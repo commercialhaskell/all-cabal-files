@@ -132,6 +132,7 @@ minioperational <0.3 || >0.3 && <0.4.1 || >0.4.1 && <0.4.4 || >0.4.4
 mongodb-queue <0.4 || >0.4
 nested-routes <0.0.1 || >0.0.1 && <0.0.1.1 || >0.0.1.1 && <0.0.2 || >0.0.2
 network-msg <0.1 || >0.1 && <0.2 || >0.2
+network-simple-sockaddr <0.1 || >0.1
 network-transport-zeromq >=0.2.1
 objective <0.0.2 || >0.0.2
 olwrapper >0.4.0
