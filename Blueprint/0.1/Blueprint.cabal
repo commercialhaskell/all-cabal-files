@@ -1,0 +1,39 @@
+-- @+leo-ver=4-thin
+-- @+node:gcross.20091128000856.1485:@thin Blueprint.cabal
+-- @@language Haskell
+Name:           Blueprint
+Description:    Preview of a new build system.
+Version:        0.1
+Cabal-Version:  >= 1.2
+License:        BSD3
+License-File:   LICENSE
+Author:         Gregory Crosswhite
+Copyright:      (c) 2009 Gregory Crosswhite
+Maintainer:     gcross@phys.washington.edu
+Stability:      experimental
+Homepage:       http://github.com/gcross/Blueprint
+Category:       Distribution
+Synopsis:       Preview of a new build system.
+Build-Type:     Custom
+Build-Depends:  base == 4.1.*,
+                containers == 0.2.*,
+                array == 0.2.*,
+                bytestring == 0.9.*,
+                mtl == 1.1.*,
+                directory == 1.0.*,
+                filepath == 1.1.*,
+                process == 1.0.*,
+                parallel == 2.1.*,
+                binary == 0.5.*,
+                stringtable-atom == 0.0.6,
+                ConfigFile == 1.0.*,
+                either-unwrap == 1.1.*,
+                pureMD5 == 1.0.*,
+                Cabal == 1.6.*,
+                ansi-wl-pprint == 0.5.*,
+                regex-tdfa == 1.1.*,
+                InfixApplicative == 1.0.*
+
+Library
+-- @-node:gcross.20091128000856.1485:@thin Blueprint.cabal
+-- @-leo

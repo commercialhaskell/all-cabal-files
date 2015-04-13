@@ -1,0 +1,15 @@
+Name:                monadiccp
+Version:             0.5.2
+Description:         Monadic Constraint Programming framework
+License:             BSD3
+License-file:        LICENSE
+Author:              Tom Schrijvers 
+Maintainer:          tom.schrijvers@cs.kuleuven.be
+Build-Depends:       base, containers, mtl, haskell98, random
+Build-Type:          Simple
+Exposed-modules:     Control.CP.ComposableTransformers  Control.CP.PriorityQueue  Control.CP.Queue  Control.CP.Solver  Control.CP.SearchTree  Control.CP.Transformers Control.CP.FD.Domain Control.CP.FD.FD Control.CP.FD.FDSugar Control.CP.Herbrand.Herbrand Control.CP.Herbrand.PrologTerm Control.CP.Herbrand.Prolog Control.CP.Herbrand.HerbrandT
+ghc-options:         
+Category:            control
+Synopsis:	     Constraint Programming
+Homepage:            http://www.cs.kuleuven.be/~toms/Haskell/
+bug-reports:         http://trac.haskell.org/monadiccp/

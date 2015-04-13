@@ -1,0 +1,80 @@
+Name:                clustertools
+Version:             0.1.2
+License:             GPL
+License-file:        LICENSE
+Author:              Ketil Malde
+Maintainer:          Ketil Malde <ketil@malde.org>
+
+Category:            Bioinformatics
+Synopsis:            Tools for manipulating sequence clusters
+Description:         This is a bunch of stuff I needed at some for manipulating sequence
+                     clusters. See the README for details. The tools included are:
+                     .
+                     * filter - remove unwanted sequences from a clustering
+                     .
+                     * hist   - produce a histogram of cluster sizes from a "label"-formatted clustering.
+                     .
+                     * clusc  - compare clusterings, calculating numerous pair-based and entropy based indices.
+                     .
+                     * add_single - add singletons to a clustering.
+                     .
+                     * ace2contigs - parse an ACE assembly file, and output the contigs in a FASTA file.
+                     .
+                     * ace2fasta - parse an ACE assembly, and output each assembly in a separate FASTA file
+                     .
+		     * ace2clusters - parse an ACE assembly, and output clusters in TGICL format
+		     .
+                     * clusterlibs - given a table of regular expressions and library names, along with a
+                     clustering (TGICL-format), output a table of clusters with the library name
+                     prepended to the sequences.
+                     .
+		     * xcerpt - extract sequences from a list of sequence labels.
+		     .
+                     The Darcs repository is at: <http://malde.org/~ketil/biohaskell/cluster_tools>.
+Homepage:            http://malde.org/~ketil/
+
+Tested-With:         GHC==6.8.2
+Build-Type:          Simple
+Cabal-Version:       >= 1.2
+
+Data-Files:          README
+
+Executable filter
+           Hs-source-dirs: src
+           Main-Is:     Filter.hs
+           Build-Depends:       base>3, containers, simpleargs>=0.1
+           ghc-options:         -Wall -O2 -funbox-strict-fields
+
+Executable clusc
+           Hs-source-dirs: src
+           Main-Is:     Cluscomp.lhs
+           Build-Depends: bytestring
+
+Executable add_single
+           Hs-source-dirs: src
+           Main-Is:     AddSingletons.hs
+
+Executable ace2contigs
+           Hs-source-dirs: src
+           Main-Is:     Ace2Contigs.hs
+           Build-depends: bio>=0.3.3.4
+
+Executable ace2fasta
+           Hs-source-dirs: src
+           Main-Is:     Ace2Fasta.hs
+           Build-depends: bio>=0.3.3.4
+
+Executable ace2clusters
+           Hs-source-dirs: src
+           Main-Is:     Ace2Clusters.hs
+           Build-depends: bio>=0.3.3.4
+
+Executable clusterlibs
+           Hs-source-dirs: src
+           Main-Is:     ClusterLibs.hs
+           Build-depends: regex-compat, QuickCheck
+
+Executable xcerpt
+           Hs-source-dirs: src
+           Main-Is:     Xcerpt.lhs
+           Build-depends: haskell98

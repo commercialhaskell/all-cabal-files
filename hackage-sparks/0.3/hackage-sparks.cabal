@@ -1,0 +1,24 @@
+name:                hackage-sparks
+version:             0.3
+homepage:            http://code.haskell.org/~dons/code/hackage-sparks
+license:             BSD3
+license-file:        LICENSE
+author:              Don Stewart
+maintainer:          dons@galois.com
+category:            Graphics
+synopsis:            Generate sparkline graphs of hackage statistics
+description:         Generate sparkline graphs of hackage statistics
+cabal-version:       >= 1.2
+build-type:          Simple
+
+flag small_base
+  description: Choose the new smaller, split-up base package.
+
+executable hackagesparks
+    main-is:         Main.hs
+    if flag(small_base) 
+        build-depends:   base >= 3, old-locale, old-time, directory
+    else
+        build-depends:   base <  3
+    build-depends:   hsparklines, tagsoup, parsedate, filepath
+

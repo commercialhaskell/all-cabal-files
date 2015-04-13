@@ -1,0 +1,34 @@
+name: xchat-plugin
+version: 0.0.3
+cabal-version: >=1.4
+build-type: Simple
+license: GPL-2
+license-file: LICENSE
+maintainer: sedrikov@gmail.com
+stability: experimental
+synopsis: XChat
+description: This package adds bindings to the plugins system of XChat to Haskell. Refer to the README file.
+category: IRC Client
+author: AUGER Cedric
+data-files: module_init.c xchat-plugin-hack.c xchat-plugin-hack.h
+            xchat-plugin.h
+data-dir: files
+extra-source-files: CHANGES README
+ 
+library
+    build-depends: base -any, directory -any, filepath -any,
+                   process -any, unix -any
+    exposed-modules: Network.IRC.XChat.Examples.CountDown
+                     Network.IRC.XChat.Examples.AutoOp Network.IRC.XChat.Plugin
+    exposed: True
+    buildable: True
+    hs-source-dirs: src
+ 
+executable hsxchat
+    build-depends: base >=2 && <5, directory -any, filepath -any,
+                   process -any, unix -any
+    main-is: Main.hs
+    buildable: True
+    hs-source-dirs: src
+    other-modules: Network.IRC.XChat.Examples.CountDown
+ 

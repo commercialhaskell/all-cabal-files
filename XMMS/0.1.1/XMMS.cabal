@@ -1,0 +1,52 @@
+Name:                XMMS
+Version:             0.1.1
+Description:         Provides the haskell client lib for XMMS2
+Synopsis:            XMMS2 client library.
+License:             LGPL
+License-file:        LICENSE
+Author:              Vodolazskiy Evgeniy
+Maintainer:          waterlaz@gmail.com
+Build-Type:          Simple
+Cabal-Version:       >=1.2
+Category:            Network, Sound
+Homepage:            http://kawais.org.ua/XMMS/
+
+Build-depends:  base >= 1.0 && < 5,
+                containers
+Build-Type:     Simple
+Tested-with:    GHC==6.12.1
+
+Exposed-modules:
+    Network.XMMS.Client, Network.XMMS.Playback, 
+    Network.XMMS.Playlist, Network.XMMS.Config,
+    Network.XMMS.Medialib,
+    Network.XMMS.Client.Glib
+
+Other-modules:
+    Network.XMMS.Constants, Network.XMMS.Result, 
+    Network.XMMS.Value, Network.XMMS.Types,
+    Network.XMMS.Utilities, Network.XMMS.UTF8Strings
+
+C-sources:
+    cbits/XMMSUtils.c
+
+Extra-libraries: xmmsclient, xmmsclient-glib
+
+Extra-source-files:
+    Network/XMMS/Utilities.hs,
+    Network/XMMS/Result.hs, 
+    Network/XMMS/Value.hs,
+    Network/XMMS/Types.hs,
+    Network/XMMS/Constants.hsc,
+    Network/XMMS/UTF8Strings.hs,
+    cbits/XMMSUtils.c, cbits/XMMSUtils.h
+
+Data-files:
+    example/tut1.hs, example/tut2.hs,
+    example/tut3.hs, example/tut4.hs,
+    example/tut7.hs
+
+Extensions:       CPP, ForeignFunctionInterface
+
+Include-dirs:     cbits . /usr/include/xmms2 
+

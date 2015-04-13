@@ -1,0 +1,64 @@
+name:                html5-entity
+version:             0.1.0.2
+synopsis:            A library for looking up and validating HTML5 entities.
+description:         A library for looking up and validating HTML5 entities.
+                     The <http://html.spec.whatwg.org/multipage/entities.json following>
+                     document is used as an authoritative source of the valid
+                     entity names and their corresponding codepoints.
+
+                     You can think of this library as about bindings to the data
+                     from that file. For usage see the 'Text.Html5.Entity'
+                     module.
+homepage:            https://github.com/zudov/html5-entity/
+bug-reports:         https://github.com/zudov/html5-entity/issues/
+license:             BSD3
+license-file:        LICENSE
+author:              Konstantin Zudov
+maintainer:          konstantin@anche.no
+copyright:           (c) Konstantin Zudov, 2015
+category:            Text
+build-type:          Simple
+extra-source-files:  README.md, generate.sh, generation/entities.json,
+                     generation/Generate.hs, generation/Template.hs
+cabal-version:       >=1.10
+
+library
+  exposed-modules:     Text.Html5.Entity
+                       Text.Html5.Entity.Data
+  build-depends:       base >=4.5 && < 4.8
+                     , text
+                     , containers
+  hs-source-dirs:      src/
+  ghc-options:         -Wall -O2
+  default-language:    Haskell98
+
+flag generator
+  description:         Build generation executable 'html5-entity-generate'
+  default:             False
+
+executable html5-entity-generate
+  if flag(generator)
+    buildable: True
+    build-depends:       base >= 4.5 && < 4.8
+                       , text
+                       , unordered-containers
+                       , haskell-src
+                       , aeson
+                       , bytestring
+  else
+    buildable: False
+  hs-source-dirs:      generation/
+  main-is:             Generate.hs
+  default-language:    Haskell2010
+  ghc-options:         -Wall
+
+benchmark bench
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      bench
+  main-is:             Main.hs
+  build-depends:       base
+                     , containers
+                     , html5-entity
+                     , criterion
+  ghc-options:         -Wall -O2
+  default-language:    Haskell98

@@ -1,0 +1,43 @@
+name: billeksah-services
+version: 1.0.0
+cabal-version: >= 1.8
+build-type: Simple
+license: LGPL
+license-file: LICENSE
+copyright: Juergen "jutaro" Nicklisch-Franken
+maintainer: maintainer@leksah.org
+homepage: http://www.leksah.org
+package-url: https://github.com/leksah
+bug-reports: http://code.google.com/p/leksah/issues/list
+synopsis: Leksah library
+description: General library used by leksah
+category: Control
+author: Juergen "jutaro" Nicklisch-Franken
+tested-with: GHC ==7.0
+
+Library
+    exposed-modules:
+        Base
+        Base.Event
+        Base.ConfigFile
+        Base.Graph
+        Base.PluginTypes
+        Base.MyMissing
+        Base.State
+        Base.Config
+        Base.Selector
+    exposed: True
+    buildable: True
+    extensions: CPP
+    hs-source-dirs: src
+    build-depends:
+        base >=4.0.0.0 && <4.4,
+        containers >=0.2 && <0.5,
+        mtl >=1.1.0.2 && <2.1,
+        transformers >= 0.2.2.0 && < 0.3,
+        parsec >= 3.1.1 && < 4,
+        pretty >=1.0.1.0 && <1.1,
+        directory >= 1.1.0.0 && <1.2,
+        filepath >= 1.2.0.0 && < 1.3
+
+

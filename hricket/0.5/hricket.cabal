@@ -1,0 +1,21 @@
+Name:           hricket
+Version:        0.5
+Synopsis:       A Cricket scoring application.
+Description:    An application to help with scoring Cricket dart games.
+Cabal-Version:  >= 1.2
+License:        BSD3
+License-file:	LICENSE
+Author:         Anthony Simpson
+Maintainer:     DiscipleRayne@gmail.com
+Homepage:       http://github.com/Raynes/Hricket
+Copyright:	(c) 2010 Anthony Simpson
+Build-Type:     Simple
+Tested-With:    GHC == 6.10
+Category:	Game
+Extra-source-files:	README,LICENSE
+
+Executable hricket
+  Build-Depends:  base >= 3 && <= 4, containers >= 0.2
+  Main-Is:        Main.hs
+  Other-Modules:  Card,Game,GameCard,Mark,Player
+  Hs-Source-Dirs: src

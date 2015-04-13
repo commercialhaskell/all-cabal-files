@@ -1,0 +1,50 @@
+name:           BiobaseBlast
+version:        0.0.0.1
+author:         Christian Hoener zu Siederdissen
+maintainer:     choener@tbi.univie.ac.at
+homepage:       http://www.tbi.univie.ac.at/~choener/
+copyright:      Christian Hoener zu Siederdissen, 2013
+category:       Bioinformatics
+synopsis:       BLAST-related tools
+license:        GPL-3
+license-file:   LICENSE
+build-type:     Simple
+stability:      experimental
+cabal-version:  >= 1.6.0
+description:
+                This library contains BLAST-related functionality. For now,
+                this library is very limited (and Ketil Malde provides other
+                BLAST functionality anyway).
+                .
+                We do provide parsers for BLOSUM and PAM matrices.
+                .
+                The matrices can be found here:
+                <ftp://ftp.ncbi.nih.gov/blast/matrices/>
+
+
+
+extra-source-files:
+  changelog
+
+
+
+library
+  build-depends:
+    base >3 && <5           ,
+    array                   ,
+    containers              ,
+    BiobaseXNA >= 0.7.0.2
+
+  exposed-modules:
+    Biobase.SubstMatrix
+    Biobase.SubstMatrix.Import
+
+  ghc-options:
+    -O2
+
+
+
+source-repository head
+  type: git
+  location: git://github.com/choener/BiobaseBlast
+

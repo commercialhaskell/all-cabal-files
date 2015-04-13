@@ -1,0 +1,48 @@
+Cabal-Version: >= 1.6
+
+Name:     notcpp
+Version:  0.0.1
+Category: Template Haskell
+Synopsis: Avoiding the C preprocessor via cunning use of Template Haskell
+
+Description:
+    notcpp is a library that attempts to provide an alternative to
+    using CPP as a mechanism for conditional compilation. It provides
+    facilities for determining if specific names or class instances
+    exist and responding accordingly.
+    .
+    When a value or class instance appears between minor releases of a
+    third-party package, a common way of dealing with the problem is to
+    use CPP to conditionally use one block of code or another. The
+    trouble with CPP is it's hard to statically analyse: tools based on
+    haskell-src-exts will outright refuse to parse it, for example. It
+    turns out Template Haskell will do the same job in some cases.
+
+Author:       Ben Millwood <haskell@benmachine.co.uk>
+Maintainer:   Ben Millwood <haskell@benmachine.co.uk>
+Bug-reports:  https://github.com/benmachine/notcpp/issues
+Copyright:    2012 Ben Millwood
+License:      BSD3
+License-file: LICENSE
+
+Build-type:  Simple
+Tested-with: GHC == 7.4.1
+
+Source-repository head
+  Type:     git
+  Location: git://github.com/benmachine/notcpp
+
+Library
+  Exposed-modules:
+     NotCPP.ScopeLookup
+     NotCPP.OrphanEvasion
+
+  Build-depends:
+     base < 5,
+     template-haskell == 2.7.*
+
+  Extensions:
+     TemplateHaskell
+
+  GHC-Options:    -W
+  Hs-source-dirs: .

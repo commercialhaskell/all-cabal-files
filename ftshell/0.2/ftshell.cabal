@@ -1,0 +1,29 @@
+name:           ftshell
+version:        0.2
+license:        PublicDomain
+license-file:   LICENSE
+author:         Sascha Boehme
+maintainer:     voigt@tcs.inf.tu-dresden.de
+synopsis:       Shell interface to the FreeTheorems library.
+description:
+    The ftshell is a shell-based user interface to interact with the
+    free-theorems library. It offers all possibilities provided by
+    that library to generate free theorems from Haskell type
+    expressions.
+category:       Language, Source-tools
+tested-with: 	GHC==6.8.2
+build-type:	Simple
+build-depends:
+    base >= 1.0
+  , mtl >= 1.0
+  , Shellac >= 0.9
+  , Shellac-readline >= 0.9
+  , free-theorems >= 0.2
+  , pretty >= 1.0.0.0
+  , containers >= 0.1.0.1
+data-files:
+    declarations.hs
+executable:     ftshell
+main-is:        main.hs
+hs-source-dirs: src
+extensions: MultiParamTypeClasses

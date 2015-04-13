@@ -1,0 +1,23 @@
+Name: libxml
+Version: 0.1
+Maintainer: Lemmih (lemmih@gmail.com)
+Author: Lemmih (lemmih@gmail.com)
+Copyright: 2006, Lemmih
+License-File: LICENSE
+License: BSD3
+Build-Depends: base, mtl
+Category: Foreign binding
+Synopsis: Binding to libxml2
+Description:
+  Minimal binding to libxml2. Additional functions will be added when needed.
+Extensions: CPP, ForeignFunctionInterface
+Hs-Source-Dirs: src
+Exposed-Modules:
+  Text.XML.LibXML
+  Text.XML.LibXML.Types
+  Text.XML.LibXML.Internals
+  Text.XML.LibXML.Tree
+  Text.XML.LibXML.Parser
+Includes: libxml/xmlIO.h libxml/xmlmemory.h
+Extra-Libraries: xml2
+GHC-Options: -fglasgow-exts -Wall -Werror -O2

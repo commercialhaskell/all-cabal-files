@@ -1,0 +1,35 @@
+name:                   Pup-Events-Demo
+version:                1.2
+synopsis:               A networked event handling framework for hooking
+                        into other programs.
+description:            Pup-Events is a networking enabled event handling
+                        framework. This package contains a demonstration of
+                        how this library is expected to be used.
+category:               Networking, Demo, Pup-Events
+author:                 Daniel Wilson
+maintainer:             wilsonhardrock@gmail.com
+copyright:              (c) 2012 Daniel Wilson
+license:                GPL-3
+license-file:           LICENSE
+cabal-version:          >= 1.10.2.0
+tested-with:            GHC == 7.0.4
+build-type:             Simple
+
+source-repository head
+    type:               git
+    location:           https://github.com/RocketPuppy/PupEvents.git
+
+executable server
+    main-is:            EventsServer/ServerDemo.hs
+    default-language:   Haskell98
+    build-depends:      base == 4.*, Pup-Events-Server >= 1.1.2, parsec >= 3.1.1
+    ghc-options:        -threaded
+
+executable demo
+    main-is:            EventsClient/Demo.hs
+    default-language:   Haskell98
+    build-depends:      base == 4.*, Pup-Events-Client >= 1.1, stm >= 2.2, OpenGL,
+                        Pup-Events-PQueue, parsec >= 3.1.1, GLUT
+    hs-source-dirs:     ./, EventsClient/
+    other-modules:      EventsClient
+    ghc-options:        -threaded

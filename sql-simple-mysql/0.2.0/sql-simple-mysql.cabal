@@ -1,0 +1,29 @@
+name:                sql-simple-mysql
+version:             0.2.0
+synopsis:            mysql backend for sql-simple
+-- description:         
+license:             MIT
+license-file:        LICENSE
+author:              HirotomoMoriwaki<philopon.dependence@gmail.com>
+maintainer:          HirotomoMoriwaki<philopon.dependence@gmail.com>
+Homepage:            https://github.com/philopon/apiary
+Bug-reports:         https://github.com/philopon/apiary/issues
+copyright:           (c) 2014 Hirotomo Moriwaki
+category:            Database
+build-type:          Simple
+cabal-version:       >=1.10
+
+library
+  exposed-modules:     Database.Sql.Simple.MySQL
+  build-depends:       base                 >=4.6 && <4.8
+                     , text                 >=1.1 && <1.2
+                     , sql-simple           >=0.2 && <0.3
+                     , mysql-simple         >=0.2 && <0.3
+                     , mysql                >=0.1 && <0.2
+                     , data-default-class   >=0.0 && <0.1
+
+  if impl(ghc < 7.8)
+    build-depends:     tagged               >=0.7 && <0.8
+
+  ghc-options:         -Wall -O2
+  default-language:    Haskell2010

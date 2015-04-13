@@ -1,0 +1,76 @@
+Name:           scrz
+Version:        0.0.0.1
+
+License:        OtherLicense
+License-file:   UNLICENSE
+
+Author:         Tomas Carnecky
+
+Synopsis:       Process management and supervision daemon
+
+Description:    @scrz@ is a daemon that runs and monitors other processes.
+                It is similar to djb's `daemontools`, the Ruby project `god`
+                or Haskell's `Angel`.
+
+                It's goals are to keep a set of services running, and to
+                facilitate the easy configuration and restart of those
+                services.
+
+Maintainer:     tomas.carnecky@gmail.com
+
+Homepage:       http://github.com/wereHamster/scrz
+
+Stability:      Stable
+Category:       System
+Build-type:     Simple
+
+Cabal-version:  >= 1.6
+
+
+Source-Repository head
+    Type:      git
+    Location:  https://github.com/wereHamster/scrz.git
+
+
+Executable scrz
+
+    Build-depends:  MonadRandom          >= 0
+    Build-depends:  aeson                >= 0
+    Build-depends:  base                 >= 4 && < 5
+    Build-depends:  base16-bytestring    >= 0
+    Build-depends:  bytestring           >= 0
+    Build-depends:  conduit              >= 0
+    Build-depends:  containers           >= 0
+    Build-depends:  cryptohash           >= 0
+    Build-depends:  directory            >= 0
+    Build-depends:  filepath             >= 0
+    Build-depends:  friendly-time        >= 0
+    Build-depends:  hashable             >= 0
+    Build-depends:  http-conduit         >= 0
+    Build-depends:  http-types           >= 0
+    Build-depends:  mtl                  >= 0
+    Build-depends:  network              >= 0
+    Build-depends:  old-locale           >= 0
+    Build-depends:  process              >= 0
+    Build-depends:  random               >= 0
+    Build-depends:  stm                  >= 0
+    Build-depends:  template-haskell     >= 0
+    Build-depends:  text                 >= 0
+    Build-depends:  time                 >= 0
+    Build-depends:  unix                 >= 0
+
+    Hs-Source-Dirs: src
+
+    Main-is:        Scrz/Main.hs
+
+    Extensions:     BangPatterns
+    Extensions:     DeriveGeneric
+    Extensions:     DoAndIfThenElse
+    Extensions:     ForeignFunctionInterface
+    Extensions:     OverloadedStrings
+    Extensions:     RecordWildCards
+    Extensions:     RecursiveDo
+    Extensions:     ScopedTypeVariables
+    Extensions:     ViewPatterns
+
+    Ghc-Options:    -threaded -Wall

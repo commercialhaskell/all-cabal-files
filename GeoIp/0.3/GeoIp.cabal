@@ -1,0 +1,25 @@
+Name:		GeoIp
+Version:	0.3
+License:	OtherLicense
+License-File:	Copying
+Author:		Stephen Cook
+Maintainer:	siti@orcon.net.nz
+category:	Network
+Synopsis:	Pure bindings for the MaxMind IP database.
+Stability:	alpha
+build-type:	Simple
+Extra-Source-Files: examples/TestGeoIp.hs
+Description:
+  GeoIp is a pure haskell binding to the MaxMind IP database.
+  The IP database contains information such as the approximate
+  longitude and latitude of an IP address.
+Cabal-Version:	>= 1.6.0
+
+Library {
+  Exposed-modules:
+    Network.GeoIp.GeoCityIp
+  Other-modules:
+    Network.GeoIp.GeoDB
+  build-depends: base > 4.0, bytestring, bytestring-mmap, syb
+  ghc-options: -Wall
+}

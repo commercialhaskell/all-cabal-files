@@ -1,0 +1,23 @@
+Name:             stylized
+Version:          0.1.2
+Description:      Various ways to output stylized text on ANSI consoles.
+                  Uses some of the MaxBolingbroke's System.Console.ANSI
+                  functionalities.
+License:          GPL
+License-file:     LICENSE
+Category:         User Interfaces
+
+Homepage:         http://patch-tag.com/r/lucid/Stylized
+Author:           Luca Molari
+Maintainer:       luca.pwns@gmail.com
+
+Build-Type:       Simple
+Cabal-Version:    >=1.6
+
+
+Library
+  Build-Depends:    base          >= 4.1 && < 4.2 ,
+                    ansi-terminal >= 0.5 && < 0.6
+  Exposed-modules:  System.Console.ANSI.Stylized
+  ghc-options:      -Wall
+

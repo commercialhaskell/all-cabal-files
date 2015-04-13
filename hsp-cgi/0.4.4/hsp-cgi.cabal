@@ -1,0 +1,25 @@
+Name:                   hsp-cgi
+Version:                0.4.4
+License:                BSD3
+License-File:           LICENSE
+Author:                 Niklas Broberg
+Maintainer:             Niklas Broberg <nibro@cs.chalmers.se>
+
+Stability:              Experimental
+Category:               Web, Network
+Synopsis:               Facilitates running Haskell Server Pages web pages as CGI programs.
+Description:            Haskell Server Pages (HSP) is an extension of vanilla Haskell, targetted at the task of
+                        writing dynamic server-side web pages. This module provides facilities to allow such pages
+                        to be run as CGI programs.
+Homepage:               http://code.google.com/p/hsp
+
+Build-Depends:          base>3, hsp>=0.4.4, network, containers, harp
+Build-Type:             Simple
+Tested-With:            GHC==6.8.3
+
+Hs-Source-Dirs:         src
+Exposed-Modules:        HSP.CGI.RunCGI
+Other-Modules:          HSP.CGI.CGIEnv, HSP.CGI.NumberGen
+
+GHC-Options:            -F -pgmFtrhsx -Wall
+Extensions:             PatternGuards

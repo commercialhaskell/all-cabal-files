@@ -1,0 +1,18 @@
+Name: config-select
+Version: 0.0.1
+Synopsis: A small program for swapping out dot files.
+Description: Manage multiple configuration profiles for the same program.  Swap out dot files quickly.
+Category:System
+
+License: GPL-3
+License-file:COPYING
+Author: Timothy Hobbs
+Maintainer: Timothy Hobbs <timothyhobbs@seznam.cz>
+build-type:Simple
+
+cabal-version: >= 1.4
+
+Executable config-select
+ build-depends:base<5,unix,directory,vty-menu,filepath
+ main-is:Main.lhs
+ other-modules: Util.ConfigSelect

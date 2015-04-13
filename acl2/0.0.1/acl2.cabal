@@ -1,0 +1,29 @@
+name:    acl2
+version: 0.0.1
+
+category: Language, Formal Methods
+
+synopsis:    Writing and calling ACL2 from Haskell.
+description: Writing and calling ACL2 from Haskell.
+
+author:     Tom Hawkins  <tomahawkins@gmail.com>
+maintainer: Tom Hawkins  <tomahawkins@gmail.com>
+
+license: BSD3
+license-file: LICENSE
+
+build-type:    Simple
+cabal-version: >= 1.9.2
+
+library
+  build-depends:
+    base     >= 4.0 && < 6.0,
+    process  >= 1.0 && < 2.0
+  exposed-modules:
+    Language.ACL2
+  ghc-options: -W
+
+source-repository head
+  type:     git
+  location: git://github.com/tomahawkins/acl2.git
+

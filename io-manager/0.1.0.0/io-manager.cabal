@@ -1,0 +1,31 @@
+name:                io-manager
+version:             0.1.0.0
+
+synopsis:            Skeleton library around the IO monad.
+
+description:         A skeleton library to help learners of Haskell
+                     concentrate on the pure-functional aspect and
+                     let the IO be handled by the library.
+
+license:             BSD3
+license-file:        LICENSE
+
+author:              Mihai Maruseac
+maintainer:          mihai.maruseac@gmail.com
+
+category:            Development
+build-type:          Simple
+
+cabal-version:       >=1.8
+
+library
+  exposed-modules:     Training.MM.IOManager
+  build-depends:       base ==4.5.*,
+                       containers ==0.4.*
+
+executable SimpleEchoExample
+  build-depends:       base ==4.5.*,
+                       containers ==0.4.*,
+                       io-manager
+  Main-Is:             SimpleEchoExample.hs
+  Hs-Source-Dirs:      simple-echo-example

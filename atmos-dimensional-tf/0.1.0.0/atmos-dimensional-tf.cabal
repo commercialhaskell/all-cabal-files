@@ -1,0 +1,30 @@
+name:                atmos-dimensional-tf
+version:             0.1.0.0
+synopsis:            dimensional-tf wrapper on atmos package
+description: {
+1976 US Standard Atmosphere with dimensions from dimensional-tf package.
+.
+This is a thin wrapper on top of the atmos package.
+.
+I recommend using the atmos-dimensional package instead of this until atmos-dimensional-tf is more stable.
+}
+license:             BSD3
+license-file:        LICENSE
+author:              Greg Horn
+maintainer:          gregmainland@gmail.com
+-- copyright:           
+category:            Science
+build-type:          Simple
+cabal-version:       >=1.8
+
+library
+   exposed-modules: Atmosphere.Dimensional.TF
+  -- other-modules:       
+   build-depends:   base >= 4 && < 5,
+                    atmos >= 0.1 && < 0.2,
+                    dimensional-tf >= 0.1 && < 0.2,
+                    numtype-tf >= 0.1 && < 0.2
+
+source-repository head
+  type:     git
+  location: git://github.com/ghorn/atmosphere.git

@@ -1,0 +1,43 @@
+name: BerkeleyDB
+version: 0.6
+license: BSD3
+license-file: LICENSE
+cabal-version: >= 1.4
+copyright: (c) 2009 Stephen Blackheath
+author: Stephen Blackheath
+maintainer: http://blacksapphire.com/antispam/
+stability: beta
+synopsis: Berkeley DB binding
+description:
+    Berkeley DB is a fast, scalable, fully transactional database that runs on a local file
+    system, and functions as a dictionary of arbitrary-sized binary blobs.
+    (It is NOT an SQL-based database.)  This package provides a thin Haskell binding for Berkeley DB.
+    .
+    This is a work in progress: The coverage of the Berkeley DB API is not yet complete. Tested with
+    Berkeley DB version 4.6.
+    .
+    Berkeley DB home page:
+    <http://www.oracle.com/database/berkeley-db/index.html>
+    .
+    Haskell binding tutorial:
+    <http://www.haskell.org/haskellwiki/BerkeleyDBXML>
+    .
+    DARCS repository:
+    <http://blacksapphire.com/BerkeleyDB>
+
+category: Database
+build-type: Simple
+homepage: http://www.haskell.org/haskellwiki/BerkeleyDBXML
+extra-source-files:
+    Database/Berkeley/db_helper.h,
+    examples/tests.hs
+    examples/capitals.hs
+
+Library
+    exposed-modules: Database.Berkeley.Db
+    c-sources: Database/Berkeley/db_helper.cpp
+
+    build-depends: base >= 4, bytestring >= 0.9
+    include-dirs: Database/Berkeley/
+    extra-libraries: db, db_cxx
+    ghc-options: -pgml c++

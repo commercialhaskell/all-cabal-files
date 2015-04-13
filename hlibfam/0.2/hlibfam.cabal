@@ -1,0 +1,25 @@
+Name:                hlibfam
+Version:             0.2
+Synopsis:            FFI interface to libFAM
+Description:         FFI interface to libFAM
+License:             BSD3
+License-file:        LICENSE
+Author:              Aycan iRiCAN
+Maintainer:          aycan.irican@core.gen.tr
+Stability:           Experimental
+Category:            Foreign
+Build-type:          Simple
+Cabal-version:       >=1.6
+
+Library
+  Exposed-modules: System.FAM
+  ghc-options: -Wall
+  Build-Depends: base >= 4 && < 5
+  Build-tools: hsc2hs
+  extra-libraries: fam
+  extra-lib-dirs: /usr/lib
+--  c-sources: wrapper.c                   
+
+source-repository head
+  type:     git
+  location: git://github.com/aycanirican/hlibfam.git  

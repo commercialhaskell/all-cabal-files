@@ -1,0 +1,25 @@
+Name:               generic-xml
+Version:            0.1
+License:            BSD3
+Copyright:          2007 HAppS LLC
+Author:             HAppS LLC
+Maintainer:         AlexJacobson@HAppS.org
+Stability:          experimental
+Synopsis:           Marshalling Haskell values to/from XML
+Description:
+    Marshalling Haskell values to/from XML.
+Category:           Xml
+Tested-With:        GHC==6.6.1
+Build-Depends:      base, mtl, template-haskell, syb-with-class, HaXml
+Exposed-modules:
+    Xml.DeriveAll
+    Xml.Xml
+    Xml.HaXml
+Other-modules:
+    Xml.Base
+    Xml.Instances
+    Xml.PrintParse
+Extensions: UndecidableInstances, OverlappingInstances, Rank2Types,
+            TemplateHaskell, FlexibleInstances
+GHC-Options: -Wall -fno-warn-orphans -fno-warn-missing-signatures
+

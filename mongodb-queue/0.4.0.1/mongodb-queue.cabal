@@ -1,0 +1,59 @@
+name:                mongodb-queue
+version:             0.4.0.1
+synopsis:            message queue using MongoDB
+description:         A simple messaging queue using MongoDB. This trades having a good queue for ease of deployment. This is designed to be much worse at scale than real queueing infrastructure. However, it is very simple to start using if you are already running MongoDB. You could probably fork this code to make it work with a different database that you are already using.
+                     .
+                     There are 2 options for receiving a message: polling or tailable cursors. Polling is obviously inefficient, but it works against an index on a capped collection, so it should still be fairly efficient, and as fast as the polling interval you set. Tailable cursors respond very quickly and don't re-query the database. However, there is an outstanding bug that they use up CPU on the database when the system is idle, particularly as more tailable cursors are added. The idle CPU usage will become worse as you scale out to multiple worker processes.
+
+homepage:            https://github.com/docmunch/haskell-mongodb-queue
+license:             MIT
+author:              Daggerboard Inc. Greg Weber
+maintainer:          Greg Weber <greg@gregweber.info>
+copyright:           Daggerboard Inc. makers of docmunch.com
+category:            Database
+build-type:          Simple
+cabal-version:       >=1.8
+
+library
+  ghc-options:   -Wall
+  exposed-modules:     
+    Database.MongoDB.Queue
+
+  extensions:
+    OverloadedStrings
+
+  -- other-modules:       
+  build-depends:
+      base > 4.5 && < 5
+    , lifted-base
+    , mongoDB >= 1.4.1.1 && < 1.5
+    , transformers
+    , monad-control
+    , text
+    , network
+    , data-default
+
+test-suite test
+  type: exitcode-stdio-1.0
+  main-is: main.hs
+  hs-source-dirs: test, .
+
+  extensions:
+    OverloadedStrings
+
+  build-depends:
+      base > 4.5 && < 5
+    , lifted-base
+    , mongoDB >= 1.4.1.1 && < 1.5
+    , transformers
+    , monad-control
+    , text
+    , network
+    , hspec
+    , data-default
+
+
+
+source-repository head
+  type: git
+  location: git://github.com/docmunch/haskell-mongodb-queue.git

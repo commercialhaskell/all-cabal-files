@@ -1,0 +1,39 @@
+Name:           twisty
+Version:        0.1.0
+Cabal-Version:  >= 1.6
+Synopsis:       Simulator of twisty puzzles à la Rubik's Cube
+Description:
+  Library with tools for simulating Rubik's Cube and similar puzzles.
+
+Build-Type:     Simple
+License:        OtherLicense
+-- License: Apache-2.0
+License-File:   COPYING.txt
+Copyright:      Copyright 2011 Google Inc.
+Author:         Luke Blanshard
+Maintainer:     leadpipe@google.com
+Stability:      experimental
+Category:       Game
+Source-Repository head
+  Type:         svn
+  Location:     http://eng-chi-haskell.googlecode.com/svn/leadpipe/twisty
+
+Library
+  Build-Depends:        base == 4.2.*
+                        , array == 0.3.*
+                        , containers == 0.3.*
+                        , data-memocombinators == 0.4.1.*
+                        , MonadRandom == 0.1.6.*
+                        , parallel == 3.1.*
+  ghc-options:  -O2
+  Exposed-Modules:
+    -- Various puzzle simulations
+    Twisty.CubeExploration, Twisty.Cube, Twisty.Cube3, Twisty.Cube3a, Twisty.Cube4,
+    Twisty.Dodeca, Twisty.Tetra, Twisty.Tetra3,
+    -- Algebra
+    Twisty.Group, Twisty.Zn, Twisty.Twists, Twisty.Wreath, Twisty.Cycles,
+    -- Puzzle/geometry
+    Twisty.Puzzle, Twisty.Polyhedron, Twisty.FaceTwist, Twisty.CubeSymmetries,
+    -- Utilities
+    Twisty.Lists, Twisty.Memo, Twisty.Searching, Twisty.Strings
+

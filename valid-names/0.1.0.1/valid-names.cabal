@@ -1,0 +1,19 @@
+name:                valid-names
+version:             0.1.0.1
+synopsis:            Valid operator/module characters
+description:         Produce or check valid Haskell names.
+homepage:            https://i.joelt.io/symbols.html
+license:             MIT
+license-file:        LICENSE
+author:              Joel Taylor
+maintainer:          me@joelt.io
+category:            Language
+build-type:          Simple
+cabal-version:       >=1.10
+
+library
+  exposed-modules:     Language.Valid, Language.Valid.Random
+  other-modules:       Language.Valid.Private
+  build-depends:       base >=4.6 && <4.7, containers == 0.5.*, MonadRandom
+  hs-source-dirs:      src
+  default-language:    Haskell2010

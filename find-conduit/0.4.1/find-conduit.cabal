@@ -1,0 +1,81 @@
+Name:                find-conduit
+Version:             0.4.1
+Synopsis:            A file-finding conduit that allows user control over traversals.
+License-file:        LICENSE
+License:             MIT
+Author:              John Wiegley
+Maintainer:          johnw@newartisans.com
+Build-Type:          Simple
+Cabal-Version:       >=1.10
+Category:            System
+Description:
+  A file-finding conduit that allows user control over traversals.  Please see
+  the module 'Data.Conduit.Find' for more information.
+
+Source-repository head
+  type: git
+  location: git://github.com/jwiegley/find-conduit.git
+
+Library
+    default-language:   Haskell98
+    ghc-options: -Wall
+    build-depends:
+        base                 >= 3 && < 5
+      , conduit
+      , conduit-combinators
+      , attoparsec
+      , system-filepath
+      , unix                 >= 2.5.1.1
+      , text                 >= 0.11.3.1
+      , regex-posix
+      , mtl
+      , semigroups
+      , exceptions
+      , time
+      , transformers
+      , transformers-base
+      , mmorph
+      , either
+      , monad-control
+    exposed-modules:
+        Data.Cond, Data.Conduit.Find
+
+test-suite test
+    hs-source-dirs: test
+    default-language: Haskell2010
+    main-is: main.hs
+    type: exitcode-stdio-1.0
+    ghc-options: -Wall -threaded
+    build-depends:
+        base
+      , find-conduit
+      , conduit
+      , conduit-combinators
+      , attoparsec
+      , system-filepath
+      , unix                 >= 2.5.1.1
+      , text                 >= 0.11.3.1
+      , regex-posix
+      , mtl
+      , time
+      , either
+      , semigroups
+      , exceptions
+      , transformers
+      , transformers-base
+      , monad-control
+      , mmorph
+      , hspec                >= 1.4
+
+Test-suite doctests
+    Default-language: Haskell98
+    Type:    exitcode-stdio-1.0
+    Main-is: doctest.hs
+    Hs-source-dirs: test
+    Build-depends:      
+          base
+        , directory    >= 1.0
+        , doctest      >= 0.8
+        , filepath     >= 1.3
+        , semigroups   >= 0.4
+

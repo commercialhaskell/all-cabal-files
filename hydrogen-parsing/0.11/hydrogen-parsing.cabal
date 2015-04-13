@@ -1,0 +1,40 @@
+name:                   hydrogen-parsing
+version:                0.11
+homepage:               https://scravy.de/hydrogen-parsing/
+synopsis:               Hydrogen Parsing Utilities
+license:                MIT
+license-file:           LICENSE
+extra-source-files:     CHANGELOG.md, README.md
+author:                 Julian Fleischer
+maintainer:             julian@scravy.de
+category:               Language
+build-type:             Simple
+cabal-version:          >=1.14
+
+source-repository head
+    type:               git
+    location:           https://github.com/scravy/hydrogen-parsing
+
+library
+  exposed-modules:      Hydrogen.Parsing
+                        , Hydrogen.Parsing.Char
+  build-depends:        base ==4.7.*
+                        , containers ==0.5.*
+                        , hydrogen-prelude ==0.11
+                        , parsec ==3.1.*
+  hs-source-dirs:       src
+  ghc-options:          -Wall
+  default-language:     Haskell2010
+  default-extensions:   CPP
+                        , DeriveDataTypeable
+                        , DeriveGeneric
+                        , EmptyCase
+                        , FlexibleContexts
+                        , GADTs
+                        , LambdaCase
+                        , MultiWayIf
+                        , NoImplicitPrelude
+                        , RecordWildCards
+                        , ScopedTypeVariables
+                        , StandaloneDeriving
+                        , TupleSections

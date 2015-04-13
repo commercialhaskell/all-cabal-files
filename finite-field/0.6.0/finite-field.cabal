@@ -1,0 +1,69 @@
+Name:		finite-field
+Version:	0.6.0
+License:	BSD3
+License-File:	COPYING
+Author:		Masahiro Sakai (masahiro.sakai@gmail.com)
+Maintainer:	masahiro.sakai@gmail.com
+Category:	Math, Algebra, Data
+Cabal-Version:	>= 1.10
+Synopsis:	Finite Fields
+Description:
+  This is an implementation of finite fields.
+  Currently only prime fields are supported.
+  .
+  Changes in 0.6.0
+  .
+  * add allValues to FiniteField class
+  .
+  Changes in 0.5.0
+  .
+  * introduce FiniteField class
+
+Bug-Reports:	https://github.com/msakai/finite-field/issues
+Extra-Source-Files:
+   README.md
+   COPYING
+   .travis.yml
+   .gitignore
+Build-Type: Simple
+
+source-repository head
+  type:     git
+  location: git://github.com/msakai/finite-field.git
+
+Library
+  Hs-source-dirs: src
+  Build-Depends:
+     base >=4 && <5, template-haskell, deepseq, type-level-numbers, algebra >=3.1
+  Default-Language: Haskell2010
+  Other-Extensions:
+     DeriveDataTypeable
+     MultiParamTypeClasses
+     ScopedTypeVariables
+     Rank2Types
+     GADTs
+     TemplateHaskell
+  Exposed-Modules:
+     Data.FiniteField
+     Data.FiniteField.Base
+     Data.FiniteField.PrimeField
+     Data.FiniteField.SomeNat
+
+Test-suite TestPrimeField
+  Type:              exitcode-stdio-1.0
+  HS-Source-Dirs:    test
+  Main-is:           TestPrimeField.hs
+  Build-depends:
+      base >=4 && <5,
+      containers,
+      test-framework,
+      test-framework-th,
+      test-framework-hunit,
+      test-framework-quickcheck2,
+      HUnit,
+      QuickCheck >=2 && <3,
+      finite-field,
+      primes,
+      type-level-numbers
+  Default-Language: Haskell2010
+  Other-Extensions: TemplateHaskell

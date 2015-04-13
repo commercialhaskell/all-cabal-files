@@ -1,0 +1,25 @@
+Name:          temporal-music-notation-western
+Version:       0.1.6
+Cabal-Version: >= 1.2
+License:       BSD3
+License-file:  LICENSE
+Author:	       Anton Kholomiov
+Maintainer:    <anton.kholomiov@gmail.com>
+Synopsis:      western music notation
+Description:   Localization of 'temporal-music-notation' library for 
+               Western music tradition.
+Category:      Music
+Stability:     Experimental
+Tested-With:   GHC==6.12.1
+Build-Type:    Simple
+
+
+Library
+  Build-Depends:
+        base >= 4, base < 5,
+        temporal-music-notation >= 0.1.6
+  Hs-Source-Dirs:      src/
+  Exposed-Modules:
+        Temporal.Music.Western
+        Temporal.Music.Western.TwelveTone
+        Temporal.Music.Western.BohlenPierce

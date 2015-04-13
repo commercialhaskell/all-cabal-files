@@ -1,0 +1,49 @@
+name:                language-python
+version:             0.3.1
+cabal-version:       >= 1.6
+synopsis:            Parsing and pretty printing of Python code. 
+description:         language-python is a Haskell library for lexical analysis, parsing 
+                     and pretty printing Python code. It supports versions 2.x and 3.x of Python. 
+category:            Language
+license:             BSD3
+license-file:        LICENSE
+copyright:           (c) 2008-2010 Bernard James Pope
+author:              Bernard James Pope (Bernie Pope)
+maintainer:          florbitous@gmail.com
+homepage:            http://github.com/bjpop/language-python 
+build-depends:       base
+build-type:          Simple
+stability:           experimental
+extra-source-files:  src/Language/Python/Version3/Parser/Parser.y 
+                     src/Language/Python/Version3/Parser/Lexer.x 
+
+Library
+   hs-source-dirs:   src
+   build-depends:    base == 4.*, containers < 0.4, pretty == 1.0.*, array < 0.4, transformers == 0.2.*, 
+                     monads-tf == 0.1.*
+   build-tools:      happy, alex
+   exposed-modules:
+      Language.Python.Common
+      Language.Python.Common.ParseError
+      Language.Python.Common.SrcLocation
+      Language.Python.Common.Pretty
+      Language.Python.Common.Token
+      Language.Python.Common.ParserMonad
+      Language.Python.Common.PrettyToken
+      Language.Python.Common.AST
+      Language.Python.Common.PrettyAST
+      Language.Python.Version3
+      Language.Python.Version3.Parser
+      Language.Python.Version3.Lexer
+      Language.Python.Version2
+      Language.Python.Version2.Parser
+      Language.Python.Version2.Lexer
+      Language.Python.Common.PrettyParseError
+      Language.Python.Common.StringEscape
+   other-modules:
+      Language.Python.Common.ParserUtils
+      Language.Python.Common.LexerUtils
+      Language.Python.Version3.Parser.Parser
+      Language.Python.Version3.Parser.Lexer
+      Language.Python.Version2.Parser.Parser
+      Language.Python.Version2.Parser.Lexer

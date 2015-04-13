@@ -1,0 +1,54 @@
+cabal-version: >= 1.2.3
+name: bindings-glib
+homepage: http://bitbucket.org/mauricio/bindings-glib
+synopsis:
+  Low level bindings to GLib.
+version: 0.1
+license: BSD3
+license-file: LICENSE
+maintainer: Maurício C. Antunes <mauricio.antunes@gmail.com>
+author: Maurício C. Antunes
+build-type: Simple
+category: FFI
+bug-reports: http://bitbucket.org/mauricio/bindings-glib/issues
+library
+  hs-source-dirs: src
+  extensions:
+    ForeignFunctionInterface
+  build-depends:
+    base >= 3 && < 5,
+    bindings-DSL >= 1.0 && < 1.1
+  exposed-modules:
+    Bindings.GLib
+    Bindings.GLib.CoreApplicationSupport
+    Bindings.GLib.CoreApplicationSupport.AsynchronousQueues
+    Bindings.GLib.CoreApplicationSupport.ErrorReporting
+    Bindings.GLib.CoreApplicationSupport.MainEventLoop
+    Bindings.GLib.CoreApplicationSupport.MemoryAllocation
+    Bindings.GLib.CoreApplicationSupport.MessageLogging
+    Bindings.GLib.CoreApplicationSupport.MessageOutputAndDebuggingFunctions
+    Bindings.GLib.CoreApplicationSupport.ThreadPools
+    Bindings.GLib.CoreApplicationSupport.Threads
+    Bindings.GLib.DataTypes
+    Bindings.GLib.DataTypes.Datasets
+    Bindings.GLib.DataTypes.DoublyLinkedLists
+    Bindings.GLib.DataTypes.MemorySlices
+    Bindings.GLib.DataTypes.Quarks
+    Bindings.GLib.DataTypes.StringChunks
+    Bindings.GLib.DataTypes.TrashStacks
+    Bindings.GLib.Fundamentals
+    Bindings.GLib.Fundamentals.AtomicOperations
+    Bindings.GLib.Fundamentals.BasicTypes
+    Bindings.GLib.Fundamentals.ByteOrderMacros
+    Bindings.GLib.Fundamentals.LimitsOfBasicTypes
+    Bindings.GLib.Fundamentals.MiscellaneousMacros
+    Bindings.GLib.Fundamentals.NumericalDefinitions
+    Bindings.GLib.Fundamentals.StandardMacros
+    Bindings.GLib.Fundamentals.TypeConversionMacros
+    Bindings.GLib.Fundamentals.VersionInformation
+    Bindings.GLib.Utilities
+    Bindings.GLib.Utilities.CommandlineOptionParser
+    Bindings.GLib.Utilities.DateAndTimeFunctions
+    Bindings.GLib.Utilities.HostnameUtilities
+  c-sources: src/inlines.c
+  pkgconfig-depends: glib-2.0 >= 2.22.2

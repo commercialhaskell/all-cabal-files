@@ -1,0 +1,127 @@
+Name:            darcswatch
+version:         0.4.4
+Category:        Distribution
+name:            darcswatch
+author:          Joachim Breitner
+maintainer:      Joachim Breitner <mail@joachim-breitner.de>
+Synopsis:        Track application of Darcs patches
+Description:     DarcsWatch is a tool to track the state of darcs patches
+                 that have been submitted to some project, usually by
+                 using the "darcs send" command. It allows both submitters
+                 and project maintainers to get an overview of patches that
+                 have been submitted but not yet applied. Some notable features are:
+                 .
+                 * Reads both darcs1 and darcs2.0 (hashed) format repositories.
+                 .
+                 * Displays patch summaries per user and per repository.
+                 .
+                 * Patch diff can be reviewed directly.
+                 .
+                 * Download link for each patch, to apply without searching for the email.
+                 .
+                 * Knows about inverse and amend-recorded patches and uses them to consider
+                 .
+                 * Integrates into http://bugs.darcs.net/
+                 .
+                 * Optionally sends out mails to mailing lists when a patch is applied to a repository
+                 patches obsolete.
+Homepage:        http://darcswatch.nomeata.de/
+Cabal-Version:   >= 1.6
+License:         GPL
+License-File:    LICENSE
+data-files:      documentation.html,
+                 README, 
+                 example/config
+Build-Type:      Simple
+
+Flag Static
+        Description: Build static binaries
+        Default: False
+
+Executable darcswatch-generate
+        Main-Is:        Generate-Main.hs
+        hs-source-dirs: src
+        Other-modules:  HTML
+                        , MultiMap
+                        , Darcs
+                        , OldDate
+                        , StringCrypto
+                        , CachedGet
+                        , LockRestart
+                        , SHA1
+                        , ByteStringUtils
+                        , Zip
+                        , Printer
+                        , Darcs.Watch.Roundup
+                        , Darcs.Watch.GenerateOutput
+                        , Darcs.Watch.Data
+                        , Darcs.Watch.PullRepos
+                        , Darcs.Watch.ImportMail
+                        , Darcs.Watch.UpdateRepoData
+                        , Darcs.Watch.Storage
+                        , Darcs.Watch.Mail
+        Build-Depends:  base == 4.*
+                        , network
+                        , HTTP >= 4000
+                        , old-time
+                        , Crypto
+                        , parsec
+                        , containers
+                        , xhtml
+                        , unix
+                        , directory
+                        , nano-md5
+                        , zlib
+                        , filepath
+                        , bytestring
+                        , concurrentoutput
+                        , time
+                        , old-locale
+                        , process
+                        , mime-string
+                        , regex-compat
+                        , cgi
+                        , mtl
+                        , safe
+        if flag(Static)
+                ghc-options: -static -optl-static -optl-pthread                           
+
+Executable darcswatch-import-mail
+        Main-Is:        ImportMail-Main.hs
+        hs-source-dirs: src
+        if flag(Static)
+                ghc-options: -static -optl-static -optl-pthread                           
+
+Executable darcswatch-import-bundle
+        Main-Is:        ImportBundle-Main.hs
+        hs-source-dirs: src
+        if flag(Static)
+                ghc-options: -static -optl-static -optl-pthread                           
+
+Executable darcswatch-convert-data
+        Main-Is:        ConvertData-Main.hs
+        hs-source-dirs: src
+        if flag(Static)
+                ghc-options: -static -optl-static -optl-pthread                           
+
+Executable darcswatch-pull-repos
+        Main-Is:        PullRepos-Main.hs
+        hs-source-dirs: src
+        if flag(Static)
+                ghc-options: -static -optl-static -optl-pthread                           
+
+Executable darcswatch-update-data
+        Main-Is:        UpdateRepoData-Main.hs
+        hs-source-dirs: src
+        if flag(Static)
+                ghc-options: -static -optl-static -optl-pthread                           
+
+Executable darcswatch-cgi
+        Main-Is:        CGI-Main.hs
+        hs-source-dirs: src
+        if flag(Static)
+                ghc-options: -static -optl-static -optl-pthread                           
+
+source-repository head
+  type:     darcs
+  location: http://darcs.nomeata.de/darcswatch/

@@ -1,0 +1,20 @@
+Name:                IcoGrid
+Version:             0.1
+Synopsis:            Library for generating grids of hexagons and pentagons mapped to a sphere.
+Description:         Defines functions for dealing with a type of hexagon grid wrapped around a sphere.  The full grid is composed of 20 smaller trianglular grids of hexagons, that fit together as an icosahedron with pentagons at the corners.  Each grid cell is assigned an integer value, and we can get a list of the neighbors of a particular cell.  We can also ask for a vector in 3d space that is the center of a particular cell.  This would be well suited for a game played on a spherical world or a planetary environment simulator.
+License:             GPL
+License-file:        LICENSE
+Author:              Jim Snow
+Maintainer:          Jim Snow <jsnow@cs.pdx.edu>
+Copyright:           Copyright 2009 Jim Snow
+Homepage:            http://www.haskell.org/haskellwiki/IcoGrid
+Stability:           experimental
+Category:            graphics
+build-type:          Simple
+Cabal-Version: >= 1.2
+extra-source-files:
+  README.txt
+
+library
+  exposed-modules:   Data.IcoGrid
+  build-depends:     base >= 3 && < 4, array, GlomeVec >= 0.1

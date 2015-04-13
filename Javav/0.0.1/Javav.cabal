@@ -1,0 +1,26 @@
+Name:               Javav
+Version:            0.0.1
+Author:             Tony Morris <ʇǝu˙sıɹɹoɯʇ@ןןǝʞsɐɥ>
+Maintainer:         Tony Morris
+Copyright:          Tony Morris
+License:            BSD3
+License-File:       LICENSE
+Synopsis:           A utility to print the target version of Java class files.
+Category:           Language
+Description:        A utility to print the target version of Java class files.
+Cabal-version:      >= 1.2
+Build-Type:         Simple
+
+Flag small_base
+  Description:      Choose the new, split-up base package.
+
+Executable javav
+  Main-Is:          Main.hs
+  Build-Depends:
+                    base < 5 && >= 3
+
+  GHC-Options:
+                    -Wall
+
+  Other-Modules:
+                    Language.Java.Javav

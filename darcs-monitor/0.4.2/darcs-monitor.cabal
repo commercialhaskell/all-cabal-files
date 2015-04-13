@@ -1,0 +1,38 @@
+Cabal-Version: >= 1.6
+Name: darcs-monitor
+Version: 0.4.2
+License: GPL
+License-File: GPL.txt
+Copyright:
+ 2007 Antti-Juhani Kaijanaho
+ 2007 Benja Fallenstein
+ 2007 Benjamin Franksen
+ 2010 Marco Túlio Gontijo e Silva <marcot@marcot.eti.br>
+Author: Antti-Juhani Kaijanaho
+Maintainer: Marco Túlio Gontijo e Silva <marcot@marcot.eti.br>
+Stability: experimental
+Homepage: http://wiki.darcs.net/RelatedSoftware/DarcsMonitor
+Package-Url: http://hackage.haskell.org/packages/darcs-monitor/0.4.0/darcs-monitor-0.4.0.tar.gz
+Synopsis: Darcs repository monitor (sends email)
+Description: Darcs-monitor will send email to a specified recipient
+ about new changes added to a specific darcs repository. It can be run
+ as an apply posthook (resulting in near-instantaneous "push"
+ emails), or periodically from Cron, or occasionally by hand, whatever
+ seems most convenient.
+Category: Distribution
+Build-Type: Simple
+Extra-Source-Files: ChangeLog README darcs-monitor.1
+Data-Files: default-template
+
+flag splitBase
+  description: Choose the new smaller, split-up base package.
+
+Executable darcs-monitor
+  Build-Depends: mtl, HaXml == 1.20.*
+  if flag(splitBase)
+    Build-Depends: base >=3 && < 5, containers, directory, process
+  else
+    Build-Depends: base < 3
+  Main-Is: darcs-monitor.hs
+  Other-Modules: Config Darcs EmailPatch PatchData
+  GHC-Options: -Wall

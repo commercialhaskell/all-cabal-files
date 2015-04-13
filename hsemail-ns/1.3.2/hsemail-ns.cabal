@@ -1,0 +1,27 @@
+Name:           hsemail-ns
+Version:        1.3.2
+Author:         Peter Simons <simons@cryp.to>, Joe Fredette <jfredett@gmail.com>
+License:        BSD3
+License-file:   LICENSE
+Maintainer:     jfredett@gmail.com
+Homepage:       http://patch-tag.com/r/hsemail-ns/home
+Synopsis:       Internet Message Parsers
+Description:    Nonstandard parsers for the syntax defined in RFC2822, forked from hsemail proper. Should not be used for parsing incoming emails, only emails stored on disk.
+Category:       Parsing
+Cabal-Version: >= 1.2
+Build-Type:     Simple
+Data-files:
+    README,
+    prologue.txt,
+    example/message-test.hs,
+    example/message-test.input
+
+Library
+        Build-Depends:  base<=4, 
+                        mtl, 
+                        parsec, 
+                        old-time
+
+        Exposed-Modules:
+            Text.ParserCombinators.Parsec.Rfc2234NS,
+            Text.ParserCombinators.Parsec.Rfc2822NS

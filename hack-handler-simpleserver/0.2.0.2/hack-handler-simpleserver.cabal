@@ -1,0 +1,26 @@
+name:            hack-handler-simpleserver
+version:         0.2.0.2
+license:         BSD3
+license-file:    LICENSE
+author:          Michael Snoyman <michael@snoyman.com>
+maintainer:      Michael Snoyman <michael@snoyman.com>
+synopsis:        A simplistic HTTP server handler for Hack.
+description:     This should not be used in a production environment.
+                 However, it's useful for testing.
+                 0.2.0.2 is equal to 0.2.0.1 but with extended ranges for
+                 network and web-encodings packages
+category:        Web
+stability:       stable
+cabal-version:   >= 1.2
+build-type:      Simple
+homepage:        http://github.com/snoyberg/hack-handler-simpleserver/tree/master
+
+library
+    build-depends:   base          >= 4       && < 5,
+                     network       >= 2.2.1.2 && < 2.4,
+                     hack          == 2009.10.30,
+                     bytestring    >= 0.9.1.4 && < 0.10,
+                     web-encodings >= 0.2.0   && < 0.4,
+                     failure       >= 0.0.0   && < 0.1
+    exposed-modules: Hack.Handler.SimpleServer
+    ghc-options:     -Wall

@@ -1,0 +1,42 @@
+name:                happybara-webkit
+version:             0.0.1
+synopsis:            WebKit Happybara driver
+homepage:            https://github.com/cstrahan/happybara/happybara-webkit
+license:             MIT
+license-file:        LICENSE
+author:              Charles Strahan
+maintainer:          charles.c.strahan@gmail.com
+copyright:           Copyright (c) 2014 Charles Strahan
+category:            Development
+build-type:          Simple
+cabal-version:       >=1.10
+
+library
+  exposed-modules:     Happybara.WebKit,
+                       Happybara.WebKit.Commands,
+                       Happybara.WebKit.Driver,
+                       Happybara.WebKit.Exceptions,
+                       Happybara.WebKit.Session
+  other-modules:       Paths_happybara_webkit
+  build-depends:       base >=4.6 && <4.7,
+                       happybara,
+                       process,
+                       directory,
+                       network,
+                       word8,
+                       bytestring,
+                       mtl,
+                       monad-control,
+                       lifted-base,
+                       data-default,
+                       transformers,
+                       transformers-base,
+                       time,
+                       text,
+                       http-types,
+                       filepath,
+                       vector,
+                       aeson,
+                       case-insensitive
+  hs-source-dirs:      src
+  default-language:    Haskell2010

@@ -1,0 +1,28 @@
+name:            EEConfig
+version:         1.0
+copyright:       (c) 2008 Bartosz Wójcik
+license:         BSD3
+license-file:    LICENSE
+author:          Bartosz Wojcik <bartek@sudety.it>
+maintainer:      Bartosz Wojcik <bartek@sudety.it>
+category:        Parsing
+synopsis:        ExtremlyEasyConfig - Extremly Simple parser for config files
+description:     Implementation of a very simple parser for parameters recognition.
+                  It recognizes given parameters and their values.
+                  As input it becomes list of parameters and all their possible values in format [ParameterInput]
+                  and input String where parameters will be searched for.
+                  As output it deliveres recognized parameters and their values in format [ParameterOutput],
+                  where only these parameters are present which have been found in the input string.
+                  In output list each exisitng parameter has exactly one value - this one that has
+                  been recognized in the input string.
+                  Parameters in the input string have to be always given in following format:
+                  (\<flagname> \<parameter>)*.
+                  Anything what is not recognized as parameter or value is ignored.
+stability:       stable
+build-type:      Simple
+cabal-version:   >= 1.2.1
+
+library
+  exposed-modules: EEConfig
+  build-depends:   base >= 3.0, containers
+

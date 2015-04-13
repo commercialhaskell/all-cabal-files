@@ -1,0 +1,37 @@
+Name:           linux-kmod
+Version:        0.1.0.1
+Cabal-Version:  >= 1.10
+Build-Type:     Simple
+License:        BSD3
+License-File:   LICENSE
+Copyright:      © 2013-2014 Nicola Squartini
+Author:         Nicola Squartini
+Maintainer:     Nicola Squartini <tensor5@gmail.com>
+Homepage:       https://github.com/tensor5/linux-kmod
+Bug-Reports:    https://github.com/tensor5/linux-kmod/issues
+Category:       System
+Stability:      experimental
+Synopsis:       Linux kernel modules support
+Description:    Manipulate Linux kernel modules through the @libkmod@ library.
+
+Extra-Source-Files:
+  CHANGELOG.md
+  README.md
+
+Source-Repository head
+  Type:      git
+  Location:  git://github.com/tensor5/linux-kmod.git
+
+Source-Repository this
+  Type:      git
+  Location:  git://github.com/tensor5/linux-kmod.git
+  Tag:       v0.1.0.1
+
+Library
+  Default-Language:   Haskell2010
+  Other-Extensions:   DeriveDataTypeable
+  Build-Depends:      base == 4.*,
+                      directory
+  Ghc-Options:        -Wall
+  Exposed-modules:    System.Linux.KMod
+  Pkgconfig-Depends:  libkmod

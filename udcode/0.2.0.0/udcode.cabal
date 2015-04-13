@@ -1,0 +1,23 @@
+Name:                udcode
+Version:             0.2.0.0
+Cabal-Version:       >= 1.2
+Build-type:          Simple
+License:             BSD3
+Synopsis:            
+ Does a set of code words form a uniquely decodable code?
+Description:         
+    A Haskell-based write-up of Mark Jason Dominus' perl UDCode package. 
+Category:            Data
+License:             BSD3
+License-file:        LICENSE
+Author:              Walt "BMeph" Rorie-Baety
+Maintainer:          black.meph@gmail.com
+Copyright:           Mark Jason Dominus, Walt "BMeph" Rorie-Baety
+extra-source-files:  tests/testcases.txt
+
+Library
+  Exposed-Modules:
+                  Data.UDCode
+  Other-Modules:  Data.UDCode.Helper
+  Extensions:     PatternGuards, NoMonomorphismRestriction
+  Build-Depends:  base, mtl, containers

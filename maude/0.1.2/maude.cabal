@@ -1,0 +1,21 @@
+Name:               maude
+Version:            0.1.2
+Synopsis:           An interface to the Maude rewriting system.
+Description:        This package provides a simple interface for doing Maude
+                    rewrites from within Haskell.        
+Homepage:           https://code.google.com/p/maude-hs/
+License:            MIT
+License-file:       LICENSE
+Author:             David Lazar
+Maintainer:         David Lazar <lazar6@illinois.edu>
+Category:           Foreign
+Build-type:         Simple
+Cabal-version:      >=1.6
+
+source-repository head
+  Type:             mercurial
+  Location:         https://maude-hs.googlecode.com/hg/
+
+Library
+  Exposed-modules:  Foreign.Maude
+  Build-depends:    base >= 4 && < 5, process, directory

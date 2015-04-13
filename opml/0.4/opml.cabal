@@ -1,0 +1,35 @@
+Name:            opml
+Version:         0.4
+Synopsis:        Representing and handling OPML subscription information.
+Description:     
+    Representing and handling OPML subscription information.  OPML
+    (Outline Processor Markup Language) is an XML format for outlines,
+    most commonly used to exchange lists of web feeds between web feed
+    aggregators. <http://www.opml.org/>
+category:        Text, Web
+license:         BSD3
+license-file:    LICENSE
+author:          Sigbjorn Finne
+maintainer:      Don Stewart
+copyright:       (c) 2007, 2008 Galois Inc.
+Build-type:      Simple
+cabal-version:   >= 1.2
+
+flag small_base
+    description: Choose the new smaller, split-up base package.
+
+library
+    Exposed-modules: 
+        Text.OPML.Import,
+        Text.OPML.Export,
+        Text.OPML.Syntax,
+        Text.OPML.Reader,
+        Text.OPML.Writer
+
+    if flag(small_base)
+        build-depends: base >= 3, directory
+    else
+        build-depends: base < 3
+
+    build-depends:     xml >= 1.2.3
+    ghc-options:       -Wall

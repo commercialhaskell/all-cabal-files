@@ -1,0 +1,33 @@
+name:              hcg-minus-cairo
+version:           0.15
+synopsis:          haskell cg (minus) (cairo rendering)
+description:       cg (minus) library (cairo rendering)
+license:           BSD3
+category:          Math
+author:            Rohan Drape
+maintainer:        rd@slavepianos.org
+homepage:          http://rd.slavepianos.org/t/hcg-minus-cairo
+tested-with:       GHC == 7.8.2
+build-type:        Simple
+cabal-version:     >= 1.8
+
+data-files:        README
+
+library
+  build-depends:   base == 4.*,
+                   cairo,
+                   colour,
+                   hcg-minus == 0.15.*,
+                   filepath,
+                   utf8-string
+  ghc-options:     -Wall -fwarn-tabs
+  exposed-modules: Render.CG.Minus
+                   Render.CG.Minus.Arrow
+
+Source-Repository  head
+  Type:            darcs
+  Location:        http://rd.slavepianos.org/sw/hcg-minus-cairo
+
+-- Local Variables:
+-- truncate-lines:t
+-- End:

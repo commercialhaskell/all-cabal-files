@@ -1,0 +1,21 @@
+Name:                shortcircuit
+Version:             0.1
+Synopsis:            Short-circuit values and expressions.
+Description:         Classes and functions for short-circuit values and expressions.
+Homepage:            http://github.com/aristidb/shortcircuit
+License:             BSD3
+License-file:        LICENSE
+Author:              Aristid Breitkreuz
+Maintainer:          aristidb@googlemail.com
+Copyright:           Copyright (C) 2010 Aristid Breitkreuz
+Category:            Data, Control
+Build-type:          Simple
+Extra-source-files:  README
+Cabal-version:       >=1.8
+
+Library
+  Exposed-modules:     Control.Shortcircuit
+  Build-depends:
+                       base >=4.2 && <5
+  GHC-Options:         -Wall
+  

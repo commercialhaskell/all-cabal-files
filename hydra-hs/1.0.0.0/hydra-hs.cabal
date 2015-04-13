@@ -1,0 +1,56 @@
+name:                hydra-hs
+
+version:             1.0.0.0
+
+synopsis:            Haskell binding to the Sixense SDK for the Razer Hydra
+
+-- A longer description of the package.
+-- description:         
+
+homepage:            https://github.com/mruegenberg/hydra-hs
+
+license:             BSD3
+
+license-file:        LICENSE
+
+author:              Marcel Ruegenberg
+
+maintainer:          github@dustlab.com
+
+category:            System
+
+build-type:          Simple
+
+cabal-version:       >=1.8
+
+Flag UsePkgConfig
+  Description: Do not use pkg-config to check for library dependencies.
+  Default: False
+
+
+library
+  exposed-modules:      System.Hardware.Hydra
+  
+  -- Modules included in this library but not exported.
+  -- other-modules:       
+
+  hs-source-dirs:      src
+  
+  build-depends:       base ==4.6.*
+                     , hmatrix >= 0.15
+  
+  if flag(UsePkgConfig)
+    PkgConfig-Depends: libsixense
+  else
+    Includes: sixense.h
+    Extra-libraries: sixense
+  -- note: the install script that comes with the Sixense SDK is slightly buggy.
+  -- I had to manually copy libsixense.dylib to /usr/local/lib
+
+
+Test-Suite hydra-test
+  type:       exitcode-stdio-1.0
+  main-is:    Main.hs
+  hs-source-dirs:      test
+  build-depends:       base ==4.6.*
+                     , hydra-hs

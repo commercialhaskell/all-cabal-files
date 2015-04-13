@@ -1,0 +1,71 @@
+Cabal-Version:		>= 1.9.2
+Name:			Omega
+Version:		1.0.2
+Build-Type:		Custom
+License:		BSD3
+License-File:		LICENSE
+Author:			Christopher Rodrigues
+Maintainer:		cirodrig@illinois.edu
+Stability:		Alpha
+Synopsis:		Integer sets and relations using Presburger arithmetic
+Description:
+        Sets of integer tuples and relations on integer tuples.
+        Sets and relations are represented compactly by storing their
+        characteristic function as a Presburger arithmetic formula.
+        Formulae are simplified and solved by the Omega Library.
+        The primary interface can be found in
+        "Data.Presburger.Omega.Set" and "Data.Presburger.Omega.Rel".
+Category:		Data
+Extra-Source-Files:
+	README
+	aclocal.m4
+	configure.ac
+	Makefile.in
+        DoSetup.hs
+	src/C_omega.cc
+	src/C_omega.h
+	src/the-omega-project.tar.gz
+Extra-Tmp-Files:	build/C_omega.o
+Tested-With:            GHC ==7.4.1, GHC ==7.6.3
+
+Flag UseInstalledOmega
+  Description:		Link to a preinstalled version of the Omega library
+  Default:		False
+
+Library
+  Build-Depends:	base >= 4 && < 5, containers
+  Exposed-Modules:
+        Data.Presburger.Omega.Expr
+        Data.Presburger.Omega.LowLevel
+        Data.Presburger.Omega.Set
+        Data.Presburger.Omega.Rel
+  Other-Modules:
+        Data.Presburger.Omega.SetRel
+  Extensions:		GADTs ScopedTypeVariables
+  Build-Tools:		hsc2hs
+  Include-Dirs:		src
+
+  if flag(UseInstalledOmega)
+    Extra-Libraries:	omega stdc++
+  else
+    Extra-Libraries:	stdc++
+
+Test-Suite test-Omega
+  Type:                 exitcode-stdio-1.0
+  main-is:              runtests.hs
+  Build-Depends:	base >= 4 && < 5, containers, HUnit
+  Other-Modules:
+        Data.Presburger.Omega.Expr
+        Data.Presburger.Omega.LowLevel
+        Data.Presburger.Omega.Set
+        Data.Presburger.Omega.Rel
+        Data.Presburger.Omega.SetRel
+        TestExpr
+  Extensions:		GADTs ScopedTypeVariables
+  Build-Tools:		hsc2hs
+  Hs-Source-Dirs:       . test
+  Include-Dirs:		src
+  if flag(UseInstalledOmega)
+    Extra-Libraries:	omega stdc++
+  else
+    Extra-Libraries:	stdc++

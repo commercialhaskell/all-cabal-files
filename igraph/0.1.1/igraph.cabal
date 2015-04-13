@@ -1,0 +1,54 @@
+Name:                 igraph
+Version:              0.1.1
+
+Synopsis:             Bindings to the igraph C library.
+Description:          Complete bindings to all functions about graph properties
+                      of the igraph C library. Requires igraph 0.6.
+                      Documentation is available at:
+                      <http://giorgidze.github.com/igraph/>
+
+License:              BSD3
+License-file:         LICENSE
+Author:               Nils Schweinsberg, George Giorgidze
+Maintainer:           Giorgidze@Gmail.com
+Category:             Data Structures, Graphs
+Build-type:           Simple
+Cabal-version:        >=1.6
+
+Homepage:             http://giorgidze.github.com/igraph/
+
+source-repository head
+  type:               git
+  location:           https://github.com/giorgidze/igraph.git
+
+Library
+  GHC-options:
+    -Wall -O3 -funbox-strict-fields 
+  CC-options:
+    -Wall
+  Build-depends:
+    base >= 4.3.1.0 && < 5,
+    containers,
+    unordered-containers,
+    hashable
+  Extensions:
+    ForeignFunctionInterface,
+    EmptyDataDecls,
+    MultiParamTypeClasses,
+    GADTs,
+    TypeFamilies,
+    FlexibleContexts,
+    FlexibleInstances
+  Extra-Libraries:
+    igraph
+  C-Sources:
+    cbits/igraph.c
+    cbits/attributes.c
+  Build-Tools:
+    c2hs
+  Exposed-modules:
+    Data.IGraph
+  Other-modules:
+    Data.IGraph.Internal
+    Data.IGraph.Internal.Constants
+    Data.IGraph.Types

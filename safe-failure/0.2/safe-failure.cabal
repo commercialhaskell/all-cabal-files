@@ -1,0 +1,32 @@
+Name:           safe-failure
+Build-Type:     Simple
+Cabal-Version:  >= 1.2
+Version:        0.2
+License:        BSD3
+License-File:   LICENSE
+Copyright:      2007-8, Neil Mitchell
+Maintainer:     pepeiborra@gmail.com
+Author:         Neil Mitchell, Jose Iborra (2009), Michael Snoyman (2009)
+Homepage:       http://www-users.cs.york.ac.uk/~ndm/safe/
+Category:       Unclassified
+Synopsis:       Partial functions from the prelude with a MonadFailure interface
+Description:
+    Partial functions from the base library, such as @head@ and @!!@, modified
+    to fail in a @MonadFailure@ monad.
+    
+    These functions can be used to reduce the number of unsafe pattern matches in
+    your code.
+
+Flag cme
+  description: build with special support for control-monad-exception
+  default: True
+
+Library
+   buildable: True
+   build-depends:  base >= 4 && < 5, control-monad-failure, transformers
+   exposed-modules:  
+      Safe.Failure
+   ghc-options: -Wall
+   if flag(cme)
+     build-depends: control-monad-exception
+     cpp-options: -DCME

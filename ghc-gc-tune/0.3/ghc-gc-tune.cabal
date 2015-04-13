@@ -1,0 +1,45 @@
+name:           ghc-gc-tune
+version:        0.3
+license:        BSD3
+license-file:   LICENSE
+author:         Don Stewart
+maintainer:     Don Stewart
+homepage:       http://code.haskell.org/~dons/code/ghc-gc-tune
+category:       Development
+synopsis:       Graph performance of Haskell programs with different GC flags
+description:    ghc-gc-tune runs your compiled Haskell program with
+                different GC flags, and generates a graph of time as
+                those GC settings vary. ghc-gc-tune lets your automate
+                the task of finding good GC flags for your program, in
+                order to get the best performance from it.
+                .
+                Graphs are rendered with gnuplot, so make sure that is
+                installed.
+                .
+                Example use:
+                . 
+                > ghc -O2 --make binarytrees.hs
+                > ghc-gc-tune -t svg binarytrees 12
+                .
+                Example output:
+                .
+                <http://haskell.org/haskellwiki/Ghc-gc-tune>
+                .
+                For more information on GHC garbage collector settings,
+                see <http://haskell.org/ghc/docs/6.12.1/html/users_guide/runtime-control.html#rts-options-gc>
+                .
+build-type:     Simple
+cabal-version:  >= 1.6
+
+executable ghc-gc-tune
+    build-depends:  base    >= 4 && <= 5,
+                    process >= 1.0.1,
+                    directory,
+                    filepath
+
+    main-is:        ghc-gc-tune.hs
+    ghc-options:    -Wall
+
+source-repository head
+  type:     darcs
+  location: http://code.haskell.org/~dons/code/ghc-gc-tune/

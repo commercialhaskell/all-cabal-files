@@ -1,0 +1,21 @@
+Name:                web-css
+Version:             0.1.0
+Synopsis:            Simple functions for CSS.
+Description:         Simple functions for CSS. Currently contains only functions for escaping string values and identifiers for CSS.
+License:             BSD3
+License-file:        LICENSE.txt
+Author:              Bardur Arantsson
+Maintainer:          bardur@scientician.net
+Stability:           Experimental
+Category:            Web
+Build-type:          Simple
+Cabal-version:       >=1.6
+
+Library
+
+  Hs-source-dirs:  src
+
+  Exposed-modules: Web.CSS.Escaping
+
+  Build-depends:   base >= 4 && < 5
+                 , text >= 0.11.1.0 && < 0.12

@@ -1,0 +1,59 @@
+name: net-concurrent
+version: 0.1.0
+cabal-version: -any
+build-type: Simple
+license: BSD3
+license-file: license.txt
+copyright: BSD
+maintainer: Paul Sonkoly
+build-depends: base <5, bytestring -any, containers -any,
+               ghc-binary -any, hslogger -any, monad-loops -any, network -any
+stability: provisional
+homepage: http://phaul.hobby-site.org/node/4123
+package-url: http://phaul.hobby-site.org/repository/4123/downloads
+bug-reports:
+synopsis: Concurrent over the network execution library
+description: net-concurrent is a simple haskell library for doing parallel
+             computation on several computers using the network. There is a
+             single master process and many slave processes. Communication
+             is between the master and the slaves, for simplicity slaves
+             never communicate with each other.
+             Communication is done using NVars, network variables.
+             The NVar api is very similar to MVar. These are stored in the
+             master process and shared between all processes in the system.
+             Slave nodes can read and write these NVar variables which results
+             in network transactions with the master.
+category: Distributed Computing, Concurrent, Network
+author: Paul Sonkoly
+tested-with:
+data-files:
+data-dir: ""
+extra-source-files:
+extra-tmp-files:
+exposed-modules: Control.Concurrent.Network.NVar
+                 Control.Concurrent.Network.Process
+				 Control.Concurrent.Network.Slave
+                 Control.Concurrent.Network.Master
+exposed: True
+buildable: True
+build-tools:
+cpp-options:
+cc-options:
+ld-options:
+pkgconfig-depends:
+frameworks:
+c-sources:
+extensions:
+extra-libraries:
+extra-lib-dirs:
+includes:
+install-includes:
+include-dirs:
+hs-source-dirs: src
+other-modules: Control.Concurrent.Network.Protocol
+ghc-prof-options:
+ghc-shared-options:
+ghc-options:
+hugs-options:
+nhc98-options:
+jhc-options:

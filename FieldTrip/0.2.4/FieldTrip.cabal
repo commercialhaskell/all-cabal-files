@@ -1,0 +1,43 @@
+Name:                FieldTrip
+Version:             0.2.4
+Synopsis: 	     Functional 3D
+Category:            graphics
+Description:
+  FieldTrip is a library for functional 3D geometry
+  .
+  Please see the project wiki page: <http://haskell.org/haskellwiki/FieldTrip>
+  .
+  &#169; 2008 by Andy Gill and Conal Elliott; BSD3 license.
+Author:              Conal Elliott and Andy Gill
+Maintainer:          conal@conal.net, andygill@ku.edu
+Homepage:            http://haskell.org/haskellwiki/FieldTrip
+Package-Url:	     http://code.haskell.org/f3d
+Copyright:           (c) 2007-2008 by Conal Elliott and Andy Gill
+License:             BSD3
+Stability:           experimental
+build-type:	     Simple
+Hs-Source-Dirs:      src
+Extensions:          
+Build-Depends:       base, old-time, OpenGL, GLUT, TypeCompose, MemoTrie, vector-space >= 0.5.7, graphicsFormats
+Exposed-Modules:     
+		     Graphics.FieldTrip
+		     Graphics.FieldTrip.Misc
+		     Graphics.FieldTrip.Vector2
+		     Graphics.FieldTrip.Vector3
+		     Graphics.FieldTrip.Point2
+		     Graphics.FieldTrip.Point3
+		     Graphics.FieldTrip.Normal3
+		     Graphics.FieldTrip.Transform
+		     Graphics.FieldTrip.Transform2
+		     Graphics.FieldTrip.Transform3
+		     Graphics.FieldTrip.Color
+		     Graphics.FieldTrip.Material
+		     Graphics.FieldTrip.Render
+		     Graphics.FieldTrip.ParamSurf
+		     Graphics.FieldTrip.Image
+		     Graphics.FieldTrip.Geometry2
+		     Graphics.FieldTrip.Geometry3
+		     
+ghc-options:         -Wall -O2
+
+-- TypeCompose is used for its IO monoid.  Not much of a reason.

@@ -1,0 +1,33 @@
+name:            persistent-postgresql
+version:         0.6.1.2
+license:         BSD3
+license-file:    LICENSE
+author:          Michael Snoyman <michael@snoyman.com>
+maintainer:      Michael Snoyman <michael@snoyman.com>
+synopsis:        Backend for the persistent library using postgresql.
+description:     Based on the HDBC-postgresql package
+category:        Database, Yesod
+stability:       Stable
+cabal-version:   >= 1.6
+build-type:      Simple
+homepage:        http://www.yesodweb.com/book/persistent
+
+library
+    build-depends:   base                  >= 4        && < 5
+                   , HDBC                  >= 2.2.6    && < 2.4
+                   , transformers          >= 0.2.1    && < 0.3
+                   , HDBC-postgresql       >= 2.2.3.1  && < 2.4
+                   , persistent            >= 0.6.3    && < 0.7
+                   , containers            >= 0.2      && < 0.5
+                   , bytestring            >= 0.9      && < 0.10
+                   , text                  >= 0.7      && < 0.12
+                   , monad-control         >= 0.2      && < 0.4
+                   , time                  >= 1.1
+                   , data-object           >= 0.3      && < 0.4
+                   , neither               >= 0.3      && < 0.4
+    exposed-modules: Database.Persist.Postgresql
+    ghc-options:     -Wall
+
+source-repository head
+  type:     git
+  location: git://github.com/yesodweb/persistent.git

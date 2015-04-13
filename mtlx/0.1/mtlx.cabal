@@ -1,0 +1,44 @@
+name:         mtlx
+version:      0.1
+license:      BSD3
+license-file: LICENSE
+author:       Mark Snyder
+maintainer:   marks@ittc.ku.edu
+category:     Control
+synopsis:     Monad transformer library with type indexes, 
+	      providing 'free' copies.
+description:
+    A monad transformer library with type indexes, which allows the
+    programmer to get a distinct copy of one of the monads without
+    reproducing definitions and instances.  It doesn't currently
+    support Error or List monads.  Inspired by the original mtl.  That
+    library was inspired by the paper /Functional Programming with
+    Overloading and Higher-Order Polymorphism/, by Mark P Jones
+    (<http://web.cecs.pdx.edu/~mpj/pubs/springschool.html>), Advanced
+    School of Functional Programming, 1995.
+
+build-type: Simple
+ghc-options: -Wall
+build-depends: base,  mtl
+exposed-modules:
+    Control.Monad.Index
+    Control.Monad.IdentityX
+    Control.Monad.RWSX
+    Control.Monad.RWSX.Class
+    Control.Monad.RWSX.Lazy
+    Control.Monad.RWSX.Strict
+    Control.Monad.ReaderX
+    Control.Monad.ReaderX.Class
+    Control.Monad.StateX
+    Control.Monad.StateX.Class
+    Control.Monad.StateX.Lazy
+    Control.Monad.StateX.Strict
+    Control.Monad.WriterX
+    Control.Monad.WriterX.Class
+    Control.Monad.WriterX.Lazy
+    Control.Monad.WriterX.Strict
+extensions: MultiParamTypeClasses,
+            FunctionalDependencies,
+            FlexibleInstances,
+            TypeSynonymInstances
+

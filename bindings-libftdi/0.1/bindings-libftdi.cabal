@@ -1,0 +1,24 @@
+name:                bindings-libftdi
+version:             0.1
+Cabal-Version:       >= 1.2
+synopsis:            
+  Low level bindings to libftdi.
+description:         <Project description>
+category:            FFI
+license:             GPL
+license-file:        LICENSE
+author:              Joe
+maintainer:          none
+build-depends:       base
+build-type:          Simple
+library
+  hs-source-dirs: src
+  extensions:
+    ForeignFunctionInterface
+  build-depends:
+    base >= 3 && < 5, bindings-DSL >= 1.0.0 && < 1.1
+  exposed-modules:
+    Bindings.Libftdi
+  pkgconfig-depends: 
+      libusb-1.0 >= 1.0, libftdi >= 0.16 && < 0.16.3
+

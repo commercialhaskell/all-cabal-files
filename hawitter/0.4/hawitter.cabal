@@ -1,0 +1,26 @@
+name:            hawitter
+cabal-version:   >=1.2
+version:         0.4
+author:          Daiki Handa <xanxys@gmail.com>
+maintainer:      Daiki Handa <xanxys@gmail.com>
+synopsis:        A twitter client for GTK+. Beta version.
+license:         BSD3
+license-file:    LICENSE
+category:        Web
+homepage:        http://d.hatena.ne.jp/xanxys/20100321/1269137834
+description:
+  A slick twitter client for GTK. Features syntax highlighting of tweets and URL linking.
+  Automatic URL shortening and 'timeline modifier' will be implemented in future versions.
+  
+build-type:      Simple
+data-files:      hawitter.glade hawitter.svg hawitter_busy.svg README.en README.ja
+tested-with:     GHC==6.10.4
+executable hawitter
+    main-is: Main.hs
+    build-depends:
+        base>=3, base<5, containers>=0.2, mtl>=1, time>=1.1.4, old-locale>=1,
+        gtk>=0.10, glade>=0.10, gconf>=0.10,
+        parsec>=3, regex-base>=0.93.1, regex-tdfa>=1,
+        network>=2.2, HTTP>=4000.0.8, json>=0.4, utf8-string>=0.3, bytestring>=0.9, hoauth>=0.1.9,
+        SHA>=1.4, base64-string>=0.2, clock>=0.1.2
+

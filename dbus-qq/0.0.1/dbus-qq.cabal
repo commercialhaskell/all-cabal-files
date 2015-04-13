@@ -1,0 +1,21 @@
+Name: dbus-qq
+Version: 0.0.1
+Synopsis: Quasi-quoter for DBus functions
+Description: This package contains a quasi-quoter to automatically convert functions of the form @[Variant] -> [Variant]@ to functions of the actual types, returning a tuple of the results.
+License: BSD3
+License-file: LICENSE
+Author: Paolo Capriotti
+Maintainer: p.capriotti@gmail.com
+Category: Network
+Build-type: Simple
+Cabal-version: >=1.8
+Extra-source-files: Tests.hs
+
+Library
+    Exposed-modules: DBus.QuasiQuoter
+    Build-depends: base (== 4.*), parsec (== 3.1.*), dbus-core (== 0.9.*), template-haskell, containers (< 0.5)
+    Extensions: TemplateHaskell, QuasiQuotes
+
+Source-repository head
+    type: git
+    location: git://github.com/pcapriotti/dbus-qq.git

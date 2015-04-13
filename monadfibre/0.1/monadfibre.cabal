@@ -1,0 +1,28 @@
+Name:                monadfibre
+Version:             0.1
+Description:         This package defines a Monad Transformer called @Fibre@,
+                     which provides the underlying monad with Choice and Parallelism.
+                     Also included is a Class called @MonadBi@ which acts as a superset
+                     of @MonadTrans@, and provides @raise@ analogous to @lift@ as well
+                     as @lower@, which goes the other way.
+                     Natural instances are provided for many Monad Transformers.
+
+Synopsis:            Monad Transformer to provide Choice and Parallelism.
+License:             GPL
+License-file:        LICENSE
+Author:              Anupam Jain
+Maintainer:          ajnsit@gmail.com
+Build-Type:          Simple
+Cabal-Version:       >=1.2
+stability:           Experimental
+Category:            Control
+Extra-source-files:  README
+
+Library
+  hs-source-dirs:    src
+  Build-Depends:     base >= 3 && < 5
+               ,     stm
+               ,     mtl
+  exposed-modules:   Control.Monad.Bi
+                     Control.Monad.Fibre
+

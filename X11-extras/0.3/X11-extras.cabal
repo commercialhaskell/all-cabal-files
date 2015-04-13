@@ -1,0 +1,30 @@
+name:           X11-extras
+version:        0.3
+x-revision: 1
+license:        BSD3
+license-file:   LICENSE
+author:         Spencer Janssen
+maintainer:     sjanssen@cse.unl.edu
+copyright:      Spencer Janssen 2007
+category:       Graphics
+synopsis:       Missing bindings to the X11 graphics library
+description:    Missing bindings to the X11 graphics library.
+    .
+	The binding is a direct translation of the C binding; for
+	documentation of these calls, refer to "The Xlib Programming
+	Manual", available online at <http://tronche.com/gui/x/xlib/>.
+exposed-modules:    Graphics.X11.Xlib.Extras, Graphics.X11.Xinerama
+extensions:         ForeignFunctionInterface
+build-depends:	    base, X11>=1.2.1 && < 1.5
+ghc-options:        -O2 -fasm -funbox-strict-fields
+extra-libraries:    "X11"
+c-sources:          cbits/XUtils.c
+install-includes:   XlibExtras.h
+extra-source-files:
+    include/XlibExtras.h
+    configure.ac
+    configure
+    X11-extras.buildinfo.in
+    include/X11_extras_config.h.in
+include-dirs:	    include
+extra-tmp-files:    include/X11_extras_config.h X11-extras.buildinfo config.log config.status autom4te.cache

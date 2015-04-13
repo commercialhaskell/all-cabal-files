@@ -1,0 +1,25 @@
+
+Name:                bv
+Version:             0.1.0
+Synopsis:            Bit-vectors library
+Description:         Bit-vectors implemented as a wrapper over integers.
+Homepage:            http://bitbucket.org/iago/bv-haskell
+Bug-reports:         http://bitbucket.org/iago/bv-haskell/issues
+License:             BSD3
+License-file:        LICENSE
+Author:              Iago Abal <iago.abal@gmail.com>
+Maintainer:          Iago Abal <iago.abal@gmail.com>
+Copyright:           2012, Iago Abal
+Category:            Data, Bit Vectors
+Build-type:          Simple
+Cabal-version:       >=1.6
+
+source-repository head
+  type:     mercurial
+  location: https://bitbucket.org/iago/bv-haskell
+
+Library
+  Exposed-modules:     Data.BitVector
+  -- Other-modules:       
+  ghc-options:         -Wall
+  Build-depends:       base >=4 && <5

@@ -1,0 +1,38 @@
+name:           parsec3
+version:        1.0.0.0
+cabal-version: >= 1.2.3
+license:        BSD3
+license-file:   LICENSE
+author:         Daan Leijen <daan@microsoft.com>, Paolo Martini <paolo@nemail.it>
+maintainer:     Christian Maeder <Christian.Maeder@dfki.de>
+homepage:       http://www.cs.uu.nl/~daan/parsec.html
+category:       Parsing
+synopsis:       Monadic parser combinators
+build-type: Simple
+description:
+        Parsec is designed from scratch as an industrial-strength parser
+        library.  It is simple, safe, well documented (on the package
+        homepage), has extensive libraries and good error messages,
+        and is also fast.  It is defined as a monad transformer that can be
+        stacked on arbitrary monads, and it is also parametric in the
+        input stream type.
+        .
+        This package comes without the compatibility layer for parsec2.
+library
+    exposed-modules:
+        Text.Parsec,
+        Text.Parsec.String,
+        Text.Parsec.ByteString,
+        Text.Parsec.ByteString.Lazy,
+        Text.Parsec.Pos,
+        Text.Parsec.Error,
+        Text.Parsec.Prim,
+        Text.Parsec.Char,
+        Text.Parsec.Combinator,
+        Text.Parsec.Token,
+        Text.Parsec.Expr,
+        Text.Parsec.Language,
+        Text.Parsec.Perm
+    build-depends: base >= 4 && < 5, syb, mtl, bytestring
+    extensions: DeriveDataTypeable, PolymorphicComponents, FlexibleInstances,
+        MultiParamTypeClasses, FlexibleContexts

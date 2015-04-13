@@ -1,0 +1,24 @@
+name:                cpuperf
+version:             0.1.1
+synopsis:            Modify the cpu frequency on OpenBSD systems
+description:         cpuperf toggle the cpu frequency on OpenBSD systems between 0 and 100%.
+category:            System
+license:             BSD3
+license-file:        LICENSE
+homepage:            http://code.haskell.org/~dons/code/cpuperf
+author:              Don Stewart 
+maintainer:          Don Stewart <dons@galois.com>
+cabal-version:       >= 1.2
+build-type:          Simple
+
+flag small_base
+    description: Choose the new smaller, split-up base package.
+ 
+executable cpuperf
+    main-is:             Main.hs
+    if flag(small_base)
+        build-depends:       base >= 3, process
+    else
+        build-depends:       base <  3
+    build-depends:       mtl
+

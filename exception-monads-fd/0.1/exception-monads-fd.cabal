@@ -1,0 +1,34 @@
+name:           exception-monads-fd
+version:        0.1
+cabal-version:  >= 1.6
+license:        BSD3
+license-file:   LICENSE
+copyright:      (c) 2008-2010 Harvard University
+author:         Geoffrey Mainland <mainland@eecs.harvard.edu>
+maintainer:     mainland@eecs.harvard.edu
+stability:      alpha
+homepage:       http://www.eecs.harvard.edu/~mainland/
+category:       Control, Monad, Error Handling, Failure
+synopsis:       A monads-fd monad transformer for unchecked extensible
+		exceptions.
+description:    This package provides a monad transformer that allows unchecked
+		extensible exceptions to be thrown and caught. Compatible with
+		monads-fd.
+
+build-type:     Simple
+
+library
+  exposed-modules:
+    Control.Monad.Exception
+
+  build-depends:
+    base >= 4 && < 5,
+    monads-fd >= 0.1 && < 0.2,
+    transformers >= 0.2 && < 0.3
+
+  ghc-options:
+    -Wall
+
+source-repository head
+  type:     svn
+  location: http://senseless.eecs.harvard.edu/repos/mainland-projects/exception-monads-fd/trunk/

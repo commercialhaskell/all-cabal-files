@@ -1,0 +1,39 @@
+Name:                bitmap-opengl
+Version:             0.0.1.5
+
+Synopsis:            OpenGL support for Data.Bitmap.
+Description:         OpenGL support for Data.Bitmap. It has its own package so that
+                     the bitmap package does not depend on OpenGL. 
+License:             BSD3
+License-file:        LICENSE
+Copyright:           (c) 2009-2011 Balazs Komuves
+Author:              Balazs Komuves
+Maintainer:          bkomuves (plus) hackage (at) gmail (dot) com
+Homepage:            http://code.haskell.org/~bkomuves/
+Stability:           Experimental
+Category:            Graphics, Data
+Tested-With:         GHC == 7.4.2
+Cabal-Version:       >= 1.2
+Build-Type:          Simple
+
+Flag opengl29
+  Description: OpenGL v2.9
+  
+Library
+  Build-Depends:     base >= 4 && < 5,
+                     bitmap >= 0.0.2 && < 0.1
+                
+  if flag(OpenGL29)
+    build-depends:     OpenGL >= 2.9.0.0
+    cpp-options:       -DOPENGL_VERSION=29
+  else
+    build-depends:     OpenGL >= 2.3 && < 2.9.0.0
+    cpp-options:       -DOPENGL_VERSION=28
+                        
+  Exposed-Modules:   Data.Bitmap.OpenGL
+                     Data.Bitmap.OpenGL.CubeMap
+
+  Hs-Source-Dirs:    .
+  Extensions:        ScopedTypeVariables, CPP
+
+                       

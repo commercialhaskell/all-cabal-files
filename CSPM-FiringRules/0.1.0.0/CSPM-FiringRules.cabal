@@ -1,0 +1,48 @@
+Name:                CSPM-FiringRules
+Version:             0.1.0.0
+Synopsis:            Firing rules semantic of CSPM
+Description:
+  This package contains functions for computing the transitions of a CSP process
+  based on the standard CSP firing rule semantic
+  (see The Theory and Practice of Concurrency A.W. Roscoe 1999.)
+  It also contains a rudimentary tracer for executing transitions,
+  some QuickCheck tests, and a data type for proof trees.
+  To use this package one has to provide instances for the classes and type families,
+  defined in the CSPM-CoreLanguage package.
+  The package contains two mock-implementations that provide these instances.
+  The CSPM-Interpreter package contains an other implementation.
+
+Category:            Language,Formal Methods,Concurrency
+License:             BSD3
+License-File:        LICENSE
+Author:              2010 Marc Fontaine
+Maintainer:          Marc Fontaine <fontaine@cs.uni-duesseldorf.de>
+Homepage:            http://www.stups.uni-duesseldorf.de/~fontaine/csp
+Stability:           experimental
+Tested-With:         GHC == 6.12.2
+
+cabal-Version:       >= 1.6
+Build-Depends:
+   CSPM-CoreLanguage >= 0.1 && < 0.2
+  ,base >= 4.0 && < 5.0
+  ,containers >= 0.3 && < 0.4
+  ,mtl >= 1.1 && < 1.2
+  ,QuickCheck >= 2.1 && < 2.2
+  ,random >= 1.0 && < 1.1
+
+build-type: Simple
+GHC-Options: -funbox-strict-fields -O2 -Wall
+Hs-Source-Dirs:         src
+
+Exposed-modules:
+  CSPM.FiringRules.Rules
+  CSPM.FiringRules.Verifier
+  CSPM.FiringRules.EnumerateEvents
+  CSPM.FiringRules.FieldConstraints
+  CSPM.FiringRules.Trace
+  CSPM.FiringRules.Test.Test
+  CSPM.FiringRules.HelperClasses
+Other-modules:
+  CSPM.FiringRules.Test.Mock1
+  CSPM.FiringRules.Test.Mock2
+  CSPM.FiringRules.Test.Gen

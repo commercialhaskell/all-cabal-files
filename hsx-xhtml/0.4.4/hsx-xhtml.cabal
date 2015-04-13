@@ -1,0 +1,33 @@
+Name:                   hsx-xhtml
+Version:                0.4.4
+License:                BSD3
+License-File:           LICENSE
+Author:                 Niklas Broberg
+Maintainer:             Niklas Broberg <nibro@cs.chalmers.se>
+
+Stability:              Experimental
+Category:               Web
+Synopsis:               XHTML utilities to use together with HSX.
+Description:            XHTML utilities to use together with HSX.
+                        
+Homepage:               http://code.google.com/hsp
+
+Build-Depends:          base>3, mtl, hsx>=0.4.4
+Build-Type:             Simple
+Tested-With:            GHC==6.8.2
+
+Hs-Source-Dirs:         src
+Exposed-Modules:        HSX.Layout, HSX.XHTML
+
+GHC-Options:            -Wall -F -pgmFtrhsx
+Extensions:             MultiParamTypeClasses,
+                        FunctionalDependencies,
+                        OverlappingInstances,
+                        UndecidableInstances,
+                        FlexibleInstances,
+                        TypeFamilies,
+                        TypeSynonymInstances,
+                        FlexibleContexts,
+                        RankNTypes,
+                        PatternSignatures,
+                        ScopedTypeVariables

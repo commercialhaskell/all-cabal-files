@@ -1,0 +1,28 @@
+name:          fitsio
+version:       0.2
+stability:     alpha
+synopsis:      A library for reading and writing data files in the FITS data format.
+description:
+  FITS (Flexible Image Transport System) is self-describing data format used
+  heavily in astronomy and high-energy physics.  Right now this library is just
+  an FFI wrapper, but higher-level functionality is planned.
+license:       GPL
+license-file:  COPYING
+author:        Eric Sessoms <nubgames@gmail.com>
+maintainer:    nubgames@gmail.com
+homepage:      http://github.com/esessoms/fitsio
+category:      data, physics
+cabal-version: >= 1.2.0
+build-type:    Simple
+
+library
+  exposed-modules: Data.Fits.FQL,
+                   Data.Fits.FitsIO,
+                   Data.Fits.GBT,
+                   Data.Fits.GBT.Antenna,
+                   Data.Fits.GBT.ScanLog,
+                   Data.Fits.WCS
+  build-Depends:   base, filepath >= 1.1.0.1, mtl
+  extra-libraries: cfitsio
+  extensions:      ForeignFunctionInterface
+  hs-source-dirs:  src/

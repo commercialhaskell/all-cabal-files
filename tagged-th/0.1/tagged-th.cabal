@@ -1,0 +1,28 @@
+name: tagged-th
+version: 0.1
+
+build-type: Simple
+
+category: Template Haskell, Phantom Types
+
+author: Nicolas Frisby <nicolas.frisby@gmail.com>
+maintainer: Nicolas Frisby <nicolas.frisby@gmail.com>
+
+stability: experimental
+
+synopsis: QuasiQuoter and Template Haskell splices for creating proxies at higher-kinds
+
+description: QuasiQuoter and Template Haskell splices for creating proxies at
+  higher-kinds (via @type-spine@'s @k -> *@ kind wrappers)
+
+license: BSD3
+license-file: LICENSE
+
+cabal-version: >= 1.6.0.1
+
+library
+  build-depends: base >= 4 && < 5, template-haskell
+  build-depends: tagged >= 0.2 && < 0.3
+  build-depends: type-spine < 0.2
+
+  exposed-modules: Data.Proxy.TH, Data.Proxy.TH.Aux

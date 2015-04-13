@@ -1,0 +1,18 @@
+Name:                leapseconds-announced
+Version:             2009
+License:             BSD3
+License-File:        LICENSE
+Copyright:           Bjorn Buckwalter 2009
+Author:              Bjorn Buckwalter 
+Maintainer:          bjorn.buckwalter@gmail.com
+Stability:           Stable
+Synopsis:            Leap seconds announced at library release time.
+Description:
+    Provides an easy to use static 'Data.Time.Clock.TAI.LeapSecondTable'
+    with the leap seconds announced at library release time.
+Category:            System
+Build-Type:          Simple
+Build-Depends:       base, time
+Exposed-Modules:     Data.Time.Clock.AnnouncedLeapSeconds
+Extra-source-files:  TestLeapSeconds.hs
+ 

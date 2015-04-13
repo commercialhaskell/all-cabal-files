@@ -1,0 +1,30 @@
+Name:                happstack-heist
+Version:             7.2.4
+Synopsis:            Support for using Heist templates in Happstack
+Description:         Happstack is a web application framework. Heist is an XML templating solution. This package makes it easy to use Heist templates with Happstack.
+Homepage:            http://www.happstack.com/
+License:             BSD3
+License-file:        LICENSE
+Author:              Chris Smith, Jeremy Shaw
+Maintainer:          Happstack team <happs@googlegroups.com>
+-- Copyright:
+Category:            Web, Happstack
+Build-type:          Simple
+Cabal-version:       >=1.6
+
+source-repository head
+    type:     darcs
+    subdir:   happstack-heist
+    location: http://hub.darcs.net/stepcut/happstack
+
+Library
+  Exposed-modules:     Happstack.Server.Heist
+  Build-depends:       base             >= 3.0 && < 5.0,
+                       blaze-builder    >= 0.2 && <0.4,
+                       bytestring       >= 0.9 && < 0.11,
+                       either           >= 3.4 && < 5,
+                       filepath,
+                       happstack-server >= 7.0 && < 7.4,
+                       heist            >= 0.13 && < 0.14,
+                       mtl              == 2.*,
+                       text             >= 0.10 && < 1.3

@@ -1,0 +1,52 @@
+Name:           dph-prim-par
+Version:        0.5.1.1
+License:        BSD3
+License-File:   LICENSE
+Author:         The DPH Team
+Maintainer:     Ben Lippmeier <benl@cse.unsw.edu.au>
+Homepage:       http://www.haskell.org/haskellwiki/GHC/Data_Parallel_Haskell
+Category:       Data Structures
+Synopsis:       Parallel Primitives for Data-Parallel Haskell.
+
+Cabal-Version:  >= 1.6
+Build-Type:     Simple
+
+Library
+  Exposed-Modules:
+        Data.Array.Parallel.Unlifted.Distributed
+        Data.Array.Parallel.Unlifted.Parallel
+        Data.Array.Parallel.Unlifted
+  Other-Modules:
+        Data.Array.Parallel.Unlifted.Distributed.Gang
+        Data.Array.Parallel.Unlifted.Distributed.TheGang
+        Data.Array.Parallel.Unlifted.Distributed.DistST
+        Data.Array.Parallel.Unlifted.Distributed.Types
+        Data.Array.Parallel.Unlifted.Distributed.Combinators
+        Data.Array.Parallel.Unlifted.Distributed.Scalars
+        Data.Array.Parallel.Unlifted.Distributed.Arrays
+        Data.Array.Parallel.Unlifted.Distributed.Basics
+        Data.Array.Parallel.Unlifted.Parallel.Combinators
+        Data.Array.Parallel.Unlifted.Parallel.Sums
+        Data.Array.Parallel.Unlifted.Parallel.Basics
+        Data.Array.Parallel.Unlifted.Parallel.Permute
+        Data.Array.Parallel.Unlifted.Parallel.Enum
+        Data.Array.Parallel.Unlifted.Parallel.Segmented
+        Data.Array.Parallel.Unlifted.Parallel.Subarrays
+        Data.Array.Parallel.Unlifted.Parallel.UPSegd
+        Data.Array.Parallel.Unlifted.Parallel.UPSel
+        Data.Array.Parallel.Unlifted.Parallel.Text
+
+  Exposed: False
+
+  Extensions: TypeFamilies, GADTs, RankNTypes,
+              BangPatterns, MagicHash, UnboxedTuples, TypeOperators
+  GHC-Options: -Odph -funbox-strict-fields -fcpr-off
+
+  Build-Depends:  
+        base     == 4.4.*,
+        random   == 1.0.*,
+        vector   == 0.7.*,
+        old-time == 1.0.*,
+        dph-base == 0.5.*,
+        dph-prim-interface == 0.5.*,
+        dph-prim-seq       == 0.5.*

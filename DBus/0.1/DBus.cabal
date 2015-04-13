@@ -1,0 +1,33 @@
+name: DBus
+version: 0.1
+
+license: BSD3
+license-file: LICENSE
+copyright: Copyright (C) 2006 Evan Martin <martine@danga.com>
+author: Evan Martin <martine@danga.com>
+maintainer: Unmaintained
+
+stability: Experimental
+Category: System
+synopsis: DBus bindings
+description: Bindings for the D-Bus API.
+  For details on D-Bus, see the D-Bus wiki at:
+  <http://www.freedesktop.org/wiki/Software/dbus>
+  .
+  It's worth noting that this binding is not stable or
+  even well-tested at all. Use this library at your own risk.
+homepage: http://neugierig.org/software/hdbus
+
+build-depends: base
+build-type:    Simple
+tested-with:   GHC==6.8.2
+
+exposed-modules: DBus, DBus.Message, DBus.Connection
+other-modules:   DBus.Internal, DBus.Shared
+
+extensions:    ForeignFunctionInterface, OverlappingInstances,
+               ExistentialQuantification, PatternSignatures,
+               ScopedTypeVariables, FlexibleInstances, TypeSynonymInstances
+
+data-files:         README, doc-prologue.txt
+extra-source-files: configure.ac, DBus.buildinfo.in, demo/Demo.hs, demo/Monitor.hs

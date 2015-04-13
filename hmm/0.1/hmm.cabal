@@ -1,0 +1,34 @@
+Name:               hmm
+Version:            0.1
+Description:
+    A simple library for working with Hidden Markov Models.
+    Should be usable even by people who are not familiar with
+    HMMs. Includes implementations of Viterbi's algorithm and
+    the forward algorithm.
+Category:           algorithms, natural language processing, data mining
+Synopsis:           Hidden Markov Model algorithms
+License:            BSD3
+License-file:       LICENSE
+Author:             Max Rabkin
+Maintainer:         max.rabkin@gmail.com
+Stability:          Alpha
+Build-Type:         Simple
+Cabal-Version:      >= 1.2
+
+Flag small_base
+    Description: Choose the new smaller, split-up base package.
+
+Library
+    if flag(small_base)
+        Build-Depends:  base >= 3, containers
+    else
+        Build-Depends:  base < 3
+        
+    Exposed-Modules:
+        Data.HMM
+
+    Other-Modules:
+        Data.Lognum
+
+    Extensions:
+        ParallelListComp

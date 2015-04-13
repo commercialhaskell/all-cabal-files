@@ -1,0 +1,82 @@
+name:            download
+version:         0.2
+homepage:        http://code.haskell.org/~dons/code/download
+synopsis:        High-level file download based on URLs
+description:     High-level file download based on URLs
+                 .
+                 Download web content as strict bytestring, strings,
+                 HTML tags, XML, RSS or Atom feeds or JSON, via HTTP,
+                 FTP or file protocols, using a URL interface.
+                 .                 
+category:        Network
+license:         BSD3
+license-file:    LICENSE
+copyright:       (c) 2008, Don Stewart <dons@galois.com>
+author:          Don Stewart
+maintainer:      Don Stewart <dons@galois.com>
+cabal-version:   >= 1.2.0
+build-type:      Simple
+tested-with:     GHC ==6.8.2
+
+-- flag external
+--  description: Build with an external libdownload
+--  default:     False
+
+flag small_base
+  description: Build with new smaller base library
+
+library
+    exposed-modules: Network.Download
+    extensions:      CPP,
+                     ForeignFunctionInterface,
+                     EmptyDataDecls,
+                     GeneralizedNewtypeDeriving
+
+    ghc-options:     -Wall -fvia-C
+
+    if flag(small_base)
+        build-depends:   base >= 3, bytestring
+    else
+        build-depends:   base > 3
+
+    build-depends: tagsoup, feed, xml
+
+    ------------------------------------------------------------------------
+    -- Building libdownload
+    --
+    -- We can build against either an external libdownload, or an internal one.
+
+--    if flag(external)
+--        extra-libraries:    download
+--        c-sources:          cbits/hs_download_utils.c
+--        include-dirs:       cbits
+--        includes:           hs_download_utils.h
+--        install-includes:   hs_download_utils.h
+--    else
+
+    cc-options:         -O2
+                        -DINET6
+                        -D_GNU_SOURCE
+                        -D_FILE_OFFSET_BITS=64
+                        -UDEBUG
+
+    c-sources:          cbits/download.c
+                        cbits/common.c
+                        cbits/ftp.c
+                        cbits/http.c
+                        cbits/file.c
+                        cbits/hs_download_utils.c
+
+    include-dirs:       cbits
+    includes:           common.h
+                        download.h
+                        ftperr.h
+                        httperr.h
+                        hs_download_utils.h
+
+    install-includes:   common.h
+                        download.h
+                        ftperr.h
+                        httperr.h
+                        hs_download_utils.h
+                                               

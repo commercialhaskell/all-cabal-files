@@ -1,0 +1,16 @@
+Name:                sparsebit
+Version:             0.1
+Description:         Sparse bitmaps for pattern match coverage
+Category:            Development,Data Structure
+License:             BSD3
+License-file:        LICENSE
+Author:              Ahn, Ki Yung
+Maintainer:          kya@pdx.edu
+Build-Type:          Simple
+Cabal-Version:       >=1.2
+extra-source-files: Type.hs TestType.hs README
+
+Library
+  Build-Depends:     base,haskell98
+  Exposed-modules:   Data.SparseBIT
+  ghc-options:       -Wall

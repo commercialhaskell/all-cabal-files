@@ -1,0 +1,33 @@
+Name:                   cabal2nix
+Version:                1.0
+Copyright:              (c) 2011 Peter Simons
+License:                BSD3
+License-File:           LICENSE
+Author:                 Peter Simons <simons@cryp.to>
+Maintainer:             Peter Simons <simons@cryp.to>
+Homepage:               http://github.com/peti/cabal2nix
+Category:               Distribution
+Synopsis:               Convert Cabal files into Nix build instructions
+Cabal-Version:          >= 1.6
+Build-Type:             Simple
+Tested-With:            GHC == 7.0.2
+Description:            This utility converts Cabal files into Nix build
+			instructions. Run the binary as follows:
+			.
+			> cabal2nix foo.cabal 57ae0330a3d0520bae3d1e447d7d5c88de9ecbf0de133f31f2cc42961c81d47f
+			.
+			The first argument is the path to the cabal file
+			to be converted, the second argument is the
+			SHA256 hash of the corresponding source tarball.
+			.
+			The Nix build instructions will be written to
+			stdout.
+
+Source-Repository head
+  Type:                 git
+  Location:             git://github.com/peti/cabal2nix.git
+
+Executable cabal2nix
+  main-is:              cabal2nix.hs
+  Build-Depends:        base >= 3 && < 5, Cabal
+  Ghc-Options:          -Wall

@@ -1,0 +1,38 @@
+name:                mage
+version:             1.1.0
+Stability:           Alpa
+synopsis:            Rogue-like
+description:         A simple rogue-like; currently has a Curses interface
+                     and simple movement and dungeon creation capbilities.
+category:            Game
+license:             BSD3
+-- dark says it's BSD somewhere in the #haskell logs
+license-file:        LICENSE
+author:              Richard Braakman <dark@xs.nl>
+-- maintainer:
+homepage:            http://www.scannedinavian.com/~shae/mage-1.0pre35.tar.gz
+
+build-depends:       base>3, array, random, mtl, containers
+build-type:          Simple
+tested-with:         GHC==6.8.2
+
+data-files:          THANKS, TODO
+extra-source-files: src/curses_wrapper.h
+
+executable:          mage
+main-is:             Main.hs
+hs-source-dirs:      src
+other-modules:       Curses, Language.Dutch, Language.English, Language,
+                     LevelGen, MonsterGen, Messages, Vision,
+                     Actions, Body, MessageWindow, Util.PQueue,
+                     Util.Search, Util.Grid, Util.Text, Main,
+                     RandT, BodyParts, Window, Keys,
+                     Glyph, Color, LanguageSelect, Items,
+                     Monsters, BoxChar, Materials, Keymap,
+                     Util, Test.Language, Test.Search, Landscape, World
+include-dirs:        src/
+includes:            curses.h
+extra-libraries:     curses
+Extensions:          ForeignFunctionInterface
+ghc-options:         -Wall -optl-Wl,-s -fvia-c
+ghc-prof-options:    -prof -auto-all

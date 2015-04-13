@@ -1,0 +1,22 @@
+Name:           DTC
+Version:        1.0.0
+Author:         Daniel Diaz
+Homepage:       http://ddiaz.asofilak.es/packages/DTC
+License:        BSD3
+License-file:   license
+Maintainer:     Daniel Diaz <danieldiaz@asofilak.es>
+Category:       Language
+Synopsis:       Data To Class.
+Description:    Transform data declarations to class definitions.
+                .
+                The way is explained in /Data Declarations to Class Definitions/.
+                You can find these notes in the homepage of the package.
+Build-type:     Simple
+Build-depends:  base == 4.*
+              , haskell-src
+Cabal-version:  >= 1.6
+Exposed-modules: 
+           Language.Haskell.DTC
+         , Language.Haskell.DTC.Parser
+         , Language.Haskell.DTC.Mod
+         , Language.Haskell.DTC.Class

@@ -1,0 +1,17 @@
+Name:		SegmentTree
+Version:	0.1
+Cabal-Version:	>= 1.2
+Build-type:	Simple
+License:	LGPL
+License-File:	LICENSE
+Author:		Alexandru Scvortov
+Maintainer:	scvalex@gmail.com
+Homepage:	http://scvalex.github.com/articles/SegmentTree.html
+Category:	Data
+Synopsis:	Data structure for O(log n) mconcats on list intervals
+Description:	The 'SegmentTree' data structure allows for logarithmic 
+                time accumulations on preprocessed lists of 'Monoid's.
+
+Library
+  Build-Depends:	base
+  Exposed-modules:	Data.SegmentTree, Data.SegmentTree.Examples

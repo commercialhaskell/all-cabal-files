@@ -1,0 +1,30 @@
+name:                exception-mailer
+version:             0.2
+synopsis:            Catch all runtime exceptions and send an email
+description:         This module is designed to be used in production code when
+                     no runtime exceptions are expected.  This module will catch any
+                     unexpected runtime exception and send a notification email
+category:            System
+license:             BSD3
+license-file:        LICENSE
+author:              David Powell
+maintainer:          David Powell <david@drp.id.au>
+homepage:            https://github.com/drpowell/exception-mailer
+bug-reports:         https://github.com/drpowell/exception-mailer/issues
+
+
+cabal-version:       >= 1.6
+build-type:          Simple
+
+
+Library
+  exposed-modules:     System.ExceptionMailer
+  ghc-options:         -W
+  build-depends:       base >=4 && < 5,
+                       text,
+                       mime-mail,
+                       hslogger
+
+source-repository head
+  type:     git
+  location: https://github.com/drpowell/exception-mailer

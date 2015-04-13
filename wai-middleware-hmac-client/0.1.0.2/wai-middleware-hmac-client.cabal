@@ -1,0 +1,60 @@
+
+name:                wai-middleware-hmac-client
+version:             0.1.0.2
+license:             BSD3
+license-file:        LICENSE
+author:              Christopher Reichert
+maintainer:          creichert07@gmail.com
+copyright:           (c) 2015, Christopher Reichert
+category:            Web
+build-type:          Simple
+cabal-version:       >=1.10
+synopsis:            WAI HMAC Authentication Middleware Client
+description:
+  Ready to use client module for
+  <https://hackage.haskell.org/package/wai-middleware-hmac wai-middleware-hmac>.
+  .
+  Since no formal specification for HMAC authentication exists, this
+  module is specifically built for
+  <https://hackage.haskell.org/package/wai-middleware-hmac wai-middleware-hmac>.
+   This module is built on @http-client@ but is
+  in the @Network.Wai@ namespace since the protocol is mostly specific
+  to the middleware.
+
+
+source-repository head
+  type:     git
+  location: git://github.com/creichert/wai-middleware-hmac-client
+
+
+library
+  exposed-modules:     Network.Wai.Middleware.HmacAuth.Client
+  default-language:    Haskell2010
+  ghc-options:         -Wall -fno-warn-unused-binds
+  build-depends:       base == 4.*
+                     , bytestring        >= 0.10
+                     , http-types        >= 0.8
+                     , http-client
+                     , base64-bytestring >= 1.0
+                     , word8             >= 0.1
+                     , case-insensitive
+                     , cryptohash
+                     , byteable
+                     , mtl
+                     , time
+                     , old-locale
+                     , transformers
+
+
+
+executable example
+  buildable: False
+  default-language: Haskell2010
+  ghc-options:      -Wall -Werror -threaded
+  main-is:          Example.hs
+  hs-source-dirs:   ""
+  build-depends:    base
+                  , bytestring
+                  , transformers
+                  , http-client
+                  , wai-middleware-hmac-client

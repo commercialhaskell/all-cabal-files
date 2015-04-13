@@ -1,0 +1,25 @@
+Name:               nntp
+Version:            0.0.1
+Cabal-Version:      >= 1.2
+Build-Type:         Simple
+License:            LGPL
+License-File:       LICENSE
+Author:             Maciej Piechotka
+Maintainer:         uzytkownik2@gmail.com
+Stability:          none
+Copyright:          (c) 2009 Maciej Piechotka
+Synopsis:           Library to connect to an NNTP Server
+Description:        This library allows to connect to NNTP server.
+Category:           Network
+Extra-Source-Files: test/TestRFC977.hs
+
+Library
+  Exposed-Modules: Network.NNTP,
+                   Network.NNTP.RFC977
+  Build-Depends:   base < 5 && >= 4,
+                   bytestring,
+                   haskell98,
+                   network,
+                   time
+  HS-Source-Dirs:  src
+  GHC-Options:     -Wall

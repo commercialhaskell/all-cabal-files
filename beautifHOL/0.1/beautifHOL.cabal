@@ -1,0 +1,23 @@
+Name:                beautifHOL
+Version:             0.1
+Cabal-Version:       >= 1.2
+License:             GPL
+License-file:        LICENSE
+Author:              Lee Pike <leepike@gmail.com>
+Synopsis:            A pretty-printer for higher-order logic
+Build-Type:          Simple
+Description:         
+  This is a pretty-printer for higher-order logic (HOL).  It reads in a formula
+  and outputs it to standard out.  A paper describes its design and motivation
+  at the project website.  The approach expands upon Leslie Lamport's paper, \"How
+  to Write a Long Formula,\" available at 
+     <http://research.microsoft.com/en-us/um/people/lamport/pubs/pubs.html#lamport-howtowrite>.
+Maintainer:          Lee Pike <leepike@gmail.com>
+Category:            Text
+Homepage:           http://www.cs.indiana.edu/~lepike/pub_pages/holpp.html
+extra-source-files: README
+Executable beautifHOL
+           Main-is: TestHOL.hs
+           Build-Depends: haskell98, mtl, array, base
+
+

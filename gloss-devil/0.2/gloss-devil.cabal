@@ -1,0 +1,21 @@
+Name:                gloss-devil
+Version:             0.2
+Synopsis:            Display images in Gloss using libdevil for decoding
+-- Description:         
+License:             BSD3
+License-file:        LICENSE
+Author:              Thomas M. DuBuisson
+Maintainer:          Thomas.DuBuisson@gmail.com
+-- Copyright:           
+Category:            Graphics
+Build-type:          Simple
+-- Extra-source-files:  
+Cabal-version:       >=1.6
+
+Library
+  Exposed-modules:     Graphics.Gloss.DevIL
+  Build-depends:       base >= 4 && < 5, gloss >= 1.6, repa >= 3.0
+                     , repa-devil, bytestring
+  -- Other-modules:       
+  -- Build-tools:         
+  

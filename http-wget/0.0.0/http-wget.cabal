@@ -1,0 +1,22 @@
+name:            http-wget
+version:         0.0.0
+license:         BSD3
+license-file:    LICENSE
+author:          Michael Snoyman <michael@snoyman.com>
+maintainer:      Michael Snoyman <michael@snoyman.com>
+synopsis:        Provide a simple HTTP client interface by wrapping the wget
+                 command line tool.
+description:     This provides the simplest interface I could imagine to
+                 making HTTP requests. It supports GET and POST parameters.
+                 Since it simply wraps the WGET program, there are no
+                 library dependencies, and it automatically gets HTTPS.
+category:        Network
+stability:       stable
+cabal-version:   >= 1.2
+build-type:      Simple
+homepage:        http://github.com/snoyberg/http-wget/tree/master
+
+library
+    build-depends:   base, process
+    exposed-modules: Network.HTTP.Wget
+    ghc-options:     -Wall

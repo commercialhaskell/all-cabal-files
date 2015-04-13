@@ -1,0 +1,24 @@
+Name:                 hack2
+Version:              2014.11.17
+Build-type:           Simple
+Synopsis:             a Haskell Webserver Interface (V2)
+Description:
+        
+    Hack2: a Haskell Webserver Interface (V2)
+
+License:              BSD3
+License-file:         LICENSE
+Author:               Jinjing Wang
+Maintainer:           Jinjing Wang <nfjinjing@gmail.com>
+Build-Depends:        base
+Cabal-version:        >= 1.2
+category:             Web
+homepage:             https://github.com/nfjinjing/hack2
+extra-doc-files:      readme.md, changelog.md
+
+library
+  ghc-options: -Wall
+  build-depends: base >= 3 && < 99, data-default >= 0.2, bytestring
+  hs-source-dirs: src/
+  exposed-modules:  
+                    Hack2

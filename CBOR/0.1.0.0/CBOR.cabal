@@ -1,0 +1,60 @@
+name:                CBOR
+version:             0.1.0.0
+synopsis:            Encode/Decode values to/from CBOR
+description:         Provides a simple type to represent CBOR values as well 
+                     as instances of the Get and Put classes from the binary 
+                     package to encode\/decode those values to\/from 
+                     ByteStrings. /N.B./ Alpha, interface subject to change!
+homepage:            https://github.com/orclev/CBOR
+license:             LGPL-3
+license-file:        LICENSE
+author:              R. Kyle Murphy
+maintainer:          orclev@gmail.com
+-- copyright:           
+category:            Data
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+
+library
+  exposed-modules:   Data.CBOR, Data.Binary.CBOR
+  other-modules:     Data.CBOR.Util
+  ghc-options:       -Wall -O2
+  build-depends:       base >=4.6 && < 5
+                     , bytestring >= 0.10
+                     , binary >= 0.7
+                     , binary-bits >= 0.3
+                     , data-binary-ieee754 >= 0.4
+                       
+  hs-source-dirs:    src
+  default-language:    Haskell2010
+
+test-suite tests
+  type:              exitcode-stdio-1.0
+  hs-source-dirs:    test, src
+  main-is:           Suite.hs
+  default-language:    Haskell2010
+  build-depends:       base >= 4.6 && < 5
+                     , bytestring >= 0.10
+                     , binary >= 0.7
+                     , binary-bits >= 0.3
+                     , data-binary-ieee754 >= 0.4
+                     , test-framework >= 0.3.3
+                     , test-framework-quickcheck2 >= 0.3
+                     , QuickCheck >= 2.6
+
+test-suite doctests
+  type:              exitcode-stdio-1.0
+  hs-source-dirs:    test, src
+  main-is:           doctests.hs
+  default-language:    Haskell2010
+  build-depends:       base >= 4.6 && < 5
+                     , bytestring >= 0.10
+                     , binary >= 0.7
+                     , binary-bits >= 0.3
+                     , data-binary-ieee754 >= 0.4
+                     , doctest >= 0.9
+
+source-repository head
+  type:     git
+  location: https://github.com/orclev/CBOR.git

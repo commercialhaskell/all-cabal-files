@@ -1,0 +1,31 @@
+name:                regex-easy
+version:             0.1.0.0
+synopsis:            sugar for regex-pcre
+description:         This packages is intended to make perl developers happy to use Haskell.  (:
+license:             BSD3
+license-file:        LICENSE
+author:              Matthias Fischmann
+maintainer:          mf@zerobuzz.net
+copyright:           (c) 2014-2017 zerobuzz.net
+homepage:            https://github.com/zerobuzz/regex-easy
+category:            Data
+build-type:          Simple
+cabal-version:       >=1.10
+
+source-repository head
+  type: git
+  location: https://github.com/zerobuzz/regex-easy
+
+library
+  exposed-modules:
+    Text.Regex.Easy
+
+  build-depends:
+    base >= 4.6 && < 5,
+    array >= 0.4,
+    string-conversions >= 0.3,
+    bytestring >= 0.10,
+    regex-pcre >= 0.94
+
+  default-language:
+    Haskell2010

@@ -1,0 +1,59 @@
+name:          categories
+category:      Control
+version:       1.0.3
+x-revision: 1
+license:       BSD3
+cabal-version: >= 1.10
+license-file:  LICENSE
+author:        Edward A. Kmett
+maintainer:    Edward A. Kmett <ekmett@gmail.com>
+stability:     experimental
+homepage:      http://github.com/ekmett/categories
+bug-reports:   http://github.com/ekmett/categories/issues
+synopsis:      Categories
+copyright:     Copyright (C) 2008-2010, Edward A. Kmett
+description:   Categories
+build-type:    Simple
+extra-source-files: .travis.yml
+
+flag Optimize
+  description: Enable optimizations
+  default:     False
+
+library
+  default-language: Haskell2010
+  default-extensions: CPP
+  other-extensions:
+    MultiParamTypeClasses
+    FunctionalDependencies
+    FlexibleContexts
+    FlexibleInstances
+    UndecidableInstances
+    TypeOperators
+    TypeFamilies
+    GADTs
+
+-- these extensions aren't yet known by my version of Cabal:
+-- other-extensions: DefaultSignatures ConstraintKinds
+
+  exposed-modules:
+    Control.Categorical.Functor,
+    Control.Categorical.Bifunctor,
+    Control.Categorical.Object,
+    Control.Category.Monoidal,
+    Control.Category.Cartesian,
+    Control.Category.Cartesian.Closed,
+    Control.Category.Associative,
+    Control.Category.Braided,
+    Control.Category.Discrete,
+    Control.Category.Distributive,
+    Control.Category.Dual
+
+  build-depends:
+    base >= 4 && < 4.6,
+    void >= 0.5.4.2 && < 0.6
+
+  ghc-options: -Wall
+
+  if flag(Optimize)
+    ghc-options: -funbox-strict-fields -O2

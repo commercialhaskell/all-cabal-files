@@ -1,0 +1,24 @@
+name:                shake-cabal-build
+version:             0.1.0
+synopsis:            Utility for building Shake build systems using Cabal sandboxes
+description:         This utility allows to build <http://hackage.haskell.org/package/shake Shake> build systems using <http://hackage.haskell.org/package/Cabal Cabal> sandboxes. It automatically installs and updates a build system's dependencies, either from Hackage or from a local source directory. See the <https://github.com/samplecount/shake-cabal-build homepage> for more information.
+homepage:            https://github.com/samplecount/shake-cabal-build
+license:             Apache-2.0
+license-file:        LICENSE
+author:              Stefan Kersten
+maintainer:          stefan@samplecount.com
+bug-reports:         https://github.com/samplecount/shake-cabal-build/issues
+copyright:           Copyright (c) 2013-2014 Samplecount S.L.
+category:            Development
+build-type:          Simple
+extra-source-files:  README.md, CHANGELOG.md
+cabal-version:       >=1.10
+
+executable shake-cabal-build
+  main-is:             Main.hs
+  build-depends:       base >=4.7 && <4.8,
+                       Cabal,
+                       directory,
+                       filepath,
+                       process >= 1.2
+  default-language:    Haskell2010

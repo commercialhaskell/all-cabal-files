@@ -1,0 +1,165 @@
+Name: halfs
+Version: 0.2
+copyright: Copyright (c) 2005 Galois Connections, Inc.
+author:    Isaac Jones, Galois Inc.
+maintainer: Iaaac Jones <ijones@syntaxpolice.org>
+homepage: http://haskell.org/halfs/
+category: System
+synopsis: Haskell File System
+description: Halfs is a filesystem implemented in the functional programming
+             language Haskell. Halfs can be mounted and used like any other Linux
+             filesystem, or used as a library.  Halfs is a fork (and a port) of the
+             filesystem developed by Galois Connections. See also http://haskell.org/pipermail/haskell-cafe/2006-April/015361.html
+             .
+             You can get it from here: http://darcs.haskell.org/halfs
+License: LGPL
+license-file: LGPL
+
+build-type:   Simple
+build-depends: HUnit, unix, base>3, QuickCheck, network, mtl,
+               containers, array, directory, process, random
+tested-with:   GHC==6.8.2
+Extensions: ExistentialQuantification, CPP, ForeignFunctionInterface, FlexibleContexts,
+            PatternSignatures, Rank2Types, RankNTypes, TypeSynonymInstances, GADTs,
+            MultiParamTypeClasses
+c-sources: binutils.c
+includes: binutils.h
+extra-source-files: binutils.h
+                    Halfs/Directory.hs-boot
+                    Halfs/Blocks.hs-boot
+                    Halfs/BasicIO.hs-boot
+                    Halfs/FileHandle.hs-boot
+
+Exposed-Modules: Halfs, Halfs.FSState, Halfs.Buffer, Data.Integral
+Other-Modules: Data.Array.SysArray,
+               Data.Queue,
+               Halfs.BufferBlockCache,
+               Halfs.BufferBlock,
+               Halfs.FSRoot,
+               Halfs.FSRW,
+               Halfs.BasicIO,
+               Halfs.Blocks,
+               Halfs.SyncStructures,
+               Halfs.BuiltInFiles,
+               Halfs.TheBlockMap,
+               Halfs.FileHandle,
+               Halfs.TestFramework,
+               Halfs.TheInodeMap,
+               Halfs.Inode,
+               Halfs.CompatFilePath,
+               Halfs.Utils,
+               Halfs.Directory,
+               Halfs.BinaryMonad,
+               BinArray,
+               Binary,
+               FastMutInt,
+               System.RawDevice.Base,
+               System.RawDevice.File,
+               System.RawDevice
+ghc-prof-options: -auto-all
+GHC-Options: -Wall -fno-ignore-asserts -O2
+
+Executable: moduleTest
+Main-is: ModuleTest.hs
+c-sources: binutils.c
+Other-Modules:  Data.Array.SysArray,
+               Data.Queue,
+               Data.Integral,
+               Halfs.BufferBlockCache,
+               Halfs.BufferBlock,
+               Halfs.FSState,
+               Halfs.FSRoot,
+               Halfs.FSRW,
+               Halfs.Buffer,
+               Halfs.BasicIO,
+               Halfs.Blocks,
+               Halfs.SyncStructures,
+               Halfs.BuiltInFiles,
+               Halfs.TheBlockMap,
+               Halfs.FileHandle,
+               Halfs.TestFramework,
+               Halfs.TheInodeMap,
+               Halfs.Inode,
+               Halfs.CompatFilePath,
+               Halfs.Utils,
+               Halfs.Directory,
+               Halfs.BinaryMonad,
+               BinArray,
+               HighLevelTests,
+               Binary,
+               FastMutInt,
+               System.RawDevice.Base,
+               System.RawDevice.File,
+               System.RawDevice
+ghc-prof-options: -auto-all
+GHC-Options: -Wall  -fno-ignore-asserts  -O2
+
+Executable: newfs-halfs
+Main-is: NewFS.hs
+c-sources: binutils.c
+Other-Modules:  Data.Array.SysArray,
+               Data.Queue,
+               Data.Integral,
+               Halfs.BufferBlockCache,
+               Halfs.BufferBlock,
+               Halfs.FSState,
+               Halfs.FSRoot,
+               Halfs.FSRW,
+               Halfs.Buffer,
+               Halfs.BasicIO,
+               Halfs.Blocks,
+               Halfs.SyncStructures,
+               Halfs.BuiltInFiles,
+               Halfs.TheBlockMap,
+               Halfs.FileHandle,
+               Halfs.TestFramework,
+               Halfs.TheInodeMap,
+               Halfs.Inode,
+               Halfs.CompatFilePath,
+               Halfs.Utils,
+               Halfs.Directory,
+               Halfs.BinaryMonad,
+               BinArray,
+               HighLevelTests,
+               Binary,
+               FastMutInt,
+               System.RawDevice.Base,
+               System.RawDevice.File,
+               System.RawDevice
+ghc-prof-options: -auto-all
+GHC-Options: -Wall  -O2
+
+Executable: fsck-halfs
+Main-is: Fsck.hs
+c-sources: binutils.c
+Other-Modules:  Data.Array.SysArray,
+               Data.Queue,
+               Data.Integral,
+               Halfs.BufferBlockCache,
+               Halfs.BufferBlock,
+               Halfs.FSState,
+               Halfs.FSRoot,
+               Halfs.FSRW,
+               Halfs.Buffer,
+               Halfs.BasicIO,
+               Halfs.Blocks,
+               Halfs.SyncStructures,
+               Halfs.BuiltInFiles,
+               Halfs.TheBlockMap,
+               Halfs.FileHandle,
+               Halfs.TestFramework,
+               Halfs.TheInodeMap,
+               Halfs.Inode,
+               Halfs.CompatFilePath,
+               Halfs.Utils,
+               Halfs.Directory,
+               Halfs.BinaryMonad,
+               BinArray,
+               HighLevelTests,
+               Binary,
+               FastMutInt,
+               System.RawDevice.Base,
+               System.RawDevice.File,
+               System.RawDevice
+ghc-prof-options: -auto-all
+GHC-Options: -Wall  -O2

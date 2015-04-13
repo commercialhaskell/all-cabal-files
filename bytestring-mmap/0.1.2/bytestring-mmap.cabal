@@ -1,0 +1,34 @@
+name:                bytestring-mmap
+version:             0.1.2
+synopsis:            mmap support for strict ByteStrings
+description:
+    .
+    This library provides a wrapper to mmap(2), allowing files or
+    devices to be lazily loaded into memory as a strict ByteString,
+    using the virtual memory subsystem to do on-demand loading.
+    .
+category:            System
+homepage:            http://code.haskell.org/~dons/code/bytestring-mmap/
+license:             BSD3
+license-file:        LICENSE
+author:              Don Stewart 
+maintainer:          Don Stewart <dons@galois.com>
+extra-source-files:  README
+cabal-version:      >= 1.2
+
+flag split-base
+  description: Choose the new smaller, split-up base package.
+
+library
+  build-depends: unix
+  if flag(split-base)
+    build-depends:     base >= 3, bytestring >= 0.9
+  else
+    build-depends:     base < 3
+  extensions:        ForeignFunctionInterface
+  exposed-modules:   System.IO.Posix.MMap
+  ghc-options:       -Wall -fglasgow-exts -O2
+  c-sources:         cbits/hs_bytestring_mmap.c
+  include-dirs:      include
+  includes:          hs_bytestring_mmap.h
+  install-includes:  hs_bytestring_mmap.h

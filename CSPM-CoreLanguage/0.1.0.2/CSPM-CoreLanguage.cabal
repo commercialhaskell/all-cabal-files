@@ -1,0 +1,34 @@
+Name:                CSPM-CoreLanguage
+Version:             0.1.0.2
+Synopsis:            Definition of a FDR-compatible CSP core-language. 
+Description:
+  This package contains an interface for a CSP core-language.
+  It defines processes, events, event sets, a EDSL for process operations like
+  parallel or interleaving.
+  This interface can be used to implement a FDR-2.83 compatible CSPM animator.
+  We use this interface in our tool to connect the functional CSPM-sub-language
+  with core CSP functionality.
+
+
+Category:            Language,Formal Methods,Concurrency
+License:             BSD3
+License-File:        LICENSE
+Author:              2010 Marc Fontaine
+Maintainer:          Marc Fontaine <fontaine@cs.uni-duesseldorf.de>
+Homepage:            http://www.stups.uni-duesseldorf.de/~fontaine/csp
+Stability:           experimental
+Tested-With:         GHC == 6.12.2
+
+cabal-Version:       >= 1.6
+Build-Depends: base >= 4.0 && < 5.0
+
+build-type: Simple
+GHC-Options: -funbox-strict-fields -O2 -Wall
+Hs-Source-Dirs:         src
+
+Exposed-modules:
+  CSPM.CoreLanguage
+  CSPM.CoreLanguage.Event
+  CSPM.CoreLanguage.Process
+  CSPM.CoreLanguage.ProcessWrapper
+  CSPM.CoreLanguage.Field

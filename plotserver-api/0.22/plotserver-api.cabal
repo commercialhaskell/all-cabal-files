@@ -1,0 +1,23 @@
+Name:              plotserver-api
+Version:           0.22
+Synopsis:          Plotserver API
+Description:       A lightweight API for Prezi's opensourced Plotserver (https:\/\/github.com\/prezi\/plotserver)
+License:           MIT
+License-file:      LICENSE
+Author:            Daniel Torok
+Maintainer:        daniel.torok@prezi.com
+Category:          API
+Build-Type:        Simple
+Cabal-Version:     >= 1.6
+
+Source-repository head
+  Type:            git
+  Location:        https://github.com/dtorok/plotserver-hsapi
+
+Library
+  Build-Depends:   base >= 4 && < 5,
+                   curl,
+                   split
+  Exposed-modules: Plotserver.Api, Plotserver.Types
+  extensions:      OverloadedStrings
+  ghc-options:     -Wall

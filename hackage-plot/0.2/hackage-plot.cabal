@@ -1,0 +1,24 @@
+name:                hackage-plot
+version:             0.2
+homepage:            http://code.haskell.org/~dons/code/hackage-plot
+license:             BSD3
+license-file:        LICENSE
+author:              Don Stewart
+maintainer:          dons@galois.com
+category:            Distribution
+synopsis:            Generate cumulative graphs of hackage uploads
+description:         Generate cumulative graphs of hackage uploads
+cabal-version:       >= 1.2
+build-type:          Simple
+
+flag small_base
+  description: Choose the new smaller, split-up base package.
+
+executable hackage-plot
+    main-is:         Main.hs
+    if flag(small_base) 
+        build-depends:   base >= 3, old-locale, old-time, directory, containers
+    else
+        build-depends:   base <  3
+    build-depends:   gnuplot > 0.2, tagsoup, parsedate, filepath
+

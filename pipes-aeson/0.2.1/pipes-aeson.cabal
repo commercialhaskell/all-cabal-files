@@ -1,0 +1,42 @@
+name:               pipes-aeson
+version:            0.2.1
+license:            BSD3
+license-file:       LICENSE
+copyright:          Copyright (c) Renzo Carbonara 2013-2014
+author:             Renzo Carbonara
+maintainer:         renzocarbonaraλgmail.com
+stability:          Experimental
+tested-with:        GHC ==7.6.3
+homepage:           https://github.com/k0001/pipes-aeson
+bug-reports:        https://github.com/k0001/pipes-aeson/issues
+category:           Pipes, Parser
+build-type:         Simple
+cabal-version:      >=1.8
+synopsis:           Encode and decode JSON streams using Aeson and Pipes.
+extra-source-files: README.md PEOPLE changelog
+description:
+  Utilities to encode and decode Pipes streams of JSON.
+  .
+  See the @changelog@ file in the source distribution to learn about any
+  important changes between version.
+
+source-repository head
+    type: git
+    location: git://github.com/k0001/pipes-aeson.git
+
+library
+  hs-source-dirs:  src
+  exposed-modules: Pipes.Aeson
+                   Pipes.Aeson.Unsafe
+  other-modules:   Pipes.Aeson.Internal
+  build-depends:
+      aeson            (>=0.6.1 && <0.8)
+    , attoparsec       (>=0.10  && <0.12)
+    , base             (>=4.5   && <5.0)
+    , pipes            (>=4.0   && <4.1)
+    , pipes-attoparsec (>=0.3.1 && <0.4)
+    , pipes-parse      (>=2.0   && <2.1)
+    , bytestring       (>=0.9.2.1)
+    , transformers     (>=0.2   && <0.4)
+  ghc-options: -Wall -O2
+  ghc-prof-options: -fprof-auto

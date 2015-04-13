@@ -1,0 +1,29 @@
+name:               xmonad-eval
+version:            0.1
+homepage:           http://xmonad.org/
+synopsis:           Module for evaluation Haskell expressions in the running xmonad instance
+description:
+    This modules allows the evaluation of Haskell expressions in the context of the currently
+    running xmonad, similar to emacs' eval feature.
+    .
+category:           System
+license:            BSD3
+license-file:       LICENSE
+author:             Daniel Schoepe
+maintainer:         asgaroth_@gmx.de
+cabal-version:      >= 1.2.1
+build-type:         Simple
+
+flag small_base
+  description: Choose the new smaller, split-up base package.
+
+library
+    if flag(small_base)
+        build-depends: base >= 3 && < 4, containers, directory, process, random, old-time, old-locale
+    else
+        build-depends: base < 3
+
+    build-depends:      hint, mtl, unix, X11>=1.4.3, xmonad>=0.8, xmonad<0.9, xmonad-contrib>=0.8
+    ghc-options:        -Wall
+
+    exposed-modules:    XMonad.Actions.Eval

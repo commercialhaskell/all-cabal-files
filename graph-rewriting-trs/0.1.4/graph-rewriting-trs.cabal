@@ -1,0 +1,39 @@
+Name:           graph-rewriting-trs
+Version:        0.1.4
+Copyright:      (c) 2011, Jan Rochel
+License:        BSD3
+License-File:   LICENSE
+Author:         Jan Rochel
+Maintainer:     jan@rochel.info
+Homepage:       http://rochel.info/#graph-rewriting
+Stability:      beta
+Build-Type:     Simple
+Synopsis:       Evaluate a first-order applicative term rewrite system interactively using graph reduction
+Description:    Given a set of term rewriting rules and an initial term with this tool you can interactively evaluate the corresponding term graph. The employed rule set has to be defined in one or more files. In the examples-directory a few rewriting systems are already supplied. To see how it works invoke the with the SKI-combinator rules and an initial term as arguments: @trs examples/ski.trs "SK(S(KIS)K)I"@. On how to interact with the application see the "GraphRewriting.GL.UI" module of the graph-rewriting-gl package.
+Category:       Graphs, Application
+Cabal-Version:  >= 1.6
+Data-Files:     examples/*.trs
+
+Executable trs
+  Main-Is:        Main.hs
+  Build-Depends:
+    base >= 4 && < 4.6,
+    base-unicode-symbols >= 0.2 && < 0.3,
+    graph-rewriting >= 0.7.1 && < 0.8,
+    graph-rewriting-layout >= 0.5.1 && < 0.6,
+    graph-rewriting-gl >= 0.6.9 && < 0.8,
+    uu-parsinglib >= 2.7 && < 2.9,
+    containers >= 0.4 && < 0.5,
+    GLUT >= 2.2 && < 2.5,
+    OpenGL >= 2.4 && < 2.9,
+    filepath >= 1.1 && < 1.4,
+    directory >= 1.0 && < 1.2
+  Extensions:
+    UnicodeSyntax
+    FlexibleInstances
+    FlexibleContexts
+    MultiParamTypeClasses
+    Rank2Types
+    ScopedTypeVariables
+  GHC-Options:    -fno-warn-duplicate-exports -fwarn-unused-binds -fwarn-unused-imports -fwarn-unused-do-bind -fwarn-wrong-do-bind -fwarn-unrecognised-pragmas
+  Other-Modules:  GL Graph Rules Term TermRewriting

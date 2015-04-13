@@ -1,0 +1,22 @@
+name:                boxes
+version:             0.1.2
+x-revision: 1
+synopsis:            2D text pretty-printing library
+description:         A pretty-printing library for laying out text in
+                     two dimensions, using a simple box model.
+category:            Text
+license:             BSD3
+license-file:        LICENSE
+extra-source-files:  CHANGES
+author:              Brent Yorgey
+maintainer:          Eelis van der Weegen <boxes@contacts.eelis.net>
+build-type:          Simple
+cabal-version:       >= 1.6
+
+library
+  build-depends:     base >= 3 && < 4.8, split >=0.1 && <0.2
+  exposed-modules:   Text.PrettyPrint.Boxes
+
+source-repository head
+  type: git
+  location: git://github.com/Eelis/boxes.git

@@ -1,0 +1,32 @@
+name:                abc-puzzle
+version:             0.2
+synopsis:            Generate instances of the ABC Logic Puzzle.
+description:         This program generate instances of the ABC Logic Puzzle
+                     (<http://en.wikipedia.org/wiki/Buchstabensalat_%28logic_puzzle%29>).
+                     The implementation uses the MiniSat SAT solver (<http://minisat.se/>)
+                     to guide the search for a valid puzzle. Each generated puzzle has one
+                     unique solution.
+homepage:            https://github.com/pa-ba/abc-puzzle
+bug-reports:         https://github.com/pa-ba/abc-puzzle/issues
+license:             BSD3
+license-file:        LICENSE
+author:              Patrick Bahr
+maintainer:          patrick.bahr@gmail.com
+category:            Game
+build-type:          Simple
+-- extra-source-files:  
+cabal-version:       >=1.10
+
+executable abc-puzzle
+  main-is:             Main.hs
+  hs-source-dirs:      src
+  ghc-options:         -W
+  -- other-modules:       
+  other-extensions:    ImplicitParams, ConstraintKinds
+  build-depends:       base >=4.7 && <5, vector >=0.10, minisat >=0.1, Safe >=0.1, random >=1.0, 
+                       random-shuffle >= 0.0.4
+  default-language:    Haskell2010
+
+source-repository head
+  type:     git
+  location: https://github.com/pa-ba/abc-puzzle

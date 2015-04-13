@@ -1,0 +1,44 @@
+Name:                time-http
+Version:             0.1.0.1
+Synopsis:            Parse and format HTTP/1.1 Date and Time strings
+Description:
+        This package provides functionalities to parse and format
+        various Date and Time formats allowed in HTTP\/1.1 (RFC 2616).
+
+Homepage:            http://cielonegro.org/HTTPDateTime.html
+License:             PublicDomain
+License-file:        COPYING
+Author:              PHO <pho AT cielonegro DOT org>
+Maintainer:          PHO <pho AT cielonegro DOT org>
+Stability:           Experimental
+Category:            Web
+Build-type:          Simple
+Cabal-version:       >= 1.6
+
+Source-Repository head
+    Type: git
+    Location: git://git.cielonegro.org/time-http.git
+
+Library
+    Exposed-modules:
+        Data.Time.RFC733
+        Data.Time.RFC733.Parsec
+        Data.Time.RFC822
+        Data.Time.RFC822.Parsec
+        Data.Time.RFC1123
+        Data.Time.RFC1123.Parsec
+        Data.Time.Asctime
+        Data.Time.Asctime.Parsec
+        Data.Time.HTTP
+        Data.Time.HTTP.Parsec
+
+    Other-modules:
+        Data.Time.HTTP.Common
+
+    Build-depends:
+        base   == 4.3.*,
+        parsec == 3.1.*,
+        time   == 1.2.*
+
+    Extensions:
+        FlexibleContexts

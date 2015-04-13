@@ -1,0 +1,40 @@
+cabal-version:       >= 1.2
+name:                make-hard-links
+version:             0.2
+synopsis:            Change duplicated files into hard-links.
+category:            System
+license:             GPL
+license-file:        LICENSE
+author:              Felipe Almeida Lessa
+copyright:           (c) 2009 Felipe A. Lessa
+maintainer:          felipe.lessa@gmail.com
+build-type:          Simple
+tested-with:         GHC
+description:
+  This program is capable of finding duplicated files and turning
+  one of them into a hard link to the other, effectively reducing
+  the space usage (as the data will not be duplicated in the disk).
+  It works only on POSIXish systems, and was tested in GNU/Linux only.
+  .
+  WARNING: As the duplicated files will point to each other, if one
+  of them is modified then the other will as well! You should use
+  make-hard-links only if the files won't be modified, only renamed,
+  removed, or created.
+  .
+  The author had a Maildir with lots of duplicated files, and in
+  his case make-hard-links was capable of reducing the space usage
+  in 29% (as measured by "du -hcs" and "du -hcs -l"). As a final note,
+  this program currently has a high memory usage as it has to maintain
+  information about all the files that are possibly duplicates in
+  memory at once (the author measured 1.7 GiB of memory for about
+  300.000 files).
+
+executable make-hard-links
+  build-depends:     base >= 4, unix, directory, filepath,
+                     containers, bytestring
+  main-is:           MakeHardLinks.hs
+  ghc-options:       -threaded -Wall
+  extensions:        ScopedTypeVariables
+  other-modules:
+    Keys,
+    FindFiles

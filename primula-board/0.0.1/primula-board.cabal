@@ -1,0 +1,31 @@
+Name:                primula-board
+Version:             0.0.1
+Synopsis:            ImageBoard on Happstack and HSP
+Category:            Web
+Description:         Simple ImageBoard like wakaba on Happstack and HSP.
+                     Messages on board sended via jabber-bot 
+                     (primula-bot package). Settings stored in 
+                     ~/.primularc file.
+License:             GPL
+License-file:        LICENSE
+Author:              Kagami <newanon@yandex.ru>
+Maintainer:          newanon@yandex.ru
+Homepage:            http://kagami.touhou.ru/projects/show/primula
+Build-Type:          Simple
+Cabal-Version:       >=1.2
+
+Data-Files:          primularc.example
+Extra-Source-Files:  debug.sh, install.sh,
+                     _static/favicon.ico, _static/primula_404.jpg,
+                     _static/rules.txt, _static/styles/futaba.css,
+                     Board.hs, BoardState.hs, BoardUtils.hs,
+                     Config.hs, Controllers.hs, DisplayHTML.hs,
+                     HTML.hs, Setup.hs
+
+Executable primula-board
+  Main-is:           Main.hs
+  Build-Depends:     base >=4.0 && < 5, happstack-helpers,
+                     happstack-server, containers, mtl, split,
+                     happstack, hsp, old-locale, time, old-time,
+                     random, directory, ConfigFile, regex-posix,
+                     MissingH, happstack-state

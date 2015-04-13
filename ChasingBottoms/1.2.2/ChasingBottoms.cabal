@@ -1,0 +1,46 @@
+name:               ChasingBottoms
+version:            1.2.2
+license:            OtherLicense
+license-file:       LICENCE
+copyright:          Copyright (c) Nils Anders Danielsson 2004-2007.
+author:             Nils Anders Danielsson
+maintainer:         http://www.cs.chalmers.se/~nad/contact.html
+stability:          experimental
+homepage:           http://www.cs.chalmers.se/~nad/software/#Chasing Bottoms
+package-url:        http://www.cs.chalmers.se/~nad/software/ChasingBottoms/ChasingBottoms.tgz
+synopsis:           For testing partial and infinite values.
+description:        Do you ever feel the need to test code involving bottoms (e.g. calls
+                    to the error function), or code involving infinite values? Then this
+                    library could be useful for you.
+category:           Test
+tested-with:        GHC == 6.8.1
+cabal-version:      >= 1.2 && < 2
+
+flag small_base
+    description: Choose the new smaller, split-up base package.
+
+library
+    exposed-modules:
+        Test.ChasingBottoms,
+        Test.ChasingBottoms.Approx,
+        Test.ChasingBottoms.ApproxShow,
+        Test.ChasingBottoms.ContinuousFunctions,
+        Test.ChasingBottoms.IsBottom,
+        Test.ChasingBottoms.Nat,
+        Test.ChasingBottoms.SemanticOrd,
+        Test.ChasingBottoms.TimeOut
+
+    other-modules: Test.ChasingBottoms.IsType
+
+    build-depends: QuickCheck >= 1.1 && < 2,
+                   mtl >= 1.1 && < 2
+    if flag(small_base)
+        build-depends: base >= 3 && < 4,
+                       containers >= 0.1 && < 1,
+                       random >= 1 && < 2
+    else
+        build-depends: base >= 2 && < 3
+
+-- It would be nice if the tests that can be accessed through
+-- Test.ChasingBottoms.Tests.main could be run automatically using
+-- Cabal (in a simple way). See make test.

@@ -1,0 +1,19 @@
+Name:		dvdread
+Version:	0.1
+Cabal-Version:	>= 1.8
+License:	GPL-3
+License-File:	LICENSE
+Author:		Nicola Squartini
+Maintainer:	Nicola Squartini <tensor5@gmail.com>
+Category:	System
+Stability:	experimental
+Build-Type:	Simple
+Synopsis:	A monadic interface to libdvdread
+Description: 	This module represents the functions of libdvdread as actions wrapped in the DVDRead monad.
+
+Library
+  Build-Depends:	base == 4.*, bytestring, mtl == 2.*
+  Exposed-modules:	DVD.DVDRead
+  Extensions:		ForeignFunctionInterface
+  build-tools:		c2hs >= 0.16.2
+  pkgconfig-depends:	dvdread

@@ -1,0 +1,35 @@
+name:               dawg
+version:            0.2.0
+synopsis:           DAWG
+description:
+    Directed acyclic word graphs.
+license:            BSD3
+license-file:       LICENSE
+cabal-version:      >= 1.6
+copyright:          Copyright (c) 2012 IPI PAN
+author:             Jakub Waszczuk
+maintainer:         waszczuk.kuba@gmail.com
+stability:          experimental
+category:           Data, Data Structures
+homepage:           https://github.com/kawu/dawg
+build-type:         Simple
+
+library
+    build-depends:
+        base >= 4 && < 5
+      , containers >= 0.5 && < 0.6
+      , binary
+      , vector
+      , vector-binary
+      , mtl
+
+    exposed-modules:
+        Data.DAWG
+      , Data.DAWG.Graph
+      , Data.DAWG.VMap
+
+    ghc-options: -Wall
+
+source-repository head
+    type: git
+    location: https://github.com/kawu/dawg.git

@@ -1,0 +1,19 @@
+Name:                Numbers
+Version:             0.1
+Cabal-Version: >= 1.2
+Synopsis:            An assortment of number theoretic functions
+Description:         Functions for finding prime numbers, checking whether a number is prime, finding the factors of a number etc.
+License:             LGPL
+License-file:        LICENSE
+Author:              Adrian Neumann
+Category:            Algorithms, Number Theory
+Maintainer:          aneumann@inf.fu-berlin.de
+stability:           alpha
+build-type:          Simple
+extra-source-files:  README, test.hs, lgpl-3.0.txt
+
+Library
+    exposed-modules:     Data.Numbers
+    build-depends: 
+         base
+    GHC-Options:    -O2

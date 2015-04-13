@@ -1,0 +1,32 @@
+Name:                NonEmptyList
+Version:             0.0.9
+License:             BSD3
+License-File:        LICENSE
+Synopsis:            A list with a length of at least one.
+Description:         A list with a length of at least one and type-safe head/tail operations.
+Homepage:            http://code.google.com/p/nonempty/
+Category:            Data
+Author:              Tony Morris, Oliver Taylor, Eelis van der Weegen
+Maintainer:          code@tmorris.net
+Copyright:           2010 Tony Morris, Oliver Taylor, Eelis van der Weegen
+Build-Type:          Simple
+Cabal-Version:       >= 1.2
+Stability:           Experimental
+
+Flag small_base
+  Description:       Choose the new, split-up base package.
+
+Library
+  Build-Depends:    base >= 3 && < 5,
+                    test-framework,
+                    test-framework-hunit,
+                    test-framework-quickcheck2,
+                    QuickCheck,
+                    Semigroup,
+                    category-extras
+
+  GHC-Options:      -Wall
+
+  Exposed-Modules:  Data.List.NonEmpty
+                    Data.List.ZipNonEmpty
+                    Test.Data.List.NonEmpty

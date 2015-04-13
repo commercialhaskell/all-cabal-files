@@ -1,0 +1,17 @@
+name: Tensor
+version: 1.1.0.0
+license: BSD3
+license-file: LICENSE
+maintainer: Sven Panne <svenpanne@gmail.com>
+bug-reports: https://github.com/haskell-opengl/Tensor/issues
+homepage: https://github.com/haskell-opengl/Tensor
+category: Data
+synopsis: Tensor data types
+description:
+   This package contains tensor data types and their instances for some basic
+   type classes.
+build-type: Simple
+exposed-modules: Data.Tensor
+hs-Source-Dirs: src
+ghc-options: -Wall
+build-depends: base >= 3 && < 5

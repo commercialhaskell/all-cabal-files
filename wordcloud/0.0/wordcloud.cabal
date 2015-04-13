@@ -1,0 +1,19 @@
+Name:                wordcloud
+Version:             0.0
+Cabal-version: >= 1.2
+Synopsis:            Library for generating word/tag clouds.
+Description:         Library for generating word/tag cloud images from histograms.
+License:             BSD3
+Author:              Chris Done
+Maintainer:          Chris Done <chrisdone@gmail.com>
+Build-Depends:       base
+Build-type:          Simple
+Category:            Graphics
+
+Flag bytestring-in-base
+
+Library
+  Build-depends:   base,mtl,containers, gd,bytestring,random,data-default
+  Exposed-Modules: Graphics.WordCloud
+  extensions: StandaloneDeriving
+  ghc-options:     -O3

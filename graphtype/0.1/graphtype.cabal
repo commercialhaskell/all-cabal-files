@@ -1,0 +1,28 @@
+Name:                graphtype
+Version:             0.1
+Synopsis:            A simple tool to illustrate dependencies between Haskell types
+Description:         This tools produces diagrams of Haskell type interdependencies in the given source.
+                     Actual drawing is done by graphviz tools (dot).
+Category:            Text
+License:             BSD3
+License-file:        LICENSE
+Author:              Dmitry Astapov
+Maintainer:          Dmity Astapov <dastapov@gmail.com>
+Build-Depends:       base >=3 && <5 , haskell-src-exts, uniplate, containers, haskell98
+Stability:           alpha
+build-type: 	     Simple
+
+extra-source-files:
+        README
+        LICENSE
+        example/Test01.hs
+        example/Test02.hs
+        example/test.sh
+
+Executable:          graphtype
+hs-source-dirs:	     src
+Main-is:             GraphType.hs
+other-modules:
+        Parse
+        OptionParser
+        Text.Dot

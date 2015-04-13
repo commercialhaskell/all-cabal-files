@@ -1,0 +1,33 @@
+name:                haskelldb-connect-hdbc-lifted
+version:             0.1.0.0
+synopsis:            Bracketed HaskellDB HDBC session using lifted-base
+description:         This package includes bracketed HDBC session function
+                     using lifted-base for HaskellDB.
+homepage:            http://twitter.com/khibino
+license:             BSD3
+license-file:        LICENSE
+author:              Kei Hibino <ex8k.hibino@gmail.com>
+maintainer:          Kei Hibino <ex8k.hibino@gmail.com>
+category:            Database
+build-type:          Simple
+cabal-version:       >=1.8
+
+library
+  exposed-modules:     Database.HaskellDB.Connect.HDBC.Lifted
+
+  build-depends:         base < 5
+                       , HDBC
+                       , haskelldb
+                       , haskelldb-connect-hdbc
+                       , transformers-base
+                       , monad-control
+                       , lifted-base
+  hs-source-dirs:      src
+
+source-repository head
+  type:           git
+  location:       git://github.com/khibino/haskelldb-connect-hdbc.git
+
+source-repository head
+  type:           mercurial
+  location:       https://bitbucket.org/khibino/haskelldb-connect-hdbc

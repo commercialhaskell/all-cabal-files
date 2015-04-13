@@ -1,0 +1,80 @@
+name:           protocol-buffers
+version:        1.2.2
+cabal-version:  >= 1.2
+build-type:     Simple
+license:        BSD3
+license-file:   LICENSE
+copyright:      (c) 2008 Christopher Edward Kuklewicz
+author:         Christopher Edward Kuklewicz
+maintainer:     Chris Kuklewicz <protobuf@personal.mightyreason.com>
+stability:      Experimental
+homepage:       http://hackage.haskell.org/cgi-bin/hackage-scripts/package/protocol-buffers
+package-url:    http://darcs.haskell.org/packages/protocol-buffers2/
+synopsis:       Parse Google Protocol Buffer specifications
+description:    Parse proto files and generate Haskell code.
+category:       Text
+Tested-With:    GHC ==6.8.3
+--data-files:     
+extra-source-files: Setup.hs
+                    doc.txt
+                    TODO
+                    README
+                    Skeleton.hs-boot
+                    descriptor.proto
+                    google/protobuf/unittest.proto
+                    google/protobuf/unittest_import.proto
+-- extra-tmp-files:
+
+flag small_base
+    description: Choose the new smaller, split-up base package.
+
+Library
+  ghc-options:  -Wall -O2
+  exposed-modules: Text.ProtocolBuffers
+                   Text.ProtocolBuffers.Basic
+                   Text.ProtocolBuffers.Default
+                   Text.ProtocolBuffers.Extensions
+                   Text.ProtocolBuffers.Get
+                   Text.ProtocolBuffers.Header
+                   Text.ProtocolBuffers.Mergeable
+                   Text.ProtocolBuffers.Reflections
+                   Text.ProtocolBuffers.Unknown
+                   Text.ProtocolBuffers.WireMessage
+                   Text.ProtocolBuffers.Identifiers
+
+  if flag(small_base)
+    build-depends: base == 4.*,
+                   containers,
+                   bytestring,
+                   array,
+                   filepath,
+                   directory,
+                   mtl,
+                   QuickCheck,
+                   binary, parsec, utf8-string, haskell-src,
+                   syb
+  else
+    build-depends: base == 3.*,
+                   containers,
+                   bytestring,
+                   array,
+                   filepath,
+                   directory,
+                   mtl,
+                   binary, parsec, utf8-string, haskell-src,
+                   QuickCheck
+
+-- Most of these are needed for protocol-buffers (Get and WireMessage.hs)
+  extensions:      DeriveDataTypeable,
+                   EmptyDataDecls,
+                   FlexibleInstances,
+                   GADTs,
+                   GeneralizedNewtypeDeriving,
+                   MagicHash,
+                   PatternGuards,
+                   RankNTypes,
+                   ScopedTypeVariables,
+                   TypeSynonymInstances,
+                   MultiParamTypeClasses,
+                   FlexibleContexts,
+                   FunctionalDependencies

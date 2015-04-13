@@ -1,0 +1,45 @@
+name:           assert
+version:        0.0.1.0
+synopsis:       Helpers for Control.Exception.assert
+description:
+    GHC supports compile-time toggling of run-time assertions via the
+    @-fignore-asserts@ flag, which only effects a behavioural change in
+    'Control.Exception.assert'. Furthermore the reported location only gives
+    the use site of the aforementioned, making it difficult to abstract over
+    and hence cumbersome to use.
+    .
+    This package aims to make assertions more convenient, and also provides
+    a rule to rewrite assertions to 'id' when @-fignore-asserts@ is used.
+homepage:       https://github.com/liyang/assert
+license:        BSD3
+license-file:   LICENSE
+author:         Liyang HU
+maintainer:     assert@liyang.hu
+copyright:      © 2013 Liyang HU
+category:       Control
+build-type:     Simple
+cabal-version:  >= 1.8
+stability:      experimental
+
+source-repository head
+    type:       git
+    location:   http://github.com/liyang/assert
+
+library
+    hs-source-dirs: src
+    exposed-modules:
+        Control.Exception.Assert
+    build-depends:
+        base >= 4 && <= 9000
+    ghc-options: -Wall
+
+test-suite rewrite
+    type: exitcode-stdio-1.0
+    hs-source-dirs: tests
+    main-is: rewrite.hs
+    build-depends: assert, base, Cabal, directory, filepath,
+        system-posix-redirect >= 1.0.0.1
+    ghc-options: -Wall -fignore-asserts
+
+-- vim: et sw=4 ts=4 sts=4:
+

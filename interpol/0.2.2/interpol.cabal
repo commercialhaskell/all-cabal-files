@@ -1,0 +1,44 @@
+Name:           interpol
+Version:        0.2.2
+Cabal-Version:  >= 1.6
+License:        GPL-3
+License-File:   LICENSE
+Stability:      experimental
+Author:         Alexandru Scvortov <scvalex@gmail.com>
+Maintainer:     scvalex@gmail.com
+Homepage:       https://github.com/scvalex/interpol
+Category:       Source-tools, Language
+Synopsis:       GHC preprocessor and library to enable variable interpolation in strings
+Build-type:     Simple
+Description:
+        This preprocessor enables variable interpolation in strings.
+        Alternatively, the library may be used.
+        .
+        See the README.md file for details.
+
+Extra-source-files:     Makefile,
+                        Test/JustShow.hs,
+                        Test/NoImport.hs,
+                        Test/NoWarn.hs,
+                        Test/One.hs,
+                        Test/Pure.hs,
+                        Test/PureString.hs,
+                        Test/Simple.hs,
+                        Test/Standalone.hs,
+                        Test/String.hs,
+                        Test/Unit.hs
+
+Data-files:             README.md, NEWS.md
+
+Source-repository head
+  Type:                 git
+  Location:             git://github.com/scvalex/interpol.git
+
+Executable interpol
+  Build-Depends:        base >= 4 && <5, syb, haskell-src-exts, regex-posix
+  Main-Is:              Main.hs
+
+Library
+  Build-Depends:         base >= 4 && <5
+  Ghc-options:           -Wall
+  Exposed-modules:       Text.Interpol

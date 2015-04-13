@@ -1,0 +1,36 @@
+Name:          natural-numbers
+Version:       0.0.0.0
+Cabal-Version: >= 1.6
+Build-Type:    Simple
+License:       BSD3
+License-File:  LICENSE
+Copyright:     © 2010 Brandenburgische Technische Universität Cottbus;
+               © 2012 Wolfgang Jeltsch
+Author:        Wolfgang Jeltsch
+Maintainer:    wolfgang@cs.ioc.ee
+Stability:     provisional
+Homepage:      http://darcs.wolfgang.jeltsch.info/haskell/natural-numbers
+Package-URL:   http://hackage.haskell.org/packages/archive/natural-numbers/0.0.0.0/natural-numbers-0.0.0.0.tar.gz
+Synopsis:      Natural numbers
+Description:   This package provides a type of all natural numbers, that is, non-negative integers.
+               .
+               In contrast to the @naturals@ package, it does not use an “indeterminate natural” to
+               represent underflows, but raises errors on underflows. We think this is more
+               reasonable, as this “indeterminate natural” is not really a natural.
+Category:      Data, Math
+Tested-With:   GHC == 7.0.4
+
+Source-Repository head
+    type:     darcs
+    location: http://darcs.wolfgang.jeltsch.info/haskell/natural-numbers/main
+
+Source-Repository this
+    type:     darcs
+    location: http://darcs.wolfgang.jeltsch.info/haskell/natural-numbers/main
+    tag:      natural-numbers-0.0.0.0
+
+Library
+    Build-Depends:   base >= 3.0 && < 5
+    Extensions:      GeneralizedNewtypeDeriving
+    Exposed-Modules: Data.Natural
+    HS-Source-Dirs:  src

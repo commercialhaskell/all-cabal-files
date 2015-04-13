@@ -1,0 +1,34 @@
+name:             hspec-expectations-pretty
+version:          0.1
+synopsis:         hspec-expectations with pretty printing on failure
+description:      Use exactly the same as hspec-expectations. Require a PrettyTerm instance for anything under expectation. To start with you can define a Pretty instance and then just write: instance PrettyTerm YourData using wl-pprint-extras and wl-pprint-terminfo.
+
+license:          MIT
+license-file:     LICENSE
+copyright:        (c) 2013 Greg Weber
+author:           Daggerboard Inc, makers of docmunch.com
+maintainer:       Greg Weber <greg@gregweber.info>
+build-type:       Simple
+category:         Testing
+cabal-version:    >= 1.8
+homepage:         https://github.com/hspec/hspec-expectations#readme
+
+source-repository head
+  type: git
+  location: https://github.com/hspec/hspec-expectations
+
+library
+  ghc-options:
+      -Wall
+  extensions:
+      CPP
+  build-depends:
+      base < 4.8
+    , hspec-expectations
+    , wl-pprint-terminfo
+    , wl-pprint-extras
+    , deepseq
+  hs-source-dirs:
+      .
+  exposed-modules:
+      Test.Hspec.Expectations.Pretty

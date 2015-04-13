@@ -1,0 +1,30 @@
+Name:                colour
+Version:             0.0.0
+x-revision: 1
+Cabal-Version:       >= 1.2
+License:             OtherLicense
+License-file:        LICENSE
+Author:              Russell O'Connor
+Maintainer:          roconnor@theorem.ca
+Build-Type:          Simple
+Category:            data
+Synopsis:            A colour model for human vision
+Description:         This package provides a data type for colours.
+                     Colours can be blended and composed.
+                     Various colour spaces are supported.
+                     A module of colour names ("Data.Colour.Names") is provided.
+Tested-with:         GHC == 6.8.2
+extra-source-files:  Tests.hs README
+
+Library
+  Build-Depends:     base < 4.5
+  Exposed-Modules:   Data.Colour
+                     Data.Colour.SRGB
+                     Data.Colour.CIE
+                     Data.Colour.Names
+                     Data.Colour.Rec601
+                     Data.Colour.Rec709
+  Other-Modules:     Data.Colour.Internal
+                     Data.Colour.Chan
+                     Data.Colour.Luma
+                     Data.Colour.Matrix

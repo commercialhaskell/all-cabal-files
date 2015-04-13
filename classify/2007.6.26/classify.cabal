@@ -1,0 +1,16 @@
+Name: classify
+Version: 2007.6.26
+Copyright: 2004-2007, Lemmih
+Build-Depends: base, mtl
+License: BSD3
+Author: Lemmih <lemmih@gmail.com>
+Maintainer: Lemmih <lemmih@gmail.com>
+Homepage: http://www.scannedinavian.org/~lemmih/
+Synopsis: Library for classification of files.
+Category: Tool
+HS-Source-Dirs: src
+Exposed-Modules:
+  Data.Classify.DataTypes,
+  Data.Classify.Rank,
+  Data.Classify.Parser,
+  Data.Classify.Printer

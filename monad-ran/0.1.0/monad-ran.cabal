@@ -1,0 +1,22 @@
+name:                   monad-ran
+version:                0.1.0
+build-type:             Simple
+license:                BSD3
+license-file:           LICENSE
+category:               Control, Monads
+author:                 Edward Kmett
+copyright:              (c) Edward Kmett 2009
+maintainer:             Edward Kmett <ekmett@gmail.com>
+stability:              experimental
+synopsis:               Fast monads and monad transformers
+cabal-version:          >= 1.6
+description:            Fast implementations of monads and monad transformers using right Kan extensions
+
+library
+    ghc-options:        -O2 -fspec-constr -funbox-strict-fields
+    build-depends:      
+        base >= 4.0 && < 4.2, 
+        mtl >= 1.1 && < 1.2,
+        ghc-prim >= 0.1 && < 0.2
+    exposed-modules:    
+        Control.Monad.Ran

@@ -1,0 +1,19 @@
+Name:                sexpr
+Version:             0.1.1
+Cabal-Version:	     >= 1.2
+Synopsis:            S-expression printer and parser 
+Description:         Parser and printer for S-expressions, including Ron 
+		     Rivest's Canonical S-expressions.  These are used in 
+		     SDSI and SPKI, and are generally useful for 
+		     cryptographic operations over structured data.
+Category:            Codec
+License:             BSD3
+License-file:        LICENSE
+Author:              Brian Sniffen
+Maintainer:          bts@evenmere.org
+Build-type: 	     Simple
+
+Library
+    Build-Depends: base, base64-string, pretty
+    Exposed-modules: Codec.Sexpr, Codec.Sexpr.Parser, Codec.Sexpr.Printer
+

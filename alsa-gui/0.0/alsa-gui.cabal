@@ -1,0 +1,68 @@
+Name:          alsa-gui
+Version:       0.0
+Maintainer:    Henning Thielemann <alsa@henning-thielemann.de>
+Author:        Henning Thielemann <alsa@henning-thielemann.de>
+Category:      Sound, Music, GUI
+License:       BSD3
+License-file:  LICENSE
+Homepage:      http://www.haskell.org/haskellwiki/ALSA
+Stability:     Experimental
+Build-Type:    Simple
+Cabal-Version: >= 1.8
+Synopsis:      Some simple interactive programs for sending MIDI control messages via ALSA
+Description:
+  Some simple interactive programs for sending MIDI control messages via ALSA.
+  The GUI uses wxHaskell.
+  Currently we provide these programs:
+  .
+  * Send @All Notes Off@ and @All Sounds Off@ events.
+  .
+  * Show several sliders, that trigger sending MIDI controller messages.
+  .
+  * Show a list widget, that triggers MIDI program changes.
+
+Source-Repository head
+  type:     darcs
+  location: http://code.haskell.org/alsa/gui/
+
+Source-Repository this
+  type:     darcs
+  location: http://code.haskell.org/alsa/gui/
+  tag:      0.0
+
+Executable alsa-midi-mode
+  Main-Is: mode.hs
+  Other-Modules: Common
+  Hs-Source-Dirs: src
+  GHC-Options: -Wall -threaded
+  Build-Depends:
+    wx >=0.12.1.6 && <0.13,
+    midi-alsa >=0.1.1 && <0.2,
+    midi >=0.1.6 && <0.2,
+    alsa-seq >=0.5.1 && <0.6,
+    alsa-core >=0.5 && <0.6,
+    base >=3 && <5
+
+Executable alsa-midi-program
+  Main-Is: program.hs
+  Other-Modules: Common
+  Hs-Source-Dirs: src
+  GHC-Options: -Wall -threaded
+  Build-Depends:
+    wx >=0.12.1.6 && <0.13,
+    wxcore >=0.12.1.6 && <0.13,
+    alsa-seq >=0.5.1 && <0.6,
+    alsa-core >=0.5 && <0.6,
+    base >=3 && <5
+
+Executable alsa-midi-controller
+  Main-Is: controller.hs
+  Other-Modules: Common
+  Hs-Source-Dirs: src
+  GHC-Options: -Wall -threaded
+  Build-Depends:
+    wx >=0.12.1.6 && <0.13,
+    wxcore >=0.12.1.6 && <0.13,
+    alsa-seq >=0.5.1 && <0.6,
+    alsa-core >=0.5 && <0.6,
+    base >=3 && <5

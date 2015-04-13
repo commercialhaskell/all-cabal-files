@@ -1,0 +1,91 @@
+name:           critbit
+version:        0.0.0.0
+homepage:       https://github.com/bos/critbit
+bug-reports:    https://github.com/bos/critbit/issues
+synopsis:       Crit-bit maps and sets
+description:
+    Whee.
+license:        BSD3
+license-file:   LICENSE
+author:         Bryan O'Sullivan <bos@serpentine.com>
+maintainer:     Bryan O'Sullivan <bos@serpentine.com>
+copyright:      2013 Bryan O'Sullivan
+category:       Data
+build-type:     Simple
+cabal-version:  >= 1.8
+extra-source-files:
+    README.markdown
+
+flag developer
+  description: operate in developer mode
+  default: False
+
+library
+  exposed-modules:
+    Data.CritBit.Map.Lazy
+  other-modules:
+    Data.CritBit.Core
+    Data.CritBit.Types.Internal
+    Data.CritBit.Tree
+
+  build-depends:
+    base >= 4 && < 5,
+    bytestring >= 0.9,
+    deepseq,
+    text >= 0.11.3.1,
+    vector
+
+  ghc-options: -Wall -funbox-strict-fields -O2 -fwarn-tabs
+  if flag(developer)
+    ghc-prof-options: -auto-all
+    ghc-options: -Werror
+    cpp-options: -DASSERTS
+
+test-suite tests
+  type:           exitcode-stdio-1.0
+  hs-source-dirs: tests
+  main-is:        Main.hs
+  if impl(ghc >= 7.4)
+    other-modules:  Properties
+
+  ghc-options:
+    -Wall -threaded -rtsopts
+
+  build-depends:
+    base >= 4 && < 5,
+    bytestring,
+    containers,
+    critbit,
+    QuickCheck >= 2.4,
+    test-framework >= 0.4,
+    test-framework-quickcheck2 >= 0.2,
+    text
+
+benchmark benchmarks
+  type:           exitcode-stdio-1.0
+  hs-source-dirs: benchmarks
+  main-is:        Benchmarks.hs
+  ghc-options:    -O2 -rtsopts
+
+  build-depends:
+    base >= 4 && < 5,
+    bytestring,
+    bytestring-trie,
+    containers,
+    critbit,
+    criterion >= 0.8,
+    deepseq,
+    hashable < 1.2,
+    mtl,
+    mwc-random,
+    text,
+    unordered-containers,
+    vector
+
+source-repository head
+  type:     git
+  location: https://github.com/bos/critbit
+
+source-repository head
+  type:     mercurial
+  location: https://bitbucket.org/bos/critbit

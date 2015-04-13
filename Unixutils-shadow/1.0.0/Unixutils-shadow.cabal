@@ -1,0 +1,20 @@
+Name:           Unixutils-shadow
+Version:        1.0.0
+License:        BSD3
+License-File:	COPYING
+Author:         Jeremy Shaw, David Fox
+Homepage:       http://src.seereason.com/haskell-unixutils-shadow
+Category:	System
+Synopsis:       A simple interface to shadow passwords (aka, shadow.h)
+Maintainer:     jeremy@n-heptane.com
+Description:
+ Provides the ability to read a user entry from the shadow password database
+Build-type:	Simple
+Cabal-Version: >= 1.2
+
+Library 
+    Build-Depends:  base >= 4 && <5,
+                    unix
+    ghc-options:	-O2
+    Exposed-modules:
+        System.Unix.Shadow

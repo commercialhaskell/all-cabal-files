@@ -1,0 +1,16 @@
+cabal-version: >= 1.2
+name: bindings
+synopsis:
+  Deprecated package.
+version: 0.1.2
+license: BSD3
+license-file: LICENSE
+maintainer: none
+author: Maurício C. Antunes
+build-type: Simple
+category: FFI
+stability: Deprecated
+library
+  build-depends: base >=3 && < 5
+  exposed-modules:
+    Bindings.Deprecated

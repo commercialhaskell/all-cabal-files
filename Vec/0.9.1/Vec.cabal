@@ -1,0 +1,42 @@
+Name:                Vec
+Version:             0.9.1
+License:             BSD3
+License-file:        LICENSE
+Author:              Scott E. Dillard
+Maintainer:          Scott E. Dillard <sedillard@gmail.com>
+Stability:           Experimental
+Synopsis:            Fixed-length lists and low-dimensional linear algebra.
+Description:         
+   Vectors are represented by lists with type-encoded lengths. The constructor
+   is @:.@, which acts like a cons both at the value and type levels, with @()@
+   taking the place of nil. So @x:.y:.z:.()@ is a 3d vector. The library
+   provides a set of common list-like functions (map, fold, etc) for working
+   with vectors. Built up from these functions are a small but useful set of
+   linear algebra operations: matrix multiplication, determinants, solving
+   linear systems, inverting matrices.
+Cabal-version:       >=1.2
+Build-type:          Simple
+Category:            Data,Math
+
+library
+    Build-Depends:      base
+
+    Exposed-modules:    Data.Vec 
+                        Data.Vec.Base,
+                        Data.Vec.LinAlg,
+                        Data.Vec.Nat,
+                        Data.Vec.Instances
+                        Data.Vec.Packed
+    Extensions: 
+                        BangPatterns,
+                        EmptyDataDecls,
+                        ExistentialQuantification,
+                        FlexibleInstances, 
+                        FlexibleContexts,
+                        FunctionalDependencies,
+                        MultiParamTypeClasses, 
+                        NoMonomorphismRestriction,
+                        ScopedTypeVariables,
+                        TypeOperators, 
+                        TypeSynonymInstances,
+                        UndecidableInstances

@@ -1,0 +1,32 @@
+name:                metric
+version:             0.1.4
+synopsis:            Metric spaces.
+license:             MIT
+license-file:        LICENSE
+author:              Vikram Verma
+maintainer:          me@vikramverma.com
+category:            Data
+build-type:          Simple
+cabal-version:       >=1.8
+
+library
+  exposed-modules:   Data.Metric,
+                     Data.Metric.Class,
+                     Data.Metric.Set,
+                     Data.Metric.String,
+                     Data.Metric.Vector.Real
+  hs-source-dirs:    src
+  other-modules:     Control.Applicative.Extras,
+                     Data.Default.Instances.EditDistance,
+                     Data.Function.Extras,
+                     Data.List.Extras,
+                     Data.Vector.Extras,
+                     Data.Packed.Matrix.Extras
+  other-extensions:  GADTs
+  build-depends:     base == 4.*, vector, hmatrix, edit-distance, data-default
+
+test-suite metric-tests:
+  type:              exitcode-stdio-1.0
+  main-is:           Main.hs
+  hs-source-dirs:    test
+  build-depends:     base == 4.*, vector, metric, QuickCheck, test-framework, test-framework-quickcheck2

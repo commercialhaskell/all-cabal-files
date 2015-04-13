@@ -1,0 +1,33 @@
+name:          uuagd
+version:       0.1.0.0
+synopsis:      A debugger for the UUAG system.
+homepage:      https://github.com/matthijssteen/uuagd
+license:       OtherLicense
+license-file:  LICENSE
+author:        Matthijs Steen <matthijssteen1990@gmail.com>
+maintainer:    Matthijs Steen <matthijssteen1990@gmail.com>
+category:      Development
+stability:     Experimental
+build-type:    Simple
+cabal-version: >= 1.8
+data-files:
+  uuagd-1.0.jar
+
+library
+  build-depends:
+    base >= 4 && < 5,
+    template-haskell >= 2.8,
+    blaze-html >= 0.6,
+    hamlet >= 1.1
+  hs-source-dirs: src
+  exposed-modules:
+    UUAGD.CodeGen,
+    UUAGD.Html.Renderer,
+    UUAGD.Html.CodeGen
+
+executable uuagd
+  build-depends:
+    base >= 4 && < 5,
+    process >= 1.0
+  hs-source-dirs: src
+  main-is: Main.hs

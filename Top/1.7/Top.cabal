@@ -1,0 +1,95 @@
+name:                   Top
+version:                1.7
+synopsis:               Constraint solving framework employed by the Helium Compiler.
+homepage:               http://www.cs.uu.nl/wiki/bin/view/Helium/WebHome
+description:
+
+  At its most general, Top is a framework for constructing abstract interpretations 
+  which focuses on giving good feedback on why an abstract interpretation does not give 
+  any useful information. In a mathematical notation this is usually made explicit by 
+  returning the top element of a (complete) lattice. This is also one of the reasons 
+  for the name of the project.
+
+category:               Constraints
+copyright:              (c) 2012
+license:                GPL
+license-file:           LICENSE.txt
+author:                 Bastiaan Heeren, Jurriaan Hage
+maintainer:             helium@cs.uu.nl
+stability:              provisional
+extra-source-files:     CREDITS.txt
+build-type:             Simple
+cabal-version:          >= 1.10.1.0
+tested-with:            GHC == 7.0.2, GHC == 7.0.3, GHC == 7.4.1
+
+source-repository head
+  type:     svn
+  location: https://subversion.cs.uu.nl/repos/staff.jur.Top/trunk
+
+--------------------------------------------------------------------------------
+
+Executable topsolver
+  Build-Depends:     base >= 3 && < 5, containers, mtl, parsec
+  ghc-options:       -Wall
+  default-language:  Haskell98
+  hs-source-dirs:    src
+  Main-is:           TopSolver.hs
+
+Library
+  Build-Depends:     base >= 3 && < 5, containers, mtl
+  ghc-options:       -Wall
+  default-language:  Haskell98
+  hs-source-dirs:    src
+  Exposed-modules:
+    Top.Constraint
+    Top.Constraint.Equality
+    Top.Constraint.Information
+    Top.Constraint.Polymorphism
+    Top.Constraint.Qualifier
+    Top.Implementation.Basic
+    Top.Implementation.FastSubstitution
+    Top.Implementation.General
+    Top.Implementation.Overloading
+    Top.Implementation.SimpleSubstitution
+    Top.Implementation.TypeGraph.ApplyHeuristics
+    Top.Implementation.TypeGraph.Basics
+    Top.Implementation.TypeGraph.Class
+    Top.Implementation.TypeGraph.ClassMonadic
+    Top.Implementation.TypeGraph.DefaultHeuristics
+    Top.Implementation.TypeGraph.EquivalenceGroup
+    Top.Implementation.TypeGraph.Heuristic
+    Top.Implementation.TypeGraph.Path
+    Top.Implementation.TypeGraph.Standard
+    Top.Implementation.TypeGraphSubstitution
+    Top.Implementation.TypeInference
+    Top.Interface.Basic
+    Top.Interface.Qualification
+    Top.Interface.Substitution
+    Top.Interface.TypeInference
+    Top.Monad.Select
+    Top.Monad.StateFix
+    Top.Ordering.Tree
+    Top.Ordering.TreeWalk
+    Top.Solver
+    Top.Solver.Greedy
+    Top.Solver.PartitionCombinator
+    Top.Solver.SwitchCombinator
+    Top.Solver.TypeGraph
+    Top.Types
+    Top.Types.Classes
+    Top.Types.Kinds
+    Top.Types.Primitive
+    Top.Types.Qualification
+    Top.Types.Quantification
+    Top.Types.Schemes
+    Top.Types.Substitution
+    Top.Types.Synonym
+    Top.Types.Unification
+    Top.Util.Embedding
+    Top.Util.Empty
+    Top.Util.Option
+  Other-modules:
+    Utils
+
+--------------------------------------------------------------------------------
+

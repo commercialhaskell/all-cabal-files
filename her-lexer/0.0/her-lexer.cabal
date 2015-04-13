@@ -1,0 +1,24 @@
+name:               her-lexer
+version:            0.0
+homepage:           http://personal.cis.strath.ac.uk/~conor/pub/she
+synopsis:           A lexer for Haskell source code.
+description:
+    This is a simple lexer which converts Haskell source code into tolkins and back to ordinary haskell again.
+category:           Language
+license:            PublicDomain
+license-file:       LICENCE
+author:             Conor McBride
+maintainer:         Timothy Hobbs<timothyhobbs@seznam.cz>
+cabal-version:      >= 1.6
+build-type:         Simple
+
+library
+    exposed-modules:    Language.Haskell.Her.HaLay
+                        Language.Haskell.Her.Parsley
+    build-depends:      base >=3 && < 5,
+                        mtl >=2 && <3
+    hs-source-dirs:     src    
+
+source-repository head
+  type:    git 
+  location: https://github.com/timthelion/her-lexer.git

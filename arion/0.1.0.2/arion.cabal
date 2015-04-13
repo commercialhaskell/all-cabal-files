@@ -1,0 +1,60 @@
+name:                arion
+version:             0.1.0.2
+synopsis:            Watcher and runner for Hspec
+description:         Watcher and runner for Hspec
+license:             PublicDomain
+license-file:        LICENSE
+author:              Karun Ramakrishnan
+maintainer:          karun012@gmail.com
+homepage:            http://github.com/karun012/arion
+category:            Testing
+build-type:          Simple
+cabal-version:       >=1.10
+
+source-repository head
+  type: git
+  location: https://github.com/karun012/arion
+
+
+executable arion
+  main-is:             Main.hs
+  build-depends:       base >=4.6 && <4.7,
+                       fsnotify ==0.1.0.3,
+                       filemanip,
+                       system-filepath,
+                       containers,
+                       regex-posix,
+                       split,
+                       text,
+                       safe,
+                       process >= 1.2.0.0,
+                       directory,
+                       transformers
+  other-modules:       Arion.Runner,
+                       Arion.Types,
+                       Arion.EventProcessor,
+                       Arion.Help,
+                       Arion.Utilities
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+  ghc-options:         -threaded
+
+test-suite test
+  default-language:    Haskell2010
+  HS-Source-Dirs:      test, src
+  build-depends:       base >=4.6 && <4.7,
+                       hspec,
+                       fsnotify ==0.1.0.3,
+                       filemanip,
+                       time,
+                       system-filepath,
+                       containers,
+                       regex-posix,
+                       split,
+                       text,
+                       safe,
+                       process >= 1.2.0.0,
+                       directory
+  type:                exitcode-stdio-1.0
+  ghc-options:         -threaded
+  main-is:             Spec.hs

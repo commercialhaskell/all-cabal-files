@@ -1,0 +1,26 @@
+name: phonetic-code
+version: 0.1
+cabal-version: >= 1.2
+build-type: Simple
+license: BSD3
+license-file: COPYING
+copyright: Copyright © 2008 Bart Massey
+author: Bart Massey
+maintainer: bart@cs.pdx.edu
+stability: alpha
+homepage: http://wiki.cs.pdx.edu/bartforge/phonetic-code
+package-url: http://wiki.cs.pdx.edu/cabal-packages/phonetic-code-0.1.tar.gz
+synopsis: Phonetic codes: Soundex and Phonix
+description: 
+
+   This package implements the "phonetic coding" algorithms
+   Soundex and Phonix.  A phonetic coding algorithm
+   transforms a word into a similarity hash based on an
+   approximation of its sounds.  Thus, similar-sounding
+   words tend to have the same hash.
+
+category: Text, Natural Language Processing
+tested-with: GHC == 6.8.3
+
+exposed-modules: Text.PhoneticCode.Soundex, Text.PhoneticCode.Phonix
+build-depends: base, containers, array

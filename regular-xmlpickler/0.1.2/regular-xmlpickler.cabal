@@ -1,0 +1,24 @@
+Name:             regular-xmlpickler
+Version:          0.1.2
+Description:      Generic generation of HXT XmlPickler instances using Regular.
+Synopsis:         Generic generation of HXT XmlPickler instances using Regular.
+Category:         XML, Data
+Cabal-Version:    >= 1.6
+Author:           typLAB
+Copyright:        (c) 2009, typLAB
+Maintainer:       code@typlab.com
+Homepage:         http://github.com/typLAB/regular-xmlpickler
+License:          BSD3
+License-File:     LICENSE
+Build-Type:       Simple
+
+Library
+  Build-Depends:    base == 4.*
+                  , hxt >=8.3 && < 9.1
+                  , regular >= 0.2 && < 0.4
+  
+  HS-Source-Dirs:   src
+  GHC-Options:      -Wall -fno-warn-orphans
+  Exposed-Modules:  Generics.Regular.XmlPickler,
+                    Generics.Regular.XmlPickler.Function,
+                    Generics.Regular.XmlPickler.Instances

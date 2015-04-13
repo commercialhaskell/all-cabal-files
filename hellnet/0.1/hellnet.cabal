@@ -1,0 +1,39 @@
+Name: hellnet
+Version: 0.1
+Synopsis: Simple, distributed, anonymous data sharing network.
+Author: Voker57
+Maintainer: voker57@gmail.com
+Build-type: Simple
+Cabal-version: >= 1.4
+License: GPL-3
+License-file: COPYING
+Homepage: http://bitcheese.net/wiki/hellnet/hspawn
+Description: Hellnet is a project to create simple, distributed, anonymous data sharing network.
+Category: Network
+library
+ Exposed-Modules: Hellnet
+  Hellnet.Crypto
+  Hellnet.Files
+  Hellnet.Utils
+  Hellnet.Storage
+  Hellnet.Meta
+  Hellnet.Network
+  Hellnet.URI
+ Build-Depends: base >= 4.2 && < 5, Crypto, bytestring, pretty, filepath, directory, haskell98, HTTP >= 4000, hjpath >= 2.0, hjson >= 1.1, safe >= 0.2, old-locale, time, unix, parsec >= 3.0.0, random, process, utf8-string, RSA, uri >= 0.1.2
+Executable hell-insert
+ Main-is: hell-insert.hs
+ Build-Depends: base
+Executable hell-get
+ Main-is: hell-get.hs
+ Build-Depends: regex-posix
+Executable hell-meta
+ Main-is: hell-meta.hs
+Executable hell-nodes
+ Main-is: hell-nodes.hs
+ Build-Depends: base
+Executable hell-fsck
+ Main-is: hell-fsck.hs
+ Build-Depends: base
+Executable hell-serve
+ Main-is: hell-serve.hs
+ Build-depends: Lucu >=0.4.1, network, mtl, containers

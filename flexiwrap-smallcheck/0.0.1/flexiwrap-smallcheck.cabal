@@ -1,0 +1,32 @@
+Name:            flexiwrap-smallcheck
+Version:         0.0.1
+Cabal-version:   >= 1.2.3
+Build-Type:      Simple
+Synopsis:        SmallCheck (Serial) instances for flexiwrap
+Description:     SmallCheck (Serial) instances for flexiwrap
+Category:        Data
+License:         BSD3
+License-File:    LICENSE
+Author:          Iain Alexander <ia@stryx.demon.co.uk>
+Maintainer:      Iain Alexander <ia@stryx.demon.co.uk>
+Build-Type:      Simple
+Extra-source-files:   .ghci
+                    , Data/Flex/Serial/SmallCheck/Wrap.hs
+                    , README
+                    , CHANGES
+                    , TODO
+Tested-with:     GHC==6.4.1, GHC==6.6.1, GHC==6.8.3, GHC==6.10.4, GHC==6.12.3
+               , GHC==7.0.1, GHC==7.0.4
+Library
+    Exposed-Modules:     Data.Flex.Serial
+                       , Data.Flex.Serial.Wrap
+    if impl(ghc < 6.6.1)
+        Extensions:      UndecidableInstances
+        Build-Depends:  special-functors < 2
+    if impl(ghc < 6.8.1)
+        Ghc-options:     -fglasgow-exts
+    if impl(ghc >= 6.8.1)
+        Extensions:      TypeOperators, KindSignatures
+    Build-Depends:   base < 5, data-type >= 0.1 && < 0.2, mtl < 2.1
+                   , flexiwrap < 0.2, smallcheck >= 0.4
+-- vim: expandtab:tabstop=4:shiftwidth=4

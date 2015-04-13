@@ -1,0 +1,39 @@
+Name:                ety
+Version:             0.1
+Synopsis:            Random etymology online entry.
+Description:         Retrieve random etymology online entries. Library and program.
+License:             BSD3
+License-file:        LICENSE
+Author:              Chris Done <chrisdone@gmail.com>
+Maintainer:          Chris Done <chrisdone@gmail.com>
+Copyright:           Chris Done 2012
+Category:            Web
+Build-type:          Simple
+Cabal-version:       >=1.6
+
+Source-repository head
+  type: git
+  location: https://github.com/chrisdone/ety
+
+Library
+  Hs-source-dirs:   src
+  Exposed-modules:  Language.English.EtymologyOnline
+  Build-depends:    base > 4 && < 5,
+                    curl,
+                    xml,
+                    utf8-string,
+                    text-icu,
+                    random,
+                    bytestring
+
+Executable ety
+  Hs-source-dirs: src
+  Main-is:        Main.hs
+  Other-modules:  Language.English.EtymologyOnline
+  Build-depends:  base > 4 && < 5,
+                  curl,
+                  xml,
+                  utf8-string,
+                  text-icu,
+                  random,
+                  bytestring

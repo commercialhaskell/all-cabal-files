@@ -1,0 +1,21 @@
+name: tcache-AWS
+version: 0.0.1
+cabal-version: >=1.2
+build-type: Simple
+license: BSD3
+license-file: LICENSE
+copyright: Alberto Gómez Corona
+maintainer: Alberto Gómez Corona
+synopsis: tcache  using Amazon Web Services as default persistence mechanism
+description: See examples in "Data.TCache.AWS"
+category: database
+author: Alberto Gómez Corona
+data-dir: ""
+
+library
+    build-depends: TCache -any, aws -any, base > 2 && < 6, bytestring -any,
+                   conduit -any, http-conduit -any, network -any, text -any
+    exposed-modules: Data.TCache.AWS
+    exposed: True
+    buildable: True
+    hs-source-dirs: src

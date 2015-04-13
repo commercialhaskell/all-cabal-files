@@ -1,0 +1,40 @@
+name:                HRay
+version:             1.2.1
+synopsis:            Haskell raytracer
+description:         HRay is a ray tracing application written in Haskell as part of my
+                     masters thesis at Ghent University. 
+
+		     It currently supports spheres, planes and metaballs (thanks to Jean-Phillipe Bernardy).
+
+                     For more information, see the homepage or the Haskell wiki entry:
+                     <http://haskell.org/haskellwiki/HRay>.
+category:            Graphics
+license:             BSD3
+license-file:        LICENSE
+author:              boegel
+maintainer:          boegel <kenneth [dot] hoste [at] [dot] ugent [dot] be>
+homepage:            http://boegel.kejo.be/ELIS/Haskell/HRay/
+
+build-depends:       base>3 && <5, array, directory, haskell98
+build-type:          Simple
+data-files:          readme.txt,
+                     -- and some files to experiment with
+                     scenes/shadow2.hry, scenes/perlinShowFire.hry,
+                     scenes/shadow0.hry, scenes/perlinShowSemiTurb.hry,
+                     scenes/perlinShowTurb.hry, scenes/mirror.hry,
+                     scenes/shadow1.hry, scenes/perlin0.hry,
+                     scenes/perlin1.hry, scenes/trans2.hry,
+                     scenes/perlinShowSolid.hry, scenes/circles.hry,
+                     scenes/trans1.hry, scenes/perlinShowMarble.hry,
+                     scenes/trans0.hry, scenes/perlinShowMarbleBase.hry,
+                     scenes/perlinShowWood.hry, scenes/perlinShowPlasma.hry
+extra-source-files:  HRayGUI.lhs
+tested-with:         GHC==6.12.3
+
+executable:          HRay
+main-is:             HRayMain.lhs
+other-modules:       HRayEngine, HRayOutput, PixBufExtras,
+                     HRayMath, HRayPerlin, HRayParser
+
+ghc-options:         -Wall
+ghc-prof-options:    -prof -auto-all

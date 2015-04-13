@@ -1,0 +1,20 @@
+Name:           simple-server
+Version:        0.0.1
+License:        GPL
+License-File:   LICENSE
+Author:	        Joseph Collard
+Stability:      experimental
+Maintainer:	jcollard@unm.edu
+Category:       Network
+Synopsis:       Simple Server interface
+Description:    This library provides a very simple interface for creating a server that sends and recieves ByteString messages and attempts to remove concurrency so the programmer can focus on the functionality of the server. A simple ChatServer example is available in the Examples module
+Cabal-Version:  >= 1.4
+Build-Type:     Simple
+
+Library
+  Build-Depends:  base>=4 && <5, bytestring>=0.9.2.1, concurrent-extra>=0.7.0.5, hashtables>=1.0.1.7, time>=1.4.0.2, containers>=0.4.2.1, network>=2.4.1.0, unbounded-delays>=0.1.0.5
+  Extensions:     ConstraintKinds
+  Exposed-Modules:
+                  Network.SimpleServer
+                  Network.SimpleServer.Examples.ChatClient
+                  Network.SimpleServer.Examples.ChatServer

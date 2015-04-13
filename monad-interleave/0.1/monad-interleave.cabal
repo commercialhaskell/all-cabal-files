@@ -1,0 +1,21 @@
+name:            monad-interleave
+version:         0.1
+homepage:        http://github.com/patperry/monad-interleave
+synopsis:        Monads with an unsaveInterleaveIO-like operation.
+description:
+    A type class for monads that have an \"unsafeInterleave\" operation.
+    Instances are provided for IO and both strict and lazy ST.
+category:        Monads
+license:         BSD3
+license-file:    LICENSE
+copyright:       (c) 2009. Patrick Perry <patperry@stanford.edu>
+author:          Patrick Perry
+maintainer:      Patrick Perry <patperry@stanford.edu>
+cabal-version: >= 1.2.0
+build-type:      Custom
+tested-with:     GHC ==6.10.1
+
+library
+    exposed-modules: Control.Monad.Interleave
+    build-depends:   base
+    ghc-options:     -Wall

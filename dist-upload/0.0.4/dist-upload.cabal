@@ -1,0 +1,35 @@
+name:			dist-upload
+version:		0.0.4
+Cabal-Version:	>= 1.6
+license:		GPL-3
+license-file:	LICENSE
+copyright:		(c) 2010 Andy Stewart
+synopsis:		Generate/Upload cabal package to Hackage.
+description:    "dist-upload" scan .cabal file under current directory to get packageName\/packageVersion (foo.x.y.z), and use command:
+ .
+ > cabal sdist && cabal upload ./dist/foo.x.y.z.tar.gz 
+ .
+ upload package to hackage, best use command "dist-upload" in script to upload package batch.
+ .
+ If you have add hackage username\/password in file `HOME/.cabal/config`, then "dist-upload" can upload package fully automatic. :)
+author:			Andy Stewart
+maintainer:		Andy Stewart <lazycat.manatee@gmail.com>
+stability:		provisional
+category:		Distribution
+
+tested-with:	GHC==6.12.3
+build-type:		Simple
+
+Source-Repository head
+  type:         darcs
+  location:     http://patch-tag.com/r/AndyStewart/dist-upload
+  
+Library
+     build-depends: base >= 4 && < 5, process, filepath, directory, Cabal >= 1.8
+     exposed-modules:
+     other-modules:							
+     extensions:  
+     ghc-options: -fwarn-unused-matches -fwarn-unused-binds -fwarn-unused-imports -fwarn-overlapping-patterns -fwarn-duplicate-exports -fwarn-unrecognised-pragmas -fwarn-hi-shadowing 
+     
+Executable dist-upload
+     main-is: Main.hs

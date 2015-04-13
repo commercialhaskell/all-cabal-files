@@ -1,0 +1,53 @@
+Name: partly
+Author: Tim Dixon <tdixon51793@gmail.com>
+Maintainer: Tim Dixon <tdixon51793@gmail.com>
+Version: 1.0.0.0
+License: BSD3
+License-File: LICENSE.txt
+Copyright: (c) 2012 Tim Dixon
+Category: System, Filesystem
+Synopsis: Inspect, create, and alter MBRs.
+Description: A Haskell library and command-line tool to create, inspect, and alter master boot records.
+Homepage: https://github.com/startling/partly
+Bug-Reports: https://github.com/startling/partly/issues
+Tested-With: GHC == 7.4.2
+Cabal-Version: >= 1.8
+Stability: experimental
+Build-Type: Simple
+Library
+  exposed-modules:
+      System.Disk.Partitions.MBR
+  build-depends:
+      base >= 4 && < 5
+    , bytestring >= 0.9
+    , binary >= 0.6.4.0
+Executable partly
+  main-is: partly.hs
+  other-modules:
+      Partly.View
+    , Partly.Make
+    , Partly.Json
+    , Partly.Common
+  build-depends:
+      aeson >= 0.6
+    , aeson-pretty >= 0.7
+    , vector >= 0.9
+    , base64-bytestring >= 0.1.2.0
+    , optparse-applicative >= 0.4.1
+Test-Suite test-partly-lib
+  type: exitcode-stdio-1.0
+  main-is: test-lib.hs
+  build-depends:
+      QuickCheck >= 2.5
+Test-Suite test-partly-json
+  type: exitcode-stdio-1.0
+  main-is: test-json.hs
+  other-modules:
+      Partly.Json
+    , System.Disk.Partitions.MBR.Gen
+  build-depends:
+      aeson >= 0.6
+    , QuickCheck >= 2.5
+Source-Repository head
+  type: git
+  location: https://github.com/startling/partly.git

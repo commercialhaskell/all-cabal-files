@@ -1,0 +1,42 @@
+Name:              hsc3-lang
+Version:           0.8
+Synopsis:          Haskell SuperCollider Language
+Description:       Haskell library defining operations from the
+                   SuperCollider language class library
+License:           GPL
+Category:          Sound
+Copyright:         (c) Rohan Drape, 2007-2010
+Author:            Rohan Drape
+Maintainer:        rd@slavepianos.org
+Stability:         Experimental
+Homepage:          http://slavepianos.org/rd/?t=hsc3-lang
+Tested-With:       GHC == 6.10.3
+Build-Type:        Simple
+Cabal-Version:     >= 1.6
+
+Data-files:        README
+                   Help/Collection/*.help.lhs
+                   Help/Math/*.help.lhs
+                   Help/Pattern/List/*.help.lhs
+                   Help/Pattern/Step/*.help.lhs
+
+Library
+  Build-Depends:   array,
+                   base == 4.*,
+                   containers,
+                   split,
+                   random
+  GHC-Options:     -Wall -fwarn-tabs
+  Exposed-modules: Sound.SC3.Lang
+                   Sound.SC3.Lang.Collection
+                   Sound.SC3.Lang.Collection.Collection
+                   Sound.SC3.Lang.Collection.Numerical
+                   Sound.SC3.Lang.Collection.SequenceableCollection
+                   Sound.SC3.Lang.Math
+                   Sound.SC3.Lang.Math.Pitch
+                   Sound.SC3.Lang.Pattern.List
+                   Sound.SC3.Lang.Pattern.Step
+
+Source-Repository  head
+  Type:            darcs
+  Location:        http://slavepianos.org/~rd/sw/hsc3-lang/

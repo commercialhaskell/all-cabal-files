@@ -1,0 +1,29 @@
+name:                   dependent-sum
+version:                0.1
+stability:              provisional
+
+cabal-version:          >= 1.6
+build-type:             Simple
+
+author:                 James Cook <mokus@deepbondi.net>
+maintainer:             James Cook <mokus@deepbondi.net>
+license:                PublicDomain
+homepage:               https://github.com/mokus0/dependent-sum
+
+category:               Data, Dependent Types
+synopsis:               Dependent sum type
+description:            Dependent sums and supporting typeclasses for
+                        comparing and formatting them.
+
+extra-source-files:     examples/*.hs
+
+source-repository head
+  type:     git
+  location: git://github.com/mokus0/dependent-sum.git
+
+Library
+  hs-source-dirs:       src
+  exposed-modules:      Data.Dependent.Sum
+                        Data.GADT.Compare
+                        Data.GADT.Show
+  build-depends:        base >= 3 && <5

@@ -1,0 +1,24 @@
+Name:               TreeStructures
+Version:            0.0.2
+Synopsis:           A collection of heaps and search trees
+Description:        This package presently includes binary heaps, binomial heaps, skew heaps, splay trees, and AVL trees.
+License:            BSD3
+License-file:       LICENSE
+Author:             Brendan Hickey
+Maintainer:         Brendan Hickey
+Homepage:           http://www.github.com/bhickey/TreeStructures
+Stability:          Experimental
+Category:           Data Structures
+Build-Type:         Simple
+Cabal-Version:      >=1.2
+
+extra-source-files: Tests.hs README
+
+Library
+  Build-Depends:    base >= 2 && < 4
+  Exposed-modules:  Data.Heap.Binary 
+                    Data.Heap.Binomial 
+                    Data.Heap.Skew
+                    Data.Tree.Splay
+                    Data.Tree.AVL
+  ghc-options:      -Wall

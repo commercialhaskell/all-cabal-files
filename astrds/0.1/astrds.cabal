@@ -1,0 +1,48 @@
+cabal-version: >=1.6
+name:          astrds
+version:       0.1
+license:       BSD3
+license-file:  LICENSE
+data-files:    fonts/*.ttf
+               fonts/*.txt
+               pics/*.png
+               sound/*.ogg
+author:        Clara Loeh <darcs@wuisch.org>,
+               Andres Loeh <ksastrds@andres-loeh.de>
+maintainer:    Clara Loeh <darcs@wuisch.org>
+synopsis:      an incomplete 2d space game
+description:   astrds is an intentionally incomplete 2d space game. The code
+               is intended to be a playground for Haskell programmers who want
+               to add their own features and extensions. The
+               implementation is based on SDL and OpenGL and includes
+               simple audio and joystick support.
+category:      Game
+build-type:    Simple
+
+executable astrds
+  main-is:        Main.hs
+  hs-source-dirs: src
+  other-modules:  Config
+                  Debug
+                  Game
+                  Options
+                  Pic
+                  Render
+                  RenderInterface
+                  RenderTitle
+                  RenderUtil
+                  States
+                  Static
+                  StaticInterface
+                  UInputInterface
+                  UInputUtils
+                  Utilities
+  build-depends:  base >= 3 && < 5, containers >= 0.2 && < 1,
+                  random >= 1 && < 2, mtl >= 1.1 && < 1.2,
+                  directory >= 1 && < 2,
+                  OpenGL >= 2.2 && < 2.3,
+                  SDL >= 0.5 && < 0.6, SDL-ttf >= 0.5 && < 0.6,
+                  SDL-image >= 0.5 && < 0.6,
+                  SDL-mixer >= 0.5 && < 0.6,
+                  unix >= 2.3 && < 3,
+                  MonadRandom >= 0.1 && < 1

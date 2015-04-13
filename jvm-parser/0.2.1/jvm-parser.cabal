@@ -1,0 +1,37 @@
+Name:                jvm-parser
+Version:             0.2.1
+License:             BSD3
+License-file:        LICENSE
+Author:              Galois, Inc.
+Maintainer:          atomb@galois.com
+Copyright:           (c) 2012-2014 Galois Inc.
+Category:            Language
+Build-type:          Simple
+Cabal-version:       >=1.8
+Synopsis:            A parser for JVM bytecode files
+Description:
+  A parser for JVM bytecode (.class and .jar) files
+
+source-repository head
+  type: git
+  location: https://github.com/GaloisInc/jvm-parser.git
+
+Library
+  Hs-source-dirs:      src
+  Exposed-modules:     Language.JVM.CFG
+                       Language.JVM.Common
+                       Language.JVM.JarReader
+                       Language.JVM.Parser
+
+  Ghc-options:         -Wall
+
+  Build-depends:       array,
+                       base       >= 4.0.0.0 && < 5.0.0.0,
+                       binary,
+                       bytestring,
+                       containers,
+                       data-binary-ieee754,
+                       fgl,
+                       fingertree,
+                       zlib,
+                       pretty

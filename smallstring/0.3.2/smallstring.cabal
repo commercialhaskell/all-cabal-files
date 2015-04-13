@@ -1,0 +1,26 @@
+Name:                smallstring
+Version:             0.3.2
+Synopsis:            A Unicode text type, optimized for low memory overhead
+Description:         A Unicode text type, optimized for low memory overhead.
+                     No string manipulation functions are offered.
+                     .
+                     Equality and ordinal comparison aim to be competitive with
+                     the Text type.
+Homepage:            http://community.haskell.org/~aslatter/code/smallstring/
+License:             BSD3
+License-file:        LICENSE
+Author:              Antoine Latter
+Maintainer:          aslatter@gmail.com
+Category:            Data
+Build-type:          Simple
+Cabal-version:       >=1.6
+
+source-repository head
+ type:     darcs
+ location: http://community.haskell.org/~aslatter/code/smallstring
+
+Library
+  Build-depends:       base == 4.*, utf8-string == 0.3.*, smallarray == 0.2.*,
+                       deepseq >= 1.1 && < 1.3, bytestring == 0.9.*, text == 0.11.*,
+                       hashable < 1.2 && >= 1.0.1
+  Exposed-modules:     Data.SmallString

@@ -1,0 +1,63 @@
+Name:                funsat
+Version:             0.4
+Cabal-Version:       >= 1.2
+Description:
+
+    Funsat is a native Haskell SAT solver that uses modern techniques for
+    solving SAT instances.  Current features include two-watched literals,
+    conflict-directed learning, non-chronological backtracking, a VSIDS-like
+    dynamic variable ordering, and restarts.  It is possible to use funsat
+    both as a library and as a standalone executable.
+
+Synopsis:            A modern DPLL-style SAT solver
+Category:            Algorithms
+Stability:           alpha
+License:             LGPL
+License-file:        LICENSE
+Author:              Denis Bueno
+Maintainer:          Denis Bueno <dbueno@gmail.com>
+Build-type:          Simple
+Extra-source-files:  README
+
+
+Executable funsat
+ Main-is:             Main.hs
+ Ghc-options:         -W
+ Extensions:          CPP
+ CPP-options:         -DTESTING
+ Hs-source-dirs:      . tests
+ Other-modules:
+                      Funsat.Solver
+                      Funsat.FastDom
+                      Funsat.Utils
+                      Text.Tabular
+                      DPLL.Monad
+                      Control.Monad.MonadST
+                      Properties
+
+ Build-Depends:       base, parsec, containers, pretty, mtl
+                      , array, QuickCheck, parse-dimacs, bitset
+                      , fgl, time
+
+-- Executable funsat-prof
+--  Main-is:             Main.hs
+--  Ghc-options:         -W -prof -auto-all
+--  Extensions:          CPP
+--  CPP-options:         -DTESTING
+--  Hs-source-dirs:      . tests
+--  Other-modules:       DPLLSat Properties FastDom Utils Text.Tabular DPLL.Monad
+--                       Control.Monad.MonadST
+--  Build-Depends:       base, parsec, containers, pretty, mtl
+--                       , random, array, QuickCheck, parse-dimacs, bitset
+--                       , fgl, time
+
+
+Library
+ Exposed-modules:     Funsat.Solver DPLL.Monad Control.Monad.MonadST Text.Tabular
+ Other-modules:       Funsat.FastDom Funsat.Utils
+ Ghc-options:         -W -funbox-strict-fields
+ Extensions:          CPP
+ Hs-source-dirs:      . tests
+ Build-Depends:       base, parsec, containers, pretty, mtl
+                      , random, array, QuickCheck, parse-dimacs, bitset
+                      , fgl

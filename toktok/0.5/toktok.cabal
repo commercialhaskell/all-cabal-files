@@ -1,0 +1,69 @@
+Name:                toktok
+Version:             0.5
+Description:         An ambiguous tokenizer for GF
+Category:            Natural Language Processing
+License:             GPL
+License-file:        LICENSE
+Author:              Grégoire Détrez <gdetrez@crans.org>
+Maintainer:          Grégoire Détrez <gdetrez@crans.org>
+Build-Type:          Simple
+Cabal-Version:       >=1.2
+
+flag benchmark
+  Description: Build the benchmarking binary
+  Default:     False
+
+flag test
+  Description: Build the tests
+  Default:     False
+
+Executable toktok-benchmark
+  Main-is: Benchmark.hs
+  if !flag(benchmark)
+    buildable: False
+  Build-Depends:
+    criterion,
+    progression,
+    filepath
+  ghc-options: -O2
+
+Executable toktok-test
+  Main-is: tests/Main.hs
+  Hs-source-dirs: ., tests
+  if !flag(test)
+    buildable: False
+  Build-Depends:
+    QuickCheck >= 2,
+    HUnit
+  ghc-options: -O2
+
+Executable toktok
+  Main-is:           Main.hs
+  Build-Depends:     
+    base >= 4.1 && < 5,
+    bytestring,
+    gf,
+    iconv
+  ghc-options: -O2
+
+Executable gf-extract-lexicon
+  Main-is:           ExtractLexicon.hs
+  Hs-Source-Dirs:    tools
+  Build-Depends:     base >= 4.1 && < 5
+  ghc-options: -O2
+
+library
+  build-depends: 
+    base >= 4.1 && < 5,
+    containers,
+    haskell98
+  exposed-modules: 
+    Toktok
+  other-modules:
+    Toktok.Lattice
+    Toktok.Lexer
+    Toktok.Sandhi
+    Toktok.Stack
+    Toktok.Transducer
+    Toktok.Trie
+  ghc-options: -O2

@@ -1,0 +1,41 @@
+Name:                HGamer3D-CAudio-Binding
+Version:             0.1.5
+Synopsis:            Library to enable 3D game development for Haskell - cAudio Bindings
+Description:         
+	Library, to enable 3D game development for Haskell,
+	based on bindings to 3D Graphics, Audio and GUI libraries.
+	THIS MODULE: cAudio Bindings
+    List of features and modules: 
+	  Data Module (Basic Data Types),
+      OGRE Binding (3D Graphics Engine), 
+      OIS Binding (Input System),
+      cAudio Binding (Audio),
+      CEGUI Binding (GUI System),
+      APIs (Haskell style APIs, different ways, to approach API)
+    Platform: Windows only
+	License: Apache License, Version 2.0
+	Install: see http://www.althainz.de/HGamer3D/Download-and-Installation.html
+	
+License:             OtherLicense
+License-file:        LICENSE
+Author:              Peter Althainz
+Maintainer:          althainz@googlemail.com
+Build-Type:          Simple
+Cabal-Version:       >=1.2
+Homepage:            http://www.althainz.de/HGamer3D.html
+Category:            Game
+Extra-source-files:  Setup.hs include/EnumAudioFormats.h,include/EnumDeviceType.h,include/TypeHG3DClass.h,include/TypeVector3.h,include/ClassPtr.h,include/Utils.h,include/CAudioDllDefines.h,include/ClassILogger.h,include/ClassIAudioDeviceList.h,include/ClassIAudioSource.h,include/ClassIAudioManager.h,include/ClassIListener.h,include/ClassIAudioCapture.h
+
+Library
+  Build-Depends:     base >= 3 && < 5, HGamer3D-Data == 0.1.5
+
+  Exposed-modules:   HGamer3D.Bindings.CAudio.EnumAudioFormats,HGamer3D.Bindings.CAudio.EnumDeviceType,HGamer3D.Bindings.CAudio.TypeHG3DClass,HGamer3D.Bindings.CAudio.TypeVector3,HGamer3D.Bindings.CAudio.ClassPtr,HGamer3D.Bindings.CAudio.Utils,HGamer3D.Bindings.CAudio.ClassILogger,HGamer3D.Bindings.CAudio.ClassIAudioDeviceList,HGamer3D.Bindings.CAudio.ClassIAudioSource,HGamer3D.Bindings.CAudio.ClassIAudioManager,HGamer3D.Bindings.CAudio.ClassIListener,HGamer3D.Bindings.CAudio.ClassIAudioCapture
+  Other-modules:     C2HS 
+
+  ghc-options:       
+  cc-options:        -Wno-attributes 
+  hs-source-dirs:    .
+  Include-dirs:      include
+  Build-tools:       
+  build-depends:     haskell98
+  extra-libraries:   HGamer3DCAudio015

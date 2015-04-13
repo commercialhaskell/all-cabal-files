@@ -1,0 +1,32 @@
+name:                syntax-example-json
+version:             0.2.0.0
+synopsis:            Example JSON parser/pretty-printer.
+description:
+  Example JSON parser/pretty-printer.
+  .
+  Source code:
+  .
+  * <https://github.com/Pawel834/syntax-example-json/blob/master/Main.hs Main.hs>
+  .
+  Example input and output:
+  .
+  * <https://github.com/Pawel834/syntax-example-json/blob/master/in.json in.json>
+  * <https://github.com/Pawel834/syntax-example-json/blob/master/out.json out.json>
+license:             MIT
+license-file:        LICENSE
+author:              Paweł Nowak
+maintainer:          Paweł Nowak <pawel834@gmail.com>
+copyright:           Paweł Nowak 2014
+category:            Data
+build-type:          Simple
+cabal-version:       >=1.10
+
+source-repository head
+  type:     git
+  location: git@github.com:Pawel834/syntax-example-json.git
+
+executable syntax-example-json
+  main-is:             Main.hs
+  default-language:    Haskell2010
+  build-depends:       base <5, semi-iso >= 0.5, syntax >= 0.3, syntax-attoparsec, syntax-printer,
+                       containers, text, scientific, lens, attoparsec

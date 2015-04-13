@@ -1,0 +1,23 @@
+Name: brainfuck-monad
+Version: 0.1.0
+Cabal-Version: >= 1.8
+License: BSD3
+Maintainer: Joey Hess <id@joeyh.name>
+Author: Joey Hess
+Stability: Stable
+Copyright: 2014 Joey Hess
+License-File: LICENSE
+Build-Type: Simple
+Category: Compilers/Interpreters
+Synopsis: BrainFuck monad
+Description:
+ This is a BrainFuck monad, for generating brainfuck programs.
+
+Library
+  GHC-Options: -Wall
+  Exposed-Modules: Control.Monad.BrainFuck
+  Build-Depends: base (>= 4.5), base < 5
+
+source-repository head
+  type: git
+  location: git://git.kitenet.net/brainfuck-monad.git

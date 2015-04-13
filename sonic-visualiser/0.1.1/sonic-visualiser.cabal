@@ -1,0 +1,28 @@
+Name:                   sonic-visualiser
+Version:                0.1.1
+Category:		Sound
+License:                GPL
+License-File:		COPYING
+Copyright:              Stefan Kersten, 2007-2008
+Author:                 Stefan Kersten
+Maintainer:             Stefan Kersten <sk@k-hornz.de>
+Stability:              Experimental
+Homepage:               http://darcs.k-hornz.de/cgi-bin/darcsweb.cgi?r=sonic-visualiser;a=summary
+Synopsis:               Sonic Visualiser
+Description:            Library for reading and parsing Sonic Visualiser project files.
+			.
+			Sonic Visualiser is available at <http://sonicvisualiser.org>.
+Tested-With:            GHC
+Build-Type:		Simple
+Build-Depends:          array, base, bytestring, containers, bzlib, mtl, pretty, utf8-string, xml
+Exposed-Modules:        Sound.SonicVisualiser
+Other-Modules:          Sound.SonicVisualiser.File
+                        Sound.SonicVisualiser.Types
+                        Sound.SonicVisualiser.XML
+Hs-Source-Dirs:		src
+GHC-Options:            -Wall
+
+Executable:             svdump
+Main-Is:                svdump.hs
+Hs-Source-Dirs:		src, tools
+GHC-Options:            -Wall

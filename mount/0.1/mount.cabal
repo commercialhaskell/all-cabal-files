@@ -1,0 +1,17 @@
+Name:		mount
+Version:	0.1
+Cabal-Version:	>= 1.2
+License:	GPL
+License-File:	LICENSE
+Author:		Nicola Squartini
+Maintainer:	tensor5@gmail.com
+Synopsis:	Mounts and umounts filesystems
+Category:	System
+Bug-Reports:	mailto:tensor5@gmail.com
+Build-Type:	Simple
+Description:	This module provides an interface to the system mount and umount functions.
+
+Library
+  Build-Depends:	base >=4.0 && < 5.0
+  Exposed-Modules:	System.Linux.Mount
+  Extensions:		ForeignFunctionInterface

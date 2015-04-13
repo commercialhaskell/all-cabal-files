@@ -1,0 +1,23 @@
+Name:              hyphenate
+Version:           0.1
+Synopsis:          Text hyphenation algorithm
+Description:       Text hyphenation algorithm
+License:           BSD3
+License-file:      LICENSE
+Category:          Text
+Copyright:         (c) 2007-2009, alpheccar
+Author:            alpheccar
+Maintainer:        rd@slavepianos.org
+Stability:         Experimental
+Homepage:          http://www.alpheccar.org
+Tested-with:       GHC==6.10.1
+Build-type:        Simple
+Cabal-version:     >=1.6
+
+Library
+  Build-Depends:   base, containers
+  GHC-Options:     -Wall -fwarn-tabs
+  Exposed-modules: Text.Hyphenate
+  Other-Modules:   Text.Hyphenate.Trie
+                   Text.Hyphenate.English
+                   Text.Hyphenate.LowLevel

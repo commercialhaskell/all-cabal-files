@@ -1,0 +1,28 @@
+name:                testpattern
+version:             0.1
+homepage:            http://code.haskell.org/~dons/code/testpattern
+license:             BSD3
+license-file:        LICENSE
+author:              Don Stewart
+maintainer:          dons@galois.com
+category:            Graphics
+synopsis:            Display a monitor test pattern
+description:         Display a monitor test pattern.
+                     Useful for callibrating projectors before giving talks.
+                     .
+                     To display the test pattern:
+                     .
+                     $ testpattern
+                     .
+                     You should see something like this:
+                     .
+                     <http://code.haskell.org/~dons/images/test-pattern-1024x768-thumb.png>
+                     .
+                     To close the window, type 'q'.
+cabal-version:       >= 1.2
+build-type:          Simple
+data-files:          test-pattern-1024x768.png
+
+executable testpattern
+    build-depends:   base, gtk, filepath
+    main-is:         Main.hs

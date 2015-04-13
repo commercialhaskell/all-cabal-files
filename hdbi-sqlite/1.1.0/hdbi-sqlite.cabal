@@ -1,0 +1,48 @@
+name:                hdbi-sqlite
+version:             1.1.0
+
+synopsis:            SQlite driver for HDBI
+homepage:            https://github.com/s9gf4ult/hdbi-sqlite
+license:             BSD3
+license-file:        LICENSE
+author:              Aleksey Uymanov
+maintainer:          Aleksey Uymaonov <s9gf4ult@gmail.com>
+category:            Database
+build-type:          Simple
+cabal-version:       >=1.8
+
+source-repository head
+  type:     git
+  location: https://github.com/s9gf4ult/hdbi-sqlite.git
+
+
+library
+
+  exposed-modules:     Database.HDBI.SQlite
+                     , Database.HDBI.SQlite.Implementation
+
+  ghc-options: -Wall
+  ghc-prof-options: -auto-all
+
+  build-depends:       base ==4.5.*
+                     , hdbi >= 1.1.0
+                     , direct-sqlite
+                     , text
+                     , blaze-builder
+                     , bytestring
+
+
+test-suite runtests
+   type: exitcode-stdio-1.0
+   main-is: testsrc/runtests.hs
+   other-modules: Database.HDBI.SQlite.Implementation
+
+   ghc-options:   -Wall -fno-warn-orphans -main-is Runtests
+   build-depends:  base >= 3 && < 5
+                 , blaze-builder
+                 , bytestring
+                 , direct-sqlite
+                 , hdbi >= 1.1.0
+                 , hdbi-tests >= 1.1.0
+                 , test-framework
+                 , text

@@ -1,0 +1,58 @@
+Name:            concurrentoutput
+version:         0.1
+Category:        User Interfaces
+author:          Joachim Breitner
+maintainer:      Joachim Breitner <mail@joachim-breitner.de>
+Synopsis:        Ungarble output from several threads 
+Description:     This library provides a simple interface to output status
+                 messages from more than one thread.
+		 .
+		 It will continue adding information (such as dots, or "done")
+		 to the correct line and continue scrolling when a line is done.
+		 .
+		 For example, this screen:
+		 .
+		 @Thread ThreadId 27: still working... done@
+		 .
+                 @Thread ThreadId 25: still working... @
+		 .
+                 @Thread ThreadId 26: still working... @
+	         .
+		 @_@
+		 .
+		 will, once thread 25 has finished, look like this
+		 .	
+                 @Thread ThreadId 25: still working... done@
+		 .
+		 @Thread ThreadId 27: still working... done@
+		 .
+                 @Thread ThreadId 26: still working... @
+	         .
+		 @_@
+		 .
+		 If standard output is not a terminal, it will only print
+		 complete lines.
+		 .
+		 At the moment, it can only handle lines that are shorter than
+		 the terminal. If they are not, output will be garbled again.
+		 .
+		 
+Cabal-Version:   >= 1.6
+License:         BSD3
+License-File:    LICENSE
+extra-source-files: Test.hs
+Build-Type:      Simple
+
+Library
+        hs-source-dirs: src
+        Exposed-Modules: System.Terminal.Concurrent
+        Build-Depends:  base > 3 && < 4
+
+source-repository head
+  type:     darcs
+  location: http://darcs.nomeata.de/concurrentoutput/
+
+source-repository this
+  type:     darcs
+  location: http://darcs.nomeata.de/darcswatch/
+  tag:      v0.1

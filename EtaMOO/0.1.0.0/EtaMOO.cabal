@@ -1,0 +1,111 @@
+
+name:                EtaMOO
+version:             0.1.0.0
+
+synopsis:            A new implementation of the LambdaMOO server
+
+description:
+
+  LambdaMOO is a network-accessible, multi-user, programmable, interactive
+  system well-suited to the construction of text-based adventure games,
+  conferencing systems, and other collaborative software.
+  .
+  EtaMOO is an experimental multithreaded implementation of LambdaMOO in
+  Haskell with anticipated ready support for 64-bit MOO integers and Unicode
+  MOO strings. The implementation follows the specifications of the LambdaMOO
+  Programmer's Manual, and should be compatible with most LambdaMOO databases
+  as of about version 1.8.3 of the LambdaMOO server code.
+  .
+  /N.B./ This is (currently) incomplete software. It is not yet usable,
+  although with further development it is hoped that it soon will be.
+
+license:             BSD3
+license-file:        LICENSE
+
+copyright:           © 2014 Rob Leslie
+author:              Rob Leslie <rob@mars.org>
+maintainer:          Rob Leslie <rob@mars.org>
+
+stability:           alpha
+category:            Network
+
+build-type:          Simple
+cabal-version:       >=1.8
+
+homepage:            https://github.com/verement/etamoo
+bug-reports:         https://github.com/verement/etamoo/issues
+
+extra-source-files:  README.md configure Makefile
+
+source-repository head
+  type:              git
+  location:          https://github.com/verement/etamoo.git
+
+-- source-repository this
+--   type:     git
+--   location: git://...
+
+flag llvm
+  description: Use GHC's LLVM backend to compile the code
+  default:     False
+
+executable etamoo
+  hs-source-dirs:      src
+  main-is:             etamoo.hs
+
+  other-modules:       MOO.AST
+                       MOO.Builtins
+                       MOO.Builtins.Common
+                       MOO.Builtins.Match
+                       MOO.Builtins.Network
+                       MOO.Builtins.Objects
+                       MOO.Builtins.Tasks
+                       MOO.Builtins.Values
+                       MOO.Command
+                       MOO.Compiler
+                       MOO.Database
+                       MOO.Database.LambdaMOO
+                       MOO.Network
+                       MOO.Object
+                       MOO.Parser
+                       MOO.Task
+                       MOO.Types
+                       MOO.Unparser
+                       MOO.Verb
+                       MOO.Version
+                       Paths_EtaMOO
+
+  ghc-options:         -threaded -rtsopts
+  if flag(llvm)
+    ghc-options:       -fllvm
+
+  extensions:          OverloadedStrings, ForeignFunctionInterface,
+                       EmptyDataDecls, ExistentialQuantification
+
+  if !os(darwin)
+    extra-libraries:   crypt
+  extra-libraries:     pcre
+
+  includes:            unistd.h pcre.h
+
+  build-depends:       array
+                     , base ==4.*
+                     , bytestring
+                     , containers >= 0.4
+                     , haskeline
+                     , mtl
+                     , network
+                     , old-locale
+                     , parsec
+                     , random
+                     , stm
+                     , text
+                     , time
+                     , unix
+                     , unordered-containers
+                     , pureMD5
+                     , transformers
+                     , vector
+
+  build-tools:         hsc2hs
+

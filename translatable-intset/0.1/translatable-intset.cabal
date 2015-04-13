@@ -1,0 +1,27 @@
+Name:			translatable-intset
+Version:        	0.1
+License:        	MIT
+License-File:   	LICENSE
+Copyright:      	(c) 2011 Jannis Harder
+Author:         	Jannis Harder <jannis@harderweb.de>
+Maintainer:     	Jannis Harder <jannis@harderweb.de>
+Category:               Data Structures
+Synopsis:   		Integer sets with a constant time translate operation.
+Description:		
+ 			This package implements integer sets with a
+			constant time translate operation, defined as
+			@translate x s = map (+x) s@. It is based on
+			Finger-Trees storing differences of consecutive
+			entries of the ordered sequence of set elements.
+Cabal-Version:		>= 1.6
+Build-Type:        	Custom
+
+Library
+  Build-Depends:        base >= 4 && < 5, fingertree < 0.1
+  Exposed-Modules:      Data.IntSet.Translatable
+
+-- This is build implicitly by cabal test
+Executable test
+  Buildable:		False
+  Other-Modules:        Data.IntSet.Translatable.Test
+  Main-Is: 		Test.hs

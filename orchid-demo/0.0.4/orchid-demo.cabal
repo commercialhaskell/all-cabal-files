@@ -1,0 +1,24 @@
+Name:             orchid-demo
+Version:          0.0.4
+Description:      Haskell Wiki Demo
+Synopsis:         Haskell Wiki Demo
+Category:         Network, Web
+License:          BSD3
+License-file:     LICENSE
+Author:           Sebastiaan Visser
+Maintainer:       sfvisser@cs.uu.nl
+Build-Type:       Simple
+Build-Depends:    base,
+                  network,
+                  salvia ==0.0.4,
+                  orchid ==0.0.6,
+                  mtl ==1.1.0.2,
+                  Pipe,
+                  stm
+Data-Files:       data.zip
+
+Executable:       orchid-demo
+Main-is:          Demo.hs
+GHC-Options:      -fglasgow-exts -threaded -Wall
+HS-Source-Dirs:   src
+

@@ -1,0 +1,67 @@
+name:          exists
+category:      Constraints
+version:       0.1
+author:        Gábor Lehel
+maintainer:    Gábor Lehel <illissius@gmail.com>
+homepage:      http://github.com/glehel/exists
+copyright:     Copyright (C) 2011 Gábor Lehel
+license:       BSD3
+license-file:  LICENSE
+stability:     experimental
+cabal-version: >= 1.10
+build-type:    Simple
+synopsis:      Existential datatypes holding evidence of constraints
+description:
+    This package contains:
+    .
+        * Existential datatypes for holding evidence of constraints on types of kind @*@ and @* -> *@;
+    .
+        * Type classes for existential datatypes holding evidence of constraints on types of kind @*@ and @* -> *@;
+    .
+        * Completely useless existential datatypes holding evidence of no constraint on types of kind @*@ and @* -> *@;
+    .
+        * Assorted type class instances for the above;
+    .
+        * A type-level combinator for combining constraint constructors.
+    .
+    Some of these should maybe be split off into separate packages.
+    .
+    "Data.Exists" is the important module, the rest are peripheral.
+
+source-repository head
+    type:      git
+    location:  git://github.com/glehel/exists.git
+
+library
+    default-language:
+        Haskell2010
+
+    other-extensions:
+        GADTs
+--        PolyKinds
+        Rank2Types
+        TypeFamilies
+        TypeOperators
+        ConstraintKinds
+        FlexibleInstances
+        UndecidableInstances
+        MultiParamTypeClasses
+
+    exposed-modules:
+        Data.Anything
+        Data.Exists
+        Data.Exists.Defaults
+        Control.Constraint.Combine
+
+    other-modules:
+        Data.Exists.Internal
+
+    build-depends:
+        base          >= 4.5 && < 5,
+        contravariant == 0.1.*,
+        comonad       == 1.1.*,
+        comonads-fd   == 2.0.*,
+        pointed       == 2.0.*
+
+    ghc-options:
+        -Wall

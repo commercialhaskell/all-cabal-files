@@ -1,0 +1,17 @@
+name:                control-event
+version:             0.1
+synopsis:            Event scheduling system.
+description:         Allows scheduling and canceling of IO actions to be
+                     executed at a specified future time.
+category:            Control
+license:             BSD3
+license-file:        LICENSE
+author:              Thomas DuBuisson
+maintainer:          Thomas.DuBuisson@gmail.com
+build-type:          Simple
+build-Depends:       base, old-time, containers >= 0.1, stm
+ghc-options:         DeriveDataTypeable
+exposed-modules:     Control.Event, Control.Event.Timeout
+stability:           alpha
+tested-with:         GHC == 6.8.2
+extra-source-files:  Test/Test.hs

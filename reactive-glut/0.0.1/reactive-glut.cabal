@@ -1,0 +1,41 @@
+Name:                reactive-glut
+Version:             0.0.1
+Cabal-Version:       >= 1.2
+Synopsis:            Connects Reactive and GLUT
+Category:            FRP, graphics
+Description:
+  This package contains an adapter that connects OpenGL/GLUT to the
+  library FRP \"Reactive\".
+  .
+  Project wiki page: <http://haskell.org/haskellwiki/reactive-glut>
+  .
+  The module documentation pages have links to colorized source code and
+  to wiki pages where you can read and contribute user comments.  Enjoy!
+  .
+  &#169; 2008 by Conal Elliott; BSD3 license.
+Author:              Conal Elliott 
+Maintainer:          conal@conal.net
+Homepage:            http://haskell.org/haskellwiki/reactive-glut
+Package-Url:         http://code.haskell.org/reactive-glut
+Copyright:           (c) 2008 by Conal Elliott
+License:             BSD3
+Stability:           experimental
+build-type:          Simple
+
+Library
+  hs-Source-Dirs:      src
+  Extensions:
+  Build-Depends:       base, old-time, OpenGL, GLUT, vector-space, reactive >= 0.8.3
+  Exposed-Modules:     
+                       FRP.Reactive.GLUT.Adapter
+  Other-Modules:
+                       FRP.Reactive.GLUT.SimpleGL
+                       FRP.Reactive.GLUT.UI
+                       Test
+-- Relies on fieldtrip
+--                     FTest
+
+  ghc-options:         -Wall
+
+
+--  ghc-prof-options:    -prof -auto-all 

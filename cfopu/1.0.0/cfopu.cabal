@@ -1,0 +1,27 @@
+name:                cfopu
+version:             1.0.0
+cabal-version:       >= 1.6
+build-type:          Simple
+license:             BSD3
+license-file:        LICENSE
+copyright:           Copyright (C) 2010 Byron James Johnson
+author:              Byron James Johnson
+maintainer:          KrabbyKrap@gmail.com
+synopsis:            cfopu processor
+category:            Compilers/Interpreters
+description:         A cfopu processor that can interpret and process cfopu source
+tested-with:         GHC == 6.12.1
+
+executable cfopu
+  main-is:           Cfopu.hs
+  build-depends:     base >= 4.2.0.0 && < 5, mtl >= 1.1.0.2, containers >= 0.3.0.0, bytestring >= 0.9.1.5, dequeue >= 0.1.5, data-default >= 0.2
+  other-modules:     Data.Memory
+  c-sources:         RTS.c
+  extensions:        ScopedTypeVariables, FlexibleContexts
+  build-tools:       ghc >= 6.12.1
+  buildable:         True
+  ghc-options:       -O2 -threaded
+
+source-repository head
+  type:              darcs
+  location:          http://patch-tag.com/r/bob/cfopu

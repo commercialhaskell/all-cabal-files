@@ -1,0 +1,31 @@
+name:           family-tree
+version:        0.1
+cabal-version:  >= 1.2
+build-type:     Simple
+author:         Nathan "Taneb" van Doorn
+maintainer:     nvd1234@gmail.com
+stability:      Unstable
+synopsis:       Family trees with lenses
+
+description:    This is a module which contains a data type for family trees.
+                .
+                It also includes appropriate lenses!
+category:       Genealogy, Data
+copyright:      (c) 2012 Nathan "Taneb" van Doorn
+license:        OtherLicense
+license-file:  LICENSE
+
+library
+  hs-source-dirs:  src
+  build-depends:   
+                   base >= 4 && < 5,
+                   text,
+                   containers,
+                   unordered-containers,
+                   bytestring,
+                   time,
+                   data-lens,
+                   binary
+  ghc-options:     -Wall
+  exposed-modules: Data.FamilyTree
+

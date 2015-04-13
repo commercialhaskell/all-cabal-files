@@ -1,0 +1,31 @@
+Name:                to-haskell
+Version:             0.3.0
+Cabal-Version:       >= 1.6
+Synopsis:            A type class and some utilities for generating Haskell code.
+Category:            Language
+Description:
+  A type class and some utilities for generating Haskell code.
+Author:              Conal Elliott
+Maintainer:          conal@conal.net
+Homepage:            https://github.com/conal/to-haskell
+Copyright:           (c) 2012 by Conal Elliott
+License:             BSD3
+License-File:        COPYING
+Stability:           experimental
+build-type:          Simple
+
+source-repository head
+  type:     git
+  location: git://github.com/conal/to-haskell.git
+
+Library
+  hs-Source-Dirs:      src
+  Extensions:
+  Build-Depends:       base<5, containers, transformers, haskell-src-exts
+  Exposed-Modules:     
+                       Language.NameSupply
+                       Language.Haskell.Exts.ToHaskell
+                       
+  ghc-options:         -Wall
+
+--  ghc-prof-options:    -prof -auto-all 

@@ -1,0 +1,34 @@
+name:          iso8601-time
+version:       0.1.0
+license:       MIT
+copyright:     2013 Niklas Hambüchen <mail@nh2.me>
+author:        Niklas Hambüchen <mail@nh2.me>
+maintainer:    Niklas Hambüchen <mail@nh2.me>
+category:      Time
+build-type:    Simple
+stability:     experimental
+tested-With:   GHC==7.6.3
+cabal-version: >= 1.8
+homepage:      https://github.com/nh2/iso8601-time
+bug-Reports:   https://github.com/nh2/iso8601-time/issues
+synopsis:      Convert to/from the ISO 8601 time format
+description:
+  Conversion functions between Haskell time types and the ISO 8601 format,
+  which is often used for printing times, e.g. JavaScript's @new Date().toISOString()@.
+  .
+  CHANGELOG
+  .
+  Version 0.1.0
+  .
+  * Initial version.
+
+source-repository head
+  type:      git
+  location:  git://github.com/nh2/iso8601-time.git
+
+
+library
+  exposed-modules: Data.Time.ISO8601
+  build-depends:   base < 5, old-locale, time
+  hs-source-dirs:  src
+  ghc-options:     -Wall

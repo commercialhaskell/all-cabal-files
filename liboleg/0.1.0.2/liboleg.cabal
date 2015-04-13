@@ -1,0 +1,46 @@
+name:           liboleg
+version:        0.1.0.2
+license:        BSD3
+license-file:   LICENSE
+author:         Oleg Kiselyov
+maintainer:     Don Stewart <dons@galois.com>
+homepage:       http://okmij.org/ftp/
+category:       Text
+synopsis:       A collection of Oleg Kiselyov's Haskell modules
+description:    A collection of Oleg Kiselyov's Haskell modules (released with his permission)
+build-type:     Simple
+stability:      experimental
+cabal-version:  >= 1.2
+
+library
+    build-depends:
+            base,
+            containers,
+            mtl,
+            unix
+
+    exposed-modules:
+            Data.FDList
+
+            Control.CaughtMonadIO
+
+            Codec.Image.Tiff
+
+            Language.TypeLC
+            Language.TypeFN
+
+            Text.PrintScan
+            Text.PrintScanF
+
+            System.SysOpen
+            System.IterateeM
+            System.LowLevelIO
+            System.RandomIO
+
+    ghc-options:
+            -funbox-strict-fields 
+
+    c-sources:         cbits/sys_open.c
+    include-dirs:      include
+    includes:          sys_open.h
+    install-includes:  sys_open.h

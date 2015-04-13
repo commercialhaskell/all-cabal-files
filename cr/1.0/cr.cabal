@@ -1,0 +1,28 @@
+Name:           cr
+Version:        1.0
+Cabal-Version:  >= 1.8
+License:        GPL-3
+License-File:   LICENSE
+Stability:      experimental
+Author:         Alexandru Scvortov <scvalex@gmail.com>
+Maintainer:     scvalex@gmail.com
+Homepage:       https://github.com/scvalex/cr
+Category:       System, Control, Network
+Synopsis:       Code review tool
+Build-Type:     Simple
+Description:
+        See the @README.md@ file and the homepage for details.
+
+Extra-Source-Files:     Makefile
+
+Data-Files:             README.md, LICENSE
+
+Source-repository head
+  Type:                 git
+  Location:             https://github.com/scvalex/cr.git
+
+Executable cr
+  Build-depends:        base >= 4 && < 5, cmdargs, shelly, text,
+                        process, transformers
+  Main-Is:              Cr.hs
+  Ghc-options:          -Wall

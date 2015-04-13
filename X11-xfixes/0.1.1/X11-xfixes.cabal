@@ -1,0 +1,23 @@
+name:		        X11-xfixes
+version:	        0.1.1
+license:	        MIT
+license-file:	        LICENSE
+copyright:	        Aren Olson, 2011
+maintainer:	        Aren Olson <reacocard@gmail.com>
+homepage:               https://github.com/reacocard/x11-xfixes
+category:	        Graphics
+synopsis:	        A binding to the Xfixes X11 extension library
+description:	        A Haskell binding to the Xfixes X11 extention graphics library.
+	.
+	The binding is a direct translation of the C binding; for
+	documentation of these calls, refer to man xfixes(3)
+cabal-version:          >= 1.4
+build-type:         Simple
+
+Library
+    exposed-modules:    Graphics.X11.Xfixes
+    extensions:	        ForeignFunctionInterface, CPP
+    extra-libraries:    "Xfixes"
+    build-depends:	base >= 3 && < 5, X11
+    ghc-options:        -funbox-strict-fields -Wall -fno-warn-unused-binds
+    ghc-prof-options:   -prof -auto-all

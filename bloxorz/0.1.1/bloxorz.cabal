@@ -1,0 +1,19 @@
+Name:                bloxorz
+Version:             0.1.1
+Synopsis:	     OpenGL Logic Game
+Description:	     Roll the block on the board to the end hole.
+License:             GPL
+Author:              Viktor Devecseri
+Maintainer:	     Viktor Devecseri <devi86@gmail.com>
+Category:            Game
+Build-Type:          Simple
+Cabal-Version:       >= 1.2
+Tested-with:         GHC==6.12.1
+Extra-Source-Files:  README, CHANGELOG, TODO, makefile, Paths_bloxorz.hs.1
+Data-Files:	     data/bg.tga, data/cube.tga, data/floor.tga
+
+Executable bloxorz
+  Executable:          bloxorz
+  Main-is:             Main.hs
+  Build-Depends:       base >= 3 && < 5, OpenGL >= 2.3, GLFW
+  Other-Modules:       Cubezor, Etc, Maps, Quaternion

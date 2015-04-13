@@ -1,0 +1,19 @@
+Name:		FileManip
+Version:	0.2
+License:	LGPL
+License-File:	COPYING.LIB
+Author:		Bryan O'Sullivan <bos@serpentine.com>
+Maintainer:	Bryan O'Sullivan
+Synopsis:	Expressive file and directory manipulation for Haskell.
+Category:	System
+Description:	A Haskell library for working with files and directories.
+		Includes code for pattern matching, finding files,
+		modifying file contents, and more.
+Build-Depends:	base, filepath, mtl, unix
+GHC-Options:    -Wall -O2
+Exposed-Modules:
+	System.FilePath.Find,
+	System.FilePath.Glob,
+	System.FilePath.GlobPattern,
+	System.FilePath.Manip
+Extra-Source-Files: README

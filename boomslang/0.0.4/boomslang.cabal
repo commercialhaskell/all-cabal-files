@@ -1,0 +1,81 @@
+name:        boomslang
+version:     0.0.4
+
+category:    Game
+
+synopsis:    Boomshine clone
+description: A clone of Boomshine (see <http://www.k2xl.com/games/boomshine/>).
+
+author:      Brian Lewis <brian@lorf.org>, Ian Taylor <ian@lorf.org>
+maintainer:  Brian Lewis <brian@lorf.org>, Ian Taylor <ian@lorf.org>
+
+license:     PublicDomain
+
+-- -- -- -- -- -- -- -- -- --
+
+cabal-version: >= 1.6
+build-type:    Simple
+
+-- -- -- -- -- -- -- -- -- --
+
+extra-source-files:
+  src/External/Graphics.hs
+  src/External/Graphics/Rendering.hs
+  src/External/Input/Keyboard.hs
+  src/External/Input/Keyboard/Keys.hs
+  src/External/Input/Mouse.hs
+  src/External/Input/Mouse/Buttons.hs
+  src/External/Time.hs
+  src/Game/Activity.hs
+  src/Game/Entity/Dot.hs
+  src/Game/Entity/Dot/Activity.hs
+  src/Game/Environment.hs
+  src/Game/G.hs
+  src/Game/Level.hs
+  src/Game/Logic.hs
+  src/Game/Score.hs
+  src/Game/State.hs
+  src/Vector.hs
+
+executable boomslang
+  hs-source-dirs:
+    src
+
+  main-is: Main.hs
+
+  if impl(ghc >= 6.12)
+    build-depends:
+      GLFW-b                 == 0.*,
+      MonadRandom            == 0.*,
+      OpenGL                 == 2.5.*,
+      base                   == 4.*,
+      containers             == 0.*,
+      data-accessor          == 0.*,
+      data-accessor-template == 0.*,
+      font-opengl-basic4x6   == 0.*,
+      mtl                    == 1.* || == 2.*
+  else
+    build-depends:
+      GLFW-b                 == 0.*,
+      MonadRandom            == 0.*,
+      OpenGL                 == 2.5.*,
+      base                   == 4.*,
+      containers             == 0.*,
+      data-accessor          == 0.*,
+      data-accessor-template == 0.*,
+      font-opengl-basic4x6   == 0.*,
+      mtl                    == 1.*,
+      template-haskell       == 2.3.*
+
+  ghc-options: -Wall -O2 -funbox-strict-fields
+  if impl(ghc >= 6.8)
+    ghc-options: -fwarn-tabs
+
+  extensions:
+    TemplateHaskell
+
+-- -- -- -- -- -- -- -- -- --
+
+source-repository head
+  type:     git
+  location: git://github.com/bsl/boomslang.git

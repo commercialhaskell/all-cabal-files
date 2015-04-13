@@ -1,0 +1,61 @@
+Name:			AppleScript
+Version:		0.2.0.1
+License:		BSD3
+License-file:		LICENSE
+Author:			Wouter Swierstra <wouter.swierstra@gmail.com>, Reiner Pope <reiner.pope@gmail.com>
+Maintainer:		Reiner Pope <reiner.pope@gmail.com>
+homepage:               https://github.com/reinerp/haskell-AppleScript
+bug-reports:            https://github.com/reinerp/haskell-AppleScript/issues
+Synopsis:		Call AppleScript from Haskell, and then call back into Haskell.
+Description:
+  This package enables you to compile and execute AppleScript code from
+  Haskell, and provides support for this AppleScript code to call back
+  into Haskell. To get started, see "Foreign.AppleScript.Rich".
+Category:		Foreign
+Extra-source-files:	examples/HelloThere.hs
+			, examples/OpenLocation.hs
+                        , examples/Plain.hs
+                        , examples/Rich.hs
+                        , examples/RuntimeError.hs
+                        , examples/SyntaxError.hs
+		        , cbits/RunScript.h
+Build-type:		Simple
+Cabal-Version:          >= 1.6
+
+source-repository head
+  type:                 git
+  location:             git://github.com/reinerp/haskell-AppleScript.git
+
+Library {
+if os(darwin) {
+  Buildable:		True
+  Build-Depends:        base >= 2 && < 5,
+                        bytestring < 0.10,
+                        data-default < 0.4,
+                        text < 0.12,
+                        haskell-src-meta >= 0.5.0.3 && < 0.6,
+                        text-format < 0.4,
+                        network < 2.4,
+                        conduit < 0.3,
+                        directory < 1.2,
+                        template-haskell == 2.7.*,
+                        mtl == 2.0.*
+  Exposed-modules:
+                        Foreign.AppleScript
+                        Foreign.AppleScript.Error
+                        Foreign.AppleScript.Plain
+                        Foreign.AppleScript.Rich
+  Frameworks: 		Carbon
+  Extensions: 		CPP, ForeignFunctionInterface
+  Include-Dirs:         cbits
+  C-Sources: 		cbits/RunScript.c
+  }
+else {
+  Buildable:		False
+  Build-Depends:        base >= 2 && < 5
+  }
+if (impl(ghc >= 6.10.3 && < 6.12))
+{
+  cc-options:	        -msse2
+}
+}

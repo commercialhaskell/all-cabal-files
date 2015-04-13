@@ -1,0 +1,23 @@
+Name:                happstack-dlg
+Version:             0.1
+Cabal-Version:       >= 1.2
+Synopsis:            Cross-request user interactions for Happstack
+Description:         A mechanism for user interactions that extend through
+                     multiple request/response cycles on the Happstack
+                     server, inspired by Chris Eidhof.
+Category:            Web
+Stability:           Experimental
+License:             BSD3
+License-File:        LICENSE
+Author:              Chris Smith
+Maintainer:          Chris Smith <cdsmith@gmail.com>
+Homepage:            http://patch-tag.com/r/cdsmith/happstack-dlg
+Build-Type:          Simple
+
+Library
+    Build-Depends:   base <5, containers, mtl, happstack,
+                     happstack-server, time, random,
+                     template-haskell
+    Exposed-Modules: Happstack.Server.Dialogs,
+                     Happstack.Server.Dialogs.Scaffold
+    Hs-Source-Dirs:  src

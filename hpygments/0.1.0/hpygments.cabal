@@ -1,0 +1,44 @@
+Name:               hpygments
+Version:            0.1.0
+Synopsis:           Highlight source code using Pygments
+Description:
+    Highlight source code using Pygments <http://pygments.org>. This package
+    depends on Pygments and its accompanying @pygmentize@ script.
+License:            MIT
+License-file:       LICENSE
+Author:             David Lazar
+Maintainer:         David Lazar <lazar6@illinois.edu>
+Category:           Text
+Build-type:         Simple
+Cabal-version:      >=1.6
+
+Extra-source-files:
+    README.md
+
+Data-files:
+    pygments_dump_json.py
+
+source-repository head
+  Type:             git
+  Location:         https://github.com/davidlazar/hpygments
+
+Library
+  ghc-options:      -Wall
+
+  Hs-source-dirs:   src
+
+  Exposed-modules:
+    Text.Highlighting.Pygments
+    Text.Highlighting.Pygments.Lexers
+    Text.Highlighting.Pygments.Formatters
+
+  Other-modules:
+    Text.Highlighting.Pygments.JSON
+    Paths_hpygments
+
+  Build-depends:
+    base >= 4 && < 5,
+    bytestring,
+    process,
+    process-extras >= 0.1.3,
+    aeson == 0.6.0.*

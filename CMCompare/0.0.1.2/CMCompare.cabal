@@ -1,0 +1,38 @@
+name:           CMCompare
+version:        0.0.1.2
+author:         Christian Hoener zu Siederdissen, Ivo L. Hofacker
+maintainer:     choener@tbi.univie.ac.at
+copyright:      Christian Hoener zu Siederdissen, Ivo L. Hofacker, 2010
+homepage:       http://www.tbi.univie.ac.at/software/cmcompare/
+category:       Bioinformatics
+synopsis:       Infernal covariance model comparison
+license:        GPL-3
+license-file:   LICENSE
+build-type:     Simple
+stability:      experimental
+cabal-version:  >= 1.4.0
+description:
+                Compares two Infernal covariance models. Returns the common
+                MaxiMin score and the offending RNA sequence. High scores point
+                toward low discriminative power of the two models. Based on:
+                "Discriminatory Power or RNA Family Models, Hoener zu
+                Siederdissen and Hofacker, 2010, accepted for eccb10"
+
+extra-source-files:
+  scripts/HighScoreEdges.sh
+  scripts/NeighborGraph.sh
+
+executable hsCMCompare
+  build-depends:
+    base >= 4 && < 5,
+    cmdargs == 0.6.4,
+    array,
+
+    Biobase >= 0.1.0 && < 0.2.0,
+    HsTools >= 0.0.1.1 && < 0.0.2
+
+  main-is:
+    CMCompare.hs
+
+  ghc-options:
+    -O2

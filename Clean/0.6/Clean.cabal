@@ -1,0 +1,21 @@
+name:                Clean
+version:             0.6
+synopsis:            A light, clean and powerful utility library
+description:         A collection of the most useful stuff I've found cleaned up
+		     and bundled in one convenient location
+license:             BSD3
+license-file:        LICENSE
+author:              Marc Coiffier
+maintainer:          marc.coiffier@gmail.com
+-- copyright:           
+category:            Control
+build-type:          Simple
+cabal-version:       >=1.8
+
+library
+  hs-source-dirs: src
+  exposed-modules:     Clean Clean.Core Clean.Functor Clean.Applicative Clean.Monad Clean.Arrow Clean.Foldable Clean.Traversable Clean.Lens
+  other-modules:       Clean.Classes 
+  build-depends:       base ==4.6.*, containers
+  ghc-options:         -W
+  extensions:          TypeSynonymInstances, NoMonomorphismRestriction, StandaloneDeriving, GeneralizedNewtypeDeriving, TypeOperators, RebindableSyntax, FlexibleInstances, FlexibleContexts

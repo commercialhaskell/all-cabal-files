@@ -1,0 +1,21 @@
+Name:            ParserFunction
+Version:         0.0.2
+License:         BSD3
+License-file:    LICENSE
+Author:          Enzo Haussecker
+Maintainer:      Enzo Haussecker <ehaussecker@gmail.com>
+Synopsis:        Enzo Haussecker's algorithm for parsing functions.
+Description:     The centerpiece of this package is a function called "evaluate" (exported from Text.ParserCombinators.Parsec.EvaluateFunction), which parses a function (in the form of a string) and evaluates it at a given point. Examples of this function can be found by viewing the source code for this module.
+Build-Depends:   base, parsec, containers
+stability:       Provisional
+Category:        Parsing
+build-type:      Simple
+cabal-version:   >= 1.2
+tested-with:     GHC ==6.8.2
+
+Exposed-modules: 
+	Text.ParserCombinators.Parsec.ParserFunction
+	Text.ParserCombinators.Parsec.EvaluateFunction
+	Text.ParserCombinators.Parsec.Functions
+
+

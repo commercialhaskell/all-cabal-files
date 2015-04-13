@@ -1,0 +1,60 @@
+-------------------------------------------------------------------------------
+--- $Id: xilinx-lava.cabal#25 2010/10/12 23:36:02 REDMOND\\satnams $
+-------------------------------------------------------------------------------
+Name:            xilinx-lava
+Version:         5.0.1.8
+License:         BSD3
+License-file:    LICENSE
+Author:          Satnam Singh
+Maintainer:      Satnam Singh <s.singh@ieee.org>
+Bug-reports:	 Satnam Singh <s.singh@ieee.org>
+Synopsis:        The Lava system for Xilinx FPGA design with layout combinators.
+Copyright:	 Satnam Singh, 2013.
+Build-Type:      Simple
+Description:	 A libray for generating circuits for Xilinx FPGAs with layout.
+Stability:       Experimental
+Category:        Hardware
+Build-Type:      Simple
+Package-URL:     http://www.raintown.org/lava
+cabal-version:    >= 1.8
+Library 
+  Build-Depends:	 array, base >= 4 && <= 5, mtl, directory, old-time, process
+  Exposed-modules: Lava,
+                   Lava.Adder,
+                   Lava.Comparator,
+                   Lava.Diagnostics,
+                   Lava.ISE,
+                   Lava.OneBitAdder,
+                   Lava.OneBitSubtractor
+                   Lava.Subtractor
+                   Lava.Virtex2,
+                   Lava.Virtex4,
+                   Lava.Virtex5,
+                   Lava.Virtex6
+  Other-modules:   Lava.ApplyLayout, 
+                   Lava.Col,
+                   Lava.Combinators, 
+                   Lava.Components,
+                   Lava.ComputeNetDrivers,
+                   Lava.ComputeNetlist, 
+                   Lava.Gates, 
+                   Lava.CircuitGraphToVHDL, 
+                   Lava.Instantiate,
+                   Lava.LUTGates,
+                   Lava.Middle,
+                   Lava.Netlist,
+                   Lava.NetlistToEDIF,
+                   Lava.OverlayTile,
+                   Lava.PortRange,
+                   Lava.Ports,
+                   Lava.PrimitiveGates,
+                   Lava.RPM, 
+                   Lava.Utils,
+                   Lava.Version
+Executable report_par
+  Main-is:	 tools/ReportPar.hs
+  Build-Depends:	 base >= 4.2 && <= 5, directory
+Executable implement
+  Main-is:	 Implement.hs
+  Build-Depends:	 base >= 4 && <= 5, process, directory
+  Other-Modules: Lava.ISE

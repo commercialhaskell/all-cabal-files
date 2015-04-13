@@ -1,0 +1,22 @@
+Name:            fclabels
+Version:         0.3.0
+Author:          Sebastiaan Visser, Erik Hesselink
+Synopsis:        First class accessor labels.
+Description:     First class labels that act as bidirectional records fields.
+                 The labels are fully composable and can be used to get, set
+                 and modify part of datatypes in a consistent way. The label
+                 datatype, conveniently called `:->', is an instance of the
+                 `Category' type class, so is has a proper identity and
+                 composition. The library has support for automatically
+                 deriving labels from record selectors that start with an
+                 underscore.
+Maintainer:      Sebastiaan Visser <sfvisser@cs.uu.nl>
+License:         BSD3
+License-File:    LICENCE
+Category:        Data
+Build-Type:      Simple
+Cabal-Version:   >= 1.6
+Exposed-Modules: Data.Record.Label
+Other-Modules:   Data.Record.Label.TH
+Build-Depends:   base >= 3 && < 5, template-haskell >= 2.2 && < 2.4, monads-fd ==0.0.*
+

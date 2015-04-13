@@ -1,0 +1,34 @@
+name:          usb
+version:       0.1
+cabal-version: >=1.6
+build-type:    Simple
+license:       BSD3
+license-file:  LICENSE
+copyright:     2009 Bas van Dijk
+author:        Bas van Dijk
+maintainer:    Bas van Dijk <v.dijk.bas@gmail.com>
+stability:     experimental
+category:      System
+synopsis:      Communicate with USB devices
+description:   This library enables you to communicate with USB devices from
+               userspace. It is implemented as a high-level wrapper around
+               bindings-libusb which is a low-level binding to the C library:
+               libusb-1.*.
+
+source-repository head
+  Type: darcs
+  Location: http://code.haskell.org/~basvandijk/code/usb
+
+Library
+  GHC-Options: -O2 -Wall
+  build-depends: base            >= 4 && < 4.2
+               , bytestring      == 0.9.*
+               , text            == 0.4.*
+               , bindings-libusb == 1.1.*
+  exposed-modules: System.USB
+                     System.USB.Initialization
+                     System.USB.DeviceHandlingAndEnumeration
+                     System.USB.Descriptors
+                     System.USB.IO.Synchronous
+                     System.USB.Exceptions
+  other-modules: System.USB.Internal

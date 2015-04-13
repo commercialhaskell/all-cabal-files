@@ -1,0 +1,45 @@
+name:         hgeometric
+version:      0.0.1
+license:      GPL
+license-file: COPYING.txt
+copyright:    Copyright (C) 2007, 2008 Marco Túlio Gontijo e Silva
+              Copyright (C) 2007 Rafael Cunha de Almeida
+author:       Marco Túlio Gontijo e Silva
+              Rafael Cunha de Almeida
+maintainer:   malebria@riseup.net
+
+stability: experimental
+category: Algebra
+synopsis: A geometric library with bindings to GPC.
+description:
+    hgeometric is a geometric library with bindings to the General Polygon
+    Clipper Library (GPC), a flexible and highly robust polygon set operations
+    library. GPC is free for non-comercial use and can be obtained at
+    <http://www.cs.man.ac.uk/~toby/alan/software/>. hgeometric also include
+    some functions to deal with geometric types.
+homepage: ftp://ftp.cs.man.ac.uk/pub/toby/gpc/
+
+build-depends: base, containers
+tested-with: GHC == 6.8.2
+build-type:  Simple
+
+extra-source-files:
+    doc/AUTHORS.txt doc/Style.txt doc/ToDo.txt
+    doc/UpstreamBugs/Haddock.Debian.txt
+    doc/UpstreamBugs/Cabal/Clean.txt doc/UpstreamBugs/Cabal/GHCi.txt
+    tests/Tests.hs tests/runTests.sh tests/FileTestInput.gpf tests/tarballs.sh
+extra-tmp-files:
+    Algebra/Geometric/Strip.chi Algebra/Geometric/Strip.h
+    Algebra/Geometric/Clip.chi Algebra/Geometric/Clip.h
+    Algebra/Geometric/Polygon.chi Algebra/Geometric/Polygon.h
+    Algebra/Geometric/Polygon/File.chi Algebra/Geometric/Polygon/File.h
+    Algebra/Geometric/Contour.chi Algebra/Geometric/Contour.h
+exposed-modules:
+    Algebra.Geometric,
+    Algebra.Geometric.Strip, Algebra.Geometric.Clip,
+    Algebra.Geometric.Polygon, Algebra.Geometric.Polygon.File,
+    Algebra.Geometric.Contour, Algebra.Geometric.Area
+
+ghc-options: -Wall
+include-dirs: .
+extra-libraries: gpcl

@@ -1,0 +1,26 @@
+name:                hetris
+version:             0.1
+synopsis:            Text Tetris
+description:         This is a simple reimplementation of Tetris which
+                     uses the Curses interface to run in a terminal.
+category:            Game
+license:             GPL
+license-file:        LICENSE
+author:              Ian Lynagh
+maintainer:          Ian Lynagh <igloo@earth.li>
+homepage:            http://web.comlab.ox.ac.uk/oucl/work/ian.lynagh/Hetris/
+
+build-depends:       base>3, random, array, old-time
+build-type:          Simple
+data-files:          README, TECH, TODO
+tested-with:         GHC==6.8.2
+
+executable:          hetris
+main-is:             Hetris.lhs
+hs-source-dirs:      src
+other-modules:       Board, Data, Input, Output, Pieces, UI, Curses
+c-sources:           wrap.c
+extra-libraries:     curses
+
+ghc-options:         -O2 -Wall -optl-Wl,-s
+ghc-prof-options:    -prof -auto-all

@@ -1,0 +1,20 @@
+Name: hask-home
+Version: 2006.3.23
+Copyright: Bjorn Bringert 2006
+Maintainer: bjorn@bringert.net
+Author: Bjorn Bringert
+Homepage: http://www.cs.chalmers.se/~bringert/darcs/hask-tags/doc/
+License: BSD3
+Build-depends: haskell98, base, Cabal, xhtml
+Synopsis: Generate homepages for cabal packages
+Description:
+ This program generates simple homepages for cabalized 
+ Haskell packages.
+
+Executable:  hask-home
+Main-Is:     hask-home.hs
+ghc-options: -O2
+
+Executable:  hask-home-upload
+Main-Is:     hask-home-upload.hs
+ghc-options: -O2

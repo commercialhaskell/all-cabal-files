@@ -1,0 +1,27 @@
+Name:              stringsearch
+Version:           0.2
+x-revision: 1
+Description:       Fast search of ByteStrings
+Category:          Text, Data, Search
+License:           BSD3
+License-file:      LICENSE
+Author:            Daniel Fischer, Chris Kuklewicz
+Maintainer:        bos@serpentine.com
+Cabal-version:     >= 1.2
+
+Flag splitBase
+  Description:     Choose the new, split-up base package.
+
+Library
+  -- Fails due to -Werror for GHC 7.x with
+  -- -fbang-patterns is deprecated: use -XBangPatterns or pragma {-# LANGUAGE BangPatterns #-} instead
+
+  if flag(splitBase)
+    Build-depends: base >= 3 && < 4.3, array, bytestring
+  else
+    Build-depends: base < 3
+  Exposed-modules: Data.ByteString.Search.BoyerMoore
+                   Data.ByteString.Search.KnuthMorrisPratt
+  Extensions:      CPP
+  ghc-options:     -O2 -Wall -Werror
+  nhc98-options:   -K4M

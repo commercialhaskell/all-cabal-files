@@ -1,0 +1,23 @@
+Name:                ProbabilityMonads
+Version:             0.1.0
+Synopsis:            Probability distribution monads.
+Description:         Tools for random sampling, explicit enumeration of possible
+                     outcomes, and applying Bayes' rule.  Highly experimental,
+                     and subject to change.  In particular, the
+                     Data.Probability API is rather poor and could stand an
+                     overhaul.
+License:             BSD3
+License-file:        LICENSE
+Category:            Control
+Author:              Eric Kidd <haskell@randomhacks.net>
+Maintainer:          Eric Kidd <haskell@randomhacks.net>
+Stability:           experimental
+Build-Depends:       base, mtl, MaybeT, MonadRandom
+Exposed-modules:     Data.Probability.Base,
+                     Data.Probability,
+                     Data.Probability.Rational,
+                     Control.Monad.MonoidValue,
+                     Control.Monad.Distribution.Base,
+                     Control.Monad.Distribution,
+                     Control.Monad.Distribution.Rational
+ghc-options:         -Wall -fno-warn-orphans -O

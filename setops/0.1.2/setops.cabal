@@ -1,0 +1,15 @@
+name: setops
+version: 0.1.2
+cabal-version: >=1.6
+build-type: Simple
+stability: provisional
+author: Eelis <eelis@eelis.net>
+maintainer: Eelis <eelis@eelis.net>
+license: PublicDomain
+category: Data
+synopsis: Uniform names (and Unicode operators) for set operations on data structures.
+description: Uniform names (and Unicode operators) for set operations on data structures.
+
+library
+  exposed-modules: Data.SetOps
+  build-depends: base >= 3.0.3.1 && < 6, containers

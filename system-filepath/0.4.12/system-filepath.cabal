@@ -1,0 +1,70 @@
+name: system-filepath
+version: 0.4.12
+x-revision: 1
+synopsis: High-level, byte-based file and directory path manipulations
+license: MIT
+license-file: license.txt
+author: John Millikin <jmillikin@gmail.com>
+maintainer: John Millikin <jmillikin@gmail.com>
+copyright: John Millikin 2010-2012
+build-type: Custom
+cabal-version: >= 1.8
+category: System
+stability: experimental
+homepage: https://john-millikin.com/software/haskell-filesystem/
+bug-reports: mailto:jmillikin@gmail.com
+description:
+  THIS PACKAGE IS DEPRECATED, AND NO LONGER MAINTAINED. Users of
+  GHC >= 7.4 should use the native file path handling, which now
+  supports paths containing arbitrary bytes. Users of older GHC
+  versions should upgrade to GHC >= 7.4.
+
+source-repository head
+  type: git
+  location: https://john-millikin.com/code/haskell-filesystem/
+
+source-repository this
+  type: git
+  location: https://john-millikin.com/code/haskell-filesystem/
+  tag: system-filepath_0.4.12
+
+library
+  ghc-options: -Wall -O2
+  hs-source-dirs: lib
+
+  build-depends:
+      base >= 4.0 && < 5.0
+    , bytestring >= 0.9
+    , deepseq >= 1.1 && < 1.4
+    , text >= 0.7.1
+
+  if os(windows)
+    cpp-options: -DCABAL_OS_WINDOWS
+
+  if os(darwin)
+    cpp-options: -DCABAL_OS_DARWIN
+
+  exposed-modules:
+    Filesystem.Path
+    Filesystem.Path.CurrentOS
+    Filesystem.Path.Rules
+
+  other-modules:
+    Filesystem.Path.Internal
+
+test-suite filesystem_path_tests
+  type: exitcode-stdio-1.0
+  main-is: FilesystemPathTests.hs
+
+  ghc-options: -Wall -O2
+  cc-options: -Wall
+  hs-source-dirs: tests
+
+  build-depends:
+      base > 4.0 && < 5.0
+    , bytestring
+    , chell >= 0.4 && < 0.5
+    , chell-quickcheck >= 0.2 && < 0.3
+    , QuickCheck
+    , system-filepath
+    , text

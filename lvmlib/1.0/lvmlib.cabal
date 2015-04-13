@@ -1,0 +1,82 @@
+name:                   lvmlib
+version:                1.0
+synopsis:               The Lazy Virtual Machine (LVM).
+homepage:               http://www.cs.uu.nl/wiki/bin/view/Helium/WebHome
+description:
+
+   The Lazy Virtual Machine (LVM) defines a portable instruction set and file
+   format. It is specifically designed to execute languages with non-strict (or
+   lazy) semantics. This cabal package defines the core assembler (coreasm) for 
+   compiling core programs into LVM instructions and a library. The LVM is used 
+   as a backend for the Helium compiler. At the moment, one LVM runtime 
+   implementation is available (written in C). More information about LVM can be 
+   found in Chapter 6 of Daan Leijen's PhD Thesis, The Lambda Abroad.
+
+category:               Compilers/Interpreters
+copyright:              (c) 2012
+license:                BSD3
+license-file:           LICENSE.txt
+author:                 Daan Leijen, Bastiaan Heeren, Jurriaan Hage
+maintainer:             helium@cs.uu.nl
+stability:              provisional
+extra-source-files:     CREDITS.txt
+build-type:             Simple
+cabal-version:          >= 1.10.1.0
+tested-with:            GHC == 7.0.2, GHC == 7.0.3, GHC == 7.4.1
+
+source-repository head
+  type:     svn
+  location: https://svn.science.uu.nl/repos/sci.hage0101.lvm/trunk/src/lib
+
+--------------------------------------------------------------------------------
+
+Executable coreasm
+  Build-Depends:     base >= 3 && < 5, array, containers, directory, parsec, wl-pprint
+  ghc-options:       -Wall
+  default-language:  Haskell98
+  hs-source-dirs:    .
+  Main-is:           Lvm/Core/Main.hs
+
+Library
+  Build-Depends:     base >= 3 && < 5, array, containers, directory, parsec, wl-pprint
+  ghc-options:       -Wall
+  default-language:  Haskell98
+  hs-source-dirs:    .
+  Exposed-modules:
+    Lvm.Asm.Data
+    Lvm.Asm.Inline
+    Lvm.Asm.Occur
+    Lvm.Asm.ToLvm
+    Lvm.Common.Byte
+    Lvm.Common.Id
+    Lvm.Common.IdMap
+    Lvm.Common.IdSet
+    Lvm.Core.Expr
+    Lvm.Core.FreeVar
+    Lvm.Core.LetSort
+    Lvm.Core.Lift
+    Lvm.Core.Module
+    Lvm.Core.NoShadow
+    Lvm.Core.Normalize
+    Lvm.Core.Parsing.Layout
+    Lvm.Core.Parsing.Lexer
+    Lvm.Core.Parsing.Parser
+    Lvm.Core.Parsing.Token
+    Lvm.Core.PrettyId
+    Lvm.Core.RemoveDead
+    Lvm.Core.Saturate
+    Lvm.Core.ToAsm
+    Lvm.Core.Type
+    Lvm.Core.Utils
+    Lvm.Data
+    Lvm.Import
+    Lvm.Instr.Data
+    Lvm.Instr.Resolve
+    Lvm.Instr.Rewrite
+    Lvm.Path
+    Lvm.Read
+    Lvm.Write
+
+
+--------------------------------------------------------------------------------
+

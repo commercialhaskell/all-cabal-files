@@ -1,0 +1,22 @@
+cabal-version: >=1.2
+build-type: Simple
+name: tiger
+version: 1.0
+license: GPL
+license-file: LICENSE
+maintainer: Doaitse Swierstra
+homepage: http://www.cs.uu.nl/wiki/HUT/WebHome
+description: Tiger compiler
+synopsis: Tiger Compiler of Universiteit Utrecht
+category: Compiler
+stability: Experimental
+copyright: Universiteit Utrecht
+extra-source-files: INSTALL, LICENSE
+
+executable tiger
+  build-depends: base >= 3
+  build-depends: haskell98, array
+  build-depends: uulib
+  main-is: Tiger.hs
+  hs-source-dirs: src, derived
+  other-modules: TigerAS, TigerSem, TigerError, TigerScanner, TigerTypes

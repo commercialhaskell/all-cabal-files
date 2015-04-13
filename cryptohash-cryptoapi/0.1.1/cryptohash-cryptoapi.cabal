@@ -1,0 +1,27 @@
+Name:                cryptohash-cryptoapi
+Version:             0.1.1
+Description:         Crypto-api interfaces for cryptohash
+License:             BSD3
+License-file:        LICENSE
+Copyright:           Vincent Hanquez <vincent@snarc.org>
+Author:              Vincent Hanquez <vincent@snarc.org>
+Maintainer:          Vincent Hanquez <vincent@snarc.org>
+Synopsis:            Crypto-api interfaces for cryptohash
+Category:            Cryptography
+Build-Type:          Simple
+Cabal-Version:       >=1.6
+Homepage:            http://github.com/vincenthz/hs-cryptohash-cryptoapi
+data-files:          README.md
+
+Library
+  Build-Depends:     base >= 4 && < 6
+                   , bytestring
+                   , cryptohash >= 0.8.0
+                   , crypto-api >= 0.11
+                   , tagged >= 0.1
+                   , cereal >= 0.2
+  Exposed-modules:   Crypto.Hash.CryptoAPI
+
+source-repository head
+  type:     git
+  location: git://github.com/vincenthz/hs-cryptohash-cryptoapi

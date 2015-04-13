@@ -1,0 +1,40 @@
+Name:                json2
+Version:             0.8.2
+Synopsis:            Library provides support for JSON. 
+Category:            Data, Text, JSON
+Description:         This library provides support for JSON.
+License:             BSD3
+License-file:        LICENSE
+Author:              YuriyIskra
+Maintainer:          YuriyIskra  <iskra.yw@gmail.com>
+Stability:           Experimental
+Copyright:           Copyright (c) 2011 Yuriy Iskra
+Build-type:          Simple
+Cabal-version:       >= 1.6
+
+extra-source-files:
+                     examples/ExampleQuery.hs
+
+library
+  Exposed-modules:
+                     Data.JSON2
+                     Data.JSON2.Pretty
+                     Data.JSON2.Parser
+                     Data.JSON2.Query
+                     Data.JSON2.Blaze
+                     Data.JSON2.Internal
+                     Data.JSON2.Instances.Time
+
+  Build-Depends:     base          >= 4   && < 5,
+                     containers    >= 0.2 && < 1,
+                     old-locale    >= 1,
+                     time          >= 1.1,
+                     mtl           >= 2,
+                     utf8-string   >= 0.3,
+                     bytestring    >= 0.9,
+                     blaze-builder >= 0.3,
+                     parsec        >= 2.0,
+                     pretty        -any,
+                     json2-types   -any
+
+ hs-source-dirs:     src

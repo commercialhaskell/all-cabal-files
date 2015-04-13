@@ -1,0 +1,70 @@
+build-type:	Simple
+cabal-version:	>= 1.8
+
+name:		binary-file
+version:	0.2
+stability:	experimental
+author:		Yoshikuni Jujo <PAF01143@nifty.ne.jp>
+maintainer:	Yoshikuni Jujo <PAF01143@nifty.ne.jp>
+
+license:	BSD3
+license-file:	LICENSE
+
+category:	File
+synopsis:	read/write binary file
+description:
+
+    > runghc -XQuasiQuotes exam.hs some.bmp out.bmp
+    .
+    exam.hs:
+    .
+    > import Binary
+    > import System.Environment
+    >
+    > main = do
+    >	[inf, outf] <- getArgs
+    >
+    >	cnt <- readBinaryFile inf
+    >	let bmp = readBitmap cnt
+    >	print $ readBitmap cnt
+    >
+    >	let out = writeBitmap bmp {
+    >		authorFirst = "Yoshikuni ",
+    >		authorSecond = "Jujo      "
+    >	 }
+    >	writeBinaryFile outf out
+    >
+    > [binary|
+    >
+    > Bitmap
+    >
+    > 2: "BM"
+    > 4: fileSize
+    > 2: 0
+    > 2: 0
+    > 4: offset
+    > 4: 40
+    > 4: bitmapWidth
+    > 4: bitmapHeight
+    > 2: 1
+    > 2: bitsPerPixel
+    > 4: compressionMethod
+    > 4: imageSize
+    > 4: horizontalResolution
+    > 4: verticalResolution
+    > 4: numberOfColors
+    > 4: importantColors
+    > 4[numberOfColors]: colors
+    > bitsPerPixel/8[imageSize*8/bitsPerPixel]: image
+    > 10<String>: authorFirst
+    > 10<String>: authorSecond
+    > 
+    > |]
+    .
+
+library
+    hs-source-dirs:	src
+    exposed-modules:	Binary
+    other-modules:	QuoteBinaryStructure, ParseBinaryStructure, Here
+    build-depends:	base > 3 && < 5, template-haskell, peggy
+    ghc-options:	-Wall

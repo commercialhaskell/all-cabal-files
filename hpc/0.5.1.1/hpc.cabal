@@ -1,0 +1,35 @@
+name:         hpc
+version:      0.5.1.1
+license:      BSD3
+license-file: LICENSE
+author:       Andy Gill
+maintainer:   libraries@haskell.org
+bug-reports: http://hackage.haskell.org/trac/ghc/newticket?component=Code%20Coverage
+category:     Control
+synopsis:     Code Coverage Library for Haskell
+build-type:   Simple
+Cabal-Version: >= 1.6
+
+source-repository head
+    type:     git
+    location: http://darcs.haskell.org/packages/hpc.git/
+
+Flag small_base
+  Description: Choose the new smaller, split-up base package.
+
+Library
+    exposed-modules:
+        Trace.Hpc.Util
+        Trace.Hpc.Mix
+        Trace.Hpc.Tix
+        Trace.Hpc.Reflect
+    extensions: CPP
+    if flag(small_base)
+        Build-Depends: base       >= 3   && < 5,
+                       directory  >= 1   && < 1.2,
+                       old-time   >= 1   && < 1.2,
+                       containers >= 0.1 && < 0.5
+    else
+        Build-Depends: base < 3
+    ghc-options: -Wall
+

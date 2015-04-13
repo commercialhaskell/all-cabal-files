@@ -1,0 +1,36 @@
+Name:           linux-xattr
+Version:        0.1.0.1
+Cabal-Version:  >= 1.8
+Build-Type:     Simple
+License:        BSD3
+License-File:   LICENSE
+Copyright:      © 2013-2014 Nicola Squartini
+Author:         Nicola Squartini
+Maintainer:     Nicola Squartini <tensor5@gmail.com>
+Homepage:       https://github.com/tensor5/linux-xattr
+Bug-Reports:    https://github.com/tensor5/linux-xattr/issues
+Synopsis:       Read, set and list extended attributes
+Category:       System
+Description:
+
+  Bindings to the Linux syscalls for reading and manipulating extended
+  attributes (@setxattr@, @getxattr@, @listxattr@, ...).
+
+Extra-Source-Files:
+  CHANGELOG.md
+  README.md
+
+Source-Repository head
+  Type:      git
+  Location:  git://github.com/tensor5/linux-xattr.git
+
+Source-Repository this
+  Type:      git
+  Location:  git://github.com/tensor5/linux-xattr.git
+  Tag:       v0.1.0.1
+
+Library
+  Build-Depends:        base == 4.*,
+                        bytestring == 0.10.*
+  Ghc-Options:          -Wall
+  Exposed-Modules:      System.Linux.XAttr

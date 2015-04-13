@@ -1,0 +1,47 @@
+cabal-version:      >= 1.6
+build-type:         Simple
+name:               scan
+version:            0.1.0.0
+license:            BSD3
+license-file:       doc/LICENSE
+category:           Development
+author:             chr.maeder@web.de
+maintainer:         chr.maeder@web.de
+copyright:          Christian Maeder 2010
+synopsis:           lexical style suggestions for source code
+description:
+  scan checks the format of your source code. It reports
+  (and partly repairs if given the @-@ option):
+
+  non-ascii characters,
+  tabs or carriage returns,
+  trailing white spaces,
+  backslash at line end,
+  unconventional comment delimiters,
+  too long lines,
+  too many consecutive blank lines,
+  not a single blank between tokens,
+  not a single final newline,
+  no spaces after commas,
+  spaces between parens and infix operators in sections,
+  bad layout (wrt @do@ or @of@).
+
+  It may be useful in conjunction with
+  <http://community.haskell.org/~ndm/hlint/>
+  to give suggestions on how to improve your source code.
+
+  Repairing is not suited for slices (aka @$(...)@) in template haskell or if
+  you like to align your code at @=@ or @->@ in the middle of a line (thus
+  wanting multiple blanks). Furthermore layout may be destroyed by inserting
+  or deleting blanks, but this is an indication for improving layout anyway.
+  Also lines may become too long after inserting blanks.
+
+homepage:           http://projects.haskell.org/style-scanner
+stability:          experimental
+
+executable scan
+    build-depends:      base < 5, parsec < 3 || >= 3
+    hs-source-dirs:     src
+    main-is:            scan.hs
+
+    ghc-options: -Wall

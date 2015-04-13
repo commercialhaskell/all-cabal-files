@@ -1,0 +1,31 @@
+Name:                clckwrks-cli
+Version:             0.2.13
+Synopsis:            a command-line interface for adminstrating some aspects of clckwrks
+Description:         This tool permits browsing of users, changing their roles, and other features.
+Homepage:            http://www.clckwrks.com/
+License:             BSD3
+License-file:        LICENSE
+Author:              Jeremy Shaw
+Maintainer:          jeremy@n-heptane.com
+Copyright:           2012 Jeremy Shaw, SeeReason Partners LLC
+Category:            Clckwrks
+Build-type:          Custom
+Cabal-version:       >=1.6
+
+source-repository head
+    type:     darcs
+    subdir:   clckwrks-cli
+    location: http://hub.darcs.net/stepcut/clckwrks
+
+Executable clckwrks-cli
+  Main-is:
+     Main.hs
+
+  Build-depends:
+     acid-state >= 0.12 && < 0.13,
+     base        < 5,
+     clckwrks   >= 0.12 && < 0.23,
+     haskeline  == 0.7.*,
+     mtl        >= 2.0 && < 2.3,
+     network    >= 2.3 && < 2.7,
+     parsec     == 3.1.*

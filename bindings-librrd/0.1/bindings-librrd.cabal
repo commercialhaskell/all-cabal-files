@@ -1,0 +1,41 @@
+Name:           bindings-librrd
+Synopsis:       Low level bindings to RRDtool
+Description:
+    RRDtool is a high performance data logging and graphing system for
+    time series data.
+
+    This package provides low-level bindings to librrd, which contains
+    most of the functionality in RRDtool.
+Version:        0.1
+License:        PublicDomain
+License-File:   COPYING
+Author:         PHO <pho at cielonegro dot org>
+Maintainer:     PHO <pho at cielonegro dot org>
+Homepage:       http://cielonegro.org/Bindings-librrd.html
+Category:       FFI
+Tested-With:    GHC == 6.12.1
+Cabal-Version:  >= 1.6
+Build-Type:     Simple
+
+Source-Repository head
+    Type:       git
+    Location:   git://git.cielonegro.org/bindings-librrd.git
+
+Library
+    Build-Depends:
+        base         == 4.2.*,
+        bindings-DSL == 1.0.*
+
+    PkgConfig-Depends:
+        librrd >= 1.4.3
+
+    Extensions:
+        ForeignFunctionInterface
+
+    Exposed-Modules:
+        Bindings.Librrd
+        Bindings.Librrd.Client
+        Bindings.Posix.Time
+
+    C-Sources:
+        cbits/inlines.c

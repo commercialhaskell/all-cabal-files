@@ -1,0 +1,42 @@
+Name:             data-accessor-template
+Version:          0.2.1.2
+License:          BSD3
+License-File:     LICENSE
+Author:           Luke Palmer <lrpalmer@gmail.com>, Henning Thielemann <haskell@henning-thielemann.de>
+Maintainer:       Henning Thielemann <haskell@henning-thielemann.de>
+Homepage:         http://www.haskell.org/haskellwiki/Record_access
+Package-URL:      http://code.haskell.org/data-accessor/
+Category:         Data
+Synopsis:         Utilities for accessing and manipulating fields of records
+Description:
+  Automate generation of @Accessor@'s of the @data-accessor@ package
+  by Template Haskell functions.
+Build-Type:       Simple
+Tested-With:      GHC==6.8.2
+Cabal-Version:    >=1.2
+
+Extra-Source-Files:
+  src-3/Data/Accessor/Template.hs
+  src-5/Data/Accessor/Template.hs
+
+Flag template_2_4
+  description: Adapt to TemplateHaskell version of GHC-6.12
+
+Library
+  Build-Depends:
+    data-accessor >=0.1 && <0.4,
+    utility-ht >=0.0.1 && <0.1,
+    base >=1.0 && <6
+
+  If flag(template_2_4)
+    Hs-Source-Dirs: src-5
+    Build-Depends:  template-haskell >=2.4 && <2.5
+  Else
+    Hs-Source-Dirs: src-3
+    Build-Depends:  template-haskell >=2.2 && <2.4
+
+  Exposed-Modules:
+    Data.Accessor.Template
+
+  Extensions:       CPP, TemplateHaskell
+  GHC-Options:      -Wall

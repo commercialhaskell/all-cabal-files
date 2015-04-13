@@ -1,0 +1,60 @@
+name:                   bindings-bfd
+version:                0.1.3
+cabal-version:          >= 1.4
+build-type:             Simple
+license:                LGPL-3
+license-file:           LICENSE
+copyright:              (c) 2009, 2010 Michael Nelson
+author:                 Michael Nelson
+maintainer:             mcnster@gmail.com
+stability:              alpha
+homepage:               http://projects.haskell.org/bindings-bfd/
+bug-reports:            mailto:mcnster@gmail.com
+package-url:            http://projects.haskell.org/bindings-bfd/bindings-bfd.cabal
+synopsis:               Bindings for libbfd, a component of the GNU `binutils'
+description:            These are bindings for `libbfd', a component of the GNU
+                        `binutils' package.  The bindings lets a Haskell program
+                        query the structure of any executable, object, or 
+                        library file format supported by the GNU Project.
+                        It also has support for disassembly of code in these
+                        files where appropriate.
+category:               Bindings
+tested-with:            GHC==6.12.3
+extra-source-files:     README,
+                        LICENSE,
+                        src/cbits/disassembler.h
+library
+   exposed-modules:     Bindings.Bfd
+                        Bindings.Bfd.Disassembler
+                        Bindings.Bfd.Disassembler.Info
+                        Bindings.Bfd.Exception
+                        Bindings.Bfd.Endian
+                        Bindings.Bfd.Flags
+                        Bindings.Bfd.Flavour
+                        Bindings.Bfd.Format
+                        Bindings.Bfd.LinkInfo
+                        Bindings.Bfd.LinkOrder
+                        Bindings.Bfd.Misc
+                        Bindings.Bfd.Relocation
+                        Bindings.Bfd.Section
+                        Bindings.Bfd.Section.Flags
+                        Bindings.Bfd.Symbol
+                        Bindings.Bfd.Symbol.Flags
+                        Bindings.Bfd.SymbolTable
+                        Bindings.Bfd.Target
+   build-depends:       base >= 4.1.0.0 && < 5,
+                        containers >= 0.2.0.1,
+                        unix >= 2.3.2.0
+   hs-source-dirs:      src
+   extensions:          CPP, 
+                        ForeignFunctionInterface
+   ghc-options:         -Wall
+   build-tools:         hsc2hs >= 0.67
+   includes:            bfd.h,
+                        dis-asm.h,
+                        stdarg.h,
+                        stdio.h
+   c-sources:           src/cbits/disassembler.c
+   extra-libraries:     bfd,
+                        opcodes
+

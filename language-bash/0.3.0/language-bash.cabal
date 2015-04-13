@@ -1,0 +1,46 @@
+name:               language-bash
+version:            0.3.0
+category:           Language
+license:            BSD3
+license-file:       LICENSE
+author:             Kyle Raftogianis
+maintainer:         Kyle Raftogianis <kylerafto@gmail.com>
+copyright:          Copyright (c) 2013 Kyle Raftogianis
+build-type:         Simple
+cabal-version:      >= 1.8
+homepage:           http://github.com/knrafto/language-bash/
+bug-reports:        http://github.com/knrafto/language-bash/issues
+synopsis:           Parsing and pretty-printing Bash shell scripts
+description:
+    A library for parsing and pretty-printing Bash shell scripts.
+
+extra-source-files:
+  .gitignore
+  README.md
+
+source-repository head
+  type: git
+  location: git://github.com/knrafto/language-bash.git
+
+library
+  hs-source-dirs: src
+
+  exposed-modules:
+    Language.Bash.Cond
+    Language.Bash.Parse
+    Language.Bash.Parse.Builder
+    Language.Bash.Pretty
+    Language.Bash.Syntax
+
+  other-modules:
+    Language.Bash.Operator
+    Language.Bash.Parse.Internal
+    Language.Bash.Parse.Packrat
+
+  build-depends:
+    base         >= 4   && < 5,
+    parsec       >= 3.0 && < 4.0,
+    pretty       >= 1.0 && < 2.0,
+    transformers >= 0.2 && < 0.4
+
+  ghc-options: -Wall

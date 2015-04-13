@@ -1,0 +1,39 @@
+Name:                xsd
+Version:             0.4.0.1
+License:             BSD3
+License-File:        LICENSE
+Synopsis:            XML Schema data structures
+Description:         XML Schema data structures (XSD)
+Homepage:            https://github.com/skogsbaer/xsd
+Category:            XML
+Author:              Tony Morris
+Maintainer:          Stefan Wehr <wehr@factisresearch.com>
+Copyright:           2010 Tony Morris, 2013 Stefan Wehr
+build-type:          Simple
+cabal-version:       >= 1.8
+
+Library
+  Build-Depends:   base < 5 && >= 4.5
+                 , attoparsec
+                 , text
+                 , time >= 1.2.0.3
+  GHC-Options:     -Wall
+  Exposed-Modules: Text.XML.XSD
+                   Text.XML.XSD.DateTime
+
+test-suite test
+  type:            exitcode-stdio-1.0
+  main-is:         main.hs
+  hs-source-dirs:  . test
+  ghc-options:     -rtsopts
+  build-depends:   base
+                 , bytestring
+                 , time
+                 , text
+                 , attoparsec
+                 , test-framework
+                 , test-framework-hunit
+                 , test-framework-quickcheck2
+                 , QuickCheck == 2.*
+                 , quickcheck-instances
+                 , HUnit

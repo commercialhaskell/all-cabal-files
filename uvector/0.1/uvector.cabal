@@ -1,0 +1,78 @@
+name:           uvector
+version:        0.1
+x-revision: 1
+license:        BSD3
+license-file:   LICENSE
+author:         Manuel Chakravarty, Gabriele Keller, Roman Leshchinskiy, Don Stewart
+maintainer:     Don Stewart <dons@galois.com>
+homepage:       http://code.haskell.org/~dons/code/uvector
+category:       Data
+synopsis:       Fast unboxed arrays with a flexible interface
+description:    Fast unboxed arrays with a flexible interface.
+                The library is built of fusible combinators, as
+                described in the paper /Stream Fusion: From Lists to
+                Streams to Nothing at All/.
+                .
+                For best results, compile with your user programs  
+                with -O2 -fvia-C -optc-O2.
+build-type:     Simple
+stability:           experimental
+cabal-version:  >= 1.2
+extra-source-files: include/fusion-phases.h README TODO
+
+flag safe
+    description: Compile the library with read/write bound checking enabled.
+    default: False
+
+library
+    build-depends:  base < 4.3
+
+    exposed-modules:
+            Data.Array.Vector
+
+    other-modules:
+            Data.Array.Vector.Prim.BUArr
+            Data.Array.Vector.Prim.Debug
+            Data.Array.Vector.Prim.Hyperstrict
+            Data.Array.Vector.Prim.Text
+
+            Data.Array.Vector.Stream
+            Data.Array.Vector.UArr
+
+            Data.Array.Vector.Strict.Stream
+            Data.Array.Vector.Strict.Basics
+            Data.Array.Vector.Strict.Enum
+            Data.Array.Vector.Strict.Sums
+            Data.Array.Vector.Strict.Permute
+            Data.Array.Vector.Strict.Text
+
+    include-dirs: include
+
+    extensions:         
+            MagicHash,
+            UnboxedTuples,
+            CPP,
+            BangPatterns,
+            ExistentialQuantification, 
+            ScopedTypeVariables,
+            TypeOperators,
+            Rank2Types,
+            TypeFamilies
+
+    ghc-options:
+            -fglasgow-exts
+            -O2
+            -fvia-C -optc-O2
+            -fspec-constr
+            -funbox-strict-fields 
+            -fdicts-cheap
+            -fno-method-sharing
+            -fmax-simplifier-iterations10
+            -fliberate-case-threshold100
+
+    if flag(safe)
+        cpp-options: -DSAFE
+
+    if impl(ghc > 6.8.2)
+        build-depends: ghc-prim
+        ghc-options:   -fno-spec-constr-threshold

@@ -1,0 +1,24 @@
+name:                repl
+version:             1.1
+synopsis:            IRC friendly REPL library.
+description:         
+    Similar to mueval, but using a server with the GHC API instead of a command-line tool.
+    As a result, it is much faster than mueval.
+    Additionally, repl supports declarations/bindings (and deleting them), type and kind pretty printing, in addition to expression evaluation.
+license:             MIT
+license-file:        LICENSE
+author:              Mike Ledger
+maintainer:          eleventynine@gmail.com
+homepage:            https://github.com/mikeplus64/repl
+category:            Development
+build-type:          Simple
+cabal-version:       >=1.8
+
+source-repository head
+  type:                git
+  location:            https://github.com/mikeplus64/repl
+
+library
+  exposed-modules:     Language.Haskell.Repl
+  build-depends:       base ==4.6.*, parsec ==3.1.*, ghc == 7.6.*, haskell-src-exts ==1.13.*, ghc-paths ==0.1.*
+  hs-source-dirs:      src

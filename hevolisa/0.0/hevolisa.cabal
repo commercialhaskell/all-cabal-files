@@ -1,0 +1,27 @@
+Name:		hevolisa
+Version:	0.0
+Cabal-Version:	>= 1.2
+License:	BSD3
+License-file:	LICENSE
+Author:		Daniel Neun
+Maintainer:	daniel.neun@gmx.de
+Category:       Graphics
+Synopsis:	Genetic Mona Lisa problem in Haskell
+Description:	Hevolisa is an application that tries to approximate a bitmap image with colored polygons. It draws a set of random polygons which are changed/mutated in small random steps. There is an error function which compares the bitmap created from the polygons with the original image. If the error between the images is smaller than before then the new image replaces the old. This is done over and over again.
+Build-Depends:	base >= 3.0.3.0, haskell98 >= 1.0.1.0, cairo >= 0.9.13, bytestring >= 0.9.1.4, filepath >= 1.1.0.1
+Build-Type:	Simple
+Extra-Source-Files:
+	Hevolisa/Shapes/DnaBrush.hs
+	Hevolisa/Shapes/DnaDrawing.hs
+	Hevolisa/Shapes/DnaPoint.hs
+	Hevolisa/Shapes/DnaPolygon.hs
+	Hevolisa/Evolution.hs
+	Hevolisa/Renderer.hs
+	Hevolisa/Settings.hs
+	Hevolisa/Tools.hs
+Data-Files:
+	mona_lisa_crop.png
+
+Executable:	hevolisa
+Main-is:	Hevolisa.hs
+ghc-options:

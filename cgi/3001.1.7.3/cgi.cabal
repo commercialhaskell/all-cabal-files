@@ -1,0 +1,61 @@
+Name: cgi
+Version: 3001.1.7.3
+x-revision: 1
+Copyright: Bjorn Bringert, Andy Gill, Anders Kaseorg, Ian Lynagh, 
+           Erik Meijer, Sven Panne, Jeremy Shaw
+Category: Network
+Maintainer: Anders Kaseorg <andersk@mit.edu>
+Author: Bjorn Bringert
+Homepage: http://andersk.mit.edu/haskell/cgi/
+License: BSD3
+License-file: LICENSE
+Synopsis: A library for writing CGI programs
+Description:
+ This is a Haskell library for writing CGI programs. 
+Build-Type: Simple
+Cabal-Version: >=1.2
+
+Flag split-base
+Flag bytestring-in-base
+
+Library
+  Exposed-Modules:
+    Network.CGI,
+    Network.CGI.Monad,
+    Network.CGI.Protocol,
+    Network.CGI.Cookie,
+    Network.CGI.Compat
+  Other-modules:
+    Network.CGI.Accept,
+    Network.CGI.Multipart,
+    Network.CGI.Header
+  Extensions: MultiParamTypeClasses
+  ghc-options: -Wall
+
+  Build-depends:
+    network >= 2.0 && < 2.6,
+    parsec >= 2.0,
+    mtl >= 1.0,
+    xhtml >= 3000.0.0,
+    extensible-exceptions
+  If flag(split-base)
+    Build-depends: base >= 3 && < 4.7, old-time, old-locale, containers
+  Else
+    Build-depends: base < 3
+  If flag(bytestring-in-base)
+    Build-depends: base >= 2 && < 3
+  Else
+    Build-depends: base < 2 || < 4.7, bytestring
+
+--Executable:     printinput
+--Main-Is:        printinput.hs
+--Hs-Source-Dir:  examples
+
+--Executable:     redirect
+--Main-Is:        redirect.hs
+--Hs-Source-Dir:  examples
+
+--Executable:     upload
+--Main-Is:        upload.hs
+--Hs-Source-Dir:  examples
+

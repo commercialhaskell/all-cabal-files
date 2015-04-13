@@ -1,0 +1,27 @@
+Name:          Dangerous
+Version:       0.1
+License:       MIT
+License-file:  LICENSE
+Category:      Error Handling
+Synopsis:      Monads for operations that can exit early and produce warnings
+Description:   Dangerous monads result in (Either Exit a, [Warning]), where
+               Exit can denote either ending computation early (Stop) or
+               the computation failing (Exit, Failure). Monads, Monad
+               Transformers, and helper functions are included.
+Author:        Nate Soares
+Maintainer:    nate@natesoares.com
+Build-Type:    Simple
+Cabal-Version: >=1.6
+
+source-repository this
+    type: git
+    location: git://github.com/Soares/Dangerous.git
+    tag: v1.0
+
+Library
+    Hs-Source-Dirs:   src
+    Build-Depends:    base >= 4 && < 5,
+                      mtl >= 1.0
+    Exposed-modules:  Control.Dangerous
+    Ghc-Options:      -Wall
+    Ghc-Prof-Options: -auto-all

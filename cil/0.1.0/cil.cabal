@@ -1,0 +1,39 @@
+name:    cil
+version: 0.1.0
+
+category: Language
+
+synopsis: An interface to CIL.
+
+description:
+  CIL (http://cil.sourceforge.net/) is a C frontend that reduces C to a manageable subset,
+  useful for source code analyzers, instrumenters, and compilers.
+
+author:     Tom Hawkins <tomahawkins@gmail.com>
+maintainer: Tom Hawkins <tomahawkins@gmail.com>
+
+license:      BSD3
+license-file: LICENSE
+
+homepage: http://tomahawkins.org
+
+build-type:    Simple
+cabal-version: >= 1.6
+
+library
+    build-depends:
+        base          >= 4.0     && < 5.0,
+        bytestring    >= 0.9     && < 1.0,
+        language-c    >= 0.3.2   && < 0.4
+
+    exposed-modules:
+        Language.CIL
+
+    extensions:
+
+    ghc-options:       -W
+
+source-repository head
+    type:     git
+    location: git://github.com/tomahawkins/cil.git
+

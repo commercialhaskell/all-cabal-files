@@ -1,0 +1,100 @@
+Name:           persistent-map
+Synopsis:       A thread-safe interface for finite map types with optional persistency support.
+Description:
+    This library provides a thread-safe (STM) frontend for finite map types together with a
+    backend interface for persistent storage. The /TMap/ data type
+    is thread-safe, since all access functions run inside an STM monad . Any type 
+    instantiating 'Data.Edison.Assoc.FiniteMapX' 
+    (see EdisonAPI) can be used as a map type. 
+    .
+    When a TMap is modified within an STM transaction, a corresponding
+    backend IO-request is added using the onCommit hook (cf. stm-io-hooks
+    package). To ensure consistency,
+    the (Adv)STM monad runs these requests iff the transaction commits.  
+    Additional backends (e.g. HDBC) can be added by instantiating the class 
+    'Backend'.
+    .
+    /Example:/
+    .
+    Thread 1:
+    .
+    > atomically $ do
+    >   isMemb <- member 1 tmap
+    >   when (not isMemb) $ 
+    >     insert 1 "john doe" tmap
+    .
+    Thread 2:
+    .
+    > atomically $ do
+    >   v <- lookup 1 tmap
+    >   -- ... do something with 'v'
+    >   adjust (\_ -> "jd") 1 tmap
+    .
+    The function 'member' will first check whether the key value '1' is in the map;
+    if not, it sends a lookup-request to the persistent backend 
+    and then retries the transaction. Note that \"sending a lookup-request\"
+    essentially means adding a call to the corresponding IO-function of the backend 
+    to the list of retry-IO actions. (This is done using the 'retryWith' 
+    IO hook of the stm-io-package.)
+    .
+    If the value does not exist yet, function 'insert' adds the key-value mapping to the
+    TMap and sends an insert-request to the backend using the
+    'onCommit' hook of the stm-io-package. Note that 'onCommit' guarantees that
+    the backend IO action is only executed iff the transaction commits. Any 
+    changes that were made to the TMap are invisible to other threads until 
+    the onCommit actions are run.  Therefore, the threads will always observe a
+    consistent state.
+    .
+    The module 'Data.TStorage' provides a high level interface to TMap inspired
+    by the TCache package ((C) Alberto Gomez Corona). It
+    can store any type that has a key (i.e. is an instance of type class 'HasKey').
+    See file Sample.hs for an example on how to use it.
+    .
+    /Warning:/ This package is very experimental and the interface will
+    probably change.
+
+Author:         Peter Robinson
+Maintainer:     thaldyron@gmail.com
+License:        LGPL
+License-file:   LICENSE
+Version:        0.0.0
+Category:       Data, Concurrency
+Stability:      experimental
+Homepage:       http://darcs.monoid.at/persistent-map
+
+build-type:     Simple                        
+cabal-version: >= 1.2.3
+library
+    ghc-options:        -Wall -fno-ignore-asserts
+
+    exposed-modules:    Data.TMap
+                        Data.TStorage
+--                        Data.TMap.Exception
+                        Data.TMap.Backend
+                        Data.TMap.Backend.NoBackend
+                        Data.TMap.Backend.StdoutBackend
+                        Data.CacheStructure
+                        Data.CacheStructure.LRU
+
+    other-modules:      Sample
+                        Data.TMap.Exception
+
+    build-depends:      base >= 4 && < 5, 
+                        EdisonAPI  >= 1.2.1 && < 1.3,
+                        LRU >= 0.1.1 && < 0.2,
+                        EdisonCore >= 1.2.1.3 && < 1.3,
+--                        binary,
+                        stm-io-hooks >= 0.2.0 && < 0.3, 
+--                        HDBC >= 2.0 && < 2.1, 
+                        mtl >= 1.1.0.2 && < 1.2
+--                        MonadCatchIO-mtl
+
+    extensions:         MultiParamTypeClasses,
+                        RankNTypes, 
+                        FunctionalDependencies, 
+                        FlexibleContexts,
+                        FlexibleInstances,
+                        UndecidableInstances,
+                        DeriveDataTypeable,
+                        ScopedTypeVariables
+

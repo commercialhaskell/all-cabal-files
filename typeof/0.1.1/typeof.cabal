@@ -1,0 +1,25 @@
+name:                typeof
+version:             0.1.1
+synopsis:            Small script for inferring types
+description:         A script to infer and insert type declarations 
+                     in Haskell source, callable from your editor.
+                     Bindings exist to emacs and vim.
+category:            Development
+license:             BSD3
+license-file:        LICENSE
+author:              Don Stewart 
+maintainer:          Don Stewart 
+build-type:          Simple
+cabal-version: >= 1.2
+
+flag small_base
+    description: Choose the new smaller, split-up base package.
+ 
+executable typeof
+    main-is:             Typeof.hs
+    ghc-options:         -threaded
+    if flag(small_base)
+        build-depends:       base >= 3, process
+    else
+        build-depends:       base <  3
+

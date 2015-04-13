@@ -1,0 +1,32 @@
+Name:                   paymill
+Version:                0.0.0
+Author:                 Jakub Arnold <darthdeus@gmail.com>
+Maintainer:             Jakub Arnold <darthdeus@gmail.com>
+License:                BSD3
+License-File:           LICENSE
+Synopsis:               This is an unofficial client for the Paymill API
+Description:            This is an unofficial client for the Paymill API.
+Cabal-Version:          >= 1.10
+Build-Type:             Simple
+
+Library
+  Default-Language:     Haskell2010
+  HS-Source-Dirs:       src
+  GHC-Options:          -Wall
+  Exposed-Modules:      Web.Paymill
+  Other-Modules:        Web.Paymill.Internal
+  Build-Depends:        base >= 4 && < 5
+
+Test-Suite spec
+  Type:                 exitcode-stdio-1.0
+  Default-Language:     Haskell2010
+  Hs-Source-Dirs:       src
+                      , test
+  Ghc-Options:          -Wall
+  Main-Is:              Spec.hs
+  Build-Depends:        base
+                      , hspec
+
+Source-Repository head
+  Type:                 git
+  Location:             https://github.com/darthdeus/paymill-haskell.git

@@ -1,0 +1,40 @@
+name:    fountain
+version: 0.0.0
+
+category: Codec
+
+synopsis: A fountain codec.
+
+description:
+  Fountain codes are forward error correction codes for erasure channels.
+  They are able to recover lost packets without needed a backchannel.
+  As a rateless code, transmitters generate packets at random, on the fly.
+  Receivers then listen to as many packets as needed to reconstruct the message.
+  
+author:     Tom Hawkins <tomahawkins@gmail.com>
+maintainer: Tom Hawkins <tomahawkins@gmail.com>
+
+license:      BSD3
+license-file: LICENSE
+
+homepage: http://tomahawkins.org
+
+build-type:    Simple
+cabal-version: >= 1.6
+
+library
+    build-depends:
+        base       >= 4.0      && < 5.0,
+        containers >= 0.3      && < 0.4,
+        random     >= 1.0      && < 1.1
+
+    exposed-modules:
+        Codec.Fountain
+
+    ghc-options: -W
+    ghc-prof-options: -auto-all
+
+source-repository head
+    type:     git
+    location: git://github.com/tomahawkins/fountain.git
+

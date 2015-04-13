@@ -1,0 +1,89 @@
+name:
+  hashtables-plus
+version:
+  0.1.0
+synopsis:
+  Extensions for a "hashtables" library
+description:
+  Provides advanced data structures built on top of the ones from the 
+  \"hashtables\" library: multimap, set, "StableName"-based structures.
+category:
+  Data, Data Structures
+homepage:
+  https://github.com/nikita-volkov/hashtables-plus 
+bug-reports:
+  https://github.com/nikita-volkov/hashtables-plus/issues 
+author:
+  Nikita Volkov <nikita.y.volkov@mail.ru>
+maintainer:
+  Nikita Volkov <nikita.y.volkov@mail.ru>
+copyright:
+  (c) 2014, Nikita Volkov
+license:
+  MIT
+license-file:
+  LICENSE
+build-type:
+  Simple
+cabal-version:
+  >=1.10
+
+
+source-repository head
+  type:
+    git
+  location:
+    git://github.com/nikita-volkov/hashtables-plus.git
+
+
+library
+  hs-source-dirs:
+    library
+  other-modules:
+    HashtablesPlus.Prelude
+  exposed-modules:
+    HashtablesPlus
+    HashtablesPlus.HashRef
+  build-depends:
+    -- data:
+    hashtables == 1.1.*,
+    hashable == 1.2.*,
+    -- debugging:
+    loch-th == 0.2.*,
+    placeholders == 0.1.*,
+    -- general:
+    base >= 4.5 && < 5
+  default-extensions:
+    Arrows
+    BangPatterns
+    ConstraintKinds
+    DataKinds
+    DefaultSignatures
+    DeriveDataTypeable
+    DeriveGeneric
+    EmptyDataDecls
+    FlexibleContexts
+    FlexibleInstances
+    FunctionalDependencies
+    GADTs
+    GeneralizedNewtypeDeriving
+    ImpredicativeTypes
+    LambdaCase
+    LiberalTypeSynonyms
+    MultiParamTypeClasses
+    MultiWayIf
+    NoImplicitPrelude
+    NoMonomorphismRestriction
+    OverloadedStrings
+    PatternGuards
+    QuasiQuotes
+    RankNTypes
+    RecordWildCards
+    ScopedTypeVariables
+    StandaloneDeriving
+    TemplateHaskell
+    TupleSections
+    TypeFamilies
+    TypeOperators
+  default-language:
+    Haskell2010

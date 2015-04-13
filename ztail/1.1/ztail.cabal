@@ -1,0 +1,29 @@
+Name:		ztail
+Version:	1.1
+Author:		Dylan Simon
+Maintainer:     dylan@dylex.net
+License:        BSD3
+License-File:	LICENSE
+Synopsis:	Multi-file, colored, filtered log tailer.
+Description:	An even more improved version of xtail/tail -f, including inotify support, full regex-based filtering, substitution, and colorization.
+Category:	System,Console
+Build-Type:	Simple
+Cabal-Version:	>= 1.6
+tested-with:    GHC == 6.12.3
+extra-source-files: README
+
+Source-Repository head
+    Type:	darcs
+    Location:	http://hub.darcs.net/dylex/ztail
+
+Flag INotify
+    Description:	Enable inotify support
+    Default:		True
+
+Executable ztail
+    Main-is:		Main.hs
+    Other-Modules:	Util, Display, TailTypes, TailHandle, Tail
+    Build-Depends:	base == 4.*, regex-compat, unix, time, old-locale, process, array, containers, filepath
+    if flag(inotify)
+        Build-Depends:	hinotify >= 0.3.6
+        CPP-Options:	-DINOTIFY

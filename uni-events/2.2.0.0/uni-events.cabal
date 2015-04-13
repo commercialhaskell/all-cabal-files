@@ -1,0 +1,38 @@
+name:           uni-events
+version:        2.2.0.0
+build-type:     Simple
+license:        LGPL
+license-file:   LICENSE
+author:         uniform@informatik.uni-bremen.de
+maintainer:     Christian.Maeder@dfki.de
+homepage:       http://www.informatik.uni-bremen.de/uniform/wb/
+category:       Uniform
+synopsis:       Event handling for the uniform workbench
+description:    uni events
+cabal-version:  >= 1.4
+Tested-With:    GHC==6.8.3, GHC==6.10.4, GHC==6.12.3
+
+library
+  exposed-modules:
+    Events.Toggle,
+    Events.Events,
+    Events.Cells,
+    Events.GuardedEvents,
+    Events.GuardedChannels,
+    Events.DeleteQueue,
+    Events.NullGuard,
+    Events.FMQueue,
+    Events.EqGuard,
+    Events.Spawn,
+    Events.Destructible,
+    Events.Channels,
+    Events.Examples,
+    Events.RefQueue,
+    Events.Synchronized
+
+  build-depends: base >=3 && < 4, containers, uni-util
+
+  if impl(ghc < 6.10)
+    extensions: PatternSignatures
+  else
+    ghc-options: -fwarn-unused-imports -fno-warn-warnings-deprecations

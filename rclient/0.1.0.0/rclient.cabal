@@ -1,0 +1,32 @@
+name:                rclient
+version:             0.1.0.0
+synopsis:            Haskell client for Rserve
+description:         This module allows you to issue R commands from Haskell to be executed via Rserve and get the results back in Haskell data types.
+category:            Statistics,Math,Network
+license:             BSD3
+license-file:        LICENSE
+author:              TomDoris <tomdoris@gmail.com>
+maintainer:          TomDoris <tomdoris@gmail.com>
+build-type:          Simple
+cabal-version:  >= 1.2
+
+library
+  exposed-modules:
+    Network.Rserve.Client
+  other-modules:
+    Network.Rserve.Internal
+    Network.Rserve.Constants
+  build-depends:     base >= 3.0 && < 5,
+                     network >= 2.3,
+                     binary >= 0.4.2,
+                     bytestring,
+                     QuickCheck >= 2.4,
+                     split >= 0.1,
+                     data-binary-ieee754 >= 0.4
+  if impl(ghc >= 6.10) 
+        build-depends: 
+              base >= 4 
+  if impl(ghc >= 6.8)
+        ghc-options: -fwarn-tabs
+  ghc-options:         -Wall -O2
+

@@ -1,0 +1,23 @@
+Name:          monad-supply
+Build-type:    Simple
+Version:       0.1
+Cabal-Version: >= 1.6
+Synopsis:      Stateful supply monad.
+Description:   Support for computations which consume values from a (possibly infinite) supply.
+License:       OtherLicense
+License-file:  LICENSE
+Category:      Control, Data, Monads
+Author:        Geoff Hulette and unknown HaskellWiki contributor(s).
+Maintainer:    Geoff Hulette <ghulette@gmail.com>
+Stability:     experimental
+Tested-With:   GHC == 7.0.3
+
+Library
+  Exposed-modules: Control.Monad.Supply
+  Hs-Source-Dirs:  src
+  Build-Depends:   base >= 4 && < 5,mtl >= 2
+  GHC-Options:     -Wall
+
+Source-Repository head
+  type:     git
+  location: git://github.com/ghulette/monad-supply.git

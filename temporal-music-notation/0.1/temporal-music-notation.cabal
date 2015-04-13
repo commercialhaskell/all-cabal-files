@@ -1,0 +1,37 @@
+Name:          temporal-music-notation
+Version:       0.1
+Cabal-Version: >= 1.2
+License-file:  LICENSE
+License:       BSD3
+Author:	       Anton Kholomiov
+Maintainer:    Anton Kholomiov
+Synopsis:      music notation
+Description:   Library for expressing musical ideas. Includes composable score representation, microsound tunings, flexible pitch and volume control.
+Category:      Music
+Stability:     Experimental
+Tested-With:   GHC==6.12.1
+Build-Type:    Simple
+
+Extra-Source-Files:
+        examples/Readme.hs       
+        examples/dm.hs       
+        examples/arpeggi.hs        
+        examples/choral.hs        
+        examples/teardrop.hs        
+        examples/Orchestra.hs        
+
+Library
+  Build-Depends:
+        base >= 4, base < 5,
+        vector, 
+        temporal-media >= 0.2,
+        type-level-natural-number, 
+        type-level-natural-number-operations
+  Hs-Source-Dirs:      src/
+  Exposed-Modules:
+        Temporal.Music.Notation
+        Temporal.Music.Notation.Volume
+        Temporal.Music.Notation.Pitch
+        Temporal.Music.Notation.Score
+        Temporal.Music.Notation.Note
+        Temporal.Music.Notation.Local.Scales

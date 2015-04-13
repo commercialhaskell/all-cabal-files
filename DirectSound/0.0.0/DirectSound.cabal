@@ -1,0 +1,44 @@
+Name:                DirectSound
+Version:             0.0.0
+Synopsis:            Partial binding to the Microsoft DirectSound API.
+Description:         Partial binding to the Microsoft DirectSound API.
+                     See the example program for a simple stereo playback.
+License:             BSD3
+License-file:        LICENSE
+Author:              Balazs Komuves
+Copyright:           (c) 2009 Balazs Komuves
+Maintainer:          bkomuves (plus) hackage (at) gmail (dot) com
+Stability:           Unstable
+Homepage:            http://code.haskell.org/~bkomuves/
+Category:            Sound
+Tested-With:         GHC == 7.4.2
+Cabal-Version:       >= 1.6
+Build-Type:          Simple
+
+extra-source-files:  example/DirectSound_playback_example.hs
+
+source-repository head
+  type:     darcs
+  location: http://code.haskell.org/~bkomuves/projects/DirectSound/
+
+Flag splitBase
+  Description:         Choose the new smaller, split-up base package.
+
+Library
+  if flag(splitBase)
+    Build-Depends:       base >= 3 && < 5
+  else
+    Build-Depends:       base <  3
+
+  Build-Depends:       Win32
+  
+  extra-libraries:     dsound
+    
+  Exposed-Modules:     Sound.Win32.DirectSound
+
+  -- ghc-options:         -threaded
+  
+  Extensions:          ForeignFunctionInterface, CPP, 
+                       EmptyDataDecls, TypeSynonymInstances                  
+  Hs-Source-Dirs:      .
+

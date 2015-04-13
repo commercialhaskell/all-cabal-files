@@ -1,0 +1,33 @@
+name:                   priority-queue
+version:                0.1.1
+stability:              provisional
+license:                BSD3
+license-file:           LICENSE
+
+cabal-version:          >= 1.2
+build-type:             Simple
+
+author:                 James Cook <mokus@deepbondi.net>
+maintainer:             James Cook <mokus@deepbondi.net>
+homepage:               http://darcs.deepbondi.net/priority-queue
+
+category:               Data
+synopsis:               Simple implementation of a priority queue.
+description:            Simple implementation of a priority queue.
+
+flag splitBase
+
+Library
+  hs-source-dirs:       src
+  exposed-modules:      Data.PriorityQueue
+  
+  extensions:           CPP
+  
+  if flag(splitBase)
+    build-depends:      base >= 3, containers
+  else
+    build-depends:      base < 3
+    cpp-options:        -DNoMinViewWithKey
+  
+  build-depends:        reord >= 0.0.0.2, stateref >= 0.2.1.0, 
+                        queue >= 0.1.1.1

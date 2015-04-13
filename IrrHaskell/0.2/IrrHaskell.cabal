@@ -1,0 +1,21 @@
+Name:		IrrHaskell
+Version:	0.2
+Description:	A wrapper for the Irrlicht game engine allowing games to be written with functional reactive programming.
+License:	LGPL
+License-file:	LICENSE
+Author:		Ewen Cochran and Maciej Baranski
+Maintainer:	e.a.p.cochran@sms.ed.ac.uk
+Build-Type:	Simple
+Cabal-Version:	>=1.6
+stability: prototype
+tested-with: GHC == 6.10.1
+category: Graphics, FFI, Game Engine
+synopsis: Haskell FRP binding to the Irrlicht game engine.
+extra-source-files:	*.hs *.o *.cpp *.h *.hs *.c *.lhs *.pdf README Makefile InterfaceGenerator/*.hs InterfaceGenerator/*.cpp InterfaceGenerator/*.h InterfaceGenerator/*.py InterfaceGenerator/*.pyc 
+Library
+  Build-Depends:	base >= 4 && < 5, random >= 1, time >= 1
+  Exposed-modules:
+  exposed: True
+  ghc-options:		
+  extensions:		ViewPatterns, NoMonomorphismRestriction, ForeignFunctionInterface
+

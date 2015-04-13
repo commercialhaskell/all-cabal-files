@@ -1,0 +1,18 @@
+Name:		suffixarray
+Version:	0.0.1
+License:	BSD3
+License-file:	LICENSE
+Copyright:	Copyright 2010 Daniël de Kok
+Author:		Daniël de Kok <me@danieldk.eu>
+Maintainer:	Daniël de Kok <me@danieldk.eu>
+Homepage:	http://github.com/danieldk/tinker-hs
+Category:	Data
+Synopsis:	Suffix arrays
+Description:	Suffix arrays
+Cabal-Version:	>= 1.2
+Build-Type:	Simple
+
+Library
+  Exposed-Modules:	Data.SuffixArray
+  Build-Depends:	base >= 3.0.3.1 && < 4, vector >= 0.5
+  Ghc-Options:		-O2

@@ -1,0 +1,44 @@
+name:                preprocess-haskell
+version:             0.0.1.1
+synopsis:            Preprocess Haskell Repositories.
+license:             BSD3
+license-file:        LICENSE
+author:              Benjamin Summers
+maintainer:          ben@benjaminsummers.net
+category:            Language
+build-type:          Simple
+description:         Do all of the dirty work required to get a Haskell repo
+                     ready for straightforward static-analysis.
+cabal-version:       >=1.10
+
+extra-source-files:  include/*.h
+                   , include/rts/*.h
+
+source-repository head
+  type:     git
+  location: https://github.com/sourcegraph/preprocess-haskell.git
+
+source-repository this
+  type:     git
+  location: https://github.com/sourcegraph/preprocess-haskell.git
+  tag:      preprocess-haskell-0.0.1.1
+
+
+library
+  hs-source-dirs:      src
+  ghc-options:         -Wall
+  default-language:    Haskell2010
+  default-extensions:  NoImplicitPrelude, OverloadedStrings, ScopedTypeVariables
+                     , UnicodeSyntax
+
+  build-depends:       base >=4.7 && <4.8, foldl, system-filepath, turtle,
+                       basic-prelude, cpphs, containers,
+                       base-unicode-symbols, text, Cabal, temporary, unix,
+                       deepseq, file-embed, bytestring, haskell-src-exts,
+                       directory, here
+
+  exposed-modules:     Language.Haskell.Preprocess
+                     , Language.Haskell.Preprocess.Internal
+                     , Language.Haskell.Preprocess.Examples
+
+  other-modules:       Language.Haskell.Preprocess.Macros

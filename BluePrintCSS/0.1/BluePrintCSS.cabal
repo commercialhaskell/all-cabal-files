@@ -1,0 +1,45 @@
+Name:                BluePrintCSS
+Version:             0.1
+Synopsis:            Html document layout library.
+Description:         The library helps to format html documents using popular BluePrint CSS framework <http://www.blueprintcss.org/>. Currently, Blaze and HSX html generators are supported (note 'blaze' and 'hsx' flags). See repository for complex examples.
+                     
+License:             BSD3
+License-file:        LICENSE
+Author:              Sergey Mironov
+Homepage:            http://git.ierton.ru/?p=BluePrint.git;a=summary
+Maintainer:          Sergey Mironov <ierton@gmail.com>
+Build-Type:          Simple
+Cabal-Version:       >=1.6
+Stability:           Experimental
+Category:            Web, Text
+
+Flag hsx
+    Description: Include HSX xml generator support
+    Default: False
+
+Flag blaze
+    Description: Include blaze-html generator support
+    Default: False
+
+Library
+
+  Exposed-modules:     Text.BluePrintCSS.Base,
+                       Text.BluePrintCSS.Attr,
+                       Text.BluePrintCSS
+
+  if flag(blaze) 
+    Exposed-modules:   Text.BluePrintCSS.Blaze
+    Build-Depends:     blaze-html  
+
+  if flag(hsx) 
+    Exposed-modules:   Text.BluePrintCSS.XMLGenT
+    Build-Depends:     hsx  
+
+  Build-Depends:       base >=4 && < 5, mtl
+
+  cpp-options:         -DBASE4
+
+  hs-source-dirs:      src
+
+  Extensions:          TypeSynonymInstances,MultiParamTypeClasses,FlexibleInstances,UndecidableInstances,TypeFamilies
+

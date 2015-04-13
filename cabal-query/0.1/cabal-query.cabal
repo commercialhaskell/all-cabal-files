@@ -1,0 +1,30 @@
+name:            cabal-query
+version:         0.1
+copyright:       (c) 2009 Max Desyatov
+category:        System
+maintainer:      Max Desyatov <explicitcall at gmail.com>
+author:          Max Desyatov
+license:         BSD3
+license-file:    LICENSE
+cabal-version:   >= 1.6
+synopsis:        Helpers for quering .cabal files or hackageDB's 00-index.tar
+description:     This package was written to assist you at finding a set of packages,
+                 which satisfy your needs.  At the moment it doesn't have a standalone executable,
+                 but you can do the queries from your Haskell code.
+stability:       Experimental
+build-type:      Simple
+homepage:        http://github.com/explicitcall/cabal-query
+bug-reports:     http://github.com/explicitcall/cabal-query/issues
+
+library
+  exposed-modules: Distribution.Query
+  other-modules:   Distribution.Query.TH,
+                   Distribution.Query.Types
+  hs-source-dirs:  src
+  ghc-options:     -Wall -fno-warn-orphans
+  build-depends:   base >= 4 && < 5, mtl, template-haskell, derive, Cabal >= 1.6 && < 1.7,
+                   MissingH, uniplate, bytestring, tar, ghc >= 6.10 && < 6.11
+
+source-repository head
+  type:      git
+  location:  git://github.com/explicitcall/cabal-query.git

@@ -1,0 +1,33 @@
+name:          repr
+version:       0.2
+cabal-version: >= 1.6
+build-type:    Simple
+stability:     experimental
+tested-with:   GHC ==6.10.4
+author:        Bas van Dijk
+maintainer:    v.dijk.bas@gmail.com
+copyright:     (c) 2009 Bas van Dijk
+license:       BSD3
+license-file:  LICENSE
+category:      Numeric, Text
+synopsis:      Render numeric expressions to their textual representation.
+description:   This library allows you to render a numeric expression to its
+               textual representation. For example:
+               .
+               @
+               *Repr> let rd = 1.5 + 2 + (3 + (-4) * (5 - pi / sqrt 6)) :: Repr Double
+               *Repr> render rd
+               \"fromRational (3 % 2) + fromInteger 2 + (fromInteger 3 + negate (fromInteger 4) * (fromInteger 5 - pi / sqrt (fromInteger 6)))\"
+               @
+
+source-repository head
+  Type: darcs
+  Location: http://code.haskell.org/~basvandijk/code/repr
+
+library
+  build-depends:     base               >= 3       && < 4.2
+                   , string-combinators >= 0.4     && < 0.5
+                   , to-string-class    >= 0.1.2   && < 0.2
+                   , dstring            >= 0.3.0.1 && < 0.4
+  exposed-modules: Repr
+  ghc-options:     -Wall -O2

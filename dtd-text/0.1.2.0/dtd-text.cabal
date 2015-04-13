@@ -1,0 +1,33 @@
+name: dtd-text
+version: 0.1.2.0
+synopsis: Parse and render XML DTDs
+description:
+  This library provides means to parse XML Document Type Declaration (DTD) documents.
+license: BSD3
+license-file: license.txt
+author: Yitzchak Gale,
+        Montez Fitzpatrick
+maintainer: Montez Fitzpatrick <montezf@gmail.com>
+build-type: Simple
+cabal-version: >=1.6
+category: Data, Text, XML, Parsing
+stability: experimental
+bug-reports: https://github.com/m15k/hs-dtd-text/issues
+homepage: http://github.com/m15k/hs-dtd-text
+
+library
+  build-depends:
+      base >=3 && < 5
+    , containers
+    , text >= 0.8
+    , dtd-types >= 0.3.0.1 && < 1
+    , xml-types ==0.3.*
+    , attoparsec >=0.10.0
+
+  exposed-modules:
+    Data.XML.DTD.Parse
+    Data.XML.DTD.Render
+
+source-repository head
+  type: git
+  location: https://github.com/m15k/hs-dtd-text/

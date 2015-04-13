@@ -1,0 +1,25 @@
+Name: haskelldb-hdbc
+Version: 0.13
+Cabal-version: >= 1.2
+Build-type: Simple
+Copyright: The authors
+Maintainer: haskelldb-users@lists.sourceforge.net
+Author: Daan Leijen, Conny Andersson, Martin Andersson, Mary Bergman, Victor Blomqvist, Bjorn Bringert, Anders Hockersten, Torbjorn Martin, Jeremy Shaw
+License: BSD3
+Synopsis: HaskellDB support for HDBC. You will also need one
+          or more back-end specific packages.
+
+Flag split-base
+
+Library
+  Build-depends: mtl >= 1 && < 2, haskelldb >= 0.12 && < 1, HDBC >= 2 && < 3, convertible >= 1.0.1
+  if flag(split-base)
+    Build-depends: base >= 3 && < 5, containers < 1, old-time >= 1 && < 2
+  else
+    Build-depends: base < 3
+  Extensions: ExistentialQuantification,
+            OverlappingInstances,
+            UndecidableInstances,
+            MultiParamTypeClasses
+  Exposed-Modules:
+        Database.HaskellDB.HDBC

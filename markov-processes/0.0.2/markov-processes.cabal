@@ -1,0 +1,50 @@
+name:                markov-processes
+version:             0.0.2
+license-file:        LICENSE
+license:             MIT
+synopsis:            Hidden Markov processes.
+author:              Leopold Tal G <leopold.tal.dg@gmail.com>, Yorick van Pelt <yorickvanpelt@gmail.com>, Vikram Verma <me@vikramverma.com>
+maintainer:          Vikram Verma <me@vikramverma.com>
+category:            AI
+build-type:          Simple
+cabal-version:       >=1.10
+
+library
+  exposed-modules: 
+    AI.Markov.HMM,
+    Data.Distribution
+  other-modules:
+    Data.Functor.Extras,
+    Data.List.Extras,
+    System.Random.Extras
+  other-extensions:
+    RecordWildCards,
+    TemplateHaskell
+  hs-source-dirs: 
+    src
+  build-depends:        
+    base == 4.*,
+    bifunctors,
+    memoize,
+    MonadRandom,
+    random
+  default-language: 
+    Haskell2010
+
+test-suite markov-tests
+  type:
+    exitcode-stdio-1.0
+  main-is:
+    Main.lhs
+  hs-source-dirs:
+    examples,
+    test
+  build-depends:
+    base == 4.*,
+    bifunctors,
+    assertions,
+    markov-processes,
+    memoize,
+    random
+  default-language:
+    Haskell2010

@@ -1,0 +1,70 @@
+Name:           haskore-realtime
+Version:        0.2
+License:        GPL
+License-File:   LICENSE
+Author:         Henning Thielemann <haskell@henning-thielemann.de>
+Maintainer:     Henning Thielemann <haskell@henning-thielemann.de>
+Homepage:       http://www.haskell.org/haskellwiki/Haskore/
+Category:       Sound, Music
+Synopsis:       Routines for realtime playback of Haskore songs
+Description:
+  This package contains support for realtime playback of Haskore songs.
+  However this does not work satisfyingly
+  and it introduces dependencies like on 'unix' package,
+  that reduce portability.
+  Thus we have removed this part from core Haskore.
+Stability:      Experimental
+Tested-With:    GHC==6.4.1, GHC==6.8.2
+Cabal-Version:  >=1.6
+Build-Type:     Simple
+
+Source-Repository head
+  type:     darcs
+  location: http://code.haskell.org/haskore/revised/realtime/
+
+Source-Repository this
+  type:     darcs
+  location: http://code.haskell.org/haskore/revised/realtime/
+  tag:      0.2
+
+Flag splitBase
+  description: Choose the new smaller, split-up base package.
+
+Library
+  Build-Depends:
+    haskore >=0.1 && <0.3,
+    midi >=0.2 && <0.3,
+    bytestring >=0.9 && <0.11,
+    -- dependency on non-negative for Haddock
+    non-negative >=0.0.1 && <0.2,
+    event-list >=0.0.6 && <0.2,
+    data-accessor >=0.2 && <0.3,
+    unix >= 2.0 && <3,
+    transformers >=0.2 && <0.5,
+    utility-ht >=0.0.8 && <0.1
+
+  If flag(splitBase)
+    Build-Depends:
+      directory >=1.0 && <1.3,
+      old-time >=1.0 && <1.2,
+      process >=1.0 && <1.3,
+      base >=3 && <5
+  Else
+    Build-Depends:
+      base >= 1.0 && < 2
+
+  GHC-Options:    -Wall
+  Hs-source-dirs: src
+  Exposed-modules:
+    Haskore.RealTime.Timer
+    Haskore.RealTime.Timer.Immediate
+    Haskore.RealTime.Timer.Thread
+    -- needs 'unix' package
+    Haskore.RealTime.Timer.Posix
+    Haskore.RealTime.EventList.TimeBody
+    Haskore.RealTime.EventList.TimeTime
+    Haskore.RealTime.ShellPipe
+    Haskore.Interface.CSound.Play
+    Haskore.Interface.MIDI.Play
+  Other-Modules:
+    Haskore.RealTime.Utility

@@ -1,0 +1,46 @@
+Name: pec
+
+Version: 0.1
+
+Synopsis: pec embedded compiler
+
+Description:  The intent of pec is to provide a drop-in replacement for C, but with modern language features.  Pec is a procedural language with a functional/declarative feel.  Programming in pec is very similar to monadic programming in Haskell.  The primary use case for pec is to provide a productive environment for writing safe, performant embedded applications.
+
+License: BSD3
+
+License-file: LICENSE
+
+Author: Brett Letner <brettletner@gmail.com>
+
+Maintainer: Brett Letner <brettletner@gmail.com>
+
+Copyright: Brett letner 2011
+
+Category: Language
+
+Build-type: Simple
+
+Extra-source-files: Pec.cf
+
+data-files: Makefile, FAQ, Pec/Makefile, DESIGN, test_cases/Makefile, test_cases/TestStack.pec, test_cases/Prelude.pec, test_cases/TestLoad.pec, test_cases/Stack.pec, test_cases/StrBuf.pec, test_cases/TestPrims.pec, test_cases/TestTuple.pec, test_cases/TestStrBuf.pec, test_cases/TestVariant.pec, test_cases/TestArray.pec, pec.cabal, THANKS, README, TODO, LICENSE, Language/Pec/Doc.html
+
+Cabal-version: >= 1.6
+
+source-repository head
+  type: git
+  location: git://github.com/stevezhee/pec.git
+
+Library
+  Exposed-modules: Pec.Base
+  Build-depends: base
+--  GHC-Options: -fhpc
+
+Executable pec
+  Main-is: Main.hs
+  
+  Build-depends: base >= 4 && < 5, derive, array, filepath, cmdargs, mtl, process, directory
+  
+  Other-modules: Language.Pec.Lex, Language.Pec.Layout, Language.Pec.ErrM, Language.Pec.Abs, Language.Pec.Par, Language.Pec.Print
+
+--   Build-tools: happy, alex
+  -- GHC-Options: -fhpc

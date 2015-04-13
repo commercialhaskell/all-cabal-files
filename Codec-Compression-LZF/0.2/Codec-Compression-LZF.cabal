@@ -1,0 +1,22 @@
+Name:            Codec-Compression-LZF
+Version:         0.2
+License:         BSD3
+License-file:    LICENSE
+Author:          Einar Karttunen
+Maintainer:      Don Stewart <dons@cse.unsw.edu.au>
+Homepage:        http://www.cs.helsinki.fi/u/ekarttun/Codec-Compression-LZF/
+Synopsis:        LZF compression bindings.
+Description:     
+    A Haskell binding to the liblzf by Marc Lehmann. LZF is a fast
+    compression algorithm sacrifising compression quality for an extra
+    bit of speed. The tiny library is contained in the source and
+    statically linked in the Haskell library resulting in no external
+    dependencies.  Exposed-modules: Codec.Compression.LZF
+Category:        Codec
+Build-Depends:   base
+Extensions:      ForeignFunctionInterface
+C-Sources:       liblzf-1.5/lzf_c.c liblzf-1.5/lzf_d.c
+Include-dirs:    liblzf-1.5
+-- Include-files:   lzf.h
+Ghc-options:     -O2
+Exposed-modules: Codec.Compression.LZF

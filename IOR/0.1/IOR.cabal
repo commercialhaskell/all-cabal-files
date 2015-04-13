@@ -1,0 +1,25 @@
+name:               IOR
+version:            0.1
+synopsis:           Region based resource management for the IO monad.
+description:        IOR monad is a wrapper around IO that allows region based
+                    resource management.
+category:           System, Monadic Regions
+cabal-version:   >= 1.2
+license:            BSD3
+license-file:       COPYING
+author:             Ivan Tomac
+maintainer:         tomac `at` pacific `dot` net `dot` au
+stability:          experimental
+build-type:         Simple
+data-files:         README
+extra-source-files: src/Example.hs
+                    src/Test.hs
+
+library
+  build-depends:        base, mtl
+  ghc-options:          -Wall
+  hs-source-dirs:       src
+  exposed-modules:      Data.IORRef
+                        System.IOR
+                        System.IOR.Resource
+  other-modules:        System.IOR.Internal

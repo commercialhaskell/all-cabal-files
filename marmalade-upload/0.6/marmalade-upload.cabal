@@ -1,0 +1,96 @@
+name:                marmalade-upload
+version:             0.6
+synopsis:            Upload packages to Marmalade
+description:
+  Upload Emacs packages to the <http://marmalade-repo.org/ Marmalade> ELPA
+  archive.
+homepage:            https://github.com/lunaryorn/marmalade-upload
+license:             MIT
+license-file:        LICENSE
+extra-source-files:  README.md,
+                     CHANGES.md,
+                     test/resources/foo.el,
+                     test/resources/foo.tar
+author:              Sebastian Wiesner
+maintainer:          lunaryorn@gmail.com
+copyright:           (C) 2014 Sebastian Wiesner
+bug-reports:         https://github.com/lunaryorn/marmalade-upload/issues
+category:            Development
+build-type:          Simple
+cabal-version:       >=1.10
+
+source-repository head
+  type:              git
+  location:          https://github.com/lunaryorn/marmalade-upload.git
+  branch:            master
+
+source-repository this
+  type:              git
+  location:          https://github.com/lunaryorn/marmalade-upload.git
+  tag:               0.6
+
+flag LibMagic
+  description:       Use libmagic to determine the mimetypes of packages
+  default:           True
+
+library
+  hs-source-dirs:      src/
+  exposed-modules:     Web.Marmalade
+                       Web.Marmalade.Magic
+  ghc-options:         -Wall
+  build-depends:       base >=4.6 && <4.8,
+                       mtl >=2.1 && <2.2,
+                       transformers >=0.3 && <0.4,
+                       exceptions >=0.5 && <0.6,
+                       bytestring >=0.10 && <1.11,
+                       utf8-string >=0.3 && <0.4,
+                       aeson >=0.7 && <0.8,
+                       network >=2.4 && <2.5,
+                       http-types >=0.8 && <0.9,
+                       http-client >=0.3 && <0.4
+  default-language:    Haskell2010
+
+  if flag(LibMagic)
+     build-tools:      hsc2hs
+     build-depends:    unix >=2.6 && <2.8
+     extra-libraries:  magic
+     cpp-options:      -DWITH_LIBMAGIC
+     other-modules:    Web.Marmalade.Magic.Native
+  else
+     build-depends:    process >=1.1 && <1.3,
+                       deepseq >=1.3 && <1.4
+
+executable marmalade-upload
+  main-is:             main.hs
+  ghc-options:         -Wall
+  build-depends:       base >=4.6 && <4.8,
+                       transformers >=0.3 && <0.4,
+                       optparse-applicative >=0.8 && <0.9,
+                       keyring >=0.1 && <0.2,
+                       marmalade-upload
+  default-language:    Haskell2010
+
+test-suite magic
+  type:                exitcode-stdio-1.0
+  main-is:             magic-tests.hs
+  hs-source-dirs:      test/
+  build-depends:       base >=4.6 && <4.8,
+                       tasty >=0.8 && <0.9,
+                       tasty-hunit >= 0.8 && <0.9,
+                       marmalade-upload
+  default-language:    Haskell2010
+  ghc-options:         -Wall
+
+test-suite marmalade
+  type:                exitcode-stdio-1.0
+  main-is:             marmalade-tests.hs
+  hs-source-dirs:      test/
+  build-depends:       base >=4.6 && <4.8,
+                       transformers >=0.3 && <0.4,
+                       exceptions >=0.5 && <0.6,
+                       aeson >=0.7 && <0.8,
+                       tasty >=0.8 && <0.9,
+                       tasty-hunit >=0.8 && <0.9,
+                       marmalade-upload
+  default-language:    Haskell2010
+  ghc-options:         -Wall

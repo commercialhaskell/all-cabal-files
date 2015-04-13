@@ -1,0 +1,27 @@
+name:                reified-records 
+version:             0.2.0.0
+homepage:            http://bitbucket.org/jozefg/reified-records
+synopsis:            Reify records to Maps and back again
+description:         This package provides a series of functions to do introspect records and allow records to be manipulated
+                     dynamically as @Map@s.
+                     Currently this works using @Data.Data@ however in future this will likely change to @GHC.Generics@ and allow more user hooks
+                     into how types are reified and reflected.
+license:             MIT
+license-file:        LICENSE
+author:              Danny Gratzer
+maintainer:          danny.gratzer@gmail.com
+category:            Generics
+build-type:          Simple
+cabal-version:       >=1.10
+source-repository head
+  type:                mercurial
+  location:            http://bitbucket.org/jozefg/reified-records
+library
+  exposed-modules:     Data.Generics.Record,
+                       Data.Generics.Record.Reify,
+                       Data.Generics.Record.Subtype
+  other-extensions:    ScopedTypeVariables
+  build-depends:       base >=4.6 && <4.7, containers >=0.5 && <0.6, mtl >=2.1 && <2.2
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+  

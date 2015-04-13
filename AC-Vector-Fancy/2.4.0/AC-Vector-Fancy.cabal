@@ -1,0 +1,35 @@
+Cabal-Version: >= 1.6
+Name:          AC-Vector-Fancy
+Version:       2.4.0
+Stability:     Experimental
+Synopsis:      Fancy type-system stuff for AC-Vector
+
+Description:
+
+  Adds various type-system tricks to AC-Vector.
+  (Requires several language extensions, including
+  type families.)
+
+  Added missing @Vector Point@ constraint to @HasSpace@
+  class. Consequently removed @HasSpace Range@ instance.
+  Added @unions@ method to @BoundingBox@ class. Added
+  @axis_range@ function.
+
+Category:      Data, Math, Numerical, Graphics
+License:       BSD3
+License-file:  License.txt
+Author:        Andrew Coppin
+Maintainer:    MathematicalOrchid@hotmail.com
+Build-Type:    Simple
+Tested-With:   GHC == 6.10.3
+
+Library
+  Exposed-modules:
+    Data.Vector,
+    Data.Vector.Fancy,
+    Data.Vector.Transform,
+    Data.Vector.Transform.Fancy,
+    Data.BoundingBox,
+    Data.BoundingBox.Fancy
+  Build-Depends:   base >= 4 && < 5, AC-Angle >= 1.0, AC-Vector >= 2.3.1
+  HS-Source-Dirs:  .

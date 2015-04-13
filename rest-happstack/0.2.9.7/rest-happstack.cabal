@@ -1,0 +1,30 @@
+Name:             rest-happstack
+Version:          0.2.9.7
+Description:      Rest driver for Happstack.
+Synopsis:         Rest driver for Happstack.
+Maintainer:       code@silk.co
+Category:         Web
+Build-Type:       Simple
+Cabal-Version:    >= 1.8
+License:          BSD3
+License-File:     LICENSE
+
+Library
+  GHC-Options:     -Wall
+  Hs-Source-Dirs:   src
+  Build-Depends:
+
+      base             == 4.*
+    , containers       >= 0.4    && < 0.6
+    , happstack-server >= 7.0.5  && < 7.4
+    , mtl              >= 2.0    && < 2.2
+    , rest-types       == 1.9.*
+    , transformers     == 0.3.*
+    , utf8-string      == 0.3.*
+    , rest-core        >= 0.28 && < 0.30
+
+  Exposed-Modules:  Rest.Driver.Happstack
+
+Source-repository head
+  Type:              Git
+  Location:          https://github.com/silkapp/rest.git

@@ -1,0 +1,46 @@
+Name:           sme
+Version:        0.1
+build-type:     Simple
+License:        BSD3
+License-File:   LICENSE
+Copyright:      (c) 2011 Mauro Jaskelioff, Alejandro Russo
+Author:         Mauro Jaskelioff, Alejandro Russo
+Maintainer:     Mauro Jaskelioff < mauro @ fceia dot unr dot edu dot ar>, Alejandro Russo < russo at chalmers dot se >
+Stability:      experimental
+Synopsis:       A library for Secure Multi-Execution in Haskell  
+Category:       Security
+Cabal-Version:  >=1.6
+
+Extra-source-files:
+     Examples/Client, Examples/Calculator.hs, Examples/Client-Interest, Examples/Client-Statistics, Examples/Client-Terms, Examples/Policy.hs
+
+Description:
+  The library is based on the paper 
+  /Secure Multi-Execution in Haskell/ by Mauro Jaskelioff, and Alejandro Russo. In Proceedings of 
+  Andrei Ershov International Conference on Perspectives of System Informatics (PSI'11), Akademgorodok, 
+  Novosibirsk, Russia, June 27-July 1, 2011. LNCS, Springer-Verlag. 
+  <http://www.cse.chalmers.se/~russo/publications_files/sme.pdf>
+
+Source-repository head
+  Type:     git
+  Location: gitosis@csmisc17.cs.chalmers.se:sme
+
+Library 
+   Build-depends: base >= 4 && < 5
+
+   ghc-options:  
+
+   Exposed-modules:
+       SME.Trustworthy, 
+       SME.Untrustworthy
+
+   Other-modules:
+       SME.Lattice, 
+       SME.LatticeLH,
+       SME.ME 
+ 
+   Extensions:
+       MultiParamTypeClasses,
+       FunctionalDependencies, 
+       FlexibleContexts 
+

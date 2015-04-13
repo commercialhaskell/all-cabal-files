@@ -1,0 +1,22 @@
+name:               c-io
+version:            0.1.0
+cabal-version:      >= 1.5
+build-type:         Simple
+license:            BSD3
+license-file:       LICENSE
+category:           System
+author:             Matt Morrow
+copyright:          (c) Matt Morrow
+maintainer:         Matt Morrow <mjm2002@gmail.com>
+stability:          experimental
+synopsis:           C IO.
+description:        FFI bindings to read(2), write(2), open(2), and close(2).
+
+library
+  build-depends:    base
+  ghc-options:      -O2
+  extensions:       ForeignFunctionInterface
+  hs-source-dirs:   src
+  includes:         unistd.h
+  c-sources:        cbits/c_io.c
+  exposed-modules:  System.C.IO

@@ -1,0 +1,56 @@
+name:             hspec-laws
+version:          0.0.0
+license:          MIT
+license-file:     LICENSE
+copyright:        (c) 2012-2014 Simon Hengel
+author:           Simon Hengel <sol@typeful.net>
+maintainer:       Simon Hengel <sol@typeful.net>
+build-type:       Simple
+cabal-version:    >= 1.8
+category:         Testing
+synopsis:         Document and test laws for standard type classes
+description:      Document and test laws for standard type classes
+
+source-repository head
+  type: git
+  location: https://github.com/hspec/hspec-laws
+
+library
+  ghc-options:
+      -Wall
+  hs-source-dirs:
+      src
+  exposed-modules:
+      Test.Hspec.Laws
+  build-depends:
+      base == 4.*
+    , hspec >= 1.4
+    , QuickCheck
+
+test-suite spec
+  type:
+      exitcode-stdio-1.0
+  ghc-options:
+      -Wall
+  hs-source-dirs:
+      test
+  main-is:
+      Spec.hs
+  build-depends:
+      base == 4.*
+    , hspec-laws
+    , hspec
+    , QuickCheck
+
+test-suite README
+  type:
+      exitcode-stdio-1.0
+  ghc-options:
+      -Wall -pgmL markdown-unlit
+  main-is:
+      README.lhs
+  build-depends:
+      base == 4.*
+    , hspec-laws
+    , hspec
+    , markdown-unlit

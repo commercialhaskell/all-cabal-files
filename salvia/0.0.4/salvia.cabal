@@ -1,0 +1,71 @@
+Name:             salvia
+Version:          0.0.4
+Description:      Lightweight Haskell Web Server Framework
+Synopsis:         Lightweight Haskell Web Server Framework 
+Category:         Network, Web
+License:          BSD3
+License-file:     LICENSE
+Author:           Sebastiaan Visser
+Maintainer:       sfvisser@cs.uu.nl
+Build-Type:       Simple
+Build-Depends:    base,
+                  bimap,
+                  bytestring,
+                  clevercss,
+                  containers,
+                  directory,
+                  encoding,
+                  filepath,
+                  hscolour,
+                  mtl ==1.1.0.2,
+                  network,
+                  old-locale,
+                  parsec,
+                  process,
+                  random,
+                  stm,
+                  time,
+                  utf8-string
+GHC-Options:      -threaded -Wall -fno-warn-orphans
+Extensions:       CPP
+HS-Source-Dirs:   src
+Other-modules:    Misc.Misc,
+                  Misc.Terminal
+Exposed-modules:  Network.Protocol.Cookie,
+                  Network.Protocol.Http,
+                  Network.Protocol.Mime,
+                  Network.Protocol.Uri,
+                  Network.Salvia.Httpd,
+                  Network.Salvia.Core.Config,
+                  Network.Salvia.Core.Handler,
+                  Network.Salvia.Core.IO,
+                  Network.Salvia.Core.Main,
+                  Network.Salvia.Core.Network,
+                  Network.Salvia.Handlers.Banner,
+                  Network.Salvia.Handlers.CGI,
+                  Network.Salvia.Handlers.Cookie,
+                  Network.Salvia.Handlers.Counter,
+                  Network.Salvia.Handlers.Default,
+                  Network.Salvia.Handlers.Directory,
+                  Network.Salvia.Handlers.Dispatching,
+                  Network.Salvia.Handlers.Error,
+                  Network.Salvia.Handlers.ExtensionDispatcher,
+                  Network.Salvia.Handlers.Fallback,
+                  Network.Salvia.Handlers.File,
+                  Network.Salvia.Handlers.FileSystem,
+                  Network.Salvia.Handlers.Head,
+                  Network.Salvia.Handlers.Log,
+                  Network.Salvia.Handlers.Login,
+                  Network.Salvia.Handlers.MethodRouter,
+                  Network.Salvia.Handlers.Parser,
+                  Network.Salvia.Handlers.PathRouter,
+                  Network.Salvia.Handlers.Printer,
+                  Network.Salvia.Handlers.Put,
+                  Network.Salvia.Handlers.Redirect,
+                  Network.Salvia.Handlers.Rewrite,
+                  Network.Salvia.Handlers.Session,
+                  Network.Salvia.Handlers.VirtualHosting,
+                  Network.Salvia.Advanced.CleverCSS,
+                  Network.Salvia.Advanced.ExtendedFileSystem,
+                  Network.Salvia.Advanced.HsColour
+

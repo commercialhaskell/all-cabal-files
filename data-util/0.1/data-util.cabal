@@ -1,0 +1,17 @@
+Name:                data-util
+Version:             0.1
+Synopsis:            utilities for handle data
+Description:         utilities for handle data
+Homepage:            https://github.com/cutsea110/data-util
+License:             BSD3
+License-file:        LICENSE
+Author:              Katsutoshi Itoh
+Maintainer:          cutsea110@gmail.com
+Category:            Data, Development, Utils
+Build-type:          Simple
+-- Extra-source-files:  
+Cabal-version:       >=1.2
+Library
+  Exposed-modules:     Data.Util, Data.Util.Size
+  Build-depends:       
+                     base >= 4.2 && < 4.3

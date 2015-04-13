@@ -1,0 +1,92 @@
+--Package-properties
+Name:			regexchar
+Version:		0.9.0.8
+Cabal-Version:		>= 1.6
+Copyright:		(C) 2010 Dr. Alistair Ward
+License:		GPL
+License-file:		LICENSE
+Author:			Dr. Alistair Ward
+Stability:		Stable interface, incomplete features.
+Synopsis:		A POSIX, extended regex-engine.
+Build-Type:		Simple
+Description:		Provides a POSIX, extended regex-engine, specialised from the underlying /polymorphic/ package /regexdot/, to merely process the traditional character-lists.
+Category:		Regex, Text
+Tested-With:		GHC == 6.10, GHC == 6.12, GHC == 7.0
+Homepage:		http://functionalley.eu
+Maintainer:		regexchar <at> functionalley <dot> eu
+Bug-reports:		regexchar <at> functionalley <dot> eu
+Data-files:		data/*.txt
+Extra-Source-Files:	man/man1/*.1 *.spec changelog copyright makefile
+
+flag threaded
+    Description:	Link with the threaded runtime.
+    default:		True
+
+flag llvm
+    Description:	Whether the 'llvm' compiler-backend has been installed and is required for code-generation.
+    manual:		True
+    default:		False
+
+Library
+    hs-source-dirs:	src
+
+    Exposed-modules:
+        RegExChar.ExtendedRegExChar
+        RegExChar.MetaChar
+        RegExChar.RegExOptsChar
+
+    Build-depends:
+        base == 4.*,
+        containers,
+        haskell98,
+        parsec == 3.*,
+        regexdot == 0.10.*,
+        toolshed >= 0.12
+
+    GHC-options:	-Wall
+    GHC-prof-options:	-prof -auto-all -caf-all
+
+    if impl(ghc >= 7.0) && flag(llvm)
+        GHC-options:	-fllvm
+
+Executable grecce
+    hs-source-dirs:	src
+    Main-Is:		Main.hs
+    Other-modules:
+        Grecce.CommandOptions
+        Grecce.Grep
+        Grecce.Test.Assert.RegExOptsChar
+        Grecce.Test.Performance.ExtendedRegEx
+        Grecce.Test.Performance.ExtendedRegExTest
+        Grecce.Test.Performance.ExtendedRegExTestsNegative
+        Grecce.Test.Performance.ExtendedRegExTestsPositive
+        Grecce.Test.QC.ExtendedRegExChar
+        Grecce.Test.QC.MetaChar
+        Grecce.Test.QC.QuickChecks
+        Grecce.Test.QC.RepeatableMetaChar
+
+    Build-depends:
+        array,
+        Cabal >= 1.6 && < 2,
+        QuickCheck >= 2.4,
+        regex-base,
+        regex-posix
+
+    GHC-options:	-Wall -O2
+    GHC-prof-options:	-prof -auto-all -caf-all
+
+    if flag(threaded)
+        Build-depends:	parallel >= 3.0
+        GHC-options:	-threaded
+
+        if impl(ghc >= 6.12)
+            GHC-options:	-feager-blackholing
+    else
+        Build-depends:	parallel
+
+    if impl(ghc >= 7.0)
+        GHC-options:	-rtsopts
+
+        if flag(llvm)
+            GHC-options:	-fllvm
+

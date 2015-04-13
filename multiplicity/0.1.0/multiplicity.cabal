@@ -1,0 +1,24 @@
+name:                multiplicity
+version:             0.1.0
+cabal-version:       >= 1.2
+build-type:          Simple
+synopsis:            Wrapper program for duplicity, adding config files
+description:         Multiplicity is a configuration file driven wrapper 
+                     around duplicity. It allows you to easily define 
+                     backup sets as config files and avoid long, 
+                     repetitive command lines.
+homepage:            http://ui3.info/d/proj/multiplicity.html
+category:            Backup
+license:             BSD3
+license-file:        LICENSE
+author:              Dino Morelli 
+maintainer:          Dino Morelli <dino@ui3.info>
+stability:           experimental
+tested-with:         GHC>=6.10.1
+data-files:          conf/example.mult-conf
+
+executable           multiplicity
+   main-is:          main.hs
+   hs-source-dirs:   src
+   build-depends:    base, containers, fez-conf, mtl, process
+   ghc-options:      -Wall

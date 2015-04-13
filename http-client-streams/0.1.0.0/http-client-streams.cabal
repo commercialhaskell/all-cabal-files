@@ -1,0 +1,29 @@
+name:                http-client-streams
+version:             0.1.0.0
+synopsis:            http-client for io-streams supporting openssl
+description:         Thin io-streams wrapper for http-client w/ openssl support
+license:             BSD3
+license-file:        LICENSE
+author:              David Johnson
+maintainer:          djohnson.m@gmail.com
+copyright:           David Johnson (c) 2014
+category:            Web, IO-Streams
+build-type:          Simple
+cabal-version:       >=1.10
+
+library
+  exposed-modules:     System.IO.Streams.HTTP
+  hs-source-dirs:      src
+  build-depends:       HsOpenSSL >= 0.11
+                     , base >=4.7 && <4.8
+                     , bytestring
+                     , http-client
+                     , http-client-openssl
+                     , io-streams
+                     , mtl
+                     , transformers >= 0.4.2.0
+  default-language:    Haskell2010
+
+source-repository head
+  type:     git
+  location: https://github.com/dmjio/http-client-streams.git

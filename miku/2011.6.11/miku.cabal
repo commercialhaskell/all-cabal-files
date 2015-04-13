@@ -1,0 +1,30 @@
+Name:                 miku
+Version:              2011.6.11
+Build-type:           Simple
+Synopsis:             A minimum web dev DSL in Haskell
+Description:
+    
+    A simple library for fast web prototyping in Haskell.
+
+License:              BSD3
+License-file:         LICENSE
+Author:               Jinjing Wang
+Maintainer:           Jinjing Wang <nfjinjing@gmail.com>
+Build-Depends:        base
+Cabal-version:        >= 1.2
+category:             Web
+homepage:             http://github.com/nfjinjing/miku
+data-files:           readme.md, changelog.md, Nemesis, known-issues.md
+
+library
+  ghc-options: -Wall
+  build-depends: base > 4 && <= 5, data-default, hack2 >= 2009.7.15, hack2-contrib >= 2009.8.18, utf8-string, air >= 2011.6.11, air-extra >= 2011.6.11, mtl, containers, bytestring
+  hs-source-dirs: src/
+  exposed-modules:  
+                      Network.Miku
+                      Network.Miku.Config
+                      Network.Miku.DSL
+                      Network.Miku.Engine
+                      Network.Miku.Middleware.MikuRouter
+                      Network.Miku.Type
+                      Network.Miku.Utils

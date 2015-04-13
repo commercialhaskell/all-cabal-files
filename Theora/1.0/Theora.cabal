@@ -1,0 +1,13 @@
+Name:			Theora
+Version:		1.0
+Description:		Video Compression Library (see http://theora.org)
+License:		GPL
+License-file:		LICENSE
+Author:			Pierre-Etienne Meunier
+Maintainer:		pierreetienne.meunier@gmail.com
+Build-Type:		Simple
+Cabal-Version:		>=1.2
+Library
+  Build-Depends:	base
+  Exposed-modules:	Theora.Encoding
+  extra-libraries:	ogg theora

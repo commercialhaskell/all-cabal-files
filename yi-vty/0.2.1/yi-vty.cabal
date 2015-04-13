@@ -1,0 +1,69 @@
+name:           yi-vty
+version:        0.2.1
+category:       Editor
+synopsis:       Vty backend for Yi
+description:
+  Core functions for the Vty backend of Yi.
+  Note that you will need the yi package to use this.
+  .
+  Note that this package is intended for Yi versions 0.2 and below, *not* 0.3, 0.4 or up.
+  This and yi-gtk are functionally obsolete.
+license:        GPL
+license-file:   LICENSE
+author:         Don Stewart
+maintainer:     dons@cse.unsw.edu.au
+build-type:     Simple
+build-depends:  ghc>=6.6, base, mtl, vty>=3.0, regex-posix, filepath>=1.0, yi<=0.2
+exposed-modules:
+ Yi
+ Yi.Buffer
+ Yi.Char
+ Yi.CharMove
+ Yi.Core
+ Yi.CoreUI
+ Yi.Debug
+ Yi.Editor
+ Yi.Eval
+ Yi.Event
+ Yi.FastBuffer
+ Yi.History
+ Yi.Interact
+ Yi.Kernel
+ Yi.Keymap
+ Yi.Keymap.Completion
+ Yi.Keymap.Ee
+ Yi.Keymap.Emacs
+ Yi.Keymap.Emacs.Keys
+ Yi.Keymap.Emacs.KillRing
+ Yi.Keymap.Emacs.UnivArgument
+ Yi.Keymap.Joe
+ Yi.Keymap.Mg
+-- Yi.Keymap.Movements ?? Investigate the contents of this module
+ Yi.Keymap.Nano
+ Yi.Keymap.Vi
+ Yi.Keymap.Vim
+ Yi.MkTemp
+ Yi.Process
+ Yi.Region
+ Yi.Search
+ Yi.String
+ Yi.Style
+ Yi.Syntax
+ Yi.Syntax.Table
+ Yi.UI
+ Yi.Undo
+ Yi.Version
+ Yi.Vty
+ Yi.Window
+ Yi.Yi
+include-dirs:   cbits
+hs-source-dirs: vty, .
+c-sources:      cbits/YiUtils.c
+other-modules:  Yi.Syntax.Haskell
+extensions:     CPP, ForeignFunctionInterface
+ghc-options:    -Wall -fglasgow-exts -funbox-strict-fields
+extra-source-files:
+ vty/Yi/UI.hs-boot
+ Yi/Editor.hs-boot
+ cbits/YiUtils.h
+ Yi/Syntax/alex.hsinc

@@ -1,0 +1,18 @@
+Name:           Etherbunny
+Version:        0.2
+Author:         Nick Burlett
+Maintainer:     nickburlett@mac.com
+Description:    A network analysis toolkit for haskell, based on the Network.Pcap library. Currently not very useful, but getting there.
+Synopsis:       A network analysis toolkit for haskell
+License:        GPL
+License-file:   LICENSE
+Category:       Network
+Build-Depends:   
+        base, network, haskell98, pcap, binary
+Exposed-modules:
+        Network.Etherbunny.Packet, Network.Etherbunny.Ethernet, Network.Etherbunny.Ip, Network.Etherbunny.Tcp
+
+Executable:     etherbunny
+Main-Is:        etherbunny.hs
+Extra-libraries: 
+                pcap

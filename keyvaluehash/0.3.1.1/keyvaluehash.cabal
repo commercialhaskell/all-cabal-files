@@ -1,0 +1,41 @@
+name:                keyvaluehash
+version:             0.3.1.1
+synopsis:            Pure Haskell key/value store implementation
+description:         A simple bytestring key/value store implemented
+                     in terms of hash table over a file.
+
+                     It cannot yet grow/shrink the hash table as
+                     needed, nor does it free old unused (key,value)
+                     pair storage.
+
+                     Mostly useful for applications that need not
+                     worry about the size of their persistent store.
+
+                     Reduces dependency hell.
+license:             BSD3
+license-file:        LICENSE
+author:              Eyal Lotem
+maintainer:          eyal.lotem@gmail.com
+copyright:           Eyal Lotem
+category:            Database
+build-type:          Simple
+cabal-version:       >=1.8
+Extra-Source-Files:  cbits/HsMsync.h
+
+library
+  hs-Source-Dirs:      src
+  exposed-modules:     Database.KeyValueHash
+  other-modules:       Database.GrowingFile, Database.FileArray, System.IO.MMap.Sync
+  build-depends:       base >= 3 && <10, filepath, directory, bytestring, hashable,
+                       binary, derive, mmap, array, storable-record
+  Include-dirs:        cbits
+  ghc-options:         -O2 -Wall
+  ghc-prof-options:    -Wall -auto-all -caf-all -rtsopts
+  if os(mingw32)
+      C-sources:       cbits/win32.c
+  else
+      C-sources:       cbits/posix.c
+
+source-repository head
+  type: git
+  location: https://github.com/Peaker/keyvaluehash.git

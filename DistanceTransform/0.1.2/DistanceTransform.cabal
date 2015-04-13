@@ -1,0 +1,43 @@
+name:                DistanceTransform
+version:             0.1.2
+synopsis:            Distance transform function.
+description:         An n-D distance transform that computes the Euclidean
+                     distance between each element in a discrete field and the nearest cell
+                     containing a zero.
+                     .
+                     The algorithm implemented is based off of
+                     Meijster et al., /"A general algorithm for computing distance/
+                     /transforms in linear time."/ Parallel versions of both the Euclidean
+                     distance transform and squared Euclidean distance transform are also
+                     provided.
+license:             BSD3
+license-file:        LICENSE
+author:              Anthony Cowley
+maintainer:          acowley@gmail.com
+copyright:           (c) Anthony Cowley 2012,2013
+category:            Math
+build-type:          Simple
+cabal-version:       >=1.10
+extra-source-files:  src/tests/Main.hs src/tests/TestPar.hs
+
+source-repository head
+  type: git
+  location: git://github.com/acowley/DistanceTransform.git
+
+library
+  exposed-modules:     DistanceTransform.Euclidean,
+                       DistanceTransform.Internal.Indexer
+  build-depends:       base >=4.5 && < 5, vector >=0.9, primitive
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+  ghc-options:         -O2 -Wall
+
+test-suite tests
+  type: exitcode-stdio-1.0
+  hs-source-dirs: src/tests
+  main-is: Main.hs
+  ghc-options: -Wall -O2 -threaded -rtsopts
+  default-language: Haskell2010
+  build-depends: base >= 4.5 && < 5,
+                 test-framework, test-framework-hunit, HUnit,
+                 vector, DistanceTransform

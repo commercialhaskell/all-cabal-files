@@ -1,0 +1,49 @@
+Name: dropbox-sdk
+Version: 0.3.1
+Synopsis: A library to access the Dropbox HTTP API.
+Description:
+    A (very preliminary) library to access the Dropbox HTTP API:
+    <https://www.dropbox.com/developers/reference/api>
+License: MIT
+License-File: License.txt
+Author: Kannan Goundan <kannan@dropbox.com>
+Maintainer: Kannan Goundan <kannan@dropbox.com>
+Homepage: http://github.com/cakoose/dropbox-sdk-haskell
+Category: Network APIs
+Build-Type: Simple
+Cabal-Version: >= 1.10
+Extra-Source-Files: trusted-certs.crt
+
+Library
+    Build-Depends:
+        base         == 4.*,
+        bytestring   == 0.9.*,
+        HTTP         == 4000.*,
+        utf8-string  == 0.3.*,
+        urlencoded   == 0.3.*,
+        json         >= 0.4 && < 0.6,
+        transformers == 0.3.*,
+        time         == 1.4.*,
+        old-locale   == 1.0.*,
+        network      == 2.3.*,
+        conduit      == 0.5.*,
+        resourcet    == 0.3.3.*,
+        case-insensitive >= 0.2 && < 0.5,
+        http-types   == 0.7.*,
+        http-conduit == 1.5.*,
+        monad-control == 0.3.1.*,
+        blaze-builder == 0.3.*,
+        tls          == 0.9.*,
+        tls-extra    == 0.4.*,
+        certificate  == 1.*,
+        pem          == 0.1.*,
+        template-haskell
+    HS-Source-Dirs: Source
+    Exposed-Modules: Dropbox, Dropbox.Certificates, Dropbox.Certificates.TH
+    GHC-Options: -Wall -fno-warn-missing-signatures -fno-warn-name-shadowing -fwarn-unused-imports
+    Default-Language: Haskell2010
+    Default-Extensions: OverloadedStrings, ScopedTypeVariables, Rank2Types
+
+Source-Repository head
+    Type: git
+    Location: git://github.com/cakoose/dropbox-sdk-haskell.git

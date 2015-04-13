@@ -1,0 +1,33 @@
+Name:		Agata
+version:	0.2.1.1
+cabal-Version:  >= 1.6
+build-type:     Simple
+license:        BSD3
+copyright:      Jonas Duregård
+license-file:   LICENSE
+author:		Jonas Duregård
+maintainer:     Jonas Duregård (jonas.duregard@gmail.com)
+category:	Testing
+synopsis:	Generator-generator for QuickCheck
+description:    Agata (Agata Generates Algebraic Types Automatically) uses Template Haskell to derive QuickCheck generators for Haskell data types.
+extra-source-files: Example.hs
+
+
+Library
+  Build-Depends: 
+    mtl, base>=4&&<5, 
+    template-haskell<2.8, 
+    QuickCheck>=2.1&&<2.6, 
+    containers, 
+    tagged>=0.4.2.1&&<1
+  Exposed-modules:
+    Test.Agata,
+    Test.AgataTH,
+    Test.Agata.Common
+    Test.Agata.Strategies,
+    Test.Agata.Instances,
+    Test.Agata.Base
+    
+source-repository head
+  type:     darcs
+  location: http://patch-tag.com/r/jonas_duregard/Agata/

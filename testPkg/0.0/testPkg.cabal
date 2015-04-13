@@ -1,0 +1,13 @@
+Name:           testPkg
+Version:        0.0
+Cabal-Version:  >= 1.2
+License:        OtherLicense
+License-file:   LICENSE
+Author:         Stephen E. A. Britton
+Synopsis:       Small test package
+Build-Type:     Simple
+
+Executable testPkg 
+  Build-Depends:  base >= 2 && < 4
+  Main-Is:        Main.hs
+  Hs-Source-Dirs: testPkg-0.0

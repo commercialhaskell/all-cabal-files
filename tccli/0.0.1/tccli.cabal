@@ -1,0 +1,16 @@
+Name: tccli
+Version: 0.0.1
+Synopsis: TokyoCabinet CLI interface
+Author: Voker57
+Maintainer: voker57@gmail.com
+Build-type: Simple
+Cabal-version: >= 1.4
+Stability: experimental
+License: BSD3
+License-file: COPYING
+Category: Database
+Description: Simple TokyoCabinet CLI interface
+Homepage: http://bitcheese.net/wiki/code/tccli
+Executable tchcli
+ Main-is: tchcli.hs
+ Build-Depends: base >= 4.0 && < 5.0, tokyocabinet-haskell, bytestring >= 0.9, utf8-string

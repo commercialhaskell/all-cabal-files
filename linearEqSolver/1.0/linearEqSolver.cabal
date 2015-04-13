@@ -1,0 +1,38 @@
+Name:          linearEqSolver
+Version:       1.0
+Category:      Math, SMT
+Synopsis:      Solve linear systems of equations over integers.
+Description:   Express and solve linear systems of equations over integers, using an SMT solver to do the actual solving.
+               By default, we use Microsoft's Z3 SMT solver (<http://research.microsoft.com/en-us/um/redmond/projects/z3/>).
+               .
+               You can get a single solution if it exists. Or ask for all possible solutions for underspecified
+               systems, which will be lazily returned in a list.
+               .
+               linearEqSolver is hosted at GitHub: <http://github.com/LeventErkok/linearEqSolver>. Comments,
+               bug reports, and patches are always welcome.
+               .
+               .
+               Release notes can be seen at: <http://github.com/LeventErkok/linearEqSolver/blob/master/RELEASENOTES>.
+
+Copyright:     Levent Erkok, 2012
+License:       BSD3
+License-file:  LICENSE
+Stability:     Experimental
+Author:        Levent Erkok
+Homepage:      http://github.com/LeventErkok/linearEqSolver
+Bug-reports:   http://github.com/LeventErkok/linearEqSolver/issues
+Maintainer:    Levent Erkok (erkokl@gmail.com)
+Build-Type:    Simple
+Cabal-Version: >= 1.14
+Extra-Source-Files: INSTALL, README, COPYRIGHT, RELEASENOTES
+
+source-repository head
+    type:       git
+    location:   git://github.com/LeventErkok/linearEqSolver.git
+
+Library
+  default-language: Haskell2010
+  ghc-options     : -Wall
+  Build-Depends   : base >= 4 && < 5
+                  , sbv
+  Exposed-modules : Math.LinearEquationSolver

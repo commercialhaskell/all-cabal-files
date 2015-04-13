@@ -1,0 +1,22 @@
+Name: rungekutta
+Version: 1.0.2
+Author: Uwe Hollerbach <uh@alumni.caltech.edu>
+Maintainer: Uwe Hollerbach <uh@alumni.caltech.edu>
+Category: Numeric
+Synopsis: A collection of explicit Runge-Kutta methods of various orders
+Description: This package contains a collection of explicit Runge-Kutta
+             methods of various orders, some with fixed-size steps (no
+             error estimate) and some intended for adaptive stepsize
+             (ie, they include an error estimate). There are a couple of
+             test programs which include some adaptive stepsize control,
+             however there is not yet any such routine in the library
+             itself. There is not yet much in the way of documentation.
+             It's version 1.0.2 because the initial version wasn't cabalized.
+Cabal-Version: >= 1.2
+Build-Type: Simple
+License: BSD3
+License-File: LICENSE
+
+Library
+ Build-Depends: base < 5
+ Exposed-Modules: Numeric.RungeKutta

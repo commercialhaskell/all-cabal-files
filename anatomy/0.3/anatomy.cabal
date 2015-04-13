@@ -1,0 +1,74 @@
+name:                anatomy
+version:             0.3
+synopsis:            Anatomy: Atomo documentation system
+description:         A Scribble-like documentation language/builder for Atomo.
+homepage:            http://atomo-lang.org/
+license:             BSD3
+license-file:        COPYING
+author:              Alex Suraci
+maintainer:          i.am@toogeneric.com
+category:            Development
+build-type:          Simple
+
+cabal-version:       >= 1.6
+
+data-files:          lib/anatomy.css
+                     lib/*.atomo
+
+source-repository   head
+    type:           hg
+    location:       http://bitbucket.org/alex/anatomy
+
+library
+  hs-source-dirs:    src
+
+  build-depends:
+    base >= 4 && < 5,
+    atomo >= 0.3,
+    containers,
+    directory,
+    filepath,
+    hashable,
+    haskeline,
+    mtl,
+    parsec >= 3.0.0,
+    pretty,
+    pretty-show,
+    tagsoup,
+    time,
+    vector
+
+  exposed-modules:
+    Anatomy.Atomo,
+    Anatomy.AutoFlow,
+    Anatomy.Builder,
+    Anatomy.Parser,
+    Anatomy.Scanner,
+    Anatomy.Types
+
+  other-modules:
+    Anatomy.Debug,
+    Paths_anatomy
+
+executable anatomy
+  hs-source-dirs:     src
+  main-is:            Main.hs
+
+  ghc-prof-options:   -prof -auto-all -caf-all
+  ghc-options:        -Wall -threaded -fno-warn-unused-do-bind
+
+  build-depends:
+    atomo >= 0.3,
+    base >= 4,
+    containers,
+    directory,
+    filepath,
+    hashable,
+    haskeline,
+    mtl,
+    parsec >= 3.0.0,
+    pretty,
+    pretty-show,
+    tagsoup,
+    time,
+    vector

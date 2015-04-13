@@ -1,0 +1,44 @@
+name:                recursive-line-count
+version:             0.1
+synopsis:            Count lines in files and display them hierarchically
+description:
+    This program can be used to count lines of code in a program and display
+    them hierarchically.  For example, to tally up lines of Haskell code in a
+    git repository:
+    .
+    >git ls-files '*.hs' | recursive-line-count
+    .
+    More precisely, @recursive-line-count@ takes a list of file names on
+    standard input, counts lines in each file, and displays the results in a
+    GtkTreeView.
+    .
+    Note that although this package is BSD3-licensed, it has LGPL dependencies.
+homepage:            https://github.com/joeyadams/haskell-recursive-line-count
+license:             BSD3
+license-file:        LICENSE
+author:              Joey Adams
+maintainer:          joeyadams3.14159@gmail.com
+copyright:           Copyright (c) Joseph Adams 2012
+category:            Tools
+build-type:          Simple
+cabal-version:       >=1.8
+
+source-repository head
+    type:       git
+    location:   git://github.com/joeyadams/haskell-recursive-line-count.git
+
+executable recursive-line-count
+    main-is: Main.hs
+
+    other-modules:
+        CountLines
+
+    build-depends: base == 4.*
+                 , containers
+                 , gtk
+                 , process
+                 , mtl >= 2
+                 , filepath
+                 , bytestring
+
+    ghc-options: -Wall -fwarn-tabs

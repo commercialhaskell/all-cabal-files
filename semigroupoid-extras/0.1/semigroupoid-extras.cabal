@@ -1,0 +1,29 @@
+name:          semigroupoid-extras
+category:      Control
+version:       0.1
+license:       BSD3
+cabal-version: >= 1.6
+license-file:  LICENSE
+author:        Edward A. Kmett
+maintainer:    Edward A. Kmett <ekmett@gmail.com>
+stability:     provisional
+homepage:      http://github.com/ekmett/semigroupoid-extras
+copyright:     Copyright (C) 2011 Edward A. Kmett
+build-type:    Simple
+synopsis:      semigroupoid products and coproducts
+description:   semigroupoid products and coproducts
+
+source-repository head
+  type: git
+  location: git://github.com/ekmett/semigroupoid-extras.git
+
+library
+  build-depends: 
+    base >= 4 && < 4.4,
+    semigroupoids >= 1.1 && < 1.2
+
+  exposed-modules:
+    Data.Semigroupoid.Product
+    Data.Semigroupoid.Coproduct
+
+  ghc-options: -Wall 

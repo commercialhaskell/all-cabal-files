@@ -1,0 +1,43 @@
+name:                TCache
+version:             0.5.5
+synopsis:            A Transactional data cache with configurable persistence 
+description: 
+        Data.Tcache is a transactional cache with configurable persistence. It tries to simulate Hibernate 
+        for Java or Rails for Ruby. The main difference is that transactions are done in memory trough STM. 
+        There are transactional cache implementations for some J2EE servers like JBOSS.
+
+        TCache uses STM. It can  atomically apply a function to a list of cached objects. The resulting 
+        objects go back to the cache (withResources). It also can retrieve these objects (getResources).  
+        Persistence can be syncronous (syncCache)  or asyncronous, wtih configurable time between cache 
+        writes and configurable cache clearance strategy. the size of the cache can be configured too . 
+        All of this can be done trough clearSyncCacheProc. Even the TVar variables can be accessed 
+        directly (getTVar) to acceess all the semantic of atomic blocks while maintaining the persistence of the 
+        TVar updates.
+
+        Persistence can be defined for each object: Each object must have a defined key, a default filename
+        path (if applicable). Persistence is pre-defined in files, but the readResource writeResource and 
+        delResource methods can be redefined to persist in databases or whatever.
+
+        There are  Samples here that explain the main features.
+        
+        
+        In this release:
+           Added a Data.TCache.Dynamic.  (SEE dynamicsample.hs)
+             - Can handle, transact, and serialize to disk many datatypes simultaneously and incrementally
+             - Dynamic uses the same interface than TCache and add *DResource(s) calls 
+             - Safe dynamic data handling trough a lighter, indexable and serializable version of Data.Dynamic
+             - Added KEY object for retrieving any object of any type.
+
+
+category:            Middleware
+license:             BSD3
+license-file:        LICENSE
+author:              Alberto Gómez Corona
+maintainer:          agocorona@gmail.com
+Tested-With:         GHC == 6.8.2
+Build-Type:          Simple
+build-Depends:       base >=3 && <4,directory >= 1.0, old-time >=1.0,stm>=2
+Cabal-Version:       >= 1.2
+
+exposed-modules:   Data.TCache, Data.TCache.Dynamic
+ghc-options:       

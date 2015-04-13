@@ -1,0 +1,26 @@
+Name:                pcap-enumerator
+Version:             0.5
+Synopsis:            Convert a pcap into an enumerator.
+Description:         pcap enumerator package
+Homepage:            http://github.com/cutsea110/pcap-enumerator
+License:             BSD3
+License-file:        LICENSE
+Author:              Katsutoshi Itoh
+Maintainer:          cutsea110@gmail.com
+Category:            Network, Enumerator
+Build-type:          Simple
+Cabal-version:       >=1.6
+
+Source-Repository head
+  type:              git
+  location:          http://github.com/cutsea110/pcap-enumerator
+
+Library
+  Exposed-modules:     Network.Pcap.Enumerator
+  Build-depends:       
+                       base >= 4.0 && < 5.0
+                     , transformers >= 0.2
+                     , pcap >= 0.4 && < 0.5
+                     , enumerator >= 0.4.10 && < 0.5
+                     , bytestring >= 0.10 && < 0.11
+

@@ -1,0 +1,33 @@
+name:           unscramble
+category:       Text
+synopsis:       Solve Boggle-like word games
+description:    Solve Boggle-like word games
+version:        1.0
+license:        MIT
+license-file:   LICENSE
+author:         Joel Taylor, Devyn Cairns
+maintainer:     Joel Taylor <me@joelt.io>,
+                Devyn Cairns <devyn.cairns@gmail.com>
+build-type:     Simple
+cabal-version:  >=1.10
+data-files:     lists/enable.txt
+
+executable unscramble
+  main-is:            Main.hs
+  other-modules:      Unscramble.Input
+                    , Unscramble.Output
+                    , Unscramble.Score
+                    , Unscramble.Search
+                    , Unscramble.Types
+  hs-source-dirs:     src
+  build-depends:      base == 4.*
+                    , array
+                    , optparse-applicative
+                    , stream-fusion
+                    , unordered-containers
+  default-extensions: TupleSections
+  default-language:   Haskell2010
+
+source-repository head
+  type:     git
+  location: https://github.com/joelteon/unscramble.git

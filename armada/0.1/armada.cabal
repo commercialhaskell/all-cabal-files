@@ -1,0 +1,18 @@
+Name:		armada
+Version:	0.1
+Stability:	experimental
+Synopsis:	Space-based real time strategy game
+Description:
+  Players use an armada of spaceships to collect resources, build their
+  military, and dominate space.
+License:	GPL
+License-file:	LICENSE
+Author:		Timothy Carstens
+Copyright:	(c) 2009 by Timothy Carstens
+Maintainer:	Timothy Carstens <carstens@math.utah.edu>
+Build-Depends:	base, OpenGL, GLUT, mtl, stm
+Build-Type:	Simple
+Category:	Game
+
+Executable:	armada
+Main-is:	Armada.hs

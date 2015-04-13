@@ -1,0 +1,42 @@
+Name:          HsHyperEstraier
+Synopsis:      HyperEstraier binding for Haskell
+Description:
+    HsHyperEstraier is a HyperEstraier binding for
+    Haskell. HyperEstraier is an embeddable full text search engine
+    which is supposed to be independent to any particular natural
+    languages.
+Version:       0.2
+License:       PublicDomain
+License-File:  COPYING
+Author:        PHO <phonohawk at ps dot sakura dot ne dot jp>
+Maintainer:    PHO <phonohawk at ps dot sakura dot ne dot jp>
+Stability:     experimental
+Homepage:      http://ccm.sherry.jp/HsHyperEstraier/
+Category:      Text
+Tested-With:   GHC == 6.8.1
+Cabal-Version: >= 1.2
+
+Extra-Source-Files:
+    NEWS
+    examples/Makefile
+    examples/HelloWorld.hs
+
+Library
+    Build-Depends:
+        base, bytestring, network, utf8-string
+    PkgConfig-Depends:
+        hyperestraier >= 1.4.9, qdbm >= 1.8.74
+    Exposed-Modules:
+        Text.HyperEstraier
+        Text.HyperEstraier.Condition
+        Text.HyperEstraier.Database
+        Text.HyperEstraier.Document
+    Other-Modules:
+        Database.QDBM.Cabin.List
+        Database.QDBM.Cabin.Map
+        Text.HyperEstraier.Utils
+    Extensions:
+        EmptyDataDecls, ForeignFunctionInterface
+    GHC-Options: 
+        -Wall -XDeriveDataTypeable
+

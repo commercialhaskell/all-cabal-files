@@ -1,0 +1,19 @@
+name:               permute
+version:            1.0
+synopsis:           Generalised permutation parser combinator
+description:
+    General permutation parser combinators that will work with any
+    parser combinator library.
+category:           Parsing
+license:            BSD3
+license-file:       LICENSE
+author:             Troels Henriksen
+maintainer:         athas@sigkill.dk
+cabal-version:      >= 1.10
+build-type:         Simple
+
+library
+    exposed-modules:    Text.ParserCombinators.Perm
+
+    build-depends:      mtl, base>=4.2 && < 5.0
+    default-language:   Haskell2010

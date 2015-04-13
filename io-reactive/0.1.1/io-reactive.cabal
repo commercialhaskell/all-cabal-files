@@ -1,0 +1,18 @@
+Name:                io-reactive
+Version:             0.1.1
+Synopsis:            An API for generating TIMBER style reactive objects.
+Description:	     An API for generating reactive objects, as used in the TIMBER programming language.
+Category:            Control, Reactivity
+License:             BSD3
+License-file:        LICENSE
+Author:              Andy Gill
+Maintainer:          Andy Gill <andygill@ku.edu>
+Build-Depends:       base
+Exposed-Modules:     Control.Concurrent.Reactive
+Stability:	     alpha
+build-type: 	     Simple
+
+-- Trivial (build) test framework
+Executable:          io-reactive-test
+hs-source-dirs:	     test, .
+Main-is:             ReactiveTest.hs

@@ -1,0 +1,21 @@
+Name:                smallstring
+Version:             0.1.0
+Synopsis:            A string type optimized for size in memory
+Description:         A string type offering very little memory overhead. No
+                     string manipulation functions are offered.
+                     .
+                     Equality and ordinal comparison aim to be competitive with
+                     the String type.
+Homepage:            http://community.haskell.org/~aslatter/code/smallstring/
+License:             BSD3
+License-file:        LICENSE
+Author:              Antoine Latter
+Maintainer:          aslatter@gmail.com
+Category:            Data
+Build-type:          Simple
+Cabal-version:       >=1.6
+
+Library
+  Build-depends:       base == 4.*, utf8-string == 0.3.*, smallarray == 0.1.*,
+                       deepseq == 1.1.*
+  Exposed-modules:     Data.SmallString

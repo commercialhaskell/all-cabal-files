@@ -1,0 +1,25 @@
+name:           binary-literal-qq
+version:        1.0
+author:         Mathieu Boespflug
+maintainer:     Mathieu Boespflug <mboes@tweag.net>
+copyright:      © 2012 Mathieu Boespflug
+synopsis:       Extends Haskell with binary literals.
+description:
+    The Haskell'98 and Haskell'2010 standards define decimal, octal
+    and hexadecimal integer literals. Binary literals are
+    conspicuously missing. Here's a quasiquoter to remedy the
+    situation.
+category:       Language
+license:        BSD3
+license-file:   LICENSE
+cabal-version:  >= 1.9.2
+build-type:     Simple
+
+source-repository head
+  type:     git
+  location: git://github.com/mboes/binary-literal-qq
+
+library
+  build-depends:   base == 4.*, template-haskell >= 2.5
+  exposed-modules: Language.Literals.Binary
+  ghc-options:     -W -fno-warn-incomplete-patterns -fno-warn-unused-matches

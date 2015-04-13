@@ -1,0 +1,116 @@
+name:               duplo
+version:            1.8.0
+synopsis:           Frontend development build tool
+description:        Intuitive, simple building blocks for building composable, completely self-managed web applications
+license:            MIT
+license-file:       LICENSE
+author:             Kenneth Kan
+maintainer:         ken@pixbi.com
+category:           Web
+build-type:         Simple
+extra-source-files: README.md tests/Tests.hs
+cabal-version:      >=1.10
+
+source-repository head
+  type:     git
+  location: https://github.com/pixbi/duplo.git
+
+library
+  ghc-options:          -Wall
+  hs-source-dirs:       src
+  default-language:     Haskell2010
+  default-extensions:   OverloadedStrings
+  exposed-modules:      Development.Duplo
+                      , Development.Duplo.Component
+                      , Development.Duplo.FileList
+                      , Development.Duplo.Files
+                      , Development.Duplo.Git
+                      , Development.Duplo.JavaScript.Order
+                      , Development.Duplo.Markups
+                      , Development.Duplo.Scripts
+                      , Development.Duplo.Server
+                      , Development.Duplo.Static
+                      , Development.Duplo.Styles
+                      , Development.Duplo.Types.AppInfo
+                      , Development.Duplo.Types.Builder
+                      , Development.Duplo.Types.Config
+                      , Development.Duplo.Types.JavaScript
+                      , Development.Duplo.Types.Options
+                      , Development.Duplo.Utilities
+                      , Development.Duplo.Watcher
+  build-depends:        base == 4.7.*
+                      , aeson
+                      , aeson-pretty
+                      , ansi-terminal
+                      , bytestring
+                      , containers
+                      , directory
+                      , executable-path
+                      , filepath
+                      , fsnotify
+                      , http-types
+                      , language-javascript
+                      , lens
+                      , mtl
+                      , regex-compat
+                      , scotty
+                      , shake
+                      , system-fileio
+                      , text
+                      , text-format
+                      , transformers
+                      , unordered-containers
+                      , utf8-string
+                      , wai
+                      , warp
+                      , MissingH
+
+executable duplo
+  main-is:              CLI.hs
+  ghc-options:          -rtsopts
+  hs-source-dirs:       src
+  default-language:     Haskell2010
+  default-extensions:   OverloadedStrings
+  build-depends:        base == 4.7.*
+                      , aeson
+                      , aeson
+                      , aeson-pretty
+                      , ansi-terminal
+                      , base64-bytestring
+                      , bytestring
+                      , containers
+                      , directory
+                      , duplo
+                      , filepath
+                      , fsnotify
+                      , http-types
+                      , language-javascript
+                      , lens
+                      , mtl
+                      , process
+                      , regex-compat
+                      , scotty
+                      , shake
+                      , system-filepath
+                      , text
+                      , text-format
+                      , transformers
+                      , unordered-containers
+                      , wai
+                      , warp
+                      , MissingH
+
+test-suite tests
+  main-is:            Tests.hs
+  ghc-options:        -Wall
+  hs-source-dirs:     tests
+  default-language:   Haskell2010
+  type:               exitcode-stdio-1.0
+  build-depends:      base == 4.7.*
+                    , duplo
+                    , HUnit
+                    , MissingH
+                    , QuickCheck
+                    , tasty
+                    , tasty-hunit
+                    , tasty-quickcheck

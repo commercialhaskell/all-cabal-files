@@ -1,0 +1,45 @@
+name:                learning-hmm
+version:             0.3.1.0
+stability:           experimental
+
+synopsis:            Yet another library for hidden Markov models
+description:         This library provides functions for the maximum likelihood
+                     estimation of discrete hidden Markov models. At present,
+                     only Baum-Welch and Viterbi algorithms are implemented for
+                     the plain HMM and the input-output HMM.
+category:            Algorithms, Machine Learning, Statistics
+
+author:              Mitsuhiro Nakamura
+maintainer:          Mitsuhiro Nakamura <m.nacamura@gmail.com>
+copyright:           Copyright (c) 2014 Mitsuhiro Nakamura
+license:             MIT
+license-file:        LICENSE
+homepage:            https://github.com/mnacamura/learning-hmm
+
+cabal-version:       >=1.10
+build-type:          Simple
+extra-source-files:  CHANGES.md
+
+source-repository head
+  type:              git
+  location:          https://github.com/mnacamura/learning-hmm.git
+
+library
+  exposed-modules:   Learning.HMM
+                   , Learning.IOHMM
+  other-modules:     Data.Random.Distribution.Categorical.Util
+                   , Data.Random.Distribution.Simplex
+                   , Data.Vector.Generic.Util
+                   , Learning.HMM.Internal
+                   , Learning.IOHMM.Internal
+  -- other-extensions:  
+  build-depends:     base >=4.7 && <4.8
+                   , containers
+                   , deepseq
+                   , hmatrix < 0.16.1
+                   , random-fu
+                   , random-source
+                   , vector
+  hs-source-dirs:    src
+  default-language:  Haskell2010
+  ghc-options:       -Wall

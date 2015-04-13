@@ -1,0 +1,66 @@
+-- The name of the package.
+name:                hactor
+
+-- The package version. See the Haskell package versioning policy
+-- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
+-- standards guiding when and how versions should be incremented.
+version:             0.1.0.0
+
+-- A short (one-line) description of the package.
+synopsis:            Lightweight Erlang-style actors for Haskell.
+
+-- A longer description of the package.
+description: This is a fork of Thespian, a library which aims to provide lightweight Erlang-style actors for Haskell.
+
+-- URL for the project homepage or repository.
+homepage:            https://github.com/Forkk/hactor
+
+-- The license under which the package is released.
+license:             BSD3
+
+-- The file containing the license text.
+license-file:        LICENSE
+
+-- The package author(s).
+author: Alex Constandache, Forkk
+
+-- An email address to which users can send suggestions, bug reports,
+-- and patches.
+maintainer:          forkk@forkk.net
+
+-- A copyright notice.
+-- Copyright:           
+
+-- Stability of the pakcage (experimental, provisional, stable...)
+stability:           experimental
+
+category:            Concurrency
+
+build-type:          Simple
+
+-- Extra files to be distributed with the package, such as examples or
+-- a README.
+-- Extra-source-files:  
+
+-- Constraint on the version of Cabal needed to build this package.
+cabal-version:       >=1.2
+
+
+library
+  -- Modules exported by the library.
+  exposed-modules:     Control.Concurrent.Actor
+  
+  -- Packages needed in order to build this package.
+  build-depends:       base >= 3 && < 5, 
+                       mtl >= 1.1,
+                       containers
+
+  -- Extra options for ghc
+  ghc-options:         -Wall
+  
+  -- Modules not exported by this package.
+  -- Other-modules:       
+  
+  -- Extra tools (e.g. alex, hsc2hs, ...) needed to build the source.
+  -- Build-tools:         
+

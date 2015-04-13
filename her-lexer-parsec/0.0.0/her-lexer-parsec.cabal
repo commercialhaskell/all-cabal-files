@@ -1,0 +1,22 @@
+name:               her-lexer-parsec
+version:            0.0.0
+synopsis:           Parsec frontend to "her-lexer" for Haskell source code.
+description:           Parsec frontend to "her-lexer" for Haskell source code.
+category:           Language
+license:            PublicDomain
+license-file:       LICENCE
+author:             Timothy Hobbs
+maintainer:         Timothy Hobbs<timothyhobbs@seznam.cz>
+cabal-version:      >= 1.6
+build-type:         Simple
+
+library
+    exposed-modules:    Language.Haskell.Her.Parsec
+    build-depends:      base >=3 && < 5,
+                        parsec >= 3,
+                        transformers >= 0.3.0.0,
+                        her-lexer >= 0
+
+source-repository head
+  type:    git
+  location: https://github.com/timthelion/her-lexer-parsec.git

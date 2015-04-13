@@ -1,0 +1,56 @@
+name:           rivers
+version:        0.1.0
+synopsis:       Rivers are like Streams, but different.
+license:        BSD3
+license-file:   LICENSE.md
+author:         Drew Day <drewday@gmail.com>
+maintainer:     Drew Day <drewday@gmail.com>
+copyright:      2011, 2012 Drew Day
+category:       Data,Comonads,Math
+homepage:       https://github.com/d-rive/rivers
+bug-reports:    https://github.com/d-rive/rivers/issues
+build-type:     Simple
+cabal-version:  >= 1.6
+
+extra-source-files:
+     README.md
+     LICENSE.md
+
+--data-files:
+
+description:
+     This library intends to unify, classify, demonstrate, and promote
+     the use, abuse, and exploration of Streams and other infinite (co)data
+     types. Many other languages have substantial feature overlap with Haskell,
+     but Streams and friends proivde excellent demonstrations of Haskell features
+     like laziness.
+     .
+     Rivers are not currently defined in this package, because they are still ill-defined.
+     The goal of this package in the meantime is, therefore, is to focus on Streams.
+     .
+     Another goal of this package is to demonstrate the ecosystem of Rivers (and Streams),
+     how identical (and indeed sometimes isomorphic) streams can be constucted in many
+     different ways. OEIS (<http://www.oeis.org>) is used to verify the correctness
+     of numeric streams, where possible.
+
+library
+  exposed-modules:
+    Data.Rivers.Ecology
+    Data.Rivers.Idiom
+    Data.Rivers.NumExt
+    Data.Rivers.Streams
+    --     other-modules:
+  build-depends:
+     base < 5.0,
+     lazysmallcheck < 0.7,
+     QuickCheck < 2.5,
+     oeis < 0.4
+
+  ghc-options: -O2 -Wall -funbox-strict-fields -fno-warn-unused-imports
+
+  if impl(ghc >= 6.8)
+    ghc-options: -fwarn-tabs
+
+source-repository head
+     type: git
+     location: git://github.com/d-rive/rivers.git

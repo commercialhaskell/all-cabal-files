@@ -1,0 +1,44 @@
+name: hasim
+version: 0.1.2
+cabal-version: >= 1.2
+build-type: Simple
+license: BSD3
+license-file: LICENSE.txt
+copyright: Copyright (c) 2008, Jochem Berndsen
+author: Jochem Berndsen
+maintainer: jochem@functor.nl
+stability: experimental
+homepage: http://huygens.functor.nl/hasim/
+synopsis: Process-Based Discrete Event Simulation library
+category: Control
+description:
+    Hasim is a library for process-based Discrete Event
+    Simulation in Haskell.
+extra-source-files: 
+    examples/simple1/Main.lhs
+    examples/elevator/Main.lhs
+tested-with:
+    GHC ==6.8.2, GHC ==6.10.1
+
+flag splitBase
+  description: Choose the new smaller, split-up base package.
+
+Library
+    if flag(splitBase)
+        build-depends: base >= 3, containers
+    else
+        build-depends: base < 3
+    build-depends: mtl >= 1.0
+    hs-source-dirs: src
+    exposed-modules: 
+        Control.Hasim
+        Control.Hasim.Action
+        Control.Hasim.DES
+        Control.Hasim.Process
+        Control.Hasim.SimRun
+        Control.Hasim.Simulation
+        Control.Hasim.Types
+        Control.Hasim.WatchMap
+    ghc-options: -Wall
+
+

@@ -1,0 +1,26 @@
+name:           uni-reactor
+version:        2.2.1.0
+build-type:     Simple
+license:        LGPL
+license-file:   LICENSE
+author:         uniform@informatik.uni-bremen.de
+maintainer:     Christian.Maeder@dfki.de
+homepage:       http://www.informatik.uni-bremen.de/uniform/wb/
+category:       Uniform
+synopsis:       Reactors for the uniform workbench
+description:    uni reactor
+cabal-version:  >= 1.4
+Tested-With:    GHC==6.10.4, GHC==6.12.3
+
+library
+  exposed-modules:
+    Reactor.Lock,
+    Reactor.BSem,
+    Reactor.MSem,
+    Reactor.ReferenceVariables,
+    Reactor.InfoBus,
+    Reactor.WithDir
+
+  build-depends: base >=4 && < 5, containers, directory, uni-util, uni-events
+
+  ghc-options: -fwarn-unused-imports -fno-warn-warnings-deprecations

@@ -1,0 +1,85 @@
+Name: greencard
+Version: 3.0.2
+Synopsis: GreenCard, a foreign function pre-processor for Haskell.
+Description:
+   GreenCard, a foreign function pre-processor for Haskell.
+Category: ForeignFunctionInterface
+License: BSD3
+License-file: LICENSE
+Author: Alastair Reid <alastair@reid-consulting-uk.ltd.uk>, Sigbjorn Finne <sof@forkIO.com>, Thomas Nordin.
+Maintainer: Sigbjorn Finne <sof@forkIO.com>
+Cabal-version: >= 1.2
+Build-type: Simple
+Extra-source-files: README
+                    INSTALL
+                    ANNOUNCE
+                    Makefile
+                    examples/Makefile
+                    examples/world/Makedefs.ghc
+                    examples/world/Makefile.hugs-linux
+                    examples/world/Makefile.hugs-win32
+                    examples/world/Makefile.ghc-win32
+                    examples/world/Makefile.ghc-linux
+                    examples/world/World.gc
+                    examples/world/README.txt
+                    examples/world/Makedeps
+                    examples/world/Main.hs
+                    examples/Gdbm/Makefile
+                    examples/Gdbm/Main.hs
+                    examples/Gdbm/Gdbm.gc
+                    examples/Gdbm/diffs
+                    examples/Gdbm/gdbmplus.h
+                    examples/Gdbm/README
+		    lib/package.conf.in
+		    lib/Makefile
+                    src/greencard.hugs.in
+                    src/greencard.ghc.in
+                    src/Parse.ly
+                    src/Package.lhs.in
+                    src/Makefile
+
+flag old-base
+  description: Old, monolithic base
+  default: False
+
+library {
+  hs-source-dirs: lib
+  Exposed-Modules: Foreign.GreenCard
+  include-dirs: lib
+  install-includes: GreenCard.gc
+ if flag(old-base)
+   Build-Depends: base < 3
+ else
+   Build-Depends: base >= 4
+}
+
+executable greencard {
+  main-is:        GreenCard.lhs
+ if flag(old-base)
+   Build-Depends: base < 3
+ else
+   Build-Depends: base >= 4
+  build-depends:  haskell98, pretty, containers, array
+  hs-source-dirs: src
+  c-sources:      src/ErrorHook.c
+  other-modules:  Process
+                  Package
+                  Lex
+                  Proc
+                  Parse
+                  Type
+                  Target
+                  PrettyUtils
+                  MarshallMonad
+                  ListUtils
+                  LexM
+                  FillIn
+                  ErrMonad
+                  DIS
+                  Decl
+                  Casm
+                  GCToken
+                  NameSupply
+                  FillInMonad
+                  Name
+}

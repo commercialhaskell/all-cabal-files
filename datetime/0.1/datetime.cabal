@@ -1,0 +1,25 @@
+name:                datetime
+version:             0.1
+stability:           experimental
+Description:
+  Provides several utilities for easily converting among the
+  various standard library Date and Time types, and for converting
+  between these and standard external representations.
+license:             GPL
+license-file:        COPYING
+author:              Eric Sessoms <nubgames@gmail.com>
+maintainer:          nubgames@gmail.com
+homepage:            http://github.com/esessoms/datetime
+category:            Data
+synopsis:            Utilities to make Data.Time.* easier to use.
+cabal-version:       >= 1.2
+build-type:          Simple
+
+library
+  build-depends:     base,
+                     QuickCheck >= 1.2,
+                     old-locale >= 1.0.0.1,
+                     old-time >= 1.0.0.1,
+                     time >= 1.1.2.2
+  exposed-modules:   Data.DateTime
+  hs-source-dirs:    src

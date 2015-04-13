@@ -1,0 +1,22 @@
+Name:		hdaemonize
+Version:	0.2
+Cabal-Version:  >= 1.6
+License:	BSD3
+License-file:   LICENSE
+Author:         Anton Tayanovskyy
+Maintainer:     Anton Tayanovskyy <name.surname@gmail.com>
+Homepage:       http://github.com/toyvo/hdaemonize/tree/master
+Category:	System
+Synopsis:       utilities for UNIX daemon writing
+Description:	Provides two functions that help writing better UNIX daemons,
+		daemonize and serviced: daemonize does what a daemon should do
+		(forking and closing descriptors), while serviced does that and 
+		more (syslog interface, PID file writing, start-stop-restart 
+		command line handling, dropping privileges).
+Build-Type:	Simple
+Extra-Source-Files:	README
+Library
+  Build-Depends:	base, unix, haskell98, hsyslog, extensible-exceptions
+  Exposed-modules:
+    System.Posix.Daemonize
+

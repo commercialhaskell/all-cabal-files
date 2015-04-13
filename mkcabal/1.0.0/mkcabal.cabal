@@ -1,0 +1,33 @@
+Name:                mkcabal
+Version:             1.0.0
+License:             GPL
+License-file:        LICENSE
+Homepage:            http://code.haskell.org/~dons/code/mkcabal
+Author:              Don Stewart
+Maintainer:          dons@galois.com
+Copyright:           (c) Don Stewart, 2005-2008, 2010
+Category:            Distribution
+Synopsis:            Generate cabal files for a Haskell project
+Description:         This project was a tool to generate cabal files for
+    a project. It has since been merged into 'cabal init'.
+    . 
+    *Please use 'cabal init' instead
+    . 
+    More details on cabal init here:
+    <http://byorgey.wordpress.com/2010/04/15/cabal-init/>
+
+build-type:          Simple
+cabal-version:       >= 1.2
+extra-source-files:  Licenses.hs
+
+flag small_base
+  description: Choose the new smaller, split-up base package.
+
+Executable mkcabal
+    main-is:             mkcabal.hs
+    build-depends:       mtl, pcre-light>=0.3, readline, extensible-exceptions
+    if flag(small_base)
+        build-depends: base >= 3 && < 5,
+                       pretty, old-locale, old-time, directory
+    else
+        build-depends: base < 3

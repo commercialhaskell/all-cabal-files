@@ -1,0 +1,31 @@
+name: gtk2hs-hello
+version: 1.1.0.0
+license: MIT
+license-file: LICENSE
+copyright: (c) Hamish Mackenzie
+author: Hamish Mackenzie
+maintainer: Hamish Mackenzie <Hamish.K.Mackenzie@gmail.com>
+bug-reports: mailto:Hamish.K.Mackenzie@gmail.com
+stability: stable
+homepage: http://www.haskell.org/hello/
+synopsis: Gtk2Hs Hello World, an example package
+category: Graphics
+cabal-version: >= 1.6
+build-type: Simple
+
+Description:
+  This is an implementation of the classic "Hello World" program in
+  Haskell using Gtk2Hs, as an example of how to create a minimal Gtk2Hs
+  application.  Please submit any suggestions and improvements.
+
+source-repository head
+  type:     git
+  location: https://github.com/gtk2hs/gtk2hs-hello
+
+executable gtk2hs-hello
+  hs-source-dirs: src
+  main-is: hello.hs
+  build-depends: base >= 4.2 && < 5,
+                 transformers >= 0.3.0.0 && < 0.4,
+                 gtk3 >= 0.13.0.0 && < 0.14,
+                 glib >= 0.13 && < 0.14

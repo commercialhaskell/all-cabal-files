@@ -1,0 +1,35 @@
+Cabal-Version: >= 1.6
+Name:          AC-VanillaArray
+Version:       1.1.2
+Stability:     Experimental
+Synopsis:      Immutable arrays with plain integer indicies.
+
+Description:
+
+  This package is a thin layer over GHC's low-level array
+  primitives. It provides arrays with zero-origin integers
+  for indicies. (These arrays also lack bounds checks.)
+  They come in two flavours: mutable or immutable. (Both
+  are boxed and lazy, however. There are no unboxed arrays
+  here.)
+
+  The idea is that you can use this package as a starting
+  point for building a more useful array package, without
+  having to learn all GHC's low-level internals for yourself.
+
+  Changes:
+
+  * Now builds with GHC 6.12.1
+
+Category:      Data
+License:       BSD3
+License-file:  License.txt
+Author:        Andrew Coppin
+Maintainer:    Andrew Coppin <MathematicalOrchid@hotmail.com>
+Build-Type:    Simple
+Tested-With:   GHC == 6.10.3
+
+Library
+  Exposed-modules: Data.Array.Vanilla.Unsafe
+  Build-Depends:   base >= 4 && < 5, ghc-prim >= 0.1 && < 0.3
+  HS-Source-Dirs:  .

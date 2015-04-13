@@ -1,0 +1,111 @@
+name:                  uu-cco-examples
+version:               0.1.0.1
+synopsis:              Utilities for compiler construction: example programs
+description:           A small utility library accompanying the course on
+                       Compiler Construction (INFOMCCO) at Utrecht Univerity.
+license:               BSD3
+license-file:          LICENSE
+category:              Compilers/Interpreters
+copyright:             (c) 2008-2014 Utrecht University
+author:                Stefan Holdermans <stefan@holdermans.nl>
+maintainer:            Atze Dijkstra <atze@uu.nl>
+stability:             provisional
+homepage:              https://github.com/UU-ComputerScience/uu-cco
+build-type:            Custom
+cabal-version:         >= 1.8
+extra-source-files:    AUTHORS,
+                       uuagc_options,
+                       src/CCO/Arith/AG.ag,
+                       src/CCO/Arith/AG/Base.ag,
+                       src/CCO/Arith/AG/Evaluation.ag,
+                       src/CCO/Arith/AG/Pos.ag,
+                       src/CCO/Arith/AG/Printing.ag,
+                       src/CCO/ArithBool/AG.ag,
+                       src/CCO/ArithBool/AG/Base.ag,
+                       src/CCO/ArithBool/AG/Evaluation.ag,
+                       src/CCO/ArithBool/AG/Pos.ag,
+                       src/CCO/ArithBool/AG/Printing.ag,
+                       src/CCO/ArithBool/AG/Typing.ag
+
+source-repository head
+  type:     git
+  location: git://github.com/UU-ComputerScience/uu-cco.git
+
+executable uu-cco-parse-arith
+  main-is:             ParseArith.hs
+  build-depends:       base >= 4 && < 5, uu-cco >= 0.1.0.0,
+                       uuagc >= 0.9.40.3, uuagc-cabal >= 1.0.3.0
+  other-modules:       CCO.Arith, CCO.Arith.AG, CCO.Arith.Base,
+                       CCO.Arith.Lexer, CCO.Arith.Parser
+  hs-source-dirs:      src
+
+executable uu-cco-parse-arithbool
+  main-is:             ParseArithBool.hs
+  build-depends:       base >= 4 && < 5, uu-cco >= 0.1.0.0,
+                       uuagc >= 0.9.40.3, uuagc-cabal >= 1.0.3.0
+  other-modules:       CCO.ArithBool, CCO.ArithBool.AG, CCO.ArithBool.Base,
+                       CCO.ArithBool.Lexer, CCO.ArithBool.Parser
+  hs-source-dirs:      src
+
+executable uu-cco-pp-arith
+  main-is:             PpArith.hs
+  build-depends:       base >= 4 && < 5, uu-cco >= 0.1.0.0,
+                       uuagc >= 0.9.40.3, uuagc-cabal >= 1.0.3.0
+  other-modules:       CCO.Arith, CCO.Arith.AG, CCO.Arith.Base,
+                       CCO.Arith.Lexer, CCO.Arith.Parser
+  hs-source-dirs:      src
+
+executable uu-cco-pp-arithbool
+  main-is:             PpArithBool.hs
+  build-depends:       base >= 4 && < 5, uu-cco >= 0.1.0.0,
+                       uuagc >= 0.9.40.3, uuagc-cabal >= 1.0.3.0
+  other-modules:       CCO.ArithBool, CCO.ArithBool.AG, CCO.ArithBool.Base,
+                       CCO.ArithBool.Lexer, CCO.ArithBool.Parser
+  hs-source-dirs:      src
+
+executable uu-cco-eval-arith
+  main-is:             EvalArith.hs
+  build-depends:       base >= 4 && < 5, uu-cco >= 0.1.0.0,
+                       uuagc >= 0.9.40.3, uuagc-cabal >= 1.0.3.0
+  other-modules:       CCO.Arith, CCO.Arith.AG, CCO.Arith.Base,
+                       CCO.Arith.Lexer, CCO.Arith.Parser
+  hs-source-dirs:      src
+
+executable uu-cco-eval-arithbool
+  main-is:             EvalArithBool.hs
+  build-depends:       base >= 4 && < 5, uu-cco >= 0.1.0.0,
+                       uuagc >= 0.9.40.3, uuagc-cabal >= 1.0.3.0
+  other-modules:       CCO.ArithBool, CCO.ArithBool.AG, CCO.ArithBool.Base,
+                       CCO.ArithBool.Lexer, CCO.ArithBool.Parser
+  hs-source-dirs:      src
+
+executable uu-cco-interp-arith
+  main-is:             InterpArith.hs
+  build-depends:       base >= 4 && < 5, uu-cco >= 0.1.0.0,
+                       uuagc >= 0.9.40.3, uuagc-cabal >= 1.0.3.0
+  other-modules:       CCO.Arith, CCO.Arith.AG, CCO.Arith.Base,
+                       CCO.Arith.Lexer, CCO.Arith.Parser
+  hs-source-dirs:      src
+
+executable uu-cco-interp-arithbool
+  main-is:             InterpArithBool.hs
+  build-depends:       base >= 4 && < 5, uu-cco >= 0.1.0.0,
+                       uuagc >= 0.9.40.3, uuagc-cabal >= 1.0.3.0
+  other-modules:       CCO.ArithBool, CCO.ArithBool.AG, CCO.ArithBool.Base,
+                       CCO.ArithBool.Lexer, CCO.ArithBool.Parser
+  hs-source-dirs:      src
+
+executable uu-cco-tc-arithbool
+  main-is:             TcArithBool.hs
+  build-depends:       base >= 4 && < 5, uu-cco >= 0.1.0.0,
+                       uuagc >= 0.9.40.3, uuagc-cabal >= 1.0.3.0
+  other-modules:       CCO.ArithBool, CCO.ArithBool.AG, CCO.ArithBool.Base,
+                       CCO.ArithBool.Lexer, CCO.ArithBool.Parser
+  hs-source-dirs:      src
+
+executable uu-cco-pp-aterm
+  main-is:             PpATerm.hs
+  build-depends:       base >= 4 && < 5, uu-cco >= 0.1.0.0
+  other-modules:       
+  hs-source-dirs:      src
+

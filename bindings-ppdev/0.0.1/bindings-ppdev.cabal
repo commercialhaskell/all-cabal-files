@@ -1,0 +1,26 @@
+Name:                      bindings-ppdev
+Version:                   0.0.1
+Cabal-version:             >= 1.2.3
+Synopsis:                  PPDev bindings
+License:                   BSD3
+License-file:              LICENSE
+Maintainer:                joe7mail@gmail.com
+Author:                    Joe M
+Build-type:                Simple
+Category:                  FFI
+
+Library
+  HS-Source-Dirs:          src
+  GHC-Options:             -Wall
+  Extensions:              ForeignFunctionInterface
+                           FunctionalDependencies,
+                           MultiParamTypeClasses,
+                           DeriveDataTypeable,
+                           StandaloneDeriving,
+                           TypeSynonymInstances
+  Build-Depends:           base >= 3 && < 5,
+                           bindings-DSL >= 1.0,
+                           ioctl >= 0.0.1
+  Exposed-Modules:         Bindings.PpDev
+  Build-tools:             hsc2hs
+

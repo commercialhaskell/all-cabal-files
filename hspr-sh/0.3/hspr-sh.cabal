@@ -1,0 +1,22 @@
+Name:                   hspr-sh
+Version:                0.3
+-- Most of the other hsp-related packages claim to be PublicDomain, but their code is actually BSD.
+-- In this case, the code makes no mention of copyright status, so might as well believe this file.
+License:                PublicDomain
+Maintainer:             nibro@cs.chalmers.se
+Author:                 Niklas Broberg
+Maintainer:             Niklas Broberg <nibro@cs.chalmers.se>
+Synopsis:               Session handler for HSP
+Description:            A simple session handler for the HSP package, needed
+                        by the HSPR tools.
+Homepage:               http://www.cs.chalmers.se/~d00nibro/hsp/
+
+Stability:              Experimental
+Category:               Network
+
+Build-Type:             Simple
+Tested-With:            GHC==6.8.3
+GHC-Options:            -Wall
+
+Build-Depends:          base>3, old-time
+Exposed-Modules:        HSPR.SessionHandler

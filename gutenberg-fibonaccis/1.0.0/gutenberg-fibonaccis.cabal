@@ -1,0 +1,17 @@
+Name:           gutenberg-fibonaccis
+Version:        1.0.0
+License:        BSD3
+License-file:   LICENSE
+Copyright:      Copyright (c) 2011, Justin Hanekom
+Author:         Justin Hanekom <justin.hanekom@gmail.com>
+Maintainer:     Justin Hanekom <justin.hanekom@gmail.com>
+Synopsis:       The first 1001 Fibonacci numbers, retrieved from the Gutenberg Project.
+Description:    Provides the first 1001 Fibonacci numbers, retrieved from the Gutenberg Project, along with functions to retrieve and query these numbers.
+Cabal-Version:  >= 1.6
+Build-type:     Simple
+-- Stability:      Stable
+Category:       Math, Numerical
+
+Library
+    Build-Depends:      base >= 3 && < 5
+    Exposed-Modules:    Gutenberg.Fibonaccis

@@ -1,0 +1,39 @@
+Name:           strings
+Version:        1.1
+
+Synopsis:       Functions for working with strings, including Text, ByteString, etc.
+
+Description:    This package provides various functions for working with strings,
+                such as @join@, @split@, @toUppercase@, etc.
+                .
+                The functions in this package work with all kinds of strings
+                such as Text, ByteString, String, and their respective lazy counter
+                parts. There is also an interface which is agnostic of the underlying
+                string type.
+                .
+                [@v1.0.2@] Fixed an issue with @strSplitAll@. Applied to the empty string
+                    it should return an empty list, but it returned a list containing
+                    a single empty string. It now returns correctly the empty list.
+                .
+                [@v1.1@] Added @strToUpper@, @strToLower@, @strCapitalize@, @strCons@,
+                    and  @strMap@. Also @sCapitalize@, @sCons@, and @sMap@.
+                
+License:        MIT
+License-File:   LICENSE
+Author:         Julian Fleischer <julian.fleischer@fu-berlin.de>
+Maintainer:     Julian Fleischer <julian.fleischer@fu-berlin.de>
+Build-Type:     Simple
+Cabal-Version:  >= 1.6
+Category:       Text, String, Utility
+Stability:      provisional
+Homepage:       http://hub.darcs.net/scravy/strings
+
+Source-Repository head
+    type: darcs
+    location: hub.darcs.net:strings
+
+Library
+    Exposed-Modules:    Data.Strings
+    Build-Depends:      base >= 4 && < 5, bytestring >= 0.9 && < 0.11, text >= 0.10
+    Hs-Source-Dirs:     src
+

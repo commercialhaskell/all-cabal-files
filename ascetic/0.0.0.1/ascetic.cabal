@@ -1,0 +1,14 @@
+Name:              ascetic
+Version:           0.0.0.1
+Synopsis:          Generic markup builder.
+Description:       Module for assembling/emitting files in any XML-like language.
+Category:          Text
+License:           GPL
+Author:            Andrei Lapets
+Maintainer:        Andrei Lapets <lapets@bu.edu>
+Build-Type:        Simple
+Cabal-Version:     >= 1.2
+
+library
+  exposed-modules: Text.Ascetic, Text.Ascetic.HTML
+  build-depends:   base >= 3 && < 5, MissingH

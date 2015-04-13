@@ -1,0 +1,26 @@
+Name:                monad-stlike-io
+Version:             0.2.1
+Cabal-Version:       >= 1.6
+Build-Type:          Simple
+Synopsis:            ST-like monad capturing variables to regions and supporting IO.
+Description:         ST-like monad capturing variables to regions and supporting IO.
+License:             BSD3
+License-file:        COPYING
+Copyright:           Taru Karttunen <taruti@taruti.net>
+Author:              Taru Karttunen
+Category:            Monadic Regions, Monads
+Maintainer:          taruti@taruti.net
+Homepage:	     http://github.com/taruti/monad-stlike-io
+Source-repository head
+  type:     git
+  location: http://github.com/taruti/monad-stlike-io.git
+
+Library
+  Build-Depends:       base >= 4 && < 5, bytestring, containers, deepseq, transformers
+  Exposed-modules:     Control.Monad.STLike.IO,
+                       Control.Monad.STLike.Unsafe
+  Other-modules:       Control.Monad.STLike.Internal
+  Extensions:          RankNTypes, FlexibleInstances, TypeOperators, EmptyDataDecls, MultiParamTypeClasses,
+                       FunctionalDependencies, FlexibleContexts, UndecidableInstances, OverlappingInstances,
+                       KindSignatures
+  GHC-Options:         -Wall

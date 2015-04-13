@@ -1,0 +1,28 @@
+Name:           roundtrip-string
+Version:        0.1.0.0
+Synopsis:       Bidirectional (de-)serialization
+Description:    Roundtrip allows the definition of bidirectional
+                (de-)serialization specifications. This package provides
+                concrete implementations of these specifications
+                for parsing/pretty-printing strings.
+                .
+                See the roundtrip package for more details.
+License:        BSD3
+License-file:   LICENSE
+Author:         Stefan Wehr <wehr@factisresearch.com>,
+                David Leuschner <leuschner@factisresearch.com>
+Maintainer:     Stefan Wehr <wehr@factisresearch.com>,
+Category:       Text
+Build-type:     Simple
+Cabal-version:  >=1.8
+
+Library
+  Hs-Source-Dirs: src
+  Exposed-modules:
+      Text.Roundtrip.Parser
+    , Text.Roundtrip.Printer
+  Build-depends:
+      base == 4.*
+    , mtl >= 1.1.1.1
+    , parsec == 3.1.*
+    , roundtrip == 0.2.*

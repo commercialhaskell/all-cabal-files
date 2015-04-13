@@ -1,0 +1,20 @@
+name:			MorseCode
+version:		0.0.1
+Cabal-Version:	>= 1.6
+license:		GPL-3
+license-file:	LICENSE
+copyright:		(c) 2009 Andy Stewart
+synopsis:		Morse code
+description:    Morse code
+author:			Andy Stewart
+maintainer:		lazycat.manatee@gmail.com
+stability:		provisional
+category:		Text
+
+tested-with:	GHC==6.10.4
+build-type:		Simple
+
+Library
+  Exposed-Modules:
+     Text.Morse
+  Build-depends: containers >= 0.2.0.1, base >= 4 && < 5

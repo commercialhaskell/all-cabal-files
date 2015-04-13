@@ -1,0 +1,25 @@
+name:                while-lang-parser
+version:             0.1.0.0
+synopsis:            Parser for the While language.
+description:         Parser for the While language described in /Semantics with Applications/ by Nielson and Nielson.
+
+homepage:            https://github.com/davnils/while-lang-parser
+
+license:             BSD3
+license-file:        LICENSE
+
+author:              David Nilsson And Patrik Berggren
+maintainer:          nilsson.dd+code@gmail.com
+
+category:            Language
+
+build-type:          Simple
+cabal-version:       >=1.8
+
+
+library
+  exposed-modules:     Language.While.Parser, Language.While.Types
+  build-depends:
+    base >= 4.5 && < 5,
+    parsec >= 3.1 && < 4,
+    indents >= 0.3 && < 0.4

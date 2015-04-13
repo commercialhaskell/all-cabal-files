@@ -1,0 +1,43 @@
+name: pipes-attoparsec-streaming
+version: 0.1.0.0
+synopsis: Streaming parsing in the pipes-core framework with Attoparsec.
+description: This module exports the single function parse, which can be used to
+  run an Attoparsec parser in a streaming fashion, which means that
+  the parser is not only run incrementally across the input (which
+  can be done with plain Attoparsec or packages like
+  pipes-attoparsec), but that the parse results are delivered
+  incrementally.  This package can be seen as a kind of dual to
+  pipes-attoparsec: the latter runs parser incrementally over their
+  input, whereas the former incrementally delivers output.
+
+license: BSD3
+license-file: LICENSE
+author: Martin Grabmueller
+maintainer: martin@grabmueller.de
+copyright: Copyrght (c) 2012 Martin Grabmueller
+category: Control
+build-type: Simple
+cabal-version: >= 1.8
+
+library
+  exposed-modules:
+    Control.Pipe.Attoparsec.Stream
+  -- other-modules:
+  build-depends:
+    base == 4.5.*,
+    pipes-core == 0.1.*,
+    attoparsec == 0.10.*,
+    transformers >= 0.3,
+    bytestring >= 0.9
+
+executable MimeParser
+  main-is: MimeParser.hs
+  hs-source-dirs: examples
+  build-depends:
+    base == 4.5.*,
+    pipes-core == 0.1.*,
+    attoparsec == 0.10.*,
+    transformers >= 0.3,
+    bytestring >= 0.9,
+    pipes-attoparsec-streaming
+

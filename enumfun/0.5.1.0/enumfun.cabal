@@ -1,0 +1,41 @@
+name:           enumfun
+version:        0.5.1.0
+synopsis:       Finitely represented /total/ EnumMaps
+description:
+    Finitely represented /total/ EnumMaps. Comprises a partial EnumMap and
+    a default value. Has Applicative and Monad instances, unlike EnumMap.
+    .
+    Inspired by Conal's Data.TotalMap:
+    <http://hackage.haskell.org/package/total-map>
+homepage:       https://github.com/liyang/enumfun
+license:        BSD3
+license-file:   LICENSE
+author:         Liyang HU
+maintainer:     enumfun@liyang.hu
+copyright:      © 2012 Liyang HU
+category:       Data
+build-type:     Simple
+cabal-version:  >= 1.8
+extra-source-files:
+    include/base.inc
+    include/enumfun.inc
+
+source-repository head
+    type:       git
+    location:   http://github.com/liyang/enumfun
+
+library
+    exposed-modules:
+        Data.EnumFun.Lazy
+        Data.EnumFun.Strict
+    other-modules:
+        Data.EnumFun.Lazy.Base
+        Data.EnumFun.Strict.Base
+    build-depends:
+        base >= 4.6 && < 5,
+        enummapset-th >= 0.5.1.0 && < 0.6
+    include-dirs: include
+    ghc-options: -Wall
+
+-- vim: et sw=4 ts=4 sts=4:
+

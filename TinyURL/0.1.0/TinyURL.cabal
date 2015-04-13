@@ -1,0 +1,16 @@
+Name:           TinyURL
+Version:        0.1.0
+Cabal-Version:  >= 1.2
+Build-Type:     Simple
+License:        BSD3
+License-File:   LICENSE
+Author:         Reid Barton
+Maintainer:     Reid Barton
+Category:       Web
+Synopsis:       Use TinyURL to compress URLs
+Description:    This package exports a single function that uses
+                the TinyURL API to compress a given URL.
+
+Library
+  Build-Depends:        base, HTTP, network
+  Exposed-Modules:      Network.TinyURL

@@ -1,0 +1,21 @@
+Name:		svg2q
+Version:	0.3.1
+Cabal-Version:   >= 1.6
+License:	BSD3
+Author:		Jan Greve
+Maintainer:	Jan Greve
+Homepage:	http://www.informatik.uni-kiel.de/~jgr/svg2q
+Category:	Parsing
+Synopsis:	Code generation tool for Quartz code from a SVG.
+Description:	svg2q will generate an Objective C Class from an SVG file which shows the SVG. The Class offers methods to set attributes of those SVG elements that have ids to change looks at runtime. This package is the result of a bachelors thesis and is not yet ready to use for "normal" SVGs. Upon request, usability may be improved if spare time is available. 
+build-type:	Simple
+stability:	alpha
+tested-with:	GHC ==6.12.3
+extra-source-files: svg2q.h, svg2q.m, *.hs
+license-file:	    license.txt
+
+
+Executable svg2q
+ Build-Depends:	base >= 4.0 && <= 4.3, svgutils, language-c, xml, haskell98, syb, pretty
+ Main-Is:	main.hs
+ Hs-Source-Dirs:	.

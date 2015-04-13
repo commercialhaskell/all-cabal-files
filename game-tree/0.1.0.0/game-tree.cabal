@@ -1,0 +1,25 @@
+name:                game-tree
+version:             0.1.0.0
+cabal-version:       >= 1.6
+synopsis:            Searching game trees with alpha-beta pruning
+description:         A data type for game trees, as used in decision theory and game theory,
+		     along with standard algorithms for searching the tree using alpha-beta pruning.
+		     Can be used as the basis of an AI for two-player zero-sum  games, such as chess.
+category:            Data
+license:             GPL
+license-file:        LICENSE
+author:              Colin Adams
+maintainer:          colin@colina.demon.co.uk
+copyright:           Copyright: 2009 Colin Adams
+build-type:          Simple
+tested-with:         GHC == 6.10.1
+
+Library
+ exposed-modules:     Data.Tree.Game_tree.Game_tree, Data.Tree.Game_tree.Negascout
+ build-depends:       base >= 4
+ ghc-options:         -Wall -fno-warn-unrecognised-pragmas -O2
+
+source-repository head
+ type: darcs
+ location: http://code.haskell.org/game-tree/
+

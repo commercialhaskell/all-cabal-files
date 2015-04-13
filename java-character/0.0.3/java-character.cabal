@@ -1,0 +1,57 @@
+Name:               java-character
+Version:            0.0.3
+License:            BSD3
+License-File:       LICENSE
+Author:             Tony Morris <ʇǝu˙sıɹɹoɯʇ@ןןǝʞsɐɥ>
+Maintainer:         Tony Morris
+Copyright:          Tony Morris
+Synopsis:           Functions to simulate Java's Character class.
+Category:           Development
+Description:        Functions to simulate the java.lang.Character class of Java. The specification of this class is required to implement some programming language grammars.
+Homepage:           https://github.com/tonymorris/java-character
+Cabal-Version:      >= 1.6
+Build-Type:         Simple
+
+Source-Repository   head
+  Type:             git
+  Location:         git@github.com:tonymorris/java-character.git
+
+Flag                small_base
+  Description:      Choose the new, split-up base package.
+
+Library
+  Build-Depends:
+                      base < 5 && >= 3
+                    , containers >= 0.4.0.0
+
+  GHC-Options:
+                    -Wall
+
+  Hs-Source-Dirs:
+                    src
+
+  Exposed-Modules:
+                    Language.Java.Character
+                    Language.Java.Character.IsDefined
+                    Language.Java.Character.IsDigit
+                    Language.Java.Character.IsIdentifierIgnorable
+                    Language.Java.Character.IsIsoControl
+                    Language.Java.Character.IsJavaIdentifierPart
+                    Language.Java.Character.IsJavaIdentifierStart
+                    Language.Java.Character.IsLetter
+                    Language.Java.Character.IsLetterOrDigit
+                    Language.Java.Character.IsLowerCase
+                    Language.Java.Character.IsMirrored
+                    Language.Java.Character.IsSpaceChar
+                    Language.Java.Character.IsSupplementaryCodePoint
+                    Language.Java.Character.IsTitleCase
+                    Language.Java.Character.IsUnicodeIdentifierPart
+                    Language.Java.Character.IsUnicodeIdentifierStart
+                    Language.Java.Character.IsUpperCase
+                    Language.Java.Character.IsValidCodePoint
+                    Language.Java.Character.IsWhitespace
+
+  GHC-Options:
+                   -Wall
+                   -funbox-strict-fields
+

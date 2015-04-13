@@ -1,0 +1,70 @@
+name:                prof2pretty
+version:             0.1.0.0
+synopsis:            generate pretty source from time/allocation profiles
+description:
+  prof2pretty is an enhanced rewrite of visual-prof that works with
+  recent GHC RTS.  sccpragmabomb adds SCC pragmas encoding source
+  location.  prof2pretty extracts those SCCs from the profiling output
+  to annotate the sources using HTML + CSS + JavaScript.
+  .
+  Usage:
+  .
+  > cd example
+  > ghc -prof -F -pgmF=sccpragmabomb test.hs
+  > cd ..
+  > ./example/test +RTS -P -RTS 31416
+  > prof2pretty --standalone --source=example/ test.prof
+  > sensible-browser test.prof.html
+  .
+  Example output: <http://mathr.co.uk/prof2pretty/prof2pretty-0.1.0.0.html>
+
+homepage:            https://gitorious.org/prof2pretty
+license:             BSD3
+license-file:        LICENSE
+author:              Claude Heiland-Allen
+maintainer:          claude@mathr.co.uk
+category:            Development, Profiling
+build-type:          Simple
+cabal-version:       >=1.8
+
+extra-source-files:
+  example/test.hs
+
+data-dir: data
+data-files:
+  prof2pretty.js
+  prof2pretty.css
+  jquery-1.7.2.min.js
+  jquery-ui-1.8.21.custom.min.js
+  jquery-ui-1.8.21.custom.css
+
+executable prof2pretty
+  hs-source-dirs: src
+  main-is: prof2pretty.hs
+  other-modules: Paths_prof2pretty
+  build-depends:
+    base >= 4 && < 5,
+    containers,
+    filepath,
+    semigroups,
+    zenc
+  ghc-options: -Wall
+
+executable sccpragmabomb
+  hs-source-dirs: src
+  main-is: sccpragmabomb.hs
+  build-depends:
+    base >= 4 && < 5,
+    haskell-src-exts,
+    uniplate,
+    zenc
+  ghc-options: -Wall
+
+source-repository head
+  type:                git
+  location:            git://gitorious.org/prof2pretty/prof2pretty.git
+
+source-repository this
+  type:                git
+  location:            git://gitorious.org/prof2pretty/prof2pretty.git
+  tag:                 v0.1.0.0

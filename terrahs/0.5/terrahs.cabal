@@ -1,0 +1,61 @@
+name:                terrahs
+version:        0.5
+license:        BSD3 
+author:                Sergio Costa <skosta@gmail.com>
+maintainer:     Sergio Costa <skosta@gmail.com>
+homepage:      http://lucc.ess.inpe.br/doku.php?id=terrahs
+category: Geographic Information System
+build-type: Simple
+license-file: LICENSE
+cabal-version: >= 1.6
+synopsis: Simple library for GIS Programs in Haskell.
+Description:
+   a software component that enables the development of geographical 
+   applications in a functional language, using the data handling capabilities
+    of TerraLib. TerraLib is a C++ library that supports different spatial 
+    database management systems, and that includes a large number 
+    of spatial algorithms. 
+   .
+   More info on package and its features at <http://lucc.ess.inpe.br/doku.php?id=terrahs>
+   
+   
+library
+    exposed-modules: 
+        TerraHS ,
+        TerraHS.TerraLib.TeRaster,
+        TerraHS.TerraLib,
+        Algebras.Functor.Category,
+        Algebras.Functor.GeoModel ,
+        TerraHS.Misc TerraHS.Misc.Generic ,
+        TerraHS.Misc.StrFunctions,
+        TerraHS.TerraLib.TeTable ,
+        TerraHS.Misc.Object ,
+        TerraHS.TerraLib.TeDatabase ,
+        TerraHS.TerraLib.TeLayer ,
+        TerraHS.TerraLib.TeGeometry ,
+        TerraHS.TerraLib.TeGeometryAlgorithms,
+        TerraHS.TerraLib.TeSTInstance ,
+        TerraHS.TerraLib.TeQuerier Algebras.Base,
+        Algebras.Base.Points ,
+        Algebras.Base.Lines ,
+        Algebras.Base.Polygons ,
+        Algebras.Base.Raster ,
+        Algebras.Base.Geometries,
+        Algebras.Base.Ids ,
+        Algebras.Base.Operations,
+        TerraHS.TerraLib.TeCoord2D,
+        TerraHS.TerraLib.TePoint,
+        TerraHS.TerraLib.TeLine2D,
+        TerraHS.TerraLib.TeBox,
+        TerraHS.TerraLib.TeCell,
+        TerraHS.TerraLib.TePolygon,
+        Algebras.Base.GeoObjects,
+        TerraHS.Misc.Databases,
+        Algebras.Base.Attribute,
+        Algebras.Base.Model ,
+        TerraHS.TerraLib.TeOverlay,
+        TerraHS.TerraLib.TeTopologyOps
+    extra-libraries: terrahsc
+    ghc-options: -fglasgow-exts  -fwarn-name-shadowing 
+    build-depends:        base==3.*
+    extensions:     MultiParamTypeClasses, UndecidableInstances,OverlappingInstances, Generics, ForeignFunctionInterface, TypeSynonymInstances, CPP, RankNTypes, DeriveDataTypeable

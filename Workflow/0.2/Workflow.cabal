@@ -1,0 +1,19 @@
+name:                Workflow
+version:             0.2
+synopsis:            FreeChooser
+description:  
+                     FreeChooser project
+
+
+category:            Application
+license:             BSD3
+license-file:        LICENSE
+author:              Alberto Gómez Corona
+maintainer:          agocorona@gmail.com
+Tested-With:         GHC == 6.8.2
+Build-Type:          Simple
+build-Depends:       base, TCache>=0.5.4, network, RefSerialize>=0.2.3,stm>=2.1,old-time
+Cabal-Version:       >= 1.2
+
+exposed-modules:     Control.Workflow
+ghc-options:       

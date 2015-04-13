@@ -1,0 +1,36 @@
+Cabal-Version: >= 1.6
+Name: hexpat-iteratee
+Version: 0.1
+Synopsis: chunked XML parsing using iteratees
+Description:
+  Provides chunked XML parsing using iteratees
+Category: XML
+License: BSD3
+License-File: LICENSE
+Author:
+  Stephen Blackheath (blackh)
+Maintainer: http://blacksapphire.com/antispam/
+Copyright:
+  (c) 2010 Stephen Blackheath <http://blacksapphire.com/antispam/>
+Homepage: http://haskell.org/haskellwiki/Hexpat/
+Build-Type: Simple
+Stability: prototype
+source-repository head
+    type:     darcs
+    location: http://code.haskell.org/hexpat-iteratee/
+
+Library
+  Build-Depends:
+    base >= 3 && < 5,
+    bytestring,
+    mtl,
+    parallel,
+    containers,
+    extensible-exceptions >= 0.1 && < 0.2,
+    iteratee >= 0.3,
+    hexpat >= 0.13,
+    List >= 0.2
+  Exposed-Modules:
+    Text.XML.Expat.Chunked
+    Text.XML.Expat.Chunked.Iterator
+  ghc-options: -Wall -fno-warn-name-shadowing -fno-warn-unused-matches -fno-warn-missing-signatures -fno-warn-orphans

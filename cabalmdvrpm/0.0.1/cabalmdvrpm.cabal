@@ -1,0 +1,20 @@
+Name: cabalmdvrpm
+Version: 0.0.1
+License: GPL
+License-file: gpl.txt
+Category: Distribution
+Maintainer: Olivier Thauvin <nanardon@nanardon.zarb.org>
+Copyright: Copyright (c) 2006-2007 Olivier Thauvin
+homepage: http://nanardon.zarb.org/darcsweb/darcsweb.cgi?r=haskell-cabalmdvrpm;a=shortlog;topi=0
+synopsis: Create mandriva rpm from cabal package
+Stability: Beta
+Hs-Source-Dirs: .
+Exposed-Modules: Distribution.MDV.Rpm
+Extensions: CPP
+Build-Depends: haskell98, base, Cabal, cabalrpmdeps
+-- Cabal will automatically add unix here on non-Windows platforms
+GHC-Options: -O2
+
+Executable: cabalmdvspec
+Main-Is: cabalmdvspec.hs
+HS-Source-Dirs: .

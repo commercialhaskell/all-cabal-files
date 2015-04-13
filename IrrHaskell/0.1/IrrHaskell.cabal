@@ -1,0 +1,30 @@
+name: IrrHaskell
+version: 0.1
+cabal-version: >= 1.6
+build-type: Simple
+license: LGPL
+license-file: LICENSE
+author: Maciej Baranski
+maintainer: let at = "@" in concat ["m.baranski", at, "sms.ed.ac.uk"]
+stability: prototype
+homepage:
+category: Graphics, FFI, Game Engine
+tested-with: GHC == 6.10.1
+synopsis: Haskell binding to the Irrlicht game engine.
+description: 
+  Haskell binding to the Irrlicht game engine.
+
+library
+  build-depends: 
+    base >= 4.0.0.0 && < 5
+  exposed-modules:
+  exposed: True
+  other-modules:
+
+  extensions: ForeignFunctionInterface
+
+
+  c-sources: irrlicht_interface.cpp
+
+
+

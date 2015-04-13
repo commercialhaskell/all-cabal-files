@@ -1,0 +1,21 @@
+Name: stringprep
+Version: 0.1.5
+Description: Implements the "StringPrep" algorithm
+Synopsis: Implements the "StringPrep" algorithm
+License: BSD3
+Author: George Pollard <porges@porg.es>
+Maintainer: George Pollard <porges@porg.es>
+Build-Type: Simple
+Cabal-Version: >=1.6
+License-file: LICENSE
+Category: data
+extra-source-files: Text/*.hs
+
+source-repository head
+    type: git
+    location: git://github.com/Porges/stringprep-hs.git
+
+Library
+ Build-Depends: base>=3 && < 5, containers>=0.2, ranges>=0.2.2, text-icu>=0.6, text>=0.9
+ Exposed-modules: Text.StringPrep, Text.NamePrep
+ ghc-options: -O2 -Wall

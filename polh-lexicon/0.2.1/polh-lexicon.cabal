@@ -1,0 +1,52 @@
+name:               polh-lexicon
+version:            0.2.1
+synopsis:           A library for manipulating the historical dictionary of Polish
+description:
+    The library provides a binary representation of the historical
+    dictionary of Polish and language markup format (LMF) parsing
+    utilities which allow to translate the original LMF representation
+    of the dictionary to the binary form.
+license:            BSD3
+license-file:       LICENSE
+cabal-version:      >= 1.6
+copyright:          Copyright (c) 2012 IPI PAN
+author:             Jakub Waszczuk
+maintainer:         waszczuk.kuba@gmail.com
+stability:          experimental
+category:           Natural Language Processing
+homepage:           https://github.com/kawu/polh/tree/master/lexicon
+build-type:         Simple
+
+library
+  hs-source-dirs:   src
+  exposed-modules:    NLP.Polh.Types
+                      NLP.Polh.LMF
+                      NLP.Polh.LMF.Parse
+                      NLP.Polh.LMF.Show
+                      NLP.Polh.Binary
+                      NLP.Polh.Util
+  build-depends:      base >= 4 && < 5 
+                    , containers
+                    , directory
+                    , filepath
+                    , text
+                    , binary
+                    , text-binary >= 0.1 && < 0.2
+                    , polysoup >= 0.1 && < 0.2
+                    , dawg >= 0.9 && < 0.10
+                    , transformers
+                    , mtl
+
+  ghc-options: -Wall
+
+source-repository head
+    type: git
+    location: https://github.com/kawu/polh.git
+
+executable polh-binarize
+  hs-source-dirs: src, tools
+  main-is: polh-binarize.hs
+
+executable polh-show
+  hs-source-dirs: src, tools
+  main-is: polh-show.hs

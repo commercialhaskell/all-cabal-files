@@ -1,0 +1,15 @@
+Name:                fuzzytime
+Version:             0.1.1
+Description:         Print current time in a more casual way
+Synopsis:            Print current time in a more casual way
+Category:            Utils
+License:             GPL
+License-file:        LICENSE
+Author:              Kamil Stachowski
+Maintainer:          kamil.stachowski@gmail.com
+Build-Type:          Simple
+Cabal-Version:       >=1.8
+
+Executable fuzzytime
+    Main-is:           fuzzytime.hs
+    Build-Depends:     base >= 3 && <= 4, cmdargs, old-time

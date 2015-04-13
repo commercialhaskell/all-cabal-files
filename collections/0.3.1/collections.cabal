@@ -1,0 +1,54 @@
+name:		collections
+version:	0.3.1
+category:       Data Structures
+description:    
+        This package provides a suite of data structures types, with a consistent API. 
+        It is intended as an evolution of the data structures in the @base@ package.
+license:	BSD3
+license-file:	LICENSE
+author:		Jean-Philippe Bernardy, Adrian Hey and others (see AUTHORS file)
+maintainer:	jeanphilippe.bernardy (google mail)
+synopsis:	Useful standard collections types and related functions.
+exposed-modules:
+	Data.COrdering,
+	Data.Collections,	
+	Data.Collections.Foldable,
+	Data.Collections.Properties,
+	Data.Map.AVL,
+	Data.Map.List,
+        Data.Ranged,
+        Data.Ranged.Boundaries,
+        Data.Ranged.RangedSet,
+        Data.Ranged.Ranges,
+	Data.Set.AVL,
+	Data.Set.Enum,
+	Data.Set.List,
+	Data.Tree.AVL,
+	Data.Tree.AVL.Delete,
+	Data.Tree.AVL.Join,
+	Data.Tree.AVL.List,
+	Data.Tree.AVL.Push,
+	Data.Tree.AVL.Read,
+	Data.Tree.AVL.Set,
+	Data.Tree.AVL.Size,
+	Data.Tree.AVL.Split,
+	Data.Tree.AVL.Test.Counter,
+	Data.Tree.AVL.Test.Utils,
+	Data.Tree.AVL.Types,
+	Data.Tree.AVL.Write,
+	Data.Tree.AVL.Zipper,
+	Data.Trie
+other-modules:
+	Data.Tree.AVL.Internals.BinPath,
+	Data.Tree.AVL.Internals.DelUtils,
+	Data.Tree.AVL.Internals.HAVL,
+	Data.Tree.AVL.Internals.HJoin,
+	Data.Tree.AVL.Internals.HPush,
+	Data.Tree.AVL.Internals.HSet,
+	Data.Tree.AVL.Internals.HeightUtils
+include-dirs: 	include
+extra-source-files: include/Typeable.h include/ghcdefs.h include/h98defs.h
+build-type: Simple
+build-depends:	base >=3 && < 4, QuickCheck, containers, array, bytestring
+extensions:	CPP
+ghc-options:    -Wall -fno-warn-name-shadowing -fno-warn-incomplete-patterns

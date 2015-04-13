@@ -1,0 +1,106 @@
+name:                minesweeper
+version:             0.8.8.5
+category:            Game
+synopsis:            Minesweeper game which is always solvable without guessing
+description:         
+	Minesweeper game which is always solvable without guessing. 
+stability:          alpha
+license:            BSD3
+license-file:       LICENSE
+author:             Péter Diviánszky
+maintainer:         divip@aszt.inf.elte.hu
+cabal-version:      >=1.4
+build-type:         Simple
+data-files:         ms.glade
+extra-source-files: runInGHCi
+
+Flag tests
+    Description:    Enable inner project testing
+    Default:        False
+
+executable minesweeper
+  extensions:       
+    NoMonomorphismRestriction,
+--    NoNPlusKPatterns,
+    EmptyDataDecls,
+    ScopedTypeVariables,
+    ExistentialQuantification,
+    Rank2Types,
+    MultiParamTypeClasses,
+    TypeFamilies,
+    NamedFieldPuns,
+    PatternGuards,
+    ViewPatterns,
+    FlexibleContexts,
+    TemplateHaskell,
+    CPP
+
+  build-depends:
+    base >= 3.0 && < 5.0, 
+    containers, 
+    time, 
+    random, 
+    directory,
+    filepath,
+    binary, 
+    derive,
+    gtk >= 0.10, 
+    cairo >= 0.10,
+    glade
+
+  if flag(tests)
+    build-depends:
+      numeric-prelude,
+      lazysmallcheck
+
+    CPP-Options: -DTEST
+
+  main-is:          
+    Minesweeper.hs
+
+  other-modules:    
+    Data.ChangeMap,
+    Data.ChangeSet,
+    Data.PContainer,
+    System.Random.Instances,
+
+    Core.Square,
+    Core.BitField,
+    Core.Constraints,
+
+    Configuration,     
+    Step,
+
+    Scores,
+    State,
+    State.Functions,
+
+    Event,
+    When,
+
+    GTK,
+    GTK.Square,
+    GTK.Preferences,
+    GTK.Score,
+
+    Transition,
+    Transition.State,
+    Transition.Action,
+    Transition.Response,
+    Transition.Graphics,
+    Transition.Managed,
+
+    Log,
+
+    Driver,
+    Driver.Log
+    Driver.Simplified
+
+  ghc-options: 
+    -threaded
+    -Wall 
+    -fno-warn-incomplete-patterns 
+    -fno-warn-name-shadowing 
+    -fno-warn-missing-signatures 
+
+

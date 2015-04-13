@@ -1,0 +1,24 @@
+Name:                IFS
+Version:             0.1
+License:             BSD3
+License-file:        LICENSE
+Author:              alpheccar
+Copyright: Copyright (c) 2007, alpha
+category: Graphics
+synopsis: Iterated Function System generation for Haskell
+description: Library to describe IFS and generate PPM pictures from the descriptions 
+maintainer: misc@NOSPAMalpheccar.org
+homepage: http://www.alpheccar.org
+hs-source-dirs:      src/
+ghc-options:         -O -fglasgow-exts
+exposed-Modules: 
+   Graphics.IFS,
+   Graphics.IFS.Examples,
+   Graphics.IFS.Geometry,
+   Graphics.IFS.Ppm
+build-depends:       base>=2.0, haskell98, mtl
+
+Executable:          IFS
+hs-source-dirs:      src/
+Main-is:             main.hs
+ghc-options:         -O -fglasgow-exts

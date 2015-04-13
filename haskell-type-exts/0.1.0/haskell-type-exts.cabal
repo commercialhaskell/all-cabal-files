@@ -1,0 +1,45 @@
+Name:                   haskell-type-exts
+Version:                0.1.0
+License:                BSD3
+License-File:           LICENSE
+Author:                 Niklas Broberg
+Maintainer:             Niklas Broberg <niklas.broberg@chalmers.se>
+Category:               Language
+Synopsis:               A type checker for Haskell/haskell-src-exts
+Description:            Haskell Types with Extensions (HTE, haskell-type-exts)
+                        is (an embryo of) a type checker for Haskell as embodied
+			syntactically by the haskell-src-exts (HSE) package.
+			At this point the type checker only handles a limited
+			number of extensions, both regarding the various syntactic
+			extensions handled by HSE, and the various type-level
+			extensions implemented in e.g. GHC. The goal is to
+			cover the full range of known Haskell extensions,
+			but every path starts with a first step.
+
+Homepage:               http://code.haskell.org/haskell-type-exts
+Stability:              Experimental
+Tested-with:            GHC==7.0.3
+Build-Type:             Custom
+Cabal-Version:          >= 1.2
+Extra-Source-Files:
+			CHANGELOG
+
+Flag base4
+
+Library
+  Build-Depends:        haskell-src-exts >= 1.11, pretty, containers
+  if flag(base4)
+    Build-depends:      base >= 4 && < 5
+    cpp-options:        -DBASE4
+  else
+    Build-depends:      base >= 3 && < 4
+
+
+  Exposed-modules:      Language.Haskell.TypeCheck,
+                        Language.Haskell.TypeCheck.TypeCheck
+
+  Other-modules:        Language.Haskell.TypeCheck.Monad,
+                        Language.Haskell.TypeCheck.Simplify,
+                        Language.Haskell.TypeCheck.InternalTypes
+
+  Hs-source-dirs:       src

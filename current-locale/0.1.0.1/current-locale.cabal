@@ -1,0 +1,20 @@
+name: current-locale
+version: 0.1.0.1
+synopsis: Get the current system locale in System.Locale format
+description:
+  Use the system 'date' command to find out the current
+  system locale in System.Locale format.
+homepage: https://github.com/koterpillar/current-locale
+license: MIT
+license-file: LICENSE
+author: Alexey Kotlyarov
+maintainer: koterpillar@gmail.com
+category: System
+build-type: Simple
+cabal-version: >=1.8
+library
+  exposed-modules: System.CurrentLocale
+  build-depends: old-locale >= 1.0, process >= 1.0.1.1, base > 3 && < 5
+source-repository head
+  type: git
+  location: git://github.com/koterpillar/current-locale.git

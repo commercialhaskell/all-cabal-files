@@ -1,0 +1,37 @@
+Name:              minimung
+Version:           0.1
+Cabal-Version: >= 1.2
+License:           BSD3
+License-File:      LICENSE
+Synopsis:          Shows how to run grabber on Mac OS X
+Category:          Foreign, Graphics
+Description:
+  This version is known to work with GHC 6.12 and Mac OS X 10.6.2.
+  .
+  Haddock generated documentation is available from my homepage
+  .         
+  minimung is capable to do real time CIF??
+  .
+  Modules under 'Mac' are stable and good.
+  .
+  'Minimung.hs' is a clumsy example of usage.
+  .
+Author:            Yakov Zaytsev
+Maintainer:        Yakov Zaytsev <yakov@yakov.cc>
+build-type:        Simple
+extra-source-files:LICENSE
+-- if os(darwin)
+Executable         minimung
+  build-depends:   base >= 4.0 && < 5.0, haskell98, unix, GLUT
+  Main-Is:         Minimung.hs
+  hs-source-dirs:  .
+  Other-modules:   Mac
+                   Mac.Carbon
+                   Mac.QuickTime
+                   Mac.QuickDraw
+                   Data.Image
+                   Data.Geometry
+                   Data.Camera
+  frameworks:      QuickTime Carbon
+  ld-options:      -threaded
+--  ghc-options:     -fglasgow-exts

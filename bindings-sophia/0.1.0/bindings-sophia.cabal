@@ -1,0 +1,88 @@
+name:         bindings-sophia
+version:      0.1.0
+category:     Database
+
+author:       Eyal Lotem <eyal.lotem+sophia@gmail.com>
+maintainer:   Eyal Lotem <eyal.lotem+sophia@gmail.com>
+
+license:      BSD3
+license-file: LICENSE
+
+synopsis:     Low-level bindings to sophia library
+description:
+  Low-level bindings to <http://sphia.org/ sophia>, an open source,
+  modern, fast key/value store.
+
+cabal-version: >= 1.10
+build-type:    Simple
+
+--------------------------------------------------------------------------------
+
+extra-source-files:
+  README.md
+  sophia/COPYRIGHT
+  sophia/README
+  sophia/makefile
+  sophia/db/*.c
+  sophia/db/*.h
+  sophia/test/*.c
+  sophia/test/*.h
+
+--------------------------------------------------------------------------------
+
+library
+  default-language: Haskell2010
+
+  ghc-options: -Wall -O2
+  if impl(ghc >= 6.8)
+    ghc-options: -fwarn-tabs
+
+  exposed-modules:
+    Bindings.Sophia
+
+  build-tools:
+    hsc2hs
+
+  build-depends:
+    base          < 5,
+    bindings-DSL == 1.0.*
+
+  include-dirs:
+    sophia/db
+
+  c-sources:
+    sophia/db/util.c
+    sophia/db/sp.c
+    sophia/db/cat.c
+    sophia/db/crc.c
+    sophia/db/file.c
+    sophia/db/cursor.c
+    sophia/db/recover.c
+    sophia/db/e.c
+    sophia/db/rep.c
+    sophia/db/i.c
+    sophia/db/merge.c
+    sophia/db/gc.c
+    cbits/wrappers.c
+
+  cc-options: -g -Wall -O2
+
+--------------------------------------------------------------------------------
+
+-- test-suite main
+--   default-language: Haskell2010
+
+--   ghc-options: -Wall -O2
+--   if impl(ghc >= 6.8)
+--     ghc-options: -fwarn-tabs
+
+--   type: exitcode-stdio-1.0
+--   main-is: Test.hs
+--   build-depends:
+--     tasty       == 0.3.*,
+
+--------------------------------------------------------------------------------
+
+source-repository head
+  type:     git
+  location: https://github.com/Peaker/bindings-sophia.git

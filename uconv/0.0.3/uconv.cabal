@@ -1,0 +1,30 @@
+name:            uconv
+version:         0.0.3
+copyright:       2008 Audrey Tang
+license:         BSD3
+license-file:    LICENSE
+author:          Audrey Tang <audreyt@audreyt.org>
+maintainer:      Audrey Tang <audreyt@audreyt.org>
+synopsis:        String encoding conversion with ICU
+description:     Provides an interface to ICU's uconv library function
+                 for string encoding conversion.
+stability:       experimental
+build-type:      Custom
+cabal-version:   >= 1.2.1
+category:        Codec
+extra-source-files: README examples/huconv.hs
+
+flag bytestring_in_base
+
+library
+  exposed-modules: Codec.Text.UConv
+  if flag(bytestring_in_base)
+    -- bytestring was in base-2.0 and 2.1.1
+    build-depends: base >= 2.0 && < 2.2
+    cpp-options: -DBYTESTRING_IN_BASE
+  else
+    build-depends: base < 2.0 || >= 2.2, bytestring >= 0.9
+  extensions:      ForeignFunctionInterface, TypeSynonymInstances, CPP
+  extra-libraries: icuuc
+  includes:        unicode/ucnv.h unicode/urename.h
+  hs-source-dirs:  src

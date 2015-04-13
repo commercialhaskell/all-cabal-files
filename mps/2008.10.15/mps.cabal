@@ -1,0 +1,18 @@
+Name:                 mps
+Version:              2008.10.15
+Build-type: 		      Simple
+Synopsis:             message passing style helpers
+Description:          message passing style helpers
+License:              BSD3
+Author:               Wang, Jinjing
+Maintainer:           Wang, Jinjing <nfjinjing@gmail.com>
+Build-Depends:        base
+Cabal-version:        >= 1.2
+data-files:			      README.markdown, changelog.markdown
+category:			        Development
+license-file:	        LICENSE
+homepage:             http://github.com/nfjinjing/mps/
+
+library
+  build-depends: base, containers, array, parallel, fgl, QuickCheck, time, bytestring >= 0.9, pandoc >= 0.46, regexpr >= 0.2.9, parsec >= 2, utf8-string >= 0.3.1, directory
+  exposed-modules: MPS, MPS.Snippets, MPS.Hack.Dot

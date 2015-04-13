@@ -1,0 +1,17 @@
+name:                addLicenseInfo
+version:             0.0
+synopsis:            Adds license info to the top of a file.
+description:         Adds license info to the top of a file.
+category:            Development
+license:             BSD3
+license-file:        LICENSE
+author:              Joe Fredette
+maintainer:          jfredett@gmail.com
+build-depends:       base,
+                     process >= 1.0.1.0
+
+build-type:          Simple
+
+executable:          addLicenseInfo
+main-is:             Main.hs
+

@@ -1,0 +1,33 @@
+Name:               salvia-sessions
+Version:            1.0.0
+Description:        Session support for the Salvia webserver.
+Synopsis:           Session support for the Salvia webserver.
+Cabal-version:      >= 1.6
+Category:           Network, Web
+License:            BSD3
+License-file:       LICENSE
+Author:             Sebastiaan Visser, Erik Hesselink
+Maintainer:         sfvisser@cs.uu.nl
+Build-Type:         Simple
+
+Library
+  GHC-Options:      -Wall -fno-warn-orphans
+  HS-Source-Dirs:   src
+
+  Build-Depends:    base ==4.*,
+                    safe ==0.2.*,
+                    fclabels ==0.4.*,
+                    pureMD5 ==1.0.*,
+                    stm ==2.1.*,
+                    containers >= 0.2 && < 0.4,
+                    MaybeT-transformers == 0.1.*,
+                    random ==1.0.*,
+                    time ==1.1.*,
+                    utf8-string ==0.3.*,
+                    salvia ==1.0.*,
+                    salvia-protocol ==1.0.*,
+                    monads-fd ==0.0.*
+
+  Exposed-modules:  Network.Salvia.Handler.Login
+                    Network.Salvia.Handler.Session
+

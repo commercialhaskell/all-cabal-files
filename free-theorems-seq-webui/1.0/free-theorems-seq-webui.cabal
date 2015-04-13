@@ -1,0 +1,42 @@
+name:           free-theorems-seq-webui
+version:        1.0
+license:        PublicDomain
+author:         Daniel Seidel
+maintainer:     ds@iai.uni-bonn.de
+synopsis:       Taming Selective Strictness
+description:
+        This package provides access to the functionality of 
+        <http://hackage.haskell.org/package/free-theorems-seq> through a web interface.
+        .
+        An online version of the interface is running at <http://www-ps.iai.uni-bonn.de/cgi-bin/polyseq.cgi>.
+category:       Language
+tested-with:    GHC==7.0.1
+build-type:	Simple
+cabal-version:  >= 1.6
+
+extra-source-files:
+    testcgi.py
+    test.sh
+    src/TimeOut.hs
+    README
+
+executable free-theorems-seq-webui.cgi
+    main-is:
+        free-theorems-seq-webui.hs
+    build-depends:
+        cgi >= 3001.1.5.1
+      , containers >= 0.1.0.1 
+      , free-theorems-seq == 0.1.*
+      , mtl >= 1.1.0.0
+      , network >= 2.1.0.0 
+      , pretty == 1.*
+      , utf8-string >= 0.3.1.1
+      , xhtml >= 3000.0.2.1
+    if impl(ghc >= 6.10)
+      build-depends:
+          base >= 4
+        , syb >= 0.1.0.0
+    else
+      build-depends:
+          base >= 1 && < 4
+    hs-source-dirs: src

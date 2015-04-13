@@ -1,0 +1,24 @@
+Name:          hskeleton
+Version:       0.1.1
+Cabal-version: >= 1.6
+License:       BSD3
+License-file:  LICENSE
+Maintainer:    Robin Green <greenrd@greenrd.org>
+Build-type:    Simple
+Copyright:     see LICENSE
+Category:      Console
+Synopsis:      Skeleton for new Haskell programs
+Description:   Currently, this just handles --help and --version arguments for you.
+               In future, it may do more.
+Bug-reports:   mailto:greenrd@greenrd.org
+Stability:     experimental
+Tested-with:   GHC == 6.10.2
+
+Source-repository head
+    Type:      darcs
+    Location:  http://patch-tag.com/publicrepos/hskeleton
+
+Library
+    Build-depends:   base < 5, Cabal >= 1.6
+    Exposed-modules: System.Console.GetOpt.Skeleton, System.Console.GetOpt.StandardOpts
+    GHC-options:     -Wall

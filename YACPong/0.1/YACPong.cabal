@@ -1,0 +1,52 @@
+name: YACPong
+version: 0.1
+cabal-version: >=1.4
+build-type: Simple
+license: MIT
+license-file: LICENSE
+copyright: Copyright (c) 2010 Korcan Hussein
+maintainer: korcan_h@hotmail.com
+build-depends: SDL -any, SDL-image -any, SDL-mixer -any,
+               SDL-ttf -any, base >=4 && <5, data-accessor-transformers -any,
+               fclabels -any, monads-fd -any, random -any, transformers -any
+stability:
+homepage: http://github.com/snkkid/YACPong
+package-url:
+bug-reports:
+synopsis: Yet Another Pong Clone using SDL.
+description: Yet Another Pong Clone using SDL.
+category: Game
+author: Korcan Hussein
+tested-with: GHC -any
+data-files: Crysta.ttf paddle.wav wall.wav win.wav
+data-dir: data
+extra-source-files: Collision.hs Consts.hs Draw.hs GameEnv.hs
+                    GameState.hs Labels.hs README Sound.hs Surface.hs Timer.hs
+                    Vector2.hs YACPong.hs
+extra-tmp-files:
+ 
+executable: YACPong
+main-is: YACPong.hs
+buildable: True
+build-tools:
+cpp-options:
+cc-options:
+ld-options:
+pkgconfig-depends:
+frameworks:
+c-sources:
+extensions:
+extra-libraries:
+extra-lib-dirs:
+includes:
+install-includes:
+include-dirs:
+hs-source-dirs: .
+other-modules: Collision Consts Draw GameEnv GameState Labels Sound
+               Surface Timer Vector2
+ghc-prof-options:
+ghc-shared-options:
+ghc-options:
+hugs-options:
+nhc98-options:
+jhc-options:

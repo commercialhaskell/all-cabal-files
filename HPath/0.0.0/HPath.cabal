@@ -1,0 +1,57 @@
+name                          : HPath
+version                       : 0.0.0
+category                      : Source Tools, Text
+license                       : BSD3
+license-file                  : LICENSE
+author                        : Jason Dusek
+maintainer                    : HPath@solidsnack.be 
+homepage                      : http://github.com/solidsnack/HPath
+synopsis                      : Extract Haskell declarations by name.
+description                   :
+  Extract the source code for Haskell declarations by name, for use in
+  documentation.
+
+
+cabal-version                 : >= 1.6
+build-type                    : Simple
+extra-source-files            : README
+
+
+library
+  build-depends               : base >= 2 && <= 4
+                              , containers
+                              , filepath
+                              , directory
+                              , mtl
+                              , parsec
+                              , utf8-string >= 0.3
+                              , haskell-src-exts >= 1.3.5
+                              , Cabal >= 1.6
+  exposed-modules             : HPath.Cabal
+                                HPath.HaskellSrcExts.Classes
+                                HPath.HaskellSrcExts
+                                HPath.Hierarchy
+                                HPath.Parser.Lower
+                                HPath.Path
+  extensions                  : StandaloneDeriving
+                                NoMonomorphismRestriction
+                                MultiParamTypeClasses
+                                ParallelListComp
+
+
+executable                      hpath
+  main-is                     : Main.hs
+  build-depends               : base >= 2 && <= 4
+                              , containers
+                              , filepath
+                              , directory
+                              , mtl
+                              , parsec
+                              , utf8-string >= 0.3
+                              , haskell-src-exts >= 1.3.5
+                              , Cabal >= 1.6
+  extensions                  : StandaloneDeriving
+                                NoMonomorphismRestriction
+                                MultiParamTypeClasses
+                                ParallelListComp
+

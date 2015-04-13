@@ -1,0 +1,36 @@
+Name:               hub
+Version:            0.0
+Copyright:          Chris Dornan, 2011
+Maintainer:         Chris Dornan <chris@chrisdornan.com>
+Author:             Chris Dornan <chris@chrisdornan.com>
+License:            BSD3
+License-file:       LICENSE
+Synopsis:           A utility for multiplexing multiple GHC installations
+Description:        This package provides a utility for multiplexing multiple
+                    GHC and Haskell Platform installations, the installation
+                    being selected by configuraton file or environment
+                    variable.
+Stability:          Alpha
+Category:           Development, Distribution
+Homepage:           https://github.com/cdornan/hub
+Build-type:         Simple
+Cabal-version:      >= 1.6
+
+Source-repository head
+    type:           git
+    location:       git@github.com:cdornan/hub.git
+
+Executable hub
+    Main-is:        hub.hs
+    Build-depends:  base        >= 4.0 && < 4.5,
+                    hexpat      == 0.19.*,
+                    regex-compat,
+                    containers,
+                    unix,
+                    filepath,
+                    directory,
+                    process,
+                    bytestring,
+                    haskell98
+    GHC-options:    -Wall
+    Extensions:     CPP

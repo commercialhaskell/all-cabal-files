@@ -1,0 +1,28 @@
+Name:                type-unary
+Version:             0.0.0
+Cabal-Version:       >= 1.2
+Synopsis:            Type-level and typed unary natural numbers, vectors, inequality proofs
+Category:            Data
+Description:
+  Type-level and value-typed unary natural numbers, plus length-typed
+  vectors, inequality proofs. There are probably many of these
+  packages. Perhaps consolidate. This one is extracted from Shady.
+Author:              Conal Elliott
+Maintainer:          conal@conal.net
+Homepage:            https://github.com/conal/type-unary
+Copyright:           (c) 2009-2011 by Conal Elliott
+License:             BSD3
+License-File:        COPYING
+Stability:           experimental
+build-type:          Simple
+
+Library
+  hs-Source-Dirs:      src
+  Extensions:
+  Build-Depends:       base >=4 && < 5, functor-combo, TypeCompose
+                     , ty, vector-space
+  Exposed-Modules:     TypeUnary.Vec
+                       
+  ghc-options:         -Wall
+
+--  ghc-prof-options:    -prof -auto-all 

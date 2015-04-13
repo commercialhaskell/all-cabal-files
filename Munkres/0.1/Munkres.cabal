@@ -1,0 +1,43 @@
+Name:                Munkres
+Version:             0.1
+Synopsis:            Munkres' assignment algorithm (hungarian method)
+Description:         The Munkres algorithm solves the weighted minimum matching 
+                     problem in a complete bipartite graph, in O(n^3) time. 
+                     This problem is often called the 'assignment problem'. 
+                     See eg. <http://en.wikipedia.org/wiki/Hungarian_algorithm>.
+License:             BSD3
+License-file:        LICENSE
+Author:              Balazs Komuves
+Copyright:           (c) 2008 Balazs Komuves
+Maintainer:          bkomuves (plus) hackage (at) gmail (dot) com
+Stability:           Experimental
+Category:            Algorithms
+Tested-With:         GHC == 6.10.1
+Cabal-Version:       >= 1.2
+Build-Type:          Simple
+
+Flag splitBase
+  Description:         Choose the new smaller, split-up base package.
+
+Flag debug
+  Description:         Debugging tools
+  Default:             False
+  
+Library
+  if flag(splitBase)
+    Build-Depends:       base >= 3, array
+  else
+    Build-Depends:       base <  3
+
+  if flag(debug)
+    cpp-options:         -DMUNKRES_DEBUG
+    build-depends:       random
+    
+  Exposed-Modules:     Data.Algorithm.Munkres
+  
+  Extensions:          CPP, MultiParamTypeClasses, FlexibleContexts
+                       
+  Hs-Source-Dirs:      .
+
+  ghc-options:         -Wall    
+ 

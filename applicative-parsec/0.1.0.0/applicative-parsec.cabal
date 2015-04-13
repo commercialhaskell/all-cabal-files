@@ -1,0 +1,86 @@
+
+name:           applicative-parsec
+version:        0.1.0.0
+cabal-version:  >= 1.10
+build-type:     Simple
+license:        GPL-3
+license-file:   LICENSE
+copyright:      Copyright 2013-2015 Karl Voelker
+author:         Karl Voelker
+maintainer:     aparsec@karlv.net
+stability:      experimental
+homepage:       https://www.github.com/ktvoelker/AParsec
+bug-reports:    mailto:aparsec@karlv.net
+synopsis:       An applicative parser combinator library
+description:
+  The goal of this library is to take advantage of the power of applicatives to
+  provide not only a parser combinator library, but grammar analysis and
+  validation tools. Right now, those tools are minimal, but do include a BNF
+  generator.
+category:       Language
+tested-with:    GHC == 7.10.1
+
+Source-repository head
+  type: git
+  location: https://github.com/ktvoelker/AParsec.git
+
+Library
+  default-language: Haskell2010
+  hs-source-dirs: src
+  ghc-options:
+    -Wall
+    -fno-warn-name-shadowing
+    -fno-warn-missing-signatures
+    -fno-warn-orphans
+  build-depends:
+    base       >= 4   && < 5,
+    containers >= 0.5 && < 0.6,
+    mtl        >= 2.2 && < 2.3,
+    lens       >= 4.9 && < 4.10,
+    text       >= 1.2 && < 1.3
+  exposed-modules:
+    Text.Parsec.Applicative
+    Text.Parsec.Applicative.BNF
+    Text.Parsec.Applicative.Grammar
+    Text.Parsec.Applicative.Internal
+    Text.Parsec.Applicative.Types
+  other-modules:
+    Example
+  default-extensions:
+    TupleSections
+    GADTs
+    RankNTypes
+    StandaloneDeriving
+    LambdaCase
+    ScopedTypeVariables
+  other-extensions:
+    TemplateHaskell
+
+Test-Suite test
+  type: exitcode-stdio-1.0
+  default-language: Haskell2010
+  hs-source-dirs: tst
+  main-is: Main.hs
+  other-modules:
+    Test
+    Types
+  ghc-options:
+    -Wall
+    -Werror
+    -fno-warn-name-shadowing
+    -fno-warn-missing-signatures
+    -fno-warn-orphans
+  build-depends:
+    base                       >= 4   && < 5,
+    mtl                        >= 2.2 && < 2.3,
+    QuickCheck                 >= 2.7 && < 2.8,
+    test-framework             >= 0.8 && < 0.9,
+    test-framework-quickcheck2 >= 0.3 && < 0.4,
+    applicative-parsec
+  default-extensions:
+    ImpredicativeTypes
+    RankNTypes
+    LambdaCase
+    TypeSynonymInstances
+    FlexibleInstances
+

@@ -1,0 +1,54 @@
+name:                tkhs
+version:             0.1.0.4
+synopsis:            Simple Presentation Utility
+description:         If you want to give your presentation in a terminal,
+                     or if PowerPoint would be overkill, you may find tkhs useful.
+category:            Console
+license:             BSD3
+license-file:        LICENSE
+extra-source-files:  README, demo/demo.txt
+author:              Yusaku Hashimoto
+maintainer:          Yusaku Hashimoto <nonowarn@gmail.com>
+build-type:          Custom
+cabal-version:       >= 1.6
+stability:           experimental
+homepage:            http://patch-tag.com/r/tkhs/snapshot/current/content/pretty/README
+
+flag test
+  description:       Build test program.
+  default:           False
+
+Executable tkhs
+  hs-source-dirs:    src
+  executable:        tkhs
+  main-is:           Main.hs
+  ghc-options:       -Wall
+  build-depends:     base == 4.*
+                   , pointedlist
+                   , mtl
+                   , vty == 3.*
+                   , parsec == 3.*
+                   , pretty
+                   , utf8-string
+  other-modules:     Vty
+                     Tkhs
+                     Parser
+  if flag(test)
+    buildable:       False
+
+Executable test
+  hs-source-dirs:    src, test
+  other-modules:
+  main-is:           Test.hs
+  ghc-options:       -fglasgow-exts
+  if !flag(test)
+    buildable:         False
+  else
+    build-depends:     test-framework
+                     , test-framework-hunit
+                     , HUnit
+
+
+Source-repository head
+  type:              darcs
+  location:          http://patch-tag.com/r/tkhs/pullrepo

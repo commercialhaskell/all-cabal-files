@@ -1,0 +1,32 @@
+Name:                cap
+Cabal-Version:       >= 1.2
+Version:             1.0.1
+Synopsis:            Interprets and debug the cap language.
+Description:         An interpreter and debugger for the cap language.
+License:             BSD3
+License-file:        LICENSE
+Author:              Thomas Davie
+Maintainer:          Thomas Davie (tom.davie@gmail.com)
+Data-Files:          README
+Category:            Language
+build-type:          Simple
+Extra-source-files:  examples/add.cap
+                     examples/allOdd.cap
+                     examples/fx.cap
+                     examples/higherOrder.cap
+                     examples/problem.cap
+                     examples/test.cap
+Executable cap
+  Build-Depends:        base >= 3.0,haskell98 >= 1.0,containers,array
+  hs-source-dirs:       src
+  Main-is:              Language/Cap/Main.hs
+  Other-Modules:        Language.Cap.Debug.Algorithmic,
+                        Language.Cap.Debug.Dotty,
+                        Language.Cap.Debug.EDT,
+                        Language.Cap.Debug.FDT,
+                        Language.Cap.Debug.Trace,
+                        Language.Cap.Debug.TraceMode,
+                        Language.Cap.Interpret.Parse,
+                        Language.Cap.Interpret.Pretty,
+                        Language.Cap.Interpret.Program
+  

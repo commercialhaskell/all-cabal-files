@@ -1,0 +1,18 @@
+Name            : SDL-mpeg
+Version         : 0.0.1
+Maintainer      : Audrey Tang
+Author          : Audrey Tang
+Copyright       : 2008, Audrey Tang
+License-File    : LICENSE
+License         : BSD3
+Build-Depends   : base, SDL
+Build-Type      : Simple
+Category        : Foreign binding
+Synopsis        : Binding to the SMPEG library
+Description     : Binding to the SMPEG library
+Extensions      : ForeignFunctionInterface
+Exposed-Modules : Graphics.UI.SDL.MPEG Graphics.UI.SDL.MPEG.Types Graphics.UI.SDL.MPEG.General
+Includes        : smpeg.h
+Data-Files      : README
+GHC-Options     : -Wall
+Extra-Libraries : smpeg

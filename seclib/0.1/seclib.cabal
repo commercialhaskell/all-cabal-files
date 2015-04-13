@@ -1,0 +1,50 @@
+Name:           seclib
+Version:        0.1
+build-type:     Simple
+License:        BSD3
+License-File:   LICENSE
+Copyright:      (c) 2008 ~ 2011 Alejandro Russo, Koen Claessen, John Hughes
+Author:         Alejandro Russo, Koen Claessen, John Hughes
+Maintainer:     Alejandro Russo < russo at chalmers dot se >
+Stability:      experimental
+Synopsis:       A lightweight library for Information-flow security in Haskell 
+Category:       Security
+Cabal-Version:  >=1.6
+
+Extra-source-files:
+     Examples/SafeExample.hs, Examples/Example.hs, Examples/Downgrade.hs, GNUmakefile
+
+Description:
+  The library is based on the paper 
+  /A Library for Light-weight Information-Flow Security in Haskell/ by Alejandro Russo, Koen Claessen 
+  and John Hughes. In Proceedings of the ACM SIGPLAN 2008 Haskell Symposium, Victoria, British Columbia, 
+  Canada, September 2008. 
+  <http://www.cse.chalmers.se/~russo/publications_files/haskell22Ext-russo.pdf>
+
+Source-repository head
+  Type:     git
+  Location: gitosis@csmisc17.cs.chalmers.se:seclib
+
+Library 
+   Build-depends: base >= 4 && < 5,
+                  network >= 2.2
+
+   ghc-options:  
+
+   Exposed-modules:
+       SecLib.Untrustworthy, 
+       SecLib.Trustworthy, 
+       SecLib.LatticeLH
+
+   Other-modules:
+       SecLib.Lattice, 
+       SecLib.Sec, 
+       SecLib.SecIO, 
+       SecLib.Declassification
+ 
+   Extensions:
+       MultiParamTypeClasses,
+       FlexibleInstances, 
+       FunctionalDependencies, 
+       TypeSynonymInstances 
+

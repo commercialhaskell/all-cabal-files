@@ -1,0 +1,17 @@
+Name:             multirec-binary
+Version:          0.0.1
+Description:      Generic Data.Binary instances using MultiRec.
+Synopsis:         Generic Data.Binary instances using MultiRec.
+Category:         Generics, Data
+License:          BSD3
+License-file:     LICENSE
+Author:           Sebastiaan Visser
+Maintainer:       sfvisser@cs.uu.nl
+Cabal-Version:    >= 1.6
+Build-Type:       Simple
+Build-Depends:    base, multirec ==0.3.*, binary ==0.5.*
+
+GHC-Options:      -Wall
+HS-Source-Dirs:   src
+Exposed-modules:  Generics.MultiRec.Binary
+

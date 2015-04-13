@@ -1,0 +1,21 @@
+name:                transformers-runnable
+version:             0.1.0.0
+synopsis:            A unified interface for the run operation of monad transformers
+homepage:            https://github.com/JanBessai/transformers-runnable
+license:             BSD3
+license-file:        LICENSE
+author:              Jan Bessai
+maintainer:          Jan.Bessai@tu-dortmund.de
+category:            Control
+build-type:          Simple
+cabal-version:       >=1.8
+
+source-repository head
+  type:      git
+  location:  https://github.com/JanBessai/transformers-runnable
+
+library
+  exposed-modules:     Control.Monad.Trans.Run
+  -- other-modules:
+  build-depends:       base ==4.5.*, transformers ==0.3.*
+  hs-source-dirs:      src

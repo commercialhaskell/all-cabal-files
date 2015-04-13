@@ -1,0 +1,47 @@
+Name:                ot
+Version:             0.1.2.1
+Synopsis:            Real-time collaborative editing with Operational Transformation
+-- A longer description of the package.
+-- Description:         
+Homepage:            https://github.com/operational-transformation/ot.hs
+License:             MIT
+License-file:        LICENSE
+Author:              Tim Baumann
+Maintainer:          tim@timbaumann.info
+
+Category:            Text
+Build-type:          Simple
+
+-- Constraint on the version of Cabal needed to build this package.
+Cabal-version:         >= 1.8
+
+
+Library
+  Ghc-options:         -Wall
+  Hs-source-dirs:      src
+  Exposed-modules:     Control.OperationalTransformation, Control.OperationalTransformation.List, Control.OperationalTransformation.Text, Control.OperationalTransformation.Properties, Control.OperationalTransformation.Client, Control.OperationalTransformation.Server
+  Build-depends:       base >= 4 && < 5,
+                       text >= 1.0 && < 1.2,
+                       aeson >= 0.7 && < 0.9,
+                       attoparsec >= 0.10.1.1 && < 1,
+                       QuickCheck >= 2.7 && < 2.8,
+                       binary >= 0.6.0.0 && < 0.8
+
+  -- Modules not exported by this package.
+  -- Other-modules:       
+
+Test-suite tests
+  Ghc-options:         -Wall -rtsopts
+  Hs-source-dirs:      test
+  type:                exitcode-stdio-1.0
+  main-is:             TestSuite.hs
+  Build-depends:       ot,
+                       QuickCheck,
+                       HUnit,
+                       base,
+                       text,
+                       aeson,
+                       test-framework >= 0.6 && < 0.9,
+                       test-framework-quickcheck2 >= 0.3.0 && < 0.4,
+                       test-framework-hunit >= 0.3.0 && < 0.4,
+                       binary >= 0.5.1.0

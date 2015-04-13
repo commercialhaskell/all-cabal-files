@@ -1,0 +1,25 @@
+Name:            XInput
+Version:         0.1
+Cabal-Version:   >= 1.6
+Synopsis:        Bindings for the DirectX XInput library.
+Description:     Bindings for the DirectX XInput library.
+Category:        System
+Build-Type:      Custom
+License:         BSD3
+License-file:    LICENSE
+Author:          Erik Charlebois
+Copyright:       Erik Charlebois
+Maintainer:      Erik Charlebois <erikcharlebois@gmail.com>
+Homepage:        http://code.fac9.com/xinput/
+
+source-repository head
+    type:     darcs
+    location: http://code.fac9.com/xinput/
+
+Library
+    Build-Depends:   base, Win32
+    Exposed-modules: System.Win32.XInput
+    Extensions:      ForeignFunctionInterface
+    Includes:        XInput.h
+    Extra-libraries: xinput
+

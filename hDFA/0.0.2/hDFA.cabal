@@ -1,0 +1,38 @@
+Name: hDFA
+Version: 0.0.2
+Cabal-version: >= 1.6
+Build-type: Simple
+Copyright: 2010-2012 Peter Gammie, original minimisation algorithm implementation in C++ (C) Antti Valmari 2011
+Maintainer: peteg42@gmail.com
+Author: Peter Gammie
+License: BSD3
+License-file: LICENCE
+Synopsis: A simple library for representing and minimising DFAs.
+Category: Data
+Description:
+
+ hDFA provides a simple API for representing and minimizing
+ deterministic finite automata (DFAs) using an explicit representation
+ (a list of transitions). It includes a port of Antti Valmari's
+ efficient DFA minimization algorithm from C++ to C. (See A. Valmari,
+ "Fast brief practical DFA minimization" Information Processing
+ Letters 112(6) 2012.)
+
+extra-source-files: Makefile bitsets.c bitsets.h dfa.c dfa.h dfa-driver.c qsort.h
+
+source-repository head
+  type:     git
+  location: git://github.com/peteg/hDFA.git
+
+Library
+  build-depends: base >= 2 && < 5, containers, directory, process
+  extensions: ForeignFunctionInterface
+  exposed-modules:
+    Data.DFA
+    Data.DFA.DOT
+    Data.DFA.KISS2
+    Data.DFA.STAMINA
+  includes: dfa.h
+  c-sources: bitsets.c dfa.c qsort.c
+  cc-options: -Wall -std=c99 -pedantic -ggdb
+  ghc-options: -Wall

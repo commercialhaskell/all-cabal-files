@@ -1,0 +1,41 @@
+Name: matchers
+Version: 0.2.0.0
+Cabal-version: >=1.8
+Build-Type: Simple
+License: MIT
+Copyright: 2012 Omari Norman.
+author: Omari Norman
+maintainer: omari@smileystation.com
+stability: Experimental
+homepage: http://www.github.com/massysett/matchers
+bug-reports: omari@smileystation.com
+Category: Text
+License-File: LICENSE
+synopsis: Text matchers
+
+description: Helpers for performing text matches.
+
+source-repository head
+    type: git
+    location: git://github.com/massysett/matchers.git
+
+Library
+    Build-depends:
+        base ==4.*,
+        bytestring ==0.9.*,
+        explicit-exception ==0.1.*,
+        regex-base ==0.93.*,
+        regex-tdfa ==1.1.*,
+        text ==0.11.*,
+        utf8-string ==0.3.*,
+        pcre-light ==0.4.*
+
+    Exposed-modules:
+        Text.Matchers,
+        Text.Matchers.CaseSensitive,
+        Text.Matchers.Regex.PCRE,
+        Text.Matchers.Regex.TDFA,
+        Text.Matchers.String,
+        Text.Matchers.Text
+
+    ghc-options: -Wall

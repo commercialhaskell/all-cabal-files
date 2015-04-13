@@ -1,0 +1,24 @@
+name:                dozenal
+version:             0.1.0.0
+synopsis:            A Haskell library for using Dozenal (Duodecimal - Base 12) numbers.
+homepage:            https://github.com/siddhanathan/dozenal
+license:             GPL-3
+license-file:        LICENSE
+author:              Siddhanathan Shanmugam
+maintainer:          siddhanathan@gmail.com
+category:            Math
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+description:         A Haskell library for using Dozenal (Duodecimal - Base 12) numbers.
+
+-- A copyright notice.
+-- copyright:           
+
+library
+  exposed-modules:     Math.Dozenal
+  other-extensions:    UnicodeSyntax
+  build-depends:       base >=4.7 && <4.8
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+  

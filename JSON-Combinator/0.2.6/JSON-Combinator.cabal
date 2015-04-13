@@ -1,0 +1,48 @@
+Name:               JSON-Combinator
+Version:            0.2.6
+License:            BSD3
+License-File:       LICENSE
+Author:             Tony Morris <ʇǝu˙sıɹɹoɯʇ@ןןǝʞsɐɥ>
+Maintainer:         Tony Morris
+Synopsis:           A combinator library on top of a generalised JSON type
+Category:           Combinators
+Description:
+  A combinator library on top of a generalised JSON type. The highest-level module is
+  @Text.JSON.Combinator@ and it is expected that no other module need to be explicitly imported.
+  .
+  Instances for the combinators are provided for three libraries available on hackage:
+  .
+    * json (@Text.JSON@)
+    .
+    * JSONb (@Text.JSONb@)
+    .
+    * hjson (@Text.HJson@)
+Cabal-version:      >= 1.2
+Build-Type:         Simple
+
+Flag small_base
+  Description:      Choose the new, split-up base package.
+
+Library
+  Build-Depends:
+                    base < 5 && >= 4
+                    , JSONb
+                    , json
+                    , hjson
+                    , containers
+                    , parsec
+                    , bytestring
+                    , bytestring-trie
+                    , failure
+
+  GHC-Options:      -Wall
+
+  Exposed-Modules:  Text.JSON.Combinator
+                    , Text.JSON.Failure
+                    , Text.JSON.JSONLike
+                    , Text.JSON.JSONField
+                    , Text.JSON.JSONPrepend
+                    , Text.JSON.JSONParse
+                    , Text.JSON.JSONPrint
+                    , Text.JSON.Interact
+                    , Text.JSON.InteractFile

@@ -1,0 +1,34 @@
+name:                multirec-alt-deriver
+version:             0.1
+synopsis:            Alternative multirec instances deriver
+description:         
+ New features/changes:
+ .
+ - Works with arbitrary monomorphic types, e.g. @([Int],String)@, not just names that refer to monomorphic types.
+ .
+ - The names of the \"proofs\" (= constructors of the family GADT) are now specified by the user; they don't need to be equal to the name of the types to which they correspond. (This is useful if you're working with existing code where the name is already taken)
+ . 
+ - The names of the empty types corresponding to constructors are now also customizable
+ .
+ - The type sums in the pattern functor are now balanced trees of @(:+:)@ rather than right-nested lists. This cuts down the size of the value-level code (and hopefully helps with compilation time).
+
+category:            Template Haskell, Generics
+license:             BSD3
+license-file:        LICENSE
+author:              Daniel Schüssler
+maintainer:          daniels@community.haskell.org
+cabal-version:       >= 1.6
+build-type:          Simple
+extra-source-files:  examples/Tree.hs
+
+source-repository head
+ type: darcs
+ location: http://code.haskell.org/~daniels/multirec-alt-deriver
+
+Library
+    build-depends:       base >= 4 && < 5, template-haskell, syb, 
+                         multirec, th-expand-syns,
+                         containers, mtl
+    ghc-options:         
+    exposed-modules:     Generics.MultiRec.TH.Alt
+    other-modules:       THUtils, BalancedFold

@@ -1,0 +1,28 @@
+Name:            compact-map
+Version:         2008.11.9
+Author:          David Himmelstrup <lemmih@gmail.com>
+Maintainer:      David Himmelstrup <lemmih@gmail.com>
+Copyright:       2008 David Himmelstrup <lemmih@gmail.com>
+Build-Type:      Simple
+Build-Depends:   base, bytestring, binary, array, containers
+ghc-prof-options: -auto-all
+ghc-options:     -fwarn-unused-imports
+Exposed-Modules: Data.CompactMap
+Other-Modules:   Data.CompactMap.Types
+                 Data.CompactMap.Index
+                 Data.CompactMap.Buffer
+                 Data.CompactMap.Fetch
+Hs-Source-Dirs:  src
+Extensions:      CPP
+License:         BSD3
+License-file:    LICENSE
+Tested-with:     GHC ==6.8.3, GHC ==6.10.1
+Category:        Data
+Synopsis:        Compact Data.Map implementation using Data.Binary
+Description:
+  This library attempts to provide a memory efficient alternative to
+  Data.Map.
+  .
+  Test coverage can be found here: <http://darcs.haskell.org/~lemmih/compact-map/tests/hpc_index.html>
+  .
+  Benchmarks can be found here: <http://darcs.haskell.org/~lemmih/compact-map/benchmarks/>

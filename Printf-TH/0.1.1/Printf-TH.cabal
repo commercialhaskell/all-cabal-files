@@ -1,0 +1,27 @@
+Name:            Printf-TH
+author:          Ian Lynagh <igloo@earth.li> June 2003
+maintainer:      Marc Weber <marco-oweber@gmx.de>
+version:         0.1.1
+Category:        Utils
+Build-Type:      Simple
+license:         LGPL
+Build-Depends:   haskell98
+                 ,base
+                 ,template-haskell
+                 , pretty
+exposed-modules: Text.Printf.TH
+other-modules: 
+          Text.Printf.TH.Parser
+          , Text.Printf.TH.Printer
+          , Text.Printf.TH.Simplify
+          , Text.Printf.TH.Types
+extensions: TemplateHaskell
+
+--Executable:     foo
+--Main-Is:        Foo.lhs
+--extensions: TemplateHaskell
+
+
+--Executable:     Test
+--Main-Is:        Test.lhs
+--extensions: TemplateHaskell

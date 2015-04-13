@@ -1,0 +1,24 @@
+name:                digestive-bootstrap
+version:             0.1.0.0
+synopsis:            Speed up form designing using digestive functors and bootstrap
+description:         Generate bootstrap forms out of digestive views
+license:             MIT
+author:              Alexander Thiemann <mail@agrafix.net>
+maintainer:          mail@agrafix.net
+copyright:           (c) 2014 Alexander Thiemann
+category:            Web
+build-type:          Simple
+cabal-version:       >=1.10
+
+library
+  exposed-modules:     Text.Digestive.Bootstrap
+  build-depends:       base ==4.*,
+                       digestive-functors >=0.7 && <0.8,
+                       digestive-functors-blaze >=0.6 && <0.7,
+                       blaze-html >=0.7 && <0.8,
+                       blaze-bootstrap >=0.1 && <0.2,
+                       http-types  >=0.8 && <0.9,
+                       text
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+  ghc-options: -Wall

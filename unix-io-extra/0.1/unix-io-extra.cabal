@@ -1,0 +1,17 @@
+Name:                unix-io-extra
+Version:             0.1
+Synopsis:            Support for writev, pwrite and pread.
+Description:         Support for writev, pwrite and pread using Ptrs and unix Fds.
+		     Fds can be obtained using System.Posix.IO from the unix package
+		     and using /handleToFd/ or /openFd/.
+License:             BSD3
+License-file:        COPYING
+Copyright:           Taru Karttunen <taruti@taruti.net>
+Author:              Taru Karttunen
+Category:            System
+Maintainer:          taruti@taruti.net
+Build-Depends:       base >= 4 && < 5
+Exposed-modules:     System.Posix.IO.Extra
+Extensions:          ForeignFunctionInterface
+GHC-Options:         -Wall
+Build-Type:	     Simple

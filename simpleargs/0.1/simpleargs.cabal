@@ -1,0 +1,24 @@
+Name:         simpleargs
+Version:      0.1
+License:      LGPL
+
+Author:       Ketil Malde <ketil@malde.org>
+Stability:    Beta
+Synopsis:     Provides a more flexible getArgs function with better error reporting.
+Description:  The provided getArgs returns an arbitrary tuple of values instead of a 
+	      list of Strings.  This means that the number and type (i.e. parseability)
+	      of parameters are checked, and reported to the user.  The module is not
+	      a substitute for proper error handling (use System.Console.GetOpt for that),
+	      but is useful for making quick and dirty command line tools a bit less dirty,
+	      without sacrificing the quick part.
+Homepage:     http://malde.org/~ketil/simpleargs
+
+Build-Depends:  base
+Build-Type:     Simple
+Tested-With:    GHC==6.8.2
+
+ghc-options:      -Wall
+Include-Dirs:     .
+Exposed-Modules:    System.SimpleArgs
+Extra-Source-Files: Example.hs
+Data-Files:         README

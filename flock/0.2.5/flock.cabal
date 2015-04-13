@@ -1,0 +1,29 @@
+Name:               flock
+Version:            0.2.5
+License:            OtherLicense
+License-File:       COPYING
+Copyright:          Ian Lynagh, 2007
+Author:             Ian Lynagh
+Maintainer:         Erik Hesselink <hesselink@gmail.com>
+Stability:          experimental
+Synopsis:           Wrapper for flock(2)
+Description:
+    Simple wrapper around flock(2).
+Category:           System
+Homepage:           http://github.com/hesselink/flock
+Build-Type:         Simple
+Tested-With:        GHC==6.10.3, GHC==6.12.3, GHC==7.0.2, GHC==7.2.1
+Cabal-Version:      >= 1.6
+Extra-source-files: "BSD3", "GPL-2", "CHANGELOG"
+
+Source-repository head
+  Type:             github
+  Location:         git://github.com/hesselink/flock.git
+
+Library
+  Build-Depends:      base > 3 && < 5
+                    , mtl == 1.1.* || == 2.0.*
+                    , unix >= 2.3 && < 2.6
+  Extensions:         ForeignFunctionInterface
+  Exposed-modules:    System.Lock.FLock
+  GHC-Options:        -Wall

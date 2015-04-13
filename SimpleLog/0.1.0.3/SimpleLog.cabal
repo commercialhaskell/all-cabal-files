@@ -1,0 +1,40 @@
+name:                SimpleLog
+version:             0.1.0.3
+synopsis:            Simple, configurable logging
+description:         SimpleLog allows configurable multi-threaded logging
+license:             BSD3
+license-file:        LICENSE
+author:              Andras Slemmer
+maintainer:          Andras Slemmer
+homepage:            https://github.com/exFalso/SimpleLog/
+category:            System
+build-type:          Simple
+cabal-version:       >=1.8
+
+library
+  exposed-modules:     System.Log.SLog.Format,
+                       System.Log.SLog
+  build-depends:       base < 5 && >= 4,
+                       transformers < 1,
+                       template-haskell < 3 && >= 2,
+                       bytestring < 1,
+                       attoparsec < 1,
+                       time < 2 && >= 1,
+                       old-locale < 2 && >= 1,
+                       ansi-terminal < 1,
+                       mtl < 3 && >= 2,
+                       stm < 3 && >= 2,
+                       ForkableT < 1,
+                       directory < 2 && >= 1,
+                       containers < 1,
+                       resourcet < 2 && >= 1,
+                       transformers-base < 1,
+                       monad-control == 1.*,
+                       text < 2 && >= 1,
+                       th-lift < 1,
+                       semigroups < 1
+  hs-source-dirs:      src
+
+source-repository head
+  type:              git
+  location:          git@github.com:exFalso/SimpleLog.git

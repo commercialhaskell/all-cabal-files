@@ -1,0 +1,44 @@
+Name:                   regex-tre
+Version:                0.91
+-- Cabal-Version:       >=1.1.4
+License:                BSD3
+License-File:           LICENSE
+Copyright:              Copyright (c) 2006, Christopher Kuklewicz
+Author:                 Christopher Kuklewicz
+Maintainer:             TextRegexLazy@personal.mightyreason.com
+Stability:              Seems to work, passes a few tests
+Homepage:               http://sourceforge.net/projects/lazy-regex
+Package-URL:            http://darcs.haskell.org/packages/regex-unstable/regex-tre/
+Synopsis:               Replaces/Enhances Text.Regex
+Description:            The TRE backend to accompany regex-base
+Category:               Text
+Tested-With:            GHC
+Build-Depends:          base >= 2.0, regex-base >= 0.80
+-- Data-Files:
+-- Extra-Source-Files:
+-- Extra-Tmp-Files:
+Exposed-Modules:        Text.Regex.TRE
+                        Text.Regex.TRE.Wrap
+                        Text.Regex.TRE.String
+                        Text.Regex.TRE.Sequence
+                        Text.Regex.TRE.ByteString
+                        Text.Regex.TRE.ByteString.Lazy
+Buildable:              True
+-- Other-Modules:
+-- HS-Source-Dirs:         "."
+-- Extensions:
+Extensions:             MultiParamTypeClasses, FunctionalDependencies
+-- GHC-Options:            -Wall -Werror
+GHC-Options:            -Wall -Werror -O2
+-- GHC-Options:            -Wall -ddump-minimal-imports
+-- GHC-Prof-Options: 
+-- Hugs-Options:
+-- NHC-Options:
+-- Includes:
+-- C-Sources:
+-- LD-Options:
+-- Frameworks:
+CC-Options:             -DHAVE_TRE_H
+Extra-Libraries:        tre
+-- Include-Dirs:           /opt/local/include
+-- Extra-Lib-Dirs:         /opt/local/lib

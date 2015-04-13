@@ -1,0 +1,57 @@
+Name:                topkata
+Version:             0.2.2
+Synopsis:            OpenGL Arcade Game
+Description:         Guide a jumping ball through a maze.
+License:             GPL
+License-file:        LICENSE
+Author:              Christoph Bauer
+Maintainer:          Christoph Bauer <ich@christoph-bauer.net>
+Category:            Game
+build-type:          Simple
+Cabal-Version:       >= 1.2
+Homepage:            http://home.arcor.de/chr_bauer/topkata.html
+Extra-Source-Files:  INSTALL THANKS Makefile
+
+Data-Files:
+  data/boing_1.wav   data/brick16.rgb   data/brick32.rgb	 data/brick64.rgb
+  data/brick1.rgb    data/brick2.rgb    data/brick4.rgb	 data/brick8.rgb
+  data/brick128.rgb  data/brick256.rgb  data/brick512.rgb  
+  data/eyes256.rgb   data/geyes256.rgb
+  data/juchhu.wav
+
+
+Flag Sound
+  Description: Enable sound support
+  Default:     True
+
+Flag Pdflaby
+  Description: build also pdflaby
+  Default:     False
+
+Flag FTGL
+  Description: use FTGL
+  Default: False
+
+Executable topkata
+  Main-is:             Main.hs
+  Build-Depends:       base, filepath, GLUT, OpenGL, array, random
+  Other-Modules:       Labygen, Labygen.Render, 
+                       Topkata.Topka.Topka, Topkata.Topka.Ghost, Topkata.Topka.Base
+                       Vector, ReadImage
+  Extensions:          CPP
+  if flag(sound)
+      Build-Depends:   OpenAL, ALUT
+      cpp-options:     -DSOUND
+  if flag(ftgl)
+      Build-Depends:   FTGL
+      cpp-options:     -DUSE_FTGL
+
+Executable pdflaby
+    Main-is:        PdfLaby.hs
+    if flag(pdflaby)
+      Build-Depends:  base, filepath, array, random, cairo
+    else
+      Buildable: False
+    Other-Modules:  Labygen
+  
+

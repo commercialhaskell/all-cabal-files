@@ -1,0 +1,79 @@
+Name:                time-http
+Version:             0.4
+Synopsis:            Parse and format HTTP/1.1 Date and Time strings
+Description:
+        This package provides functionalities to parse and format
+        various Date and Time formats allowed in HTTP\/1.1
+        (<http://tools.ietf.org/html/rfc2616#section-3.3>).
+
+Homepage:            http://cielonegro.org/HTTPDateTime.html
+Bug-Reports:         http://static.cielonegro.org/ditz/time-http/
+License:             PublicDomain
+License-file:        COPYING
+Author:              PHO <pho AT cielonegro DOT org>
+Maintainer:          PHO <pho AT cielonegro DOT org>
+Stability:           Experimental
+Category:            Web
+Build-type:          Simple
+Tested-With:         GHC == 7.0.3
+Cabal-version:       >= 1.10
+Extra-Source-Files:
+    COPYING
+    ChangeLog
+
+Source-Repository head
+    Type: git
+    Location: git://git.cielonegro.org/time-http.git
+
+Library
+    Exposed-modules:
+        Data.Time.Format.C
+        Data.Time.Format.RFC733
+        Data.Time.Format.RFC822
+        Data.Time.Format.RFC1123
+        Data.Time.Format.HTTP
+
+    Other-modules:
+        Data.Time.Format.HTTP.Common
+        Data.Time.Format.RFC822.Internal
+
+    Build-depends:
+        ascii                == 0.0.*,
+        attempt              == 0.3.*,
+        attoparsec           == 0.10.*,
+        base                 == 4.*,
+        base-unicode-symbols == 0.2.*,
+        blaze-builder        == 0.3.*,
+        blaze-textual        == 0.2.*,
+        bytestring           == 0.9.*,
+        convertible-text     == 0.4.*,
+        failure              == 0.1.*,
+        tagged               == 0.2.*,
+        time                 == 1.2.*
+
+    Default-Language:
+         Haskell2010
+
+    GHC-Options:
+        -Wall
+
+Test-Suite test-time-http
+    Type:    exitcode-stdio-1.0
+    Main-Is: Test/Time/Format/HTTP.hs
+    Default-Language: Haskell2010
+    Build-depends:
+        QuickCheck           == 2.4.*,
+        ascii                == 0.0.*,
+        attempt              == 0.3.*,
+        attoparsec           == 0.10.*,
+        base                 == 4.*,
+        base-unicode-symbols == 0.2.*,
+        blaze-builder        == 0.3.*,
+        blaze-textual        == 0.2.*,
+        bytestring           == 0.9.*,
+        convertible-text     == 0.4.*,
+        failure              == 0.1.*,
+        tagged               == 0.2.*,
+        time                 == 1.2.*
+    GHC-Options:
+        -Wall -fno-warn-orphans

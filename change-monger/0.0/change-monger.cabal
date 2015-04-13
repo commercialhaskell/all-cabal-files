@@ -1,0 +1,33 @@
+name:                change-monger
+version:             0.0
+
+license:             BSD3
+license-file:        LICENSE
+author:              Gwern
+maintainer:          Gwern <gwern0@gmail.com>
+
+category:            Text, Development
+synopsis:            Parse VCS changelogs into ChangeLogs
+description:         change-monger is intended to allow you to extract
+                     the revision history from various VCSes like Darcs,
+                     and save them as a ChangeLog; particularly important
+                     is being able to extract the summaries for all patches
+                     since the last release.
+
+
+build-type:          Simple
+Cabal-Version:       >= 1.2
+
+Library
+        exposed-modules:     Text.ChangeMonger.Darcs,
+                             Text.ChangeMonger.Git,
+                             Text.ChangeMonger.Subversion,
+                             Text.ChangeMonger.CVS,
+                             Text.ChangeMonger.Mercurial,
+                             Text.ChangeMonger.Parse
+        build-Depends:       base, process
+        ghc-options:         -Wall
+
+Executable change-monger
+           main-is:       ChangeMonger.hs
+           build-depends: directory

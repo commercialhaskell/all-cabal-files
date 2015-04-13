@@ -1,0 +1,22 @@
+Name:            archive
+Version:         1.2.12
+Cabal-Version:   >= 1.2
+Category:        System
+Synopsis:        A library and programs for creating hardlinked incremental archives or backups
+Description:     Uses rsync, etc to before backups similar to the old timemachine script and the newer 'Time Machine' OS X tool.
+License:         BSD3
+License-File:    COPYRIGHT
+Author:          David Fox, Jeremy Shaw
+Maintainer:      partners@seereason.com
+Stability:       alpha
+Build-Type:      Simple
+
+Library
+  Build-Depends:   base >= 3 && <5, regex-compat, regex-posix, HUnit, process, unix, old-locale, directory, Unixutils, network, time, bytestring, mtl, xhtml, pretty, debian >= 2.19, debian-mirror >= 1.1.3, help, filepath, progress >= 1.51, Extra
+  Exposed-Modules: System.Archive.Archive, System.Archive.Prune, System.Archive.Target, System.Archive.UpdateMirror, System.Archive.AptMethods
+  ghc-options:	-O2 -W
+
+Executable archive
+  Main-Is:         util/ArchiveMain.hs
+  -- Hs-Source-Dirs:  util
+  ghc-options:	-O2 -W -threaded

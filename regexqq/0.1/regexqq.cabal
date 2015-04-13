@@ -1,0 +1,28 @@
+name:               regexqq
+version:            0.1
+cabal-version:      >= 1.2
+build-type:         Simple
+license:            BSD3
+license-file:       LICENSE
+category:           Text
+author:             Matt Morrow
+copyright:          Matt Morrow
+maintainer:         Matt Morrow <morrow@jypsis.com>
+stability:          unstable
+synopsis:           A quasiquoter for PCRE regexes.
+description:        > [$rx|([aeiou]).*(er|ing|tion)([\.,!\?]*)$|] "helloing.!?!?!"
+                    > Just ["elloing.!?!?!","e","ing",".!?!?!"]
+                    >
+                    > ghci> tail `fmap` [$rx|^([+-])?([0-9]+)\.([0-9]+)|] (show $ negate pi)
+                    > Just ["-","3","141592653589793"]
+                    >
+                    > ghci> maybe [] tail $ [$rx|^([+-])?([0-9]+)\.([0-9]+)|] (show $ negate pi)
+                    > ["-","3","141592653589793"]
+
+library
+  build-depends:    base, bytestring, template-haskell >= 2.2, pcre-light
+  extensions:       TemplateHaskell
+  ghc-options:      -O2 -fglasgow-exts
+  hs-source-dirs:   .
+  exposed-modules:  Text.Regex.PCRE.QQ
+

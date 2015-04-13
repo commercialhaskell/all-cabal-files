@@ -1,0 +1,69 @@
+Name:              hsc3-utils
+Version:           0.15
+Synopsis:          Haskell SuperCollider Utilities
+Description:       Haskell SuperCollider Utilities
+License:           GPL
+Category:          Sound
+Copyright:         (c) Rohan Drape, 2013-2014
+Author:            Rohan Drape
+Maintainer:        rd@slavepianos.org
+Stability:         Experimental
+Homepage:          http://rd.slavepianos.org/t/hsc3-utils
+Tested-With:       GHC == 7.8.2
+Build-Type:        Simple
+Cabal-Version:     >= 1.8
+
+Data-files:        README
+
+Library
+  Build-Depends:   base == 4.*,
+                   directory,
+                   filepath,
+                   hashable,
+                   hosc == 0.15.*,
+                   hsc3 == 0.15.*,
+                   hsc3-sf == 0.15.*
+  GHC-Options:     -Wall -fwarn-tabs
+  Exposed-modules: Sound.SC3.Server.Buffer.Send
+
+executable hsc3-hash-at
+  build-depends:   base == 4.*,
+                   hsc3-rw == 0.15.*
+  hs-source-dirs:  hs
+  main-is:         hash-at.hs
+  ghc-options:     -Wall -fwarn-tabs
+
+executable hsc3-hash-paren
+  build-depends:   base == 4.*,
+                   hsc3-rw == 0.15.*
+  hs-source-dirs:  hs
+  main-is:         hash-paren.hs
+  ghc-options:     -Wall -fwarn-tabs
+
+executable hsc3-id-rewrite
+  build-depends:   base == 4.*,
+                   hsc3-rw == 0.15.*
+  hs-source-dirs:  hs
+  main-is:         id-rewrite.hs
+  ghc-options:     -Wall -fwarn-tabs
+
+executable hsc3-id-clear
+  build-depends:   base == 4.*,
+                   hsc3-rw == 0.15.*
+  hs-source-dirs:  hs
+  main-is:         id-clear.hs
+  ghc-options:     -Wall -fwarn-tabs
+
+executable hsc3-scsyndef-to-dot
+  build-depends:   base == 4.*,
+                   filepath,
+                   hsc3-dot == 0.15.*,
+                   hsc3 == 0.15.*,
+                   process
+  hs-source-dirs:  hs
+  main-is:         scsyndef-to-dot.hs
+  ghc-options:     -Wall -fwarn-tabs
+
+Source-Repository  head
+  Type:            darcs
+  Location:        http://rd.slavepianos.org/sw/hsc3-utils/

@@ -1,0 +1,21 @@
+name:                linebreak
+version:             0.1.0.1
+synopsis:            breaks strings to fit width
+description:         Simple functions to break a String to fit a maximum text
+                     width, using Knuth-Lian hyphenation algorhitm.
+license:             BSD3
+license-file:        LICENSE
+author:              Francesco Ariis
+maintainer:          fa-ml@ariis.it
+category:            Text
+build-type:          Simple
+cabal-version:       >=1.8
+
+source-repository head
+  type:     darcs
+  location: http://www.ariis.it/share/repos/linebreak/
+
+library
+  -- Modules exported by the library.
+  exposed-modules:     Text.LineBreak
+  build-depends:       base ==4.5.*, hyphenation ==0.4.*

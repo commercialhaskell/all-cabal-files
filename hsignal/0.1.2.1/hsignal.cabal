@@ -1,0 +1,64 @@
+Name:               hsignal
+Version:            0.1.2.1
+License:            GPL
+License-file:       LICENSE
+Author:             Vivian McPhail
+Maintainer:         haskell.vivian.mcphail <at> gmail <dot> com
+Stability:          provisional
+Homepage:           http://code.haskell.org/hsignal
+Synopsis:           Signal processing
+Description:        Purely functional interface to signal processing based on hmatrix
+                       provides data types for manipulating EEG data,
+                       including reading from BDF
+Category:           Math, 
+tested-with:        GHC ==6.12.1
+
+cabal-version:      >=1.8
+
+build-type:         Custom
+
+extra-source-files: configure configure.hs README INSTALL CHANGES
+extra-tmp-files:    hsignal.buildinfo
+
+library
+
+    Build-Depends:      base >= 3 && < 5,
+                        haskell98, mtl, 
+                        array,
+                        bytestring, storable-complex, ghc-binary,
+                        hmatrix >= 0.10.0,
+                        hmatrix-gsl-stats >= 0.1.1.5,
+                        hstatistics >= 0.2.0.5
+
+    Extensions:         ForeignFunctionInterface
+
+    hs-source-dirs:     lib
+    Exposed-modules:    Numeric.Signal
+                        Numeric.Signal.Multichannel
+                        Numeric.Signal.EEG
+    other-modules:      Numeric.Signal.Internal
+                        Numeric.Signal.EEG.BDF
+    C-sources:          lib/Numeric/Signal/signal-aux.c
+
+    ghc-prof-options:   -auto
+
+    ghc-options:        -Wall -fno-warn-missing-signatures
+                              -fno-warn-orphans
+                              -fno-warn-unused-binds
+
+    if os(OSX)
+        extra-lib-dirs: /opt/local/lib/
+        include-dirs: /opt/local/include/
+        extra-libraries: gsl
+        frameworks: Accelerate
+
+-- The extra-libraries required for GSL
+-- should now be automatically detected by configure(.hs)
+
+    extra-libraries:
+    extra-lib-dirs:
+
+    source-repository head
+        type:     darcs
+        location: http://code.haskell.org/hsignal
+

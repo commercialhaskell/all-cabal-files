@@ -1,0 +1,38 @@
+name:                roller
+version:             0.1.3
+synopsis:            Playing with applicatives and dice!
+description:         A basic library and program for simulated rolling of
+                     polyhedral dice, as would be used in pen and paper RPGs.
+homepage:            https://github.com/Econify/roller
+license:             GPL-2
+license-file:        LICENSE
+author:              Louis J. Scoras
+maintainer:          lou@econify.com
+copyright:           (c) 2013-2014 Econify, LLC
+category:            ACME
+build-type:          Simple
+cabal-version:       >=1.10
+
+source-repository head
+ type: git
+ location: https://github.com/Econify/roller.git
+
+library
+  exposed-modules:     Roller.Core,
+                       Roller.Types,
+                       Roller.Parse,
+                       Roller.CLI
+  build-depends:       base ==4.7.*,
+                       random >=1.0.1,
+                       regex-applicative >=0.3 && <0.3.1,
+                       optparse-applicative >=0.11.0 && <0.11.1
+  default-language:    Haskell2010
+
+executable roller
+  main-is:             Roller.hs
+  build-depends:       base ==4.7.*,
+                       random >=1.0.1,
+                       regex-applicative >=0.3 && <0.3.1,
+                       optparse-applicative >=0.11.0 && <0.11.1,
+                       roller
+  default-language:    Haskell2010

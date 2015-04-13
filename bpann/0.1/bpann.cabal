@@ -1,0 +1,35 @@
+Name:              bpann
+
+Version:           0.1
+
+Synopsis:          backpropagation neuronal network
+
+Description:       - fully-connected multylayer perceptron
+                   - uses bias neurons
+                   - creation of randomly initialized networks of arbitrary size
+                   - easy (de-)serialization
+
+License:           BSD3
+
+License-file:      LICENSE
+
+Author:            Robert Steuck
+
+Maintainer:        robert.steuck@gmail.com
+
+Copyright:         (c) Robert Steuck 2011
+
+Stability:         Experimental
+
+Category:          AI
+
+Build-type:        Simple
+Cabal-version:     >=1.2
+
+
+Library
+  Exposed-modules: AI.BPANN
+  Build-depends:   base >= 4 && < 5, split -any, haskell98 -any
+  
+  hs-source-dirs: src
+  

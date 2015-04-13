@@ -1,0 +1,58 @@
+Name:                Ebnf2ps
+Version:             1.0.10
+Synopsis:               Peter's Syntax Diagram Drawing Tool
+Homepage:            http://www.informatik.uni-freiburg.de/~thiemann/haskell/ebnf2ps/
+License:             BSD3
+License-file:        LICENSE
+Author:                 Peter Thiemann <thiemann@acm.org>
+Maintainer:             Peter Thiemann <thiemann@acm.org>
+Category:            Language
+Build-type:          Simple
+Cabal-version:       >=1.2
+Tested-With:            GHC == 6.10.4, GHC == 6.12.3, GHC == 7.0.4, GHC == 7.2.2
+Description:            Ebnf2ps generates nice looking syntax diagrams in EPS
+                        and FIG format from EBNF specifications and from yacc,
+                        bison, and Happy input grammars. The diagrams can be
+                        immediatedly included in TeX/LaTeX documents and in
+                        texts created with other popular document preparation
+                        systems.
+
+Extra-source-files:
+          examples/ebnf.BNF examples/gofer.BNF examples/regular.BNF, examples/examples.ps,
+          doc/Atom.eps, doc/ExtAtom.eps, doc/Factor.eps, doc/File.eps,
+	  doc/Production_unfold.eps, doc/Nonterminal.eps,
+	  doc/Production.eps, doc/String.eps, doc/Term.eps, doc/Character.eps, doc/Atom_unfold.eps,
+	  doc/RAtom.eps, doc/RAtom_unfold.eps, doc/Export.eps,
+	  doc/RExtAtom.eps, doc/RFactor.eps, doc/Regexp.eps,
+	  doc/doc.tex, doc/doc.ps, src/afmpath.h, src/rgbpath.h
+
+Executable ebnf2ps
+  Main-is:   Ebnf2ps.hs
+  Hs-source-dirs: src
+  Build-depends:        base < 5, containers,
+                        old-time,
+                        directory,
+                        unix, array, haskell98
+  Build-tools:         happy
+  Cc-options: -DAFMPATH=/usr/share/texmf-texlive/fonts/afm
+  Other-modules:        
+    AbstractSyntax, 
+    Color, 
+    CommandLine,
+    Defaults,
+    Ebnf2psParser, 
+    EbnfLayout, 
+    EbnfOutput, 
+    Fig31Output, 
+    Fonts,
+    GrammarTransform, 
+    GrammarUnfold,
+    IOSupplement,
+    Info,
+    Lexer, 
+    ParseAux,
+    Parsers,
+    PathExpansion, 
+    PsOutput, 
+    StringMatch,
+    Version

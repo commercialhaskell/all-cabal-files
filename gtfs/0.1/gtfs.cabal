@@ -1,0 +1,32 @@
+name:                gtfs
+version:             0.1
+license:             BSD3
+license-file:        LICENSE
+synopsis:            The General Transit Feed Specification format
+category:            Data
+author:              Keegan McAllister <mcallister.keegan@gmail.com>
+maintainer:          Keegan McAllister <mcallister.keegan@gmail.com>
+build-type:          Simple
+cabal-version:       >=1.2
+description:
+  This module provides data types and parsers for the General Transit Feed
+  Specification, described at
+  <http://code.google.com/transit/spec/transit_feed_specification.html>.
+  .
+  GTFS is used by transit agencies to provide schedules, geographic
+  information, etc. to Google Maps and other Google applications.  Many data
+  sets are available online, often with few restrictions, so the format is
+  useful to third-party developers.
+
+library
+  exposed-modules:
+      Data.GTFS.Types
+    , Data.GTFS.Parse
+  ghc-options:       -Wall
+  build-depends:
+      base      >= 3 && < 5
+    , filepath  >= 1.1
+    , directory >= 1.0
+    , csv       >= 0.1
+    , rowrecord >= 0.1
+    , split     >= 0.1

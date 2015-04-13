@@ -1,0 +1,23 @@
+name:               dom-lt
+version:            0.1.1
+cabal-version:      >= 1.6
+build-type:         Simple
+license:            BSD3
+license-file:       LICENSE
+category:           Algorithms, Graphs
+author:             Matt Morrow
+copyright:          (c) Matt Morrow, 2009
+maintainer:         Matt Morrow <morrow@moonpatio.com>
+stability:          experimental
+synopsis:           The Lengauer-Tarjan graph dominators algorithm.
+description:        .
+
+library
+  includes:
+  build-tools:
+  extra-libraries:
+  hs-source-dirs:   .
+  ghc-options:      -O2
+  extensions:       RankNTypes
+  build-depends:    base==4.*, containers
+  exposed-modules:  Data.Graph.Dom

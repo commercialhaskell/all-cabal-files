@@ -1,0 +1,24 @@
+Name:                sloane
+Version:             1.5.1
+Synopsis:            A command line interface to Sloane's On-Line Encyclopedia of Integer Sequences
+Description:         A command line interface to Sloane's On-Line Encyclopedia of Integer Sequences.
+                     For usage see <http://github.com/akc/sloane>.
+Homepage:            http://github.com/akc/sloane
+License:             BSD3
+License-file:        LICENSE
+Author:              Anders Claesson
+Maintainer:          anders.claesson@gmail.com
+Category:            Math
+Build-type:          Custom
+Extra-Source-Files:  README.md sloane.1
+
+Cabal-version:       >=1.6
+
+source-repository head
+  type:                git
+  location:            git://github.com/akc/sloane.git
+
+Executable sloane
+  Main-is:             sloane.hs
+  Build-depends:       base >=3 && <5, cmdargs >=0.9, HTTP >=4000.0.9, url >=2,
+                       bytestring >=0.9, ansi-terminal >=0.6, terminal-size >=0.2

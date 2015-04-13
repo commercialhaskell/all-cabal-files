@@ -1,0 +1,69 @@
+Name:           nettle-frp
+Version:        0.1
+Synopsis:       FRP for controlling networks of OpenFlow switches.
+Cabal-Version:  >=1.2
+Build-Type:     Simple
+Stability:      Experimental
+Category:       Network
+License: 	BSD3
+License-file:   LICENSE
+Author: 	Andreas Voellmy, Daniel Rozycki, Kwabene Antwi-Boasiako
+Maintainer: 	andreas.voellmy@yale.edu
+
+Description:
+  This module provides an FRP-based framework for controlling OpenFlow switches. 
+  The library is under active development and should still be considered experimental.
+
+extra-source-files: src/Examples/AFRPControl/LearningNetwork.hs
+		    src/Examples/AFRPControl/TrackSwitches.hs
+		    src/Examples/AFRPControl/TrackPorts.hs
+		    LICENSE-AFRP.txt
+		    README
+
+Library
+  hs-source-dirs: src
+  cpp-options: "-DOPENFLOW_VERSION=1"
+
+  exposed-modules:
+    Nettle.FRPControl.NettleSF
+    Nettle.FRPControl.PacketPredicate
+    Nettle.FRPControl.AFRPUtils
+    Nettle.FRPControl.NetInfo
+    Nettle.FRPControl.SwitchInterface
+    Nettle.FRPControl.TrafficGenerator
+    Nettle.FRPControl.AFRP 
+    Nettle.Discovery.Discovery
+    Nettle.Discovery.Topology
+
+  other-modules:
+    Nettle.FRPControl.AFRPEvent
+    Nettle.FRPControl.AFRPInternals
+    Nettle.FRPControl.AFRPUtilities
+    Nettle.FRPControl.AFRPAffineSpace
+    Nettle.FRPControl.AFRPMergeableRecord
+    Nettle.FRPControl.AFRPVector2
+    Nettle.FRPControl.AFRPDiagnostics
+    Nettle.FRPControl.AFRPMiscellany
+    Nettle.FRPControl.AFRPVector3
+    Nettle.FRPControl.AFRPPoint2
+    Nettle.FRPControl.AFRPVectorSpace
+    Nettle.FRPControl.AFRPForceable
+    Nettle.FRPControl.AFRPPoint3
+    Nettle.FRPControl.AFRPGeometry
+    Nettle.FRPControl.AFRPTask
+    Nettle.Discovery.Topology_Internal
+    Nettle.LLDP.LLDP
+
+
+  build-depends:
+    base >= 4 && < 5
+    , nettle-openflow
+    , mtl
+    , bytestring
+    , containers
+    , bimap
+    , binary
+    , time
+    , network
+    , haskell98
+    , network-data

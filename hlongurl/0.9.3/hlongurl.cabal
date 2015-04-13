@@ -1,0 +1,33 @@
+name:                hlongurl
+version:             0.9.3
+Cabal-Version:	     >= 1.6
+synopsis:            Library and utility interfacing to longurl.org
+description:         The library provides a Haskell binding to the longurl.org API.
+		     The utility finds all URLs in its input that longurl says it can expand,
+		     and then tries to expand each of them in-place.
+category:            Network
+license:             BSD3
+license-file:        LICENSE
+copyright:	     Copyright (C) Robin Green 2008
+author:              Robin Green
+maintainer:          Robin Green <greenrd@greenrd.org>
+build-type:	     Simple
+stability:	     experimental
+bug-reports:	     mailto:greenrd@greenrd.org
+category:	     Web
+tested-with:	     GHC == 6.10.1
+
+source-repository head
+  type:     darcs
+  location: http://code.haskell.org/hlongurl/
+
+Library
+  build-Depends:	base, curl >= 1.3.4, json
+  exposed-modules:      Network.LongURL, Util.Codec.Percent
+  ghc-options:          -Wall
+
+Executable hlongurl
+  build-Depends:	base, bytestring, curl >= 1.3.4, regex-base >= 0.93.1, regex-posix >= 0.93.2
+  main-is:	Hlongurl.hs
+  Other-Modules:	Network.LongURL, Util.Codec.Percent, Data.List.Replace
+  ghc-options:          -Wall

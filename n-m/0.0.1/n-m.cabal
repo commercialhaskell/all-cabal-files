@@ -1,0 +1,24 @@
+name: n-m
+version: 0.0.1
+cabal-version: >= 1.2.3.0
+build-type: Simple
+license: OtherLicense
+license-file: LICENSE
+copyright: (c) 2008 Marco Túlio Gontijo e Silva <marcot@riseup.net>
+author: Marco Túlio Gontijo e Silva
+maintainer: Marco Túlio Gontijo e Silva <marcot@riseup.net>
+synopsis: Utility to call iwconfig.
+description:
+  This program choses between the available open wireless networks and tries to
+  connect to them using DHCP.
+category: Network
+tested-with: GHC == 6.8.2
+extra-source-files: README
+Library
+  build-depends: base
+  exposed-modules: Network.Cell
+  ghc-options: -Wall
+Executable n-m
+  main-is: Main.hs
+  build-depends: base, mtl, process, HSH
+  ghc-options: -Wall

@@ -1,0 +1,45 @@
+Name:               FilePather
+Version:            0.0.1
+Author:             Tony Morris <ʇǝu˙sıɹɹoɯʇ@ןןǝʞsɐɥ>
+Maintainer:         Tony Morris <ʇǝu˙sıɹɹoɯʇ@ןןǝʞsɐɥ>
+Copyright:          Tony Morris
+License:            BSD3
+License-File:       LICENSE
+Synopsis:           Functions on System.FilePath
+Category:           System
+Description:
+  Functions over @System.FilePath@ including a find function for recursing down directories.
+  .
+  /This package is similar to the filemanip package but without the unix and mtl dependencies./
+  .
+  Usage example:
+  .
+  @
+    -- find all haskell source files in the current directory, recursing all the way down
+    findHere always (extensionEq "hs") >>= mapM_ putStrLn
+    ./Setup.hs
+    ./System/FilePath/FilePather.hs
+  @
+Homepage:           https://bitbucket.org/dibblego/filepather/
+Cabal-version:      >= 1.2
+Build-Type:         Simple
+
+Flag small_base
+  Description:      Choose the new, split-up base package.
+
+Library
+  Build-Depends:
+                    base < 5 && >= 3,
+                    directory,
+                    filepath,
+                    HUnit,
+                    QuickCheck,
+                    test-framework,
+                    test-framework-hunit,
+                    test-framework-quickcheck2
+
+  GHC-Options:
+                    -Wall
+
+  Exposed-Modules:
+                    System.FilePath.FilePather

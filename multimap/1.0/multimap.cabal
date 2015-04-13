@@ -1,0 +1,25 @@
+Name:           multimap
+Version:        1.0
+Synopsis:       A multimap.
+Description:    This is a simple implementation of a multimap, based on "Data.Map".
+                
+License:        MIT
+License-File:   LICENSE
+Author:         Julian Fleischer <julian.fleischer@fu-berlin.de>
+Maintainer:     Julian Fleischer <julian.fleischer@fu-berlin.de>
+Build-Type:     Simple
+Cabal-Version:  >= 1.6
+Category:       Data Structures
+Stability:      provisional
+Homepage:       http://hub.darcs.net/scravy/strings
+
+Source-Repository head
+    type: darcs
+    location: hub.darcs.net:multimap
+
+Library
+    Exposed-Modules:    Data.Multimap
+    Build-Depends:      base >= 3 && < 5, containers
+    Hs-Source-Dirs:     src
+
+

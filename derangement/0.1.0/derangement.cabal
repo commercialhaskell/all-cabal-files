@@ -1,0 +1,10 @@
+Name:                derangement
+Version:             0.1.0
+Synopsis:            Find derangements of lists
+Description:         Find a derangement, a permutation with no fixed points, on a list
+License:             GPL
+License-file:        LICENSE
+Author:              Dennis Griffith
+Maintainer:          Dennis Griffith <dgriffi3@uiuc.edu>
+Build-Depends:       base,fgl
+Exposed-Modules:     Data.List.Derangement

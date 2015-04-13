@@ -1,0 +1,37 @@
+name:           BiobaseTypes
+version:        0.0.2.1
+author:         Christian Hoener zu Siederdissen
+maintainer:     choener@tbi.univie.ac.at
+copyright:      Christian Hoener zu Siederdissen, 2010
+category:       Bioinformatics
+synopsis:       Ring class, with several instances.
+license:        GPL-3
+license-file:   LICENSE
+build-type:     Simple
+stability:      experimental
+cabal-version:  >= 1.4.0
+description:
+                Provides an algebraic ring class and instances for Gibbs free
+                energy, partition function probabilities, and scores.
+                Conversion between different entities is provided by a convert
+                function. All entities are ready for the vector library.
+                .
+                - Ignore everything except the Ring itself!
+
+
+
+library
+  build-depends:
+    base >=4 && <5,
+    vector >=0.7 && <0.8,
+    primitive >=0.3 && <0.4
+
+  exposed-modules:
+    Biobase.Types.Ring
+    Biobase.Types.Convert
+    Biobase.Types.Energy
+    Biobase.Types.Partition
+    Biobase.Types.Score
+
+  ghc-options:
+    -O2

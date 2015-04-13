@@ -1,0 +1,26 @@
+Name:                   fsmActions
+Version:                0.1
+Synopsis:               Finite state machines and FSM actions
+Description:
+    This is a library for representing and manipulating finite state
+    machines (FSMs) in Haskell, with an emphasis on computing the
+    effects of sequences of transitions across entire machines (which
+    we call actions), and in particular investigating action
+    equivalences between such sequences.
+Category:               Data
+License:                BSD3
+License-file:           LICENSE
+Author:                 Andy Gimblett <haskell@gimbo.org.uk>
+Maintainer:             Andy Gimblett <haskell@gimbo.org.uk>
+Build-Type:             Simple
+Cabal-Version:          >=1.2
+Extra-source-files:     README
+                        doc/fsmActions.pdf
+
+Library
+  Build-Depends:        base >= 3 && < 5, bytestring, containers, mtl, parsec, pretty
+  Exposed-modules:      Data.FsmActions,
+                        Data.FsmActions.ActionMatrix,
+                        Data.FsmActions.Error,
+                        Data.FsmActions.FsmMatrix
+  ghc-options:          -fwarn-tabs -Wall

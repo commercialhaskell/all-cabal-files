@@ -1,0 +1,53 @@
+Name:            ldif
+Version:         0.0.1
+License:         BSD3
+License-File:    LICENSE
+Synopsis:        The LDAP Data Interchange Format (LDIF) parser 
+Author:          Radoslav Dorcik <radoslav.dorcik@gmail.com>
+Maintainer:      radoslav.dorcik@gmail.com
+Description:     
+   LDIF files parser implementation using Parsec and based
+   on RFC 2849 - The LDAP Data Interchange Format (LDIF).
+
+Category:        Text
+Stability:       experimental
+Build-Type:      Simple
+Cabal-Version:   >= 1.6
+Extra-Source-Files:
+    doc/rfc2253.txt
+    doc/rfc2849.txt
+    tests/TestMain.hs
+    tests/data/OK_simple03.modify.ldif
+    tests/data/OK_simple01.modify.ldif
+    tests/data/OK_simple02.content.ldif
+    tests/data/OK_multivalue.modify.ldif
+    tests/data/OK_simple01.content.ldif
+
+Source-Repository head
+  type:     darcs
+  location: http://rampa.sk/repo/ldif
+
+flag test
+  description: Build test program.
+  default:     False
+
+Library
+  Build-Depends:   ghc,
+                   base         < 5,
+                   filepath,
+                   haskell98,
+                   parsec       >= 2.1.0,
+                   Cabal        >= 1.5 && < 1.7
+  Hs-Source-Dirs:  src
+  Extensions:      CPP, PatternGuards
+  Ghc-Options:      -Wall -fno-warn-orphans
+
+  Exposed-modules:
+        Text.LDIF
+
+Executable test
+  Hs-Source-Dirs:  src, tests
+  Main-Is:         TestMain.hs
+  Build-Depends:   base, HUnit
+  if !flag(test)
+    Buildable:     False

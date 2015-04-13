@@ -1,0 +1,58 @@
+Name:          KiCS-prophecy
+Version:       0.1.0
+Cabal-Version: >= 1.6
+Author:        Bernd Braßel
+Maintainer:    Bernd Braßel
+Homepage:      http://curry-language.org
+License:       OtherLicense
+License-File:  LICENSE
+Category:      Debug
+build-type:    Custom
+Synopsis:      a transformation used by the kics debugger 
+Description:   This package contains a transformation of the debugger 
+               for the Curry to Haskell compiler "kics".
+Stability:     experimental
+extra-tmp-files: Curry/Module/*.fcy, 
+                 Curry/Module/*.fint 
+extra-source-files:
+   Curry/Module/*.hs.include
+Data-Dir: .
+Data-Files:    
+   Curry/Module/*.fcy
+   Curry/Module/*.fint
+
+Library
+  hs-source-dirs: .
+  Build-Depends:  
+    base == 4.1.*,
+    filepath,
+    KiCS >= 0.9.1
+
+  Exposed-Modules:
+    Curry.Files.ProphecyPath
+
+    Curry.Module.Oracle
+    Curry.Module.CEventOracle
+
+    Curry.Module.LiftCases
+    Curry.Module.Make
+
+  Other-Modules:
+    Curry.Module.EventOracle
+    Paths_KiCS_prophecy
+
+  install-includes: coracle/coracle.h
+  c-sources:        coracle/coracle.c
+
+Executable prophecy
+  main-is: prophecy.hs
+  hs-source-dirs: ., .curry/kics
+  Build-Depends:  
+    base == 4.1.*,
+    KiCS >= 0.9.0
+  Other-Modules:
+    Curry.Module.AddWorld
+    Curry.Module.Wrapper
+    Curry.Module.Transform
+    Curry.Module.Make
+    Curry.Module.LiftCases

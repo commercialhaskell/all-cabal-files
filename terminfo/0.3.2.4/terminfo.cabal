@@ -1,0 +1,38 @@
+Name:           terminfo
+Cabal-Version:  >=1.4
+Version:        0.3.2.4
+x-revision: 2
+Category:       User Interfaces
+License:        BSD3
+License-File:   LICENSE
+Copyright:      (c) Judah Jacobson
+Author:         Judah Jacobson
+Maintainer:     Judah Jacobson <judah.jacobson@gmail.com>
+Category:       User Interfaces
+Synopsis:       Haskell bindings to the terminfo library.
+Description:    This library provides an interface to the terminfo database (via bindings to the
+                curses library).  Terminfo allows POSIX systems to interact with a variety of terminals 
+                using a standard set of capabilities.  
+Homepage:       http://code.haskell.org/terminfo
+Stability:      Experimental
+Build-type:     Configure
+
+extra-source-files: configure.ac configure terminfo.buildinfo.in
+extra-tmp-files: config.log config.status autom4te.cache terminfo.buildinfo
+
+Library
+    -- avoid GHC 7.2 due to SafeHaskell-caused compile-failure
+    build-depends:  base < 4.4 || >= 4.5
+
+    Build-depends:  base >= 4.0 && < 4.8
+    Extensions:     CPP, ForeignFunctionInterface, DeriveDataTypeable,
+                    EmptyDataDecls, ScopedTypeVariables, FlexibleInstances
+    ghc-options:    -Wall
+    Exposed-Modules:
+                    System.Console.Terminfo
+                    System.Console.Terminfo.Base
+                    System.Console.Terminfo.Cursor
+                    System.Console.Terminfo.Color
+                    System.Console.Terminfo.Edit
+                    System.Console.Terminfo.Effects
+                    System.Console.Terminfo.Keys

@@ -1,0 +1,21 @@
+Name:              stable-maps
+Version:           0.0.1
+Synopsis:          Heterogeneous maps keyed by StableNames
+Description:       Provides an API for inserting heterogeneous data in a collection keyed by StableNames and for later retrieving it.
+Homepage:          http://github.com/ekmett/stable-maps
+License:           BSD3
+License-file:      LICENSE
+Author:            Edward Kmett
+Maintainer:        ekmett@gmail.com
+Category:          Math
+Build-type:        Simple
+Cabal-version:     >=1.6
+
+Library
+  Exposed-modules: System.Mem.StableName.Map
+                   System.Mem.StableName.Dynamic
+                   System.Mem.StableName.Dynamic.Map
+  Build-depends:   base >= 4 && < 5,
+                   containers >= 0.3 && < 0.4,
+                   ghc-prim >= 0.2 && < 0.3
+  GHC-Options:     -Wall

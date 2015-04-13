@@ -1,0 +1,24 @@
+name:                perceptron
+version:             0.1.0.1
+cabal-version:       >= 1.14
+build-type:          Simple
+license:             BSD3
+license-file:        LICENSE
+copyright:           (c) 2013-2014 Stefan Holdermans
+author:              Stefan Holdermans
+maintainer:          stefan@vectorfabrics.com
+stability:           provisional
+bug-reports:         mailto:stefan@vectorfabrics.com
+synopsis:            The perceptron learning algorithm.
+description:
+  This package provides a straightforward implementation of the perceptron
+  learning algorithm for supervised binary linear classification.
+category:            Machine Learning
+tested-with:         GHC == 7.6.1
+extra-source-files:  AUTHORS CHANGELOG COPYRIGHT
+
+library
+  exposed-modules:   Learning.Perceptron
+  build-depends:     base == 4.7.*
+  hs-source-dirs:    src
+  default-language:  Haskell98

@@ -1,0 +1,22 @@
+Name:            hfov
+Version:         1.0.1
+Category:        Game
+Synopsis:        Field-of-view calculation for low-resolution 2D raster grids.
+Description:     A Haskell binding to a Field of View calculation library
+                 written by Greg McIntyre (blue_puyo) in C.
+Stability:       Unstable
+License:         BSD3
+License-file:    LICENSE
+Author:          Jeremy Apthorp <nornagon@nornagon.net>, Greg McIntyre
+Maintainer:      nornagon@nornagon.net
+Build-Depends:   base >= 1.0 && < 3
+Build-Type:      Simple
+Tested-with:     GHC==6.8.2
+
+Exposed-Modules: FOV
+C-sources: fov.c
+Includes: fov.h
+Extra-source-files: fov.h
+Extensions: CPP, ForeignFunctionInterface
+Include-dirs: .
+ghc-options:  -Wall

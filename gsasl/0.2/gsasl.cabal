@@ -1,0 +1,21 @@
+name: gsasl
+version: 0.2
+stability: Alpha
+synopsis: Bindings for GNU SASL
+license: GPL
+license-file: License.txt
+author: John Millikin
+maintainer: jmillikin@gmail.com
+build-type: Simple
+cabal-version: >=1.2
+category: Network
+
+library
+  build-depends: base >=3 && < 5
+  build-tools: c2hs
+  exposed-modules: Network.Protocol.SASL.GSASL
+
+  extra-libraries: gsasl
+  pkgconfig-depends: libgsasl
+
+  extensions: ForeignFunctionInterface

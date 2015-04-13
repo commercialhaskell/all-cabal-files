@@ -1,0 +1,26 @@
+Name:                chalkboard-viewer
+Version:             0.1
+Synopsis:            OpenGL based viewer for chalkboard rendered images. 
+Description:	     Chalkboard is a Haskell hosted Domain Specific Language (DSL) for image generation and processing.
+		The basic structure is a chalk board, a two-dimensional canvas of values, typically colors. 
+		Chalkboard provides the usual image processing functions (masking, overlaying, function mapping,
+		cropping, warping, rotating) as well as a few more unusual ones.
+		.		
+		Chalkboard Viewer is a portal into a dynamically updatable Board, via an OpenGL window. 
+
+Category:            Graphics
+License:             BSD3
+License-file:        LICENSE
+Author:              Andy Gill
+Maintainer:          Andy Gill <andygill@ku.edu>
+Copyright:           (c) 2009 Andy Gill
+Homepage:            http://ittc.ku.edu/~andygill/chalkboard.php
+Stability:	     alpha
+build-type: 	     Simple
+Cabal-Version:       >= 1.6
+	
+Library
+  Build-Depends:        base, array, time, chalkboard==0.2, OpenGL, GLUT
+  Exposed-modules:
+       Graphics.Chalkboard.Viewer
+  Ghc-Options:  -Wall

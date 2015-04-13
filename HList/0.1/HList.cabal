@@ -1,0 +1,26 @@
+Name:                HList
+Version:             0.1
+Category:            Data
+Synopsis:            Heterogeneous lists
+Description:         HList is a record system providing strongly typed heterogenous lists, records,
+                     type-indexed products (TIP) and co-products; licensed under the MIT X License.
+License:             OtherLicense
+License-File:        LICENSE
+Author:              2004 Oleg Kiselyov (FNMOC, Monterey), Ralf Laemmel (CWI/VU, Amsterdam),
+                     Keean Schupke (Imperial College, London)
+Maintainer:          oleg@pobox.com
+
+Tested-With:         GHC==6.8.2
+Build-Depends:       base
+Build-Type:          Simple
+Exposed-modules:     Data.HList
+Other-modules:       Data.HList.Label4, Data.HList.CommonMain, Data.HList.Variant, Data.HList.GhcSyntax,
+                     Data.HList.GhcRecord, Data.HList.Record, Data.HList.HZip, Data.HList.TIC, Data.HList.TIP,
+                     Data.HList.HTypeIndexed, Data.HList.HOccurs, Data.HList.HArray, Data.HList.GhcExperiments,
+                     Data.HList.HListPrelude, Data.HList.TypeEqBoolGeneric, Data.HList.TypeEqGeneric1,
+                     Data.HList.TypeCastGeneric1, Data.HList.FakePrelude
+
+extensions:          EmptyDataDecls, FlexibleContexts, FlexibleInstances, FunctionalDependencies,
+                     MultiParamTypeClasses, OverlappingInstances, PatternSignatures, RankNTypes,
+                     ScopedTypeVariables, TypeSynonymInstances, UndecidableInstances
+ghc-options:         -O2 -Wall

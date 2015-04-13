@@ -1,0 +1,16 @@
+name: bzlib
+version: 0.2
+x-revision: 1
+copyright: (c) 2006 Duncan Coutts
+build-depends: base < 4.3, fps
+license: BSD3
+author: Duncan Coutts <duncan.coutts@worc.ox.ac.uk>
+maintainer: Duncan Coutts <duncan.coutts@worc.ox.ac.uk>
+synopsis: Compression and decompression in the bzip2 format
+exposed-modules: Codec.Compression.BZip,
+                 Codec.Compression.BZip.Internal
+other-modules: Codec.Compression.BZip.Stream
+extensions: ForeignFunctionInterface
+includes: bzlib.h
+extra-libraries: bz2
+ghc-options: -fvia-C -Wall

@@ -1,0 +1,50 @@
+name:                netspec
+version:             0.2.0.0
+synopsis:            Simplify static Networking tasks
+
+homepage:            http://github.com/DanBurton/netspec
+author:              Dan Burton
+maintainer:          danburton.email@gmail.com
+
+license:             BSD3
+license-file:        LICENSE
+copyright:           (c) 2012 Dan Burton
+
+description:
+  A Networking library for static Networking tasks.
+  .
+  To learn about how to use this library in general,
+  see <http://github.com/DanBurton/netspec#readme>
+
+
+category:            Network
+build-type:          Simple
+stability:           experimental
+cabal-version:       >=1.8
+
+library
+  exposed-modules:
+    Network.NetSpec,
+    Network.NetSpec.Json,
+    Network.NetSpec.Text,
+    Network.NetSpec.ByteString
+  build-depends:
+    base >= 4 && < 4.6,
+    aeson == 0.6.*,
+    network == 2.3.*,
+    mtl == 2.0.*,
+    template-haskell == 2.7.*,
+    transformers == 0.2.*,
+    text == 0.11.*,
+    binary == 0.5.*,
+    bytestring == 0.9.*
+  hs-source-dirs: src
+
+source-repository head
+  type:     git
+  location: git://github.com/DanBurton/netspec.git
+
+source-repository this
+  type:     git
+  location: git://github.com/DanBurton/netspec.git
+  tag:      netspec-0.2.0.0

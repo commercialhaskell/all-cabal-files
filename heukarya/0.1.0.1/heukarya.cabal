@@ -1,0 +1,32 @@
+name: heukarya
+version: 0.1.0.1
+cabal-version: >=1.6
+build-type: Simple
+license: BSD3
+license-file: LICENSE
+homepage: https://github.com/t3476/heukarya
+maintainer: depot051@gmail.com
+synopsis: A genetic programming based on tree structure.
+category: AI
+author: He-chien Tsai
+data-dir: ""
+
+
+description: 
+  It based on Data.Dynamic and tree container, so that Gene can represent both haskell functions and syntax trees by type connstructors. since it also supports higher order functions by multiple way type parsing, there's no need to have any variable in Gene's Tree structure.
+
+ 
+library
+    build-depends: 
+      base < 5, containers, random, deepseq, parallel, text
+    exposed-modules: 
+      AI.Heukarya.Gene, AI.Heukarya.Jungle, AI.Heukarya.Center,
+      AI.Heukarya.Gene.Dynamic, AI.Heukarya.Gene.Dynamic.Double
+    exposed: True
+    buildable: True
+    hs-source-dirs: src
+    other-modules: 
+
+source-repository head 
+  type:     git
+  location: https://github.com/t3476/heukarya 

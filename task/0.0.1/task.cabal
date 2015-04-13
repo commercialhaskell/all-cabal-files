@@ -1,0 +1,39 @@
+Name:                task
+Version:             0.0.1
+Synopsis:            A command line tool for keeping track of tasks you worked on
+Description:         'task' is a simple command line tool for keeping track of 
+                     tasks you are working on. Tasks are kept in a simple
+                     persistent store. Each task can be tagged with arbitrary
+                     key/value pairs and the results can be exported to CSV files
+                     filtered on said key/value pairs.
+License:             BSD3
+License-file:        LICENSE
+Author:              Sean Seefried
+Maintainer:          sean.seefried@gmail.com
+
+Category:            Network
+Build-type:          Simple
+Cabal-version: >= 1.8
+Extra-Source-Files:  README.md
+
+Source-Repository head
+   type: git
+   location: git://github.com/sseefried/task.git
+
+Executable task
+  Main-is: Task.hs
+  Build-depends: base >= 2 && <= 4.5.0.0,
+                 random,
+                 containers,
+                 text,
+                 time,
+                 filepath,
+                 unix,
+                 directory,
+                 attoparsec,
+                 bytestring,
+                 aeson,
+                 old-locale,
+                 csv-enumerator
+                 
+  hs-source-dirs: src

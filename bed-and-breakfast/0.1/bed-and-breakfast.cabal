@@ -1,0 +1,21 @@
+Name:           bed-and-breakfast
+Version:        0.1
+Synopsis:       Efficient Matrix operations in 100% Haskell.
+Description:    Efficient Matrix operations in 100% Haskell.
+                
+License:        MIT
+License-File:   LICENSE
+Author:         Julian Fleischer <julian.fleischer@fu-berlin.de>
+Maintainer:     Julian Fleischer <julian.fleischer@fu-berlin.de>
+Build-Type:     Simple
+Cabal-Version:  >= 1.8
+Category:       Data
+Stability:      stable
+
+Library
+    Exposed-Modules:    Numeric.Matrix
+    Build-Depends:      base >= 4.5 && < 5,
+                        array >= 0.4
+    Hs-Source-Dirs:     src
+
+

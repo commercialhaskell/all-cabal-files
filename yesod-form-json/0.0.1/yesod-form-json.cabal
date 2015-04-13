@@ -1,0 +1,34 @@
+Name: yesod-form-json
+Category: Web, Yesod
+license:  MIT
+License-File: LICENSE
+Version: 0.0.1
+Cabal-version: >= 1.8
+Build-type: Simple
+Copyright: Anton Cheshkov
+Author: Anton Cheshkov <acheshkov@gmail.com>
+maintainer: Anton Cheshkov <acheshkov@gmail.com>
+Synopsis: Extension for Yesod web framework to handle JSON requests as applicative forms
+Description: Extension for Yesod web framework to handle JSON requests as applicative forms
+
+
+
+Library
+  Build-depends:
+      base >= 4 && < 5,
+      yesod-form,
+      bytestring,
+      text,
+      unordered-containers,
+      containers,
+      yesod-core >= 1.2.7,
+      aeson
+
+    
+  Extensions:       FlexibleContexts
+  Exposed-Modules:  Yesod.Form.JSON
+  Ghc-options:      -Wall
+
+source-repository head
+  type:     git
+  location: https://github.com/acheshkov/yesod-form-json.git

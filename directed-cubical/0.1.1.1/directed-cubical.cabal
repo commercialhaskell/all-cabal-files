@@ -1,0 +1,41 @@
+name:                directed-cubical
+version:             0.1.1.1
+synopsis:            Finite directed cubical complexes and associated algorithms
+description:         Finite directed cubical complexes and associated algorithms
+license:             BSD3
+license-file:        LICENSE
+author:              Michael D. Misamore
+maintainer:          m.misamore@gmail.com
+copyright:           (c) 2014, Michael D. Misamore
+category:            Math
+build-type:          Simple
+cabal-version:       >=1.8
+stability:           experimental
+extra-source-files:  README,
+                     Tests.hs,
+                     Examples/bigCube.hs,
+                     Examples/smallCube.hs,
+                     Examples/sqPairFwd.hs,
+                     Examples/sqPairBack.hs,
+                     Examples/torus3d.hs,
+                     Examples/genusTwo3d.hs,
+                     Examples/swissFlag.hs
+
+source-repository head
+  type:     git 
+  location: https://github.com/mmisamore/directed-cubical 
+
+library
+  exposed-modules:     Math.Topology.CubeCmplx.CornerReduce, 
+                       Math.Topology.CubeCmplx.DirCubeCmplx,
+                       Math.Topology.CubeCmplx.DPTrace
+  -- other-modules:       
+  build-depends:       base ==4.6.*, 
+                       vector ==0.10.*, 
+                       unordered-containers ==0.2.*, 
+                       parallel ==3.2.*, 
+                       hashable ==1.2.*, 
+                       deepseq ==1.3.*, 
+                       QuickCheck ==2.6.*, 
+                       containers ==0.5.*
+

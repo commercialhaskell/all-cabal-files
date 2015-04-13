@@ -1,0 +1,42 @@
+Name: hsql-mysql
+Version: 1.8.3
+x-revision: 1
+Cabal-Version: >=1.10
+Build-Type: Simple
+License: BSD3
+License-File: LICENSE
+Author: Krasimir Angelov <kr.a...@gmail.com>
+Maintainer: none
+Category: Database
+Synopsis: MySQL driver for HSQL.
+Description: MySQL driver for HSQL.
+
+Library {
+  Build-Depends: base >=4 && < 5, hsql >= 1.8.2, Cabal
+  Exposed-Modules: Database.HSQL.MySQL
+                   DB.HSQL.MySQL.Type
+                   DB.HSQL.MySQL.Functions
+  Exposed: True
+  Other-Modules:
+  Hs-Source-Dirs: .
+  Default-Extensions:
+  Other-Extensions: CPP, DeriveDataTypeable, FlexibleInstances,
+                    ForeignFunctionInterface, RankNTypes, ScopedTypeVariables
+  Buildable: True
+  GHC-Options: -O2
+  Includes: Database/HSQL/HsMySQL.h
+  Install-Includes:
+  C-Sources:
+  if os(mingw32) || os(win32)
+    Include-Dirs: Database/HSQL
+    Extra-Libraries: libmysql
+  else
+    Include-Dirs: Database/HSQL, /usr/include/mysql
+    Extra-Libraries: mysqlclient
+    Extra-Lib-Dirs: /usr/lib,/usr/lib/mysql
+  CC-Options:
+  LD-Options:
+  PkgConfig-Depends:
+  Frameworks:
+  Default-Language: Haskell2010
+}

@@ -1,0 +1,22 @@
+Name:                scons2dot
+Version:             0.9
+Synopsis:            Generates graphviz file of scons dependency information
+Description:         This tool creates a graphviz dot file that represents
+                     build dependencies on a system built with scons.
+License:             GPL
+License-file:        COPYING
+Author:              Leandro Lisboa Penz
+Maintainer:          Leandro Lisboa Penz <llpenz@gmail.com>
+Build-type:          Simple
+Cabal-Version:       >= 1.6
+Category:            Development
+Extra-source-files:  manual.t2t
+
+Executable           scons2dot
+  Main-is:           scons2dot.hs
+  Build-depends:     base >= 3 && < 4,bytestring,containers,process
+
+Source-repository    head
+  Type:              git
+  Location:          git://github.com/lpenz/scons2dot.git
+

@@ -1,0 +1,33 @@
+name:                warp-dynamic
+version:             0.0.1
+synopsis:            Dynamic configurable warp HTTP server
+
+description:         Dynamic configurable warp HTTP server
+
+homepage:            http://tanakh.jp
+license:             BSD3
+license-file:        LICENSE
+author:              Hideyuki Tanaka
+maintainer:          Hideyuki Tanaka <tanaka.hideyuki@gmail.com>
+copyright:           (c) 2012, Hideyuki Tanaka
+category:            Network
+build-type:          Simple
+cabal-version:       >=1.8
+
+extra-source-files:  config/warpd.hs
+
+library
+  build-depends:       base           == 4.*
+                     , data-default
+                     , dyre           == 0.8.*
+                     , http-types     == 0.6.*
+                     , wai            == 1.1.*
+                     , warp           == 1.1.*
+
+  exposed-modules:     Network.Wai.Application.Dynamic
+
+executable warpd
+  hs-source-dirs:      app
+  main-is:             Main.hs
+  build-depends:       base           == 4.*
+                     , warp-dynamic

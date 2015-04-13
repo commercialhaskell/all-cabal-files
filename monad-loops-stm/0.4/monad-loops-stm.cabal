@@ -1,0 +1,24 @@
+name:                   monad-loops-stm
+version:                0.4
+stability:              provisional
+license:                PublicDomain
+
+cabal-version:          >= 1.6
+build-type:             Simple
+
+author:                 James Cook <mokus@deepbondi.net>
+maintainer:             James Cook <mokus@deepbondi.net>
+homepage:               https://github.com/mokus0/monad-loops-stm
+
+category:               Control
+synopsis:               Monadic loops for STM
+description:            Some useful control operators for looping.
+
+source-repository head
+  type: git
+  location: git://github.com/mokus0/monad-loops-stm.git
+
+Library
+  hs-source-dirs:       src
+  exposed-modules:      Control.Monad.Loops.STM
+  build-depends:        base >= 2 && < 5, stm

@@ -1,0 +1,15 @@
+Name:            applicative-extras
+Version:         0.1.4
+Synopsis:        Instances for Applicative
+Description:     Some instances for Applicative and type-level composition.
+Category:        Control
+License:         BSD3
+License-file:    LICENSE
+Copyright:       (c) Tupil
+Author:          Chris Eidhof <ce+hackage@tupil.com>
+Maintainer:      Chris Eidhof <ce+hackage@tupil.com>
+Exposed-Modules:   Control.Applicative.Compose
+                 , Control.Applicative.Error
+                 , Control.Applicative.State
+Build-Type:      Simple
+Build-Depends:   base, haskell98, mtl

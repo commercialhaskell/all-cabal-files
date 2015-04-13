@@ -1,0 +1,35 @@
+name:                cellrenderer-cairo
+version:             1.0.0.0
+synopsis:            Cairo-based CellRenderer
+description:         A CellRenderer instance that allows for arbitrary Cairo
+                     rendering functions to render each item in a TreeView.
+license:             BSD3
+license-file:        LICENSE
+author:              John W. Lato
+maintainer:          jwlato@gmail.com
+-- copyright:           
+category:            Graphics
+build-type:          Simple
+cabal-version:       >=1.8
+extra-source-files:  c-exts/gtkcellrenderercairo.c,
+                     c-exts/gtkcellrenderercairo.h
+
+
+library
+  exposed-modules:     Graphics.UI.Gtk.ModelView.CellRendererCairo
+  -- other-modules:       
+  c-sources:           c-exts/gtkcellrenderercairo.c
+  include-dirs:        c-exts
+  ghc-options:         -Wall
+  includes:            gtk/gtk.h, gtkcellrenderercairo.h
+  pkgconfig-depends:   gtk+-2.0
+  build-depends:       base >= 4 && < 5,
+                       glib ==0.12.*,
+                       gtk ==0.12.*,
+                       cairo ==0.12.*,
+                       mtl == 2.*
+  build-tools:         c2hs
+
+source-repository head
+  type:                git
+  location:            git://github.com/tsurucapital/cellrenderer-cairo.git

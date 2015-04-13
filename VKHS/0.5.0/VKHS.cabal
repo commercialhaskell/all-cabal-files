@@ -1,0 +1,118 @@
+
+name:                VKHS
+version:             0.5.0
+synopsis:            Provides access to Vkontakte social network via public API
+description:
+    Provides access to Vkontakte API methods. Library requires no interaction
+    with the user during Implicit-flow authentication.
+
+license:             BSD3
+license-file:        LICENSE
+author:              Sergey Mironov
+maintainer:          ierton@gmail.com
+copyright:           Copyright (c) 2012, Sergey Mironov
+category:            Web
+build-type:          Custom
+cabal-version:       >=1.6
+homepage:            http://github.com/ierton/vkhs
+
+source-repository head
+    type:     git
+    location: https://github.com/ierton/vkhs.git
+
+executable vknews
+  extra-libraries: curl
+  hs-source-dirs:    src
+  main-is:           VKNews.hs
+  build-tools:     hsc2hs
+  ghc-options:     -Wall -fwarn-tabs
+  other-modules:
+    Network.Curlhs.Base,
+    Network.Curlhs.Core,
+    Network.Curlhs.Easy,
+    Network.Curlhs.Setopt,
+    Network.Curlhs.Errors,
+    Network.Curlhs.Types
+
+executable vkq
+  extra-libraries: curl
+  hs-source-dirs:    src
+  main-is:           VKQ.hs
+  build-tools:     hsc2hs
+  ghc-options:     -Wall -fwarn-tabs
+  other-modules:
+    Network.Curlhs.Base,
+    Network.Curlhs.Core,
+    Network.Curlhs.Easy,
+    Network.Curlhs.Setopt,
+    Network.Curlhs.Errors,
+    Network.Curlhs.Types
+
+
+library
+  --extra-libraries: curl
+  build-tools:     hsc2hs
+  ghc-options:     -Wall -fwarn-tabs
+  hs-source-dirs:    src
+  other-modules:     Test.Debug, Test.Data, Test.API, Network.Shpider.Forms,
+    Network.Protocol.Uri, Network.Protocol.Mime, Network.Protocol.Http,
+    Network.Protocol.Cookie, Network.Protocol.Uri.Remap,
+    Network.Protocol.Uri.Query, Network.Protocol.Uri.Printer,
+    Network.Protocol.Uri.Path, Network.Protocol.Uri.Parser,
+    Network.Protocol.Uri.Encode, Network.Protocol.Uri.Data,
+    Network.Protocol.Uri.Chars, Network.Protocol.Http.Status,
+    Network.Protocol.Http.Printer, Network.Protocol.Http.Parser,
+    Network.Protocol.Http.Headers, Network.Protocol.Http.Data, Text.Namefilter,
+    Text.PFormat,
+    Network.Curlhs.Base,
+    Network.Curlhs.Core,
+    Network.Curlhs.Easy,
+    Network.Curlhs.Setopt,
+    Network.Curlhs.Errors,
+    Network.Curlhs.Types,
+    Data.Label.Abstract,
+    Data.Label.Derive,
+    Data.Label.Maybe,
+    Data.Label.MaybeM,
+    Data.Label.Pure,
+    Data.Label.PureM,
+    Data.Label
+
+  -- maybe not elegant, but convenient during tests
+  -- if os(windows)
+  --   include-dirs:   .\curl-7.25.0-devel-mingw32\include
+  --   extra-lib-dirs: .\curl-7.25.0-devel-mingw32\bin
+
+  exposed-modules:   Web.VKHS
+                     Web.VKHS.API
+                     Web.VKHS.API.Aeson
+                     Web.VKHS.API.Types
+                     Web.VKHS.API.Monad
+                     Web.VKHS.Curl
+                     Web.VKHS.Login
+                     Web.VKHS.Types
+
+  build-depends:     base >=4.6 && <5,
+                     containers,
+                     mtl,
+                     bytestring,
+                     tagsoup-parsec ==0.0.*,
+                     tagsoup ==0.12.*,
+                     failure ==0.2.*,
+                     safe ==0.3.*,
+                     parsec ==3.1.*,
+                     split ==0.2.*,
+                     utf8-string ==0.3.*,
+                     bimap ==0.2.*,
+                     template-haskell,
+                     transformers ==0.3.*,
+                     optparse-applicative,
+                     aeson,
+                     filepath,
+                     directory,
+                     regexpr,
+                     pretty-show,
+                     vector,
+                     text,
+                     time
+

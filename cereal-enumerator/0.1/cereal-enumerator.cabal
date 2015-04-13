@@ -1,0 +1,17 @@
+name:                cereal-enumerator
+version:             0.1
+synopsis:            Deserialize things with cereal and enumerator
+license:             PublicDomain
+author:              Patrick Palka
+maintainer:          patrick@parcs.ath.cx
+category:            Text
+build-type:          Simple
+cabal-version:       >=1.8
+
+library
+  exposed-modules:     Data.Serialize.Get.Enumerator
+  build-depends:       base < 5
+                     , enumerator
+                     , cereal
+                     , bytestring
+

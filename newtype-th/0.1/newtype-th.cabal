@@ -1,0 +1,25 @@
+Name:                newtype-th
+Version:             0.1
+Synopsis:            Provides a template haskell deriver for use with Control.Newtype.
+Description:         Provides a template haskell based mechanism for
+                     deriving instances of djahandarie's Control.Newtype class.
+License:             BSD3
+License-file:        LICENSE
+Author:              Michael Sloan
+Maintainer:          Michael Sloan <mgsloan at gmail>
+Homepage:            http://github.com/mgsloan/newtype-th
+-- Copyright:           
+Category:            Control
+Build-type:          Simple
+-- Extra-source-files:  
+Cabal-version:       >=1.6
+Bug-Reports:         http://github.com/mgsloan/newtype-th/issues
+Source-Repository head
+  Type: git
+  Location: git://github.com/mgsloan/newtype-th
+
+Library
+  Extensions:        TemplateHaskell
+  Exposed-modules:   Control.Newtype.TH
+  Build-depends:     base >= 3.0 && < 6, newtype, haskell-src-meta, template-haskell
+  Ghc-options:       -Wall

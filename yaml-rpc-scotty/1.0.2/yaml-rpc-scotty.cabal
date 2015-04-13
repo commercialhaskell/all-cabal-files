@@ -1,0 +1,37 @@
+Name:                yaml-rpc-scotty
+
+Version:             1.0.2
+
+Synopsis:            Scotty server backend for yaml-rpc
+Description:         This package provides Scotty-based server backend for yaml-rpc package.
+Homepage:            http://redmine.iportnov.ru/projects/yaml-rpc
+License:             BSD3
+License-file:        LICENSE
+Author:              Ilya V. Portnov
+Maintainer:          portnov84@rambler.ru
+Category:            Network
+Build-type:          Simple
+Cabal-version:       >= 1.8
+
+Library
+  Exposed-modules:   Network.YAML.Scotty
+  Build-depends:       base >= 3 && <= 5,
+                       transformers >= 0.3.0.0,
+                       mmorph >= 1.0.3,
+                       aeson >= 0.7.0.6,
+                       yaml,
+                       containers,
+                       text >= 1.1.1.3,
+                       http-types >= 0.8.5,
+                       scotty >= 0.8.0,
+                       yaml-rpc >= 1.0.2
+
+  Other-modules:     Test.Server,
+                     Test.TestAPIImpl
+
+Source-repository head
+  type: git
+  location: git@github.com:portnov/yaml-rpc.git
+
+
+

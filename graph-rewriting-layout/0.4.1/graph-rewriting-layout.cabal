@@ -1,0 +1,39 @@
+Name:           graph-rewriting-layout
+Version:        0.4.1
+Copyright:      (c) 2010, Jan Rochel
+License:        BSD3
+License-File:   LICENSE
+Author:         Jan Rochel
+Maintainer:     jan@rochel.info
+Stability:      beta
+Build-Type:     Simple
+Synopsis:       Force-directed node placement intended for incremental graph drawing
+Description:
+	Defines basic methods for force-directed node displacement that can be combined into an incremental graph-drawing procedure.
+Category:       Graphs, Graphics
+Extensions:     UnicodeSyntax
+Cabal-Version:  >= 1.6
+Build-Depends:
+	base >= 4 && < 4.3,
+	base-unicode-symbols >= 0.2 && < 0.3,
+	graph-rewriting >= 0.4 && < 0.5,
+	AC-Vector >= 1.2 && < 1.3
+Exposed-Modules:
+	GraphRewriting.Layout.Position
+	GraphRewriting.Layout.PortSpec
+	GraphRewriting.Layout.Rotation
+	GraphRewriting.Layout.RotPortSpec
+	GraphRewriting.Layout.Coulomb
+	GraphRewriting.Layout.Gravitation
+	GraphRewriting.Layout.SpringEmbedder
+	GraphRewriting.Layout.Wrapper
+Other-Modules:
+	GraphRewriting.Layout.Force
+	GraphRewriting.Layout.Geometry
+Extensions:
+	UnicodeSyntax
+	FlexibleInstances
+	FlexibleContexts
+	MultiParamTypeClasses
+	TypeSynonymInstances
+GHC-Options:   -fno-warn-duplicate-exports -fwarn-unused-imports

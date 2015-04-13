@@ -1,0 +1,48 @@
+name:               hs-bibutils
+version:            0.1
+homepage:           http://code.haskell.org/hs-bibutils
+
+synopsis:           Haskell bindings to bibutils, the bibliography
+                    conversion utilities.
+
+description:        Haskell bindings to Chris Putnam's bibutils, a
+                    library that interconverts between various
+                    bibliography formats using a common MODS-format
+                    XML intermediate.
+		    .
+                    hs-bibutils is available under a BSD3 license. See
+                    the LICENSE file for details.
+                    .
+                    Be aware, however, that bibutils itself is
+		    licensed under the GPL. If you wish to use the
+		    hs-bibutils bindings, your project will need to be
+		    GPL compatible.
+                    .
+                    For more details about bibutils, please check:
+		    <http://www.scripps.edu/~cdputnam/software/bibutils/>.
+                    .
+                    The original API documentation is available here:
+                    <http://www.scripps.edu/~cdputnam/software/bibutils/library_specs.html>.
+
+category:           Text
+license:            BSD3
+license-file:       LICENSE
+author:             Andrea Rossato
+maintainer:         andrea.rossato@unitn.it
+cabal-version:      >= 1.4
+build-type:         Simple
+
+library
+    exposed-modules:  Text.Bibutils
+    other-modules:
+    ghc-options:      -funbox-strict-fields -Wall
+    ghc-prof-options: -prof -auto-all
+    hs-source-dirs:   src
+    extra-libraries:  bibutils
+    extensions:       ForeignFunctionInterface
+    c-sources:        cbits/stub.c
+
+    if impl(ghc >= 6.10)
+       build-depends: base >= 4, syb
+    else
+       build-depends: base >= 3 && < 4

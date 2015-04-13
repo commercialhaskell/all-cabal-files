@@ -1,0 +1,68 @@
+Name: EsounD
+Synopsis: Type-safe bindings to EsounD (ESD; Enlightened Sound Daemon)
+Description:
+        Type-safe bindings to EsounD: <http://www.tux.org/~ricdude/EsounD.html>
+Version: 0.1
+License: PublicDomain
+License-File: COPYING
+Author: PHO <pho at cielonegro dot org>
+Maintainer: PHO <pho at cielonegro dot org>
+Stability: experimental
+Homepage: http://cielonegro.org/EsounD.html
+Category: Sound
+Tested-With: GHC == 7.0.1
+Cabal-Version: >= 1.6
+Build-Type: Simple
+Extra-Source-Files:
+    COPYING
+
+Source-Repository head
+    Type: git
+    Location: git://git.cielonegro.org/EsounD.git
+
+Flag build-examples
+    Description: Build example programs.
+    Default: False
+
+Library
+    Build-Depends:
+        base                      == 4.*,
+        base-unicode-symbols      == 0.2.*,
+        bindings-EsounD           == 0.1.*,
+        monad-peel                == 0.1.*,
+        network                   == 2.3.*,
+        regions                   == 0.8.*,
+        safer-file-handles        == 0.9.*,
+        storablevector            == 0.2.*,
+        transformers              == 0.2.*,
+        unix                      == 2.4.*
+
+    Exposed-Modules:
+        Sound.EsounD
+        Sound.EsounD.Controller
+        Sound.EsounD.Filter
+        Sound.EsounD.Monitor
+        Sound.EsounD.Player
+        Sound.EsounD.Recorder
+        Sound.EsounD.Streams
+        Sound.EsounD.Types
+
+    Other-Modules:
+        Sound.EsounD.Internals
+
+    GHC-Options:
+        -Wall
+
+Executable hs-esd-player-example
+   if flag(build-examples)
+       Buildable: True
+   else
+       Buildable: False
+
+   HS-Source-Dirs:
+        ., examples
+
+   Main-Is: EsdPlayerExample.hs
+
+   GHC-Options:
+        -Wall

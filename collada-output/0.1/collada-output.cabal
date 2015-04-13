@@ -1,0 +1,31 @@
+Name:               collada-output
+Version:            0.1
+Synopsis:           Generate animated 3d objects in COLLADA
+Description:        Generate a COLLADA file with textures, materials, animations, ...
+category:           graphics
+License:            BSD3
+License-file:       LICENSE
+Author:             Tillmann Vogt
+Maintainer:         Tillmann.Vogt@rwth-aachen.de
+Build-Type:         Simple
+Cabal-Version:    >=1.6
+
+Library
+    hs-source-dirs: src
+    build-depends:
+        haskell98,
+        base == 4.*,
+        xml == 1.3.*,
+        containers == 0.3.*,
+        Vec == 0.9.7,
+        time == 1.1.*,
+        SVGPath == 1.0.*
+    exposed-modules:
+        Graphics.Formats.Collada.ColladaTypes
+        Graphics.Formats.Collada.Animations
+        Graphics.Formats.Collada.GenerateCollada
+        Graphics.Formats.Collada.GenerateObjects
+
+Executable Examples
+    hs-source-dirs: src
+    Main-is:        Examples.hs

@@ -1,0 +1,27 @@
+name:                clckwrks-theme-bootstrap
+version:             0.2.2
+synopsis:            simple bootstrap based template for clckwrks
+homepage:            http://www.clckwrks.com/
+license:             BSD3
+license-file:        LICENSE
+author:              Jeremy Shaw
+maintainer:          jeremy@n-heptane.com
+category:            Clckwrks
+build-type:          Simple
+cabal-version:       >=1.8
+
+data-files:
+  data/style.css
+
+source-repository head
+    type:     darcs
+    subdir:   clckwrks-theme-bootstrap
+    location: http://hub.darcs.net/stepcut/clckwrks
+
+library
+  exposed-modules:     Theme
+                       Paths_clckwrks_theme_bootstrap
+  build-depends:       base             >  4 && <5,
+                       clckwrks         == 0.13.*,
+                       hsp              == 0.7.*,
+                       text             == 0.11.*

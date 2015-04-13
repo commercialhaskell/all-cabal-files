@@ -1,0 +1,25 @@
+Name:                haskoon
+Version:             0.1
+Synopsis:            Web Application Abstraction
+Description:         Web Astraction Layer with a binding to CGI providing a simple way to
+                     map parameter and header values to data structures (inspired by HAppS)
+                     and a sitemap functionality to map URLs to functions that answer the request.
+License:             LGPL
+License-file:        LICENSE
+Category:            Web
+Author:              David Leuschner, Dirk Spöri
+Maintainer:          David Leuschner <leuschner@openfactis.org>
+Build-Type:          Simple
+Cabal-Version:       >= 1.2
+
+Library
+  Hs-Source-Dirs:    src
+  GHC-Options: -Wall
+  Build-Depends:     base >= 3 && < 4, bytestring, utf8-string, hslogger, regex-posix,
+                     MissingH, directory, filepath, mtl, safe, MaybeT, fastcgi,
+                     cgi, network, hsp, hsx
+  Exposed-Modules:   Factis.Haskoon.Web
+                     Factis.Haskoon.WebSitemap
+                     Factis.Haskoon.WebCGI
+                     Factis.Haskoon.WebRqAccessM
+                     Factis.Haskoon.WebHsp

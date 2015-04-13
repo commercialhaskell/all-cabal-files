@@ -1,0 +1,22 @@
+Name:		yjtools
+Version:	0.2
+Cabal-Version:	>= 1.2
+Build-Type:	Simple
+License:	GPL
+License-file:	LICENSE
+Author:		Yoshikuni Jujo
+Maintainer:	Yoshikuni Jujo <PAF01143@nifty.ne.jp>
+Stability:	experimental
+Homepage:	http://homepage3.nifty.com/salamander/second/projects/yjtools/index.xhtml
+Package-Url:	http://homepage3.nifty.com/salamander/second/portage/distfiles/yj-gentoo-haskell-tools-0.0.tar.gz
+Synopsis:	some tools for Monad
+Description:	ifM, whenM, unlessM, doWhile, doWhile_ and so on.
+Category:	Unclassified
+Tested-With:	GHC
+Data-Files:
+Extra-Source-Files:
+Extra-Tmp-Files:
+
+Library
+  Build-Depends:	base
+  Exposed-Modules:	Control.Monad.Utils, Control.Applicative.Utils, Data.List.Tools, Data.Tuple.Tools, Data.Function.Tools

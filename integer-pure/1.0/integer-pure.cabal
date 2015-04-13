@@ -1,0 +1,22 @@
+name:		integer-pure
+version:	1.0
+license:	BSD3
+license-file:	LICENCE
+author:		Malcolm Wallace <Malcolm.Wallace@me.com>
+maintainer:	author
+homepage:	http://projects.haskell.org/~malcolm/integer-pure
+category:	Numeric
+synopsis:	A pure-Haskell implementation of arbitrary-precision Integers.
+description:
+	A pure-Haskell implementation of the arbitrary-precision Integer
+	numeric type.  Originally developed for a compiler that does not
+	supply a builtin Integer type, this package could also be useful
+	for people who want to avoid ghc's builtin integer-gmp for
+	licencing reasons.
+build-type:     Simple
+cabal-version:  >=1.2
+extra-source-files:  LICENCE QC.hs TestLocal.hs TestGlobal.hs
+
+library
+  exposed-modules:
+        Data.Integer

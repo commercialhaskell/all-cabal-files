@@ -1,0 +1,44 @@
+Name:           rbr
+Version:        0.8.3
+License:        GPL
+License-File:   LICENSE
+Stability:      Beta
+Author:         Ketil Malde
+Maintainer:     Ketil Malde <ketil@malde.org>
+Category:       Bioinformatics
+Synopsis:       Mask nucleotide (EST) sequences in Fasta format
+Description:    RBR is a tool for masking EST sequences. It uses a
+                statistical model to identify suspicious sequence parts,
+                and masks them. The README has more details.
+                .
+                The Darcs repository is at <http://malde.org/~ketil/rbr>.
+Homepage:       http://malde.org/~ketil/
+
+Cabal-Version:  >= 1.2
+Tested-With:    GHC==6.8.2
+-- add fps for ghc-6.4.2
+Build-Depends:  base, bio >= 0.3.1, QuickCheck, binary, bytestring, containers
+Build-Type:     Simple
+
+data-files:     idea.txt, README, TODO
+
+Library
+        Exposed-Modules:  RBR.Options, RBR.Util, RBR.Stats, RBR.FreqTable, RBR.TextFormat
+        C-sources:        RBR/hooks.c
+        Build-Depends:    base>3, containers, bio
+        Extensions:
+        Ghc-Options:      -Wall -funbox-strict-fields
+
+Executable rbr
+        Executable:     rbr
+        Main-Is:        RBR/RBR.lhs
+        build-depends:  bytestring
+        Extensions:     CPP
+        Ghc-Options:    -Wall -funbox-strict-fields
+
+Executable mct
+        Executable:     mct
+        Main-Is:        RBR/MCT.lhs
+        build-depends:  bytestring
+        Extensions:      BangPatterns, FlexibleContexts
+        Ghc-Options:    -Wall -funbox-strict-fields

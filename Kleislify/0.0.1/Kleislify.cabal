@@ -1,0 +1,28 @@
+Name:               Kleislify
+Version:            0.0.1
+Author:             Dylan Just <dylan@techtangents.com>
+License:            BSD3
+License-file:       LICENSE
+Copyright:          Dylan Just
+Maintainer:         Dylan Just
+Category:           Control
+Synopsis:           Variants of Control.Arrow functions, specialised to kleislis. 
+Description:        Avoids boxing into Control.Arrow.Kleisli values. 
+Cabal-version:      >= 1.6
+Build-Type:         Simple
+
+
+source-repository head
+  type:     git
+  location: https://techtangents@github.com/techtangents/kleislify.git
+
+
+
+Library
+  Build-Depends:    base < 5 && >= 3
+
+  GHC-Options:      -Wall
+                    -fno-warn-type-defaults
+                    -fno-warn-name-shadowing
+
+  Exposed-Modules:  Control.Kleislify 

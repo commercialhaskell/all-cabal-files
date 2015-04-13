@@ -1,0 +1,52 @@
+name:           j2hs
+version:        0.9.1
+
+license:        MIT
+license-file:   LICENSE
+
+author:         Julian Fleischer <julian.fleischer@fu-berlin.de>
+maintainer:     Julian Fleischer <julian.fleischer@fu-berlin.de>
+
+stability:      experimental
+category:       Foreign, Java, JVM, FFI Tools
+
+cabal-version:  >= 1.8
+
+synopsis:       j2hs
+description:    j2hs
+
+build-type:     Custom
+
+
+Executable j2hs
+
+    hs-source-dirs: src
+    main-is: Main.hs
+
+    other-modules:  Options
+                    , Java2Haskell
+                    , JavaSE6
+                    , Translate
+                    , Typomatic
+                    , Bindings
+                    , Utils
+
+    build-depends:  base >= 4.5 && < 5
+                    , hinduce-missingh
+                    , java-bridge == 0.9
+                    , java-bridge-extras == 0.9
+                    , java-reflect == 0.9
+                    , haskell-reflect == 0.9
+                    , split >= 0.2.1.1
+                    , named-records >= 0.5
+                    , filepath >= 1.3
+                    , directory >= 1.1.0.2
+                    , containers >= 0.4.2.1
+                    , bimap >= 0.2.4
+                    , multimap >= 1.2
+                    , syb >= 0.3.6.1
+                    , strings >= 1.1
+                    , mtl >= 2.1.1
+                    , transformers >= 0.3
+
+

@@ -1,0 +1,15 @@
+Name: txt2rtf
+Version: 1.0.0
+License: GPL
+Maintainer: John Goerzen <jgoerzen@complete.org>
+Stability: Alpha
+Copyright: Copyright (c) 2005 John Goerzen
+Build-Depends: base >= 4 && <5
+Build-Type: Simple
+Synopsis: Filter to convert plain text files to RTF
+Category: Text
+license-file: COPYRIGHT
+extra-source-files: COPYING, Makefile
+
+Executable: txt2rtf
+Main-Is: txt2rtf.hs

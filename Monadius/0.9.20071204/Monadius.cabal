@@ -1,0 +1,21 @@
+name:                Monadius
+version:             0.9.20071204
+synopsis:            2-D arcade scroller
+description:         A fast-paced 2-D scrolling vector graphics clone of the arcade game Gradius.
+category:            Game
+license:             GPL
+license-file:        LICENSE
+extra-source-files:  monadius.rc, monadius.ico
+author:              Hideyuki Tanaka & Takayuki Muranushi
+maintainer:          Takayuki Muranushi <muranushi@gmail.com>
+build-depends:       base, GLUT, OpenGL, array, directory
+build-type:          Simple
+extra-source-files:  readme-e.txt, readme-j.txt
+
+executable:          monadius
+main-is:             Main.hs
+hs-source-dirs:      Monadius/
+other-modules:       Demo, Game, Monadius, Recorder, Util
+
+ghc-options:         -O2 -Wall -optl-Wl,-s
+ghc-prof-options:    -prof -auto-all

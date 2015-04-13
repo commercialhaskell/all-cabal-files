@@ -1,0 +1,20 @@
+name:                blaze
+version:             0.0.0
+synopsis:            Common blaze operations
+description:         Common blaze operations
+license:             BSD3
+license-file:        LICENSE
+author:              Chris Done
+maintainer:          chrisdone@gmail.com
+copyright:           2013 Chris Done
+category:            CATEGORY
+build-type:          Simple
+cabal-version:       >=1.8
+
+library
+  exposed-modules:   Blaze.Html5
+  hs-source-dirs:    src/
+  build-depends:     base > 4 && <5,
+                     blaze-markup,
+                     blaze-html
+  ghc-options:       -Wall

@@ -1,0 +1,38 @@
+Name:                omega
+Version:             1.5.1
+Synopsis:            A purely functional programming language and a proof system
+
+Description:         Omega is a purely functional programming language (like Haskell)
+                     and it also enables built-in proofs about program correctness
+                     employing the Curry-Howard correspondence. Powerful metaprogramming
+                     facilities and extensible syntax for data make programming a less
+                     verbose experience.
+
+Category:            Language, Compilers/Interpreters
+License:             BSD3
+License-file:        LICENSE.txt
+Stability:           provisional
+Author:              Tim Sheard, his students and heisenbug
+Maintainer:          ggreif@gmail.com
+Homepage:            http://code.google.com/p/omega/
+Bug-Reports:         http://code.google.com/p/omega/issues/
+Build-Type:          Simple
+Extra-Source-Files:  ./*.hs, LangPrelude.prg
+Data-Files:          OmegaManual.pdf
+Cabal-Version:       >= 1.6
+Tested-With:         GHC == 7.0.3
+
+Source-Repository    head
+  type:     svn
+  location: http://omega.googlecode.com/svn/trunk/
+Source-Repository    this
+  type:     svn 
+  location: http://omega.googlecode.com/svn/tags/omega-1.5.1/
+  tag:      omega-1.5.1
+
+Executable omega
+  Main-is:           Main.hs
+  Build-Depends:     base >= 3 && < 5, directory, filepath,
+                     old-time, haskell98, pretty, array,
+                     containers
+  Extensions:        GADTs

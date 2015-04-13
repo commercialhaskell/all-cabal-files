@@ -1,0 +1,20 @@
+Name:                MaybeT-transformers
+Version:             0.2
+Cabal-version:       >= 1.6
+Synopsis:            MaybeT monad transformer using transformers instead of mtl.
+Description:         Support for computations with failures. This
+                     package is a fork from the MaybeT package by Eric
+                     Kidd, changed to depend on transformers instead
+                     of mtl. It also adds a few more utility
+                     functions.
+License:             BSD3
+License-file:        LICENSE
+Category:            Control
+Author:              Erik Hesselink <hesselink@gmail.com>
+Maintainer:          Erik Hesselink <hesselink@gmail.com>
+Stability:           experimental
+Build-Type:          Simple
+Build-Depends:       base >= 3 && < 5, 
+                     monads-fd < 0.2,
+                     transformers < 0.3
+Exposed-modules:     Control.Monad.Maybe

@@ -1,0 +1,43 @@
+name:            matrix-market
+version:         1.1
+homepage:        http://stat.stanford.edu/~patperry/code/matrix-market
+synopsis:        Read and write NIST Matrix Market files
+description:
+    The Matrix Market (MM) exchange formats provide a simple mechanism
+    to facilitate the exchange of matrix data. In particular, the 
+    objective has been to define a minimal base ASCII file format which
+    can be very easily explained and parsed, but can easily adapted to
+    applications with a more rigid structure, or extended to related
+    data objects. The MM exchange format for matrices is really a 
+    collection of affiliated formats which share design elements. In the
+    initial specification, two matrix formats are defined.
+    .
+    Coordinate Format - A file format suitable for representing general
+    sparse matrices. Only nonzero entries are provided, and the coordinates
+    of each nonzero entry is given explicitly. 
+    .
+    Array Format - A file format suitable for representing general dense
+    matrices. All entries are provided in a pre-defined (column-oriented)
+    order.
+    .
+    For more information, see the NIST Matrix Market webpage:
+    <http://http://math.nist.gov/MatrixMarket/>
+    .
+category:        Math, System
+license:         BSD3
+license-file:    LICENSE
+copyright:       (c) 2008. Patrick Perry <patperry@stanford.edu>
+author:          Patrick Perry
+maintainer:      Patrick Perry <patperry@stanford.edu>
+cabal-version: >= 1.2.0
+build-type:      Custom
+tested-with:     GHC ==6.8.2
+
+extra-source-files: tests/Properties.hs
+
+library
+    exposed-modules: System.IO.MatrixMarket
+
+    build-depends: base, bytestring
+
+    ghc-options:     -Wall

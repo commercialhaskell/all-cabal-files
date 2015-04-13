@@ -1,0 +1,36 @@
+Name:                 luka
+Version:              2012.7.7.1
+Build-type:           Simple
+Synopsis:             Simple ObjectiveC runtime binding
+Description:          Simple ObjectiveC runtime binding
+License:              BSD3
+License-file:         LICENSE
+Author:               Jinjing Wang
+Maintainer:           Jinjing Wang
+Build-Depends:        base
+Cabal-version:        >= 1.2
+category:             Language
+homepage:             https://github.com/nfjinjing/luka
+data-files:           readme.md
+                    , changelog.md
+                    , known-issues.md
+                    , Nemesis
+                    , src/Main.hs
+                    , src/Init.hs
+
+Library            
+ 
+  ghc-options:        -frameworkCocoa
+  
+  build-depends:      base < 99
+                    , air
+                    , libffi
+                      
+  hs-source-dirs:     src
+  exposed-modules:    Language.ObjectiveC.Luka.RunTime
+                      Language.ObjectiveC.Luka.API
+                      Language.ObjectiveC.Luka
+  
+  
+  other-modules:       
+  extra-libraries:   objc

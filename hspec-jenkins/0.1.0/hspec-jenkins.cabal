@@ -1,0 +1,29 @@
+name: hspec-jenkins
+version: 0.1.0
+synopsis: Jenkins-friendly XML formatter for Hspec
+description: Jenkins-friendly XML formatter for Hspec
+author: Kohei Suzuki
+maintainer: eagletmt@gmail.com
+build-type: Simple
+cabal-version: >= 1.8
+category: Testing
+license: MIT
+license-file: LICENSE.txt
+homepage: https://github.com/worksap-ate/hspec-jenkins
+extra-source-files:
+  example/example.cabal
+  example/lib/*.hs
+  example/test/*.hs
+source-repository head
+  type: git
+  location: git://github.com/worksap-ate/hspec-jenkins.git
+
+library
+  build-depends:
+      base == 4.*
+    , hspec >= 1.4
+    , blaze-markup
+  hs-source-dirs: lib
+  ghc-options: -Wall -W
+  exposed-modules:
+    Test.Hspec.Formatters.Jenkins

@@ -1,0 +1,20 @@
+Name:                penn-treebank
+Version:             0.1.0.1
+Synopsis:            Tools for manipulating the Penn TreeBank
+Description:
+    .
+    Tools for working with the Penn TreeBank
+    .
+    Right now, this only includes a parser for the Penn TreeBank
+    format.  But additional tools would be more than welcome!
+    .
+License:             BSD3
+License-file:        LICENSE
+Category:            Parsing, Natural Language Processing
+Copyright:           Copyright (c) Eric Kow 2008
+Author:              Eric Kow
+Maintainer:          eric.kow@gmail.com
+Stability:           provisional
+Build-Type:          Simple
+Build-depends:       base < 5, parsec, containers
+Exposed-modules:     NLP.PennTreebank

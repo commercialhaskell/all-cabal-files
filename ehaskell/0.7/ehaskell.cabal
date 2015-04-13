@@ -1,0 +1,49 @@
+Name:		ehaskell
+Version:	0.7
+Cabal-Version:	>= 1.2
+Build-Type:	Simple
+License:	GPL
+License-File:	LICENSE
+Stability:	experimental
+Author:		Yoshikuni Jujo <PAF01143@nifty.ne.jp>
+Maintainer:	PAF01143@nifty.ne.jp
+Category:	Text
+Homepage:	http://homepage3.nifty.com/salamander/second/projects/ehaskell/index.xhtml
+Synopsis:	like eruby, ehaskell is embedded haskell.
+Description:	You can embed haskell in Text file.
+                You can use in html, haskell source, and so on.
+		.
+		> <%%   ... %%> : <%% import Some.Module %%> <%% h = "hello" %%>
+		> <%    ...  %> : <% ln <- getLine %>
+		> <%    ... -%> ... <%- ... -%> ... <%- ... %>: <% if b then -%>Yes<%- else -%>No<%-%>
+		> <%=   ...  %> : <%= "hello" %>
+		> <%==  ...  %> : <%== getLine %>
+		> <%=$  ...  %> : <%=$ 123 %>
+		> <%==$ ...  %> : <%==$ getClockTime %>
+		.
+		You can put code at top level by \<%% ... %%\>.
+		.
+		You can put code in do-notation by \<% ... %\>.
+		.
+		You can get args by \<% ... -%\> ... \<%- ... -%\> ... \<%- ... %\>.
+		.
+		If you write \<% func -%\>abc\<%- def -%\>ghi\<% jkl %\>mno\<%- pqr %\>,
+		.
+		translate in "func (putStr "abc") def (putStr "ghi") jkl (putStr "mno") pqr"
+		and execute.
+		.
+		You can put dinamic String by \<%== .. %\>.
+		.
+		And rests (\<%= ... %\>, \<%==$ ... %\>, \<%=$ ... %\>) are just syntax sugar.
+		.
+		\<%= some %\>   == \<%== return some %\>
+		.
+		\<%==$ some %\> == \<%== some \>\>= return . show %\>
+		.
+		\<%=$ some %\>  == \<%== return $ show some %\>
+
+Executable ehs
+  Main-Is:		Main.hs
+  Other-Modules:	MkCode, EHaskellTools, Types, EHaskell, GetCodeText
+  GHC-Options:		-Wall
+  Build-Depends:	base, mtlparse >= 0.0.1, yjtools >= 0.8, directory, regexpr >= 0.3.3, process, filepath, utf8-string

@@ -1,0 +1,30 @@
+Name:              hsc3-unsafe
+Version:           0.14
+Synopsis:          Unsafe Haskell SuperCollider
+Description:       Alternate non-deterministic UGen constructors.
+License:           GPL
+Category:          Sound
+Copyright:         (c) Rohan Drape, 2006-2013
+Author:            Rohan Drape
+Maintainer:        rd@slavepianos.org
+Stability:         Experimental
+Homepage:          http://rd.slavepianos.org/?t=hsc3-unsafe
+Tested-With:       GHC == 7.6.1
+Build-Type:        Simple
+Cabal-Version:     >= 1.8
+
+Data-files:        README
+
+Library
+  Build-Depends:   base == 4.*,
+                   hsc3 == 0.14.*
+  GHC-Options:     -Wall -fwarn-tabs
+  Exposed-modules: Sound.SC3.UGen.Demand.Unsafe
+                   Sound.SC3.UGen.FFT.Unsafe
+                   Sound.SC3.UGen.Noise.Unsafe
+                   Sound.SC3.UGen.Unsafe
+                   Sound.SC3.UGen.Unsafe.Lift
+
+Source-Repository  head
+  Type:            darcs
+  Location:        http://rd.slavepianos.org/sw/hsc3-unsafe/

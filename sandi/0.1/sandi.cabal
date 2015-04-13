@@ -1,0 +1,71 @@
+name: sandi
+version: 0.1
+license: BSD3
+license-file: LICENSE
+cabal-version: >= 1.8
+build-type: Simple
+author: Magnus Therning
+maintainer: magnus@therning.org
+homepage: http://hackage.haskell.org/package/sandi
+copyright: Magnus Therning, 2012
+category: Codec
+synopsis: Data encoding library
+description: Reasonably fast data encoding library.
+extra-source-files: csrc/*.h
+
+source-repository head
+    type: git
+    location: https://github.com/magthe/sandi
+
+flag tests
+    description: Build tests
+    default: False
+
+library
+    hs-source-dirs: src
+    c-sources:
+        csrc/b16.c
+        csrc/b32.c
+        csrc/b32hex.c
+        csrc/b64.c
+        csrc/b64url.c
+        csrc/b85.c
+        csrc/qp.c
+        csrc/uu.c
+        csrc/xx.c
+        csrc/yenc.c
+    include-dirs: csrc
+    build-depends:
+        base ==4.6.*,
+        bytestring ==0.10.*
+    exposed-modules:
+            Codec.Binary.Base16
+            Codec.Binary.Base32
+            Codec.Binary.Base32Hex
+            Codec.Binary.Base64
+            Codec.Binary.Base64Url
+            Codec.Binary.Base85
+            Codec.Binary.QuotedPrintable
+            Codec.Binary.Uu
+            Codec.Binary.Xx
+            Codec.Binary.Yenc
+    if !flag(tests)
+        cc-options: "-DNDEBUG"
+    else
+        cc-options: "-DDEBUG"
+
+executable tests
+    main-is: Main.hs
+    hs-source-dirs: test-src
+    if flag(tests)
+        buildable: True
+        build-depends:
+            sandi,
+            base ==4.6.*,
+            bytestring ==0.10.*,
+            HUnit ==1.2.*,
+            test-framework-th ==0.2.*,
+            test-framework ==0.6.*,
+            test-framework-hunit ==0.2.*
+    else
+        buildable: False

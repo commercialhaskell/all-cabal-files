@@ -1,0 +1,43 @@
+Name:                   regex-compat-tdfa
+Version:                0.95.1
+Cabal-Version:          >=1.2
+License:                BSD3
+License-File:           LICENSE
+Copyright:              Copyright (c) Christopher Kuklewicz 2006
+                                  (c) shelarcy 2012
+Author:                 Christopher Kuklewicz
+Maintainer:             shelarcy <shelarcy@gmail.com>
+Stability:              Seems to work, passes a few tests
+Homepage:               http://darcsden.com/shelarcy/regex-compat-tdfa
+Package-URL:            http://darcsden.com/shelarcy/regex-compat-tdfa
+Synopsis:               Unicode Support version of Text.Regex, using regex-tdfa
+Description:            One module layer over regex-tdfa to replace Text.Regex.
+                        .
+                        regex-compat can't uses Unicode characters correctly because
+                        of using regex-posix. This is not good for Unicode users.
+                        .
+                        I modified regex-compat to use regex-tdfa for solving today's
+                        problem.
+Category:               Text
+Tested-With:            GHC
+Build-Type:		Simple
+flag newBase
+  description: Choose base >= 4
+  default: True
+flag splitBase
+  description: Choose the new smaller, split-up base package.
+  default: True
+library
+  if flag(newBase)
+      Build-Depends:      base >= 4 && < 5, regex-base >= 0.93, regex-tdfa >= 0.95.1, array
+  else
+    if flag(splitBase)
+      Build-Depends:      base >= 3.0, regex-base >= 0.93, regex-tdfa >= 0.95.1, array
+    else
+      Build-Depends:      base < 3.0,  regex-base >= 0.93, regex-tdfa >= 0.95.1
+  Exposed-Modules:        Text.Regex
+  Buildable:              True
+  Extensions:             MultiParamTypeClasses, FunctionalDependencies
+  GHC-Options:            -Wall -O2
+  -- GHC-Options:            -Wall -Werror -O2
+  -- GHC-Options:            -Wall -ddump-minimal-imports

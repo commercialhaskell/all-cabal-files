@@ -1,0 +1,58 @@
+Name:                hp2pretty
+Version:             0.4
+Synopsis:            generate pretty graphs from heap profiles
+Description:         hp2pretty is a rewrite of hp2ps, implemented in Haskell, with
+                     the aims of being maintainable, with more flexible output, and
+                     more beautiful output.  Currently hp2pretty outputs Scalable
+                     Vector Graphics (SVG) only, though PostScript (PS) is planned.
+                     Also none (count'em) of hp2ps' options are implemented yet in
+                     hp2pretty.
+                     .
+                     Usage has changed since the previous release:
+                     .
+                        hp2pretty *.hp
+                     .
+                        hp2pretty --uniform-scale=time   *.hp
+                     .
+                        hp2pretty --uniform-scale=memory *.hp
+                     .
+                        hp2pretty --uniform-scale=both   *.hp
+                     .
+                     Colours have also changed: now they are based on a hash of the
+                     cost label, which should make colours have stable semantics
+                     across program runs.
+
+Homepage:            http://gitorious.org/hp2pretty
+License:             BSD3
+License-file:        LICENSE
+Author:              Claude Heiland-Allen
+Maintainer:          claudiusmaximus@goto10.org
+Copyright:           (C) 2010,2011  Claude Heiland-Allen
+Category:            Development
+Build-type:          Simple
+Extra-source-files:  BUGS NEWS README THANKS
+Cabal-version:       >=1.6
+
+Executable hp2pretty
+  Build-depends:       base >= 4 && < 5, array, bytestring, containers, filepath, mtl
+  GHC-options:         -Wall
+  GHC-prof-options:    -prof -auto-all
+  HS-source-dirs:      src
+  Main-is:             Main.hs
+  Other-modules:       Types
+                       Total
+                       Prune
+                       Bands
+                       Pretty
+                       Print
+                       SVG
+                       Graphics
+
+Source-repository head
+  type:                git
+  location:            git://gitorious.org/hp2pretty/hp2pretty.git
+
+Source-repository this
+  type:                git
+  location:            git://gitorious.org/hp2pretty/hp2pretty.git
+  tag:                 v0.4

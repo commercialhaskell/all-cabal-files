@@ -1,0 +1,22 @@
+Name: fitsio
+Version: 0.1
+Stability: alpha
+Synopsis: A library for reading and writing data files in the FITS data format.
+Description:
+  FITS (Flexible Image Transport System) is self-describing data format used
+  heavily in astronomy and high-energy physics.  Right now this library is just
+  an FFI wrapper, but higher-level functionality is planned.
+License: GPL
+License-file: COPYING
+Author: Eric Sessoms
+Maintainer: esessoms at mac dot com
+Category: Foreign, Physics
+Cabal-version: >= 1.2.0
+
+Library
+  Exposed-Modules: FitsIO
+  Build-Depends: base, mtl
+  Ghc-Options: -O -ffi -lcfitsio
+  Hs-Source-Dirs: src/
+  Build-Tools: c2hs >= 0.15
+  Extensions: TypeSynonymInstances

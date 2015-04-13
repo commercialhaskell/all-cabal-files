@@ -1,0 +1,39 @@
+Name:             midi
+Version:          0.0.4
+License:          GPL
+License-File:     LICENSE
+Author:           Henning Thielemann <haskell@henning-thielemann.de>
+Maintainer:       Henning Thielemann <haskell@henning-thielemann.de>
+Homepage:         http://darcs.haskell.org/midi/
+Category:         Sound
+Build-Type:       Simple
+Build-Depends:    event-list==0.0.5, non-negative==0.0.1, base>=1.0, mtl, QuickCheck
+-- From the Monad Template Library we only need the State monad.
+-- If your compiler does not support functional dependencies,
+-- it would be easy to replace that by mapAccumL
+-- or wait for a divided MTL package which is on the way:
+-- http://darcs.haskell.org/packages/mtl-split/Control/Monad/Trans/State.hs
+Synopsis:         Handling of MIDI messages and files
+Description:
+   MIDI is the Musical Instrument Digital Interface.
+   The package contains definition of MIDI messages,
+   reading and writing MIDI files.
+   It contains no sending and receiving of MIDI messages. Cf. alsa-midi package.
+   For music composition with MIDI output, see Haskore.
+GHC-Options:      -Wall
+Tested-With:      GHC==6.4.1
+Hs-Source-Dirs:   src
+Exposed-Modules:
+  Sound.MIDI.Event
+  Sound.MIDI.File
+  Sound.MIDI.File.Load
+  Sound.MIDI.File.Save
+  -- exports ByteString data type
+  Sound.MIDI.General
+  Sound.MIDI.IO
+Other-Modules:
+  Sound.MIDI.Bit
+  Sound.MIDI.Parser
+  Sound.MIDI.ParserState
+  Sound.MIDI.String
+  Sound.MIDI.Utility

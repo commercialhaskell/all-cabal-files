@@ -1,0 +1,31 @@
+Name:               th-lift
+Version:            0.5.6
+Cabal-Version:      >= 1.6
+License:            OtherLicense
+License-File:       COPYING
+Copyright:          Ian Lynagh, 2006
+Author:             Ian Lynagh
+Maintainer:         Mathieu Boespflug <mboes@tweag.net>
+Synopsis:           Derive Template Haskell's Lift class for datatypes.
+Description:
+    Derive Template Haskell's Lift class for datatypes.
+Category:           Language
+Tested-With:        GHC==6.12, GHC==7.0.1, GHC==7.2
+build-type:         Simple
+Extra-source-files: BSD3, GPL-2, Changelog, t/Foo.hs, t/Test.hs
+
+Library
+  Exposed-modules: Language.Haskell.TH.Lift
+  Extensions:      CPP, TemplateHaskell, MagicHash, TypeSynonymInstances, FlexibleInstances
+  Hs-Source-Dirs:  src
+  Build-Depends:   base >= 3 && < 5
+
+  if impl(ghc < 6.12)
+    Build-Depends: packedstring == 0.1.*,
+                   template-haskell >= 2.2 && < 2.4
+  else
+    Build-Depends: template-haskell >= 2.4 && < 2.10
+
+source-repository head
+  type:     git
+  location: git://github.com/mboes/th-lift

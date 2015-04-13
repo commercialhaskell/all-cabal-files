@@ -1,0 +1,32 @@
+Name:              html-minimalist
+Version:           0.3
+Synopsis:          Minimalist haskell html library
+Description:       Text.HTML.Light is a very simple Haskell module 
+                   for writing [x]html documents.  It provides 
+                   constructors for html elements and attributes
+                   in terms of Text.XML.Light.
+License:           GPL
+Category:          Text
+Copyright:         (c) Rohan Drape, 2006-2011
+Author:            Rohan Drape
+Maintainer:        rd@slavepianos.org
+Stability:         Experimental
+Homepage:          http://slavepianos.org/rd/?t=html-minimalist
+Tested-With:       GHC == 6.12.1
+Build-Type:        Simple
+Cabal-Version:     >= 1.6
+
+Data-files:        README
+
+Library
+  Build-Depends:   base == 4.*,
+                   xml
+  GHC-Options:     -Wall -fwarn-tabs
+  Exposed-modules: Text.HTML.Light
+                   Text.HTML.Light.Attribute
+                   Text.HTML.Light.Constant
+                   Text.HTML.Light.Element
+
+Source-Repository  head
+  Type:            darcs
+  Location:        http://slavepianos.org/rd/sw/html-minimalist

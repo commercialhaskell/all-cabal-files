@@ -1,0 +1,16 @@
+Name:                   dnsrbl
+Version:                0.0.1
+Author:                 Holden Karau <holden@pigscanfly.ca>
+Maintainer:             Holden <holden@pigscanfly.ca>
+License:                BSD3
+License-File:           LICENSE
+Homepage:               http://www.pigscanfly.ca/~holden/dnsrbl/
+Synopsis:               Asynchronous DNS RBL lookup
+Description:            Asynchronous DNS RBL lookup
+Category:               Network
+Build-Depends:          base, network, containers, hsdns, HUnit
+Exposed-Modules:        Network.DNSRBL
+GHC-Options:            -Wall -threaded
+Data-Files:             README, prologue.txt
+Build-Type:             Simple
+extra-source-files:	tests/dnsrbltest.hs

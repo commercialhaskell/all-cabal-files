@@ -1,0 +1,58 @@
+Name:               timeout
+Version:            0.0.0
+Synopsis:           Generalized sleep and timeout functions
+Description:        Generalized sleep and timeout functions
+License:            MIT
+License-file:       LICENSE
+Copyright:          2014 Fedor Gogolev
+                    2013 Selectel
+Author:             Fedor Gogolev <knsd@knsd.net>
+Maintainer:         knsd@knsd.net
+Homepage:           https://github.com/lambda-llama/timeout
+Bug-reports:        https://github.com/lambda-llama/timeout/issues
+Category:           Concurrency, Control
+Stability:          Alpha
+Build-type:         Simple
+Cabal-version:      >= 1.12
+Tested-with:        GHC == 7.6.*
+
+extra-source-files:
+  README.md
+  CHANGES.md
+
+Library
+    Hs-source-dirs:   src
+    Ghc-options:      -Wall -fno-warn-orphans
+    Default-language: Haskell2010
+
+    Build-depends:
+        base < 5
+      , time
+      , mtl
+      , exceptions
+
+    Exposed-modules:
+        Control.Timeout
+
+Test-suite timeout-tests
+    Main-is:          Tests.hs
+    Hs-source-dirs:   src, tests
+    Default-language: Haskell2010
+    Type:             exitcode-stdio-1.0
+
+    Other-modules:
+        Control.Timeout.Tests
+
+    Build-depends:
+        base
+      , time
+      , mtl
+      , exceptions
+
+      , tasty
+      , tasty-quickcheck
+      , QuickCheck       >= 2.7
+
+Source-repository head
+    Type:     git
+    Location: https://github.com/lambda-llama/timeout

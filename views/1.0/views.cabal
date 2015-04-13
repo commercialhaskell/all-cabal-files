@@ -1,0 +1,14 @@
+name:              views
+version:           1.0
+description:       A package library defining Views.
+license:           BSD3
+license-file:      LICENSE
+category:          Control, Monad
+maintainer:        Marc Coiffier <marc.coiffier@gmail.com>
+build-type:        Simple
+cabal-version:     >= 1.2
+synopsis:          Views allow you to run a State monad on part of a state. 
+
+library
+  exposed-modules: Data.View, Control.Monad.State.View
+  build-depends: base <= 4.6.0.1, mtl

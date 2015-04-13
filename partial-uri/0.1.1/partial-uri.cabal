@@ -1,0 +1,33 @@
+name:            partial-uri
+version:         0.1.1
+cabal-version:   >= 1.8
+license:         OtherLicense
+license-file:    COPYING
+category:        Web
+copyright:       © 2012 Stephen Paul Weber
+author:          Stephen Paul Weber <singpolyma@singpolyma.net>
+maintainer:      Stephen Paul Weber <singpolyma@singpolyma.net>
+stability:       experimental
+tested-with:     GHC == 7.4.1
+synopsis:        Datatype for passing around unresolved URIs.
+homepage:        https://github.com/singpolyma/partial-uri
+bug-reports:     https://github.com/singpolyma/partial-uri/issues
+build-type:      Simple
+description:
+        Datatype wrapping URI that has not been fully resolved yet (such as
+        a route in a webapp without the application root).
+
+extra-source-files:
+        README
+
+library
+        exposed-modules:
+                Network.URI.Partial
+
+        build-depends:
+                base == 4.*,
+                network >= 2.4.0.0
+
+source-repository head
+        type:     git
+        location: git://github.com/singpolyma/partial-uri.git

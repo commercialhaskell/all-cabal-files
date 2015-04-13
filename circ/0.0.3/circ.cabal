@@ -1,0 +1,26 @@
+name:                circ
+version:             0.0.3
+synopsis:            A Compiler IR Compiler.
+description:         A Compiler IR Compiler.
+license:             BSD3
+license-file:        LICENSE
+author:              Tom Hawkins <tomahawkins@gmail.com>
+maintainer:          Tom Hawkins <tomahawkins@gmail.com>
+category:            Language, Compiler
+build-type:          Simple
+cabal-version:       >= 1.8
+
+library
+  build-depends:   base      < 5.0,
+                   mtl       < 3.0,
+                   directory < 2.0
+
+  exposed-modules: Language.CIRC
+                   Language.CIRC.Runtime
+  extensions:
+  ghc-options:    -W
+
+source-repository head
+  type: git
+  location: git://github.com/tomahawkins/circ.git
+

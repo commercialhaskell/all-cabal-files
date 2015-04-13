@@ -1,0 +1,90 @@
+Name: ghci-haskeline
+Version: 0.2
+Copyright: BSD3
+License: BSD3
+License-File: LICENSE
+-- Author: XXX
+Build-Type: Simple
+Cabal-Version: >= 1.6
+Maintainer: Judah Jacobson <judah.jacobson@gmail.com>
+Category: Compilers/Interpreters
+Synopsis: An implementation of ghci using the Haskeline line-input library.
+Description: This package reimplements ghci using the GHC API and the Haskeline
+             package for line input in command-line programs.
+             .
+             This is an unofficial package; thus any bugs may be the fault of
+             the maintainer rather than of the GHC team.
+Homepage: http://code.haskell.org/~judah/ghci-haskeline
+
+flag newer-ghc
+    Description: for GHC >= 6.10.2
+
+flag ghc-612
+    Description: for GHC >= 6.12.1
+
+Executable ghci-haskeline
+  Main-is: Main.hs
+  if !flag(ghc-612) {
+    Other-modules:  GhciHaskeline.GhciMonad
+                    GhciHaskeline.InteractiveUI
+                    GhciHaskeline.GhciTags
+                    GhciHaskeline.Main
+
+    Build-Depends: base       >=4 && < 5,
+                   array      >= 0.1 && < 0.3,
+                   bytestring >= 0.9 && < 0.10,
+                   directory  >= 1   && < 1.1,
+                   filepath >= 1 && < 1.2,
+                   process    >= 1   && < 1.1
+    Build-Depends: mtl, haskeline == 0.6.*
+
+    if os(windows)
+        Build-Depends: Win32
+    else
+        Build-Depends: unix
+
+    if flag(newer-ghc)
+        Build-Depends: ghc>=6.10.2 && < 6.11
+        cpp-options: -DNEWER_GHC
+    else
+        Build-Depends: ghc>=6.9 && < 6.10.2
+
+    Build-Depends: ghc-paths
+    cpp-Options: -DGHCI
+    ghc-options: -threaded
+
+    Extensions: CPP, MagicHash, UnboxedTuples, PatternGuards,
+                ForeignFunctionInterface, EmptyDataDecls,
+                TypeSynonymInstances, MultiParamTypeClasses,
+                FlexibleInstances, Rank2Types, ScopedTypeVariables,
+                DeriveDataTypeable
+
+    GHC-Options: -Wall -fno-warn-orphans -fno-warn-name-shadowing
+  } else {
+      Other-modules: GhciHaskeline612.GhciMonad
+                     GhciHaskeline612.InteractiveUI
+                     GhciHaskeline612.GhciTags
+                     GhciHaskeline612.Main
+      build-depends: base >= 3 && < 5,
+                     array      >= 0.1 && < 0.4,
+                     bytestring >= 0.9 && < 0.10,
+                     directory  >= 1   && < 1.1,
+                     process    >= 1   && < 1.1,
+                     ghc == 6.12.*,
+                     filepath >= 1 && < 1.2,
+                     mtl == 1.1.*,
+                     haskeline == 0.6.*,
+                     ghc-paths
+
+      if os(windows) {
+          Build-Depends: Win32
+      } else {
+          Build-Depends: unix
+      }
+      CPP-Options: -DGHCI
+      Extensions: ForeignFunctionInterface,
+                  UnboxedTuples,
+                  FlexibleInstances,
+                  MagicHash, CPP, PatternGuards
+  }
+

@@ -1,0 +1,73 @@
+name:               xmonad-bluetilebranch
+version:            0.8.1
+homepage:           http://xmonad.org
+synopsis:           A tiling window manager
+description:        This is a modified version of xmonad used by Bluetile.
+category:           System
+license:            BSD3
+license-file:       LICENSE
+author:             Spencer Janssen
+maintainer:         jan.vornberger@informatik.uni-oldenburg.de
+extra-source-files: README TODO CONFIG STYLE tests/loc.hs tests/Properties.hs
+                    man/xmonad.1.in man/xmonad.1 man/xmonad.html man/xmonad.hs
+                    util/GenerateManpage.hs
+cabal-version:      >= 1.2
+build-type:         Simple
+
+flag small_base
+    description: Choose the new smaller, split-up base package.
+
+flag testing
+    description: Testing mode, only build minimal components
+    default: False
+
+library
+    exposed-modules:    XMonad
+                        XMonad.Main
+                        XMonad.Core
+                        XMonad.Config
+                        XMonad.Layout
+                        XMonad.ManageHook
+                        XMonad.Operations
+                        XMonad.PositionStore
+                        XMonad.StackSet
+    exposed:            False
+
+    if flag(small_base)
+        build-depends: base < 4 && >=3, containers, directory, process
+    else
+        build-depends: base < 3
+    build-depends: X11>=1.4.3, mtl, unix, random
+
+    ghc-options:        -funbox-strict-fields -Wall
+    ghc-prof-options:   -prof -auto-all
+    extensions:         CPP
+
+    if flag(testing)
+        buildable: False
+
+executable xmonad
+    main-is:            Main.hs
+    other-modules:      XMonad
+                        XMonad.Main
+                        XMonad.Core
+                        XMonad.Config
+                        XMonad.Layout
+                        XMonad.ManageHook
+                        XMonad.Operations
+                        XMonad.PositionStore
+                        XMonad.StackSet
+
+    ghc-options:        -funbox-strict-fields -Wall
+    ghc-prof-options:   -prof -auto-all
+    extensions:         CPP
+
+    if flag(testing)
+        cpp-options:    -DTESTING
+        hs-source-dirs: . tests/
+        build-depends:  QuickCheck < 2
+        ghc-options:    -Werror
+    else
+        buildable: False
+    if flag(testing) && flag(small_base)
+        build-depends:  random

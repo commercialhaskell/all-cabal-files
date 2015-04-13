@@ -1,0 +1,16 @@
+Name:                drClickOn
+Version:             0.1
+Description:         FRP style where sequential composition (switching) is more primitive than in other approaches.
+Synopsis:            Monadic FRP
+Homepage:            https://github.com/cwi-swat/monadic-frp
+License:             PublicDomain
+Author:              Atze van der Ploeg
+Maintainer:          ploeg@cwi.nl
+Build-Type:          Simple
+Category:            FRP
+
+cabal-version:       >= 1.2
+Library
+     Build-Depends:     base >= 3 && < 5, containers
+     Exposed-modules:   Control.MonadicFRP
+

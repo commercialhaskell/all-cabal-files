@@ -1,0 +1,24 @@
+name:                  calc
+version:               0.1
+cabal-version:         >= 1.2
+license:               BSD3
+license-file:          LICENSE
+author:                Austin Seipp
+stability:             Provisional
+synopsis:              A small compiler for arithmetic expressions.
+extra-source-files:    Parser.hs, Compile.hs, Asm.hs
+
+flag debug
+  description:         enable debug support
+  default:             False
+
+executable calc
+  main-is:             Main.hs
+  build-depends:       base, harpy, array, mtl, haskell98
+  if flag(debug)
+     if impl(ghc >= 6.8)
+          ghc-options: -fhpc -O0
+     else
+          ghc-options: -O0 
+  else
+     ghc-options:      -fvia-C -O2 -optc-O3 

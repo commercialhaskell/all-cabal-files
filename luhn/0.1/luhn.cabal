@@ -1,0 +1,19 @@
+Build-Type: Custom
+Name: luhn
+Category: Data
+Version: 0.1
+Cabal-Version: >= 1.2
+Synopsis: An implementation of Luhn's check digit algorithm.
+Description: An implementation of Luhn's check digit algorithm.
+License: BSD3
+License-File: LICENSE
+Copyright: (c) 2008 N-Sim Ltd.
+Author: Henry Bucklow
+Maintainer: jhb@n-sim.com
+Tested-With: GHC==6.10
+Build-Depends: base, QuickCheck
+Exposed-Modules: Luhn
+Hs-Source-Dirs: src
+Extra-Source-Files: src/Tests.hs
+GHC-Options: -Wall
+

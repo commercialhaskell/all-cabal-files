@@ -1,0 +1,17 @@
+name:                simplesmtpclient
+version:             0.2
+x-revision: 1
+synopsis:            Very simple SMTP Client
+description:         Original post to lang.haskell.libraries: "If you find this limited module useful then you can insert in your project. It is very limited but it could be useful to send email message using insecure plain/login authentication. I have no time to extend it."
+category:            Network
+license:             BSD3
+license-file:        LICENSE
+author:              Massimo Zaniboni <massimo.zaniboni.74@virgilio.it>
+maintainer:          none
+cabal-Version:       >= 1.2
+build-type:          Simple
+
+library
+  build-depends: base>=4,network,old-time,directory,array
+  exposed-modules: Network.SMTP.Client.Simple
+  other-modules: Base64

@@ -1,0 +1,56 @@
+name                          : system-uuid
+version                       : 1.1.0
+category                      : System
+license                       : BSD3
+license-file                  : LICENSE
+author                        : Jason Dusek
+maintainer                    : jason.dusek@gmail.com
+homepage                      : http://github.com/jsnx/system-uuid/
+synopsis                      : Bindings to system UUID functions.
+description                   :
+  Bindings to the native UUID generator for a number of platforms. Please
+  contact the author if your platform is not supported.
+
+
+cabal-version                 : >= 1.2
+build-type                    : Simple
+extra-source-files            : README
+                                ACKNOWLEDGEMENTS
+                                CONTRIBUTORS
+                                Options.hs
+                                Macros.hs
+                                MacroMacros.hs
+                                Messages.hs
+
+
+library
+  build-depends               : base 
+                              , containers
+                              , binary
+                              , regex-compat
+                              , template-haskell
+                              , parsec
+  exposed-modules             : System.UUID.V1
+                                System.UUID.V4
+                                System.UUID.FromForeign
+                                Data.UUID
+  if os(linux)
+    extra-libraries           : uuid
+  if os(mingw32)
+    extra-libraries           : rpcrt4
+  extensions                  : ForeignFunctionInterface
+                                TemplateHaskell
+                                PatternGuards
+                                CPP
+
+executable                      hooty
+  main-is                     : Main.hs
+  if os(linux)
+    extra-libraries           : uuid
+  if os(mingw32)
+    extra-libraries           : rpcrt4
+  extensions                  : ForeignFunctionInterface
+                                TemplateHaskell
+                                PatternGuards
+                                CPP
+

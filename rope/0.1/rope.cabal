@@ -1,0 +1,35 @@
+name:           rope
+version:        0.1
+license:        BSD3
+license-file:   LICENSE
+author:         Edward A. Kmett
+maintainer:     Edward A. Kmett <ekmett@gmail.com>
+stability:      experimental
+homepage:       http://comonad.com/reader
+category:       Language
+synopsis:       Tools for manipulating annotated ropes of bytestrings
+description:    Tools for manipulating annotated ropes of bytestrings
+copyright:      (c) 2010 Edward A. Kmett
+build-type:     Simple
+cabal-version:  >=1.2
+Tested-With:    GHC==6.10.4
+
+library
+  build-depends:    
+    base >= 4 && < 6, 
+    bytestring >= 0.9.1.4 && < 0.10,
+    fingertree >= 0.0.1 && < 0.1,
+    mtl >= 1.1 && < 1.2,
+    utf8-string >= 0.3.5 && < 0.4
+  exposed-modules:
+    Data.Rope
+    Data.Rope.Body
+    Data.Rope.Internal
+    Data.Rope.Unpackable
+    Data.Rope.Util.Bifunctor
+    Data.Rope.Util.Comonad
+    Data.Rope.Util.Coproduct
+    Data.Rope.Util.Product
+    Data.Rope.Util.Reducer
+    
+  ghc-options: -Wall

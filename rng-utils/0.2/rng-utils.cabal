@@ -1,0 +1,17 @@
+name:                rng-utils
+version:             0.2
+synopsis:            RNG within an MVar for convenient concurrent use
+license:             BSD3
+license-file:        LICENSE
+author:              Ozgun Ataman, Snap Framework Authors
+maintainer:          ozgun.ataman@soostone.com
+category:            Data
+build-type:          Simple
+cabal-version:       >=1.8
+
+library
+  exposed-modules:     Data.RNG
+  build-depends:       
+    base >= 4.5 && < 5, 
+    bytestring,
+    mwc-random

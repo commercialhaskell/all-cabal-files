@@ -1,0 +1,24 @@
+Name:                 hack
+Version:              2009.10.30
+Build-type:           Simple
+Synopsis:             a Haskell Webserver Interface
+Description:
+        
+    Hack: a Haskell Webserver Interface
+
+License:              BSD3
+License-file:         LICENSE
+Author:               Wang, Jinjing
+Maintainer:           Wang, Jinjing <e .nfjinjing@gmail.com>
+Build-Depends:        base
+Cabal-version:        >= 1.2
+category:             Web
+homepage:             http://github.com/nfjinjing/hack/tree/master
+data-files:           readme.md, changelog.md
+
+library
+  ghc-options: -Wall
+  build-depends: base >= 3 && < 5, data-default >= 0.2, bytestring
+  hs-source-dirs: src/
+  exposed-modules:  
+                    Hack

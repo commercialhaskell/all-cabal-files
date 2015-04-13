@@ -1,0 +1,51 @@
+name: TCache
+version: 0.10.0.3
+cabal-version: >= 1.6
+build-type: Simple
+license: BSD3
+license-file: LICENSE
+maintainer: agocorona@gmail.com
+synopsis: A Transactional cache with user-defined persistence
+description: TCache is a transactional cache with configurable persitence. It allows conventional
+             STM transactions for objects that syncronize  with
+             their user defined storages.
+             State in memory and into permanent storage is transactionally coherent.
+             .
+             The package implements serializable STM references, access by key and by record field value, triggers,
+             full text and field indexation, default serialization and a query language based on record fields
+             .
+             This version add memoization and a persistent and transactional collection/queue
+             .
+             See "Data.TCache" for details
+
+
+category: Data, Database
+author: Alberto Gómez Corona
+tested-with: GHC ==7.0.3
+data-dir: ""
+extra-source-files: demos/DBRef.hs demos/DynamicSample.hs
+                    demos/IndexQuery.hs demos/basicSample.hs demos/caching.hs
+                    demos/triggerRelational.lhs
+
+source-repository head
+    type: git
+    location: https://github.com/agocorona/TCache
+
+library
+    build-depends: base >=4 && <5, bytestring -any,
+                   containers >=0.1.0.1, directory >=1.0, old-time >=1.0,
+                   stm -any, text -any, mtl -any,
+                   RefSerialize -any
+
+
+    exposed-modules: Data.TCache Data.TCache.DefaultPersistence,
+                     Data.TCache.Defs Data.TCache.IResource Data.TCache.IndexQuery
+                     Data.TCache.IndexText Data.TCache.Memoization Data.TCache.Triggers
+                     Data.Persistent.Collection
+    exposed: True
+    buildable: True
+    extensions: OverlappingInstances UndecidableInstances
+                ScopedTypeVariables DeriveDataTypeable
+    hs-source-dirs: .
+    other-modules:
+

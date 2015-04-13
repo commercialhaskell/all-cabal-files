@@ -1,0 +1,33 @@
+name:          syb-extras
+category:      Polymorphism, Combinators, Generic
+version:       0.2.2.1
+license:       BSD3
+cabal-version: >= 1.6
+license-file:  LICENSE
+author:        Edward A. Kmett
+maintainer:    Edward A. Kmett <ekmett@gmail.com>
+stability:     provisional
+homepage:      http://github.com/ekmett/syb-extras/
+bug-reports:   http://github.com/ekmett/syb-extras/issues
+copyright:     Copyright (C) 2011 Edward A. Kmett
+synopsis:      Higher order versions of the Scrap Your Boilerplate classes
+description:   Higher order versions of the Scrap Your Boilerplate classes to ease programming with polymorphic recursion and reduce UndecidableInstances
+build-type:    Simple
+extra-source-files: .travis.yml
+
+source-repository head
+  type: git
+  location: git://github.com/ekmett/syb-extras.git
+
+library
+  build-depends:
+    base           >= 4 && < 5,
+    prelude-extras >= 0.1 && < 0.3,
+    eq             >= 0.3.6 && <= 0.4
+
+  extensions: CPP
+
+  ghc-options: -Wall
+
+  exposed-modules:
+    Data.Data.Extras

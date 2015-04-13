@@ -1,0 +1,18 @@
+name:            network-minihttp
+version:         0.1
+license:         BSD3
+license-file:    LICENSE
+author:          Adam Langley <agl@imperialviolet.org>
+description:     A very minimal webserver
+synopsis:        A very minimal webserver
+category:        Network
+build-depends:   base, containers, bytestring>=0.9, network-bytestring>=0.1.1.2, network>=2.1, stm>=2.1, binary>=0.4, binary-strict>=0.3, filepath>=1.1.0.0, mtl>=1.1.0.0, unix>=2.3.0.0, time>=1.1.2.0, old-locale>=1.0.0.0
+stability:       provisional
+tested-with:     GHC == 6.8.2
+exposed-modules: Network.MiniHTTP.Server,
+                 Network.MiniHTTP.Marshal
+                 Network.MiniHTTP.MimeTypesParse
+other-modules:   Network.MiniHTTP.Connection
+extra-source-files: examples/fileserver.hs
+ghc-options:     -Wall -fno-warn-name-shadowing
+extensions:      OverloadedStrings

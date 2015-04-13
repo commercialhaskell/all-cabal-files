@@ -1,0 +1,32 @@
+name:               hack-handler-epoll
+version:            0.1
+synopsis:           hack handler implementation using epoll
+description:        Hack handler implemented using System.Linux.Epoll
+category:           Web
+license:            LGPL
+license-file:       LICENSE
+author:             Toralf Wittner
+maintainer:         toralf.wittner@gmail.com
+copyright:          Copyright (c) 2010 Toralf Wittner
+homepage:           http://github.com/twittner/hack-handler-epoll/
+stability:          experimental
+tested-With:        GHC == 6.12.1
+cabal-version:      >= 1.6.0
+build-type:         Simple
+extra-source-files: README
+
+library
+  exposed-modules:  Hack.Handler.Epoll
+  ghc-options:      -Wall -O2
+  build-depends:    base >= 3 && < 5,
+                    unix,
+                    hack >= 2009.10.30,
+                    epoll >= 0.2.2,
+                    HTTP >= 4000.0.8,
+                    data-default >= 0.2,
+                    network >= 2.2.1.2,
+                    failure >= 0.0.0.1,
+                    utf8-string >= 0.3.4,
+                    containers >= 0.3.0.0
+  hs-source-dirs:   src
+

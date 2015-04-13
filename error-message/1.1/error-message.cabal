@@ -1,0 +1,39 @@
+-- @+leo-ver=4-thin
+-- @+node:gcross.20091202203048.1623:@thin error-message.cabal
+-- @@language Haskell
+Name:           error-message
+Version:        1.1
+Cabal-Version:  >= 1.6
+License:        BSD3
+License-File:   LICENSE
+Author:         Gregory Crosswhite
+Copyright:      (c) 2009-2010 Gregory Crosswhite
+Maintainer:     gcross@phys.washington.edu
+Stability:      stable
+Homepage:       http://github.com/gcross/error-message
+Category:       Development, Error Handling
+Synopsis:       Composable error messages.
+Build-Type:     Simple
+Description:
+    This philosophy behind this package is that it is often better to find
+    out all of the errors that have occured in a computation and report them
+    simultaneously, rather than aborting as soon as the first error is
+    encountered.  Towards this end, this module supplies a type of
+    /combinable error messages/ so that all of the errors from subcomputations
+    can be gathered and presented together.
+    .
+    New in version 1.1:  Removed Monoid instance for Doc (it should now be supplied by ansi-wl-pprint), added ErrorMessageOr type alias.
+Extra-Source-Files: tests/runtests.hs
+
+Library
+    Exposed:            True
+    Exposed-Modules:    Data.ErrorMessage
+    Build-Depends:      base >= 4.1 && < 4.3,
+                        mtl >= 1.1 && < 1.2,
+                        containers >= 0.2 && < 0.4,
+                        either-unwrap >= 1.1 && < 1.2,
+                        InfixApplicative >= 1.0 && < 1.2,
+                        ansi-wl-pprint >= 0.5 && < 0.6.4
+-- @nonl
+-- @-node:gcross.20091202203048.1623:@thin error-message.cabal
+-- @-leo

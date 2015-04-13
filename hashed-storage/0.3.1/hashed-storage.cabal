@@ -1,0 +1,68 @@
+name:          hashed-storage
+version:       0.3.1
+synopsis:      Hashed file storage support code.
+
+description:   Support code for reading and manipulating hashed file storage
+               (where each file and directory is associated with a
+               cryptographic hash, for corruption-resistant storage and fast
+               comparisons).
+               .
+               The supported storage formats include darcs hashed pristine, a
+               plain filesystem tree and an indexed plain tree (where the index
+               maintains hashes of the plain files and directories).  darcs'
+               pristine.hashed.
+
+license:       BSD3
+license-file:  LICENSE
+copyright:     2009 Petr Rockai <me@mornfall.net>
+author:        Petr Rockai <me@mornfall.net>
+maintainer:    Petr Rockai <me@mornfall.net>
+category:      System
+build-type:    Custom
+cabal-version: >= 1.2
+extra-source-files: Bundled/sha2.h
+
+flag test
+    default: False
+
+library
+    if impl(ghc >= 6.8)
+      ghc-options: -fwarn-tabs
+    ghc-options:   -Wall -O2
+    ghc-prof-options: -prof -auto-all -O2
+
+    exposed-modules:
+        Storage.Hashed
+        Storage.Hashed.AnchoredPath
+        Storage.Hashed.Diff
+        Storage.Hashed.Index
+        Storage.Hashed.Monad
+        Storage.Hashed.Tree
+
+    other-modules:
+        Bundled.Posix
+        Bundled.SHA256
+        Storage.Hashed.Utils
+        Storage.Hashed.Test
+
+    build-depends: base, directory, filepath,
+                   bytestring, bytestring-mmap,
+                   zlib, lcs, binary, containers,
+                   mtl, extensible-exceptions,
+                   mmap
+
+    c-sources: Bundled/sha2.c
+
+executable hashed-storage-test
+    if impl(ghc >= 6.8)
+      ghc-options: -fwarn-tabs
+    ghc-options:   -Wall -O2
+
+    ghc-prof-options: -prof -auto-all -O2
+
+    main-is: test.hs
+    other-modules: Bundled.Posix
+    c-sources: Bundled/sha2.c
+    build-depends: HUnit, process >= 1.0.1
+    if !flag(test)
+      buildable: False

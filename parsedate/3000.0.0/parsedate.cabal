@@ -1,0 +1,26 @@
+Name: parsedate
+Version: 3000.0.0
+Cabal-version: >= 1.2
+Build-type: Simple
+Copyright: Bjorn Bringert
+Maintainer: bjorn@bringert.net
+Author: Bjorn Bringert
+Homepage: http://www.cs.chalmers.se/~bringert/darcs/parsedate/doc/
+License: BSD3
+Synopsis: Data and time parsing for CalendarTime
+Description:
+  This library provides a function for parsing dates and times
+  given a date format string. 
+  This package creates CalendarTime values and is meant
+  for use with the old-time package. New code should 
+  use the time package, which now includes parsing, instead.
+
+Flag split-base
+
+Library
+  Build-depends: parsec
+  if flag(split-base)
+    Build-depends: base >= 3.0, old-time, old-locale
+  else
+    Build-depends: base < 3.0
+  Exposed-modules: System.Time.Parse

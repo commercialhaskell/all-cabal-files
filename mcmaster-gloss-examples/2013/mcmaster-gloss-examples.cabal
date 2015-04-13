@@ -1,0 +1,52 @@
+name: mcmaster-gloss-examples
+version: 2013
+category: Graphics
+description: A collection of simple gloss examples written by first year students at McMaster University. 
+cabal-version: >= 1.8
+build-type: Simple
+maintainer: toporoy@mcmaster.ca, anandc@mcmaster.ca
+homepage: http://www.cas.mcmaster.ca/~anand/
+license: MIT
+license-file: license
+
+Executable moving-star
+  Build-Depends:  base == 4.6.* , gloss == 1.8.*
+  hs-source-dirs: .
+  Main-Is:        MovingStar.hs
+  ghc-options: -O2
+
+Executable haunted-house
+  Build-Depends:  base == 4.6.* , gloss == 1.8.*
+  hs-source-dirs: .
+  Main-Is:        HauntedHouse.hs
+  ghc-options: -O2
+
+Executable solar-system
+  Build-Depends:  base == 4.6.* , gloss == 1.8.*
+  hs-source-dirs: .
+  Main-Is:        SolarSystem.hs
+  ghc-options: -O2
+
+Executable parabolic
+  Build-Depends:  base == 4.6.* , gloss == 1.8.*
+  hs-source-dirs: .
+  Main-Is:        Parabolic.hs
+  ghc-options: -O2
+
+Executable stare
+  Build-Depends:  base == 4.6.* , gloss == 1.8.*
+  hs-source-dirs: .
+  Main-Is:        Stare.hs
+  ghc-options: -O2
+
+Executable waves
+  Build-Depends:  base == 4.6.* , gloss == 1.8.*
+  hs-source-dirs: .
+  Main-Is:        Waves.hs
+  ghc-options: -O2
+
+Executable windmills
+  Build-Depends:  base == 4.6.* , gloss == 1.8.*
+  hs-source-dirs: .
+  Main-Is:        Windmills.hs
+  ghc-options: -O2

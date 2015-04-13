@@ -1,0 +1,66 @@
+Name:                happs-tutorial
+Version:             0.2
+Synopsis:            A HAppS Tutorial that is is own demo
+Description:         A nice way to learn how to build web sites with HAppS
+
+
+
+License:             BSD3
+License-file:        LICENSE
+Author:              Thomas Hartman
+
+
+
+
+Maintainer:          thomashartman1 at gmail dot com
+Copyright:           2008 Thomas Hartman
+
+
+
+
+Stability:           Experimental
+Category:            Web
+Build-type:          Simple
+Extra-Source-Files:
+    runServer.sh
+    templates/basic-url-handling.st templates/googleanalytics.st
+    templates/run-tutorial-locally.st
+    templates/home.st
+    templates/understanding-happs-types.st
+    templates/start-tutorial.st
+    templates/base.st
+    templates/login.st
+    templates/home_interpersonal.st
+    templates/myhomepage.st
+    templates/start-happs-on-boot.st
+    templates/moreFavoriteAnimals.st
+    templates/footer.st
+    templates/main-function.st
+    templates/header.st
+    templates/prerequisites.st
+    templates/using-templates.st
+    templates/favoriteAnimal.st
+    static/tutorial.css
+    static/HAppSTutorialLogo.png
+
+Cabal-Version:       >= 1.2
+
+Executable happs-tutorial
+    Main-is:             Main.hs
+    hs-source-dirs:
+        src
+    Other-Modules:
+        ControllerBasic
+        ControllerUsingTemplates  
+        Misc   
+        View
+        Controller          
+        Model  
+        Session
+         
+    Build-Depends:   base >= 3, HStringTemplate, mtl, bytestring,
+                     HAppS-Server, HAppS-Data, HAppS-State,
+                     containers
+
+
+

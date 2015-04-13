@@ -1,0 +1,15 @@
+Name:                darcs-graph
+Version:             0.2
+License:             GPL
+License-file:        LICENSE
+Category:            Distribution
+Synopsis:            Generate pretty graphs of darcs repository activity
+Description:         Generate pretty graphs of darcs repository activity
+Author:              Don Stewart
+Maintainer:          dons@cse.unsw.edu.au
+Build-Depends:       base
+
+Executable:          darcs-graph
+Main-is:             Graph.hs
+ghc-options:         -fglasgow-exts -Wall -Werror -O -funbox-strict-fields -optl-Wl,-s
+ 

@@ -1,0 +1,24 @@
+name:               monitor
+version:            0.1.1
+synopsis:           Do things when files change.
+description:        monitor waits for files to change, then runs system commands.
+license:            MIT
+license-file:       LICENSE
+author:             Martin Stensgård
+maintainer:         mastensg@ping.uio.no
+copyright:          (c) 2013 Martin Stensgård
+category:           System
+build-type:         Simple
+cabal-version:      >=1.8
+
+executable monitor
+  main-is:          monitor.hs
+  GHC-Options:      -Wall
+  build-depends:    base >= 4.5.0 && <= 10.0.0,
+                    hinotify >= 0.3,
+                    process,
+                    filepath
+
+source-repository head
+    type:           git
+    location:       git://github.com/mastensg/monitor.git

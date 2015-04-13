@@ -1,0 +1,53 @@
+cabal-version: >= 1.6
+
+name: witness
+version: 0.2
+build-type: Simple
+license: BSD3
+license-file: LICENSE
+copyright:
+maintainer: Ashley Yakeley <ashley@semantic.org>
+build-depends: base == 4.*, mtl >=1.1
+stability:
+homepage:
+package-url:
+bug-reports:
+synopsis: values that witness types
+description: A witness is a value that /witnesses/ some sort of constraint on some list of type variables.
+             This library provides support for simple witnesses, that constrain a type variable to a single type, and equality witnesses, that constrain two type variables to be the same type. It also provides classes for representatives, which are values that represent types.
+             See the paper /Witnesses and Open Witnesses/ (<http://semantic.org/stuff/Open-Witnesses.pdf>).
+category: Data
+author: Ashley Yakeley <ashley@semantic.org>
+tested-with:
+data-files:
+data-dir: ""
+extra-source-files:
+extra-tmp-files:
+exposed-modules: Data.Witness Data.Witness.SimpleWitness
+                 Data.Witness.Type Data.Witness.List Data.Witness.WitnessDict
+                 Data.Witness.WitnessFDict Data.Witness.Any Data.Witness.Nat
+                 Data.Witness.Representative Data.Witness.EqualType
+exposed: True
+buildable: True
+build-tools:
+cpp-options:
+cc-options:
+ld-options:
+pkgconfig-depends:
+frameworks:
+c-sources:
+extensions: MultiParamTypeClasses RankNTypes FlexibleContexts
+            FlexibleInstances EmptyDataDecls KindSignatures TypeFamilies GADTs
+extra-libraries:
+extra-lib-dirs:
+includes:
+install-includes:
+include-dirs:
+hs-source-dirs: .
+other-modules:
+ghc-prof-options:
+ghc-shared-options:
+ghc-options: -Wall
+hugs-options:
+nhc98-options:
+jhc-options:

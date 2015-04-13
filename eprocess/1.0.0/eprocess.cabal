@@ -1,0 +1,32 @@
+name: eprocess
+version: 1.0.0
+cabal-version: >=1.6
+build-type: Simple
+license: BSD3
+license-file: LICENSE
+copyright: 2009 Fernando "Brujo" Benavides
+maintainer: greenmellon@gmail.com
+stability: stable
+package-url: http://code.haskell.org/eprocess
+bug-reports: http://github.com/elbrujohalcon/eprocess/issues
+synopsis: *Very* basic erlang-like process support for Haskel
+description: This library provides a *very* basic support for processes with message queues.  It was built using channels and MVars.
+category: Concurrency
+author: Fernando "Brujo" Benavides
+tested-with: GHC ==6.10.3, GHC ==6.10.4
+data-files: LICENSE README
+data-dir: ""
+extra-source-files: Setup.hs
+extra-tmp-files:
+
+source-repository head
+    type:     git
+    location: git://github.com/elbrujohalcon/eprocess.git
+
+Library
+    build-depends: base >= 4,                   base < 5,
+                   mtl >=1.1.0,                 mtl < 1.2,
+                   MonadCatchIO-mtl >= 0.1.0,   MonadCatchIO-mtl < 0.3
+    exposed-modules: Control.Concurrent.Process
+    hs-source-dirs: src
+    

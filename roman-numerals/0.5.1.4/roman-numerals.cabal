@@ -1,0 +1,31 @@
+name:          roman-numerals
+version:       0.5.1.4
+cabal-version: >= 1.6
+build-type:    Simple
+stability:     stable
+author:        Roel van Dijk <vandijk.roel@gmail.com>
+maintainer:    Roel van Dijk <vandijk.roel@gmail.com>
+copyright:     2009–2014 Roel van Dijk
+license:       BSD3
+license-file:  LICENSE
+homepage:      https://github.com/roelvandijk/roman-numerals
+bug-reports:   https://github.com/roelvandijk/roman-numerals/issues
+category:      Numerical, Parsing
+synopsis:      Parsing and pretty printing of Roman numerals
+description:
+  This library provides functions for parsing and pretty printing
+  Roman numerals. Because the notation of Roman numerals has varied
+  through the centuries this package allows for some customisation
+  using a configuration that is passed to the conversion functions.
+
+source-repository head
+  type:     git
+  location: git://github.com/roelvandijk/roman-numerals.git
+
+library
+  build-depends: base                 >= 4     && < 5
+               , base-unicode-symbols >= 0.1.1 && < 0.3
+               , bytestring           >= 0.9.1 && < 0.11
+               , text                 >= 0.11  && < 1.2
+  exposed-modules: Text.Numeral.Roman
+  ghc-options: -Wall

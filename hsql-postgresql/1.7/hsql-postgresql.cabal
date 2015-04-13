@@ -1,0 +1,10 @@
+name:		 hsql-postgresql
+version:	 1.7
+license:	 BSD3
+author:		 Krasimir Angelov <kr.angelov@gmail.com>
+category:	 Database
+description: 	 PostgreSQL driver for HSQL.
+exposed-modules: Database.HSQL.PostgreSQL
+build-depends: 	 base, hsql
+extensions:      ForeignFunctionInterface, CPP
+extra-libraries: pq

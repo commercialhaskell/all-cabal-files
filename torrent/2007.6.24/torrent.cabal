@@ -1,0 +1,19 @@
+Name: torrent
+Version: 2007.6.24
+Maintainer: Lemmih (lemmih@gmail.com)
+Author: Lemmih (lemmih@gmail.com)
+Copyright: 2005-2007, Lemmih
+License-File: LICENSE
+License: BSD3
+Build-Depends: base, bencode, FilePath, network
+Category: Network
+Synopsis: BitTorrent file parser.
+Tested-with: GHC ==6.6
+Extensions: ForeignFunctionInterface, PatternGuards
+Exposed-Modules:
+  Data.Torrent
+  Data.Torrent.Scrape
+  Data.Torrent.SHA1
+GHC-Options: -Wall -Werror
+Hs-Source-Dirs: src
+C-Sources: cbits/sha1.c

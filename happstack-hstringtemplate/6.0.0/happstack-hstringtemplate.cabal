@@ -1,0 +1,30 @@
+Name:                happstack-hstringtemplate
+Version:             6.0.0
+Synopsis:            Support for using HStringTemplate in Happstack
+Description:         Happstack is a web application framework. HStringTemplate is a templating solution.
+Homepage:            http://www.happstack.com/
+License:             BSD3
+License-file:        LICENSE
+Author:              Jeremy Shaw
+Maintainer:          Happstack team <happs@googlegroups.com>
+-- Copyright:           
+Category:            Web
+Build-type:          Simple
+Cabal-version:       >=1.6
+
+source-repository head
+    type:     darcs
+    subdir:   happstack-hstringtemplate
+    location: http://patch-tag.com/r/mae/happstack
+
+Library
+  Hs-source-dirs:      src
+  Exposed-modules:     Happstack.Server.HStringTemplate
+  Build-depends:       base >= 3.0 && < 5.0,
+                       bytestring,
+                       happstack-server >= 6.0 && < 6.1,
+                       hslogger,
+                       HStringTemplate >= 0.4.3 && < 0.7,
+                       mtl >= 1.1 && < 2.1
+
+

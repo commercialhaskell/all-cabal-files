@@ -1,0 +1,39 @@
+name:            wai-dispatch
+version:         0.1
+cabal-version:   >= 1.8
+license:         OtherLicense
+license-file:    COPYING
+category:        Web
+copyright:       © 2012 Stephen Paul Weber
+author:          Stephen Paul Weber <singpolyma@singpolyma.net>
+maintainer:      Stephen Paul Weber <singpolyma@singpolyma.net>
+stability:       experimental
+tested-with:     GHC == 7.0.3
+synopsis:        Nice wrapper around yesod-routes for use with WAI
+homepage:        https://github.com/singpolyma/wai-dispatch
+bug-reports:     https://github.com/singpolyma/wai-dispatch/issues
+build-type:      Simple
+description:
+        Provides a simple wrapper for taking Route data mapping to WAI
+        'Application's and a default 'Application' and producing a single
+        'Application'.
+        .
+        You may find the route-generator package useful for generating route
+        data to use with this library.
+
+extra-source-files:
+        README
+
+library
+        exposed-modules:
+                Network.Wai.Dispatch
+
+        build-depends:
+                base == 4.*,
+                text >= 0.7,
+                yesod-routes,
+                wai
+
+source-repository head
+        type:     git
+        location: git://github.com/singpolyma/wai-dispatch.git

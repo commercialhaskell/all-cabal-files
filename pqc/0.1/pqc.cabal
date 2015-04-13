@@ -1,0 +1,12 @@
+Name:                pqc
+Version:             0.1
+Description:         Parallel batch driver for QuickCheck
+Synopsis:            Parallel batch driver for QuickCheck
+Category:            Testing
+License:             BSD3
+License-file:        LICENSE
+Author:              Don Stewart
+Maintainer:          dons@cse.unsw.edu.au
+Build-Depends:       base, QuickCheck
+Exposed-modules:     Test.QuickCheck.Parallel
+ghc-options:         -O

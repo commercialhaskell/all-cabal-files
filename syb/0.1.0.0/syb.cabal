@@ -1,0 +1,37 @@
+name:                   syb
+version:                0.1.0.0
+x-revision: 1
+license:                BSD3
+license-file:           LICENSE
+author:                 Ralf LÃ¤mmel, Simon Peyton Jones
+maintainer:             generics@haskell.org
+homepage:               http://www.cs.uu.nl/wiki/GenericProgramming/SYB
+synopsis:               Scrap Your Boilerplate
+description:
+    This package contains the generics system described in the
+    /Scrap Your Boilerplate/ papers (see <http://www.cs.vu.nl/boilerplate/>).
+    It defines the @Data@ class of types permitting folding and unfolding
+    of constructor applications, instances of this class for primitive
+    types, and a variety of traversals.
+
+category:               Generics
+stability:              provisional
+build-type:             Simple
+cabal-version:          >= 1.2.1
+tested-with:            GHC == 6.10.1
+
+Library {
+  hs-source-dirs:         src
+
+  exposed-modules:        Data.Generics,
+                          Data.Generics.Basics,
+                          Data.Generics.Instances,
+                          Data.Generics.Aliases,
+                          Data.Generics.Schemes,
+                          Data.Generics.Text,
+                          Data.Generics.Twins
+
+  build-depends:          base >= 4.0 && < 4.4
+  extensions:             CPP, Rank2Types, ScopedTypeVariables
+  ghc-options:            -Wall
+}

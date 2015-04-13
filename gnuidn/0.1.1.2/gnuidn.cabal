@@ -1,0 +1,32 @@
+name: gnuidn
+version: 0.1.1.2
+stability: experimental
+synopsis: Bindings for GNU IDN
+license: GPL-3
+license-file: license.txt
+author: John Millikin
+maintainer: jmillikin@gmail.com
+build-type: Simple
+cabal-version: >=1.6
+category: Codec, Text
+bug-reports: mailto:jmillikin@gmail.com
+homepage: http://john-millikin.com/software/bindings/gnuidn/
+tested-with: GHC==6.12.1
+
+source-repository head
+  type: bazaar
+  location: http://john-millikin.com/software/bindings/gnuidn/
+
+library
+  ghc-options: -Wall
+
+  build-depends:
+      base >= 3 && < 5
+    , text >= 0.2 && < 0.11
+    , bytestring >= 0.9 && < 0.10
+
+  extra-libraries: idn
+  pkgconfig-depends: libidn
+
+  exposed-modules:
+    Data.Text.IDN.StringPrep

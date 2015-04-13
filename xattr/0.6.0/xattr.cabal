@@ -1,0 +1,62 @@
+Author:        Evan Klitzke, Deian Stefan
+Maintainer:    Deian Stefan <deian@cs.stanford.edu>
+Name:          xattr
+Version:       0.6.0
+Cabal-Version: >= 1.8
+License:       BSD3
+License-File:  LICENSE
+Category:      System
+Copyright:     (c) 2009 by Evan Klitzke, (c) 2012 by Deian Stefan
+Synopsis:      Haskell extended file attributes interface
+Description:
+  Relatively low-level interface to work with extended attributes
+  on Unix systems. This is a fairly straightforward port of the
+  API exposed by SGI's libattr.
+ 
+Build-Type: Configure
+Extra-Source-Files:
+  README.md
+  LICENSE
+  configure.ac
+  configure
+  include/HsXattrConfig.h.in
+Extra-Tmp-Files:
+  config.log config.status autom4te.cache
+  include/HsXattrConfig.h
+ 
+Library
+  Exposed-Modules:
+    System.Xattr
+  Build-Depends:
+    base >= 4.0 && < 5,
+    bytestring,
+    unix
+  Extensions: CPP, ForeignFunctionInterface
+  Extra-Libraries: attr
+  Include-Dirs: include
+  Includes: HsXattrConfig.h
+  Install-Includes: HsXattrConfig.h
+  GHC-Options: -Wall -fno-warn-orphans
+
+Source-Repository head
+    Type:     git
+    Location: git://github.com/deian/libattr-hs.git
+
+Test-Suite tests
+  Type: exitcode-stdio-1.0
+  Hs-Source-Dirs: tests
+  Main-Is: Tests.hs
+
+  GHC-Options: -Wall -threaded -rtsopts
+
+  Build-Depends:
+    HUnit,
+    xattr,
+    unix,
+    filepath,
+    base,
+    directory,
+    containers,
+    bytestring,
+    test-framework,
+    test-framework-hunit

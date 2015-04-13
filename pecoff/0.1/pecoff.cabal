@@ -1,0 +1,20 @@
+Name:          pecoff
+Version:       0.1
+License:       BSD3
+License-file:  LICENSE
+Category:      Data
+Author:        Erik Charlebois
+Copyright:     Erik Charlebois
+Maintainer:    Erik Charlebois <erikcharlebois@gmail.com>
+Stability:     unstable
+Cabal-Version: >= 1.2
+Build-Depends: base
+Build-Type:    Custom
+Synopsis:      Parser for PE/COFF format.
+Description:   Parser for PE/COFF format.
+Data-Files:    tests/Test.hs
+
+library
+    build-depends:   base, bytestring, containers, binary
+    hs-source-dirs:  src
+    exposed-modules: Data.Pecoff

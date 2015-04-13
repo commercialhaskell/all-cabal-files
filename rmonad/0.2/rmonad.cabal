@@ -1,0 +1,25 @@
+name:           rmonad
+cabal-version:  >= 1.2
+build-type:     Simple
+copyright:      (c) 2008 Ganesh Sittampalam
+stability:      provisional
+version:        0.2
+license:        BSD3
+license-file:   LICENSE
+category:       Control
+maintainer:     Ganesh Sittampalam <ganesh@earth.li>
+synopsis:       Restricted monad library
+build-depends:  base, containers
+build-tools:    ghc >= 6.8
+extra-source-files: README
+hs-source-dirs: src/
+description:
+        A library for restricted monads based on associated datatypes.
+        This allows datatypes such as Set to be made into monads.
+        Users can either use the NoImplicitPrelude extension and use
+        Control.RMonad directly, or use Control.RMonad.AsMonad with
+        the embed and unEmbed combinators to use the normal Prelude
+        monad operations.
+exposed-modules:
+        Control.RMonad
+        Control.RMonad.AsMonad

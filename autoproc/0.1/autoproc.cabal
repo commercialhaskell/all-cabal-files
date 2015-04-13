@@ -1,0 +1,32 @@
+name:                autoproc
+version:             0.1
+synopsis:            EDSL for Procmail scripts
+description:         Autoproc is a utility which allows you to write an email filterer in an Haskell
+                     EDSL (embedded domain specific language); autoproc will then compile
+                     it down to a Procmail configuration file (.procmailrc). This file can
+                     then be used with Procmail to sort and filter your email before
+                     you see it.
+category:            System
+license:             BSD3
+license-file:        LICENSE
+author:              Jason Dagit
+maintainer:          Jason Dagit <dagit@codersbase.com>
+homepage:            http://projects.codersbase.com/repos/autoproc
+
+build-type:          Simple
+Cabal-Version:       >= 1.2
+tested-with:         GHC==6.8.2
+
+data-files:          README
+
+Library
+        exposed-modules:     Autoproc.Classifier, Autoproc.Configuration, Autoproc.Run,
+                             Autoproc.Procmail, Autoproc.Rules.Dagit, Autoproc.Transform
+
+        build-depends:       base>3, mtl, unix, directory, process
+
+        ghc-options:         -Wall -optl-Wl,-s
+        ghc-prof-options:    -prof -auto-all
+
+Executable autoproc
+           main-is:             Main.hs

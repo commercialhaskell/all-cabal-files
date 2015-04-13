@@ -1,0 +1,43 @@
+name:            safe-lazy-io
+cabal-Version:   >=1.6
+version:         0.1
+license:         BSD3
+license-File:    LICENSE
+copyright:       (c) Nicolas Pouillard
+author:          Nicolas Pouillard
+maintainer:      Nicolas Pouillard <nicolas.pouillard@gmail.com>
+category:        System
+synopsis:        A library providing safe lazy IO features.
+description:     Provides a safer API for incremental IO processing in a way very
+                 close to standard lazy IO.
+stability:       Provisional
+build-type:      Simple
+
+extra-source-files:
+  README
+  System/IO/Lazy/Input/Tests.hs
+  examples/count-words.hs
+  examples/testhgetcontents.hs
+  examples/cksum.hs
+  examples/std-lazy-io/count-lines-good.hs
+  examples/std-lazy-io/count-lines-better.hs
+  examples/swap-case.hs
+
+
+library
+  build-depends:   base>=3.0, parallel, strict-io>=0.1, extensible-exceptions
+  exposed-modules: System.IO.Lazy.Input
+                   System.IO.Lazy.Input.Internals
+                   System.IO.Lazy.Input.Extra
+                   System.IO.Unsafe.GetContents
+  ghc-options:     -Wall -O2
+
+-- source-repository head
+--   type:     darcs
+--   location: http://patch-tag.com/publicrepos/safe-lazy-io
+
+-- source-repository this
+--   type:     darcs
+--   location: http://patch-tag.com/publicrepos/safe-lazy-io
+--   tag:      0.1
+

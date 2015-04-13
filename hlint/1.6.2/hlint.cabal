@@ -1,0 +1,64 @@
+cabal-version:      >= 1.6
+build-type:         Simple
+name:               hlint
+version:            1.6.2
+license:            GPL
+license-file:       LICENSE
+category:           Development
+author:             Neil Mitchell <ndmitchell@gmail.com>
+maintainer:         Neil Mitchell <ndmitchell@gmail.com>
+copyright:          Neil Mitchell 2006-2009
+synopsis:           Source code suggestions
+description:
+    HLint gives suggestions on how to improve your source code.
+homepage:           http://community.haskell.org/~ndm/hlint/
+stability:          Beta
+data-dir:           data
+data-files:
+    Default.hs
+    Generalise.hs
+    Dollar.hs
+    HLint.hs
+    report.html
+    hs-lint.el
+Extra-Source-Files:
+    hlint.htm
+
+
+executable hlint
+    build-depends:
+        base == 4.*, syb, filepath, directory, mtl, containers, hscolour >= 1.10,
+        haskell-src-exts >= 1 && < 1.1, uniplate == 1.2.* && >= 1.2.0.2, parallel
+
+    ghc-options:        -fno-warn-overlapping-patterns -threaded
+
+    -- ViewPatterns not yet supported by Cabal as an extension
+    -- extensions:         ViewPatterns, PatternGuards, MultiParamTypeClasses
+
+    main-is:            Main.hs
+    hs-source-dirs:     src
+    other-modules:
+        CmdLine
+        Settings
+        Report
+        Type
+        Test
+        Util
+        Parallel
+        HSE.All
+        HSE.Bracket
+        HSE.Evaluate
+        HSE.Generics
+        HSE.Match
+        HSE.Operators
+        HSE.Util
+        HSE.NameMatch
+        Hint.All
+        Hint.Bracket
+        Hint.Lambda
+        Hint.List
+        Hint.ListRec
+        Hint.Match
+        Hint.Monad
+        Hint.Naming
+        Hint.Structure

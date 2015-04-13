@@ -1,0 +1,16 @@
+   Name:                fpipe
+   Version:             0.0.1
+   Synopsis:            F#-style composition and application
+   Description:         Control.FPipe provides trivial F#-style composition and application, namely the full complement of right and left associative versions of the fundamental (.) and ($) operators: (\<.), (.\>), (\<$), ($\>).
+   License:             BSD3
+   License-file:        LICENSE
+   Author:              Ben Schulz <benjamin.a.schulz@gmail.com>
+   Maintainer:          Ben Schulz <benjamin.a.schulz@gmail.com>
+   Build-Type:          Simple
+   Cabal-Version:       >=1.2
+   
+   Library
+     Build-Depends:     base >= 3 && < 5
+     Exposed-modules:   Control.FPipe
+     ghc-options:       -Wall
+

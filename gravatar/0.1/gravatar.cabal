@@ -1,0 +1,28 @@
+name:                gravatar
+version:             0.1
+homepage:            http://code.haskell.org/~dons/code/gravatar
+synopsis:            Find the url of the gravatar associated with an email address.
+description:         
+    Gravatars <gravatar.com> are globally unique images associated with an email
+    address, widely used in social networking sites. This library
+    lets you find the URL of a gravatar .png associated with an email
+    address.
+category:            Network
+license:             BSD3
+license-file:        LICENSE
+author:              Don Stewart 
+maintainer:          <dons@galois.com>
+cabal-version:      >= 1.2
+build-type:         Simple
+
+flag small_base
+    description: Choose the new smaller, split-up base package.
+
+library
+    exposed-modules:    Network.Gravatar
+
+    if flag(small_base)
+        build-depends: base >= 3, bytestring
+    else
+        build-depends: base < 3
+    build-depends: nano-md5

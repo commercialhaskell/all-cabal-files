@@ -1,0 +1,42 @@
+cabal-version: >= 1.2
+name: bindings
+synopsis:
+  Low level bindings for foreign libraries
+  following community driven guidelines
+description: 
+  This package has been left in favor of a new design. See
+  @bindings-common@ and others.
+version: 0.1.1
+license: BSD3
+license-file: LICENSE
+maintainer: none
+author: Maurício C. Antunes
+build-type: Simple
+category: FFI
+stability: Deprecated
+library
+  hs-source-dirs: src
+  extensions:
+    ForeignFunctionInterface
+    TypeSynonymInstances
+    ScopedTypeVariables
+  build-depends: base
+  exposed-modules:
+    Bindings
+    Bindings.Utilities
+    Bindings.Sqlite3
+    Bindings.StandardC
+  c-sources:
+    src/Bindings.c
+    src/Bindings/Sqlite3.c
+    src/Bindings/StandardC.c
+    packageCode/sqlite3.c
+  include-dirs:
+    packageCode/include
+  cc-options:
+    -D SQLITE_ENABLE_FTS3
+    -D SQLITE_ENABLE_FTS3_PARENTHESIS
+    -D SQLITE_ENABLE_LOCKING_STYLE
+    -D SQLITE_ENABLE_MEMORY_MANAGEMENT
+    -D SQLITE_ENABLE_MEMSYS5
+    -D SQLITE_ENABLE_RTREE

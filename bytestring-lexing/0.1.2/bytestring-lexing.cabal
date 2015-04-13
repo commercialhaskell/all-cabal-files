@@ -1,0 +1,30 @@
+Name:                bytestring-lexing
+Version:             0.1.2
+x-revision: 2
+Synopsis:            Parse literals efficiently from bytestrings
+Description:         Parse literals efficiently from bytestrings
+License:             BSD3
+License-file:        LICENSE
+Category:            Data
+Copyright:           Copyright (c) Don Stewart 2008
+Author:              Don Stewart
+Maintainer:          dons@galois.com
+Stability:           provisional
+Homepage:            http://code.haskell.org/~dons/code/bytestring-lexing
+Tested-With:         GHC ==6.8.2
+Build-Type:          Simple
+Cabal-Version:       >= 1.2
+
+flag small_base
+    description: Choose the new smaller, split-up base package.
+
+library
+  exposed-modules:   Data.ByteString.Lex.Double
+
+  if flag(small_base)
+      build-depends:     base >= 3 && < 5, bytestring, array
+  else
+      build-depends: base < 3
+
+  extensions:        ForeignFunctionInterface
+  ghc-options:       -O2 -funbox-strict-fields 

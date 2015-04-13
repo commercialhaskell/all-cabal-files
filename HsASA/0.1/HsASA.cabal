@@ -1,0 +1,30 @@
+name:               HsASA
+version:            0.1
+homepage:           http://repetae.net/recent/out/HsASA.html
+synopsis:           A haskell interface to Lester Ingber's adaptive simulating annealing code
+description:        A haskell interface to Lester Ingber's adaptive simulating annealing code
+category:           Math
+license:            BSD3
+license-file:       LICENSE.asa
+author:             John Meacham
+extra-source-files: Main.hs Makefile README
+cabal-version:      >= 1.2
+build-type:         Simple
+
+library
+    build-depends:    base, array, haskell98
+    exposed-modules:
+                      Optimize.ASA
+                      Optimize.Parameter
+
+    ghc-options:      -O2 -funbox-strict-fields
+    cc-options:       -O2 -msse
+    extensions:       ForeignFunctionInterface,
+                      UndecidableInstances,
+                      PatternSignatures,
+                      Rank2Types
+
+    c-sources:        cbits/asa.c cbits/hs_asa.c
+    include-dirs:     include
+    includes:         asa.h asa_usr.h asa_usr_asa.h
+    install-includes: asa.h asa_usr.h asa_usr_asa.h

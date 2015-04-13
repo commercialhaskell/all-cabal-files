@@ -1,0 +1,25 @@
+Name: shell-monad
+Version: 0.0.1
+Cabal-Version: >= 1.8
+License: BSD3
+Maintainer: Joey Hess <id@joeyh.name>
+Author: Joey Hess
+Stability: Stable
+Copyright: 2014 Joey Hess
+License-File: LICENSE
+Build-Type: Simple
+Category: Compilers/Interpreters
+Synopsis: shell monad
+Description:
+ This is a shell monad, for generating shell scripts.
+Extra-Source-Files:
+  santa.hs
+
+Library
+  GHC-Options: -Wall
+  Exposed-Modules: Control.Monad.Shell
+  Build-Depends: base (>= 4.5), base < 5, containers, text
+
+source-repository head
+  type: git
+  location: git://git.kitenet.net/shell-monad.git

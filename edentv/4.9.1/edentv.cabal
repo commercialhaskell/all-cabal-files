@@ -1,0 +1,53 @@
+name:                edentv
+version:             4.9.1
+synopsis:            A Tool to Visualize Parallel Functional Program Executions
+description:         The Eden Trace Viewer is a tool designed to help
+                     programmers optimize Eden programs by visualising traces
+                     (eventlog files) of Eden program runs. It is similar to
+                     (and precedes) threadscope. However, it has been designed
+                     to visualize not just threads, but also different
+                     machines, processes, and messages between processes.
+                     EdenTV can show you what has happened during the
+                     execution of your program. This is very helpful to
+                     optimize parallel programs.
+license:             GPL-3
+license-file:        gpl.txt
+homepage:            http://www.mathematik.uni-marburg.de/~eden
+author:              Jost Berthold, Mischa Dieterle, Thomas Horstmeyer, Bernhard Pickenbrock, Tobias Sauerwein, Bjoern Struckmeier
+maintainer:          Eden group <eden@mathematik.uni-marburg.de>
+copyright:           Copyright (C) 2005-2012  Phillips Universitaet Marburg
+category:            Development, Eden, Profiling, Trace
+build-type:          Simple
+cabal-version:       >=1.6
+
+data-files:	     edentv.ui
+
+source-repository head
+  type:     git
+  location: git://james.mathematik.uni-marburg.de/edentv-hs.git
+
+executable edentv
+  main-is:           EdenTV.hs
+
+  build-depends:     base == 4.*,
+                     containers >= 0.5,
+                     bytestring,
+                     binary,
+                     mtl,
+                     filepath,
+                     directory,
+                     zip-archive,
+                     gtk >= 0.12,
+                     cairo >= 0.12,
+                     array,
+                     ghc-events-parallel >= 0.5.0.1
+
+  GHC-Options: -rtsopts
+
+  other-modules:     EdenTvBasic
+                     EdenTvInteract
+                     EdenTvType
+                     EdenTvViewer
+                     RTSEventsParser
+                     RTSEventsParserOld
+                     TinyZipper

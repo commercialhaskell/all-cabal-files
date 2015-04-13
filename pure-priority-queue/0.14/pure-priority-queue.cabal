@@ -1,0 +1,21 @@
+name:                pure-priority-queue
+version:             0.14
+synopsis:            A pure priority queue.
+description:         A pure priority queue.
+category:            Data
+license:             BSD3
+license-file:        LICENSE
+author:              Bradford Larsen
+maintainer:          brad.larsen@gmail.com
+build-depends:       base
+build-type:          Simple
+cabal-version:       >= 1.2
+
+library
+  build-depends:
+                        base >= 3.0.3.1 && < 4,
+                        containers >= 0.2.0.1
+
+  exposed-modules:
+                        Data.PurePriorityQueue,
+                        Data.PurePriorityQueue.Internal

@@ -1,0 +1,40 @@
+name:            plivo
+version:         0.2.0.0
+x-revision: 1
+cabal-version:   >=1.8
+license:         OtherLicense
+license-file:    COPYING
+copyright:       © 2013 Stephen Paul Weber
+category:        Services
+author:          Stephen Paul Weber <singpolyma@singpolyma.net>
+maintainer:      Stephen Paul Weber <singpolyma@singpolyma.net>
+stability:       experimental
+build-type:      Simple
+homepage:        https://github.com/singpolyma/plivo-haskell
+bug-reports:     http://github.com/singpolyma/plivo-haskell/issues
+synopsis:        Plivo API wrapper for Haskell
+description:
+        This package provides types representing requests to Plivo API endpoints
+        and a function that calls the endpoints correctly, given the request.
+
+library
+        exposed-modules:
+                Plivo
+
+        build-depends:
+                base == 4.*,
+                network-uri,
+                http-types,
+                http-streams,
+                io-streams,
+                blaze-builder,
+                bytestring,
+                aeson,
+                time,
+                old-locale,
+                errors,
+                unexceptionalio < 0.2.0
+
+source-repository head
+        type:     git
+        location: git://github.com/singpolyma/plivo-haskell.git

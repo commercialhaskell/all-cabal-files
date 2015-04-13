@@ -1,0 +1,49 @@
+name:           mwc-random
+version:        0.6.0.0
+x-revision: 1
+synopsis:       Fast, high quality pseudo random number generation
+description:
+  This package contains code for generating high quality random
+  numbers that follow either a uniform or normal distribution.  The
+  generated numbers are suitable for use in statistical applications.
+  .
+  The uniform PRNG uses Marsaglia's MWC256 (also known as MWC8222)
+  multiply-with-carry generator, which has a period of 2^8222 and
+  fares well in tests of randomness.  It is also extremely fast,
+  between 2 and 3 times faster than the Mersenne Twister.
+  .
+  Compared to the mersenne-random package, this package has a more
+  convenient API, is faster, and supports more statistical
+  distributions.
+license:        BSD3
+license-file:   LICENSE
+homepage:       http://darcs.serpentine.com/mwc-random
+author:         Bryan O'Sullivan <bos@serpentine.com>
+maintainer:     Bryan O'Sullivan <bos@serpentine.com>
+copyright:      2009, 2010 Bryan O'Sullivan
+category:       Math, Statistics
+build-type:     Simple
+cabal-version:  >= 1.2
+extra-source-files:
+  README
+  benchmarks/Benchmark.hs
+  benchmarks/Quickie.hs
+
+library
+  exposed-modules:
+    System.Random.MWC
+  build-depends:
+    base < 4.7,
+    --primitive,
+    time,
+    vector >= 0.5
+  if impl(ghc >= 6.10)
+    build-depends:
+      base >= 4
+
+  -- gather extensive profiling data for now
+  ghc-prof-options: -auto-all
+
+  ghc-options: -Wall -funbox-strict-fields
+  if impl(ghc >= 6.8)
+    ghc-options: -fwarn-tabs

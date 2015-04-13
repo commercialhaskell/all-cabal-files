@@ -1,0 +1,25 @@
+name:          ParserFunction
+version:       0.0.6
+cabal-version: >= 1.6
+license:       BSD3
+license-file:  LICENSE
+author:        Enzo Haussecker
+maintainer:    ehaussecker@gmail.com
+category:      Parsing
+synopsis:      Utilities for parsing and evaluating mathematical expressions.
+description:
+    ParserFunction provides utilities for parsing and evaluating mathematical expressions.
+    The central parsing function in this package is @stringToExpr@, which parses a string-expression
+    (e.g. \"3*x+2\") and returns a Maybe expression tree of type Expr (e.g. Just (Add (Mul (Num 3.0) (Var \'x\')) (Num 2.0))).
+    This type is suitable for performing symbolic logic. Expressions can then be evaluated using the function @evaluate@
+    (e.g. @evaluate@ (fromAscList [(\"x\",2)]) (Add (Mul (Num 3.0) (Var \'x\'))) (Num 2.0) would give 8.0).
+    If you wish to evaluate a string-expression without any intermediate symbolic logic operations, simply use the function
+    @evaluateExpression@ (e.g. @evaluateExpression@ \"3*x+2\" [(\'x\',4)] gives 14.0). More examples of these functions can be found
+    by viewing the source code for this package.
+
+build-type: Simple
+
+Library
+  exposed-modules:
+    Text.ParserCombinators.Parsec.ParserFunction
+  build-depends: base < 6, parsec, containers

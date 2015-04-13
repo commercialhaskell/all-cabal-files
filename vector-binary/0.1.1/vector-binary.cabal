@@ -1,0 +1,33 @@
+name:               vector-binary
+version:            0.1.1
+synopsis:           Binary instances for vector types (deprecated)
+description:
+    DEPRECATED.  Use vector-binary-instances >= 0.2 instead.
+    .
+    The library provides binary instances for boxed and unboxed vector types.
+    The code is based on the vector-binary-instances package but restricts
+    instances to monomorphic vector types.
+license:            BSD3
+license-file:       LICENSE
+cabal-version:      >= 1.6
+author:             Jakub Waszczuk
+maintainer:         waszczuk.kuba@gmail.com
+stability:          provisional
+category:           Data
+homepage:           https://github.com/kawu/vector-binary
+build-type:         Simple
+
+library
+    build-depends:
+        base >= 4 && < 5
+      , vector
+      , binary
+
+    exposed-modules:
+        Data.Vector.Binary
+
+    ghc-options: -Wall
+
+source-repository head
+    type: git
+    location: git://github.com/kawu/vector-binary.git

@@ -1,0 +1,110 @@
+Name:                happs-tutorial
+Version:             0.4
+Synopsis:            A HAppS Tutorial that is is own demo
+Description:         A nice way to learn how to build web sites with HAppS
+
+
+
+License:             BSD3
+License-file:        LICENSE
+Author:              Thomas Hartman
+
+
+
+
+Maintainer:          thomashartman1 at gmail dot com
+Copyright:           2008 Thomas Hartman
+
+
+
+
+Stability:           Experimental
+Category:            Web
+Build-type:          Simple
+
+-- when cabal install 1.6 comes out, hopefully can use * patterns for templates
+-- see http://hackage.haskell.org/trac/hackage/ticket/213
+Extra-Source-Files:
+
+    runServerWithCompileNLink.sh
+    hackInGhci.sh
+
+
+    static/tutorial.css
+    static/HAppSTutorialLogo.png
+
+    -- templates/*.st
+    templates/accountsettingschanged.st
+    templates/base.st
+    templates/basicurlhandling.st
+    templates/changepassword.st
+    templates/consultantprofile.st
+    templates/consultants.st
+    templates/consultantswanted.st
+    templates/editconsultantprofile.st
+    templates/editjob.st
+    templates/errortemplate.st
+    templates/favoritePlant.st
+    templates/footer.st
+    templates/gettingstarted.st
+    templates/googleanalytics.st
+    templates/happsslowlinkingbug.st
+    templates/header.st
+    templates/home.st
+    templates/jobs.st
+    templates/job.st
+    templates/leastFavoriteAnimal.st
+    templates/login.st
+    templates/mainfunction.st
+    templates/mainusermenu.st
+    templates/menubarmenu.st
+    templates/menubar.st
+    templates/menulinkgray.st
+    templates/menulinkselected.st
+    templates/menulinkunselected.st
+    templates/missinghappsdocumentation.st
+    templates/moreFavoriteAnimals.st
+    templates/myFavoriteAnimalBase.st
+    templates/myFavoriteAnimal.st
+    templates/myjobposts.st
+    templates/newuser.st
+    templates/paginationlinkselected.st
+    templates/paginationlinkunselected.st
+    templates/postnewjob.st
+    templates/prerequisites.st
+    templates/register.st
+    templates/runtutoriallocally.st
+    templates/simplelink.st
+    templates/starthappsonboot.st
+    templates/stringtemplatebasics.st
+    templates/templatesdontrepeatyourself.st
+    templates/thanks.st
+    templates/toc.st
+    templates/understandinghappstypes.st
+    templates/viewconsultantprofile.st
+    templates/viewjob.st
+
+
+
+Cabal-Version:       >= 1.2
+
+Executable happs-tutorial
+    Main-is:             Main.hs
+    hs-source-dirs:
+        src
+    Other-Modules:
+        ControllerBasic
+        Misc   
+        View
+        Controller          
+        SerializeableSessions
+        SerializeableUsers         
+        AppStateSetBased
+        AppStateGraphBased
+    Build-Depends:   base >= 3, HStringTemplate, mtl, bytestring,
+                     HAppS-Server, HAppS-Data, HAppS-State,
+                     containers, pretty, pureMD5, directory, filepath, hscolour, HTTP
+
+
+
+

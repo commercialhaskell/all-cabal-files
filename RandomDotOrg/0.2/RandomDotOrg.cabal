@@ -1,0 +1,16 @@
+name:                RandomDotOrg
+version:             0.2
+build-type:          Simple
+Cabal-Version:       >= 1.2
+synopsis:            Interface to random numbers on random.org
+description:         Using this package you can generate random numbers
+		     (based on the atmosphere, not a PRNG) via the random.org website
+category:            Other
+license:             PublicDomain
+license-file:        LICENSE
+author:              Austin Seipp
+maintainer:          mad.one@gmail.com
+
+library
+  build-depends:       base, HTTP-Simple >= 0.1, network
+  exposed-modules:     System.Random.Atmosphere

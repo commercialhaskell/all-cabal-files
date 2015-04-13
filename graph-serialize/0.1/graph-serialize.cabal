@@ -1,0 +1,24 @@
+name:                   graph-serialize
+version:                0.1
+license:                BSD3
+license-file:           LICENSE
+author:                 Thomas Schilling
+maintainer:             Thomas Schilling <nominolo@googlemail.com>
+homepage:               http://github.com/nominolo/graph-serialize
+synopsis:               Serialization of data structures with references.
+description:
+  Serialization of data structures with references.
+category:               System
+stability:              provisional
+build-type:             Simple
+cabal-version:          >= 1.6
+
+library
+  build-depends:
+    base                >= 4     && < 5,
+    containers          >= 0.1   && < 0.5,
+    bytestring          == 0.9.*,
+    blaze-builder       == 0.3.*,
+    array               < 0.4
+  exposed-modules:
+    Data.Serialize.References

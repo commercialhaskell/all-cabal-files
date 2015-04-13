@@ -1,0 +1,61 @@
+Name:                repa-devil
+Version:             0.3.2
+Synopsis:            Support for image reading and writing of Repa arrays using in-place FFI calls
+
+Description:         The repa-image library adds support for reading and
+                     writing images in many formats based on the DevIL
+                     open source image library. Image data is represented in Haskell
+                     as typed, multi-dimensional repa arrays.
+                     .
+                     Developer\'s Image Library (DevIL) is a library to
+                     develop applications with very powerful image
+                     loading capabilities, yet with a relatively simple
+                     interface. DevIL can load, save, convert,
+                     manipulate, filter and display a wide variety of
+                     image formats, including:
+                     . 
+                     * BMP, ICO, JPG, PNG, PNM, TGA, TIF, GIF, EXIF and many more.
+                     .
+                     /References:/
+                     .
+                     * <http://hackage.haskell.org/package/repa>
+                     .
+                     * <http://openil.sourceforge.net/>
+                     .
+                     * <http://www.haskell.org/haskellwiki/Numeric_Haskell:_A_Repa_Tutorial>
+
+Homepage:            https://github.com/RaphaelJ/repa-devil
+License:             BSD3
+License-file:        LICENSE
+Author:              Don Stewart, Raphael Javaux
+Maintainer:          Raphael Javaux <raphaeljavaux[at]gmail.com>
+Copyright:           Don Stewart (c) 2011, Raphael Javaux (c) 2012
+Category:            Data Structures
+Build-type:          Simple
+Cabal-version:       >=1.6
+
+
+Library
+  Exposed-modules:
+    Data.Array.Repa.IO.DevIL
+  
+  Build-depends:       
+    base              >= 4.5 && < 5.0,
+    repa              >= 3.2.0.0 && < 4.0,
+    transformers      >= 0.2 && < 0.4
+  
+  Build-tools:
+    hsc2hs
+    
+  GHC-Options: -O2 -Wall
+  
+  Extensions:
+    CPP,
+    ForeignFunctionInterface
+
+  Extra-Libraries: 
+    IL
+
+source-repository head
+  type:     git
+  location: https://github.com/RaphaelJ/repa-devil

@@ -1,0 +1,40 @@
+name:            yesod-auth-ldap
+version:         0.0.1 
+license:         BSD3
+license-file:    LICENSE
+author:          Michael Litchard 
+maintainer:      Michael Litchard 
+synopsis:        LDAP Authentication for Yesod.
+category:        Web, Yesod
+stability:       experimental 
+cabal-version:   >= 1.6.0
+build-type:      Simple
+homepage:        http://www.yesodweb.com/
+extra-source-files: include/qq.h
+description:     LDAP Authentication for Yesod.
+
+flag ghc7
+
+library
+    if flag(ghc7)
+        build-depends:   base                >= 4.3      && < 5
+        cpp-options:     -DGHC7
+    else
+        build-depends:   base                >= 4        && < 4.3
+    build-depends:   LDAP                    == 0.6.6    
+                   , bytestring              >= 0.9.1.4   && < 0.10
+                   , yesod-core              >= 0.10      && < 0.11
+                   , yesod-auth              >= 0.8       && < 0.9
+                   , text                    >= 0.7       && < 0.12
+                   , hamlet                  >= 0.10      && < 0.11
+                   , yesod-form              >= 0.4       && < 0.5
+                   , transformers            >= 0.2.2     && < 0.3
+                   , authenticate-ldap       == 0.0.1
+
+    exposed-modules: Yesod.Auth.LDAP
+    ghc-options:     -Wall
+    include-dirs: include
+
+source-repository head
+  type:     git
+  location: git://github.com:mlitchard/yesod-auth-ldap.git

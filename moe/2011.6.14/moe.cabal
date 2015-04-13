@@ -1,0 +1,50 @@
+Name:                 moe
+Version:              2011.6.14
+Build-type:           Simple
+Synopsis:             html with style
+Description:
+
+    a purely functional html combinator with a clean syntax
+
+License:              BSD3
+License-file:         LICENSE
+Author:               Jinjing Wang
+Maintainer:           Jinjing Wang <nfjinjing@gmail.com>
+Build-Depends:        base
+Cabal-version:        >= 1.2
+category:             Web
+homepage:             https://github.com/nfjinjing/moe
+data-files:           readme.md, changelog.md, known-issues.md, Nemesis, src/test.hs
+
+library
+
+  build-depends: base >= 4 && < 5, mtl, air >= 2011.6.18, data-default, bytestring, utf8-string, dlist
+  hs-source-dirs: src/
+  exposed-modules:  
+                      Text.HTML.Moe   
+                      Text.HTML.Moe.Attribute
+                      Text.HTML.Moe.Element
+                      Text.HTML.Moe.DSL.Markdown
+                      Text.HTML.Moe.DSL.Kawaii
+                      Text.HTML.Moe.DSL.HTML5
+                      Text.HTML.Moe.Type
+                      Text.HTML.Moe.Utils
+                      Text.HTML.Moe.Backend.ByteString
+                      
+                      Text.HTML.Moe2   
+                      Text.HTML.Moe2.Attribute
+                      Text.HTML.Moe2.Element
+                      Text.HTML.Moe2.DSL.Markdown
+                      Text.HTML.Moe2.DSL.Kawaii
+                      Text.HTML.Moe2.DSL.HTML5
+                      Text.HTML.Moe2.DSL.HTML
+                      Text.HTML.Moe2.Renderer
+
+                      Text.HTML.Moe2.Type
+                      Text.HTML.Moe2.Utils
+
+                      
+  other-modules:
+                      Text.HTML.Moe.Backend.DList
+                      
+                      

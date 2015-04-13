@@ -1,0 +1,26 @@
+Name:                wai-router
+Version:             1.0.0.0
+Synopsis:            Provides basic routing on URL paths for WAI.
+Description:         Simple routing based on a URL path pieces mapped to web applications.
+License:             MIT
+License-file:        LICENSE
+Author:              Marek Dolgos
+Maintainer:          mdmarek@gmail.com
+Homepage:            http://github.com/mdmarek/wai-router
+Category:            Web
+Build-Type:          Simple
+Cabal-Version:       >=1.8
+Stability:           Stable
+
+Library
+  Build-Depends:     base >= 4   && < 5
+                   , wai  >= 1.0 && < 1.3
+                   , text >= 0.7 && < 0.12
+
+  Exposed-modules:   Network.Wai.Middleware.Router
+
+  ghc-options:       -Wall
+
+source-repository head
+  type:     git
+  location: git://github.com/mdmarek/wai-router.git

@@ -1,0 +1,27 @@
+name:                casui
+version:             0.3
+stability:           experimental
+synopsis:            Equation Manipulator
+description:         Interactive user interface for computer algebra systems
+category:            Math
+license:             MIT
+license-file:        LICENSE
+author:              Etienne Laurin
+maintainer:          Etienne Laurin <etienne@atnnn.com>
+homepage:            http://code.atnnn.com/projects/casui
+bug-reports:         http://code.atnnn.com/projects/casui/issues/new
+cabal-version:       >= 1.6
+build-type:          Simple
+data-dir:            data/
+data-files:          *.cui
+tested-with:         GHC ==7.0.3
+extra-source-files:  Casui/*.hs
+
+executable casui
+  main-is:             Casui/Gui.hs
+  build-depends:       base > 3, base < 5, parsec >= 3, gtk, haskell98, mtl
+  --ghc-options:         -Wall
+
+source-repository head
+  type: darcs
+  location: http://code.atnnn.com/darcs/casui/

@@ -1,0 +1,63 @@
+name:                Strafunski-Sdf2Haskell
+version:             1.0.0.2
+synopsis:            Converts SDF to Haskell
+description:         Generates code for using SDF grammars in Haskell. See <http://www.syntax-definition.org/> for more information about SDF.
+category:            Language
+license:             BSD3
+license-file:        LICENSE
+-- For contributors & what they did, see AUTHORS
+author:              Ralf Laemmel, Joost Visser
+maintainer:          darmanithird@gmail.com
+
+Cabal-Version: >= 1.8
+build-type:   Simple
+data-files:   AUTHORS, ChangeLog, README
+
+source-repository head
+  type:       git
+  location:   https://github.com/jkoppel/Strafunski-Sdf2Haskell
+
+--extra-source-files:
+
+executable Sdf2Haskell
+
+    Extensions:
+      Rank2Types,
+      TypeSynonymInstances,
+      FlexibleInstances,
+      FlexibleContexts,
+      DeriveDataTypeable,
+      ScopedTypeVariables,
+      IncoherentInstances
+
+    build-depends:  base <= 4.6.0.1,
+                    Strafunski-ATermLib<=1.6.1,
+                    template-haskell,
+                    pretty <= 1.1.1.0,
+                    mtl <= 2.1.2,
+                    Strafunski-StrategyLib <= 5.0.1,
+                    directory <= 1.2.0.1,
+                    process <= 1.1.0.2,
+                    haskell-src <= 1.0.2
+
+    main-is:        Sdf2Haskell.hs
+    hs-source-dirs: generator
+    other-modules: CFG,
+                   GPP,
+                   HaskellLib,
+                   ImplodePT,
+                   SGLR,
+                   Sdf,
+                   Sdf2Cfg,
+                   Sdf2HaskellUtils,
+                   Sdf2Pretty,
+                   Sdf2Syntax,
+                   SdfCoverage,
+                   SdfEqInstances,
+                   SdfLib,
+                   --SdfMetrics,
+                   SdfOrdInstances,
+                   SdfPP,
+                   SyntaxATermConvertibleInstances
+    ghc-options:    -Wall
+

@@ -1,0 +1,36 @@
+name:                TCache
+version:             0.5.1
+synopsis:            A Transactional data cache with configurable persitence 
+description:         -------------------------------------------------
+-- A Transactional data cache with configurable persitence
+-- The exported methods are documented in the TCache.hs header
+-- See also  http://haskell-web.blogspot.com
+-- (Something like a little Java Hybernate or Rails for Rubi)
+-- Author: Alberto Gómez Corona Nov 2006-2008   agocorona at gmail.com
+-- Language: Haskell
+-- Version: 0.5.1
+-- Terms of use: you can do whatever you want
+-- with this code as long as you keep this notice
+
+-- 10/15/2007 : changes
+-- Default writeResource and delResource for persistence in files
+--     (only keyResource must be defined by the user if use defaults)
+-- Coherent Inserts and deletes
+-- Reduced the number of accesses to the hashtable
+-- hashtable access put outside of the transaction block (takeBlocks) 
+-- faster re-executions in case of rollback
+
+
+
+category:            Middleware
+license:             BSD3
+license-file:        LICENSE
+author:              Alberto Gómez Corona
+maintainer:          agocorona@gmail.com
+Tested-With:         GHC == 6.8.2
+Build-Type:          Simple
+build-Depends:       base,directory >= 1.0, old-time >=1.0
+Cabal-Version:       >= 1.2
+
+exposed-modules:   Data.TCache
+ghc-options:       

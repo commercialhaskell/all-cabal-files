@@ -1,0 +1,26 @@
+name:                     cabal-uninstall
+version:                  0.1.4
+cabal-version:            >= 1.6
+stability:                alpha
+description:              Very simple script to delete a cabal package.
+synopsis:                 Uninstall cabal packages
+license:                  BSD3
+license-file:             LICENSE
+author:                   Jan Christiansen
+maintainer:               Jan Christiansen <j.christiansen@monoid-it.de>
+category:                 Distribution
+build-type:		  Simple
+bug-reports:              https://github.com/plancalculus/cabal-uninstall/issues
+source-repository head
+  type:      git
+  location:  https://github.com/plancalculus/cabal-uninstall.git
+
+executable cabal-uninstall
+  main-is:                  cabal-uninstall.hs
+  ghc-options:              -Wall
+  build-depends:
+    base >= 4 && < 5,
+    filepath,
+    directory,
+    process,
+    mtl

@@ -1,0 +1,45 @@
+Name:          convertible-ascii
+Synopsis:      convertible instances for ascii
+Description:
+    .
+    This package provides convertible instances for ascii:
+    .
+      * <http://hackage.haskell.org/package/convertible-text>
+    .
+      * <http://hackage.haskell.org/package/ascii>
+    .
+Version:       0.1
+License:       PublicDomain
+License-File:  COPYING
+Author:        PHO <pho at cielonegro dot org>
+Maintainer:    PHO <pho at cielonegro dot org>
+Stability:     experimental
+Homepage:      https://github.com/phonohawk/convertible-ascii
+Bug-Reports:   https://github.com/phonohawk/convertible-ascii/issues
+Category:      Data, Failure
+Tested-With:   GHC == 7.0.3
+Cabal-Version: >= 1.6
+Build-Type:    Simple
+Extra-Source-Files:
+    README.rst
+
+Source-Repository head
+    Type: git
+    Location: git://github.com/phonohawk/convertible-ascii.git
+
+Library
+    Build-Depends:
+        ascii                == 0.0.*,
+        base                 == 4.*,
+        base-unicode-symbols == 0.2.*,
+        blaze-builder        == 0.3.*,
+        bytestring           == 0.9.*,
+        convertible-text     == 0.4.*,
+        failure              == 0.1.*,
+        text                 == 0.11.*
+
+    Exposed-Modules:
+        Data.Convertible.Instances.Ascii
+
+    ghc-options:
+        -Wall

@@ -1,0 +1,35 @@
+name:                blaze-svg
+version:             0.1.1
+synopsis:            SVG combinator library
+description:         SVG combinator library
+homepage:            https://github.com/deepakjois/blaze-svg
+license:             BSD3
+license-file:        LICENSE
+author:              Deepak Jois
+maintainer:          deepak.jois@gmail.com
+category:            Graphics
+build-type:          Simple
+cabal-version:       >=1.6
+
+Extra-source-files:
+  Util/Sanitize.hs
+  Util/GenerateSvgCombinators.hs
+
+Library
+  Ghc-Options:       -Wall
+
+  Exposed-modules:
+    Text.Blaze.Svg
+    Text.Blaze.Svg.Internal
+    Text.Blaze.Svg11
+    Text.Blaze.Svg11.Attributes
+
+  Build-depends:
+    base          >= 4  && < 5,
+    mtl           >= 2  && < 3,
+    blaze-html    >= 0.4.3.2 && < 0.5,
+    bytestring    >= 0.9
+
+Source-repository head
+  Type:     git
+  Location: http://github.com/deepakjois/blaze-svg.git

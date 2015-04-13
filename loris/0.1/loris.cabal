@@ -1,0 +1,28 @@
+Name:           loris
+Version:        0.1
+Cabal-Version:  >= 1.6
+Description:    Haskell interface to the Loris toolkit,
+                'http://sourceforge.net/projects/loris/'
+License:        GPL-2
+License-file:   LICENSE
+Author:	        John W. Lato, jwlato@gmail.com
+Maintainer:     John W. Lato, jwlato@gmail.com
+Stability:      experimental
+synopsis:       interface to Loris API
+category:       Sound, Music
+build-type:     Simple
+tested-with:    GHC == 7.0.2
+homepage:       http://www.tiresiaspress.us/haskell/loris
+extra-source-files: 
+
+Library
+ Hs-Source-Dirs:        src
+ build-depends:         base         >=3 && < 5
+ build-tools:           c2hs
+ exposed-modules:       Sound.Loris.Foreign
+ includes:              loris.h
+ extra-libraries:       loris
+
+source-repository head
+  type:     darcs
+  location: http://www.tiresiaspress.us/haskell/loris

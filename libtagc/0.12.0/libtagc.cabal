@@ -1,0 +1,43 @@
+Name:           libtagc
+Version:        0.12.0
+License:        LGPL-2.1
+License-file:   COPYING
+Copyright:      (c) 2010 Andy Stewart
+Author:         Andy Stewart
+Maintainer:     gtk2hs-users@sourceforge.net
+Build-Type:     Custom
+Cabal-Version:  >= 1.6
+Stability:      stable
+homepage:       https://patch-tag.com/r/AndyStewart/libtagc/home
+bug-reports:    http://hackage.haskell.org/trac/gtk2hs/
+Synopsis:       Binding to TagLib C library.
+Description:    TagLib is a library for reading and editing the meta-data of several popular audio formats. 
+                Currently it supports both ID3v1 and ID3v2 for MP3 files, Ogg Vorbis comments and ID3 tags 
+                and Vorbis comments in FLAC, MPC, Speex, WavPack and TrueAudio files.
+Category:       Audio
+Tested-With:    GHC == 6.12.3
+Extra-Source-Files: COPYING
+
+Data-Dir:		demo
+Data-Files:		Main.hs
+                Makefile
+				
+Source-Repository head
+  type:         darcs
+  location:     http://patch-tag.com/r/AndyStewart/libtagc
+
+Library
+        build-depends:  base >= 4 && < 5, 
+                        glib >= 0.12.0 && < 0.13.0,
+                        bytestring
+						
+        exposed-modules:
+          Audio.TagLib.TagLib
+        other-modules:
+
+        extensions: ForeignFunctionInterface, CPP
+		
+        include-dirs:   .
+        Extra-libraries: tag_c
+        x-c2hs-Header:  taglib/tag_c.h
+        pkgconfig-depends: taglib_c

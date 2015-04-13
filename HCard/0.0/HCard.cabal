@@ -1,0 +1,34 @@
+Name:                   HCard
+Version:                0.0
+Synopsis:               A library for implementing a Deck of Cards
+Description:            HCard provides a standard interface to a deck of cards -- providing shuffling, permutation irrelevant equality of hands, etc. 
+Homepage:               http://patch-tag.com/publicrepos/HCard
+Package-Url:            http://patch-tag.com/publicrepos/HCard
+Category:               Game 
+License:                BSD3
+License-file:           LICENSE
+Author:                 Joe Fredette
+Maintainer:             jfredett@gmail.com
+Build-Type:             Simple
+Cabal-Version:          >=1.6
+
+Library
+        Build-Depends:          base,
+                                random-shuffle >= 0.0.2,
+                                mtl >= 1.1.0.2, 
+                                random >= 1.0.0.1,
+                                QuickCheck >= 2.1.0.1
+                                
+
+        Exposed-Modules:        Data.HCard,
+                                Data.HCard.Instances,
+                                Data.HCard.Examples
+
+        Other-Modules:          Data.HCard.Card,
+                                Data.HCard.Deck,
+                                Data.HCard.Hand,
+                                Data.HCard.Misc,
+                                Data.HCard.Instances.Classic,
+                                Data.HCard.Test.Test,
+                                Data.HCard.Examples.Cribbage
+

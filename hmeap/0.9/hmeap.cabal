@@ -1,0 +1,59 @@
+Name:              hmeap
+Version:           0.9
+Synopsis:          Haskell Meapsoft Parser
+Description:       Parser for the anaylsis files produced by the
+                   Meapsoft feature extractor.
+License:           GPL
+Category:          Sound
+Copyright:         Rohan Drape and others, 2007-2011
+Author:            Rohan Drape
+Maintainer:        rd@slavepianos.org
+Stability:         Experimental
+Homepage:          http://slavepianos.org/rd/?t=hmeap
+Tested-With:       GHC == 6.12.1
+Build-Type:        Simple
+Cabal-Version:     >= 1.8
+
+Data-files:        README
+                   sh/extract.sh
+
+Library
+  Build-Depends:   array,
+                   base == 4.*,
+                   bytestring,
+                   bytestring-lexing,
+                   delimited-text >= 0.1.0,
+                   parsec
+  GHC-Options:     -Wall -fwarn-tabs
+  Exposed-modules: Sound.Analysis.Meapsoft
+                   Sound.Analysis.Meapsoft.Measure
+                   Sound.Analysis.Meapsoft.Header
+                   Sound.Analysis.Meapsoft.Data
+
+Executable         hmeap-browse
+ Main-Is:          cmd/browse.hs
+ Build-Depends:    array,base==4.*,bytestring,bytestring-lexing,delimited-text >= 0.1.0,hmeap==0.9,parsec
+
+Executable         hmeap-parser
+ Main-Is:          cmd/parser.hs
+ Build-Depends:    array,base==4.*,bytestring,bytestring-lexing,delimited-text >= 0.1.0,hmeap==0.9,parsec
+
+Executable         hmeap-play
+ Main-Is:          cmd/play.hs
+ Build-Depends:    array,base==4.*,bytestring,bytestring-lexing,delimited-text >= 0.1.0,hmeap==0.9,hosc==0.9,hsc3==0.9,parsec
+
+Executable         hmeap-plot
+ Main-Is:          cmd/plot.hs
+ Build-Depends:    array,base==4.*,bytestring,bytestring-lexing,delimited-text >= 0.1.0,gnuplot,hmatrix,hmeap==0.9,parsec
+
+Executable         hmeap-stat
+ Main-Is:          cmd/stat.hs
+ Build-Depends:    array,base==4.*,bytestring,bytestring-lexing,delimited-text >= 0.1.0,hmatrix,hmeap==0.9,parsec
+
+Source-Repository  head
+  Type:            darcs
+  Location:        http://slavepianos.org/rd/sw/hmeap
+
+-- Local Variables:
+-- truncate-lines:t
+-- End:

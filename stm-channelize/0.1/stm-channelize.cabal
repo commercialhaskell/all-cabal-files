@@ -1,0 +1,29 @@
+name:                stm-channelize
+version:             0.1
+synopsis:            Transactional I/O for duplex streams
+description:
+    Turn I/O operations into STM transactions on channels.
+
+license:             BSD3
+license-file:        LICENSE
+author:              Joey Adams
+maintainer:          joeyadams3.14159@gmail.com
+copyright:           Copyright (c) Joseph Adams 2012
+category:            Concurrency
+build-type:          Simple
+cabal-version:       >=1.8
+
+extra-source-files:
+    examples/chat-server.hs
+    examples/chat-client.hs
+
+source-repository head
+    type:       git
+    location:   git://github.com/joeyadams/haskell-stm-channelize.git
+
+library
+    exposed-modules:    Control.Concurrent.STM.Channelize
+    build-depends:      base >= 4.3 && < 5
+                      , stm
+    ghc-options:        -Wall -fno-warn-unused-imports
+    other-extensions:   CPP, DeriveDataTypeable

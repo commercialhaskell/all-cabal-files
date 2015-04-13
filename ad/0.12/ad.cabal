@@ -1,0 +1,37 @@
+Name:         ad
+Version:      0.12
+License:      BSD3
+License-File: LICENSE
+Copyright:    Edward Kmett 2010
+Author:       Edward Kmett 2010
+Maintainer:   ekmett@gmail.com
+Stability:    Experimental
+Category:     Math
+Homepage:     http://comonad.com/reader/
+Synopsis:     Mixed-Mode Automatic Differentiation.
+Description:  Forward, reverse, and higher-order automatic differentiation with a common API
+
+Build-Type:   Simple
+Build-Depends:       
+    base >= 4 && < 5,
+    data-reify >= 0.5 && < 0.6, 
+    containers >= 0.2 && < 0.4,
+    template-haskell >= 2.4 && < 2.5,
+    array >= 0.2 && < 0.4
+
+Exposed-Modules:
+    Numeric.AD
+    Numeric.AD.Forward
+    Numeric.AD.Reverse
+    Numeric.AD.Tower
+    Numeric.AD.Directed
+    Numeric.AD.Newton
+    Numeric.AD.Classes
+    Numeric.AD.Internal
+    Numeric.AD.Internal.Forward
+    Numeric.AD.Internal.Reverse
+    Numeric.AD.Internal.Tower
+
+Extra-Source-Files: TODO
+
+GHC-Options: -Wall

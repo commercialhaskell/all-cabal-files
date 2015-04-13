@@ -1,0 +1,32 @@
+Name:                slidemews
+Version:             0.3
+Synopsis:            ws convert markdown to reveal-js
+Description:         Simple WebService to convert markdown to reveal-js | https://github.com/j4/slidemews
+License:             GPL
+Author:              Jean-Alexandre Peyroux
+Maintainer:          m@j4.pe
+Stability:           Experimental
+Category:            Web
+Build-type:          Simple
+Cabal-version:       >=1.2
+
+Executable slidemews
+  hs-source-dirs: src
+  main-is: Main.hs
+
+  Build-depends:
+    base                      >= 4     && < 5,
+    bytestring                >= 0.9.1 && < 0.11,
+    MonadCatchIO-transformers >= 0.2.1 && < 0.4,
+    mtl                       >= 2     && < 3,
+    snap-core                 >= 0.9   && < 0.11,
+    snap-server               >= 0.9   && < 0.11,
+    aeson		      >= 0.7,
+    pandoc		      >= 1.12,
+    utf8-string		      >= 0.3
+
+  if impl(ghc >= 6.12.0)
+    ghc-options: -threaded -Wall -fwarn-tabs -funbox-strict-fields 
+                 -fno-warn-unused-do-bind
+  else
+    ghc-options: -threaded -Wall -fwarn-tabs -funbox-strict-fields 

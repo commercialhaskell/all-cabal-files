@@ -1,0 +1,46 @@
+Name: network-dns
+Version: 1.0.0.1
+Category: Network
+Stability: experimental
+Synopsis: Domain Name System data structures
+Description:
+  This package provides Domain Name System data structures and
+  (de)serialization routines.
+
+Homepage: https://github.com/mvv/network-dns
+Bug-Reports: https://github.com/mvv/network-dns/issues
+
+Author: Mikhail Vorozhtsov <mikhail.vorozhtsov@gmail.com>
+Maintainer: Mikhail Vorozhtsov <mikhail.vorozhtsov@gmail.com>
+Copyright: 2013 Mikhail Vorozhtsov <mikhail.vorozhtsov@gmail.com>
+License: BSD3
+License-File: LICENSE
+
+Extra-Source-Files: examples/Resolver.hs
+
+Cabal-Version: >= 1.10.0
+Build-Type: Simple
+
+Source-Repository head
+  Type: git
+  Location: https://github.com/mvv/network-dns.git
+
+Library
+  Default-Language: Haskell2010
+  Build-Depends:
+    base         >= 4.3 && < 5,
+    tagged       >= 0.2,
+    hashable     >= 1.1,
+    containers   >= 0.4,
+    binary       >= 0.5,
+    cereal       >= 0.3,
+    bytestring   >= 0.10,
+    text-latin1  >= 0.2,
+    text-printer >= 0.3,
+    data-textual >= 0.1,
+    parsers      >= 0.5,
+    network-ip   >= 0.2
+  Hs-Source-Dirs: src
+  GHC-Options: -Wall
+  Exposed-Modules:
+    Network.DNS

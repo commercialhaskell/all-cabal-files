@@ -1,0 +1,70 @@
+name:       SHA
+category:   Cryptography, Codec
+version:    1.2.1
+license:    BSD3
+license-file: LICENSE
+author:     Adam Wick <awick@galois.com>
+maintainer: Adam Wick <awick@galois.com>
+stability:  stable
+build-type: Simple
+cabal-version: >= 1.6
+tested-with: GHC ==6.8.0
+synopsis: Implementations of the SHA suite of message digest functions
+description: This library implements the SHA suite of message digest functions,
+             according to NIST FIPS 180-2 (with the SHA-224 addendum). The
+             functions have been tested against most of the NIST test vectors
+             for the various functions. While some attention has been paid to
+             performance, these do not presently reach the speed of
+             well-tuned libraries, like OpenSSL.
+
+Flag Test
+ Description: Build the SHA test suite.
+ Default: False
+
+Flag exe
+ Description: Build a SHA2-384 executable similar to 'md5sum'
+ Default: False
+
+Library
+ build-depends: base >= 3, bytestring, binary, array
+ exposed-modules: Data.Digest.Pure.SHA
+ GHC-Options: -O2 -Wall -fno-ignore-asserts -funbox-strict-fields -fwarn-tabs
+ extensions: CPP, BangPatterns
+
+Executable test_sha
+  build-depends: base >= 3, bytestring, binary, array
+  GHC-Options: -O2 -Wall -fno-ignore-asserts -fno-warn-orphans -funbox-strict-fields -fwarn-tabs
+  cpp-options: -DSHA_TEST
+  Main-Is: Test.hs
+  Other-Modules: Data.Digest.Pure.SHA
+  extensions: CPP, BangPatterns
+  if !flag(test)
+    buildable: False
+  else
+    build-depends: QuickCheck == 2.*
+
+Executable sha1
+  build-depends: base >= 3, bytestring, binary, array
+  GHC-Options: -O2 -Wall -fno-ignore-asserts -funbox-strict-fields -fwarn-tabs
+  Main-Is: Main.hs
+  extensions: CPP, BangPatterns
+  cpp-options: -DALGORITHM=sha1
+  if !flag(exe)
+    buildable: False
+  else
+    build-depends: directory
+
+Executable sha384
+  build-depends: base >= 3, bytestring, binary, array
+  GHC-Options: -O2 -Wall -fno-ignore-asserts -funbox-strict-fields -fwarn-tabs
+  Main-Is: Main.hs
+  extensions: CPP, BangPatterns
+  cpp-options: -DALGORITHM=sha384
+  if !flag(exe)
+    buildable: False
+  else
+    build-depends: directory
+
+source-repository head
+  type:     git
+  location: git://code.haskell.org/SHA.git

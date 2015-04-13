@@ -1,0 +1,25 @@
+name:                lojban
+version:             0.2
+synopsis:            Useful utilities for the Lojban language
+description:         Some utilities such as querying Jbovlaste XML 
+                     exports for gismu, gloss, rafsi, etc. and 
+                     lujvo-decomposition. More stuff to come.
+category:            Language
+license:             BSD3
+license-file:        LICENSE
+author:              Chris Done <chrisdone@gmail.com>
+maintainer:          chrisdone@gmail.com
+build-Depends:       base
+cabal-Version:       >= 1.2
+build-type:          Simple
+
+library
+  build-depends: base,xml,strict,parsec,process,regex-compat,containers,tagsoup,HTTP,curl,random,directory,markov-chain
+  exposed-modules: Language.Lojban.Jbovlaste,Language.Lojban.Lujvo,Language.Lojban.Util,Language.Lojban.CLL,Language.Lojban.Jbobau,Language.Lojban.Mlismu,Language.Lojban.Camxes.Parse
+  other-modules: WildCard, Utils
+  ghc-options: -O2
+
+executable jbovlastegendb
+  build-depends: haskell98
+  main-is: GenDB.hs
+  ghc-options: -O2

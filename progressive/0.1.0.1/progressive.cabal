@@ -1,0 +1,21 @@
+name:                progressive
+version:             0.1.0.1
+synopsis:            Multilabel classification model which learns sequentially (online).
+description:         Progressive is a multilabel classification model which learns
+                     sequentially (online). The set of labels need not be known in advance:
+                     the learner keeps a constantly updated set of top N most frequent
+                     labels seen so far and predicts labels from this set.
+homepage:            https://bitbucket.org/gchrupala/progression
+license:             BSD3
+license-file:        LICENSE
+author:              Grzegorz Chrupała
+maintainer:          Grzegorz Chrupała <g.chrupala@uvt.nl>
+build-type:          Simple
+cabal-version:       >=1.8
+
+executable progressive
+  main-is:	       progressive.hs             
+  build-depends:       base ==4.*, containers ==0.5.*, text ==0.11.*, directory ==1.*,
+                       filepath ==1.3.*, binary ==0.7.*, bytestring ==0.10.*, 
+                       process ==1.1.*, ghc-prim
+  hs-source-dirs:      src

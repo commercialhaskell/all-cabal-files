@@ -1,0 +1,36 @@
+Name:               nntp
+Version:            0.0.4
+Cabal-Version:      >= 1.6
+Build-Type:         Simple
+License:            LGPL
+License-File:       LICENSE
+Author:             Maciej Piechotka
+Maintainer:         uzytkownik2@gmail.com
+Stability:          none
+Copyright:          (c) 2009 Maciej Piechotka
+Synopsis:           Library to connect to an NNTP Server
+Description:        This library allows to connect to NNTP server.
+Category:           Network
+
+Source-Repository head
+  Type:             darcs
+  Location:         http://code.haskell.org/nntp
+
+Library
+  Exposed-Modules: Network.NNTP,
+                   Network.NNTP.Common,
+                   Network.NNTP.Core,
+                   Network.NNTP.Internal,
+                   Network.NNTP.Internal.Article,
+                   Network.NNTP.Internal.Group,
+                   Network.NNTP.ParserHelpers
+  Build-Depends:   base < 5 && >= 4,
+                   bytestring,
+                   monad-loops,
+                   mtl == 2.*,
+                   network,
+                   old-locale,
+                   parsec == 3.*,
+                   time
+  HS-Source-Dirs:  src
+  GHC-Options:     -Wall

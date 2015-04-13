@@ -1,0 +1,43 @@
+cabal-version: >= 1.6
+
+name: countable
+version: 0.1
+
+license: BSD3
+license-file: LICENSE
+copyright: Ashley Yakeley <ashley@semantic.org>
+maintainer: Ashley Yakeley <ashley@semantic.org>
+author: Ashley Yakeley <ashley@semantic.org>
+category: Data
+synopsis: Countable, Searchable, Finite, Empty classes
+description:
+ * @class Countable@, for countable types
+ .
+ * @class AtLeastOneCountable@, for countable types that have at least one value
+ .
+ * @class InfiniteCountable@, for infinite countable types
+ .
+ * @class Searchable@, for types that can be searched over. This turns out to include some infinite types, see <http://math.andrej.com/2007/09/28/seemingly-impossible-functional-programs/>.
+ .
+ * @class Finite@, for finite types
+ .
+ * @class Empty@, for empty types
+ .
+ * @data Nothing@, an empty type
+ .
+ Some orphan instances:
+ .
+ * @(Searchable a,Eq b) => Eq (a -> b)@ / /
+ .
+ * @(Finite t) => Foldable ((->) t)@ / /
+ .
+ * @(Finite a) => Traversable ((->) a)@ / /
+ .
+ * @(Show a,Finite a,Show b) => Show (a -> b)@ / /
+
+build-type: Simple
+build-depends: base == 4.*
+extensions: EmptyDataDecls ExistentialQuantification
+hs-source-dirs: src
+ghc-options: -Wall
+exposed-modules: Data.Searchable Data.Countable Data.Empty

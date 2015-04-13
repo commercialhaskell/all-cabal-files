@@ -1,0 +1,76 @@
+name:          libstackexchange
+version:       0.1.0.0
+synopsis:      StackExchange API interface
+description:   Provides interface for StackExchange v2.1 API
+homepage:      https://github.com/supki/libstackexchange
+license:       MIT
+license-file:  LICENSE
+author:        Matvey Aksenov, Dmitry Malikov
+maintainer:    matvey.aksenov@gmail.com
+category:      NetworkAPIs
+build-type:    Simple
+cabal-version: >= 1.8
+
+flag enable-examples
+  default: False
+flag enable-doctests
+  default: False
+
+library
+  build-depends: base >= 4.6 && < 5,
+                 bytestring,
+                 containers,
+                 data-default,
+                 attoparsec,
+                 text,
+                 aeson,
+                 http-conduit,
+                 lens >= 3.0.4
+  hs-source-dirs: src
+  exposed-modules: Network.StackExchange
+                   Network.StackExchange.API
+                   Network.StackExchange.Auth
+                   Network.StackExchange.Request
+                   Network.StackExchange.Response
+  ghc-options: -Wall
+               -fno-warn-unused-do-bind
+
+test-suite aeson-lens
+  build-depends: base >= 4.6,
+                 template-haskell,
+                 bytestring,
+                 attoparsec,
+                 aeson,
+                 lens,
+                 HUnit,
+                 libstackexchange
+  type: exitcode-stdio-1.0
+  main-is: Main.hs
+  hs-source-dirs: tests/aeson-lens
+  other-modules: TH
+  ghc-options: -Wall
+               -fno-warn-unused-do-bind
+
+test-suite request
+  build-depends: base >= 4.6,
+                 containers,
+                 text,
+                 QuickCheck,
+                 libstackexchange
+  type: exitcode-stdio-1.0
+  main-is: Main.hs
+  hs-source-dirs: tests/request
+  ghc-options: -Wall
+               -fno-warn-unused-do-bind
+
+test-suite api
+  build-depends: base >= 4.6,
+                 doctest >= 0.8,
+                 http-conduit,
+                 libstackexchange
+  if !flag(enable-doctests)
+    buildable: False
+  type:          exitcode-stdio-1.0
+  main-is: doctests.hs
+  ghc-options: -Wall
+               -fno-warn-unused-do-bind

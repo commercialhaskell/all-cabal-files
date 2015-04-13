@@ -1,0 +1,16 @@
+Name:                getflag
+Version:             1.0
+Synopsis:            Command-line parser.
+Description:
+   This package implements parsing of Plan 9-style command line flags.
+License:             MIT
+License-file:        LICENSE
+category:            Parsing
+Author:              Troels Henriksen
+Maintainer:          athas@sigkill.dk
+Build-Depends:       base
+Exposed-modules:     System.Console.GetFlag
+cabal-version:       >= 1.6
+build-type:          Simple
+build-depends:       base==4.*
+ghc-options:         -Wall

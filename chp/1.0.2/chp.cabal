@@ -1,0 +1,55 @@
+Name:            chp
+Version:         1.0.2
+Synopsis:        An implementation of concurrency ideas from Communicating Sequential Processes
+License:         BSD3
+License-file:    LICENSE
+Author:          Neil Brown
+Maintainer:      neil@twistedsquare.com
+Copyright:       Copyright (c) 2008, University of Kent
+Stability:       Provisional
+Tested-with:     GHC==6.8.2
+Description:     The Communicating Haskell Processes (CHP) library is an
+                 implementation of ideas from Hoare's Communicating
+		 Sequential Processes.  More details and a tutorial can be
+		 found at its homepage:
+		 <http://www.cs.kent.ac.uk/projects/ofa/chp/>
+                 The library requires at least GHC 6.8.1.
+Homepage:        http://www.cs.kent.ac.uk/projects/ofa/chp/
+Category:        Concurrency
+
+Build-Type:      Simple
+Build-Depends:   base, containers, mtl, parallel, pretty, stm
+
+Exposed-modules: Control.Concurrent.CHP
+                 Control.Concurrent.CHP.Alt
+                 Control.Concurrent.CHP.Arrow
+                 Control.Concurrent.CHP.Barriers
+                 Control.Concurrent.CHP.BroadcastChannels
+                 Control.Concurrent.CHP.Buffers
+                 Control.Concurrent.CHP.Channels
+                 Control.Concurrent.CHP.Common
+                 Control.Concurrent.CHP.Console
+                 Control.Concurrent.CHP.Enroll
+                 Control.Concurrent.CHP.Monad
+                 Control.Concurrent.CHP.Parallel
+                 Control.Concurrent.CHP.Traces 
+                 Control.Concurrent.CHP.Traces.CSP
+                 Control.Concurrent.CHP.Traces.Structural
+                 Control.Concurrent.CHP.Traces.TraceOff
+                 Control.Concurrent.CHP.Traces.VCR
+                 Control.Concurrent.CHP.Utils
+
+Other-modules:   Control.Concurrent.CHP.Base
+                 Control.Concurrent.CHP.CSP
+                 Control.Concurrent.CHP.Event
+                 Control.Concurrent.CHP.Guard
+                 Control.Concurrent.CHP.Mutex
+                 Control.Concurrent.CHP.Poison
+                 Control.Concurrent.CHP.ProcessId
+                 Control.Concurrent.CHP.Traces.Base
+
+Extensions:      ScopedTypeVariables MultiParamTypeClasses
+                 FlexibleInstances UndecidableInstances
+                 GeneralizedNewtypeDeriving
+
+GHC-Options:     -Wall -threaded -O2

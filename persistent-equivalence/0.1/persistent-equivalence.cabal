@@ -1,0 +1,27 @@
+Name:                persistent-equivalence
+Version:             0.1
+Synopsis:            Persistent equivalence relations (aka union-find)
+Description:         This is a semi-persistent data structure for equivalence
+                     relations (known in the imperative world as union-find
+                     or disjoint set union).  It exhibits optimal performance
+                     when used in a linear pattern, but degrades when other
+                     access patterns are used.
+                     .
+                     The basic idea is as given by Conchon and Filliatre in
+                     their 2007 paper "A persistent union-find data structure."
+                     Unlike the implementation given in the paper, this version
+                     is safe with multiple threads, but does not optimize
+                     for backtracking.
+License:             BSD3
+License-file:        LICENSE
+Author:              Chris Smith <cdsmith@gmail.com>
+Maintainer:          Chris Smith <cdsmith@gmail.com>
+Category:            Data
+Build-type:          Simple
+Cabal-version:       >=1.6
+
+Library
+  Exposed-modules:   Data.Equivalence.Persistent
+  Build-depends:     base >= 3 && < 5,
+                     array == 0.3.*,
+                     diffarray == 0.1.*

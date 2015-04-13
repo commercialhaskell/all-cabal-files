@@ -1,0 +1,23 @@
+Name:                EnumContainers
+Version:             0.1
+Synopsis:            Simple Enum-class-based int containers
+License:             BSD3
+License-file:        LICENSE
+Author:              Eyal Lotem
+Maintainer:          eyal.lotem@gmail.com
+Category:            Data
+Build-type:          Simple
+-- Extra-source-files:
+Cabal-version:       >=1.2
+
+Library
+  hs-source-dirs:  src
+  Exposed-modules: Data.EnumIntMap,
+                   Data.EnumIntSet
+  Build-depends:   base >= 4 && < 5, containers >= 0.3 && < 0.4, deepseq >= 1.1 && < 1.2
+
+  -- Modules not exported by this package.
+  -- Other-modules:
+
+  -- Extra tools (e.g. alex, hsc2hs, ...) needed to build the source.
+  -- Build-tools:

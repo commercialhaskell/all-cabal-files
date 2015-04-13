@@ -1,0 +1,40 @@
+Name:                   cabal-macosx
+Version:                0.1.0
+Stability:              Alpha
+Synopsis:               Cabal support for creating Mac OSX application bundles.
+Description:
+
+    GUI applications on Mac OSX must be run as application /bundles/;
+    these wrap an executable in a particular directory structure which
+    can also carry resources such as icons, program metadata, other
+    binaries, and copies of shared libraries.
+
+    This package provides Cabal support for creating such application
+    bundles.
+
+    For more information about OSX application bundles, look for the
+    /Bundle Programming Guide/ on the /Apple Developer Connection/
+    website, <http://developer.apple.com/>.
+
+Category:               Distribution
+License:                BSD3
+License-file:           LICENSE
+Copyright:              Eric Kow & Andy Gimblett
+Author:                 Eric Kow <eric.kow@gmail.com> & Andy Gimblett <haskell@gimbo.org.uk>
+Maintainer:             Andy Gimblett <haskell@gimbo.org.uk>
+Homepage:               http://github.com/gimbo/cabal-macosx
+Build-Type:             Simple
+Cabal-Version:          >=1.6
+
+Source-Repository head
+    Type:         git
+    Location:     http://github.com/gimbo/cabal-macosx
+
+Library
+  Build-Depends:   base >= 4 && < 5, Cabal >= 1.6, directory, fgl,
+                   filepath, MissingH, parsec, process
+  Exposed-modules: Distribution.MacOSX
+  Other-modules:   Distribution.MacOSX.Common,
+                   Distribution.MacOSX.Dependencies,
+                   Distribution.MacOSX.DG
+  ghc-options:     -fwarn-tabs -Wall

@@ -1,0 +1,49 @@
+Name:            multifocal
+Version:         0.0.1
+License:         BSD3
+License-file:    LICENSE
+Author:          Hugo Pacheco <hpacheco@di.uminho.pt>, Alcino Cunha <alcino@di.uminho.pt>
+Maintainer:      Hugo Pacheco <hpacheco@di.uminho.pt>
+Synopsis:        Bidirectional Two-level Transformation of XML Schemas
+Description:	 Library that implements a two-level transformation (<http://dx.doi.org/10.1007/978-3-540-69611-7_19>) for creating bidirectional views of XML Schemas based on bidirectional lenses. It supports the specialization of generic queries as two-level transformation steps and the optimization of the generated lens data transformations.
+	
+Homepage:        
+
+Category: Generics
+
+extra-source-files: README, src/Language/TLT/TltLexer.x, src/Language/TLT/TltParser.y
+                  , examples/company.xsd, examples/company.xml, examples/imdb.xsd, examples/imdb.xml, examples/imdb2mod.xml
+                  , examples/company.2lt, examples/imdb.2lt
+
+Build-type: Simple
+Cabal-Version:  >= 1.4
+
+Library
+  hs-source-dirs: src
+  Build-Depends: mtl >= 1, base >= 4 && < 5, pointless-haskell >= 0.0.8, pointless-lenses >= 0.0.9, pointless-rewrite >= 0.0.3, process, containers, haskell-src-exts >= 1.11.1, syb >= 0.3, hxt >= 9.1.5, hxt-xpath >= 9.1.1, parsec >= 3.1.2, array, pretty >= 1.1.0.0, HaXml >= 1.22.5
+
+  exposed-modules:
+    Data.Transform.TwoLevel
+    Language.TLT.Tlt2Strat
+    Language.TLT.TltLexer
+    Language.TLT.TltParser
+    Language.TLT.TltSyntax
+    Language.XML.HaXmlAliases
+    Language.XML.Type2Xml
+    Language.XML.Type2Xsd
+    Language.XML.Xml2Type
+    Language.XML.Xsd2Type
+    Language.XPath.HXTAliases
+    Language.XPath.XPath2Pf
+    UI.GenHaskell
+    UI.Menu
+    UI.LensMenu
+  extensions: DeriveDataTypeable, TypeOperators, ImpredicativeTypes, FlexibleContexts, RankNTypes, ViewPatterns, ScopedTypeVariables, GADTs, TypeFamilies, ViewPatterns, DoAndIfThenElse
+  
+Executable multifocal
+  hs-source-dirs: src
+  Main-is:    UI/CmdLine.hs
+
+  Build-Depends: mtl >= 1, base >= 4 && < 5, pointless-haskell >= 0.0.6, pointless-lenses >= 0.0.8, pointless-rewrite >= 0.0.3, process, containers, haskell-src-exts >= 1.11.1, syb >= 0.3, hxt >= 9.1.5, hxt-xpath >= 9.1.1, parsec >= 3.1.2, array, pretty >= 1.1.0.0, HaXml >= 1.22.5
+
+  extensions: DeriveDataTypeable, TypeOperators, ImpredicativeTypes, FlexibleContexts, RankNTypes, ViewPatterns, ScopedTypeVariables, GADTs, TypeFamilies, ViewPatterns, DoAndIfThenElse

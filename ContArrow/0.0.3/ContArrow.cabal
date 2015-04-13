@@ -1,0 +1,21 @@
+Name:            ContArrow
+Version:         0.0.3
+License:         LGPL
+Maintainer:      Evgeny Jukov <masloed@gmail.com>
+Author:          Evgeny Jukov
+Stability:       Alpha
+Build-Type:      Simple
+Copyright:       Copyright (c) 2007, 2008 Evgeny Jukov
+license-file:    LICENSE
+
+Homepage:        http://macode.sourceforge.net/ContArrow
+Synopsis:        Control.Arrow.Transformer.Cont
+description:     A library providing Control.Arrow.Transformer.Cont
+Category:        Control
+
+Hs-Source-Dirs:  src
+Exposed-Modules: Control.Arrow.Transformer.Cont
+Tested-With:     GHC
+Build-Depends:   base, arrows
+Extensions:      FlexibleInstances, MultiParamTypeClasses
+GHC-Options:     -O2 -Wall -Werror

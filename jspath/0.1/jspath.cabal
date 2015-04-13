@@ -1,0 +1,26 @@
+name:                jspath
+version:             0.1
+license:             BSD3
+license-file:        LICENSE
+synopsis:            Extract substructures from JSON by following a path.
+category:            Text
+author:              Keegan McAllister <mcallister.keegan@gmail.com>
+maintainer:          Keegan McAllister <mcallister.keegan@gmail.com>
+build-type:          Simple
+cabal-version:       >=1.2
+description:
+  Use this library to extract substructures from JSON structures by following a
+  path.  Path components can select elements by key or index, map over arrays,
+  or invoke user-specified functions.  Works with JSONb types.
+  .
+  Suggestions and patches are welcome.
+
+library
+  exposed-modules:   Text.JSONb.Path
+  ghc-options:       -Wall
+  build-depends:
+      base            >= 3 && < 5
+    , JSONb           >= 1.0
+    , utf8-string     >= 0.3
+    , bytestring      >= 0.9
+    , bytestring-trie >= 0.1.4

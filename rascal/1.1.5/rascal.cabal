@@ -1,0 +1,51 @@
+name:                rascal
+
+-- PVP summary:      +-+------- breaking API changes
+--                   | | +----- non-breaking API additions
+--                   | | | +--- code changes with no API change
+version:             1.1.5
+synopsis:            A command-line client for Reddit
+description:         Rascal is a command-line client for Reddit with colors,
+                     configurable sorting, threaded comments, and some day
+                     most of Reddit's API available.
+license:             MIT
+license-file:        LICENSE
+author:              Sylvain Soliman
+maintainer:          Sylvain.Soliman@gmail.com
+category:            Web
+build-type:          Simple
+extra-source-files:  README.md, screenshot.png, threads.png
+cabal-version:       >=1.10
+stability:           experimental
+homepage:            http://soli.github.io/rascal/
+
+source-repository this
+  type:              git
+  location:          git://github.com/soli/rascal.git
+  tag:               v1.1.5
+
+source-repository head
+  type:              git
+  location:          git://github.com/soli/rascal.git
+
+executable rascal
+  hs-source-dirs:    src
+  main-is:           Main.hs
+  other-modules:     Paths_rascal, Rascal.Utils, Rascal.Conf, Rascal.Types
+                   , Rascal.Constants
+  ghc-options:       -Wall
+  build-depends:     base >=4.6 && <4.7, curl-aeson, curl, aeson
+                   , process >= 1.2, ansi-terminal, vector
+                   , filepath, directory, containers, mtl
+  default-language:  Haskell2010
+
+test-suite Tests
+  hs-source-dirs:    src
+  main-is:           Test.hs
+  type:              exitcode-stdio-1.0
+  build-depends:     base >=4.6 && <4.7, curl-aeson, curl, aeson
+                   , process >= 1.2, ansi-terminal, vector
+                   , filepath, directory, containers, mtl
+                   , QuickCheck, tasty, tasty-quickcheck
+                   , HUnit, tasty-hunit
+  default-language:  Haskell2010

@@ -1,0 +1,48 @@
+Name:                   nested-routes
+Version:                0.1
+Author:                 Athan Clark <athan.clark@gmail.com>
+Maintainer:             Athan Clark <athan.clark@gmail.com>
+License:                BSD3
+License-File:           LICENSE
+Synopsis:               Declarative, compositional Wai responses
+-- Description:
+Cabal-Version:          >= 1.10
+Build-Type:             Simple
+
+Library
+  Default-Language:     Haskell2010
+  HS-Source-Dirs:       src
+  GHC-Options:          -Wall
+  Exposed-Modules:      Web.Routes.Nested
+                        Web.Routes.Nested.VerbListener
+                        Web.Routes.Nested.FileExtListener
+  Build-Depends:        base >= 4 && < 5
+                      , wai
+                      , wai-extra
+                      , http-types
+                      , mtl
+                      , transformers
+                      , semigroups
+                      , containers
+                      , pseudo-trie >= 0.0.4.2
+                      , text
+                      , aeson
+                      , blaze-html
+                      , lucid
+                      , bytestring
+
+Test-Suite spec
+  Type:                 exitcode-stdio-1.0
+  Default-Language:     Haskell2010
+  Hs-Source-Dirs:       src
+                      , test
+  Ghc-Options:          -Wall
+  Main-Is:              Spec.hs
+  Build-Depends:        base
+                      , hspec
+                      , QuickCheck
+                      , quickcheck-instances
+
+Source-Repository head
+  Type:                 git
+  Location:             git://github.com/athanclark/nested-routes.git

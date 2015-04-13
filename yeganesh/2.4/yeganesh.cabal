@@ -1,0 +1,50 @@
+name:               yeganesh
+version:            2.4
+cabal-version:      >=1.2
+build-type:         Simple
+license:            BSD3
+license-file:       LICENSE
+author:             Daniel Wagner
+maintainer:         daniel@wagner-home.com
+homepage:           http://www.dmwit.com/yeganesh
+synopsis:           small dmenu wrapper
+description:        I get so annoyed when I go to use dmenu, and the three
+                    programs I use every day aren't at the beginning of the
+                    list.  Let's make it so, and automatically!
+category:           Text
+extra-source-files: Catch.hs, Version.hs, Yeganesh.hs
+cabal-version:      >= 1.6
+source-repository head
+    type:           darcs
+    location:       http://dmwit.com/yeganesh
+source-repository this
+    type:           darcs
+    location:       http://dmwit.com/yeganesh
+    tag:            2.4
+
+Executable yeganesh
+    main-is:        main.hs
+    build-depends:  base >= 3 && < 5,
+                    containers >= 0.1,
+                    directory >= 1.0,
+                    filepath >= 1.1,
+                    process >= 1.0,
+                    strict >= 0.3,
+                    time >= 1.1,
+                    unix >= 2.5,
+                    xdg-basedir >= 0.2
+    ghc-options:    -Wall
+    extensions:     CPP
+
+Executable yeganesh-strip
+    main-is:        strip.hs
+    build-depends:  base >= 3 && < 5,
+                    containers >= 0.1,
+                    directory >= 1.0,
+                    filepath >= 1.1,
+                    process >= 1.0,
+                    strict >= 0.3,
+                    time >= 1.1,
+                    unix >= 2.5,
+                    xdg-basedir >= 0.2
+    ghc-options:    -Wall

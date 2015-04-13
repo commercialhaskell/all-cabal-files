@@ -1,0 +1,38 @@
+Name:                bliplib
+Version:             0.2.1
+Synopsis:            Support code for Blip.
+Homepage:            https://github.com/bjpop/blip 
+License:             BSD3
+License-file:        LICENSE
+Author:              Bernie Pope
+Maintainer:          Bernie Pope <florbitous@gmail.com>
+Stability:           Experimental
+category:            Development
+Build-type:          Simple
+Cabal-version:       >=1.8
+Description:         Support code for the Blip compiler. In particular, a library for reading, writing and manipulating Python 3 bytecode files.
+
+source-repository head
+  type: git
+  location: git://github.com/bjpop/blip.git
+
+Library {
+   ghc-options: -Wall -fno-warn-name-shadowing -fno-warn-orphans
+   hs-source-dirs: src
+   exposed-modules:
+      Blip.Bytecode,
+      Blip.Marshal,
+      Blip.MarshalDouble,
+      Blip.Pretty,
+      Blip.Version
+   build-depends:
+      base==4.*,
+      binary==0.7.*,
+      mtl==2.1.*,
+      containers==0.5.*,
+      pretty==1.1.*,
+      bytestring==0.10.*,
+      utf8-string==0.3.*
+   other-modules:
+      Paths_bliplib
+}

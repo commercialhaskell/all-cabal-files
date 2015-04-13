@@ -1,0 +1,55 @@
+Name:                   multipart-names
+Version:                0.0.1
+Author:                 Eric Nedervold<nedervoldsoftware@gmail.com>
+Maintainer:             Eric Nedervold<nedervoldsoftware@gmail.com>
+License:                BSD3
+License-File:           LICENSE
+Stability:              alpha
+Homepage:               http://github.com/nedervold/multipart-names
+Bug-Reports:            http://github.com/nedervold/multipart-names/issues
+Copyright:              (c) 2015 Eric Nedervold
+Synopsis:               Handling of multipart names in various casing styles
+Description:
+
+    Basic utilities to handle multipart names with conversion between
+    casing styles UpperCamelCase, lowerCamelCase,
+    Case_insensitive_Underscored, UPPER_UNDERSCORED, lower_underscored
+    and UPPER-HYPHENATED, Case-insensitive-Hyphenated, and
+    lower-hyphenated.
+
+Cabal-Version:          >= 1.10
+Category:               Data
+Build-Type:             Simple
+Extra-Source-Files:     Makefile
+                      , changelog
+
+Library
+  Default-Language:     Haskell2010
+  HS-Source-Dirs:       src
+  GHC-Options:          -Wall
+  Exposed-Modules:      Text.MultipartNames
+  Other-Modules:        Text.MultipartNames.MultipartName
+                      , Text.MultipartNames.Parsers
+                      , Text.MultipartNames.Show
+  Build-Depends:        base >= 4 && < 5
+                      , case-insensitive == 1.2.*
+                      , lens >= 4
+                      , parsec >= 3.1
+
+Test-Suite test
+  Type:                 exitcode-stdio-1.0
+  Default-Language:     Haskell2010
+  Hs-Source-Dirs:       tests
+  Ghc-Options:          -Wall
+  Main-Is:              Test.hs
+  Other-Modules:        Text.MultipartNamesTests
+  Build-Depends:        base
+                      , HUnit
+                      , multipart-names
+                      , test-framework
+                      , test-framework-hunit
+                      , lens >= 4
+
+Source-Repository head
+  Type:                 git
+  Location:             https://github.com/nedervold/multipart-names.git

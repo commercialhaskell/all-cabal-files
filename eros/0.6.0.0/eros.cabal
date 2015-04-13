@@ -1,0 +1,57 @@
+name:                eros
+version:             0.6.0.0
+synopsis:            A text censorship library.
+description:
+  A Haskell library for censoring text, using
+  <http://contentfilter.futuragts.com/phraselists/ DansGuardian phraselists>.
+  .
+  I converted the phraselists into JSON. You can view the converted phraselists
+  <https://github.com/pharpend/eros/tree/master/res/phraselists-pretty here>.
+  .
+  I recommend looking at the API documentation for 'Text.Eros' if you want an
+  idea of how to use the library.
+  .
+  Changelog
+  .
+  [0.6] - Fixed algorithm, added "flat score" for zero-depth message score.
+
+license:             BSD3
+license-file:        LICENSE
+author:              Peter Harpending
+maintainer:          Peter Harpending <pharpend2@gmail.com>
+copyright:           2014, Peter Harpending.
+category:            Text
+build-type:          Simple
+data-files:
+  res/schemata/*.json
+  res/phraselists-ugly/*.json
+cabal-version:       >=1.10
+extra-source-files:
+  README.md
+  res/schemata/*.json
+  res/phraselists-pretty/*.json
+
+library
+  exposed-modules:
+      Paths_eros
+    , Text.Eros
+    , Text.Eros.Message
+    , Text.Eros.Phrase
+    , Text.Eros.Phraselist
+  other-modules:
+  other-extensions:
+      FlexibleInstances
+    , OverloadedStrings
+  build-depends:
+      aeson      >=0.8  && <0.9
+    , base       >=4.6  && <4.8
+    , bytestring >=0.10 && <0.11
+    , containers >=0.5  && <0.6
+    , text       >=1.1  && <1.2
+  hs-source-dirs:      src/
+  default-language:    Haskell2010
+
+source-repository head
+  type:     git
+  location: https://github.com/pharpend/eros.git
+  branch:   master

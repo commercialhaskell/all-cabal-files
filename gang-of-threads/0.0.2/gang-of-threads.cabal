@@ -1,0 +1,30 @@
+Name:          gang-of-threads
+Version:       0.0.2
+License:       BSD3
+License-File:  LICENSE
+Author:        Bastian Holst <bho@informatik.uni-kiel.de>
+Maintainer:    Bastian Holst <bho@informatik.uni-kiel.de>
+Build-type:    Simple
+Cabal-Version: >= 1.8
+Category:      Parallelism, Control
+Synopsis:      Non-deterministic parallelism with bags
+Description:
+  Package implementing a bag-of-tasks approach to parallelism. This is an
+  approach to non-deterministic parallelism, where non-deterministic means
+  that the order of multiple values from the same set depends on the scheduling.
+
+Library
+  build-depends:
+    base >= 4 && < 5,
+    stm,
+    mtl,
+    containers,
+    transformers
+  
+  exposed-modules:
+    Control.Concurrent.Bag.Task
+    Control.Concurrent.Bag.Basic
+    Control.Concurrent.Bag.Safe
+    Control.Concurrent.Bag.Implicit
+    Control.Concurrent.Bag.TaskBuffer
+    Control.Concurrent.STM.TStack

@@ -1,0 +1,33 @@
+name:		TrieMap
+version:	0.0.1.2
+license:	BSD3
+license-file:	LICENSE
+maintainer:	wasserman.louis@gmail.com
+category:	Data Structures
+synopsis:	An implementation of generalized tries with sophisticated map type inference.
+description:	Generalized trie implementation that automatically infers map types.  Keys must implement the class 'TrieMap.Algebraic.Algebraic', which 
+			declares that they are isomorphic to an /algebraic type/,
+			defined recursively as follows:
+ .
+ * () and 'Int' are algebraic types.
+ .
+ * If @'Ord' a@, then @'Ordered' a@ is an algebraic type.
+ .
+ * If @a,b@ are algebraic types, then so are @(a, b)@ and @Either a b@.
+ .
+ * If @a@ is algebraic, so is @[a]@.
+ .
+ This package exports almost the entire collection of methods available in Data.Map, and several new methods as well.  In addition, each method will automatically infer the correct map type.
+ 
+build-type:	Simple
+build-depends:
+	base >= 4 && <= 5, containers == 0.2.0.1, bytestring
+exposed-modules:
+	TrieMap
+	TrieMap.Algebraic
+other-modules:
+	TrieMap.TrieAlgebraic
+	TrieMap.Applicative
+	TrieMap.Reflection
+	TrieMap.RadixTrie
+	TrieMap.MapTypes

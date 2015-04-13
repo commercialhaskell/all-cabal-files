@@ -1,0 +1,23 @@
+Name:                biofasta
+Version:             0.0.1
+Synopsis:            Library for reading fasta sequence files
+Description:         Library for reading fasta sequence files
+Homepage:	     https://patch-tag.com/r/dfornika/biofasta/home
+License:             GPL
+License-file:        LICENSE
+Cabal-Version:       >=1.6
+Author:              Dan Fornika <dfornika@gmail.com>
+Maintainer:          dfornika@gmail.com
+Stability:	     Provisional
+Category:	     Bioinformatics
+Build-Type:          Simple
+
+Library
+  Build-depends:     base >= 2 && < 5, biocore, bytestring
+  Exposed-modules:   Bio.Sequence.Fasta
+  Hs-source-dirs:    src
+
+source-Repository    head
+  type:		     darcs
+  location:	     http://www.patch-tag.com/r/dfornika/biofasta
+

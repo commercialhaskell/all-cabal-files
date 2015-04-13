@@ -1,0 +1,27 @@
+Name:                buildbox-tools
+Version:             1.5.0.1
+License:             BSD3
+License-file:        LICENSE
+Author:              Ben Lippmeier
+Maintainer:          Ben Lippmeier <benl@ouroborus.net>
+Build-Type:          Simple
+Cabal-Version:       >=1.6
+Stability:           experimental
+Category:            Development, Testing
+Homepage:            http://code.ouroborus.net/buildbox
+Description:
+        Tools for working with buildbox benchmark result files.
+
+Synopsis:
+        Tools for working with buildbox benchmark result files.
+
+Tested-with:
+        GHC == 6.12.1
+
+Executable buildbox-results
+  Build-depends: 
+        base                 == 4.*,
+        buildbox             == 1.5.*,
+        parseargs            == 0.1.3.*
+  Main-is: Main.hs
+  hs-source-dirs: results 

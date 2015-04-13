@@ -1,0 +1,22 @@
+name:		    reflection
+version:	    0.1.0
+license:	    BSD3
+license-file:   LICENSE
+author:		    Oleg Kiselyov and Chung-chieh Shan
+maintainer:	    Edward A. Kmett <ekmett@gmail.com>
+stability:	    experimental
+homepage:	    http://www.cs.rutgers.edu/~ccshan/prepose/prepose.pdf
+category:	    Data
+synopsis:	    Functional Pearl: Implicit Configurations
+copyright:      2009 Edward A. Kmett, 2004 Oleg Kiselyov and Chung-chieh Shan
+description:    Implementation of the code in "Functional Pearl: Implicit Configurations" by Oleg Kiselyov and Chung-chieh Shan
+build-type:     Simple
+cabal-version:  >=1.2
+
+library
+  build-depends: 
+    base >= 4 && < 4.1
+  exposed-modules:
+    Data.Reflection
+    
+  ghc-options: -Wall

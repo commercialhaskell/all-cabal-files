@@ -1,0 +1,26 @@
+Name: hask-home
+Version: 2009.3.18
+Cabal-version: >= 1.6
+Build-type: Simple
+Copyright: Bjorn Bringert 2006
+Maintainer: Greg Heartsfield <scsibug@imap.cc>
+Author: Bjorn Bringert
+Homepage: http://gregheartsfield.com/hask-home
+License: BSD3
+Synopsis: Generate homepages for cabal packages
+Description:
+ This program generates simple homepages for cabalized 
+ Haskell packages.
+
+source-repository head
+  type:     darcs
+  location: http://gregheartsfield.com/repos/hask-home/
+
+Executable hask-home
+  Main-Is: hask-home.hs
+  Build-depends: Cabal >= 1.6, regex-compat, network, hmarkup >= 3000.0.1, xhtml >= 3000.0.2.1
+  Build-depends: base >= 4.0, process, directory, hsemail, parsec
+
+Executable hask-home-upload
+  Main-Is: hask-home-upload.hs
+  Build-depends: base >= 4.0, process

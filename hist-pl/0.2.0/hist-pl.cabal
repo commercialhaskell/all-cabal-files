@@ -1,0 +1,43 @@
+name:               hist-pl
+version:            0.2.0
+synopsis:           Umbrella package for the historical dictionary of Polish
+description:
+    The package provides a tool for creating and searching the
+    historical dictionary of Polish.  
+license:            BSD3
+license-file:       LICENSE
+cabal-version:      >= 1.6
+copyright:          Copyright (c) 2012 IPI PAN
+author:             Jakub Waszczuk
+maintainer:         waszczuk.kuba@gmail.com
+stability:          experimental
+category:           Natural Language Processing
+homepage:           https://github.com/kawu/hist-pl/tree/master/umbrella
+build-type:         Simple
+
+library
+  hs-source-dirs:   src
+  exposed-modules:    NLP.HistPL.Analyse
+  build-depends:      base >= 4 && < 5 
+                    , containers
+                    , text
+                    , aeson >= 0.6 && < 0.7
+                    , hist-pl-lexicon >= 0.4 && < 0.5
+                    , hist-pl-transliter >= 0.1 && < 0.2
+                    , morfeusz >= 0.4 && < 0.5
+
+executable hist-pl
+  hs-source-dirs: src, tools
+  main-is: hist-pl.hs
+  build-depends:      base >= 4 && < 5 
+                    , containers
+                    , cmdargs
+                    , bytestring
+                    , aeson-pretty >= 0.7 && < 0.8
+                    , polimorf >= 0.7.1 && < 0.8
+                    , hist-pl-lexicon >= 0.4 && < 0.5
+                    , hist-pl-fusion >= 0.4 && < 0.5
+
+source-repository head
+    type: git
+    location: https://github.com/kawu/hist-pl.git

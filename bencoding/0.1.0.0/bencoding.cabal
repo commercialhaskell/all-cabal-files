@@ -1,0 +1,87 @@
+name:                  bencoding
+version:               0.1.0.0
+synopsis:              A library for encoding and decoding of BEncode data.
+homepage:              https://github.com/pxqr/bencoding
+bug-reports:           https://github.com/pxqr/bencoding/issues
+license:               MIT
+license-file:          LICENSE
+author:                Sam T.
+maintainer:            Sam T. <pxqr.sta@gmail.com>
+copyright:             (c) 2013, Sam T.
+category:              Data
+build-type:            Simple
+cabal-version:         >= 1.8
+description:
+
+  A library for encoding and decoding of BEncode data.
+  .
+  [/Release notes/]
+  .
+    * /0.1.0.0:/ Initial version.
+
+
+extra-source-files:    README.md .travis.yml
+
+source-repository head
+  type:                git
+  location:            git://github.com/pxqr/bencoding.git
+
+
+library
+  exposed-modules:     Data.BEncode
+  build-depends:       base       == 4.*
+                     , containers >= 0.4
+                     , bytestring >= 0.10.2.0
+                     , attoparsec >= 0.10
+                     , text       >= 0.11
+                     , pretty
+
+  hs-source-dirs:      src
+  extensions:          PatternGuards
+  ghc-options:         -Wall -fno-warn-unused-do-bind
+
+
+executable pp
+  main-is:             pp.hs
+  build-depends:       base        == 4.*
+                     , bytestring
+                     , bencoding
+  hs-source-dirs:      pp
+  ghc-options:         -Wall
+
+
+test-suite properties
+  type:                exitcode-stdio-1.0
+  main-is:             properties.hs
+  hs-source-dirs:      tests
+
+  build-depends:       base       == 4.*
+                     , containers >= 0.4
+                     , bytestring >= 0.10.2.0
+                     , attoparsec >= 0.10
+
+                     , test-framework
+                     , test-framework-quickcheck2
+                     , QuickCheck
+                     , bencoding
+
+  ghc-options:         -Wall -fno-warn-orphans
+
+
+benchmark bench-comparison
+  type:                exitcode-stdio-1.0
+  main-is:             Main.hs
+  hs-source-dirs:      bench
+
+  build-depends:       base == 4.*
+                     , attoparsec >= 0.10
+                     , bytestring >= 0.10.2.0
+
+                     , criterion
+                     , deepseq
+
+                     , bencoding
+                     , bencode     >= 0.5
+                     , AttoBencode >= 0.2
+
+  ghc-options:         -O2 -Wall -fno-warn-orphans

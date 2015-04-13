@@ -1,0 +1,20 @@
+Name: subnet
+Version: 0.0.1
+cabal-version: >= 1.4
+Build-Type: Simple
+License: MIT
+License-File: LICENSE
+Author: Gregory Ganley <gcganley@gcganley.com>
+Maintainer: Gregory Ganley <gcganley@gcganley.com>
+Description: uses combinators to describe subnets
+Stability: alpha
+Homepage: https://github.com/gcganley/subnet
+Category: Network
+Library
+ Build-Depends: base >= 4.2 && <= 5.0,
+                split >= 0.2.0.0
+ Hs-Source-Dirs: src
+ Exposed-Modules: Network.Subnet,
+                  Network.Subnet.Binary,
+                  Network.Subnet.Ip,
+                  Network.Subnet.Network

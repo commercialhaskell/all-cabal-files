@@ -1,0 +1,58 @@
+name:                sym
+version:             0.9
+synopsis:            Permutations, patterns, and statistics
+description:
+  Definitions for permutations with an emphasis on permutation
+  patterns and permutation statistics.
+
+homepage:            https://github.com/akc/sym
+license:             BSD3
+license-file:        LICENSE
+author:              Anders Claesson
+maintainer:          anders.claesson@gmail.com
+category:            Data
+build-type:          Simple
+cabal-version:       >=1.8
+
+source-repository head
+  type:                git
+  location:            git://github.com/akc/sym.git
+
+library
+  exposed-modules:     Data.CLongArray
+                       Data.Perm
+                       Data.Permgram
+                       Math.Perm
+                       Math.Perm.Component
+                       Math.Perm.Constructions
+                       Math.Perm.D8
+                       Math.Perm.Group
+                       Math.Perm.Bijection
+                       Math.Perm.Stat
+                       Math.Perm.Sort
+                       Math.Perm.Simple
+                       Math.Perm.Pattern
+                       Math.Perm.Class
+                       Math.Sym
+
+  other-modules:       Data.Perm.Internal
+
+  build-depends:       base >= 3 && <= 4.7, array >=0.4, hashable >=1.1, QuickCheck >=2.5
+
+  ghc-prof-options:    -auto-all
+  ghc-options:         -Wall
+  cc-options:          -Wall
+
+  c-sources:           cbits/rank.c
+                       cbits/stat.c
+                       cbits/d8.c
+                       cbits/group.c
+                       cbits/bij.c
+                       cbits/ordiso.c
+                       cbits/bit.c
+                       cbits/simple.c
+                       cbits/sortop.c
+
+  include-dirs:        include
+  includes:            rank.h, stat.h, d8.h, group.h, bij.h, ordiso.h, bit.h, simple.h, sortop.h
+  install-includes:    rank.h, stat.h, d8.h, group.h, bij.h, ordiso.h, bit.h, simple.h, sortop.h

@@ -1,0 +1,35 @@
+name:              bytestring-show
+version:           0.3.2
+license:           BSD3
+license-file:      LICENSE
+author:            Dan Doel
+maintainer:        Dan Doel <dan.doel@gmail.com>
+homepage:          http://code.haskell.org/~dolio/
+category:          Text
+synopsis:          Efficient conversion of values into readable byte strings.
+description:       Efficient conversion of values into readable byte strings.
+build-type:        Simple
+cabal-version:     >= 1.2.3
+
+library
+    build-depends: base, binary, bytestring >= 0.9, array, containers
+
+    exposed-modules:
+        Text.Show.ByteString
+
+    other-modules:
+        Text.Show.ByteString.Util
+        Text.Show.ByteString.Char
+        Text.Show.ByteString.Int
+        Text.Show.ByteString.Float
+        Text.Show.ByteString.Integer
+
+    extensions:
+        UnboxedTuples, MagicHash, BangPatterns, TypeSynonymInstances, CPP
+
+    ghc-options:
+        -O2 -Wall
+
+    if impl(ghc >= 6.9)
+        build-depends: integer
+        cpp-options: -DINTEGER_GMP

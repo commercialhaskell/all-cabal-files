@@ -1,0 +1,29 @@
+Name:         spacefill
+Version:      0.1
+Cabal-version: >= 1.8
+License:      PublicDomain
+Author:       Raphael 'kena' Poss
+Maintainer:   knz@thaumogen.net
+Synopsis:     Generators for space-filling curves.
+Category:     Algorithms
+Homepage:     https://github.com/knz/spacefill
+
+Description:
+   Generators of Hilbert and Moore space-filling curves in configurable
+   coordinate domains.
+
+Build-type: Simple
+
+Library
+   Build-depends: base >= 4.0 && < 5
+   Exposed-modules: Data.SpaceFillingCurves
+   GHC-Options: -Wall
+
+Test-Suite doc-tests
+   Build-depends: base
+   Type: exitcode-stdio-1.0
+   Main-is: README.lhs
+
+Source-repository head
+   Type: git
+   Location: git://github.com/knz/spacefill

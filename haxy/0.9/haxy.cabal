@@ -1,0 +1,43 @@
+Name:                haxy
+Version:             0.9
+Synopsis:            A simple HTTP proxy server library
+Description:         A library for writing HTTP proxy servers with the focus on simplicity, flexibility and modularity. Allows arbitrary transformations on requests and responses and custom caching methods. It's up to the user to make sure that the message transformations are consistent with the HTTP specification. The executable program is a simple non-caching identity proxy and is used for testing the library.
+License:             BSD3
+License-file:        LICENSE
+Author:              Andrey Chudnov
+Maintainer:          Andrey Chudnov <oss@chudnov.com>
+Copyright:           (c) 2012-2013 Stevens Institute of Technology
+Category:            Web
+Build-type:          Simple
+Stability:           Stable
+Cabal-version:       >=1.10
+
+source-repository head
+   type: git
+   location: git://github.com/achudnov/haxy.git
+
+source-repository this
+   type: git
+   location: git://github.com/achudnov/haxy.git
+   tag: 0.9
+
+Library
+  Exposed-modules: Network.HTTP.Proxy.Server
+  Build-depends: http-server  >= 1.0.3 && < 1.1
+               , HTTP         >= 4000.2.0 && < 5000
+               , base         >= 4.3.1.0 && < 5
+               , url          >= 2.1.2 && < 2.2
+               , bytestring   >= 0.9.1.10 && < 0.10
+               , data-default-class >= 0.0.1 && < 0.1
+               , hostname     >= 1.0 && < 2
+  Default-Language: Haskell2010
+
+Executable simple-proxy
+   Main-Is: test/IdProxy.hs
+   Build-Depends: base         >= 4.3.1.0 && < 5
+                , bytestring   >= 0.9.1.10 && < 0.10
+                , data-default-class >= 0.0.1 && < 0.1
+                , hostname     >= 1.0 && < 2
+                , http-server  >= 1.0.3 && < 1.1
+                , HTTP         >= 4000.2.0 && < 5000
+   Default-Language: Haskell2010

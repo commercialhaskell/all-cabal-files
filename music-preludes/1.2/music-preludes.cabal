@@ -1,0 +1,34 @@
+
+name:               music-preludes
+version:            1.2
+cabal-version:      >= 1.2
+author:             Hans Hoglund
+maintainer:         Hans Hoglund
+license:            BSD3
+license-file:       COPYING
+synopsis:           Some useful preludes for the Music Suite.
+category:           Music
+tested-with:        GHC
+build-type:         Simple
+
+description: 
+    Some useful preludes for the Haskell Music Suite.
+
+    This library is part of the Haskell Music Suite, see <http://musicsuite.github.com>.
+
+library                    
+    build-depends: 
+        base >= 4 && < 5,
+        music-score,
+        musicxml2,
+        vector-space,
+        semigroups,
+        music-pitch,
+        music-pitch-literal,
+        music-dynamics,
+        music-dynamics-literal
+        
+    hs-source-dirs: src
+    exposed-modules:
+        Music.Prelude.Piano
+        

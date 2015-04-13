@@ -1,0 +1,50 @@
+Name:          tempus
+Version:       0.1.0
+Cabal-Version: >= 1.6
+Build-Type:    Simple
+License:       BSD3
+License-File:  LICENSE
+Copyright:     (C) 2010, Matthias Reisner
+Author:        Matthias Reisner
+Maintainer:    Matthias Reisner <matthias.reisner@googlemail.com>
+Stability:     experimental
+Synopsis:      Interpreter for the FRP language Tempus
+Description:   This package provides an interactive console application for loading of modules,
+               definition of types and values, as well as type checking and evaluation of
+               expressions in the functional reactive language Tempus.
+Category:      FRP, Language, Compilers/Interpreters
+Tested-With:   GHC == 6.10.4, GHC == 6.12.1
+
+Data-Files:          Prelude.tp
+Extra-Source-Files:  Tempus/Examples/lightbulb.tp
+
+Flag base4
+    Description: base >= 4.0
+    Default: True
+
+Executable tempus
+    Build-Tools:        happy >= 1.18
+
+    if flag(base4)
+        Build-Depends:  base              >= 4       && < 5
+    else
+        Build-Depends:  base              >= 3.0.3   && < 4
+    Build-Depends:      mtl               >= 1.1.0.2 && < 1.2,
+                        uniplate          >= 1.5.1,
+                        array             >= 0.2     && < 3,
+                        utf8-string       >= 0.3.6,
+                        filepath          >= 1.1.0.2,
+                        directory         >= 1.0.0.3,
+                        haskeline         >= 0.6.3.2,
+                        executable-path   >= 0.0.2
+    Extensions:         DeriveDataTypeable,
+                        FlexibleInstances
+
+    Main-Is:            Tempus/Main.hs
+    Other-Modules:      Tempus.Loc,
+                        Tempus.Lexer,
+                        Tempus.Syntax,
+                        Tempus.Parser,
+                        Tempus.TypeCheck,
+                        Tempus.Evaluation,
+                        Tempus.Interpreter

@@ -1,0 +1,13 @@
+name:     scan-vector-machine
+version:  0.0.1
+Cabal-Version: >= 1.2
+build-type: Simple
+synopsis: An implementation of the Scan Vector Machine instruction set in Haskell
+license: BSD3
+category: Parallelism
+maintainer: Adam Megacz <megacz@cs.berkeley.edu>
+description: An implementation of the Scan Vector Machine instruction set in Haskell
+license-file: LICENSE
+
+library
+  exposed-modules: ScanVectorMachine

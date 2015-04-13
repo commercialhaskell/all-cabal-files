@@ -1,0 +1,34 @@
+Cabal-Version: >= 1.6
+
+Name:     MaybeT-monads-tf
+Version:  0.1
+Category: Control
+Synopsis: MaybeT monad transformer compatible with monads-tf instead of mtl
+
+Description:
+    Support for computations with failures. This is a fork of the MaybeT
+    package by Eric Kidd, but compatible with the type-family based monad
+    classes of the monads-tf package.
+
+Author:       Ben Millwood <haskell@benmachine.co.uk>
+Maintainer:   Ben Millwood <haskell@benmachine.co.uk>
+Copyright:    2010 Ben Millwood
+License:      BSD3
+License-file: LICENSE
+
+Build-type:  Simple
+Tested-with: GHC == 7.0.1
+
+Library
+  Exposed-modules: Control.Monad.Maybe
+
+  Build-depends: base >= 4 && < 4.4,
+                 monads-tf < 0.2,
+                 transformers < 0.3
+  Extensions:    TypeFamilies
+
+  GHC-options: -Wall
+
+Source-Repository head
+  type:     git
+  location: git://github.com/benmachine/MaybeT-monads-tf.git

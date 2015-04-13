@@ -1,0 +1,32 @@
+Name: network-websocket
+Version: 0.3
+Stability: experimental
+Synopsis: WebSocket library
+Description: A library for creating Websocket servers
+Copyright: (c) Michael Melanson, 2010
+License: BSD3
+License-file: LICENSE
+Homepage: http://github.com/michaelmelanson/network-websocket
+Author: Michael Melanson <michael@michaelmelanson.net>
+Maintainer: Michael Melanson <michael@michaelmelanson.net>
+Category: Network
+Cabal-version: >=1.2
+Build-type: Simple
+Tested-with: GHC ==6.10
+
+Flag BuildExamples
+  Description: Build the example programs
+  Default: False
+
+
+Library
+  Exposed-Modules: Network.Websocket
+  Build-depends: base >=2 && <4, haskell98 -any, network -any,
+                 webserver -any
+
+
+Executable websocket-echo
+  Main-is: examples/echo.hs
+  
+  if !flag(buildexamples)
+    Buildable: False

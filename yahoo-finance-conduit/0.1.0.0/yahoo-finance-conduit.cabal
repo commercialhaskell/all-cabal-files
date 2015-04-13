@@ -1,0 +1,27 @@
+name:                yahoo-finance-conduit
+version:             0.1.0.0
+synopsis:            Streaming aproach to the yahoo finance api
+description:         Small library streaming stock market data from the yahoo finance api
+license:             MIT
+license-file:        LICENSE
+author:              Alexander Thiemann <mail@agrafix.net>
+maintainer:          mail@agrafix.net
+copyright:           (c) 2014 Alexander Thiemann <mail@agrafix.net>
+category:            Data
+build-type:          Simple
+cabal-version:       >=1.10
+
+library
+  exposed-modules:     Data.Conduit.Finance.Yahoo
+  build-depends:       base >=4.7 && <4.8,
+                       conduit >=1.1 && <1.3,
+                       wreq >=0.2 && <0.3,
+                       text >=1.1 && <1.2,
+                       mtl >=2.2 && <2.3,
+                       lens >=4.4 && <4.5,
+                       cassava >=0.4 && <0.5,
+                       vector >=0.10 && <0.11,
+                       attoparsec >=0.12 && <0.13
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+  ghc-options: -Wall -fno-warn-orphans

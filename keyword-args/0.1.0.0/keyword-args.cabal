@@ -1,0 +1,57 @@
+name:                keyword-args
+version:             0.1.0.0
+synopsis:            Extract data from a keyword-args config file format
+
+description: Extracts data from a configuration file with keywords
+             separated fram arguments by one or more spaces. Removes
+             comments and unnecessary whitespace.
+
+license:             MIT
+license-file:        LICENSE
+author:              Justin Leitgeb
+maintainer:          justin@stackbuilders.com
+copyright:           2015 Stack Builders Inc.
+category:            System
+build-type:          Simple
+cabal-version:       >=1.10
+
+
+executable keyword-args
+  main-is:             Main.hs
+  other-modules:       Data.KeywordArgs.Parse
+
+  build-depends:         base >=4.5 && <4.8
+                       , parsec >= 3.1.0 && <= 3.2
+                       , containers
+                       , cassava
+                       , bytestring
+
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+
+
+library
+  exposed-modules:    Data.KeywordArgs.Parse
+  build-depends:         base >=4.5 && <4.8
+                       , parsec >= 3.1.0 && <= 3.2
+                       , containers
+
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+
+
+test-suite keyword-args-test
+  type: exitcode-stdio-1.0
+  hs-source-dirs: spec, src
+  main-is: Spec.hs
+  build-depends:       base >=4.5 && <4.8
+                       , parsec >= 3.1.0 && <= 3.2
+                       , containers
+
+                       , hspec
+
+  default-language:    Haskell2010
+
+source-repository head
+  type:     git
+  location: https://github.com/stackbuilders/keyword-args

@@ -1,0 +1,31 @@
+name:                hsbackup
+version:             0.1
+synopsis:            simple utility for rolling filesystem backups
+description:         Take backups of a directory and store them in a hashed format.
+                     Currently only supports plain files and directories. Very crude
+                     and limited, do NOT use in production. To be improved. Will break
+                     backward compatibility in future versions.
+
+-- The license under which the package is released.
+-- copyright:
+license:             BSD3
+license-file:        LICENSE
+
+-- The package author(s).
+author:              Petr Rockai
+maintainer:          me@mornfall.net
+category:            System
+build-type:          Simple
+
+-- extra-source-files:
+
+-- Constraint on the version of Cabal needed to build this package.
+cabal-version:       >=1.6
+
+Executable hsbackup
+  main-is: main.hs
+  -- other-modules:
+  build-depends: base < 5, hashed-storage, cmdargs, strict,
+                 bytestring, filepath, directory,
+                 time, old-locale
+

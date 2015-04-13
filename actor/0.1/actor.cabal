@@ -1,0 +1,36 @@
+
+Name:		actor
+Synopsis:	Actors with multi-headed receive clauses
+Category:       Concurrency
+Version:	0.1
+Stability:      experimental
+Cabal-Version:  >= 1.2
+License:	BSD3
+License-File:	LICENSE
+Author:		Martin Sulzmann
+Maintainer:     martin.sulzmann@gmail.com
+Description:    A Haskell library implementing
+                "Actors with Multi-Headed Message Receive Patterns"
+                COORDINATION'08
+homepage:      http://sulzmann.blogspot.com/2008/10/actors-with-multi-headed-receive.html
+            
+data-files: README
+extra-source-files: PingPong.hs, Chain.hs, MarketPlace.hs
+
+Build-Type: Simple
+Build-Depends:	base, haskell98, stm, time
+Exposed-modules:
+                     Actor.ActorBase,
+                     Actor.ActorSyntax,
+                     Actor.ActorCompiler,
+                     Actor.ActorLinearSearch
+Other-modules:     Actor.SList,
+                   Actor.QList,
+                   Actor.Timeout
+
+Extensions: UndecidableInstances, FlexibleInstances, TypeSynonymInstances
+            MultiParamTypeClasses, FunctionalDependencies
+
+GHC-Options: -threaded
+
+tested-with: GHC == 6.8.2

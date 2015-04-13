@@ -1,0 +1,33 @@
+name: direct-murmur-hash
+version: 1.0
+cabal-version: >= 1.12
+build-type: Simple
+license: BSD3
+license-file: LICENSE
+copyright: Copyright (c) 2013 Irene Knapp
+author: Irene Knapp <irene.knapp@icloud.com>
+maintainer: irene.knapp@icloud.com
+homepage: http://ireneknapp.com/software/
+bug-reports: https://github.com/IreneKnapp/direct-murmur-hash/issues
+category: Data
+synopsis: An implementation of the MurmurHash3 algorithm
+description:
+
+Source-Repository head
+  type: git
+  location: https://github.com/IreneKnapp/direct-murmur-hash.git
+
+Library
+  exposed-modules: Data.Digest.Murmur3
+  build-depends: base >= 4.1 && < 5,
+                 bytestring >= 0.9.1.5 && < 1
+  default-language: Haskell2010
+
+-- Executable test
+--   main-is: Main.hs
+--   other-modules: Data.Digest.Murmur3
+--   build-depends: base >= 4.1 && < 5,
+--                  bytestring >= 0.9.1.5 && < 1,
+--                  utf8-string >= 0.3.7 && < 1
+--   default-language: Haskell2010
+

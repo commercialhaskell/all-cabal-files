@@ -1,0 +1,32 @@
+Name:                quicktest
+Version:             0.1
+Synopsis:            A reflective batch tester for Haskell.
+Description:
+  QuickTest inspects Haskell source files for unit tests, and runs all tests found through GHCi with a dynamically generated test harness. This means you can simply write properties about your code, and QuickTest will test these properties en masse using QuickCheck. QuickTest is based on quickcheck-script by Koen Claessen and John Hughes.
+License:             BSD3
+License-file:        LICENSE
+Author:              David Siegel
+Maintainer:          djsiegel@gmail.com
+Homepage:            https://github.com/davidsiegel/quicktest
+Stability:           Experimental
+Category:            Testing
+Build-type:          Simple
+Cabal-version:       >=1.4
+
+Executable quicktest
+  hs-source-dirs: src
+  main-is: Main.hs
+  extensions: NamedFieldPuns, PackageImports, GeneralizedNewtypeDeriving 
+
+  Build-depends:
+    base >= 4 && <= 4,
+    haskell98,
+    mtl,
+    process,
+    directory
+
+  if impl(ghc >= 6.12.0)
+    ghc-options: -threaded -Wall -funbox-strict-fields -O2
+                 -fno-warn-unused-do-bind
+  else
+    ghc-options: -threaded -Wall -funbox-strict-fields -O2

@@ -1,0 +1,64 @@
+Name:                splitter
+Version:             0.1.0.0
+
+Synopsis:            Use numerical ranges to split out certain lines from a file.
+
+Description:         
+   Splitter lets you specify numerical ranges to split out certain lines
+   from a file. This means that you can extract exactly what you want from a file and only
+   the sections that you want. Or, if you are only interested in a log file after a certain
+   preamble then you can specify that range of files too.
+
+-- The license under which the package is released.
+License:             MIT
+
+License-file:        LICENSE
+
+-- The package author
+Author:              Robert Massaioli
+
+Maintainer:          robertmassaioli@gmail.com
+
+stability:           provisional
+
+-- Project Information
+homepage:            https://bitbucket.org/robertmassaioli/splitter
+
+bug-reports:         https://bitbucket.org/robertmassaioli/splitter/issues
+
+-- A copyright notice.
+Copyright: (c) 2013 Robert Massaioli
+
+Category:            Text
+
+Build-type:          Simple
+
+-- Extra files to be distributed with the package, such as examples or
+-- a README.
+Extra-source-files:  README.markdown
+
+-- Constraint on the version of Cabal needed to build this package.
+Cabal-version:       >=1.6
+
+Source-repository head
+   type:       git
+   location:   git@bitbucket.org:robertmassaioli/splitter.git
+
+Executable splitter
+  -- .hs or .lhs file containing the Main module.
+  Main-is:             Main.hs
+  
+  -- Packages needed in order to build this package.
+  Build-depends: 
+    base >= 4 && < 5, 
+    directory >= 1.1 && < 1.3, 
+    filepath >= 1.2 && < 1.4,
+    parsec >= 3, 
+    range >= 0.1 && <= 0.2 
+  
+  -- Modules not exported by this package.
+  -- Other-modules:       
+  
+  -- Extra tools (e.g. alex, hsc2hs, ...) needed to build the source.
+  -- Build-tools:         
+  

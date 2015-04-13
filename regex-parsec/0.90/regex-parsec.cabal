@@ -1,0 +1,52 @@
+Name:                   regex-parsec
+Version:                0.90
+-- Cabal-Version:       >=1.1.4
+License:                BSD3
+License-File:           LICENSE
+Copyright:              Copyright (c) 2006, Christopher Kuklewicz
+Author:                 Christopher Kuklewicz
+Maintainer:             TextRegexLazy@personal.mightyreason.com
+Stability:              Seems to work, passes a few tests
+Homepage:               http://sourceforge.net/projects/lazy-regex
+Package-URL:            http://darcs.haskell.org/packages/regex-unstable/regex-parsec/
+Synopsis:               Replaces/Enhances Text.Regex
+Description:            A better performance, lazy, powerful replacement of Text.Regex and JRegex
+Category:               Text
+Tested-With:            GHC
+Build-Depends:          base >= 2.0, regex-base >= 0.80, parsec
+-- Data-Files:
+-- Extra-Source-Files:
+-- Extra-Tmp-Files:
+-- This is the library
+Exposed-Modules:        Text.Regex.Parsec
+                        Text.Regex.Parsec.Wrap
+                        Text.Regex.Parsec.String
+                        Text.Regex.Parsec.ByteString
+                        Text.Regex.Parsec.ByteString.Lazy
+                        Text.Regex.Parsec.Sequence
+                        Text.Regex.Parsec.Common
+                        Text.Regex.Parsec.FullParsec
+                        Text.Regex.Parsec.FullParsecPosix
+                        Text.Regex.Parsec.Pattern
+                        Text.Regex.Parsec.ReadRegex
+                        Text.Regex.Parsec.RegexParsecState
+-- Futher fields
+Buildable:              True
+-- Other-Modules:
+-- be backward compatible until 6.4.2 is futher deployed
+-- HS-Source-Dirs:         "."
+Extensions:             MultiParamTypeClasses, FunctionalDependencies
+-- GHC-Options:            -Wall -Werror
+GHC-Options:            -Wall -Werror -O2
+-- GHC-Options:            -Wall -ddump-minimal-imports
+-- GHC-Prof-Options: 
+-- Hugs-Options:
+-- NHC-Options:
+-- Includes:
+-- Include-Dirs:
+-- C-Sources:
+-- Extra-Libraries:
+-- Extra-Lib-Dirs:
+-- CC-Options:
+-- LD-Options:
+-- Frameworks:

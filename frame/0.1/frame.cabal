@@ -1,0 +1,60 @@
+Name: frame
+Version: 0.1
+Cabal-version: >= 1.2
+Build-type: Simple
+Copyright: Adam Dunkley
+Maintainer: "Adam Dunkley" <acd07u@cs.nott.ac.uk>
+Stability: experimental
+Author: Adam Dunkley
+License: BSD3
+License-file: LICENSE
+Category: Web
+Synopsis: A simple web framework.
+Description: A simple web framework.
+
+Executable frame-shell
+  Main-is: Frame/Shell.lhs
+  Hs-source-dirs: src
+  Build-Depends:
+    pretty
+Library
+  Build-Depends:
+    base >= 2 && < 4,
+    old-time,
+    ghc-binary,
+    haskell98,
+    directory,
+    bytestring,
+    utf8-string,
+    MissingH,
+    HDBC-odbc,
+    HDBC,
+    haskelldb-hdbc-odbc,
+    haskelldb-hdbc,
+    haskelldb,
+    mtl,
+    containers,
+    happstack-server,
+    happstack-fastcgi,
+    HTTP
+  Extensions:
+    UndecidableInstances,
+    MultiParamTypeClasses,
+    FunctionalDependencies,
+    FlexibleInstances,
+    FlexibleContexts
+  Exposed-Modules:
+        Frame,
+        Frame.Config,
+        Frame.Data,
+        Frame.GUI,
+        Frame.Model,
+        Frame.Router,
+        Frame.Server,
+        Frame.Session,
+        Frame.State,
+        Frame.Types,
+        Frame.Utilities,
+        Frame.Validation,
+        Frame.View
+  Hs-source-dirs: src

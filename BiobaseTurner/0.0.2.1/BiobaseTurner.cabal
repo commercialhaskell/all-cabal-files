@@ -1,0 +1,39 @@
+name:           BiobaseTurner
+version:        0.0.2.1
+author:         Christian Hoener zu Siederdissen
+maintainer:     choener@tbi.univie.ac.at
+copyright:      Christian Hoener zu Siederdissen, 2010
+category:       Bioinformatics
+synopsis:       RNA folding data structures.
+license:        GPL-3
+license-file:   LICENSE
+build-type:     Simple
+stability:      experimental
+cabal-version:  >= 1.4.0
+description:
+                Data structures and parsers for the Turner 2004 set of RNA parameters.
+                - http://rna.urmc.rochester.edu/NNDB/index.html
+
+
+
+library
+  build-depends:
+    base >=4 && <5,
+    containers,
+    parsec >=3 && <4,
+    primitive >=0.3 && <0.4,
+    FileManip >=0.3.3 && <0.4,
+    split >=0.1.2 && <0.2,
+
+    Biobase >=0.0.2 && <0.0.3,
+    HsTools >=0.0.1.1 && <0.0.2,
+    ParsecTools >=0.0.2 && <0.0.3,
+    PrimitiveArray >=0.0.2 && <0.0.3
+
+  exposed-modules:
+    Biobase.Turner
+    Biobase.Turner.Import
+    Biobase.Turner.Tables
+
+  ghc-options:
+    -O2

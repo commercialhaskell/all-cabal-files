@@ -1,0 +1,40 @@
+name:                binary-streams
+version:             0.1.0.0
+synopsis:            data serialization/deserialization io-streams library
+description:         Allow binary serialization/deserialization using io-streams
+homepage:            http://github.com/jonpetterbergman/binary-streams
+bug-reports:         http://github.com/jonpetterbergman/binary-streams/issues
+license:             BSD3
+license-file:        LICENSE
+author:              Petter Bergman
+maintainer:          jon.petter.bergman@gmail.com
+-- copyright:           
+category:            Data, IO-Streams
+build-type:          Simple
+extra-source-files:  changelog.md
+cabal-version:       >=1.10
+
+library
+  exposed-modules:     System.IO.Streams.Binary
+  -- other-modules:       
+  other-extensions:    DeriveDataTypeable
+  build-depends:       base >=4.7 && <4.8,
+                       bytestring >=0.9 && <0.11,
+                       binary >=0.6 && <0.8,
+                       io-streams >=1.1.0 && <2.0
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+
+Test-Suite encode-decode
+  type:                detailed-0.9
+  test-module:         EncodeDecode
+  build-depends:       base >=4.7 && <4.8, 
+                       bytestring >=0.9 && <0.11,
+                       Cabal >= 1.9.2,
+                       binary >=0.6 && <0.8,
+                       io-streams >=1.1.0 && <2.0,
+                       binary-streams,
+                       QuickCheck,
+                       cabal-test-quickcheck
+  hs-source-dirs:      test
+  default-language:    Haskell2010

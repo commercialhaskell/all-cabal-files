@@ -1,0 +1,27 @@
+Name:                djinn-th
+Version:             0.0.1
+Synopsis:            Generate executable Haskell code from a type
+Description:         Djinn uses a theorem prover for intuitionistic
+                     propositional logic to generate a Haskell
+                     expression when given a type.
+                     .
+                     Djinn-TH uses Template Haskell to turn this
+                     expression into executable code.
+
+Homepage:            http://gitorious.org/djinn-th
+License:             BSD3
+License-file:        LICENSE
+Author:              Claude Heiland-Allen
+Maintainer:          claudiusmaximus@goto10.org
+Category:            Language
+Build-type:          Simple
+
+Cabal-version:       >=1.2
+
+Library
+  Hs-source-dirs:    src
+  Exposed-modules:   Language.Haskell.Djinn
+  Other-modules:     Language.Haskell.Djinn.LJT, Language.Haskell.Djinn.LJTFormula, Language.Haskell.Djinn.HTypes
+  Build-depends:     base >= 4 && < 5, template-haskell >= 2.4 && < 2.5, containers >= 0.3 && < 0.4, logict >= 0.4 && < 0.5
+  GHC-options:       -Wall
+  GHC-prof-options:  -prof -auto-all

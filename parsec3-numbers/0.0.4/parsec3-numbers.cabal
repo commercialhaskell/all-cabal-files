@@ -1,0 +1,29 @@
+name:          parsec3-numbers
+version:       0.0.4
+build-type:    Simple
+cabal-version: >= 1.6
+license:       BSD3
+license-file:  LICENSE
+author:        chr.maeder@web.de
+maintainer:    chr.maeder@web.de
+category:      Parsing
+synopsis:      Utilities for parsing numbers from Char sequences
+description:
+    parsec3-numbers provides the number parsers independent from
+    token parsers
+
+stability: experimental
+
+flag parsec3
+    Description: Use parsec3
+    Default: False
+
+Library
+  exposed-modules:
+    Text.Parsec.Number
+  if flag(parsec3)
+      build-depends: parsec3
+  else
+      build-depends: parsec
+  build-depends: base < 5
+  ghc-options: -Wall

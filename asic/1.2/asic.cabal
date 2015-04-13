@@ -1,0 +1,20 @@
+cabal-version: >= 1.8
+build-type: Simple
+name: asic
+version: 1.2
+license: LGPL
+license-file: LICENSE
+maintainer: Arie Middelkoop <ariem@cs.uu.nl>
+homepage: http://www.pros.upv.es/fittest/
+description: A compiler for the instrumentation of ActionScript programs.
+category: Compilers/Interpreters
+synopsis: Action Script Instrumentation Compiler
+stability: Experimental
+copyright: Universiteit Utrecht, FITTEST project
+
+executable asic
+  build-depends: base >= 4, base < 5
+  build-depends: bytestring >= 0.9, utf8-string >= 0.3
+  build-depends: asil >= 1.2
+  main-is: Main.hs
+  hs-source-dirs: src

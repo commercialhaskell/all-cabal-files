@@ -1,0 +1,31 @@
+Name:                vector-functorlazy
+Version:             0.0.1
+Synopsis:            vectors that perform the fmap operation in constant time
+Description:         Functor-lazy vectors perform the fmap operation in constant time, whereas other vectors require linear time.  All vector operations are supported except for slicing.  See <http://github.com/mikeizbicki/vector-funxtorlazy> for details on how this module works under the hood.
+Category:            Data, Data Structures
+License:             BSD3
+--License-file:        LICENSE
+Author:              Mike izbicki
+Maintainer:          mike@izbicki.me
+Build-Type:          Simple
+Cabal-Version:       >=1.8
+homepage:            http://github.com/mikeizbicki/vector-functorlazy/
+bug-reports:         http://github.com/mikeizbicki/vector-functorlazy/issues
+
+Library
+    Build-Depends:      
+        base                        >= 3 && < 5,
+        ghc-prim                    ,
+        vector                      >= 0.9,
+        vector-th-unbox             >= 0.2,
+        primitive                   >= 0.5
+
+    hs-source-dirs:     src
+    ghc-options:        
+        -O2 
+        -fllvm
+        -funbox-strict-fields
+    Exposed-modules:
+        Data.Vector.FunctorLazy
+        Data.Vector.FunctorLazy.Mutable
+        Data.Vector.FunctorLazy.Common

@@ -1,0 +1,26 @@
+Name:                json2
+Version:             0.2
+Synopsis:            This library provides support for JSON. 
+Category:            Data, Text, JSON.
+Description:         This library provides support for JSON.
+License:             BSD3
+License-file:        LICENSE
+Author:              YuriyIskra  <iskra.yw@gmail.com>
+Maintainer:          YuriyIskra  <iskra.yw@gmail.com>
+Stability:           Experimental
+Copyright:           Copyright (c) 2011 Yuriy Iskra
+Build-type:          Simple
+Cabal-version:       >= 1.6
+
+extra-source-files:
+  Examples/ExampleSqlite.hs
+  Examples/ExampleQuery.hs
+
+library
+  Exposed-modules:     Data.JSON2
+                       Data.JSON2.FromSQL
+                       Data.JSON2.Query
+
+  Build-Depends:       base       >= 4   && < 5,
+                       containers >= 0.2 && < 1
+		       

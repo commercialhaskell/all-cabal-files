@@ -1,0 +1,17 @@
+Name:          tnet
+Version:       0.0.1
+Synopsis:      Library for encoding/decoding TNET strings for PGI
+Description:
+  Provides an API to encode/decode Haskell datatypes into the
+  TNET protocol.
+Author:        Harry Terkelsen
+Maintainer:    het32@cornell.edu
+Cabal-Version: >= 1.2
+Build-Type:    Simple
+Category:      Web
+License:       OtherLicense
+License-File:  LICENSE
+library
+  Exposed-Modules: TNET
+  Build-Depends:   base >= 4.0 && < 5, attoparsec >= 0.10, bytestring >= 0.9,
+                   utf8-string >= 0.3

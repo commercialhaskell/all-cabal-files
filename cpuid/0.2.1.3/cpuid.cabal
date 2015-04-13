@@ -1,0 +1,45 @@
+Name:               cpuid
+Version:            0.2.1.3
+License:            GPL
+License-file:       COPYING
+Author:             Martin Grabmueller <martin@grabmueller.de>
+Maintainer:         martin@grabmueller.de, cpuid@henning-thielemann.de
+Homepage:           http://code.haskell.org/cpuid
+Category:           Foreign binding
+Synopsis:           Binding for the cpuid machine instruction on x86 compatible
+        processors
+Description:	    This module provides the function 'cpuid' for accessing
+	information about the currently running IA-32 processor.  Both a function
+        for calling the 'cpuid' instruction directly, and some convenience functions
+        for common uses are provided.  This package is only portable to IA-32
+        machines.
+Stability:          Experimental
+Build-type:         Simple
+Cabal-version:      >=1.2
+
+Extra-source-files:
+  README
+  cbits/cpuid-pic.c
+  cbits/cpuid-pdc.c
+
+Flag buildExamples
+  Description: Build example executables
+  Default: False
+
+Library
+  If !arch(i386)
+    Buildable: False
+  Build-depends:      base >= 4 && < 5
+  Exposed-Modules:    System.Cpuid
+  Extensions:         ForeignFunctionInterface
+  C-sources:	      cbits/cpuid.c
+  Include-dirs:       cbits
+  Install-includes:   cpuid.h
+  GHC-Options:        -Wall
+
+Executable cpuid-test
+  If !(flag(buildExamples) && arch(i386))
+    Buildable: False
+  Main-Is:            tests/TestCpuid.hs
+  C-sources:	      cbits/cpuid.c
+  GHC-Options:        -Wall

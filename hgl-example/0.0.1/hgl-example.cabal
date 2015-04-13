@@ -1,0 +1,39 @@
+Name:           hgl-example
+Version:        0.0.1
+License:        GPL
+License-File:   LICENSE
+Author:         Henning Thielemann <haskell@henning-thielemann.de>
+Maintainer:     Henning Thielemann <haskell@henning-thielemann.de>
+Homepage:       http://code.haskell.org/~thielema/hgl-example/
+Category:       Graphics
+Synopsis:       Various animations generated using HGL
+Description:
+   Various animations generated using HGL:
+   .
+   * Locomotive with asymmetrically mounted wheels
+   .
+   * Rotating stars
+   .
+   * Rotating spiral
+   .
+   * Rotating Lissajous curve
+   .
+   * Probabilistic Sierpinski triangle
+Stability:      Experimental
+Tested-With:    GHC==6.8.2
+Cabal-Version:  >=1.2
+Build-Type:     Simple
+
+Executable hgl-example
+  Build-Depends:
+    HTam >=0.0.2 && <0.1,
+    HGL >=3.2 && <3.3,
+    random >=1.0 && <1.1,
+    array >=0.1 && <0.3,
+    base >= 3
+
+  GHC-Options:    -Wall
+  Hs-Source-Dirs: src
+  Main-Is: Main.hs
+  Other-Modules:
+    GraphicDemo

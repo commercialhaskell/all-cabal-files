@@ -1,0 +1,43 @@
+Name:               operational
+Version:            0.1.0.0
+Synopsis:           Implement monads by specifying operational semantics.
+Description:
+  Tiny library for implementing monads by specifying the primitive instructions
+  and their operational semantics. The monad laws will hold automatically.
+  Can also be used to define monad transformers,
+  the lifting laws are, again, automatic.
+  
+  Accompanies the article: \"The Operational Monad Tutorial\",
+  published in Issue 15 of The Monad.Reader <http://themonadreader.wordpress.com/2010/01/26/issue-15/>.
+  
+  Related packages: MonadPrompt <http://hackage.haskell.org/package/MonadPrompt>.
+  
+Category:           Control, Monads
+License:            BSD3
+License-file:       LICENSE
+Author:             Heinrich Apfelmus
+Maintainer:         Heinrich Apfelmus <apfelmus quantentunnel de>
+Copyright:          (c) Heinrich Apfelmus 2010
+Homepage:           http://projects.haskell.org/operational/
+Stability:          Provisional
+
+build-type:         Simple
+cabal-version:      >= 1.6
+extra-source-files: docs/*.css
+                    docs/*.html
+                    docs/*.md
+                    docs/Makefile
+                    docs/examples/*.hs
+                    docs/examples/*.lhs
+                    
+source-repository head
+    type:           darcs
+    location:       http://code.haskell.org/operational
+
+
+Library
+    hs-source-dirs:     src
+    build-depends:      base == 4.* , mtl == 1.1.*
+    ghc-options:        -Wall
+    extensions:         GADTs
+    exposed-modules:    Control.Monad.Operational

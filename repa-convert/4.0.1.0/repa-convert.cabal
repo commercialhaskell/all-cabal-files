@@ -1,0 +1,52 @@
+Name:           repa-convert
+Version:        4.0.1.0
+License:        BSD3
+License-file:   LICENSE
+Author:         The Repa Development Team
+Maintainer:     Ben Lippmeier <benl@ouroborus.net>
+Build-Type:     Simple
+Cabal-Version:  >=1.6
+Stability:      experimental
+Category:       Data Structures
+Homepage:       http://repa.ouroborus.net
+Bug-reports:    repa@ouroborus.net
+Description:    Packing and unpacking binary data.
+Synopsis:       Packing and unpacking binary data.
+
+source-repository head
+  type:     git
+  location: https://github.com/DDCSF/repa.git
+
+Library
+  build-Depends: 
+        base            == 4.7.*,
+        primitive       == 0.5.4.*,
+        vector          == 0.10.*
+
+  exposed-modules:
+        Data.Repa.Product
+        Data.Repa.Convert.Format
+
+  other-modules:
+        Data.Repa.Convert.Format.Base
+        Data.Repa.Convert.Format.Binary
+
+  ghc-options:
+        -Wall -fno-warn-missing-signatures
+        -O2
+
+  extensions:
+        CPP
+        NoMonomorphismRestriction
+        ExistentialQuantification
+        BangPatterns
+        FlexibleContexts
+        FlexibleInstances
+        PatternGuards
+        MultiWayIf
+        TypeFamilies
+        TypeOperators
+        ScopedTypeVariables
+        MultiParamTypeClasses
+
+

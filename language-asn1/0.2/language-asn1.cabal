@@ -1,0 +1,37 @@
+Name:           language-asn1
+Version:        0.2
+Cabal-Version:  >= 1.2.3
+Build-Type:     Simple
+License:        GPL
+License-File:   LICENSE
+Copyright:      LICENSE
+Author:         Dmitry Astapov <dastapov@gmail.com>
+Maintainer:     Dmitry Astapov <dastapov@gmail.com>
+Stability:      experimental
+Homepage:       http://patch-tag.com/r/adept/language-asn1
+Synopsis:       Parsing of ASN1 definitions
+Description:    Language C is a haskell library for the analysis and generation of C code.
+                It features a complete, well tested parser and pretty printer for all of C99 and a large
+                set of GNU extensions.
+Category:       Language
+Tested-With:    GHC==6.10.4, GHC==6.12.1
+
+Extra-Source-Files: LICENSE README TestASN1Parser.hs
+  samples/LDAP_simplified.asn1 samples/rfc3280-PKIX1Explicit88.asn1 samples/rfc3280-PKIX1Implicit88.asn1
+
+Flag splitBase
+  Description: Choose the new smaller, split-up base package.
+
+Library
+  if flag(splitBase)
+    Build-Depends:       base >= 3 && < 5, parsec >= 3.0.0, syb
+  else
+    Build-Depends:       base >= 2 && < 3
+  if impl(ghc >= 6.10)
+    build-depends: base >= 4
+
+  Extensions: DeriveDataTypeable
+
+  Hs-Source-Dirs: .
+  Exposed-Modules:
+    Language.ASN1.Parser

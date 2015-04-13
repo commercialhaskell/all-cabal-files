@@ -1,0 +1,27 @@
+Name:                buildbox-tools
+Version:             1.2.0.0
+License:             BSD3
+License-file:        LICENSE
+Author:              Ben Lippmeier
+Maintainer:          Ben Lippmeier <benl@ouroborus.net>
+Build-Type:          Simple
+Cabal-Version:       >=1.6
+Stability:           experimental
+Category:            Development, Testing
+Homepage:            http://code.haskell.org/~benl/code/buildbox-head
+Description:
+        Tools for working with buildbox benchmark result files.
+
+Synopsis:
+        Tools for working with buildbox benchmark result files.
+
+Tested-with:
+        GHC == 6.12.1
+
+Executable buildbox-results
+  Build-depends: 
+        base                 == 4.*,
+        buildbox             == 1.2.*,
+        parseargs            == 0.1.*
+  Main-is: Main.hs
+  hs-source-dirs: results 

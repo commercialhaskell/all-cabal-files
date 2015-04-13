@@ -1,0 +1,26 @@
+name:                gl-capture
+version:             0.1.0.0
+synopsis:            simple image capture from OpenGL
+description:
+  Simplify image capture from OpenGL to ByteString in PPM P6 format.
+
+license:             BSD3
+license-file:        LICENSE
+author:              Claude Heiland-Allen
+maintainer:          claude@mathr.co.uk
+category:            Graphics
+build-type:          Simple
+cabal-version:       >=1.8
+
+library
+  exposed-modules:     Graphics.Rendering.OpenGL.Capture
+  build-depends:       base < 5, bytestring, OpenGL
+
+source-repository head
+  type:                git
+  location:            git://gitorious.org/maximus/gl-capture.git
+                       
+source-repository this
+  type:                git
+  location:            git://gitorious.org/maximus/gl-capture.git
+  tag:                 v0.1.0.0

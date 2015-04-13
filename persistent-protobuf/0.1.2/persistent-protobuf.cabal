@@ -1,0 +1,33 @@
+Name:                persistent-protobuf
+Version:             0.1.2
+Synopsis:            Template-Haskell helpers for integrating protobufs with persistent.
+Description:         Template-Haskell helpers for integrating protobufs with persistent.
+Homepage:            https://github.com/mstone/persistent-protobuf
+License:             BSD3
+License-file:        LICENSE
+Author:              Michael Stone
+Maintainer:          mistone@akamai.com
+Copyright:           Copyright 2012 Akamai Technologies, Inc.
+Category:            Database
+Build-type:          Simple
+Cabal-version:       >=1.6
+
+source-repository head
+  type:     git
+  location: git://github.com/mstone/persistent-protobuf.git
+
+source-repository this
+  type:     git
+  location: git://github.com/mstone/persistent-protobuf.git
+  tag:      v0.1.2
+
+Library
+  Exposed-modules:   Database.Persist.TH.ProtocolBuffers
+  Build-Depends:     base == 4.*,
+                     bytestring -any,
+                     persistent -any,
+                     protocol-buffers -any,
+                     protocol-buffers-descriptor -any,
+                     template-haskell -any,
+                     text -any
+  GHC-Options:       -Wall -funbox-strict-fields

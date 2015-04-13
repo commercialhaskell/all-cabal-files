@@ -1,0 +1,23 @@
+Name:           hmatrix-mmap
+Version:        0.0.1
+License:        BSD3
+License-File:   LICENSE
+Author:         Daniel Peebles <pumpkingod@gmail.com>, Alan Falloon <alan.falloon@gmail.com>
+Maintainer:     Alan Falloon <alan.falloon@gmail.com>
+Copyright:      (c) Daniel Peebles 2010, (c) Alan Falloon 2011
+Homepage:       http://github.com/alanfalloon/hmatrix-mmap
+Category:       Data, Data Structures
+Synopsis:       Memory map Vector from disk into memory efficiently
+Description:
+        Memory map Data.Packed.Vector.Vector from disk into memory efficiently.
+
+Cabal-Version:  >= 1.2
+Build-Type:     Simple
+
+Extra-source-files: README
+
+Library
+  Exposed-Modules:
+        Data.Packed.Vector.MMap
+
+  Build-Depends: base >= 2 && < 5, mmap >= 0.5.4, hmatrix >= 0.10

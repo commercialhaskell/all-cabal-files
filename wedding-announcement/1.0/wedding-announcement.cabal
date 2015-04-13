@@ -1,0 +1,17 @@
+Name:                wedding-announcement
+Version:             1.0
+Synopsis:            a wedding announcement
+Description:         Feel free to update this package with your own announcement.
+Homepage:            http://web.mornfall.net
+License:             PublicDomain
+Author:              Petr Rockai
+Maintainer:          me@mornfall.net
+Category:            Factual
+Build-type:          Simple
+Cabal-version:       >=1.2
+
+Executable wedding-announcement
+  Main-is: main.hs
+  Other-Modules: Wedding
+  Extensions: NoImplicitPrelude
+  Build-Depends: base >= 4 && < 5

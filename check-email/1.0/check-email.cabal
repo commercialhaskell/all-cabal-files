@@ -1,0 +1,26 @@
+Name:                check-email
+Category:            Network
+License-File:        LICENSE
+Version:             1.0
+Cabal-version:       >= 1.2
+Build-type:          Simple
+Copyright:           2010 Chris Done
+Maintainer:          Chris Done <chrisdone@gmail.com>
+Author:              Chris Done
+License:             BSD3
+Synopsis:            Confirm whether an email is valid and probably existant.
+Description:         Confirm whether an email is valid and probably existant.
+Extra-source-files:  cbits/check-mx.h
+
+Library
+  Build-depends:    base >= 4 && < 5
+                  , bytestring
+                  , email-validate >= 0.2
+  Extensions:       ForeignFunctionInterface
+  Exposed-Modules:  Network.Email.Check
+  Ghc-options:      -Wall
+  Include-dirs:     cbits
+  Install-includes: check-mx.h
+  C-sources:        cbits/check-mx.c
+  Extra-libraries:  resolv
+  Hs-source-dirs:   src

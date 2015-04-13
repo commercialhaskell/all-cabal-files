@@ -1,0 +1,18 @@
+Name: hdm
+Version: 0.0
+Synopsis: a small display manager.
+Description: A small display manager which loads from shell and just provides a text based menu for selecting the xinitrc file of your choice.  I created it for use with xmonad, where I often wish to start up gnome or xfce4 as well.  Since this uses startx, it handles multiple xsessions seamlessly.
+Category:System
+
+License: GPL-3
+License-file:COPYING 
+Author: Timothy Hobbs & Cheater__
+Maintainer: Timothy Hobbs <timothyhobbs@seznam.cz>
+build-type:Simple
+
+cabal-version: >= 1.4
+
+Executable hdm
+ build-depends:base<5,vty,unix,process,directory
+ Main-is: hdm.lhs
+ extensions: DoAndIfThenElse

@@ -1,0 +1,36 @@
+Name:                hweblib
+Version:             0.1
+Synopsis:            Haskell Web Library
+Description:
+  The library includes attoparsec based incremental parsers for
+  rfc2616 (http) and rfc3986 (uri). rfcs 2045, 2046, 2109, 2388, 2617
+  are planned.
+
+Homepage:            http://github.com/aycanirican/hweblib
+License:             BSD3
+License-file:        LICENSE
+Author:              Aycan iRiCAN
+Maintainer:          aycan.irican@core.gen.tr
+Category:            Web
+Build-type:          Simple
+Cabal-version:       >=1.6
+
+Library
+  -- Modules exported by the library.
+  Exposed-modules: 
+    Network.Http.Parser.RfcCommon
+    , Network.Http.Parser.Rfc3986
+    , Network.Http.Parser.Rfc2616 
+  
+  -- Packages needed in order to build this package.
+  Build-depends:
+    base >= 4 && < 5
+    , containers
+    , bytestring
+    , monads-fd
+    , transformers
+    , attoparsec
+
+source-repository head
+  type:     git
+  location: git://github.com/aycanirican/hweblib.git

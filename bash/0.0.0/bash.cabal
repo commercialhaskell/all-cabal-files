@@ -1,0 +1,45 @@
+name                          : bash
+version                       : 0.0.0
+category                      : Language
+license                       : BSD3
+license-file                  : LICENSE
+author                        : Jason Dusek
+maintainer                    : oss@solidsnack.be
+homepage                      : http://github.com/solidsnack/bash
+synopsis                      : Bash generation library.
+description                   :
+  A library for generation of Bash scripts, handling escaping, statement
+  grouping and expression formation at a high level.
+  .
+  The top-level module, Language.Bash, is all you need to import to access the
+  package's functionality. The module Language.Bash.Lib contains some
+  examples, as does the test script, tests.bash, included with the source
+  distribution.
+
+cabal-version                 : >= 1.6
+build-type                    : Simple
+extra-source-files            : README
+                              , tests.bash
+
+flag split-base
+
+library
+  if flag(split-base)
+    build-depends             : base >= 4 && < 5
+  else
+    build-depends             : base < 4
+  build-depends               : containers
+                              , bytestring >= 0.9
+                              , shell-escape >= 0.1.1
+                              , binary >= 0.5.0.2
+                              , hxt-regex-xmlschema >= 9.0.0
+                              , mtl >= 2.0.1.0
+                              , SHA >= 1.4.1.3
+  exposed-modules             : Language.Bash
+                                Language.Bash.Syntax
+                                Language.Bash.Script
+                                Language.Bash.PrettyPrinter
+                                Language.Bash.PrettyPrinter.State
+                                Language.Bash.Annotations
+                                Language.Bash.Lib
+

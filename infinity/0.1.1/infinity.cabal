@@ -1,0 +1,24 @@
+Name:                infinity
+Version:             0.1.1
+Description:         a tiny IRC bot, extendable through
+                     plugins written in haskell
+Synopsis:            a tiny IRC bot
+Category:            network
+License:             BSD3
+License-file:        LICENSE
+Author:              Austin Seipp
+Maintainer:          austin@youareinferior.net
+Build-Depends:       base, mtl, network, plugins, haskell98
+Extra-Source-Files:  INSTALL, README,
+		     API.hs,
+		     Utils.hs,
+		     IRC.hs,
+		     Config.hs,
+		     Plugins.hs,
+		     Plugins/PLUGINS
+		     Plugins/GreetPlugin.hs,
+		     Plugins/SystemPlugin.hs
+
+Executable:          infinity
+Main-is:             Infinity.hs
+ghc-options:         -O

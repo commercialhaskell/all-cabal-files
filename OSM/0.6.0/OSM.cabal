@@ -1,0 +1,59 @@
+Name:                 OSM
+Version:              0.6.0
+License:              BSD3
+License-File:         LICENSE
+Synopsis:             Parse OpenStreetMap files
+Description:          Parse OpenStreetMap http:\/\/osm.org/ files using HXT into data structures.
+                      The Data.Geo.OSM module is the core module that exports all others.
+Homepage:             https://github.com/tonymorris/geo-osm
+Category:             Utils
+Author:               Tony Morris <ʇǝu˙sıɹɹoɯʇ@ןןǝʞsɐɥ>, Thomas DuBuisson
+Maintainer:           Tony Morris, Thomas DuBuisson
+Copyright:            2009 -- 2012 Tony Morris, Thomas DuBuisson
+Build-Type:           Simple
+Cabal-Version:        >= 1.6
+Source-Repository     head
+  Type:               git
+  Location:           git@github.com:tonymorris/geo-osm.git
+
+Flag                  small_base
+  Description:        Choose the new, split-up base package.
+
+Library
+  Build-Depends:      base < 5 && >= 3
+                      , hxt >= 9
+                      , containers
+                      , data-lens
+                      , comonad-transformers
+                      , newtype
+
+  GHC-Options:        -Wall
+                      -fno-warn-name-shadowing
+
+  Hs-Source-Dirs:     src
+
+  Exposed-Modules:    Data.Geo.OSM
+                      Data.Geo.OSM.Api
+                      Data.Geo.OSM.Area
+                      Data.Geo.OSM.Bound
+                      Data.Geo.OSM.Bounds
+                      Data.Geo.OSM.Changeset
+                      Data.Geo.OSM.Children
+                      Data.Geo.OSM.GpxFile
+                      Data.Geo.OSM.Home
+                      Data.Geo.OSM.Nd
+                      Data.Geo.OSM.Node
+                      Data.Geo.OSM.NodeWayRelation
+                      Data.Geo.OSM.NWRCommon
+                      Data.Geo.OSM.MemberType
+                      Data.Geo.OSM.Member
+                      Data.Geo.OSM.OSM
+                      Data.Geo.OSM.Preferences
+                      Data.Geo.OSM.Relation
+                      Data.Geo.OSM.Tag
+                      Data.Geo.OSM.Tracepoints
+                      Data.Geo.OSM.User
+                      Data.Geo.OSM.Version
+                      Data.Geo.OSM.Way
+                      Data.Geo.OSM.Waynodes
+                      

@@ -1,0 +1,53 @@
+name:          free
+category:      Control, Monads
+version:       3.0
+license:       BSD3
+cabal-version: >= 1.6
+license-file:  LICENSE
+author:        Edward A. Kmett
+maintainer:    Edward A. Kmett <ekmett@gmail.com>
+stability:     provisional
+homepage:      http://github.com/ekmett/free/
+bug-reports:   http://github.com/ekmett/free/issues
+copyright:     Copyright (C) 2008-2011 Edward A. Kmett
+synopsis:      Monads for free
+description:   Monads for free
+build-type:    Simple
+extra-source-files: .travis.yml
+
+source-repository head
+  type: git
+  location: git://github.com/ekmett/free.git
+
+library
+  hs-source-dirs: src
+
+  other-extensions:
+    MultiParamTypeClasses
+    FunctionalDependencies
+    FlexibleInstances
+    UndecidableInstances
+
+  build-depends:
+    base                 >= 4       && < 5,
+    distributive         >= 0.2.1   && < 0.3,
+    transformers         >= 0.2.0   && < 0.4,
+    mtl                  >= 2.0.1.0 && < 2.2,
+    semigroupoids        >= 3.0     && < 3.1,
+    comonad              >= 3.0     && < 3.1,
+    comonad-transformers >= 3.0     && < 3.1,
+    comonads-fd          >= 3.0     && < 3.1,
+    semigroups           >= 0.8.3.1 && < 0.9
+
+  if impl(ghc)
+    cpp-options: -DGHC_TYPEABLE
+
+  extensions: CPP
+
+  exposed-modules:
+    Control.Monad.Free
+    Control.Monad.Free.Class
+    Control.Comonad.Cofree
+    Control.Comonad.Cofree.Class
+
+  ghc-options:      -Wall

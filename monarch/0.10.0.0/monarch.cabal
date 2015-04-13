@@ -1,0 +1,83 @@
+name:                monarch
+version:             0.10.0.0
+synopsis:            Monadic interface for TokyoTyrant.
+description:         This package provides simple monadic interface for TokyoTyrant.
+license:             BSD3
+license-file:        LICENSE
+author:              Noriyuki OHKAWA <n.ohkawa@gmail.com>
+maintainer:          Noriyuki OHKAWA <n.ohkawa@gmail.com>
+category:            Database
+build-type:          Simple
+cabal-version:       >=1.8
+homepage:            https://github.com/notogawa/monarch
+tested-with:         GHC ==7.4.1, GHC ==7.6.3
+
+source-repository head
+  type:                git
+  location:            https://github.com/notogawa/monarch
+
+flag develop
+  description:         For developer
+  default:             False
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     Database.Monarch
+                       Database.Monarch.Mock
+  other-modules:       Database.Monarch.Utils
+                       Database.Monarch.Types
+                       Database.Monarch.Action
+                       Database.Monarch.Mock.Types
+                       Database.Monarch.Mock.Action
+  ghc-options:         -Wall
+  build-depends:       base ==4.*
+                     , mtl ==2.1.*
+                     , transformers ==0.3.*
+                     , bytestring >=0.9 && <0.11
+                     , binary ==0.5.*
+                     , transformers ==0.3.*
+                     , network >=2.3 && <2.5
+                     , pool-conduit ==0.1.*
+                     , monad-control ==0.3.*
+                     , lifted-base >=0.1 && <0.3
+                     , transformers-base ==0.4.*
+                     , containers >=0.4 && <0.6
+                     , stm >=2.3 && <2.5
+
+test-suite specs
+  if flag(develop)
+    buildable:         True
+  else
+    buildable:         False
+  hs-source-dirs:      test
+  type:                exitcode-stdio-1.0
+  ghc-options:         -Wall -threaded
+  main-is:             Spec.hs
+  other-modules:       Database.Monarch.ActionSpec
+                       Database.Monarch.Mock.ActionSpec
+  build-depends:       base ==4.*
+                     , monarch
+                     , bytestring
+                     , transformers
+                     , hspec >=1.3
+
+test-suite doctests
+  hs-source-dirs:      test
+  type:                exitcode-stdio-1.0
+  main-is:             doctests.hs
+  build-depends:       base ==4.*
+                     , doctest
+
+benchmark benchmark
+  if flag(develop)
+    buildable:         True
+  else
+    buildable:         False
+  hs-source-dirs:      test
+  type:                exitcode-stdio-1.0
+  main-is:             benchmark.hs
+  build-depends:       base ==4.*
+                     , monarch
+                     , tokyotyrant-haskell
+                     , bytestring
+                     , criterion

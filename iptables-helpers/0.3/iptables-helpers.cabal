@@ -1,0 +1,32 @@
+Name:                iptables-helpers
+Version:             0.3
+Synopsis:            Static checking of iptables rules
+License:             BSD3
+License-file:        LICENSE
+Author:              Evgeny Tarasov
+Maintainer:          etarasov.ekb@gmail.com
+Category:            Text
+Build-type:          Simple
+
+Cabal-version:       >=1.2
+
+
+Library
+    Exposed-modules:
+                    Iptables
+                    Iptables.Parser
+                    Iptables.Print
+                    Iptables.Types
+  
+    Build-depends:
+                    base >=4 && <5,
+                    parsec >= 2.1,
+                    mtl >= 1.1,
+                    safe >= 0.3,
+                    containers >= 0.3 && < 0.4
+  
+  -- Other-modules:       
+  
+    Hs-Source-Dirs: src  
+
+    Ghc-options:    -Wall -fno-warn-unused-do-bind

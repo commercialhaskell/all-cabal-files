@@ -1,0 +1,45 @@
+Name:           names
+Version:        0.2.3
+Synopsis:       Type level names.
+Description:    Type level names.
+                .
+                [@v0.2@] Show Instances added. Restricted to latin1.
+                .
+                [@v0.2.1@] Infix operator fixities set.
+                .
+                [@v0.2.2@] Merge "Data.Name" and "Data.Name.TH".
+                .
+                [@v0.2.3@] Added basic Documentation.
+
+License:        MIT
+License-File:   LICENSE
+Author:         Julian Fleischer <julian.fleischer@fu-berlin.de>
+Maintainer:     Julian Fleischer <julian.fleischer@fu-berlin.de>
+Build-Type:     Simple
+Cabal-Version:  >= 1.6
+Category:       Data, Type System
+Stability:      experimental
+
+
+Source-Repository head
+    type: darcs
+    location: hub.darcs.net:names
+
+Source-Repository head
+    type: darcs
+    location: hub.darcs.net:names
+    tag: v0.2.3
+
+
+Library
+    Exposed-Modules:    Data.Name
+
+    Other-Modules:      Data.Name.Internal.Names,
+                        Data.Name.Internal.TH
+
+    Build-Depends:      base >= 4 && < 5,
+                        template-haskell >= 2.7
+
+    Hs-Source-Dirs:     src
+
+

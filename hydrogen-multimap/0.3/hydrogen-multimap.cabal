@@ -1,0 +1,34 @@
+name:                 hydrogen-multimap
+version:              0.3
+homepage:             https://scravy.de/hydrogen-multimap/
+synopsis:             Hydrogen Multimap
+license:              MIT
+license-file:         LICENSE
+extra-source-files:   CHANGELOG.md, README.md
+author:               Julian Fleischer
+maintainer:           julian@scravy.de
+category:             Language
+build-type:           Simple
+cabal-version:        >=1.14
+
+source-repository head
+    type:             git
+    location:         https://github.com/scravy/hydrogen-multimap
+
+library
+  exposed-modules:    Hydrogen.MultiMap
+  build-depends:      base >=4.5 && <5
+                      , containers >=0.4.2.1
+                      , ghc-prim
+  hs-source-dirs:     src
+  ghc-options:        -Wall
+  default-language:   Haskell2010
+  default-extensions:  CPP
+                       , DeriveDataTypeable
+                       , DeriveFoldable
+                       , DeriveFunctor
+                       , DeriveGeneric
+                       , DeriveTraversable
+                       , GADTs
+                       , ScopedTypeVariables
+

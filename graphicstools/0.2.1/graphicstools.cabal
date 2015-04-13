@@ -1,0 +1,62 @@
+Name:                graphicstools
+Version:             0.2.1
+Synopsis:            Tools for creating graphical UIs, based on wxHaskell.
+Description:         This library provides interfaces for creating easily
+                     graphical UIs especially for computer vision purposes,
+                     and for rendering information in graphical form.
+                     Implementations are provided for CV libraries.
+                     Example applications are included.
+                     (This is an early preview version)
+Homepage:            https://yousource.it.jyu.fi/cvlab/pages/GraphicsTools
+License:             BSD3
+License-file:        LICENSE
+Author:              Matti J. Eskelinen & Ville Tirronen
+Maintainer:          matti.j.eskelinen@jyu.fi
+Copyright:
+Category:            Graphics
+Build-type:          Simple
+Extra-source-files:  README
+Cabal-version:       >=1.8
+
+Executable cvexample
+  Main-is:
+    CVExample.hs
+  Build-Depends:
+    base >= 3 && < 5,
+    wxcore >= 0.13.2.0,
+    wx >= 0.12.1.6,
+    CV >= 0.3.4,
+    graphicstools >= 0.1
+
+Library
+  Exposed-modules:
+    Graphics.Tools.WX,
+    Graphics.Tools.CV2WX,
+    Graphics.Tools.DefaultGUI,
+    Graphics.Tools.Tangible
+    Graphics.Tools.Tangible.Instances
+    Utils.Persist
+    Graphics.Tools.Bindings.Convert
+  Extensions:
+    ForeignFunctionInterface
+  Build-Depends:
+    base >= 3 && < 5,
+    ghc-prim,
+    containers >= 0.4.2 && < 0.8,
+    bindings-DSL >= 1.0.7 && < 1.1,
+    directory >= 1.1 &&  < 2.5,
+    CV >= 0.3.5,
+    wxcore >= 0.12.1.6,
+    wx >= 0.12.1.6
+  Include-dirs:
+    c
+  Includes:
+    c/convert.h
+  Install-includes:
+    c/convert.h
+  C-sources:
+    c/convert.c
+
+source-repository head
+  type:     git
+  location: git@yousource.it.jyu.fi:cvlab/graphicstools.git

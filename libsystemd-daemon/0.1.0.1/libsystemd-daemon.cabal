@@ -1,0 +1,48 @@
+name:                libsystemd-daemon
+version:             0.1.0.1
+synopsis:            Haskell bindings for libsystemd-daemon.
+description:         Haskell bindings for libsystemd-daemon.
+license:             LGPL-2.1
+license-file:        LICENSE
+author:              Cedric Staub <cs+hs@cssx.cc>
+maintainer:          Cedric Staub <cs+hs@cssx.cc>
+category:            System
+build-type:          Simple
+cabal-version:       >=1.8
+
+Flag UsePkgConfig
+  Description: Use pkg-config to check for library dependencies.
+  Default: True
+
+library
+  exposed-modules:   System.SD.Daemon 
+  other-modules:     System.SD.Daemon.Constants
+  build-depends:     base >= 4.5 && < 5,
+                     bytestring >= 0.9,
+                     network >= 2.3,
+                     utf8-string >= 0.3
+  hs-source-dirs:    src
+  extensions:        ForeignFunctionInterface
+  ghc-options:       -Wall
+  extra-libraries:   systemd-daemon
+
+  if flag(UsePkgConfig)
+    pkgconfig-depends: libsystemd-daemon >= 195
+  else
+    includes: systemd/sd-daemon.h
+
+test-suite run-tests
+  type:              exitcode-stdio-1.0
+  main-is:           Main.hs
+  hs-source-dirs:    test
+  extensions:        ForeignFunctionInterface
+  build-depends:     base >= 4.5,
+                     libsystemd-daemon,
+                     network >= 2.3,
+                     test-framework >= 0.8,
+                     test-framework-hunit >= 0.3,
+                     HUnit >= 1.2
+
+source-repository head
+  type:     hg
+  location: https://bitbucket.org/csstaub/libsystemd-daemon

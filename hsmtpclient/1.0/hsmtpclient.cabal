@@ -1,0 +1,18 @@
+name:                hsmtpclient
+version:             1.0
+synopsis:            Simple SMTP Client
+description:         A very simple SMTP Client library for sending emails.
+category:            Network
+homepage:            http://code.google.com/p/hsmtpclient/
+license:             BSD3
+license-file:        LICENSE
+author:              Massimo Zaniboni <massimo.zaniboni@gmail.com>
+maintainer:          Massimo Zaniboni <massimo.zaniboni@gmail.com>
+cabal-Version:       >= 1.2
+build-type:          Simple
+extra-source-files:  README CREDITS
+
+library
+  build-depends: base >=3 && < 5,network,old-time,directory,array
+  exposed-modules: Network.SMTP.Client.HSmtpClient
+  other-modules: Base64

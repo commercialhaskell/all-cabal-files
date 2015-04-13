@@ -1,0 +1,29 @@
+name:               morfeusz
+version:            0.3.0
+synopsis:           Bindings to the morphological analyser Morfeusz
+description:
+    The library provides bindings to the morphological analyser Morfeusz
+    <http://sgjp.pl/morfeusz/>.
+license:            BSD3
+license-file:       LICENSE
+cabal-version:      >= 1.6
+copyright:          Copyright (c) 2012 IPI PAN
+author:             Jakub Waszczuk
+maintainer:         waszczuk.kuba@gmail.com
+stability:          experimental
+category:           Natural Language Processing
+homepage:           https://github.com/kawu/morfeusz
+build-type:         Simple
+
+library
+  exposed-modules:  NLP.Morfeusz
+  other-modules:    NLP.Morfeusz.Lock, NLP.Morfeusz.Lock.Internal
+  build-depends:    base >= 4 && < 5, containers, text, bytestring, mtl
+  includes:         morfeusz.h
+  extra-libraries:  morfeusz
+  extensions:       ForeignFunctionInterface
+  c-sources:        cbits/global.c
+
+source-repository head
+    type: git
+    location: git://github.com/kawu/morfeusz.git

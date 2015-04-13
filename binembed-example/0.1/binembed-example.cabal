@@ -1,0 +1,38 @@
+Name:                binembed-example
+Version:             0.1
+Synopsis:            Example project using binembed to embed data in object files.
+Description:         binembed-example prints out its source code, embedded into it
+                     at compile time using the "binembed" package.
+
+Homepage:            http://gitorious.org/binembed
+License:             BSD3
+License-file:        LICENSE
+Author:              Claude Heiland-Allen
+Maintainer:          claudiusmaximus@goto10.org
+Category:            Distribution
+Build-type:          Custom
+Cabal-version:       >=1.6
+
+Extra-source-files:  main_c.c
+                     Makefile
+                     README
+
+Executable binembed-example
+  Main-is:             Main_haskell.hs
+  Other-modules:       Example
+  -- The next line is needed for the @withBinEmbed@ hooks to work:
+  x-binembed:          Example
+  Build-depends:       base >= 4 && < 5, bytestring >= 0.9 && < 0.10, filepath >= 1.1 && < 1.2, containers >= 0.3 && < 0.4, binembed >= 0.1 && < 0.2
+  GHC-options:         -Wall
+  GHC-prof-options:    -prof -auto-all
+
+Source-repository head
+  type:     git
+  location: git://gitorious.org/binembed/binembed.git
+  subdir:   example
+
+Source-repository this
+  type:     git
+  location: git://gitorious.org/binembed/binembed.git
+  subdir:   example
+  tag:      v0.1

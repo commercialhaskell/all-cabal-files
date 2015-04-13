@@ -1,0 +1,14 @@
+Name:           EventSocket 
+Version:        0.1
+Author:         Vulpyne @ Teliax 
+Maintainer:     vulpyne+haskelleventsocket@teliax.com
+Synopsis:       Interfaces with FreeSwitch Event Socket.
+Description:    Interfaces with FreeSwitch Event Socket. This should be considered an alpha release and has not been tested extensively.
+License:        BSD3
+License-file:   LICENSE
+Category:       Network
+Build-Type:     Simple
+Build-Depends:
+        base >= 3 && < 5, network, haskell98, bytestring, mtl, containers
+Exposed-Modules:
+        Network.EventSocket

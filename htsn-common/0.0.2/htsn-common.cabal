@@ -1,0 +1,68 @@
+name:           htsn-common
+version:        0.0.2
+cabal-version:  >= 1.8
+author:         Michael Orlitzky
+maintainer:	Michael Orlitzky <michael@orlitzky.com>
+category:       Utils
+license:        GPL-3
+license-file:   doc/LICENSE
+build-type:     Simple
+synopsis:
+  Display/logging facilities used by both htsn and htsn-import.
+description:
+  This library contains three modules,
+  .
+    * Network.Services.TSN.Logging
+  .
+    * Network.Services.TSN.Report
+  .
+    * Network.Services.TSN.Terminal
+  .
+  They work together to provide \"reporting\" for the htsn and htsn-import
+  executables which both display and log things in the same way.
+  .
+  The Network.Services.TSN.Logging module allows the application to
+  log to syslog, a file, or both. Four convenience functions are
+  provided to log messages at each priority: error, debug, info, and
+  warn.
+  .
+  The Network.Services.TSN.Terminal provides similar functions that
+  instead display messages on the console (terminal). The output is
+  color-coded according to the severity of the message.
+  .
+  The Network.Services.TSN.Report modules contains convenience
+  functions that both log and display informational message. This is
+  what an (optionally interactive) application will usually want to
+  do.
+
+library
+  hs-source-dirs: src/
+  exposed-modules:
+    Network.Services.TSN.Logging
+    Network.Services.TSN.Report
+    Network.Services.TSN.Terminal
+  build-depends:
+    ansi-terminal               >= 0.6,
+    base                        >= 4.6 && < 5,
+    hslogger                    >= 1.2,
+    transformers                >= 0.3
+  ghc-options:
+    -Wall
+    -fwarn-hi-shadowing
+    -fwarn-missing-signatures
+    -fwarn-name-shadowing
+    -fwarn-orphans
+    -fwarn-type-defaults
+    -fwarn-tabs
+    -fwarn-incomplete-record-updates
+    -fwarn-monomorphism-restriction
+    -fwarn-unused-do-bind
+    -rtsopts
+    -optc-O3
+    -optc-march=native
+    -O2
+
+source-repository head
+  type: git
+  location: http://michael.orlitzky.com/git/htsn-common.git
+  branch: master

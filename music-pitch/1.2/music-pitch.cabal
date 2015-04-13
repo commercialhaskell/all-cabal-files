@@ -1,0 +1,33 @@
+
+name:               music-pitch
+version:            1.2
+cabal-version:      >= 1.2
+author:             Hans Hoglund
+maintainer:         Hans Hoglund
+license:            BSD3
+license-file:       COPYING
+synopsis:           Abstract representation of musical pitch.
+category:           Music
+tested-with:        GHC
+build-type:         Simple
+
+description: 
+    Abstract representation of musical pitch.
+    
+    This library is part of the Haskell Music Suite, see <http://musicsuite.github.com>.
+
+library                    
+    build-depends: 
+        base >= 4 && < 5,
+        unix,
+        time,
+        random,
+        semigroups,
+        semigroupoids
+
+    hs-source-dirs: src
+    exposed-modules:
+        Music.Pitch
+        Music.Pitch.Absolute
+        Music.Pitch.Relative
+        Music.Pitch.Intonation

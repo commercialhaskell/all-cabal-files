@@ -1,0 +1,21 @@
+name:                   rwlock
+version:                0.0.0.1
+stability:              provisional
+
+cabal-version:          >= 1.2
+build-type:             Simple
+
+author:                 James Cook <james.cook@usma.edu>
+maintainer:             James Cook <james.cook@usma.edu>
+license:                PublicDomain
+homepage:               http://code.haskell.org/~mokus/rwlock
+
+category:               Concurrency
+synopsis:               Multiple-read / single-write locks
+description:            A simple implementation of a multiple-reader / single-writer
+                        lock, using STM.
+
+Library
+  hs-source-dirs:       src
+  exposed-modules:      Control.Concurrent.RWLock
+  build-depends:        base >= 3 && <5, monad-loops, stm

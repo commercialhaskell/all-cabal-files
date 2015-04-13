@@ -1,0 +1,44 @@
+name:                syntax-example
+version:             1.0.0.0
+synopsis:            Example application using syntax, a library for abstract syntax descriptions.
+description:
+  Example application using syntax, a library for abstract syntax descriptions.
+  .
+  The code:
+  .
+  * <https://github.com/Pawel834/syntax-example/blob/83c283823749038db3d21aaf99105f456e25bac7/Main.hs Main.hs>
+  .
+  Example input:
+  .
+  > (\f->
+  > (\x
+  >      -> f     ((x) x)) (\x
+  > -> f  (x x)
+  > )
+  > (\x -> "test")
+  > (\y -> y +2.0e13))
+  .
+  Example output:
+  .
+  > Abs "f" (App (App (App (Abs "x" (App (Var "f") (App (Var "x") (Var "x")))) (Abs "x" (App (Var "f") (App (Var "x") (Var "x"))))) (Abs "x" (Lit (LitStr "test")))) (Abs "y" (App (Var "y") (Lit (LitNum 2.0e13)))))
+  > \f -> (\x -> f (x x)) (\x -> f (x x)) (\x -> "test") (\y -> y 2.0e13)
+
+license:             MIT
+license-file:        LICENSE
+author:              Paweł Nowak
+maintainer:          Paweł Nowak <pawel834@gmail.com>
+copyright:           Paweł Nowak 2014
+category:            Data
+build-type:          Simple
+cabal-version:       >=1.10
+
+source-repository head
+  type:     git
+  location: git@github.com:Pawel834/syntax-example.git
+
+executable syntax-example
+  main-is:             Main.hs
+  build-depends:       base >= 4 && < 5, lens, semi-iso >= 1,
+                       syntax >= 1, syntax-attoparsec >= 1, syntax-printer >= 1,
+                       attoparsec, text, scientific >= 0.3
+  default-language:    Haskell2010

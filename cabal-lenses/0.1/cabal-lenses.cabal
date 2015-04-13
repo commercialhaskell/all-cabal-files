@@ -1,0 +1,44 @@
+name: cabal-lenses
+version: 0.1
+cabal-version: >=1.9.2
+build-type: Simple
+license: BSD3
+license-file: LICENSE
+maintainer: daniel.trstenjak@gmail.com
+synopsis: Lenses and traversals for the Cabal library.
+description:
+    Lenses and traversals (compatible with the <https://hackage.haskell.org/package/lens lens>) library) for
+    the <https://hackage.haskell.org/package/Cabal Cabal> library.
+category: Utils
+author: Daniel Trstenjak
+data-dir: ""
+extra-source-files: 
+    README.md
+ 
+source-repository head
+    type: git
+    location: https://github.com/dan-t/cabal-lenses
+ 
+library
+    build-depends: 
+        base >=3 && <5,
+        lens >=4.0.1 && <4.1,
+        unordered-containers >=0.2.3.3 && <0.3,
+        Cabal >=1.18.0 && <1.21
+    exposed-modules: 
+        CabalLenses
+        CabalLenses.PackageDescription
+        CabalLenses.Package
+        CabalLenses.Version
+        CabalLenses.CondVars
+        CabalLenses.Section
+        CabalLenses.Traversals.BuildInfo
+        CabalLenses.Traversals.Dependency
+    other-modules:
+        CabalLenses.Traversals.Internal
+    exposed: True
+    buildable: True
+    cpp-options: -DCABAL
+    hs-source-dirs: lib
+    other-modules: Paths_cabal_lenses
+    ghc-options: -W

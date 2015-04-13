@@ -1,0 +1,43 @@
+Name:              imparse
+Version:           0.0.0.1
+Cabal-Version:     >= 1.6
+License:           GPL-3
+License-File:      LICENSE
+Synopsis:          Multi-platform parser analyzer and generator.
+Description:       Multi-platform parser analyzer and generator.
+Category:          Text
+Author:            Andrei Lapets
+Maintainer:        Andrei Lapets <lapets@bu.edu>
+Build-Type:        Simple
+
+Library
+  Exposed-Modules: Text.Imparse
+  Build-Depends:   base >= 3 && < 5,
+                   MissingH,
+                   containers == 0.4.2.1,
+                   text == 0.11.2.3, 
+                   split,
+                   directory,
+                   staticanalysis,
+                   compilation,
+                   ascetic,
+                   uxadt,
+                   richreports
+
+Executable imparse
+  Main-Is:         Main.hs
+  Build-Depends:   base >= 3 && < 5,
+                   MissingH,
+                   containers == 0.4.2.1,
+                   text == 0.11.2.3, 
+                   split,
+                   directory,
+                   staticanalysis,
+                   compilation,
+                   ascetic,
+                   uxadt,
+                   richreports
+
+Source-Repository head
+  Type:            git
+  Location:        https://github.com/lapets/imparse

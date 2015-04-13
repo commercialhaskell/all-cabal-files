@@ -1,0 +1,80 @@
+Name:           hledger
+Version:        0.3
+Category:       Finance
+Synopsis:       A ledger-compatible text-based accounting tool.
+Description:    hledger is a haskell clone of John Wiegley's "ledger" text-based
+                accounting tool (http://newartisans.com/software/ledger.html).  
+                It generates ledger-compatible register & balance reports from a plain
+                text ledger file, and demonstrates a functional implementation of ledger.
+License:        GPL
+Stability:      beta
+Author:         Simon Michael <simon@joyful.com>
+Maintainer:     Simon Michael <simon@joyful.com>
+Homepage:       http://joyful.com/hledger
+Tested-With:    GHC
+Build-Type:     Simple
+License-File:   LICENSE
+Extra-Source-Files: README sample.ledger
+Extra-Tmp-Files: 
+Cabal-Version:  >= 1.2
+
+Executable hledger
+  Main-Is:        hledger.hs
+  Build-Depends:  
+                  base,
+                  containers, 
+                  haskell98, 
+                  directory, 
+                  parsec, 
+                  regex-compat, 
+                  regexpr>=0.5.1,
+                  old-locale, 
+                  time, 
+                  HUnit, 
+                  mtl, 
+                  bytestring,
+                  vty>=3.1.8.2
+  Other-Modules:  
+                  BalanceCommand
+                  Options
+                  PrintCommand
+                  RegisterCommand
+                  Setup
+                  Tests
+                  UICommand
+                  Utils
+                  Ledger
+                  Ledger.Account
+                  Ledger.AccountName
+                  Ledger.Amount
+                  Ledger.Commodity
+                  Ledger.Dates
+                  Ledger.Entry
+                  Ledger.RawLedger
+                  Ledger.Ledger
+                  Ledger.RawTransaction
+                  Ledger.Parse
+                  Ledger.TimeLog
+                  Ledger.Transaction
+                  Ledger.Types
+                  Ledger.Utils
+
+library
+  Build-Depends:  base, containers, haskell98, directory, parsec, regex-compat,
+                  old-locale, time, HUnit
+  Exposed-modules:
+                  Ledger
+                  Ledger.Account
+                  Ledger.AccountName
+                  Ledger.Amount
+                  Ledger.Commodity
+                  Ledger.Dates
+                  Ledger.Entry
+                  Ledger.RawLedger
+                  Ledger.Ledger
+                  Ledger.RawTransaction
+                  Ledger.Parse
+                  Ledger.TimeLog
+                  Ledger.Transaction
+                  Ledger.Types
+                  Ledger.Utils

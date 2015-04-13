@@ -1,0 +1,29 @@
+Name:                hjson-query
+Version:             0.4
+Synopsis:            library for querying from JSON
+Category:            Text
+Description:         library(HXT-like) for querying from JSON
+License:             BSD3
+License-file:        LICENSE
+Author:              YuriyIskra  <iskra.yw@gmail.com>
+Maintainer:          YuriyIskra  <iskra.yw@gmail.com>
+Stability:           Experimental
+Copyright:           Copyright (c) 2010 Yuriy Iskra
+Build-type: Simple
+Cabal-version: >= 1.6
+
+extra-source-files:
+  examples/Example1.hs
+
+library
+  Exposed-modules:     Text.HJson.Query
+                       
+  Build-Depends:       hjson, 
+                       base       >= 4   && < 5,
+                       containers >= 0.2 && < 1
+                
+  hs-source-dirs:      src
+
+Source-repository head
+    Type: git
+    Location: git://github.com/iskra/hjson-query.git

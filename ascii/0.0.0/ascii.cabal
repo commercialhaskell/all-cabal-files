@@ -1,0 +1,18 @@
+Name:                ascii
+Version:             0.0.0
+Synopsis:            Type-safe, bytestring-based ASCII values.
+License:             BSD3
+License-file:        LICENSE
+Author:              Michael Snoyman
+Maintainer:          michael@snoyman.com
+Stability:           Stable
+Category:            Data
+Build-type:          Simple
+Cabal-version:       >=1.2
+
+Library
+  Exposed-modules:     Data.Ascii
+  Build-depends:       base            >= 4             && < 5
+                     , bytestring      >= 0.9           && < 0.10
+                     , text            >= 0.11          && < 0.12
+  Ghc-options:         -Wall

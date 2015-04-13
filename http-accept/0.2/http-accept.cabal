@@ -1,0 +1,35 @@
+name:            http-accept
+version:         0.2
+cabal-version:   >= 1.8
+license:         OtherLicense
+license-file:    COPYING
+category:        Web
+copyright:       © 2012 Stephen Paul Weber
+author:          Stephen Paul Weber <singpolyma@singpolyma.net>
+maintainer:      Stephen Paul Weber <singpolyma@singpolyma.net>
+stability:       experimental
+tested-with:     GHC == 7.4.1
+synopsis:        Functions for working with HTTP Accept headers
+homepage:        https://github.com/singpolyma/http-accept
+bug-reports:     https://github.com/singpolyma/http-accept/issues
+build-type:      Simple
+description:
+        Functions for working with HTTP Accept headers.  You may also want
+        check out parseHttpAccept from wai-extra:Network.Wai.Parse (it is
+        not tied to WAI in any way and some similar may make it into this
+        package eventually).
+
+extra-source-files:
+        README
+
+library
+        exposed-modules:
+                Network.HTTP.Accept
+
+        build-depends:
+                base == 4.*,
+                bytestring
+
+source-repository head
+        type:     git
+        location: git://github.com/singpolyma/http-accept.git

@@ -1,0 +1,22 @@
+name:               AspectAG 
+version:            0.1.4
+license:            LGPL
+license-file:       COPYRIGHT
+maintainer:         Marcos Viera <mviera@fing.edu.uy>
+homepage:           http://www.cs.uu.nl/wiki/bin/view/Center/AspectAG 
+description:        Library of strongly typed Attribute Grammars implemented using type-level programming   
+synopsis:           Attribute Grammars in the form of an EDSL
+build-type:         Simple
+category:           Development 
+stability:          Experimental
+copyright:          Universiteit Utrecht
+build-depends:      base<=4, haskell98, template-haskell, HList>=0.2, containers>=0.2.0.0, mtl>=1.1.0.2
+cabal-version:      >= 1.2.3  
+exposed-modules:    Data.AspectAG, Data.AspectAG.Derive
+other-modules:           
+extensions:         EmptyDataDecls, FlexibleContexts, FlexibleInstances, FunctionalDependencies,
+                    MultiParamTypeClasses, RankNTypes, ScopedTypeVariables,
+                    TypeSynonymInstances, UndecidableInstances, GADTs
+hs-source-dirs:     src
+extra-source-files: README, LICENSE-LGPL 
+ghc-options:        -Wall

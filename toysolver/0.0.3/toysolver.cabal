@@ -1,0 +1,244 @@
+Name:		toysolver
+Version:	0.0.3
+License:	BSD3
+License-File:	COPYING
+Author:		Masahiro Sakai (masahiro.sakai@gmail.com)
+Maintainer:	masahiro.sakai@gmail.com
+Category:	Algorithms
+Cabal-Version:	>= 1.8
+Synopsis:	Assorted decision procedures
+Description:	Toy-level implementation of some decision procedures
+Bug-Reports:	https://github.com/msakai/toysolver/issues
+Extra-Source-Files:
+   README.md
+   COPYING
+   .travis.yml
+   src/TseitinEncode.hs
+   src/Data/Polyhedron.hs
+   src/pbverify.hs
+   src/pigeonhole.hs
+   src/Algorithm/Wang.hs
+   samples/gcnf/*.gcnf
+   samples/lp/*.lp
+   samples/lp/error/*.lp
+   samples/maxsat/*.cnf
+   samples/maxsat/*.wcnf
+   samples/pbo/*.opb
+   samples/pbs/*.opb
+   samples/sat/*.cnf
+   samples/wbo/*.wbo
+   samples/sdp/*.dat
+   samples/sdp/*.dat-s
+   samples/smt/*.smt2
+   samples/qbf/*.qdimacs
+   test/TestAReal2.hs
+   benchmarks/UF250.1065.100/*.cnf
+   benchmarks/UUF250.1065.100/*.cnf
+Build-Type: Simple
+
+Flag ForceChar8
+  Description: set default encoding to char8 (not to use iconv)
+  Default: False
+
+source-repository head
+  type:     git
+  location: git://github.com/msakai/toysolver.git
+
+Library
+  Exposed: False
+  Hs-source-dirs: src
+  Build-Depends:
+     base >=4 && <5,
+     containers >= 0.4.2, mtl, array, random, stm >=2.3, parsec, bytestring, filepath, deepseq, time, old-locale, primes,
+     parse-dimacs, queue, heaps, unbounded-delays,
+     OptDir
+  Extensions:
+     MultiParamTypeClasses
+     FlexibleInstances
+     BangPatterns
+     DoAndIfThenElse
+     CPP
+  Exposed-Modules:
+     Algorithm.BoundsInference
+     Algorithm.CAD
+     Algorithm.CongruenceClosure
+     Algorithm.ContiTraverso
+     Algorithm.Cooper
+     Algorithm.FOLModelFinder
+     Algorithm.FourierMotzkin
+     Algorithm.LPSolver
+     Algorithm.LPSolverHL
+     Algorithm.LPUtil
+     Algorithm.MIPSolverHL
+     Algorithm.MIPSolver2
+     Algorithm.OmegaTest
+     Algorithm.Simplex
+     Algorithm.Simplex2
+     Converter.CNF2LP
+     Converter.ObjType
+     Converter.PB2LP
+     Converter.LP2SMT
+     Converter.MaxSAT2LP
+     Data.AlgebraicNumber
+     Data.AlgebraicNumber.Root
+     Data.ArithRel
+     Data.Delta
+     Data.Expr
+     Data.Formula
+     Data.LA
+     Data.Lattice
+     Data.LBool
+     Data.Linear
+     Data.Interval
+     Data.Polynomial
+     Data.Polynomial.FactorZ
+     Data.Polynomial.GBase
+     Data.Polynomial.Lagrange
+     Data.Polynomial.Sturm
+     SAT
+     SAT.Integer
+     SAT.MUS
+     SAT.CAMUS
+     SAT.PBO
+     SAT.TheorySolver
+     SAT.TseitinEncoder
+     SAT.Types
+     SAT.Printer
+     Text.GCNF
+     Text.GurobiSol
+     Text.LPFile
+     Text.MPSFile
+     Text.MaxSAT
+     Text.PBFile
+     Text.SDPFile
+     Util
+     Version
+  Other-Modules:
+     Data.IndexedPriorityQueue
+     Data.SeqQueue
+     Paths_toysolver
+  GHC-Prof-Options: -auto-all
+
+Executable toysolver
+  Main-is: toysolver.hs
+  HS-Source-Dirs: toysolver
+  Build-Depends: base >=4.4 && <5, containers, array, filepath, parsec, OptDir, parse-dimacs, toysolver
+  if impl(ghc)
+    GHC-Options: -threaded
+  if impl(ghc >= 7)
+    GHC-Options: -rtsopts
+  GHC-Prof-Options: -auto-all
+
+Executable toysat
+  Main-is: toysat.hs
+  HS-Source-Dirs: toysat
+  Build-Depends: base >=4 && <5, containers >= 0.4.2, array, parsec, bytestring, filepath, parse-dimacs, time, old-locale, unbounded-delays, toysolver
+  if impl(ghc >= 7)
+    GHC-Options: -rtsopts
+  GHC-Prof-Options: -auto-all
+  if flag(ForceChar8) && impl(ghc)
+    Build-Depends: base >=4.5
+    CPP-OPtions: "-DFORCE_CHAR8"
+
+Executable toyfmf
+  Main-is: toyfmf.hs
+  HS-Source-Dirs: toyfmf
+  Build-Depends: base >=4 && <5, containers >= 0.4.2, toysolver, logic-TPTP
+  if impl(ghc >= 7)
+    GHC-Options: -rtsopts
+  GHC-Prof-Options: -auto-all
+
+Executable lpconvert
+  Main-is: lpconvert.hs
+  HS-Source-Dirs: lpconvert
+  Build-Depends: base >=4 && <5, containers, filepath, parse-dimacs, toysolver
+
+Test-suite TestSAT
+  Type:              exitcode-stdio-1.0
+  HS-Source-Dirs:    test
+  Main-is:           TestSAT.hs
+  Build-depends:     base >=4 && <5, array, containers, toysolver, test-framework,test-framework-th,test-framework-hunit,HUnit
+  Extensions: TemplateHaskell, DoAndIfThenElse
+
+Test-suite TestSimplex2
+  Type:              exitcode-stdio-1.0
+  HS-Source-Dirs:    test
+  Main-is:           TestSimplex2.hs
+  Build-depends:     base >=4 && <5, containers, toysolver, test-framework,test-framework-th,test-framework-hunit,HUnit
+  Extensions: TemplateHaskell, DoAndIfThenElse
+
+Test-suite TestMIPSolver2
+  Type:              exitcode-stdio-1.0
+  HS-Source-Dirs:    test
+  Main-is:           TestMIPSolver2.hs
+  Build-depends:     base >=4 && <5, containers, toysolver, test-framework, test-framework-th, test-framework-hunit, HUnit, OptDir, stm
+  Extensions: TemplateHaskell, DoAndIfThenElse
+
+Test-suite TestPolynomial
+  Type:              exitcode-stdio-1.0
+  HS-Source-Dirs:    test
+  Main-is:           TestPolynomial.hs
+  Build-depends:     base >=4 && <5, containers, toysolver, test-framework,test-framework-th,test-framework-hunit,test-framework-quickcheck2,HUnit,QuickCheck >=2 && <3
+  Extensions: TemplateHaskell, DoAndIfThenElse
+
+Test-suite TestInterval
+  Type:              exitcode-stdio-1.0
+  HS-Source-Dirs:    test
+  Main-is:           TestInterval.hs
+  Build-depends:     base >=4 && <5, containers, toysolver, test-framework,test-framework-th,test-framework-hunit,test-framework-quickcheck2,HUnit,QuickCheck >=2 && <3
+  Extensions: TemplateHaskell, DoAndIfThenElse
+
+Test-suite TestAReal
+  Type:              exitcode-stdio-1.0
+  HS-Source-Dirs:    test
+  Main-is:           TestAReal.hs
+  Build-depends:     base >=4 && <5, containers, toysolver, test-framework,test-framework-th,test-framework-hunit,test-framework-quickcheck2,HUnit,QuickCheck >=2 && <3
+  Extensions: TemplateHaskell, DoAndIfThenElse
+
+Test-suite TestQE
+  Type:              exitcode-stdio-1.0
+  HS-Source-Dirs:    test
+  Main-is:           TestQE.hs
+  Build-depends:     base >=4 && <5, containers, toysolver, OptDir, test-framework,test-framework-th,test-framework-hunit,test-framework-quickcheck2,HUnit,QuickCheck >=2 && <3
+  Extensions: TemplateHaskell, DoAndIfThenElse
+
+Test-suite TestContiTraverso
+  Type:              exitcode-stdio-1.0
+  HS-Source-Dirs:    test
+  Main-is:           TestContiTraverso.hs
+  Build-depends:     base >=4 && <5, containers, toysolver, OptDir, test-framework,test-framework-th,test-framework-hunit,test-framework-quickcheck2,HUnit,QuickCheck >=2 && <3
+  Extensions: TemplateHaskell, DoAndIfThenElse
+
+Test-suite TestLPFile
+  Type:              exitcode-stdio-1.0
+  HS-Source-Dirs:    test
+  Main-is:           TestLPFile.hs
+  Build-depends:     base >=4 && <5, containers, toysolver, test-framework,test-framework-th,test-framework-hunit,test-framework-quickcheck2,HUnit,QuickCheck >=2 && <3
+  Extensions: TemplateHaskell, DoAndIfThenElse
+
+Test-suite TestMPSFile
+  Type:              exitcode-stdio-1.0
+  HS-Source-Dirs:    test
+  Main-is:           TestMPSFile.hs
+  Build-depends:     base >=4 && <5, containers, toysolver, test-framework,test-framework-th,test-framework-hunit,test-framework-quickcheck2,HUnit,QuickCheck >=2 && <3
+  Extensions: TemplateHaskell, DoAndIfThenElse
+
+Test-suite TestPBFile
+  Type:              exitcode-stdio-1.0
+  HS-Source-Dirs:    test
+  Main-is:           TestPBFile.hs
+  Build-depends:     base >=4 && <5, toysolver, test-framework,test-framework-th,test-framework-hunit,test-framework-quickcheck2,HUnit,QuickCheck >=2 && <3
+  Extensions: TemplateHaskell, DoAndIfThenElse
+
+Test-suite TestUtil
+  Type:              exitcode-stdio-1.0
+  HS-Source-Dirs:    test
+  Main-is:           TestUtil.hs
+  Build-depends:     base >=4 && <5, toysolver, test-framework,test-framework-th,test-framework-hunit,test-framework-quickcheck2,HUnit,QuickCheck >=2 && <3
+  Extensions: TemplateHaskell, DoAndIfThenElse
+
+Benchmark BenchmarkSATLIB
+  type:             exitcode-stdio-1.0
+  hs-source-dirs:   benchmarks
+  main-is:          BenchmarkSATLIB.hs
+  build-depends:    base >=4 && <5, array, containers, random, parse-dimacs, toysolver, criterion

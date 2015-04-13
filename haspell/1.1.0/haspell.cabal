@@ -1,0 +1,19 @@
+name:                haspell
+version:             1.1.0
+synopsis:            Haskell bindings to aspell
+homepage:            https://github.com/otters/haspell
+license:             MIT
+license-file:        LICENSE
+author:              Joel Taylor
+maintainer:          joel@otte.rs
+category:            Language
+build-type:          Simple
+cabal-version:       >=1.8
+tested-with:         GHC == 7.4.2, GHC == 7.6.3, GHC == 7.7.20130824
+
+library
+  build-depends:     base >= 4 && < 5,
+                     bytestring
+  exposed-modules:   Language.Aspell, Language.Aspell.Options
+  extensions:        CPP, EmptyDataDecls, ForeignFunctionInterface, OverloadedStrings, ScopedTypeVariables
+  extra-libraries:   aspell

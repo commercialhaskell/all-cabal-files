@@ -1,0 +1,33 @@
+Name:                zenc
+Version:             0.1.1
+Synopsis:            GHC style name Z-encoding and Z-decoding
+Description:         Implements GHC's name mangling.  This code was taken
+                     directly from the GHC source.
+License:             BSD3
+License-file:        LICENSE
+Author:              GHC Team, Jason Dagit
+Maintainer:          dagitj@gmail.com
+Copyright:           GHC HQ
+Category:            Text
+Build-type:          Simple
+Cabal-version:       >=1.6
+
+
+Library
+  -- Modules exported by the library.
+  Exposed-modules:     Text.Encoding.Z
+  
+  -- Packages needed in order to build this package.
+  Build-depends:       base >= 3 && <= 5
+  GHC-options:         -O2
+  
+  -- Modules not exported by this package.
+  -- Other-modules:       
+  
+  -- Extra tools (e.g. alex, hsc2hs, ...) needed to build the source.
+  -- Build-tools:         
+  
+source-repository this
+  type: git
+  location: git://github.com/dagit/zenc.git
+  tag: 0.1.0

@@ -1,0 +1,30 @@
+Name:          contstuff-monads-tf
+Version:       0.1.0
+Category:      Control, Monads
+Synopsis:      ContStuff instances for monads-tf transformers
+Maintainer:    Ertugrul Söylemez <es@ertes.de>
+Author:        Ertugrul Söylemez <es@ertes.de>
+Copyright:     (c) 2010 Ertugrul Söylemez
+License:       BSD3
+License-file:  LICENSE
+Build-type:    Simple
+Stability:     experimental
+Cabal-version: >= 1.6
+Description:
+
+    This package provides contstuff class instances for the monads from
+    the monads-tf package.  This makes using both transformer libraries
+    in a single project much more convenient.
+
+Library
+    Build-depends:
+        base >= 4 && <= 5,
+        contstuff >= 0.7.0,
+        monads-tf >= 0.1.0
+    GHC-Options:   -W
+    Extensions:
+        FlexibleInstances
+        TypeFamilies
+        UndecidableInstances
+    Exposed-modules:
+        Control.ContStuff.MonadsTf

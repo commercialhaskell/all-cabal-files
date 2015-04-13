@@ -1,0 +1,65 @@
+Name:           hsgnutls-yj
+Version:        0.2.3.3
+License:        LGPL
+License-File:   LICENSE
+Author:         Einar Kartunen <ekarttun@cs.helsinki.fi>,
+                Henning Günther <h.guenther@tu-bs.de>
+
+Stability:      Alpha
+Category:       Network
+Synopsis:       Library wrapping the GnuTLS API.
+Description:    hsgnutls is a wrapper to the GNU TLS Library.
+                Currently it is in quite early stages but offers client functionality
+                and parts of the server-side interface. Anonymous and X509 authentication
+                is supported, but SRP and OpenPGP will appear in a future version.
+                hsgnutls uses the attribute implementation borrowed from Gtk2Hs.
+                .
+                Note this is not the official hsgnutls, but rather a fork updated for the needs
+                of the Barracuda ad-hoc chat client, which repo can be found at
+                <http://repos.mroot.net/sep07-adhoc>.
+Homepage:       http://www.cs.helsinki.fi/u/ekarttun/hsgnutls
+
+Build-Type:     Simple
+cabal-version:	>=1.8
+Tested-With:    GHC==7.6.3
+
+library
+
+    Build-Depends:  base>3 && < 5, mtl, old-time, bytestring>0.9
+
+    extra-libraries: gnutls, gcrypt
+
+    c-sources:       helpers.c, crypt_helpers.c
+
+    Exposed-Modules: Network.GnuTLS,
+                 Network.GnuTLS.Attributes,
+                 Network.GnuTLS.GnuTLSMonad,
+                 Network.GnuTLS.Errors,
+                 Network.GnuTLS.X509,
+                 Network.GnuTLS.OID,
+                 Codec.Encryption,
+                 Codec.Encryption.Ciphers
+
+    Other-Modules:   Network.GnuTLS.GnuTLS,
+                 Network.GnuTLS.Internals,
+                 Network.GnuTLS.IOWrap,
+                 Network.GnuTLS.RefCount
+
+    Extensions:      FunctionalDependencies,
+                 ForeignFunctionInterface,
+                 TypeSynonymInstances,
+                 FlexibleInstances,
+                 MultiParamTypeClasses,
+                 ExistentialQuantification,
+                 FlexibleContexts,
+                 EmptyDataDecls,
+                 PatternSignatures
+
+source-repository	head
+    type:	git
+    location:	git://github.com/YoshikuniJujo/hsgnutls.git
+
+source-repository	this
+    type:	git
+    location:	git://github.com/YoshikuniJujo/hsgnutls.git
+    tag:	0.2.3.3

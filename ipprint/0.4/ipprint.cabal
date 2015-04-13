@@ -1,0 +1,27 @@
+Name:           ipprint
+Category:       Text
+Version:        0.4
+License:        BSD3
+License-file:   LICENSE
+Author:         Gleb Alexeyev
+Maintainer:     gleb.alexeev@gmail.com
+Build-Depends:  base, haskell-src
+Synopsis:       Tiny helper for pretty-printing values in ghci console
+Description:    Tiny helper for pretty-printing values in ghci console
+                .
+                Usage example:
+                .                
+                >Prelude> let e = replicate 5 [1..14] -- value we want to print                
+                >Prelude> :m + IPPrint                
+                >Prelude IPPrint> pprint e                
+                >   [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14],               
+                >    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14],                
+                >    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14],                
+                >    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14],                
+                >    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]]
+                .
+                Terminal width support added by Jean-Marie Gaillourdet. 
+Exposed-modules:
+	IPPrint
+Build-Type: Simple
+Build-Depends: base >= 2 && <= 5, Extra >= 1.33 && < 1.34

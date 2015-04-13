@@ -1,0 +1,24 @@
+name:		        xosd
+version:	        0.1.1
+license:	        BSD3
+license-file:	    LICENSE
+copyright:	        Don Stewart <dons@galois.com>
+maintainer:	        Don Stewart <dons@galois.com>
+homepage:           http://code.haskell.org/~dons/code/xosd
+category:	        Graphics
+synopsis:	        A binding to the X on-screen display 
+description:	    A binding to the X on-screen display 
+	.
+    xosd is a library for displaying an on-screen display (like the one
+    on many TVs) on your X display.
+build-type:         Simple
+stability:          experimental
+cabal-version:      >= 1.2
+
+library
+    build-depends:	    base
+    extra-libraries:    xosd
+    exposed-modules:    Graphics.XOSD.Base
+    extensions:	        ForeignFunctionInterface,
+                        CPP,
+                        EmptyDataDecls

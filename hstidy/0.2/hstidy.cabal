@@ -1,0 +1,26 @@
+name:               hstidy
+version:            0.2
+cabal-version:      >= 1.2
+build-type:         Simple
+license:            BSD3
+license-file:       LICENSE
+category:           Text
+author:             Matt Morrow
+copyright:          Matt Morrow
+maintainer:         Matt Morrow <mjm2002@gmail.com>
+homepage:           http://code.haskell.org/~morrow/code/haskell/hstidy
+stability:          unstable
+synopsis:           Takes haskell source on stdin, parses it, then
+                    prettyprints it to stdout.
+description:        @hstidy@ reads haskell source from stdin, then
+                    parses and prettyprints it to stdout. @hstidy@ accepts not
+                    only modules as a parseable unit, but expressions
+                    and patterns as well. Haddock docs are located at
+                    <http://code.haskell.org/~morrow/code/haskell/hstidy/docs/>
+executable hstidy
+  executable:       hstidy
+  main-is:          hstidy.hs
+  build-depends:    base, haskell-src-exts
+  ghc-options:      -O2
+  hs-source-dirs:   .
+

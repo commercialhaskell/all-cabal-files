@@ -1,0 +1,48 @@
+Name:                HXQ
+Version:             0.4
+Description:         A Compiler from XQuery to Haskell
+Synopsis:            A Compiler from XQuery to Haskell
+Category:            XML
+build-type:          Simple
+License-file:        LICENSE
+License:             GPL
+Author:              Leonidas Fegaras
+Maintainer:          fegaras@cse.uta.edu
+Homepage:            http://lambda.uta.edu/HXQ/
+extra-source-files:
+  Makefile
+  index.html
+  data/cs.xml
+  data/q1.xq
+  XQuery.hs
+  XQueryParser.hs
+  XQueryParser.y
+  XQueryCompiler.hs
+  XQueryInterpreter.hs
+  Test1.hs
+  Test2.hs
+  hxml-0.2/Arrow.hs
+  hxml-0.2/LLParsing.hs
+  hxml-0.2/XML.hs
+  hxml-0.2/AssocList.hs
+  hxml-0.2/Misc.hs
+  hxml-0.2/XMLParse.hs
+  hxml-0.2/DTD.hs
+  hxml-0.2/NTree.hs
+  hxml-0.2/XMLScanner.hs
+  hxml-0.2/ETree.hs
+  hxml-0.2/PrintXML.hs
+  hxml-0.2/Filter.hs
+  hxml-0.2/TreeBuild.hs
+  hxml-0.2/Tree.hs
+  hxml-0.2/HXML.hs
+  hxml-0.2/XMLCombinators.hs
+  hxml-0.2/00-LICENSE.txt
+  hxml-0.2/00-README.txt
+
+Build-Depends:       base, haskell98, template-haskell
+
+Executable:          xquery
+Main-is:             Main.hs
+ghc-options:         -ihxml-0.2
+

@@ -1,0 +1,67 @@
+Name:           hledger
+Version:        0.2
+Category:       Finance
+Synopsis:       A ledger-compatible text-based accounting tool.
+Description:    hledger is a minimal haskell clone of John Wiegley's "ledger" text-based
+                accounting tool (http://newartisans.com/software/ledger.html).  hledger
+                generates ledger-compatible register & balance reports from a plain text
+                ledger file, and demonstrates a functional implementation of ledger.
+License:        GPL
+Stability:      alpha
+Author:         Simon Michael <simon@joyful.com>
+Maintainer:     Simon Michael <simon@joyful.com>
+Homepage:       http://joyful.com/hledger
+Tested-With:    GHC
+Build-Type:     Simple
+License-File:   LICENSE
+Extra-Source-Files: README sample.ledger
+Extra-Tmp-Files: 
+Cabal-Version:  >= 1.2
+
+Executable hledger
+  Build-Depends:  base, containers, haskell98, directory, parsec, regex-compat,
+                  old-locale, time, HUnit
+  Main-Is:        hledger.hs
+  Other-Modules:  
+                  BalanceCommand
+                  Options
+                  PrintCommand
+                  RegisterCommand
+                  Setup
+                  Tests
+                  Utils
+                  Ledger
+                  Ledger.Account
+                  Ledger.AccountName
+                  Ledger.Amount
+                  Ledger.Commodity
+                  Ledger.Dates
+                  Ledger.Entry
+                  Ledger.RawLedger
+                  Ledger.Ledger
+                  Ledger.RawTransaction
+                  Ledger.Parse
+                  Ledger.TimeLog
+                  Ledger.Transaction
+                  Ledger.Types
+                  Ledger.Utils
+
+library
+  Build-Depends:  base, containers, haskell98, directory, parsec, regex-compat,
+                  old-locale, time, HUnit
+  Exposed-modules:
+                  Ledger
+                  Ledger.Account
+                  Ledger.AccountName
+                  Ledger.Amount
+                  Ledger.Commodity
+                  Ledger.Dates
+                  Ledger.Entry
+                  Ledger.RawLedger
+                  Ledger.Ledger
+                  Ledger.RawTransaction
+                  Ledger.Parse
+                  Ledger.TimeLog
+                  Ledger.Transaction
+                  Ledger.Types
+                  Ledger.Utils

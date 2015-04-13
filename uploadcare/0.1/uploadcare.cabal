@@ -1,0 +1,38 @@
+name:                uploadcare
+version:             0.1
+synopsis:            Haskell client for Uploadcare.
+description:         Haskell client for the Uploadcare API.
+                     Uploadcare handles file uploads and storage for you,
+                     while you focus on other important things.
+                     <http://uploadcare.com/>
+license:             MIT
+license-file:        LICENSE
+author:              Dimitry Solovyov <dimituri@gmail.com>
+maintainer:          Dimitry Solovyov <dimituri@gmail.com>
+category:            Web, API
+build-type:          Simple
+cabal-version:       >= 1.8
+
+library
+  hs-source-dirs:      src
+  exposed-modules: Web.Uploadcare
+                   Web.Uploadcare.API
+                   Web.Uploadcare.Client
+                   Web.Uploadcare.Internal
+
+  build-depends: base         >= 4       && < 5
+               , aeson        >= 0.6.0.2 && < 0.6.1
+               , attoparsec   >= 0.8     && < 0.11
+               , bytestring   >= 0.9.2.1 && < 0.9.3
+               , cryptohash   >= 0.7.5   && < 0.8
+               , hex          >= 0.1.2   && < 0.2
+               , http-conduit == 1.6.0.*
+               , http-types   >= 0.7.1   && < 0.8
+               , old-locale   >= 1.0.0.4 && < 1.0.1
+               , time         >= 1.4     && < 1.4.1
+
+  ghc-options: -Wall
+
+source-repository head
+  type:     git
+  location: git://github.com/uploadcare/uploadcare-haskell.git

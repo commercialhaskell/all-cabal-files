@@ -1,0 +1,16 @@
+Name:		TreeCounter
+Version:	0.0.2
+Cabal-Version:  >= 1.2
+License:	BSD3
+Author:		Julian Sutherland
+Homepage:       https://github.com/Julek
+Category:	Data
+Synopsis:	Wait-free Tree Counter
+Build-Type:     Simple
+Maintainer:     Julian Sutherland (julian.sutherland10@imperial.ac.uk)
+Description:    A wait-free tree counter. Creates a binary tree of counters, with each leaf associated with a thread. Leaves can be split, creating a new leaf for the current thread and another that can be used by another thread. Each thread will act on different leaves, meaning the actions are wait-free. A read is performed on the counter by recursively traversing it and summing the value of the counters in the nodes and leaves of the tree. (UPDATE: removed useless dependency)
+License-file:   LICENSE
+
+Library
+  Build-Depends:	base >= 4.6 && < 4.8, ref-mtl <2.3 && >= 0.2.1, stm >= 0.2.4 && < 2.5
+  Exposed-modules:      Data.NonBlocking.WaitFree.TreeCounter

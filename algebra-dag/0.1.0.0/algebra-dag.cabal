@@ -1,0 +1,43 @@
+cabal-version: >=1.8
+Name:           algebra-dag
+synopsis:       Infrastructure for DAG-shaped relational algebra plans
+Category:       Database
+Version:        0.1.0.0
+Description:    This library contains infrastructure for DAG-shaped plans of relational operators.
+                It offers an API for construction and modification of algebra plans and a DSL
+                for specifying rewrites on plans. Examples of usage can be found in the packages
+                <http://hackage.haskell.org/package/DSH DSH> and 
+                <http://hackage.haskell.org/package/algebra-sql algebra-sql>
+License:        BSD3
+License-file:   LICENSE
+Author:		Alexander Ulrich
+Maintainer:	alex@etc-network.de
+Build-Type:     Simple
+
+library
+    buildable:        True
+    build-depends:    base               >= 4.7 && < 5,  
+                      mtl                >= 2.1, 
+                      containers         >= 0.5, 
+                      template-haskell   >= 2.9, 
+                      fgl                >= 5.5, 
+                      transformers       >= 0.3, 
+                      parsec             >= 3.1,
+                      aeson              >= 0.8
+
+    exposed-modules:  Database.Algebra.Dag
+                      Database.Algebra.Dag.Build
+                      Database.Algebra.Dag.Common
+
+                      Database.Algebra.Rewrite
+                      Database.Algebra.Rewrite.Match
+                      Database.Algebra.Rewrite.Traversal
+                      Database.Algebra.Rewrite.Rule
+                      Database.Algebra.Rewrite.Properties
+                      Database.Algebra.Rewrite.PatternConstruction
+                      Database.Algebra.Rewrite.DagRewrite
+
+    hs-source-dirs:   src
+    GHC-Options:       -Wall -fno-warn-orphans
+    other-modules:    Database.Algebra.Rewrite.PatternSyntax		      
+

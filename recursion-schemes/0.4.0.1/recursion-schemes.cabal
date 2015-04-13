@@ -1,0 +1,53 @@
+name:          recursion-schemes
+category:      Control, Recursion
+version:       0.4.0.1
+license:       BSD3
+cabal-version: >= 1.6
+license-file:  LICENSE
+author:        Edward A. Kmett
+maintainer:    Edward A. Kmett <ekmett@gmail.com>
+stability:     provisional
+homepage:      http://github.com/ekmett/recursion-schemes/
+copyright:     Copyright (C) 2008-2011 Edward A. Kmett
+synopsis:      Generalized bananas, lenses and barbed wire
+description:   
+  Generalized bananas, lenses and barbed wire
+  . 
+  /Changes since 0.2.2/:
+  .
+  * Split distHisto from distGHisto
+  .
+  * Added zygohistomorphic prepromorphisms
+  .
+  /Changes since 0.2.1/:
+  .
+  * Added (generalized) prepro- and postpro- morphisms
+  .
+  /Changes since 0.2/:
+  .
+  * Added Elgot (co)algebras
+  .
+  /Changes since 0.1/:
+  .
+  * Removed dependency on Foldable from Mendler-style recursion schemes
+  .
+  * Added Lambek's Lemma
+  
+build-type:    Simple
+
+source-repository head
+  type: git
+  location: git://github.com/ekmett/recursion-schemes.git
+
+library
+  build-depends: 
+    base >= 4 && < 4.4,
+    transformers >= 0.2.0 && < 0.3,
+    comonad >= 1.0 && < 1.1,
+    comonad-transformers >= 1.0 && < 1.4,
+    streams >= 0.6 && < 0.7
+
+  exposed-modules:
+    Data.Functor.Foldable
+
+  ghc-options: -Wall 

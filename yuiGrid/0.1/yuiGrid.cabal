@@ -1,0 +1,34 @@
+Name:               yuiGrid
+Version:            0.1
+Synopsis:           Grids defined by layout hints and implemented on top of Yahoo grids.
+Description:        The grid is specified by boxes, containers and hints telling how these boxes and containers should be laid out. The hints also 
+                    include CSS specifications. Everything is rendered to html using Yahoo grids through the contextual html combinators
+                     (see yahoo grids in  <http://developer.yahoo.com/yui/grids >).
+                    The contextual html combinators are also implemented in this package (called CxML here). They allow to keep track of input context 
+                    and output html parts like inline CSSs, JSs, etc.
+Category:           Web
+License:            OtherLicense
+License-file:       LICENSE
+Author:             RedNucleus (see AUTHORS)
+Maintainer:         sergio.urinovsky@gmail.com
+Stability:          Experimental
+Build-Type:         Simple
+Build-Depends:      base
+Exposed-modules:    Text.CxML,
+                    Text.YuiGrid
+Other-modules:      Text.CxML.NavList,
+                    Text.CxML.HTML,
+                    Text.CxML.CSS,
+                    Text.CxML.JS,
+                    Text.CxML.Tags,
+                    Text.CxML.Output,
+                    Text.CxML.Types,
+                    Text.YuiGrid.LayoutHints,
+                    Text.YuiGrid.Grid,
+                    Text.YuiGrid.YGrid,
+                    Text.YuiGrid.YGridCxML
+
+Extra-source-files: AUTHORS,
+                    Example/README, Example/Makefile,
+                    Example/GridExample.hs,
+                    Example/images/header.gif

@@ -1,0 +1,26 @@
+name:                bindings-sane
+version:             0.0.1
+synopsis:            FFI bindings to libsane
+description:         These are FFI bindings to the SANE API (version 1.0)
+homepage:            http://floss.scru.org/bindings-sane
+license:             LGPL-3
+license-file:        LICENSE
+author:              Clint Adams
+maintainer:          clint@debian.org
+copyright:           Copyright (C) 2012  Clint Adams
+category:            FFI
+build-type:          Simple
+cabal-version:       >=1.8
+
+library
+  exposed-modules:     Bindings.SANE
+  build-depends:       base         >= 4.5    && <5
+                     , bindings-DSL >= 1.0.15 && <1.1
+  build-tools:         hsc2hs
+  pkgconfig-depends:   sane-backends
+  c-sources:           src/c_macros.c
+  includes:            sane/sane.h
+
+source-repository head
+  type:     git
+  location: git://git.debian.org/users/clint/bindings-sane.git

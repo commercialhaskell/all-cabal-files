@@ -1,0 +1,23 @@
+Name:                   hinduce-associations-apriori
+Version:                0.0.0.0
+Build-Type:             Simple
+License:                MIT
+Copyright:              Hidde Verstoep
+Author:                 Hidde Verstoep
+Homepage:               https://github.com/roberth/hinduce-associations-apriori
+Cabal-version:          >= 1.4
+Category:               Data Mining
+Synopsis:               Apriori algorithm for association rule mining
+Description:            This module provides an implementation of the Apriori algorithm for association rule mining. It uses Control.Parallel.Strategies for parallelism and allows the user to provide custom selection criteria. See hinduce-examples for an example.
+
+                        hInduce is a framework for knowledge discovery/machine learning/data mining. It has a modular design that hopefully will invite others to re-use and build upon the interface. This module currently deviates from this concept, because we had a different focus and too limited time budget to investigate other rule mining algorithms and find any use for this kind of abstraction.
+
+Library
+    Build-Depends:      base >= 4 && < 5
+                        , hinduce-missingh >= 0.0.0.0
+                        , vector >= 0.9.1
+                        , containers >= 0.4.2.0
+                        , deepseq >= 1.1.0.0
+                        , parallel >= 3.1.0.1
+    Exposed-Modules:    Data.HInduce.Associations.Apriori
+    Hs-Source-Dirs:     src

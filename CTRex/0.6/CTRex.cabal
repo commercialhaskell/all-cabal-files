@@ -1,0 +1,45 @@
+Name:                CTRex
+Version:             0.6
+Synopsis:	     Open records using closed type families.
+Description:          Open records using closed type families.
+License:             BSD3
+License-file:        LICENSE
+Author:              Atze van der Ploeg
+Maintainer:          atzeus@gmail.com
+Homepage:            http://www.haskell.org/haskellwiki/CTRex
+Build-Type:          Simple
+Cabal-Version:       >=1.6
+Data-files:          ChangeLog
+Category:            Data, Data Structures
+Tested-With:         GHC==7.8.2
+Library
+  Build-Depends: base >= 2 && < 6,
+                 containers,
+                 hashable >= 1.2,
+                 mtl >= 1.0,
+                 unordered-containers >= 0.2
+  Exposed-modules: Data.OpenRecords
+  other-modules:
+  Extensions: AllowAmbiguousTypes,
+              ConstraintKinds,
+              DataKinds,
+              EmptyDataDecls,
+              FlexibleContexts,
+              FlexibleInstances,
+              FunctionalDependencies,
+              GADTs,
+              InstanceSigs,
+              KindSignatures,
+              MultiParamTypeClasses,
+              PatternGuards,
+              PolyKinds,
+              RankNTypes,
+              ScopedTypeVariables,
+              TypeFamilies,
+              TypeOperators,
+              ViewPatterns,
+              UndecidableInstances
+
+source-repository head
+    type:     git
+    location: https://github.com/atzeus/CTRex

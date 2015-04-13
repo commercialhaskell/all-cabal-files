@@ -1,0 +1,17 @@
+name:                urlcheck
+version:             0.1
+license:             BSD3
+license-file:        LICENSE
+author:              Don Stewart 
+maintainer:          <dons@cse.unsw.edu.au>
+homepage:            http://www.cse.unsw.edu.au/~dons/urlcheck.html
+build-depends:       base, mtl, network
+description:         A (SMP) parallel link checker.
+                     Checks the validity of embedded urls in the input files.
+                     Usage: urlcheck foo.html
+synopsis:            Parallel link checker
+category:            Network
+ 
+executable:          urlcheck
+main-is:             Check.hs
+ghc-options:         -O -threaded

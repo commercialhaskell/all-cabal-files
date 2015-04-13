@@ -1,0 +1,27 @@
+Name:               ordered
+Version:            0.1
+License:            OtherLicense
+License-File:       LICENSE
+Cabal-Version:      >= 1.6
+Author:             Nick Bowler, Miguel Pagano
+Maintainer:         miguel.pagano@gmail.org
+Stability:          experimental
+Category:           Mathematics
+Build-Type:         Simple
+Synopsis:           A definition of Posets.
+Description:
+	A library defining the notion of Poset.
+
+
+Source-repository head
+  type:     git
+  location: http://github.com/miguelpagano/ordered
+
+Library
+    Build-Depends: base >= 4 && < 5
+    Include-Dirs: .
+    Exposed-Modules:
+        Data.Poset
+    Other-Modules:
+        Data.Poset.Internal,
+        Data.Poset.Instances

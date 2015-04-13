@@ -1,0 +1,105 @@
+name:             precis
+version:          0.5.0
+license:          OtherLicense
+license-file:     LICENCE
+copyright:        Stephen Tetley <stephen.tetley@gmail.com>
+maintainer:       Stephen Tetley <stephen.tetley@gmail.com>
+homepage:         http://code.google.com/p/copperbox/
+category:         Distribution
+synopsis:         Diff Cabal packages.
+description:
+  Summarize API differences between revisions of Cabal packages.
+  .
+  Precis library is BSD3, Precis executable is LGPL apropos 
+  the dependency on CppHs.
+  .
+  NOTE for version 0.5.0 - the next version is likely to have 
+  substantial changes. Version 0.5.0 does have a better strategy 
+  to resolve conditional modules, but otherwise it is not a 
+  compelling upgrade. If you have 0.4.0 installed, I recommend 
+  you skip this revision and wait for the next version.
+  .
+  CHANGES
+  0.4.0 to 0.5.0
+  .
+  * Major re-organization. Module-to-file resolution substantially
+    changed. Should be better for Cabal fines that use condition
+    variables.
+  .
+  0.3.1 to 0.4.0
+  .
+  * Substantial changes to reporting - now a summary is printed
+    to the console, and an HTML report can be generated via a
+    command line flag.
+  .
+  * Changed constructor names for Edit data type
+  . 
+
+build-type:         Simple
+stability:          unstable
+cabal-version:      >= 1.2
+extra-source-files:
+  LICENCE,
+  LICENCE-LGPL
+
+library
+  build-depends:  base               <  5,
+                  containers         <  0.5,
+                  Cabal              >= 1.8    && < 2.0,
+                  filepath           >= 1.1    && < 2.0,
+                  directory          >= 1.0    && < 2.0,
+                  haskell-src-exts   >= 1.8    && < 2.0,
+                  cpphs              >= 1.11   && < 2.0,
+                  xhtml              >= 3000.2 && < 3010
+
+                  
+  hs-source-dirs: src
+
+  exposed-modules:
+    Precis.Cabal, 
+    Precis.Cabal.CabalPackage,
+    Precis.Cabal.Datatypes,
+    Precis.Cabal.InterimDatatypes,
+    Precis.Cabal.ResolveM,
+    Precis.Diff,
+    Precis.HsSrc.Datatypes,
+    Precis.HsSrc.Utils,
+    Precis.HtmlReport,
+    Precis.ModuleProperties,
+    Precis.ReportMonad,
+    Precis.StyleSheet,
+    Precis.TextOutput,
+    Precis.Utils.Common,  
+    Precis.Utils.ControlOperators,
+    Precis.Utils.PPShowS,
+    Precis.VersionNumber
+  
+  other-modules:
+
+executable precis
+  main-is: Main.hs
+
+  hs-source-dirs: src
+    
+  other-modules:   
+    CPP,
+    Precis.Cabal,
+    Precis.Cabal.CabalPackage,
+    Precis.Cabal.Datatypes,
+    Precis.Cabal.InterimDatatypes,
+    Precis.Cabal.ResolveM,
+    Precis.Diff,
+    Precis.HsSrc.Datatypes,
+    Precis.HsSrc.Utils,
+    Precis.HtmlReport,
+    Precis.ModuleProperties,
+    Precis.ReportMonad,
+    Precis.StyleSheet,
+    Precis.TextOutput,
+    Precis.Utils.Common,  
+    Precis.Utils.ControlOperators,
+    Precis.Utils.PPShowS,
+    Precis.VersionNumber
+
+
+

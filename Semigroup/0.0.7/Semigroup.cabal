@@ -1,0 +1,23 @@
+Name:                Semigroup
+Version:             0.0.7
+License:             BSD3
+License-File:        LICENSE
+Synopsis:            A semigroup
+Description:         A semigroup is a binary associative operation
+Homepage:            https://bitbucket.org/dibblego/semigroup/
+Category:            Data
+Author:              Tony Morris
+Maintainer:          ʇǝu˙sıɹɹoɯʇ@ןןǝʞsɐɥ
+Copyright:           2010-2011 Tony Morris
+build-type:          Simple
+cabal-version:       >= 1.2
+
+Flag small_base
+  Description:       Choose the new, split-up base package.
+
+Library
+  Build-Depends:     base < 5 && >= 3, mtl, containers, bytestring
+
+  GHC-Options:       -Wall
+  Exposed-Modules:   Data.Semigroup
+

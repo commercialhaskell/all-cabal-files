@@ -1,0 +1,27 @@
+name:                   oneOfN
+version:                0.1
+stability:              provisional
+
+cabal-version:          >= 1.6
+build-type:             Simple
+
+author:                 James Cook <mokus@deepbondi.net>
+maintainer:             James Cook <mokus@deepbondi.net>
+license:                PublicDomain
+homepage:               https://github.com/mokus0/oneOfN
+
+category:               Data
+synopsis:               Anonymous coproduct type
+description:            Anonymous coproduct type (generalization of Either to
+                        choices among other than 2 cases)
+
+extra-source-files:     src-TH/Data/OneOfN.hs
+
+source-repository head
+  type:                 git
+  location:             git://github.com/mokus0/oneOfN.git
+
+Library
+  hs-source-dirs:       src
+  exposed-modules:      Data.OneOfN
+  build-depends:        base >= 3 && <5

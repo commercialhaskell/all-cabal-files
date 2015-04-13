@@ -1,0 +1,19 @@
+name:                easy-api
+version:             0.1.0.0
+synopsis:            Utility code for building HTTP API bindings more quickly.
+description:         Utility code for building HTTP API bindings more quickly.
+homepage:            http://github.com/sanetracker/easy-api
+license:             MIT
+license-file:        LICENSE
+author:              Ian Duncan
+maintainer:          ian@iankduncan.com
+category:            Web
+build-type:          Simple
+cabal-version:       >=1.8
+source-repository    head
+  type:                git
+  location:            http://github.com/sanetracker/easy-api
+library
+  exposed-modules:     Network.HTTP.API
+  build-depends:       base ==4.6.*, mtl ==2.1.*, bytestring ==0.10.*, text ==0.11.*, aeson, http-conduit, resourcet, either
+  hs-source-dirs:      src

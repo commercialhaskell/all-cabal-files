@@ -1,0 +1,37 @@
+Name:                yaml-rpc-snap
+
+Version:             1.0.3
+
+Synopsis:            Snap server backend for yaml-rpc
+Description:         This package provides Snap-based server backend for yaml-rpc package.
+Homepage:            http://redmine.iportnov.ru/projects/yaml-rpc
+License:             BSD3
+License-file:        LICENSE
+Author:              Ilya V. Portnov
+Maintainer:          portnov84@rambler.ru
+Category:            Network
+Build-type:          Simple
+Cabal-version:       >= 1.8
+
+Library
+  Exposed-modules:   Network.YAML.Snap
+  Build-depends:       base >= 3 && <= 5,
+                       transformers >= 0.3.0.0,
+                       bytestring >= 0.10.0.2,
+                       aeson >= 0.7.0.6,
+                       yaml,
+                       containers,
+                       text >= 1.1.1.3,
+                       http-types >= 0.8.5,
+                       snap >= 0.13.2.7,
+                       yaml-rpc >= 1.0.3
+
+  Other-modules:     Test.Server,
+                     Test.TestAPIImpl
+
+Source-repository head
+  type: git
+  location: git@github.com:portnov/yaml-rpc.git
+
+
+

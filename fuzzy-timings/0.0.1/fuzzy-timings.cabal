@@ -1,0 +1,58 @@
+name:   fuzzy-timings
+version: 0.0.1
+license:    MIT
+license-file: LICENSE
+author:  Tero Laitinen
+maintainer: Tero Laitinen
+synopsis: Translates high-level definitions of "fuzzily" scheduled objects (e.g. play this commercial 10 times per hour between 9:00-13:00) to a list of accurately scheduled objects using glpk-hs.
+description:
+    The original use case of this package is to implement "media planning" in
+    retail stores, that is, what should be played and when.  Accurately scheduled
+    announcements, fuzzily scheduled commercials and store opening hours are taken
+    into account.
+category:    Scheduling
+stability:   Experimental
+cabal-version: >= 1.8
+build-type:  Simple
+homepage:    https://github.com/tlaitinen/fuzzy-timings
+
+library
+    build-depends:  base >= 4.3     && < 5
+                 , time
+                 , random
+                 , containers
+                 , glpk-hs
+                 , mtl
+                    
+    exposed-modules: 
+        FuzzyTimings.AccTiming
+        FuzzyTimings.FuzzyTiming
+        FuzzyTimings.Schedule
+        FuzzyTimings.SlicedTime
+        FuzzyTimings.Solve
+        FuzzyTimings.TimeOfDaySlice
+        FuzzyTimings.TimeSlice
+        FuzzyTimings.TimingBuckets
+        FuzzyTimings.WeeklySlicedTime
+    ghc-options: -Wall
+
+source-repository head
+    type: git
+    location: https://github.com/tlaitinen/fuzzy-timings
+
+Test-suite tests
+    Type: exitcode-stdio-1.0
+    Hs-source-dirs: tests
+    Main-is: main.hs
+    ghc-options: -Wall
+    build-depends: base >= 4 && < 5
+                  , test-framework >= 0.3.3
+                  , test-framework-quickcheck2 >= 0.2.9
+                  , test-framework-hunit >= 0.3.0
+                  , HUnit >= 1.2.5
+                  , QuickCheck >= 2.4.0 && <= 2.5.1.1
+                  , containers >= 0.4.0
+                  , time >= 1.4
+                  , fuzzy-timings
+                  , random
+                  , mtl   

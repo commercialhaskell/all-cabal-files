@@ -1,0 +1,71 @@
+name: liblastfm
+version: 0.1.1.1
+synopsis: Lastfm API interface
+license: MIT
+license-file: LICENSE
+author: Matvey Aksenov, Dmitry Malikov
+maintainer: Matvey Aksenov <matvey.aksenov@gmail.com>
+category: Network APIs
+description:
+  Provides interface to Lastfm REST API, supports XML and JSON formats.
+cabal-version: >= 1.9.2
+build-type: Simple
+
+library
+  build-depends: base >= 3 && < 5,
+                 bytestring,
+                 containers >= 0.5,
+                 text,
+                 cereal,
+                 http-conduit >= 1.9,
+                 http-types,
+                 pureMD5,
+                 crypto-api,
+                 network,
+                 aeson
+  hs-source-dirs: src
+  exposed-modules: Network.Lastfm
+                   Network.Lastfm.Authentication
+                   Network.Lastfm.Album
+                   Network.Lastfm.Artist
+                   Network.Lastfm.Chart
+                   Network.Lastfm.Event
+                   Network.Lastfm.Geo
+                   Network.Lastfm.Group
+                   Network.Lastfm.Library
+                   Network.Lastfm.Playlist
+                   Network.Lastfm.Radio
+                   Network.Lastfm.Tag
+                   Network.Lastfm.Tasteometer
+                   Network.Lastfm.Track
+                   Network.Lastfm.User
+                   Network.Lastfm.Venue
+                   Network.Lastfm.Request
+                   Network.Lastfm.Response
+                   Network.Lastfm.Internal
+  ghc-options: -Wall
+               -fno-warn-unused-do-bind
+               -funbox-strict-fields
+
+
+test-suite json
+  build-depends: base >= 3 && < 5,
+                 bytestring >= 0.9 && < 0.11,
+                 attoparsec >= 0.10,
+                 aeson == 0.6.*,
+                 HUnit,
+                 test-framework,
+                 test-framework-hunit,
+                 text,
+                 liblastfm
+  type: exitcode-stdio-1.0
+  main-is: json.hs
+  hs-source-dirs: tests
+  ghc-options: -Wall
+               -fno-warn-unused-do-bind
+               -fno-warn-orphans
+
+
+source-repository head
+  type:     git
+  location: https://github.com/supki/liblastfm

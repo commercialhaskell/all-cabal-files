@@ -1,0 +1,35 @@
+name: MusicBrainz-libdiscid
+version: 0.5.0.0
+cabal-version: >=1.6
+build-type: Simple
+license: LGPL
+license-file: COPYING.LESSER
+copyright: 2013 André Twupack
+maintainer: André Twupack
+homepage: https://github.com/atwupack/MusicBrainz-libdiscid
+bug-reports: https://github.com/atwupack/MusicBrainz-libdiscid/issues
+synopsis: Binding to libdiscid by MusicBrainz
+description: Binding to libdiscid by MusicBrainz.
+category: Audio, Sound, FFI
+author: André Twupack
+data-dir: ""
+extra-source-files: COPYING libdiscid/AUTHORS libdiscid/COPYING
+                    libdiscid/README
+                    libdiscid/include/discid/*.h libdiscid/src/*.c libdiscid/src/*.h
+
+library
+    build-depends: base >=4 && <5, containers >0.5, vector >0.10
+    exposed-modules: Sound.MusicBrainz.DiscId
+    exposed: True
+    buildable: True
+    if os(windows)
+        c-sources: libdiscid/src/base64.c libdiscid/src/disc.c
+               libdiscid/src/disc_win32_new.c libdiscid/src/sha1.c
+               libdiscid/src/disc_win32.c
+        extra-libraries: winmm
+    if os(linux)
+        c-sources: libdiscid/src/base64.c libdiscid/src/disc.c
+               libdiscid/src/disc_linux.c libdiscid/src/sha1.c
+    include-dirs: libdiscid/include
+    hs-source-dirs: src
+

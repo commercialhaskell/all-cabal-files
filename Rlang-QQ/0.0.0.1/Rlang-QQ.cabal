@@ -1,0 +1,39 @@
+name: Rlang-QQ
+version: 0.0.0.1
+cabal-version: >=1.8
+build-type: Simple
+license: BSD3
+license-file: LICENSE
+maintainer: Adam Vogt <vogt.adam@gmail.com>
+homepage: http://code.haskell.org/~aavogt/Rlang-QQ
+synopsis: quasiquoter for inline-R code
+description: This quasiquoter calls R (<http://www.r-project.org/>) from ghc.
+             Variables from the haskell-side are passed in. In the future,
+             variables created (or modified) could be returned as the value
+             of the quasiquote.
+category: Development
+author: Adam Vogt <vogt.adam@gmail.com>
+data-dir: rsrc
+data-files: Tree.R parseTreeExample.R
+extra-source-files: examples/test.hs
+
+source-repository head
+    type: darcs
+    location: http://code.haskell.org/~aavogt/Rlang-QQ
+
+library
+    hs-source-dirs: src
+
+    build-depends: base ==4.*, containers,
+                   template-haskell ==2.8.*, directory, process,
+                   trifecta ==1.1.*, utf8-string ==0.3.*, bytestring,
+                   Cabal
+
+    exposed-modules: RlangQQ.Internal
+                     RlangQQ
+
+    other-modules:  Paths_Rlang_QQ
+
+    exposed: True
+    buildable: True
+ 

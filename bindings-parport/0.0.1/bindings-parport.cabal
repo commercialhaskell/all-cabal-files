@@ -1,0 +1,25 @@
+Name:                      bindings-parport
+Version:                   0.0.1
+Cabal-version:             >= 1.2.3
+Synopsis:                  parport bindings
+License:                   BSD3
+License-file:              LICENSE
+Maintainer:                sivaramreddy@hotmail.com
+Author:                    Sivaram Gowkanapalli
+Build-type:                Simple
+Category:                  FFI
+
+Library
+  HS-Source-Dirs:          src
+  GHC-Options:             -Wall
+  Extensions:              ForeignFunctionInterface
+                           FunctionalDependencies,
+                           MultiParamTypeClasses,
+                           DeriveDataTypeable,
+                           StandaloneDeriving,
+                           TypeSynonymInstances
+  Build-Depends:           base >= 3 && < 5,
+                           bindings-DSL >= 1.0
+  Exposed-Modules:         Bindings.Parport
+  Build-tools:             hsc2hs
+

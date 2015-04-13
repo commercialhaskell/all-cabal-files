@@ -1,0 +1,34 @@
+Name:                caf
+Version:             0.0.3
+Description:         This library contains implementations of several kinds of futures and concurrency abstractions.
+License:             BSD3
+License-file:        LICENSE
+Author:              Dr. David Sabel and Martina Willig 
+Maintainer:          Martina Willig <willig@ki.informatik.uni-frankfurt.de>
+Build-Type:          Simple
+Stability:           experimental
+Synopsis:            A library of Concurrency Abstractions using Futures.
+Category:            Concurrency
+homepage:            http://sites.google.com/site/cafwiki/
+Cabal-Version:       >= 1.2
+Extra-Source-Files:  README
+                     Examples/Example01.hs
+                     Examples/Example02.hs
+                     Examples/Example03.hs
+                     Examples/Example04.hs
+                     Examples/Example05.hs
+                     Examples/Example06.hs
+                     Examples/Example07.hs
+                     Examples/Examples.hs
+library
+  Exposed-Modules: Control.Concurrent.Futures
+                   Control.Concurrent.Futures.Futures
+                   Control.Concurrent.Futures.Buffer
+                   Control.Concurrent.Futures.Chan
+                   Control.Concurrent.Futures.QSem
+                   Control.Concurrent.Futures.BChan
+                   Control.Concurrent.Futures.HQSem
+                   Control.Concurrent.Futures.Barrier
+  Build-Depends:   base >= 2.0
+
+

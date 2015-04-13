@@ -1,0 +1,18 @@
+Name:                GotoT-transformers
+Version:             1.0.0.1
+License:             BSD3
+License-file:        LICENSE
+Author:              Gregory Crosswhite
+Maintainer:          Gregory Crosswhite <gcross@phys.washington.edu>
+Stability:           Provisional
+Homepage:            http://github.com/gcross/GotoT-transformers
+Synopsis:            A monad and monadic transformer providing "goto" functionality
+Description:         This module provides a monad and a monad transformer that allow the user to transfer the flow of execution from an arbitrary point of a monadic computation to another monadic computation.
+Cabal-version:       >=1.2.3
+Build-type:          Simple
+Category:	     Control
+
+Library
+    Build-depends:   base >= 3 && < 5,
+                     transformers >= 0.2 && < 0.4
+    Exposed-modules: Control.Monad.Trans.Goto

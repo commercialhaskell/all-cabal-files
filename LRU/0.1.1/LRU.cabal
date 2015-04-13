@@ -1,0 +1,12 @@
+Name: LRU
+Version: 0.1.1
+License: BSD3
+Author: Adam Langley
+Homepage: http://www.imperialviolet.org/lru
+Stability: experimental
+Synopsis: Implements an LRU data structure
+Tested-With: GHC == 6.8.1
+Cabal-Version: >= 1.2
+Build-Depends: base, QuickCheck, containers
+Exposed-modules: Data.LRU
+Extra-Source-Files: LRU_test.hs

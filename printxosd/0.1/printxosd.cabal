@@ -1,0 +1,20 @@
+name:		        printxosd
+version:	        0.1
+license:	        BSD3
+license-file:	    LICENSE
+copyright:	        Don Stewart <dons@galois.com>
+maintainer:	        Don Stewart <dons@galois.com>
+homepage:           http://code.haskell.org/~dons/code/printxosd
+category:	        Graphics
+synopsis:	        Simple tool to display some text on an on-screen display
+description:	    Simple tool to display some text on an on-screen display
+	.
+    $ printxosd "this is some text"
+	.
+build-type:         Simple
+stability:          experimental
+cabal-version:      >= 1.2
+
+executable printxosd
+    main-is:            Main.hs
+    build-depends:	    base, xosd

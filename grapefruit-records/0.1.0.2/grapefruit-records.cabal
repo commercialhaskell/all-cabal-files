@@ -1,0 +1,52 @@
+Name:          grapefruit-records
+Version:       0.1.0.2
+Cabal-Version: >= 1.6
+Build-Type:    Simple
+License:       BSD3
+License-File:  LICENSE
+Copyright:     © 2007–2009 Brandenburgische Technische Universität Cottbus
+               © 2011–2012 Wolfgang Jeltsch
+Author:        Wolfgang Jeltsch
+Maintainer:    wolfgang@cs.ioc.ee
+Stability:     provisional
+Homepage:      http://grapefruit-project.org/
+Package-URL:   http://hackage.haskell.org/packages/archive/grapefruit-records/0.1.0.2/grapefruit-records-0.1.0.2.tar.gz
+Synopsis:      A record system for Functional Reactive Programming
+Description:   Grapefruit is a library for Functional Reactive Programming (FRP) with a focus on
+               user interfaces. FRP makes it possible to implement reactive and interactive systems
+               in a declarative style. To learn more about FRP, have a look at
+               <http://haskell.org/haskellwiki/Functional_Reactive_Programming>.
+               .
+               This package provides a record system for use with FRP.
+Category:      Data, FRP, Reactivity
+Tested-With:   GHC == 7.4.1
+
+Source-Repository this
+    type:     darcs
+    location: http://darcs.grapefruit-project.org/monolithic/0.1
+    tag:      grapefruit-0.1.0.2
+
+Library
+    Build-Depends:   arrows         >= 0.2 && < 0.5,
+                     base           >= 3.0 && < 5,
+                     grapefruit-frp >= 0.1 && < 0.2
+    Extensions:      Arrows
+                     EmptyDataDecls
+                     FlexibleContexts
+                     FlexibleInstances
+                     FunctionalDependencies
+                     MultiParamTypeClasses
+                     OverlappingInstances
+                     RankNTypes
+                     ScopedTypeVariables
+                         -- only needed for workaround in consConsumeThing and consProduceThing
+                     TypeFamilies
+                     TypeOperators
+                     UndecidableInstances
+    Exposed-Modules: Data.Record
+                     Data.Record.Context
+                     Data.Record.Plain
+                     Data.Record.Optionality
+                     Data.Record.Signal
+                     Data.Record.Signal.Context
+    HS-Source-Dirs:  src

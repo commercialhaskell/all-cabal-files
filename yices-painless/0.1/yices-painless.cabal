@@ -1,0 +1,71 @@
+Name:                yices-painless
+Version:             0.1
+Synopsis:            An embedded language for programming the Yices SMT solver
+Description:         
+    This library defines an embedded language in Haskell for programming
+    the Yices SMT solver.
+    .
+    Yices is an efficient SMT solver that decides the satisfiability of
+    arbitrary formulas containing uninterpreted function symbols with
+    equality, linear real and integer arithmetic, scalar types,
+    recursive datatypes, tuples, records, extensional arrays, fixed-size
+    bit-vectors, quantifiers, and lambda expressions. Yices also does
+    MaxSMT (and, dually, unsat cores) and is competitive as an ordinary
+    SAT and MaxSAT solver.
+    .
+    The embedded language embeds both terms and types into Haskell, via
+    a typed higher-order abstract syntax representation. Propositions in
+    the embedding are represented as (typed) pure expressions.
+    .
+    Solution variables in the proposition (notionally, free variables)
+    are bound an the outermost lambda term. Propositions constructed
+    from logical primitives can then be executed by the solver to yield
+    a satisfying assignment to those free variables in the proposition.
+    .
+    More information about Yices:
+    .
+    * <http://yices.csl.sri.com/>
+    .
+    Low and medium-level bindings to the Yices C API are also provided.
+    The medium-level bindings add significant type and resource safety
+    to that which the C API provides.
+
+Homepage:            http://code.haskell.org/~dons/code/yices-painless
+License:             BSD3
+License-file:        LICENSE
+Author:              Don Stewart
+Maintainer:          dons@galois.com
+Copyright:           Don Stewart 2010.
+Category:            Math, Theorem Provers, Formal Methods
+Build-type:          Simple
+Cabal-version:       >=1.2
+
+Flag yices-dynamic
+    default: True
+
+Library
+    Exposed-modules: 
+        Yices.Painless.Language
+
+        Yices.Painless.Base
+        Yices.Painless.Base.C
+
+        Yices.Painless.Type
+        Yices.Painless.Tuple
+  
+    ghc-options: -Wall
+
+    Build-depends:       base > 3 && < 5,
+                         pretty,
+                         strict-concurrency,
+                         containers >= 0.2,
+                         vector     >= 0.7
+
+    Build-tools:         hsc2hs
+    Extensions:          ForeignFunctionInterface
+    includes:            yices_c.h
+    extra-libraries:     yices
+
+    if flag(yices-dynamic)
+        extra-libraries:   gmp
+

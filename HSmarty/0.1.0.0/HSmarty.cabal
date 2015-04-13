@@ -1,0 +1,39 @@
+name:                HSmarty
+version:             0.1.0.0
+synopsis:            Haskell implementation of a subset of the PHP-Smarty template language
+-- description:         
+license:             BSD3
+license-file:        LICENSE
+author:              Alexander Thiemann <mail@agrafix.net>
+maintainer:          mail@agrafix.net
+copyright:           (c) 2013 by Alexander Thiemann
+category:            Text
+build-type:          Simple
+cabal-version:       >=1.8
+extra-source-files:  test.tpl
+
+Library
+  exposed-modules:   Text.HSmarty
+  other-modules:     Text.HSmarty.Parser.Smarty
+  build-depends:     base ==4.6.*,
+                     vector ==0.10.*,
+                     text ==0.11.*,
+                     unordered-containers ==0.2.*,
+                     aeson ==0.6.*,
+                     attoparsec ==0.10.*,
+                     mtl ==2.1.*,
+                     HTTP,
+                     HTF
+
+Executable TestHSmarty
+  Main-Is:           Tests.hs
+  Ghc-Options:       -Wall
+  build-depends:     base ==4.6.*,
+                     vector ==0.10.*,
+                     text ==0.11.*,
+                     unordered-containers ==0.2.*,
+                     aeson ==0.6.*,
+                     attoparsec ==0.10.*,
+                     mtl ==2.1.*,
+                     HTTP,
+                     HTF

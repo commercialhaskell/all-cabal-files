@@ -1,0 +1,40 @@
+name:           NaturalLanguageAlphabets
+version:        0.0.0.1
+author:         Christian Hoener zu Siederdissen
+maintainer:     choener@tbi.univie.ac.at
+homepage:       http://www.tbi.univie.ac.at/~choener/
+copyright:      Christian Hoener zu Siederdissen, 2014
+category:       Natural Language Processing
+synopsis:       Alphabet and word representations
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+stability:      experimental
+cabal-version:  >= 1.6.0
+description:
+                Provides different encoding for characters and words in natural
+                language processing. A character will often be encoded as a
+                bytestring as we deal with multi-symbol characters.
+
+
+
+extra-source-files:
+  changelog
+
+library
+  build-depends:
+    base                  >3 && <5  ,
+    bytestring            >= 0.10.4 ,
+    hashable              >= 1.2    ,
+    intern                >= 0.9    ,
+    unordered-containers  >= 0.2.3
+
+  exposed-modules:
+    NLP.Alphabet.MultiChar
+
+  ghc-options:
+
+source-repository head
+  type: git
+  location: git://github.com/choener/NaturalLanguageAlphabets
+

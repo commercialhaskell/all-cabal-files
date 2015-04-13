@@ -1,0 +1,24 @@
+name:                digestive-foundation-lucid
+version:             0.0.0.1
+synopsis:            Speed up form designing using digestive functors and foundation
+description:         Generate foundation forms out of digestive views
+license:             MIT
+author:              Athan Clark <athan.clark@gmail.com>
+maintainer:          Athan Clark <athan.clark@gmail.com>
+copyright:           (c) 2014 Athan Clark
+category:            Web
+build-type:          Simple
+cabal-version:       >=1.10
+
+library
+  exposed-modules:     Text.Digestive.Foundation
+  build-depends:       base ==4.*,
+                       digestive-functors >=0.7 && <0.8,
+                       digestive-functors-lucid >=0.0.0.2,
+                       lucid >=2.9,
+                       lucid-foundation >=0.0.2.1,
+                       http-types  >=0.8 && <0.9,
+                       text
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+  ghc-options: -Wall

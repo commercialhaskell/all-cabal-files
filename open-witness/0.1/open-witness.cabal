@@ -1,0 +1,31 @@
+name:			open-witness
+version:		0.1
+license:		BSD3
+license-file:	LICENSE
+author:			Ashley Yakeley <ashley@semantic.org>
+maintainer:		Ashley Yakeley <ashley@semantic.org>
+build-depends:	base>=2.0, mtl>=1.1, witness==0.1
+category:		Data
+synopsis:		open witnesses
+description:
+	Open witnesses are witnesses that can witness to any type. However, they cannot be constructed, they can only be generated in the IO monad.
+
+	See the paper /Witnesses and Open Witnesses/ (<http://semantic.org/stuff/Open-Witnesses.pdf>).
+build-type:		Simple
+extensions:
+	RankNTypes
+	EmptyDataDecls
+	GeneralizedNewtypeDeriving
+	ScopedTypeVariables
+	GADTs
+	PatternSignatures
+	FlexibleContexts
+	FlexibleInstances
+	MultiParamTypeClasses
+exposed-modules:
+	Data.OpenWitness
+	Data.OpenWitness.ST
+	Data.OpenWitness.Typeable
+	Data.OpenWitness.Typeable.Rep
+	Data.OpenWitness.Dynamic
+other-modules:

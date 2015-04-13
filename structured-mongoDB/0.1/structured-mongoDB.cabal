@@ -1,0 +1,43 @@
+Name:           structured-mongoDB
+Version:        0.1
+build-type:     Simple
+License:        GPL
+License-File:   LICENSE
+Author:         HAILS team
+Maintainer:	Amit Levy <alevy at stanford dot edu>, Deian Stefan  <deian at cs dot stanford dot edu>
+Stability:      experimental
+Synopsis:       Structured MongoDB interface
+Category:       Database
+Cabal-Version:  >= 1.6
+
+Extra-source-files:
+    examples/simple.hs
+    examples/mongoExample.hs
+
+Description:
+        This module exports a structured type-safe interface to MongoDB.
+
+Source-repository head
+  Type:     git
+  Location: http://www.scs.stanford.edu/~deian/structured-mongoDB.git
+
+Library
+  Build-Depends: base >= 4 && < 5,
+                 array >= 0.2 && < 1,
+                 bytestring >= 0.9 && < 1,
+                 containers >= 0.2 && < 1,
+                 mtl >= 1.1.0.2 && < 3,
+                 transformers >= 0.2.2 && < 0.3,
+                 old-time >= 1 && < 2,
+                 mongoDB >= 1.1.1 && <2,
+                 bson >= 0.1.6 && <0.2,
+                 compact-string-fix >= 0.3.2 && < 0.4,
+                 template-haskell
+
+  ghc-options: -Wall -fno-warn-orphans
+
+  Exposed-modules:
+    Database.MongoDB.Structured
+    Database.MongoDB.Structured.Types
+    Database.MongoDB.Structured.Query
+    Database.MongoDB.Structured.Deriving.TH

@@ -1,0 +1,13 @@
+Name: control-monad-free
+Description:
+    A monad transformer for free monads.
+Version: 0.2
+Stability: experimental
+Synopsis: A monad transformer for free monads.
+License: PublicDomain
+Category: Control
+Author: Luke Palmer
+Maintainer: lrpalmer@gmail.com
+Build-Type: Simple
+Build-Depends: base, mtl
+Exposed-Modules: Control.Monad.FreeT

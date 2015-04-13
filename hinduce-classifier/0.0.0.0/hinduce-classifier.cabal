@@ -1,0 +1,22 @@
+Name:           hinduce-classifier
+Version:        0.0.0.0
+License:        BSD3
+Author:         Robert Hensing
+Maintainer:     hackage@roberthensing.nl
+Synopsis:       Interface and utilities for classifiers
+Description:    Provides an interface for classifiers and functions to use and analyze them. Take one or more hinduce-classifier-* packages for actual classifier implementations.
+Stability:      stable
+Maintainer:     Robert Hensing
+Build-Type:     Simple
+Cabal-Version:  >= 1.2
+Category:       Data Mining
+
+Library
+    Build-Depends:      haskell98
+                        , base >= 4 && < 5
+                        , layout >= 0.0.0.1
+                        , hinduce-missingh >= 0.0.0.0
+    Exposed-Modules:    Data.HInduce.Classifier
+                        Data.HInduce.Classifier.Class
+    Hs-Source-Dirs:     src
+    Extensions:	        MultiParamTypeClasses, FunctionalDependencies

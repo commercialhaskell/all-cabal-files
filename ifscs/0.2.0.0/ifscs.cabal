@@ -1,0 +1,35 @@
+name:                ifscs
+version:             0.2.0.0
+synopsis:            An inductive-form set constraint solver
+license:             BSD3
+license-file:        LICENSE
+author:              Tristan Ravitch
+maintainer:          travitch@cs.wisc.edu
+category:            Constraints
+build-type:          Simple
+cabal-version:       >=1.10
+description: This is an implementation of an (inclusion) set constraint
+             solver.  Set constraints are a convenient and efficient way
+             to specify and solve graph reachability problems.
+             .
+             See the Constraints.Set.Solver module for detailed documentation.
+
+library
+  default-language: Haskell2010
+  exposed-modules: Constraints.Set.Solver
+  other-modules: Constraints.Set.Implementation
+  build-depends: base == 4.*,
+                 failure >= 0.2 && < 0.3,
+                 containers
+  hs-source-dirs: src
+  ghc-options: -Wall
+  ghc-prof-options: -auto-all
+
+test-suite ConstraintTests
+  default-language: Haskell2010
+  type: exitcode-stdio-1.0
+  hs-source-dirs: tests
+  main-is: ConstraintTests.hs
+  build-depends: ifscs, base,
+                 test-framework, test-framework-hunit, HUnit
+  ghc-options: -Wall -threaded

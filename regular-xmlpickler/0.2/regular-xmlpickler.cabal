@@ -1,0 +1,30 @@
+Name:               regular-xmlpickler
+Version:            0.2
+Description:        Generic generation of HXT XmlPickler instances using Regular.
+Synopsis:           Generic generation of HXT XmlPickler instances using Regular.
+Category:           XML, Data
+Cabal-Version:      >= 1.6
+Author:             Silk
+Copyright:          (c) 2014, Silk
+Maintainer:         code@silk.co
+Homepage:           http://github.com/silkapp/regular-xmlpickler
+License:            BSD3
+License-File:       LICENSE
+Build-Type:         Simple
+Extra-Source-Files: CHANGELOG, README.md
+
+Library
+  Build-Depends:    base    == 4.*
+                  , hxt     >= 9.2 && < 9.4
+                  , regular >= 0.2 && < 0.4
+                  , text
+
+  HS-Source-Dirs:   src
+  GHC-Options:      -Wall
+  Exposed-Modules:  Generics.Regular.XmlPickler,
+                    Generics.Regular.XmlPickler.Function,
+                    Generics.Regular.XmlPickler.Instances
+
+Source-Repository head
+  Type:     git
+  Location: https://github.com/silkapp/regular-xmlpickler.git

@@ -1,0 +1,30 @@
+Name:               libmpd
+Version:            0.3.0
+License:            LGPL
+License-file:       LICENSE
+Copyright:          Ben Sinclair 2005-2008
+Author:             Ben Sinclair
+Maintainer:         bsinclai@turing.une.edu.au
+Stability:          beta
+Homepage:           http://turing.une.edu.au/~bsinclai/code/libmpd-haskell.html
+Synopsis:           An MPD client library.
+Description:        A client library for MPD, the Music Player Daemon
+                    (<http://www.musicpd.org/>).
+Category:           Network, Sound
+Tested-With:        GHC == 6.6.1, GHC == 6.8.2
+Build-Type:         Simple
+Cabal-Version:      >= 1.2
+Extra-Source-Files: TODO README ChangeLog tests/Properties.hs tests/Commands.hs
+                    tests/Main.hs tests/Displayable.hs tests/run-tests
+                    tests/coverage
+
+Library
+    Build-Depends:      base >= 2.1.1, network >= 2.0.1, mtl >= 1.0.1,
+                        filepath >= 1.0, utf8-string >= 0.3.1
+    Exposed-Modules:    Network.MPD
+    Other-Modules:      Network.MPD.Core, Network.MPD.Commands,
+                        Network.MPD.Parse, Network.MPD.SocketConn,
+                        Network.MPD.Types, Network.MPD.Utils
+
+    ghc-options:        -Wall
+    ghc-prof-options:   -auto-all -prof

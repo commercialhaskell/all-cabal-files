@@ -1,0 +1,16 @@
+Name:                loch
+Version:             0.2
+Description:         Location-emitting tracing and errors for Haskell
+Category:            Development
+Synopsis:            Support for precise error locations in source files
+License:             BSD3
+License-file:        LICENSE
+Author:              Don Stewart
+Maintainer:          dons@cse.unsw.edu.au
+Build-Depends:       base
+Exposed-modules:     Debug.Trace.Location
+ghc-options:         -Wall -Werror -O
+
+Executable:          loch
+Main-is:             Locate.hs
+ghc-options:         -O

@@ -1,0 +1,19 @@
+Name:           Docs
+Version:        1.0.0
+Author:         Daniel Diaz
+Homepage:       http://ddiaz.asofilak.es/packages/Docs.html
+License:        BSD3
+License-file:   license
+Maintainer:     lazy.ddiaz@gmail.com
+Category:       Documentation
+Synopsis:       Documentation types library.
+Description:    Currently, this package defines classes for types that represents documentation.
+                .
+                The point of this library is to make possible write documentation in a general format,
+                and later, render it in a desired concrete format.
+                .
+                At the moment, only Html format are supported by default, but you can add new instances.
+Build-type:     Simple
+Build-depends:  base == 4.* , html
+Cabal-version:  >= 1.6
+Exposed-modules: Text.Docs.Class

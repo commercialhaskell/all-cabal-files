@@ -1,0 +1,56 @@
+Name:                snaplet-typed-sessions
+Version:             0.5
+Synopsis:            Typed session snaplets and continuation-based
+                     programming for the Snap web framework
+Description:         This package provides two Snaplets implementing
+                     typed sessions in the Snap web framework, as either
+					 memory-backed arbitrary types, or as client-side
+					 cookie-backed serializable types.  Unlike the
+					 standard session snaplet, sessions can be of an
+					 arbitrary type appropriate to the application.
+					 Client-side session data is encrypted for security,
+                     and sessions have a configurable timeout (optional
+					 for the client-side back end).
+                     .
+                     In addition, a library is provided for a
+					 continuation-based programming model called
+					 Snap Dialogues.  Dialogues allow natural
+					 specification of stateful interactions with the
+					 client that span multiple requests.  Because the
+					 session type is not serializable, this requires the
+					 memory-backed session implementation.
+License:             BSD3
+License-file:        LICENSE
+Author:              Chris Smith <cdsmith@gmail.com>
+Maintainer:          Chris Smith <cdsmith@gmail.com>
+Stability:           Experimental
+Category:            Web
+Build-type:          Simple
+Cabal-version:       >=1.6
+
+Library
+  Hs-source-dirs: src
+  Build-depends:
+    base == 4.*,
+    bytestring >= 0.9.1 && < 0.10,
+    cereal == 0.3.*,
+    clientsession >= 0.7 && < 0.8,
+    containers >= 0.3 && < 0.5,
+    hashtables >= 1.0 && < 1.1,
+    mtl >= 2.0 && < 2.2,
+    PSQueue >= 1.0 && < 1.2,
+    random == 1.0.*,
+    regex-posix >= 0.94 && < 0.96,
+    snap >= 0.6 && < 0.10,
+    snap-core >= 0.6 && < 0.10,
+    time >= 1.1 && < 1.5
+
+  Exposed-modules: Snap.Snaplet.TypedSession,
+                   Snap.Snaplet.TypedSession.Memory,
+                   Snap.Snaplet.TypedSession.Client,
+                   Snap.Dialogues
+
+  Other-modules:   Snap.Snaplet.TypedSession.SessionMap
+
+  Ghc-options: -Wall -fwarn-tabs -funbox-strict-fields
+               -fno-warn-orphans

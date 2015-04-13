@@ -1,0 +1,65 @@
+Name:                 geek
+Version:              1.0.0.5
+Build-type:           Simple
+Synopsis:             Geek blog engine
+Description:          A dynamic blog engine, customizable with standard web technology, i.e. HTML, CSS and Javascript (JSON)
+
+License:              BSD3
+License-file:         LICENSE
+Author:               Jinjing Wang
+Maintainer:           Jinjing Wang <nfjinjing@gmail.com>
+Build-Depends:        base
+Cabal-version:        >= 1.6
+category:             Web
+homepage:             http://github.com/nfjinjing/geek
+data-files:           
+                      Nemesis
+                    , src/Web/Geek/ImportFromBamboo.hs
+                    
+
+Library           
+  ghc-options:        -Wall
+  build-depends:      base >= 4 && < 99
+                    , Glob
+                    , aeson
+                    , aeson-pretty
+                    , air >= 2013.7.18
+                    , air-extra >= 2013.7.18
+                    , air-spec
+                    , bytestring
+                    , containers
+                    , curl
+                    , data-default
+                    , directory
+                    , filepath
+                    , fsnotify
+                    , hack2
+                    , hack2-contrib
+                    , hspec
+                    , miku
+                    , mtl
+                    , old-locale
+                    , process
+                    , random
+                    , safe
+                    , split
+                    , system-filepath
+                    , text
+                    , text-icu
+                    , time
+                    , uuid
+                    , moe
+
+                    
+  hs-source-dirs:     src/
+  exposed-modules:    
+                      Web.Geek.Application
+                      Web.Geek.Config
+                      Web.Geek.DefaultConfig
+                      Web.Geek.DemoMiddlewareStack
+                      Web.Geek.Post
+                      Web.Geek.RSS
+                      Web.Geek.Runtime
+                      Web.Geek.Serve
+                      Web.Geek.Spec
+                      Web.Geek.Type

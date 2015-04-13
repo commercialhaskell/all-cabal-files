@@ -1,0 +1,17 @@
+name:                ircbouncer
+version:             0.0
+synopsis:            IRC bouncer
+description:         A very simple IRC bouncer.
+category:            Network
+license:             BSD3
+license-file:        LICENSE
+author:              Chris Done <chrisdone@gmail.com>
+maintainer:          Chris Done <chrisdone@gmail.com>
+build-Depends:       base
+cabal-Version:       >= 1.2
+build-type:          Simple
+
+executable ircbouncer
+  build-depends: base,regex-compat,mtl,network,unix,haskell98
+  main-is:       Ircbouncer.hs
+  ghc-options:   -threaded

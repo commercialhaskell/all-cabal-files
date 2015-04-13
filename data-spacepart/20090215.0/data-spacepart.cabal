@@ -1,0 +1,47 @@
+Name:           data-spacepart
+Version:        20090215.0
+License:        BSD3
+License-File:   LICENSE
+Author:         Corey O'Connor <coreyoconnor@gmail.com>
+Maintainer:     Corey O'Connor <coreyoconnor@gmail.com>
+Homepage:       http://code.haskell.org/data-spacepart
+Package-URL:    http://code.haskell.org/data-spacepart
+Category:       Data
+Build-Type:     Simple
+Synopsis:       Deprecated. Now called "spacepart". Space partitioning data structures. 
+Stability:      alpha
+Description:
+    Package "data-spacepart" is now called just "spacepart". This was due to issues with the version
+    number used for the first release of data-spacepart.
+    .
+    http:\/\/hackage.haskell.org\/cgi-bin\/hackage-scripts\/package\/spacepart
+    .
+    Space partition data structures. Currently only a QuadTree.
+    .
+    darcs get --partial http:\/\/code.haskell.org\/data-spacepart\/
+    .
+    TODO:
+    .
+        lots.
+    .
+    See README: http:\/\/code.haskell.org\/data-spacepart\/README
+    
+Extra-Source-Files: test/QuadTreeVisualize.hs
+                    test/run_visualize
+                    test/Render.hs
+                    test/run_verify
+                    test/Verify.hs
+                    test/Verify/Data/SpacePart/AABB.hs
+                    test/Verify/Data/SpacePart/QuadTree.hs
+                    test/System/Random/Utils.hs
+                    README
+                    CHANGELOG
+
+Cabal-Version:  >= 1.6
+
+library
+    hs-source-dirs:         src
+    build-depends:          base, vector-space == 0.5.*
+    exposed-modules:        Data.SpacePart.QuadTree
+                            Data.SpacePart.AABB
+

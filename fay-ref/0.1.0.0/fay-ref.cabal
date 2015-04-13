@@ -1,0 +1,23 @@
+name:                fay-ref
+version:             0.1.0.0
+synopsis:            Like IORef but for Fay.
+description:         Like IORef but for Fay.
+homepage:            https://github.com/A1kmm/fay-ref
+bug-reports:         https://github.com/A1kmm/fay-ref/issues
+license:             BSD3
+license-file:        LICENSE
+author:              Andrew Miller
+maintainer:          Andrew Miller <andrew@amxl.com>
+copyright:           Andrew Miller
+build-type:          Simple
+cabal-version:       >=1.8
+data-files: src/FayRef.hs
+category:	     Fay
+source-repository head
+  type: git
+  location: https://github.com/A1kmm/fay-ref
+
+library
+  hs-source-dirs: src
+  exposed-modules: FayRef
+  build-depends: fay-base >= 0.14.1.0

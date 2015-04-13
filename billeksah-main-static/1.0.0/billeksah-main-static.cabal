@@ -1,0 +1,42 @@
+name: billeksah-main-static
+version: 1.0.0
+cabal-version: >= 1.8
+build-type: Simple
+license: LGPL
+license-file: LICENSE
+copyright: Juergen "jutaro" Nicklisch-Franken
+maintainer: maintainer@leksah.org
+homepage: http://www.leksah.org
+package-url: https://github.com/leksah
+bug-reports: http://code.google.com/p/leksah/issues/list
+synopsis: Leksah plugin base
+description: Plugin framework used by leksah (static version)
+category: Control
+author: Juergen "jutaro" Nicklisch-Franken
+tested-with: GHC ==7.0
+
+
+Executable billeksah-main-static
+    main-is: Main.hs
+    other-modules: Base.Plugin
+    buildable: True
+    extensions: CPP
+    hs-source-dirs: src
+    build-depends:
+        base >=4.0.0.0 && <4.4,
+        containers >=0.2 && <0.5,
+        mtl >=1.1.0.2 && <2.1,
+        transformers >= 0.2.2.0 && < 0.3,
+        parsec >= 3.1.1 && < 4,
+        pretty >=1.0.1.0 && <1.1,
+        directory >= 1.1.0.0 && <1.2,
+        filepath >= 1.2.0.0 && < 1.3,
+
+        billeksah-services >= 1.0.0 && < 1.1,
+-- List all plugins here
+
+        billeksah-forms  >= 1.0.0 && < 1.1,
+        billeksah-pane  >= 1.0.0 && < 1.1,
+        leksah-main >= 1.0.0 && < 1.1,
+        leksah-plugin-pane  >= 1.0.0 && < 1.1,
+        leksah-dummy >= 1.0.0 && < 1.1

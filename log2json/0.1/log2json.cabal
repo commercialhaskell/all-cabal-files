@@ -1,0 +1,27 @@
+Name:                log2json
+Version:             0.1
+Synopsis:            Turn log file records into JSON.
+Description:         Take an httpd.conf style LogFormat string and parse
+                     log files into JSON records.
+License:             GPL
+License-file:        gpl.txt
+Author:              harold@hotelling.net
+Maintainer:          harold@hotelling.net
+Homepage:            https://github.com/haroldl/log2json
+Bug-Reports:         https://github.com/haroldl/log2json/issues
+Category:            Logging, JSON, Text, Utils, Tools
+Build-Type:          Simple
+Cabal-Version:       >=1.6
+Extra-Source-Files:  README.md
+
+Source-Repository head
+  Type: git
+  Location: git://github.com/haroldl/log2json.git
+
+Executable log2json
+  Main-is:           Main.hs
+  Build-Depends:     base >= 3 && < 5, containers, parsec >= 3, json == 0.3.6
+
+Library
+  Exposed-Modules: Text.LogFormat
+

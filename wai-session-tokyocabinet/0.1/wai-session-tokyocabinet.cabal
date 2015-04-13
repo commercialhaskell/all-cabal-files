@@ -1,0 +1,39 @@
+name:            wai-session-tokyocabinet
+version:         0.1
+cabal-version:   >= 1.8
+license:         OtherLicense
+license-file:    COPYING
+category:        Web
+copyright:       © 2012 Stephen Paul Weber
+author:          Stephen Paul Weber <singpolyma@singpolyma.net>
+maintainer:      Stephen Paul Weber <singpolyma@singpolyma.net>
+stability:       experimental
+tested-with:     GHC == 7.0.3
+synopsis:        Session store based on Tokyo Cabinet
+homepage:        https://github.com/singpolyma/wai-session-tokyocabinet
+bug-reports:     https://github.com/singpolyma/wai-session-tokyocabinet/issues
+build-type:      Simple
+description:
+        Provides a session store for use with wai-session.
+        .
+        See example/Main.hs in git for example usage.
+
+extra-source-files:
+        README
+
+library
+        exposed-modules:
+                Network.Wai.Session.TokyoCabinet
+
+        build-depends:
+                base == 4.*,
+                bytestring,
+                transformers,
+                cereal,
+                tokyocabinet-haskell,
+                errors,
+                wai-session
+
+source-repository head
+        type:     git
+        location: git://github.com/singpolyma/wai-session-tokyocabinet.git

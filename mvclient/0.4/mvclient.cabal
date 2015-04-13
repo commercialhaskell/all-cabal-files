@@ -1,0 +1,46 @@
+Name:                mvclient
+Version:             0.4
+Synopsis:            Client library for metaverse systems like Second Life
+Description:         The client side of connections to virtual world environments
+                     like Linden Labs' Second Life, sometimes known as the
+                     "metaverse".
+                     .
+                     As of version 0.3, no longer requires an stunnel proxy for
+                     connecting to Second Life.  Thanks for Michael Snoyman and
+                     his http-enumerator package!
+
+License:             BSD3
+License-file:        LICENSE
+
+Author:              Chris Smith
+Maintainer:          cdsmith@gmail.com
+
+Category:            Network
+Build-type:          Custom
+
+Cabal-version:       >=1.6
+
+Extra-source-files:  TODO.txt,
+                     BuildTools/Template2Hs.hs,
+                     other/LogTranslate.hs
+
+Library
+  Hs-source-dirs:      src
+  Exposed-modules:     Network.Metaverse, Network.Metaverse.Circuit,
+                       Network.Metaverse.PacketTypes, Network.Metaverse.Login
+  Build-depends:       base >= 4 && < 5,
+                       base-unicode-symbols == 0.2.1.1,
+                       bytestring == 0.9.*,
+                       Crypto == 4.2.*,
+                       maccatcher == 1.0.*,
+                       binary == 0.5.*,
+                       mtl >= 1.1 && < 2.1,
+                       data-binary-ieee754 == 0.4.*,
+                       containers == 0.3.*,
+                       time == 1.1.*,
+                       control-event >= 1.1.0.4 && < 1.3,
+                       parsec == 3.1.*,
+                       uuid == 1.2.*,
+                       http-enumerator == 0.5.*,
+                       hexpat == 0.19.*,
+                       network >= 2.2.3 && < 2.4

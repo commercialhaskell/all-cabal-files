@@ -1,0 +1,16 @@
+name:                sexp-show
+version:             0.1.0.0
+synopsis:            Produce a s-expression representation of Show values.
+description:         Program to produce a s-expression representation of Show values.
+license:             BSD3
+license-file:        LICENSE
+author:              Chris Done
+maintainer:          chrisdone@gmail.com
+category:            Development
+build-type:          Simple
+cabal-version:       >=1.8
+executable sexp-show
+  main-is:           Main.hs
+  hs-source-dirs:    src
+  build-depends:     base > 4 && < 5,
+                     pretty-show

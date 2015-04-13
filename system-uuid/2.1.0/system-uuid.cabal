@@ -1,0 +1,80 @@
+name                          : system-uuid
+version                       : 2.1.0
+category                      : System
+license                       : BSD3
+license-file                  : LICENSE
+author                        : Jason Dusek
+maintainer                    : oss@solidsnack.be
+homepage                      : http://github.com/solidsnack/system-uuid/
+synopsis                      : Bindings to system UUID functions.
+description                   :
+  Bindings to the native UUID generator for a number of platforms. Please
+  contact the author if your platform is not supported.
+
+
+cabal-version                 : >= 1.8.0.6
+build-type                    : Simple
+extra-source-files            : README
+                                ACKNOWLEDGEMENTS
+                                CONTRIBUTORS
+                                Options.hs
+                                Macros.hs
+                                MacroMacros.hs
+                                Messages.hs
+
+flag split-base
+
+flag cli   
+  description                 : Enable command line tool.
+  default                     : False
+
+library
+  if flag(split-base)
+    build-depends             : base >= 4 && < 5
+  else
+    build-depends             : base < 4
+  build-depends               : containers
+                              , binary
+                              , bytestring
+                              , template-haskell
+                              , parsec
+                              , murmur-hash
+  exposed-modules             : System.UUID.V1
+                                System.UUID.V4
+                                System.UUID.FromForeign
+                                Data.UUID
+  if os(linux)
+    extra-libraries           : uuid
+  if os(mingw32)
+    extra-libraries           : rpcrt4
+  extensions                  : ForeignFunctionInterface
+                                TemplateHaskell
+                                PatternGuards
+                                CPP
+
+executable                      hooty
+  main-is                     : Main.hs
+  if flag(cli)  
+    buildable                 : True
+  else
+    buildable                 : False
+  if flag(split-base)
+    build-depends             : base >= 4 && < 5
+  else
+    build-depends             : base < 4
+  build-depends               : containers
+                              , binary
+                              , bytestring
+                              , template-haskell
+                              , parsec
+                              , murmur-hash
+  if os(linux)
+    extra-libraries           : uuid
+  if os(mingw32)
+    extra-libraries           : rpcrt4
+  extensions                  : ForeignFunctionInterface
+                                TemplateHaskell
+                                PatternGuards
+                                DeriveDataTypeable
+                                CPP
+

@@ -1,0 +1,28 @@
+Name:           hx
+Version:        0.4
+Synopsis:       Haskell extras (missing utility functions).
+Description:    Utility functions that some may feel are missing from Prelude and base.
+                .
+                Some functions are taken from the package @hinduce-missingh@, which was
+                written by Robert Hensing and published under the BSD 3-clause license.
+                
+License:        MIT
+License-File:   LICENSE
+Author:         Julian Fleischer
+Maintainer:     julian.fleischer@fu-berlin.de
+Build-Type:     Simple
+Cabal-Version:  >= 1.8
+Category:       Utilities
+Stability:      provisional
+
+
+Library
+    Exposed-Modules:    Haskell.X
+                        , Haskell.X.Ops
+                        , Haskell.X.Unsafe
+                        , Haskell.X.Prelude
+
+    Build-Depends:      base >= 4.5 && < 5
+    Hs-Source-Dirs:     src
+
+

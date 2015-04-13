@@ -1,0 +1,75 @@
+Name: bindings-apr-util
+Synopsis: Low level bindings to Apache Portable Runtime Utility (APR Utility)
+Description:
+        Bindings to APR Utility: <http://apr.apache.org/>
+Version: 0.1
+License: PublicDomain
+License-File: COPYING
+Author: PHO <pho at cielonegro dot org>
+Maintainer: PHO <pho at cielonegro dot org>
+Stability: experimental
+Homepage: http://cielonegro.org/Bindings-APR.html
+Category: FFI
+Tested-With: GHC == 6.12.3
+Cabal-Version: >= 1.6
+Build-Type: Simple
+Extra-Source-Files:
+
+Source-Repository head
+    Type: git
+    Location: git://git.cielonegro.org/bindings-apr-util.git
+
+Library
+    Build-Depends:
+        base         == 4.2.*,
+        bindings-DSL == 1.0.*,
+        bindings-apr == 0.1.*
+
+    PkgConfig-Depends:
+        apr-util-1 >= 1.3
+
+    Exposed-Modules:
+        Bindings.APR.AnyLock
+        Bindings.APR.Base64
+        Bindings.APR.Buckets
+        Bindings.APR.Date
+        Bindings.APR.DBD
+        Bindings.APR.DBM
+        Bindings.APR.Hooks
+        Bindings.APR.LDAP
+        Bindings.APR.LDAP.Init
+        Bindings.APR.LDAP.Option
+        Bindings.APR.LDAP.Rebind
+        Bindings.APR.LDAP.URL
+        Bindings.APR.MD4
+        Bindings.APR.MD5
+        Bindings.APR.MemCache
+        Bindings.APR.Queue
+        Bindings.APR.RMM
+        Bindings.APR.ResList
+        Bindings.APR.SDBM
+        Bindings.APR.SHA1
+        Bindings.APR.StrMatch
+        Bindings.APR.Thread.Pool
+        Bindings.APR.URI
+        Bindings.APR.UUID
+        Bindings.APR.XLate
+        Bindings.APR.XML
+        Bindings.APU
+        Bindings.APU.Version
+
+    C-Sources:
+        cbits/helper_apr_anylock.c
+        cbits/helper_apr_buckets.c
+        cbits/helper_apr_dbm.c
+        cbits/helper_apr_ldap.c
+        cbits/helper_apr_ldap_init.c
+        cbits/helper_apr_md4.c
+        cbits/helper_apr_sdbm.c
+        cbits/helper_apr_sha1.c
+        cbits/helper_apr_strmatch.c
+        cbits/helper_apr_xml.c
+        cbits/helper_apu_version.c
+
+    Extensions:
+        ForeignFunctionInterface

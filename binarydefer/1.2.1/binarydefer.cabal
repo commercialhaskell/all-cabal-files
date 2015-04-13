@@ -1,0 +1,15 @@
+name:            binarydefer
+build-type:      Simple
+version:         1.2.1
+license:         BSD3
+license-file:    LICENSE
+author:          Neil Mitchell <ndmitchell@gmail.com>
+maintainer:      Neil Mitchell <ndmitchell@gmail.com>
+synopsis:        Binary serialization with deferred loading
+description:     Binary serialization, but with delays.
+category:        Data
+build-depends:   base < 5
+exposed-modules: Data.Binary.Defer,
+                 Data.Binary.Defer.List
+                 Data.Binary.Defer.Internal
+hs-source-dirs:  .

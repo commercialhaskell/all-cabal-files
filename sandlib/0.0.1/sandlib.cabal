@@ -1,0 +1,52 @@
+name: sandlib
+version: 0.0.1
+cabal-version: -any
+build-type: Simple
+license: BSD3
+license-file: LICENSE
+copyright: 2012 (c) Mahmut Bulut
+maintainer: Mahmut Bulut <mahmutbulut0@gmail.com>
+build-depends:
+stability: unstable
+homepage: http://github.com/regularlambda/sandlib
+package-url:
+bug-reports: http://github.com/regularlambda/sandlib
+synopsis: SAND data serialization and manipulation library
+description: SAND is a Multi-Agent Systems data serialization and manipulation method.
+             It is used by monitoring & surveillance systems agent wiring to monitor-server
+             and representation of agent data.
+category: AI
+author: Mahmut Bulut <mahmutbulut0@gmail.com>
+tested-with: GHC -any
+data-files:
+data-dir: ""
+extra-source-files:
+extra-tmp-files:
+exposed-modules: AI.Planning.Swarm.SandData
+exposed: True
+buildable: True
+build-tools:
+cpp-options:
+cc-options:
+ld-options:
+pkgconfig-depends:
+frameworks:
+c-sources:
+default-language:
+other-languages:
+default-extensions:
+other-extensions:
+extensions:
+extra-libraries:
+extra-lib-dirs:
+includes:
+install-includes:
+include-dirs:
+hs-source-dirs: . src
+other-modules:
+ghc-prof-options:
+ghc-shared-options:
+ghc-options:
+hugs-options:
+nhc98-options:
+jhc-options:

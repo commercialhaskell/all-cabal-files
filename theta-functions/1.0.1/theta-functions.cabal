@@ -1,0 +1,34 @@
+Name:                theta-functions
+Version:             1.0.1
+Cabal-version:       >= 1.6
+Synopsis:            Theta-functions implemented as trigonometric series
+
+Description:
+  Small and simple library for computing values of Theta functions.
+  They're the special functions of two variables. Described very well at <https://en.wikipedia.org/wiki/Theta_function>.
+  Library exports four theta-functions and a small helper to calculate their second parameter.
+  Theta functions are functions of Complex variables, FYI.
+
+License:             PublicDomain
+License-file:        LICENSE
+
+Author:              Mark Safronov a.k.a. hijarian
+Maintainer:          hijarian@gmail.com
+
+Category:            Math
+
+Build-type:          Simple
+
+Homepage: https://github.com/hijarian/theta-functions
+
+Extra-source-files:  README.md
+
+Library
+  Exposed-modules:     Numeric.Functions.Theta
+  Build-Depends: base >= 4.3.1.0 && < 5
+
+Source-repository head
+  type: git
+  location: git@github.com:hijarian/theta-functions.git
+
+

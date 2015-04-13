@@ -1,0 +1,34 @@
+name: dbus-client
+version: 0.1
+synopsis: D-Bus client libraries
+description: Connect and interact with the D-Bus IPC system.
+license: GPL
+license-file: License.txt
+author: John Millikin
+maintainer: jmillikin@gmail.com
+build-type: Simple
+cabal-version: >=1.6
+category: Network, Desktop
+stability: experimental
+bug-reports: mailto:jmillikin@gmail.com
+
+extra-source-files:
+  dbus-client.nw
+  Makefile
+
+source-repository head
+  type: darcs
+  location: http://patch-tag.com/r/jmillikin/dbus-client/pullrepo
+
+library
+  ghc-options: -Wall
+  hs-source-dirs: hs
+
+  build-depends:
+      base >=3 && < 5
+    , dbus-core >= 0.5
+    , containers
+    , text
+
+  exposed-modules:
+    DBus.Client

@@ -1,0 +1,26 @@
+Name:                   unicode-normalization
+Version:                0.1
+Cabal-Version:          >= 1.2
+License:                BSD3
+License-File:           LICENSE
+Author:                 Reinier Lamers
+Maintainer:             reinier.lamers@phil.uu.nl
+Homepage:               http://sloompie.reinier.de/unicode-normalization/
+Category:               text
+Synopsis:               Unicode normalization using the ICU library
+Description:            Unicode normalization using the ICU library
+
+flag split-base
+
+Library
+  extensions:           ForeignFunctionInterface, CPP
+  extra-libraries:      icuuc
+
+  Exposed-modules:
+    Text.Unicode.Base, Text.Unicode.Normalization
+
+  if flag(split-base)
+    build-depends: base, compact-string, bytestring
+  else
+    build-depends: base, compact-string
+

@@ -1,0 +1,22 @@
+Name:               hszephyr
+Author:             Nelson Elhage <nelhage@nelhage.com>
+Maintainer:         Nelson Elhage <nelhage@nelhage.com>
+Version:            0.1
+License:            BSD3
+License-File:       LICENSE
+Category:           Network
+Stability:          experimental
+Synopsis:           Simple libzephyr bindings
+Description:
+ Network.Zephyr provides haskell bindings to MIT's "Zephyr" instant
+ messaging / notification service.
+Build-Type:         Simple
+Tested-With:        GHC==6.8.2
+Cabal-Version:      >= 1.2
+Extra-Source-Files:
+   Network/Zephyr/CBits.hsc
+Library
+  Build-Depends:      base, mtl, bytestring, time
+  Extra-Libraries:    zephyr, com_err
+  Exposed-Modules:    Network.Zephyr
+  Other-Modules:      Network.Zephyr.CBits

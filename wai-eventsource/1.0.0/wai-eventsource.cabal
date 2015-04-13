@@ -1,0 +1,33 @@
+Name:                wai-eventsource
+Version:             1.0.0
+Synopsis:            WAI support for server-sent events
+Description:         WAI support for server-sent events
+License:             BSD3
+Author:              Chris Smith, Mathias Biilmann Christensen
+Maintainer:          greg@gregweber.info
+Stability:           Experimental
+Category:            Web
+Build-type:          Simple
+Cabal-version:       >=1.8
+homepage:            http://www.yesodweb.com/book/wai
+license-file:        LICENSE
+
+Library
+  Build-depends:
+      base                      >= 4.3 && < 5
+    , bytestring                >= 0.9.1.4  && < 0.10
+    , blaze-builder             >= 0.3 && < 0.4
+    , conduit
+    , http-types                >= 0.6      && < 0.7
+    , wai                       >= 1.0
+    , warp                      >= 1.0
+    , transformers
+
+  ghc-options:     -Wall
+  hs-source-dirs:  src
+  exposed-modules: Network.Wai.EventSource
+  other-modules:   Network.Wai.EventSource.EventStream
+
+source-repository head
+  type:     git
+  location: git://github.com/yesodweb/wai.git

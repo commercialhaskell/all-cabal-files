@@ -1,0 +1,33 @@
+name:                up-grade
+version:             0.0.1
+
+synopsis:            Software management tool
+description:         A tool to manage upgrading of ports on a FreeBSD machine
+homepage:            http://github.com/ppenzin/up/
+-- BSD2 (FreeBSD) license
+license:             OtherLicense
+license-file:        LICENSE
+author:              Petr Penzin
+maintainer:          penzin-dev@gmail.com
+-- copyright:           
+category:            Build
+build-type:          Simple
+cabal-version:       >=1.8
+data-files:          
+
+-- Library
+--   hs-source-dirs:      src
+--   exposed-modules:     
+--   build-depends:       base
+
+Executable up
+  hs-source-dirs:      src
+  main-is:             Main.hs
+  other-modules:       
+  build-depends:       base<5, process, ports-tools
+  
+-- Test-suite test-all
+--   type:                exitcode-stdio-1.0
+--   hs-source-dirs:      test, src
+--   main-is:             TestAll.hs
+--   build-depends:       base, text, aeson, yaml, bytestring, tasty, tasty-hunit, tasty-smallcheck, tasty-quickcheck

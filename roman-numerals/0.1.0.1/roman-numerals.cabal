@@ -1,0 +1,32 @@
+name:          roman-numerals
+version:       0.1.0.1
+cabal-version: >= 1.6
+build-type:    Simple
+stability:     stable
+author:        Roel van Dijk
+maintainer:    vandijk.roel@gmail.com
+copyright:     (c) 2009 Roel van Dijk
+license:       BSD3
+license-file:  LICENSE
+category:      Numerical, Parsing
+synopsis:      Parsing and pretty printing of Roman numerals
+description:
+  This library provides functions for parsing and pretty printing
+  Roman numerals. Because the notation of Roman numerals has varied
+  through the centuries this package allows for some customisation
+  using a configuration that is passed to the conversion
+  functions. Exceptions are dealt with by wrapping the results of
+  conversions in the error monad.
+
+source-repository head
+  type:     darcs
+  location: http://code.haskell.org/~roelvandijk/code/roman-numerals
+
+library
+  build-depends: base                 >= 3.0.3.1 && < 4.3
+               , base-unicode-symbols >= 0.1.1   && < 0.2
+               , mtl                  == 1.1.*
+  exposed-modules: Text.RomanNumerals
+
+
+

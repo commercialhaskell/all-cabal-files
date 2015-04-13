@@ -1,0 +1,99 @@
+Name:           DPM
+Version:        0.2.1
+License:        GPL
+License-File:   LICENSE
+Copyright:      (c) 2009-2010 Stefan Wehr
+Category:       Development
+Author:         Stefan Wehr <mail@stefanwehr.de>
+Maintainer:     Stefan Wehr <mail@stefanwehr.de>
+Bug-Reports:    mailto:mail@stefanwehr.de
+Synopsis:       Darcs Patch Manager
+Description:
+
+  The Darcs Patch Manager (/DPM/ for short) is a tool that simplifies working
+  with the revision control system darcs (<http://darcs.net>). It is most
+  effective when used in an environment where developers do not push their
+  patches directly to the main repository but where patches undergo a
+  reviewing process before they are actually applied. See the documentation
+  of the module "DPM.Tutorial" for a short tutorial.
+
+Stability:      Beta
+Cabal-Version:  >= 1.6
+Build-Type:     Simple
+
+flag test
+  description:          Enable the test configuration: Build the test
+                        executable, reduce build time.
+  default:              False
+
+Executable dpm-tests
+  Main-Is:        AllTests.hs
+  Hs-Source-Dirs: src
+  Other-Modules:  DPM.Core.Lexer, DPM.Core.QueryParser
+  -- WARNING: The build-depends property is duplicated for the dpm executable.
+  --          Can we avoid this somehow?
+  Build-Depends:  darcs >= 2.4
+                  , bytestring >= 0.9
+                  , time
+                  , old-locale
+                  , convertible
+                  , filepath >= 1.1
+                  , base >= 4 && < 5
+                  , containers
+                  , array
+                  , split
+                  , mtl
+                  , syb
+                  , regex-posix
+                  , process
+                  , directory
+                  , pretty
+                  , unix
+                  , HTF >= 0.3
+                  , HSH >= 2
+  if flag(test)
+    Buildable:    True
+  else
+    Buildable:    False
+
+Executable dpm
+  Main-Is:        CommandlineMain.hs
+  Hs-Source-Dirs: src
+  Other-Modules:  DPM.Core.Lexer, DPM.Core.QueryParser,
+                  DPM.Core.Conflicts, DPM.Core.DataTypes, DPM.Core.Model,
+                  DPM.Core.ReverseDependencies, DPM.Core.TestDarcs,
+                  DPM.Core.DPM_Monad, DPM.Core.Email, DPM.Core.PatchBundleParser,
+                  DPM.Core.ShortID, DPM.Core.Utils, DPM.Core.Darcs, DPM.Core.Storage,
+                  DPM.UI.Commandline.ANSIColors, DPM.UI.Commandline.CDPM_Monad,
+                  DPM.UI.Commandline.Commands, DPM.UI.Commandline.Interaction,
+                  DPM.UI.Commandline.Main
+  Build-Depends:  darcs >= 2.4
+                  , bytestring >= 0.9
+                  , time
+                  , old-locale
+                  , convertible
+                  , filepath >= 1.1
+                  , base >= 4 && < 5
+                  , containers
+                  , array
+                  , split
+                  , mtl
+                  , syb
+                  , regex-posix
+                  , process
+                  , directory
+                  , pretty
+                  , unix
+                  , HTF >= 0.3
+                  , HSH >= 2
+                  -- FIXME: specify dependency on happy and alex
+  Ghc-Options:    -Werror -fwarn-incomplete-patterns -fwarn-tabs -fwarn-missing-fields -fwarn-incomplete-record-updates -fwarn-duplicate-exports -fwarn-warnings-deprecations -fwarn-deprecated-flags -funbox-strict-fields
+
+Source-Repository head
+  Type:           darcs
+  Location:       http://www.stefanwehr.de/darcs/DPM
+
+-- Just a dummy library to force building the documentation per default
+Library
+  Exposed-Modules: DPM.Tutorial
+  Hs-Source-Dirs:  src

@@ -1,0 +1,34 @@
+Author:        Evan Klitzke
+Maintainer:    Evan Klitzke <evan@eklitzke.org>
+Name:          hspresent
+Version:       0.2
+Cabal-Version: >= 1.2
+License:       BSD3
+License-File:  LICENSE
+Category:      Console
+Copyright:     (c) 2009 by Evan Klitzke
+Synopsis:      A terminal presentation tool
+Description:
+  Hspresent is a simple program that lets you give powerpoint-like presentations
+  in your terminal (for certain definitions of powerpoint-like). It's extremely
+  basic and unintelligent. Don't expect much.
+  .
+  Invoke like `hspresent /path/to/your/presentation`. Left and right arrow keys
+  move between slides, and hitting `q` or `Ctrl-C` quits the presentation.
+  .
+  The file format is really simple right now. Slides are separated by lines
+  consisting of the characters `--`. You can put the single character `.` on a
+  line to demarcate a split frame. A split frame really creates a new frame with
+  the contents of the previous frame copied at the front (this is similar to how
+  beamer works).
+
+Build-Type: Simple
+
+Executable hspresent
+  Main-Is: Main.hs
+
+Library
+  Build-Depends:  array
+                , base < 5
+                , bytestring
+                , vty

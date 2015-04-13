@@ -1,0 +1,23 @@
+name:                SGdemo
+version:             1.0
+synopsis:            An example of using the SG and OpenGL libraries
+description:         This program serves as a demonstration of the functions of the SG library
+                     (to be found on Hackage:
+                     <http://hackage.haskell.org/cgi-bin/hackage-scripts/package/SG>)) by
+                     visualising it with OpenGL.  It also serves as a sort of informal test
+                     suite for the SG library.  Documentation is available at
+		     the top of the main module's source code.
+category:            Graphics
+license:             GPL
+license-file:        LICENSE
+author:              Neil Brown
+maintainer:          neil@twistedsquare.com
+copyright:           Copyright (c) 2009, Neil Brown
+stability:           Provisional
+build-depends:       base, SG, OpenGL, GLUT
+build-type:          Simple
+
+executable:          sgdemo
+main-is:             SGdemo.hs
+ghc-options:         
+extensions:          MultiParamTypeClasses FlexibleContexts

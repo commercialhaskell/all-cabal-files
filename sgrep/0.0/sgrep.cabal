@@ -1,0 +1,17 @@
+Name:          sgrep
+Version:       0.0
+License:       GPL	
+Category:      Bioinformatics
+Author:        Ketil Malde
+Maintainer:    Ketil Malde <ketil@malde.org>
+Homepage:      http://blog.malde.org/
+
+Synopsis:      Sgrep - grep Fasta files for sequences matching a regular expression
+Description:   This is a simple utility to extract sequences from Fasta files. It
+	       expects its first parameter to be a regular expression, and its second
+	       to be a Fasta-formatted file.  It will then output all sequences matching
+	       the regexp to standard output.
+Build-Type:    Simple
+Executable:    sgrep
+Build-Depends: base>=3 && <5, bio, regex-compat
+Main-Is:       SGrep.hs

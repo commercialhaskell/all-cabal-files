@@ -1,0 +1,19 @@
+Name:                reference
+Version:             0.1
+Synopsis:            A class for references in Haskell
+Description:         Reference is class which generalizes references and monads                      they exists in. It means that IORef, STRef and others can
+                     be accessed by common interface.
+License:             MIT
+License-file:        LICENSE
+Author:              Maciej Piechotka
+Maintainer:          uzytkownik2@gmail.com
+Copyright:           2010 (c) Maciej Piechotka
+Category:            Control, Data
+Build-type:          Simple
+Cabal-version:       >=1.4
+
+Library
+  Exposed-modules:   Data.Reference
+  Build-depends:     base >= 4 && < 5,
+                     stm
+  

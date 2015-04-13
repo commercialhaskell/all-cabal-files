@@ -1,0 +1,29 @@
+Name:               FileManipCompat
+Version:            0.1
+License:            BSD3
+License-File:       LICENSE
+Author:             Bryan O'Sullivan <bos@serpentine.com>
+Maintainer:         Thomas Hartman <thomashartman1@gmail.com>
+Synopsis:           Port of Find function of FileManip lib for use on windows systems
+Category:           System
+Description:        A Haskell library for working with files and directories.
+                    Includes code for pattern matching, finding files,
+                    modifying file contents, and more.
+Build-type:         Simple
+Cabal-version:      >= 1.6
+Extra-Source-Files: README
+
+Flag base4
+    Description: Choose the even newer, even smaller, split-up base package.
+
+Library
+  Build-Depends: bytestring, directory, filepath, mtl, unix-compat, extensible-exceptions
+  if flag(base4)
+    Build-Depends:       base >= 4 && < 5
+  else
+    Build-Depends:       base < 4
+
+  GHC-Options:    -Wall
+  Exposed-Modules:
+          System.FilePath.FindCompat
+

@@ -1,0 +1,9 @@
+Name: LRU
+Version: 0.1
+License: BSD3
+Author: Adam Langley
+Homepage: http://www.imperialviolet.org/lru
+Stability: experimental
+Synopsis: Implements an LRU data structure
+Build-Depends: base, QuickCheck
+Exposed-modules: Data.LRU

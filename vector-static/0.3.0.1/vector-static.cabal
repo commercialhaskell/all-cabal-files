@@ -1,0 +1,50 @@
+Name:           vector-static
+Version:        0.3.0.1
+License:        BSD3
+License-File:   LICENSE
+Author:         Daniel Peebles <pumpkingod@gmail.com>
+Maintainer:     None
+Copyright:      (c) Daniel Peebles 2010
+Homepage:       http://github.com/geezusfreeek/vector-static
+Stability:      Unstable
+Category:       Data, Data Structures
+Synopsis:       Statically checked sizes on Data.Vector
+Description:
+        Very unstable! Many interfaces are still incomplete or even empty. 
+        Nat and Fin will be moving to a separate package eventually.
+
+        This package is not currently maintained.
+
+Cabal-Version:  >= 1.6
+Build-Type:     Simple
+
+Source-Repository head
+  Type:     git
+  Location: git://github.com/geezusfreeek/vector-static.git
+
+Source-Repository this
+  Type:     git
+  Location: git://github.com/geezusfreeek/vector-static.git
+  Tag:      v0.3.0.1
+
+Library
+  Exposed-Modules:
+        Data.Nat,
+        Data.Fin,
+        
+        Data.Vector.Generic.Static,
+        Data.Vector.Generic.Mutable.Static,
+
+        Data.Vector.Static,
+        Data.Vector.Mutable.Static,
+        
+        Data.Vector.Unboxed.Fin,      
+        Data.Vector.Unboxed.Static,
+        Data.Vector.Unboxed.Mutable.Static,
+
+        Data.Vector.Storable.Static,
+        Data.Vector.Storable.Mutable.Static
+        
+
+  Build-Depends: base >= 2 && < 5, vector == 0.5.*, primitive == 0.2.1.*
+  GHC-Options:    -Odph

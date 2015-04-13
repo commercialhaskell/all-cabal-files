@@ -1,0 +1,49 @@
+name:             zmidi-core
+version:          0.1.0
+license:          BSD3
+license-file:     LICENSE
+copyright:        Stephen Tetley <stephen.tetley@gmail.com>
+maintainer:       Stephen Tetley <stephen.tetley@gmail.com>
+homepage:         http://code.google.com/p/copperbox/
+category:         Music
+synopsis:         Read and write MIDI files.
+description:
+  Minimalist library to read and write MIDI files, with 
+  dependencies only on ByteString and Data.Binary.
+  .
+
+build-type:         Simple
+stability:          unstable
+cabal-version:      >= 1.2
+
+extra-source-files:
+  demo/MidiPrint.hs,
+  demo/MidiCopy.hs
+
+
+library
+  hs-source-dirs:     src
+  build-depends:      base < 5,
+                      bytestring,
+                      binary >= 0.5
+  
+  exposed-modules:
+    ZMidi.Core.Datatypes,
+    ZMidi.Core.Pretty,
+    ZMidi.Core.ReadFile,
+    ZMidi.Core.WriteFile
+
+  other-modules:
+    ZMidi.Core.Internal.ParserMonad,
+    ZMidi.Core.Internal.SimpleFormat
+      
+  extensions:
+    
+
+  ghc-options:
+  
+  includes: 
+  
+
+  
+  

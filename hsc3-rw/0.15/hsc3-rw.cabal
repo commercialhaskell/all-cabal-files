@@ -1,0 +1,38 @@
+Name:              hsc3-rw
+Version:           0.15
+Synopsis:          hsc3 re-writing
+Description:       hsc3 re-writing
+License:           GPL
+Category:          Sound
+Copyright:         (c) Rohan Drape and others, 2013-2014
+Author:            Rohan Drape
+Maintainer:        rd@slavepianos.org
+Stability:         Experimental
+Homepage:          http://rd.slavepianos.org/?t=hsc3-rw
+Tested-With:       GHC == 7.6.3
+Build-Type:        Simple
+Cabal-Version:     >= 1.8
+
+Data-files:        README
+
+Library
+  Build-Depends:   base == 4.*,
+                   directory,
+                   parsec,
+                   polyparse,
+                   split,
+                   syb,
+                   transformers,
+                   haskell-src-exts
+  GHC-Options:     -Wall -fwarn-tabs
+  Exposed-modules: Sound.SC3.RW.HA
+                   Sound.SC3.RW.HP
+                   Sound.SC3.RW.HP.Parsec
+                   Sound.SC3.RW.HP.Polyparse
+                   Sound.SC3.RW.ID
+                   Sound.SC3.RW.PSynth
+                   Sound.SC3.RW.Tag
+
+Source-Repository  head
+  Type:            darcs
+  Location:        http://rd.slavepianos.org/sw/hsc3-rw

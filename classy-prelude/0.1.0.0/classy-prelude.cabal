@@ -1,0 +1,38 @@
+name:                classy-prelude
+version:             0.1.0.0
+synopsis:            A typeclass-based Prelude.
+description:         Focuses on using common typeclasses when possible, and creating new ones to avoid name clashing. Exposes many recommended datastructures (Map, ByteString, etc) directly without requiring long import lists and qualified modules.
+homepage:            https://github.com/snoyberg/classy-prelude
+license:             MIT
+license-file:        LICENSE
+author:              Michael Snoyman
+maintainer:          michael@snoyman.com
+category:            Control
+build-type:          Simple
+cabal-version:       >=1.8
+
+library
+  exposed-modules:     ClassyPrelude
+                       ClassyPrelude.Classes
+  other-modules:       ClassyPrelude.List
+                       ClassyPrelude.ByteString
+                       ClassyPrelude.LByteString
+                       ClassyPrelude.Text
+                       ClassyPrelude.LText
+                       ClassyPrelude.Map
+                       ClassyPrelude.Set
+                       ClassyPrelude.FilePath
+                       ClassyPrelude.Vector
+                       ClassyPrelude.HashMap
+                       ClassyPrelude.LHashMap
+                       ClassyPrelude.HashSet
+  build-depends:       base                          >= 4          && < 5
+                     , system-filepath               >= 0.4        && < 0.5
+                     , transformers
+                     , containers
+                     , text
+                     , bytestring
+                     , vector
+                     , unordered-containers
+                     , hashable
+  ghc-options:         -Wall -fno-warn-orphans

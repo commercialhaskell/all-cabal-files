@@ -1,0 +1,19 @@
+name: mastermind
+version: 2010.7.25.1
+license: BSD3
+license-file: LICENSE
+maintainer: Paolo Veronelli <paolo.veronelli@gmail.com> 
+stability: unstable
+category: game
+synopsis: console mastermind decypher
+description:  a 5 guess decypher for mastermind game
+homepage: http://wiki.github.com/paolino/mastermind
+copyright: Copyright (c) 2010 Paolo Veronelli 
+build-type: Simple
+cabal-version: >= 1.6
+
+Executable mastermind
+ ghc-options: -Wall
+ main-is: Solver.hs
+ build-depends: base >= 4.2 && <5  , 
+                random      

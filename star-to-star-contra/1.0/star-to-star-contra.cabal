@@ -1,0 +1,21 @@
+name: star-to-star-contra
+version: 1.0
+
+build-type: Simple
+
+category: Composition
+
+maintainer: nicolas.frisby@gmail.com
+
+synopsis: contravariant instances for * -> * types and operators.
+description: Contravariant instances for the fundamental * -> * types and operators.
+
+license: OtherLicense
+license-file: LICENSE
+
+cabal-version: >= 1.2
+
+library
+  build-depends: base >= 4 && < 5
+  build-depends: star-to-star >= 1 && < 2
+  exposed-modules: Control.Functor.Contra, Data.StarToStar.Contra

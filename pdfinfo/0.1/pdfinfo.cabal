@@ -1,0 +1,20 @@
+Name:                pdfinfo
+Version:             0.1
+Synopsis:            Wrapper around the pdfinfo command.
+Description:         Just a wrapper around the pdfinfo command. See man pdfinfo.
+License:             BSD3
+License-file:        LICENSE
+Author:              Chris Done
+Maintainer:          chrisdone@gmail.com
+Copyright:           2010 Chris Done
+Category:            Text
+Build-type:          Simple
+Cabal-version:       >=1.2
+Library
+  Exposed-modules:   Text.PDF.Info
+  Hs-source-dirs:    src/
+  Build-depends:     base >= 4 && < 5,
+                     old-locale >= 1.0 && < 1.1,
+                     time >= 1.1 && < 1.2,
+                     process >= 1.0 && < 1.1,
+                     mtl >= 1.1 && < 1.2

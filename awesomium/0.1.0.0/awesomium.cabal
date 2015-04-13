@@ -1,0 +1,52 @@
+
+Name:                awesomium
+Version:             0.1.0.0
+Synopsis:            High-level Awesomium bindings.
+License:             LGPL-3
+License-File:        LICENSE
+Author:              Maksymilian Owsianny
+Maintainer:          Maksymilian.Owsianny+Awesomium@gmail.com
+Bug-Reports:         https://github.com/MaxOw/awesomium/issues
+Copyright:           (c) 2012 Maksymilian Owsianny
+Category:            Graphics, Web
+Build-Type:          Simple
+Stability:           Experimental
+Cabal-Version:       >= 1.8
+
+Description:         Awesomium (<http://awesomium.com>) is a windowless
+                     port of Chromium/Webkit.
+                     .
+                     You can integrate it with your program, and write
+                     all of your UI with HTML\/CSS\/JS.
+                     .
+                     If you plan to integrate Awesomium with GLUT you
+                     can also check out this package
+                     (<http://hackage.haskell.org/package/awesomium-glut>).
+
+Source-Repository head
+  Type:     git
+  Location: https://github.com/MaxOw/awesomium.git
+
+Library
+  Exposed-Modules: Graphics.UI.Awesomium
+                 , Graphics.UI.Awesomium.WebCore
+                 , Graphics.UI.Awesomium.WebView
+                 , Graphics.UI.Awesomium.WebView.Callbacks
+                 , Graphics.UI.Awesomium.RenderBuffer
+                 , Graphics.UI.Awesomium.Resource
+                 , Graphics.UI.Awesomium.UploadElement
+                 , Graphics.UI.Awesomium.History
+                 , Graphics.UI.Awesomium.Javascript
+                 , Graphics.UI.Awesomium.Javascript.JSValue
+                 , Graphics.UI.Awesomium.Javascript.JSObject
+                 , Graphics.UI.Awesomium.Javascript.JSArray
+
+  Build-Depends  : awesomium-raw
+                 , base             >= 3 && < 5
+                 , vector           >= 0.7.1
+                 , text             >= 0.11.1
+                 , containers
+                 , aeson
+                 , attoparsec       >= 0.8.6.1
+
+  Hs-Source-Dirs : src

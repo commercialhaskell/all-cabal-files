@@ -1,0 +1,70 @@
+name:               Encode
+version:            0.7
+license:            GPL
+license-file:       LICENSE
+extra-source-files: INSTALL, LicenseBSD, LicenseGPL
+copyright:          2007
+author:             Otakar Smrz
+maintainer:         otakar.smrz mff.cuni.cz
+homepage:           http://ufal.mff.cuni.cz/~smrz/
+package-url:        http://ufal.mff.cuni.cz/~smrz/Encode/Encode-0.7.tar.gz
+category:           Various
+build-depends:      Cabal, base
+synopsis:           Encoding character data
+description:        The "Encode" library is being proposed as a Haskell
+                    analogy to the /Encode/ extension in Perl,
+                    <http://search.cpan.org/dist/Encode/>.
+                    .
+                    Like its counterpart, "Encode" should provide a unified
+                    interface for converting strings from different encodings
+                    into a common representation, and vice versa. The
+                    representation should be isomorphic to the Unicode
+                    character set, and the encodings might be both standard
+                    and user-defined. For this purpose, the "Encode" module
+                    defines the 'Encode.UPoint' type and the
+                    'Encode.Encoding' type class.
+                    .
+                    The "FunParsing" library is an edited excerpt from the
+                    /Functional Parsing/ library developed by Peter
+                    Ljungl&#246;f in his licenciate thesis /Pure Functional
+                    Parsing &#150; an advanced tutorial/, G&#246;teborg
+                    University and Chalmers University of Technology, April
+                    2002, <http://www.cs.chalmers.se/~peb/software.html>.
+                    .
+                    The "Version" library is just a simple support for
+                    working with the CVS\/SVN revision keyword.
+                    .
+                    This software is published under the /GNU General Public
+                    License/. Only the "Encode".hs and "Version".hs files are
+                    instead subject to the /Revised BSD License/. Note the
+                    copyright and license details in the headers of the
+                    files, and see "LICENSE", "LicenseBSD" and "LicenseGPL"
+                    distributed with this package.
+                    .
+                    "Encode" "FunParsing" "Version"
+exposed-modules:    Encode,
+                        Encode.Arabic,
+                            Encode.Arabic.ArabTeX,
+                                Encode.Arabic.ArabTeX.ZDMG,
+                            Encode.Arabic.Buckwalter,
+                            Encode.Arabic.Byte,
+                        Encode.Extend,
+                        Encode.Mapper,
+                        Encode.Unicode,
+                            Encode.Unicode.UTF8,
+                    FunParsing,
+                        FunParsing.OrdMap,
+                        FunParsing.OrdSet,
+                        FunParsing.Parsers,
+                            FunParsing.Parsers.AmbExTrie,
+                            FunParsing.Parsers.AmbTrie,
+                            FunParsing.Parsers.ExTrie,
+                            FunParsing.Parsers.PairTrie,
+                            FunParsing.Parsers.Parser,
+                            FunParsing.Parsers.Standard,
+                            FunParsing.Parsers.Stream,
+                            FunParsing.Parsers.Trie,
+                    Version
+extensions:         MultiParamTypeClasses,
+                    FunctionalDependencies,
+                    ExistentialQuantification

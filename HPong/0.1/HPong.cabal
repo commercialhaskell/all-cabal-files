@@ -1,0 +1,25 @@
+name:                HPong
+version:             0.1
+
+license:             GPL
+license-file:        LICENSE
+author:              Remco Niemeijer
+maintainer:          Remco Niemeijer <R.A.Niemeijer@tue.nl>
+
+stability:           Stable
+category:            Game
+synopsis:            2-D single-player game
+description:         A simple OpenGL Pong game based on GLFW
+homepage:            
+
+build-depends:       base, data-accessor, data-accessor-template, OpenGL, GLFW
+build-type:          Simple
+data-files:          README
+tested-with:         GHC==6.10.2
+
+executable:          hpong
+main-is:             HPong.hs
+other-modules:       
+
+ghc-options:         -Wall
+ghc-prof-options:    -prof -auto-all

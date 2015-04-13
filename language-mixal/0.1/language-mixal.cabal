@@ -1,0 +1,44 @@
+Name:                language-mixal
+Version:             0.1
+Synopsis:            Parser, pretty-printer, and AST types for the MIXAL
+                     assembly language
+Description:         MIXAL parser and pretty-printer
+License:             BSD3
+License-file:        LICENSE
+Author:              Jonathan Daugherty <cygnus@foobox.com>
+Maintainer:          Jonathan Daugherty <cygnus@foobox.com>
+Copyright:           Jonathan Daugherty, 2013
+Category:            Language
+Homepage:            http://github.com/jtdaugherty/language-mixal/
+Build-Type:          Simple
+Cabal-Version:       >=1.8
+
+Source-Repository head
+  Type:     git
+  Location: git://github.com/jtdaugherty/language-mixal.git
+
+Library
+  Hs-source-dirs:    src
+  GHC-Options:       -Wall
+
+  Exposed-modules:
+    Language.MIXAL.AST
+    Language.MIXAL.Parser
+    Language.MIXAL.PP
+    Language.MIXAL.Char
+    Language.MIXAL.OpCode
+
+  Build-depends:
+    base >= 4 && < 5,
+    parsec,
+    mtl,
+    pretty
+
+Executable mixal-pretty
+  Hs-Source-Dirs:    programs
+  Main-is:           MixalPretty.hs
+  GHC-Options:       -Wall
+  Build-Depends:
+    base >= 4 && < 5,
+    pretty,
+    language-mixal

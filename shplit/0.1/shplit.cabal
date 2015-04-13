@@ -1,0 +1,27 @@
+name:               shplit
+version:            0.1
+homepage:           http://personal.cis.strath.ac.uk/~conor/pub/shplit
+synopsis:           A Haskell pattern splitter with emacs attachments
+description:
+    Shplit is a transducer which attempts to split one function line into several
+    by replacing a variable with constructor patterns, deduced from the type
+    annotation on the function.
+category:           Language
+license:            PublicDomain
+license-file:       LICENCE
+author:             Conor McBride
+maintainer:         conor@strictlypositive.org
+extra-source-files: Shplit.el
+cabal-version:      >= 1.6
+build-type:         Simple
+
+executable shplit
+    main-is:            Shplit.lhs
+
+    build-depends:      base >=3 && < 5,
+                        mtl >=2 && <3
+    hs-source-dirs:     src
+
+source-repository head
+  type:     darcs
+  location: http://personal.cis.strath.ac.uk/~conor/pub/shplit

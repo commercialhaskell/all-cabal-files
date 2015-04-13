@@ -1,0 +1,19 @@
+Name: arrowapply-utils
+Version: 0.1
+Cabal-Version: >= 1.6
+Build-Type: Simple
+License: BSD3
+License-File: LICENSE
+Author: Andrew Miller
+Copyright: (C) 2012 The University of Auckland
+Maintainer: ak.miller@auckland.ac.nz
+Stability: experimental
+Synopsis: Utilities for working with ArrowApply instances more naturally
+Description: This package provides useful utilities for making use of the opportunities the ArrowApply class provides, such as the ability to work with Arrows as Monads, and use liftM-like functions.
+Category: Control
+Source-Repository head
+    Type:     git
+    Location: https://github.com/A1kmm/cellml-testbed/
+Library
+    Exposed-Modules: Control.Arrow.ApplyUtils
+    Build-Depends: base >= 3 && <= 5

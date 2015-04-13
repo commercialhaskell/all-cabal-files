@@ -1,0 +1,43 @@
+name: OpenCLWrappers
+version: 0.0.0
+cabal-version: >=1.2
+build-type: Simple
+license: BSD3
+license-file: LICENSE
+copyright: Renaissance Computing Institute, Emil Karlson
+maintainer: Emil Karlson <jekarlson@gmail.com>
+stability: Experimental
+homepage: https://github.com/jkarlson/OpenCLWrappers
+package-url:
+bug-reports: https://github.com/jkarlson/OpenCLWrappers/issues
+synopsis: The OpenCL Standard for heterogenous data-parallel computing
+description: Light opencl wrappers, a fork of the OpenCLRaw package.
+category: FFI
+author: J.R. Heard, Emil Karlson
+
+Library
+  exposed-modules: System.OpenCL.Wrappers.CommandQueue
+                   System.OpenCL.Wrappers.Context
+                   System.OpenCL.Wrappers.DeviceInfo
+                   System.OpenCL.Wrappers.Errors
+                   System.OpenCL.Wrappers.Etc
+                   System.OpenCL.Wrappers.EventObject
+                   System.OpenCL.Wrappers.FlushFinish
+                   System.OpenCL.Wrappers.Kernel
+                   System.OpenCL.Wrappers.MemoryObject
+                   System.OpenCL.Wrappers.OutOfOrder
+                   System.OpenCL.Wrappers.PlatformInfo
+                   System.OpenCL.Wrappers.ProgramObject
+                   System.OpenCL.Wrappers.Sampler
+                   System.OpenCL.Wrappers.Types
+                   System.OpenCL.Wrappers.Helpers
+                   System.OpenCL.Wrappers.Raw
+                   System.OpenCL.Wrappers
+  build-depends: base <= 4.4,
+                 bytestring -any,
+                 mtl >= 2 && < 2.1
+  exposed: True
+  buildable: True
+  hs-source-dirs: .
+  other-modules: System.OpenCL.Wrappers.Utils
+

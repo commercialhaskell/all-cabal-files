@@ -1,0 +1,36 @@
+name:                hoobuddy
+version:             0.1.0.0
+synopsis:            Simple tool for fetching and merging hoogle data
+description:
+ Hoobuddy parses the specified cabal project file and invokes hoogle to fetch databases for
+ all specified dependencies merging the result into a `default.hoo` file in the current directory.
+license:             MIT
+license-file:        LICENSE
+author:              tobias pflug
+maintainer:          tobias.pflug@gmail.com
+homepage:            http://github.com/gilligan/hoobuddy
+category:            Development
+build-type:          Simple
+cabal-version:       >=1.10
+
+source-repository head
+  type:                 git
+  location:             git://github.com/gilligan/hoobuddy
+
+executable hoobuddy
+  hs-source-dirs:      src
+  main-is:             Main.hs
+  ghc-options:         -fwarn-incomplete-patterns
+  build-depends:       base >=4.7 && <4.8
+                     , Cabal
+                     , directory
+                     , filepath
+                     , monad-loops
+                     , aeson
+                     , yaml
+                     , hoogle >= 4.2.34
+                     , process
+                     , bytestring
+
+
+  default-language:    Haskell2010

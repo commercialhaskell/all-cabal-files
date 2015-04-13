@@ -1,0 +1,37 @@
+name:		queuelike
+version:	1.0.6
+synopsis:	A library of queuelike data structures, both functional and stateful.
+description:	Contains several implementations of data structures implementing a /single-in, single-out/ paradigm.  Intended to be a better, more useful replacement for pqueue-mtl.
+		In particular, includes an experimental and possibly genuinely new trie-based priority queue on strings.  Feedback is appreciated.
+tested-with:	GHC
+category:	Algorithms
+stability:	experimental
+bug-reports:	mailto:wasserman.louis@gmail.com
+license:	BSD3
+license-file:	LICENSE
+author:		Louis Wasserman
+maintainer:	wasserman.louis@gmail.com
+build-Depends:	base, containers, mtl, array, stateful-mtl >= 1.0.7
+build-type:	Simple
+Exposed-modules:
+	Data.Queue
+	Data.Queue.PQueue
+	Data.Queue.Class
+	Data.Queue.Instances
+	Data.Queue.Stack
+	Data.Queue.Queue
+	Data.Queue.TrieQueue
+	Data.MQueue.Class
+	Data.MQueue.Heap
+	Data.MQueue.SyncQueue
+	Data.MQueue.Chan
+	Data.MQueue
+other-modules: 
+	Data.Queue.QueueHelpers
+	Data.Queue.TrieQueue.Edge
+	Data.Queue.TrieQueue.MonoidQueue
+	Data.Queue.TrieQueue.TrieLabel
+	Data.MQueue.MonadHelpers
+extra-source-files:
+	Data/Queue/TrieQueue/MonoidQueue2.hs
+ghc-options:

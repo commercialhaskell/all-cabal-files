@@ -1,0 +1,21 @@
+name:                 winerror
+version:              0.1
+copyright:            2008 Felix Martini
+license:              BSD3
+license-file:         LICENSE
+maintainer:           fmartini@gmail.com
+stability:            Provisional
+category:             Foreign
+synopsis:             Error handling for foreign calls to the Windows API.
+tested-with:          GHC == 6.8.2, Hugs == 2006-09
+build-type:           Simple
+cabal-version:        >= 1.2
+
+library
+  if os(windows)
+    build-depends:    base
+    exposed-modules:  System.Windows.Error
+    include-dirs:     include
+    c-sources:        cbits/HsWinError.c
+    install-includes: HsWinError.h
+    extensions:       CPP

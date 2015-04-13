@@ -1,0 +1,32 @@
+name:           cereal-ieee754
+version:        0.1
+synopsis:       Floating point support for the 'cereal' serialization library
+description:    Provides functions for reading and writing IEEE 754 floating
+                point numbers using the 'cereal' binary serialization library.
+homepage:       http://github.com/jystic/cereal-ieee754
+license:        BSD3
+license-file:   LICENSE
+author:         Jacob Stanley
+maintainer:     Jacob Stanley <jacob@stanley.io>
+category:       Data, Parsing
+build-type:     Simple
+cabal-version:  >=1.6
+
+source-repository head
+  type:     git
+  location: http://github.com/jystic/cereal-ieee754.git
+
+library
+  hs-source-dirs: src
+  exposed-modules: Data.Serialize.IEEE754
+
+  build-depends:
+    array  == 0.3.*,
+    base   == 4.*,
+    cereal == 0.3.*
+
+  ghc-options:
+    -Wall
+    -funbox-strict-fields
+    -fno-warn-unused-do-bind
+    -fwarn-tabs

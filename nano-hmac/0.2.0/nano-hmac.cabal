@@ -1,0 +1,27 @@
+name:                nano-hmac
+version:             0.2.0
+description:         Bindings to OpenSSL HMAC.
+synopsis:            Bindings to OpenSSL HMAC.
+license:             BSD3
+license-file:        LICENSE
+homepage:            http://www.jasani.org/search/label/nano-hmac
+author:              Hitesh Jasani
+category:            Codec
+maintainer:          <hitesh.jasani@gmail.com>
+Cabal-Version:       >= 1.2
+Build-Type:          Simple
+Tested-With:         GHC == 6.8.2
+extra-source-files:  README test/Makefile test/hmac_hu.hs
+
+flag split-base
+library
+  if flag(split-base)
+    build-depends:     base >= 3, bytestring
+  else
+    build-depends:     base < 3
+  exposed-modules:     Data.Digest.OpenSSL.HMAC
+  ghc-options:         -Wall -Werror -O2 -fvia-C
+  extensions:          ForeignFunctionInterface, BangPatterns, CPP
+  includes:            openssl/hmac.h
+  extra-libraries:     crypto ssl
+

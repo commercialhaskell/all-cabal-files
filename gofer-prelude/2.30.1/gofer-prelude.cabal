@@ -1,0 +1,29 @@
+name:           gofer-prelude
+version:        2.30.1
+license:        BSD3
+license-file:   LICENSE
+author:         Mark P Jones
+maintainer:     Don Stewart <dons@galois.com>
+homepage:       http://code.haskell.org/~dons/code/gofer-prelude
+category:       Data
+synopsis:       The Gofer 2.30 standard prelude
+description:    
+                Functional programming environment, Version 2.30
+                Standard prelude for use of overloaded values using type classes.
+                Based on the Haskell standard prelude version 1.2.
+                .
+                <http://web.cecs.pdx.edu/~mpj/goferarc/>
+                .
+build-type:     Simple
+stability:      experimental
+cabal-version: >= 1.2.3
+extra-source-files: Readme
+
+library
+    build-depends:  base
+
+    if impl(ghc >= 6.9)
+        build-depends: ghc-prim
+
+    exposed-modules: Prelude.Gofer
+    extensions:      MagicHash

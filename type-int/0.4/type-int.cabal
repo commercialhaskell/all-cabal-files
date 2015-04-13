@@ -1,0 +1,26 @@
+name:			type-int
+category:		Type
+version:		0.4
+license:		BSD3
+license-file:		LICENSE
+build-depends:		template-haskell -any, base -any
+author:			Edward Kmett
+maintainer:		ekmett@gmail.com
+stability:		alpha
+homepage:		http://slipwave.info/
+synopsis:		Type Level 2s- and 16s- Complement Integers
+copyright:		Copyright (C) 2006 Edward Kmett. All Rights Reserved
+description: 		Type level 2s- and 16s- complement Integers (positive and negative), Booleans, Ord and Eq
+extensions:		MultiParamTypeClasses, FunctionalDependencies, TemplateHaskell, UndecidableInstances, CPP
+exposed-modules:
+	Data.Type.Boolean, 
+	Data.Type.Ord, 
+	Data.Type.Binary, 
+	Data.Type.Binary.Internals, 
+	Data.Type.Binary.TH,
+	Data.Type.Hex,
+	Data.Type.Hex.Stage1,
+	Data.Type.Hex.Stage2,
+	Data.Type.Hex.Stage3
+ghc-options:		-O2 -funbox-strict-fields
+hs-source-dirs:		src

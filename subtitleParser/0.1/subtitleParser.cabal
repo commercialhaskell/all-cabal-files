@@ -1,0 +1,42 @@
+name:            subtitleParser
+version:         0.1
+license:         BSD3
+license-file:    LICENSE
+category:        Text, Parsing
+author:          Ruben Astudillo  <ruben.astud@gmail.com>
+maintainer:      Ruben Astudillo  <ruben.astud@gmail.com>
+stability:       experimental
+tested-with:     GHC == 7.4.2
+synopsis:        A parser for .srt and .sub files
+cabal-version:   >= 1.8
+homepage:        https://patch-tag.com/r/rubenAst/subtitleParser/home
+bug-reports:     https://patch-tag.com/r/rubenAst/subtitleParser/home
+build-type:      Simple
+description:
+    A basic .srt and .sub parser based on attoparsec and text 
+extra-source-files:
+    LICENSE
+    THANKS
+
+Flag developer
+  Description: Whether to build the library in development mode
+  Default: False
+
+library
+  build-depends: base >= 3 && < 5,
+                 containers,
+                 text >= 0.11.1.5,
+                 attoparsec
+
+  exposed-modules: Text.Subtitles.SRT
+                   Text.Subtitles.Datatypes
+
+  ghc-options: -Wall
+
+  if flag(developer)
+    ghc-prof-options: -auto-all
+
+source-repository head
+  type:     darcs
+  location: https://patch-tag.com/r/rubenAst/subtitleParser
+

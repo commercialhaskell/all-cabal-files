@@ -1,0 +1,22 @@
+Name: tar
+Version: 0.1
+x-revision: 1
+License: BSD4
+License-File: LICENSE
+Author: Bjorn Bringert <bjorn@bringert.net>
+Maintainer: Bjorn Bringert <bjorn@bringert.net>
+Copyright: 2007 Bjorn Bringert <bjorn@bringert.net>
+Stability: Experimental
+Build-depends: base >= 2.0 && < 4, binary >= 0.2, unix-compat >= 0.1
+Synopsis: TAR (tape archive format) library.
+Description:
+  This is a library for reading and writing TAR archives.
+Exposed-modules: Codec.Archive.Tar
+Other-modules:
+ Codec.Archive.Tar.Create,
+ Codec.Archive.Tar.Extract,
+ Codec.Archive.Tar.Read,
+ Codec.Archive.Tar.Types,
+ Codec.Archive.Tar.Util,
+ Codec.Archive.Tar.Write
+GHC-Options: -O -Wall

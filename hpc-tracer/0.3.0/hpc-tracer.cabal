@@ -1,0 +1,43 @@
+name:		hpc-tracer
+version:	0.3.0
+license:	BSD3
+license-file:	LICENSE
+Build-depends:  base, hpc, unix, parsec, haskell98, network, process, containers, pretty, array
+author:		Andy Gill <andygill@ku.edu>
+maintainer:	Andy Gill <andygill@ku.edu>
+homepage:	http://darcs.unsafePerformIO.com/hpc-tracer
+category:	Trace, Test
+Synopsis:	Tracer with AJAX interface
+description:
+    An incomplete component of the Hpc toolkit which provides the
+    ability to step through coverage ticks as they happen, giving a
+    poor mans debugger.  Requires the binary being traced to be build
+    using a specific version of ghc-6.7, so YMWV.
+
+    The plan is to port this to the new GHC API, giving both tracing
+    and free variable examination via an Ajax interface.
+Copyright:      (c) 2006 Andy Gill, Colin Runciman, (c) 2006-2007 Galois Inc.
+Stability:	builds
+build-type: Simple
+extra-source-files:
+	includefile.pl	
+	     fs/code.html
+	     fs/default.css
+	     fs/default.js
+	     fs/favicon.ico
+	     fs/footer.html
+	     fs/header.html
+	     fs/progressbar_green.gif
+	     fs/root.html
+	     fs/status.html
+
+executable: hpc-tracer
+main-is: Main.hs
+hs-source-dirs: src
+extensions: OverlappingInstances, RankNTypes, GADTs, TypeSynonymInstances
+other-modules: Main,
+	       AjaxAPI,Debug,Reactive,TracerActor
+	       BreakPoint,Flags,StreamHandle,Utils
+	       CodeRenderActor,Main,TixActor
+	       Common,MixActor,TixStreamActor
+

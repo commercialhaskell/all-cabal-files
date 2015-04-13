@@ -1,0 +1,23 @@
+Name:           ip6addr
+Version:        0.2
+Author:         Michel Boucey <michel.boucey@gmail.com>
+Maintainer:     Michel Boucey <michel.boucey@gmail.com>
+Homepage:       http://www.cybervisible.fr/ip6addr
+Category:       Network,Console
+Synopsis:       Command-line tools to filter parsed IPv6 Addresses against RFC 4291 and generate random IPv6 adresses
+Description:    ip6addr consists of two command-line tools: ip6addrval which filters IPv6 addresses parsed against RFC 4291. By default, ip6addrval outputs only validated inputs, i.e. IPv6 addresses, removing CIDR suffix if necessary. -e option throws out discarded inputs to stderr (which have of course to be redirected). The second command-line tool, ip6addrgen, generates random IPv6 adresses. -p option allows to provide a prefix to all IPv6 adresses to generate. -n option allows to provide the amount of IPv6 addresses to generate.
+License:        BSD3
+License-File:   LICENSE
+Build-Type:     Simple
+Cabal-Version:  >= 1.2
+
+Executable ip6addrval
+    Hs-Source-Dirs: src 
+    Main-Is:  IP6AddrVal.hs
+    Build-Depends:  base >4 && <5
+
+Executable ip6addrgen
+    Hs-Source-Dirs: src
+    Main-Is:  IP6AddrGen.hs
+    Build-Depends:  base >4 && <5,
+                    random

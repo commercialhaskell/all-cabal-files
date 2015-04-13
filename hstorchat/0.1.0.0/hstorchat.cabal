@@ -1,0 +1,47 @@
+name:                hstorchat
+version:             0.1.0.0
+synopsis:            Distributed instant messaging over Tor
+copyright:           (c) 2014 Christopher Reichert
+license:             GPL-3
+license-file:        LICENSE
+author:              Christopher Reichert
+maintainer:          creichert07@gmail.com
+build-type:          Simple
+cabal-version:       >=1.10
+category:            Network
+stability:           experimental
+data-files:          qml/*.qml, qml/img/*.png
+description:
+    A Distributed instant messaging application built on Tor Hidden Services.
+
+    Compatible with the original TorChat client.
+
+library
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+  build-depends:       base >=4.6 && <4.7, network,
+                       socks, process, hsqml>=0.3, safecopy, tagged,
+                       attoparsec, text, socks, random, containers
+  exposed-modules:     Network.HSTorChat.Client,
+                       Network.HSTorChat.GUI,
+                       Network.HSTorChat.Protocol
+
+executable hstorchat
+  main-is:             src/Main.hs
+  ghc-options:         -Wall -threaded -fno-warn-unused-do-bind
+  default-language:    Haskell2010
+  build-depends:       base >=4.6 && <4.7, network, hstorchat, process,
+                       hsqml>=0.3, text, containers
+
+test-suite hstorchat-tests
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      tests
+  main-is:             Main.hs
+  ghc-options:         -Wall
+  default-language:    Haskell2010
+  build-depends:       base, hstorchat, test-framework, test-framework-hunit,
+                       test-framework-quickcheck2, HUnit, QuickCheck
+
+source-repository head
+    type:     git
+    location: https://github.com/creichert/hstorchat

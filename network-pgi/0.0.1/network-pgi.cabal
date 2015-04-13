@@ -1,0 +1,17 @@
+Name:          network-pgi
+Version:       0.0.1
+Synopsis:      Library for writing PGI applications
+Description:
+  Provides an API to create and serve PGI applications.
+Author:        Harry Terkelsen
+Maintainer:    het32@cornell.edu
+Cabal-Version: >= 1.2
+Build-Type:    Simple
+Category:      Web
+License:       OtherLicense
+License-File:  LICENSE
+library
+  Exposed-Modules: Network.PGI, Network.PGI.Handlers
+  Build-Depends:   base >= 4.0 && < 5.0, attoparsec >= 0.10, bytestring >= 0.9,
+                   attoparsec-enumerator >= 0.3, enumerator >= 0.4,
+                   tnet >= 0.0.1

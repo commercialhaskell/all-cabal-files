@@ -1,0 +1,48 @@
+name: data-binary-ieee754
+version: 0.4.2.1
+synopsis: Parser/Serialiser for IEEE-754 floating-point values
+description: Convert Float and Decimal values to/from raw octets.
+license: MIT
+license-file: License.txt
+author: John Millikin
+maintainer: jmillikin@gmail.com
+build-type: Simple
+cabal-version: >=1.6
+category: Data
+stability: experimental
+bug-reports: mailto:jmillikin@gmail.com
+homepage: http://john-millikin.com/software/data-binary-ieee754/
+tested-with: GHC==6.12.1
+
+source-repository head
+  type: bazaar
+  location: http://john-millikin.com/software/data-binary-ieee754/
+
+flag test
+  default: False
+
+library
+  if true
+    ghc-options: -Wall
+
+  if impl(ghc >= 6.11)
+    ghc-options: -fno-warn-unused-do-bind
+
+  build-depends:
+      base >= 3.0 && < 5
+    , binary >= 0.4 && < 0.6
+
+  exposed-modules:
+    Data.Binary.IEEE754
+
+executable data-binary-ieee754_tests
+  main-is: Tests.hs
+
+  if flag(test)
+    build-depends:
+        QuickCheck >= 2.2 && < 2.4
+      , test-framework >= 0.2 && < 0.4
+      , test-framework-quickcheck2 >= 0.2 && < 0.3
+      , bytestring >= 0.9 && < 0.10
+  else
+    buildable: False

@@ -1,0 +1,17 @@
+Name:                CPBrainfuck
+Cabal-Version:       >= 1.2
+Version:             1.1
+Synopsis:            A simple Brainfuck interpretter.
+Description:         This is a very simple brainfuck interpretter, that's easy
+                     to understand.
+License:             BSD3
+License-file:        LICENSE
+Author:              Thomas Davie
+Maintainer:          Thomas Davie (tom.davie@gmail.com)
+category:            Compilers/Interpreters
+Data-Files:          README
+build-type:          Simple
+
+Executable bf
+  Build-Depends:        base >= 3.0,haskell98 >= 1.0
+  Main-is:              BF.hs

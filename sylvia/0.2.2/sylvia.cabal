@@ -1,0 +1,76 @@
+Name:                sylvia
+Version:             0.2.2
+Synopsis:            Lambda calculus visualization
+Category:            Game
+
+Description:
+    The Simple Yuser-friendly Lambda Visualization Interaction Application (SYLVIA)
+    is a unique way to manipulate untyped lambda calculus expressions, by
+    representing them as boxes connected by wires.
+    .
+    It is an implementation of an idea by Keenan (1996). See
+    <http://dkeenan.com/Lambda> for the theory behind this application.
+
+Homepage:            https://github.com/lfairy/sylvia
+Bug-Reports:         https://github.com/lfairy/sylvia/issues
+
+Author:              Chris Wong
+Maintainer:          chrisyco@gmail.com
+
+License:             GPL
+License-File:        LICENSE
+Copyright:           2012 Chris Wong
+
+Build-Type:          Simple
+Extra-Source-Files:  README.mkd
+Cabal-Version:       >= 1.8
+
+
+Executable sylvia
+    Main-Is:     Main.hs
+    Build-Depends:
+          base   == 4.*
+        , comonad-transformers
+        , data-default
+        , data-lens
+        , data-lens-template
+        , optparse-applicative == 0.4.*
+        , parsec >= 3.1.2 && < 3.2
+        , transformers
+        , void   >= 0.5.5 && < 0.6
+        , cairo
+        , gtk
+
+    Other-Modules:
+        Sylvia.Model
+        Sylvia.Render.Backend
+        Sylvia.Render.Backend.Cairo
+        Sylvia.Render.Core
+        Sylvia.Render.Pair
+        Sylvia.Text.Parser
+        Sylvia.Text.PrettyPrint
+        Sylvia.UI.GTK
+
+    GHC-Options: -Wall
+
+
+Test-Suite tests
+    Type:           exitcode-stdio-1.0
+    Hs-Source-Dirs: tests, .
+    Main-Is:        Properties.hs
+    Build-Depends:
+          base
+        , void
+        , parsec
+
+        , test-framework    >= 0.3.3 && < 0.7
+        , test-framework-smallcheck
+                            >= 0.1 && < 0.2
+        , smallcheck        >= 0.6 && < 0.7
+
+    GHC-Options:    -Wall -fno-warn-orphans
+
+
+Source-Repository head
+    Type:     git
+    Location: https://github.com/lfairy/sylvia.git

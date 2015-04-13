@@ -1,0 +1,35 @@
+name:                barcodes-code128
+version:             0.1.0
+synopsis:            Generate Code 128 barcodes as PDFs
+description:
+                     A library for generating barcodes in Code 128 in PDF format, either
+                     directly as 'Data.ByteString.Lazy.ByteString's or as drawing commands
+                     in 'HPDF''s command set.
+
+                     Code 128 is described at <http://en.wikipedia.org/wiki/Code_128>.
+license:             MIT
+license-file:        LICENSE
+author:              David Raymond Christiansen
+maintainer:          david@davidchristiansen.dk
+copyright:           (c) 2014 David Raymond Christiansen, Galois, Inc.
+category:            Graphics
+build-type:          Simple
+-- extra-source-files:  
+cabal-version:       >=1.10
+stability:           provisional
+homepage:            
+bug-reports:         https://github.com/david-christiansen/barcodes-code128/issues
+
+source-repository head
+  type:     git
+  location: git://github.com/david-christiansen/barcodes-code128.git
+
+library
+  exposed-modules:     Graphics.Barcode.Code128
+  -- other-modules:       
+  -- other-extensions:    
+  build-depends:       base       >=4.7    && <4.8,
+                       bytestring >=0.10.4 && <0.11,
+                       HPDF       >=1.4.6  && <1.5
+  hs-source-dirs:      src
+  default-language:    Haskell2010

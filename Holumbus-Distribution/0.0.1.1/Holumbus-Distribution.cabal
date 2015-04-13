@@ -1,0 +1,74 @@
+name:          Holumbus-Distribution
+version:       0.0.1.1
+license:       OtherLicense
+license-file:  LICENSE
+author:        Stefan Schmidt, Uwe Schmidt
+copyright:     Copyright (c) 2008 Stefan Schmidt, Uwe Schmidt
+maintainer:    Stefan Schmidt <sts@holumbus.org>
+stability:     experimental
+category:      Distributed Computing, Network
+synopsis:      intra- and inter-program communication
+homepage:      http://holumbus.fh-wedel.de
+description:   Holumbus-Distribution offers Erlang-Style mailboxes for an easy implementation
+               of distributed systems in Haskell. The mailboxes can be used to exchange messages
+               between threads inside a single program or between programs over the network.
+build-type:    Simple
+cabal-version: >=1.6
+
+extra-source-files:
+    README
+    Makefile
+    Programs/Makefile
+    Programs/PortRegistry/Makefile
+    Programs/PortRegistry/PortRegistry.hs
+    Examples/Makefile
+    Examples/ClientServer/Client.hs
+    Examples/ClientServer/Makefile
+    Examples/ClientServer/Server.hs
+    Examples/Ports/Makefile
+    Examples/Ports/Receiver.hs
+    Examples/Ports/Sender.hs
+    Examples/Ports/Single.hs
+
+library
+  build-depends:  base       >= 4
+                , binary     >= 0.4
+                , bytestring >= 0.9
+                , containers >= 0.1
+                , editline   >= 0.2
+                , haskell98  >= 1
+                , hslogger   >= 1.0
+                , hxt        >= 8.2
+                , network    >= 2.1
+                , time       >= 1.1
+                , unix       >= 2.3
+
+  hs-source-dirs: 
+                  source
+  exposed-modules: Holumbus.Data.AccuMap
+                 , Holumbus.Data.KeyMap
+                 , Holumbus.Data.MultiMap
+                 , Holumbus.Network.Communication
+                 , Holumbus.Network.Core
+                 , Holumbus.Network.Messages
+                 , Holumbus.Network.Port
+                 , Holumbus.Network.Site
+                 , Holumbus.Network.PortRegistry
+                 , Holumbus.Network.PortRegistry.Messages
+                 , Holumbus.Network.PortRegistry.PortRegistryData
+                 , Holumbus.Network.PortRegistry.PortRegistryPort
+                 , Holumbus.Console.Console
+                 , Holumbus.Common.Debug
+                 , Holumbus.Common.FileHandling
+                 , Holumbus.Common.Logging
+                 , Holumbus.Common.Threading
+                 , Holumbus.Common.Utils
+
+  ghc-options: -Wall -threaded
+  extensions: Arrows DeriveDataTypeable ExistentialQuantification
+
+executable PortRegistry
+  main-is: PortRegistry.hs
+  hs-source-dirs: Programs/PortRegistry source
+  ghc-options: -Wall -threaded
+  extensions: Arrows DeriveDataTypeable ExistentialQuantification

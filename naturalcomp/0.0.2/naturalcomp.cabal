@@ -1,0 +1,44 @@
+Name:           naturalcomp
+Version:        0.0.2
+Synopsis:       Natural-order string comparison
+Description:    Natural order string comparison is needed when e.g. one wants
+                to compare file names or strings of software version.  It's
+                aimed to be compatible to glibc's strverscmp() function.
+
+License:        BSD3
+License-file:   COPYING
+Author:         Hironao Komatsu
+Maintainer:     Hironao Komatsu <hirkmt@gmail.com>
+Build-Type:     Simple
+Cabal-Version:  >= 1.8
+Stability:      alpha
+Homepage:       not yet available
+Bug-Reports:    not yet available
+Category:       Text
+Tested-With:    GHC == 7.6.3
+
+Extra-Source-Files: tests/colltest.hs
+                    tests/naturalcomp-tests.cabal
+                    tests/nctest.hs
+
+flag filepath
+    default: False
+    manual:  True
+
+flag unicode-collation
+    default: False
+    manual:  True
+
+Library
+    exposed-modules: Text.NaturalComp
+                     Text.NaturalComp.Stringy
+    build-depends:  base >= 4 && < 5, text, utf8-string
+
+    if flag(filepath)
+        exposed-modules: Text.NaturalComp.FilePath
+        build-depends: system-filepath >= 0.3
+
+    if flag(unicode-collation)
+        exposed-modules: Text.NaturalComp.Collation
+        build-depends: rfc5051
+

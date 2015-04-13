@@ -1,0 +1,33 @@
+Name:               WordNet-ghc74
+Version:            0.1.2
+Description:
+    A pure-Haskell interface to the WordNet lexical database of English.
+    Depends on the WordNet database, but not on the WordNet source code.
+Category:           natural language processing, text
+Synopsis:           Haskell interface to the WordNet database
+License:            BSD3
+License-file:       LICENSE
+Author:             Hal Daume III
+Maintainer:         Max Rabkin <max.rabkin@gmail.com>
+Build-Depends:      base, filepath
+Build-Type:         Simple
+Cabal-Version:      >= 1.8
+
+Flag small_base
+    Description: Choose the new smaller, split-up base package.
+
+Library
+    Build-depends: base == 4.*, containers, filepath, array
+        
+    Exposed-Modules:
+        NLP.WordNet
+
+    Other-Modules:
+        NLP.WordNet.Common
+        NLP.WordNet.PrimTypes
+        NLP.WordNet.Util
+        NLP.WordNet.Consts
+        NLP.WordNet.Prims
+        NLP.WordNet.Types
+
+    Extensions:     CPP, DeriveDataTypeable, ImplicitParams, MultiParamTypeClasses, RankNTypes, ScopedTypeVariables

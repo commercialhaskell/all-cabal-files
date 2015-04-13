@@ -1,0 +1,44 @@
+Name:          curry-frontend
+Version:       0.1
+Cabal-Version: >= 1.6
+Synopsis:      A compiler for the functional logic language Curry to several intermediate language formats.
+Description:   The Curry Frontend consists of the executable program "cymake".
+               It is used by various backends to compile Curry programs to 
+               an internal representation. 
+               The code is a stripped-down version of an early version of
+	       the Muenster Curry Compiler 
+               (<http://danae.uni-muenster.de/~lux/curry/>)
+Category:      Language
+License:       OtherLicense
+License-File:  LICENSE
+Author:        Wolfgang Lux, Martin Engelke, Bernd Brassel, Holger Siegel
+Maintainer:    Michael Hanus
+Bug-Reports:   mailto:mh@informatik.uni-kiel.de
+Homepage:      http://curry-language.org
+Build-Type:    Simple
+Stability:     experimental
+
+Extra-Source-Files: src/currydoc.css
+		    
+
+Executable cymake
+  hs-source-dirs:   src
+  Main-is:          cymake.hs
+  Build-Depends:    base >= 3 && < 4, mtl, old-time, directory, filepath
+  Other-Modules:    AbstractCurry, CurryBuilder, Env, IL, Message
+                    CurryCompilerOpts, Error, Modules, Subst, Arity
+                    CurryDeps, Eval, ILPP, NestEnv, SyntaxCheck, Base
+                    Exports, ILScope, SyntaxColoring, CurryEnv
+                    ExtendedFlat, ILTrans, OldScopeEnv, CurryHtml
+                    ILxml, PatchPrelude, TopEnv, CaseCompletion
+                    CurryLexer, Imports, PathUtils, TypeCheck
+                    CurryParser, InterfaceCheck, Position
+                    Types, CurryPP, Frontend, PrecCheck
+                    TypeSubst, CurrySubdir, GenAbstractCurry
+                    Pretty, Typing, Combined, CurrySyntax
+                    GenFlatCurry, KindCheck, Qual, Unlit, CompilerResults
+                    LexComb, SCC, Utils, GetOpt
+                    Lift, ScopeEnv, WarnCheck
+                    LLParseComb, Set, Desugar, Ident, ShowCurrySyntax
+                    Map, Simplify
+

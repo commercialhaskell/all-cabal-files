@@ -1,0 +1,28 @@
+Name:                ascii
+Version:             0.0.4.1
+Synopsis:            Type-safe, bytestring-based ASCII values. (deprecated)
+Description:         Type-safe, bytestring-based ASCII values.
+License:             BSD3
+License-file:        LICENSE
+Author:              Michael Snoyman
+Maintainer:          michael@snoyman.com
+Stability:           Stable
+Category:            Data
+Homepage:            https://github.com/snoyberg/ascii
+Bug-Reports:         https://github.com/snoyberg/ascii/issues
+Build-type:          Simple
+Cabal-version:       >= 1.6
+
+Source-Repository head
+    Type:     git
+    Location: git://github.com/snoyberg/ascii.git
+
+Library
+  Exposed-modules:     Data.Ascii
+  Build-depends:       base             >= 4             && < 5
+                     , bytestring       >= 0.9           && < 0.10
+                     , text             >= 0.11          && < 0.12
+                     , blaze-builder    >= 0.2.1.4       && < 0.4
+                     , case-insensitive >= 0.2           && < 0.5
+                     , hashable         >= 1.0           && < 1.2
+  Ghc-options:         -Wall

@@ -1,0 +1,16 @@
+name:            network-connection
+version:         0.1.1
+license:         BSD3
+license-file:    LICENSE
+author:          Adam Langley <agl@imperialviolet.org>
+synopsis:        A wrapper around a generic stream-like connection
+description:     Many uses of Sockets needs a number of common functions, like a write queue, pushback etc. This provides such and allows code to be written generically for any type of connection, be a raw socket or an SSL connection.
+homepage:        http://darcs.imperialviolet.org/network-connection
+category:        Network
+build-depends:   base, containers, bytestring>=0.9, network-bytestring>=0.1.1.2, network>=2.1, stm>=2.1
+stability:       provisional
+tested-with:     GHC == 6.8.2
+exposed-modules: Network.Connection
+ghc-options:     -Wall -fno-warn-name-shadowing
+extensions:      OverloadedStrings
+build-type:      Simple

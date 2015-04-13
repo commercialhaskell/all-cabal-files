@@ -1,0 +1,178 @@
+Name: FM-SBLEX
+Version: 3.0
+cabal-version: >= 1.2
+build-type: Simple
+category: Natural Language Processing
+Copyright: Lars Borin, Markus Forsberg, Aarne Ranta, Free software under GNU General Public License (GPL).
+License: GPL
+License-File: LICENSE
+Maintainer: Lars Borin <lars.borin@gu.se>, Markus Forsberg <markus.forsberg@gu.se>, Aarne Ranta <aarne@chalmers.se>
+Homepage: http://spraakbanken.gu.se/eng/research/swefn/fm-sblex
+Synopsis: A set of computational morphology tools for Swedish diachronic lexicons. 
+Description: A set of computational morphology tools for Swedish diachronic lexicons. Retrieve up-to-date dictionaries from the homepage.
+Extra-source-files: src/lib/trie_lib.h
+
+Executable saldo
+  Build-Depends: haskell98, base>=4 && <5, containers, array
+  Main-is: Main.hs
+  Extensions: ForeignFunctionInterface
+  HS-source-dirs: src/lib src/saldo src/lib/Dict
+  C-sources: src/lib/rts.c,  src/lib/trie_lib.c
+  Includes: src/lib/trie_lib.h
+  Other-modules:
+    Combine,
+    CTrie,           
+    Frontend,
+    Net,
+    Tokenize,  
+    Command,     
+    Dictionary,
+    General,    
+    Options,       
+    Trie,
+    CommonMain,  
+    DictToDictionary,
+    GeneralIO,
+    Print,
+    UTF8,  
+    Compound,  
+    EditDistance,  
+    Invariant,  
+    SharedString,  
+    Util,
+    -- Dict 
+    Dict.Abs,  
+    Dict.ErrM,  
+    Dict.GetDict,
+    Dict.Lex,  
+    Dict.Par,  
+    Dict.Print,  
+    Dict.Skel, 
+    -- saldo
+    AdjBuildSw,
+    DictSw,  
+    NounBuildSw,  
+    PrintSw,  
+    VerbBuildSw,  
+    AdjRulesSw,  
+    EncodeSw,  
+    NounRulesSw,  
+    RulesSw,  
+    VerbRulesSw,  
+    Attr,  
+    GenRulesSw,  
+    OtherBuildSw,  
+    TestGenSw,  
+    BuildSw,  
+    Main,  
+    OtherParadigms,
+    TestSw,
+    CommandsSw,
+    Multiwords,
+    OtherRulesSw,
+    TypesSw
+
+Executable dalin
+  Build-Depends: haskell98, base>=4 && <5, containers, array
+  Main-is: Main.hs
+  Extensions: ForeignFunctionInterface
+  HS-source-dirs: src/lib src/dalin src/lib/Dict
+  C-sources: src/lib/rts.c,  src/lib/trie_lib.c
+  Includes: src/lib/trie_lib.h
+  Other-modules:
+    Combine,     
+    CTrie,             
+    Frontend,   
+    Net,           
+    Tokenize,
+    Command,     
+    Dictionary,        
+    General,    
+    Options,       
+    Trie,
+    CommonMain,  
+    DictToDictionary,  
+    GeneralIO,  
+    Print,         
+    UTF8,
+    Compound,    
+    EditDistance,      
+    Invariant,  
+    SharedString,  
+    Util,
+    -- Dict  
+    Dict.Abs,  
+    Dict.ErrM,  
+    Dict.GetDict,
+    Dict.Lex,  
+    Dict.Par,  
+    Dict.Print,  
+    Dict.Skel, 
+    -- dalin
+    AdjBuildSw,
+    AdjRulesSw,
+    Attr,
+    BuildSw,
+    CommandsSw,
+    DictSw,
+    EncodeSw,
+    GenRulesSw,
+    Main,
+    NounBuildSw,
+    NounRulesSw,
+    OtherBuildSw,
+    OtherRulesSw,
+    PrintSw,
+    RulesSw,
+    TestGenSw,
+    TestSw,
+    TypesSw,
+    VerbBuildSw,
+    VerbRulesSw
+
+Executable fsv
+  Build-Depends: haskell98, base>=4 && <5, containers, array
+  Main-is: Main.hs
+  Extensions: ForeignFunctionInterface
+  HS-source-dirs: src/lib src/fsv src/lib/Dict
+  C-sources: src/lib/rts.c,  src/lib/trie_lib.c
+  Includes: src/lib/trie_lib.h
+  Other-modules:
+    Combine,     
+    CTrie,             
+    Frontend,   
+    Net,           
+    Tokenize,
+    Command,     
+    Dictionary,        
+    General,    
+    Options,       
+    Trie,
+    CommonMain,  
+    DictToDictionary,  
+    GeneralIO,  
+    Print,         
+    UTF8,
+    Compound,    
+    EditDistance,      
+    Invariant,  
+    SharedString,  
+    Util,
+    -- Dict  
+    Dict.Abs,  
+    Dict.ErrM,  
+    Dict.GetDict,
+    Dict.Lex,  
+    Dict.Par,  
+    Dict.Print,  
+    Dict.Skel, 
+    -- fsv
+    Build,     
+    Dict,  
+    PrintSw,  
+    TestGen,  
+    Types,
+    Commands,  
+    Main,  
+    Rules,    
+    Test

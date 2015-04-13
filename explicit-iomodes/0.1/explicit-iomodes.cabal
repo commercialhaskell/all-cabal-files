@@ -1,0 +1,28 @@
+name:          explicit-iomodes
+version:       0.1
+cabal-version: >=1.6
+build-type:    Simple
+license:       BSD3
+license-file:  LICENSE
+copyright:     2009 Bas van Dijk
+author:        Bas van Dijk
+maintainer:    Bas van Dijk <v.dijk.bas@gmail.com>
+stability:     experimental
+category:      System
+synopsis:      File handles with explicit IOModes
+description:   The module @System.IO.ExplicitIOModes@ exports a
+               @Handle@ to a file which is parameterized with the
+               IOMode the handle is in. All operations on handles
+               explicitly specify the needed IOMode. This way it is
+               impossible to read from a write-only handle or write to
+               a read-only handle for example.
+
+source-repository head
+  Type:     darcs
+  Location: http://code.haskell.org/~basvandijk/code/explicit-iomodes
+
+Library
+  GHC-Options: -O2 -Wall
+  build-depends: base   >= 4 && < 4.2
+               , tagged == 0.0.*
+  exposed-modules: System.IO.ExplicitIOModes

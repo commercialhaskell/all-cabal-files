@@ -1,0 +1,60 @@
+Name:               data-reify
+Version:            0.2
+Synopsis:           Reify a recursive data structure into an explicit graph.
+Description:	    'data-reify' provided the ability to turn recursive structures into explicit graphs. 
+		    Many (implicitly or explicitly) recursive data structure can be given this ability, via
+		    a type class instance. This gives an alternative to using 'Ref' for observable sharing.
+		    .
+		    Observable sharing in general is unsafe (hence the module path name Data.Unsafe.Reify), 
+		    but can be used safely if some simple conditions are met.
+		    Typically this package will be used to tie the knot with DSL's that depend of
+		    observable sharing, like Lava.
+ 		    .
+		    Providing an instance for 'MuRef' is the mechanism for allowing a structure to be 
+		    reified into a graph, and four examples of this are provided.
+		    .
+		    Version 0.2 of data-reify uses 'StableName's, and is much faster.
+		    .
+		    &#169; 2009 Andy Gill; BSD3 license.
+
+Category:            Language, Data, Parsing, Reflection 
+License:             BSD3
+License-file:        LICENSE
+Author:              Andy Gill
+Maintainer:          Andy Gill <andygill@ku.edu>
+Copyright:           (c) 2009 Andy Gill
+Homepage:            http://ittc.ku.edu/~andygill/data-reify.php
+Stability:	     alpha
+build-type: 	     Simple
+Cabal-Version:       >= 1.6
+
+Library
+  Build-Depends: base, containers
+  Exposed-modules:
+       Data.Unsafe.Reify
+  Ghc-Options:  -Wall
+
+
+Executable data-reify-test1
+  Build-Depends:  base
+  Main-Is:        Test1.hs
+  Hs-Source-Dirs: ., test
+  buildable: False
+
+Executable data-reify-test2
+  Build-Depends:  base
+  Main-Is:        Test2.hs
+  Hs-Source-Dirs: ., test
+  buildable: False
+
+Executable data-reify-test3
+  Build-Depends:  base
+  Main-Is:        Test3.hs
+  Hs-Source-Dirs: ., test
+  buildable: False
+
+Executable data-reify-test4
+  Build-Depends:  base
+  Main-Is:        Test4.hs
+  Hs-Source-Dirs: ., test
+  buildable: False

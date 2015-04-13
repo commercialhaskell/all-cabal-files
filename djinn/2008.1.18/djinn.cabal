@@ -1,0 +1,22 @@
+Name:		djinn
+Version:	2008.1.18
+License:	BSD3
+License-file:	LICENSE
+Author:		Lennart Augustsson
+Maintainer:	lennart@augustsson.net
+Description:	Djinn uses an theorem prover for intuitionistic propositional logic
+		to generate a Haskell expression when given a type.
+Category:	source-tools
+Homepage:	http://www.augustsson.net/Darcs/Djinn/
+Synopsis:	Generate Haskell code from a type
+Build-Depends:	base, mtl, readline, pretty, array, containers
+
+Executable:     djinn
+Main-Is:        Djinn.hs
+Hs-Source-Dirs: Djinn/
+Other-modules:  Help, LJTParse, HCheck,  LJT, MLJT
+                HTypes, LJTFormula, REPL,
+                Util.Digraph, Util.Sort
+
+ghc-options:         -O2 -Wall -Werror -optl-Wl
+ghc-prof-options:    -prof -auto-all

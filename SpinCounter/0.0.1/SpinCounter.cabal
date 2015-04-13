@@ -1,0 +1,16 @@
+Name:		SpinCounter
+Version:	0.0.1
+Cabal-Version:  >= 1.2
+License:	BSD3
+Author:		Julian Sutherland
+Homepage:       https://github.com/Julek
+Category:	Data
+Synopsis:	Lock free Spin Counter
+Build-Type:     Simple
+Maintainer:     Julian Sutherland (julian.sutherland10@imperial.ac.uk)
+Description:    A simple lock-free spin counter.
+License-file:   LICENSE
+
+Library
+  Build-Depends:	base >= 4.6 && < 4.8, monad-loops >= 0.4.2 && < 0.5, ref-mtl <2.3 && >= 0.2.1, stm >= 0.2.4 && < 2.5
+  Exposed-modules:      Data.NonBlocking.LockFree.SpinCounter

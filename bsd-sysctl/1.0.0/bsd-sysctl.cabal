@@ -1,0 +1,24 @@
+Name:		bsd-sysctl
+Version:	1.0.0
+License-File:	LICENSE
+License:	BSD3
+Author:		Maxime Henrion
+Copyright:	2009, Maxime Henrion
+Maintainer:	Maxime Henrion <mhenrion@gmail.com>
+Category:	System
+Synopsis:	Access to the BSD sysctl(3) interface
+Description:	This module provides efficient access to the BSD sysctl(3)
+                interface via the Haskell FFI.  It allows to read and write
+                both basic sysctl types, as well as complex opaque types
+                described via Storable instances.
+Build-Type:	Simple
+Cabal-Version:	>= 1.2
+Tested-with:	GHC ==6.10
+Data-Files:	demo/Demo.hsc demo/demo.cabal demo/demo.output
+
+Library
+  Build-Depends:	base
+  Exposed-Modules:	System.BSD.Sysctl
+  Extensions:		ForeignFunctionInterface, ScopedTypeVariables,
+                        TypeSynonymInstances, FlexibleInstances
+  GHC-Options:		-Wall -O2 -funbox-strict-fields

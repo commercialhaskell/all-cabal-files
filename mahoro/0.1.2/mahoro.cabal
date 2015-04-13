@@ -1,0 +1,29 @@
+Name:                mahoro
+Version:             0.1.2
+Synopsis:            ImageBoards to XMPP gate
+Category:            Web
+Description:         Chans (ImageBoards) to XMPP gate. Supports Wakaba, 
+                     Kusaba and other engines. Settings stored 
+                     in ~/.mahororc file.
+License:             GPL
+License-file:        LICENSE
+Author:              Kagami <newanon@yandex.ru>
+Maintainer:          newanon@yandex.ru
+Homepage:            http://kagami.touhou.ru/projects/show/mahoro
+Build-Type:          Simple
+Cabal-Version:       >=1.2
+
+Data-Files:          INSTALL, mahororc.example
+Extra-Source-Files:  debug.sh, install.sh, Threads.hs,
+                     Config.hs, DB.hs, DBState.hs, HTTP.hs,
+                     Help.hs, Parsers.hs, Setup.hs,
+                     Parsers/Dobrochan.hs, Parsers/Nowai.hs,
+                     Parsers/Post.hs, Parsers/Thread.hs,
+                     Parsers/Wakaba.hs
+
+Executable mahoro
+  Main-is:           Main.hs
+  Build-Depends:     base >= 4.0 && < 5, regex-posix, XMPP>0.0.1,
+                     network, old-time, happstack-state, containers,
+                     mtl, MissingH, tagsoup, utf8-string, directory,
+                     ConfigFile, curl

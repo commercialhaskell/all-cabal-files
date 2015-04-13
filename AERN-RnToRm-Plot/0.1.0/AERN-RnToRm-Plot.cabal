@@ -1,0 +1,46 @@
+Name:           AERN-RnToRm-Plot
+Version:        0.1.0
+Cabal-Version:  >= 1.2
+Build-Type:     Simple
+License:        BSD3
+License-File:   LICENCE
+Author:         Michal Konecny (Aston University)
+Copyright:      (c) 2007-2008 Michal Konecny
+Maintainer:     mik@konecny.aow.cz
+Stability:      experimental
+Category:       Data, Math
+Synopsis:       GL plotting of polynomial function enclosures (PFEs)
+Tested-with:    GHC ==6.8.3
+Description:
+    This library extends AERN-RnToRm with support for plotting unary function enclosures
+    in any GL context and a Gtk window for inspecting these enclosures.
+    .
+    Simple examples of usage can be found in module @Demo.hs@ in folder @tests@.
+Extra-source-files:
+    tests/Demo.hs tests/FnView.glade src/FnView.glade
+Data-files:
+    ChangeLog README.glade
+Flag containers-in-base
+    Default: False
+
+Library
+  hs-source-dirs:  src
+  if flag(containers-in-base)
+    Build-Depends:
+      base < 3, binary >= 0.4, directory, filepath, old-time, stm,
+      AERN-Real >= 0.9.7.1, AERN-RnToRm >= 0.4.1, 
+      OpenGL >= 2.2.1.1, GLUT >= 2.1.1.1,
+      gtk >= 0.9.12.1, gtkglext >= 0.9.12.1, glib >= 0.9.12.1, glade >= 0.9.12.1
+  else
+    Build-Depends:
+      base >= 3, containers, binary >= 0.4, directory, filepath, old-time, stm, 
+      AERN-Real >= 0.9.7.1, AERN-RnToRm >= 0.4.1, 
+      OpenGL >= 2.2.1.1, GLUT >= 2.1.1.1,
+      gtk >= 0.9.12.1, gtkglext >= 0.9.12.1, glib >= 0.9.12.1, glade >= 0.9.12.1
+  Exposed-modules:
+    Data.Number.ER.RnToRm.Plot.FnView,
+    Data.Number.ER.RnToRm.Plot.GLDrawable,
+    Data.Number.ER.RnToRm.Plot.Params,
+    Data.Number.ER.MiscSTM
+    
+  

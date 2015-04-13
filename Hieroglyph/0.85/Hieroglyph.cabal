@@ -1,0 +1,26 @@
+Name:           Hieroglyph
+Version:        0.85
+Cabal-Version:  >= 1.2
+License:        BSD3
+License-File:   LICENSE
+Author:         J.R. Heard
+Maintainer:     J.R. Heard
+Category:       Graphics
+Description:    
+  A purely functional 2D scenegraph library with functionality similar to a barebones Processing.
+  Currently entirely implmeneted using Cairo, although I would like to go to OpenGL as well.
+Synopsis:       Purely functional 2D drawing
+Build-Type:     Simple
+
+Library
+   Build-Depends: cairo, base, mtl, gtk, IfElse, containers
+   Exposed-Modules:
+      Graphics.Rendering.Hieroglyph
+      Graphics.Rendering.Hieroglyph.Primitives
+      Graphics.Rendering.Hieroglyph.Cairo
+      Graphics.Rendering.Hieroglyph.BasicUIState
+      Graphics.Rendering.Hieroglyph.UIState
+      Graphics.Rendering.Hieroglyph.Interactive
+      Graphics.Rendering.Hieroglyph.Colors
+
+

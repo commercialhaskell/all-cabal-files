@@ -1,0 +1,29 @@
+name:               parco
+version:            0.1
+synopsis:           Generalised parser combinators
+description:
+    General parser combinators that will work with any parser
+    combinator library.  At the moment, the contents of the library is
+    not particularly structured, and it is extended as I find it
+    necessary.
+category:           Parsing
+license:            BSD3
+license-file:       LICENSE
+author:             Troels Henriksen
+maintainer:         athas@sigkill.dk
+cabal-version:      >= 1.10
+build-type:         Simple
+
+Source-Repository head
+  Type:     git
+  Location: git://github.com/athas/parco.git
+
+library
+    exposed-modules:    Text.Parco.Perm
+                        Text.Parco.Expr
+                        Text.Parco
+
+    build-depends:      mtl, base>=4.2 && < 5.0
+    default-language:   Haskell2010
+    Ghc-Options:        -Wall
+    hs-source-dirs:     src

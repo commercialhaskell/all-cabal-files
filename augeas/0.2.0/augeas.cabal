@@ -1,0 +1,28 @@
+Name: augeas
+Version: 0.2.0
+Synopsis:  A Haskell FFI wrapper for the Augeas API
+Description: A Haskell FFI wrapper for the Augeas API
+Author: Jude Nagurney
+Maintainer: jude@pwan.org
+Cabal-Version: >= 1.2
+License: GPL
+License-File: LICENSE
+Data-Files: AUTHORS
+Build-Type: Custom
+Category: System
+Stability: Alpha
+HomePage: http://trac.haskell.org/augeas
+
+library 
+        Exposed-Modules: System.Augeas
+        Other-Modules: System.AugeasHsc
+        Build-Depends: base >= 2.0 && <4, directory, unix >=2.3.0.0, bytestring >= 0.9.0.1
+        GHC-options: -Wall -fwarn-dodgy-imports
+
+executable "test-haskell-augeas"
+        Main-is: HUnitAug.hs
+        Build-Depends: HUnit
+        Other-Modules: System.Augeas, System.AugeasHsc
+        extra-libraries: augeas
+
+

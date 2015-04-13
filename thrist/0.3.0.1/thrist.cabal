@@ -1,0 +1,57 @@
+Name:                thrist
+Version:             0.3.0.1
+Synopsis:            Type-threaded list
+
+Description:
+    @Thrist@ is a list-like data structure (GADT)
+    whose elements are values of a two-parameter
+    datatype. The typing constraint ensures that
+    the second type parameter of a former value
+    unifies with the first type parameter of the
+    latter.
+    .
+    This threading of types is the foundation for
+    thrists' nice properties. E.g., paired with a
+    suitable semantics, function composition (.)
+    can be embedded.
+    .
+    Sub-modules demonstrate the power of the thrist
+    idea by emulating some familiar data structures.
+    .
+    For further ideas, please consult the companion
+    (draft) paper \"Thrists: Dominoes of Data\" at
+    <http://omega.googlecode.com/files/Thrist-draft-2011-11-20.pdf>
+    .
+    Release history:
+    .
+    [0.3] Support for (GHC v7.6.1) @PolyKinds@ extension, this compiler is required now
+    .
+    [0.2] Several new functions introduced, some renamed
+    .
+    [0.1] Initial version
+
+Category:            Data Structures, Categories
+License:             BSD3
+License-File:        LICENSE
+Copyright:           (c) 2008-2013 Gabor Greif and Brandon Simmons
+
+Author:              Gabor Greif, Brandon Simmons
+Maintainer:          ggreif+thrist@gmail.com, brandon.m.simmons+thrist@gmail.com
+Homepage:            http://heisenbug.blogspot.com/search/label/thrist
+Bug-Reports:         mailto:ggreif+thrist@gmail.com
+
+Stability:           experimental
+Tested-With:         GHC == 7.6.1
+Cabal-Version:       >= 1.6
+Extra-Source-Files:  examples.hs
+Build-Type:          Simple
+
+Source-Repository head
+  Type:     darcs
+  Location: http://patch-tag.com/r/heisenbug/thrist/
+
+Library
+    Build-Depends:       base >= 4.6 && < 5
+    Exposed-Modules:     Data.Thrist Data.Thrist.List Data.Thrist.Monad
+    Extensions:          GADTs, RankNTypes, KindSignatures, FlexibleInstances, TypeOperators
+    Ghc-Options:         -Wall

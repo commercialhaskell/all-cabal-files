@@ -1,0 +1,35 @@
+Name:                sink
+Version:             0.1.0.0
+Synopsis:            An alternative to lazy I/O that doesn't conflate
+                     execution with evaluation
+Description:         Lazy I/O conflates evaluation with execution; a
+                     value obtained from 'unsafeInterleaveIO' can
+                     perform side-effects during the evaluation of
+                     pure code. Like lazy I/O, a 'Sink' provides a way
+                     to obtain the value of the result of an 'IO'
+                     action before the action has been executed, but
+                     unlike lazy I/O, it does not enable pure code to
+                     perform side-effects. Instead, the value is
+                     explicitly assigned by a later 'IO' action.
+License:             MIT
+License-file:        LICENSE
+Author:              Jake McArthur
+Maintainer:          Jake McArthur <Jake.McArthur@gmail.com>
+Category:            Control, Data, System
+Build-type:          Simple
+Cabal-version:       >=1.6
+
+Library
+  Build-depends:     base == 4.3.*
+  Extensions:        DeriveDataTypeable
+  Exposed-modules:   Data.Sink
+  GHC-options:       -Wall -fwarn-tabs
+
+Source-repository head
+  Type:              darcs
+  Location:          http://patch-tag.com/r/jmcarthur/sink
+
+source-repository this
+  type:     darcs
+  location: http://patch-tag.com/r/jmcarthur/sink
+  tag:      v0.1.0.0

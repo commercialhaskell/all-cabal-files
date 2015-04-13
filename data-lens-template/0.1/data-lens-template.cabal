@@ -1,0 +1,29 @@
+Name          : data-lens-template
+Version       : 0.1
+License       : BSD3
+License-File  : LICENSE
+Author        : Joel Burget <joelburget@gmail.com>
+Maintainer    : Joel Burget <joelburget@gmail.com>
+Category      : Data
+Synopsis      : Utilities for Data.Lens
+Description   : Automatically derive a @Lens@ instance for your data type for use with @Data.Lens@. Note: the code is derived from data-accessor-template <http://hackage.haskell.org/package/data-accessor-template> by Luke Palmer and Henning Thielemann.
+Build-Type    : Simple
+Cabal-Version : >= 1.6
+
+Library
+  Build-Depends:
+      comonad-transformers >= 1.6
+    , utility-ht           >= 0.0.1 && < 0.1
+    , base                 >= 1.0   && < 5
+    , template-haskell     >= 2.4   && < 2.6
+
+  Exposed-Modules:
+    Data.Lens.Template
+
+  Extensions : CPP, TemplateHaskell
+  GHC-Options: -Wall
+
+
+Source-repository head
+  type    : git
+  location: git@github.com:joelburget/data-lens-template.git

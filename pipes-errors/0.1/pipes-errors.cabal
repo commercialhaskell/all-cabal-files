@@ -1,0 +1,29 @@
+name:                pipes-errors
+version:             0.1
+cabal-version:       >=1.10
+build-type:          Simple
+license:             BSD3
+license-file:        LICENSE
+author:              Danny Navarro
+maintainer:          j@dannynavarro.net
+homepage:            https://github.com/jdnavarro/pipes-errors
+bug-reports:         https://github.com/jdnavarro/pipes-errors/issues
+category:            Control, Monad, Pipes, Error Handling
+synopsis:            Integration between pipes and errors
+description:
+  This package provides orphan `MFunctor` instances for `EitherT` and
+  `EitherRT`, in addition to functions for base monad manipulation in the
+  presence of `Proxy` monad transformers.
+
+source-repository head
+  type: git
+  location: https://github.com/jdnavarro/pipes-errors
+
+library
+  exposed-modules:     Pipes.Lift.EitherT
+                       Pipes.Lift.EitherRT
+  build-depends:       base >=4.6 && <4.8,
+                       errors >=1.3,
+                       pipes >=4.0
+  default-language:    Haskell2010
+  ghc-options:         -O2 -Wall

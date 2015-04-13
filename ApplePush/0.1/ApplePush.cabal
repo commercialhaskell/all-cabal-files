@@ -1,0 +1,29 @@
+Name:           ApplePush
+Version:        0.1
+
+Cabal-Version:  >= 1.2
+Author:         Chris Moos <chris@tech9computers.com>
+Maintainer:     Chris Moos <chris@tech9computers.com>
+Synopsis:       Library for Apple Push Notification Service
+Category:       Network
+license:	BSD3
+license-file:	LICENSE
+Build-Type:     Simple
+Description:    This library provides an interface to send notifications with the Apple Push Notification Service.
+                
+                .
+                Note: Your connection to Apple's Push Notification service must be secured with SSL. Currently, Haskell's support
+                for SSL is incomplete, therefore you should use an SSL tunnel to connect your application to the push service, such as                       stunnel.
+
+library
+    build-depends:      base >= 4 && < 5, haskell98, bytestring >= 0.9,
+                        binary >= 0.5, mtl, network, json >= 0.4
+    exposed-modules:    ApplePush, ApplePush.Types, ApplePush.Notification, ApplePush.Helpers
+    hs-source-dirs:     src
+    
+Executable applepushtest
+    Build-Depends:      base
+    other-modules:      ApplePush
+    Main-Is:            Main.hs
+    ghc-options:        -threaded
+    Hs-Source-Dirs:     src

@@ -1,0 +1,41 @@
+Name:                HGamer3D-OIS-Binding
+Version:             0.1.5
+Synopsis:            Library to enable 3D game development for Haskell - OIS Bindings
+Description:         
+	Library, to enable 3D game development for Haskell,
+	based on bindings to 3D Graphics, Audio and GUI libraries.
+	THIS MODULE: OIS Bindings
+    List of features and modules: 
+	  Data Module (Basic Data Types),
+      OGRE Binding (3D Graphics Engine), 
+      OIS Binding (Input System),
+      cAudio Binding (Audio),
+      CEGUI Binding (GUI System),
+      APIs (Haskell style APIs, different ways, to approach API)
+    Platform: Windows only
+	License: Apache License, Version 2.0
+	Install: see http://www.althainz.de/HGamer3D/Download-and-Installation.html
+	
+License:             OtherLicense
+License-file:        LICENSE
+Author:              Peter Althainz
+Maintainer:          althainz@googlemail.com
+Build-Type:          Simple
+Cabal-Version:       >=1.2
+Homepage:            http://www.althainz.de/HGamer3D.html
+Category:            Game
+Extra-source-files:  Setup.hs include/EnumActionType.h,include/EnumBindableType.h,include/EnumStateType.h,include/TypeHG3DClass.h,include/ClassPtr.h,include/Utils.h,include/OISDllDefines.h,include/ClassState.h,include/ClassAnalogAxisState.h,include/ClassSequenceAction.h,include/ClassDebugBindableListener.h,include/ClassKeyboard.h,include/ClassMouse.h,include/ClassDevice.h,include/ClassAction.h,include/ClassAnalogEmulator.h,include/ClassLinearAnalogEmulator.h,include/ClassTriggerAction.h,include/ClassSystem.h,include/ClassBindable.h,include/ClassAnalogAxisAction.h,include/ClassDigitalState.h,include/ClassJoyStick.h,include/ClassBindableListener.h,include/ClassPropertySet.h,include/ClassActionSchema.h,include/ClassBinding.h
+
+Library
+  Build-Depends:     base >= 3 && < 5, HGamer3D-Data == 0.1.5, HGamer3D-Ogre-Binding == 0.1.5
+
+  Exposed-modules:   HGamer3D.Bindings.OIS.EnumActionType,HGamer3D.Bindings.OIS.EnumBindableType,HGamer3D.Bindings.OIS.EnumStateType,HGamer3D.Bindings.OIS.TypeHG3DClass,HGamer3D.Bindings.OIS.ClassPtr,HGamer3D.Bindings.OIS.Utils,HGamer3D.Bindings.OIS.ClassState,HGamer3D.Bindings.OIS.ClassAnalogAxisState,HGamer3D.Bindings.OIS.ClassSequenceAction,HGamer3D.Bindings.OIS.ClassDebugBindableListener,HGamer3D.Bindings.OIS.ClassKeyboard,HGamer3D.Bindings.OIS.ClassMouse,HGamer3D.Bindings.OIS.ClassDevice,HGamer3D.Bindings.OIS.ClassAction,HGamer3D.Bindings.OIS.ClassAnalogEmulator,HGamer3D.Bindings.OIS.ClassLinearAnalogEmulator,HGamer3D.Bindings.OIS.ClassTriggerAction,HGamer3D.Bindings.OIS.ClassSystem,HGamer3D.Bindings.OIS.ClassBindable,HGamer3D.Bindings.OIS.ClassAnalogAxisAction,HGamer3D.Bindings.OIS.ClassDigitalState,HGamer3D.Bindings.OIS.ClassJoyStick,HGamer3D.Bindings.OIS.ClassBindableListener,HGamer3D.Bindings.OIS.ClassPropertySet,HGamer3D.Bindings.OIS.ClassActionSchema,HGamer3D.Bindings.OIS.ClassBinding
+  Other-modules:     C2HS 
+
+  ghc-options:       
+  cc-options:        -Wno-attributes 
+  hs-source-dirs:    .
+  Include-dirs:      include
+  Build-tools:       
+  build-depends:     haskell98
+  extra-libraries:   HGamer3DOIS015

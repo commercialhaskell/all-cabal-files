@@ -1,0 +1,37 @@
+Name:                gloss-raster
+Version:             1.7.7.201204.1
+License:             MIT
+License-file:        LICENSE
+Author:              Ben Lippmeier
+Maintainer:          benl@ouroborus.net
+Build-Type:          Simple
+Cabal-Version:       >=1.6
+Stability:           provisional
+Category:            Graphics
+Homepage:            http://gloss.ouroborus.net
+Bug-reports:         gloss@ouroborus.net
+Description:
+        Legacy version for Haskell Platform 2012.04.
+        You will get better performance if you upgrade to the most recent version of GHC.
+        Parallel rendering of raster images.
+
+Synopsis:
+        Parallel rendering of raster images.
+
+Tested-with: GHC == 6.12.1, GHC == 7.0.1
+
+Library
+  Build-Depends: 
+        base       == 4.5.*,
+        ghc-prim   == 0.2.*,
+        containers == 0.4.*,
+        repa       == 3.2.*,
+        gloss      == 1.7.7.*
+
+  ghc-options:
+        -Odph -fno-liberate-case
+
+  Exposed-modules:
+        Graphics.Gloss.Raster.Field
+        Graphics.Gloss.Raster.Array
+

@@ -1,0 +1,16 @@
+name: typical
+version: 0.0.1
+license: GPL
+license-file: LICENSE
+build-depends: base
+exposed-modules: 
+	Data.Typical
+	Data.Typical.Misc
+build-type: Simple
+category: Data
+description: Type level programming library
+maintainer: Rick Kaudewitz <rick.kaudewitz@yahoo.de>
+synopsis: Type level numbers, vectors, list. This lib needs to be extended.
+
+hs-source-dirs: .
+ghc-options: -Wall -fno-warn-orphans

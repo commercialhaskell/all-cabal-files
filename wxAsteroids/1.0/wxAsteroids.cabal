@@ -1,0 +1,27 @@
+Name:           wxAsteroids
+Synopsis:       Try to avoid the asteroids with your space ship
+Description:    
+  The Asteroids game, using the wxHaskell GUI, as described in 
+  "wxHaskell, A Portable and Concise GUI Library for Haskell"
+  http://legacy.cs.uu.nl/daan/download/papers/wxhaskell.pdf
+Homepage:       http://www.haskell.org/haskellwiki/wxAsteroids
+Version:        1.0
+License:        BSD3
+License-file:   LICENSE.txt
+Author:         Daan Leijen
+Maintainer:     Nobody
+Stability:      Stable
+Cabal-Version:  >= 1.2
+Build-type:     Simple
+Category:       Game
+Tested-with:    GHC == 6.10.1
+Extra-Source-Files:
+                README.txt
+Data-dir:       .
+Data-files:     rock.ico, burning.ico, ship.ico, explode.wav
+
+Executable wxAsteroids
+  Build-Depends:  base, directory, random, wxcore, wx
+  Main-Is:        Asteroids.lhs
+  if !os(windows) 
+    GHC-Options: "-optl-mwindows"

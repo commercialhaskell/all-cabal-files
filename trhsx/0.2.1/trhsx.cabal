@@ -1,0 +1,32 @@
+Name:                   trhsx
+Version:                0.2.1
+License:                BSD4
+License-File:           LICENSE
+Author:                 Niklas Broberg
+Maintainer:             Niklas Broberg <nibro@cs.chalmers.se>
+
+Stability:              Experimental
+Category:               Language
+Synopsis:               trhsx is the preprocessor for Harp and HSP
+Description:            trhsx, the desugaring pre-processor executable for HaRP and HSP.
+                        Requires haskell-src-exts to build.
+                        .
+                        It is meant to be used as a preprocessor for GHC, with the command
+                        'ghc -F -pgmF trhsx infile'. It can also be used as a separate tool,
+                        in which case the command-line syntax is:
+                        .
+                        $ trhsx \<infile\>   Desugars \<infile\> and gives the result on standard output.
+                        .
+                        $ trhsx \<infile\> \<outfile\>  Desugars \<infile\> and writes the result to \<outfile\>.
+                        .
+                        The pre-processed files rely on pattern guards and will therefore work with GHC only.
+                        .
+                        For details on usage, please see the website.
+Homepage:               http://www.cs.chalmers.se/~d00nibro/harp/
+
+Build-Depends:          base, haskell-src-exts
+Build-Type:             Simple
+Tested-With:            GHC==6.8.3
+
+Executable:             trhsx
+Main-Is:                Hsx.hs

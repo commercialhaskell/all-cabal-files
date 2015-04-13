@@ -1,0 +1,30 @@
+
+Name:               NetSNMP
+Version:            0.1.2
+Synopsis:           Bindings for net-snmp's C API for clients
+Description:        Network.Protocol.NetSNMP is a partial binding to the
+                    library portion of the net-snmp package.  It uses the
+                    'single-session api', which is claimed to be
+                    thread-safe.  Not all operations are supported yet;
+                    please contact the maintainer if you're in need of
+                    expanded functionality, and especially if you would
+                    like to contribute.
+Category:           Network
+Copyright:          (c) John Dorsey 2009
+Cabal-Version:      >= 1.2
+License:            BSD3
+License-file:       LICENSE
+Author:             John Dorsey <haskell@colquitt.org>
+Maintainer:         John Dorsey <haskell@colquitt.org>
+Stability:          alpha
+Build-type:         Simple
+Bug-reports:        mailto:haskell@colquitt.org
+
+library
+  hs-source-dirs:   src
+  build-depends:    base >=4 && <5
+  build-tools:      hsc2hs
+  exposed-modules:  Network.Protocol.NetSNMP
+  extensions:       ForeignFunctionInterface, CPP, EmptyDataDecls
+  extra-libraries:  netsnmp
+

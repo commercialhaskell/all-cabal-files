@@ -1,0 +1,76 @@
+Name:          webwire
+Version:       0.1.0
+Category:      Web
+Synopsis:      Functional reactive web framework
+Maintainer:    Ertugrul Söylemez <es@ertes.de>
+Author:        Ertugrul Söylemez <es@ertes.de>
+Copyright:     (c) 2011 Ertugrul Söylemez
+License:       BSD3
+License-file:  LICENSE
+Build-type:    Simple
+Stability:     experimental
+Cabal-version: >= 1.8
+Description:
+    Web framework based on the design pattern of functional reactive
+    programming (FRP) using the netwire library.
+
+Library
+    Build-depends:
+        base >= 4 && < 5,
+        base64-bytestring >= 0.1.0,
+        blaze-builder >= 0.3.0,
+        blaze-html >= 0.4.1,
+        bytestring >= 0.9.1,
+        case-insensitive >= 0.3.0,
+        containers >= 0.4.0,
+        cookie >= 0.3.0,
+        cprng-aes >= 0.2.1,
+        hamlet >= 0.10.0,
+        http-types >= 0.6.5,
+        netwire >= 1.2.5,
+        shakespeare-css >= 0.10.1,
+        shakespeare-js >= 0.10.1,
+        text >= 0.11.1,
+        time >= 1.2.0,
+        transformers >= 0.2.2,
+        wai >= 0.4.1,
+        wai-extra >= 0.4.2
+    Extensions:
+        Arrows
+        DeriveDataTypeable
+        DoRec
+        FlexibleInstances
+        OverloadedStrings
+        ScopedTypeVariables
+        TupleSections
+        TypeSynonymInstances
+    GHC-Options: -W
+    Exposed-modules:
+        WebWire
+        WebWire.Core
+        WebWire.Render
+        WebWire.Routing
+        WebWire.Session
+        WebWire.Tools
+        WebWire.Types
+        WebWire.Widget
+
+-- Executable webwire-test
+--     Build-depends:
+--         base >= 4 && < 5,
+--         blaze-html,
+--         bytestring,
+--         hamlet,
+--         shakespeare-css,
+--         shakespeare-js,
+--         text,
+--         time,
+--         warp,
+--         webwire
+--     Extensions:
+--         Arrows
+--         OverloadedStrings
+--         QuasiQuotes
+--     Hs-source-dirs: test
+--     Main-is: Main.hs
+--     GHC-Options: -W -threaded -rtsopts

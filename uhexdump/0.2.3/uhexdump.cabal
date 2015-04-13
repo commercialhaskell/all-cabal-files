@@ -1,0 +1,23 @@
+name:                uhexdump
+version:             0.2.3
+synopsis:            hex dumper for UTF-8 text
+description:         hex dumper for UTF-8 text
+category:            Text
+license:             BSD3
+license-file:        LICENSE
+author:              Eric Kow
+maintainer:          <E.Y.Kow@brighton.ac.uk>
+build-type:          Simple
+cabal-version:       >= 1.6
+
+source-repository head
+  type:     darcs
+  location: http://patch-tag.com/r/kowey/uhexdump
+
+executable           uhexdump
+  build-Depends:       base         < 4.1,
+                       bytestring  == 0.9.*,
+                       utf8-string == 0.3.*
+  main-is:             uhexdump.hs
+  ghc-options:         -Wall
+  other-modules:       UTF8

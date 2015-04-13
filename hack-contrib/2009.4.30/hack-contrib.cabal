@@ -1,0 +1,42 @@
+Name:                 hack-contrib
+Version:              2009.4.30
+Build-type:           Simple
+Synopsis:             Hack contrib
+Description:
+License:              GPL
+License-file:         LICENSE
+Author:               Wang, Jinjing
+Maintainer:           Wang, Jinjing <nfjinjing@gmail.com>
+Build-Depends:        base
+Cabal-version:        >= 1.2
+category:             Web
+homepage:             http://github.com/nfjinjing/hack/tree/master
+data-files:           readme.md, changelog.md
+
+library
+  ghc-options: -Wall
+  build-depends: base, cgi, network, haskell98, old-locale, old-time, directory, filepath, containers, bytestring, template, base64-string, zlib, ansi-wl-pprint, mps >= 2009.4.21, data-default >= 0.2, ansi-wl-pprint, unix, time, hack >= 2009.4.30
+  hs-source-dirs: src/
+  exposed-modules:  
+                    Hack.Contrib.Utils
+                    Hack.Contrib.Request
+                    Hack.Contrib.Response
+                    Hack.Contrib.Constants
+                    
+                    Hack.Contrib.Middleware.ContentSize
+                    Hack.Contrib.Middleware.ContentType
+                    Hack.Contrib.Middleware.File
+                    Hack.Contrib.Middleware.Head
+                    Hack.Contrib.Middleware.Hub
+                    Hack.Contrib.Middleware.Lambda
+                    Hack.Contrib.Middleware.Lucky
+                    Hack.Contrib.Middleware.Mime
+                    Hack.Contrib.Middleware.RawRouter
+                    Hack.Contrib.Middleware.ShowExceptions
+                    Hack.Contrib.Middleware.ShowStatus
+                    Hack.Contrib.Middleware.SimpleAccessLogger
+                    Hack.Contrib.Middleware.SimpleRouter
+                    Hack.Contrib.Middleware.Static
+
+                    
+                    

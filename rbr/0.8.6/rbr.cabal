@@ -1,0 +1,40 @@
+Name:           rbr
+Version:        0.8.6
+License:        GPL
+License-File:   LICENSE
+Stability:      Beta
+Author:         Ketil Malde
+Maintainer:     Ketil Malde <ketil@malde.org>
+Category:       Bioinformatics
+Synopsis:       Mask nucleotide (EST) sequences in Fasta format
+Description:    RBR is a tool for masking EST sequences. It uses a
+                statistical model to identify suspicious sequence parts,
+                and masks them. The README has more details.
+                .
+                The Darcs repository is at <http://malde.org/~ketil/biohaskell/rbr>.
+Homepage:       http://malde.org/~ketil/
+Cabal-Version:  >= 1.2
+Tested-With:    GHC==6.10.4
+-- add fps for ghc-6.4.2
+Build-Depends:  base>3 && <5, bio >= 0.4, QuickCheck, binary, bytestring, containers
+Build-Type:     Simple
+
+data-files:     idea.txt, README, TODO
+
+Executable rbr
+        Executable:     rbr
+        Hs-Source-Dirs: src
+        Other-Modules:  Lib.Options, Lib.Stats, Lib.Util, Lib.FreqTable
+        Main-Is:        RBR.lhs
+        build-depends:  base >3 && <5, bytestring, containers, bio >= 0.3.1
+        Extensions:     CPP
+        Ghc-Options:    -Wall -funbox-strict-fields
+
+Executable mct
+        Executable:     mct
+        Hs-Source-Dirs: src
+        Other-Modules:  Lib.TextFormat
+        Main-Is:        MCT.lhs
+        build-depends:  bytestring
+        Extensions:     BangPatterns, FlexibleContexts
+        Ghc-Options:    -Wall -funbox-strict-fields

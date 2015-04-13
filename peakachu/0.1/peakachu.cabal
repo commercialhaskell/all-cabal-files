@@ -1,0 +1,24 @@
+Name:                peakachu
+Version:             0.1
+Category:            FRP
+Synopsis:            An FRP library with a GLUT backend
+Description:
+  An experiemental simple FRP library.
+  GLUT backend included.
+License:             BSD3
+License-file:        LICENSE
+Author:              Yair Chuchem
+Maintainer:          yairchu@gmail.com
+Cabal-Version:       >= 1.2
+Stability:           experiemental
+Build-type:          Simple
+
+Library
+  hs-Source-Dirs:      src
+  Extensions:
+  Build-Depends:       base >= 3 && < 5, GLUT
+  Exposed-modules:     FRP.Peakachu
+                       FRP.Peakachu.Backend.GLUT
+                       FRP.Peakachu.Internal
+  ghc-options:         -Wall
+

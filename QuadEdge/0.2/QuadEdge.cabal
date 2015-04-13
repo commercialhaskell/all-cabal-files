@@ -1,0 +1,20 @@
+Name:                QuadEdge
+Version:             0.2
+Synopsis:            QuadEdge structure for representing triangulations
+License:             BSD3
+License-file:        LICENSE
+Author:              Neal Alexander
+Maintainer:          NHAlxr@gmail.com
+Category:            Data
+Build-Type:          Simple
+Cabal-Version:       >=1.6
+   
+Library
+  Build-Depends:     base >= 3 && < 5, random >= 1, vector >= 0.6
+  Exposed-modules:   Data.QuadEdge, Data.QuadEdge.Base
+  ghc-options:       -Wall -Odph
+
+source-repository head
+  type:     darcs
+  location: http://code.haskell.org/~hexpuem/QuadEdge
+

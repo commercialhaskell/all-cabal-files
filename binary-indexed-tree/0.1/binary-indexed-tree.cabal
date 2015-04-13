@@ -1,0 +1,33 @@
+Name:                binary-indexed-tree
+Version:             0.1
+Synopsis:            Binary Indexed Trees (a.k.a. Fenwick Trees).
+Description:         Binary indexed trees are a data structure on indexes
+                     1 through n.  They allow you to compute the sum
+                     of all values at indexes 1 through i in O(logn) and to
+                     increase the value at index i in O(logn).
+                     .
+                     This implements binary indexed trees, both
+                     as an immutable data structure in pure code
+                     and as a mutable data structure using the ST Monad.
+                     .
+                     Both the immutable and mutable version have the
+                     same runtime complexity, but the mutable version
+                     has a smaller constant.
+                     .
+                     Written by Maxwell Sayles (2012).
+License:             LGPL
+License-file:        LICENSE
+Author:              Maxwell Sayles <maxwellsayles@gmail.com>
+Maintainer:          Maxwell Sayles <maxwellsayles@gmail.com>
+Category:            Data
+Build-type:          Simple
+Stability:           Stable
+Cabal-version:       >= 1.8
+
+Library
+  Exposed-modules:   Data.BinaryIndexedTree,
+                     Data.BinaryIndexedTree.ST
+  Build-depends:     base >= 3 && < 5,
+                     array >= 0.3
+
+

@@ -1,0 +1,25 @@
+name:               hakyll-contrib-hyphenation
+version:            0.1.0.1
+synopsis:           Automatic hyphenation for Hakyll
+-- description:
+category:           Web
+stability:          experimental
+author:             Pavel Kretov <firegurafiku@gmail.com>
+maintainer:         Pavel Kretov <firegurafiku@gmail.com>
+license:            MIT
+license-file:       LICENSE.txt
+homepage:           https://bitbucket.org/rvlm/hakyll-contrib-hyphenation
+bug-reports:        https://bitbucket.org/rvlm/hakyll-contrib-hyphenation/issues
+build-type:         Simple
+cabal-version:      >= 1.8
+tested-with:        GHC == 7.6.3
+
+library
+  hs-source-dirs:   src
+  exposed-modules:  Hakyll.Contrib.Hyphenation
+  build-depends:    base        == 4.6.*,
+                    split       == 0.2.*,
+                    hyphenation == 0.4.*, 
+                    tagsoup     == 0.13.*,
+                    hakyll      == 4.6.* 
+

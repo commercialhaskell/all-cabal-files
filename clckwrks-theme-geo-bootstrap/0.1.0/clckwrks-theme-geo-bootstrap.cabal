@@ -1,0 +1,37 @@
+name:                clckwrks-theme-geo-bootstrap
+version:             0.1.0
+synopsis:            geo bootstrap based template for clckwrks
+homepage:            http://divshot.github.com/geo-bootstrap/
+license:             BSD3
+license-file:        LICENSE
+author:              Jeremy Shaw
+maintainer:          jeremy@n-heptane.com
+category:            Clckwrks
+build-type:          Simple
+cabal-version:       >=1.8
+data-files:
+        data/css/hscolour.css
+        data/css/bootstrap-responsive.min.css
+        data/css/bootstrap.css
+        data/css/bootstrap-responsive.css
+        data/css/bootstrap.min.css
+        data/img/flames.gif
+        data/img/glyphicons-halflings-white.png
+        data/img/glyphicons-halflings.png
+        data/img/microfab.gif
+        data/img/progress.gif
+        data/img/rainbow.gif
+        data/img/stars.gif
+
+source-repository head
+    type:     darcs
+    subdir:   clckwrks
+    location: http://hub.darcs.net/stepcut/clckwrks-theme-geo-bootstrap
+
+library
+  exposed-modules:     Theme
+                       Paths_clckwrks_theme_geo_bootstrap
+  build-depends:       base             >  4 && <5,
+                       clckwrks         >= 0.17 && < 0.18,
+                       hsp              == 0.7.*,
+                       text             == 0.11.*

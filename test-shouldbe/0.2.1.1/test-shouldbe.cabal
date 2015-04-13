@@ -1,0 +1,36 @@
+name:             test-shouldbe
+version:          0.2.1.1
+synopsis:         Catchy combinators for HUnit
+description:      Catchy combinators for HUnit
+license:          MIT
+license-file:     LICENSE
+build-type:       Simple
+category:         Testing
+cabal-version:    >= 1.8
+
+library
+  ghc-options:
+      -Wall
+  build-depends:
+      base < 4.6
+    , HUnit
+  hs-source-dirs:
+      src
+  exposed-modules:
+      Test.HUnit.ShouldBe
+    , Test.HUnit.ShouldBe.Contrib
+
+test-suite spec
+  main-is:
+      Spec.hs
+  type:
+      exitcode-stdio-1.0
+  ghc-options:
+      -Wall -Werror
+  hs-source-dirs:
+      src, test
+  build-depends:
+      base        >= 4.0  && < 4.6
+    , silently
+    , hspec
+    , hspec-discover

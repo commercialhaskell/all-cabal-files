@@ -1,0 +1,39 @@
+-- Copyright 2011 Jared Hance
+-- MIT Licensed
+
+Name: network-stream
+Version: 0.1.0
+License: GPL-3
+License-File: COPYING
+Author: Jared Hance
+Maintainer: Jared Hance <jaredhance@gmail.com>
+Build-Type: Simple
+Cabal-Version: >= 1.8
+Category: Data
+Synopsis: ByteString and Text streams for networking
+Description: Provides bytestring and text streams which support both
+    retry's and invalidation for sending information before all information
+    is known. Includes support for enumerating over the chunks of bytes
+    or chunks of text sent.
+
+Library
+    Build-Depends: base < 4.5,
+                   binary < 0.6,
+                   bytestring < 0.10,
+                   cereal < 0.4,
+                   enumerator < 0.5,
+                   transformers < 0.3,
+                   network < 2.4,
+                   stm < 2.3,
+                   text < 0.12
+    Ghc-Prof-Options: -prof -auto-all -caf-all -rtsopts
+    Exposed-Modules: Network.ByteString.Stream
+                     Network.ByteString.Lazy.Stream
+                     Network.Text.Stream
+                     Network.Text.Lazy.Stream
+    Exposed: True
+
+Source-Repository head
+    Type: git
+    Location: https://github.com/jhance/network-stream
+

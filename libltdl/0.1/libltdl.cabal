@@ -1,0 +1,43 @@
+name:           libltdl
+version:        0.1
+cabal-version:  >= 1.8
+license:        BSD3
+license-file:   LICENSE
+copyright:      (c) 2011 Harvard University
+author:         Geoffrey Mainland <mainland@eecs.harvard.edu>
+maintainer:     mainland@eecs.harvard.edu
+stability:      alpha
+homepage:       http://www.eecs.harvard.edu/~mainland/projects/libffi
+category:       Foreign
+synopsis:       FFI interface to libltdl
+
+build-type:     Custom
+
+flag examples
+  description: Build example programs.
+  default:     False
+
+library
+  exposed-modules:
+    Foreign.LibLTDL
+    Foreign.LibLTDL.Internal
+
+  build-depends:
+    base >=4 && <5
+
+executable sin
+  build-depends:
+    base >=4 && <5,
+    libltdl >=0.1 && <0.2
+
+  main-is: 	   Main.hs
+  hs-source-dirs:  examples/sin
+
+  if flag(examples)
+    buildable: True
+  else
+    buildable: False
+
+source-repository head
+  type:     svn
+  location: http://senseless.eecs.harvard.edu/repos/mainland-projects/libltl/trunk/

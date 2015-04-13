@@ -1,0 +1,99 @@
+Name:                gdiff-th
+Version:             0.1.0.7
+
+Synopsis:            Generate gdiff GADTs and Instances.
+Description:  
+    Generate gdiff GADTs and Instances. 
+    .
+    There are examples in the @examples@ directory of the cabal tarball. Also the main module includes an example in the documentation.
+    .
+    * 0.1.0.4 : Builds on GHC 7.6.1, 7.4.2, and 7.0.3
+    .
+    * 0.1.0.5 : Doc fixes.
+
+License:             BSD3
+License-file:        LICENSE
+Author:  Jonathan Fischoff            
+Maintainer:          jonathangfischoff@gmail.com
+Copyright: (c) 2012-2013 Jonathan Fischoff           
+Category:            Generics, Testing
+
+Build-type:          Simple
+    
+Extra-source-files: examples/Expr.hs
+                    examples/New.hs
+                    examples/Old.hs
+                    examples/CompareVersions.hs
+                    examples/Parser.hs
+                    examples/Utils.hs
+                    
+Cabal-version:       >=1.8
+
+homepage:    https://github.com/jfischoff/gdiff-th
+bug-reports: https://github.com/jfischoff/gdiff-th/issues
+tested-with: GHC == 7.6.2
+
+
+source-repository head
+    type:     git
+    location: git://github.com/jfischoff/gdiff-th.git
+
+Library
+  Hs-Source-Dirs: src
+ 
+  Exposed-modules: Data.Generic.Diff.TH
+  
+  Other-modules: Data.Generic.Diff.TH.Conversion, 
+                 Data.Generic.Diff.TH.Internal,
+                 Data.Generic.Diff.TH.Types
+                 Data.Generic.Diff.TH.Specialize
+  
+  Build-depends: base >= 4.0 && <= 6.0,
+                 gdiff == 1.0.*,
+                 th-expand-syns == 0.3.*,
+                 uniplate == 1.6.*,
+                 containers,
+                 mtl == 2.1.*
+                    
+ if impl(ghc == 7.0.3)
+    Build-depends: template-haskell < 2.6.0
+ else
+    Build-depends: template-haskell < 2.9.0
+    ghc-options: -Wall
+                 
+Test-Suite tests
+    Hs-Source-Dirs: src, tests
+    type:       exitcode-stdio-1.0
+    main-is:    Main.hs
+    build-depends:   base >= 4.0 && <= 6.0,
+                     template-haskell < 2.9.0,
+                     gdiff == 1.0.*,
+                     th-expand-syns == 0.3.*,
+                     uniplate == 1.6.*,
+                     containers,
+                     mtl == 2.1.*
+
+--Executable CompareVersions
+--    Hs-Source-Dirs: examples, src
+--    main-is: CompareVersions.hs
+--    Build-depends: base >= 4.0 && <= 6.0,
+--                   gdiff == 1.0.*,
+--                   th-expand-syns == 0.3.*,
+--                   uniplate == 1.6.*,
+--                  containers,
+--                   mtl == 2.1.*,
+--                   wl-pprint-terminfo == 3.6.*,
+--                   wl-pprint-extras == 3.4.*,
+--                   terminfo == 0.3.*,
+--                   template-haskell >= 2.7 && <= 2.9,
+--                   haskell-src-exts == 1.13.*,
+--                   deepseq == 1.3.*,
+--                   deepseq-th == 0.1.*
+--    ghc-options: -fprof-auto -threaded -rtsopts
+ 
+    
+    
+    
+    
+    
+    

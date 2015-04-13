@@ -1,0 +1,29 @@
+name:                alea
+version:             0.3.1.0
+synopsis:            a diceware passphrase generator
+description:
+
+  Alea is a utility that helps you generate diceware passphrases.
+  You can choose to roll the dice on your own or let the program
+  generates the words for you.
+
+homepage:            https://github.com/Rnhmjoj/alea
+license:             MIT
+license-file:        LICENSE
+author:              Rnhmjoj
+maintainer:          micheleguerinirocco@me.com
+copyright:           (C) Michele Guerini Rocco 2014
+category:            Utility
+build-type:          Simple
+extra-source-files:  README.md, LICENSE
+data-files:          dict/diceware
+cabal-version:       >=1.10
+
+executable alea
+  main-is:             Main.hs
+  default-language:    Haskell2010
+  other-modules:       Paths_alea
+  other-extensions:    DeriveDataTypeable, RecordWildCards
+  build-depends:       base ==4.7.* , containers ==0.5.*,
+                       argparser ==0.3.*, threefish == 0.2.*
+  ghc-options:         -O2

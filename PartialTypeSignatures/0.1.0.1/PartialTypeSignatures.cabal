@@ -1,0 +1,21 @@
+name:                PartialTypeSignatures
+version:             0.1.0.1
+synopsis:            emulate partial type signatures with template haskell
+homepage:            http://code.haskell.org/~aavogt/PartialTypeSignatures
+license:             BSD3
+license-file:        LICENSE
+author:              Adam Vogt <vogt.adam@gmail.com>
+maintainer:          Adam Vogt <vogt.adam@gmail.com>
+category:            Development
+build-type:          Simple
+extra-source-files:  Example.hs
+cabal-version:       >=1.10
+
+library
+  exposed-modules:     PartialTypeSigs
+  other-extensions:    TemplateHaskell, CPP
+  build-depends:       base <5,
+                       containers,
+                       template-haskell,
+                       syb
+  default-language:    Haskell2010

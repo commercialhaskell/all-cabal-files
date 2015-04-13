@@ -1,0 +1,25 @@
+Name:           numeric-quest
+Version:        0.1
+License:        GPL
+Author:         Jan Skibinski
+Maintainer:     Henning Thielemann <numeric-quest@henning-thielemann.de>
+Homepage:       http://www.haskell.org/haskellwiki/Numeric_Quest
+Package-URL:    http://darcs.haskell.org/numeric-quest/
+Category:       Math
+Build-Depends:  base, haskell98
+Synopsis:       Math and quantum mechanics
+Description:    List based linear algebra, similtaneous linear equations, eigenvalues and eigenvectors, roots of polynomials, transcendent functions with arbitrary precision implemented by continued fractions, quantum operations, tensors
+GHC-Options:    -Wall
+Hs-source-dirs: .
+Exposed-modules:
+   Eigensystem
+   EigensystemNum
+   Fraction
+   LinearAlgorithms
+   Orthogonals
+   QuantumVector
+   Roots
+   Tensor
+Data-Files:
+   Makefile
+   README

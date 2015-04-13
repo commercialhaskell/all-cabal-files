@@ -1,0 +1,31 @@
+name:                   rwlock
+version:                0.0.0.3
+stability:              provisional
+
+cabal-version:          >= 1.6
+build-type:             Simple
+
+author:                 James Cook <mokus@deepbondi.net>
+maintainer:             James Cook <mokus@deepbondi.net>
+license:                PublicDomain
+homepage:               https://github.com/mokus0/rwlock
+
+category:               Concurrency
+synopsis:               Multiple-read / single-write locks
+description:            A simple implementation of a multiple-reader / single-writer
+                        lock, using STM.
+
+source-repository head
+  type:                 git
+  location:             https://github.com/mokus0/rwlock.git
+
+flag base4
+
+Library
+  hs-source-dirs:       src
+  exposed-modules:      Control.Concurrent.RWLock
+  build-depends:        monad-loops-stm, stm
+  if flag(base4)
+    build-depends:      base >= 4 && <5, syb
+  else
+    build-depends:      base >= 3 && <4

@@ -1,0 +1,33 @@
+Name:          LibZip
+Version:       0.0.1
+License:       BSD3
+License-File:  LICENSE
+Author:        Sergey Astanin
+Maintainer:    Sergey Astanin <s.astanin@gmail.com>
+Homepage:      http://bitbucket.org/jetxee/hs-libzip/
+Bug-reports:   http://bitbucket.org/jetxee/hs-libzip/issues/
+
+Category:      Codec, Foreign
+Synopsis:      Partial bindings to libzip to read zip archives.
+Description:
+  This package provides basic read-only access to zip-archives.
+  It is produced with @c2hs@ for @libzip@ ver. 0.9.
+Exposed-modules: Codec.Archive.LibZip, C2HS
+
+Build-Type:     Simple
+Cabal-Version:  >= 1.2.3
+Extra-Tmp-Files:
+                Codec/Archive/LibZip.hs
+              , Codec/Archive/LibZip.chs.h
+Build-Tools:    c2hs
+Build-Depends:	base >= 4.0 && < 4.2
+              , bytestring
+              , haskell98
+GHC-Options:    -Wall
+Extensions:     ForeignFunctionInterface
+              , FlexibleContexts
+              , DeriveDataTypeable
+              , CPP
+
+Tested-with:   GHC == 6.10.4
+

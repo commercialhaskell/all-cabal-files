@@ -1,0 +1,54 @@
+name:                voyeur
+version:             0.1.0.1
+synopsis:            Haskell bindings for libvoyeur
+description:         Haskell bindings for libvoyeur, a library for observing the private
+                     activities of child processes.
+homepage:            https://github.com/sethfowler/hslibvoyeur
+license:             BSD3
+license-file:        LICENSE
+author:              Seth Fowler <mark.seth.fowler@gmail.com>
+maintainer:          Seth Fowler <mark.seth.fowler@gmail.com>
+copyright:           Copyright (C) 2014 Seth Fowler
+category:            System
+build-type:          Custom
+cabal-version:       >=1.18
+extra-source-files: README.md,
+                    changelog,
+
+                    -- Bake in libvoyeur in its entirety.
+                    libvoyeur/include/voyeur.h,
+                    libvoyeur/LICENSE,
+                    libvoyeur/Makefile,
+                    libvoyeur/README.md,
+                    libvoyeur/src/dyld.h,
+                    libvoyeur/src/env.c,
+                    libvoyeur/src/env.h,
+                    libvoyeur/src/event.c,
+                    libvoyeur/src/event.h,
+                    libvoyeur/src/net.c,
+                    libvoyeur/src/net.h,
+                    libvoyeur/src/util.c,
+                    libvoyeur/src/util.h,
+                    libvoyeur/src/voyeur-close.c,
+                    libvoyeur/src/voyeur-exec.c,
+                    libvoyeur/src/voyeur-exit.c,
+                    libvoyeur/src/voyeur-open.c,
+                    libvoyeur/src/voyeur.c
+
+source-repository head
+  type: git
+  location: https://github.com/sethfowler/hslibvoyeur.git
+  tag: 0.1.0.1
+
+library
+  ghc-options:         -Wall
+  exposed-modules:     System.Process.Voyeur
+  other-modules:       System.Process.Voyeur.FFI,
+                       Paths_voyeur
+  build-depends:       base >=4.6 && <4.8,
+                       bytestring >=0.10 && <0.11,
+                       process >=1.1 && <1.3,
+                       utf8-string >=0.3 && <0.4
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+  default-extensions:  CPP

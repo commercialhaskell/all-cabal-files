@@ -1,0 +1,28 @@
+name:                nm
+version:             1.0.0
+synopsis:            Network Manager, binding to libnm-glib.
+description:         A binding to libnm-glib.
+license:             BSD3
+license-file:        LICENSE
+author:              Chris Done
+maintainer:          chrisdone@gmail.com
+category:            Development
+build-type:          Simple
+cabal-version:       >=1.8
+
+library
+  hs-source-dirs:    src
+  exposed-modules:   NM, NM.Types, NM.Internal
+  other-modules:     GLib
+  ghc-options:       -O2 -Wall
+  build-depends:     base >= 4 && < 5, vector
+  pkgconfig-depends: glib-2.0 >= 2.22.2, libnm-glib
+  include-dirs:      cbits/
+  extra-libraries:   nm-glib, g
+  c-sources:         cbits/glib-helpers.c
+
+executable nm-demo
+  hs-source-dirs: src
+  main-is:        Main.hs
+  build-depends:  base >= 4 && < 5,
+                  nm

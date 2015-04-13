@@ -1,0 +1,32 @@
+name:           exception-mtl
+version:        0.1
+cabal-version:  >= 1.6
+license:        BSD3
+license-file:   LICENSE
+copyright:      (c) 2008-2010 Harvard University
+author:         Geoffrey Mainland <mainland@eecs.harvard.edu>
+maintainer:     mainland@eecs.harvard.edu
+stability:      alpha
+homepage:       http://www.eecs.harvard.edu/~mainland/
+category:       Control, Monad, Error Handling, Failure
+synopsis:       An mtl-compatible monad transformer for unchecked extensible
+		exceptions.
+description:    This package provides a monad transformer that allows unchecked
+		extensible exceptions to be thrown and caught.
+
+build-type:     Simple
+
+library
+  exposed-modules:
+    Control.Monad.Exception
+
+  build-depends:
+    base >= 4 && < 5,
+    mtl >= 1.1 && < 1.2
+
+  ghc-options:
+    -Wall
+
+source-repository head
+  type:     svn
+  location: http://senseless.eecs.harvard.edu/repos/mainland-projects/exception-mtl/trunk/

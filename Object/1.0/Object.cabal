@@ -1,0 +1,22 @@
+Name:	Object
+Version:	1.0
+Cabal-Version:	>= 1.4
+License:	Apache-2.0
+License-File:	LICENSE
+Author:		Silvio Frischknecht
+Homepage:	https://github.com/yokto/object
+Category:	Data, Control
+Maintainer: yokto.reports@gmail.com
+Synopsis:	Object oriented programming for haskell using multiparameter typeclasses.
+Description:	Read the homepage or Object.Example for more information.
+Build-Type:	Simple
+
+Library
+  Build-Depends:	base >= 3 && < 5, ghc >= 7.8, template-haskell, containers
+  Exposed-modules:
+    Object,
+    Object.Types,
+    Object.Templates,
+    Object.Example,
+    Object.Letters
+  Extensions:	

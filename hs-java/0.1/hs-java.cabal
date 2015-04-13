@@ -1,0 +1,29 @@
+Name:           hs-java
+Version:        0.1
+Cabal-Version:  >= 1.6
+License:        BSD3
+License-File:   LICENSE
+Author:         Ilya V. Portnov
+Maintainer:     portnov84@rambler.ru
+Synopsis:       Java .class files assembler/disassembler
+Category:       Jvm
+Build-Type:     Simple
+Description:    This package declares data types for Java .class files format and functions
+                to assemble/disassemble Java bytecode.
+
+Extra-source-files: dump-class.hs
+
+library
+  Exposed-Modules: JVM.Types
+                   JVM.ClassFile
+                   JVM.Assembler
+                   JVM.Converter
+
+  Build-Depends:  base >= 3 && <= 5, haskell98, containers, binary,
+                  mtl, directory, filepath, utf8-string, array,
+                  bytestring, data-binary-ieee754, binary-state,
+                  control-monad-exception
+
+  ghc-options: -fwarn-unused-imports
+
+

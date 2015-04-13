@@ -1,0 +1,38 @@
+Name:               diet
+Version:            0.0.1
+License:            BSD3
+License-File:       LICENSE
+Author:             Tony Morris <ʇǝu˙sıɹɹoɯʇ@ןןǝʞsɐɥ>
+Maintainer:         Tony Morris
+Copyright:          Tony Morris
+Synopsis:           Discrete Interval Encoding Tree
+Category:           Development
+Description:        Discrete Interval Encoding Tree described by Martin Erwig in /Diets for Fat Sets, January 1993/.
+Homepage:           https://github.com/tonymorris/diet
+Cabal-Version:      >= 1.6
+Build-Type:         Simple
+
+Source-Repository   head
+  Type:             git
+  Location:         git@github.com:tonymorris/diet.git
+
+Flag                small_base
+  Description:      Choose the new, split-up base package.
+
+Library
+  Build-Depends:
+                    base < 5 && >= 3
+
+  GHC-Options:
+                    -Wall
+
+  Hs-Source-Dirs:
+                    src
+
+  Exposed-Modules:
+                    Data.Set.Diet
+
+  GHC-Options:      
+                   -Wall
+                   -funbox-strict-fields
+

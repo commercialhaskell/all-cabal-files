@@ -1,0 +1,19 @@
+name:                congruence-relation
+version:             0.1.0.0
+synopsis:            Decidable congruence relations for Haskell: up to you whether this is a joke
+description:         The laws of 'Eq' only require that you have a decidable equivalence relation defined on a type; they do not force you to guarantee abstraction with respect to the relation, i.e. you can write anti-extensional operations without violating the laws. This package provides an alternative for when functionality with respect to an equivalence relation is desired.
+license:             MIT
+license-file:        LICENSE
+author:              Jonathan Sterling
+maintainer:          jon@jonmsterling.com
+category:            Data
+build-type:          Simple
+cabal-version:       >=1.10
+
+library
+  exposed-modules:     Data.Congruence.Decidable
+  build-depends:       base >=4.7 && <4.8,
+                       containers >=0.5.5.0,
+                       array >=0.4.0.0
+  hs-source-dirs:      src
+  default-language:    Haskell2010

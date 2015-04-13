@@ -1,0 +1,53 @@
+Name:                xlsx-templater
+
+Version:             0.0.1
+
+Synopsis:            Simple and incomplete Excel file templater
+Description:
+    Library for creating xlsx data files from xlsx tempaltes.
+
+Homepage:            https://github.com/qrilka/xlsx-templater
+Bug-Reports:         https://github.com/qrilka/xlsx-templater/issues
+License:             MIT
+License-file:        LICENSE
+Author:              Kirill Zaborsky
+Maintainer:          qrilka@gmail.com
+
+
+Category:            Codec
+Build-type:          Simple
+
+-- Extra files to be distributed with the package, such as examples or
+-- a README.
+-- Extra-source-files:  
+
+-- Constraint on the version of Cabal needed to build this package.
+Cabal-version:       >=1.6
+
+
+Library
+  Hs-source-dirs:    src
+  Exposed-modules:   Codec.Xlsx.Templater
+
+
+Executable           test
+  Hs-source-dirs:    src
+  ghc-options:       -rtsopts -Wall -threaded -O2
+
+  main-is:           Test.hs
+
+  
+  Build-depends:     base         == 4.*
+                   , containers
+                   , transformers
+                   , bytestring
+                   , text
+                   , xlsx         == 0.0.1
+                   , data-default == 0.4.*
+                   , conduit      == 0.4.*
+                   , parsec       == 3.1.*
+                   , time
+  
+source-repository head
+  type:     git
+  location: git://github.com/qrilka/xlsx-templater.git

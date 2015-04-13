@@ -1,0 +1,39 @@
+name:                majority
+version:             1.0
+synopsis:            Boyer-Moore Majority Vote Algorithm
+category:            Algorithms
+stability:           provisional
+license:             PublicDomain
+license-file:        LICENSE
+author:              Nis N. Wegmann
+maintainer:          niswegmann@gmail.com
+homepage:            https://github.com/niswegmann/majority
+extra-source-files:  README.md, test/Properties.hs
+build-type:          Simple
+cabal-version:       >= 1.10
+
+description:
+
+  The Boyer-Moore Majority Vote Algorithm determines if there in a list of votes
+  is a candidate that holds more than half of the majority, and if so, finds
+  this candidate. It does so in time linear in the length of the input list and
+  constant memory. For a detailed description of the algorithm, see these papers:
+  .
+    * Wim H. Hesselink,
+      \"/The Boyer-Moore Majority Vote Algorithm/\",
+      2005;
+  .
+    * Robert S. Boyer and J. Strother Moore,
+      \"/MJRTY - A Fast Majority Vote Algorithm/\",
+      1982.
+
+source-repository head
+  type:     git
+  location: https://github.com/niswegmann/majority.git
+
+library
+  default-language:  Haskell2010
+  build-depends:     haskell2010
+  ghc-options:       -O2 -Wall -fwarn-tabs
+  hs-source-dirs:    src
+  exposed-modules:   Algorithms.Majority

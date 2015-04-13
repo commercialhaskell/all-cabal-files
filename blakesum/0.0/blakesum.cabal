@@ -1,0 +1,33 @@
+name:                blakesum
+version:             0.0
+synopsis:            The BLAKE SHA-3 candidate hashes, in Haskell
+description:         
+    .
+    This provides an implementation of the BLAKE SHA-3 candidate hash algorithms
+    in Haskell, including BLAKE-256, BLAKE-512, BLAKE-224, and BLAKE-384.
+    .
+    Based on the BLAKE proposal,
+    here: http:\/\/131002.net\/blake\/blake.pdf
+    .
+    Contributions and optimizations are welcome!
+    .
+category:            Data
+license:             BSD3
+license-file:        LICENSE
+author:              Kevin Cantu <me@kevincantu.org>
+maintainer:          Kevin Cantu <me@kevincantu.org>
+copyright:           2011 Kevin Cantu
+bug-reports:         https://github.com/killerswan/Haskell-BLAKE/issues
+build-type:          Simple
+cabal-version:       >=1.6
+
+library
+   build-depends:    base >= 4 && < 5, vector >= 0 && < 1, bytestring >= 0 && < 1
+   exposed-modules:  Data.Digest.SHA3.Candidate.BLAKE
+   ghc-options:      -Wall
+
+source-repository head
+   type:       git
+   location:   https://github.com/killerswan/Haskell-BLAKE
+
+

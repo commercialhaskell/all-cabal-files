@@ -1,0 +1,37 @@
+Name:                dpkg
+Version:             0.0.0
+Synopsis:            libdpkg bindings
+Description:         Haskell bindings to the libdpkg API
+Copyright:           (C) 2011 Clint Adams
+License:             GPL-3
+License-file:        COPYING
+Author:              Clint Adams
+Maintainer:          Clint Adams <clint@debian.org>
+Category:            Debian
+Build-Type:          Simple
+Cabal-Version:       >=1.10
+Extra-Source-Files: test.hs, testdb/status, testdb/updates/.placeholder
+Data-Files:          README
+
+Library
+  build-depends:   base >= 4 && < 5
+                 , bindings-DSL >= 1.0.7 && < 1.1
+                 , monad-loops
+  exposed-modules: Debian.Dpkg.DB, Debian.Dpkg.Types, Debian.Dpkg.Enums
+  other-extensions: ForeignFunctionInterface
+  pkgconfig-depends: libdpkg >= 1.16.1
+  cpp-options: -DLIBDPKG_VOLATILE_API=1
+  default-language: Haskell98
+
+Test-Suite test
+  type:       exitcode-stdio-1.0
+  main-is:    test.hs
+  build-depends: base, HUnit, dpkg
+  pkgconfig-depends: libdpkg >= 1.16.1
+  extra-libraries: dpkg
+  default-language: Haskell98
+
+
+source-repository head
+  type:     git
+  location: git://git.debian.org/users/clint/haskell-dpkg.git

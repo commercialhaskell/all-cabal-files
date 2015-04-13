@@ -1,0 +1,63 @@
+name:                opengles
+version:             0.5.0
+synopsis:            OpenGL ES 2.0 and 3.0 with EGL 1.4
+description:         A simplified OpenGL ES core wrapper library.
+                     The mission statement of this library is three F: Fun, Fast, yet Flexible.
+                     Please check out simple texture rendering example in just 100 lines.
+                     This library is intended use on mobile, however,
+                     also works in OpenGL 4.1/4.3+ environment on desktop.
+license:             LGPL-3
+license-file:        LICENSE
+author:              capsjac <capsjac at gmail dot com>
+maintainer:          capsjac <capsjac at gmail dot com>
+copyright:           (c) 2014 capsjac
+category:            Graphics
+build-type:          Simple
+extra-source-files:
+  include/EGL/egl.h
+  include/EGL/eglext.h
+  include/EGL/eglplatform.h
+  include/KHR/khrplatform.h
+stability: experimental
+cabal-version:       >= 1.18
+
+source-repository head
+  type:              git
+  location:          https://github.com/capsjac/opengles
+
+library
+  default-language: Haskell2010
+
+  exposed-modules:
+    Graphics.EGL,
+    Graphics.OpenGLES,
+    Graphics.OpenGLES.Base,
+    Graphics.OpenGLES.Buffer,
+    Graphics.OpenGLES.Core,
+    Graphics.OpenGLES.Env,
+    Graphics.OpenGLES.Framebuffer,
+    Graphics.OpenGLES.Internal,
+    Graphics.OpenGLES.PixelFormat,
+    Graphics.OpenGLES.State,
+    Graphics.OpenGLES.Texture,
+    Graphics.OpenGLES.Types,
+    Graphics.TextureContainer.KTX,
+    Graphics.TextureContainer.PKM
+  
+  other-extensions: ForeignFunctionInterface
+  extra-libraries: EGL, GLESv2
+  build-depends:
+    base >= 4.6 && < 5,
+    bytestring >= 0.10 && < 1,
+    ghc-prim,
+    array >= 0.5 && < 0.6,
+    future-resource >= 0.3,
+    linear-vect >= 0.1,
+    packer >= 0.1 && < 0.2
+  
+  include-dirs: include
+  
+  if os(ios)
+    frameworks: QuartzCore, OpenGLES
+  ghc-options: -Wall -fexcess-precision  -funbox-strict-fields
+  

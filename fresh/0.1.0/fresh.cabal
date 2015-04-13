@@ -1,0 +1,28 @@
+Name:               fresh
+Version:            0.1.0
+Synopsis:           Introduce fresh variables into Haskell source code
+Description:        This library provides functions for converting fresh
+                    variables of the form @Ident \"\@foo\"@ into concrete
+                    variables that are globally unique across an AST.
+Homepage:           https://code.google.com/p/fresh-hs/
+License:            MIT
+License-file:       LICENSE
+Author:             David Lazar
+Maintainer:         lazar6@illinois.edu
+Category:           Language
+Build-type:         Simple
+Cabal-version:      >=1.6
+
+source-repository head
+  Type:             mercurial
+  Location:         https://fresh-hs.googlecode.com/hg/
+
+Library
+  Exposed-modules:
+    Language.Haskell.Exts.Fresh
+
+  Build-depends:
+    base >= 4 && < 5,
+    containers,
+    haskell-src-exts,
+    syb

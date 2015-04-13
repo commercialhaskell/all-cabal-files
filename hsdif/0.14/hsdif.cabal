@@ -1,0 +1,37 @@
+Name:              hsdif
+Version:           0.14
+Synopsis:          Haskell SDIF
+Description:       hsdif provides Sound.SDIF, a haskell
+                   module implementing a subset of Sound Description
+                   Interchange Format.
+License:           GPL
+Category:          Sound
+Copyright:         (c) Rohan Drape, 2010-2013
+Author:            Rohan Drape
+Maintainer:        rd@slavepianos.org
+Stability:         Experimental
+Homepage:          http://rd.slavepianos.org/?t=hsdif
+Tested-With:       GHC == 7.6.1
+Build-Type:        Simple
+Cabal-Version:     >= 1.8
+
+Data-Files:        README
+                   Help/hsdif.hs
+                   Help/crotale.sdif
+
+Library
+  Build-Depends:   base == 4.*,
+                   bytestring,
+                   hosc == 0.14.*
+  GHC-Options:     -Wall -fwarn-tabs
+  Exposed-modules: Sound.SDIF
+                   Sound.SDIF.Frame
+                   Sound.SDIF.Matrix
+                   Sound.SDIF.Type
+                   Sound.SDIF.Byte.Frame
+                   Sound.SDIF.Byte.Matrix
+                   Sound.SDIF.Byte.SDIF
+
+Source-Repository  head
+  Type:            darcs
+  Location:        http://rd.slavepianos.org/sw/hsdif/

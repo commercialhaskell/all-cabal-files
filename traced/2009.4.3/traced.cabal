@@ -1,0 +1,16 @@
+Name:		traced
+Version:	2009.4.3
+License:	BSD3
+Author:		Lennart Augustsson
+Maintainer:	Lennart Augustsson
+Category:	Debug
+Synopsis:	Simple evaluation trace
+Stability:      experimental
+Build-type:	Simple
+Description:	The module defines a type constructor Traced, which allows evaluation
+		of values to be traced.  Instances for all numeric types make tracing
+		numeric evaluation especially easy.
+Hs-Source-Dirs: src
+Build-Depends:	base, mtl, pretty, containers
+Exposed-modules:	Debug.Traced Debug.TracedInternal
+Other-modules:	Debug.StableMap

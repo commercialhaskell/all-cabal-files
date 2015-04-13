@@ -1,0 +1,15 @@
+Name:             hexdump
+Version:          0.1
+Description:      A library for forming hexdumps.
+Synopsis:         A library for forming hexdumps.
+License:          PublicDomain
+Author:           Tim Newsham
+Maintainer:       Tim Newsham <newsham@lava.net>
+Build-Depends:    base
+Exposed-modules:  Text.Hexdump
+Hs-Source-Dirs:   src
+data-files:       README
+Build-Type:       Simple
+Stability:        experimental
+Category:         Text
+

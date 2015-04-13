@@ -1,0 +1,43 @@
+name: hakyll-contrib-links
+version: 0.1.0.0
+synopsis: A hakyll library that helps maintain a separate links database.
+
+description: Often when building packages we would like to collect all
+  commonly occuring urls in a separate file and include it in all
+  pages. This module facilitates maintaining such links database and
+  including it with different pages. The syntax of the links database
+  is that of markdown.
+
+license: BSD3
+license-file: LICENSE
+author: Piyush P Kurur
+maintainer: ppk@cse.iitk.ac.in
+category: Web, Hakyll
+build-type: Simple
+cabal-version: >=1.9.2
+
+library
+  build-depends: base ==4.5.*
+               , containers ==0.4.*
+               , binary ==0.5.*
+               , parsec ==3.*
+               , hakyll ==3.*
+               , pandoc ==1.9.*
+               , pandoc-types ==1.9.*
+  exposed-modules: Hakyll.Contrib.Markdown.Link
+  ghc-Options: -Wall
+test-Suite tests
+  type: exitcode-stdio-1.0
+  hs-source-dirs: tests
+  main-is: Main.hs
+  build-depends: base==4.5.*
+               , binary ==0.5.*
+               , test-framework==0.6.*
+               , test-framework-quickcheck2==0.2.*
+               , QuickCheck==2.4.*
+               , hakyll-contrib-links
+
+Source-repository this
+  type: darcs
+  location: http://patch-tag.com/r/ppk/hakyll-contrib-links
+  tag: 0.1.0.0-RELEASE

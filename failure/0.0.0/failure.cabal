@@ -1,0 +1,24 @@
+name: failure
+version: 0.0.0
+Cabal-Version:  >= 1.6
+build-type: Simple
+license: PublicDomain
+author: Pepe Iborra, Michael Snoyman, Nicolas Pouillard
+maintainer: pepeiborra@gmail.com
+homepage: http://github.com/snoyberg/failure
+description: A simple type class for success/failure computations.
+synopsis: A simple type class for success/failure computations.
+category: Control, Monads, Failure
+stability: stable
+
+Library
+  buildable: True
+  build-depends: base >= 4 && < 5
+  ghc-options: -Wall
+
+  exposed-modules:
+     Control.Failure
+
+source-repository head
+  type:     git
+  location: git://github.com/snoyberg/failure.git

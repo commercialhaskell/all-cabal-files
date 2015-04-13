@@ -1,0 +1,24 @@
+Name:                primula-bot
+Version:             0.0.2
+Synopsis:            Jabber-bot for primula-board ImageBoard
+Category:            Web
+Description:         Jabber-bot for communication with primula-board. 
+                     Settings stored in ~/.primularc file.
+License:             GPL
+License-file:        LICENSE
+Author:              Kagami <newanon@yandex.ru>
+Maintainer:          newanon@yandex.ru
+Homepage:            http://kagami.touhou.ru/projects/show/primula
+Build-Type:          Simple
+Cabal-Version:       >=1.2
+
+Data-Files:          primularc.example
+Extra-Source-Files:  debug.sh, install.sh,
+                     ApplicativeParsec.hs,
+                     Config.hs, HTTP.hs, Help.hs
+                     ParseCmd.hs, Setup.hs
+
+Executable primula-bot
+  Main-is:           Main.hs
+  Build-Depends:     base >=4.0 && < 5, XMPP>0.0.1, network, utf8-string,
+                     HTTP, parsec >=2.0 && < 3, mtl, directory, ConfigFile

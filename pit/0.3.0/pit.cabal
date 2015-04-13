@@ -1,0 +1,54 @@
+name:                pit
+version:             0.3.0
+synopsis:            Account management tool.
+license:             MIT
+license-file:        LICENSE
+author:              Yuichiro Hanada
+maintainer:          Yuichiro Hanada <i@chir.jp>
+stability:           Experimental
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+homepage:            https://github.com/chiro/haskell-pit
+category:            Tools
+
+description:
+  This package provides the account management tool and the library for
+  account management.
+  .
+  This package is a porting of Pit (see <https://github.com/cho45/pit>).
+
+source-repository head
+  type: git
+  location: git://github.com/chiro/haskell-pit.git
+
+library
+  exposed-modules: Pit
+
+  build-depends:       base >= 4.7 && < 4.8
+                       , bytestring >= 0.10 && < 0.11
+                       , directory >= 1.1 && < 1.3
+                       , filepath >= 1.2 && < 1.4
+                       , process >= 1.2 && < 1.3
+                       , temporary >= 1.2 && < 1.3
+                       , text >= 1.2 && < 1.3
+                       , unordered-containers >= 0.2 && < 0.3
+                       , yaml >= 0.8 && < 0.9
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+
+  ghc-options: -Wall
+
+executable pit
+  hs-source-dirs: src-exec
+  default-language: Haskell2010
+  main-is: Main.hs
+  build-depends: base >= 4.7 && < 4.8
+                 , pit
+                 , bytestring >= 0.10 && < 0.11
+                 , optparse-applicative >= 0.10
+                 , text >= 1.2 && < 1.3
+                 , unordered-containers >= 0.2 && < 0.3
+                 , yaml >= 0.8 && < 0.9
+
+  ghc-options: -Wall

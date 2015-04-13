@@ -1,0 +1,24 @@
+name:            binary-strict
+version:         0.2.2
+license:         BSD3
+license-file:    LICENSE
+author:          Lennart Kolmodin <kolmodin@dtek.chalmers.se>
+maintainer:      Adam Langley <agl@imperialviolet.org>
+description:     This is a strict version of the Get monad from the binary
+                 package. It's pretty much just a copy and paste job from the
+                 original source code. The binary team are currently unsure
+                 about their future plans w.r.t. strictness, so this is just a
+                 stop gap measure.
+synopsis:        Binary deserialisation using strict ByteStrings
+category:        Data, Parsing
+build-depends:   base, containers, array, bytestring>=0.9
+stability:       provisional
+tested-with:     GHC == 6.8.2
+exposed-modules: Data.Binary.Strict.Get,
+                 Data.Binary.Strict.IncrementalGet,
+                 Data.Binary.Strict.BitGet
+extensions:      CPP, FlexibleContexts
+hs-source-dirs:  src
+extra-source-files: tests/BitGetTest.hs, src/Data/Binary/Strict/Common.h
+ghc-options:     -Wall
+build-type:      Simple

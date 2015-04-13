@@ -1,0 +1,25 @@
+Name:                multiset-comb
+Version:             0.2.2
+Synopsis:            Combinatorial algorithms over multisets
+Description:         Various combinatorial algorithms over multisets,
+                     including generating all permutations,
+                     partitions, size-2 partitions, size-k subsets,
+                     and Sawada's algorithm for generating all
+                     necklaces with elements from a multiset.
+License:             BSD3
+License-file:        LICENSE
+Author:              Brent Yorgey
+Maintainer:          byorgey@cis.upenn.edu
+Copyright:           (c) 2010 Brent Yorgey
+Stability:           Experimental
+Category:            Math
+Tested-with:         GHC ==6.10.4, GHC ==6.12.1, GHC ==7.0.3
+Build-type:          Simple
+Cabal-version:       >=1.6
+source-repository head
+  type:     darcs
+  location: http://code.haskell.org/~byorgey/code/multiset-comb
+
+Library
+  Exposed-modules:     Math.Combinatorics.Multiset
+  Build-depends:       base >= 3 && < 5

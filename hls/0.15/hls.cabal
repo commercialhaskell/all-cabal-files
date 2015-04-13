@@ -1,0 +1,31 @@
+Name:              hls
+Version:           0.15
+Synopsis:          Haskell Lindenmayer Systems
+Description:       Haskell Lindenmayer Systems
+License:           GPL
+Category:          Graphics
+Copyright:         Rohan Drape, 2006-2014
+Author:            Rohan Drape
+Maintainer:        rd@slavepianos.org
+Stability:         Experimental
+Homepage:          http://rd.slavepianos.org/t/hls
+Tested-With:       GHC == 7.8.2
+Build-Type:        Simple
+Cabal-Version:     >= 1.8
+
+Data-files:        README
+
+Library
+  Build-Depends:   base == 4.*,
+                   containers,
+                   hcg-minus == 0.15.*,
+                   hps == 0.15.*
+  GHC-Options:     -Wall -fwarn-tabs
+  Exposed-modules: LSystem.LSystem
+                   LSystem.Turtle
+                   LSystem.Render.PS
+                   LSystem.Systems
+
+Source-Repository  head
+  Type:            darcs
+  Location:        http://rd.slavepianos.org/sw/hls

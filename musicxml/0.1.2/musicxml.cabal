@@ -1,0 +1,61 @@
+name:           musicxml
+version:        0.1.2
+author:         Samuel Silva <silva.samuel@alumni.uminho.pt>
+maintainer:     Samuel Silva <silva.samuel@alumni.uminho.pt>
+copyright:      Copyright (c) 2008-2009 Samuel Silva
+stability:      experimental
+synopsis:       MusicXML format encoded as Haskell type and functions of reading
+                and writting.  
+description:    This package presents MusicXML format typed at Haskell language
+                to be interface between MusicXML format and MusicXML
+                applications developed using Haskell. This package allows read
+                and write MusicXML documents at least 2.0 version as partwise or
+                timewise format besides opus and container specification.
+
+homepage:       https://troglodita.di.uminho.pt/svn/musica/work/MusicXML
+license:        BSD3
+license-file:   LICENSE
+category:       Text, XML, Music
+tested-with:    GHC ==6.8.2
+build-type:     Simple
+cabal-version:  >= 1.2
+extra-source-files:
+    BUGS
+    CHANGELOG
+    README
+    TODO
+    THANKS
+    examples/Update.lhs
+    examples/ReadPartwise.lhs
+    examples/Read.lhs
+    examples/ReadWrite.lhs
+flag splitBase
+    default: True
+    description: base >= 3
+
+library
+    if flag(splitBase)
+        build-depends: base >= 3 && < 4, directory, old-time, containers
+    else 
+        build-depends: base < 3
+    build-depends: pretty, HaXml >=1.19.4
+
+    ghc-options: -Wall 
+    hs-source-dirs: src
+    exposed-modules: 
+        Text.XML.MusicXML
+        Text.XML.MusicXML.Attributes
+        Text.XML.MusicXML.Barline
+        Text.XML.MusicXML.Common
+        Text.XML.MusicXML.Container
+        Text.XML.MusicXML.Direction
+        Text.XML.MusicXML.Identity
+        Text.XML.MusicXML.Layout
+        Text.XML.MusicXML.Link
+        Text.XML.MusicXML.Note
+        Text.XML.MusicXML.Opus
+        Text.XML.MusicXML.Partwise
+        Text.XML.MusicXML.Score
+        Text.XML.MusicXML.Timewise
+        Text.XML.MusicXML.Util
+

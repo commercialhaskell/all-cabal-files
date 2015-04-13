@@ -1,0 +1,30 @@
+category:               Generics
+copyright:              (c) 2011 Universiteit Utrecht
+name:                   gdiff-ig
+version:                0.1
+license:                BSD3
+license-file:           LICENSE
+author:                 José Pedro Magalhães
+maintainer:             generics@haskell.org
+synopsis:               Generic diff for the instant-generics library
+description:               
+
+  The generic diff of <http://hackage.haskell.org/package/gdiff> adapted to the
+  <http://hackage.haskell.org/package/instant-generics> library.
+  .
+  The Test.hs file (included in the package) shows an example of use of this
+  library.
+
+stability:              experimental
+build-type:             Simple
+homepage:               http://www.cs.uu.nl/wiki/GenericProgramming/InstantGenerics
+cabal-version:          >= 1.2.3
+tested-with:            GHC == 7.0.2
+extra-source-files:     examples/Test.hs
+
+library
+  hs-source-dirs:         src
+  build-depends:          base >= 4.3.1.0 && < 5, template-haskell >=2.5, 
+                          instant-generics >= 0.2.1, array, ghc-prim
+  exposed-modules:        Generics.Instant.GDiff
+  ghc-options:            -Wall

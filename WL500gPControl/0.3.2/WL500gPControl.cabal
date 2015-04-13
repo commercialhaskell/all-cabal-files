@@ -1,0 +1,23 @@
+name:                           WL500gPControl
+version:                        0.3.2
+cabal-version:                  >= 1.2
+license:                        BSD3
+license-file:                   LICENSE
+author:                         Vasyl Pasternak <vasyl.pasternak@gmail.com>
+category:                       Network, UI
+synopsis:                       A simple command line tools to control the 
+                                Asus WL500gP router
+build-type:                     Simple
+
+executable WL500gPStatus
+           main-is:             Status/Main.hs
+           build-depends:       base < 4, WL500gPLib >= 0.3
+           hs-source-dirs:      src
+           other-modules:       Common
+
+executable WL500gPControl
+           main-is:             Control/Main.hs
+           build-depends:       base < 4, WL500gPLib >= 0.3, mtl, unix
+           hs-source-dirs:      src
+           other-modules:       Common
+

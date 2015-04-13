@@ -1,0 +1,9 @@
+name:		 hsql-sqlite3
+version:	 1.7
+license:	 BSD3
+author:		 Krasimir Angelov <kr.angelov@gmail.com>
+category:	 Database
+description: 	 SQLite3 driver for HSQL.
+exposed-modules: Database.HSQL.SQLite3
+build-depends: 	 base, hsql
+extensions:      ForeignFunctionInterface, CPP

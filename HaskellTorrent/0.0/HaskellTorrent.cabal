@@ -1,0 +1,74 @@
+name: HaskellTorrent
+category: Network
+version: 0.0
+category: Network
+description:   HaskellTorrent provides a BitTorrent client, based on the CML library
+               for concurrency. This is an early preview release which is capable of
+               downloading files from various torrent trackers, but have not yet
+               demonstrated to be correct in all aspects.
+
+               It is expected that the package currently contains numerous and even
+               grave bugs. Patches to fix any problem are welcome!
+cabal-version: >= 1.6
+
+license: BSD3
+license-file: LICENSE
+copyright: (c) 2009 Jesper Louis Andersen
+author: Jesper Louis Andersen
+maintainer: jesper.louis.andersen@gmail.com
+stability: experimental
+synopsis: A concurrent bittorrent client
+build-type: Configure
+
+extra-tmp-files: src/Version.hs
+extra-source-files: src/Version.hs.in, configure
+data-files: AUTHORS, README.md
+
+flag debug
+  description: Enable debug support
+  default:     False
+
+executable HaskellTorrent
+  hs-source-dirs: src
+  main-is: HaskellTorrent.hs
+  other-modules: Protocol.BCode, Protocol.Wire,
+    Data.Queue,
+    Process.ChokeMgr, Process.Console, Process.FS, Process.Listen,
+    Process.PeerMgr, Process.Peer, Process.PieceMgr, Process.Status,
+    Process.Timer, Process.Tracker,
+    Digest, FS,  Logging, LoggingTypes, PeerTypes, Process, RateCalc,
+    Supervisor, Torrent
+
+  extensions: CPP
+
+  build-depends:
+    base >= 3.0,
+    base <= 5.0,
+    mtl,
+    cereal,
+    pretty,
+    parsec,
+    containers,
+    bytestring,
+    random,
+    network,
+    cml,
+    HTTP,
+    HsOpenSSL,
+    time,
+    random-shuffle,
+    directory
+
+  ghc-options: -threaded -fwarn-unused-imports
+  if flag(debug)
+      cpp-options: "-DDEBUG"
+  else
+      cpp-options: "-DNDEBUG"
+
+source-repository head
+  type: git
+  location: git://github.com/jlouis/haskell-torrent.git
+  branch: master
+
+
+

@@ -1,0 +1,23 @@
+Name:           vector-mmap
+Version:        0.0.1
+License:        BSD3
+License-File:   LICENSE
+Author:         Daniel Peebles <pumpkingod@gmail.com>
+Maintainer:     Daniel Peebles <pumpkingod@gmail.com>
+Copyright:      (c) Daniel Peebles 2010
+Homepage:       http://code.haskell.org/vector
+Category:       Data, Data Structures
+Synopsis:       Memory map immutable and mutable vectors
+Description:
+        Memory map immutable and mutable vectors.
+
+Cabal-Version:  >= 1.2
+Build-Type:     Simple
+
+Library
+  Exposed-Modules:
+        Data.Vector.Storable.MMap
+
+  Build-Depends: base >= 2 && < 5, mmap >= 0.5.4, vector >= 0.5, primitive >= 0.2.1
+
+  Ghc-Options: -O2

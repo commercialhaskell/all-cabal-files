@@ -1,0 +1,37 @@
+Name:           graph-rewriting-trs
+Version:        0.1
+Copyright:      (c) 2011, Jan Rochel
+License:        BSD3
+License-File:   LICENSE
+Author:         Jan Rochel
+Maintainer:     jan@rochel.info
+Homepage:       http://rochel.info/#graph-rewriting
+Stability:      alpha
+Build-Type:     Simple
+Synopsis:       Evaluate a first-order term rewrite system interactively using graph reduction
+Description:    Given a set of term rewriting rules (see examples) and a term with this tool you can interactively evaluate the corresponding term graph by applying the rules, which are translated into their graph rewriting equivalents.
+Category:       Graphs, Application
+Cabal-Version:  >= 1.6
+Data-Files:     examples/*.trs
+
+Executable trs
+  Main-Is:        Main.hs
+  Build-Depends:
+    base >= 4 && < 4.4,
+    base-unicode-symbols >= 0.2 && < 0.3,
+    graph-rewriting >= 0.5.2 && < 0.6,
+    graph-rewriting-layout >= 0.4.1 && < 0.5,
+    graph-rewriting-gl >= 0.6 && < 0.7,
+    uu-parsinglib >= 2.5 && < 2.6,
+    containers >= 0.4 && < 0.5,
+    GLUT >= 2.2 && < 2.3,
+    OpenGL >= 2.4 && < 2.5,
+    filepath >= 1.1 && < 1.2,
+    directory >= 1.0 && < 1.1
+  Extensions:
+    UnicodeSyntax
+    FlexibleInstances
+    FlexibleContexts
+    MultiParamTypeClasses
+  GHC-Options:    -fno-warn-duplicate-exports
+  Other-Modules:  GL Graph Rules Term TermRewriting

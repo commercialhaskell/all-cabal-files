@@ -1,0 +1,16 @@
+name:                clist
+version:             0.1.0.0
+synopsis:            Counted list
+homepage:            https://github.com/strake/clist.hs
+license:             OtherLicense
+license-file:        LICENSE
+author:              M Farkas-Dyck
+maintainer:          strake888@gmail.com
+category:            Data
+build-type:          Simple
+cabal-version:       >=1.9.2
+
+library
+  exposed-modules:     Data.CList
+  extensions:          TypeOperators, FlexibleContexts, FlexibleInstances, GADTs, DataKinds, DeriveFunctor, DeriveFoldable, DeriveTraversable
+  build-depends:       base >=4.8 && <4.9, base-unicode-symbols, peano

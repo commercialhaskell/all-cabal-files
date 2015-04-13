@@ -1,0 +1,25 @@
+
+
+name: turni 
+version: 2011.1.10
+license: BSD3
+license-file: LICENSE
+maintainer: Paolo Veronelli <paolo.veronelli@gmail.com> 
+stability: unstable
+category: gestionale, personale
+synopsis: tool per la creazione dei turni commessi in un negozio di vestiti
+description:  ..
+homepage: http://wiki.github.com/paolino/turni
+copyright: Copyright (c) 2010 Paolo Veronelli 
+build-type: Simple
+cabal-version: >= 1.6
+
+
+Executable settimana
+ ghc-options: -Wall 
+ main-is: Settimana.hs
+ build-depends: base  >=4.2 && <5   , 
+                containers,
+                random      ,
+                MonadRandom
+

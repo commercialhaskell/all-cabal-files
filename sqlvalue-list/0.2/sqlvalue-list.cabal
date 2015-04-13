@@ -1,0 +1,22 @@
+Name:                sqlvalue-list
+Version:             0.2
+Synopsis:            Class and instances for conversion to list of SqlValue.
+Category:            Database
+Description:         Class and instances for conversion to list of SqlValue. 
+License:             BSD3
+License-file:        LICENSE
+Author:              YuriyIskra
+Maintainer:          YuriyIskra  <iskra.yw@gmail.com>
+Stability:           Experimental
+Copyright:           Copyright (c) 2011 Yuriy Iskra
+Build-type:          Simple
+Cabal-version:       >= 1.6
+
+library
+  Exposed-modules:   Database.HDBC.SqlValue.List,
+                     Database.HDBC.SqlValue.List.Derive
+
+  Build-Depends:     base             >= 4   && < 5,
+                     HDBC             -any,
+                     convertible      -any,
+                     template-haskell >= 2.4

@@ -1,0 +1,28 @@
+name:                urlcheck
+version:             0.1.1
+license:             BSD3
+license-file:        LICENSE
+author:              Don Stewart 
+maintainer:          <dons@cse.unsw.edu.au>
+homepage:            http://code.haskell.org/~dons/code/urlcheck
+build-depends:       base, mtl, network
+description:         A (SMP) parallel link checker.
+                     Checks the validity of embedded urls in the input files.
+                     Usage: urlcheck foo.html
+synopsis:            Parallel link checker
+category:            Network
+build-type:          Simple
+Cabal-Version: >= 1.2
+ 
+flag small_base
+    description: Choose the new smaller, split-up base package.
+
+executable urlcheck
+    main-is:             Check.hs
+    ghc-options:         -threaded
+    extensions:          PatternGuards
+    if flag(small_base)
+        build-depends: base >= 3, old-time, containers, bytestring
+    else
+        build-depends: base < 3
+    build-depends: network, mtl

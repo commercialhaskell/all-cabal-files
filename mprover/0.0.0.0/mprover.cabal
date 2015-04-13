@@ -1,0 +1,20 @@
+Name:                mprover
+Version:             0.0.0.0
+Synopsis:            Simple equational reasoning for a Haskell-ish language
+License:             BSD3
+License-file:        LICENSE
+Author:              Adam Procter and Aaron Stump
+Maintainer:          Adam Procter <amp269@mail.missouri.edu>
+Build-Type:          Simple
+Cabal-Version:       >= 1.6
+Description:	     MProver is a proof checker for equational reasoning in a Haskell-like language.
+
+                     This is an extremely preliminary release, so don't expect it to be terribly useful just yet!
+Category:            Theorem Provers
+Extra-Source-Files:  README, examples/*.hs
+
+Executable mp
+  Main-is:           Main.hs
+  Build-Depends:     base < 6, haskell98, containers >= 0.4.0.0, mtl >= 2.0.1.0, parsec >= 3.1.1, unbound >= 0.3.1, transformers >= 0.2.2.0, pretty >= 1.0.1.2
+  Other-Modules:     MProver.Checker, MProver.Eval, MProver.Monad, MProver.PPrint, MProver.Parser, MProver.REPL, MProver.Syntax
+  ghc-prof-options:  -rtsopts -auto-all

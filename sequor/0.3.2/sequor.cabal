@@ -1,0 +1,46 @@
+Name:                sequor
+Version:             0.3.2
+Description:         A sequence labeler based on Collins's sequence perceptron.
+Synopsis:	     A sequence labeler based on Collins's sequence perceptron.
+Homepage:	     http://code.google.com/p/sequor/
+License:             BSD3
+License-file:        LICENSE
+Author:              Grzegorz Chrupała
+Maintainer:          grzegorz.chrupala@gmail.com
+Build-Type:          Simple
+Cabal-Version:       >=1.2
+Category:            Natural Language Processing
+Extra-source-files:  README, Makefile, lib/seminer/README,
+                     lib/seminer/seminer, lib/seminer/seminer, bin/seminer
+Data-dir:  	     data
+Data-files:	     all.features, example.features, mlcomp.features,
+                     mlcomp2.features, 
+                     train.conll, devel.conll, test.conll,
+                     seminer/lrec-2010.features,
+                     seminer/lrec-2010-raw.features,
+                     seminer/deu.eci.unlabeled.500+1000.classes,
+                     seminer/deu.train.lrec-2010.model,
+                     seminer/deu.train.lrec-2010-raw.model
+
+Executable sequor
+  Main-is:           Main.hs
+  Other-modules:     Helper.ListZipper, Helper.Utils, Helper.Text, 
+                     Helper.Atom, Helper.Commands, CorpusReader,
+                     FeatureTemplate, Config, Perceptron.Vector,
+                     Perceptron.Sequence, Features, Labeler, Hashable
+  Build-Depends:     base >= 3 && < 5, containers >= 0.2, 
+                     bytestring >= 0.9.2,
+                     binary >= 0.5, mtl >= 1.1,
+                     vector >= 0.5, array >= 0.2, pretty >= 1.0,
+                     text >= 0.10
+  hs-source-dirs:    src,lib
+  ghc-options:	     -O2 -rtsopts
+  c-sources:	     src/ghc_rts_opts.c 
+
+Executable augment
+  Main-is:            augment.hs
+  Other-modules:      Helper.Utils, Helper.Text
+  Build-Depends:      base >= 3 && < 5, containers >= 0.2, text >= 0.10
+  hs-source-dirs:     lib, lib/seminer
+  ghc-options:	      -O2 -rtsopts
+

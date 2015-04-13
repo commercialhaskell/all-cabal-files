@@ -1,0 +1,30 @@
+Name:           scenegraph
+Version:        0.1.0.2
+Copyright:      Mark Wassell 2009
+License:        BSD3
+license-file:	LICENSE
+Author:         Mark Wassell <mwassell@bigpond.net.au>
+Maintainer:     none
+Stability:	experimental
+Homepage:       http://www.haskell.org/haskellwiki/SceneGraph
+Category:       Graphics
+Build-Depends:  base>=3 && < 5,mtl,hmatrix,OpenGL>=2.2,GLUT>=2.1,haskell98,containers,fgl == 5.4.2.2,array,old-time,process
+build-type:	Simple
+tested-with:	GHC==6.10.1
+Synopsis:       Scene Graph
+Description:
+	Scene Graph Library.
+Extensions: OverlappingInstances,UndecidableInstances
+Hs-Source-Dirs:	src
+Exposed-Modules: Graphics.SceneGraph,
+	Graphics.SceneGraph.Basic,
+        Graphics.SceneGraph.Vector,
+        Graphics.SceneGraph.Render,
+        Graphics.SceneGraph.SimpleViewport,
+	Graphics.SceneGraph.GraphViz,
+        Graphics.SceneGraph.Library,
+        Graphics.SceneGraph.Dump,
+        Graphics.SceneGraph.Textures
+
+
+

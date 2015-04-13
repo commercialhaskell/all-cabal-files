@@ -1,0 +1,19 @@
+name:             hspec-shouldbe
+version:          0.0.1
+synopsis:         Convenience wrapper and utilities for hspec
+license:          MIT
+license-file:     LICENSE
+build-type:       Simple
+category:         Testing
+cabal-version:    >= 1.6
+
+library
+  ghc-options:
+      -Wall
+  hs-source-dirs:
+      src
+  build-depends:
+      hspec
+    , test-shouldbe
+  exposed-modules:
+      Test.Hspec.ShouldBe

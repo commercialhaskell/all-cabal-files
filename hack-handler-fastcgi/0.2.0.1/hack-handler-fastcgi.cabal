@@ -1,0 +1,23 @@
+name:            hack-handler-fastcgi
+version:         0.2.0.1
+license:         BSD3
+license-file:    LICENSE
+author:          Michael Snoyman <michael@snoyman.com>
+maintainer:      Michael Snoyman <michael@snoyman.com>
+synopsis:        Hack handler direct to fastcgi (deprecated)
+category:        Web
+stability:       stable
+cabal-version:   >= 1.2
+build-type:      Configure
+extra-source-files: configure fastcgi.buildinfo.in
+homepage:        http://github.com/snoyberg/hack-handler-fastcgi/tree/master
+
+library
+    build-depends:   base >= 4 && < 5,
+                     hack == 2009.10.30,
+                     bytestring >= 0.9.1.4 && < 0.10,
+                     hack-handler-cgi >= 0.2.0 && < 0.3
+    exposed-modules: Hack.Handler.FastCGI
+    ghc-options:     -Wall
+    includes:        fcgiapp.h
+    extra-libraries: fcgi

@@ -1,0 +1,41 @@
+name:    tableaux
+version: 0.1
+
+category: Theorem Provers
+
+synopsis: An interactive theorem prover based on semantic tableaux
+
+description:
+  This is a simple web-based interactive theorem prover 
+  using semantic tableaux for propositional and first-order logic  
+  (cf. "First-Order Logic", Raymond Smullyan, Dover).
+  It allows step-by-step construction of proofs and runs on any
+  web server supporting the CGI interface.
+  
+
+author:     Pedro Vasconcelos <pbv@ncc.up.pt>
+maintainer: Pedro Vasconcelos <pbv@ncc.up.pt>
+
+license:      BSD3
+license-file: LICENSE
+
+build-type:    Simple
+cabal-version: >= 1.6
+
+extra-source-files:
+  README INSTALL RELEASE-NOTES 
+
+executable tableaux.cgi
+  hs-source-dirs:   src
+  main-is:          Main.hs
+  other-modules:    FOL Unify Tableaux Markup CSS Parser Zipper Examples Util 
+  build-depends:
+    base       >= 4       && < 5,
+    haskell98,
+    containers,
+    mtl >= 1.1,
+    html >= 1.0,
+    parsec >= 2.1  && <3,
+    cgi >= 3001.1,
+    QuickCheck >= 2.1
+

@@ -1,0 +1,38 @@
+name:               citeproc-hs-pandoc-filter
+version:            0.1
+homepage:           http://istitutocolli.org/repos/citeproc-hs-pandoc-filter/
+synopsis:           A Pandoc filter for processing bibliographic references with citeproc-hs
+
+description:        citeproc-hs is a library for rendering
+                    bibliographic reference citations into a variety
+                    of styles using a macro language called Citation
+                    Style Language (CSL). More details on CSL can be
+                    found here:
+                    <http://citationstyles.org/>.
+                    .
+                    citeproc-hs-pandoc-filter is a replacement of
+                    citeproc-pandoc which uses citeproc-hs for
+                    processing citations.
+
+category:           Text
+license:            GPL-2
+license-file:       LICENSE
+author:             Andrea Rossato
+maintainer:         andrea.rossato@unitn.it
+bug-reports:        http://code.google.com/p/citeproc-hs/issues/list
+cabal-version:      >= 1.10
+build-type:         Simple
+
+executable citeproc-hs
+    main-is:          citeproc-hs-pandoc-filter.hs
+    default-extensions:    CPP
+    hs-source-dirs:   src
+    ghc-options:      -funbox-strict-fields -Wall
+    ghc-prof-options: -prof -auto-all
+
+    build-depends: base >= 4 && < 5, containers, bytestring, utf8-string, mtl,
+                   parsec, filepath, directory, citeproc-hs >= 0.3.10,
+                   pandoc-types >= 1.12.3, aeson, texmath >= 0.6.4,
+                   yaml >= 0.8, pandoc >= 1.12.0.2, tagsoup
+
+    default-language: Haskell98

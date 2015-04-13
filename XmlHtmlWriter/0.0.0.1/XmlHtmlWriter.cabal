@@ -1,0 +1,44 @@
+Name:                XmlHtmlWriter
+Version:             0.0.0.1
+Description:         A way to write XML and HTML with more efficient syntax.
+Synopsis:	     A library for writing XML and HTML
+
+Homepage:            http://github.com/mmirman/haskogeneous/tree/XmlHtmlWriter
+
+License:             BSD3
+
+License-file:        LICENSE
+
+Author:              Matthew Mirman
+
+Maintainer:          Matthew Mirman <mmirman@andrew.cmu.edu>
+
+Category:            Language
+
+Build-type:          Simple
+
+Cabal-version:       >=1.6
+
+Source-repository head
+  Type:     git
+  Location: git@github.com:mmirman/haskogeneous.git
+
+Library
+  
+  Build-depends:       base >= 4.0 && < 5.0, 
+                       mtl >= 2.0 && < 3.0, 
+                       transformers >= 0.2 && <= 1.0
+                       
+  Exposed-modules:    Language.XmlHtml.XmlWriter, 
+                      Language.XmlHtml.HtmlTags
+  
+  Extensions:  FlexibleInstances, 
+               NoMonomorphismRestriction, 
+               GeneralizedNewtypeDeriving, 
+               FlexibleContexts, 
+               EmptyDataDecls,
+               MultiParamTypeClasses,
+               FunctionalDependencies,
+               GADTs
+
+    

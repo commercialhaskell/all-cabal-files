@@ -1,0 +1,59 @@
+name:                sdf2p1-parser
+version:             0.1.1
+synopsis:            A parser for SDF version 2.1 using Parsec
+description:         This is a simple parser for the SDF version 2.1 using Parsec.
+                     Refer to http://www.eda.org/sdf for more information on this file format.
+license:             MIT
+license-file:        LICENSE
+bug-reports:         mailto:kojung@gmail.com
+homepage:            https://github.com/kojung/sdf2p1-parser
+author:              Jung Ko
+maintainer:          kojung@gmail.com
+copyright:           Copyright (c) 2015 Jung Ko 
+category:            Text
+build-type:          Simple
+cabal-version:       >=1.8
+Stability:           Experimental
+Category:            Text
+Build-type:          Simple
+Extra-source-files:  tests/sdf/sample.sdf
+
+source-repository head
+  type: git
+  location: https://github.com/kojung/sdf2p1-parser
+
+library
+  hs-source-dirs:    src
+  exposed-modules:   Text.SDF.V2p1.Parser.SDFTypes,
+                     Text.SDF.V2p1.Parser.SDFParser,
+                     Text.SDF.V2p1.Parser.SDFQuery
+  build-depends:     base >= 4.0 && < 5.0,
+                     parsec >= 3,
+                     transformers >= 0.2,
+                     bytestring >= 0.9
+                    
+Test-Suite SDFParserTests
+  hs-source-dirs:    tests
+  type:              exitcode-stdio-1.0
+  main-is:           SDFParserTests.hs
+  build-depends:     base >= 4.0 && < 5.0,
+                     sdf2p1-parser,
+                     HUnit > 1.2,
+                     transformers >= 0.2,
+                     test-framework-hunit >= 0.2,
+                     test-framework >= 0.6,
+                     parsec >= 3,
+                     bytestring >= 0.9,
+                     Cabal
+
+Test-Suite SDFQueryTests
+  hs-source-dirs:     tests
+  type:               exitcode-stdio-1.0
+  main-is:            SDFQueryTests.hs
+  build-depends:      base >= 4.0 && < 5.0,
+                      sdf2p1-parser,
+                      HUnit > 1.2,
+                      test-framework-hunit >= 0.2,
+                      test-framework >= 0.6,
+                      bytestring >= 0.9,
+                      Cabal

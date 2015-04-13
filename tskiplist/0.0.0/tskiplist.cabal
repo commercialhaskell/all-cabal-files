@@ -1,0 +1,48 @@
+Name:           tskiplist
+Synopsis:       A Skip List Implementation in STM
+Description:
+    This package provides an implementation of a skip list in STM.
+    A skip list is a probabilistic data structure with map-like operations. In
+    contrast to a balanced tree, a skip list does not need any (expensive)
+    rebalancing operation, which makes it particularly suitable for concurrent
+    programming. See: William Pugh. Skip Lists: A Probabilistic Alternative to
+    Balanced Trees. 1990. 
+    .  
+    Feedback appreciated!
+Author:         Peter Robinson 2010
+Maintainer:     Peter Robinson <thaldyron@gmail.com>
+License:        LGPL
+License-file:   LICENSE
+Version:        0.0.0
+Category:       Data, Concurrency
+Stability:      experimental
+Homepage:       http://darcs.monoid.at/tskiplist
+
+build-type:     Simple                        
+cabal-version: >= 1.2.3
+library
+    ghc-options:        -Wall -fno-ignore-asserts -fwarn-incomplete-patterns
+
+    exposed-modules:    Control.Concurrent.STM.TSkipList
+
+--    other-modules:      test.hs
+
+    build-depends:      base >= 4 && < 5, 
+                        stm >= 2.1.1.0 && < 2.2, 
+                        random >= 1.0.0.1 && < 1.1,
+                        array >= 0.2 && < 0.4,
+                        containers >= 0.2 && < 0.5
+
+--    extensions:         MultiParamTypeClasses
+--                        FunctionalDependencies, 
+--                        FlexibleContexts,
+--                        FlexibleInstances,
+--                        UndecidableInstances,
+--                        DeriveDataTypeable,
+--                        ExistentialQuantification,
+--                        TypeSynonymInstances,
+--                        BangPatterns,
+--                        ScopedTypeVariables,
+--                        TypeSynonymInstances
+                      
+

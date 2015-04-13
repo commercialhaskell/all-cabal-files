@@ -1,0 +1,33 @@
+Name:          varan
+Version:       0.5.1
+License:       GPL
+Cabal-Version: >= 1.6
+Build-Type:    Simple
+Category:      Bioinformatics
+Author:        Ketil Malde
+Maintainer:    Ketil Malde <ketil@malde.org>
+Synopsis:      Process mpileup output to identify significant differences
+Description:   Post-processing output from `samtools mpileup` to extract various information, 
+	       including statistics (per-position or global), consensus sequence (in various
+	       formats), and textual visualizations.
+
+Executable varan
+    Hs-Source-Dirs:  src
+    Main-Is:         Varan.hs
+    Other-Modules:   AgrestiCoull, MPileup, RandomSelect, Variants, Metrics, Options, ParMap, Process, Count, ESIV
+    Build-Depends:   base >= 4 && < 5, random, mtl, parallel, statistics, cmdargs, bytestring
+    Ghc-Options:     -rtsopts -Wall -threaded
+
+Executable vextr
+    Hs-Source-Dirs:  src
+    Main-Is:         VExtr.hs
+    Other-Modules:   MPileup, Count
+    Build-Depends:   base >= 4 && < 5, bytestring, cmdargs
+    Ghc-Options:     -rtsopts -Wall -threaded -main-is VExtr
+
+Executable sparks
+    Hs-Source-Dirs:  src
+    Main-Is:         Sparks.hs
+    Other-Modules:   MPileup, Count
+    Build-Depends:   base >= 4 && < 5, bytestring, cmdargs, ansi-terminal
+    Ghc-Options:     -rtsopts -Wall -threaded

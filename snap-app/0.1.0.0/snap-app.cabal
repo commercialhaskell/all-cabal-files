@@ -1,0 +1,26 @@
+name:                snap-app
+version:             0.1.0.0
+synopsis:            Simple modules for writing apps with Snap, abstracted from hpaste.
+homepage:            Simple modules for writing apps with Snap, abstracted from hpaste.
+license:             BSD3
+license-file:        LICENSE
+author:              Chris Done
+maintainer:          chrisdone@gmail.com
+category:            Web
+build-type:          Simple
+cabal-version:       >=1.8
+
+library
+  hs-source-dirs:    src
+  exposed-modules:   Snap.App, Snap.App.Types, Snap.App.Controller, Snap.App.Model
+  build-depends:     base >= 4 && <5,
+                     snap-core,
+                     network,
+                     pgsql-simple >= 0.1.1,
+                     mtl,
+                     blaze-html == 0.4.3.4,
+                     safe,
+                     text,
+                     utf8-string,
+                     bytestring,
+                     MonadCatchIO-transformers

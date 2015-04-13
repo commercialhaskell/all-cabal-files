@@ -1,0 +1,36 @@
+Name:          usb-id-database
+Version:       0.1
+Cabal-Version: >=1.6
+Build-Type:    Simple
+Stability:     provisional
+Author:        Roel van Dijk
+Maintainer:    vandijk.roel@gmail.com
+Copyright:     (c) 2009 Roel van Dijk
+License:       BSD3
+License-File:  LICENSE
+Data-Files:    usb_vendor_list.txt
+Category:      System
+Synopsis:      A database of USB identifiers
+Description:
+  Functions to find the names associated with numerical vendor
+  identifiers.
+
+Extra-Source-Files: example.hs
+
+Library
+  Build-Depends: base >= 3 && < 4.2
+               , bimap >= 0.2 && < 0.3
+               , bytestring >= 0.9 && < 1.0
+               , download >= 0.3 && < 0.4
+  Extensions: CPP
+  GHC-Options: -Wall
+  CPP-Options: -DBUILD_WITH_CABAL
+  Exposed-Modules: System.USB.IDDB
+  Other-Modules: Paths_usb_id_database
+
+-- Uncomment to build a small example program
+-- Executable example
+--   Extensions: CPP
+--   GHC-Options: -Wall
+--   CPP-Options: -DBUILD_WITH_CABAL
+--   Main-Is: example.hs

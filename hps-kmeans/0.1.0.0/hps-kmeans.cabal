@@ -1,0 +1,26 @@
+name:                hps-kmeans
+version:             0.1.0.0
+stability:	     Experimental
+
+synopsis:            A nice implementation of the k-Means algorithm.
+
+description:	     An implementation of the k-Means algorithm in Haskell that aims to be simple, readable, extendable and efficient enough to be used as a building block. More finger-typed documentation can be found in <http://stathacking.com/hps-kmeans>
+homepage:            http://stathacking.com/hps-kmeans
+
+license:             GPL-3
+license-file:        LICENSE
+author:              Rodrigo Gadea
+maintainer:          rodrigo.gadea@gmail.com
+copyright:           2012 Rodrigo Gadea
+
+category:            Math, Statistics, Algorithms, Data Mining, Clustering, Pattern Recognition
+
+build-type:          Simple
+cabal-version:       >=1.8
+
+extra-source-files:
+        doc/examples/*.hs
+
+library
+  exposed-modules:     Math.Statistics.KMeans
+  build-depends:       base ==4.5.*, vector ==0.9.*

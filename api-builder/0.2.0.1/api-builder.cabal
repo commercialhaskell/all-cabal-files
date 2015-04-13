@@ -1,0 +1,36 @@
+name: api-builder
+version: 0.2.0.1
+synopsis: Library for easily building REST API wrappers in Haskell
+license: BSD3
+author: Fraser Murray
+maintainer: fraser.m.murray@gmail.com
+copyright: (c) Fraser Murray 2014
+category: Network
+build-type: Simple
+cabal-version: >= 1.10
+
+library
+  exposed-modules:
+    Network.API.Builder
+    Network.API.Builder.API
+    Network.API.Builder.Builder
+    Network.API.Builder.Decoding
+    Network.API.Builder.Error
+    Network.API.Builder.Examples.StackOverflow
+    Network.API.Builder.Query
+    Network.API.Builder.Routes
+  build-depends:
+    base >= 4.6 && < 4.8,
+    aeson == 0.7.*,
+    attoparsec == 0.11.*,
+    bytestring == 0.10.*,
+    either == 4.*,
+    HTTP == 4000.*,
+    http-types == 0.8.*,
+    http-conduit == 2.*,
+    text == 1.*,
+    transformers == 0.3.*
+  hs-source-dirs: src/
+  default-language: Haskell2010
+  default-extensions: OverloadedStrings
+  ghc-options: -Wall

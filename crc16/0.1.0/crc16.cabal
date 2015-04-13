@@ -1,0 +1,20 @@
+name:           crc16 
+version:        0.1.0
+cabal-version:  >= 1.2
+build-Type:     Custom
+license:        BSD3
+license-file:	LICENSE
+copyright:      (c) 2009 Joris Putcuyps
+author:         Joris Putcuyps
+maintainer:     Joris.Putcuyps@gmail.com
+bug-reports:    mailto:Joris.Putcuyps@gmail.com
+synopsis:       Calculate the crc16-ccitt.
+description:    This module provides a method to calculate the crc16-ccitt using the slow bit shift way.
+category:       Cryptography
+extra-source-files: Tests.hs
+
+Library
+    Build-Depends:    base, bytestring, HUnit
+    Exposed-modules:  Data.Digest.CRC16
+    ghc-options:      -Wall
+

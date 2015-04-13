@@ -1,0 +1,20 @@
+Name:		tuple
+Version:	0.1.0.0
+License:	BSD3
+Author:		Lennart Augustsson
+Maintainer:	Lennart Augustsson
+Category:	Data
+Synopsis:	Various functions on tuples
+Stability:      experimental
+Build-type:	Simple
+Description:	Various useful functions on tuples, overloaded on tuple size.
+Hs-Source-Dirs: src
+Build-Depends:	base, OneTuple
+Exposed-modules:
+	Data.Tuple.All
+	Data.Tuple.Curry
+	Data.Tuple.Select
+	Data.Tuple.Sequence
+Extra-source-files:
+	Makefile
+	Tools/MkTuple.hs

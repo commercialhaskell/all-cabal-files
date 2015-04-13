@@ -1,0 +1,54 @@
+name:           math-functions
+version:        0.1.0.0
+cabal-version:  >= 1.8
+license:        BSD3
+license-file:   LICENSE
+author:         Bryan O'Sullivan <bos@serpentine.com>,
+                Aleksey Khudyakov <alexey.skladnoy@gmail.com>
+maintainer:     Bryan O'Sullivan <bos@serpentine.com>
+homepage:       https://github.com/bos/math-functions
+category:       Math, Numeric
+build-type:     Simple
+synopsis:       Special functions and Chebyshev polynomials
+description:
+  This library provides implementations of special mathematical
+  functions and Chebyshev polynomials.  These functions are often
+  useful in statistical and numerical computing.
+extra-source-files:
+  README.markdown
+  tests/Tests/SpecFunctions/gen.py
+
+library
+  build-depends:        base >=3 && <5,
+                        vector >= 0.7,
+                        erf >= 2
+  exposed-modules:      
+    Numeric.SpecFunctions
+    Numeric.Polynomial.Chebyshev
+
+test-suite tests
+  type:           exitcode-stdio-1.0
+  hs-source-dirs: tests
+  main-is:        tests.hs
+  other-modules:
+    Tests.Chebyshev
+    Tests.SpecFunctions
+    Tests.SpecFunctions.Tables
+  build-depends:
+    math-functions,
+    base >=3 && <5,
+    vector >= 0.7,
+    ieee754 >= 0.7.3,
+    HUnit      >= 1.2,
+    QuickCheck >= 2.4,
+    test-framework,
+    test-framework-hunit,
+    test-framework-quickcheck2
+
+source-repository head
+  type:     git
+  location: https://github.com/bos/math-functions
+
+source-repository head
+  type:     mercurial
+  location: https://bitbucket.org/bos/math-functions

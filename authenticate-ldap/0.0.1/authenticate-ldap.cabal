@@ -1,0 +1,26 @@
+name:            authenticate-ldap
+version:         0.0.1 
+license:         BSD3
+license-file:    LICENSE
+author:          Michael Litchard 
+maintainer:      Michael Litchard 
+synopsis:        LDAP authentication for Haskell web applications.
+description:     LDAP authentication for Haskell web applications. 
+category:        Web
+stability:       Experimental 
+cabal-version:   >= 1.6
+build-type:      Simple
+homepage:        http://github.com:mlitchard/authenticate-ldap
+
+
+library
+    build-depends:   base                          >= 4        && < 5
+                   , text
+                   , LDAP                          == 0.6.6
+    exposed-modules: Web.Authenticate.LDAP
+    ghc-options:     -Wall
+
+
+source-repository head
+  type:     git
+  location: git://github.com:mlitchard/authenticate-ldap/authenticate-ldap.git

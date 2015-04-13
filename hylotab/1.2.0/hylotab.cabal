@@ -1,0 +1,39 @@
+Name:                hylotab
+Version:             1.2.0
+Homepage:            http://www.glyc.dc.uba.ar/intohylo/hylotab.php
+Synopsis:            Tableau based theorem prover for hybrid logics
+Description:         HyLoTab is a proof-of-concept tableaux prover for
+                     hybrid logics originally written in 2002 by Jan van Eijck.
+                     It is no longer developped, but we made it compatible
+                     with the syntax used in HyLoLib to easen comparison
+                     with other provers.
+License:             GPL
+License-file:        LICENSE
+Author:              Jan van Eijck, Guillaume Hoffmann
+Maintainer:          guillaumh@gmail.com
+Category:            Theorem Provers
+Cabal-version:       >= 1.6.0
+Build-type:          Simple
+
+data-files: NF.tex
+            hylotab.bib
+            cthl.tex
+            examples/*.sh
+            examples/sat/*.frm
+            examples/unsat/*.frm
+
+Flag static
+  Description: Build a static binary
+  Default:     False
+
+Executable          hylotab
+  Main-is:             Main.hs
+  Other-modules:       Form Hylotab
+  Build-Depends:       base >= 4, base < 5,
+                       mtl >= 1, mtl < 2,
+                       hylolib >= 1.3, hylolib < 1.4
+  hs-source-dirs:      src
+  ghc-options:          -Wall
+  ghc-prof-options:    -auto-all
+  if flag(static)
+    ghc-options: -static -optl-static -optl-pthread

@@ -1,0 +1,62 @@
+Name:                peggy
+Version:             0.3.1.1
+Synopsis:            The Parser Generator for Haskell
+
+Description:
+
+  The Parser Generator for Haskell
+  <http://tanakh.github.com/Peggy>
+
+
+Homepage:            http://tanakh.github.com/Peggy
+License:             BSD3
+License-file:        LICENSE
+Author:              Hideyuki Tanaka
+Maintainer:          Hideyuki Tanaka <tanaka.hideyuki@gmail.com>
+Copyright:           Copyright (c)2011, Hideyuki Tanaka
+Category:            Language
+Build-type:          Simple
+Cabal-version:       >=1.8
+
+Extra-source-files:  README.md
+                     bootstrap/README.md
+                     bootstrap/Stage1.hs
+                     bootstrap/Stage2.hs
+                     bootstrap/Bootstrap.hs
+                     bootstrap/peggy.peggy
+
+flag build-example
+  default:           False
+
+Source-repository head
+  Type:              git
+  Location:          git://github.com/tanakh/Peggy.git
+
+Library
+  Exposed-modules:     Text.Peggy
+                     , Text.Peggy.CodeGen.TH
+                     , Text.Peggy.LeftRec
+                     , Text.Peggy.Normalize
+                     , Text.Peggy.Parser
+                     , Text.Peggy.Prim
+                     , Text.Peggy.Quote
+                     , Text.Peggy.SrcLoc
+                     , Text.Peggy.Syntax
+  
+  Build-depends:       base             == 4.*
+                     , mtl              >= 2.0
+                     , ListLike         == 3.1.*
+                     , hashtables       == 1.0.*
+                     , monad-control    == 0.3.*
+                     , template-haskell >= 2.5 && < 2.8
+                     , haskell-src-meta == 0.5.*
+  
+Executable peggy-example
+  Hs-source-dirs:      example
+  Main-is:             Main.hs
+
+  Build-depends:       base  == 4.*
+                     , peggy
+
+  if !flag(build-example)
+    Buildable:         False

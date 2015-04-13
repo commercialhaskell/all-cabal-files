@@ -1,0 +1,34 @@
+Name: transformers-base
+Version: 0.1
+Category: Control
+Stability: experimental
+Synopsis: Lift computations from the bottom of a transformer stack
+Description:
+  This package provides a straightforward port of @monadLib@'s BaseM
+  typeclass to @transformers@.
+
+Homepage: https://github.com/mvv/transformers-base
+Bug-Reports: https://github.com/mvv/transformers-base/issues
+
+Author: Mikhail Vorozhtsov <mikhail.vorozhtsov@gmail.com>
+Maintainer: Mikhail Vorozhtsov <mikhail.vorozhtsov@gmail.com>
+Copyright: 2011 Mikhail Vorozhtsov <mikhail.vorozhtsov@gmail.com>
+License: BSD3
+License-File: LICENSE
+
+Cabal-Version: >= 1.6.0
+Build-Type: Simple
+
+Source-Repository head
+  Type: git
+  Location: https://github.com/mvv/transformers-base.git
+
+Library
+  Build-Depends:
+    base         >= 4.4 && < 5,
+    transformers >= 0.2
+  Hs-Source-Dirs: src
+  GHC-Options: -Wall
+  Exposed-Modules:
+    Control.Monad.Base
+

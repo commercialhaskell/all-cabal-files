@@ -1,0 +1,29 @@
+name: HaMinitel
+version: 0.1.0.0
+synopsis: An Haskell library to drive the french Minitel through a serial port
+-- description:
+description:
+    HaMinitel allows you to drive a french Minitel through a serial port in Haskell. It has been started as a mean to discover Haskell and functional programming.
+homepage: https://github.com/Zigazou/HaMinitel
+license: GPL-3
+license-file: LICENSE
+author: Frédéric BISSON
+maintainer: zigazou@free.fr
+-- copyright:
+category: Terminal
+build-type: Simple
+cabal-version: >=1.8
+
+source-repository head
+    type: git
+    location: https://github.com/Zigazou/HaMinitel
+
+library
+    exposed-modules:
+        Minitel.MString
+        Minitel.Constants
+        Minitel.Generator
+        Minitel.Queue
+        Minitel.Minitel
+    build-depends: base ==4.5.*, bytestring ==0.9.*, serialport ==0.4.*, stm ==2.4.*
+    ghc-options: -fwarn-incomplete-patterns -fwarn-incomplete-uni-patterns

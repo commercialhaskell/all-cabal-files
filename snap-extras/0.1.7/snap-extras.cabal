@@ -1,0 +1,56 @@
+Name:                snap-extras
+Version:             0.1.7
+Synopsis:            A collection of useful helpers and utilities for Snap web applications.
+Description: This package contains a collection of helper functions
+             that come in handy in most practical, real-world
+             applications. Check individual modules to understand
+             what's here. You can simply import Snap.Extras and use
+             the initializer in there to get them all at once.
+License:             BSD3
+License-file:        LICENSE
+Author:              Ozgun Ataman
+Maintainer:          ozataman@gmail.com
+Category:            Web, Snap
+Build-type:          Simple
+Cabal-version:       >= 1.6
+
+
+data-files:
+  resources/templates/*.tpl
+
+Library
+  -- Modules exported by the library.
+  Exposed-modules:     
+    Snap.Extras
+    Snap.Extras.CoreUtils
+    Snap.Extras.TextUtils
+    Snap.Extras.JSON
+    Snap.Extras.FlashNotice
+    Snap.Extras.SpliceUtils
+    Snap.Extras.FormUtils
+    Snap.Extras.Tabs
+  other-modules:
+    Paths_snap_extras
+
+  hs-source-dirs: src
+  Build-depends:
+      base >= 4 && < 5
+    , containers
+    , filepath
+    , aeson >= 0.6
+    , snap-core >= 0.7
+    , snap >= 0.7
+    , heist >= 0.7
+    , xmlhtml >= 0.1.6
+    , bytestring
+    , text
+    , safe
+    , data-lens >= 2.0
+    , transformers
+    , blaze-html
+    , digestive-functors >= 0.3
+    , digestive-functors-blaze >= 0.3
+    , digestive-functors-snap >= 0.3
+  
+  -- Other-modules:       
+  

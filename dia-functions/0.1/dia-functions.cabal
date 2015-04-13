@@ -1,0 +1,36 @@
+name:                dia-functions
+version:             0.1
+category:            Graphics, Education
+synopsis:            An EDSL for teaching Haskell with diagrams - functions
+description:
+    This package contains diagram manipulating functions
+    and an SVG backend.
+    .
+    For exaples see <http://pnyf.inf.elte.hu/fp/Diagrams_en.xml>
+stability:           alpha
+license:             BSD3
+license-file:        LICENSE
+author:              Péter Diviánszky
+maintainer:          divip@aszt.inf.elte.hu
+cabal-version:       >=1.2
+build-type:          Simple
+
+library
+  GHC-Options: -Wall -fwarn-tabs -fno-warn-unused-matches -fno-warn-name-shadowing 
+
+  Exposed-Modules:
+    Graphics.Diagrams.Colors,
+    Graphics.Diagrams.Escape,
+    Graphics.Diagrams.FunctionGraphs,
+    Graphics.Diagrams.SVG
+
+  Build-Depends:
+    data-pprint >= 0.2 && < 0.3,
+    dia-base >= 0.1 && < 0.2,
+    base >= 4.0 && < 4.4,
+    containers >= 0.4 && < 0.5,
+    xhtml >= 3000.2 && < 3000.3,
+    mtl >= 2.0 && < 2.1,
+    deepseq >= 1.1 && < 1.2
+
+

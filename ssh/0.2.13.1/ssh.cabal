@@ -1,0 +1,62 @@
+name:                ssh
+version:             0.2.13.1
+synopsis:            A pure-Haskell SSH server library.
+description:
+    This a library for implementing your own servers that handle SSH
+    requests and authorization, etc. Similar to Python's Twisted Conch
+    library. It's used eg by darcsden to provide basic SSH access.
+
+    This package receives only basic maintenance; if you'd like to
+    take it over, please contact the current maintainer.
+
+homepage:            http://hub.darcs.net/simon/ssh
+license:             BSD3
+license-file:        LICENSE
+author:              Alex Suraci <suraci.alex@gmail.com>
+maintainer:          Simon Michael <simon@joyful.com>
+category:            Network
+build-type:          Simple
+cabal-version:       >= 1.6
+stability:           Unstable
+tested-with:         GHC==7.8.2
+data-files:          CHANGES,
+                     README
+
+source-repository   head
+    type:           darcs
+    location:       http://hub.darcs.net/simon/ssh
+
+library
+  hs-source-dirs:   src
+  ghc-options:   -Wall -fno-warn-unused-do-bind
+
+  exposed-modules:  SSH,
+                    SSH.Channel,
+                    SSH.Crypto,
+                    SSH.NetReader,
+                    SSH.Packet,
+                    SSH.Sender,
+                    SSH.Session
+
+  other-modules:    SSH.Debug,
+                    SSH.Util
+
+  build-depends:    asn1-data >= 0.7.1,
+                    base >= 4 && < 5,
+                    base64-string,
+                    binary,
+                    bytestring,
+                    cereal,
+                    containers,
+                    crypto-api,
+                    crypto-pubkey-types >= 0.2,
+                    cryptohash-cryptoapi,
+                    HsOpenSSL >= 0.8,
+                    network,
+                    process,
+                    RSA >= 1.2 && < 1.3,
+                    random,
+                    SHA,
+                    SimpleAES,
+                    split,
+                    transformers

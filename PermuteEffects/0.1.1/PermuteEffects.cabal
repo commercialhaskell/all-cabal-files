@@ -1,0 +1,22 @@
+Name:                PermuteEffects
+Version:             0.1.1
+Synopsis:            Permutations of effectful computations
+-- Description:         
+Category:            Control
+
+License:             BSD3
+License-file:        LICENSE
+
+Author:              Martijn van Steenbergen
+Maintainer:          martijn@van.steenbergen.nl
+Homepage:            https://github.com/MedeaMelana/PermuteEffects
+-- Copyright:           
+
+
+Build-type:          Simple
+Extra-source-files:  ParsecEx.hs
+Cabal-version:       >= 1.2
+
+Library
+  Exposed-modules:     Control.Applicative.Permute
+  Build-depends:       base >= 4.0 && < 4.4

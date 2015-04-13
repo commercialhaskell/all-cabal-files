@@ -1,0 +1,21 @@
+name:            hack-middleware-cleanpath
+version:         0.0.0
+license:         BSD3
+license-file:    LICENSE
+author:          Michael Snoyman <michael@snoyman.com>
+maintainer:      Michael Snoyman <michael@snoyman.com>
+synopsis:        Applies some basic redirect rules to get cleaner paths.
+description:     Forces request to have a trailing slash (unless there is a
+                 file extension) and ensures there are no doubled slashes.
+                 Takes the idea from Django.
+category:        Web
+stability:       unstable
+cabal-version:   >= 1.2
+build-type:      Simple
+homepage:        http://github.com/snoyberg/hack-middleware-cleanpath/tree/master
+
+library
+    build-depends:   base >= 3, split >= 0.1.1, web-encodings,
+                     bytestring >= 0.9.1.4, hack >= 2009.5.19
+    exposed-modules: Hack.Middleware.CleanPath
+    ghc-options:     -Wall

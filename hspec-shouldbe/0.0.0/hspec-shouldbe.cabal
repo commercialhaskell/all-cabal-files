@@ -1,0 +1,26 @@
+name:             hspec-shouldbe
+version:          0.0.0
+synopsis:         Convenience wrapper and utilities for hspec
+license:          MIT
+license-file:     LICENSE
+copyright:        (c) 2011, 2012 Simon Hengel
+author:           Simon Hengel <sol@typeful.net>
+maintainer:       Simon Hengel <sol@typeful.net>
+build-type:       Simple
+category:         Testing
+cabal-version:    >= 1.6
+
+source-repository head
+  type: git
+  location: https://github.com/sol/hspec-shouldbe
+
+library
+  ghc-options:
+      -Wall
+  hs-source-dirs:
+      src
+  build-depends:
+      hspec
+    , test-shouldbe
+  exposed-modules:
+      Test.Hspec.ShouldBe

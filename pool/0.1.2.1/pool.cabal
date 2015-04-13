@@ -1,0 +1,25 @@
+name:            pool
+version:         0.1.2.1
+x-revision: 1
+license:         BSD3
+license-file:    LICENSE
+author:          Michael Snoyman <michael@snoyman.com>
+maintainer:      Michael Snoyman <michael@snoyman.com>
+synopsis:        Thread-safe resource pools. (deprecated)
+description:     This package is deprecated. Users are recommended to switch over to resource-pool and/or pool-conduit. Note: pool-conduit is built on top of resource-pool.
+category:        Data, Database, Yesod
+stability:       Stable
+cabal-version:   >= 1.6
+build-type:      Simple
+homepage:        http://www.yesodweb.com/book/persistent
+
+library
+    build-depends:   base                     >= 4         && < 4.7
+                   , transformers             >= 0.2.1     && < 0.3
+                   , monad-control            >= 0.2       && < 0.4
+    exposed-modules: Data.Pool
+    ghc-options:     -Wall
+
+source-repository head
+  type:     git
+  location: git://github.com/yesodweb/persistent.git

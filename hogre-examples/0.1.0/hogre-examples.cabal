@@ -1,0 +1,54 @@
+Name:           hogre-examples
+Version:        0.1.0
+Cabal-Version:  >= 1.6
+License:        MIT
+License-File:   LICENSE
+Author:         Antti Salonen<ajsalonen at gmail dot com>
+Maintainer:     Antti Salonen<ajsalonen at gmail dot com>
+Copyright:      Antti Salonen 2010
+Stability:      Unstable
+Homepage:       http://github.com/anttisalonen/hogre-examples
+Category:       Graphics
+Synopsis:       Examples for using Hogre.
+Description:    Examples for using Hogre, Haskell bindings to OGRE
+                (Object-Oriented Graphics Rendering Engine)
+                (<http://www.ogre3d.org/>).
+Build-type:     Simple
+
+data-files:     Media/Example_Basic.cg
+                Media/Examples.material
+                Media/Grass.cg
+                Media/GreenSkin.jpg
+                Media/hdr.cg
+                Media/knot.mesh
+                Media/MtlPlat2.jpg
+                Media/ogrehead.mesh
+                Media/Ogre.material
+                Media/r2skin.jpg
+                Media/robot.mesh
+                Media/robot.skeleton
+                Media/spheremap.png
+                Media/tusk.jpg
+                plugins.cfg
+                README
+
+extra-source-files: src/Common.hs
+
+source-repository head
+  type:      git
+  location:  git://github.com/anttisalonen/hogre-examples.git
+
+Executable example_01
+  Build-Depends:   base >= 3 && < 5, haskell98, hogre>=0.1.0
+  Main-is:         Example_01.hs
+  Hs-Source-Dirs:  src
+  Ghc-options:     -Wall
+  extra-libraries: OgreMain
+
+Executable example_02
+  Build-Depends:   base >= 3 && < 5, haskell98, hogre>=0.1.0
+  Main-is:         Example_02.hs
+  Hs-Source-Dirs:  src
+  Ghc-options:     -Wall
+  extra-libraries: OgreMain
+

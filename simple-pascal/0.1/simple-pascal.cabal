@@ -1,0 +1,36 @@
+Name:           simple-pascal
+Version:        0.1
+Cabal-Version:  >= 1.6
+License:        BSD3
+License-File:   LICENSE
+Author:         Ilya V. Portnov
+Maintainer:     portnov84@rambler.ru
+Synopsis:       Simplified Pascal language to SSVM compiler
+Category:       Languages, Compilers/Interpreters
+Build-Type:     Simple
+Description:    This package provides a compiler for simplified variant of Pascal language.
+                That language includes conditional statements, for loops, procedures and
+                functions. But it does not support complex data types (only integer, string
+                and boolean are supported currently).
+                This compiler outputs bytecode which may be run by SSVM (see simple-stacked-vm
+                package).
+
+Extra-source-files: hello.pas Makefile
+
+library
+  Exposed-Modules: Language.Pascal.Types
+                   Language.Pascal.Parser
+                   Language.Pascal.TypeCheck
+                   Language.Pascal.CodeGen
+                   Language.Pascal.Builtin
+
+  Build-Depends:  base >= 3 && <= 5, containers,
+                  mtl > 1, filepath, parsec >= 3,
+                  simple-stacked-vm
+
+  ghc-options: -fwarn-unused-imports
+
+executable spc
+  Main-is: spc.hs
+
+

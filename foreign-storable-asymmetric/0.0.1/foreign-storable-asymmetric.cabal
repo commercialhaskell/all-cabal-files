@@ -1,0 +1,20 @@
+Name: foreign-storable-asymmetric
+Synopsis: Types and instances for implementing a Storable with different peek and poke
+Description: Utilities useful for working with unioned data structures, where you want to use a different peek and poke. This is particularly useful for use with the ioctl package if you have an ioctl that provides output of a different type to the input.
+License: BSD3
+License-File: LICENSE
+Category: Foreign
+Maintainer: Andrew Miller (andrew.miller@lanthaps.com)
+Cabal-Version: >= 1.6
+Build-Type: Simple
+
+Version: 0.0.1
+Library
+  Build-tools: hsc2hs
+  HS-Source-Dirs: hssrc
+  Exposed-Modules: Foreign.Storable.Asymmetric
+  Build-depends: base >= 4 && < 5
+
+Source-Repository head
+  type: git
+  location: https://github.com/A1kmm/foreign-asymmetric

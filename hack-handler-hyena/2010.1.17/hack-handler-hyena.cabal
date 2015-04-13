@@ -1,0 +1,22 @@
+Name:                 hack-handler-hyena
+Version:              2010.1.17
+Build-type:           Simple
+Synopsis:             Hyena hack handler
+Description:          Hyena hack handler
+License:              BSD3
+License-file:         LICENSE
+Author:               Wang, Jinjing
+Maintainer:           Wang, Jinjing <nfjinjing@gmail.com>
+Build-Depends:        base
+Cabal-version:        >= 1.2
+category:             Web
+homepage:             http://github.com/nfjinjing/hack/tree/master
+data-files:           readme.md, changelog.md, known-issues.md, Nemesis, src/Test.hs
+
+library
+  ghc-options: -Wall
+  build-depends: base >= 4.0 && < 5, network, bytestring, data-default >= 0.2, hack >= 2009.5.19, hyena >= 0.1, containers
+  hs-source-dirs: src/
+  exposed-modules:  
+                    Hack.Handler.Hyena
+                    

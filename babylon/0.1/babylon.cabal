@@ -1,0 +1,20 @@
+Name:           babylon
+Version:        0.1
+Cabal-Version:  >= 1.2
+License:        GPL
+License-file:	LICENSE
+Author:         Pedro Vasconcelos <pbv@dcc.fc.up.pt>
+Copyright:	(c) 2009 Pedro Vasconcelos
+Synopsis:       An implementation of a simple 2-player board game
+Description:    The board game was originally designed by Bruno Faidutti (www.faidutti.com).
+		In this implementation you play against the computer. 
+Build-Type:     Simple
+Data-files:	images/White.png images/Black.png images/Brown.png images/Green.png README
+Category:	Game
+
+Executable babylon
+  Build-Depends:  base>= 3 && < 4, haskell98, containers, wx >= 0.11, wxcore >= 0.11
+  Main-Is:        Main.hs
+  Other-modules:  Babylon Minimax
+
+

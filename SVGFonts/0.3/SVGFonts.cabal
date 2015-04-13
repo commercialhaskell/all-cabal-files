@@ -1,0 +1,42 @@
+Name:             SVGFonts
+Version:          0.3
+Synopsis:         Fonts from the SVG-Font format
+Description:      Parse SVG-Font files and generate outlines or textures or texture files from text strings.
+                  This library uses algorithms similar to Freetype and therefore needs no binding.
+                  Unfortunately some speed issues (xml, rasterization) and bugs (triangulation,rasterization) make an actual usage problematic, but they will be solved.
+category:         Graphics
+License:          BSD3
+License-file:     LICENSE
+Author:           Tillmann Vogt
+Maintainer:       Tillmann.Vogt@rwth-aachen.de
+Build-Type:       Simple
+Cabal-Version:    >=1.6
+
+data-files: src/Test/*.svg
+
+Library
+    hs-source-dirs: src
+    other-modules: Paths_SVGFonts
+    build-depends:
+        haskell98,
+        base == 4.*,
+        OpenGL,
+        GLUT,
+        xml == 1.3.*,
+        parsec == 2.1.*,
+        array,
+        containers == 0.3.*,
+        SVGPath == 1.0.*,
+        split == 0.1.*,
+        directory == 1.0.*,
+        bytestring == 0.9.1.*,
+        tga,
+        tuple
+    exposed-modules:
+        Graphics.SVGFonts.ReadFont
+        Graphics.SVGFonts.KETTriangulation
+
+Executable Fonts
+    hs-source-dirs: src
+    main-is:        Test/Fonts.hs
+    other-modules:  Test.PointOfView, Graphics.SVGFonts.ReadFont, Paths_SVGFonts

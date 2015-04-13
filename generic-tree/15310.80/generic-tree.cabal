@@ -1,0 +1,18 @@
+Name:generic-tree
+Version:15310.80
+Description:Generic tree type
+License:LGPL
+License-File:license.txt
+Author:Matthew Farkas-Dyck
+Maintainer:strake888@gmail.com
+Category:Data Structures
+Synopsis:Generic Tree data type
+Build-Type:Simple
+Cabal-Version: >= 1.2
+
+Library {
+  Build-Depends: base >= 4 && <= 5
+  Extensions: FlexibleContexts
+  Exposed-Modules: Data.Tree, Data.LTree
+  Other-Modules: Util
+}

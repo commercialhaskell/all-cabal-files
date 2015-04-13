@@ -1,0 +1,21 @@
+Name:           linux-kmod
+Version:        0.1.0.0
+Cabal-Version:  >= 1.8
+Build-Type:     Simple
+License:        LGPL-2.1
+License-File:   LICENSE
+Copyright:      © 2013 Nicola Squartini
+Author:         Nicola Squartini
+Maintainer:     Nicola Squartini <tensor5@gmail.com>
+Bug-Reports:    mailto:tensor5@gmail.com
+Category:       System
+Stability:      experimental
+Synopsis:       Linux kernel modules support
+Description:    Manipulate Linux kernel modules through the @libkmod@ library.
+
+Library
+  Build-Depends:      base == 4.*,
+                      unix == 2.6.*
+  Ghc-Options:        -Wall
+  Exposed-modules:    System.Linux.KMod
+  Pkgconfig-Depends:  libkmod

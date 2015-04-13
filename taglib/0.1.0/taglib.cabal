@@ -1,0 +1,27 @@
+Author:         Brandon Bickford
+Maintainer:     Brandon Bickford <bickfordb@gmail.com>
+Name:           taglib
+Version:        0.1.0
+Cabal-Version:  >= 1.2
+License:        LGPL
+License-File:   LICENSE
+Category:       Sound
+Copyright:      (c) 2008 by Brandon Bickford
+Synopsis:       Haskell binding to TagLib
+Description:
+  This is a Haskell binding to TagLib.  TagLib is a popular library for reading and writing tags (ID3) of media files and getting audio properties from audio files.
+  TagLib homepage: http://developer.kde.org/~wheeler/taglib.html
+
+Build-Type:     Simple
+Extra-Source-Files:
+    README
+    LICENSE
+
+Library 
+  Exposed-Modules: Sound.TagLib
+  Build-Depends: base, bytestring, utf8-string
+  Extensions: ForeignFunctionInterface, CPP
+  Hs-Source-Dirs: src
+  Extra-libraries: tag_c
+  extra-lib-dirs: /usr/local/lib, /opt/local/lib
+

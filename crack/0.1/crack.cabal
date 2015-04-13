@@ -1,0 +1,25 @@
+name:          crack
+version:       0.1
+synopsis:      A haskell binding to cracklib
+description:   A haskell binding to cracklib
+category:      System
+author:        Trevor Elliott
+maintainer:    trevor@geekgateway.com
+copyright:     (c) 2008. Trevor Elliott <trevor@geekgateway.com>
+license:       GPL
+license-file:  COPYING
+cabal-version: >= 1.2.0
+build-type:    Configure
+tested-with:   GHC ==6.8.2
+
+extra-tmp-files:    crack.buildinfo
+extra-source-files: configure,
+                    crack.buildinfo.in
+
+library
+  build-depends:   base
+  exposed-modules: Text.Crack
+                   Text.Crack.Base
+  ghc-options:     -Wall
+  extensions:      ForeignFunctionInterface
+  extra-libraries: crack

@@ -1,0 +1,36 @@
+Name:              hmeap
+Version:           0.14
+Synopsis:          Haskell Meapsoft Parser
+Description:       Parser for the analysis files produced by the
+                   Meapsoft feature extractor.
+License:           GPL
+Category:          Sound
+Copyright:         Rohan Drape and others, 2007-2013
+Author:            Rohan Drape
+Maintainer:        rd@slavepianos.org
+Stability:         Experimental
+Homepage:          http://rd.slavepianos.org/?t=hmeap
+Tested-With:       GHC == 7.6.1
+Build-Type:        Simple
+Cabal-Version:     >= 1.8
+
+Library
+  Build-Depends:   array,
+                   base == 4.*,
+                   bytestring,
+                   bytestring-lexing,
+                   delimited-text >= 0.1.0,
+                   parsec
+  GHC-Options:     -Wall -fwarn-tabs
+  Exposed-modules: Sound.Analysis.Meapsoft
+                   Sound.Analysis.Meapsoft.Measure
+                   Sound.Analysis.Meapsoft.Header
+                   Sound.Analysis.Meapsoft.Data
+
+Source-Repository  head
+  Type:            darcs
+  Location:        http://rd.slavepianos.org/sw/hmeap
+
+-- Local Variables:
+-- truncate-lines:t
+-- End:

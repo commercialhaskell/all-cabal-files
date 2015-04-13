@@ -1,0 +1,73 @@
+name:          Holumbus-Storage
+version:       0.1.0
+license:       OtherLicense
+license-file:  LICENSE
+author:        Uwe Schmidt, Stefan Schmidt
+copyright:     Copyright (c) 2010 Stefan Schmidt, Uwe Schmidt, Sebastian Reese
+maintainer:    Stefan Schmidt <sts@holumbus.org>
+stability:     experimental
+category:      Distributed Computing
+synopsis:      a distributed storage system
+homepage:      http://holumbus.fh-wedel.de
+description:   This package contains a library for building distributed storage systems.
+build-type:    Simple
+cabal-version: >=1.6
+
+extra-source-files:
+    README
+    Makefile
+    Examples/FileSystem/ClientMain.hs
+    Examples/FileSystem/Makefile
+    Examples/FileSystem/ControllerMain.hs
+    Examples/FileSystem/NodeMain.hs
+    Examples/Makefile
+    Examples/StoragePerformance/Makefile
+    Examples/StoragePerformance/NetFile_1.hs
+    Examples/StoragePerformance/NetFile_2.hs
+    Examples/StoragePerformance/ReadFile_1.hs
+    Examples/StoragePerformance/ReadFile_2.hs
+    Examples/Utils/Filehandling/FileHandlingTest.hs
+    Examples/Utils/Filehandling/Makefile
+
+library
+  build-depends:  base >= 4 && < 5
+                , binary     >= 0.4
+                , bytestring >= 0.9
+                , containers >= 0.1
+                , directory  >= 1.0
+                , haskell98  >= 1
+                , hslogger   >= 1.0
+                , hxt        >= 8.2
+                , network    >= 2.1
+                , time       >= 1.1
+                , unix       >= 2.3
+                , Holumbus-Distribution >= 0.0.1 && < 0.2
+                , random     >= 1.0
+
+  hs-source-dirs: 
+                  source
+  exposed-modules:  
+                  Holumbus.FileSystem.UserInterface
+                , Holumbus.FileSystem.FileSystem
+                , Holumbus.FileSystem.Storage
+                , Holumbus.FileSystem.Storage.FileStorage
+                , Holumbus.FileSystem.Messages
+                , Holumbus.FileSystem.Node
+                , Holumbus.FileSystem.Node.NodeData
+                , Holumbus.FileSystem.Node.NodePort
+                , Holumbus.FileSystem.Controller
+                , Holumbus.FileSystem.Controller.ControllerData
+                , Holumbus.FileSystem.Controller.ControllerPort
+  ghc-options: -Wall
+  extensions: Arrows DeriveDataTypeable ExistentialQuantification
+
+executable StorageControllerDaemon
+  main-is: StorageControllerDaemon.hs
+  hs-source-dirs: Programs/StorageControllerDaemon source
+  ghc-options: -Wall -threaded -O2
+
+executable StorageNodeDaemon
+  main-is: StorageNodeDaemon.hs
+  hs-source-dirs: Programs/StorageNodeDaemon source
+  ghc-options: -Wall -threaded -O2
+

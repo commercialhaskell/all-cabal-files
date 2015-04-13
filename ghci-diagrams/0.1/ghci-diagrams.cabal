@@ -1,0 +1,30 @@
+name:                ghci-diagrams
+version:             0.1
+category:            Graphics
+synopsis:            Display simple diagrams from ghci
+description:
+    This library provides a simple 2D graphics environment which is used
+    in our beginner's Haskell course at ELTE University in Budapest.
+    .
+    Example> draw $ circle 3
+stability:           alpha
+license:             BSD3
+license-file:        LICENSE
+author:              Péter Diviánszky
+maintainer:          divip@aszt.inf.elte.hu
+cabal-version:       >=1.2
+build-type:          Simple
+
+library
+--  ghc-options:       -Wall
+  exposed-modules:
+    DrawDiagrams
+  other-modules:
+    Diagrams
+  build-depends:
+    base >= 4.0 && < 4.4,
+    diagrams >= 0.2 && < 0.3,
+    cairo,
+    gtk,
+    colour
+

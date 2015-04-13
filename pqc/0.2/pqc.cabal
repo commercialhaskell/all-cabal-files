@@ -1,0 +1,21 @@
+name:                pqc
+version:             0.2
+description:         Parallel batch driver for QuickCheck
+synopsis:            Parallel batch driver for QuickCheck
+category:            Testing
+license:             BSD3
+license-file:        LICENSE
+Author:              Don Stewart
+Maintainer:          dons@cse.unsw.edu.au
+homepage:            http://code.haskell.org/~dons/code/pqc
+Cabal-Version: >= 1.2
+
+flag split-base
+
+library
+  if flag(split-base)
+    build-depends:     base >= 3, random, QuickCheck < 2
+  else
+    build-depends:     base < 3, QuickCheck < 2
+  exposed-modules: Test.QuickCheck.Parallel
+  ghc-options:    -Wall -O2

@@ -1,0 +1,25 @@
+Name:          mtree
+Version:       0.0
+Cabal-Version: >=1.6
+Synopsis:   Tree with Meta and Content parameters
+Description:
+
+    This Haskell library provides an implementation of
+    a tree data type with meta data in the nodes and
+    contents in the leaves.
+Category:      Data
+License:       PublicDomain
+License-File:  LICENSE
+Author:        Rahul Gopinath
+Maintainer:    gopinath@eecs.oregonstate.edu
+Bug-Reports:   mailto:gopinath@eecs.oregonstate.edu
+Build-Type:    Simple
+Stability:     experimental
+
+Library
+  Build-Depends:    base >= 2 && < 5, bifunctors
+  Exposed-Modules:  Data.Trees.MTree
+
+Source-Repository head
+  type:     darcs
+  location: 

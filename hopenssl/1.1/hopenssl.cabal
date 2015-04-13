@@ -1,0 +1,22 @@
+Name:                   hopenssl
+Version:                1.1
+Author:                 Peter Simons <simons@cryp.to>
+Synopsis:               FFI bindings to OpenSSL's EVP digest interface
+Description:            Foreign-function bindings to the OpenSSL library
+                        <http://www.openssl.org/>. Currently provides
+                        access to the messages digests MD2, MD5, SHA,
+                        SHA1, DSS, DSS1, MDC2, and RIPEMD160 through the
+                        EVP digest interface.
+Category:               Cryptography
+License:                BSD3
+License-file:           LICENSE
+Maintainer:             Peter Simons <simons@cryp.to>
+Homepage:               http://cryp.to/hopenssl/
+Build-Depends:          base, mtl
+Extra-Libraries:        crypto
+Includes:               "openssl/evp.h"
+Extensions:             ForeignFunctionInterface
+Build-Type:             Simple
+Exposed-Modules:        OpenSSL.Digest
+Data-files:             README
+Ghc-Options:            -Wall

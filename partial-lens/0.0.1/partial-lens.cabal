@@ -1,0 +1,25 @@
+name:          partial-lens
+category:      Control, Comonads
+version:       0.0.1
+license:       MIT
+cabal-version: >= 1.6
+license-file:  LICENSE
+author:        Russell O'Connor
+maintainer:    Russell O'Connor <roconnor@theorem.ca>
+stability:     provisional
+synopsis:      Haskell 98 Partial Lenses
+description:   Haskell 98 Partial Lenses
+build-type:    Simple
+
+library
+  build-depends:
+    base >= 4 && < 5,
+    comonad-transformers >= 2.0 && < 2.1,
+    transformers >= 0.2.0 && < 0.3,
+    data-lens >= 2.0 && < 2.1
+
+  exposed-modules:
+    Data.Lens.Partial.Common
+    Data.Lens.Partial.Lazy
+
+  ghc-options:      -Wall

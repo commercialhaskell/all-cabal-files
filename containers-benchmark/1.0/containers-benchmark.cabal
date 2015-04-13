@@ -1,0 +1,68 @@
+Name:                containers-benchmark
+Version:             1.0
+Synopsis:            Extensive benchmark suite for containers package.
+Description:         This package evaluates performance of a containers package
+                     from multiple perspectives.
+                     .
+                     It measures time and memory allocation of methods specialised
+                     to several types. It can also measure the size and memory
+                     allocation of GHC compiled with the containers package.
+                     .
+                     The containers package used can be both system-installed or
+                     any darcs repository.
+Homepage:            http://fox.auryn.cz/darcs/containers-benchmark/
+License:             BSD3
+License-file:        LICENSE
+Author:              Milan Straka
+Maintainer:          fox@ucw.cz
+Stability:           Experimental
+Category:            Benchmarking
+Build-type:          Simple
+Cabal-version:       >=1.2
+Extra-source-files:  README
+                     scripts/benchmark.sh
+                     scripts/cmp.pl
+                     scripts/cmp.sh
+                     scripts/collect.pl
+                     scripts/compile.sh
+                     scripts/custom_containers.sh
+                     scripts/ghc.sh
+                     scripts/run.sh
+                     scripts/see.sh
+                     scripts/system_containers.sh
+                     src/Driver.inc.hs
+                     src/Benchmark/Map-like.inc.hs
+                     src/Benchmark/Set-like.inc.hs
+                     src/Variants/gen.sh
+
+Executable benchmark
+  Main-is:           Main.hs
+  Build-depends:     base >= 3 && < 5,
+                     bytestring >= 0.9 && < 1.0,
+                     containers >= 0.3 && < 0.5,
+                     criterion >= 0.5 && < 0.6,
+                     random >= 1.0 && < 1.1
+  Hs-source-dirs:    src
+  Other-modules:     Container.IntMap
+                     Container.IntSet
+                     Container.Map
+                     Container.Set
+                     InputData.ByteString
+                     InputData.Int
+                     InputData.IntegerBig
+                     InputData.IntegerSmall
+                     InputData.String
+                     Variants.IntMap_Int
+                     Variants.IntSet_Int
+                     Variants.Map_ByteString
+                     Variants.Map_Int
+                     Variants.Map_IntegerBig
+                     Variants.Map_IntegerSmall
+                     Variants.Map_String
+                     Variants.Set_ByteString
+                     Variants.Set_Int
+                     Variants.Set_IntegerBig
+                     Variants.Set_IntegerSmall
+                     Variants.Set_String
+  if impl(ghc >= 7.0)
+    Ghc-Options: -rtsopts

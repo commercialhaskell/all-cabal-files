@@ -1,0 +1,26 @@
+name:                analyze-client
+version:             0.1.0.0
+synopsis:            Client for analyze service
+-- description:
+homepage:            https://github.com/dbp/analyze-client
+license:             BSD3
+license-file:        LICENSE
+author:              Daniel Patterson
+maintainer:          dbp@dbpmail.net
+-- copyright:
+category:            Web
+build-type:          Simple
+cabal-version:       >=1.8
+
+library
+  exposed-modules:
+        Web.Analyze.Client
+  hs-source-dirs: src
+  build-depends:       base == 4.*,
+                       snap == 0.13.*,
+                       snap-core == 0.9.*,
+                       http-conduit == 2.*,
+                       time == 1.4.*,
+                       bytestring >= 0.9.1 && < 0.11,
+                       mtl >= 2 && < 3,
+                       MonadCatchIO-transformers

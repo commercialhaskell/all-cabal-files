@@ -1,0 +1,21 @@
+Cabal-Version:	>= 1.6
+Name:			rezoom
+Version:		0.0.1
+Synopsis:		Github resume generator
+Description:	Generates a resume from your github page.
+License:		GPL
+License-File:	LICENSE
+Author:			Joel Taylor
+Maintainer:		Joel Taylor <barebonesgraphics@gmail.com>
+Build-Type: Simple
+Data-Files:		Rezoom/rezoom.css
+Extra-Source-Files:	README
+Category:		Utils
+
+source-repository head
+    type: git
+    location: git://github.com/incluye/rezoom.git
+
+Executable rezoom
+    Main-is: Main.hs
+    Build-Depends: base == 4.*, json == 0.5.*, xhtml == 3000.*, HTTP == 4000.*, nano-md5 == 0.1.*, bytestring == 0.9.*, datetime == 0.2.*, containers == 0.4.*

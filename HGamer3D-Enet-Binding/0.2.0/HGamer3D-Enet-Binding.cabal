@@ -1,0 +1,35 @@
+Name:                HGamer3D-Enet-Binding
+Version:             0.2.0
+Synopsis:            Windows Game Engine for the Haskell Programmer - Enet Bindings
+Description:         
+   HGamer3D is a game engine for developing 3D games in the programming 
+   language Haskell. The game engine uses available libraries for 3D graphics, 
+   sound, input device handling, gui programming and other areas and make
+   those functions available for the Haskell programmer by providing  
+   a Haskell API on top of that. HGamer3D is available on Windows only.
+   
+
+	
+License:             OtherLicense
+License-file:        LICENSE
+Author:              Peter Althainz
+Maintainer:          althainz@gmail.com
+Build-Type:          Simple
+Cabal-Version:       >=1.4
+Homepage:            http://www.hgamer3d.org
+Category:            Game Engine, Network
+Extra-source-files:  Setup.hs, include/ClassEnet.h, include/ClassEnetClient.h, include/ClassEnetPacket.h, include/ClassEnetServer.h, include/ClassPtr.h, include/EnetDllDefines.h, include/StructHG3DClass.h
+
+Library
+  Build-Depends:     base >= 3 && < 5, HGamer3D-Data >= 0.2.0
+
+  Exposed-modules:   HGamer3D.Bindings.Enet.Utils, HGamer3D.Bindings.Enet.ClassPtr, HGamer3D.Bindings.Enet.StructHG3DClass, HGamer3D.Bindings.Enet.ClassEnet, HGamer3D.Bindings.Enet.ClassEnetClient, HGamer3D.Bindings.Enet.ClassEnetPacket, HGamer3D.Bindings.Enet.ClassEnetServer
+  Other-modules:     
+
+  ghc-options:       
+  cc-options:        -Wno-attributes 
+  hs-source-dirs:    .
+  Include-dirs:      include
+  Build-tools:       
+  build-depends:     
+  extra-libraries:   

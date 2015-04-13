@@ -1,0 +1,19 @@
+Name:                c0parser
+Version:             0.1
+Synopsis:            Simple C0 Parser
+Description:         The package contains a parser for C0 programs.
+	             The C0-language is introduced in the basic programming course \"Algorithmisches Denken und imperative Programmierung\" (WS 2011/12 and later) at the University of Bonn.
+License:             GPL
+Author:              Daniel Seidel
+Maintainer:          ds@iai.uni-bonn.de
+Build-Type:          Simple
+Cabal-Version:       >=1.2
+Category:            Language
+Stability:           Experimental
+
+Library
+  hs-source-dirs:    src
+  Exposed-Modules:   Language.C0.Parser.C0Parser,
+                     Language.C0.Types.C0Types
+  Build-Depends:     base >= 3 && < 6,
+                     parsec >= 3 && <4

@@ -1,0 +1,23 @@
+Name: hsSqlite3
+Version: 0.0.3
+License: LGPL
+Maintainer: Evgeny Jukov <masloed@gmail.com>
+Author: Evgeny Jukov
+Stability: Alpha
+Copyright: Copyright (c) 2007 Evgeny Jukov
+license-file: COPYRIGHT
+Homepage: http://macode.sourceforge.net
+Synopsis: Sqlite3 bindings
+description: Bindings for Sqlite3
+Category: Database
+Hs-Source-Dirs: src
+Exposed-Modules: 
+  Database.Sqlite3,
+  Database.Sqlite3.Low
+Build-Depends: base, utf8-string, mtl, state
+GHC-Options: -O2
+
+Executable: hs_sqlite3_test
+Main-Is: hs_sqlite3_test.hs
+HS-Source-Dirs: src
+extra-libraries: sqlite3

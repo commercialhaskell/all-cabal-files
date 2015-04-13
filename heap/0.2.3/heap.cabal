@@ -1,0 +1,20 @@
+Name:               heap
+Version:            0.2.3
+Stability:          beta
+Category:           Data, Data Structures
+Synopsis:           Heaps in Haskell
+Description:        A flexible Haskell heap implementation
+License:            BSD3
+License-File:       LICENSE
+Copyright:          (c) 2008, Stephan Friedrichs
+Author:             Stephan Friedrichs
+Maintainer:         stephan[dot]friedrichs[at]tu-bs[dot]de
+Build-Type:         Custom
+Cabal-Version:      >=1.2
+Extra-Source-Files: Tests.lhs, Test/Heap.hs
+
+Library
+  Build-Depends:   base
+  Exposed-Modules: Data.Heap
+  ghc-options:     -Wall
+  Extensions:      CPP

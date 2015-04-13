@@ -1,0 +1,32 @@
+Name:              hsc3-sf-hsndfile
+Version:           0.8
+Synopsis:          Haskell SuperCollider SoundFile
+Description:       Provide hsc3-sf interface to Stefan 
+                   Kersten's hsndfile package.
+License:           GPL
+Category:          Sound
+Copyright:         (c) Rohan Drape, 2010
+Author:            Rohan Drape
+Maintainer:        rd@slavepianos.org
+Stability:         Experimental
+Homepage:          http://slavepianos.org/rd/?t=hsc3-sf-hsndfile
+Tested-With:       GHC == 6.10.3
+Build-Type:        Simple
+Cabal-Version:     >= 1.6
+
+Data-files:        README
+                   Help/stat.help.hs
+
+Library
+  Build-Depends:   array,
+                   base == 4.*,
+                   hsc3-sf == 0.8,
+                   hsndfile == 0.4.*,
+                   hsndfile-vector == 0.4.*,
+                   vector >= 0.5
+  GHC-Options:     -Wall -fwarn-tabs
+  Exposed-modules: Sound.File.HSndFile
+
+Source-Repository  head
+  Type:            darcs
+  Location:        http://slavepianos.org/~rd/sw/hsc3-sf-hsndfile/

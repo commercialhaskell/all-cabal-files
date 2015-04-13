@@ -1,0 +1,21 @@
+Name:           NGrams
+Version:        1.1
+License:        BSD3
+Author:         Justin Bailey
+Homepage:       
+Maintainer:     jgbailey _ gmail _ com
+Category:       Natural Language Processing
+Build-Depends:  base >= 3.0.0.0, HTTP >= 3000.0.0, HCL >= 1.2, network >= 2.0.0.0, regex-compat >= 0.7.0.0
+Build-type: Simple
+Synopsis:       Simple application for calculating n-grams using Google.
+Description:
+  An n-gram is a natural language processing technique for determining,
+  given a list of words and a phrase, the probability that each of the
+  words given will follow in the phrase. The executable provided asks for
+  a phrase and a list of alternate ending words. It also asks for the type
+  of n-gram to create (e.g., bi-gram, tri-gram). The probability for each
+  possible phrase is then calculated using Google search results.
+
+Executable:     ngrams
+Main-Is:        ngrams.hs
+Hs-Source-Dirs: .

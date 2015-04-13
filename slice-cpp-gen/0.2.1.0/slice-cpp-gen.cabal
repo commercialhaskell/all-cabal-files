@@ -1,0 +1,23 @@
+name:                slice-cpp-gen
+version:             0.2.1.0
+synopsis:            Generate C++ skeletons from slice files
+description:         Generate C++ skeletons from slice files
+homepage:            https://github.com/paulkoerbitz/slice-cpp-gen
+license:             BSD3
+license-file:        LICENSE
+author:              Paul Koerbitz
+maintainer:          paul.koerbitz@gmail.com
+copyright:           Paul Koerbitz 2013
+category:            Development
+build-type:          Simple
+cabal-version:       >=1.8
+
+executable slice-cpp-gen
+  main-is:             slice-cpp-gen.hs
+  build-depends:       base >=4.5 && < 5,
+                       bytestring >= 0.9,
+                       cmdargs >= 0.9,
+                       directory >= 1.1,
+                       filepath >= 1.2,
+                       language-slice >= 0.2
+  hs-source-dirs:      src

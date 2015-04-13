@@ -1,0 +1,70 @@
+name:                copilot
+version:             2.0.6
+cabal-version:       >= 1.10
+license:             BSD3
+license-file:        LICENSE
+author:              Nis Nordby Wegmann, Lee Pike, Robin Morisset, Sebastian Niller, Alwyn Goodloe
+synopsis:            A stream DSL for writing embedded C programs.
+build-type:          Simple
+maintainer:          Lee Pike <leepike@galois.com>
+category:            Language, Embedded
+homepage:            http://leepike.github.com/Copilot/
+stability:           Experimental
+description:         Documentation is available at the website, and see the included examples.
+
+extra-source-files:  README.md
+
+source-repository head
+    type:       git
+    location:   git://github.com/leepike/Copilot.git
+
+library
+    hs-source-dirs: src
+    default-language:  Haskell2010
+    ghc-options:     
+      -Wall
+      -fwarn-tabs
+      -auto-all
+      -caf-all
+      -fno-warn-orphans
+    build-depends:
+                       base >= 4.0 && <5
+                     , copilot-core >= 0.2.3
+                     , copilot-language >= 0.4
+                     , copilot-libraries
+                     , copilot-cbmc
+    exposed-modules: Language.Copilot
+
+executable copilot-regression
+  default-language        : Haskell2010
+  hs-source-dirs          : Examples, src
+  ghc-options             : -Wall -fwarn-tabs
+  main-is                 : Test.hs
+  build-depends:
+                     base >= 4.0
+                   , copilot-core
+                   , copilot-language
+                   , copilot-libraries
+                   , copilot-sbv
+                   , copilot-cbmc
+                   , copilot-c99 >= 0.2
+                   , directory >= 1.1
+                   , random
+  other-modules:    AddMult
+                  , Array
+                  , Cast
+                  , ClockExamples
+                  , EngineExample
+                  , Examples
+                  , Examples2
+                  , ExtFuns
+                  , Local
+                  , LTLExamples
+                  , PTLTLExamples
+                  , Random
+                  , RegExpExamples
+                  , Sat
+                  , StackExamples
+                  , StatExamples
+                  , VotingExamples
+

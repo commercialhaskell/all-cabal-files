@@ -1,0 +1,51 @@
+Name:                happs-tutorial
+Version:             0.6.3
+Synopsis:            A HAppS Tutorial that is is own web 2.0-type demo. 
+Description:         A nice way to learn how to build web sites with HAppS
+
+License:             BSD3
+License-file:        LICENSE
+Author:              Thomas Hartman, Eelco Lempsink
+
+Maintainer:          thomashartman1 at gmail dot com
+Copyright:           2008 Thomas Hartman
+
+Stability:           Experimental
+Category:            Web
+Build-type:          Simple
+
+-- when cabal install 1.6 comes out, hopefully can use * patterns for templates
+-- see http://hackage.haskell.org/trac/hackage/ticket/213
+Extra-Source-Files:
+    recompile-and-kill-head.sh
+    hackInGhci.sh
+    static/*.png
+    static/*.css
+    templates/*.st
+
+Cabal-Version:       >= 1.2
+
+Executable happs-tutorial
+    Main-is:             Main.hs
+    hs-source-dirs:
+        src
+    Other-Modules:
+        StateVersions.AppState1
+        ControllerBasic
+        ControllerGetActions
+        Controller
+        ControllerMisc
+        ControllerPostActions
+        FromDataInstances
+        Misc
+        MiscMap
+        ControllerStressTests
+        View
+    Build-Depends:   base>=3.0.3.0, HStringTemplate, HStringTemplateHelpers, mtl, bytestring,
+                     HAppS-Server, HAppS-Data, HAppS-State,
+                     containers, pretty, pureMD5, directory, filepath, hscolour >= 1.10.1, HTTP, safe,
+                     old-time, parsec, HAppSHelpers >= 0.9, DebugTraceHelpers
+
+
+
+

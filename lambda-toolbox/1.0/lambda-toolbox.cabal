@@ -1,0 +1,36 @@
+Name:               lambda-toolbox
+Version:            1.0
+Synopsis:           An application to work with the lambda calculus (for learning)
+Description:        lambda-toolbox allows one to reduce lambda expressions step by step,
+                    performing alpha-, beta-, and eta-reduction. It's a tool intended
+                    for beginners to play with the lambda calculus.
+                    .
+                    > $ lambda-toolbox -h
+                    .
+                    will tell you everything relevant.
+
+Category:           LambdaCalculus, Teaching
+Stability:          stable
+License:            BSD3
+License-File:       LICENSE
+Author:             Julian Fleischer <julian.fleischer@fu-berlin.de>
+Maintainer:         Julian Fleischer <julian.fleischer@fu-berlin.de>
+Build-Type:         Simple
+Cabal-Version:      >= 1.6
+Homepage:           http://scravy.de/blog/2012-02-20/a-lambda-toolbox-in-haskell.htm
+
+Source-Repository head
+    type: darcs
+    location: hub.darcs.net:lambda-toolbox
+
+Source-Repository this
+    type: darcs
+    location: hub.darcs.net:lambda-toolbox
+    tag: v1.0
+
+Executable simplex
+    Hs-Source-Dirs:     src
+    Main-is:            lambda-toolbox.hs
+
+    Build-Depends:      base >= 3.0 && < 5.0
+

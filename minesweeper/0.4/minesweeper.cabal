@@ -1,0 +1,49 @@
+name:                minesweeper
+version:             0.4
+category:            Game
+synopsis:            Minesweeper game which is always solvable without guessing
+description:         
+	Minesweeper game which is always solvable without guessing. 
+    .
+    TODO list:
+    .
+    * Source code documentation and improvement
+    .
+    * Implement the score table.
+stability:          alpha
+license:            BSD3
+license-file:       LICENSE
+author:             Péter Diviánszky
+maintainer:         divip@aszt.inf.elte.hu
+data-files:         ms.glade
+cabal-version:      >=1.4
+build-type:         Simple
+
+executable          minesweeper
+  ghc-options:      -Wall -fno-warn-incomplete-patterns -fno-warn-name-shadowing
+  build-depends:    base >= 3.0, 
+                    containers, 
+                    random, 
+                    time, 
+                    glade, 
+                    gtk >= 0.10, 
+                    cairo >= 0.10
+
+  main-is:          Minesweeper.hs
+
+  other-modules:    Place,
+                    PlaceSet,
+                    PlaceMap,
+                    Delay,
+                    Core, 
+                    Game,
+                    Table,
+                    TableGraphics,
+                    Timer
+
+  extensions:       RecursiveDo,
+                    NamedFieldPuns,
+                    ViewPatterns,
+                    PatternGuards
+
+

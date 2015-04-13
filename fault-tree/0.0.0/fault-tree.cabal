@@ -1,0 +1,38 @@
+name:    fault-tree
+version: 0.0.0
+
+category: Language, Embedded
+
+synopsis: A fault tree analysis library.
+
+description:
+  Fault tree analysis is used to determine probability of failure modes
+  in safety critical applications.  Generates fault tree graphs (Graphviz)
+  and calculates cutsets.
+  Yices (required) is the backend SMT solver used for cutset calculation.
+
+author:     Tom Hawkins <tomahawkins@gmail.com>
+maintainer: Tom Hawkins <tomahawkins@gmail.com>
+
+license:      BSD3
+license-file: LICENSE
+
+homepage: http://tomahawkins.org
+
+build-type:    Simple
+cabal-version: >= 1.6
+
+library
+    build-depends:
+        base      >= 4.0     && < 5,
+        yices     >= 0.0.0.7 && < 0.0.1
+
+    exposed-modules:
+        Language.FaultTree
+
+    ghc-options: -W
+
+source-repository head
+    type:     git
+    location: git://github.com/tomahawkins/fault-tree.git
+

@@ -1,0 +1,21 @@
+name:                hfractal
+version:             0.3.3.2
+cabal-version:       >= 1.2
+synopsis:            OpenGL fractal renderer
+description:         An OpenGL fractal browser with multicore support and the capability to output high quality png images.
+stability:           Experimental
+category:            Graphics
+license:             BSD3
+copyright:           2009-2009 Chris Holdsworth
+author:              Chris Holdsworth <chrisholdsworth@gmail.com>
+maintainer:          Chris Holdsworth <chrisholdsworth@gmail.com>
+homepage:            http://github.com/cmh/Hfractal
+build-type:          Simple
+extra-source-files:  README
+
+Executable hfractal
+    main-is:            Hfractal.hs
+    build-depends:      base >=3 && <5, array, gd < 3000.3.0 && >= 3000.2.0, data-accessor >=0.2 && <=0.3, data-accessor-template >=0.2 && <=0.3, OpenGL >= 2.3 && < 2.4.0.0, OpenGLRaw < 1.1.0.0, GLUT >= 2.2.1.0 && < 2.2.2.0, colour >=2.3.1, containers >= 0.2
+    other-Modules:      FracComp, FracColour, FracImg, FracState, Bindings
+    ghc-options:        -O2 -threaded -fvia-C -optc-O3 -optc-ffast-math
+    Hs-Source-Dirs:     src

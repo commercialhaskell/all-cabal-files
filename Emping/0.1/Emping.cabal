@@ -1,0 +1,28 @@
+name:                Emping
+version:             0.1
+license:             GPL
+license-file:        LICENSE
+build-depends:       base, parsec
+copyright:           Hans van Thiel 2006 - 2007
+author:              Hans van Thiel
+maintainer:          hthiel.char@zonnet.nl
+stability:           experimental
+homepage:            j-van-thiel.speedlinq.nl/
+synopsis:            derives heuristic rules from nominal data
+description:         utility that reads a table in a csv (comma
+       separated) format that can be generated from 
+       Open Office Calc (spreadsheet), derives all shortest rules
+       for a selected attribute, and writes them to a .csv file
+                     that can be read by OO Calc.
+category:            Data Mining
+extra-source-files:  README
+      
+executable:        emping
+hs-source-dirs:    src
+main-is:           Main.hs
+ghc-options:       -o
+other-modules:     CSVParse
+                   Codec
+                   Aux
+                   Reduce
+                   CSVTable

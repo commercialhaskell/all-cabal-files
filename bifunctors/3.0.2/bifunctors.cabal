@@ -1,0 +1,38 @@
+name:          bifunctors
+category:      Data, Functors
+version:       3.0.2
+x-revision: 1
+license:       BSD3
+cabal-version: >= 1.6
+license-file:  LICENSE
+author:        Edward A. Kmett
+maintainer:    Edward A. Kmett <ekmett@gmail.com>
+stability:     provisional
+homepage:      http://github.com/ekmett/bifunctors/
+bug-reports:   http://github.com/ekmett/bifunctors/issues
+copyright:     Copyright (C) 2008-2011 Edward A. Kmett
+synopsis:      Haskell 98 bifunctors
+description:   Haskell 98 bifunctors
+build-type:    Simple
+extra-source-files: .travis.yml
+
+source-repository head
+  type: git
+  location: git://github.com/ekmett/bifunctors.git
+
+library
+  hs-source-dirs: src
+  build-depends:
+    base          >= 4.0 && < 4.8,
+    semigroups    >= 0.8.3.1 && < 0.9,
+    semigroupoids == 3.0.*
+
+  exposed-modules:
+    Data.Bifunctor
+    Data.Bifunctor.Apply
+    Data.Bifoldable
+    Data.Bitraversable
+    Data.Semigroup.Bifoldable
+    Data.Semigroup.Bitraversable
+
+  ghc-options: -Wall

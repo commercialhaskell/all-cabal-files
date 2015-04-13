@@ -1,0 +1,22 @@
+name:                popenhs
+version:             1.0.0
+synopsis:            popenhs is a popen-like library for Haskell.
+description:         It provides a convenient way of sending string input to
+                     a subprocess and reading output from it lazily. It requires
+                     the Posix module and has been tested under ghc5 so far.
+category:            System
+license:             GPL
+license-file:        LICENSE
+author:              Jens-Ulrik Petersen
+maintainer:          Jens-Ulrik Petersen <juhp@01.246.ne.jp>
+homepage:            http://www.haskell.org/~petersen/haskell/popenhs/
+build-type:          Simple
+Cabal-Version:       >= 1.2
+data-files:          AUTHORS, INSTALL, NEWS, README, TODO, ChangeLog, index.html, popenhs.spec.in
+
+Library
+        exposed-modules:     System.Posix.POpen
+        build-depends:       base, haskell98, directory, unix
+
+        ghc-options:         -O2 -Wall -optl-Wl,-s
+        ghc-prof-options:    -prof -auto-all

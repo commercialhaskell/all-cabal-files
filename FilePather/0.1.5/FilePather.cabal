@@ -1,0 +1,46 @@
+Name:               FilePather
+Version:            0.1.5
+Author:             Tony Morris <ʇǝu˙sıɹɹoɯʇ@ןןǝʞsɐɥ>
+Maintainer:         Tony Morris <ʇǝu˙sıɹɹoɯʇ@ןןǝʞsɐɥ>
+Copyright:          Tony Morris
+License:            BSD3
+License-File:       LICENSE
+Synopsis:           Functions on System.FilePath
+Category:           System
+Description:
+  Functions over @System.FilePath@ including a find function for recursing down directories.
+Homepage:           https://github.com/tonymorris/filepather
+Cabal-version:      >= 1.6
+Build-Type:         Simple
+
+Flag                small_base
+  Description:      Choose the new, split-up base package.
+
+Library
+  Build-Depends:
+                    base < 5 && >= 3,
+                    directory >= 1.1,
+                    filepath >= 1.2,
+                    mtl >= 2,
+                    comonad >= 1.1,
+                    transformers >= 0.2
+
+  GHC-Options:
+                    -Wall
+
+  Hs-Source-Dirs:
+                    src
+
+  Exposed-Modules:
+                    System.FilePath.FilePather
+                    System.FilePath.FilePather.FileType
+                    System.FilePath.FilePather.RecursePredicate
+                    System.FilePath.FilePather.FilterPredicate
+                    System.FilePath.FilePather.FilePathPredicate
+                    System.FilePath.FilePather.Find
+                    System.FilePath.FilePather.LiftI
+
+Source-Repository  head
+  type: git
+  location: git@github.com:tonymorris/filepather.git
+

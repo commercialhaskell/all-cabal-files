@@ -1,0 +1,35 @@
+name: direct-fastcgi
+version: 1.0.1
+cabal-version: >= 1.2
+build-type: Simple
+license: BSD3
+license-file: LICENSE
+copyright: Copyright (c) 2009 Dan Knapp
+author: Dan Knapp
+maintainer: dankna@gmail.com
+homepage: http://dankna.com/software/
+bug-reports: http://dankna.com/issues/create/
+category: Network
+synopsis: Native implementation of the FastCGI protocol.
+description:
+  This package is a native implementation of the FastCGI protocol, allowing
+  Haskell to work with any webserver that supports it.  It makes no attempt to
+  imitate the interface of the cgi-3000 and fastcgi-3000 packages, because
+  that API is tied too heavily to legacy interfaces, as with its handling of
+  exceptions, logging, and time.  Its advantage over those packages is
+  primarily in the area of clean exception management and better control
+  structure which allows more versatility in processing requests which are
+  not simple GETs.  In particular, POST of large files should be possible, as
+  should server-push responses which return content a piece at a time.  Also,
+  of course, as a native implementation, there is no dependency on a C
+  library, which simplifies the install process.
+
+Library
+  exposed-modules: Network.FastCGI
+  build-depends: base >= 4.1 && < 5,
+                 bytestring >= 0.9.1.4 && < 1,
+                 containers >= 0.3.0.0 && < 1,
+                 mtl >= 1.1.0.2 && < 2,
+                 network >= 2.2.1.5 && < 3,
+                 network-bytestring >= 0.1.2.1 && < 1,
+                 utf8-string >= 0.3.6 && < 1

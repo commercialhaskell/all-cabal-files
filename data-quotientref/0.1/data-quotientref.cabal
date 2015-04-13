@@ -1,0 +1,14 @@
+Name: data-quotientref
+Description:
+    Reference cells that need two independent indices to be accessed.
+Version: 0.1
+Stability: experimental
+Synopsis: Reference cells that need two independent indices to be accessed.
+License: BSD3
+Category: Data
+Author: Luke Palmer
+Maintainer: lrpalmer@gmail.com
+Build-Type: Simple
+Build-Depends: base
+Exposed-Modules: Data.QuotientRef
+Extensions: 

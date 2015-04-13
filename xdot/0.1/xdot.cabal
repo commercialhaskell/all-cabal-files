@@ -1,0 +1,33 @@
+name:               xdot
+version:            0.1
+license:            BSD3
+license-file:       LICENSE
+category:           Graphs, Graphics
+cabal-version:      >= 1.10
+build-type:         Simple
+author:             Dennis Felsing <dennis@felsin9.de>
+maintainer:         Dennis Felsing <dennis@felsin9.de>
+copyright:          Dennis Felsing 2012
+synopsis:           Parse Graphviz xdot files and interactively view them using GTK and Cairo
+description:        Parse Graphviz xdot files and interactively view them using
+                    GTK and Cairo.
+                    .
+                    Currently not all xdot features are supported and only
+                    nodes can be highlighted by hovering them and clicked.
+                    .
+                    For an example of using this library try the accompanying
+                    @Demo.hs@ with the dot-files in @dot-examples/@.
+
+Extra-source-files: Demo.hs, dot-examples/*.dot
+Library
+  Exposed-modules: Graphics.XDot.Parser Graphics.XDot.Viewer Graphics.XDot.Types
+  Default-Language: Haskell2010
+  Build-depends: base == 4.5.*,
+                 mtl,
+                 cairo,
+                 gtk,
+                 graphviz,
+                 text,
+                 polyparse
+  Hs-source-dirs: src/
+  Ghc-options: -Wall -fno-warn-unused-do-bind

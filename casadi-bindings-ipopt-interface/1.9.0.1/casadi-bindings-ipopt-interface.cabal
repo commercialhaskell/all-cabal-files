@@ -1,0 +1,38 @@
+name:                casadi-bindings-ipopt-interface
+version:             1.9.0.1
+license:             LGPL-3
+license-file:        LICENSE
+category:            Numerical, Math
+copyright:           (c) 2013-2014 Greg Horn
+author:              Greg Horn
+maintainer:          gregmainland@gmail.com
+build-type:          Simple
+cabal-version:       >=1.10
+synopsis:            low level bindings to casadi-ipopt_interface
+description:         see http://hackage.haskell.org/package/casadi-bindings for instructions
+extra-source-files:  cbits/marshal.hpp
+extra-tmp-files:     Casadi/Callback_stub.h
+
+library
+  build-depends:       base >=4.6 && <5,
+                       vector >=0.10,
+                       casadi-bindings-core,
+                       casadi-bindings-internal
+
+  default-language:    Haskell2010
+
+
+  extra-libraries:  stdc++
+
+  pkgconfig-depends: casadi_ipopt_interface
+
+  ghc-prof-options: -prof -fprof-auto -fprof-cafs -rtsopts
+  ghc-options: 
+  cc-options: -Wall -Wno-delete-non-virtual-dtor
+
+  C-sources:        cbits/autogen/ipopt_interface_classes.cpp
+                    cbits/autogen/ipopt_interface_functions.cpp
+
+  exposed-modules:  Casadi.IpoptInterface.Data
+                    Casadi.IpoptInterface.Enums
+                    Casadi.IpoptInterface.Classes.IpoptSolver

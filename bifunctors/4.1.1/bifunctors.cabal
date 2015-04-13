@@ -1,0 +1,46 @@
+name:          bifunctors
+category:      Data, Functors
+version:       4.1.1
+x-revision: 1
+license:       BSD3
+cabal-version: >= 1.6
+license-file:  LICENSE
+author:        Edward A. Kmett
+maintainer:    Edward A. Kmett <ekmett@gmail.com>
+stability:     provisional
+homepage:      http://github.com/ekmett/bifunctors/
+bug-reports:   http://github.com/ekmett/bifunctors/issues
+copyright:     Copyright (C) 2008-2013 Edward A. Kmett
+synopsis:      Bifunctors
+description:   Bifunctors
+build-type:    Simple
+extra-source-files: .travis.yml
+
+source-repository head
+  type: git
+  location: git://github.com/ekmett/bifunctors.git
+
+library
+  hs-source-dirs: src
+  build-depends:
+    base          >= 4.5 && < 4.8,
+    semigroups    >= 0.8.3.1,
+    semigroupoids == 4.*,
+    tagged        >= 0.4.4 && < 1
+
+  exposed-modules:
+    Data.Biapplicative
+    Data.Bifunctor
+    Data.Bifunctor.Apply
+    Data.Bifunctor.Clown
+    Data.Bifunctor.Flip
+    Data.Bifunctor.Join
+    Data.Bifunctor.Joker
+    Data.Bifunctor.Product
+    Data.Bifunctor.Wrapped
+    Data.Bifoldable
+    Data.Bitraversable
+    Data.Semigroup.Bifoldable
+    Data.Semigroup.Bitraversable
+
+  ghc-options: -Wall

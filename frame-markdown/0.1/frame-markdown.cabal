@@ -1,0 +1,22 @@
+Name: frame-markdown
+Version: 0.1
+Cabal-version: >= 1.2
+Build-type: Simple
+Copyright: Adam Dunkley
+Maintainer: "Adam Dunkley" <acd07u@cs.nott.ac.uk>
+Stability: experimental
+Author: Adam Dunkley
+License: BSD3
+License-file: LICENSE
+Category: Web
+Synopsis: A markdown to Frame GUI writer for Pandoc
+Description: A markdown to Frame GUI writer for Pandoc
+
+Library
+  Build-Depends:
+    base >= 2 && < 4,
+    frame,
+    pandoc
+  Exposed-Modules:
+        Frame.View.Markdown
+  Hs-source-dirs: src

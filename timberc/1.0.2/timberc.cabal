@@ -1,0 +1,97 @@
+Name:                timberc
+Version:             1.0.2
+Synopsis:            The Timber Compiler.
+Description:         This is a compiler for a strict and pure functional 
+		     language
+License:             BSD3
+License-file:        LICENSE
+Author:              Johan Nordlander
+Maintainer:          Johan Nordlander <nordland@csee.ltu.se>
+Homepage:	     http://www.timber-lang.org
+Build-type:	     Custom
+Cabal-Version:       >= 1.4
+extra-tmp-files:     config.log config.status 
+data-files:          examples/Counter.t,
+                     examples/Echo.t,
+                     examples/Echo2.t,
+                     examples/Echo3.t,
+                     examples/EchoServer.t,
+                     examples/EchoServer2.t,
+                     examples/MasterMind.t,
+                     examples/PingTimeServers.t,
+                     examples/Primes.t,
+                     examples/Reflex.t,
+                     examples/TCPClient.t,
+                     examples/UnionFind.t,
+                     examples/Makefile,
+                     include/arrays.c,
+                     include/float.c,
+                     include/timber.c,
+                     include/timber.h,
+                     lib/BitOps.t,
+                     lib/Data.Functional.List.t,
+                     lib/Data.Objects.Dictionary.t,
+                     lib/Data.Objects.Stack.t, 
+                     lib/POSIX.t,
+                     lib/Prelude.t,
+                     lib/RandomGenerator.t
+
+extra-source-files:  rtsPOSIX/Makefile.in,
+                     rtsPOSIX/configure,
+                     rtsPOSIX/config.guess,
+                     rtsPOSIX/config.sub,
+                     rtsPOSIX/config.h.in,
+                     rtsPOSIX/cyclic.c,
+                     rtsPOSIX/env.c,
+                     rtsPOSIX/env.h,
+                     rtsPOSIX/gc.c,
+                     rtsPOSIX/install-sh,
+                     rtsPOSIX/main.c,
+                     rtsPOSIX/rts.c,
+                     rtsPOSIX/rts.h,
+                     rtsPOSIX/timberc.cfg.in,
+                     rtsPOSIX/timer.c,
+                     timberc.spec
+
+
+Executable timberc
+  Main-is:           Main.hs
+  Build-Depends:     base >= 4, haskell98, pretty >= 1.0.0.0, binary >= 0.4.2, 
+                     mtl >= 1.1, filepath >= 1.1, array >= 0.1,
+                     bzlib >= 0.4.0.0, bytestring >= 0.9
+  build-tools:	     happy >= 1.18
+  hs-source-dirs:    src
+  other-modules:     Common,
+                     Config,
+                     Core,
+                     Core2Kindle,
+                     Decls,
+                     Depend,
+                     Derive,
+                     Desugar1,
+                     Desugar2,
+                     Env,
+                     Execution,
+                     Fixity,
+                     Interfaces,
+                     Kind,
+                     Kindle,
+                     Kindle2C,
+                     Kindlered,
+                     Lambdalift,
+                     Lexer,
+                     Match,
+                     Name,
+                     ParseMonad,
+                     Parser,
+                     PP,
+                     Prepare4C,
+                     Reduce,
+                     Rename,
+                     Syntax,
+                     Syntax2Core,
+                     Termred,
+                     Token,
+                     Type,
+                     Type2
+

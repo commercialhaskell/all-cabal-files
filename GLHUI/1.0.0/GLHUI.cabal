@@ -1,0 +1,55 @@
+name: GLHUI
+version: 1.0.0
+license: BSD3
+license-file: LICENSE
+author: Hugo Gomes <mr.hugo.gomes@gmail.com>
+maintainer: Hugo Gomes <mr.hugo.gomes@gmail.com>
+copyright: Hugo Gomes
+homepage: http://www.hackological.com/projects/GLHUI
+category: Graphics
+synopsis: Open OpenGL context windows in X11 with libX11
+description:
+   .
+   Haskell functions to open and manage a OpenGL window with libX11.
+   .
+   This module is intended to be imported qualified, to avoid clashes with
+   Prelude functions, e.g.
+   .
+   > import qualified Graphics.UI.GLWindow as Window
+   .
+   As an example, here is a simple module that uses some of these functions 
+   to open a OpenGL 3.2 Context: 
+   .
+   > module Main where                                                     
+   >  
+   > import Graphics.Rendering.OpenGL    
+   > import qualified Graphics.UI.GLWindow as Window    
+   > 
+   > myLoop = do clear [ColorBuffer]    
+   >             t <- Window.time    
+   >             clearColor $= Color4 (sin (realToFrac t) * 0.5 + 0.5)
+   >                                  (sin (realToFrac (t+1)) * 0.5 + 0.5)
+   >                                  (sin (realToFrac (t+2)) * 0.5 +0.5)
+   >                                  0                                              
+   > 
+   > main = do Window.init 3 2 -- initializes a OpenGL 3.2 context
+   >           Window.loop myLoop -- stops when the ESC key is pressed
+   >           Window.kill -- removes the window when the loop stops
+   .
+   Special thanks to Tiago Farto (aka xernobyl) for coding the C version of
+   these functions
+build-type: Simple
+cabal-version: >=1.6
+extra-source-files:
+   README
+
+library
+   build-depends:
+      base < 5
+   exposed-modules:
+      Graphics.UI.GLWindow
+   include-dirs: include
+   c-sources:
+      c/HsGLWindow.c
+   ghc-options: -Wall -O2
+   extra-libraries: X11 GL rt

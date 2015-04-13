@@ -1,0 +1,21 @@
+name:                hsparklines
+version:             0.1.0
+description:         Sparklines implementation of smooth and bar graphs
+synopsis:            Sparklines for Haskell
+license:             BSD3
+license-file:        LICENSE
+homepage:            http://www.jasani.org/search/label/hsparklines
+author:              Hitesh Jasani
+category:            Graphics
+maintainer:          <hitesh.jasani@gmail.com>
+Cabal-Version:       >= 1.2
+Build-Type:          Simple
+Tested-With:         GHC == 6.8.2
+extra-source-files:  README examples/bar.hs examples/bar.html examples/dataurl.hs
+                     examples/Makefile examples/smooth.hs examples/smooth.html
+
+library
+  build-depends:     base >= 3, bytestring, gd, dataenc
+  exposed-modules:   Graphics.Rendering.HSparklines
+  ghc-options:       -Wall
+

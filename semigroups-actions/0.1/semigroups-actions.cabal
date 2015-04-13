@@ -1,0 +1,47 @@
+name:          semigroups-actions
+category:      Algebra, Data, Data Structures, Math
+version:       0.1
+license:       BSD3
+cabal-version: >= 1.10
+license-file:  LICENSE
+author:        Petr Pudlák
+maintainer:    Petr Pudlák <petr.mvd@gmail.com>
+stability:     provisional
+homepage:      http://github.com/ppetr/semigroups-actions/
+bug-reports:   http://github.com/ppetr/semigroups-actions/issues
+copyright:     Copyright (C) 2012 Petr Pudlák
+synopsis:      Semigroups actions
+description:
+    In mathematics, an action of a semigroup on a set is an operation that
+    associates each element of the semigroup is with a transformation on the
+    set.
+build-type:    Simple
+extra-source-files: .travis.yml README.markdown
+
+source-repository head
+  type: git
+  location: git://github.com/ppetr/semigroups-actions.git
+
+flag base2
+  default: False
+  manual: False
+
+library
+  default-language: Haskell98
+  default-extensions: MultiParamTypeClasses
+
+  if flag(base2)
+    build-depends:
+      base == 2.*,
+      semigroups >= 0.8 && < 0.9
+  else
+    build-depends:
+      base >= 3 && < 5,
+      containers >= 0.3 && < 0.6,
+      semigroups >= 0.8 && < 0.9
+
+  ghc-options: -Wall
+
+  exposed-modules:
+    Data.Semigroup.Act
+    Data.Semigroup.Act.Enum

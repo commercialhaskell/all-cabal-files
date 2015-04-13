@@ -1,0 +1,32 @@
+Name:                bullet
+Version:             0.1.1
+Synopsis:            A wrapper for the Bullet physics engine.
+Description:         A wrapper for the Bullet physics engine.
+License:             BSD3
+License-file:        LICENSE
+Author:              Csaba Hruska
+Maintainer:          csaba (dot) hruska (at) gmail (dot) com
+Homepage:            http://www.haskell.org/haskellwiki/Bullet
+Stability:           Experimental
+Category:            Physics
+Tested-With:         GHC == 6.10.1, GHC == 6.10.4
+Cabal-Version:       >= 1.2
+Build-Type:          Simple
+
+Extra-Source-Files:  cbits/bullet.h
+                     Examples/BulletExample.hs
+                     Examples/bullet-example-1.png
+                     Examples/bullet-example-2.png
+                     README
+
+Library
+  Build-Depends:       base >= 4 && < 5
+
+  Exposed-Modules:     Physics.Bullet
+
+  Hs-Source-Dirs:      .
+  Extensions:          ForeignFunctionInterface
+  Extra-Libraries:     BulletDynamics LinearMath BulletCollision
+
+  C-Sources:           cbits/bullet.cpp
+  Include-Dirs:        cbits

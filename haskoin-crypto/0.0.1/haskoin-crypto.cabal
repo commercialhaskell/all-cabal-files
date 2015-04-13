@@ -1,0 +1,89 @@
+name:                  haskoin-crypto
+version:               0.0.1
+synopsis:              Implementation of Bitcoin cryptographic primitives.
+description:
+  This package provides the elliptic curve cryptography required for creating
+  and validating bitcoin transactions. It also provides SHA-256 and RIPEMD-160
+  hashing functions.
+homepage:              http://github.com/plaprade/haskoin-crypto
+bug-reports:           http://github.com/plaprade/haskoin-crypto/issues
+stability:             experimental
+license:               PublicDomain
+license-file:          UNLICENSE
+author:                Philippe Laprade
+maintainer:            plaprade+hackage@gmail.com
+category:              Bitcoin, Finance, Network
+build-type:            Simple
+cabal-version:         >= 1.9.2
+
+source-repository head
+    type:     git
+    location: git://github.com/plaprade/haskoin-crypto.git
+
+library
+    exposed-modules:   Network.Haskoin.Crypto,
+                       Network.Haskoin.Crypto.Arbitrary
+    other-modules:     Network.Haskoin.Crypto.NumberTheory, 
+                       Network.Haskoin.Crypto.Curve, 
+                       Network.Haskoin.Crypto.Hash, 
+                       Network.Haskoin.Crypto.Ring,
+                       Network.Haskoin.Crypto.Point,
+                       Network.Haskoin.Crypto.Base58,
+                       Network.Haskoin.Crypto.Keys,
+                       Network.Haskoin.Crypto.ECDSA
+    build-depends:     base         == 4.6.*, 
+                       containers   == 0.5.*,
+                       mtl          == 2.1.*, 
+                       binary       == 0.7.*, 
+                       bytestring   == 0.10.*, 
+                       byteable     == 0.1.*,
+                       cryptohash   == 0.11.*,
+                       haskoin-util == 0.0.*,
+                       QuickCheck   == 2.6.*
+    ghc-options:       -Wall -fno-warn-orphans
+
+Test-Suite test-haskoin-crypto
+    type:              exitcode-stdio-1.0
+    main-is:           Main.hs
+    other-modules:     Network.Haskoin.Crypto.Ring.Tests,
+                       Network.Haskoin.Crypto.Point.Tests,
+                       Network.Haskoin.Crypto.ECDSA.Tests,
+                       Network.Haskoin.Crypto.Base58.Tests,
+                       Network.Haskoin.Crypto.Keys.Tests,
+                       Network.Haskoin.Crypto.Hash.Tests,
+                       Network.Haskoin.Crypto.Hash.Units,
+                       QuickCheckUtils,
+                       Units
+    build-depends:     base                       == 4.6.*, 
+                       containers                 == 0.5.*,
+                       mtl                        == 2.1.*, 
+                       binary                     == 0.7.*, 
+                       bytestring                 == 0.10.*, 
+                       byteable                   == 0.1.*,
+                       cryptohash                 == 0.11.*,
+                       haskoin-util               == 0.0.*,
+                       QuickCheck                 == 2.6.*, 
+                       test-framework             == 0.8.*, 
+                       test-framework-quickcheck2 == 0.3.*, 
+                       test-framework-hunit       == 0.3.*, 
+                       HUnit                      == 1.2.*
+    hs-source-dirs:    . tests
+    ghc-options:       -Wall -fno-warn-orphans
+
+Benchmark bench-haskoin-crypto
+    type:              exitcode-stdio-1.0
+    main-is:           Main.hs
+    build-depends:     base         == 4.6.*, 
+                       containers   == 0.5.*,
+                       mtl          == 2.1.*, 
+                       binary       == 0.7.*, 
+                       bytestring   == 0.10.*, 
+                       byteable     == 0.1.*,
+                       cryptohash   == 0.11.*,
+                       haskoin-util == 0.0.*,
+                       time         == 1.4.*,
+                       random       == 1.0.*
+    hs-source-dirs:    . benchmark
+    ghc-prof-options:  -auto-all -with-rtsopts=-p
+    ghc-options:       -Wall -fno-warn-orphans
+

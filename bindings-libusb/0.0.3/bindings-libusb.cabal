@@ -1,0 +1,35 @@
+cabal-version: >= 1.2.3
+name: bindings-libusb
+homepage: http://bitbucket.org/mauricio/bindings
+synopsis:
+  Check bindings-common package for directions.
+version: 0.0.3
+license: BSD3
+license-file: LICENSE
+maintainer: Maurício C. Antunes
+author: Maurício C. Antunes
+build-type: Simple
+category: FFI
+library
+  hs-source-dirs: src
+  extensions:
+    ForeignFunctionInterface
+    TypeSynonymInstances
+    ScopedTypeVariables
+    EmptyDataDecls
+    TypeFamilies
+  build-depends: base, bindings-common
+  exposed-modules:
+    Bindings.Libusb
+  other-modules:
+    LibusbConstants
+    LibusbFunctions
+    LibusbTypes
+-- This has to be commented out so that hackage
+-- won't complain about a missing library.
+--c-sources:
+--  src/constants.c
+--  src/functions.c
+--  src/types.c
+--pkgconfig-depends:
+--  libusb-1.0 >= 1.0.0

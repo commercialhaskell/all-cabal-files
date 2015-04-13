@@ -1,0 +1,20 @@
+Name:                nyan
+Version:             0.1
+Synopsis:            Bored? Nyan cat!
+Description:         A little ncurses animation of nyan cat.
+License:             BSD3
+License-file:        LICENSE
+Author:              Chris Done
+Maintainer:          chrisdone@gmail.com
+Copyright:           2011 Chris Done
+Category:            Development
+Build-type:          Simple
+Cabal-version:       >=1.2
+
+Executable nyan
+  Main-is:           Main.hs
+  Hs-source-dirs:    src
+  Build-depends:     base >= 4 && < 5,
+                     ncurses >= 0.2,
+                     mtl >= 1.1,
+                     text >= 0.11

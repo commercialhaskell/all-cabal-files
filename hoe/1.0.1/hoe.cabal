@@ -1,0 +1,38 @@
+Name:                hoe
+Version:             1.0.1
+Synopsis:            hoe: Haskell One-liner Evaluator
+
+Description:
+  @hoe@ is AWK like text processor.
+  This can evaluate scripts in various ways depending on types.
+
+License:             BSD3
+License-file:        LICENSE
+Author:              Hideyuki Tanaka
+Maintainer:          tanaka.hideyuki@gmail.com
+Copyright:           (c) 2010-2015, Hideyuki Tanaka
+Homepage:            http://github.com/tanakh/hoe
+Category:            Compilers/Interpreters
+Build-type:          Simple
+Cabal-version:       >=1.8
+
+Source-repository head
+  Type:     git
+  Location: git://github.com/tanakh/hoe.git
+
+Executable hoe
+  Main-is:             HOE.hs
+
+  Other-Modules:       Evaluator
+
+  Build-depends:       base        >= 4.7 && < 5
+                     , cmdargs
+                     , exceptions
+                     , hint        >= 0.4.2
+                     , mtl         == 2.*
+                     , regex-posix
+                     , split
+                     , time
+
+  Hs-source-dirs:      src
+  Ghc-options:         -Wall

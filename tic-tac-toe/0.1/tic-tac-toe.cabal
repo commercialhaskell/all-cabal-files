@@ -1,0 +1,17 @@
+Name:		        tic-tac-toe
+Version:	        0.1
+Description: 	        An attempt to implement the minimax algorithm using tic-tac-toe
+License:                BSD3
+License-file:           LICENSE
+Author:                 Hristo Asenov
+Maintainer:             asenov79@students.rowan.edu
+Homepage:		http://ecks.homeunix.net
+Synopsis:               Useful if reading "Why FP matters" by John Hughes
+Category:               Game
+build-type:             Simple
+Data-files:	        Cross.png, Nought.png, noughty.glade
+Extra-source-files:	MyTree.hs, GetAgentMove.hs, GetValue.hs, DataTypes.hs, README
+Build-Depends:          base, gtk, glade, haskell98
+
+Executable:             tic-tac-toe
+Main-is:                NoughtyGlade.hs

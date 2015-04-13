@@ -1,0 +1,21 @@
+name:            hack-middleware-jsonp
+version:         0.0.2
+license:         BSD3
+license-file:    LICENSE
+author:          Michael Snoyman <michael@snoyman.com>
+maintainer:      Michael Snoyman <michael@snoyman.com>
+synopsis:        Automatic wrapping of JSON responses to convert into JSONP.
+category:        Web
+stability:       unstable
+cabal-version:   >= 1.2
+build-type:      Simple
+homepage:        http://github.com/snoyberg/hack-middleware-jsonp/tree/master
+
+library
+    build-depends:   base >= 3 && < 5,
+                     bytestring >= 0.9.1.4,
+                     bytestring-class,
+                     web-encodings,
+                     hack >= 2009.5.19
+    exposed-modules: Hack.Middleware.Jsonp
+    ghc-options:     -Wall

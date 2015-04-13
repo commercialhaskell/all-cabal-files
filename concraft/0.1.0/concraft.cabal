@@ -1,0 +1,46 @@
+name:               concraft
+version:            0.1.0
+synopsis:           Morphosyntactic tagging tool based on constrained CRFs
+description:
+    A morphosyntactic tagging tool based on constrained conditional
+    random fields.
+license:            BSD3
+license-file:       LICENSE
+cabal-version:      >= 1.6
+copyright:          Copyright (c) 2011 Jakub Waszczuk, 2012 IPI PAN
+author:             Jakub Waszczuk
+maintainer:         waszczuk.kuba@gmail.com
+stability:          experimental
+category:           Natural Language Processing
+homepage:           https://github.com/kawu/concraft
+build-type:         Simple
+
+library
+    build-depends:
+        base >= 4 && < 5
+      , containers
+      , binary
+      , text
+      , text-binary >= 0.1 && < 0.2
+      , vector
+      , crf-chain1-constrained >= 0.1.1 && < 0.2
+      , monad-ox >= 0.2 && < 0.3
+      , sgd >= 0.2.2 && < 0.3
+
+    exposed-modules:
+        NLP.Concraft.Morphosyntax
+      , NLP.Concraft.Guess
+      , NLP.Concraft.Plain
+
+    ghc-options: -Wall -O2
+
+source-repository head
+    type: git
+    location: git://github.com/kawu/concraft.git
+
+executable concraft-guess
+    build-depends:
+        cmdargs
+    hs-source-dirs: ., tools
+    main-is: concraft-guess.hs    
+    ghc-options: -Wall -O2 -threaded

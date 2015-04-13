@@ -1,0 +1,31 @@
+name: jsaddle-hello
+version: 1.0.0.0
+cabal-version: >=1.6
+build-type: Simple
+license: MIT
+license-file: LICENSE
+copyright: (c) Hamish Mackenzie
+maintainer: Hamish Mackenzie <Hamish.K.Mackenzie@gmail.com>
+stability: stable
+homepage: https://github.com/ghcjs/jsaddle-hello
+bug-reports: https://github.com/ghcjs/jsaddle-hello/issues
+synopsis: JSaddle Hello World, an example package
+description: This is an implementation of the classic "Hello World" program using JSaddle,
+             as an example of how to create a minimal JSaddle application.
+             Please submit any suggestions and improvements.
+category: Web
+author: Hamish Mackenzie
+data-dir: ""
+
+source-repository head
+    type: git
+    location: https://github.com/ghcjs/jsaddle-hello
+
+executable jsaddle-hello
+    build-depends: base >=4.2 && <5, ghcjs-dom >=0.0.7 && <0.1,
+                   jsaddle >=0.1.1.4 && <0.2, lens >=4.0.7 && <5.0
+    main-is: Main.hs
+    buildable: True
+    hs-source-dirs: src
+
+

@@ -1,0 +1,22 @@
+
+Name:		stmcontrol
+Synopsis:	Control communication among retrying transactions
+Category:       Concurrency
+Version:	0.1
+Stability:      experimental
+Cabal-Version:  >= 1.2
+License:	BSD3
+License-File:	LICENSE
+Author:		Martin Sulzmann
+Maintainer:     martin.sulzmann@gmail.com
+Description:    Control communication among retrying transactions
+homepage:       http://sulzmann.blogspot.com/2008/12/stm-with-control-communication-for.html
+            
+data-files: README
+extra-source-files: Example.lhs
+
+Build-Type: Simple
+Build-Depends:	base, haskell98, stm, mtl
+Exposed-modules:     STMControl.STMC
+
+tested-with: GHC == 6.8.2

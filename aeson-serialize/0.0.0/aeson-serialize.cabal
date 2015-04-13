@@ -1,0 +1,37 @@
+Name:                   aeson-serialize
+Version:                0.0.0
+Author:                 Kevin Cotrone <kevincotrone@gmail.com>
+Maintainer:             Kevin Cotrone <kevincotrone@gmail.com>
+License:                BSD3
+License-File:           LICENSE
+Synopsis:               Simple serialization functions for aeson types
+Description:            Serialize a type using json instances
+Cabal-Version:          >= 1.10
+Build-Type:             Simple
+
+Library
+  Default-Language:     Haskell2010
+  HS-Source-Dirs:       src
+  GHC-Options:          -Wall
+  Exposed-Modules:      Data.Aeson.Serialize
+  Other-Modules:        Data.Aeson.Serialize.Internal
+  Build-Depends:        base >= 4 && < 5
+                      , aeson
+                      , cereal
+
+Test-Suite spec
+  Type:                 exitcode-stdio-1.0
+  Default-Language:     Haskell2010
+  Hs-Source-Dirs:       src
+                      , test
+  Ghc-Options:          -Wall
+  Main-Is:              Spec.hs
+  Build-Depends:        base
+                      , hspec
+                      , aeson
+                      , cereal
+                      , HUnit
+
+Source-Repository head
+  Type:                 git
+  Location:             git@github.com:plow-technologies/aeson-serialize.git

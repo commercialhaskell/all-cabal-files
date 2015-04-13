@@ -1,0 +1,16 @@
+name:                typeof
+version:             0.1
+synopsis:            Small script for inferring types
+description:         A script to infer and insert type declarations 
+                     in Haskell source, callable from your editor.
+                     Bindings exist to emacs and vim.
+category:            Development
+license:             BSD3
+license-file:        LICENSE
+author:              Don Stewart 
+maintainer:          <dons@cse.unsw.edu.au>
+build-Depends:       base
+ 
+executable:          typeof
+main-is:             Typeof.hs
+ghc-options:         -O -threaded

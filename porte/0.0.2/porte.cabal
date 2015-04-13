@@ -1,0 +1,18 @@
+Name:                porte
+Version:             0.0.2
+Cabal-Version:       >= 1.2
+Synopsis:            FreeBSD ports interface
+Description:         Haskell FreeBSD ports analysis library
+Category:            System
+License:             BSD3
+License-file:        LICENSE
+Author:              Samy Al Bahra
+Maintainer:          sbahra@kerneled.org
+Build-Type:          Simple
+
+Library
+  Build-Depends:       base, bytestring, containers, stringsearch
+  Exposed-Modules:     Porte.Tool Porte.Statistics Porte.Ports
+
+Executable porte
+  Main-is:             Porte/porte.hs

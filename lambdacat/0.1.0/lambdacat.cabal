@@ -1,0 +1,76 @@
+Name:          lambdacat
+Version:       0.1.0
+Stability:     Alpha
+Synopsis:      Webkit Browser
+Description:   A Browser based on WebKit, concepted to be easy to use and
+               extendable
+License:       BSD3
+License-File:  LICENSE
+Build-Type:    Simple
+Author:        Andreas Baldeau, Daniel Ehlers
+Maintainer:    Andreas Baldeau <andreas@baldeau.net>,
+               Daniel Ehlers <danielehlers@mindeye.net>
+Category:      User Interfaces
+Tested-With:   GHC == 6.12.3
+Cabal-Version: >= 1.6
+
+Extra-Source-Files:
+    README.md
+    STYLE.md
+
+Data-Files:
+    lambdacat.glade
+    lambdacat.gtkrc
+
+Executable lambdacat
+    Main-is: Main.hs
+
+    Ghc-Options:
+        -Wall
+
+Library
+    Build-Depends:
+        base >= 4 && < 5,
+        mtl == 2.*,
+        gtk == 0.12.*,
+        glade == 0.12.*,
+        webkit >= 0.12.1 && < 0.13,
+        network == 2.2.*,
+        containers == 0.3.*,
+        dyre >= 0.8.5 && < 0.9,
+        cmdargs == 0.6.*
+
+    Ghc-Options:
+        -Wall
+
+    Exposed-Modules:
+        LambdaCat
+        LambdaCat.Configure
+        LambdaCat.Supplier
+        LambdaCat.Supplier.Web
+        LambdaCat.Utils
+        LambdaCat.View
+        LambdaCat.View.Web
+        LambdaCat.Session
+        LambdaCat.History
+        LambdaCat.UI
+        LambdaCat.UI.Glade
+        -- LambdaCat.UI.Vim
+
+    Other-Modules:
+        Paths_lambdacat
+        LambdaCat.Internal.Class
+        LambdaCat.UI.Glade.PersistentTabId
+        LambdaCat.CmdArgs
+
+    Extensions:
+        DeriveDataTypeable
+        ExistentialQuantification
+        FlexibleContexts
+        FlexibleInstances
+        FunctionalDependencies
+        MultiParamTypeClasses
+        OverloadedStrings
+        RankNTypes
+        TypeSynonymInstances
+

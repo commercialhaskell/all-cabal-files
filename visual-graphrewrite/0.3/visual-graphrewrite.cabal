@@ -1,0 +1,48 @@
+
+name:                visual-graphrewrite
+version:             0.3
+synopsis:            Visualize the graph-rewrite steps of a Haskell program
+description:         Visualize the graph-rewrite steps of a Haskell program. Currently it only shows the right-hand-sides of rewrite rules (function alternatives).
+category:            Development
+license:             BSD3
+license-file:        LICENSE
+author:              Zsolt Dollenstein
+maintainer:          zsol@elte.hu
+homepage:            http://github.com/zsol/visual-graphrewrite/
+build-type:          Simple
+cabal-version:       >= 1.6
+build-Depends:       base >= 4.1.0.0,
+                     containers >= 0.2.0.0,
+                     value-supply >= 0.5,
+                     lazysmallcheck >= 0.3,
+                     haskell-src >= 1.0.1.2,
+                     ipprint >= 0.3,
+                     strict-concurrency >= 0.2.1,
+                     parallel >= 1.1.0.1,
+                     directory >= 1.0.0.3,
+                     process >= 1.0.1.1,
+                     fgl >= 5.4.2.2,
+                     pretty >= 1.0.1.0,
+                     gtk >= 0.10.0,
+                     svgcairo >= 0.10.0,
+                     cairo >= 0.10.0
+extensions:          PatternGuards
+extra-source-files:  sample/*.hs
+                     GraphRewrite/Debug.hs
+
+executable:          visual-graphrewrite
+main-is:             GraphRewrite/Main.hs
+other-modules:       GraphRewrite,
+                     GraphRewrite.Internal.Rename,
+                     GraphRewrite.Internal.SimpleHaskell,
+                     GraphRewrite.Internal.Convert,
+                     GraphRewrite.Internal.RewriteApp,
+                     GraphRewrite.Internal.RewriteTypes,
+                     GraphRewrite.Internal.Rewrite,
+                     GraphRewrite.Internal.DeltaFunctions,
+                     GraphRewrite.Internal.Test,
+                     GraphRewrite.Main.CmdLineOpts,
+                     GraphRewrite.Main.Visualize
+
+ghc-options:         -Wall -fno-warn-name-shadowing -fno-warn-incomplete-patterns
+

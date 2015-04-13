@@ -1,0 +1,37 @@
+Name:                polyToMonoid
+Version:             0.1
+Synopsis:            Polyvariadic functions mapping to a given monoid
+Description:  {
+A polyvariadic function takes an indefinite number of possibly differently
+typed parameters. polyToMonoid provides two polyvariadic functions that map
+their parameters into a given monoid.
+}      
+
+-- The license under which the package is released.
+License:             BSD3
+
+-- The file containing the license text.
+License-file:        LICENSE
+
+-- The package author(s).
+Author:              Kevin Jardine, Oleg Kiselyov
+Maintainer: Kevin Jardine <kevinjardine@yahoo.com>
+
+-- A copyright notice.
+-- Copyright:           
+
+Category:            Data
+
+Build-type:          Simple
+
+Cabal-version:       >=1.2
+
+
+Library
+  -- Modules exported by the library.
+  Exposed-modules:  Data.PolyToMonoid
+  
+  -- Packages needed in order to build this package.
+  build-depends:  base >= 4 && < 5       
+        
+  

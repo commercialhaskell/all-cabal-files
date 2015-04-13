@@ -1,0 +1,25 @@
+name:                  monad-state
+version:               0.1.1.2
+cabal-version:         >= 1.10
+build-type:            Simple
+license:               BSD3
+license-file:          LICENSE
+copyright:             Copyright (C) 2010 Byron James Johnson
+author:                Byron James Johnson
+maintainer:            KrabbyKrap@gmail.com
+synopsis:              Utility library for monads, particularly those involving state
+description:           Utility library for monads, particularly those involving state
+category:              Control, Data, Monads
+tested-with:           GHC == 7.0.2
+
+library
+    default-language:  Haskell2010
+    hs-source-dirs:    src
+    build-depends:     base >= 4 && < 5, fclabels, transformers, monads-tf, AbortT-transformers
+    exposed-modules:   Control.Monad.Abort, Control.Monad.Abort.Class, Control.Monad.Abort.Instances, Control.Monad.Record, Control.Monad.Runnable, Control.Monad.Short, System.Timeout.Monad
+    ghc-options:       -Wall
+    other-extensions:  TypeFamilies, MultiParamTypeClasses, TypeOperators, PostfixOperators, FlexibleInstances, FlexibleContexts, TypeSynonymInstances
+
+source-repository head
+    type:              darcs
+    location:          http://patch-tag.com/r/bob/monad-state

@@ -1,0 +1,38 @@
+Name:                incremental-parser
+Version:             0.1
+Cabal-Version:       >= 1.2
+Build-Type:          Simple
+Synopsis:            Generic parser library capable of providing partial results from partial input.
+Category:            Parsing
+Tested-with:         GHC
+Description:
+  This package defines yet another parser library. This one is implemented using the concept of Brzozowski derivatives,
+  tweaked and optimized to work with any monoidal input type. Lists, ByteString, and Text are supported out of the box.
+  If the parser result is also a monoid, the parser can provide it incrementally, before the complete input is parsed.
+  
+License:             GPL
+License-file:        LICENSE.txt
+Copyright:           (c) 2011 Mario Blazevic
+Author:              Mario Blazevic
+Maintainer:          blamario@yahoo.com
+Homepage:            http://patch-tag.com/r/blamario/incremental-parser/wiki/
+-- Source-repository head
+--   type:              darcs
+--   location:          http://code.haskell.org/SCC/
+Flag Test
+  Description: Install QuickCheck test suite
+  Default:     False
+
+Executable test-incremental-parser
+  Main-is:           Test/TestIncrementalParser.hs
+  Other-Modules:     Text.ParserCombinators.Incremental,
+                     Data.Monoid.Cancellative, Data.Monoid.Factorial, Data.Monoid.Null
+  Build-Depends:     base < 5, bytestring >= 0.9 && < 1.0, text >= 0.11.0.1 && < 0.12, QuickCheck >= 2 && < 3
+  if !flag(test)
+    buildable:       False
+
+Library
+  Exposed-Modules:   Text.ParserCombinators.Incremental,
+                     Data.Monoid.Cancellative, Data.Monoid.Factorial, Data.Monoid.Null
+  Build-Depends:     base < 5, bytestring >= 0.9 && < 1.0, text >= 0.11.0.1 && < 0.12
+  GHC-prof-options:  -auto-all

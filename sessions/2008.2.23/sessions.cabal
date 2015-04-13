@@ -1,0 +1,30 @@
+Name:               sessions
+Version:            2008.2.23
+Stability:          Beta
+Copyright:          Matthew Sackman
+Category:           Control
+Maintainer:         matthew@wellquite.org
+Author:             Matthew Sackman
+Homepage:           http://www.wellquite.org/sessions/
+License:            GPL
+License-File:       LICENSE
+Cabal-Version:      >= 1.2
+Build-Type:         Simple
+Synopsis:           Session Types for Haskell
+Extra-Source-Files: Control/Concurrent/Session/Tests.hs, ChangeLog.txt
+Description:
+  Session Types for Haskell. Allows the specification of communication
+  protocols and then validation that an implementation does not
+  violate said protocol.
+
+Library {
+        Build-depends:     base, mtl
+        Exposed-modules:   Control.Concurrent.Session
+                           Control.Concurrent.Session.Runtime
+                           Control.Concurrent.Session.SessionType
+                           Control.Concurrent.Session.SMonad
+                           Control.Concurrent.Session.List
+                           Control.Concurrent.Session.Number
+        ghc-options:       -Wall -fno-warn-name-shadowing
+}
+

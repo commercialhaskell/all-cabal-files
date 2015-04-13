@@ -1,0 +1,31 @@
+name:                parsec-permutation
+version:             0.1.0.0
+synopsis:            Applicative permutation parser for Parsec intended as
+                     a replacement for Text.Parsec.Perm.
+license:             BSD3
+license-file:        LICENSE
+author:              Samuel Hoffstaetter
+maintainer:          samuel@hoffstaetter.com
+copyright:           Bitbase, LLC
+category:            Parsing
+build-type:          Simple
+cabal-version:       >=1.8
+extra-source-files:  tests/PermutationTest.hs README
+
+library
+  exposed-modules:     Text.Parsec.Permutation
+  build-depends:       base >= 4 && < 5, parsec >= 3
+  ghc-options:         -Wall -fwarn-tabs -fno-warn-name-shadowing
+
+test-suite tests
+  type:                exitcode-stdio-1.0
+  build-depends:       parsec-permutation, base >= 4 && < 5, parsec >= 3,
+                       QuickCheck >= 2.4
+  hs-source-dirs:      tests
+  main-is:             PermutationTest.hs
+  ghc-options:         -Wall -fwarn-tabs -fno-warn-name-shadowing
+
+source-repository head
+  type:     git
+  location: https://github.com/bitbasenyc/parsec-permutation.git
+

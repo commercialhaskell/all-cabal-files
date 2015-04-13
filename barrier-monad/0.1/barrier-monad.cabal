@@ -1,0 +1,16 @@
+Name:                barrier-monad
+Version:             0.1
+Synopsis:            Implementation of barrier monad, can use custom front/back type
+License:             PublicDomain
+Category:            Control
+Build-type:          Simple
+Cabal-version:       >=1.6
+
+X-Printout-Mode:     PlainTeX
+X-Printout-Main:     Control/Monad/Barrier.lhs
+-- X-Printout-Others:   example.lhs
+X-Printout-Require:  birdstyle.tex
+
+Library
+  Exposed-modules:     Control.Monad.Barrier
+  Build-depends:       base == 4.*, mtl == 2.0.*, comonad >= 1.0 && < 1.2

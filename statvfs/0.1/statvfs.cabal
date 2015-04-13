@@ -1,0 +1,39 @@
+name:           statvfs
+version:        0.1
+license:        BSD3
+license-file:   LICENSE
+maintainer:     gergely@risko.hu
+bug-reports:    http://github.com/errge/statvfs/issues
+cabal-version:  >= 1.6
+build-type:     Configure
+category:       System
+
+synopsis:       Get unix filesystem statistics with statfs, statvfs
+description:
+  C FFI wrapper for POSIX statvfs and fstatvfs calls.
+
+extra-tmp-files:
+                config.log config.status autom4te.cache include/StatVFSConfig.h
+
+extra-source-files:
+                config.guess config.sub
+                aclocal.m4 configure.ac configure
+                test.hs include/StatVFSConfig.h.in
+
+source-repository head
+  type:     git
+  location: http://github.com/errge/statvfs
+
+library
+  ghc-options: -Wall
+
+  build-depends:
+      base >= 4.6 && < 5
+
+  exposed-modules:
+    System.Posix.StatVFS
+
+  include-dirs:
+    include
+
+  extensions: CPP

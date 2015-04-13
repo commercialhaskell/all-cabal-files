@@ -1,0 +1,36 @@
+Name:              hsc3-sf
+Version:           0.14
+Synopsis:          Haskell SuperCollider SoundFile
+Description:       Trivial @NeXT@ sound file input and output.
+                   The main module is "Sound.File.NeXT".
+                   For almost all use cases please see Stefan
+                   Kersten's @hsndfile@ package,
+                   <http://hackage.haskell.org/package/hsndfile>.
+License:           GPL
+Category:          Sound
+Copyright:         (c) Rohan Drape, 2006-2013
+Author:            Rohan Drape
+Maintainer:        rd@slavepianos.org
+Stability:         Experimental
+Homepage:          http://rd.slavepianos.org/?t=hsc3-sf
+Tested-With:       GHC == 7.6.1
+Build-Type:        Simple
+Cabal-Version:     >= 1.8
+
+Data-files:        README
+                   Help/rescale.help.hs
+                   Help/stat.help.hs
+
+Library
+  Build-Depends:   base == 4.*,
+                   bytestring,
+                   hosc == 0.14.*
+  GHC-Options:     -Wall -fwarn-tabs
+  Exposed-modules: Sound.File.NeXT
+                   Sound.File.Decode
+                   Sound.File.Encoding
+                   Sound.File.Encode
+
+Source-Repository  head
+  Type:            darcs
+  Location:        http://rd.slavepianos.org/sw/hsc3-sf/

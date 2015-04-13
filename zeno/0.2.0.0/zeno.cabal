@@ -1,0 +1,57 @@
+name:             zeno
+version:          0.2.0.0
+cabal-version:    >= 1.4
+author:           William Sonnex
+maintainer:       William Sonnex <will@sonnex.name>
+synopsis:         An automated proof system for Haskell programs
+description:      Zeno is an automated proof system for Haskell program
+                  properties; developed at Imperial College London by 
+                  William Sonnex, Sophia Drossopoulou and Susan Eisenbach. 
+                  It aims to solve the general problem of equality between 
+                  two Haskell terms, for any input value.
+category:         Theorem Provers
+stability:        Experimental
+build-type:       Simple
+license:          MIT
+license-file:     LICENSE
+data-files:       Zeno.hs Example.hs
+
+executable zeno
+  hs-source-dirs: src
+  main-is:        Main.hs
+  build-depends:  base >= 4 && < 5, mtl >= 2, containers >= 0.4,
+                  random, array, ghc, ghc-paths, directory,
+                  text, process, transformers >= 0.2, parallel >= 3
+  extensions:     MultiParamTypeClasses, FlexibleContexts, 
+                  FlexibleInstances, ScopedTypeVariables, 
+                  TypeSynonymInstances, ViewPatterns,
+                  OverloadedStrings, TypeFamilies, BangPatterns
+  ghc-options:    -funbox-strict-fields -threaded -feager-blackholing
+  
+  if impl(ghc >= 7)
+    ghc-options:  -with-rtsopts="-N"
+    
+  other-modules:  Zeno.Checker,
+                  Zeno.Clause,
+                  Zeno.Core,
+                  Zeno.DataType,
+                  Zeno.Evaluation,
+                  Zeno.Expression,
+                  Zeno.Flags,
+                  Zeno.HaskellParser,
+                  Zeno.Id,
+                  Zeno.Isabelle,
+                  Zeno.Prelude,
+                  Zeno.Program,
+                  Zeno.Proof,
+                  Zeno.Property,
+                  Zeno.Reduction,
+                  Zeno.Solver,
+                  Zeno.Traversing,
+                  Zeno.Type,
+                  Zeno.Unification,
+                  Zeno.Utils,
+                  Zeno.Var,
+                  Zeno.Isabellable.Class,
+                  Zeno.Isabellable.Core,
+                  Zeno.Isabellable.Proof

@@ -1,0 +1,41 @@
+name:			manatee-pdfviewer
+version:		0.0.1
+Cabal-Version:	>= 1.6
+license:		GPL-3
+license-file:	LICENSE
+copyright:		(c) 2009 ~ 2010 Andy Stewart
+synopsis:		PDF viewer extension for Manatee.
+description:    manatee-pdfviewer is PDF viewer extension for Manatee (Haskell/Gtk+ Integrated Live Environment)
+ .
+ If you see Chinese garbled in pdf viewer, make sure install package `poppler-data` 
+ first, example, use command "sudo aptitude install poppler-data -y" to install it in Debian System.
+ And replace Chinese font in file `/etc/fonts/conf.d/49-sansserif.conf'
+author:			Andy Stewart
+maintainer:		Andy Stewart <lazycat.manatee@gmail.com>
+stability:		provisional
+category:		Manatee, PDF Viewer, PDF
+
+tested-with:	GHC==6.12.3
+build-type:		Custom
+
+Source-Repository head
+  type:         darcs
+  location:     http://patch-tag.com/r/AndyStewart/manatee-pdfviewer
+  
+Library
+     build-depends: base >= 4 && < 5, manatee-core >= 0.0.1, dbus-client >= 0.3 && < 0.4, stm >= 2.1.2.0,
+                    containers >= 0.3.0.0, gtk-serialized-event >= 0.12.0, poppler >= 0.12.1, gtk >= 0.12.0,
+                    cairo >= 0.12.0, text >= 0.7.1.0, mtl >= 1.1.0.2, utf8-string
+     exposed-modules:
+         Manatee.Extension.PdfViewer
+         Manatee.Extension.PdfViewer.PdfBuffer
+         Manatee.Extension.PdfViewer.PdfView
+         Manatee.Extension.PdfViewer.PageMode
+     other-modules:							
+     extensions:  
+     ghc-options: -fwarn-unused-matches -fwarn-unused-binds -fwarn-unused-imports -fwarn-overlapping-patterns -fwarn-duplicate-exports -fwarn-unrecognised-pragmas -fwarn-hi-shadowing 
+     
+Executable manatee-pdfviewer
+     main-is: Main.hs
+
+     ghc-options: -threaded                               

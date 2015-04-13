@@ -1,0 +1,22 @@
+Name:           lostcities
+Version:        0.1
+Cabal-Version:  >= 1.2
+License:        GPL
+License-file:	LICENSE
+Author:         Pedro Vasconcelos
+Maintainer:     pbv@dcc.fc.up.pt
+Homepage:	http://www.dcc.fc.up.pt/~pbv/stuff/lostcities
+Copyright:	(c) 2009 Pedro Vasconcelos
+Synopsis:       An implementation of an adictive two-player card game
+Description:    Game originally designed by Reiner Knizia
+		In this implementation you play against the computer. 
+Build-Type:     Simple
+Category:	Game
+Extra-source-files:	README
+
+Executable lostcities
+  Build-Depends:  base>=3 && < 4, haskell98, containers, array, mtl, wx >= 0.11, wxcore >= 0.11
+  Main-Is:        Main.hs
+  Other-modules:  Minimax LostCities GUI Utils
+
+

@@ -1,0 +1,42 @@
+name:           compact-string
+version:        0.3.1
+license:        BSD3
+license-file:   LICENSE
+author:         Twan van Laarhoven
+maintainer:     Twan van Laarhoven <twanvl@gmail.com>
+homepage:       http://twan.home.fmf.nl/compact-string/
+category:       Data
+synopsis:       Fast, packed and strict strings with Unicode support, based on bytestrings.
+description:
+    Fast, packed, strict strings with a list interface.
+    Based on "Data.ByteString".
+    Multiple encodings are supported.
+
+build-type:      Simple
+cabal-version:   >= 1.2
+extra-source-files:
+    Data/CompactString/signatures.include
+    Data/CompactString/specialized.include
+    test/QuickCheckUtils.hs
+    test/Properties.hs
+
+library
+    build-depends:  base >= 3 && < 5, bytestring >= 0.9
+
+    exposed-modules:
+        Data.CompactString
+        Data.CompactString.ASCII
+        Data.CompactString.Encodings
+        Data.CompactString.UTF16
+        Data.CompactString.UTF8
+        Data.CompactString.Unsafe
+        Data.CompactString.Internal
+        Data.CompactString.Fusion
+
+    include-dirs: Data/CompactString
+
+    extensions:     CPP, EmptyDataDecls
+    ghc-options:    -Wall -O2 -funbox-strict-fields
+
+    if impl(ghc <= 6.4.2)
+        cpp-options:    -DSLOW_FOREIGN_PTR

@@ -1,0 +1,23 @@
+Name:                ClassyPrelude
+Version:             0.1
+Synopsis:            Prelude replacement using classes instead of concrete types where reasonable
+Description:         ClassyPrelude is a Prelude for people who know Haskell well. It
+                     re-exports some commonly imported modules, replaces Prelude
+                     functions with their type-class equivalents where reasonable, and
+                     removes some Prelude functions that in my opinion don't belong
+                     there.
+
+                     These modules are likely to be incomplete. Suggestions are greatly appreciated.
+License:             BSD3
+License-file:        LICENSE
+Author:              Svein Ove Aas
+Maintainer:          sveina@gmail.com
+Category:            Control, Data
+Build-type:          Simple
+Cabal-version:       >=1.2
+Stability:           Experimental
+
+Library
+  Build-Depends:     base >= 4 && < 5, strict >= 0.3.2
+  Extensions:        NoImplicitPrelude
+  Exposed-modules:   Prelude.Classy, Prelude.Math

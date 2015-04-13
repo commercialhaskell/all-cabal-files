@@ -1,0 +1,49 @@
+name:                stm-linkedlist
+version:             0.1.0.0
+synopsis:            Mutable, doubly linked lists for STM
+description:
+    Doubly linked lists are often used in imperative languages to maintain a
+    collection of objects such that an object can remove itself easily.  The
+    same idea applies here.  Thanks to STM, these lists can be shared among
+    threads with little effort.
+    .
+    Suppose you have a thread listening for events.  You want to dispatch
+    events to any thread that opts in.  You could write a function that
+    installs an event handler, performs an action, and removes the handler:
+    .
+    >withEventHandler list handler action =
+    >    bracket (atomically $ LinkedList.append handler list)
+    >            (atomically . LinkedList.delete)
+    >            (\_ -> action)
+    .
+    Then, you could have your listener thread dispatch events using a function
+    like this:
+    .
+    >dispatchEvent list event = do
+    >    handlers <- atomically $ LinkedList.toList list
+    >    forM_ handlers $ \handler -> handler event
+
+license:             BSD3
+license-file:        LICENSE
+author:              Joey Adams
+maintainer:          joeyadams3.14159@gmail.com
+copyright:           Copyright (c) Joseph Adams 2011
+category:            Data
+build-type:          Simple
+cabal-version:       >=1.8
+
+extra-source-files:
+    testing/trivial.hs
+    testing/event-handler.hs
+
+source-repository head
+    type:       git
+    location:   git://github.com/joeyadams/haskell-stm-linkedlist.git
+
+library
+    exposed-modules:    Data.STM.LinkedList
+    other-modules:      Data.STM.LinkedList.Internal
+    build-depends:      base == 4.*
+                      , stm
+    ghc-options:        -Wall
+    other-extensions:   BangPatterns

@@ -1,0 +1,16 @@
+Name: WikimediaParser
+Version: 0.1
+Build-Type: Simple
+License: BSD3
+License-File: LICENSE
+Cabal-Version: >= 1.2
+Author: Ezekiel Smithburg
+Maintainer: tehgeekmeister@gmail.com
+Stability: Alpha
+Category: Parsing
+Description: Functions to parse various parts of wikimedia markup, or entire articles.  Currently has some french wikipedia specific code and doesn't return the values of some syntax it parses, but most of this will be fixed in the next release.  Feel free to submit a patch yourself using darcs send to my email if you fix any of these problems.
+Synopsis: A parser for wikimedia style article markup.
+
+Library
+  Build-Depends: base, parsec
+  Exposed-Modules: Text.WikimediaParser

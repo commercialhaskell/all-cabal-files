@@ -1,0 +1,33 @@
+Name:                blaze-html-hexpat
+Version:             0.1.0.0
+Synopsis:            A hexpat backend for blaze-html.
+Description:         Allows you to generate hexpat node trees using blaze
+                     syntax.
+Homepage:            https://github.com/jaspervdj/blaze-html-hexpat
+License:             BSD3
+License-file:        LICENSE
+Author:              Jasper Van der Jeugt, Doug Beardsley
+Maintainer:          Jasper Van der Jeugt <jaspervdj@gmail.com>
+Copyright:           Jasper Van der Jeugt
+Stability:           Experimental
+Category:            Text
+Build-type:          Simple
+Cabal-version:       >=1.6
+
+
+Source-repository head
+  Type:              git
+  Location:          http://github.com/jaspervdj/blaze-html-hexpat.git
+
+Library
+  Ghc-Options:       -Wall
+
+  -- Modules exported by the library.
+  Exposed-modules:   Text.Blaze.Renderer.Hexpat
+
+  -- Packages needed in order to build this package.
+  Build-depends:     base >= 4 && < 5,
+                     text >= 0.10,
+                     bytestring >= 0.9,
+                     blaze-html >= 0.3.2 && < 0.4,
+                     hexpat >= 0.19 && < 0.20

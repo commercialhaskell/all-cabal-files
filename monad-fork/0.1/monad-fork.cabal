@@ -1,0 +1,29 @@
+name:           monad-fork
+version:        0.1
+synopsis:       Type class for monads which support a fork operation.
+license:        PublicDomain
+license-file:   LICENSE
+author:         Robin Banks
+maintainer:     anarchomorphism@seomraspraoi.org
+stability:      Experimental
+category:       Control
+cabal-version:  >= 1.6
+build-type:     Simple
+
+extra-source-files:
+  CONTRIBUTORS
+
+Library
+  hs-source-dirs:
+    src
+
+  exposed-modules:
+    Control.Monad.Fork.Class
+
+  build-depends:
+    base > 4 && < 5,
+    monad-control > 0.3 && < 0.4
+
+source-repository head
+  type:     git
+  location: git://git.seomraspraoi.org/monad-fork.git

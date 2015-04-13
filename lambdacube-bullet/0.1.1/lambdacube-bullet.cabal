@@ -1,0 +1,35 @@
+Name:          lambdacube-bullet
+Version:       0.1.1
+Cabal-Version: >= 1.2
+Synopsis:      Example for combining LambdaCube and Bullet
+Category:      Graphics, Physics
+Description:   Example for combining LambdaCube and Bullet
+Author:        Csaba Hruska
+Maintainer:    csaba (dot) hruska (at) gmail (dot) com
+Copyright:     (c) 2009, Csaba Hruska
+Homepage:      http://www.haskell.org/haskellwiki/LambdaCubeEngine
+License:       BSD3
+License-File:  LICENSE
+Stability:     experimental
+Build-Type:    Simple
+Extra-Source-Files:
+  README
+  src/Utils.hs
+  src/BulletUtils.hs
+
+Data-Files:
+  media/chasis_a.jpg
+  media/chasis.jpg
+  media/grass_1024.jpg
+  media/Ground.mesh.xml
+  media/scooby_body.material
+  media/scooby_body.mesh.xml
+  media/test.material
+  media/ventanas.jpg
+
+Executable lambdacube-bullet-example
+  Executable:     lambdacube-bullet-example
+  HS-Source-Dirs: src
+  Main-IS:        lambdacube-bullet-example.hs
+  Build-Depends:  base >= 4 && < 5, lambdacube-engine, elerea, GLFW, OpenGL, containers, hslogger, bullet
+  GHC-Options:    -Wall -O2

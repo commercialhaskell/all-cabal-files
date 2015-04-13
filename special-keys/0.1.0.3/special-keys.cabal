@@ -1,0 +1,32 @@
+name:                special-keys
+version:             0.1.0.3
+synopsis:            Simple data types that help me here and there. 
+description:         Datatypes that I use as keys to index other data types. Here you will find a wrap of UUID and also constraints on Text so that it never exceeds a given number of characters.
+license:             BSD3
+license-file:        LICENSE
+author:              Hugo Gomes
+maintainer:          mr.hugo.gomes@gmail.com
+-- copyright:           
+category:            Data
+build-type:          Simple
+cabal-version:       >=1.8
+
+library
+  exposed-modules:  Keys.UUID,
+                    Keys.Constraints,
+                    Keys.Random
+
+  -- other-modules:       
+  build-depends:    base >= 4 && < 5,
+                    hashable >= 1.2,
+                    text >= 0.11,
+                    safecopy >= 0.8,
+                    cereal >= 0.3,
+                    path-pieces >= 0.1,
+                    blaze-markup >= 0.5,
+                    deepseq >= 1.3,
+                    primitive >= 0.5,
+                    bytestring >= 0.10,
+                    uuid >= 1.2,
+                    mwc-random >= 0.12,
+                    aeson >= 0.6.1.0

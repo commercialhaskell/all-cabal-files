@@ -1,0 +1,32 @@
+Name:             tuple-gen
+Version:          2.0
+Synopsis:         Enum instances for tuples where the digits increase with the same speed
+Description:      Generating tuples like this: [(x, y) | x <- [1..], y <- [1..]] generates tuples that change only in the second position.
+                  .
+                  This library uses increasingly bigger hyperplanes to generate tuples.
+                  .
+                  It uses the Enum instances that are also used in the Prelude.
+                  .
+                  Thereby tuples with arbitrary starting values and types can be enumerated.
+                  .
+                  Example:  ( enumFrom (0,(1,2),3) ) :: [(Word8,(Word8,Word8),Word8)]
+                  .
+                  evaluates to [(0,(1,2),3), (0,(2,1),4), (0,(3,0),5), ...].
+                  .
+                  Further explanations are planned to appear in the Monad Reader issue 20.
+
+category:         Data
+License:          BSD3
+License-file:     LICENSE
+Author:           Tillmann Vogt
+Maintainer:       Tillmann.Vogt@rwth-aachen.de
+Build-Type:       Simple
+Cabal-Version:    >=1.6
+
+Library
+    hs-source-dirs: src
+    build-depends:
+        base == 4.*,
+        combinat == 0.2.4.*
+    exposed-modules:
+        Data.Tuple.Enum

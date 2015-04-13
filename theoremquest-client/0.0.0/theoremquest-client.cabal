@@ -1,0 +1,31 @@
+name:    theoremquest-client
+version: 0.0.0
+
+category: Game, Formal Methods, Theorem Provers
+
+synopsis: A simple client for the TheoremQuest theorem proving game.
+
+description:
+  TODO
+
+author:     Tom Hawkins <tomahawkins@gmail.com>
+maintainer: Tom Hawkins <tomahawkins@gmail.com>
+
+build-type:    Simple
+cabal-version: >= 1.6
+
+license:      BSD3
+license-file: LICENSE
+
+executable tq
+  main-is:           TheoremQuestClient.hs
+  build-depends:     base         >= 4.0    && < 5,
+                     network      >= 2.3    && < 2.4,
+                     HTTP         >= 4000.1 && < 4000.2,
+                     theoremquest >= 0.0.0
+  ghc-options:       -W
+
+source-repository head
+  type:     git
+  location: git://github.com/tomahawkins/theoremquest.git
+

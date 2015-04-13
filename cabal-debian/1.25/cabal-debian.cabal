@@ -1,0 +1,49 @@
+Name:           cabal-debian
+Version:        1.25
+License:        BSD3
+License-File:   debian/copyright
+Author:         David Fox <dsf@seereason.com>
+Category:       Debian, Distribution, System
+Maintainer:     David Fox <dsf@seereason.com>
+Homepage:       http://src.seereason.com/cabal-debian
+Build-Type:     Simple
+Synopsis:       Create a debianization for a cabal package
+Cabal-Version: >= 1.6
+Description:
+  A program which creates a debian subdirectory containing the required
+  files to build a deb.
+Data-Files:
+  debian/cabal-debian.1,
+  debian/cabal-debian.manpages,
+  debian/changelog,
+  debian/compat,
+  debian/control,
+  debian/copyright,
+  debian/rules
+
+Source-Repository head
+  type: darcs
+  location: http://src.seereason.com/cabal-debian
+
+Flag cabal19
+ Description: True if Cabal >= 1.9 is available
+
+Executable cabal-debian
+ Main-is: CabalDebian.hs
+ ghc-options: -threaded -W
+ Build-Depends: base < 5, bytestring, Cabal >= 1.6.0.1, containers, debian >= 3.63, directory, filepath, mtl, parsec >= 3, pretty, process, regex-tdfa, unix, Unixutils >= 1.50, utf8-string
+ Extensions:           ExistentialQuantification CPP
+ if flag(cabal19)
+   build-depends: Cabal >= 1.9
+   cpp-options: -DCABAL19
+ else
+   build-depends: Cabal >= 1.8
+   cpp-options: -DCABAL18
+ Other-Modules:
+   Distribution.Package.Debian,
+   Distribution.Package.Debian.Bundled,
+   Distribution.Package.Debian.Dependencies,
+   Distribution.Package.Debian.Interspersed,
+   Distribution.Package.Debian.Main,
+   Distribution.Package.Debian.Relations,
+   Distribution.Package.Debian.Setup

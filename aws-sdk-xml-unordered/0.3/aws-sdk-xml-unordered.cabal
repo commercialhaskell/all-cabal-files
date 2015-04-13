@@ -1,0 +1,53 @@
+name:                aws-sdk-xml-unordered
+version:             0.3
+synopsis:            The xml parser for aws-sdk package
+description:         This package provides the unordered xml parser for aws-sdk package.
+license:             BSD3
+license-file:        LICENSE
+author:              Shohei Yasutake <amutake.s@gmail.com>
+maintainer:          Shohei Yasutake <amutake.s@gmail.com>
+homepage:            https://github.com/worksap-ate/aws-sdk-xml-unordered
+bug-reports:         https://github.com/worksap-ate/aws-sdk-xml-unordered/issue
+-- copyright:
+category:            XML
+build-type:          Simple
+cabal-version:       >=1.10
+
+library
+  exposed-modules:     Cloud.AWS.Lib.Parser.Unordered
+  other-modules:       Cloud.AWS.Lib.Parser.Unordered.Types
+                       Cloud.AWS.Lib.Parser.Unordered.Convert
+                       Cloud.AWS.Lib.Parser.Unordered.Conduit
+                       Cloud.AWS.Lib.Parser.Unordered.Path
+  build-depends:       base ==4.*
+                     , containers >=0.5
+                     , unordered-containers >=0.2
+                     , conduit >=1.0.1
+                     , xml-conduit >=0.5
+                     , xml-types ==0.3.*
+                     , text >=0.1
+                     , mtl >=1.0
+                     , lifted-base >=0.2
+                     , aws-sdk-text-converter >=0.1
+  hs-source-dirs:      src
+  ghc-options:         -Wall -fno-warn-unused-do-bind
+  default-language:    Haskell2010
+
+test-suite test
+  type:                exitcode-stdio-1.0
+  main-is:             test.hs
+  hs-source-dirs:      test
+  build-depends:       base ==4.*
+                     , bytestring
+                     , text
+                     , conduit
+                     , xml-conduit
+                     , aws-sdk-xml-unordered
+                     , hspec
+                     , mtl
+  ghc-options:       -Wall -threaded -fno-warn-unused-do-bind
+  default-language:  Haskell2010
+
+source-repository head
+  type:                git
+  location:            git://github.com/worksap-ate/aws-sdk-xml-unordered.git

@@ -1,0 +1,12 @@
+Name:		polytypeable-utils
+Version:	0.1.0.0
+License:	BSD3
+Author:		Ahn, Ki Yung
+Maintainer:	Ahn, Ki Yung <kya@pdx.edu>
+Category:	Data
+Synopsis:	Utilities for polytypeable.
+Stability:      experimental
+Build-type:	Simple
+Description:	Utilities for polytypeable (Typeable for polymorphic types).
+Build-Depends:	base >= 2 && < 6, haskell98, polytypeable >= 0.1 && < 0.2
+Exposed-modules:	Data.PolyTypeable.Utils

@@ -1,0 +1,22 @@
+name:               haskell-compression
+version:            0.1
+synopsis:           
+description:        Compress files
+category:           Codec
+license:            BSD3
+author:             Alan Hawkins
+homepage:           codekinder.com
+maintainer:         hawk.alan@gmail.com
+cabal-version:      >= 1.2
+build-type:         Simple
+
+executable hs-compress
+    main-is:            Main.hs
+    build-depends:      base<10000 , containers, bytestring,bimap, boolean-list
+    
+library
+  exposed-modules:  Codec.HaskellCompression
+  other-modules:  Codec.HaskellCompression.Zip
+                 ,Codec.HaskellCompression.Unzip
+                 ,Codec.HaskellCompression.Shared
+  build-depends: base <10000, containers, bytestring,bimap,boolean-list 

@@ -1,0 +1,39 @@
+name:               wyvern
+version:            0.1
+homepage:           http://dmwit.com/wyvern
+synopsis:           An autoresponder for Dragon Go Server.
+description:        Wyvern will play pre-planned sequences for you on the
+                    Dragon Go Server.  Just feed it some SGF files outlining
+                    your plan, and it will make moves in any games that are
+                    waiting.
+category:           Game
+license:            BSD3
+license-file:       LICENSE
+author:             Daniel Wagner
+maintainer:         daniel@wagner-home.com
+cabal-version:      >= 1.6
+build-type:         Simple
+
+executable wyvern
+    main-is:        Main.hs
+    build-depends:  base >= 3 && < 4,
+                    bytestring >= 0.9,
+                    ConfigFile >= 1.0,
+                    containers >= 0.2,
+                    dgs >= 0.2,
+                    directory >= 1.0,
+                    filepath >= 1.1,
+                    mtl >= 1.1,
+                    parsec >= 3.0,
+                    process >= 1.0,
+                    sgf >= 0.1.1,
+                    split >= 0.1
+
+source-repository head
+    type:       git
+    location:   http://www.dmwit.com/wyvern/.git
+
+source-repository this
+    type:       git
+    location:   http://www.dmwit.com/wyvern/.git
+    tag:        0.1

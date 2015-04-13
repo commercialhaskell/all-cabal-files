@@ -1,0 +1,55 @@
+name:             wumpus-tree
+version:          0.1.0
+license:          BSD3
+license-file:     LICENSE
+copyright:        Stephen Tetley <stephen.tetley@gmail.com>
+maintainer:       Stephen Tetley <stephen.tetley@gmail.com>
+homepage:         http://code.google.com/p/copperbox/
+category:         Graphics
+synopsis:         Drawing trees
+description:
+  .
+  Tree drawing with /nice/ layout. 
+  .
+  Draw trees represented by Data.Tree, output SVG or EPS. The 
+  output should be quite good - no overlapping edges, identical 
+  subtrees should have the same shape.
+  .
+  .
+build-type:         Simple
+stability:          highly unstable
+cabal-version:      >= 1.2
+
+extra-source-files:
+  CHANGES,
+  LICENSE,
+  demo/Demo01.hs
+  
+library
+  hs-source-dirs:     src
+  build-depends:      base              <  5, 
+                      containers        >= 0.3.0     && < 0.4.0,
+                      vector-space      >= 0.6,
+                      wumpus-core       >= 0.22.0,
+                      wumpus-basic      >= 0.3.0
+
+  
+  exposed-modules:
+    Wumpus.Tree,
+    Wumpus.Tree.VersionNumber
+
+  other-modules:
+    Wumpus.Tree.Base,
+    Wumpus.Tree.Design,
+    Wumpus.Tree.Draw
+
+  extensions:
+    
+
+  ghc-options:
+  
+  includes: 
+  
+
+  
+  

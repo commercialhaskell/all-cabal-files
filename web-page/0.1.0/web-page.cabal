@@ -1,0 +1,74 @@
+name:          web-page
+version:       0.1.0
+category:      Web
+synopsis:      Monoidally construct web pages
+maintainer:    Ertugrul Söylemez <ertesx@gmx.de>
+author:        Ertugrul Söylemez <ertesx@gmx.de>
+copyright:     (c) 2014 Ertugrul Söylemez
+license:       BSD3
+license-file:  LICENSE
+build-type:    Simple
+cabal-version: >= 1.10
+extra-source-files: README.md default.nix
+description:
+    This package combines blaze-html, clay, jmacro and web-routes into a
+    framework-agnostic library to generate web pages dynamically from
+    individual components.  It is inspired by Yesod's widgets, but is
+    more general, more powerful and can be used with other web
+    frameworks.
+
+flag TestProgram
+    default: False
+    description: Build the test program
+    manual: True
+
+source-repository head
+    type:     darcs
+    location: http://hub.darcs.net/ertes/web-page
+
+library
+    build-depends:
+        base           >= 4.5  && < 5,
+        blaze-html     >= 0.7  && < 1,
+        bytestring     >= 0.10 && < 1,
+        clay           >= 0.9  && < 1,
+        containers     >= 0.5  && < 1,
+        jmacro         >= 0.6  && < 1,
+        lens           >= 4.4  && < 5,
+        mtl            >= 2.1  && < 3,
+        text           >= 1.0  && < 2,
+        wl-pprint-text >= 1.1  && < 2
+    default-language: Haskell2010
+    default-extensions:
+        ConstraintKinds
+        DeriveDataTypeable
+        DeriveFoldable
+        FlexibleContexts
+        OverloadedStrings
+        RankNTypes
+    ghc-options: -W
+    exposed-modules:
+        Web.Page
+        Web.Page.Render
+        Web.Page.Widget
+
+executable web-page-test
+    if flag(testprogram)
+        build-depends:
+            base >= 4.5 && < 5,
+            blaze-html,
+            bytestring,
+            clay,
+            jmacro,
+            text,
+            web-page
+    else
+        buildable: False
+    default-language: Haskell2010
+    default-extensions:
+        FlexibleContexts
+        OverloadedStrings
+        QuasiQuotes
+    ghc-options: -threaded -rtsopts
+    hs-source-dirs: test
+    main-is: Test.hs

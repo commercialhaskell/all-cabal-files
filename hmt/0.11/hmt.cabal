@@ -1,0 +1,59 @@
+Name:              hmt
+Version:           0.11
+Synopsis:          Haskell Music Theory
+Description:       Haskell music theory library
+License:           GPL
+Category:          Music
+Copyright:         Rohan Drape, 2006-2011
+Author:            Rohan Drape
+Maintainer:        rd@slavepianos.org
+Stability:         Experimental
+Homepage:          http://slavepianos.org/rd/?t=hmt
+Tested-With:       GHC == 7.2.2
+Build-Type:        Simple
+Cabal-Version:     >= 1.8
+
+Data-files:        README
+                   Help/hmt.help.lhs
+
+Library
+  Build-Depends:   base==4.*,
+                   cairo,colour,containers,
+                   hcg-minus==0.11.*,html-minimalist==0.11.*,
+                   multiset-comb,
+                   parsec,
+                   permutation,
+                   split,
+                   utf8-string,
+                   xml
+  GHC-Options:     -Wall -fwarn-tabs
+  Exposed-modules: Music.Theory.Bjorklund
+                   Music.Theory.Contour.Polansky_1992
+                   Music.Theory.Diagram.Grid
+                   Music.Theory.Diagram.Path
+                   Music.Theory.Duration
+                   Music.Theory.Duration.Name
+                   Music.Theory.Duration.Name.Abbreviation
+                   Music.Theory.Duration.RQ
+                   Music.Theory.Duration.Sequence.Notate
+                   Music.Theory.Interval
+                   Music.Theory.Interval.Name
+                   Music.Theory.Interval.Spelling
+                   Music.Theory.Key
+                   Music.Theory.Parse
+                   Music.Theory.Pct
+                   Music.Theory.Permutations
+                   Music.Theory.Pitch
+                   Music.Theory.Pitch.Name
+                   Music.Theory.Pitch.Spelling
+                   Music.Theory.PitchClass
+                   Music.Theory.Prime
+                   Music.Theory.Set
+                   Music.Theory.Table
+                   Music.Theory.Tuning
+                   Music.Theory.Xenakis.S4
+                   Music.Theory.Xenakis.Sieve
+
+Source-Repository  head
+  Type:            darcs
+  Location:        http://slavepianos.org/rd/sw/hmt

@@ -1,0 +1,14 @@
+Name: hetero-map
+Description:
+    Pure heterogeneous maps.  
+Version: 0.20
+Stability: experimental
+Synopsis: Pure heterogeneous maps.
+License: BSD3
+Category: Data, Data Structures
+Author: Luke Palmer
+Homepage: http://github.com/luqui/hetero-map
+Maintainer: lrpalmer@gmail.com
+Build-Type: Simple
+Build-Depends: base, containers, ghc-prim
+Exposed-Modules: HeteroMap.Map

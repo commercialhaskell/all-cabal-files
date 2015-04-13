@@ -1,0 +1,33 @@
+
+Name:		multisetrewrite
+Synopsis:	Multi-set rewrite rules with guards and a parallel execution scheme
+Category:       Concurrency
+Version:	0.1
+Stability:      experimental
+Cabal-Version:  >= 1.2
+License:	BSD3
+License-File:	LICENSE
+Author:		Martin Sulzmann
+Maintainer:     martin.sulzmann@gmail.com
+Description:    Multi-set rewrite rules with guards and a parallel execution scheme
+homepage:       http://sulzmann.blogspot.com/2008/10/multi-set-rewrite-rules-with-guards-and.html
+            
+data-files: README
+extra-source-files: Stack.hs, CHR.hs
+
+Build-Type: Simple
+Build-Depends:	base, haskell98, stm
+Exposed-modules:
+                     MultiSetRewrite.Base,
+                     MultiSetRewrite.RuleSyntax,
+                     MultiSetRewrite.RuleCompiler,
+                     MultiSetRewrite.StoreRepresentation
+Other-modules:     MultiSetRewrite.ConcurrentList,
+                   MultiSetRewrite.ConcurrentBag
+
+Extensions: UndecidableInstances, FlexibleInstances, TypeSynonymInstances
+            MultiParamTypeClasses, FunctionalDependencies
+
+GHC-Options: -threaded
+
+tested-with: GHC == 6.8.2

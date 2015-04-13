@@ -1,0 +1,38 @@
+Name: GenSmsPdu
+Version: 0.1
+Cabal-Version: >= 1.2
+Build-type: Simple
+License: BSD3
+License-file: LICENSE
+Copyright: Kwanghoon Choi <lazyswamp@gmail.com>
+Author: Kwanghoon Choi <lazyswamp@gmail.com>
+Maintainer: Kwanghoon Choi <lazyswamp@gmail.com>
+Homepage: 
+Category: Testing
+Synopsis: Automatic SMS message generator
+Description: GenSmsPdu is a library for random generation of 3GPP SMS
+            messages. It defines a big data type for 3GPP defined 
+            SMS message formats such as SMS-SUBMIT and SMS-DELIVER \[1\].
+            Using QuickCheck, it can generate a list of random SMS messages
+            in the data type automatically.
+            .
+            GenSmsPdu offers an encoder to convert an SMS message into
+            an SMS PDU (Protocol Data Unit) in bytes, and a decoder to do the reverse. Currently,
+            it generates only single paged SMS messages.
+            .
+            \[1\] 3GPP TS 23.040 V6.7.0, 3rd Generation Partnership Project
+              Technical Specification Group Core Network and Terminals;
+              Technical Realization of the Short Message Service (SMS)
+             (Release 6), March 2006. http:\/\/www.3gpp.org.
+
+Extra-source-files: src/GenSmsPdu.hs
+
+Executable gensmspdu
+  Main-Is: Main.hs
+  hs-source-dirs: src
+  Build-depends: base >= 4 && < 5, random, haskell98, QuickCheck
+  Ghc-options: -fglasgow-exts
+  extensions: MultiParamTypeClasses 
+  extensions: UndecidableInstances
+
+

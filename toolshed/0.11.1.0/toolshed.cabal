@@ -1,0 +1,51 @@
+--Package-properties
+Name:			toolshed
+Version:		0.11.1.0
+Cabal-Version:		>= 1.6
+Copyright:		(C) 2010 Dr. Alistair Ward
+License:		GPL
+License-file:		LICENSE
+Author:			Dr. Alistair Ward
+Stability:		Stable interface. Ill-defined scope.
+Synopsis:		Utilities used by other packages.
+Build-Type:		Simple
+Description:		An ill-defined collection of simple unrelated utilities used by other packages from <http://functionalley.eu>
+Category:		Utils
+Tested-With:		GHC == 6.10, GHC == 6.12, GHC == 7.0
+Homepage:		http://functionalley.eu
+Maintainer:		toolshed <at> functionalley <dot> eu
+Bug-reports:		toolshed <at> functionalley <dot> eu
+Extra-Source-Files:	changelog, copyright, makefile
+
+flag haveDeepSeq
+    Description:	Use the new module 'Control.DeepSeq', where available, rather than 'Control.Parallel.Strategies'.
+    Default:		True
+
+flag llvm
+    Description:	Whether the 'llvm' backend has been installed and is required for code-generation.
+    manual:		True
+    default:		False
+
+Library
+    hs-source-dirs:	src
+
+    Exposed-modules:
+        ToolShed.Defaultable
+        ToolShed.ListPlus
+        ToolShed.Options
+        ToolShed.SelfValidate
+        ToolShed.TimePure
+        ToolShed.Unsafe 
+
+    Build-depends:	base == 4.*
+
+    GHC-options:	-Wall -O2
+    GHC-prof-options:	-prof -auto-all -caf-all
+
+    if flag(haveDeepSeq)
+        Build-depends:	deepseq >= 1.1
+        CPP-options:	-DHAVE_DEEPSEQ
+
+    if impl(ghc >= 7.0) && flag(llvm)
+        GHC-options:	-fllvm
+

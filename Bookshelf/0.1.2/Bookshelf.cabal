@@ -1,0 +1,15 @@
+name:           Bookshelf
+version:        0.1.2
+synopsis:       A simple document organizer with some wiki functionality
+description:    A simple document organizer with some wiki functionality
+category:       Text
+license:        GPL
+license-file:   LICENSE
+author:         Emil Axelsson <emax@chalmers.se>
+maintainer:     Emil Axelsson <emax@chalmers.se>
+homepage:       http://www.cs.chalmers.se/~emax/bookshelf/Manual.shelf.html
+build-depends:  base, filepath, directory, utf8-string, parseargs, pandoc
+build-type:     Simple
+
+executable:     bookshelf
+main-is:        Bookshelf.hs

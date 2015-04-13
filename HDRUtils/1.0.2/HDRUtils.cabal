@@ -1,0 +1,52 @@
+name: HDRUtils 
+version: 1.0.2
+cabal-version: >=1.2
+build-type: Simple
+license: BSD3
+license-file: LICENSE
+copyright: 2009 Jeff Heard
+maintainer: J.R. Heard
+build-depends: array -any, base == 4.1.0.0, containers -any, mtl -any, colour > 2.2.0, unix <= 2.3.2.0
+stability:
+homepage: http://vis.renci.org/jeff/pfs
+package-url: 
+bug-reports:
+synopsis: Utilities for reading, manipulating, and writing HDR images
+description: PFS is a library for manipulating Portable Floating-point Streams, an interchange
+ format for high-dynamic range images.  You will need pfstools for this library to work properly.
+ pfstools can be found at http://pfstools.sourceforge.net/
+             
+category: Graphics
+author: J.R. Heard
+tested-with:
+data-files:
+data-dir: ""
+extra-source-files:
+extra-tmp-files:
+exposed-modules: Graphics.Image.PFS.Internal
+                 Graphics.Image.PFS
+                 Graphics.Image.PixelMap
+                 
+exposed: True
+buildable: True
+build-tools:
+cpp-options:
+cc-options:
+ld-options:
+pkgconfig-depends:
+frameworks:
+c-sources: pfsapi.cxx
+extensions:
+extra-libraries: pfs-1.2
+extra-lib-dirs:
+includes: 
+install-includes:
+include-dirs: .
+hs-source-dirs: .
+other-modules:
+ghc-prof-options:
+ghc-shared-options:
+ghc-options: 
+hugs-options:
+nhc98-options:
+jhc-options:

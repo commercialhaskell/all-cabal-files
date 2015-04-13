@@ -1,0 +1,39 @@
+name:                catch-fd
+version:             0.2.0.1
+cabal-version:       >= 1.10
+synopsis:            MonadThrow and MonadCatch, using functional dependencies
+description:         MonadThrow and MonadCatch, using functional dependencies
+license:             BSD3
+license-file:        LICENSE
+author:              Andy Sonnenburg
+maintainer:          Andy Sonnenburg <andy22286@gmail.com>
+category:            Control
+homepage:            http://github.com/sonyandy/catch-fd
+bug-reports:         http://github.com/sonyandy/catch-fd/issues
+build-type:          Simple
+
+source-repository head
+  type: git
+  location: git://github.com/sonyandy/catch-fd.git
+
+library
+  default-language: Haskell98
+  exposed-modules:
+    Control.Monad.Catch
+    Control.Monad.Catch.Class
+  build-depends:
+    base >= 4 && < 5,
+    transformers >= 0.2 && < 0.4,
+    mtl >= 2.0 && < 2.2
+  other-extensions: CPP
+  if impl(ghc >= 7.4)
+    cpp-options: -DLANGUAGE_ConstraintKinds
+    other-extensions: ConstraintKinds
+  if impl(ghc >= 7.2)
+    cpp-options: -DLANGUAGE_DefaultSignatures
+  other-extensions:
+    FlexibleInstances
+    FunctionalDependencies
+    MultiParamTypeClasses
+    UndecidableInstances
+  ghc-options: -Wall

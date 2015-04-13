@@ -1,0 +1,27 @@
+Name:           language-c-comments
+Version:        0.1
+Cabal-Version:  >= 1.2.3
+Build-Type:     Simple
+License:        BSD3
+License-File:   LICENSE
+Author:         Geoff Hulette
+Maintainer:     ghulette@gmail.com
+Stability:      experimental
+Homepage:       http://github.com/ghulette/language-c-comments
+Bug-reports:    http://github.com/ghulette/language-c-comments/issues
+Synopsis:       Extracting comments from C code
+Description:    Language C Comments is a Haskell library for extracting 
+                comments from C code.  It will parse both single- and 
+                multi-line comments, and correctly handles split lines.
+Category:       Language
+
+Extra-Source-Files: examples/Main.hs
+Data-Files: LICENSE, README
+
+Library
+  Build-Depends:   base >= 4 && < 5,array,language-c >= 0.3.2
+  Build-Tools:     alex
+  Hs-Source-Dirs:  src
+  Exposed-Modules: Language.C.Comments
+  Other-Modules:   Language.C.Comments.Lexer
+                   Language.C.Comments.LineParser

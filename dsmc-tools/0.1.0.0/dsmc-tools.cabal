@@ -1,0 +1,49 @@
+name:                dsmc-tools
+description:         CLI tools for dsmc library
+version:             0.1.0.0
+synopsis:            DSMC toolkit for rarefied gas dynamics
+license:             BSD3
+license-file:        LICENSE
+author:              Dmitry Dzhus
+maintainer:          dima@dzhus.org
+category:            Physics
+
+data-files:          README, example.prb, body.geo, smiley.geo, reentry2.geo
+
+build-type:          Simple
+cabal-version:       >=1.8
+tested-with:         GHC == 7.4.1
+
+source-repository head
+  type: git
+  location: https://github.com/dzhus/dsmc-tools/
+
+executable dsmc-caster
+  ghc-options: -Wall -O2 -funbox-strict-fields -Odph -rtsopts -threaded -fno-liberate-case -funfolding-use-threshold1000 -funfolding-keeness-factor1000 -fllvm -optlo-O3
+  main-is: src/Caster.hs
+
+  -- other-modules:
+
+  build-depends:
+    base         == 4.*,
+    cmdargs      == 0.9.*,
+    dsmc         == 0.1.*,
+    gloss        == 1.7.*,
+    gloss-raster == 1.7.*,
+    strict       == 0.3.*
+
+executable dsmc-runner
+  ghc-options: -Wall -O2 -funbox-strict-fields -Odph -rtsopts -threaded -fno-liberate-case -funfolding-use-threshold1000 -funfolding-keeness-factor1000 -fllvm -optlo-O3
+  main-is: src/Runner.hs
+
+  build-depends:
+    base           == 4.*,
+    bytestring     == 0.9.*,
+    cmdargs        == 0.9.*,
+    ConfigFile     == 1.1.*,
+    dsmc           == 0.1.*,
+    hslogger       == 1.2.*,
+    transformers   == 0.3.*,
+    mtl            == 2.1.*,
+    repa           == 3.2.*,
+    vector         == 0.9.*

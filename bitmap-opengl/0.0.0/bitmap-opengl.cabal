@@ -1,0 +1,35 @@
+Name:                bitmap-opengl
+Version:             0.0.0
+Synopsis:            OpenGL support for Data.Bitmap.
+Description:         OpenGL support for Data.Bitmap. It has its own package so that
+                     the bitmap package does not depend on OpenGL. 
+License:             BSD3
+License-file:        LICENSE
+Copyright:           (c) 2009 Balazs Komuves
+Author:              Balazs Komuves
+Maintainer:          bkomuves (plus) hackage (at) gmail (dot) com
+Homepage:            http://code.haskell.org/~bkomuves/
+Stability:           Experimental
+Category:            Graphics, Data
+Tested-With:         GHC == 6.10.1
+Cabal-Version:       >= 1.2
+Build-Type:          Simple
+
+Flag base4
+  Description: Base v4
+
+Library
+  build-depends:    OpenGL, bitmap <= 0.1
+  if flag(base4)
+    Build-Depends:   base >= 4 && < 5
+    cpp-options:     -DBASE_VERSION=4
+  else
+    Build-Depends:   base >= 3 && < 4
+    cpp-options:     -DBASE_VERSION=3
+    
+  Exposed-Modules:     Data.Bitmap.OpenGL
+
+  Hs-Source-Dirs:      .
+  Extensions:          ScopedTypeVariables, CPP
+
+                       

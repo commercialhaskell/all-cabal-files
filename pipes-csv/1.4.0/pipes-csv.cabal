@@ -1,0 +1,60 @@
+name:                pipes-csv
+version:             1.4.0
+synopsis:            Fast, streaming csv parser
+license:             MIT
+license-file:        LICENSE
+author:              William Casarin
+maintainer:          will@casarin.me
+category:            Pipes, CSV
+build-type:          Simple
+cabal-version:       >=1.10
+Description:
+  `pipes-csv` is a streaming csv parser built on top of `cassava` and `pipes`
+
+source-repository head
+  type: git
+  location: https://github.com/jb55/pipes-csv
+
+library
+  hs-source-dirs: src
+  ghc-options: -Wall -O2
+  default-language: Haskell2010
+
+  exposed-modules:
+      Pipes.Csv
+    , Pipes.Csv.Encoding
+
+  build-depends:
+      base                  >= 4       && < 5
+    , cassava               >= 0.4     && < 0.5
+    , pipes                 >= 4       && < 5
+    , unordered-containers  < 0.3
+    , blaze-builder         < 0.4
+    , bytestring            < 0.11
+    , vector                < 0.11
+
+
+flag test-hunit
+  default: True
+  manual: True
+
+test-suite hunit
+  type: exitcode-stdio-1.0
+  main-is: test-pipes-csv.hs
+  ghc-options: -w -threaded -rtsopts -with-rtsopts=-N
+  hs-source-dirs: test
+
+  if !flag(test-hunit)
+    buildable: False
+  else
+    build-depends:
+        base
+      , HUnit >= 1.2
+      , pipes                >= 4 && < 5
+      , pipes-bytestring     >= 2 && < 3
+      , pipes-csv
+      , cassava
+      , vector
+      , bytestring
+      , test-framework       >= 0.6
+      , test-framework-hunit >= 0.2

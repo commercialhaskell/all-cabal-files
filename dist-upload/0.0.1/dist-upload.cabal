@@ -1,0 +1,29 @@
+name:			dist-upload
+version:		0.0.1
+Cabal-Version:	>= 1.6
+license:		GPL-3
+license-file:	LICENSE
+copyright:		(c) 2009 ~ 2010 Andy Stewart
+synopsis:		Generate/Upload cabal package to Hackage.
+description:    Generate/Upload cabal package to Hackage.
+author:			Andy Stewart
+maintainer:		Andy Stewart <lazycat.manatee@gmail.com>
+stability:		provisional
+category:		Distribution
+
+tested-with:	GHC==6.12.3
+build-type:		Simple
+
+Source-Repository head
+  type:         darcs
+  location:     http://patch-tag.com/r/AndyStewart/dist-upload
+  
+Library
+     build-depends: base >= 4 && < 5, process, filepath, directory, Cabal >= 1.8
+     exposed-modules:
+     other-modules:							
+     extensions:  
+     ghc-options: -fwarn-unused-matches -fwarn-unused-binds -fwarn-unused-imports -fwarn-overlapping-patterns -fwarn-duplicate-exports -fwarn-unrecognised-pragmas -fwarn-hi-shadowing 
+     
+Executable dist-upload
+     main-is: Main.hs

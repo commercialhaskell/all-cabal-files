@@ -1,0 +1,61 @@
+name                          : system-uuid
+version                       : 1.4.0
+category                      : System
+license                       : BSD3
+license-file                  : LICENSE
+author                        : Jason Dusek
+maintainer                    : system-uuid@solidsnack.be
+homepage                      : http://github.com/solidsnack/system-uuid/
+synopsis                      : Bindings to system UUID functions.
+description                   :
+  Bindings to the native UUID generator for a number of platforms. Please
+  contact the author if your platform is not supported.
+
+
+cabal-version                 : >= 1.2.3
+build-type                    : Simple
+extra-source-files            : README
+                                ACKNOWLEDGEMENTS
+                                CONTRIBUTORS
+                                Options.hs
+                                Macros.hs
+                                MacroMacros.hs
+                                Messages.hs
+
+flag split-base
+
+library
+  if flag(split-base)
+    build-depends : base >= 4 && < 5
+  else
+    build-depends : base < 4
+
+  build-depends               : containers
+                              , binary
+                              , template-haskell
+                              , parsec
+  exposed-modules             : System.UUID.V1
+                                System.UUID.V4
+                                System.UUID.FromForeign
+                                Data.UUID
+  if os(linux)
+    extra-libraries           : uuid
+  if os(mingw32)
+    extra-libraries           : rpcrt4
+  extensions                  : ForeignFunctionInterface
+                                TemplateHaskell
+                                PatternGuards
+                                CPP
+
+executable                      hooty
+  main-is                     : Main.hs
+  if os(linux)
+    extra-libraries           : uuid
+  if os(mingw32)
+    extra-libraries           : rpcrt4
+  extensions                  : ForeignFunctionInterface
+                                TemplateHaskell
+                                PatternGuards
+                                DeriveDataTypeable
+                                CPP
+

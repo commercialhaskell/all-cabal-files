@@ -1,0 +1,43 @@
+build-type:          Simple
+name:                dtrace
+version:             0.1
+cabal-version:       >= 1.2
+description:         Haskell interface to the DTrace system tracing utility
+synopsis:            Haskell interface to the DTrace system tracing utility
+category:            System
+license:             BSD3
+license-file:        LICENSE
+author:              Aaron Tomb <aarontomb@gmail.com>
+maintainer:          Aaron Tomb <aarontomb@gmail.com>
+tested-with:         GHC == 6.8.2, GHC == 6.10.1
+extra-source-files:  cbits/trace.d
+                     cbits/trace.h
+                     cbits/user-trace.c
+
+flag test
+  description: Build an example test program
+  default: False
+
+library
+    build-depends:    base >= 3 && < 5
+    extensions:       ForeignFunctionInterface CPP
+    ghc-options:      -Wall
+    ghc-prof-options: -prof -auto-all
+    exposed-modules:  System.DTrace
+    if os(darwin)
+        includes:     cbits/trace.h
+        c-sources:    cbits/user-trace.c
+        cpp-options:  -DENABLE_TRACE=1
+
+executable DTTest
+    main-is: test/DTTest.hs
+    ghc-options: -Wall -Werror
+    if os(darwin)
+        includes:     cbits/trace.h
+        c-sources:    cbits/user-trace.c
+        cpp-options:  -DENABLE_TRACE=1
+    if flag(test)
+        buildable: True
+    else
+        buildable: False
+

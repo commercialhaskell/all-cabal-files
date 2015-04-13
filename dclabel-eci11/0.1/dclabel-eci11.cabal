@@ -1,0 +1,43 @@
+Name:           dclabel-eci11
+Version:        0.1
+build-type:     Simple
+License:        BSD3
+License-File:   LICENSE
+Copyright:      (c) 2011 Deian Stefan, David Mazieres, Alejandro Russo
+Author:         Deain Stefan, David Mazieres, Alejandro Russo
+Maintainer:     Alejandro Russo < russo at chalmers dot se >
+Stability:      experimental
+Synopsis:       Dynamic labels to assign confidentiality and integrity levels in scenarios of mutual distrust 
+Category:       Security
+Cabal-Version:  >=1.6
+
+Extra-source-files:
+     Examples/Labels.hs, GNUmakefile
+
+Description: A package that provides dynamic labels in the form of conjunctions of disjunctions of principals. This package is intended to only be used at the computer science school ECI 2011 (Buenos Aires, Argentina) <http://www.dc.uba.ar/events/eci/2011/index_html>. Please, refer to the official release of dclabels if you plan to use it for other purposes.
+
+Source-repository head
+  Type:     git
+  Location: gitosis@csmisc17.cs.chalmers.se:dclabels-eci11
+
+Library 
+   Build-depends: base >= 4 && < 5, 
+                  QuickCheck >= 2.1
+
+   ghc-options:  
+
+   Exposed-modules:
+       DCLabel.Untrustworthy, 
+       DCLabel.Trustworthy 
+
+   Other-modules:
+       DCLabel.Lattice,  
+       DCLabel.Core, 
+       DCLabel.QC_Core 
+ 
+   Extensions:
+       MultiParamTypeClasses,
+       FlexibleInstances, 
+       FlexibleContexts, 
+       TypeSynonymInstances,  
+       FunctionalDependencies 

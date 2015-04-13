@@ -1,0 +1,50 @@
+Name:           tbox
+Synopsis:       Transactional variables with IO hooks
+Description:
+    (to be expanded...)
+    .
+    This package provides transactional variables with IO hooks. 
+    See module 'Control.Concurrent.TFile' for a concrete instance. 
+    .
+    Feedback appreciated!
+
+Author:         Peter Robinson 2009
+Maintainer:     Peter Robinson <thaldyron@gmail.com>
+License:        LGPL
+License-file:   LICENSE
+Version:        0.0.0
+Category:       Data, Concurrency
+Stability:      experimental
+Homepage:       http://darcs.monoid.at/tbox
+
+build-type:     Simple                        
+cabal-version: >= 1.2.3
+library
+    ghc-options:        -Wall -fno-ignore-asserts -fwarn-incomplete-patterns
+
+    exposed-modules:    Control.Concurrent.TBox
+                        Control.Concurrent.TBox.Class
+                        Control.Concurrent.TBox.Operations
+                        Control.Concurrent.TFile
+
+--    other-modules:      test.hs
+
+    build-depends:      base >= 4 && < 5, 
+                        stm-io-hooks >= 0.5.0 && < 0.6, 
+                        mtl >= 1.1.0.2 && < 1.2,
+                        binary >= 0.5 && < 0.6,
+                        filepath >= 1.1 && < 1.2,
+                        directory >= 1.0.0.3 && < 1.1,
+                        cautious-file >= 0.1.5 && < 0.2
+--                        containers >= 0.2.0.1 && < 0.3
+
+    extensions:         MultiParamTypeClasses,
+--                        RankNTypes, 
+--                        FunctionalDependencies, 
+--                        FlexibleContexts,
+                        FlexibleInstances,
+--                        UndecidableInstances,
+                        DeriveDataTypeable,
+                        ScopedTypeVariables
+--                        TypeSynonymInstances
+

@@ -1,0 +1,24 @@
+category:               Compilers/Interpreters
+copyright:              (c) 2012 Jonathan Fischoff 
+name:                   lambda-ast
+version:                0.0.12
+license:                BSD3
+license-file:           LICENSE
+author:                 Jonathan Fischoff
+maintainer:             jonathangfischoff@gmail.com
+synopsis:               Lambda Calculi Abstract Syntax Trees
+description:            AST's for various Lambda Calculi. Adding more as I need them.
+
+stability:              experimental
+build-type:             Simple
+cabal-version:          >= 1.10.1.0
+tested-with:            GHC == 7.2.2
+
+library
+  hs-source-dirs:         src
+  default-language:       Haskell98
+  exposed-modules:        Language.Lambda.SimplyTyped.Syntax, Language.Lambda.Untyped.Syntax,
+                          Language.Lambda.SimplyTyped.Let.Syntax
+  ghc-options:            -Wall
+  Build-depends:          base < 6.0
+  

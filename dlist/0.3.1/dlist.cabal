@@ -1,0 +1,15 @@
+Name:                dlist
+Version:             0.3.1
+x-revision: 1
+Synopsis:            Differences lists
+Description:         Differences lists: a list-like type supporting O(1) append
+Category:            Data
+License:             BSD3
+License-file:        LICENSE
+Author:              Don Stewart 
+Maintainer:          dons@cse.unsw.edu.au
+Build-Depends:       base < 4.8
+Ghc-options:         -O2
+Exposed-modules:     Data.DList
+Homepage:            http://www.cse.unsw.edu.au/~dons/dlist.html
+extra-source-files:  README tests/Properties.hs tests/Parallel.hs

@@ -1,0 +1,77 @@
+Name:                HLearn-classification
+Version:             0.0.1
+Description:         This module is for unsupervised, supervised, and semi-supervised classification tasks.  It is in desperate need of documentation and refactoring.
+Category:            Data Mining, Machine Learning
+License:             GPL
+--License-file:        LICENSE
+Author:              Mike izbicki
+Maintainer:          mike@izbicki.me
+Build-Type:          Simple
+Cabal-Version:       >=1.8
+
+Executable HLearn-Classification-Demo
+    Main-is: src/examples/demo.lhs
+    Build-Depends:      
+        HLearn-algebra              >= 0.0.1,
+        ConstraintKinds             >= 0.0.1,
+        HLearn-distributions        >= 0.0.1,
+        HLearn-classification       >= 0.0.1,
+        
+        base                        >= 3 && < 5,
+        criterion                   >= 0.6.1.1
+    ghc-options: 
+        -threaded
+        -rtsopts 
+        -O2
+        -- -prof
+        -funbox-strict-fields
+        -- -prof
+        -- -fllvm
+
+Library
+    Build-Depends:      
+        base                    >= 3 && < 5,
+        HLearn-algebra          >= 0.0.1,
+        HLearn-distributions    >= 0.0.1,
+        ConstraintKinds         >= 0.0.1,
+
+        -- are these really necessary?
+        
+        dlist                   >= 0.5,
+        
+        parsec                  >= 3.1.3,
+        Safe                    >= 0.1,
+        bytestring              >= 0.10.0.0,
+        primitive               >= 0.4.1,
+        split                   >= 0.2.1.1,
+        list-extras             >= 0.4.1,
+        containers              >= 0.5,
+        statistics              >= 0.10.2,
+        
+        QuickCheck              >= 2.5.1,
+        vector                  >= 0.9,
+        vector-th-unbox         >= 0.1,
+        
+        MonadRandom             >= 0.1.6,
+        logfloat                >= 0.12.0,
+        math-functions          >= 0.1.1,
+        normaldistribution      >= 1.1.0
+
+        
+    hs-source-dirs:     src
+    ghc-options:        
+        -rtsopts 
+        -- -auto-all 
+        -- -caf-all 
+        -funbox-strict-fields
+        -O2 
+        -- -fllvm
+    Exposed-modules:
+        HLearn.Models.Classification
+        HLearn.Models.Classifiers.NBayes
+        HLearn.Models.DistributionContainer
+        HLearn.DataContainers
+        HLearn.DataContainers.CSVParser
+        HLearn.DataContainers.DS_List
+        HLearn.Evaluation.CrossValidation
+        --HLearn.Evaluation.Metrics

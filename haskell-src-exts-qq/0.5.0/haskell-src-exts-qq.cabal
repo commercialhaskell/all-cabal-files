@@ -1,0 +1,35 @@
+Name:           haskell-src-exts-qq
+Version:        0.5.0
+Author:         Mathieu Boespflug
+Maintainer:     Mathieu Boespflug <mboes@tweag.net>
+Synopsis:       A quasiquoter for haskell-src-exts.
+Description:
+    Allows one to write programs that generate Haskell programs much
+    more concisely and legibly. This package supports:
+    .
+    * Antiquotations, denoted by stealing the splice syntax of
+    Template Haskell, for example @[$hs| $x ++ $(Hs.strE "bar") |]@.
+    Splices may not nested.
+    .
+    * Antiquoting names in patterns. Names that are antiquoted appear
+    surrounded by double parentheses. For instance:
+    .
+    > let f = Hs.name "foo" in [$hs| ((f)) x = x + x |]
+Category:       Language
+License:        BSD3
+License-File:   LICENSE
+Cabal-Version:  >= 1.10.0
+Build-Type:     Simple
+Tested-With:    GHC == 7.0.1
+
+source-repository head
+  type:     git
+  location: git://github.com/mboes/haskell-src-exts-qq
+
+library
+  Build-Depends:  base >= 4 && < 5, syb, template-haskell,
+                  haskell-src-exts >= 1.9.0,
+                  haskell-src-meta >= 0.3
+  Default-Language:     Haskell2010
+  Default-Extensions:   TemplateHaskell, CPP
+  Exposed-Modules:      Language.Haskell.Exts.QQ

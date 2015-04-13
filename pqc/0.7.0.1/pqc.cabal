@@ -1,0 +1,46 @@
+name:                pqc
+version:             0.7.0.1
+description:         Parallel batch driver for QuickCheck
+synopsis:            Parallel batch driver for QuickCheck
+category:            Testing
+license:             BSD3
+license-file:        LICENSE
+Author:              Don Stewart
+Copyright:           Don Stewart 2006-2007, shelarcy 2011-2012
+Maintainer:          shelarcy <shelarcy@gmail.com>
+homepage:            http://darcsden.com/shelarcy/pqc
+build-type: Simple
+Cabal-Version: >= 1.10
+
+source-repository head
+   type: darcs
+   location: http://darcsden.com/shelarcy/pqc
+
+flag split-base
+
+library
+  if flag(split-base)
+    build-depends:     base >= 3 && < 5, random, stm
+                     , QuickCheck > 2.1 && < 3
+  else
+    build-depends:     base < 3, stm, QuickCheck > 2.1 && < 3
+  default-language: Haskell2010
+  exposed-modules:  Test.QuickCheck.Parallel
+  ghc-options:      -Wall -O2
+
+Test-Suite Example
+  type:       exitcode-stdio-1.0
+  main-is:    Example.hs
+  buildable:       True
+  hs-source-dirs:  examples
+  default-language: Haskell2010
+  build-depends:    base < 5, pqc
+                    -- If you want to test code involving bottoms,
+                    -- use ChasingBottoms package.
+                  , ChasingBottoms
+  -- for GHC 7.4.1 with pRunAllProcessors
+  -- ghc-options:      -threaded
+  -- for GHC 7.4.1 or higher
+  ghc-options:      -threaded -with-rtsopts=-N
+  -- for GHC 7.0.x
+  -- ghc-options:      -threaded -rtsopts -with-rtsopts=-N

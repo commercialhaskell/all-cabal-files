@@ -1,0 +1,41 @@
+Name:                combinat
+Version:             0.1
+Synopsis:            Generation of various combinatorial objects.
+Description:         A collection of functions to generate combinatorial
+                     objects like partitions, combinations, permutations,
+                     Young tableaux, various trees, etc.
+License:             BSD3
+License-file:        LICENSE
+Author:              Balazs Komuves
+Copyright:           (c) 2008 Balazs Komuves
+Maintainer:          bkomuves (plus) hackage (at) gmail (dot) com
+Stability:           Unstable
+--Portability:         Portable
+Category:            Math
+Tested-With:         GHC == 6.8.3
+Cabal-Version:       >= 1.2
+Build-Type:          Simple
+
+Flag splitBase
+  Description: Choose the new smaller, split-up base package.
+
+Library
+  if flag(splitBase)
+    Build-Depends:       base >= 3, array, containers
+  else
+    Build-Depends:       base <  3
+
+  Exposed-Modules:     Math.Combinat, 
+                       Math.Combinat.Tuples, 
+                       Math.Combinat.Combinations,
+                       Math.Combinat.Partitions,
+                       Math.Combinat.Permutations,
+                       Math.Combinat.Tableaux,
+                       Math.Combinat.Trees
+  
+  Other-Modules:       Math.Combinat.Helper
+
+  Hs-Source-Dirs:      .
+
+  ghc-options:         -Wall -fno-warn-unused-matches
+    

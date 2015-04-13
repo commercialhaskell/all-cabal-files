@@ -1,0 +1,19 @@
+Name:                multiset-comb
+Version:             0.1
+Synopsis:            Combinatorial operations on multisets
+Description:         Efficiently generate all permutations and partitions of multisets.
+Homepage:            http://code.haskell.org/~byorgey/code/multiset-comb
+License:             BSD3
+License-file:        LICENSE
+Author:              Brent Yorgey
+Maintainer:          byorgey@cis.upenn.edu
+Copyright:           (c) 2010 Brent Yorgey
+Stability:           Experimental
+Category:            Math
+Tested-with:         GHC ==6.10.4, GHC ==6.12.1
+Build-type:          Simple
+Cabal-version:       >=1.2
+
+Library
+  Exposed-modules:     Math.Combinatorics.Multiset
+  Build-depends:       base >= 3 && < 5

@@ -1,0 +1,31 @@
+Name:                gdiff
+Version:             1.1
+Category:            Data
+License:             BSD3
+License-File:        LICENSE
+Author:              Eelco Lempsink, Andres Löh
+Maintainer:          Andres Löh <andres@well-typed.com>
+Synopsis:            Generic diff and patch
+Extra-Source-Files:  CHANGELOG.md
+
+Description:
+  Get an efficient, optimal, type-safe diff and patch function for your
+  datatypes of choice by defining a simple GADT and some class instances.
+  .
+  Extracted from Eelco Lempsink's Thesis (<http://eelco.lempsink.nl/thesis.pdf>).
+
+Cabal-Version:       >= 1.6
+Build-Type:          Simple
+Tested-With:         GHC == 7.8.2
+
+Homepage:            https://github.com/eelco/gdiff
+Bug-Reports:         https://github.com/eelco/gdiff/issues
+
+Library
+    Build-Depends:   base >= 4.7 && < 5
+    Hs-Source-Dirs:  src
+    Exposed-Modules: Data.Generic.Diff
+
+Source-Repository head
+    Type:     git
+    Location: git://github.com/eelco/gdiff.git

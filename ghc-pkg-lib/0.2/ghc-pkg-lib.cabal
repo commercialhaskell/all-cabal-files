@@ -1,0 +1,30 @@
+name:           ghc-pkg-lib
+version:        0.2
+cabal-version:  >=1.20
+build-type:     Simple
+author:         Thiago Arrais, JP Moresmau
+maintainer:     jp@moresmau.fr
+license:        BSD3
+license-file:   LICENSE
+copyright:      (c) Thiago Arrais 2009
+stability:      stable
+synopsis:       Provide library support for ghc-pkg information
+description:    A library that lists the installed packages in a given sandbox and/or in the global and user package databases
+category:       Development
+homepage:       https://github.com/JPMoresmau/ghc-pkg-lib
+
+library
+  hs-source-dirs:   src
+  build-depends:   
+                    base < 5,
+                    ghc-paths >=0.1.0,
+                    filepath >=1.3.0,
+                    directory >=1.2.1,
+                    Cabal >=1.18
+  ghc-options:      -Wall
+  exposed-modules:  Language.Haskell.Packages
+  default-language: Haskell98
+
+source-repository head
+  type:     git
+  location: git@github.com:JPMoresmau/ghc-pkg-lib.git

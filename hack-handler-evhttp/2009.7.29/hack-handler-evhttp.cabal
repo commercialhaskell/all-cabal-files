@@ -1,0 +1,21 @@
+Name:                 hack-handler-evhttp
+Version:              2009.7.29
+Build-type:           Simple
+Synopsis:             Hack EvHTTP (libevent) Handler
+Description:          Hack EvHTTP (libevent) Handler
+License:              GPL
+License-file:         LICENSE
+Author:               Bickford, Brandon <bickfordb@gmail.com>
+Maintainer:           Bickford, Brandon <bickfordb@gmail.com>
+Build-Depends:        base
+Cabal-version:        >= 1.2
+category:             Web
+homepage:             http://github.com/bickfordb/hack-handler-evhttp
+data-files:           examples/Basic.hs
+
+library
+    ghc-options: -Wall
+    build-depends: base >= 3 && < 5, bytestring, bytestring-class, containers, network, data-default >= 0.2, hack >= 2009.5.19, hack-contrib
+    exposed-modules: Hack.Handler.EvHTTP
+    extra-libraries:      event
+    extensions: ForeignFunctionInterface

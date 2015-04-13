@@ -1,0 +1,39 @@
+Name:                   unbounded-delays-units
+Version:                0.4
+Author:                 João Cristóvão <jmacristovao@gmail.com>
+Maintainer:             João Cristóvão <jmacristovao@gmail.com>
+License:                BSD3
+License-File:           LICENSE
+Synopsis:               Thread delays and timeouts using proper time units 
+Description:           
+  Higher level interface to unbounded-delays lib, allowing you to specify
+  the time delays in whatever unit you prefer, us, ms, seconds, minutes, hours.
+Homepage:            https://github.com/jcristovao/unbouded-delays-units
+Cabal-Version:          >= 1.10
+Build-Type:             Simple
+
+extra-source-files:     README.md
+
+Library
+  Default-Language:     Haskell2010
+  HS-Source-Dirs:       src
+  GHC-Options:          -Wall
+  Exposed-Modules:      Control.Concurrent.Units
+  Build-Depends:        base              >= 4        && < 5
+                      , unbounded-delays  >= 0.1.0    && < 0.2
+                      , units             >= 2.0      && < 2.1
+                      , units-defs        >= 1.0.1    && < 1.1
+
+--Test-Suite spec
+  --Type:                 exitcode-stdio-1.0
+  --Default-Language:     Haskell2010
+  --Hs-Source-Dirs:       src
+                      --, test
+  --Ghc-Options:          -Wall
+  --Main-Is:              Spec.hs
+  --Build-Depends:        base
+                      --, hspec
+
+Source-Repository head
+  Type:                 git
+  Location:             https://github.com/jcristovao/unbounded-delays-units 

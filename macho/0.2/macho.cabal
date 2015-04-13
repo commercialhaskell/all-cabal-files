@@ -1,0 +1,25 @@
+Name:          macho
+Version:       0.2
+License:       BSD3
+License-file:  LICENSE
+Category:      Data
+Author:        Erik Charlebois
+Copyright:     Erik Charlebois
+Maintainer:    Erik Charlebois <erikcharlebois@gmail.com>
+Stability:     unstable
+Cabal-Version: >= 1.6
+Homepage:      http://code.fac9.com/macho/
+Build-Depends: base
+Build-Type:    Custom
+Synopsis:      Parser for Mach-O object format.
+Description:   Parser for Mach-O object format.
+Data-Files:    tests/Test.hs
+
+source-repository head
+  type:     darcs
+  location: http://code.fac9.com/macho/
+
+library
+    build-depends:   base, bytestring, binary
+    hs-source-dirs:  src
+    exposed-modules: Data.Macho

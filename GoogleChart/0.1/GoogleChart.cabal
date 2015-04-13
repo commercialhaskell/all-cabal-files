@@ -1,0 +1,15 @@
+Cabal-Version: >= 1.2
+Name: GoogleChart
+Version: 0.1
+Synopsis: Generate web-based charts using the Google Chart API
+Category: Graphics
+License: BSD3
+License-File: LICENSE
+Author: Evan Martin
+Maintainer: martine@danga.com
+Copyright: (c) 2008 Evan Martin <martine@danga.com>
+Homepage: http://neugierig.org/software/darcs/browse/?r=google-chart;a=summary
+
+Library
+  Build-Depends: base
+  Exposed-Modules: Graphics.Google.Chart

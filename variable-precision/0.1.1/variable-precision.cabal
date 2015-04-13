@@ -1,0 +1,52 @@
+Name:                variable-precision
+Version:             0.1.1
+Synopsis:            variable-precision floating point
+Description:
+  Software floating point with type-tagged variable mantissa precision,
+  implemented using a strict pair of 'Integer' and 'Int' scaled alike
+  to 'decodeFloat'.
+  .
+  Instances of the usual numeric type classes are provided, along with
+  additional operators (with carefully chosen fixities) to coerce,
+  adjust and reify precisions.
+  .
+  The intention with this library is to be relatively simple but still
+  useful, refer to the documentation for caveats concerning accuracy and
+  assorted ill-behaviour.
+
+Homepage:            https://gitorious.org/variable-precision
+License:             BSD3
+License-file:        LICENSE
+Author:              Claude Heiland-Allen
+Maintainer:          claudiusmaximus@goto10.org
+Copyright:           (c) 2012 Claude Heiland-Allen
+Category:            Math
+Build-type:          Simple
+
+Cabal-version:       >=1.6
+
+Extra-source-files:  CHANGES README THANKS TODO
+
+Library
+  Exposed-modules:
+    Numeric.VariablePrecision.Complex
+    Numeric.VariablePrecision.Float
+    Numeric.VariablePrecision.Float.Aliases
+    Numeric.VariablePrecision.Precision
+    Numeric.VariablePrecision.Precision.Reify
+    TypeLevel.NaturalNumber.ExtraNumbers
+  Build-depends:
+    base >= 3 && < 6,
+    floatshow >= 0.2 && < 0.3,
+    type-level-natural-number >= 1 && < 2
+  GHC-Options:        -Wall -fno-warn-incomplete-patterns -fcontext-stack=100
+  GHC-Prof-Options:   -prof -auto-all -caf-all
+
+source-repository head
+  type:     git
+  location: git://gitorious.org/variable-precision/variable-precision.git
+
+source-repository this
+  type:     git
+  location: git://gitorious.org/variable-precision/variable-precision.git
+  tag:      v0.1.1

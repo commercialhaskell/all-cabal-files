@@ -1,0 +1,58 @@
+cabal-version: >= 1.6
+name:          sstable
+version:       1.0
+build-type:    Simple
+license:       BSD3
+license-file:  LICENSE
+author:        marius a. eriksen
+category:      Data
+synopsis:      SSTables in Haskell
+description:
+    .
+    This library implements SSTables as described in the Bigtable
+    paper: <http://labs.google.com/papers/bigtable.html>
+    .
+maintainer:    marius a. eriksen
+copyright:     (c) 2010 marius a. eriksen
+
+flag tests
+  description: Build test executables.
+  default:     False
+
+library
+  hs-source-dirs: src
+  build-depends: 
+    base == 4.*, containers >= 0.2, 
+    bytestring >= 0.9, binary >= 0.5, 
+    deepseq >= 1.1, array >= 0.2, 
+    iteratee >= 0.3.4, directory >= 1.0
+  exposed-modules:
+    Data.SSTable, Data.SSTable.Writer, Data.SSTable.Packing
+
+  ghc-options: -Wall -fwarn-tabs -funbox-strict-fields
+
+executable sstable
+  hs-source-dirs: src
+
+  main-is: sstable.hs
+
+  build-depends:
+    cmdargs >= 0.1
+
+  ghc-options: -Wall -fwarn-tabs -funbox-strict-fields
+
+executable testSSTable
+  hs-source-dirs:
+    test
+    src
+
+  main-is: Test.hs
+  other-modules: PackingTest, BinarySearchTest
+
+  if flag(tests)
+    build-depends:
+      QuickCheck >= 2 && < 3, test-framework >= 0.2,
+      test-framework-quickcheck2 >= 0.2
+  else
+    executable: False
+    buildable:  False

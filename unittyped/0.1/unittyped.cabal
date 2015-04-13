@@ -1,0 +1,54 @@
+name:           unittyped
+version:        0.1
+author:         Thijs Alkemade <thijsalkemade@gmail.com>
+maintainer:     Thijs Alkemade <thijsalkemade@gmail.com>
+copyright:      Copyright: (c) 2012 Thijs Alkemade
+homepage:       https://bitbucket.org/xnyhps/haskell-unittyped/
+bug-reports:    https://bitbucket.org/xnyhps/haskell-unittyped/issues/new
+license:        LGPL-2.1
+license-file:   LICENSE
+category:       Physics, Math
+stability:      experimental
+Cabal-Version:  >= 1.8
+build-type:     Simple
+synopsis:       An extendable library for type-safe computations including units.
+description:    UnitTyped is a Haskell library that makes it possible to do computations on values with a dimension and a unit. The typechecker ensures that all operations are using the proper dimensions, and all units can be converted to compatible units automatically. New dimensions and units can be defined from other modules, requiring just a data type and one class instance to work with everything else. The library comes with all SI dimensions and units, and many units derived from those.
+
+source-repository head
+  type: hg
+  location: https://bitbucket.org/xnyhps/haskell-unittyped
+
+source-repository this
+  type: hg
+  location: https://bitbucket.org/xnyhps/haskell-unittyped
+  tag: 0.1
+
+library
+  build-depends:   base >= 4.6 && < 4.7
+  extensions:      FlexibleInstances,
+                   UndecidableInstances,
+                   FunctionalDependencies,
+                   KindSignatures,
+                   ScopedTypeVariables,
+                   FlexibleContexts,
+                   OverlappingInstances,
+                   GADTs,
+                   EmptyDataDecls
+  exposed-modules: UnitTyped,
+                   UnitTyped.NoPrelude,
+                   UnitTyped.SI,
+                   UnitTyped.SI.Meta,
+                   UnitTyped.SI.Constants,
+                   UnitTyped.Bytes,
+                   UnitTyped.Currency,
+                   UnitTyped.SI.Derived,
+                   UnitTyped.SI.Derived.Length,
+                   UnitTyped.SI.Derived.Count,
+                   UnitTyped.SI.Derived.Time,
+                   UnitTyped.SI.Derived.Mass
+  hs-source-dirs:  src
+
+Test-Suite test-si
+    type:          exitcode-stdio-1.0
+    main-is:       tests/TestSI.hs
+    build-depends: base >= 4.6 && < 4.7, unittyped

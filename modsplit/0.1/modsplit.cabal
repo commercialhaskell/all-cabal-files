@@ -1,0 +1,31 @@
+Name:           modsplit
+Version:        0.1
+Author:         Dmitry Golubovsky
+Maintainer:     Dmitry Golubovsky <golubovsky@gmail.com>
+License:        BSD3
+License-File:   LICENSE
+Stability:      Experimental
+Category:       Utils
+
+Synopsis:       Haskell source splitter driven by special comments.
+Description:    The "modsplit" program takes a (most likely auto-generated) single-module 
+                Haskell source file containing specifically formatted comments and 
+                splits it into several modules according to the directives 
+                contained in the special comments.
+                .
+                This program has its roots in HSFFIG, and the format of these
+                comments is described here:
+                .
+                <http://www.haskell.org/haskellwiki/HSFFIG/Tutorial#Splitting_large_modules>
+                .
+                This program is intended to post-process the output of programs generating
+                Haskell code rather than to deal with handwritten code.
+                
+
+Build-Type:     Simple
+Build-Depends:  base > 3, filepath, mtl, utf8-env, utf8-string, haskell98, directory
+
+Executable:     modsplit
+Main-is:        ModSplit.hs
+
+

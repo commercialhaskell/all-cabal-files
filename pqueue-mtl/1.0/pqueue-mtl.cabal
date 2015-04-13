@@ -1,0 +1,16 @@
+
+name:		pqueue-mtl
+version:	1.0
+synopsis:	Fully encapsulated monad transformers with queuelike functionality.
+description:	Contains several implementations of data structures implementing a /single-in, single-out/ paradigm, and implements monad transformers for their safe use.  The monad transformer part of the library includes tools to fully encapsulate single-threaded use of a priority queue in a monad, including an array-based heap implementation.
+tested-with:	GHC
+category:	Monads, Algorithms
+license:	BSD3
+license-file:	LICENSE
+author:		Louis Wasserman
+maintainer:	wasserman.louis@gmail.com
+build-Depends:	base, ghc-prim, mtl, containers, stateful-mtl, MaybeT
+build-type:	Simple
+Exposed-modules:Control.Monad.Queue, Control.Monad.Queue.Instances, Control.Monad.Queue.Class, Control.Monad.Queue.Heap, Control.Monad.Queue.QueueT, Data.Queue, Data.Queue.PQueue, Data.Queue.FibQueue, Data.Queue.Class, Data.Queue.Instances, Data.Queue.Stack, Data.Queue.Queue, Data.Queue.ReverseQueue
+ghc-options:
+

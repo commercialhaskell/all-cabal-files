@@ -1,0 +1,40 @@
+name:                hpapi
+version:             0.0.1.0
+cabal-version:       >= 1.2
+build-type:          Simple
+license:             BSD3
+license-file:        LICENSE
+copyright:           Copyright (c) 2008, Michael D. Adams
+author:              Michael D. Adams <adamsmd [AT] cs.indiana.edu>
+maintainer:          Michael D. Adams <adamsmd [AT] cs.indiana.edu>
+stability:           alpha
+synopsis:            Binding for the PAPI library
+description:         This package contains bindings for the
+                     Performance Application Programming Interface
+                     (<http://icl.cs.utk.edu/papi/index.html>).
+                     It provides a basic interface to the PAPI library
+                     for reading and controlling CPU counters
+                     (e.g. L1 cache miss count).
+category:            System
+extra-source-files:  README
+                     template-bit-hsc.h
+
+library
+  build-depends:     base
+  exposed-modules:   System.PAPI
+                     System.PAPI.Event
+                     System.PAPI.HighLevel
+                     System.PAPI.Init
+                     System.PAPI.Options
+                     System.PAPI.Timer
+                     System.PAPI.EventSet
+                     System.PAPI.Run
+                     System.PAPI.Error
+                     System.PAPI.Util
+  other-modules:     
+  extensions:        ForeignFunctionInterface
+                     GeneralizedNewtypeDeriving
+                     EmptyDataDecls
+  ghc-options:       -Wall
+  extra-libraries:   papi
+  include-dirs:      .

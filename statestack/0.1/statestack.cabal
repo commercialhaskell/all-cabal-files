@@ -1,0 +1,22 @@
+Name:                statestack
+Version:             0.1
+Synopsis:            Simple State-like monad transformer with saveable and restorable state
+Description:         Simple State-like monad transformer where states can be saved to
+                     and restored from an internal stack.
+License:             BSD3
+License-file:        LICENSE
+Author:              Brent Yorgey
+Maintainer:          byorgey@cis.upenn.edu
+Category:            Control
+Build-type:          Simple
+Cabal-version:       >=1.6
+Source-repository head
+  type: darcs
+  location: http://patch-tag.com/r/byorgey/statestack
+
+Library
+  Exposed-modules:     Control.Monad.StateStack
+  Build-depends:       base >= 4.2 && < 4.4,
+                       mtl >= 2.0 && < 2.1,
+                       transformers >= 0.2.2.0 && < 0.3,
+                       newtype >= 0.2 && < 0.3

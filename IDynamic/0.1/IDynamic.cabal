@@ -1,0 +1,19 @@
+name: IDynamic
+version: 0.1
+cabal-version: -any
+
+synopsis: Indexable, serializable  form of Data.Dynamic
+description: A variant of Data.Dynamic that can be indexed, stored, transmitted trough communications etc.
+
+category:          Data
+license:             BSD3
+license-file:        LICENSE
+author:              Alberto Gómez Corona
+maintainer:          agocorona@gmail.com
+Tested-With:         GHC == 6.10.3
+Build-Type:          Simple
+build-Depends:       base == 4.1.0.0 , directory, containers
+
+
+exposed-modules: Data.IResource, Data.IDynamic
+ghc-options:

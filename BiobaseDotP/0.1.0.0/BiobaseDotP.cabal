@@ -1,0 +1,37 @@
+name:           BiobaseDotP
+version:        0.1.0.0
+author:         Christian Hoener zu Siederdissen
+maintainer:     choener@tbi.univie.ac.at
+homepage:       http://www.tbi.univie.ac.at/~choener/
+copyright:      Christian Hoener zu Siederdissen, 2011
+category:       Bioinformatics
+synopsis:       Vienna / DotBracket / ExtSS parsers
+license:        GPL-3
+license-file:   LICENSE
+build-type:     Simple
+stability:      experimental
+cabal-version:  >= 1.4.0
+description:
+                Parsers for Vienna dot-bracket like formats. Includes parsing
+                two-line RNAfold output, RNAstrand dot-bracket notation and the
+                RNAwolf extended RNA secondary structure notation.
+
+library
+  build-depends:
+    base >3 && <5,
+    bytestring,
+    iteratee
+
+  exposed-modules:
+    Biobase.ExtSS
+    Biobase.ExtSS.Export
+    Biobase.ExtSS.Import
+    Biobase.RNAstrand
+    Biobase.RNAstrand.Export
+    Biobase.RNAstrand.Import
+    Biobase.Vienna
+    Biobase.Vienna.Export
+    Biobase.Vienna.Import
+
+  ghc-options:
+    -O2

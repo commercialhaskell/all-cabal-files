@@ -1,0 +1,27 @@
+Name:           lifter
+Version:        0.1
+License:        BSD3
+Author:         ICFP Contest 2012 Organisers 
+Maintainer:     Edwin Brady <eb@cs.st-andrews.ac.uk>
+Homepage:       http://icfpcontest2012.wordpress.com/
+
+Stability:      Beta
+Category:       Games 
+Synopsis:       A boulderdash-like game and solution validator
+Description:    ICFP Contest 2012 task
+
+Cabal-Version:  >= 1.6
+Build-type:     Simple
+
+Data-files:     graphics/*.bmp maps/*.map maps/full/*.map maps/lightning/*.map
+
+Executable     lifter
+               Main-is: Main.hs
+               hs-source-dirs: src
+               Other-modules: Map, Rules
+                              Paths_lifter
+
+               Build-depends:   base>=4 && <5, mtl, gloss>=1.7.4.1, 
+                                bytestring, stb-image, bitmap,
+                                array, directory, filepath
+                                

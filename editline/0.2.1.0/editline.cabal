@@ -1,0 +1,35 @@
+name:		editline
+version:	0.2.1.0
+license:	BSD3
+license-file:	LICENSE
+maintainer:	Judah Jacobson <judah.jacobson@gmail.com>
+category:       User Interfaces
+synopsis:	Bindings to the editline library (libedit).
+description:
+                This package contains bindings to the BSD editline library
+                (<http://www.thrysoee.dk/editline/>).
+                It provides a basic interface to the editline API for
+                reading lines of input from the user.  
+                .
+                Additionally, a readline compatibility module is included
+                which provides a subset of the functions from the 
+                readline package.
+homepage:       http://code.haskell.org/editline
+extra-source-files:
+		aclocal.m4 configure.ac
+		editline.buildinfo.in
+                configure include/HsEditlineConfig.h.in
+extra-tmp-files:
+		config.log config.status autom4te.cache
+		editline.buildinfo include/HsEditlineConfig.h
+build-type: Configure
+cabal-version: >=1.2
+
+library
+  build-depends: base
+  exposed-modules: System.Console.Editline System.Console.Editline.Readline
+  extensions: ForeignFunctionInterface, EmptyDataDecls
+  include-dirs:   include
+  includes:       HsEditline.h
+  install-includes:   HsEditline.h HsEditlineConfig.h
+  c-sources:      cbits/HsEditline.c

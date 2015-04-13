@@ -1,0 +1,32 @@
+name:                request-monad
+version:             0.3.0.0
+synopsis:            A transformer for generic requests
+description:
+    An MTL-style monad that can be used to perform requests. Using RequestT
+    simplifies writing generic middleware.
+homepage:            http://github.com/nahiluhmot/request-monad
+bug-reports:         http://github.com/nahiluhmot/request-monad/issues
+license:             MIT
+license-file:        LICENSE
+author:              Tom Hulihan
+maintainer:          Tom Hulihan <hulihan.tom159@gmail.com>
+category:            Control
+build-type:          Simple
+extra-source-files:  README.md, CHANGELOG.md
+cabal-version:       >=1.10
+
+source-repository head
+    type:              git
+    location:          git://github.com/nahiluhmot/request-monad.git
+
+library
+  hs-source-dirs:      src
+  build-depends:       base >=4.7 && <4.8,
+                       transformers ==0.4.*,
+                       mtl ==2.2.*,
+                       free ==4.9
+  exposed-modules:     Control.Monad.Request,
+                       Control.Monad.Request.Class,
+                       Control.Monad.Request.Lazy
+  ghc-options:         -Wall
+  default-language:    Haskell2010

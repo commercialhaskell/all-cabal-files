@@ -1,0 +1,25 @@
+Name:                haskell-qrencode
+Version:             1.0.2
+Synopsis:            Haskell bindings for libqrencode.
+Description:         Haskell bindings for libqrencode.
+
+                     Libqrencode is a C library for encoding data in a QR Code symbol, a kind of 2D symbology 
+                     that can be scanned by handy terminals such as a mobile phone with CCD. The capacity of 
+                     QR Code is up to 7000 digits or 4000 characters, and is highly robust.
+
+License:             BSD3
+License-file:        LICENSE
+Author:              James Sanders
+Maintainer:          james.sanders@thisismedium.com
+Category:            Data
+Build-type:          Simple
+Cabal-version:       >=1.2
+
+
+Library
+  hs-source-dirs: src
+  Exposed-modules:     Data.QRCode
+  Build-depends: base <= 4, bytestring >= 0.9.1.7
+  Build-tools:         hsc2hs
+  ghc-options: -O2 -Wall
+  extra-libraries: qrencode

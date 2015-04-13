@@ -1,0 +1,26 @@
+name:                JuicyPixels-util
+version:             0.1
+synopsis:            Convert JuicyPixel images into RGBA format, flip, trim and so on
+description:         
+homepage:            https://github.com/fumieval/JuicyPixels-util
+bug-reports:         https://github.com/fumieval/JuicyPixels-util/issues
+license:             BSD3
+license-file:        LICENSE
+author:              Fumiaki Kinoshita
+maintainer:          Fumiaki Kinoshita <fumiexcel@gmail.com>
+copyright:           Copyright (C) 2012-2013 Fumiaki Kinoshita
+category:            Control
+build-type:          Simple
+stability:           experimental
+cabal-version:       >=1.10
+
+source-repository head
+  type: git
+  location: https://github.com/fumieval/JuicyPixels-util.git
+
+library
+  default-language:   Haskell2010
+  exposed-modules: Codec.Picture.RGBA8
+  ghc-options: -Wall
+
+  build-depends: base == 4.*, JuicyPixels >= 3.1, vector

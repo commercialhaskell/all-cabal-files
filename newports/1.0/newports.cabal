@@ -1,0 +1,16 @@
+Name:                newports
+Version:             1.0
+License:             BSD3
+License-file:        LICENSE
+Author:              brad clawsie
+Maintainer:          haskell@fastmail.fm
+Stability:	     experimental
+Build-Depends:       base
+Category:	     System
+Homepage:	     http://www.b7j0c.org/content/haskell-newports.html
+Synopsis:	     List ports newer than N days on a FreeBSD system
+Description:	     List ports newer than N days on a FreeBSD system
+
+Executable:          newports
+Main-is:             newports.hs
+ghc-options:         -O

@@ -1,0 +1,63 @@
+name:          usb-id-database
+version:       0.4.0.2
+cabal-version: >=1.6
+build-type:    Simple
+stability:     provisional
+author:        Roel van Dijk
+maintainer:    vandijk.roel@gmail.com
+copyright:     (c) 2009 Roel van Dijk
+license:       BSD3
+license-file:  LICENSE
+category:      System
+synopsis:      A database of USB identifiers
+description:
+  Functions to find the names associated with various identifiers from the USB
+  specification. This is useful if you want to display full human-readable names
+  instead of cryptic numeric codes.
+
+extra-source-files: example.hs
+data-files: usb_dot_org_db.txt
+          , usb_id_repo_db.txt
+
+flag example
+  description: Build an example program
+  default:     False
+
+flag profile-example
+  description: Enable profiling for the example program
+  default:     False
+
+source-repository head
+  type:     darcs
+  location: http://code.haskell.org/~roelvandijk/code/usb-id-database
+
+library
+  build-depends: base                       >= 3.0.3.1 && < 4.3
+               , base-unicode-symbols       >= 0.1.1   && < 0.2
+               , bytestring                 == 0.9.*
+               , containers                 <  0.4
+               , containers-unicode-symbols == 0.1.*
+               , parsimony                  >= 1 && < 1.1
+  ghc-options: -Wall
+  cpp-options: -DBUILD_WITH_CABAL
+  exposed-modules: System.USB.IDDB
+                 , System.USB.IDDB.UsbDotOrg
+                 , System.USB.IDDB.LinuxUsbIdRepo
+  other-modules: Paths_usb_id_database
+               , System.USB.IDDB.Base
+               , System.USB.IDDB.Misc
+
+executable example
+  extensions: CPP
+  cpp-options: -DBUILD_WITH_CABAL
+  main-is: example.hs
+
+  if flag(example)
+    buildable: True
+  else
+    buildable: False
+
+  if flag(profile-example)
+    ghc-options: -Wall -prof -auto-all -caf-all -fforce-recomp
+  else
+    ghc-options: -Wall

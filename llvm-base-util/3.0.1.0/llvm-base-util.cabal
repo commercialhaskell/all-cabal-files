@@ -1,0 +1,47 @@
+name:          llvm-base-util
+version:       3.0.1.0
+license:       BSD3
+license-file:  LICENSE
+synopsis:      Utilities for bindings to the LLVM compiler toolkit.
+description:
+  * Exposing the LLVM.Core.Util from llvm to make llvm-base much easier to use. It's for people where llvm high level interface is not suitable but llvm-base is too low level to use
+author:        Bryan O'Sullivan, Lennart Augustsson
+maintainer:    Paul Meng (mno2@mno2.org)
+homepage:      https://github.com/bos/llvm
+bug-reports:   https://github.com/bos/llvm/issues
+stability:     experimental
+category:      Compilers/Interpreters, Code Generation
+tested-with:   GHC == 6.12.3, GHC == 7.0.4, GHC == 7.2.2
+cabal-version: >= 1.10
+build-type:    Simple
+
+flag developer
+  description: operate in developer mode
+  default: False
+
+library
+  default-language: Haskell98
+  build-depends:
+    base >= 3 && < 5,
+    llvm-base >= 3.0.0.1 && < 4
+
+  ghc-options: -Wall
+
+  if flag(developer)
+    ghc-options: -Werror
+
+  if os(darwin)
+    ld-options: -w 
+    frameworks: vecLib
+    cpp-options: -D__MACOS__
+
+  exposed-modules:
+      LLVM.Core.Util
+
+source-repository head
+  type:     git
+  location: git://github.com/bos/llvm.git
+
+source-repository head
+  type:     mercurial
+  location: https://bitbucket.org/bos/llvm/

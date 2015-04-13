@@ -1,0 +1,20 @@
+Name:           literals
+Version:        1.0
+Synopsis:       Non-overloaded functions for concrete literals.
+Description:    Non-overloaded functions for concrete literals.
+                
+License:        MIT
+License-File:   LICENSE
+Author:         Julian Fleischer <julian.fleischer@fu-berlin.de>
+Maintainer:     Julian Fleischer <julian.fleischer@fu-berlin.de>
+Build-Type:     Simple
+Cabal-Version:  >= 1.6
+Category:       Data
+Stability:      stable
+
+Library
+    Exposed-Modules:    Data.Literals
+    Build-Depends:      base >= 4 && < 5
+    Hs-Source-Dirs:     src
+
+

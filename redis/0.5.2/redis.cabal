@@ -1,0 +1,44 @@
+Name:                redis
+Version:             0.5.2
+License:             MIT
+Maintainer:          Alexander Bogdanov <andorn@gmail.com>
+Author:              Alexander Bogdanov <andorn@gmail.com>
+Copyright:           Copyright (c) 2009-2010 Alexander Bogdanov
+Category:            Database
+Synopsis:            A driver for Redis key-value database
+Description:
+    Redis is an advanced key-value store. It is similar to memcached
+    but the dataset is not volatile. Values can be strings, exactly
+    like in memcached, but also lists, sets, and ordered sets.
+    .
+    This library is a Haskell driver for Redis. Note that this library
+	supports the most recent (actually the git one) version of Redis
+	protocol. Most of the functions will work correctly with stable version
+	but not all.
+	.
+	Changes from v0.4:
+	.
+	- new hash commands added: hmset, hmget, hincrby
+	.
+	- initial support for (p)subscribe\/(p)unsubscribe\/publish
+	.
+	- getServer and getDatabase accessors added
+	.
+	New in this version:
+	.
+	- listen now have timeout argument
+
+Stability:           beta
+Build-Type:          Simple
+Cabal-Version: >= 1.4
+
+Library
+    Build-Depends:       base < 5, bytestring, utf8-string,
+                         network, mtl, old-time, MonadCatchIO-mtl
+    Exposed-modules:     Database.Redis.Redis
+                         Database.Redis.Monad
+                         Database.Redis.ByteStringClass
+                         Database.Redis.Monad.State
+                         Database.Redis.Utils.Lock
+                         Database.Redis.Utils.Monad.Lock
+    Other-modules:       Database.Redis.Internal

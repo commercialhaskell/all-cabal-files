@@ -1,0 +1,54 @@
+name:                edit-lenses
+version:             0.2
+synopsis:            Symmetric, stateful edit lenses
+Description:         An implementation of the ideas of the paper /Edit Lenses/,
+                     available at <http://dmwit.com/papers/201107EL.pdf>.
+-- Homepage:            http://dmwit.com/edit-lenses
+license:             BSD3
+license-file:        LICENSE
+author:              Daniel Wagner
+maintainer:          daniel@wagner-home.com
+category:            Data
+build-type:          Simple
+cabal-version:       >=1.8
+
+library
+  exposed-modules:
+    Data.Container,
+    Data.Iso,
+    Data.Module,
+    Data.Module.Class,
+    Data.Module.List,
+    Data.Module.Primitive,
+    Data.Module.Sum,
+    Data.Module.Product,
+    Data.Module.Container,
+    Data.Module.Shape,
+    Data.Lens.Bidirectional,
+    Data.Lens.Edit,
+    Data.Lens.Edit.Container,
+    Data.Lens.Edit.List,
+    Data.Lens.Edit.Stateless,
+    Data.Lens.Edit.Stateful,
+    Data.Lens.Edit.Sum,
+    Data.Lens.Edit.Primitive,
+    Data.Lens.Edit.Product
+  build-depends:
+    base >= 3.0 && < 5,
+    containers >= 0.3,
+    data-default >= 0.3,
+    lattices >= 1.2,
+    mtl >= 2.0
+  extensions:
+    FlexibleContexts,
+    FlexibleInstances,
+    GeneralizedNewtypeDeriving,
+    ScopedTypeVariables,
+    TypeFamilies,
+    TypeOperators
+  if impl(ghc)
+    -- The meaning of the TypeFamilies extension changed between GHC 7.0 and
+    -- GHC 7.2: superclass equality constraints were not possible prior to 7.2.
+    -- Since there's no way to depend on a version of GHC, this is the next
+    -- best thing: depend on a version of base that's quite new.
+    base >= 4.4

@@ -1,0 +1,50 @@
+Name:                bindings-sipc 
+Version:             1.0 
+Synopsis:            Low level bindings to SIPC. 
+Description:         Low level bindings for the SELinux Secure Inter-Process
+                     Communications (SIPC) Library.
+License:             LGPL
+License-file:        LICENSE
+Author:              Justin Ethier
+Maintainer:          Justin Ethier <github.com/justinethier>
+Homepage:            http://justinethier.github.com/hs-bindings-sipc
+Cabal-Version:       >= 1.8
+-- Build-Tools:         c2hs
+Build-Type:          Simple
+Category:            Security 
+Tested-with:         GHC == 7.0.4
+
+Extra-Source-Files:  README.markdown
+                     LICENSE
+Source-Repository head
+     Type:            git
+     Location:        git://github.com/justinethier/hs-bindings-sipc.git
+
+Library
+  Build-Depends:   base >= 2.0 && < 5
+--, c2hs
+  Hs-Source-Dirs:  src
+  Exposed-Modules: Bindings.SELinux.SIPC 
+  Extra-Libraries: sipc
+
+-- Example/Test programs
+
+Executable         MQCreator
+  Build-Depends:   bindings-sipc, base >= 2.0 && < 5
+  Main-is:         MQCreator.hs
+  Hs-Source-Dirs:  src/Examples
+
+Executable         MQDestroyer
+  Build-Depends:   bindings-sipc, base >= 2.0 && < 5
+  Main-is:         MQDestroyer.hs
+  Hs-Source-Dirs:  src/Examples
+
+Executable         MQReader
+  Build-Depends:   bindings-sipc, base >= 2.0 && < 5
+  Main-is:         MQReader.hs
+  Hs-Source-Dirs:  src/Examples
+ 
+Executable         MQSender
+  Build-Depends:   bindings-sipc, base >= 2.0 && < 5
+  Main-is:         MQSender.hs
+  Hs-Source-Dirs:  src/Examples

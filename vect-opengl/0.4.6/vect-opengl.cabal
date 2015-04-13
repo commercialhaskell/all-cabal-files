@@ -1,0 +1,48 @@
+Name:                vect-opengl
+Version:             0.4.6
+Synopsis:            OpenGL support for the `vect' low-dimensional linear algebra library.
+Description:         OpenGL support for the `vect' low-dimensional linear algebra library. 
+License:             BSD3
+License-file:        LICENSE
+Author:              Balazs Komuves
+Copyright:           (c) 2008-2010 Balazs Komuves
+Maintainer:          bkomuves (plus) hackage (at) gmail (dot) com
+Homepage:            http://code.haskell.org/~bkomuves/
+Stability:           Experimental
+Category:            Graphics, Math
+Tested-With:         GHC == 6.10.1
+Cabal-Version:       >= 1.6
+Build-Type:          Custom
+
+extra-source-files:  src/flt/OpenGL.hs
+                     
+Flag splitBase
+  Description: Choose the new smaller, split-up base package.
+
+Flag newOpenGL
+  Description: OpenGL bindings since 2.3.0.0 
+  
+Library
+  if flag(splitBase)
+    Build-Depends:       base >= 3 && < 5
+  else
+    Build-Depends:       base >= 2 && < 3
+    
+  Build-Depends:         vect >= 0.4.6 && < 0.5
+
+  if flag(newOpenGL)
+    Build-Depends:       OpenGL >= 2.3
+    cpp-options:         -DVECT_OPENGL=23
+  else
+    Build-Depends:       OpenGL >= 2.1 && < 2.3
+    cpp-options:         -DVECT_OPENGL=22
+    
+  Exposed-Modules:     Data.Vect.Float.OpenGL,                         
+                       Data.Vect.Double.OpenGL                         
+
+  Hs-Source-Dirs:      .
+  Extensions:          ForeignFunctionInterface, CPP
+--                       MultiParamTypeClasses
+
+  ghc-options:         -Wall
+    

@@ -1,0 +1,83 @@
+Name:                happstack-contrib
+Version:             0.2.1
+Synopsis:            Web related tools and services.
+Description:         Collection of standalone applications
+License:             BSD3
+License-file:        COPYING
+Author:              Happstack team, HAppS LLC
+Maintainer:          Happstack Team <happs@googlegroups.com>
+homepage:            http://happstack.com
+Category:            Web, Distributed Computing
+Build-Type:          Simple
+Cabal-Version:       >= 1.2.3
+
+Flag base4
+    Description: Choose the even newer, even smaller, split-up base package.
+
+Flag tests
+    Description: Build the testsuite, and include the tests in the library
+    Default: False
+
+Library
+
+  Exposed-modules:
+                       Happstack.Server.Facebook
+                       Happstack.Store.FlashMsgs
+                       Happstack.Store.HelpReqs
+                       Happstack.Contrib.Atom
+                       Happstack.Contrib.HList
+                       Happstack.Contrib.HListBase
+  if flag(tests)
+    Exposed-modules:   
+                       Happstack.Contrib.Tests
+                       Happstack.Contrib.Tests.HList001
+                       Happstack.Contrib.Tests.HList002                   
+                       Happstack.Contrib.Tests.HasT001
+
+  build-depends:       base,
+                       bytestring,
+                       directory,
+                       happstack-server >= 0.2.1 && < 0.3,
+                       happstack-util >= 0.2.1 && < 0.3,
+                       happstack-state >= 0.2.1 && < 0.3,
+                       happstack-ixset >= 0.2.1 && < 0.3,
+                       happstack-data >= 0.2.1 && < 0.3,
+                       HTTP >= 4000.0.2,
+                       mtl,
+                       network,
+                       old-time
+  
+  if flag(tests)
+    build-depends:     template-haskell
+
+  hs-source-dirs:      src
+
+  if !os(windows)
+     Build-Depends:    unix
+     cpp-options:      -DUNIX
+  if flag(base4)
+    Build-Depends:     base >= 4 && < 5, syb
+  if flag(tests)
+    Build-Depends:     HUnit
+
+  if flag(tests)
+    hs-source-dirs:    tests
+
+  -- Should have ", DeriveDataTypeable, PatternSignatures" but Cabal complains
+  Extensions:          CPP, TemplateHaskell, FlexibleInstances,
+                       DeriveDataTypeable, MultiParamTypeClasses, TypeFamilies,
+                       TypeSynonymInstances, ImplicitParams, TypeOperators,
+                       UndecidableInstances
+  ghc-options:         -Wall
+  GHC-Prof-Options:    -auto-all
+
+
+Executable happstack-contrib-tests
+  Main-Is: Test.hs
+  GHC-Options: -threaded
+  Build-depends: HUnit
+  hs-source-dirs: tests, src
+  if flag(tests)
+    Buildable: True
+  else
+    Buildable: False

@@ -1,0 +1,21 @@
+Name:                   GuiHaskell
+Synopsis:               A graphical REPL and development environment for Haskell
+Description:
+    GuiHaskell aims to be a cross-platform development environment
+    for Haskell that is integrated with other popular Haskell tools.
+    The program uses the PropLang GUI combinator library to declaratively
+    define the relationships between UI elements and data.
+Version:                0.1
+License:                BSD3
+License-file:           LICENSE
+Author:                 Neil Mitchell, Asumu Takikawa
+Stability:              Alpha
+Homepage:               http://www-users.cs.york.ac.uk/~ndm/guihaskell/
+Category:               Development
+Build-Depends:          base>=2.0, filepath>=1.0, proplang>=0.1, gtk>=0.9.11, glade>=0.9.11, parsec
+Data-files:             res/guihaskell.glade res/prefdialog.glade res/about.glade
+
+Executable:             guihaskell
+Main-is:                Main.hs
+Other-modules:          Config Data Evaluator Prof Util Text.EscapeCodes
+Ghc-options:            -O2 -Wall

@@ -1,0 +1,36 @@
+name:          contravariant
+category:      Control, Data
+version:       0.4.3
+x-revision: 1
+license:       BSD3
+cabal-version: >= 1.6
+license-file:  LICENSE
+author:        Edward A. Kmett
+maintainer:    Edward A. Kmett <ekmett@gmail.com>
+stability:     provisional
+homepage:      http://github.com/ekmett/contravariant/
+bug-reports:   http://github.com/ekmett/contravariant/issues
+copyright:     Copyright (C) 2007-2013 Edward A. Kmett
+synopsis:      Contravariant functors
+description:   Contravariant functors
+build-type:    Simple
+extra-source-files:
+  .travis.yml
+  CHANGELOG.markdown
+
+source-repository head
+  type: git
+  location: git://github.com/ekmett/contravariant.git
+
+library
+  build-depends: base < 4.4 || >= 4.5
+  build-depends:
+    base                            < 5,
+    tagged              >= 0.4.4 && < 1,
+    transformers        >= 0.2   && < 0.4,
+    transformers-compat >= 0.1   && < 1
+  exposed-modules:
+    Data.Functor.Contravariant
+    Data.Functor.Contravariant.Compose
+    Data.Functor.Contravariant.Day
+  ghc-options: -Wall

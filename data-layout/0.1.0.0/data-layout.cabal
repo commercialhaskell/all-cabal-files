@@ -1,0 +1,39 @@
+name:          data-layout
+version:       0.1.0.0
+synopsis:      Read/write arbitrary binary layouts to a "Data.Vector.Storable".
+homepage:      http://github.com/jystic/data-layout
+license:       BSD3
+license-file:  LICENSE
+copyright:     Jacob Stanley (c) 2012-2013
+author:        Jacob Stanley
+maintainer:    Jacob Stanley <jacob@stanley.io>
+category:      Data
+build-type:    Simple
+cabal-version: >= 1.6
+
+library
+  hs-source-dirs: src
+
+  exposed-modules:
+    Data.Layout
+    Data.Layout.Language
+    Data.Layout.Vector
+    Data.Layout.Internal
+
+  other-modules:
+    Data.Layout.ForeignPtr
+
+  build-depends:
+      base       == 4.*
+    , bytestring >= 0.10
+    , vector     >= 0.10
+
+  c-sources: cbits/layout.c
+  cc-options: -Wall -Werror -O3
+
+  ghc-options:
+    -O2 -Wall
+    -funbox-strict-fields
+    -fno-warn-unused-do-bind
+    -fno-warn-orphans
+    -fwarn-tabs

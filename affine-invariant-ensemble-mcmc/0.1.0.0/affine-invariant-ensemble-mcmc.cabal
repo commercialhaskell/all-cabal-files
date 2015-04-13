@@ -1,0 +1,26 @@
+Name:                affine-invariant-ensemble-mcmc
+Homepage:            http://github.com/jtobin/affine-invariant-ensemble-mcmc
+Version:             0.1.0.0
+Cabal-version:       >=1.8
+build-type:          Simple
+License:             BSD3
+License-file:        LICENSE
+Author:              Jared Tobin
+Maintainer:          jared@jtobin.ca
+Category:            Numerical, Machine Learning, Statistics
+Synopsis:            General-purpose sampling 
+Description:
+
+    A general-purpose sampling routine for badly-scaled distributions.    
+
+Source-repository head
+  Type:     git
+  Location: http://github.com/jtobin/affine-invariant-ensemble-mcmc.git
+
+Library
+  Build-depends:       base ==4.5.*, containers ==0.5.*, vector ==0.9.*, mwc-random ==0.12.*, primitive ==0.4.*, split ==0.1.*
+
+  ghc-options:         -Wall
+  Exposed-modules:     Numeric.MCMC.AffineInvariantEnsemble, Numeric.MCMC.Util
+  Extensions:          FlexibleContexts, FlexibleInstances
+

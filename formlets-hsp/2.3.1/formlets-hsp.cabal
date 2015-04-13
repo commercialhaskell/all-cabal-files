@@ -1,0 +1,30 @@
+Name:            formlets-hsp
+Version:         2.3.1
+Synopsis:        HSP support for Formlets
+Description:     A modular way to build forms based on applicative functors, as
+                 described in:
+                 .
+                  * Ezra Cooper, Samuel Lindley, Philip Wadler and Jeremy Yallop
+                    \"An idiom's guide to formlets\"
+                    Technical Report, EDI-INF-RR-1263.
+                    <http://groups.inf.ed.ac.uk/links/formlets/>
+                 .
+                 This library extends formlets with support for HSP
+Category:        XML, Web, User Interfaces, Text
+License:         BSD3
+License-file:    LICENSE
+Copyright:       (c) Jeremy Yallop / Tupil, Jeremy Shaw
+Author:          Jeremy Yallop, Chris Eidhof, Jeremy Shaw, David Fox
+Maintainer:      Jeremy Shaw <jeremy@seereason.com>
+Cabal-version:   >= 1.6
+Build-Type:      Custom
+
+Library
+        Exposed-Modules:   HSP.Formlets
+        Build-Depends:   base >3 && < 5, haskell98, formlets >= 0.7.1, hsx, hsp, mtl, applicative-extras
+        Build-Tools:     trhsx
+
+source-repository head
+    type:     darcs
+    subdir:   happstack
+    location: http://src.seereason.com/formlets-hsp

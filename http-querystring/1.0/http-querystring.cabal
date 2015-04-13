@@ -1,0 +1,49 @@
+name:                http-querystring
+version:             1.0
+synopsis:            The HTTP query builder.
+description:         The HTTP query builder.
+license:             BSD3
+license-file:        LICENSE
+author:              Yusuke Nomura<yunomu@gmail.com>
+maintainer:          Yusuke Nomura<yunomu@gmail.com>
+-- copyright:           
+homepage:            https://github.com/worksap-ate/http-querystring
+category:            Network
+build-type:          Simple
+cabal-version:       >=1.8
+
+library
+  exposed-modules:   Network.HTTP.QueryString
+  other-modules:     Network.HTTP.QueryString.Internal
+  extensions:        OverloadedStrings
+  ghc-options:       -Wall -fno-warn-unused-do-bind
+  build-depends:       base == 4.*
+                     , bytestring
+                     , containers
+                     , http-types
+
+test-suite doctest
+  type:              exitcode-stdio-1.0
+  hs-source-dirs:    test
+  main-is:           Doctest.hs
+  ghc-options:       -Wall
+  build-depends:       base == 4.*
+                     , doctest
+
+test-suite spec
+  type:              exitcode-stdio-1.0
+  hs-source-dirs:    ., test
+  main-is:           Spec.hs
+  ghc-options:       -Wall
+  extensions:        OverloadedStrings
+  build-depends:       base == 4.*
+                     , bytestring
+                     , containers
+                     , http-types
+                     , hspec
+                     , QuickCheck
+                     , bytestring
+
+source-repository head
+    type:            git
+    location:        git://github.com/worksap-ate/http-querystring.git

@@ -1,0 +1,26 @@
+Name: SDL-ttf
+Version: 0.5.5
+Maintainer: Lemmih (lemmih@gmail.com)
+Author: Lemmih (lemmih@gmail.com)
+Copyright: 2004-2009, Lemmih
+License-File: LICENSE
+License: BSD3
+Build-Depends: base, SDL
+Build-Type: Custom
+Category: Foreign binding
+Synopsis: Binding to libSDL_ttf
+Extensions: ForeignFunctionInterface, EmptyDataDecls, MultiParamTypeClasses
+Exposed-Modules:
+  Graphics.UI.SDL.TTF,
+  Graphics.UI.SDL.TTF.Version,
+  Graphics.UI.SDL.TTF.Types,
+  Graphics.UI.SDL.TTF.Render,
+  Graphics.UI.SDL.TTF.Management,
+  Graphics.UI.SDL.TTF.Attributes,
+  Graphics.UI.SDL.TTF.General
+C-Sources: Graphics/UI/SDL/TTF/Wrapper.c
+Include-Dirs: .
+Includes: Graphics/UI/SDL/TTF/Wrapper.h SDL.h SDL_ttf.h
+Extra-Source-Files: Graphics/UI/SDL/TTF/Wrapper.h, includes/HsSDLConfig.h.in, SDL-ttf.buildinfo.in, configure, config.mk.in
+Data-Files: README, MACOSX
+GHC-Options: -Wall

@@ -1,0 +1,23 @@
+name:                language-python-colour 
+version:             0.1 
+cabal-version:       >= 1.6
+synopsis:            Generate coloured XHTML for Python code. 
+description:         Generate coloured XHTML for Python code. 
+category:            Language
+license:             BSD3
+license-file:        LICENSE
+copyright:           (c) 2009 Bernard James Pope
+author:              Bernard James Pope 
+maintainer:          bjpop@csse.unimelb.edu.au
+homepage:            http://www.cs.mu.oz.au/~bjpop/
+build-type:          Simple
+stability:           experimental
+tested-with:         GHC==6.10.4
+
+Executable pycol 
+  main-is:         Main.hs
+  hs-source-dirs:  src
+  build-depends:   haskell98, base >= 4 && < 5, language-python, xhtml
+  other-modules:
+     Language.Python.Colour.Colourise
+     Language.Python.Colour.Options

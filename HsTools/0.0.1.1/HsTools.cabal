@@ -1,0 +1,28 @@
+name:           HsTools
+version:        0.0.1.1
+author:         Christian Hoener zu Siederdissen
+maintainer:     choener@tbi.univie.ac.at
+copyright:      Christian Hoener zu Siederdissen, 2010
+category:       Generic
+synopsis:       Haskell helper functions
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+stability:      experimental
+cabal-version:  >= 1.4.0
+description:
+                Helper functions for a lot of different libraries. (unstable
+                library!)
+
+library
+  build-depends:
+    base >= 4 && < 5,
+    ghc-prim
+
+  exposed-modules:
+    Data.Ix.Tuple,
+    Data.Ix.List,
+    Debug.Trace.Tools
+
+  ghc-options:
+    -O2

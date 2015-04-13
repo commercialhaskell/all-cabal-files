@@ -1,0 +1,47 @@
+name:                rolling-queue
+version:             0.1
+synopsis:            Bounded channel for STM that discards old entries when full
+description:
+    This package provides a FIFO channel for STM supporting a size limit.  When
+    this limit is reached, older entries are discarded to make way for newer
+    entries.
+    .
+    The motivation for this is logging.  If log entries are written to a plain
+    @TChan@, the program will use a lot of memory if it produces log entries
+    faster than they can be processed.  If log entries are written to a bounded
+    channel where writes block (e.g. the @stm-chans@ package), the program may
+    deadlock if the log channel fills up.  With 'Data.STM.RollingQueue', old
+    entries will be discarded instead.
+    .
+    Possible improvements (not available in 'Data.STM.RollingQueue') include:
+    .
+        * Discard lower-priority entries first.
+    .
+        * Discard every other entry, so some of the older entries will still be
+          available.
+homepage:            https://github.com/joeyadams/haskell-rolling-queue
+license:             BSD3
+license-file:        LICENSE
+author:              Joey Adams
+maintainer:          joeyadams3.14159@gmail.com
+copyright:           Copyright (c) Joseph Adams 2012
+category:            Data
+build-type:          Simple
+cabal-version:       >=1.8
+
+extra-source-files:
+    testing/trivial.hs
+    testing/trivial.expected
+
+source-repository head
+    type:       git
+    location:   git://github.com/joeyadams/haskell-rolling-queue.git
+
+library
+    exposed-modules:
+        Data.STM.RollingQueue
+
+    build-depends: base == 4.*
+                 , stm
+
+    ghc-options: -Wall -O2

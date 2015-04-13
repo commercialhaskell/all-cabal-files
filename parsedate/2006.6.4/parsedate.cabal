@@ -1,0 +1,14 @@
+Name: parsedate
+Version: 2006.6.4
+Copyright: Bjorn Bringert
+Maintainer: bjorn@bringert.net
+Author: Bjorn Bringert
+Homepage: http://www.cs.chalmers.se/~bringert/darcs/parsedate/doc/
+License: BSD3
+build-depends: haskell98, base, parsec
+Synopsis: Haskell library for parsing dates and times
+Description:
+  This library provides a function for parsing dates and times
+  given a date format string.
+Exposed-Modules: System.Time.Parse
+Ghc-options: -O2

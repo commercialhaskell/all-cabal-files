@@ -1,0 +1,22 @@
+Name:            pseudomacros
+Version:         0.0.1
+Cabal-Version:   >= 1.6
+Category:        Development, Template Haskell
+Synopsis:        cpp-style built-in macros using Template Haskell
+Description:
+  This package provides Template Haskell pseudo-constants describing the time
+  and place of their use, similar to @__FILE__@, @__LINE__@, @__DATE__@, etc.
+  in the C preprocessor.
+Build-Type:      Simple
+License:         BSD3
+License-File:    LICENSE
+Author:          Lukas Mai
+Maintainer:      <l.mai@web.de>
+
+source-repository head
+  type: git
+  location: https://github.com/mauke/pseudomacros
+
+Library
+  Build-Depends:     base >=2 && <5, old-locale >=1, time >=1, template-haskell >=2.3
+  Exposed-Modules:   PseudoMacros

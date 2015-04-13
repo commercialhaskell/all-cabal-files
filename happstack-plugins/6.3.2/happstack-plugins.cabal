@@ -1,0 +1,37 @@
+Name:                happstack-plugins
+Version:             6.3.2
+Synopsis:            The haskell application server stack + reload
+Description:         This library provides support for automatically recompiling and reloading modules into a running server.
+License:             BSD3
+License-file:        COPYING
+Author:              Happstack team, HAppS LLC
+Maintainer:          Happstack team <happs@googlegroups.com>
+homepage:            http://happstack.com
+Category:            Web, Distributed Computing
+Build-Type:          Simple
+Cabal-Version:       >= 1.6
+
+source-repository head
+    type:     darcs
+    subdir:   happstack-plugins
+    location: http://patch-tag.com/r/mae/happstack/pullrepo
+
+Flag base4
+    Description: Choose the even newer, even smaller, split-up base package.
+
+Flag tests
+    Description: Build the testsuite, and include the tests in the library
+    Default: False
+
+Library
+  exposed-modules:     Happstack.Server.Plugins.Dynamic
+                       Happstack.Server.Plugins.Static
+
+  build-depends:       base             >= 3 && < 5,
+                       plugins-auto     == 0.0.*,
+                       mtl              == 2.0.*,
+                       happstack-server >= 6,
+                       template-haskell >= 2.6 && <2.8,
+                       th-lift          == 0.5.*
+                       
+  ghc-options:      -Wall

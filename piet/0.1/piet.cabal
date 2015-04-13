@@ -1,0 +1,45 @@
+
+Name:               piet
+Version:            0.1
+Stability:          beta
+
+Category:           Compilers/Interpreters
+Synopsis:           A Piet interpreter
+Description:        An interpreter for the Piet programming language,
+                    see <http://www.dangermouse.net/esoteric/piet.html>.
+
+License:            BSD3
+License-File:       LICENSE
+Copyright:          (c) 2008, Stephan Friedrichs
+
+Author:             Stephan Friedrichs
+Maintainer:         Stephan Friedrichs (deduktionstheorem at web dot de)
+
+Build-Type:         Custom
+Cabal-Version:      >= 1.2
+
+Library
+  Build-Depends:
+      array >= 0.1
+    , base >= 3.0
+    , containers >= 0.1
+    , Imlib >= 0.1
+    , mtl >= 1.1
+  Exposed-Modules:
+      Data.RollStack
+    , Language.Piet
+    , Language.Piet.Commands
+    , Language.Piet.Compiler
+    , Language.Piet.Interpreter
+    , Language.Piet.PietMonad
+    , Language.Piet.Types
+  Hs-Source-Dirs:   sources
+  GHC-Options:      -threaded -Wall -O2
+  Extensions:       CPP
+
+Executable          piet
+  Main-Is:          Main.hs
+  Hs-Source-Dirs:   sources
+  GHC-Options:      -threaded -Wall -O2
+  Extensions:       CPP
+

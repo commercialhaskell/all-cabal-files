@@ -1,0 +1,28 @@
+name:           derivation-trees
+version:        0.7.3
+category:       Graphics, Math
+synopsis:       Typeset Derivation Trees via MetaPost
+description:
+  A library to typeset derivation trees via Laurent Mehats metapost package.
+  Also contains a module to ease the generation of trees for (coloured) pure type systems.
+license:        GPL
+license-file:   LICENSE
+author:         Jean-Philippe Bernardy
+maintainer:     jeanphilippe.bernardy@gmail.com
+Cabal-Version:  >= 1.8
+tested-with:    GHC==6.12.1
+build-type:     Simple
+
+extra-source-files: Main.hs
+
+library
+  build-depends: labeled-tree==1.*
+  build-depends: base==4.*
+  build-depends: mtl==1.1.*
+  build-depends: applicative-extras==0.1.*
+  exposed-modules:
+     DerivationTrees
+     DerivationTrees.Basics
+     DerivationTrees.ManualPTS
+     DerivationTrees.CPTS
+

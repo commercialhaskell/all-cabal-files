@@ -1,0 +1,35 @@
+Name:              hosc-json
+Version:           0.14
+Synopsis:          Haskell Open Sound Control JSON Serialisation
+Description:       hosc-json
+License:           GPL
+Category:          Sound
+Copyright:         (c) Rohan Drape, 2013
+Author:            Rohan Drape
+Maintainer:        rd@slavepianos.org
+Stability:         Experimental
+Homepage:          http://rd.slavepianos.org/?t=hosc-json
+Tested-With:       GHC == 7.6.1
+Build-Type:        Simple
+Cabal-Version:     >= 1.8
+Data-Files:        README
+
+Library
+  Build-Depends:   aeson,
+                   attoparsec,
+                   base == 4.*,
+                   bifunctors,
+                   hosc == 0.14,
+                   bytestring,
+                   json,
+                   text,
+                   unordered-containers,
+                   utf8-string,
+                   vector
+  GHC-Options:     -Wall -fwarn-tabs
+  Exposed-modules: Sound.OSC.Type.JSON
+                   Sound.OSC.Type.JSON.Aeson
+
+Source-Repository  head
+  Type:            darcs
+  Location:        http://rd.slavepianos.org/sw/hosc-json

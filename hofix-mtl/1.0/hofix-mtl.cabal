@@ -1,0 +1,26 @@
+name: hofix-mtl
+version: 1.0
+
+build-type: Simple
+
+category: Composition, Monads
+
+author: nicolas.frisby@gmail.com
+maintainer: nicolas.frisby@gmail.com
+
+stability: experimental
+
+synopsis: defining @mtl@-ready monads as * -> * fixed-points
+description: Declares the * -> * isomorphism class and uses it to declare instances for the @mtl@ interface classes for monads defined using 'star-to-star:Data.StarToStar.Fix'.
+
+license: OtherLicense
+license-file: LICENSE
+
+cabal-version: >= 1.2
+
+library
+  build-depends: base >= 4 && < 5
+  build-depends: star-to-star >= 1 && < 2
+  build-depends: mtl >= 1.1 && < 1.2
+  build-depends: template-haskell >= 2.4 && < 2.5
+  exposed-modules: Data.StarToStar.Iso, Data.StarToStar.Iso.TH, Control.Monad.StarToStar.Fix

@@ -1,0 +1,60 @@
+build-type:	Simple
+cabal-version:	>= 1.2
+
+name:		prototype
+version:	0.1
+stability:	experimental
+author:		Yoshikuni Jujo <PAF01143@nifty.ne.jp>
+maintainer:	Yoshikuni Jujo <PAF01143@nifty.ne.jp>
+
+license:	BSD3
+license-file:	LICENSE
+
+category:	Development
+synopsis:	prototype-based programming on Haskell
+description:	prototype-based programming on Haskell
+		.
+		You can download source codes by git.
+		.
+		git clone git:\/\/github.com\/YoshikuniJujo\/prototype.git prototype
+		.
+		Example code
+		.
+		> module Main where
+		>
+		> import Control.Prototype
+		>
+		> main :: IO ()
+		> main = fmap fst $ flip runPT initPTEnv $ do
+		>	dog <- clone object
+		>	name <- makeMember "name"
+		>	setName <- setMethod dog "setName" $ \this [ n ] -> do
+		>		setMember this name n
+		>		return [ ]
+		>	sit <- setMethod dog "sit" $ \this _ -> do
+		>		n <- member this name
+		>		liftPT $ putStrLn $ fromPrimStr n ++ " sitting."
+		>	myDog <- clone dog
+		>	method myDog setName [ primStr "John" ]
+		>	method myDog sit [ ]
+		>	return ()
+		.
+		Another sample
+		.
+		> module Main where
+		>
+		> import MyToolkit
+		>
+		> main :: IO ()
+		> main = runToolKit $ do
+		>	( textView, setText, setContentView ) <- importMyToolkit
+		>	myTV <- clone textView
+		>	method myTV setText [ primStr "Hello, world!" ]
+		>	method myTV setContentView [ ]
+		>	return ()
+
+library
+  hs-source-dirs:	src
+  exposed-modules:	Control.Prototype
+  build-depends:	base > 3 && < 5, monads-tf
+  ghc-options:		-Wall

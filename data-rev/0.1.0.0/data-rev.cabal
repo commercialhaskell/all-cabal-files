@@ -1,0 +1,26 @@
+name:                data-rev
+version:             0.1.0.0
+synopsis:            A typeclass for reversing order of contents.
+-- description:         
+homepage:            https://github.com/jxv/data-rev
+license:             BSD3
+license-file:        LICENSE
+author:              Joe Vargas
+maintainer:          https://github.com/jxv/
+-- copyright:           
+category:            Data
+build-type:          Simple
+-- extra-source-files:  
+cabal-version:       >=1.10
+
+library
+  exposed-modules:     Data.Rev
+  -- other-modules:       
+  other-extensions:    FlexibleInstances
+  build-depends:       base >=4.7 && <4.8,
+                       vector,
+                       containers,
+                       bytestring,
+                       text
+  hs-source-dirs:      src
+  default-language:    Haskell2010

@@ -1,0 +1,67 @@
+Name:               ArrayRef
+Version:            0.1.3.1
+Category:           Data
+Synopsis:           Unboxed references, dynamic arrays and more
+Description:        This array library supports: unboxed references,
+                    Monad-independent references, syntax sugar for mutable types,
+                    a reimplemented Arrays library, changes in MArray usage,
+                    and using dynamic (resizable) arrays
+License:            BSD3
+License-file:       LICENSE
+Stability:          experimental
+Author:             Bulat Ziganshin
+Maintainer:         Bulat Ziganshin <Bulat.Ziganshin@gmail.com>
+Homepage:           http://haskell.org/haskellwiki/Library/ArrayRef
+
+cabal-version:      >= 1.2.3
+Build-type:         Simple
+Tested-with:        GHC==6.8.2
+Build-Depends:      base<5 && > 3
+Extensions:         CPP, FlexibleContexts, FlexibleInstances, FunctionalDependencies,
+                    KindSignatures, ForeignFunctionInterface,
+                    MagicHash, RankNTypes, ScopedTypeVariables, TypeOperators,
+                    TypeSynonymInstances, UnboxedTuples, UnliftedFFITypes
+ghc-options:         -Wall
+ghc-prof-options:    -prof -auto-all
+
+Exposed-modules:
+                    Control.Concurrent.LockingBZ,
+                    Control.Monad.STorIO,
+                    Data.HasDefaultValue,
+                    Data.Ref,
+                    Data.SyntaxSugar,
+                    Data.Unboxed,
+                    Data.ArrayBZ.Boxed,
+                    Data.ArrayBZ.Diff,
+                    Data.ArrayBZ.Dynamic,
+                    Data.ArrayBZ.IArray,
+                    Data.ArrayBZ.IO,
+                    Data.ArrayBZ.MArray,
+                    Data.ArrayBZ.ST,
+                    Data.ArrayBZ.Storable,
+                    Data.ArrayBZ.Unboxed,
+                    Data.ArrayBZ.Internals.Boxed,
+                    Data.ArrayBZ.Internals.IArray,
+                    Data.ArrayBZ.Internals.MArray,
+                    Data.ArrayBZ.Internals.Unboxed,
+                    Data.Ref.LazyST,
+                    Data.Ref.Unboxed,
+                    Data.Ref.Universal,
+                    GHC.ArrBZ,
+                    GHC.Unboxed
+Extra-source-files:
+                    README
+                    TODO,
+                    Hugs/Typeable.h,
+                    Data/ArrayBZ/Internals/readme.txt,
+                    Data/ArrayBZ/Internals/unused.hs,
+                    Examples/SyntaxSugar.hs,
+                    Examples/Universal.hs,
+                    Examples/URef.hs,
+                    Examples/Array/Boxed.hs,
+                    Examples/Array/Diff.hs,
+                    Examples/Array/Dynamic.hs,
+                    Examples/Array/IO.hs,
+                    Examples/Array/ST.hs,
+                    Examples/Array/Storable.hs,
+                    Examples/Array/Unboxed.hs

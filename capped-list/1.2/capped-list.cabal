@@ -1,0 +1,19 @@
+name: capped-list
+version: 1.2
+synopsis: A list-like type for lazy sequences, with a user-defined termination value.
+license: BSD3
+license-File: license.txt
+author: John Millikin <jmillikin@gmail.com>
+maintainer: John Millikin <jmillikin@gmail.com>
+copyright: 2010 John Millikin <jmillikin@gmail.com>
+build-type: Simple
+cabal-version: >=1.2
+category: Data
+
+library
+  build-depends: base >= 2 && < 5
+
+  exposed-modules:
+    Data.CappedList
+
+  ghc-options: -Wall

@@ -1,0 +1,23 @@
+Name:               collada-types
+Version:            0.1
+Synopsis:           data exchange between graphic applications
+Description:        Collada is the standard graphics format for data exchange between 3d Tools. As well as the file format also its represenation as an algebraic data type could be used to make libraries more composable. Please propose changes.
+category:           graphics
+License:            BSD3
+License-file:       LICENSE
+Author:             Tillmann Vogt
+Maintainer:         Tillmann.Vogt@rwth-aachen.de
+Build-Type:         Simple
+Cabal-Version:    >=1.6
+
+Library
+    hs-source-dirs: src
+    build-depends:
+        base ==4.*,
+        containers == 0.4.*,
+        enumerable,
+        tuple-gen
+    exposed-modules:
+        Graphics.Formats.Collada.ColladaTypes
+        Graphics.Formats.Collada.GenerateObjects
+        Graphics.Formats.Collada.Transformations

@@ -1,0 +1,25 @@
+
+name:               reverse-apply
+version:            1.0.1
+cabal-version:      >= 1.2
+author:             Hans Hoglund
+maintainer:         Hans Hoglund
+license:            BSD3
+license-file:       COPYING
+synopsis:           Standard version of the reverse apply operator.
+category:           Music
+tested-with:        GHC
+build-type:         Simple
+
+description: 
+    Provides a standard version of the reverse apply operator.
+
+    Its definition is simply @(&) = flip ($)@.
+    
+
+library                    
+    build-depends: 
+        base >= 4 && < 5
+    hs-source-dirs: src
+    exposed-modules:
+        Control.Apply.Reverse

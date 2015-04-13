@@ -1,0 +1,24 @@
+name:          regions-monadsfd
+version:       0.3
+cabal-version: >=1.6
+build-type:    Simple
+license:       BSD3
+license-file:  LICENSE
+copyright:     2009 Bas van Dijk
+author:        Bas van Dijk
+maintainer:    Bas van Dijk <v.dijk.bas@gmail.com>
+stability:     experimental
+category:      Control, Monadic Regions
+synopsis:      Monads-fd instances for the RegionT monad transformer
+
+source-repository head
+  Type:     darcs
+  Location: http://code.haskell.org/~basvandijk/code/regions-monadsfd
+
+Library
+  GHC-Options: -Wall -fno-warn-orphans
+  build-depends: base-unicode-symbols >= 0.1.1 && < 0.2
+               , transformers         >= 0.1.4 && < 0.2
+               , regions              == 0.3.*
+               , monads-fd            == 0.0.*
+  exposed-modules: Control.Monad.Trans.Region.Instances.MonadsFD

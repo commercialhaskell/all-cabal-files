@@ -1,0 +1,21 @@
+Name:                stringtable-atom
+Version:             0.0.1
+Category:            Data
+Synopsis:            Maps strings to Atoms for fast equality and ordering comparison
+Description:         Maps strings to Atoms for fast equality and ordering comparison
+License:             BSD3
+License-File:        LICENSE
+Author:              John Meacham
+Maintainer:          audreyt@audreyt.org
+Copyright:           John Meacham, 2008
+Exposed-modules:     StringTable.Atom
+
+Build-Depends:       base, bytestring>=0.9.0.1, binary
+Build-Type:          Simple
+Tested-With:         GHC==6.8.2
+
+extensions:          ForeignFunctionInterface, TypeSynonymInstances, DeriveDataTypeable, FlexibleInstances
+c-sources:           cbits/StringTable_cbits.c
+extra-source-files:  cbits/StringTable_cbits.h
+include-dirs:        cbits
+cc-options:          -O2 -std=c99

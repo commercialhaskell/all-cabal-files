@@ -1,0 +1,23 @@
+name:                up-grade
+version:             0.0.2
+
+synopsis:            Software management tool
+description:         A tool to manage upgrading of ports on a FreeBSD machine
+homepage:            http://github.com/ppenzin/up/
+-- BSD2 (FreeBSD) license
+license:             OtherLicense
+license-file:        LICENSE
+author:              Petr Penzin
+maintainer:          penzin-dev@gmail.com
+copyright:           Petr Penzin
+category:            Build
+build-type:          Simple
+cabal-version:       >=1.8
+data-files:          
+
+Executable up
+  hs-source-dirs:      src
+  main-is:             Main.hs
+  other-modules:       Pkg
+  build-depends:       base<5, process>=1.2, ports-tools
+  

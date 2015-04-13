@@ -1,0 +1,50 @@
+name:               cabalgraph
+version:            0.1
+homepage:           http://code.haskell.org/~dons/code/cabalgraph
+synopsis:           Generate pretty graphs of module trees from cabal files
+description:        
+    Generate pretty graphs of module trees from cabal files
+    .
+    Graph exposed modules from .cabal files in some directories: 
+    .
+    >   $ cabalgraph a b c d | dot -Tpng | xv -
+    .
+    Results in a graph like: <http://code.haskell.org/~dons/images/dot.png>
+    .
+    Graph exposed modules from a url:
+    .    
+    >   $ cabalgraph http://code.haskell.org/xmonad/xmonad.cabal | circo -Tpng | xv -
+    . 
+    Results in a graph like: <http://code.haskell.org/~dons/images/xmonad-dot.png>
+
+category:           Distribution
+license:            BSD3
+license-file:       LICENSE
+author:             Don Stewart
+maintainer:         dons@galois.com
+cabal-version:      >= 1.2
+build-type:         Simple
+
+flag small_base
+    description: Choose the new smaller, split-up base package.
+
+executable cabalgraph
+    main-is:            Main.hs
+    ghc-options:        -Wall
+
+    if flag(small_base)
+        build-depends:      
+            base >= 4 && < 5,
+            pretty,
+            process,
+            directory,
+            containers,
+            bytestring
+    else
+        build-depends:      
+            base < 3
+
+    build-depends:
+            Cabal   > 1.6,
+            filepath
+

@@ -1,0 +1,46 @@
+Name:           helisp
+Version:        0.1
+License:        BSD3
+License-File:   LICENSE
+Author:         Jason Dagit <dagit@codersbase.com>
+Homepage:       http://www.codersbase.com/index.php/Helisp
+
+Stability:      Alpha
+Category:       Compilers/Interpreters
+Synopsis:       An incomplete Elisp compiler
+Description:    This is an incomplete compiler for Emacs Lisp;
+                the source might be of interest to others.
+                .
+                The Darcs repository can be found at
+                <http://projects.codersbase.com/repos/helisp>.
+
+Tested-With:    GHC==6.8.2
+Build-Depends:  base>=3, mtl, containers, process, parsec
+Build-Type:     Simple
+
+Extra-source-files: helisp.c
+
+Executable:     helisp
+Main-Is:        Helisp.hs
+Hs-Source-Dirs: src
+Other-Modules:  CodeGen
+                Eval
+                Immediate
+                Parser
+                SExp
+                TestHarness
+                Builtins
+                Compile
+                Compile32
+                Helisp
+                Intermediate
+                MonadUnique
+                Parser2
+                SimpleTests
+                Registers
+                Types
+                X86_64Inst
+                X86_64Regs
+                X86_64Inst
+                X86_32Regs
+ghc-options:    -Wall

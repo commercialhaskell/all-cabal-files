@@ -1,0 +1,25 @@
+Name:           safe-failure-cme
+Build-Type:     Simple
+Cabal-Version:  >= 1.2
+Version:        0.1.0
+Copyright:      2011-12, Jose Iborra
+License:        PublicDomain
+Maintainer:     pepeiborra@gmail.com
+Author:         Jose Iborra
+Category:       Failure
+Synopsis:       control-monad-exception Instances for safe-failure
+Description:
+    Instances for the encoding of explicitly typed exceptions provided by the control-monad-exception package.
+
+Library
+   buildable: True
+   build-depends:  base >= 4 && < 5,
+                   safe-failure >= 0.5.0 && < 0.6,
+                   control-monad-exception >= 0.10
+		   
+   exposed-modules:  
+      Safe.Failure.Instances
+
+   ghc-options: -Wall -fno-warn-orphans
+
+   extensions: FlexibleInstances, MultiParamTypeClasses

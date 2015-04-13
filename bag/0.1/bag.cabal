@@ -1,0 +1,20 @@
+Name:                   bag
+Synopsis:               A simple stable bag.
+Version:                0.1
+Category:               Data Structures
+License:                MIT
+License-file:           LICENSE
+Extra-source-files:     README
+Author:                 Daniel Waterworth <da.waterworth@gmail.com>
+Maintainer:             Daniel Waterworth <da.waterworth@gmail.com>
+Stability:              experimental
+Build-Type:             Simple
+Cabal-Version:          >=1.4
+Description:
+    bag provides an alternative to a list for cases where constant time 
+    concatenation is required.
+
+Library
+    Build-Depends:      base >= 4 && < 5
+    Exposed-modules:
+        Data.Bag

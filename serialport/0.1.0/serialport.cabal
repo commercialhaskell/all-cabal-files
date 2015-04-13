@@ -1,0 +1,35 @@
+Name:           serialport
+Version:        0.1.0
+Cabal-Version:  >= 1.2
+Build-Type:     Simple
+license:        BSD3
+license-file:   LICENSE
+copyright:      (c) 2009 Joris Putcuyps
+author:         Joris Putcuyps
+maintainer:     Joris.Putcuyps@gmail.com
+homepage:       http://users.skynet.be/jputcu/projects/haskell-serialport/index.html
+bug-reports:    mailto:Joris.Putcuyps@gmail.com
+synopsis:       Cross platform serial port library.  
+
+description:    This library provides a way to interface the serial port from haskell in a cross platform way.
+                .
+                Tested on the following platforms:
+                . 
+                 * Linux (Arch)
+                .
+                 * Windows XP 32-bit
+
+category:       Hardware
+
+Library
+  Exposed-Modules:    System.Hardware.Serialport
+  Build-Depends:      base >= 4, base < 5 
+  Extensions:         CPP
+
+  if !os(windows)
+    Build-Depends:    unix
+    Exposed-Modules:  System.Hardware.Serialport.Posix
+  else
+    Build-Depends:    Win32
+    Exposed-Modules:  System.Hardware.Serialport.Windows
+                      System.Win32.Comm

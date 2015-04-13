@@ -1,0 +1,21 @@
+Name:           Ranged-sets
+Version:        0.2.1
+License:        BSD3
+License-file:   LICENSE.txt
+Copyright:      Paul Johnson, 2005, 2006, 2007, 2008
+Author:         Paul Johnson
+Homepage:       http://code.haskell.org/ranged-sets
+Maintainer:     paul@cogito.org.uk
+Stability:      beta
+Category:       Data
+Build-Depends:  base, QuickCheck<2, HUnit
+Build-type:     Simple
+Synopsis:       Ranged sets for Haskell
+Description:	A ranged set is an ordered list of ranges.  This allows sets
+           	such as all reals x such that
+                (0.25 < x <= 0.75 or 1.4 <= x < 2.3 or 4.5 < x).
+Exposed-modules: Data.Ranged, Data.Ranged.Boundaries, Data.Ranged.Ranges,
+		Data.Ranged.RangedSet
+Extra-source-files: tests/Makefile, tests/Main.hs, README.txt, CHANGES.txt,
+		INSTALL.txt, TODO.txt
+ghc-options:    -Wall

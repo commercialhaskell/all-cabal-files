@@ -1,0 +1,48 @@
+Name:                Mhailist
+Version:             0.0
+Synopsis:            Haskell mailing list manager
+Description:         A mailing list manager written in pure Haskell.
+Category:            Network
+License:             BSD3
+Author:              Curt Sampson, Lars Kotthoff
+Maintainer:          cjs@cynic.net, lars@larsko.org
+Stability:           experimental
+Build-type:          Simple
+Cabal-version:       >=1.6
+Tested-with:         GHC==6.10
+Extra-source-files:  README, LTR/Ttool.hs
+
+Flag Test
+  Description:       Enable tests.
+  Default:           False
+
+Flag Warnings
+  Description:       Enable warnings.
+  Default:           False
+
+Executable mhailist
+  Main-is:           Mhailist.hs
+  Extensions:        CPP
+  Other-modules:     Data.Digest.Pure.MD5, LTR.Transaction, Mhailist.Address,
+                     Mhailist.BuildMessage, Mhailist.Error, Mhailist.List,
+                     Mhailist.Message, Mhailist.Receive, Mhailist.Transaction,
+                     Util.String
+  Build-depends:     base < 4, process, directory, haskell98, filepath, mtl,
+                     bytestring, old-locale, time, binary
+  if flag(Warnings)
+    Ghc-options:     -Wall
+
+Executable Test
+  Main-is:           Test.hs
+  Extensions:        CPP
+  if flag(Test)
+    Other-modules:   Data.Digest.Pure.MD5, LTR.Transaction, Mhailist.Address,
+                     Mhailist.BuildMessage, Mhailist.Error, Mhailist.List,
+                     Mhailist.Message, Mhailist.Receive, Mhailist.Transaction,
+                     Util.String, UnitTest
+    Build-depends:   base < 4, process, directory, haskell98, filepath, mtl,
+                     bytestring, old-locale, time, binary, HUnit
+    Cpp-options:     -D__TEST__
+    Ghc-options:     -fno-ignore-asserts -O0
+  else
+    Buildable:       False

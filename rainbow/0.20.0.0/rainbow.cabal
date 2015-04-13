@@ -1,0 +1,59 @@
+-- This Cabal file generated using the Cartel library.
+-- Cartel is available at:
+-- http://www.github.com/massysett/cartel
+--
+-- Script name used to generate: genCabal.hs
+-- Generated on: 2014-11-22 16:50:57.649392 EST
+-- Cartel library version: 0.10.0.2
+name: rainbow
+version: 0.20.0.0
+cabal-version: >= 1.14
+build-type: Simple
+license: BSD3
+license-file: LICENSE
+copyright: Copyright 2013 - 2014 Omari Norman
+author: Omari Norman
+maintainer: omari@smileystation.com
+stability: Experimental
+homepage: http://www.github.com/massysett/rainbow
+bug-reports: http://www.github.com/massyett/rainbow/issues
+synopsis: Print text to terminal with colors and effects
+description:
+  rainbow helps you print Text chunks to a terminal with colors and effects
+  such as bold, underlining, etc. You pair each Text with a description
+  of how it should appear. Rainbow works with both 8-color and 256-color
+  terminals.
+  .
+  rainbow uses the terminfo package which, in turn, needs the full C
+  library for ncurses installed, including the development
+  headers. Before installing terminfo, you may need to install the
+  ncurses headers (for instance, on Debian systems, install the
+  libncurses5-dev package.)
+category: System
+tested-with: GHC == 7.4.1, GHC == 7.6.3, GHC == 7.8.2
+extra-source-files:
+    README.md
+  , sunlight-test.hs
+  , minimum-versions.txt
+  , current-versions.txt
+  , changelog
+
+source-repository head
+  type: git
+  location: git://github.com/massysett/rainbow.git
+  branch: master
+
+Library
+  exposed-modules:
+      Rainbow
+    , Rainbow.Colors
+    , Rainbow.Types
+  default-language: Haskell2010
+  ghc-options:
+      -Wall
+  hs-source-dirs:
+      lib
+  build-depends:
+      base ((> 4.5.0.0 || == 4.5.0.0) && < 4.8.0.0)
+    , terminfo ((> 0.3.2 || == 0.3.2) && < 0.5.0.0)
+    , text ((> 0.11.2.0 || == 0.11.2.0) && < 1.2.0.0)

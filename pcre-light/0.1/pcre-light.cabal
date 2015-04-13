@@ -1,0 +1,36 @@
+name:            pcre-light
+version:         0.1
+homepage:        http://code.haskell.org/~dons/code/pcre-light
+synopsis:        A lightweight binding to PCRE
+description:
+    A lightweight binding to PCRE
+    .
+    The PCRE library is a set of functions that implement regular
+    expression pattern matching using the same syntax and semantics as Perl 5.
+    .
+    Test coverage data for this library is available at:
+        <http://code.haskell.org/~dons/tests/pcre-light/hpc_index.html>
+    .
+category:        Text
+license:         BSD3
+license-file:    LICENSE
+copyright:       (c) 2007. Don Stewart <dons@galois.com>
+author:          Don Stewart
+maintainer:      Don Stewart <dons@galois.com>
+cabal-version: >= 1.2.0
+build-type:      Configure
+
+flag new-base
+  description: Build with new smaller base library
+  default:     False
+
+library
+    exposed-modules: Text.Regex.PCRE.Light
+                     Text.Regex.PCRE.Light.Char8
+                     Text.Regex.PCRE.Light.Base
+
+    extensions:      CPP, ForeignFunctionInterface
+    ghc-options:     -Wall -O2 -fvia-C
+
+    build-depends: base >= 3, bytestring >= 0.9
+    extra-libraries: pcre

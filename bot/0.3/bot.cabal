@@ -1,0 +1,43 @@
+Name:                bot
+Version:             0.3
+Synopsis: 	     bots for functional reactive programming
+Category:            reactivity, FRP
+Description:
+  /Bot/ is an experimental, arrow-friendly foundation for functional
+  reactive programming.
+  .
+  Please see the project wiki page: <http://haskell.org/haskellwiki/Bot>
+  .
+  The module documentation pages have links to colorized source code and
+  to wiki pages where you can read and contribute user comments.  Enjoy!
+  .
+  &#169; 2008 by Conal Elliott; BSD3 license.
+Cabal-Version:       >= 1.2
+Author:              Conal Elliott 
+Maintainer:          conal@conal.net
+Homepage:            http://haskell.org/haskellwiki/Bot
+Package-Url:	     http://code.haskell.org/~conal/code/bot
+Copyright:           (c) 2007-2010 by Conal Elliott
+License:             BSD3
+License-File:        COPYING
+build-type:          Simple
+Stability:           experimental
+Extra-Source-Files:
+                     Examples.Chatter
+                     Examples.LeadFollow
+
+Library
+  Hs-Source-Dirs:      src
+  Extensions:          
+  Build-Depends:       base >= 4 && < 5, arrows >= 0.4, Stream
+  Exposed-Modules:     
+                       Data.Bot.Mutant
+                       Data.Bot.Misc
+                       Data.Bot.Chatter
+                       Data.Bot.LeadFollow
+                       Data.Bot.Edit
+  ghc-options:         -Wall
+
+
+-- We could add TypeCompose to Build-Depends and uncomment the Pair instances
+-- in Data.Bot.LeadFollow.

@@ -1,0 +1,25 @@
+Name:           type-ord
+Version:        0.1
+License:        BSD3
+License-File:   LICENSE
+Author:         Nicolas Frisby <nicolas.frisby@gmail.com>
+Maintainer:     Nicolas Frisby <nicolas.frisby@gmail.com>
+
+Category: Type System
+
+Synopsis:       Type-level comparison operator
+
+Description: Type-level comparison operator with instances for ()-terminated
+  @type-digit@ numerals until <http://hackage.haskell.org/trac/ghc/ticket/1894>
+  is resolved.
+
+Cabal-Version: >= 1.6.0.1
+
+Build-Type: Simple
+
+
+Library
+  Build-Depends: base >= 4 && < 5, template-haskell
+  Build-Depends: type-booleans < 0.2, type-spine < 0.2, type-digits < 0.2
+
+  Exposed-Modules: Type.Ord, Type.Ord.Base

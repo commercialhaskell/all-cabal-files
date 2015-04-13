@@ -1,0 +1,20 @@
+Name:           geniconvert
+Version:        0.17.1
+License:        GPL
+License-file:   LICENSE
+Author:         Carlos Areces and Eric Kow
+Build-Depends:  GenI >=0.17.2 && < 0.18, base < 4, binary, haskell98, containers, mtl, parsec
+                < 3, QuickCheck, HUnit, HaXml >=1.16
+build-type:     Simple
+Category:       Natural Language Processing
+Homepage:       http://wiki.loria.fr/wiki/GenI
+Description:    Conversion utility for the GenI generator
+Synopsis:       Conversion utility for the GenI generator
+Maintainer:     eric.kow@loria.fr
+extra-source-files: NLP/GenI/HsShow.lhs, NLP/GenI/Converter/ReadTagml.hs, NLP/GenI/Converter/XmgTagml.hs
+data-files:     geniconvert.cabal
+
+Executable:     geniconvert
+Main-Is:        Converter.hs
+Extensions:     CPP, Rank2Types, OverlappingInstances, TypeSynonymInstances
+Ghc-options:    -Wall -O2

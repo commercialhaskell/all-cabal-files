@@ -1,0 +1,50 @@
+Name:          derive-trie
+Version:       0.1.0
+Stability:     Provisional
+Synopsis:      Automatic derivation of Trie implementations.
+Description:   Automatic derivation of Trie implementations from user
+               defined key types with Template Haskell. Uses KeyMap class
+               as interface for tries.
+License:       BSD3
+License-file:  LICENSE
+Author:        Peter Findeisen, Frank Huch, Sebastian Fischer, Andreas Baldeau
+Maintainer:    Andreas Baldeau <andreas@baldeau.net>
+Homepage:      http://github.com/baldo/derive-trie
+Bug-Reports:   http://github.com/baldo/derive-trie/issues
+Category:      Data
+Build-Type:    Simple
+Tested-With:   GHC == 6.12.3
+Cabal-Version: >= 1.8
+
+Extra-Source-Files:
+    Setup.hs
+    README
+    examples/TreeTrie.hs
+
+Source-Repository head
+    Type:     git
+    Location: git://github.com/baldo/derive-trie.git
+
+Library
+    Build-Depends:
+        base             == 4.*,
+        array            == 0.3.*,
+        containers       == 0.3.*,
+        template-haskell == 2.4.*
+
+    Ghc-Options:
+        -Wall
+
+    Hs-Source-Dirs:
+        src
+
+    Exposed-modules:
+        Data.Derive.Trie,
+        Data.KeyMap
+
+    Extensions:
+        FlexibleInstances
+        FunctionalDependencies
+        MultiParamTypeClasses 
+        TemplateHaskell
+        UndecidableInstances

@@ -1,0 +1,29 @@
+Name:               hiernotify
+Version:            2011.3.17
+
+Synopsis:           Notification library for a filesystem hierarchy.
+Description:        Notification library for a filesystem hierarchy.
+Author:             Paolo Veronelli
+Maintainer:         paolo.veronelli@gmail.com
+Homepage:           http://github.com/paolino/hiernotify
+Bug-Reports:        http://github.com/paolino/hiernotify/issues
+License:            BSD3
+License-File:       LICENSE
+Category:           System
+Cabal-Version:      >= 1.6
+build-type:         Simple
+
+source-repository head
+  type:             git
+  location:         git://github.com/paolino/hierarchy.git
+
+library
+  ghc-options:        -Wall
+  build-depends:      base >= 4 && < 5,
+                      filepath ,
+                      directory,
+                      stm,
+                      old-time,
+                      mtl  
+  exposed-modules:    System.Hiernotify
+                      Control.Concurrent.STM.TMonoid

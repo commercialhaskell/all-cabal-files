@@ -1,0 +1,50 @@
+name:                marmalade-upload
+version:             0.5.1
+synopsis:            Upload packages to Marmalade
+description:
+  Upload Emacs packages to the <http://marmalade-repo.org/ Marmalade> ELPA
+  archive.
+homepage:            https://github.com/lunaryorn/marmalade-upload
+license:             MIT
+license-file:        LICENSE
+extra-source-files:  README.md,
+                     CHANGES.md
+author:              Sebastian Wiesner
+maintainer:          lunaryorn@gmail.com
+copyright:           (C) 2014 Sebastian Wiesner
+bug-reports:         https://github.com/lunaryorn/marmalade-upload/issues
+category:            Development
+build-type:          Simple
+cabal-version:       >=1.10
+
+source-repository head
+  type:              git
+  location:          https://github.com/lunaryorn/marmalade-upload.git
+  branch:            master
+
+source-repository this
+  type:              git
+  location:          https://github.com/lunaryorn/marmalade-upload.git
+  tag:               0.5.1
+
+executable marmalade-upload
+  main-is:             main.hs
+  other-modules:       Web.Marmalade
+                       System.IO.Magic
+  ghc-options:         -Wall
+  build-depends:       base >=4.6 && <4.7,
+                       mtl >=2 && <3,
+                       transformers >=0 && <1,
+                       failure >=0 && <1,
+                       bytestring >=0 && <1,
+                       utf8-string >=0 && <1,
+                       directory >=1.2 && <2,
+                       process >=1.1 && <2,
+                       cmdargs >=0 && <1,
+                       aeson >=0 && <1,
+                       network >=2 && <3,
+                       http-types >=0 && <1,
+                       http-client >=0 && <1,
+                       http-client-multipart >=0 && <1,
+                       keyring >=0 && <1
+  default-language:    Haskell2010

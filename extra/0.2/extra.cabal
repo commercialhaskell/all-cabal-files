@@ -1,0 +1,69 @@
+cabal-version:      >= 1.10
+build-type:         Simple
+name:               extra
+version:            0.2
+x-revision: 2
+license:            BSD3
+license-file:       LICENSE
+category:           Development
+author:             Neil Mitchell <ndmitchell@gmail.com>
+maintainer:         Neil Mitchell <ndmitchell@gmail.com>
+copyright:          Neil Mitchell 2014
+synopsis:           Extra functions I use.
+description:
+    A library of extra functions for the standard Haskell libraries. Most functions are new, and add missing functionality. Some are available in later versions of GHC, but this package ports them back to GHC 7.2.
+homepage:           https://github.com/ndmitchell/extra#readme
+bug-reports:        https://github.com/ndmitchell/extra/issues
+tested-with:        GHC==7.8.2, GHC==7.6.3, GHC==7.4.2, GHC==7.2.2
+
+extra-source-files:
+    CHANGES.txt
+    README.md
+
+source-repository head
+    type:     git
+    location: https://github.com/ndmitchell/extra.git
+
+library
+    default-language: Haskell2010
+    hs-source-dirs: src
+    build-depends:
+        base >= 4.4 && < 4.8,
+        directory,
+        filepath,
+        time
+    if !os(windows)
+        build-depends: unix
+
+    exposed-modules:
+        Extra
+        Control.Concurrent.Extra
+        Control.Exception.Extra
+        Control.Monad.Extra
+        Data.Either.Extra
+        Data.IORef.Extra
+        Data.List.Extra
+        Data.Tuple.Extra
+        Numeric.Extra
+        System.Directory.Extra
+        System.Environment.Extra
+        System.Info.Extra
+        System.IO.Extra
+        System.Time.Extra
+
+test-suite extra-test
+    type:            exitcode-stdio-1.0
+    default-language: Haskell2010
+    build-depends:
+        base >= 4.4 && < 4.8,
+        directory,
+        filepath,
+        time,
+        QuickCheck
+    if !os(windows)
+        build-depends: unix
+    hs-source-dirs: src
+    ghc-options: -main-is Test.main
+    main-is:        Test.hs
+    other-modules:
+        TestUtil

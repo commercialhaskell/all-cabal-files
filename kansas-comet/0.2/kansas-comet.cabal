@@ -1,0 +1,42 @@
+Name:                kansas-comet
+Version:             0.2
+Synopsis:            A JavaScript push mechanism based on the comet idiom
+Homepage:            https://github.com/ku-fpg/kansas-comet/
+Bug-reports:         https://github.com/ku-fpg/kansas-comet/
+License:             BSD3
+License-file:        LICENSE
+Author:              Andrew Gill <andygill@ku.edu>, Andrew Farmer <anfarmer@ku.edu>
+Maintainer:          Andrew Gill <andygill@ku.edu>
+Copyright:           (c) 2013 The University of Kansas
+Category:            Web
+Stability:           experimental
+Build-type:          Simple
+Cabal-version:       >= 1.10
+Description:
+  A transport-level remote JavaScript RESTful push mechanism.
+
+data-files:
+    static/js/kansas-comet.js
+
+Library
+  Exposed-modules:     Web.KansasComet
+  other-modules:       Paths_kansas_comet
+  default-language:    Haskell2010
+  build-depends:       base             >= 4.5          && < 5,
+                       unordered-containers >= 0.2.3    && < 0.3,
+                       aeson            == 0.6.*,
+                       containers       == 0.5.*,
+                       data-default     == 0.5.*,
+                       scotty           >= 0.4.3        && < 0.5,
+                       stm              >= 2.2          && < 3.0,
+                       transformers     == 0.3.*,
+                       text             == 0.11.*,
+                       time             == 1.4.*
+
+-- text is needed just for scotty's literal
+
+  GHC-options: -Wall -fno-warn-orphans
+
+source-repository head
+  type:     git
+  location: git://github.com/ku-fpg/kansas-comet.git

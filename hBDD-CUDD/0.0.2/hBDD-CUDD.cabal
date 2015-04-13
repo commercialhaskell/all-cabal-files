@@ -1,0 +1,39 @@
+Name: hBDD-CUDD
+Version: 0.0.2
+Cabal-version: >= 1.6
+Build-type: Simple
+Copyright: (C) 2002-2005, 2009 University of New South Wales, (C) 2009-2011 Peter Gammie
+Maintainer: peteg42@gmail.com
+Author: Peter Gammie, Jeremy Lee
+License: LGPL
+License-file: LICENCE
+Synopsis: An FFI binding to the CUDD library
+Category: Data
+Description:
+
+ hBDD provides a high-level API to some Boolean Decision Diagram
+ libraries; this is the CUDD part of it.
+
+Extra-source-files: README create-cudd-so.sh im/cudd_im.c im/cudd_im.h
+
+source-repository head
+  type:     git
+  location: git://github.com/peteg/hBDD.cabal
+
+Library
+  build-Tools: c2hs
+  build-depends: base >= 4 && < 5, containers, deepseq, hBDD == 0.0.2, unix
+  extensions: ForeignFunctionInterface TypeFamilies
+  exposed-modules: Data.Boolean.CUDD
+  includes: stdio.h cudd.h
+  include-dirs: im
+  c-sources: im/cudd_im.c
+  ghc-options: -Wall
+  if os(darwin)
+    -- We're guessing that they've used MacPorts to install CUDD
+    -- This builds a .dylib
+    include-dirs: /opt/local/include/cudd
+    extra-lib-dirs: /opt/local/lib/cudd
+    extra-libraries: cudd
+  if os(linux)
+    extra-libraries: cudd, mtr, st, util, epd

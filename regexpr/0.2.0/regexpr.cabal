@@ -1,0 +1,27 @@
+Name:		regexpr
+Version:	0.2.0
+License:	GPL
+License-File:	LICENSE
+Author:		Yoshikuni Jujo <PAF01143@nifty.ne.jp>
+Maintainer:	PAF01143@nifty.ne.jp
+Synopsis:	regular expression like Perl/Ruby in Haskell
+Category:	Text
+Build-Depends:	base, mtl, HUnit
+Exposed-modules:Text.RegexPR
+Other-modules:	Hidden.RegexPRTypes, Hidden.Tools, Hidden.ParseLib,
+		Hidden.ParseLibCore, Hidden.RegexPRCore,
+		Hidden.ParseRegexStr, Hidden.SrcRegActList
+		Hidden.TestMain
+Extensions:
+ld-options:
+Description:
+  Regular expression library like Perl/Ruby's regular expression.
+  This package has a module RegexPR.
+  And RegexPR export function matchRegexPR and gsubRegexPR.
+  matchRegexPR :: String -> Maybe ((String, (String, String)), [(Int, String)]),
+  gsubRegexPR :: String -> String -> String.
+  Examples: matchRegexPR "ab(cde)f\\1" "kkkabcdefcdefgh" =>
+  Just (("abcdefcde", ("kkk", "fgh")),[(1,"cde")]),
+  matchRegexPR "(?<=hij)abc" "kkkabchijabcde" =>
+  Just (("abc",("kkkabchij","de")),[]),
+  gsubRegexPR "\\G(\\d\\d\\d)" "\\1," "123456 789" => "123,456, 789"

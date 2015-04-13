@@ -1,0 +1,28 @@
+Name:           Hashell
+Version:        1.0
+Synopsis:       Simple shell written in Haskell
+Description:    A simple shell written in Haskell; through the GHC API, it allows
+                evaluation of Haskell expressions.
+                .
+                This works only with old GHCs.
+Category:       User Interfaces
+
+License:        GPL
+License-File:   LICENSE
+Author:         Luis Francisco Araujo
+Maintainer:     none
+Stability:      experimental
+cabal-version: >= 1.6
+Tested-With:    GHC==6.8.2
+Build-Depends:  base==3.*, unix, haskell98, readline, parsec, regex-compat, process, ghc,
+                directory
+Build-Type:     Simple
+Extra-Source-Files: BUGS, CHANGELOG, config_example, README
+
+Executable:     hashell
+Main-Is:        Main.hs
+hs-source-dirs: Hashell/
+Other-Modules:  ConfigFile, Environment, Eval, Exec, Options, Parse, Process
+                Signals
+Ghc-options:         -O2 -Wall
+Ghc-prof-options:    -prof -auto-all

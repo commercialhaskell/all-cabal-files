@@ -1,0 +1,23 @@
+Name:                 bla
+Version:              2009.10.20
+Build-type:           Simple
+Synopsis:             a stupid cron
+Description:
+        
+    run a script forever
+
+License:              BSD3
+License-file:         LICENSE
+Author:               Wang, Jinjing
+Maintainer:           Wang, Jinjing <nfjinjing@gmail.com>
+Build-Depends:        base
+Cabal-version:        >= 1.2
+category:             System
+homepage:             http://github.com/nfjinjing/bla
+data-files:           readme.md, changelog.md
+
+Executable            bla
+  ghc-options:        -Wall
+  build-depends:      base >= 4 && < 5, unix, haskell98
+  hs-source-dirs:     src/
+  main-is:            bla.hs

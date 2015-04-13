@@ -1,0 +1,40 @@
+
+Name:                xml-prettify
+
+Version:             0.1.0.1
+Synopsis:            Pretty print XML.
+Description:         A simple command-line XML pretty-printer which automatically handles
+                     indentation.
+License:             BSD3
+License-file:        LICENSE
+
+Author:              David M. Rosenberg
+Maintainer:          dmr@davidrosenberg.me
+Homepage:            http://github.com/rosenbergdm/xml-prettify
+
+Category:            Text
+
+Build-type:          Simple
+Extra-source-files:  README.md,
+                     LICENSE,
+                     examples/ugly.xml
+
+Cabal-version:       >=1.6
+Tested-with:         GHC == 6.12.2
+
+
+Library
+  Exposed-modules:     Text.XML.Prettify
+  Hs-source-dirs:      src
+  Build-depends:       base >=4 && <= 5
+  
+
+  
+Executable xml-prettify
+  Main-is:            Main.hs
+  Hs-source-dirs:     src
+  Build-depends:      base >= 4 && <= 5,
+                      cmdargs -any,
+                      unix >= 2.4
+  -- Extensions:         DeriveDataTypeable
+  

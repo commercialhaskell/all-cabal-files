@@ -1,0 +1,40 @@
+name: cal3d-examples
+version: 0.1
+cabal-version: >= 1.6
+build-type: Simple
+-- The original Cally Demo is GLP'ed, so it makes sense to do this
+-- the same way, especially as long as it uses data files from the original.
+license: GPL
+license-file: LICENSE
+author: Gregory D. Weber
+maintainer: let at = "@" in concat ["gdweber", at, "iue.edu"]
+stability: experimental
+homepage: http://haskell.org/haskellwiki/Cal3d_animation
+category: Graphics, Animation
+tested-with: GHC == 6.10.1
+data-files: data/*.csf data/*.cmf data/*.caf data/*.xrf
+synopsis: Examples for the Cal3d animation library.
+description: 
+  Cal3d animation examples for cal3d.
+
+extra-source-files: CallyCommon.hs
+
+executable cally-dump
+  main-is: CallyDump.hs
+  build-depends: 
+    base >= 4.0.0.0 && < 5,
+    OpenGL >= 2.2.3 && < 3,
+    SDL >= 0.5 && < 1,
+    cal3d >= 0.1 && < 0.2,
+    cal3d-opengl >= 0.1 && < 0.2
+  extensions: ForeignFunctionInterface
+
+executable cally-gl
+  main-is: CallyOpenGL.hs
+  build-depends: 
+    base >= 4.0.0.0 && < 5,
+    OpenGL >= 2.2.3 && < 3,
+    SDL >= 0.5 && < 1,
+    cal3d >= 0.1 && < 0.2,
+    cal3d-opengl >= 0.1 && < 0.2
+  extensions: ForeignFunctionInterface

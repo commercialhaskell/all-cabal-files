@@ -1,0 +1,56 @@
+
+name:               music-score
+version:            1.2.1
+cabal-version:      >= 1.2
+author:             Hans Hoglund
+maintainer:         Hans Hoglund
+license:            BSD3
+license-file:       COPYING
+synopsis:           Musical score and part representation.
+category:           Music
+tested-with:        GHC
+build-type:         Simple
+
+description: 
+    Musical score and part representation.
+    
+    This library is part of the Haskell Music Suite, see <http://musicsuite.github.com>.
+
+library                    
+    build-depends: 
+        base >= 4 && < 5,
+        unix,
+        time,
+        random,           
+        containers,       
+        parsec,
+        transformers,
+        HCodecs,
+        musicxml2,
+        semigroups,
+        semigroupoids,
+        vector-space,
+        music-pitch-literal,
+        music-dynamics-literal,
+        reenact
+
+    hs-source-dirs: src
+    exposed-modules:
+        Music.Score
+        Music.Score.Time
+        Music.Score.Duration
+        Music.Score.Track
+        Music.Score.Part
+        Music.Score.Score
+        Music.Score.Rhythm
+        Music.Score.Combinators
+        Music.Score.Pitch
+        Music.Score.Voice
+        Music.Score.Ties
+        Music.Score.Articulation
+        Music.Score.Dynamics
+        Music.Score.Ornaments
+        
+executable "music-score-tests"
+    hs-source-dirs: src test
+    main-is: Main.hs

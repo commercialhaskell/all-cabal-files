@@ -1,0 +1,38 @@
+name: miniplex
+version: 0.2.2
+cabal-version: >= 1.2
+license: LGPL
+license-file: LICENSE
+author: Lukas Mai
+maintainer: Lukas Mai <l.mai@web.de>
+stability: experimental
+category: System
+synopsis: simple 1-to-N interprocess communication
+description:
+    This module provides interprocess communication channels. This is meant
+    to be used by logger-like programs that want to send status reports to
+    N listeners (where N >= 0).
+
+flag small_base
+  description: Choose the new smaller, split-up base package.
+
+library
+  exposed-modules: System.Miniplex, System.Miniplex.Source, System.Miniplex.Sink
+  other-modules: System.Miniplex.Sekrit
+  hs-source-dirs: lib
+  if flag(small_base)
+    build-depends: directory
+  build-depends: base, network, stm, unix, mtl
+  ghc-options: -Wall
+
+executable plox-read
+  hs-source-dirs: bin, lib
+  main-is: plox-read.hs
+  other-modules: System.Miniplex
+  ghc-options: -Wall
+
+executable plox-write
+  hs-source-dirs: bin, lib
+  main-is: plox-write.hs
+  other-modules: System.Miniplex
+  ghc-options: -Wall

@@ -1,0 +1,61 @@
+Name:             black-jewel
+Version:          0.0.0.1
+Synopsis:         The pirate bay client.
+Description:      Interactive torrent search utility. It support following commands:
+		  .
+                  'find' -- execute search
+                  .
+                  'more' -- find more results.
+                  .
+                  'list' -- display found results.
+                  .
+                  'show' -- display meta-information via your pager.
+                  .
+                  'save' -- save corresponding .torrent file in current directory.
+                  .
+                  Parsing torrent takes time, so program use lazy IO to not waste user's time.
+                  Here is need for 'more' command.
+License:          GPL-3
+license-file:     LICENSE
+Homepage:         http://git.kaction.name/black-jewel
+category:         Application
+Author:           Dmitry Bogatov
+Maintainer:       KAction@gnu.org
+Cabal-Version:    >= 1.10
+Build-Type:       Simple
+
+source-repository head
+  type: git
+  location: git://kaction.name/black-jewel.git
+
+
+Executable black-jewel
+  Hs-Source-Dirs: src
+  default-language: Haskell2010
+  Main-is:        Main.hs
+  other-modules:  Utils PirateBay Quarry
+  Build-Depends:  base          >= 4 && < 5,
+                  bytestring    >= 0.9,
+                  HTTP          >= 4000.1.2,
+                  tagsoup       >= 0.12.6,
+                  bytestring    >= 0.9,
+                  network       >= 2.3,
+                  directory     >= 1.1,
+                  download      >= 0.3,
+                  hxt           >= 9.3,
+                  transformers  >= 0.3,
+                  haskeline     >= 0.7,
+                  safe          >= 0.3,
+                  ansi-terminal >= 0.6,
+                  process       >= 1.1.0,
+                  zlib          >= 0.5
+  ghc-options:    -Wall
+  default-extensions:     FlexibleInstances
+
+Test-Suite dummy
+  type:             exitcode-stdio-1.0
+  main-is:          tDummy.hs
+  default-language: Haskell2010
+  hs-source-dirs:   tests
+  build-depends:    base,
+                    QuickCheck >= 2.6

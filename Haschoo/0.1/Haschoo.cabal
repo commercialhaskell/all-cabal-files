@@ -1,0 +1,62 @@
+Cabal-Version: >= 1.6
+
+Name:        Haschoo
+Version:     0.1
+Homepage:    http://iki.fi/matti.niemenmaa/misc-projects.html#haschoo
+Synopsis:    Minimalist R5RS Scheme interpreter
+Category:    Compilers/Interpreters
+Description:
+   Haschoo is a minimalist R5RS interpreter written in Haskell for a university
+   course.
+
+Author:       Matti Niemenmaa
+Maintainer:   Matti Niemenmaa <matti.niemenmaa+haschoo@iki.fi>
+License:      BSD3
+License-File: LICENSE.txt
+
+Build-Type: Simple
+
+Extra-Source-Files: README.txt
+                    tests/*.scm
+                    tests/macros/*.scm
+                    tests/macros/r5rs/4.3.1.scm
+                    tests/macros/r5rs/4.3.2.scm
+                    tests/macros/xfail/*.scm
+
+Data-Files: std-func.scm
+            std-prim.scm
+
+Executable haschoo
+   Main-Is: Haschoo/Main.hs
+
+   Build-Depends: base        == 4.*
+                , array       == 0.2.*
+                , mtl         == 1.1.*
+                , list-tries  == 0.1.*
+                , numbers     >= 2009.5.28 && <= 2009.8.9
+                , monad-loops == 0.3.*
+                , parsec      == 2.1.*
+
+   Other-Modules: Haschoo.Evaluator
+                  Haschoo.Evaluator.Eval
+                  Haschoo.Evaluator.Macros
+                  Haschoo.Evaluator.Primitives
+                  Haschoo.Evaluator.Standard
+                  Haschoo.Evaluator.Standard.Boolean
+                  Haschoo.Evaluator.Standard.Characters
+                  Haschoo.Evaluator.Standard.Control
+                  Haschoo.Evaluator.Standard.Equivalence
+                  Haschoo.Evaluator.Standard.Eval
+                  Haschoo.Evaluator.Standard.IO
+                  Haschoo.Evaluator.Standard.Numeric
+                  Haschoo.Evaluator.Standard.PairsLists
+                  Haschoo.Evaluator.Standard.Strings
+                  Haschoo.Evaluator.Standard.Symbols
+                  Haschoo.Evaluator.Standard.Vectors
+                  Haschoo.Evaluator.Utils
+                  Haschoo.Parser
+                  Haschoo.Running
+                  Haschoo.Stdlib
+                  Haschoo.Types
+                  Haschoo.Utils
+                  Paths_Haschoo

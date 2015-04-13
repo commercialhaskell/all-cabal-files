@@ -1,0 +1,60 @@
+Name:              unm-hip
+Version:       	   0.0.0.2
+License:           GPL
+License-File:      LICENSE
+Author:	           Joseph Collard, Stephen Patel, Lance Williams
+Stability:         experimental
+Maintainer:	   josephmcollard+unm-hip@gmail.com
+Category:          Image Processing
+Synopsis:          A Library for the manipulation of images
+Description:       The University of New Mexico's Haskell Image Processing library contains functionality for performing manipulations on binary, grayscale, color, and complex images. The library was designed for use in UNM's Digital Image Processing class but it can be used for a wide range of image processing purposes.
+                   .
+                   [Changes]
+                   .
+                   [unm-hip-0.0.0.2]
+                   .
+                     * Adjusted the label function to reduce to the lowest label values. This results in "better" output for areas, boundingBoxes, and centersOfMass
+                   .
+                     * Added the Arithmetic module that provides support for arithmetic operations on images using scalar values.
+                   .
+                   [unm-hip-0.0.0.1]
+                   .
+                     * Added an error if fft or ifft are used with a non power of 2 image
+                   .                  
+                     * Fixed error in equivalence labeling in label
+                   .
+                     * Made consistent if and only if through out documentation
+                   .
+                     * Fixed typo in Complex.hs haddock under fft.
+                   .
+                   [unm-hip-0.0.0.0]
+                   .
+                     * Initial release containing functionality for Boxed Images
+Cabal-Version:     >= 1.6
+Build-Type:        Simple
+
+Library
+  Build-Depends:  array >= 0.4.0.1,
+                  base >= 4 && < 5, 
+                  bytestring >= 0.10.0.2,
+                  containers >= 0.5.0.0,
+                  vector >= 0.10.0.1,
+                  process >= 1.1.0.2
+
+  Extensions:     FlexibleContexts, 
+                  FlexibleInstances, 
+                  TypeFamilies, 
+                  ViewPatterns
+
+  Exposed-Modules:Data.Image,
+                  Data.Image.Binary,
+                  Data.Image.Boxed,
+                  Data.Image.Complex,
+                  Data.Image.Convolution,
+                  Data.Image.Interactive,
+                  Data.Image.Internal,
+                  Data.Image.IO
+
+Source-Repository head
+  type:     git
+  location: https://github.com/jcollard/unm-hip

@@ -1,0 +1,36 @@
+Name:           libxml
+Version:        0.1.1
+Maintainer:     Lemmih (lemmih@gmail.com)
+Author:         Lemmih (lemmih@gmail.com)
+Copyright:      2006, Lemmih
+License-File:   LICENSE
+License:        BSD3
+Category:       XML
+Synopsis:       Binding to libxml2
+Cabal-Version:  >=1.2
+build-type:     Simple
+Description:
+  Minimal binding to libxml2. Additional functions will be added when needed.
+
+flag small_base
+  description: Choose the new smaller, split-up base package.
+
+library
+    if flag(small_base)
+        build-depends: base >= 3, bytestring
+    else
+        build-depends: base <  3
+
+    build-depends: mtl
+    extensions: CPP, ForeignFunctionInterface
+    hs-source-dirs: src
+
+    Exposed-Modules:
+      Text.XML.LibXML
+      Text.XML.LibXML.Types
+      Text.XML.LibXML.Internals
+      Text.XML.LibXML.Tree
+      Text.XML.LibXML.Parser
+
+    includes: libxml/xmlIO.h libxml/xmlmemory.h
+    extra-libraries: xml2

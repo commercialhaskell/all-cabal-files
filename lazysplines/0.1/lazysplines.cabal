@@ -1,0 +1,16 @@
+name:                lazysplines
+version:             0.1
+synopsis:            Differential solving with lazy splines
+description:         See the source of Numeric.LazySplines.Examples for usage.
+category:            Math
+license:             BSD3
+license-file:        LICENSE
+author:              Gershom Bazerman, Jeff Polakow
+maintainer:          gbazerman@gmail.com
+Tested-With:         GHC == 6.10.2
+Build-Type:          Simple
+build-Depends:       base
+Cabal-Version:       >= 1.2
+
+exposed-modules: Numeric.LazySplines
+                 Numeric.LazySplines.Examples

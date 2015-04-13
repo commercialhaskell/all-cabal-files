@@ -1,0 +1,37 @@
+name:               OddWord
+version:            1.0.0
+license:            BSD3
+license-file:       LICENSE
+copyright:          (c) 2011 Robin KAY
+author:             Robin KAY
+maintainer:         Robin KAY <komadori@gekkou.co.uk>
+synopsis:           Provides a wrapper for deriving word types with fewer bits.
+category:           Data
+stability:          Stable
+cabal-version:      >= 1.10
+build-type:         Simple
+extra-source-files: test/*.hs
+homepage:           http://www.gekkou.co.uk/
+description:
+    Provdes the 'OddWord' type, which wraps an existing integer type and
+    exposes a subset of its bits as a new narrower word type. Includes
+    predefined type synonyms for all the odd sized words up to 63 bits.
+
+Library
+    hs-source-dirs:   src
+    exposed-modules:  Data.Word.Odd
+    default-language: Haskell2010
+    other-extensions: ScopedTypeVariables
+    build-depends:
+        base >= 4 && < 5
+
+Test-Suite oddword-tests
+    type:             exitcode-stdio-1.0
+    hs-source-dirs:   test
+    main-is:          Main.hs
+    default-language: Haskell2010
+    other-extensions: ScopedTypeVariables
+    build-depends:
+        base       >= 4   && < 5,
+        QuickCheck >= 2.4 && < 2.5,
+        OddWord    >= 1.0 && < 1.1

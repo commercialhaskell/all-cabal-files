@@ -1,0 +1,12 @@
+Name:                darcs-graph
+Version:             0.1
+License:             GPL
+License-file:        LICENSE
+Author:              Don Stewart
+Maintainer:          dons@cse.unsw.edu.au
+Build-Depends:       base, fps>=0.7
+
+Executable:          darcs-graph
+Main-is:             Graph.hs
+ghc-options:         -fglasgow-exts -Wall -Werror -O -funbox-strict-fields -optl-Wl,-s
+ 

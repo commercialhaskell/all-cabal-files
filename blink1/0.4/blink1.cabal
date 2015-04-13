@@ -1,0 +1,43 @@
+Name:		blink1
+Version:	0.4
+Author:		Dylan Simon
+Maintainer:     dylan@dylex.net
+License:        BSD3
+License-File:	LICENSE
+Synopsis:	Control library for blink(1) LED from ThingM
+Description:    Provides an interface to the ThingM blink(1) LED <http://thingm.com/products/blink-1.html> similar to (but not dependent on) <http://github.com/todbot/blink1> via Linux hidraw or the libusb-based usb package.
+Category:	Hardware
+Build-Type:	Simple
+Cabal-Version:	>= 1.8
+tested-with:	GHC == 7.8.3
+
+Source-Repository head
+    Type:	git
+    Location:   http://github.com/dylex/blink
+
+Flag usb
+    Description:        Enable libusb-based usb backend
+
+Library
+    Build-Depends:	base == 4.*
+    Exposed-Modules:    System.Hardware.Blink1, System.Hardware.Blink1.Types, System.Hardware.Blink1.Class, System.Hardware.Blink1.Dummy
+    ghc-options: -Wall
+
+    if os(linux)
+        Build-Depends:	unix
+        Exposed-Modules: System.Hardware.Blink1.Linux, System.Linux.HIDRaw
+
+    if flag(usb)
+        Build-Depends:  usb, vector, text < 1.2, bytestring
+        Exposed-Modules: System.Hardware.Blink1.USB
+
+Executable blink1
+    main-is: blink1.hs
+    build-depends: base, blink1
+    if os(linux)
+        build-depends: unix
+        CPP-options: -DUSE_LINUX
+    if flag(usb)
+        Build-Depends: usb, vector, text < 1.2, bytestring
+        CPP-options: -DUSE_USB
+    ghc-options: -Wall

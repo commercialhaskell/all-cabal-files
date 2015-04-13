@@ -1,0 +1,21 @@
+Name:          interpolatedstring-qq-mwotton
+Version:       0.1.1
+License:       BSD3
+License-file:  LICENSE
+Category:      Data
+Author:        Erik Charlebois
+Copyright:     Erik Charlebois
+Maintainer:    Erik Charlebois <erikcharlebois@gmail.com> (-mwotton version very slightly changed by mwotton@gmail.com)
+Stability:     unstable
+Cabal-Version: >= 1.2
+Build-Depends: base >= 3 && < 4
+Build-Type:    Custom
+Synopsis:      DO NOT USE THIS. interpolatedstring-qq works now.
+Description:   DO NOT USE THIS. interpolatedstring-qq works now.
+Data-Files:    tests/Test.hs
+
+library
+    extensions:      TemplateHaskell
+    build-depends:   base >= 3 && <4, template-haskell, haskell-src-meta-mwotton
+    hs-source-dirs:  src
+    exposed-modules: Text.InterpolatedString.QQ

@@ -1,0 +1,72 @@
+name:             wumpus-tree
+version:          0.10.0
+license:          BSD3
+license-file:     LICENSE
+copyright:        Stephen Tetley <stephen.tetley@gmail.com>
+maintainer:       Stephen Tetley <stephen.tetley@gmail.com>
+homepage:         http://code.google.com/p/copperbox/
+category:         Graphics
+synopsis:         Drawing trees
+description:
+  .
+  Tree drawing with /nice/ layout. 
+  .
+  Draw trees represented by Data.Tree, output SVG or EPS. The 
+  output should be quite good - no overlapping edges, identical 
+  subtrees should have the same shape, leaf nodes evenly spaced.
+  .
+  \*\* WARNING \*\* - the API is unstable and will change. 
+  .
+  Changelog:
+  .
+  0.9.0 to 0.10.0:
+  .
+  * Internal changes to track updates to Wumpus-Basic.
+  .
+  0.8.0 to 0.9.0:
+  .
+  * Stopped re-exporting @DrawingContext@ from Wumpus-Basic in 
+    the module Wumpus.Tree. Clients must now import 
+    @Wumpus.Basic.Graphic@ to get the @DrawingContext@ type and 
+    the constructor @StandardContext@.
+  .
+  * Internal changes to track updates to Wumpus-Basic.
+  . 
+  .
+build-type:         Simple
+stability:          highly unstable
+cabal-version:      >= 1.2
+
+extra-source-files:
+  CHANGES,
+  LICENSE,
+  demo/Demo01.hs
+  
+library
+  hs-source-dirs:     src
+  build-depends:      base              <  5, 
+                      containers        >= 0.3.0     && < 0.4.0,
+                      vector-space      >= 0.6,
+                      wumpus-core       == 0.36.0,
+                      wumpus-basic      == 0.12.0
+
+  
+  exposed-modules:
+    Wumpus.Tree,
+    Wumpus.Tree.Base,
+    Wumpus.Tree.Design,
+    Wumpus.Tree.Draw,
+    Wumpus.Tree.VersionNumber
+
+  other-modules:
+
+  extensions:
+    
+
+  ghc-options:
+  
+  includes: 
+  
+
+  
+  

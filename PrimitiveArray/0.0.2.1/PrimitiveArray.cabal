@@ -1,0 +1,31 @@
+Name:           PrimitiveArray
+Version:        0.0.2.1
+License:        BSD3
+License-file:   LICENSE
+Author:         Christian Hoener zu Siederdissen
+Maintainer:     choener@tbi.univie.ac.at
+Stability:      Experimental
+Category:       Data
+Build-type:     Simple
+Cabal-version:  >=1.2
+Synopsis:
+                Unboxed, multidimensional arrays based on the primitive
+                package.
+Description:
+                Provides unboxed multidimensional tables with a small
+                interface. Comes with an instance for Ix keys.
+
+extra-source-files:
+  Benchmarks/Index.hs
+
+Library
+  Exposed-modules:
+    Data.PrimitiveArray
+    Data.PrimitiveArray.Ix
+    Data.PrimitiveArray.Internal
+  Build-depends:
+    base >= 4 && <5,
+    primitive >= 0.3 && < 0.4
+  ghc-options:
+    -O2
+

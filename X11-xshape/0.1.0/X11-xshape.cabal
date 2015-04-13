@@ -1,0 +1,21 @@
+name:		        X11-xshape
+version:	        0.1.0
+license:	        BSD3
+license-file:	    LICENSE
+copyright:	        Ewan Higgs, 2008, libraries@haskell.org 2008
+maintainer:	        Ewan Higgs <ewan_higgs@yahoo.co.uk>
+homepage:           http://darcs.haskell.org/X11-xshape
+category:	        Graphics
+synopsis:	        A binding to the Xshape X11 extension library
+description:	    A Haskell binding to the Xshape X11 extention graphics library.
+	.
+	The binding is a direct translation of the C binding; for
+	documentation of these calls, refer to "The Xlib Programming
+	Manual", available online at <http://tronche.com/gui/x/xlib/>.
+exposed-modules:
+    Graphics.X11.Xshape
+extensions:	        ForeignFunctionInterface, CPP
+build-depends:	    base >= 3 && < 10, X11
+build-type:         Simple
+ghc-options:        -funbox-strict-fields -Wall -fno-warn-unused-binds
+ghc-prof-options:   -prof -auto-all

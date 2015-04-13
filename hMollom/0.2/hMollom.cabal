@@ -1,0 +1,32 @@
+name:                hMollom
+version:             0.2
+cabal-version:       >= 1.6
+stability:           experimental
+synopsis:            Library to interact with the Mollom anti-spam service
+description:         Library to interact with the Mollom anti-spam service
+license:             BSD3
+license-file:        LICENSE
+author:              Andy Georges
+homepage:            http://github.com/itkovian/hMollom
+category:            Network
+maintainer:          itkovian@gmail.com
+build-Type:          Simple
+extra-source-files:  src/Network/Mollom/Auth.hs
+                     src/Network/Mollom/Internals.hs
+                     src/Network/Mollom/MollomMonad.hs
+
+
+library
+    build-depends:     
+        base >= 3 && < 5, 
+        haxr >= 3000.5,
+        old-locale >= 1,
+        time >= 1.1.4,
+        Crypto >= 4.2.0,
+        bytestring >= 0.9.1.4,
+        dataenc >= 0.13,
+        mtl >= 1.1.0.2
+    exposed-modules:   Network.Mollom
+    ghc-options:       -Wall
+    hs-source-dirs:      src
+

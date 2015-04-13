@@ -1,0 +1,38 @@
+name:                hexquote
+version:             0.1
+license:             BSD3
+license-file:        LICENSE
+synopsis:            Hexadecimal ByteString literals, with placeholders that bind variables
+category:            Data
+author:              Keegan McAllister <mcallister.keegan@gmail.com>
+maintainer:          Keegan McAllister <mcallister.keegan@gmail.com>
+build-type:          Simple
+cabal-version:       >=1.6
+description:
+  This library defines a quasiquoter for @ByteString@s. As an expression, it
+  provides hexadecimal @ByteString@ literals.  As a pattern, the hexdump can
+  contain named placeholders of fixed size, which bind local variables when
+  pattern matching.
+
+extra-source-files:
+  README
+
+library
+  exposed-modules:  Data.Hex.Quote
+  ghc-options:      -Wall
+  build-depends:
+      base             >= 3 && < 5
+    , containers       >= 0.2
+    , template-haskell >= 2.3
+    , bytestring       >= 0.9
+    , parsec           >= 3.1
+
+  other-extensions:
+      TemplateHaskell
+    , NamedFieldPuns
+    , CPP
+    , ViewPatterns
+
+source-repository head
+    type:     git
+    location: git://github.com/kmcallister/hexquote.git

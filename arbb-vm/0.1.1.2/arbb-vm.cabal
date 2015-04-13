@@ -1,0 +1,64 @@
+Name:           arbb-vm
+Version:        0.1.1.2
+
+License:                BSD3
+License-file:           LICENSE
+Stability:              Beta
+Maintainer:		Joel Svensson<svensson.bj@gmail.com>
+Author:			Joel Svensson<svensson.bj@gmail.com>
+
+Copyright:              Copyright (c) 2011 Intel Corporation
+Synopsis:               FFI binding to the Intel Array Building Blocks (ArBB) virtual machine.
+HomePage:               git://github.com/svenssonjoel/arbb-vm/wiki
+Description: 
+   DESCRIPTION GOES HERE.
+
+Category: Foreign
+Cabal-Version: >=1.8
+Tested-With: GHC == 7.0.1
+
+build-type: Simple
+
+extra-source-files:
+     examples/tests/Test_DotProd.hs
+
+
+source-repository head
+  type:     git
+  location: git://github.com/svenssonjoel/arbb-vm.git
+
+----------------------------------------------------------------------------------------------------
+Library
+  build-depends: base >= 4 && < 5, haskell98
+               , mtl >= 2.0 
+               , bytestring
+               , cereal
+               , directory
+               , containers
+               , pretty
+-- Having a problem with this [2011.02.27] :
+--               , c2hs
+
+  exposed-modules: Intel.ArbbVM
+                 , Intel.ArbbVM.Convenience
+                 , Intel.ArbbVM.Type
+  other-modules:
+                   C2HS
+                 , Intel.ArbbVM.Debug
+
+  GHC-Options: -O2 
+--extra-libraries: tbb, arbb, pthread
+  include-dirs: /opt/intel/arbb/latest/include
+
+  -- FIXME: How do we read an environment variable?
+  if arch( x86_64 ) 
+    extra-lib-dirs: /opt/intel/arbb/latest/lib/intel64
+  else
+    extra-lib-dirs: /opt/intel/arbb/latest/lib/ia32
+
+--  C-sources: 
+-- [2011.02.15] Don't need this at the moment because of the arbb_alt hack:
+--      cbits/arbb_vmwrap.c
+--    , cbits/arbb_vmwrap.h
+
+-- Include-Dirs: cbits

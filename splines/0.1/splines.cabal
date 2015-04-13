@@ -1,0 +1,36 @@
+name:                   splines
+version:                0.1
+stability:              provisional
+
+cabal-version:          >= 1.6
+build-type:             Simple
+
+author:                 James Cook <mokus@deepbondi.net>
+maintainer:             James Cook <mokus@deepbondi.net>
+license:                PublicDomain
+
+category:               Graphics, Numerical, Math
+synopsis:               B-Splines, other splines, and NURBS.
+description:            This is a fairly simple implementation of a 
+                        general-purpose spline library, just to get the code
+                        out there.  Its interface is still mildly unstable and
+                        may change (hopefully not drastically) as new needs or
+                        better style ideas come up.  Patches, suggestions
+                        and/or feature requests are welcome.
+
+source-repository head
+    type: darcs
+    location: http://code.haskell.org/~mokus/splines/
+
+Library
+  hs-source-dirs:       src
+  exposed-modules:      Math.Spline
+                        Math.Spline.BezierCurve
+                        Math.Spline.BSpline
+                        Math.Spline.Class
+                        Math.Spline.ISpline
+                        Math.Spline.Knots
+                        Math.Spline.MSpline
+                        Math.NURBS
+  other-modules:        Math.Spline.BSpline.Internal
+  build-depends:        base >= 3 && < 5, containers, vector-space

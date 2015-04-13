@@ -1,0 +1,61 @@
+name:        font-opengl-basic4x6
+version:     0.0.1
+category:    Graphics
+synopsis:    Basic4x6 font for OpenGL
+description: Basic4x6 font for OpenGL containing digits and symbols. It is
+             called \"4x6\" because it was drawn in 4x6 grids on graph paper.
+             .
+             This library might not be a good idea, but I needed to display
+             some simple values and didn't want to introduce any heavy
+             dependencies.
+             .
+             Run executable 'show-font-basic4x6' for a demo.
+
+author:      Brian Lewis <brian@lorf.org>
+maintainer:  Brian Lewis <brian@lorf.org>
+license:     PublicDomain
+
+-- -- -- -- -- -- -- -- -- --
+
+cabal-version: >= 1.6
+build-type:    Custom
+
+-- -- -- -- -- -- -- -- -- --
+
+library
+  exposed-modules:
+    Graphics.Fonts.OpenGL.Basic4x6
+
+  build-depends:
+    OpenGL == 2.4.*,
+    base   == 4.*
+
+  ghc-options: -Wall -O2
+  if impl(ghc >= 6.8)
+    ghc-options: -fwarn-tabs
+
+  hs-source-dirs:
+    src
+
+-- -- -- -- -- -- -- -- -- --
+
+executable show-font-basic4x6
+  main-is: Main.hs
+
+  build-depends:
+    GLFW-b == 0.*,
+    OpenGL == 2.4.*,
+    base   == 4.*
+
+  ghc-options: -Wall -O2
+  if impl(ghc >= 6.8)
+    ghc-options: -fwarn-tabs
+
+  hs-source-dirs:
+    src
+
+-- -- -- -- -- -- -- -- -- --
+
+source-repository head
+  type:     git
+  location: git://github.com/bsl/font-opengl-basic4x6.git

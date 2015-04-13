@@ -1,0 +1,31 @@
+name:           caldims
+version:        0.1.0
+license:        GPL
+license-file:   LICENSE
+copyright:      Copyright (c) 2007 Marcel Manthe
+maintainer:	Rick Kaudewitz <rick.kaudewitz@yahoo.de>
+category:	Math
+stability:      experimental
+synopsis:       Calculation tool and library supporting units
+description:    CalDims is an easy to use tool for defining functions and units 
+                (basic and derrived), so it can provide dimension-save calculation
+                (not embedded but via shell).
+ghc-options:    -Wall -fno-warn-orphans
+exposed-Modules: 
+	Language.CalDims.Expression, 
+	Language.CalDims.Action,
+	Language.CalDims.Misc,
+	Language.CalDims.Program,
+	Language.CalDims.State,
+	Language.CalDims.Expr,
+	Language.CalDims.Helpers,
+	Language.CalDims.Texts,
+	Language.CalDims.Types
+build-depends:  base, haskell98, parsec, readline, mtl, containers, directory
+hs-source-dirs: src
+build-type: Simple
+
+executable:     caldims
+ghc-options:    -Wall -fno-warn-orphans
+main-is:        Main.hs
+hs-source-dirs: tool src

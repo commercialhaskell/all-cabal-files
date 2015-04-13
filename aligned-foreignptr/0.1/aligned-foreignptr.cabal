@@ -1,0 +1,30 @@
+Name:                aligned-foreignptr
+Version:             0.1
+Synopsis:            An aligned ForeignPtr type
+Description:         An aligned ForeignPtr type.
+License:             PublicDomain
+License-file:        LICENSE
+Author:              Balazs Komuves
+Maintainer:          bkomuves (plus) hackage (at) gmail (dot) com
+Homepage:            http://code.haskell.org/~bkomuves/
+Stability:           Experimental
+Category:            System, Foreign
+Tested-With:         GHC == 6.10.1 
+Cabal-Version:       >= 1.2
+Build-Type:          Simple
+
+Flag base4
+  Description: Base v4 
+
+Library
+  if flag(base4)
+    Build-Depends:        base >= 4 && < 5
+    cpp-options:          -DBASE_MAJOR_VERSION=4
+  else
+    Build-Depends:        base >= 3 && < 4
+    cpp-options:          -DBASE_MAJOR_VERSION=3
+    
+  Exposed-Modules:     Foreign.ForeignPtr.Aligned
+  
+  Hs-Source-Dirs:      .
+  Extensions:          ForeignFunctionInterface

@@ -1,0 +1,70 @@
+Name:                   cuda
+Version:                0.2.1
+Synopsis:               FFI binding to the CUDA interface for programming NVIDIA GPUs
+Description:
+    The CUDA library provides a direct, general purpose C-like SPMD programming
+    model for NVIDIA graphics cards (G8x series onwards). This is a collection
+    of bindings to allow you to call and control, although not write, such
+    functions from Haskell-land. You will need to install the CUDA driver and
+    developer toolkit.
+    .
+    <http://developer.nvidia.com/object/cuda.html>
+    .
+
+License:                BSD3
+License-file:           LICENSE
+Copyright:              Copyright (c) [2009..2010]. Trevor L. McDonell <tmcdonell@cse.unsw.edu.au>
+Author:                 Trevor L. McDonell <tmcdonell@cse.unsw.edu.au>
+Maintainer:             Trevor L. McDonell <tmcdonell@cse.unsw.edu.au>
+Category:               Foreign
+Cabal-version:          >=1.6
+
+Build-type:             Custom
+Extra-tmp-files:        cuda.buildinfo config.status config.log
+Extra-source-files:     configure
+                        configure.ac
+                        config.guess
+                        config.sub
+                        install-sh
+                        cuda.buildinfo.in
+                        README
+
+Library
+  Exposed-Modules:      Foreign.CUDA
+                        Foreign.CUDA.Ptr
+                        Foreign.CUDA.Analysis
+                        Foreign.CUDA.Analysis.Device
+                        Foreign.CUDA.Analysis.Occupancy
+                        Foreign.CUDA.Runtime
+                        Foreign.CUDA.Runtime.Device
+                        Foreign.CUDA.Runtime.Error
+                        Foreign.CUDA.Runtime.Event
+                        Foreign.CUDA.Runtime.Exec
+                        Foreign.CUDA.Runtime.Marshal
+                        Foreign.CUDA.Runtime.Stream
+                        Foreign.CUDA.Runtime.Texture
+                        Foreign.CUDA.Runtime.Thread
+                        Foreign.CUDA.Runtime.Utils
+                        Foreign.CUDA.Driver
+                        Foreign.CUDA.Driver.Context
+                        Foreign.CUDA.Driver.Device
+                        Foreign.CUDA.Driver.Error
+                        Foreign.CUDA.Driver.Event
+                        Foreign.CUDA.Driver.Exec
+                        Foreign.CUDA.Driver.Marshal
+                        Foreign.CUDA.Driver.Module
+                        Foreign.CUDA.Driver.Stream
+                        Foreign.CUDA.Driver.Texture
+                        Foreign.CUDA.Driver.Utils
+
+  Other-modules:        Foreign.CUDA.Internal.C2HS
+                        Foreign.CUDA.Internal.Offsets
+
+  Include-dirs:         .
+  C-sources:            cbits/stubs.c
+
+  Build-tools:          c2hs, hsc2hs
+  Build-depends:        base >= 3 && < 5, haskell98, bytestring, extensible-exceptions
+  Extensions:
+  ghc-options:          -Wall
+

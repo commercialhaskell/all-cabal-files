@@ -1,0 +1,31 @@
+name:		network-data
+version:	0.2.0
+license:	BSD3
+license-file:	LICENSE
+author:		Thomas DuBuisson <thomas.dubuisson@gmail.com>
+maintainer:	Thomas DuBuisson
+synopsis:	Library for network data structures (ex: ip/udp/tcp headers and helper functions)
+description:	This library includes definiations for common headers such as IPv4, IPv6, UDP, TCP, etc.
+		Data type/functions for full packets, better typeclass setup, and a more agreeable interface
+		with a berkeley sockets like API should be coming soon.  Also, test cases - this code is
+		untested as of yet.
+category:	Data, Network
+stability:	stable
+build-type:	Simple
+cabal-version:	>= 1.2
+tested-with:	GHC == 6.10.1
+extra-source-files:
+
+Flag small_base
+  Description: Choose the split-up base package.
+
+Library
+  Build-Depends: base >= 3 && < 5,
+                   bytestring >= 0.9 && < 1.0,
+                   cereal >= 0.2 && < 0.4,
+                   prettyclass >= 1.0.0.0 && < 1.1,
+                   pretty >= 1.0.0 && < 1.1.0,
+                   parsec >= 3 && < 4
+  hs-source-dirs:
+  exposed-modules: Data.IP, Data.IPv6, Data.Header, Data.TCP, Data.UDP, Data.CSum
+  ghc-options: 

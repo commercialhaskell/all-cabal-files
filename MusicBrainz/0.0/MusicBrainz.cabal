@@ -1,0 +1,40 @@
+name:                MusicBrainz
+version:             0.0
+synopsis:            interface to MusicBrainz XML2 web service
+description:         interface to MusicBrainz XML2 web service
+homepage:            http://floss.scru.org/hMusicBrainz
+license:             GPL-3
+license-file:        LICENSE
+author:              Clint Adams
+maintainer:          clint@debian.org
+copyright:           2012 Clint Adams
+category:            Network
+build-type:          Simple
+cabal-version:       >=1.8
+
+library
+  exposed-modules: Network.Protocol.MusicBrainz.XML2.WebService
+                 , Network.Protocol.MusicBrainz.XML2.Types
+  build-depends: base          >= 4.5     && <5
+               , transformers  >= 0.3
+               , monad-control ==0.3.*
+               , bytestring    ==0.9.*
+               , conduit       ==0.4.*
+               , text          ==0.11.*
+               , time
+               , vector        ==0.9.*
+               , xml-types     ==0.3.*
+               , http-conduit  ==1.4.*
+               , http-types    ==0.6.*
+               , old-locale    ==1.0.*
+               , xml-conduit   ==0.7.*
+
+source-repository head
+  type:     git
+  location: git://anonscm.debian.org/users/clint/MusicBrainz.git
+  branch:   master
+
+source-repository this
+  type:     git
+  location: git://anonscm.debian.org/users/clint/MusicBrainz.git
+  tag:      hMB/0.0

@@ -1,0 +1,34 @@
+name: mtp
+version: 0.1.1.1
+license: LGPL
+license-file: COPYING
+copyright: Joachim Fasting 2010
+author: Joachim Fasting
+maintainer: Joachim Fasting <joachim.fasting@gmail.com>
+category: Sound
+synopsis: Bindings to libmtp
+description:
+        A FFI binding to libmtp, an implementation of the Media Transfer
+        Protocol.
+        .
+        See <http://libmtp.sourceforge.net> for more information.
+extra-source-files: ChangeLog, README.md
+build-type: Simple
+cabal-version: >= 1.6 && < 1.9
+
+source-repository head
+      type: git
+      location: git://github.com/joachifm/hsmtp.git
+
+library
+        exposed-modules: MTP
+        other-modules: Foreign.Handle,
+                       MTP.Foreign,
+                       MTP.Handle
+        build-depends: base ==4.2.*, unix ==2.4.*, filepath ==1.1.*
+        extensions: ForeignFunctionInterface, CPP, EmptyDataDecls,
+                    DeriveDataTypeable
+        includes: libmtp.h
+        extra-libraries: mtp
+        ghc-options: -Wall
+        ghc-prof-options: -prof -auto-all

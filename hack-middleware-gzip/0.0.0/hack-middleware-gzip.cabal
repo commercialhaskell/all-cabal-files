@@ -1,0 +1,18 @@
+name:            hack-middleware-gzip
+version:         0.0.0
+license:         BSD3
+license-file:    LICENSE
+author:          Michael Snoyman <michael@snoyman.com>
+maintainer:      Michael Snoyman <michael@snoyman.com>
+synopsis:        Automatic gzip compression of responses.
+category:        Web
+stability:       unstable
+cabal-version:   >= 1.2
+build-type:      Simple
+homepage:        http://github.com/snoyberg/hack-middleware-gzip/tree/master
+
+library
+    build-depends:   base >= 3, split >= 0.1.1, zlib >= 0.5,
+                     hack >= 2009.5.19
+    exposed-modules: Hack.Middleware.Gzip
+    ghc-options:     -Wall

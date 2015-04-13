@@ -1,0 +1,41 @@
+name:                show
+version:             0.3.4
+
+license:             GPL
+license-file:        LICENSE
+author:              Lambdabot devs, Twan van Laarhoven <twanvl@gmail.com>
+maintainer:          Lambdabot developers
+
+stability:           Experimental
+category:            Language
+synopsis:            'Show' instances for Lambdabot
+description:         This package provides ShowQ, ShowFun, and SimpleReflect.
+                     .
+                     ShowFun gives a Typeable-dependent instance for showing functions as their type. ShowIO does the same for IO actions.
+                     .
+                     ShowQ adds SmallCheck & QuickCheck support.
+                     .
+                     And SimpleReflect allows us to literally see how functions 'expand',
+                     through appropriate Show magic. See <http://twan.home.fmf.nl/blog/haskell/simple-reflection-of-expressions.details>.
+
+build-type:          Simple
+Cabal-Version:       >= 1.2
+tested-with:         GHC==6.8.2
+
+Flag Base4orNewer
+  Description: Adjusts the build dependencies depending on which version of Base is available.
+  -- Cabal checks if the configuration is possible, first
+  -- with this flag set to True and if not it tries with False
+
+library
+   exposed-modules:     ShowQ, ShowFun, ShowIO, SimpleReflect
+
+   build-depends:       random, QuickCheck<2, smallcheck>=0.4
+
+   if flag(Base4orNewer)
+     build-depends: base >= 4 && < 5, syb
+   else
+     build-depends: base >= 3 && < 4
+
+   ghc-options:         -Wall
+   ghc-prof-options:    -prof -auto-all

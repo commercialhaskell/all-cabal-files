@@ -1,0 +1,68 @@
+name: mongoDB
+version: 0.8
+build-type: Simple
+license: OtherLicense
+license-file: LICENSE
+copyright: Copyright (c) 2010-2010 Scott Parish & 10gen Inc.
+maintainer: Tony Hannan <tony@10gen.com>
+build-depends:
+    array -any,
+    base <5,
+    binary -any,
+    bson -any,
+    bytestring -any,
+    containers -any,
+    mtl -any,
+    nano-md5 -any,
+    network -any,
+    parsec -any,
+    random -any
+stability: alpha
+homepage: http://github.com/TonyGen/mongoDB-haskell
+package-url:
+bug-reports:
+synopsis: A driver for MongoDB
+description: This module lets you connect to MongoDB (www.mongodb.org) and do inserts, queries, updates, etc.
+category: Database
+author: Scott Parish <srp@srparish.net> & Tony Hannan <tony@10gen.com>
+tested-with:
+data-files:
+data-dir: ""
+extra-source-files:
+extra-tmp-files:
+exposed-modules:
+    Control.Monad.Context
+    Control.Monad.MVar
+    Control.Monad.Throw
+    Control.Monad.Util
+    Control.Pipeline
+    Database.MongoDB
+    Database.MongoDB.Admin
+    Database.MongoDB.Connection
+    Database.MongoDB.Internal.Protocol
+    Database.MongoDB.Internal.Util
+    Database.MongoDB.Query
+    Var.Pool
+exposed: True
+buildable: True
+build-tools:
+cpp-options:
+cc-options:
+ld-options:
+pkgconfig-depends:
+frameworks:
+c-sources:
+extensions:
+extra-libraries:
+extra-lib-dirs:
+includes:
+install-includes:
+include-dirs:
+hs-source-dirs: .
+other-modules:
+ghc-prof-options:
+ghc-shared-options:
+ghc-options: -Wall -O2
+hugs-options:
+nhc98-options:
+jhc-options:

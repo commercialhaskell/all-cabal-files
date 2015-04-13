@@ -1,0 +1,82 @@
+Name: propellor
+Version: 0.1
+Cabal-Version: >= 1.6
+License: GPL
+Maintainer: Joey Hess <joey@kitenet.net>
+Author: Joey Hess
+Stability: Stable
+Copyright: 2014 Joey Hess
+License-File: GPL
+Build-Type: Simple
+Homepage: http://joeyh.name/code/propellor/
+Category: Utility
+Extra-Source-Files:
+  README
+  TODO
+  Makefile
+Synopsis: property-based host configuration management in haskell
+Description:
+ Propellor enures that the system it's run in satisfies a list of
+ properties, taking action as necessary when a property is not yet met.
+ .
+ While Propellor can be installed from hackage, to customize and use it
+ you should fork its git repository and modify it from there:
+   git clone git://git.kitenet.net/propellor
+
+Executable propellor
+  Main-Is: config.hs
+  GHC-Options: -Wall
+  Build-Depends: MissingH, directory, filepath, base >= 4.5, base < 5, 
+   IfElse, process, bytestring, hslogger, unix-compat, ansi-terminal,
+   containers
+
+  if (! os(windows))
+    Build-Depends: unix
+
+Library
+  GHC-Options: -Wall
+  Build-Depends: MissingH, directory, filepath, base >= 4.5, base < 5, 
+   IfElse, process, bytestring, hslogger, unix-compat, ansi-terminal,
+   containers
+
+  if (! os(windows))
+    Build-Depends: unix
+
+  Exposed-Modules:
+    Propellor
+    Propellor.Property
+    Propellor.Property.Apt
+    Propellor.Property.Cmd
+    Propellor.Property.Docker
+    Propellor.Property.File
+    Propellor.Property.GitHome
+    Propellor.Property.Hostname
+    Propellor.Property.JoeySites
+    Propellor.Property.Network
+    Propellor.Property.Reboot
+    Propellor.Property.Ssh
+    Propellor.Property.Sudo
+    Propellor.Property.Tor
+    Propellor.Property.User
+    Propellor.CmdLine
+    Propellor.PrivData
+    Propellor.Types
+  Other-Modules:
+    Utility.Applicative
+    Utility.Data
+    Utility.Directory
+    Utility.Env
+    Utility.Exception
+    Utility.FileMode
+    Utility.FileSystemEncoding
+    Utility.Misc
+    Utility.Monad
+    Utility.PartialPrelude
+    Utility.PosixFiles
+    Utility.Process
+    Utility.SafeCommand
+    Utility.Tmp
+
+source-repository head
+  type: git
+  location: git://git.kitenet.net/propellor.git

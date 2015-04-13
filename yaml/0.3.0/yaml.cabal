@@ -1,0 +1,76 @@
+name:            yaml
+version:         0.3.0
+license:         BSD3
+license-file:    LICENSE
+author:          Michael Snoyman <michael@snoyman.com>, Anton Ageev <antage@gmail.com>
+maintainer:      Michael Snoyman <michael@snoyman.com>
+synopsis:        Low-level binding to the libyaml C library.
+description:     Provides support for parsing and emitting Yaml documents. Includes the full C library in the package so you don't need to worry about any non-Haskell dependencies.
+category:        Web
+stability:       unstable
+cabal-version:   >= 1.2
+build-type:      Simple
+homepage:        http://github.com/snoyberg/yaml/
+extra-source-files: c/helper.h,
+                    c/yaml_private.h,
+                    c/yaml.h
+
+flag nolib
+  description: Skip building the library
+  default: False
+flag buildtests
+  description: Build the executable to run unit tests
+  default: False
+
+library
+    if flag(nolib)
+        Buildable: False
+    else
+        Buildable: True
+    build-depends:   base >= 4 && < 5,
+                     transformers >= 0.1 && < 0.3,
+                     bytestring >= 0.9.1.4 && < 0.10,
+                     iteratee >= 0.3.5 && < 0.4,
+                     MonadCatchIO-transformers >= 0.2.2 && < 0.3,
+                     ListLike >= 1.0.1 && < 1.1
+    exposed-modules: Text.Libyaml
+    ghc-options:     -Wall -auto-all -caf-all
+    c-sources:       c/helper.c,
+                     c/api.c,
+                     c/dumper.c,
+                     c/emitter.c,
+                     c/loader.c,
+                     c/parser.c,
+                     c/reader.c,
+                     c/scanner.c,
+                     c/writer.c
+    include-dirs:    c
+
+executable           runtests
+    if flag(buildtests)
+        Buildable: True
+        cpp-options:     -DTEST
+        build-depends:   test-framework,
+                         test-framework-hunit,
+                         HUnit,
+                         directory,
+                         base >= 4 && < 5,
+                         transformers >= 0.1 && < 0.3,
+                         bytestring >= 0.9.1.4 && < 0.10,
+                         iteratee >= 0.3.5 && < 0.4,
+                         MonadCatchIO-transformers >= 0.2.2 && < 0.3,
+                         ListLike >= 1.0.1 && < 1.1
+    else
+        Buildable: False
+    ghc-options:     -Wall
+    c-sources:       c/helper.c,
+                     c/api.c,
+                     c/dumper.c,
+                     c/emitter.c,
+                     c/loader.c,
+                     c/parser.c,
+                     c/reader.c,
+                     c/scanner.c,
+                     c/writer.c
+    include-dirs:    c
+    main-is:         runtests.hs

@@ -1,0 +1,16 @@
+Name: learn
+Version: 0.1
+Description: Learning Algorithms
+License: BSD3
+License-file: LICENSE
+Author: Augustus Odena
+Maintainer: aqo2@columbia.edu
+Build-Type: Simple
+Cabal-Version: >=1.2
+Category: Statistics
+Synopsis: Learning Algorithms
+
+Library
+  Build-Depends: base >= 3 && < 5, containers
+  Exposed-modules: Numeric.Learn
+  ghc-options: -Wall

@@ -1,0 +1,23 @@
+name: tasty-th
+version: 0.1.1
+cabal-version: >= 1.6
+build-type: Simple
+license: BSD3
+license-file: BSD3.txt
+maintainer: Benno Fünfstück
+homepage: http://github.com/bennofs/tasty-th
+synopsis: Automagically generate the HUnit- and Quickcheck-bulk-code using Template Haskell.
+description: A fork of of test-framework-th modified to use tasty instead of test-framework.
+
+category: Testing
+author: Oscar Finnsson & Emil Nordling & Benno Fünfstück
+
+library
+  exposed-modules: Test.Tasty.TH 
+  build-depends: base >= 4 && < 5, tasty, language-haskell-extract >= 0.2, template-haskell
+  hs-source-dirs: src
+
+
+source-repository head
+  type:     git
+  location: https://github.com/bennofs/tasty-th.git

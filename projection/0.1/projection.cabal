@@ -1,0 +1,33 @@
+Name:			projection
+Version:		0.1
+x-revision: 1
+Synopsis:            	Projection function for arbitrarily nested binary product types.
+Description:
+  This package implements a projection function for arbitrarily nested
+  binary product types. The implementation is based on closed type
+  families and follows the approach described in the paper 
+  /Composing and Decomposing Data Types/ (Workshop on Generic Programming, 2014,
+  to appear).
+
+
+Category:               Generics
+License:                BSD3
+License-file:           LICENSE
+Author:                 Patrick Bahr
+Maintainer:             paba@di.ku.dk
+Build-Type:             Simple
+Cabal-Version:          >=1.9.2
+bug-reports:            https://github.com/pa-ba/projection/issues
+
+
+library
+  Exposed-Modules:      Data.Projection
+  Build-Depends:	base >= 4.7, base < 5
+  hs-source-dirs:	src
+  ghc-options:          -W
+
+
+source-repository head
+  type:     git
+  location: https://github.com/pa-ba/projection
+

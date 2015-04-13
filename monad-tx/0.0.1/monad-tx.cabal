@@ -1,0 +1,21 @@
+name:               monad-tx
+version:            0.0.1
+cabal-version:      >= 1.6
+build-type:         Simple
+license:            BSD3
+license-file:       LICENSE
+category:           Control, Monads
+author:             Matt Morrow
+copyright:          (c) Matt Morrow, 2009
+maintainer:         Matt Morrow <morrow@moonpatio.com>
+stability:          experimental
+synopsis:           A transactional state monad.
+description:        .
+
+library
+  build-depends:    base
+  ghc-options:      -O2
+  extensions:       RankNTypes
+  hs-source-dirs:   .
+  exposed-modules:  Control.Monad.Tx
+

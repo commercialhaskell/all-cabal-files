@@ -1,0 +1,18 @@
+Name:                data-accessor-monadLib
+Version:             0.0.0
+Cabal-Version:       >= 1.2
+License:             OtherLicense
+License-file:        LICENSE
+Author:              Russell O'Connor
+Maintainer:          Russell O'Connor <roconnor@theorem.ca>
+Build-Type:          Simple
+Category:            data, monad
+Synopsis:            Accessor functions for monadLib's monads
+Tested-with:         GHC == 6.8.2
+
+Library
+ Build-Depends:      base < 4.1,
+                     data-accessor >= 0.1 && < 0.3,
+                     monadLib >= 3.4 && < 3.6
+ Exposed-Modules:    Data.Accessor.MonadLib
+

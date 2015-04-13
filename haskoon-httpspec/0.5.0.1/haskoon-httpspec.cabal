@@ -1,0 +1,21 @@
+Name:                haskoon-httpspec
+Version:             0.5.0.1
+Synopsis:            Integrating HttpSpec with Haskoon
+Description:         Allows to send and receive Http requests using the
+                     HttpSpec specifications.
+License:             LGPL
+License-file:        LICENSE
+Category:            Web
+Author:              David Leuschner <leuschner@factisresearch.com>, Dirk Spoeri <spoeri@factisresearch.com>, Stefan Wehr <wehr@factisresearch.com>
+Maintainer:          David Leuschner <leuschner@factisresearch.com>, Dirk Spoeri <spoeri@factisresearch.com>, Stefan Wehr <wehr@factisresearch.com>
+Build-Type:          Simple
+Cabal-Version:       >= 1.2
+
+Library
+  Hs-Source-Dirs:    src
+  GHC-Options:       -Wall
+  Build-Depends:     base >= 3 && < 5, HTTP, bytestring, mtl, hslogger >= 1.1.0, network,
+                     haskoon >= 0.3.0 && < 0.4, bidispec, httpspec >= 0.3 && < 0.4
+  Exposed-Modules:   Factis.Haskoon.HttpSpec.SpecHandler,
+                     Factis.Haskoon.HttpSpec.WebHandler
+                     Factis.Haskoon.HttpSpec.SendRecv

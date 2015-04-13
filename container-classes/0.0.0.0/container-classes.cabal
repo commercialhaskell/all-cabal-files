@@ -1,0 +1,21 @@
+Name:                container-classes
+Version:             0.0.0.0
+Synopsis:            Generic classes for interacting with different container types
+Description:         Allow users of your library to choose which data
+                     structure they want to use rather than
+                     constraining them to whatever you chose at the
+                     time.
+License:             BSD3
+License-file:        LICENSE
+Author:              Ivan Lazar Miljenovic
+Maintainer:          Ivan.Miljenovic@gmail.com
+Copyright:           Ivan Lazar Miljenovic
+Category:            Data Structures
+Build-type:          Simple
+-- Extra-source-files:
+Cabal-Version:       >=1.2
+
+
+Library
+  Exposed-modules:     Data.Containers
+  Build-Depends:       base < 5

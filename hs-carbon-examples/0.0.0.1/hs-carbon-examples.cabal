@@ -1,0 +1,38 @@
+
+name:                hs-carbon-examples
+version:             0.0.0.1
+synopsis:            Example Monte Carlo simulations implemented with Carbon
+description:         Example Monte Carlo simulations implemented with Carbon
+license:             MIT
+license-file:        LICENSE
+author:              Casper M. H. Holmgreen
+maintainer:          cholmgreen@gmail.com
+-- copyright:           
+category:            Simulation
+build-type:          Simple
+cabal-version:       >=1.8
+
+source-repository head
+  type:     git
+  location: https://github.com/icasperzen/hs-carbon-examples
+
+executable PiExample
+  hs-source-dirs: examples-src
+  build-depends:
+    base == 4.*, hs-carbon, tf-random
+  main-is: Pi.hs
+  ghc-options: -Wall -threaded -O3
+
+executable IntegralExample
+  hs-source-dirs: examples-src
+  build-depends:
+    base == 4.*, hs-carbon, tf-random
+  main-is: Integral.hs
+  ghc-options: -Wall -threaded -O3
+
+executable TransportExample
+  hs-source-dirs: examples-src
+  build-depends:
+      base == 4.*, hs-carbon, gloss, tf-random, deepseq, monad-loops, mtl
+  main-is: Transport/Transport.hs
+  ghc-options: -Wall -threaded -O3

@@ -1,0 +1,22 @@
+Name:                hepevt
+Version:             0.4
+Synopsis:            HEPEVT parser
+Description:         This package implements a parser for the ASCII HEPEVT event log file format
+License:             MIT
+License-file:        LICENSE
+Author:              Scott Lawrence
+Maintainer:          bytbox@gmail.com
+Category:            Physics
+Build-type:          Simple
+Cabal-version:       >=1.10
+
+Library
+  Default-language:    Haskell2010
+  Exposed-modules:     Data.HEPEVT
+  Build-depends:       haskell2010 >= 1.0, bytestring>=0.9, lha>=0.1.1
+  -- Other-modules:       
+
+source-repository head
+  type: git
+  location: https://github.com/bytbox/hepevt.hs.git
+  

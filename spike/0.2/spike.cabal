@@ -1,0 +1,30 @@
+Name:                spike
+Version:             0.2
+Synopsis:            Experimental web browser
+Description:         Experimental web browser based on WebKit-Gtk+
+License:             BSD3
+License-file:        LICENSE
+Author:              Krzysztof Skrzętnicki
+Maintainer:          gtener@gmail.com
+Category:            Web
+Build-type:          Simple
+Cabal-version:       >=1.6
+Homepage:            http://github.com/Tener/spike
+
+Source-repository head
+  type:              git
+  location:          git://github.com/Tener/spike.git
+
+
+Executable spike
+  Main-is:           spike.hs
+  Other-modules:     Utils, VisualBrowseTree, Datatypes, Graphs, 
+                     CFunctions, NotebookSimple, GlobalVariables, 
+                     Commands, BrowseTreeOperations
+  Hs-source-dirs:    src
+  Build-depends:     webkit == 0.12.*, containers, gtk, base == 4.*, 
+                     stm, mtl > 2, rosezipper, process, directory, 
+                     filepath, glib, random, global-variables
+  Ghc-options:       -rtsopts
+  C-sources:         cbits/cbits.c
+  pkgconfig-depends: libsoup-gnome-2.4

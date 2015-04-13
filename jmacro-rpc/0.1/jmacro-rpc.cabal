@@ -1,0 +1,27 @@
+Name:                jmacro-rpc
+Version:             0.1
+Homepage:            http://patch-tag.com/r/gershomb/jmacro-rpc
+License:             BSD3
+License-file:        LICENSE
+Author:              Gershom Bazerman
+Maintainer:          gershomb@gmail.com
+Category:            Network
+Build-type:          Simple
+Cabal-version:       >=1.6
+
+Synopsis:            JSON-RPC clients and servers using JMacro.
+
+Description:         Base jmacro-rpc package. Provides server-idependent functions.
+
+Library
+  Exposed-modules: Network.JMacroRPC.Base 
+    -- , Network.JMacroRPC.Http
+  
+  Build-depends: base >= 4, base < 7, jmacro > 0.5, text > 0.11, containers >= 0.4, bytestring >= 0.9.1, vector >= 0.8, attoparsec > 0.10, aeson >= 0.6, mtl > 2, unordered-containers > 0.1.4
+   --, network > 2, HTTP > 4000
+   
+  ghc-options: -Wall
+
+source-repository head
+  type:      darcs
+  location:  http://patch-tag.com/r/gershomb/jmacro-rpc

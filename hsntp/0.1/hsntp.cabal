@@ -1,0 +1,39 @@
+name:          hsntp
+version:       0.1
+stability:     Beta
+synopsis:      Libraries to use SNTP protocol and small client/server implementations.
+description:   HSNTP - Haskell Simple Network Time Protocol
+               .
+               Simple Network Time Protocol is a simple subset of NTP. This package
+               includes Haskell libraries to use SNTP Protocol and small client and
+               server implementations. The package contains everything needed for a compilation.
+category:      System
+license:       BSD3
+license-file:  LICENSE
+author:        Einar Karttunen
+maintainer:    Einar Karttunen <ekarttun@cs.helsinki.fi>
+homepage:      http://www.cs.helsinki.fi/u/ekarttun/util/
+
+Cabal-Version: >= 1.2
+build-type:    Simple
+tested-with:   GHC==6.8.2
+
+data-files:    README
+
+Library
+       exposed-modules:  DNS.LoWire, DNS.Type, SNTP.Client, SNTP.SNTP, HSNTP.Util.UDPServer,
+                         HSNTP.Util.UDP, HSNTP.Util.Daemon, HSNTP.Util.Misc, HSNTP.Util.UDPClient
+
+       build-depends:    base>3, array, mtl, network, random, old-time
+       extensions:       CPP, ForeignFunctionInterface
+
+       ghc-options:      -O2 -Wall -optl-Wl,-s
+       ghc-prof-options: -prof -auto-all
+
+Executable               sntpdate
+       main-is:          sntpdate.hs
+       build-depends:    unix
+       c-sources:        time.c
+
+Executable               sntpd
+      main-is:           sntpd.hs

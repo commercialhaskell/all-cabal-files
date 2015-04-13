@@ -1,0 +1,57 @@
+name:              twitter-types
+version:           0.2.20140407
+license:           BSD3
+license-file:      LICENSE
+author:            Takahiro HIMURA
+maintainer:        Takahiro HIMURA <taka@himura.jp>
+synopsis:          Twitter JSON parser and types
+description:       This package uses enumerator package for access Twitter API.
+category:          Web, Enumerator
+stability:         Experimental
+cabal-version:     >= 1.8
+build-type:        Simple
+homepage:          https://github.com/himura/twitter-types
+
+extra-source-files:
+  .gitignore
+  .travis.yml
+
+source-repository head
+  type: git
+  location: git://github.com/himura/twitter-types.git
+
+library
+  ghc-options: -Wall
+
+  build-depends:
+      base >= 4 && < 5
+    , http-types
+    , aeson >= 0.3.2.2
+    , text
+    , unordered-containers
+
+  exposed-modules:
+    Web.Twitter.Types
+    Web.Twitter.Types.Lens
+
+test-suite tests
+  type:              exitcode-stdio-1.0
+  hs-source-dirs:    tests, .
+  main-is:           TypesTest.hs
+  build-depends:
+      base >= 4.0 && < 5
+    , template-haskell
+    , test-framework >= 0.3.3
+    , test-framework-th-prime
+    , test-framework-hunit
+    , HUnit
+    , shakespeare >= 2.0
+    , http-types
+    , aeson
+    , attoparsec
+    , text
+    , unordered-containers
+  other-modules:
+    Fixtures
+
+  ghc-options:       -Wall

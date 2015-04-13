@@ -1,0 +1,22 @@
+Name: HSHHelpers
+Version: 0.15
+License: GPL
+License-file: gpl.txt
+Description: 
+
+  Functions I found I was using repeatedly when doing shell programming with HSH.
+
+  Rather than duplicate code, released on hackage.
+
+Synopsis: Convenience functions that use HSH, instances for HSH. 
+Maintainer: Thomas Hartman <thomashartman1 at gmail>
+Author: Thomas Hartman
+Stability: Beta
+Copyright: Copyright (c) 2008 Thomas Hartman
+Exposed-Modules: HSH.Helpers, HSH.Helpers.Instances, HSH.Helpers.UnixUsers, HSH.Helpers.FileManip, 
+                 HSH.Helpers.Utils
+Build-Depends: base, HSH, unix, HStringTemplateHelpers, MissingH, regex-pcre, directory, bytestring, filepath, mtl,
+               DebugTraceHelpers
+Category: System
+Build-type: Simple
+

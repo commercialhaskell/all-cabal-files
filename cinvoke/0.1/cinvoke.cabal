@@ -1,0 +1,28 @@
+Name:               cinvoke
+Version:            0.1
+Description:        A binding to cinvoke, allowing C functions of types only known at runtime to be called from Haskell.
+                    See "Foreign.CInvoke" to get started.
+                    The C library used can be found at <http://www.nongnu.org/cinvoke/>
+License:            BSD3
+License-file:       LICENSE
+Copyright:          Copyright (c) Remi Turk 2009-2011
+Author:             Remi Turk
+Maintainer:         remi.turk@gmail.com
+Homepage:           http://haskell.org/haskellwiki/Library/cinvoke
+Stability:          alpha
+Synopsis:           A binding to cinvoke.
+Tested-With:        GHC == 6.12.3, GHC == 7.0.1, GHC == 7.0.2
+Build-Type:         Simple
+cabal-version:      >= 1.6
+extra-source-files: examples/Makefile examples/*.hs
+Category:           Foreign
+Library
+    Build-Depends:      base >= 4 && < 5, bytestring
+    exposed-modules:    Foreign.CInvoke,
+                        Foreign.CInvoke.Base,
+                        Foreign.CInvoke.Types,
+                        Foreign.CInvoke.Internal
+    other-modules:      Foreign.TreePtr
+                        Data.RefCount
+    extra-libraries:    cinvoke
+    includes:           cinvoke.h cinvoke-arch.h

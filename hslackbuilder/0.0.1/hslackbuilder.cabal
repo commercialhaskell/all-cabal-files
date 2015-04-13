@@ -1,0 +1,27 @@
+name:               hslackbuilder
+version:            0.0.1
+homepage:           http://code.haskell.org/~arossato/hslackbuilder
+synopsis:           HSlackBuilder automatically generates slackBuild scripts from a cabal package
+description: 	    HSlackBuilder automatically generates slackBuild scripts from a cabal package
+category:           Distribution
+license:            BSD3
+license-file:       LICENSE
+author:             Andrea Rossato
+maintainer:         andrea.rossato@unibz.it
+build-type:         Simple
+cabal-version:      >= 1.2
+flag small_base
+  description: Choose the new smaller, split-up base package.
+
+executable cabal2slackBuild
+    main-is:            Main.hs
+    other-Modules:      Distribution.Slackware.SlackBuild
+    ghc-options:        -funbox-strict-fields -Wall -optl-Wl,-s
+    ghc-prof-options:   -prof -auto-all
+    extensions:         ForeignFunctionInterface
+    if flag(small_base)
+       build-depends:   base >= 3, directory, process
+    else
+       build-depends:   base < 3
+    build-depends:      Cabal > 1.2.2, unix, filepath
+

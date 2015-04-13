@@ -1,0 +1,27 @@
+name:            hack-handler-simpleserver
+version:         0.0.0
+license:         BSD3
+license-file:    LICENSE
+author:          Michael Snoyman <michael@snoyman.com>
+maintainer:      Michael Snoyman <michael@snoyman.com>
+synopsis:        A simplistic HTTP server handler for Hack.
+description:     FIXME
+category:        Web
+stability:       unstable
+cabal-version:   >= 1.2
+build-type:      Simple
+homepage:        http://github.com/snoyberg/hack-handler-simpleserver/tree/master
+
+library
+    build-depends:   base >= 4 && < 5,
+                     network,
+                     hack >= 2009.5.19,
+                     utf8-string,
+                     bytestring >= 0.9.1.4,
+                     web-encodings,
+                     data-default >= 0.2
+    exposed-modules: Hack.Handler.SimpleServer
+    other-modules:   Data.Mime.Header,
+                     Data.ByteString.Lazy.Util,
+                     Data.String.Util
+    ghc-options:     -Wall

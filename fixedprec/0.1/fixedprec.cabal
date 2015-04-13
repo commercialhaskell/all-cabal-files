@@ -1,0 +1,31 @@
+Name:           fixedprec
+-- don't forget to bump the "this" source tag
+Version:        0.1
+License:        BSD3
+cabal-version:  >= 1.8
+Build-type:	Simple
+License-file:   LICENSE
+Copyright:	(c) 2013 Peter Selinger
+Author:         Peter Selinger
+Maintainer:     selinger@mathstat.dal.ca
+Stability:	alpha
+Category:       Data, Math
+Synopsis:       A fixed-precision real number type
+Description:
+  A reasonably efficient implementation of arbitrary-but-fixed precision
+  real numbers. This is inspired by, and partly based on,
+  Data.Number.Fixed and Data.Number.CReal, but more efficient.
+bug-reports:    mailto:selinger@mathstat.dal.ca
+
+Library
+  Build-Depends:
+    base >= 3 && < 5
+
+  Exposed-modules:
+    Data.Number.FixedPrec
+
+  Ghc-Options:
+    -Wall
+    -fno-warn-name-shadowing
+    -fno-warn-unused-binds
+    -fno-warn-type-defaults

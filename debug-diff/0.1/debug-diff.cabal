@@ -1,0 +1,29 @@
+name:                debug-diff
+version:             0.1
+license:             BSD3
+license-file:        LICENSE
+synopsis:            Display a colorized diff between two Haskell values
+category:            Debug
+author:              Keegan McAllister <mcallister.keegan@gmail.com>
+maintainer:          Keegan McAllister <mcallister.keegan@gmail.com>
+build-type:          Simple
+cabal-version:       >=1.2
+description:
+  @Debug.Diff@ is a quick tool for comparing two Haskell values, as
+  when diagnosing a test failure.  It pretty-prints the values
+  (using the @groom@ library) and passes them to an external @diff@
+  command (@colordiff@ by default), which writes the diff to standard
+  output.
+  .
+  @Debug.Diff.Config@ provides more control over the diff parameters.
+
+library
+  exposed-modules:
+      Debug.Diff
+    , Debug.Diff.Config
+  ghc-options:      -Wall
+  build-depends:
+      base      >= 3 && < 5
+    , groom     >= 0.1
+    , temporary >= 1.1
+    , process   >= 1.0

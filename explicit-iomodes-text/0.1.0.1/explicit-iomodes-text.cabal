@@ -1,0 +1,25 @@
+name:          explicit-iomodes-text
+version:       0.1.0.1
+cabal-version: >=1.6
+build-type:    Simple
+license:       BSD3
+license-file:  LICENSE
+copyright:     2010 Bas van Dijk
+author:        Bas van Dijk
+maintainer:    Bas van Dijk <v.dijk.bas@gmail.com>
+stability:     experimental
+category:      System
+synopsis:      Extends explicit-iomodes with Text operations
+description:   Extends @explicit-iomodes@ with @Text@ operations
+
+source-repository head
+  Type:     darcs
+  Location: http://code.haskell.org/~basvandijk/code/explicit-iomodes-text
+
+Library
+  GHC-Options: -Wall
+  build-depends: base             >= 4   && < 4.3
+               , text             >= 0.7 && < 0.9
+               , explicit-iomodes >= 0.4 && < 0.6
+  exposed-modules: Data.Text.IO.ExplicitIOModes
+                   Data.Text.Lazy.IO.ExplicitIOModes

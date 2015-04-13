@@ -1,0 +1,33 @@
+Name:           HaTeX
+Version:        1.0.0
+Author:         Daniel Díaz
+License:        BSD3
+License-file:   license
+Maintainer:     lazy.ddiaz@gmail.com
+Category:       Text
+Synopsis:       Library for generate LaTeX code.
+Description:    
+         You can write LaTeX files using this package.
+         See Text.LaTeX for a brief introduction.
+         .
+         It's a first version,
+         and documentation is in process,
+         but you can test the library and report me any bug or suggestion at:
+         .
+         lazy.ddiaz\@gmail.com
+         .
+         Also, if you have an example where you use HaTeX, you could send it to my email. Thank you.
+Extensions:     OverloadedStrings , FlexibleInstances , TypeSynonymInstances
+Build-type:     Simple
+Build-depends:  base >= 4 && < 5 , mtl , dstring , to-string-class , filepath
+Cabal-version:  >= 1.2.3
+Tested-with:    GHC == 6.12.1
+Exposed-modules: Text.LaTeX
+               , Text.LaTeX.Macro
+               , Text.LaTeX.IO
+               , Text.LaTeX.Commands
+               , Text.LaTeX.Packages
+               , Text.LaTeX.Arguments
+               , Text.LaTeX.Define
+               , Text.LaTeX.Monad
+               , Text.LaTeX.Result

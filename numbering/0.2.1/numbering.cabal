@@ -1,0 +1,30 @@
+Name:                numbering
+Version:             0.2.1
+Synopsis:            Combinators for creating bijections from some type to the natural numbers.
+Description:
+    Combinators for creating bijections from a subset of an arbitrary type to a range of 'Int's,
+    , e.g. for using libraries that require 'Int' IDs.
+Homepage:            daniels@community.haskell.org
+License:             BSD3
+License-file:        LICENSE
+Author:              Daniel Schüssler
+Maintainer:          Daniel Schüssler 
+Copyright:           Daniel Schüssler  
+Category:            Data
+Build-type:          Simple
+-- Extra-source-files:  
+Cabal-version:       >=1.6
+Homepage:            https://github.com/DanielSchuessler/numbering
+extra-source-files: tests.hs
+
+Source-Repository head
+    type:   git
+    location: git@github.com:DanielSchuessler/numbering.git
+
+
+Library
+  Exposed-modules:     Data.Numbering
+  Build-depends:       vector, containers, base >= 4 && < 6
+  Ghc-options:         -O2
+  -- Other-modules:       
+  -- Build-tools:         

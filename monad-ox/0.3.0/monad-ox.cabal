@@ -1,0 +1,39 @@
+name:               monad-ox
+version:            0.3.0
+synopsis:           Monad for observation extraction
+description:
+    The library provides an Ox monad and accompanying functions which
+    are intended to simplify writing functional expressions over input
+    sentence with arbitrary type of token.  Values of such functional
+    expressions can be subsequently used as observations in input data
+    for sequential classifiers.
+license:            BSD3
+license-file:       LICENSE
+cabal-version:      >= 1.6
+copyright:          Copyright (c) 2012 IPI PAN
+author:             Jakub Waszczuk
+maintainer:         waszczuk.kuba@gmail.com
+stability:          experimental
+category:           Control, Natural Language Processing
+homepage:           https://github.com/kawu/monad-ox
+build-type:         Simple
+
+library
+    build-depends:
+        base >= 4 && < 5
+      , containers
+      , vector
+      , text
+      , mtl >= 2
+
+    exposed-modules:
+        Control.Monad.Ox
+      , Control.Monad.Ox.String
+      , Control.Monad.Ox.Text
+      , Control.Monad.Ox.Text.Lazy
+
+    ghc-options: -Wall
+
+source-repository head
+    type: git
+    location: git://github.com/kawu/monad-ox.git

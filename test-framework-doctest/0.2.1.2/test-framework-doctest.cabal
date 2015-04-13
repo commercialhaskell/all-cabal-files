@@ -1,0 +1,47 @@
+Name:                test-framework-doctest
+Version:             0.2.1.2
+Synopsis:            Test.Framework wrapper for DocTest
+Description:         This package is deprecated, use Doctest`s cabal integration instead.
+                     .
+                     See: <https://github.com/sol/doctest-haskell#cabal-integration>
+License:             BSD3
+License-file:        LICENSE
+Author:              Sakari Jokinen
+Maintainer:          sakariij@gmail.com
+Category:            Testing
+Build-type:          Simple
+Cabal-version:       >=1.10
+
+extra-source-files:
+  tests/Main.hs
+  tests/Test.hs
+
+Source-repository head
+  type: git
+  location: https://github.com/sakari/test-framework-doctest
+
+Source-repository this
+  type: git
+  location: https://github.com/sakari/test-framework-doctest
+  tag: 0.2.1.1
+
+test-suite doctest
+  main-is: Main.hs
+  default-language: Haskell98
+  type: exitcode-stdio-1.0
+  hs-source-dirs: tests
+  build-depends:
+    base >= 4 && < 5,
+    test-framework >= 0.6,
+    test-framework-doctest >= 0.2.1
+
+Library
+  Hs-source-dirs: src
+  default-language: Haskell98
+  Exposed-modules: Test.Framework.Providers.DocTest
+  Build-depends:
+    base >= 4 && < 5,
+    doctest >= 0.6.0.1 && < 0.7,
+    test-framework >= 0.6,
+    test-framework-hunit >= 0.2
+

@@ -1,0 +1,21 @@
+Name:                rad
+Version:             0.1.6
+License:             BSD3
+License-File:        LICENSE
+Copyright:           Edward Kmett 2010
+Author:              Edward Kmett 2010
+Maintainer:          ekmett@gmail.com
+Stability:           Experimental
+Homepage:            http://comonad.com/reader/
+Synopsis:            Reverse Automatic Differentiation.
+Description:
+    Reverse-Mode Automatic Differentiation via overloading.
+    Existential type \"branding\" is used to prevent sensitivity confusion.
+Category:            Math
+Build-Type:          Simple
+Build-Depends:       base >= 4 && < 5,
+                     data-reify >= 0.5 && < 0.7, 
+                     containers >= 0.2 && < 0.4,
+                     array >= 0.2 && < 0.4
+Exposed-Modules:     Numeric.RAD
+Extra-Source-Files:  TODO

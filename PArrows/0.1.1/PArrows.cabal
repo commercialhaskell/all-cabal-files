@@ -1,0 +1,30 @@
+Name:            PArrows
+Version:         0.1.1
+License:         BSD3
+License-File:    LICENSE
+Author:          Einar Karttunen <ekarttun@cs.helsinki.fi>
+Maintainer:      none
+Stability:       Alpha
+Category:        Parsing
+Synopsis:        Arrow parser combinators similar to Parsec
+Description:     PArrows is an arrows based parsing combinator library written in Haskell.
+                 The library is similar to Parsec, but arrows allow for more future optimizations.
+                 .
+                 Currently PArrows is only tested with GHC, although making it work with Hugs should be easy.
+Homepage:        http://www.cs.helsinki.fi/u/ekarttun/PArrows/
+
+Build-Depends:   base>3, containers, mtl, ghc-prim
+Build-Type:      Simple
+Tested-With:     GHC==6.10
+cabal-version:   >= 1.2.3
+Extensions:      FlexibleContexts, FunctionalDependencies, MagicHash, GADTs
+Ghc-Options:     -Wall
+
+Hs-Source-Dirs:  src
+Exposed-Modules: Text.ParserCombinators.PArrow,
+                 Text.ParserCombinators.PArrow.Char,
+                 Text.ParserCombinators.PArrow.Combinator,
+                 Text.ParserCombinators.PArrow.MD,
+                 Text.ParserCombinators.PArrow.Prim,
+                 Text.ParserCombinators.PArrow.ToJavaScript
+Other-Modules:   Text.ParserCombinators.PArrow.CharSet

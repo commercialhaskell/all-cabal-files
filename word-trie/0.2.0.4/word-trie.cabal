@@ -1,0 +1,39 @@
+name:                word-trie
+version:             0.2.0.4
+synopsis:            Implementation of a finite trie over words.
+description:         Implementation of a finite trie over words.
+homepage:            https://github.com/yi-editor/word-trie
+license:             GPL-2
+license-file:        LICENSE
+author:              Mateusz Kowalczyk
+maintainer:          yi-devel@googlegroups.com
+category:            Data
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+
+library
+  exposed-modules:     Data.Trie
+  build-depends:       base >=4.5 && <5, binary, containers, derive
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+
+test-suite spec
+  type:             exitcode-stdio-1.0
+  default-language: Haskell2010
+  main-is:          Spec.hs
+  hs-source-dirs:
+      test
+    , src
+  ghc-options: -Wall
+
+  other-modules:
+      Data.TrieSpec
+
+  build-depends:
+      base
+    , binary
+    , containers
+    , derive
+    , hspec
+    , QuickCheck == 2.*

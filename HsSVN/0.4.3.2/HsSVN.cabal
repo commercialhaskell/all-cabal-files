@@ -1,0 +1,63 @@
+Name:          HsSVN
+Synopsis:      Partial Subversion (SVN) binding for Haskell
+Description:
+    HsSVN is a partial Subversion (SVN) binding for Haskell. Currently it
+    can do most things related to the Subversion FS but others are
+    left uncovered.
+Version:       0.4.3.2
+License:       PublicDomain
+License-File:  COPYING
+Author:        PHO <pho at cielonegro dot org>
+Maintainer:    PHO <pho at cielonegro dot org>
+Stability:     experimental
+Homepage:      http://cielonegro.org/HsSVN.html
+Category:      System
+Tested-With:   GHC == 6.12.1
+Cabal-Version: >= 1.6
+Build-Type: Configure
+Extra-Source-Files:
+    HsSVN.buildinfo.in
+    INSTALL
+    NEWS
+    cbits/HsSVN.h
+    configure
+    configure.ac
+    examples/Makefile
+    examples/HelloWorld.hs
+
+Source-Repository head
+    Type: darcs
+    Location: http://darcs.cielonegro.org/HsSVN/
+
+Library
+    Build-Depends:
+        base       == 4.3.*,
+        bytestring == 0.9.*,
+        mtl        == 2.0.*,
+        stm        == 2.2.*
+    Exposed-Modules:
+        Subversion
+        Subversion.Config
+        Subversion.FileSystem
+        Subversion.FileSystem.DirEntry
+        Subversion.FileSystem.PathChange
+        Subversion.FileSystem.Revision
+        Subversion.FileSystem.Root
+        Subversion.FileSystem.Transaction
+        Subversion.Error
+        Subversion.Repository
+        Subversion.Types
+    Other-Modules:
+        Subversion.Hash
+        Subversion.Pool
+        Subversion.Stream
+        Subversion.Stream.Pipe
+        Subversion.String
+    GHC-Options: 
+        -Wall
+    C-Sources:
+        cbits/HsSVN.c
+    Include-Dirs:
+        cbits
+    Install-Includes:
+        HsSVN.h

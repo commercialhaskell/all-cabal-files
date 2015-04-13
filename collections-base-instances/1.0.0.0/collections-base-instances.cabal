@@ -1,0 +1,31 @@
+name:           collections-base-instances
+version:        1.0.0.0
+category:       Data Structures
+description:
+        This package provides a common API, through a consistent set of classes, to the container types in the @containers@ package.
+        list, array, set, map, bytestring, etc. are supported.
+license:        BSD3
+license-file:   LICENSE
+author:         Jean-Philippe Bernardy
+maintainer:     jeanphilippe.bernardy (google mail)
+
+stability:      Stable
+category:       Data Structures
+synopsis:       Useful standard collections types and related functions.
+description:
+        This package provides a common API, through a consistent set of classes, to the various standard container types.
+        list, array, set, map, bytestring, etc. are supported.
+homepage: http://code.haskell.org/collections/
+cabal-version: >= 1.6
+
+build-type:     Simple
+tested-with:    GHC==6.8.2
+
+exposed-modules:
+        Data.Collections.BaseInstances,
+        Data.Map.List,
+        Data.Set.List
+
+build-depends:  base >= 3.0 && < 5, array, containers, bytestring, collections-api == 1.0.*
+extensions:     CPP
+ghc-options:    -Wall

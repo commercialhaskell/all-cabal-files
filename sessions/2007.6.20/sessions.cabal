@@ -1,0 +1,30 @@
+name: sessions
+version: 2007.6.20
+stability: Alpha
+copyright: Matthew Sackman
+category: Control
+maintainer: matthew@wellquite.org
+author: Matthew Sackman
+homepage: http://www.wellquite.org/sessions/
+license: LGPL
+license-file: LICENSE
+build-depends: base, mtl
+synopsis: Session Types for Haskell
+description:
+    This library implements session types for Haskell.
+    It is currently extremely experimental and only
+    compiles with GHC 6.7.x or better. Documentation
+    is also extremely scarce at the moment but hopefully
+    should appear soon.
+exposed-modules: Control.Concurrent.Session
+other-modules: Control.Concurrent.Session.BaseClasses
+               Control.Concurrent.Session.BaseTypes
+               Control.Concurrent.Session.Choice
+               Control.Concurrent.Session.ExtraClasses
+               Control.Concurrent.Session.List
+               Control.Concurrent.Session.Loop
+               Control.Concurrent.Session.Runtime
+               Control.Concurrent.Session.State
+ghc-options: -O2
+extra-source-files: Tests.hs, ChangeLog.txt
+

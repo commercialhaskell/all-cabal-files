@@ -1,0 +1,28 @@
+name:          monad-st
+category:      Control, Monads
+version:       0.1
+license:       BSD3
+cabal-version: >= 1.6
+license-file:  LICENSE
+author:        Edward A. Kmett
+maintainer:    Edward A. Kmett <ekmett@gmail.com>
+stability:     experimental
+homepage:      git://github.com/ekmett/monad-st
+copyright:     Copyright (C) 2011 Edward A. Kmett
+synopsis:      Provides a MonadST class
+description:   Provides a MonadST class
+build-type:    Simple
+
+source-repository head
+  type: git
+  location: git://github.com/ekmett/monad-st.git
+
+library
+  build-depends: 
+    base >= 4 && < 5,
+    transformers >= 0.2.0 && <= 0.3
+
+  exposed-modules:
+    Control.Monad.ST.Class
+
+  ghc-options:      -Wall 

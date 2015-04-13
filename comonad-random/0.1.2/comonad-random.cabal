@@ -1,0 +1,14 @@
+name:                comonad-random
+version:             0.1.2
+synopsis:            Comonadic interface for random values
+description:         Comonadic interface for random values
+category:            Control
+license:             OtherLicense
+license-file:        LICENSE
+author:              Jake McArthur
+maintainer:          Jake.McArthur@gmail.com
+build-depends:       base >= 4 && < 5, category-extras >= 0.53.5 && < 0.54,
+                     random >= 1.0.0.1 && < 1.1
+build-type:          Simple
+ghc-options:         -Wall
+exposed-modules:     Control.Comonad.Random

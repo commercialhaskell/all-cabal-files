@@ -1,0 +1,23 @@
+name:                Monaris
+version:             0.1.7
+synopsis:            A simple tetris clone
+description:         A tetris clone written in Haskell.
+homepage:            https://github.com/fumieval/Monaris/
+license:             BSD3
+license-file:        LICENSE
+author:              Fumiaki Kinishota
+maintainer:          fumiexcel@gmail.com
+copyright:           Copyright (C) 2012-2013 Fumiaki Kinoshita
+category:            Game
+build-type:          Simple
+cabal-version:       >=1.8
+data-files:          images/*.png
+
+source-repository head
+  type: git
+  location: https://github.com/fumieval/Monaris.git
+
+executable Monaris
+  main-is:             Monaris.hs
+  -- other-modules:       
+  build-depends:       base ==4.*, mtl >=2.1, array >=0.4, containers >=0.4, free >=3.0, directory >=1.1, free-game >= 1.0 && < 1.3

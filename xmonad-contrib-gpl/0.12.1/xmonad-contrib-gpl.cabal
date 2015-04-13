@@ -1,0 +1,28 @@
+name:               xmonad-contrib-gpl
+version:            0.12.1
+homepage:           http://xmonad.org/
+synopsis:           Third party extensions for xmonad
+description:
+    Third party tiling algorithms, configurations and scripts to xmonad,
+    a tiling window manager for X, released under GPL license.
+category:           System
+license:            GPL-3
+license-file:       LICENSE
+author:             Dmitry Bogatov & others
+maintainer:         kaction@gnu.org
+cabal-version:      >= 1.6
+build-type:         Simple
+tested-with:        GHC==7.8.1
+source-repository head
+  type:     darcs
+  location: http://hub.darcs.net/kaction/xmonad-contrib-gpl
+
+library
+  build-depends:  base >= 3 && < 5 ,
+                  xmonad >= 0.11 && < 0.13,
+                  xmonad-contrib >= 0.11 && < 0.13,
+                  mtl >= 2.1
+  ghc-options:    -fwarn-tabs -Wall -fwarn-tabs
+  extensions: DeriveGeneric
+  exposed-modules: XMonad.Hooks.FocusSwitch
+                   XMonad.Util.WindowState2

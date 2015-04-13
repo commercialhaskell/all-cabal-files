@@ -1,0 +1,30 @@
+Name:           restyle
+Version:        0.1.0
+Cabal-version:  >= 1.6
+Build-type:     Simple
+License:        MIT
+License-file:   LICENCE
+Copyright:      (c) 2010 Daniel Fischer
+Author:         Daniel Fischer
+Maintainer:     Daniel Fischer <daniel.is.fischer@web.de>
+Stability:      experimental
+Synopsis:       Convert between camel case and separated words style.
+Description:    Functions to transform Haskell source files and
+                haddock(or HsColour)-produced HTML files from camel case
+                to separated words or Haskell source from separated words
+                to camel case.
+Category:       Development
+Tested-With:    GHC == 6.10.3, GHC == 6.12.1
+
+Library
+    Build-Depends:      base >= 3 && < 5
+    Exposed-Modules:    Data.Transform.Camel, Data.Transform.UnCamel,
+                        Data.Transform.Separators
+    Other-Modules:      Data.Transform.Utils
+
+Executable restyle
+    Main-Is:            Main.hs
+    Build-Depends:      base >= 3 && < 5, directory == 1.0.*,
+                        filepath == 1.1.*, utf8-string >= 0.3 && < 0.4
+    Other-Modules:      Data.Transform.Camel, Data.Transform.UnCamel,
+                        Data.Transform.Separators

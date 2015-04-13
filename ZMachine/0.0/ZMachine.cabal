@@ -1,0 +1,34 @@
+Name:                ZMachine
+Version:             0.0
+Stability:           Alpha
+Category:            Game
+Synopsis:            A Z-machine interpreter
+Description:         ZMachine is a Z-machine (Infocom's interactive fiction VM) interpreter
+                     which currently needs attention to its UI rather badly. It uses Gtk2Hs,
+                     but it just goes down hill from there. Help welcome!
+                     .
+                     The Darcs repository can be found at <http://naesten.dyndns.org:8080/repos/ZMachine>
+License:             BSD3
+License-File:        LICENSE
+Author:              Samuel Bronson
+Maintainer:          Samuel Bronson <naesten@gmail.com>
+
+Build-depends:       base>3, mtl, gtk, array, random
+Build-Type:          Simple
+Tested-With:         GHC==6.8.2
+
+Data-Files:          Cloak.inf, Cloak.z5, hello.inf, hello.z5, Museum.inf,
+                     Museum.z5, proptest.inf, proptest.z5
+
+Executable:          zmachine
+Main-is:             Main.hs
+ghc-options:         -O2 -Wall
+
+other-modules: ZMachine.Ops
+               ZMachine.Objects
+               ZMachine.Strings
+               ZMachine.Base
+               ZMachine.IO.Gtk
+               ZMachine.IO.Base
+               ZMachine.Startup
+               ZMachine.IO

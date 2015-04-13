@@ -1,0 +1,31 @@
+
+Name:               NetSNMP
+Version:            0.3.0.3
+Synopsis:           Bindings for net-snmp's C API for clients
+Description:        Network.Protocol.NetSNMP is a partial binding to the
+                    library portion of the net-snmp package.  It uses the
+                    'single-session api', which is claimed to be
+                    thread-safe.  Not all operations are supported yet;
+                    please contact the maintainer if you're in need of
+                    expanded functionality, and especially if you would
+                    like to contribute.
+Category:           Network
+Cabal-Version:      >= 1.2
+License:            BSD3
+License-file:       LICENSE
+Author:             Pavlo Kerestey and Humane Software for Global Access Internet Services GmbH
+Maintainer:         Pavlo Kerestey <pavlo@kerestey.net>
+Stability:          alpha
+Build-type:         Simple
+Homepage:           https://github.com/ptek/netsnmp
+Bug-reports:        https://github.com/ptek/netsnmp/issues
+
+library
+  hs-source-dirs:   src
+  build-depends:    base >=4.5 && <5
+                   ,bytestring >= 0.10 && < 0.11
+  build-tools:      hsc2hs
+  exposed-modules:  Network.Protocol.NetSNMP
+  extensions:       ForeignFunctionInterface, CPP, EmptyDataDecls
+  extra-libraries:  netsnmp
+  ghc-options:      -static -optc-static -optl-static -optl-pthread

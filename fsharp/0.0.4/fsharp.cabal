@@ -1,0 +1,22 @@
+name:       fsharp
+category:   Control
+version:    0.0.4
+author:        Heather Cynede
+maintainer:    Heather Cynede <Cynede@Gentoo.org>
+license: BSD3
+license-file: LICENSE
+synopsis: some F# operators, high priority pipes
+description:
+  Some F# operators, high priority pipes, etc...
+
+build-type: Simple
+cabal-version: >= 1.6
+
+library
+  Hs-Source-Dirs: src
+
+  exposed-modules:
+    Control.FSharp
+    Control.FSharp.Syntax.Operators
+
+  Build-Depends: base >= 4.3 && < 5

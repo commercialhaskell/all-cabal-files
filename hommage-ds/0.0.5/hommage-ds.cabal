@@ -1,0 +1,29 @@
+name:               hommage-ds
+version:            0.0.5
+license:            GPL
+author:			    Daniel van den Eijkel
+maintainer:         dvde@gmx.net
+category:           Sound
+stability:          experimental
+homepage:           substitut-fuer-feinmotorik/projects/haskellommage
+synopsis:           DirectSound extension (Windows) for the Hommage sound library
+description:        This library adds realtime sound playback to the hommage library. 
+                    It can be used with GHCi. 
+                    It is very experimental, not very fast 
+                    and supports only playback of Signals (Lists) and Samples (Wav-Files).
+                    It contains a simple sequencer.
+cabal-version:      >=1.2
+build-type:         Simple
+ghc-options:        -O2 
+
+build-depends:      base>=2 && <=4, array, haskell98, DirectSound>=0.0.0, hommage>=0.0.5&&<=0.0.5
+
+exposed-modules:    Sound.Hommage.DSPlayer.DSPlayer , 
+                    Sound.Hommage.DSPlayer.AudioSample,
+                    Sound.Hommage.DSPlayer.VoicePlayer,
+                    Sound.Hommage.DSPlayer.Voices,
+                    Sound.Hommage.DSPlayer.SimplePlayer, 
+                    Sound.Hommage.DSPlayer.SimpleControl,
+                    Sound.Hommage.DSPlayer.UnsafeSimpleControl
+                    
+                    

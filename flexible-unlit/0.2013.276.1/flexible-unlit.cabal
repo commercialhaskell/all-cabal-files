@@ -1,0 +1,28 @@
+name:                flexible-unlit
+version:             0.2013.276.1
+synopsis:            A configurable reimplementation of unlit
+license:             BSD3
+license-file:        LICENSE
+author:              Stijn van Drongelen
+maintainer:          rhymoid@gmail.com
+category:            Development
+build-type:          Simple
+cabal-version:       >=1.10
+
+library
+    default-language:   Haskell2010
+    exposed-modules:    Language.Preprocessor.Unlit
+    build-depends:
+        base >= 4 && < 5,
+        text -any
+    hs-source-dirs: src
+    ghc-options:    -Wall
+
+executable funlit
+    default-language:   Haskell2010
+    main-is:            funlit.hs
+    build-depends:
+        base >= 4 && <5,
+        bytestring -any,
+        text -any
+    hs-source-dirs: src, apps

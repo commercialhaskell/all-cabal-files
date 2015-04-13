@@ -1,0 +1,20 @@
+name: star-to-star
+version: 1.0
+
+build-type: Simple
+
+category: Composition
+
+maintainer: nicolas.frisby@gmail.com
+
+synopsis: the * -> * types, operators, and covariant instances.
+description: Fundamental * -> * types, operators, and covariant instances.
+
+license: OtherLicense
+license-file: LICENSE
+
+cabal-version: >= 1.2
+
+library
+  build-depends: base >= 4 && < 5
+  exposed-modules: Data.StarToStar

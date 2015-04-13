@@ -1,0 +1,22 @@
+name:                wai-static-pages
+version:             0.1.0.0
+synopsis:            generate static html pages from a WAI application
+-- description:         
+license:             MIT
+author:              Greg Weber
+maintainer:          greg@gregweber.info
+-- copyright:           
+category:            Web
+build-type:          Simple
+cabal-version:       >=1.8
+
+library
+  exposed-modules:     Network.WAI.Application.StaticPages
+  -- other-modules:       
+  build-depends:      base == 4.*
+                    , wai
+                    , wai-test
+                    , http-types
+                    , conduit
+                    , blaze-builder
+                    , bytestring

@@ -1,0 +1,65 @@
+Name: pipes-core
+Version: 0.0.1
+Cabal-Version: >=1.10.1
+Build-Type: Simple
+License: BSD3
+License-File: LICENSE
+Copyright: 2012 Gabriel Gonzalez, 2012 Paolo Capriotti
+Author: Gabriel Gonzalez, Paolo Capriotti
+Maintainer: p.capriotti@gmail.com
+Stability: Experimental
+Homepage: https://github.com/pcapriotti/pipes-core
+Bug-Reports: https://github.com/pcapriotti/pipes-core/issues
+Synopsis: Compositional pipelines
+Description:
+  This library offers an abstraction similar in scope to
+  iteratees\/enumerators\/enumeratees, but with different characteristics and
+  naming conventions.
+  .
+  Difference with traditional iteratees:
+  .
+  * /Simpler semantics/: There is only one data type ('Pipe'), two primitives
+    ('await' and 'yield'), and only one way to compose 'Pipe's ('>+>').  In
+    fact, ('>+>') is just convenient syntax for the composition operator in
+    'Category'. Most pipes can be implemented just using the 'Monad' instance
+    and composition.
+  .
+  * /Different naming conventions/: Enumeratees are called 'Pipe's, Enumerators
+    are 'Producer's, and Iteratees are 'Consumer's.  'Producer's and 'Consumer's
+    are just type synonyms for 'Pipe's with either the input or output end
+    closed.
+  .
+  * /Pipes form a Category/: that means that composition is associative, and
+    that there is an identity 'Pipe'.
+  .
+  * /"Vertical" concatenation works on every 'Pipe'/: ('>>'),
+    concatenates 'Pipe's. Since everything is a 'Pipe', you can use it to
+    concatenate 'Producer's, 'Consumer's, and even intermediate 'Pipe' stages.
+    Vertical concatenation can be combined with composition to create elaborate
+    combinators, without the need of executing pipes in \"passes\" or resuming
+    partially executed pipes.
+  .
+  Check out "Control.Pipe" for a copious introduction (in the spirit of the
+  @iterIO@ library), and "Control.Pipe.Combinators" for some basic combinators
+  and 'Pipe' examples.
+Category: Control, Enumerator
+Tested-With: GHC ==7.0.3
+Source-Repository head
+    Type: git
+    Location: https://github.com/pcapriotti/pipes-core
+
+Library
+    Build-Depends: base >= 4 && < 5
+                 , mtl
+                 , categories
+                 , void
+                 , lifted-base
+                 , monad-control
+    Exposed-Modules: Control.Pipe
+                   , Control.Pipe.Category
+                   , Control.Pipe.Combinators
+                   , Control.Pipe.Common
+                   , Control.Pipe.Exception
+                   , Control.Pipe.Monoidal
+                   , Control.Category.Multiplicative
+    Default-Language: Haskell2010

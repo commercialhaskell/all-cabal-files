@@ -1,0 +1,55 @@
+name: cal3d
+version: 0.1
+cabal-version: >= 1.6
+build-type: Simple
+-- The C++ Cal3D library is LGPLed, so that makes sense here too
+license: LGPL
+license-file: LICENSE
+author: Gregory D. Weber
+maintainer: let at = "@" in concat ["gdweber", at, "iue.edu"]
+stability: experimental
+homepage: http://haskell.org/haskellwiki/Cal3d_animation
+category: Graphics, Animation
+tested-with: GHC == 6.10.1
+synopsis: Haskell binding to the Cal3D animation library.
+description: 
+  Haskell binding to the Cal3D, a skeletal-based animation
+  library written in C++.
+  See also the related packages cal3d-opengl and cal3d-examples.
+
+-- extra-source-files: *list-of-files* (not including directories)
+
+-- extra-source-files:
+--    c++/cal3d_c.h
+library
+  build-depends: 
+    base >= 4.0.0.0 && < 5
+  exposed-modules: Graphics.Animation.Cal3D
+    Graphics.Animation.Cal3D.CoreModel
+    Graphics.Animation.Cal3D.Model
+    Graphics.Animation.Cal3D.Mixer
+    Graphics.Animation.Cal3D.Types
+    Graphics.Animation.Cal3D.Error
+    Graphics.Animation.Cal3D.Renderer
+  exposed: True
+  other-modules:
+
+  extensions: ForeignFunctionInterface
+
+  -- Is there a better way to require compilation by a C++ compiler?
+  -- e.g. for another OS (Windows?) and/or another Haskell system (Hugs, etc.)
+  -- Maybe this isn't necessary?
+  -- ghc-options: -pgmc g++
+  -- ?? hugs-options:
+  -- ?? nhc98-options: 
+
+  c-sources: c++/cal3d_c.cc
+  includes: cal3d/cal3d.h
+  install-includes: cal3d_c.h
+  include-dirs: c++
+
+  -- For running hsc2hs separately, you need also -I /usr/lib/ghc-6.10.1/include
+  extra-libraries: cal3d
+
+
+

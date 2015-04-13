@@ -1,0 +1,36 @@
+Name:                iteratee-compress
+Version:             0.3.1.0
+Synopsis:            An enumerators for compressing and decompressing streams
+Description:         An enumerators for compressing and decompressing streams
+License:             BSD3
+License-file:        LICENSE
+Author:              Maciej Piechotka
+Maintainer:          uzytkownik2@gmail.com
+Copyright:           2010 (c) Maciej Piechotka
+Category:            Codec, Data
+Build-type:          Simple
+-- Extra-source-files:  
+Cabal-version:       >=1.6
+
+Flag Debug
+  Description:       Enable debug support
+  Default:           False
+
+Library
+  Exposed-modules:   Data.Iteratee.BZip,
+                     Data.Iteratee.ZLib
+  Build-depends:     base >= 4 && < 5,
+                     bytestring >= 0.9 && < 0.10,
+                     iteratee >= 0.8.7 && < 0.9,
+                     mtl >= 2.0 && < 2.2
+  Build-tools:       c2hs
+  Extensions:        CPP,
+                     DeriveDataTypeable,
+                     ForeignFunctionInterface
+  Extra-libraries:   z, bz2
+  if flag(debug)
+      CPP-Options:   -DDEBUG
+
+Source-Repository head
+  Type:              git
+  Location:          git://gitorious.org/iteratee-compress/iteratee-compress.git

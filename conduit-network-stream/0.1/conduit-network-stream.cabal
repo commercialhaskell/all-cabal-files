@@ -1,0 +1,39 @@
+Name:                conduit-network-stream
+Version:             0.1
+
+Synopsis:            A base layer for network protocols using Conduits
+Description:         A base layer for network protocols using Conduits
+
+License:             BSD3
+License-file:        LICENSE
+Author:              Nils Schweinsberg <mail@nils.cc>
+Maintainer:          mail@nils.cc
+-- Copyright:           
+
+Category:            Network
+
+Build-type:          Simple
+Cabal-version:       >=1.6
+
+-- Extra-source-files:  
+
+source-repository head
+  type:             git
+  location:         git://github.com/mcmaniac/conduit-network-stream.git
+  tag:              0.1
+
+Library
+
+  HS-source-dirs:    src
+  GHC-options:       -Wall
+
+  Build-depends:       
+    base == 4.*, bytestring >= 0.10, mtl,
+    resourcet, conduit, network-conduit
+
+  Exposed-modules:
+    Data.Conduit.Network.Stream
+    Data.Conduit.Network.Stream.Exceptions
+  Other-modules:       
+    Data.Conduit.Network.Stream.Header
+    Data.Conduit.Network.Stream.Internal

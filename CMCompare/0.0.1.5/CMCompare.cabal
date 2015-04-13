@@ -1,0 +1,57 @@
+name:           CMCompare
+version:        0.0.1.5
+author:         Christian Hoener zu Siederdissen, Ivo L. Hofacker
+maintainer:     choener@tbi.univie.ac.at
+copyright:      Christian Hoener zu Siederdissen, Ivo L. Hofacker, 2010
+homepage:       http://www.tbi.univie.ac.at/software/cmcompare/
+category:       Bioinformatics
+synopsis:       Infernal covariance model comparison
+license:        GPL-3
+license-file:   LICENSE
+build-type:     Simple
+stability:      experimental
+cabal-version:  >= 1.6.0
+description:
+                Compares two Infernal covariance models. Returns the common
+                MaxiMin score and the offending RNA sequence. High scores point
+                toward low discriminative power of the two models. Based on:
+                .
+                "Christian Höner zu Siederdissen, and Ivo L. Hofacker. 2010.
+                Discriminatory power of RNA family models. Bioinformatics 26,
+                no. 18: 453–59"
+                .
+                <http://bioinformatics.oxfordjournals.org/content/26/18/i453.long>
+
+extra-source-files:
+  scripts/HighScoreEdges.sh
+  scripts/NeighborGraph.sh
+
+library
+
+  build-depends:
+    base        >= 4 && < 5 ,
+    array       >= 0.4      ,
+    containers  >= 0.4      ,
+    lens        == 3.*      ,
+
+    BiobaseXNA      >= 0.6.3.1 ,
+    BiobaseInfernal >= 0.7.0.1
+
+  exposed-modules:
+    BioInf.CMCompare
+
+  ghc-options:
+    -O2 -rtsopts -fllvm -optlo-O3 -optlo-inline -optlo-std-compile-opts
+
+
+
+executable CMCompare
+
+  build-depends:
+    cmdargs >= 0.10
+
+  main-is:
+    CMCompare.hs
+
+  ghc-options:
+    -O2 -rtsopts -fllvm -optlo-O3 -optlo-inline -optlo-std-compile-opts

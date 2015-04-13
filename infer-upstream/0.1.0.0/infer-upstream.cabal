@@ -1,0 +1,21 @@
+name:                infer-upstream
+version:             0.1.0.0
+synopsis:            Find the repository from where a given repo was forked
+description:         Find the repository from where a given repo was forked
+homepage:            https://github.com/silky/infer-upstream
+license:             MIT
+license-file:        LICENSE
+author:              Noon Silk
+maintainer:          noonsilk@gmail.com
+category:            Development
+build-type:          Simple
+cabal-version:       >=1.8
+extra-source-files:  README.md, fetch_upstreams.sh, upstream_everything.sh
+
+executable infer-upstream
+  main-is: infer-upstream.hs
+  build-depends:
+    base                   >= 4.0    && < 5.0,
+    text                   >= 0.10   && < 0.12,
+    optparse-applicative   >= 0.5    && < 0.6,
+    github                 >= 0.8

@@ -1,0 +1,62 @@
+Name:         HaskellNN
+Version:      0.1
+License:      GPL
+License-file: LICENSE
+Author:       Kiet Lam
+Maintainer:   Kiet Lam <ktklam9@gmail.com>
+Synopsis:     High Performance Neural Network in Haskell
+Description:  High Performance Neural Network in Haskell
+              .
+              Provides fast training algorithms using
+              hmatrix's bindings to GSL and custom bindings
+              to the liblbfgs C-library
+              .
+              Supported training algorithms: Gradient Descent, Conjugate Gradient, BFGS, LBFGS
+              .
+              - Users should focus on "AI.Model" for most usages (classification / regression)
+              .
+              - Other modules are provided for user expansion if needed
+              .
+              Go to <https://github.com/ktklam9/HaskellNN> for examples and tests for usage
+
+Category: AI
+
+Build-type:         Simple
+Cabal-version:      >= 1.6
+
+Library
+
+  Build-depends:    base >= 4 && < 5,
+                    hmatrix >= 0.13.0.0,
+                    random
+
+  Extensions:       ForeignFunctionInterface
+
+  hs-source-dirs:   src
+  Exposed-modules:  AI.Calculation,
+                    AI.Calculation.Activation,
+                    AI.Calculation.Cost,
+                    AI.Calculation.Gradients,
+                    AI.Calculation.NetworkOutput,
+                    AI.Signatures,
+                    AI.Model,
+                    AI.Model.Classification,
+                    AI.Model.General,
+                    AI.Model.GenericModel,
+                    AI.Training,
+                    AI.Network
+
+  Other-modules:    AI.Training.Internal,
+                    AI.Training.Internal.LBFGSAux
+
+
+  ghc-prof-options: -prof -auto-all
+  Include-Dirs:     cbits
+  C-sources:        src/AI/Training/Internal/lbfgs_aux.c,
+                    cbits/lbfgs.c
+  Includes:         lbfgs.h
+
+
+source-repository head
+  type:     git
+  location: https://github.com/ktklam9/HaskellNN

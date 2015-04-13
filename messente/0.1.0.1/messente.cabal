@@ -1,0 +1,23 @@
+name:   messente
+version:  0.1.0.1
+cabal-Version:  >= 1.8
+license:  MIT
+license-File: LICENSE
+author:   Kaiko Kaur
+maintainer: kaiko@zazler.com
+homepage: http://github.com/kaiko/messente-haskell
+category: API
+synopsis: Messente SMS Gateway
+build-type: Simple
+-- description: ...
+
+source-repository head
+  type:     git
+  location: https://github.com/kaiko/messente-haskell
+
+Library
+  Build-Depends: base > 4.2 && < 5, bytestring >= 0.9, network > 2.2 && < 2.7,  HTTP > 4000.1 && < 4000.3, http-conduit > 2.0 && < 2.2
+  Exposed-modules:
+    Messente
+  Extensions: OverloadedStrings, DeriveDataTypeable
+

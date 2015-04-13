@@ -1,0 +1,23 @@
+Name: alloy-proxy-fd
+Version: 1.0.0
+License: BSD3
+License-File: LICENSE
+Author: Neil Brown
+Copyright: Copyright 2008-2009, University of Kent
+Maintainer: neil@twistedsquare.com
+Cabal-Version: >= 1.2.3
+Build-type: Simple
+Synopsis: Some add-on instances for the Alloy library
+Description: Two modules supplying proxy instances that allow you to define pure and/or effectful
+             instances in terms of their more general
+	     effectful/route-including equivalents in Alloy.
+Category: Generics
+Tested-With: GHC==6.8.2, GHC == 6.10.3
+Library
+  Build-Depends: base >= 3 && < 5, alloy, mtl
+
+  Exposed-modules: Data.Generics.Alloy.EffectProxy
+                   Data.Generics.Alloy.PureProxy
+
+  Extensions: TypeOperators MultiParamTypeClasses FunctionalDependencies FlexibleInstances UndecidableInstances KindSignatures
+

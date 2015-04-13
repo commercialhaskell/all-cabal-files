@@ -1,0 +1,49 @@
+Name:                AMI
+
+Version:             0.1
+
+Synopsis:            Low-level bindings for Asterisk Manager Interface (AMI).
+
+Description:         This package provides simple low-level bindings for
+                     Asterisk Manager Interface (AMI).
+
+Homepage:            http://redmine.iportnov.ru/projects/ami
+
+bug-reports: http://redmine.iportnov.ru/projects/ami
+
+License:             BSD3
+
+License-file:        LICENSE
+
+Author:              IlyaPortnov
+
+Maintainer:          portnov84@rambler.ru
+
+-- A copyright notice.
+-- Copyright:           
+
+Category:            Network
+
+Build-type:          Simple
+
+Extra-source-files:  test.hs
+
+Cabal-version:       >=1.6
+
+
+Library
+  Exposed-modules:     Network.AMI
+  
+  Build-depends:       base >= 4 && < 5, containers, mtl, network, bytestring,
+                       pureMD5, stm
+  
+  -- Modules not exported by this package.
+  -- Other-modules:       
+  
+  -- Extra tools (e.g. alex, hsc2hs, ...) needed to build the source.
+  -- Build-tools:         
+
+Source-repository head
+  type: git
+  location: git://home.iportnov.ru/AMI.git
+

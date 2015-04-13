@@ -1,0 +1,39 @@
+Name: cmathml3
+Version: 0.1
+Cabal-Version: >= 1.6
+Build-Type: Simple
+License: BSD3
+License-File: LICENSE
+Author: Andrew Miller
+Copyright: (C) 2012 The University of Auckland
+Maintainer: ak.miller@auckland.ac.nz
+Stability: experimental
+Synopsis: Data model, parser, serialiser and transformations for Content MathML 3
+Description: Data model, parser, serialiser and basic transformations for working with Content MathML 3
+Category: Math
+Category: XML
+Source-Repository head
+    Type:     git
+    Location: https://github.com/A1kmm/cellml-testbed/
+
+Executable mathtest
+    -- Type: exitcode-stdio-1.0
+    Main-Is: tests/TestMain.hs    
+    Build-Depends: base, Cabal >= 1.9.2, filepath
+
+Library
+    Exposed-Modules: Data.ContentMathML3,
+                     Data.ContentMathML3.Structure,
+                     Data.ContentMathML3.Parser,
+                     Data.ContentMathML3.NSToS
+    Other-Modules: Data.ContentMathML3.XNodeOrd
+    Build-Depends: hxt >= 9 && <10,
+                   base >= 3 && < 5,
+                   arrowapply-utils == 0.2,
+                   monads-tf,
+                   transformers,
+                   parsec,
+                   containers,
+                   url,
+                   array,
+                   syb

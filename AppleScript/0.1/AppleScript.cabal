@@ -1,0 +1,21 @@
+Name:			AppleScript
+Version:		0.1
+License:		BSD3
+License-file:		LICENSE
+Author:			Wouter Swierstra
+Maintainer:		Wouter Swierstra <wss@cs.nott.ac.uk>
+Synopsis:		Call AppleScript from Haskell.
+Description:		This package enables you to compile and 
+			execute AppleScript from Haskell applications.
+Category:		Foreign
+Build-Depends:		base
+Exposed-modules:	Foreign.AppleScript
+Extra-source-files:	examples/HelloThere.hs
+			, examples/OpenLocation.hs
+			, examples/TextFields.hs
+Include-Dirs: 		cbits
+C-Sources: 		cbits/RunScript.c 
+Frameworks: 		Carbon
+Ghc-Options: 		-ffi
+Extensions: 		CPP, ForeignFunctionInterface
+

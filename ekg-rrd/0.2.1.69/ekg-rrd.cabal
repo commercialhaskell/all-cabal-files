@@ -1,0 +1,57 @@
+name:                ekg-rrd
+version: 0.2.1.69
+synopsis:            Passes ekg statistics to rrdtool
+description:         Simple API for passing ekg monitoring statistics to a round-robin database (RRD) using rrdtool.
+homepage:            https://bitbucket.org/davecturner/ekg-rrd
+license:             BSD3
+license-file:        LICENSE
+author:              David Turner
+maintainer:          dct25-dkefo@mythic-beasts.com
+copyright:           David Turner 2014
+category:            System
+build-type:          Simple
+cabal-version:       >=1.10
+
+library
+  exposed-modules:      System.Metrics.RRDTool
+                      , System.Metrics.RRDTool.Internals
+  build-depends:       base >=4.7 && <4.8
+                      , text >= 1.1
+                      , unordered-containers == 0.2.*
+                      , process == 1.2.*
+                      , ekg-core == 0.1.*
+                      , directory == 1.2.*
+                      , time == 1.4.*
+                      , mtl  == 2.1.*
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+  ghc-options: -Wall
+
+test-suite test
+  type: exitcode-stdio-1.0
+  main-is: Main.hs
+  other-modules: Tests.System.Metrics.RRDTool.Tests
+  hs-source-dirs: test
+  default-language:   Haskell2010
+  build-depends:      base
+                    , ekg-rrd
+                    , HUnit
+                    , ekg-core
+                    , test-framework
+                    , test-framework-hunit
+                    , text
+                    , time
+                    , unordered-containers
+  ghc-options: -Wall -with-rtsopts=-T
+
+
+source-repository head
+  type: hg
+  location:          https://bitbucket.org/davecturner/ekg-rrd
+
+
+source-repository this
+  type: hg
+  location: https://bitbucket.org/davecturner/ekg-rrd
+  tag: 5ef08e3f15641c976ffc5386790e4bafb4b71cd3
+

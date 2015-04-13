@@ -1,0 +1,39 @@
+name:                haggis
+version:             0.1.0.0
+synopsis:            A static site generator with blogging/comments support
+homepage:            http://github.com/tych0/haggis
+license:             MIT
+license-file:        LICENSE
+author:              Tycho Andersen
+maintainer:          Tycho Andersen <tycho@tycho.ws>
+category:            Web
+build-type:          Simple
+cabal-version:       >=1.8
+bug-reports:         https://github.com/tych0/haggis/issues
+description: Haggis is a static site generator with support for blogging.
+             Haggis has very few restrictions on how you manage your content,
+             and supports any markup format that pandoc does.
+
+source-repository head
+  type:              git
+  location:          git://github.com/tych0/haggis.git
+
+library
+  build-depends: base ==4.*, filemanip >= 0.3, filepath >= 1.3,
+                 directory >= 1.1, unix >= 2.5, bytestring >= 0.9,
+                 blaze-builder >= 0.3, pandoc >= 1.10, pandoc-types >= 1.10,
+                 xmlhtml >= 0.2, containers >= 0.4, hquery >= 0.1.0.2,
+                 time >= 1.4, old-locale, parsec >= 3.1, split >= 0.2,
+                 text >= 0.11
+  hs-source-dirs: src
+  exposed-modules: Text.Haggis, Text.Haggis.Parse, Text.Haggis.Types,
+                   Text.Haggis.Binders
+  ghc-options: -Wall
+
+executable haggis
+  main-is: haggis.hs
+  hs-source-dirs: tools
+  build-depends: base ==4.*, filemanip >= 0.3, filepath >= 1.3,
+                 optparse-applicative >= 0.5, directory >= 1.1,
+                 haggis >= 0.1.0.0
+  ghc-options: -Wall

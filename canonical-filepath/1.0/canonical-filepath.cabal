@@ -1,0 +1,23 @@
+name:                   canonical-filepath
+version:                1.0
+license:                BSD3
+license-file:           LICENSE
+author:                 Thomas Schilling <nominolo@googlemail.com>
+maintainer:             Thomas Schilling <nominolo@googlemail.com>
+homepage:               http://github.com/nominolo/canonical-filepath
+synopsis:               Abstract data type for canonical file paths.
+description:
+  Abstract data type for canonical file paths.
+category:               System
+stability:              provisional
+build-type:             Simple
+cabal-version:          >= 1.6
+
+library
+  build-depends:
+    base                >= 4     && < 5,
+    deepseq             == 1.1.*,
+    directory           == 1.1.*,
+    filepath            == 1.2.*
+  exposed-modules:
+    System.FilePath.Canonical

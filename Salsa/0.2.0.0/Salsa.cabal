@@ -1,0 +1,97 @@
+Cabal-Version:  >= 1.10
+
+Name:           Salsa
+Version:        0.2.0.0
+Build-Type:     Simple
+
+Category:       Foreign, .NET
+
+Synopsis:       A .NET Bridge for Haskell
+Description:
+  Salsa is an experimental Haskell library and code generator that allows
+  Haskell programs to host the .NET runtime and interact with .NET libraries.
+  It uses type families extensively to provide a type-safe mapping of the .NET
+  object model in the Haskell type system.
+
+Author:         Andrew Appleyard
+Maintainer:     tim.matthews7@gmail.com
+Homepage:       http://haskell.org/haskellwiki/Salsa
+
+License:        BSD3
+License-File:   LICENSE
+Copyright:      (c) 2007-2014 Andrew Appleyard, Tim Matthews
+
+Stability:      Experimental
+Tested-With:    GHC==7.6.3
+
+
+Extra-Source-Files:
+  README
+
+  Driver/README
+  Driver/Driver.cs
+  Driver/Salsa.dll
+
+  Generator/README
+  Generator/Generator.csproj
+  Generator/Generator.cs
+  Generator/Set.cs
+  Generator/Array.hs
+
+  Samples/Hello/Hello.proj
+  Samples/Hello/Hello.hs
+  Samples/Hello/Hello.imports
+
+  Samples/Weather/Weather.proj
+  Samples/Weather/Weather.hs
+  Samples/Weather/Weather.imports
+
+  Samples/Conway/Conway.proj
+  Samples/Conway/Conway.hs
+  Samples/Conway/Conway.imports
+  Samples/Conway/Conway.xaml
+
+  Docs/Thesis.pdf
+
+flag use_mono
+    description: use mono instead of .Net
+    default: False
+
+Source-Repository head
+    Type: git
+    Location: https://github.com/tim-m89/Salsa
+
+Library
+  Default-Language: Haskell2010
+
+  C-sources: Foreign/Salsa/salsa.c
+
+  Exposed-modules:
+      Foreign.Salsa
+      Foreign.Salsa.Binding
+
+  Other-Modules:
+      Foreign.Salsa.CLR,
+      Foreign.Salsa.Mono.CLRHost,
+      Foreign.Salsa.Win.CLRHost,
+      Foreign.Salsa.Common,
+      Foreign.Salsa.Core,
+      Foreign.Salsa.Resolver,
+      Foreign.Salsa.TypePrelude,
+      Foreign.Salsa.Driver
+
+  if !os(windows) || flag(use_mono)
+
+    Build-Depends: base==4.*, bytestring, file-embed
+
+    Cpp-options: -DMONO
+    cc-options: -DMONO
+
+    Extra-Libraries: glib-2.0, mono-2.0
+
+  else
+
+    Build-Depends: base==4.*, Win32, bytestring, file-embed
+
+    Extra-Libraries: oleaut32, ole32
+

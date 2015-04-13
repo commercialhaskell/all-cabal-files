@@ -1,0 +1,34 @@
+Name:                 simple-log
+Version:              0.1
+Synopsis:             Simple log for Haskell
+Description:          Log library for Haskell with removing unnecessary traces
+License:              BSD3
+Author:               Alexandr `Voidex` Ruchkin
+Homepage:             http://github.com/mvoidex/simple-log
+Maintainer:           voidex@live.com
+Category:             Logging
+Build-type:           Simple
+Cabal-version:        >= 1.6
+
+Library
+  HS-Source-Dirs: src
+  Build-Depends:
+    base >= 4.0 && < 5,
+    containers,
+    deepseq,
+    time,
+    text,
+    old-locale,
+    directory,
+    transformers,
+    MonadCatchIO-transformers,
+    mtl
+  Exposed-Modules:
+    System.Log
+    System.Log.Base
+    System.Log.Config
+    System.Log.Monad
+    System.Log.Text
+    System.Log.HTML
+    System.Log.Console
+    System.Log.File

@@ -1,0 +1,43 @@
+Name:           jdi
+Version:        0.0.3
+Description:    Implementation of Java Debug Interface
+Synopsis:       Implementation of Java Debug Interface
+Copyright:      2012 Victor Denisov
+License:        GPL-2
+License-file:   LICENSE
+Author:	        Victor Denisov <denisovenator@gmail.com>
+Maintainer:     Victor Denisov <denisovenator@gmail.com>
+Build-type:     Custom
+Homepage:       https://github.com/VictorDenisov/jdi
+Category:       Debug, Language, Jvm
+Cabal-version:  >=1.8
+
+Executable Test
+        main-is:        Tests/Test.hs
+        build-depends:  base >= 3
+                      , jdi >= 0.0.3
+                      , mtl >= 2.1.2
+                      , network >= 2.3.0.14
+        extensions:     MultiParamTypeClasses
+                      , GeneralizedNewtypeDeriving
+                      , StandaloneDeriving
+
+Library
+        hs-source-dirs:         src
+        exposed-modules:        Language.Java.Jdi
+        build-depends:          base >= 3.0.3.1 && <= 4.5.0.0
+                              , containers >= 0.4.2.1
+                              , binary >= 0.5.1.0
+                              , bytestring >= 0.9.2.1
+                              , transformers >= 0.3.0.0
+                              , mtl >= 2.1.2
+                              , network >= 2.3.0.14
+        other-modules:          Language.Java.Jdwp
+        extensions:             MultiParamTypeClasses
+                              , GeneralizedNewtypeDeriving
+                              , StandaloneDeriving
+
+Source-repository head
+        type:           git
+        location:       git://github.com/VictorDenisov/jdi.git
+

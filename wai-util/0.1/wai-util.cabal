@@ -1,0 +1,45 @@
+name:            wai-util
+version:         0.1
+cabal-version:   >= 1.8
+license:         OtherLicense
+license-file:    COPYING
+category:        Web
+copyright:       © 2012 Stephen Paul Weber
+author:          Stephen Paul Weber <singpolyma@singpolyma.net>
+maintainer:      Stephen Paul Weber <singpolyma@singpolyma.net>
+stability:       experimental
+tested-with:     GHC == 7.4.1
+synopsis:        Collection of utility functions for use with WAI
+homepage:        https://github.com/singpolyma/wai-util
+bug-reports:     https://github.com/singpolyma/wai-util/issues
+build-type:      Simple
+description:
+        Utility functions for use with WAI that haven't found another home
+        yet.
+
+extra-source-files:
+        README
+
+library
+        exposed-modules:
+                Network.Wai.Util
+
+        build-depends:
+                base == 4.*,
+                wai,
+                wai-extra,
+                resourcet,
+                conduit,
+                aeson,
+                transformers,
+                blaze-builder,
+                bytestring,
+                text,
+                case-insensitive,
+                mime-mail,
+                network >= 2.4.0.0,
+                http-types >= 0.7.2
+
+source-repository head
+        type:     git
+        location: git://github.com/singpolyma/wai-util.git

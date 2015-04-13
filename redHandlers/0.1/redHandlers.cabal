@@ -1,0 +1,35 @@
+Name:               redHandlers
+Version:            0.1
+Synopsis:           Monadic HTTP request handlers combinators to build a standalone web apps.
+Description:        Monadic HTTP request handlers combinators to build a standalone web apps. Most of them deal with request data. 
+                    Some of them allow mapping part of the URL to public folders in the file system. There is also a combinator for 
+                    sending files efficiently in the response (a fork of the HTTP library was necessary for this, included here).
+Category:           Web
+License:            OtherLicense
+License-file:       LICENSE
+Author:             RedNucleus (see AUTHORS)
+Maintainer:         none
+Stability:          Experimental
+Build-Type:         Simple
+Build-Depends:      base < 4, cgi, network, stm, containers, old-time, bytestring, parsec, unix, MaybeT >= 0.1.2, mtl, haskell98, xhtml, array
+Exposed-modules:    Network.HTTP.RedHandler,
+                    Network.HTTP.RedHandler.Session
+Other-modules:      Network.HTTP.RedHandler.RequestContext,
+                    Network.HTTP.RedHandler.Handler,
+                    Network.HTTP.RedHandler.Response,
+                    Network.HTTP.RedHandler.Httpd,
+                    Network.HTTP.RedHandler.FileUtils,
+                    Network.HTTP.RedHandler.Utils,
+                    Network.HTTP.RedHandler.HTTP_Fork.HTTP,
+                    Network.HTTP.RedHandler.HTTP_Fork.TCP,
+                    Network.HTTP.RedHandler.HTTP_Fork.StreamSocket,
+                    Network.HTTP.RedHandler.HTTP_Fork.StreamDebugger,
+                    Network.HTTP.RedHandler.HTTP_Fork.Stream,
+                    Network.HTTP.RedHandler.HTTP_Fork.HTTP.Base64,
+                    Network.HTTP.RedHandler.HTTP_Fork.HTTP.Headers
+
+Extra-source-files: AUTHORS,
+                    Example/README, Example/Makefile,
+                    Example/GridExample.hs, Example/HtmlExample.hs,
+                    Example/images/header.gif
+

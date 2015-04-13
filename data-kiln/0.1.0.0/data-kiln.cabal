@@ -1,0 +1,23 @@
+name:                data-kiln
+version:             0.1.0.0
+synopsis:            Sculpt mutable recursive data with reference equality; bake it using a data kiln into an immutable lazy structure
+description:         We functional programmers know that mutable state is unglamorous, but sometimes useful. Data.Kiln lets you create and manipulate mutable recursive structures (Clay) in the Squishy monad (built over ST), then once you're finished with mutation, bake them into immutable, pure, lazy data. The library is polymorphic in the shape of each mutable node in the graph, requiring only that it be Traversable, which means that all sorts of structures, from cons-cells to tagged state diagrams, can be represented and manipulated safely and efficiently, with an ultimately pure output.
+license:             BSD3
+license-file:        LICENSE
+author:              Kenneth Foner
+maintainer:          kenny.foner@gmail.com
+copyright:           Copyright (c) 2014 Kenneth Foner
+homepage:            https://github.com/kwf/data-kiln
+bug-reports:         https://github.com/kwf/data-kiln/issues
+category:            Data
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+
+library
+  exposed-modules:     Control.Monad.Squishy, Data.Kiln, Data.Kiln.Examples
+  -- other-modules:       
+  other-extensions:    RankNTypes, GeneralizedNewtypeDeriving, ScopedTypeVariables
+  build-depends:       base >=4.7 && <4.8, transformers >=0.4 && <0.5, mtl >=2.2 && <2.3, data-fix >=0.0 && <0.1, IfElse >=0.85 && <0.86, containers >=0.5 && <0.6
+  -- hs-source-dirs:      
+  default-language:    Haskell2010

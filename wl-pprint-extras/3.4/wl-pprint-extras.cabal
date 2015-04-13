@@ -1,0 +1,39 @@
+name:          wl-pprint-extras
+category:      Control, Monads, Text
+version:       3.4
+cabal-version: >= 1.6
+license:       BSD3
+license-file:  LICENSE
+author:        Edward A. Kmett
+maintainer:    Edward A. Kmett <ekmett@gmail.com>
+stability:     experimental
+homepage:      http://github.com/ekmett/wl-pprint-extras/
+bug-reports:   http://github.com/ekmett/wl-pprint-extras/issues
+copyright:     Copyright (C) 2011-2012 Edward A. Kmett,
+               Copyright (C) 2000 Daan Leijen
+synopsis:      A free monad based on the Wadler/Leijen pretty printer
+description:   A free monad based on the Wadler/Leijen pretty printer
+build-type:    Simple
+extra-source-files: .travis.yml
+
+source-repository head
+  type: git
+  location: git://github.com/ekmett/wl-pprint-extras.git
+
+library
+
+  build-depends:
+    base          == 4.*,
+    containers    >= 0.4     && < 0.6,
+    nats          >= 0.1,
+    semigroups    >= 0.9,
+    semigroupoids >= 3,
+    utf8-string   >= 0.3.6   && < 0.4,
+    text          == 0.11.*
+
+  exposed-modules:
+    Text.PrettyPrint.Free
+    Text.PrettyPrint.Free.Internal
+
+  ghc-options:      -Wall
+  hs-source-dirs:   src

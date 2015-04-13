@@ -1,0 +1,19 @@
+Name:              uxadt
+Version:           0.0.16.0
+Cabal-Version:     >= 1.6
+License:           GPL-3
+License-File:      LICENSE
+Synopsis:          Cross-language extensible representation for algebraic data type instances.
+Description:       A library that supports a universal, cross-platform embedded representation for algebraic data type (ADT) values.
+Category:          Data
+Author:            Andrei Lapets
+Maintainer:        Andrei Lapets <lapets@bu.edu>
+Build-Type:        Simple
+
+Library
+  Exposed-Modules: Data.UxADT
+  Build-Depends:   base >= 3 && < 5, json, mtl, MissingH
+
+Source-Repository head
+  Type:            git
+  Location:        https://github.com/lapets/uxadt

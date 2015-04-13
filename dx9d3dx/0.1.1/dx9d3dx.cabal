@@ -1,0 +1,38 @@
+name:               dx9d3dx
+version:            0.1.1
+author:             Esa Ilari Vuokko
+maintainer:         none
+license:            BSD3
+license-file:       LICENSE
+category:           Graphics
+Synopsis:           A binding to the Microsoft DirectX 9 D3DX API.
+Description:        A Haskell binding for the Microsoft DirectX 9 D3DX .
+                    .
+                    This version requires DirectX SDK that is specified in --extra-include-dirs and --extra-lib-dirs PATH.
+                    See the README file for more information.
+stability:          alpha
+build-type:         Simple
+build-depends:      base >= 3 && < 5, Win32, dx9base >= 0.1.1, dx9d3d >= 0.1.1
+extra-source-files:
+   gen/Parser.hs, gen/extract-dx.hs, gen/extract-d3dx.hs
+   gen/d3d_h.h,   gen/d3dx_h.h,      gen/fix_decl_x.h
+   gen/d3d_c.h,   gen/d3dx_c.h,      gen/fix_decl.h
+   README.txt
+exposed-modules:
+    DirectX9.D3D.X
+    DirectX9.D3D.X.Constants
+    DirectX9.D3D.X.Import
+    DirectX9.D3D.X.Misc
+    DirectX9.D3D.X.Raw
+    DirectX9.D3D.X.Shader
+extensions: CPP
+c-sources:
+    cbits/d3dx_raw.c
+include-dirs: ./gen
+ghc-options:
+    -Wall
+    -fno-warn-name-shadowing
+    -fno-warn-orphans
+    -funbox-strict-fields
+cc-options:
+extra-libraries: d3dx9

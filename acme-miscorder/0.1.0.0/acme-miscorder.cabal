@@ -1,0 +1,21 @@
+name:                acme-miscorder
+version:             0.1.0.0
+synopsis:            Miscellaneous newtypes for orderings of discutable use.
+description:         A collection of newtypes with Ord and Eq instances with peculiar behaviours.
+license:             PublicDomain
+license-file:        LICENSE
+author:              ARJANEN Loïc Jean David
+maintainer:          arjanen.loic@gmail.com
+copyright:           © 2015 ARJANEN Loïc Jean David
+category:            Acme
+build-type:          Simple
+cabal-version:       >=1.10
+
+library
+  exposed-modules:     Acme.MiscOrder
+  build-depends:       base >=4.7 && <4.8, random
+  default-language:    Haskell98
+
+Source-Repository head
+  Type:     darcs
+  Location: http://hub.darcs.net/Azel/acme-miscorder

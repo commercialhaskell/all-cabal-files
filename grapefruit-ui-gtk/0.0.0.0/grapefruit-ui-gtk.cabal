@@ -1,0 +1,36 @@
+Name:          grapefruit-ui-gtk
+Version:       0.0.0.0
+Cabal-Version: >= 1.2.3
+Build-Type:    Simple
+License:       BSD3
+License-File:  LICENSE
+Copyright:     © 2007–2009 Brandenburgische Technische Universität Cottbus
+Author:        Wolfgang Jeltsch
+Maintainer:    jeltsch@informatik.tu-cottbus.de
+Stability:     provisional
+Homepage:      http://haskell.org/haskellwiki/Grapefruit
+Package-URL:   http://hackage.haskell.org/packages/archive/grapefruit-ui-gtk/0.0.0.0/grapefruit-ui-gtk-0.0.0.0.tar.gz
+Synopsis:      GTK+-based backend for declarative user interface programming
+Description:   Grapefruit is a library for Functional Reactive Programming (FRP) with a focus on
+               user interfaces. FRP makes it possible to implement reactive and interactive systems
+               in a declarative style. To learn more about FRP, have a look at
+               <http://haskell.org/haskellwiki/Functional_Reactive_Programming>.
+               .
+               This package contains the GTK+-based user interface backend.
+Category:      FRP, Reactivity, GUI, User Interfaces
+Tested-With:   GHC == 6.8.3
+               GHC == 6.10.1
+
+Library
+    Build-Depends:   base               >= 3.0    && < 4.1,
+                     grapefruit-frp     >= 0.0    && < 0.1,
+                     grapefruit-records >= 0.0    && < 0.1,
+                     grapefruit-ui      >= 0.0    && < 0.1,
+                     gtk                >= 0.9.13 && < 0.11
+    Extensions:      TypeFamilies
+    Exposed-Modules: Graphics.UI.Grapefruit.GTK
+                     Graphics.UI.Grapefruit.GTK.Connector
+                     Graphics.UI.Grapefruit.GTK.Item
+    Other-Modules:   Graphics.UI.Grapefruit.GTK.Backend
+                     Graphics.UI.Grapefruit.GTK.Backend.Std
+    HS-Source-Dirs:  src

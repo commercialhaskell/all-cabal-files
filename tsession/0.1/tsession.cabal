@@ -1,0 +1,30 @@
+Name:                tsession
+Version:             0.1
+x-revision: 2
+Synopsis:            A Transaction Framework for Web Applications         
+Description:         The concept of this web transaction framework is influenced by sessions, transactions and software transactional memory.  
+  To web-developers it offers  sessions with integrated transaction management that has an included server-side storage of key-value pairs. The transactions can be spanned over multiple web requests and only affect the database when a commit is instructed. 
+  Additionally, the sessions have access to the (not yet committed) key-value pairs and the status (e.g., the last requested page) of all other sessions that are active. As sessions have to be canceled after a given timeout, the framework has a garbage collector that safely cleans up the timed out sessions. The framework introduces a monad which encapsulates all the logic of the transactions and frees them of side effects. This is a concept known from the STM--monad and like in STM, the transactions cannot dead-lock each other. 
+  .
+  For more information check my master thesis:
+  .
+  <http://stud.micheler.net/master.pdf>
+
+
+License:             BSD3
+License-file:        LICENSE
+Author:              Florian Micheler <hackage@micheler.net>
+Maintainer:          Florian Micheler <hackage@micheler.net>
+Copyright:           2014 Florian Micheler
+Category:            Web
+Build-type:          Simple
+Cabal-version:       >=1.6
+
+
+Library
+  Exposed-modules:     Control.TSession
+  Build-depends:       base >4 && <5,
+                       containers > 0.4,
+                       time,
+                       transformers,
+                       mtl

@@ -1,0 +1,26 @@
+name:                gender
+version:             0.1.0.0
+synopsis:            Identify a persons gender by their first name
+description:         This is a Haskell port of Jörg Michael's gender.c/nam_dict gender identification library.
+homepage:            https://github.com/womfoo/gender
+license:             LGPL-2.1
+license-file:        LICENSE
+author:              Kranium Gikos Mendoza <kranium@gikos.net>
+maintainer:          Kranium Gikos Mendoza <kranium@gikos.net>
+copyright:
+  Copyright (c) 2013, Kranium Gikos Mendoza
+  Copyright (c) 2007-2008, Jörg Michael
+category:            Language
+build-type:          Simple
+cabal-version:       >=1.8
+data-files:
+  data/nam_dict.txt.UTF8
+
+library
+  exposed-modules:     Language.Gender, Language.Gender.Dictionary, Language.Gender.Types
+  other-modules:       Paths_gender
+  build-depends:       base ==4.5.*, attoparsec ==0.10.*, text ==0.11.*
+
+executable gender
+  main-is:             gender.hs
+  build-depends:       base ==4.5.*, attoparsec ==0.10.*, text ==0.11.*

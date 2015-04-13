@@ -1,0 +1,152 @@
+-- This Cabal file generated using the Cartel library.
+-- Cartel is available at:
+-- http://www.github.com/massysett/cartel
+--
+-- Script name used to generate: genCabal.hs
+-- Generated on: 2015-03-27 14:33:18.544254 EDT
+-- Cartel library version: 0.14.2.0
+
+name: rainbow
+version: 0.22.0.2
+cabal-version: >= 1.18
+license: BSD3
+license-file: LICENSE
+build-type: Simple
+copyright: Copyright 2013-2015 Omari Norman
+author: Omari Norman
+maintainer: omari@smileystation.com
+stability: Experimental
+homepage: https://www.github.com/massysett/rainbow
+bug-reports: https://www.github.com/massysett/rainbow/issues
+synopsis: Print text to terminal with colors and effects
+description:
+  rainbow helps you print Text chunks to a terminal with colors and effects
+  such as bold, underlining, etc. You pair each Text with a description
+  of how it should appear. Rainbow works with both 8-color and 256-color
+  terminals.
+category: System
+tested-with:
+  GHC == 7.8.2
+  GHC == 7.10.1
+
+Library
+  exposed-modules:
+    Rainbow
+    Rainbow.Colors
+    Rainbow.Translate
+    Rainbow.Types
+  default-language: Haskell2010
+  ghc-options:
+    -Wall
+  build-depends:
+      base >= 4.7.0.0 && < 4.9.0.0
+    , text >= 0.11.2.0 && < 1.3.0.0
+    , bytestring >= 0.10 && < 0.11
+    , process >= 1.2 && < 1.3
+  hs-source-dirs:
+    lib
+
+source-repository head
+  type: git
+  location: https://github.com/massysett/rainbow.git
+
+Test-Suite rainbow-instances
+  type: exitcode-stdio-1.0
+  main-is: rainbow-instances.hs
+  other-modules:
+    Rainbow.QuickCheck
+    Rainbow
+    Rainbow.Colors
+    Rainbow.Translate
+    Rainbow.Types
+  hs-source-dirs:
+    tests
+  build-depends:
+      QuickCheck >= 2.7 && < 2.9
+  default-language: Haskell2010
+  ghc-options:
+    -Wall
+  build-depends:
+      base >= 4.7.0.0 && < 4.9.0.0
+    , text >= 0.11.2.0 && < 1.3.0.0
+    , bytestring >= 0.10 && < 0.11
+    , process >= 1.2 && < 1.3
+  hs-source-dirs:
+    lib
+
+Executable test8color
+  main-is: test8color.hs
+  if flag(visual)
+    buildable: True
+    other-modules:
+      Rainbow
+      Rainbow.Colors
+      Rainbow.Translate
+      Rainbow.Types
+    hs-source-dirs:
+      tests
+    default-language: Haskell2010
+    ghc-options:
+      -Wall
+    build-depends:
+        base >= 4.7.0.0 && < 4.9.0.0
+      , text >= 0.11.2.0 && < 1.3.0.0
+      , bytestring >= 0.10 && < 0.11
+      , process >= 1.2 && < 1.3
+    hs-source-dirs:
+      lib
+  else
+    buildable: False
+
+Executable test256color
+  main-is: test256color.hs
+  if flag(visual)
+    buildable: True
+    other-modules:
+      Rainbow
+      Rainbow.Colors
+      Rainbow.Translate
+      Rainbow.Types
+    hs-source-dirs:
+      tests
+    default-language: Haskell2010
+    ghc-options:
+      -Wall
+    build-depends:
+        base >= 4.7.0.0 && < 4.9.0.0
+      , text >= 0.11.2.0 && < 1.3.0.0
+      , bytestring >= 0.10 && < 0.11
+      , process >= 1.2 && < 1.3
+    hs-source-dirs:
+      lib
+  else
+    buildable: False
+
+Executable colorTest
+  main-is: colorTest.hs
+  if flag(visual)
+    buildable: True
+    other-modules:
+      Rainbow
+      Rainbow.Colors
+      Rainbow.Translate
+      Rainbow.Types
+    hs-source-dirs:
+      tests
+    default-language: Haskell2010
+    ghc-options:
+      -Wall
+    build-depends:
+        base >= 4.7.0.0 && < 4.9.0.0
+      , text >= 0.11.2.0 && < 1.3.0.0
+      , bytestring >= 0.10 && < 0.11
+      , process >= 1.2 && < 1.3
+    hs-source-dirs:
+      lib
+  else
+    buildable: False
+
+Flag visual
+  description: builds visual tests
+  default: False
+  manual: True

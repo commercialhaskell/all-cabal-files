@@ -1,0 +1,21 @@
+name:            web-encodings
+version:         0.0.0
+license:         BSD3
+license-file:    LICENSE
+author:          Michael Snoyman <michael@snoyman.com>
+maintainer:      Michael Snoyman <michael@snoyman.com>
+synopsis:        Encapsulate multiple web encoding in a single package.
+description:     The idea is to minimize external dependencies so this is usable in just about any context.
+category:        Web
+stability:       stable
+cabal-version:   >= 1.2
+build-type:      Simple
+homepage:        http://github.com/snoyberg/web-encodings/tree/master
+
+library
+    build-depends:   base, bytestring, bytestring-class
+    exposed-modules: Web.Encodings
+    other-modules:   Data.Mime.Header,
+                     Data.ByteString.Lazy.Util,
+                     Data.String.Util
+    ghc-options:     -Wall

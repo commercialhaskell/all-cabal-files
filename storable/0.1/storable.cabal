@@ -1,0 +1,26 @@
+Cabal-Version: >= 1.6
+
+Name:           storable
+Version:        0.1
+Synopsis:       Storable type class for variable-sized data
+Description:    The module "Data.Storable" provides an extension to the
+                Foreign.Storable type class adding support for variable-sized
+                data types.
+Author:         Tomas Janousek
+Maintainer:     Tomas Janousek <tomi@nomi.cz>
+License:        BSD3
+License-File:   LICENSE
+HomePage:       http://anna.fi.muni.cz/~xjanous3/gitweb/?p=storable.git;a=summary
+Category:       Data, Foreign
+Build-Type:     Simple
+
+Library
+    Exposed-Modules:    Data.Storable, Data.Storable.Instances
+    Build-Depends:      base, mtl
+    -- GHC-Options:        -O2
+
+Source-Repository head
+    Type:       git
+    Location:   http://anna.fi.muni.cz/~xjanous3/git/storable.git
+
+-- vim:set et ai:

@@ -1,0 +1,36 @@
+name: dtd-text
+version: 0.1.0.0
+synopsis: Parse and render XML DTDs
+description:
+  This library provides an attoparse-text parser and blaze-builder for
+  XML Document Type Declaration (DTD) documents.
+license: BSD3
+license-file: license.txt
+author: Yitzchak Gale
+maintainer: gale@sefer.org
+category: Data, Text, XML
+build-type: Simple
+cabal-version: >=1.6
+category: Data, Text, XML, Parsing
+stability: experimental
+bug-reports: mailto:gale@sefer.org
+homepage: http://projects.haskell.org/dtd/
+
+source-repository head
+  type: darcs
+  location: http://code.haskell.org/dtd/dtd-text/
+
+library
+  build-depends:
+      base >=3 && < 5
+    , containers
+    , text
+    , dtd-types >= 0.3.0.1 && < 1
+    , xml-types ==0.3.*
+    , attoparsec ==0.8.*
+    , attoparsec-text ==0.8.*
+--    , blaze-builder ==0.3.*
+
+  exposed-modules:
+    Data.XML.DTD.Parse
+--    Data.XML.DTD.Render

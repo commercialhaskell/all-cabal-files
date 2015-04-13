@@ -1,0 +1,23 @@
+Name: graphics-drawingcombinators
+Description:
+    This module is a functional wrapper around OpenGL, so you don't
+    have to go into the deep, dark world of imperative stateful
+    programming just to draw stuff.  It supports 2D only (for now),
+    with support drawing geometry, images, and text.
+Version: 1.1.0
+Stability: experimental
+Synopsis: A functional interface to 2D drawing in OpenGL
+License: BSD3
+Category: Graphics
+Author: Luke Palmer
+Homepage: http://github.com/luqui/graphics-drawingcombinators
+Maintainer: lrpalmer@gmail.com
+Build-Type: Simple
+Extra-Source-Files: example.hs
+cabal-Version: >= 1.2
+
+Library
+  Build-Depends: base < 5, mtl, containers, OpenGL >= 2.4 && < 2.5, stb-image >= 0.2 && < 0.3, bitmap-opengl < 0.1, FTGL
+  Exposed-Modules: Graphics.DrawingCombinators, Graphics.DrawingCombinators.Affine
+  ghc-options : -Wall 
+  Ghc-Prof-Options:  -prof -auto-all

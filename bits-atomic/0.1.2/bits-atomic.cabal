@@ -1,0 +1,73 @@
+Name:               bits-atomic
+Version:            0.1.2
+License:            BSD3
+License-File:       License.txt
+Maintainer:         Gabriel Wicke <wicke@wikidev.net>
+Author:             Gabriel Wicke <wicke@wikidev.net>
+Synopsis:       Atomic bit operations on memory locations 
+                for low-level synchronization
+Description:        
+ Atomic operations including CAS (compare-and-swap), lock and fetch & add
+ suitable for low-level shared-memory synchronization.
+ .
+ The implementation is using GCC's builtin atomic operations in C wrappers
+ called through the FFI.
+ .
+ /Testing:/ The following commands can be used to compile and run the test suite:
+ .
+    > cabal unpack bits-atomic && cd bits-atomic-* # if not yet locally available
+    > cabal configure -ftest
+    > cabal build
+    > cabal test
+ .
+ /Recent changes/:
+ .
+ * 0.1.2: Avoid using System.FilePath in Setup.hs to fix build failure on hackage
+Category:           Data, Concurrency, Foreign
+Stability:          experimental
+Build-Type:         Custom
+Cabal-Version: >= 1.6
+Extra-Source-Files: cbits/atomic-bitops-gcc.c cbits/atomic-bitops-gcc.h
+Source-Repository head
+    type: mercurial
+    location: http://dev.wikidev.net/hg/bits-atomic/
+
+library
+    Exposed-Modules:  Data.Bits.Atomic
+    Build-Depends:    base >= 4 && < 6
+    GHC-Options:      -Wall -O2 -funbox-strict-fields
+    GHC-Prof-Options: -auto-all
+    C-Sources:        cbits/atomic-bitops-gcc.c
+    CC-Options:       -Wall
+    if os (linux)
+        CC-Options: -fomit-frame-pointer -march=native
+    Include-Dirs:     cbits
+    Install-Includes: atomic-bitops-gcc.h
+    -- Try link-time optimization (inlining) with gcc 4.5:
+    -- CC-Options:       -fomit-frame-pointer -march=native -Wall -flto
+    --LD-Options:     -flto
+
+flag test
+    description: Build test program.
+    default:     False
+
+Executable test
+    if flag(test)
+        buildable:  True
+        build-depends:   
+                    base >= 4 && < 6, 
+                    QuickCheck, 
+                    HUnit,
+                    test-framework-quickcheck2,
+                    test-framework-hunit,
+                    test-framework
+    else
+        buildable:  False
+    hs-source-dirs:  ., test
+    other-modules:   Data.Bits.Atomic
+    main-is:         test.hs
+    GHC-Options:      -O2 -funbox-strict-fields -threaded -fhpc
+    GHC-Prof-Options: -auto-all
+
+    Include-Dirs:     cbits
+    C-Sources:        cbits/atomic-bitops-gcc.c

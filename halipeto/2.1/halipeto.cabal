@@ -1,0 +1,32 @@
+Name:                   halipeto
+Version:                2.1
+Copyright:              (c) 2004-2010 Peter Simons
+License:                GPL
+License-File:           COPYING
+Copyright:              (c) 2004-2008 Andrew Cooke <andrew@acooke.org>
+                        (c) 2007-2010 Peter Simons <simons@cryp.to>
+Author:                 Andrew Cooke <andrew@acooke.org>, Peter Simons <simons@cryp.to>
+Maintainer:             Peter Simons <simons@cryp.to>
+Homepage:               http://gitorious.org/halipeto
+Category:               Text
+Synopsis:               Haskell Static Web Page Generator
+Description:            A library for generating static HTML pages from XML
+                        templates and a file-based value dictionary.
+Cabal-Version:          >= 1.6
+Build-Type:             Simple
+Tested-With:            GHC == 6.12.1
+
+Source-Repository head
+  Type:                 git
+  Location:             git://gitorious.org/halipeto/mainline.git
+
+Library
+  Exposed-Modules:      Halipeto.Dictionary,
+                        Halipeto.Functions,
+                        Halipeto.Pages,
+                        Halipeto.SimpleDB,
+                        Halipeto.Template,
+                        Halipeto.Utilities
+  Build-Depends:        base >= 2 && < 5, haskell98, HaXml == 1.13.*, directory, pandoc
+  Extensions:           MultiParamTypeClasses, FlexibleInstances, FlexibleContexts
+  Ghc-Options:          -Wall

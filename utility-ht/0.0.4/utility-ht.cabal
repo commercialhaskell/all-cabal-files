@@ -1,0 +1,59 @@
+Name:             utility-ht
+Version:          0.0.4
+License:          BSD3
+License-File:     LICENSE
+Author:           Henning Thielemann <haskell@henning-thielemann.de>
+Maintainer:       Henning Thielemann <haskell@henning-thielemann.de>
+-- Homepage:         http://www.haskell.org/haskellwiki/Utility-HT
+Category:         Data, List
+Synopsis:         Various small helper functions for Lists, Maybes, Tuples, Functions
+Description:
+  Various small helper functions for Lists, Maybes, Tuples, Functions.
+  Some of these functions are improved implementations of standard functions.
+  They have the same name as their standard counterparts.
+
+  The package only contains functions
+  that do not require packages other than the base package.
+  Thus you do not risk a dependency avalanche by importing it.
+  However, further splitting the base package might invalidate this statement.
+Tested-With:       GHC==6.8.2
+Cabal-Version:     >=1.6
+Build-Type:        Simple
+
+Source-Repository head
+  type:     darcs
+  location: http://code.haskell.org/~thielema/utility/
+
+Source-Repository this
+  type:     darcs
+  location: http://code.haskell.org/~thielema/utility/
+  tag:      0.0.4
+
+
+Library
+  Build-Depends: base
+
+  GHC-Options:      -Wall
+  Hs-Source-Dirs:   src
+  Exposed-Modules:
+    Data.Bool.HT
+    Data.Eq.HT
+    Data.Function.HT
+    Data.List.HT
+    Data.List.Key
+    Data.List.Match
+    Data.Maybe.HT
+    Data.Ord.HT
+    Data.Record.HT
+    Data.Tuple.HT
+    Control.Monad.HT
+    Data.String.HT
+    Text.Read.HT
+    Text.Show.HT
+  Other-Modules:
+    Data.Bool.HT.Private
+    Data.List.HT.Private
+    Data.List.Key.Private
+    Data.List.Match.Private
+    Data.Function.HT.Private
+    Data.Record.HT.Private

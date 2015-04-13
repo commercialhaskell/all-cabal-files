@@ -1,0 +1,36 @@
+name:                nats-queue
+version:             0.1.1.0
+synopsis:            Haskell API for NATS messaging system
+description:         
+    This library is a Haskell driver for NATS <http://nats.io>. 
+    NATS is a fast and lightweight publish-subscribe messaging system. 
+    
+    This version supports authentication but does not support SSL as the current 
+    version of gnatsd (go server 0.5.6) does not support it either.
+    
+license:             BSD3
+license-file:        LICENSE
+author:              Ondrej Palkovsky
+maintainer:          palkovsky.ondrej@gmail.com
+category:            Network
+build-type:          Simple
+cabal-version:       >=1.8
+
+
+source-repository head
+  type:     git
+  location: https://github.com/ondrap/nats-queue.git
+
+library
+  exposed-modules:   Network.Nats, Network.Nats.Json
+  build-depends:     base==4.*, network>=2.6, dequeue, random, network-uri>=2.6,
+                     containers >= 0.5, bytestring, text, aeson >= 0.7
+  ghc-options:       -Wall
+  extensions:        TemplateHaskell
+                     OverloadedStrings
+                     RecordWildCards
+                     GeneralizedNewtypeDeriving
+                     PatternGuards
+                     DeriveDataTypeable
+                     Rank2Types
+                     

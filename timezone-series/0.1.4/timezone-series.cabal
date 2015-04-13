@@ -1,0 +1,28 @@
+Name:                timezone-series
+Version:             0.1.4
+Synopsis:            Enhanced timezone handling for Data.Time
+Description:         This package endows Data.Time, from the time
+                     package, with several data types and functions
+                     for enhanced processing of timezones. For one way
+                     to create timezone series, see the timezone-olson
+                     package.
+Homepage:            http://projects.haskell.org/time-ng/
+License:             BSD3
+License-file:        LICENSE
+Author:              Yitzchak Gale
+Maintainer:          yitz@sefer.org
+Copyright:           Copyright (c) 2010-2014 Yitzchak Gale. All rights reserved.
+Category:            Data
+Build-type:          Simple
+Extra-source-files:  README
+Cabal-version:       >=1.10
+Source-repository HEAD
+  type:              darcs
+  location:          http://code.haskell.org/time-ng/timezone-series
+
+Library
+  Default-language:    Haskell2010
+  Exposed-modules:     Data.Time.LocalTime.TimeZone.Series
+  Default-extensions:  DeriveDataTypeable
+  Build-depends:       base >= 4.4 && < 5,
+                       time >= 1.1.4 && < 1.5

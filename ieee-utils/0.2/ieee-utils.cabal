@@ -1,0 +1,25 @@
+name:               ieee-utils
+version:            0.2
+cabal-version:      >= 1.3
+build-type:         Simple
+license:            BSD3
+license-file:       LICENSE
+category:           Numerical
+author:             Matt Morrow
+copyright:          (c) Matt Morrow
+maintainer:         Matt Morrow <mjm2002@gmail.com>
+stability:          provisional
+synopsis:           ieee-utils
+description:        IEEE 754 (Standard for Binary Floating-Point Arithmetic) Utilities.
+                    Haddock docs are at <http://code.haskell.org/~morrow/code/haskell/ieee-utils/haddock/>.
+
+library
+  build-tools:
+  build-depends:      base
+  ghc-options:        -O2 -Wall
+  extensions:         ForeignFunctionInterface
+  hs-source-dirs:     src
+  includes:           fenv.h
+  c-sources:          cbits/fe_round.c
+  extra-libraries:
+  exposed-modules:    Numeric.IEEE.RoundMode

@@ -1,0 +1,16 @@
+Name:FailureT
+Version:15778.1
+Description:Failure Monad Transformer
+License:PublicDomain
+Author:Matthew Farkas-Dyck
+Maintainer:strake888@gmail.com
+Category:Control, Failure
+Synopsis:Failure Monad Transformer
+Build-Type:Simple
+Cabal-Version: >= 1.2
+
+Library {
+  Build-Depends: base >= 4 && < 5, base-unicode-symbols, mmtl
+  Extensions: MultiParamTypeClasses, FlexibleContexts, FlexibleInstances
+  Exposed-Modules: Control.Monad.Failure, Control.Monad.Failure.Class, Control.Monad.Failure.Instances
+}

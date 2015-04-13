@@ -1,0 +1,51 @@
+name:           crypto-api
+version:        0.11
+license:        BSD3
+license-file:   LICENSE
+copyright:      Thomas DuBuisson <thomas.dubuisson@gmail.com>
+author:         Thomas DuBuisson <thomas.dubuisson@gmail.com>
+maintainer:     Thomas DuBuisson <thomas.dubuisson@gmail.com>
+description:    A generic interface for cryptographic operations (hashes, ciphers, randomness).
+
+                Maintainers of hash and cipher implementations are
+                encouraged to add instances for the classes defined
+                in Crypto.Classes.  Crypto users are similarly
+                encouraged to use the interfaces defined in the Classes
+                module.
+
+                Any concepts or functions of general use to more than
+                one cryptographic algorithm (ex: padding) is within
+                scope of this package.
+synopsis:       A generic interface for cryptographic operations
+category:       Data, Cryptography
+homepage:       http://trac.haskell.org/crypto-api/wiki
+bug-reports:    http://trac.haskell.org/crypto-api/report/1
+stability:      stable
+build-type:     Simple
+cabal-version:  >= 1.6
+tested-with:    GHC == 7.2.2
+extra-source-files:
+  cbits/misc.c
+  cbits/misc.h
+
+
+Library
+  Build-Depends: base == 4.*,
+                 bytestring >= 0.9 && < 0.11,
+                 cereal >= 0.2 && < 0.4,
+                 tagged >= 0.1 && < 0.5,
+                 entropy, transformers
+  ghc-options:
+  hs-source-dirs:
+  exposed-modules: Crypto.Classes, Crypto.Types, Crypto.HMAC,
+                   Crypto.Random, Crypto.Padding, Crypto.Modes
+  other-modules: Crypto.Util
+  extensions: ForeignFunctionInterface, MultiParamTypeClasses,
+              BangPatterns, FunctionalDependencies, FlexibleInstances,
+              TypeSynonymInstances
+  c-sources: cbits/misc.c
+  include-dirs: cbits
+
+source-repository head
+  type:     git
+  location: https://github.com/TomMD/crypto-api

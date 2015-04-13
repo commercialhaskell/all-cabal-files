@@ -1,0 +1,22 @@
+Author:         David Sankel
+Maintainer:     david@sankelsoftware.com
+Name:           htags
+Version:        1.0
+Cabal-Version:  >= 1.2
+License:        BSD3
+Category:       Development, Source-tools, Utils
+Copyright:      (c) 2008 by David Sankel
+Synopsis:       A Haskell98 parsing tags program similar to ctags.
+Description:
+  htags is a tag file generator to enable extra functionality in editors like
+  vim. It expands upon 'hasktags' by using a full Haskell 98 parser and options
+  for recursion.
+  .
+  &#169; 2008 by David Sankel; BSD3 license.
+Build-Type:     Simple
+extra-source-files: readme.txt TODO
+
+Executable htags
+  Build-Depends:  base, filepath, directory, mtl, haskell-src
+  Main-Is:        htags.hs
+  Hs-Source-Dirs: src

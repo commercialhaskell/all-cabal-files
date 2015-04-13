@@ -1,0 +1,24 @@
+Name:          pasty
+Version:       0.1
+License:       GPL
+license-file:  COPYING
+copyright:     (c) 2008 Markus Dittrich
+category:      console
+Synopsis:      A simple command line pasting utility
+Description:   pasty is simple command line utility for extracting 
+               a collection of columns from any number of input
+               files and pasting them in a specified order to 
+               stdout.
+Author:        Markus Dittrich <markus.lists@gmail.com>
+Maintainer:    Markus Dittrich <markus.lists@gmail.com>
+stability:     alpha
+build-type:    Simple
+Homepage:      http://github.com/markusle/pasty/tree/master
+cabal-version: >= 1.2.1
+extra-source-files: man/pasty.1 README
+
+Executable pasty
+  Build-Depends:  base, bytestring >= 0.9.0.1, mtl >= 1.1.0.0
+  ghc-options:    -O2
+  Main-Is:        pasty.hs
+  hs-source-dirs: src

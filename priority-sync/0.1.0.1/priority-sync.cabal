@@ -1,0 +1,63 @@
+name:                priority-sync
+version:             0.1.0.1
+license:             BSD3
+license-file:        LICENSE
+author:              Christopher Lane Hinson
+maintainer:          Christopher Lane Hinson <lane@downstairspeople.org>
+stability:           Unstable
+
+category:            Concurrency
+synopsis:            Cooperative task prioritization.
+description:         In a simple use case, we want to run some expensive tasks in prioritized order, so that only one task is running on each
+                     CPU (or hardware thread) at any time.   For this simple case, four operations are needed: 'simpleTaskPool', 
+                     'schedule', 'claim', and 'startQueue'.
+                     .
+                     @
+                     let expensiveTask = threadDelay 1000000
+                     pool <- simpleTaskPool
+                     forkIO $ claim Acquire (schedule pool 1) $ putStrLn \"Task 1 started . . .\" >> expensiveTask >> putStrLn \"Task 1 completed.\"
+                     forkIO $ claim Acquire (schedule pool 3) $ putStrLn \"Task 3 started . . .\" >> expensiveTask >> putStrLn \"Task 3 completed.\"
+                     forkIO $ claim Acquire (schedule pool 2) $ putStrLn \"Task 2 started . . .\" >> expensiveTask >> putStrLn \"Task 2 completed.\"
+                     threadDelay 100000  -- contrive to wait for all tasks to become enqueued
+                     putStrLn \"Starting pool: \"
+                     startQueue pool
+                     threadDelay 4000000 -- contrive to wait for all tasks to become dequeued
+                     @
+                     .
+                     A 'TaskPool' combines 'Room's and 'Queue's in an efficient easy-to-use-interface.
+                     .
+                     'Room's provide fully reentrant synchronization to any number of threads based on arbitrary resource constraints.
+                     For example, the 'Room' from a 'simpleTaskPool' is constrained by 'GHC.numCapabilities'.
+                     .
+                     'Queue's provide task prioritization.  A 'Queue' systematically examines (to a configurable depth) all waiting threads with their
+                     priorities and resource constraints and wakes the most eagerly prioritized thread whose constraints can be satisfied.
+                     .
+                     'TaskPool's are not thread pools.  The concept is similar to IO Completion Ports.  There are no worker threads.  If a number of threads are waiting,
+                     the thread that is most likely to be processed next is woken and temporarily serves as a working thread.  
+                     .
+                     'Room's, 'Queue's, and 'TaskPool's are backed by carefully written STM (software transactional memory) transactions.
+                     .
+                     A salient feature is that, because any thread can participate, a 'TaskPool' supports both bound threads and threads created with 'forkOnIO'.
+                     .
+                     The git repository is available at <http://www.downstairspeople.org/git/priority-sync.git>.
+
+cabal-version:       >= 1.2
+build-type:          Simple
+tested-with:         GHC==6.10.1
+
+Library
+  exposed-modules:     Control.Concurrent.Priority.Room,
+                       Control.Concurrent.Priority.Queue, 
+                       Control.Concurrent.Priority.RoomConstraint,
+                       Control.Concurrent.Priority.Schedule, 
+                       Control.Concurrent.Priority.TaskPool
+  other-modules:       Control.Concurrent.Priority.RoomCore
+  ghc-options:         -Wall -fno-warn-type-defaults
+  ghc-prof-options:    -prof -auto-all
+  build-depends:       base>3, containers >= 0.1.0.1, heap, parallel >= 1.0.0.0, stm >= 2.1.1.2, random
+
+Executable _Control_Concurrent_Priority_Tests
+  Main-Is:             Tests.hs
+  ghc-options:         -Wall -threaded -fno-warn-type-defaults
+  ghc-prof-options:    -prof -auto-all
+  build-depends:       base>3

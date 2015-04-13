@@ -1,0 +1,77 @@
+Name:            PTQ
+Version:         0.0.6
+License:         LGPL
+License-File:    COPYING
+Author:          Masahiro Sakai
+Maintainer:      Masahiro Sakai <masahiro.sakai AT gmail.com>
+Homepage:        http://www.tom.sfc.keio.ac.jp/~sakai/hiki/?hsPTQ
+Category:        Natural Language Processing
+Build-Type:      Simple
+Synopsis:        An implementation of Montague's PTQ.
+Description:     An implementation of Montague's PTQ (Proper Treatment of Quantification). It translates simple plain English sentences into formulas of intentional logic.
+Cabal-Version:   >= 1.6
+Stability:       experimental
+Extra-Source-Files:
+   README.md, COPYING, .travis.yml,
+   src/Context.hs, src/MP.hs, src/PDict.hs, src/ParserTest.hs,
+   misc/Test.hs, misc/Test2.agda, misc/Test3.hs
+Data-Files: cgi/index.html, cgi/main.html
+
+Source-Repository head
+  Type:     git
+  Location: git://github.com/msakai/ptq.git
+
+Flag UTF8Terminal
+  Description: Use UTF-8 for terminal I/O
+  Default: False
+  Manual: True
+
+Flag UTF8CGI
+  Description: Use UTF-8 for HTTP contents
+  Default: True
+  Manual: True
+
+Executable ptq
+  Main-Is: Main.hs
+  Hs-Source-Dirs: src
+  Other-Modules:
+     IL
+     P
+     Translation
+     Parser
+     Report
+     Version
+  Extensions:
+     EmptyDataDecls
+     GADTs
+     MultiParamTypeClasses
+     TypeOperators
+     TypeSynonymInstances
+  Build-Depends: base >=4.4 && <5, mtl, containers
+  if flag(UTF8Terminal)
+    CPP-Options: "-DUSE_UTF8"
+
+Executable ptq.cgi
+  Main-Is: CGIMain.hs
+  Hs-Source-Dirs: src
+  Other-Modules:
+     IL
+     P
+     Translation
+     Parser
+     Version
+     ReportHTML
+     CGI
+     URLEncoding
+  Other-Extensions:
+     EmptyDataDecls
+     GADTs
+     MultiParamTypeClasses
+     TypeOperators
+     TypeSynonymInstances
+     ScopedTypeVariables
+     FlexibleInstances
+     CPP
+  Build-Depends: base >=4.4 && <5, mtl, containers, network, xml
+  if flag(UTF8CGI)
+    CPP-Options: "-DUSE_UTF8"

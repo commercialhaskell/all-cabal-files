@@ -1,0 +1,17 @@
+Name:		shoap
+Version:	0.1
+Cabal-Version:  >= 1.2
+Build-Type:     Simple
+License:	BSD3
+License-File:	LICENSE
+Author:		Richard Fergie
+Maintainer:	richard.fergie@gmail.com
+Homepage:	http://richardfergie.com/shoap
+Category:	Network
+Synopsis:	A very basic SOAP package
+Description:	Wraps a message in SOAP headers and provides a function to POST this message to a URL.
+
+Library
+  Build-Depends:	base >= 2 && < 4, curl
+  Exposed-modules:	Network.Soap
+ 

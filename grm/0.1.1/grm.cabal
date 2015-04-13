@@ -1,0 +1,39 @@
+Name:                grm
+
+Version:             0.1.1
+
+Synopsis:            grm grammar converter
+
+Description:  Grm takes a grammar specification and generates Haskell bindings.  Given a grammar the tool produces an abstract syntax implementation, a Happy parser generator file, and a pretty-printer.
+
+License:             BSD3
+
+License-file:        LICENSE
+
+Author:              Brett Letner <brettletner@gmail.com>
+
+Maintainer:          Brett Letner <brettletner@gmail.com>
+
+Copyright:           Brett Letner 2011-2012
+
+Category:            Development
+
+Build-type:          Simple
+
+Extra-source-files:  README, THANKS
+
+Cabal-version:       >= 1.8
+
+source-repository head
+  type: git
+  location: git://github.com/stevezhee/grm.git
+
+Library
+  Exposed-modules:     Grm.Prims, Grm.Layout, Grm.Lex
+  Build-depends: base < 5, wl-pprint, process, syb >= 0.3, filepath, directory
+
+Executable grm
+  Main-is:             grm.hs
+  Build-depends:       base < 5, parsec, wl-pprint, filepath, cmdargs, directory, Cabal, process, syb >= 0.3
+  Build-tools:         happy
+  

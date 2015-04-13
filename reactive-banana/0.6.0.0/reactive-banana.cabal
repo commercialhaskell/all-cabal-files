@@ -1,0 +1,84 @@
+Name:                reactive-banana
+Version:             0.6.0.0
+Synopsis:            Practical library for functional reactive programming (FRP).
+Description:         
+    Reactive-banana is a practical library for Functional Reactive Programming (FRP).
+    .
+    FRP offers an elegant and concise way to express interactive programs such as graphical user interfaces, animations, computer music or robot controllers. Thus, the reactive-banana library promises to avoid the spagethetti code commonly used in traditional GUI technologies.
+    .
+    See the project homepage <http://haskell.org/haskellwiki/Reactive-banana>
+    for a more detailed introduction and features.
+    .
+    Stability forecast:
+    No semantic bugs expected.
+    Significant API changes are likely in future versions,
+    though the main interface is beginning to stabilize.
+
+Homepage:            http://haskell.org/haskellwiki/Reactive-banana
+License:             BSD3
+License-file:        LICENSE
+Author:              Heinrich Apfelmus
+Maintainer:          Heinrich Apfelmus <apfelmus quantentunnel de>
+Stability:           Experimental
+Category:            FRP
+Cabal-version:       >=1.6
+Build-type:          Simple
+
+extra-source-files:  doc/examples/*.hs
+
+Source-repository head
+    type:               git
+    location:           git://github.com/HeinrichApfelmus/reactive-banana.git
+    subdir:             reactive-banana/
+
+flag UseExtensions
+    description: Use language extensions like type families or GADTs.
+                 This enables the efficient push-driven implementation,
+                 but doesn't necessarily work with compilers other than GHC.
+-- Cabal checks if the package can be build with  UseExtensions = True,
+-- otherewise it is set to  False .
+
+Library
+    hs-source-dirs:     src
+    
+    extensions:         CPP,
+                        Rank2Types, NoMonomorphismRestriction, FlexibleInstances
+    
+    build-depends:      base >= 4.2 && < 5, containers >= 0.3 && < 0.6,
+                        transformers >= 0.2 && < 0.4,
+                        vault == 0.2.*
+    
+    if flag(UseExtensions)
+        extensions:     TypeFamilies, GADTs, MultiParamTypeClasses,
+                        BangPatterns, TupleSections,
+                        EmptyDataDecls
+        build-depends:  QuickCheck >= 1.2 && < 2.5,
+                        fclabels == 1.1.*,
+                        unordered-containers >= 0.2.1.0 && < 0.3,
+                        hashable == 1.1.*
+        CPP-options:    -DUseExtensions
+        
+    exposed-modules:
+                        Reactive.Banana,
+                        Reactive.Banana.Combinators,
+                        Reactive.Banana.Experimental.Calm,
+                        Reactive.Banana.Frameworks,
+                        Reactive.Banana.Model
+    
+    other-modules:
+                        Reactive.Banana.Internal.InputOutput,
+                        Reactive.Banana.Tests
+    
+    if flag(UseExtensions)
+        other-modules:
+                        Reactive.Banana.Internal.AST,
+                        Reactive.Banana.Internal.InterpretModel,
+                        Reactive.Banana.Internal.PushGraph,
+                        Reactive.Banana.Internal.TotalOrder
+    else
+        other-modules:
+                        Reactive.Banana.Internal.CompileModel
+
+                        
+
+

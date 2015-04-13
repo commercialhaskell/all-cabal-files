@@ -1,0 +1,17 @@
+Name:                loadavg
+Version:             0.1
+Synopsis:            Load average parsing from /proc/loadavg and bindings to getloadavg (3)
+Description:         Load average parsing from @\/proc\/loadavg@ and bindings to @getloadavg (3)@
+License:             BSD3
+License-file:        LICENSE
+Author:              Krzysztof Skrzętnicki
+Maintainer:          gtener@gmail.com
+Category:            System
+Build-type:          Simple
+Cabal-version:       >=1.2
+Stability:           Experimental
+
+Library
+  Hs-source-dirs:    src
+  Exposed-modules:   System.Posix.LoadAvg
+  Build-depends:     base > 3 && < 5

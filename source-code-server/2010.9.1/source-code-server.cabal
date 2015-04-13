@@ -1,0 +1,61 @@
+Name:                 source-code-server
+Version:              2010.9.1
+Build-type:           Simple
+Synopsis:             The server backend for the source code iPhone app
+Description:          a reference implementation, such that an android equivalent is less of work
+
+License:              BSD3
+License-file:         LICENSE
+Author:               Jinjing Wang
+Maintainer:           Jinjing Wang <nfjinjing@gmail.com>
+Build-Depends:        base
+Cabal-version:        >= 1.2
+category:             Web
+homepage:             http://github.com/nfjinjing/source-code-server
+data-files:           readme.md, Nemesis
+
+Executable            source-code-server
+  ghc-options:        -Wall
+  build-depends:      base >= 4 && < 5
+                    , haskell98
+                    , mtl
+                    , process
+                    , containers
+                    , mps
+                    , json
+                    , directory
+                    , hack
+                    , hack-contrib
+                    , hack-handler-happstack
+                    , data-default
+                    , stm
+                    , loli
+                    , StateVar
+                    , bytestring
+                    , unix
+                    , curl
+                    , filepath
+                    , template-haskell
+                    , safe
+                    , time
+                    , HDBC-sqlite3
+                    , HDBC
+                    
+  hs-source-dirs:     src/
+  main-is:            CodeMushu/Driver/Server.hs
+  other-modules:      CodeMushu.Constant
+                      CodeMushu.DSL
+                      CodeMushu.Env
+                      CodeMushu.Project
+                      CodeMushu.Repo
+                      CodeMushu.Server
+                      CodeMushu.Thread
+                      CodeMushu.Type
+                      
+                      MPS.Lab1
+                      Rika.Type.Default
+                      
+                      
+                      Rika.Data.Record.Label
+                      Rika.Data.Record.Label.TH
+                      

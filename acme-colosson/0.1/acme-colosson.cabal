@@ -1,0 +1,20 @@
+name:                acme-colosson
+version:             0.1
+license:             BSD3
+license-file:        LICENSE
+synopsis:            Determines whether it is numberwang.
+category:            Acme
+author:              Keegan McAllister <mcallister.keegan@gmail.com>
+maintainer:          Keegan McAllister <mcallister.keegan@gmail.com>
+build-type:          Simple
+cabal-version:       >=1.2
+description:
+    Yes, that is a number!
+
+library
+  exposed-modules:
+      Acme.Colosson
+  ghc-options:      -Wall
+  build-depends:
+      base   >= 3 && < 5
+    , random >= 1.0

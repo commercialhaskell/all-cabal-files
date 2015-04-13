@@ -1,0 +1,57 @@
+name:          stm-chunked-queues
+category:      Concurrency
+version:       0.1.0.0
+license:       BSD3
+cabal-version: >= 1.8
+license-file:  LICENSE
+author:        Alexander Kondratskiy
+maintainer:    Alexander Kondratskiy <kholdstare0.0@gmail.com>
+stability:     provisional
+homepage:      http://github.com/kholdstare/stm-chunked-queues/
+bug-reports:   http://github.com/kholdstare/stm-chunked-queues/issues
+copyright:     Copyright (C) 2014 Alexander Kondratskiy
+synopsis:      Chunked Communication Queues
+description:   Thread communication queues that group items/requests that occur close together in time
+build-type:    Simple
+tested-with:   GHC == 7.8.1
+extra-source-files:
+  .gitignore
+  .travis.yml
+  README.markdown
+
+source-repository head
+  type: git
+  location: git://github.com/kholdstare/stm-chunked-queues.git
+
+library
+  build-depends:
+    base  >= 4.3      &&  < 5.0,
+    stm   >= 2.4,
+    async >= 2.0.1
+
+  exposed-modules:
+    Control.Concurrent.STM.TChunkedQueue
+    Control.Concurrent.STM.TMChunkedQueue
+
+  other-modules:
+    Control.Concurrent.STM.ChunkedQueue
+
+  ghc-options: -Wall -fwarn-tabs
+
+  hs-source-dirs:
+    src
+  
+test-suite UnitTests
+  type:           exitcode-stdio-1.0
+  main-is:        UnitTests.hs
+
+  ghc-options:    -Wall -threaded
+  hs-source-dirs: tests src
+  build-depends:
+    base        >= 4.3      &&  < 5.0,
+    stm         >= 2.4,
+    async       >= 2.0.1,
+
+    HUnit       >= 1.2,
+    tasty       >= 0.8,
+    tasty-hunit >= 0.8

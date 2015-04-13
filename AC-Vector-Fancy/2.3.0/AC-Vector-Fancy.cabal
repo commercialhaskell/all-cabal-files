@@ -1,0 +1,34 @@
+Cabal-Version: >= 1.6
+Name:          AC-Vector-Fancy
+Version:       2.3.0
+Stability:     Experimental
+Synopsis:      Fancy type-system stuff for AC-Vector
+
+Description:
+
+  Adds various type-system tricks to AC-Vector.
+  (Requires several language extensions, including
+  type families.)
+
+  Changed the @Project@ class from being multi-parameter
+  to using an associated type. (Should help resolve some
+  of the \"ambiguous type\" errors.)
+
+Category:      Data, Math, Numerical, Graphics
+License:       BSD3
+License-file:  License.txt
+Author:        Andrew Coppin
+Maintainer:    MathematicalOrchid@hotmail.com
+Build-Type:    Simple
+Tested-With:   GHC == 6.10.3
+
+Library
+  Exposed-modules:
+    Data.Vector,
+    Data.Vector.Fancy,
+    Data.Vector.Transform,
+    Data.Vector.Transform.Fancy,
+    Data.BoundingBox,
+    Data.BoundingBox.Fancy
+  Build-Depends:   base >= 4 && < 5, AC-Angle >= 1.0, AC-Vector >= 2.3.0
+  HS-Source-Dirs:  .

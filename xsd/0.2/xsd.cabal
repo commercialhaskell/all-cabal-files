@@ -1,0 +1,25 @@
+Name:                xsd
+Version:             0.2
+License:             BSD3
+License-File:        LICENSE
+Synopsis:            XML Schema data structures
+Description:         XML Schema data structures (XSD)
+Homepage:            http://code.google.com/p/data-xsd/
+Category:            XML
+Author:              Tony Morris
+Maintainer:          code@tmorris.net
+Copyright:           2009 Tony Morris
+build-type:          Simple
+cabal-version:       >= 1.2
+
+Flag small_base
+  Description:     Choose the new, split-up base package.
+
+Library
+  if flag(small_base)
+    Build-Depends: base < 4 && >= 3, parsec, time
+  else
+    Build-Depends: base < 3, parsec, time
+
+  GHC-Options:    -Wall
+  Exposed-Modules: Text.XML.XSD.DateTime

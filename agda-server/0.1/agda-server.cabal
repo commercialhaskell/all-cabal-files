@@ -1,0 +1,54 @@
+name:               agda-server
+version:            0.1
+category:           Dependent types
+synopsis:           Http server for Agda (prototype)
+description:
+    @agda-server@ serves agda files as XML files.
+    .
+    Usage: Run @agda-server@ (see --help for command line options). Then open a browser
+    with @localhost:8001//X.xml@ (or similar).
+    .
+    Supported features: Type checking (whole module), links between modules (but not between library modules), basic support for holes.
+stability:          experimental
+license:            BSD3
+license-file:       LICENSE
+author:             Péter Diviánszky
+maintainer:         divipp@gmail.com
+cabal-version:      >=1.6
+build-type:         Simple
+data-files:
+                    copy/*.css,
+                    copy/*.js,
+                    copy/*.template,
+                    copy/icon.ico
+
+Executable agda-server
+  GHC-Options:      -threaded -rtsopts -Wall -fwarn-tabs -fno-warn-incomplete-patterns -fno-warn-type-defaults -fno-warn-unused-matches -fno-warn-name-shadowing
+  Main-is:
+                    Main.hs
+  Other-modules:
+                    AgdaInterface
+                    Args
+                    Html
+                    JSDictDef
+                    JSDict
+                    JS
+                    Memo
+                    Param
+                    Standalone
+  Build-Depends:
+                    base < 5
+                  , containers
+                  , transformers
+                  , mtl
+                  , filepath
+                  , directory
+                  , cmdargs
+                  , utf8-string
+                  , xhtml
+                  , HJavaScript
+                  , pandoc
+                  , snap-core
+                  , snap-server
+                  , Agda >= 2.3.3
+

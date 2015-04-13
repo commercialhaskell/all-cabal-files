@@ -1,0 +1,43 @@
+name:                priority-sync
+version:             0.2.1.0
+license:             BSD3
+license-file:        LICENSE
+author:              Christopher Lane Hinson
+maintainer:          Christopher Lane Hinson <lane@downstairspeople.org>
+stability:           Unstable
+
+category:            Concurrency
+synopsis:            Cooperative task prioritization.
+description:         A strategy to prioritize access to limited resources.
+                     .
+                     The git repository is available at <http://www.downstairspeople.org/git/priority-sync.git>.
+
+cabal-version:       >= 1.2
+build-type:          Simple
+tested-with:         GHC==6.12.1
+
+Library
+  exposed-modules:     PrioritySync.PrioritySync,
+                       PrioritySync.Internal.Room,
+                       PrioritySync.Internal.Queue, 
+                       PrioritySync.Internal.RoomConstraint,
+                       PrioritySync.Internal.Schedule, 
+                       PrioritySync.Internal.TaskPool
+                       PrioritySync.Internal.Receipt
+                       PrioritySync.Internal.Prioritized
+                       PrioritySync.Internal.Dispatch
+                       PrioritySync.Internal.UserData
+                       PrioritySync.Internal.RoomGroup
+                       PrioritySync.Internal.ClaimContext
+                       PrioritySync.Internal.Constrained
+                       PrioritySync.Internal.Unconstrained
+  other-modules:       PrioritySync.Internal.RoomCore
+  ghc-options:         -Wall -fno-warn-type-defaults
+  ghc-prof-options:    -prof -auto-all
+  build-depends:       base>4&&<5, containers >= 0.1.0.1, PSQueue, parallel >= 1.0.0.0, stm >= 2.1.1.2, random
+
+Executable _PrioritySync.Internal_Tests
+  Main-Is:             Tests.hs
+  ghc-options:         -Wall -threaded -fno-warn-type-defaults
+  ghc-prof-options:    -prof -auto-all
+  build-depends:       base>3

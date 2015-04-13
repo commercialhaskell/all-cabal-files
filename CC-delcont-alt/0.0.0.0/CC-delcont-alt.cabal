@@ -1,0 +1,40 @@
+name:               CC-delcont-alt
+version:            0.0.0.0
+author:             Oleg Kiselyov
+maintainer:         shelarcy <shelarcy@gmail.com>
+license:            BSD3
+license-file:       LICENSE
+category:           Control
+Synopsis:           Three new monad transformers for multi-prompt delimited control
+Description:        Oleg Kiselyov's three new monad transformers for multi-prompt delimited control
+                    (released with his permission)
+                    .
+                    This library implements the superset of the interface described in
+                    *   /A Monadic Framework for Delimited Continuations/,
+                       R. Kent Dybvig, Simon Peyton Jones, and Amr Sabry
+                       JFP, v17, N6, pp. 687--730, 2007.
+                       <http://www.cs.indiana.edu/cgi-bin/techreports/TRNNN.cgi?trnum=TR615>
+                    .
+                    See the original article at <http://okmij.org/ftp/continuations/implementations.html#CC-monads>
+                    for more information.
+                    .
+                    This package split multi-prompt delimited control from
+                    <http://hackage.haskell.org/package/liboleg> for usability.
+stability:          experimental
+cabal-version:      >= 1.8
+build-type:         Simple
+extra-source-files:
+   Bench_nondet.hs
+   CC_Test.hs
+   Generator1.hs, Generator2.hs, ProtocolRecovery.hs
+
+library
+ build-depends:      base >= 3 && < 5, mtl
+ --                    CC-delcont-ref, CC-delcont-exc, CC-delcont-cxe
+ exposed-modules:
+    Control.Monad.CC.CCCxe
+    Control.Monad.CC.CCExc
+    Control.Monad.CC.CCRef
+ other-modules: Mutation
+ cc-options:
+ ld-options:

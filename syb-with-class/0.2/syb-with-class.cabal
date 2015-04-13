@@ -1,0 +1,26 @@
+Name:               syb-with-class
+Version:            0.2
+License:            BSD3
+Copyright:          2004 - 2007 The University of Glasgow, CWI,
+                                Simon Peyton Jones, Ralf Laemmel,
+                                Ulf Norell, Sean Seefried, Simon D. Foster,
+                                HAppS LLC
+Author:             Simon Peyton Jones, Ralf Laemmel
+Maintainer:         AlexJacobson@HAppS.org
+Stability:          experimental
+Synopsis:           Scrap Your Boilerplate With Class
+Description:
+    Classes, and Template Haskell code to generate instances, for the
+    Scrap Your Boilerplate With Class system.
+Category:           Data
+Tested-With:        GHC==6.6
+Build-Depends:      base, template-haskell
+Exposed-modules:
+    Data.Generics.SYB.WithClass.Basics
+    Data.Generics.SYB.WithClass.Context
+    Data.Generics.SYB.WithClass.Derive
+    Data.Generics.SYB.WithClass.Instances
+Extensions: UndecidableInstances, OverlappingInstances, Rank2Types,
+            EmptyDataDecls, TemplateHaskell, FlexibleInstances, CPP
+GHC-Options: -Wall -Werror
+

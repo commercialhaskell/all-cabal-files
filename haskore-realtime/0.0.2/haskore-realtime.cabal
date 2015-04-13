@@ -1,0 +1,56 @@
+Name:           haskore-realtime
+Version:        0.0.2
+License:        GPL
+License-File:   LICENSE
+Author:         Henning Thielemann <haskell@henning-thielemann.de>
+Maintainer:     Henning Thielemann <haskell@henning-thielemann.de>
+Homepage:       http://www.haskell.org/haskellwiki/Haskore/
+Package-URL:    http://darcs.haskell.org/haskore-realtime/
+Category:       Sound
+Synopsis:       Routines for realtime playback of Haskore songs
+Description:
+  This package contains support for realtime playback of Haskore songs.
+  However this does not work satisfyingly
+  and it introduces dependencies like on 'unix' package,
+  that reduce portability.
+  Thus we have removed this part from core Haskore.
+Stability:      Experimental
+Tested-With:    GHC==6.4.1, GHC==6.8.2
+Cabal-Version:  >=1.2
+Build-Type:     Simple
+
+Flag splitBase
+  description: Choose the new smaller, split-up base package.
+
+Library
+  Build-Depends:
+    haskore >=0.0.5 && <0.1,
+    midi >=0.1.1 && <0.2,
+    bytestring >=0.9 && <1.0,
+    -- dependency on non-negative for Haddock
+    non-negative >=0.0.1 && <0.1,
+    event-list >=0.0.6 && <0.1,
+    data-accessor >=0.1 && <0.2,
+    unix >= 2.0 && <3,
+    mtl >=1.0 && <2
+
+  If flag(splitBase)
+    Build-Depends:
+      base >= 3, process >= 1.0 && < 1.1, old-time >= 1.0, directory >= 1.0
+  Else
+    Build-Depends:
+      base >= 1.0 && < 2
+
+  GHC-Options:    -Wall
+  Hs-source-dirs: src
+  Exposed-modules:
+    Haskore.RealTime.Timer,
+    Haskore.RealTime.Timer.Immediate,
+    Haskore.RealTime.Timer.Thread,
+    -- needs 'unix' package
+    Haskore.RealTime.Timer.Posix
+    Haskore.RealTime.EventList.TimeBody,
+    Haskore.RealTime.EventList.TimeTime,
+    Haskore.RealTime.ShellPipe,
+    Haskore.Interface.CSound.Play,
+    Haskore.Interface.MIDI.Play

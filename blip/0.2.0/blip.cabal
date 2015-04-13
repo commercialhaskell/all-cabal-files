@@ -1,0 +1,38 @@
+Name:                blip 
+Version:             0.2.0
+Synopsis:            Python to bytecode compiler.
+Homepage:            https://github.com/bjpop/blip  
+License:             BSD3
+License-file:        LICENSE
+Author:              Bernie Pope
+Maintainer:          Bernie Pope <florbitous@gmail.com>
+Stability:           Experimental
+category:            Language 
+Build-type:          Simple
+Cabal-version:       >=1.8
+Description:
+ Compiles Python 3 source code to bytecode. The resulting
+ bytecode is written to a '.pyc' file, compatible with the
+ CPython implementation (the default Python interpreter).
+
+source-repository head
+  type: git
+  location: git://github.com/bjpop/blip.git
+
+Executable blip {
+  ghc-options: -Wall -fno-warn-name-shadowing -fno-warn-orphans
+  main-is: Main.hs
+  hs-source-dirs: src
+  build-depends: base==4.*,
+     bliplib == 0.2.*,
+     -- directory == 1.2.*,
+     filepath == 1.3.*,
+     parseargs == 0.1.* ,
+     language-python==0.4.*,
+     mtl==2.1.*,
+     containers==0.5.*,
+     bytestring==0.10.*,
+     old-time==1.1.*,
+     pretty==1.1.*
+     -- utf8-string==0.3.*
+}

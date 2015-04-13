@@ -1,0 +1,55 @@
+Name:                HAppS-State
+Version:             0.9.3
+Synopsis:            Event-based distributed state.
+Description:         Web framework
+License:             BSD3
+License-file:        COPYING
+Copyright:           2007-2008 HAppS LLC
+Author:              HAppS LLC
+Maintainer:          AlexJacobson@HAppS.org
+Category:            Web, Distributed Computing
+Cabal-Version:       >= 1.2
+Build-Type:          Simple
+
+flag base4
+
+Library
+
+  Exposed-modules:     
+                       HAppS.State
+--                     HAppS.State.Logger
+                       HAppS.State.Saver
+                       HAppS.State.Control
+                       HAppS.State.Transaction
+                       HAppS.State.ComponentTH
+                       HAppS.State.ComponentSystem
+  Other-modules:       
+                       HAppS.State.Checkpoint
+                       HAppS.State.Spread
+                       HAppS.State.Monad
+                       HAppS.State.Saver.Impl.File
+                       HAppS.State.Saver.Impl.Memory
+                       HAppS.State.Saver.Impl.Queue
+                       HAppS.State.Saver.Types
+--                     HAppS.State.OperationModes
+                       HAppS.State.Types
+                       HAppS.State.Util
+                       HAppS.State.TxControl
+  Build-Depends:       HaXml >= 1.13 && < 1.14, mtl, network,
+                       stm, template-haskell, hslogger >= 1.0.2, HAppS-Util>=0.9.3,
+                       HAppS-Data>=0.9.3, bytestring, containers, random, old-time,
+                       old-locale, directory, binary, filepath, hspread >=0.3
+  if flag(base4)
+    Build-Depends:     base >= 4 && < 5, syb
+  else
+    Build-Depends:     base < 4
+
+  hs-source-dirs:      src
+  
+  if !os(windows)
+     Build-Depends:    unix
+     cpp-options:      -DUNIX
+
+  Extensions:          CPP  
+  ghc-options:         -W -fno-warn-incomplete-patterns
+  GHC-Prof-Options:    -auto-all

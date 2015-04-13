@@ -1,0 +1,32 @@
+Name:           histogram-fill
+Version:        0.3.1
+Cabal-Version:  >= 1.6
+License:        BSD3
+License-File:   LICENSE
+Author:         Alexey Khudyakov
+Maintainer:     Alexey Khudyakov <alexey.skladnoy@gmail.com>
+Homepage:       http://bitbucket.org/Shimuuar/histogram-fill/
+Category:       Data
+Build-Type:     Simple
+Synopsis:       Library for histograms creation.
+Description:    
+  This is library for histograms filling. Its aim to provide
+  convenient way to create and fill histograms. 
+
+source-repository head
+  type:     hg
+  location: http://bitbucket.org/Shimuuar/histogram-fill
+
+Library
+  Build-Depends:        base >=3 && <5,
+                        primitive,
+                        vector >= 0.6.0.2
+--                        monoid-statistics == 0.1.*
+  Exposed-modules:      Data.Histogram
+                        Data.Histogram.Generic
+                        Data.Histogram.Fill
+                        Data.Histogram.Bin
+                        Data.Histogram.Bin.Extra
+                        Data.Histogram.ST
+  Other-modules:        Data.Histogram.Parse
+  Ghc-options:          -O2 -Wall

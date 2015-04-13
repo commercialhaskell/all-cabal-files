@@ -1,0 +1,40 @@
+name:                luachunk
+version:             0.1.0.0
+synopsis:            Library functions for reading and writing Lua chunks
+description:         Library functions for reading and writing Lua chunks
+license:             GPL-3
+license-file:        LICENSE
+author:              Anupam Jain
+maintainer:          ajnsit@gmail.com
+copyright:           Copyright 2012, Anupam Jain. All Rights Reserved.
+category:            Scripting
+build-type:          Simple
+cabal-version:       >=1.8
+
+source-repository head
+  type:     git
+  location: http://github.com/ajnsit/luachunk
+
+source-repository this
+  type:     git
+  location: http://github.com/ajnsit/luachunk/tree/v0.1.0.0
+  tag:      v0.1.0.0
+
+library
+  hs-source-dirs:      src
+  extensions:          OverloadedStrings, NoImplicitPrelude
+  exposed-modules:     Scripting.Lua.Chunk.Reader,
+                       Scripting.Lua.Chunk.Writer,
+                       Scripting.Lua.Chunk.Types
+  other-modules:       Scripting.Lua.Chunk.BitUtils,
+                       Scripting.Lua.Chunk.Endianness,
+                       Scripting.Lua.Chunk.IEEE754
+  build-depends:       base ==4.5.*,
+                       text ==0.11.*,
+                       binary ==0.5.*,
+                       pretty ==1.1.*,
+                       custom-prelude ==0.2.*,
+                       bytestring ==0.9.*,
+                       attoparsec ==0.10.*,
+                       ghc-prim ==0.2.*
+

@@ -1,0 +1,25 @@
+Name:                linda
+Version:             0.1.1
+Synopsis:            LINear Discriminant Analysis
+Description:         This package (mainly the module LDA) implements the linear discriminant analysis. It provides both data classification (according to Fisher) and data analysis (by discriminant criteria).
+
+License:             BSD3
+License-file:        LICENSE
+
+Author:              Lennart Schmitt
+Maintainer:          lennart...schmitt@<nospam>gmail.com
+Copyright:           (c) Lennart Schmitt
+Stability:           Experimental
+Category:            Math, Statistics
+Build-type:          Simple
+
+-- Extra-source-files:  
+Cabal-version:       >=1.2
+
+
+Library
+  Exposed-modules:     Numeric.Function, Numeric.Statistics.LDA, Numeric.MatrixList, Numeric.Matrix, Numeric.Vector
+  Build-depends:       base >= 2 && <= 5, hstats -any, hmatrix -any, HUnit >= 1
+  Other-modules:       Tests
+  hs-source-dirs:      src/
+

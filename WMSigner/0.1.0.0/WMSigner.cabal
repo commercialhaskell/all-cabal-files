@@ -1,0 +1,63 @@
+name:                   WMSigner
+version:                0.1.0.0
+synopsis:               WebMoney authentication module
+description:
+    Pure haskell implementation WMSigner authentication module.
+    .
+    Simple examples:
+    .
+    > import Data.Digest.Webmoney
+    >
+    > signer = newSigner (exponent :: [Word8) (modulus :: [Word8])
+    >
+    > main = do
+    >   putStrLn $ signUnsafe signer "message" -- static version
+    >   sign signer "message" >>= putStrLn     -- randomized version
+license:                MIT
+license-file:           LICENSE
+copyright:              Ilya Smelkov <triplepointfive@gmail.com>
+author:                 Ilya Smelkov <triplepointfive@gmail.com>
+maintainer:             Ilya Smelkov <triplepointfive@gmail.com>
+category:               Data, Cryptography
+build-type:             Simple
+cabal-version:          >=1.8
+
+library
+    exposed-modules:    Data.Digest.WebMoney
+    other-modules:      Data.Digest.WebMoney.Signer
+                        Data.Digest.WebMoney.Montgomery
+                        Data.Digest.WebMoney.Algebra
+    build-depends:      base >=4.6 && <4.8
+                      , bytestring >= 0.10
+                      , directory >= 1.0.0.0
+                      , cryptohash
+                      , random
+                      , vector >= 0.10
+                      , base64-bytestring >= 1
+                      , binary >= 0.5
+                      , random >= 1.0.1
+                      , mtl >= 2.1
+                      , split >= 0.2
+                      , lens >= 4.4
+    hs-source-dirs:     src
+    ghc-options:        -Wall -fno-warn-unused-do-bind -fno-warn-missing-signatures
+
+Test-Suite test-WMSigner
+    type:               exitcode-stdio-1.0
+    main-is:            Spec.hs
+    build-depends:      base
+                      , hspec
+                      , lens >= 4.4
+                      , bytestring >= 0.10
+                      , split >= 0.2
+                      , cryptohash
+                      , random
+                      , vector >= 0.10
+    buildable:          True
+    cpp-options:        -DTEST_MODE=true
+    hs-source-dirs:     src test
+    ghc-options:        -Wall -fno-warn-unused-do-bind -fno-warn-missing-signatures
+
+source-repository head
+  type:     git
+  location: git://github.com/triplepointfive/wmsigner

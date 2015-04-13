@@ -1,0 +1,30 @@
+name:            binary-generic
+version:         0.1
+license:         BSD3
+license-file:    LICENSE
+author:          Lars Petersen <info@lars-petersen.net>
+maintainer:      Lars Petersen <info@lars-petersen.net>
+homepage:        http://github.com/lpeterse/binary-generic
+description:     Instead of manual or semi-automated generation of
+                 instances of 'Data.Binary.Binary' you just derive 
+                 'Data.Data' and the library automatically figures
+                 out how to (de-)serialize the type.
+synopsis:        Generic binary serialisation using binary and syb.
+category:        Data, Parsing
+stability:       experimental
+build-type:      Simple
+cabal-version:   >= 1.2
+tested-with:     GHC == 6.12.1
+extra-source-files: README 
+
+library
+  build-depends:   base >= 3 && < 5,
+                   binary, 
+                   data-binary-ieee754,
+                   bytestring,
+                   syb,
+                   text
+  hs-source-dirs:  src
+  exposed-modules: Data.Binary.Generic
+  ghc-options:     -Wall
+

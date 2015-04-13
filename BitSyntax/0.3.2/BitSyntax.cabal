@@ -1,0 +1,13 @@
+Name:            BitSyntax
+Version:         0.3.2
+License:         BSD3
+Author:          Adam Langley
+Homepage:        http://www.imperialviolet.org/bitsyntax
+Stability:       experimental
+Synopsis:        A module to aid in the (de)serialisation of binary data
+Build-Depends:   base, haskell98, QuickCheck, template-haskell, bytestring
+Build-Type:      Simple
+Exposed-modules: Data.BitSyntax
+Extensions:      ForeignFunctionInterface
+ghc-options:         -Wall -optl-Wl,-s
+ghc-prof-options:    -prof -auto-all

@@ -1,0 +1,45 @@
+name:           parsimony
+version:        1.1
+license:        BSD3
+license-file:   LICENSE
+author:         Daan Leijen <daan@cs.uu.nl>, Iavor S. Diatchki <iavor.diatchki@gmail.com>
+maintainer:     iavor.diatchki@gmail.com
+
+
+category:       Parsing
+synopsis:       Monadic parser combinators derived from Parsec
+description:
+    Parsimony is a generalized and simplified version of the
+    industrial-strength parser combinator library Parsec.
+    Like Parsec, it is simple, safe, well documented, convenient, 
+    with good error messages, and fast.  In addition, Parsimony
+    adds support for working with differet types of input such as
+    byte strings (for compat input representation) and
+    lazy byte strings (for parsing large amounts of data).
+    It also supports working with text in different character
+    encodings such as UTF8.
+
+cabal-version: >= 1.2
+build-type:     Simple
+
+library
+  hs-source-dirs:
+    src
+  exposed-modules:
+    Parsimony
+    Parsimony.Char
+    Parsimony.Error
+    Parsimony.IO
+    Parsimony.Pos
+    Parsimony.Stream
+    Parsimony.UserState
+  other-modules:
+    Parsimony.Combinator
+    Parsimony.Prim
+  build-depends:
+    base >= 3 && < 5,
+    bytestring,
+    utf8-string
+  GHC-options: -O2 -Wall
+
+

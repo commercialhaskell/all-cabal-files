@@ -1,0 +1,22 @@
+Name:                happstack-lite
+Version:             6.0.0
+Synopsis:            Happstack minus the useless stuff
+Description:         This packages provides a subset of Happstack that is easier to learn but still very useful. It as 100% compatible with the full version of Happstack.
+Homepage:            http://www.happstack.com/
+License:             BSD3
+License-file:        LICENSE
+Author:              Jeremy Shaw
+Maintainer:          jeremy@n-heptane.com
+Stability:           Provisional
+Category:            Web
+Build-type:          Simple
+Cabal-version:       >=1.6
+
+Library
+  Exposed-modules:
+                 Happstack.Lite
+  
+  Build-depends: base < 5,
+                 bytestring == 0.9.*,
+                 happstack-server == 6.3.*,
+                 text == 0.11.*

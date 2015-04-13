@@ -1,0 +1,28 @@
+Name:                cqrs-example
+Version:             0.4.0
+Synopsis:            Example for cqrs package
+License:             MIT
+License-file:        LICENSE
+Author:              Bardur Arantsson
+Maintainer:          spam@scientician.net
+Category:            Web
+Build-type:          Simple
+Cabal-version:       >=1.6.0.1
+
+Executable cqrs-example
+  Main-is:           Main.hs
+  Build-depends:     base == 4.*
+                   , cereal >= 0.3 && < 0.4
+                   , cqrs >= 0.4 && < 0.5
+                   , data-default >= 0.3 && < 0.4
+                   , text >= 0.11 && < 0.12
+                   , transformers >= 0.2.2 && < 0.3
+  Ghc-options:       -Wall
+  Extensions:        DeriveDataTypeable
+                     MultiParamTypeClasses
+                     OverloadedStrings
+                     ScopedTypeVariables
+  Hs-source-dirs:    src
+  Other-modules:     Aggregates
+                     Events
+                     

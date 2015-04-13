@@ -1,0 +1,18 @@
+Name:		mount
+Version:	0.2.1
+Cabal-Version:	>= 1.2
+License:	GPL
+License-File:	LICENSE
+Author:		Nicola Squartini
+Maintainer:	tensor5@gmail.com
+Stability:	experimental
+Synopsis:	Mounts and umounts filesystems
+Category:	System
+Bug-Reports:	mailto:tensor5@gmail.com
+Build-Type:	Simple
+Description:	This package is obsolete. Use <http://hackage.haskell.org/package/linux-mount> instead.
+
+Library
+  Build-Depends:	base >=4.0 && < 5, bytestring
+  Exposed-Modules:	System.Linux.Mount
+  Extensions:		ForeignFunctionInterface

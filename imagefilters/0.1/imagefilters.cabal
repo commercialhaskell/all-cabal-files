@@ -1,0 +1,24 @@
+Name:                imagefilters
+Version:             0.1
+Synopsis:            Image Filters (contrast, brightness, gaussian blur, etc)
+Description:         
+    This package brings image filters comparable to PHP's imagefilter functions. In the current release,
+    these filters may only be used with the GD Haskell extension library, but in the future it may support
+    other image management libraries, such as the new JuicyPixels library.
+    .
+    imagefilters also supplies functionality for creating custom filters by using the 'pixelTransform' function
+    for per-pixel transformations, or the 'convolute' function for the application of convolution matrices
+
+Homepage:            https://github.com/tchannel/imagefilters
+License:             BSD3
+License-file:        LICENSE
+Author:              Tim Channell
+Maintainer:          tim.channell@gmail.com
+Category:            Graphics
+Build-type:          Simple
+Cabal-version:       >=1.2
+
+Library
+  Exposed-modules:     Graphics.Filters.Util, Graphics.Filters.GD  
+  Build-depends: base >= 4 && < 5, gd >= 3000      
+

@@ -1,0 +1,32 @@
+name:            strict-io
+cabal-Version:   >=1.6
+version:         0.2.0
+license:         BSD3
+license-File:    LICENSE
+copyright:       (c) Nicolas Pouillard
+author:          Nicolas Pouillard
+maintainer:      Nicolas Pouillard <nicolas.pouillard@gmail.com>
+category:        System
+synopsis:        A library wrapping standard IO modules to provide strict IO.
+description:     This library is a thin layer on top standard IO modules like System.IO
+                 and Data.IORef that re-expose these functions under a different type, namely SIO.
+stability:       Provisional
+build-type:      Simple
+
+library
+  build-depends:   base>=3.0 && <5, deepseq==1.1.*, extensible-exceptions
+  exposed-modules: System.IO.Strict
+                   System.IO.Strict.Internals
+                   Data.IORef.Strict
+                   -- TODO Control.Exception.Strict
+  ghc-options:     -Wall -O2
+
+source-repository head
+  type:     darcs
+  location: http://patch-tag.com/publicrepos/strict-io
+
+source-repository this
+  type:     darcs
+  location: http://patch-tag.com/publicrepos/strict-io
+  tag:      0.2.0
+

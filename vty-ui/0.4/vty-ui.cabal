@@ -1,0 +1,69 @@
+Name:                vty-ui
+Version:             0.4
+Synopsis:            A user interface composition library for Vty
+Description:         An extensible library of user interface widgets
+                     for composing and laying out Vty user interfaces.
+                     This library provides a collection of primitives
+                     for building and composing widgets and creating
+                     Vty Images.  This library is intended to make
+                     non-trivial user interfaces trivial to express
+                     and modify without having to worry about terminal
+                     size.
+Category:            User Interfaces
+Author:              Jonathan Daugherty <drcygnus@gmail.com>
+Maintainer:          Jonathan Daugherty <drcygnus@gmail.com>
+Build-Type:          Simple
+License:             BSD3
+License-File:        LICENSE
+Cabal-Version:       >= 1.2
+Homepage:            http://codevine.org/vty-ui/
+
+Flag testing
+    Description:     Build for testing
+    Default:         False
+
+Library
+  Build-Depends:
+    base >= 4 && < 5,
+    vty >= 4.0 && < 4.5,
+    containers >= 0.2 && < 0.4,
+    pcre-light >= 0.3 && < 0.4
+
+  GHC-Options:       -Wall
+  Hs-Source-Dirs:    src
+  Exposed-Modules:
+          Graphics.Vty.Widgets.All
+          Graphics.Vty.Widgets.Text
+          Graphics.Vty.Widgets.Rendering
+          Graphics.Vty.Widgets.Composed
+          Graphics.Vty.Widgets.Base
+          Graphics.Vty.Widgets.List
+          Graphics.Vty.Widgets.Borders
+  Other-Modules:
+          Text.Trans.Tokenize
+
+Executable vty-ui-tests
+  Build-Depends:
+    QuickCheck >= 2.1 && < 2.2
+
+  CPP-Options: -DTESTING
+  GHC-Options: -Wall
+
+  if !flag(testing)
+    Buildable:     False
+  end
+  Hs-Source-Dirs:  src,test,test/src
+  Main-is:         TestDriver.hs
+
+  Other-Modules:
+        Tests.Instances
+        Tests.Util
+        Tests.Text
+        Tests.Tokenize
+
+Executable vty-ui-demo
+  Hs-Source-Dirs:  src
+  GHC-Options:     -Wall
+  Main-is:         Demo.hs
+  Build-Depends:
+    mtl >= 1.1 && < 1.2

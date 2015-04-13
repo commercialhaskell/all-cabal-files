@@ -1,0 +1,17 @@
+Name:                gearbox
+Version:             1
+Synopsis:            zooming rotating fractal gears graphics demo
+Description:         OpenGL gearbox iterated function system.  Usage:
+                     @gearbox quality@ where quality is an integer between
+                     6 and 14 (default 9).  Shaders generate a gear shape
+                     and hue rotate succesive copies via texture feedback.
+License:             GPL-3
+License-file:        LICENSE
+Author:              Claude Heiland-Allen
+Maintainer:          claudiusmaximus@goto10.org
+Category:            Demo
+Build-type:          Simple
+Cabal-version:       >=1.6
+Executable gearbox
+  Main-is:             GearBox.hs
+  Build-depends:       base < 5, GLUT == 2.2.*, OpenGLRaw == 1.1.*, Vec == 0.9.*, Vec-OpenGLRaw == 0.2.*

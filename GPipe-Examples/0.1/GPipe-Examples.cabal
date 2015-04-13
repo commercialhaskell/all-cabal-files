@@ -1,0 +1,40 @@
+name:           GPipe-Examples
+version:        0.1
+cabal-version:  >= 1.6
+license:        GPL
+author:         Kree Cole-McLaughlin
+synopsis:       Examples for the GPipes package
+maintainer:     kree.colemclaughlin@gmail.com
+homepage:       
+bug-reports:    
+description:    A set of examples with increasing complexity
+copyright:      (c) 2010 Kree Cole-McLaughlin
+stability:      alpha
+category:       Graphics
+
+build-type:     Simple
+
+executable 01_green_triangle
+           main-is:             01_green_triangle.hs
+           hs-source-dirs:      src
+           ghc-options:		-O2
+           build-depends:       base >= 3 && < 5, haskell98, Vec, Vec-Transform, GPipe, GPipe-TextureLoad, GLUT
+
+executable 02_triangle_texture
+           main-is:             02_triangle_texture.hs
+           hs-source-dirs:      src
+           ghc-options:		-O2
+           build-depends:       base >= 3 && < 5, haskell98, Vec, Vec-Transform, GPipe, GPipe-TextureLoad, GLUT
+
+executable 03_green_sphere
+           main-is:             03_green_sphere.hs
+           hs-source-dirs:      src
+           ghc-options:		-O2
+           build-depends:       base >= 3 && < 5, haskell98, Vec, Vec-Transform, GPipe, GPipe-TextureLoad, GLUT
+
+executable 04_brass_sphere
+           main-is:             04_brass_sphere.hs
+           hs-source-dirs:      src
+           extensions:          TypeFamilies
+           ghc-options:		-O2
+           build-depends:       base >= 3 && < 5, haskell98, Vec, Vec-Transform, GPipe, GPipe-TextureLoad, GLUT

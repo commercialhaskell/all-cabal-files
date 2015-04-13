@@ -1,0 +1,14 @@
+Name:                HTTP-Simple
+Version:             0.1
+Description:         Enable simple wrappers to Network.HTTP
+Synopsis:	     Enable simple wrappers to Network.HTTP
+Category:            Network
+Stability:           experimental
+Homepage:            http://www.b7j0c.org/content/haskell-http.html
+License:             BSD3
+License-file:        LICENSE
+Author:              brad clawsie
+Maintainer:          haskell@fastmail.fm
+Build-Depends:	     base, network, HTTP
+Exposed-modules:     Network.HTTP.Simple
+ghc-options:         -O

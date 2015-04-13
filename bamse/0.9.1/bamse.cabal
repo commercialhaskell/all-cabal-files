@@ -1,0 +1,111 @@
+name: bamse
+version: 0.9.1
+Synopsis: A Windows Installer (MSI) generator framework
+Description:
+   Bamse is a framework for building Windows Installers for
+   your Windows applications, giving you a comprehensive set
+   of features to put together Windows Installers using Haskell.
+
+category      : System
+license       : BSD3
+license-file  : LICENSE
+author        : Sigbjorn Finne <sof@forkIO.com>
+maintainer    : sof@forkIO.com
+cabal-version :  >= 1.2
+build-type    : Simple
+extra-source-files: README 
+                    license.rtf
+                    icons/folder.exe
+                    icons/star.exe
+                    icons/pdf.exe
+                    icons/html2.exe
+                    icons/cmdIcon.exe
+                    icons/txt.exe
+                    icons/html.exe
+                    icons/hsx.exe
+                    icons/hs.exe
+                    doc/errors.txt
+                    doc/howto.txt
+                    doc/howto.html
+                    doc/index.html
+                    doc/using.txt
+                    doc/using.html
+                    doc/icons.txt
+                    data/license.rtf
+                    data/msi/base.msi
+                    data/msi/UISample.msi
+                    data/msi/Sequence.msi
+                    data/msi/Schema.msi
+		    art/README.txt
+		    art/haskell-banner.bmp
+		    art/haskell-background.bmp
+		    art/ghc-background.bmp
+		    art/ghc-background-3rd.bmp
+		    art/galois-bground.JPG
+		    art/galois-bground-fade.jpg
+		    art/dlgbmp3rd.bmp
+		    art/bground2.bmp
+		    art/bground.bmp
+		    art/banner3.bmp
+		    art/banner2.bmp
+		    art/banner.bmp
+                    tools/msiIcon.h
+                    tools/msiIcon.c
+                    tools/README.txt
+                    tools/Makefile
+                    templates/Alex.hs
+                    templates/Bamse.hs
+                    templates/Base.hs
+                    templates/ComPkg.hs
+                    templates/Cryptol.hs
+                    templates/GHC.hs
+                    templates/GaloisPkg.hs
+                    templates/Greencard.hs
+                    templates/HDirectLib.hs
+                    templates/Haddock.hs
+                    templates/Happy.hs
+                    templates/Hugs98.hs
+                    templates/Hugs98Net.hs
+                    templates/PubCryptol.hs
+                    templates/SOE.hs
+
+flag old-base
+  description: Old, monolithic base
+  default: False
+
+library {
+ Exposed-modules: Bamse.Builder,
+                  Bamse.DiaWriter,
+                  Bamse.Dialog,
+                  Bamse.DialogUtils,
+                  Bamse.GhcPackage,
+                  Bamse.IMonad,
+                  Bamse.MSIExtra,
+                  Bamse.MSITable,
+                  Bamse.Options,
+                  Bamse.Package,
+                  Bamse.PackageGen,
+                  Bamse.PackageUtils,
+                  Bamse.WindowsInstaller,
+                  Bamse.Writer
+ 
+ Other-Modules:   System.Path,
+                  Util.Dir,
+                  Util.GetOpts,
+                  Util.List,
+                  Util.Path
+
+ Ghc-Options:     -Wall
+
+ build-depends: com, haskell98, directory, pretty
+ if flag(old-base)
+   Build-Depends: base < 3
+ else
+   Build-Depends: base >= 4
+}
+
+executable bamse {
+  main-is:              Main.hs
+  hs-source-dirs:       . templates
+  ghc-options:          -Wall
+}

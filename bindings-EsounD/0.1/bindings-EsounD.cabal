@@ -1,0 +1,39 @@
+Name: bindings-EsounD
+Synopsis: Low level bindings to EsounD (ESD; Enlightened Sound Daemon)
+Description:
+        Bindings to EsounD: <http://www.tux.org/~ricdude/EsounD.html>
+Version: 0.1
+License: PublicDomain
+License-File: COPYING
+Author: PHO <pho at cielonegro dot org>
+Maintainer: PHO <pho at cielonegro dot org>
+Stability: experimental
+Homepage: http://cielonegro.org/Bindings-EsounD.html
+Category: FFI
+Tested-With: GHC == 6.12.3
+Cabal-Version: >= 1.6
+Build-Type: Simple
+Extra-Source-Files:
+    COPYING
+
+Source-Repository head
+    Type: git
+    Location: git://git.cielonegro.org/bindings-EsounD.git
+
+Library
+    Build-Depends:
+        base               == 4.2.*,
+        bindings-DSL       == 1.0.*,
+        bindings-audiofile == 0.1.*
+
+    Exposed-Modules:
+        Bindings.EsounD
+
+    PkgConfig-Depends:
+        esound >= 0.2.41
+
+    C-Sources:
+        cbits/helper_EsounD.c
+
+    Extensions:
+        ForeignFunctionInterface

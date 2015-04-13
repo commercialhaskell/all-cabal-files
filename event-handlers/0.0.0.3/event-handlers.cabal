@@ -1,0 +1,20 @@
+name:                   event-handlers
+version:                0.0.0.3
+stability:              experimental
+license:                PublicDomain
+
+cabal-version:          >= 1.2
+build-type:             Simple
+
+author:                 James Cook <james.cook@usma.edu>
+maintainer:             James Cook <james.cook@usma.edu>
+homepage:               http://code.haskell.org/~mokus/event-handlers
+
+category:               Data, Control
+synopsis:               Event handlers
+description:            Simple event handler set management.
+
+Library
+  hs-source-dirs:       src
+  exposed-modules:      Data.Handler
+  build-depends:        base >= 3, containers

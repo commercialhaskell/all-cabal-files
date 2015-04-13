@@ -1,0 +1,41 @@
+Name:           soegtk
+Version:        0.12.1
+License:        LGPL-2.1
+License-file:   COPYING
+Copyright:      (c) 2001-2010 The Gtk2Hs Team
+Author:         Duncan Coutts, Paul Liu
+Maintainer:     gtk2hs-users@lists.sourceforge.net
+Build-Type:     Simple
+Cabal-Version:  >= 1.8
+Stability:      provisional
+homepage:       http://projects.haskell.org/gtk2hs/
+bug-reports:    http://hackage.haskell.org/trac/gtk2hs/
+Synopsis:       GUI functions as used in the book "The Haskell School of Expression".
+Description:    An alternative implementation of the graphics library used in the book The Haskell
+                School of Expression, by Paul Hudak, <http://www.haskell.org/soe/
+                This library builds on top of Gtk+.
+
+Category:       Graphics
+Tested-With:    GHC == 6.10.4, GHC == 6.12.3, GHC == 7.0.3, GHC == 7.2.1
+
+Data-Dir:	demo
+Data-Files:	BouncingBall.hs
+                Demo1.hs
+                Demo2.hs
+                Makefile
+                Snowflake.hs
+
+Source-Repository head
+  type:         darcs
+  location:     http://code.haskell.org/soegtk/
+
+Library
+        build-depends:  base >= 4 && < 5,
+                        cairo >= 0.12 && < 0.13,
+                        gtk   >= 0.12 && < 0.13,
+                        stm   >= 2.0 && < 3.0,
+                        old-time >= 1.0.0.2
+			
+        exposed-modules:
+          Graphics.SOE.Gtk
+

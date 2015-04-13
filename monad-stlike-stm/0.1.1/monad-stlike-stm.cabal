@@ -1,0 +1,22 @@
+Name:                monad-stlike-stm
+Version:             0.1.1
+Cabal-Version:       >= 1.6
+Build-Type:          Simple
+Synopsis:            ST-like monad capturing variables to regions and supporting STM.
+Description:         ST-like monad capturing variables to regions and supporting STM.
+License:             BSD3
+License-file:        COPYING
+Copyright:           Taru Karttunen <taruti@taruti.net>
+Author:              Taru Karttunen
+Category:            Monadic Regions, Monads
+Maintainer:          taruti@taruti.net
+Homepage:	     http://github.com/taruti/monad-stlike-stm
+Source-repository head
+  type:     git
+  location: http://github.com/taruti/monad-stlike-stm.git
+
+Library
+  Build-Depends:       monad-stlike-io < 0.3, base >= 4 && < 5, stm
+  Exposed-modules:     Control.Monad.STLike.STM
+  Extensions:          FlexibleInstances
+  GHC-Options:         -Wall

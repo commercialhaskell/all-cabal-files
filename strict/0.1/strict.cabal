@@ -1,0 +1,22 @@
+Name:           strict
+Version:        0.1
+Synopsis:       Strict data types
+Category:       Data
+Description:
+        This package provides strict versions of some standard Haskell data
+        types (pairs, Maybe and Either at the moment).
+License:        BSD3
+License-File:   LICENSE
+Author:         Roman Leshchinskiy <rl@cse.unsw.edu.au>
+Maintainer:     Roman Leshchinskiy <rl@cse.unsw.edu.au>
+Copyright:      (c) 2006-2007 by Roman Leshchinskiy
+Homepage:       http://www.cse.unsw.edu.au/~rl/code/strict.html
+Exposed-Modules:
+        Data.Strict.Tuple,
+        Data.Strict.Maybe,
+        Data.Strict.Either,
+        Data.Strict
+Build-Depends:  base
+Ghc-Options: -Wall -O
+Extensions:     CPP
+

@@ -1,0 +1,16 @@
+Name:                memo-sqlite
+Version:             0.1
+Synopsis:            memoize functions using SQLite3 database
+Homepage:            https://gitorious.org/memo-sqlite
+License:             BSD3
+License-file:        LICENSE
+Author:              Claude Heiland-Allen
+Maintainer:          claudiusmaximus@goto10.org
+Category:            Database
+Build-type:          Simple
+Extra-source-files:  examples/fib.hs
+Cabal-version:       >=1.2
+
+Library
+  Exposed-modules:     Data.Memo.Sqlite
+  Build-depends:       base < 5, direct-sqlite >= 1 && < 2

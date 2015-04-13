@@ -1,0 +1,38 @@
+name:		        xosd
+version:	        0.2.1
+license:	        BSD3
+license-file:	    LICENSE
+copyright:	        Don Stewart <dons00@gmail.com>
+maintainer:	        Don Stewart <dons00@gmail.com>
+homepage:           http://code.haskell.org/~dons/code/xosd
+category:	        Graphics
+synopsis:	        A binding to the X on-screen display 
+description:	    A binding to the X on-screen display 
+	.
+    xosd is a library for displaying an on-screen display (like the one
+    on many TVs) on your X display.
+	.
+    For example, the following displays the string \"TEST\" in the center
+    of the screen, in 34pt Helvetica, for 3 seconds.
+    .
+    > runXOSD [ Timeout 3
+    >         , VAlign VAlignMiddle
+    >         , HAlign HAlignCenter
+    >         , Font "-adobe-helvetica-bold-r-*-*-34-*-*-*-*-*-*-*"
+    >         , Color "LimeGreen"
+    >         , Display (String "TEST")] 
+    >                   (const $ return ())
+	.
+build-type:         Simple
+stability:          experimental
+cabal-version:      >= 1.2
+
+library
+    build-depends:	    base > 1 && < 6
+    extra-libraries:    xosd
+    exposed-modules:    Graphics.XOSD.Base
+                        Graphics.XOSD
+    extensions:	        ForeignFunctionInterface,
+                        CPP,
+                        EmptyDataDecls
+    ghc-options:        -funbox-strict-fields -Wall -fno-warn-unused-do-bind

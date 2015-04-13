@@ -1,0 +1,42 @@
+name: web-mongrel2
+version: 0.0.3
+build-type: Simple
+license: BSD3
+license-file: LICENSE
+maintainer: Clint Moore <clint@ivy.io>
+stability: unstable
+homepage: http://github.com/cmoore/web-mongrel2
+synopsis: Bindings for the Mongrel2 web server.
+description: A simple handler API for Mongrel2.
+category: Web
+author: Clint Moore
+cabal-version: >= 1.6
+extra-source-files: response_template.st
+
+source-repository head
+  type: git
+  location: git://github.com/cmoore/web-mongrel2.git
+
+library
+  ghc-options: -Wall
+  hs-source-dirs: src
+  build-depends:
+   base >= 3 && <= 5,
+   bytestring -any,
+   data-default -any,
+   json -any,
+   parsec -any,
+   system-uuid -any,
+   mtl >= 2,
+   old-time,
+   haskell98,
+   zeromq-haskell,
+   template-haskell -any,
+   HStringTemplate,
+   file-embed,
+   text
+  exposed-modules:
+    Web.Mongrel2,
+    Web.Mongrel2.Types,
+    Web.Mongrel2.Parsing,
+    Text.Parsec.Text

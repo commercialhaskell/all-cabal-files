@@ -1,0 +1,43 @@
+Name:           monad-wrap
+Version:        0.0
+Cabal-Version:  >= 1.2
+build-type:     Simple
+License:        BSD3
+License-File:   LICENSE
+Author:         David Mazieres
+Stability:      experimental
+Maintainer:     http://www.scs.stanford.edu/~dm/addr/
+Category:       Control
+Synopsis:       Wrap functions such as catch around different monads
+Extra-source-files:
+        multigen/multigen.hs, multigen/MultiWrap-head.hs,
+	multigen/MultiLift-head.hs, Examples/wrapExample.hs,
+        Examples/multiliftExample.hs, Examples/multiwrapExample.hs
+Description:
+
+        This package allows you to invoke a function on one monadic
+        type passing it an argument of a different monadic type.  The
+        canonical example of this is wanting to use a function such as
+        @'finally' :: 'IO' a -> 'IO' a@ to catch exceptions thrown by
+        a computation @x :: 'ReaderT' MyConfig 'IO' b@.  If @x@ uses
+        the 'ReaderT' function 'ask', it cannot be re-written to run
+        in the 'IO' monad, and hence cannot be executed with a
+        construction like @'lift' (x ``finally`` cleanup)@.
+
+	Instead, you must use the 'wrap' method, provide by module
+        "Control.Monad.Wrap".  This package contains two further
+        modules:  "Control.Monad.MultiWrap" implements 'mwrap', a
+        method that behaves like 'wrap' but allows wrapping through
+        multiple nested layers of monad transformer.  The module
+        "Control.Monad.MultiLift" provides 'mlift', a version of
+        'lift' that similarly lifts through multiple nested monad
+        transformers.
+    
+Library
+  Build-Depends:        base >= 4 && < 5, mtl >= 1.1.0.2 && < 2
+  Exposed-modules:
+    Control.Monad.Wrap, Control.Monad.MultiWrap,
+    Control.Monad.MultiLift
+  Extensions:
+    MultiParamTypeClasses, FlexibleInstances,
+    FunctionalDependencies, UndecidableInstances

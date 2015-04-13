@@ -1,0 +1,23 @@
+name:		 hascat-setup
+version:	 0.2
+license:	 OtherLicense
+Build-Type:  Simple
+license-file:	 LICENSE
+copyright:	 Florian Micheler 2010
+author:		 Florian Micheler
+maintainer:	 fmi@informatik.uni-kiel.de
+stability:	 experimental
+synopsis:	 Hascat Installation helper
+description:	 This program installs  Hascat into a given folder
+category:	 Network
+tested-with:	 GHC
+build-depends:
+		 base   >=4 && <5,
+		 hascat-lib ==0.2,
+		 hascat-system ==0.2,
+		 directory,
+		 haskell98,
+		 plugins
+ghc-options:	 -fglasgow-exts
+executable:	 hascat-setup
+main-is:	 Hascat-setup.hs

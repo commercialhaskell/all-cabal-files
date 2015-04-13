@@ -1,0 +1,32 @@
+name:           Bookshelf
+version:        0.2
+synopsis:       A simple document organizer with some wiki functionality
+description:    A simple document organizer with some wiki functionality
+category:       Text
+license:        GPL
+license-file:   LICENSE
+stability:      experimental
+copyright:      Copyright (c) 2009-2012 Emil Axelsson
+author:         Emil Axelsson <emax@chalmers.se>
+maintainer:     Emil Axelsson <emax@chalmers.se>
+homepage:       http://www.cse.chalmers.se/~emax/bookshelf/Manual.shelf.html
+build-type:     Simple
+cabal-version:  >= 1.6
+tested-with:    GHC==7.4.2
+
+data-files:
+  bookshelf.css
+  Documentation/*.shelf
+  Documentation/Test/*.txt
+  Documentation/Test/*.shelf
+
+extra-source-files: Types.hs, Generate.hs
+
+source-repository head
+  type:      darcs
+  location:  http://projects.haskell.org/Bookshelf/
+
+executable bookshelf
+  build-depends:  base < 5, filepath, directory, parseargs, pandoc >= 1.10, pandoc-types >= 1.10
+  main-is:        Bookshelf.hs
+

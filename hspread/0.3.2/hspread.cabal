@@ -1,0 +1,38 @@
+name:		hspread
+version: 	0.3.2
+license:	BSD3
+license-file:	LICENSE
+author:		Andrea Vezzosi
+maintainer:	Andrea Vezzosi, sanzhiyan@gmail.com
+synopsis:	A client library for the spread toolkit
+description:
+    hspread is a client library for the Spread toolkit.
+    It is fully implemented in haskell and supports the most recent version
+    of the protocol. It's intended to be used with a serialization library
+    like binary, and a separate installation of the spread deamon.
+build-type: 	Simple
+cabal-version:	>= 1.6
+category:	Network
+extra-source-files: README, LICENSE, examples/hspflooder.hs
+Bug-Reports: http://code.google.com/p/hspread/issues/list
+
+source-repository head
+  type:     darcs
+  location: http://patch-tag.com/publicrepos/hspread
+
+flag small_base
+  description: Choose the new smaller, split-up base package.
+
+library
+  exposed-modules:	Control.Concurrent.Chan.Closeable
+                        Spread.Client
+  other-modules:	
+                        Spread.Client.Message
+                        Spread.Client.Connection
+                        Spread.Constants
+
+  if flag(small_base)
+        build-depends: base >= 3 && < 5, containers, bytestring
+  else
+        build-depends: base < 3
+  build-depends: network, binary >= 0.3, extensible-exceptions

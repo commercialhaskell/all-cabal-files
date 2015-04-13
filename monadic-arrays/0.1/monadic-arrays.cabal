@@ -1,0 +1,30 @@
+name:          monadic-arrays
+category:      Data Structures
+version:       0.1
+license:       BSD3
+cabal-version: >= 1.6
+license-file:  LICENSE
+author:        Edward A. Kmett
+maintainer:    Edward A. Kmett <ekmett@gmail.com>
+stability:     provisional
+homepage:      http://github.com/ekmett/monadic-arrays/
+copyright:     Copyright (C) 2011 Edward A. Kmett
+synopsis:      MArray instances for monad transformers
+description:   MArray instances for monad transformers
+build-type:    Simple
+
+source-repository head
+  type: git
+  location: git://github.com/ekmett/monadic-arrays.git
+
+library
+  build-depends: 
+    base >= 4 && < 4.4,
+    array >= 0.3.0.2 && < 0.4,
+    transformers >= 0.2.0 && < 0.3,
+    stm >= 2.1.2.1 && < 2.3
+
+  exposed-modules:
+    Control.Monad.Array.Class
+
+  ghc-options: -Wall 

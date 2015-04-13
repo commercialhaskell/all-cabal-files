@@ -1,0 +1,40 @@
+name:                spice
+version:             0.5.0.0
+synopsis:            An FRP-based game engine written in Haskell.
+description:         An FRP-based game engine written in Haskell. - See the homepage for more information.
+homepage:            http://github.com/crockeo/spice
+license:             MIT
+license-file:        LICENSE
+author:              Cerek Hillen
+maintainer:          Cerek Hillen <cerekh@gmail.com>
+copyright:           (c) 2014, Cerek Hillen
+category:            FRP
+build-type:          Simple
+cabal-version:       >=1.10
+
+library
+  ghc-options:         -Wall -fno-warn-unused-do-bind
+
+  exposed-modules:     FRP.Spice
+
+  other-modules:       FRP.Spice.Internal.Assets
+                       FRP.Spice.Internal.Engine
+                       FRP.Spice.Internal.Graphics
+                       FRP.Spice.Internal.Input
+                       FRP.Spice.Internal.LoadAssets
+                       FRP.Spice.Internal.Math
+                       FRP.Spice.Internal.Types
+
+  hs-source-dirs:      src/
+
+  build-depends:       base              == 4.7.*
+               ,       elerea            == 2.7.*
+               ,       GLFW              == 0.5.*
+               ,       containers        == 0.5.*
+               ,       data-default      == 0.5.*
+               ,       bytestring        == 0.10.*
+               ,       JuicyPixels       == 3.1.*
+               ,       JuicyPixels-repa  == 0.7.*
+               ,       OpenGL            >= 2.9.0.0
+
+  default-language:    Haskell2010

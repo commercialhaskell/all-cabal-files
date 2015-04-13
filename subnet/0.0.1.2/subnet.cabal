@@ -1,0 +1,25 @@
+name: subnet
+version: 0.0.1.2
+synopsis: subnetting calculator
+homepage: https://github.com/gcganley/subnet
+license: MIT
+license-file: LICENSE
+author: Gregory Ganley
+maintainer: Gregory Ganley <gcganley@gcganley.com>
+category: Network
+build-type: Simple
+cabal-version: >=1.10
+source-repository head
+  type: git
+  location: git://github.com/gcganley/subnet.git
+library
+  Default-Language: Haskell2010
+  ghc-options: -Wall -O2
+  build-depends:
+                split
+              , base >= 4 && < 5
+  exposed-modules: Network.Subnet
+                   Network.Subnet.Network
+                   Network.Subnet.Ip
+                   Network.Subnet.Binary
+  hs-source-dirs: src

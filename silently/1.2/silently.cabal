@@ -1,0 +1,38 @@
+name: silently
+version: 1.2
+cabal-version: >= 1.8
+build-type: Simple
+license: BSD3
+license-file: LICENSE
+copyright: (c) Trystan Spangler 2011
+maintainer: trystan.s@comcast.net
+stability:
+homepage: https://github.com/trystan/silently
+package-url: https://github.com/trystan/silently
+bug-reports: https://github.com/trystan/silently/issues
+synopsis: Prevent or capture writing to stdout and other handles.
+description: Prevent or capture writing to stdout and other handles.
+category:
+author: Trystan Spangler
+tested-with: GHC ==7.0
+
+source-repository head
+  type: git
+  location: https://github.com/trystan/silently
+
+Library
+  build-depends:
+      base >=4 && <=5
+    , directory
+    , deepseq
+  exposed-modules: System.IO.Silently
+  exposed: True
+  buildable: True
+
+  hs-source-dirs:
+      src
+
+  if os(windows)
+    cpp-options: -DWINDOWS
+  if os(linux) || os(osx) || os(freebsd) || os(openbsd) || os(netbsd)
+    cpp-options: -DUNIX

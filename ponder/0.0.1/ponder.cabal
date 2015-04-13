@@ -1,0 +1,23 @@
+name:               ponder
+version:            0.0.1
+synopsis:           PEG parser combinator
+description:        Ponder is PEG parser combinator. This Library is experimental.
+license:            MIT
+license-file:       LICENSE
+author:             matt
+maintainer:         matt76k@gmail.com
+homepage:           https://gihub.com/matt76k/ponder
+copyright:          Copyright (c) matt
+category:           Parsing
+build-type:         Simple
+extra-source-files: README.md
+cabal-version:      >=1.10
+
+source-repository head
+  type:             git
+  location:         https://github.com/matt76k/ponder.git
+
+library
+  exposed-modules:     Text.Ponder, Text.Ponder.Char, Text.Ponder.Prim
+  build-depends:       base >=4.6 && <4.7, mtl >=2.1 && <2.2
+  default-language:    Haskell2010

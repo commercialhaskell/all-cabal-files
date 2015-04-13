@@ -1,0 +1,48 @@
+Name:                uu-parsinglib
+Version:             2.2.1
+Build-Type:          Simple
+License:             LGPL
+Author:              Doaitse Swierstra
+Maintainer:          doaitse@swierstra.net       
+Stability:           experimental
+Homepage:            http://www.cs.uu.nl/wiki/bin/view/HUT/ParserCombinators
+Bug-reports:         mailto:doaitse@swierstra.net
+Synopsis:            New version of the Utrecht University parser combinator library        
+Cabal-Version:       >=1.2
+Description:         New version of the Utrecht University parser combinator library, providing online, error correction, 
+                     annotation free, applicative style parser combinators which also provides a monadic interface
+                     .
+                     The file Text.ParserCombinators.UU.Examples contains a ready-made main function,
+                     which can be called to see the error correction at work.
+                     .
+                     The library is based on ideas described in the paper:
+                     .
+                     * S.Doaitse Swierstra.
+                     /Combinator Parsing: A Short Tutorial/.
+                     Technical Report, Universiteit Utrecht
+                     (<http://www.cs.uu.nl/research/techreps/repo/CS-2008/2008-044.pdf>).
+                     .
+                     This tutorial will also appear in LNCS Volume 5520, which contains the lecture notes from 
+                     the Lernet Summerschool.
+                     .
+                     Versions above 2.1: 
+                     .
+                     * based on Control.Applicative
+                     .
+                     Versions above 2.2:
+                     .
+                     *  make use of type families
+                     .   
+                     *  contain a module with many list-based derived combinators
+                     .
+                     * Version 2.2.1: bug fix: pattern matching too strict; ~ added
+
+Category:            Text.ParserCombinators Parsing Text
+
+Library
+     Build-Depends:     base > 2 && <= 4, haskell98
+     Exposed-modules:   Text.ParserCombinators.UU.Parsing 
+                        Text.ParserCombinators.UU.Core  
+                        Text.ParserCombinators.UU.BasicInstances
+                        Text.ParserCombinators.UU.Derived 
+                        Text.ParserCombinators.UU.Examples

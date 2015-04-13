@@ -1,0 +1,28 @@
+Name: rehoo
+
+Version:  0.1.1
+Synopsis: Rebuild default.hoo from many .hoo files in the current directory
+
+Description: Rebuild default.hoo from many .hoo files in the current directory
+
+Homepage:           https://github.com/jwiegley/rehoo
+License:            BSD3
+License-file:       LICENSE
+Author:             John Wiegley
+Maintainer:         John Wiegley <johnw@newartisans.com>
+Category:           Development
+Build-type:         Simple
+Cabal-version:      >= 1.8
+
+Extra-Source-Files: README.md
+
+Executable rehoo
+    Main-is: Main.hs
+    Ghc-options: -threaded
+
+    Build-depends: base >= 4 && < 5, shelly, cmdargs, hslogger, regex-posix,
+                   system-filepath, text, monad-loops, split, SafeSemaphore
+
+Source-repository head
+  type:     git
+  location: https://github.com/jwiegley/rehoo

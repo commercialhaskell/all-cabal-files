@@ -1,0 +1,33 @@
+Name:                hmatrix-syntax
+Version:             0.1
+Synopsis:            MATLAB-like syntax for hmatrix vectors and matrices
+Description:
+  This package uses QuasiQuotes to provide a nice syntax for hmatrix
+  vectors and matrices. To get started, see "Data.Packed.Syntax".
+Homepage:            http://github.com/reinerp/hmatrix-syntax
+License:             GPL-3
+License-file:        LICENSE
+Author:              Reiner Pope
+Maintainer:          reiner.pope@gmail.com
+-- Copyright:
+Category:            Math
+Build-type:          Simple
+-- Extra-source-files:
+Cabal-version:       >=1.6
+source-repository head
+  type:      git
+  location:  git://github.com/reinerp/hmatrix-syntax.git
+
+Library
+  Exposed-modules:     Data.Packed.Syntax
+                       Data.Packed.Syntax.Internal
+  Build-depends:
+                       base < 5,
+                       haskell-src-exts >= 1.8 && < 1.12,
+                       haskell-src-meta >= 0.5.0.3 && < 0.6,
+                       hmatrix >= 0.13.1 && < 0.14,
+                       template-haskell == 2.7.*
+  -- TODO: relax template-haskell once haskell-src-meta handles
+  -- ambiguous infix expressions properly prior to template-haskell-2.7
+  -- Other-modules:
+  -- Build-tools:

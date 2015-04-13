@@ -1,0 +1,48 @@
+Name:           flowsim
+Version:        0.2.8
+License:        GPL
+Cabal-Version:  >= 1.6
+Author:         Ketil Malde
+Maintainer:     Ketil Malde <ketil@malde.org>
+
+Category:       Bioinformatics
+Synopsis:       Simulate 454 pyrosequencing
+Description:    Provides clonesim, a clone simulator that simulates shotgun 
+                genomic clones, and flowsim, that takes the output from clonesim
+                (or any other Fasta-formatted file) and generates simulated 
+                reads from them mimicing Roche's 454 pyrosequencing technology,
+                writing output in 454's native SFF format.  The flowgram
+                generation is based on empirical distributions derived from real
+                data (although analytic distributions are available too, if you
+                prefer).
+                .
+                The Darcs repository is at <http://malde.org/~ketil/biohaskell/flowsim>.
+
+HomePage:       http://blog.malde.org/index.php/flowsim/
+-- Build-Depends:  bio >= 0.4.4, base >= 4 && <= 5, array >= 0.1, bytestring >= 0.9.1, random, MonadRandom, cmdargs <= 0.1.1, containers, directory
+Build-Type:     Simple
+Tested-with:    GHC==6.8.2, GHC==6.10, GHC==6.12.1
+
+ -- Data-files:     README
+Executable flowsim
+  Main-Is:        FlowSim.hs
+  Other-Modules:  Statistics, Config, EmpFile
+                  Generations.GenBase, Generations.GS20, 
+                  Generations.Titanium, Generations.Empirical
+  Build-Depends:  bio >= 0.4.4, base >= 4 && < 5, array >= 0.1, random, MonadRandom, cmdargs >= 0.5, containers, bytestring, directory
+  Ghc-Options:    -Wall
+  Hs-Source-Dirs: src
+
+Executable hplc
+  Build-Depends:  bio >= 0.4.4, base >= 4 && < 5, containers, bytestring
+  Main-Is:        HPLCount.hs
+  Ghc-Options:    -main-is HPLCount
+  Hs-Source-Dirs: src
+
+Executable clonesim
+  Main-Is:	  CloneSim.hs
+  Build-Depends:  bio >= 0.4.4, base >= 4 && < 5, array >= 0.1, cmdargs >= 0.5, bytestring, MonadRandom
+  Other-Modules:  Statistics
+  Extensions: DeriveDataTypeable
+  Ghc-Options: -Wall
+  Hs-Source-Dirs: src

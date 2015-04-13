@@ -1,0 +1,43 @@
+Name:          MonadLab
+Version:       0.0.1
+Synopsis:      Automatically generate layered monads
+Category:      Monads
+
+Stability:     experimental
+
+Author:        Pericles Kariotis
+Maintainer:    Adam Procter <amp269@mizzou.edu>
+Homepage:      http://monadgarden.cs.missouri.edu/MonadLab
+License:       BSD3
+License-File:  LICENSE
+
+Cabal-Version: >= 1.2
+
+Build-type: Simple
+
+Extra-Source-Files: examples/InterpA.hs, examples/InterpB.hs,
+                    examples/InterpC.hs, examples/InterpD.hs,
+                    examples/InterpMonadA.mlab, examples/InterpMonadB.mlab,
+                    examples/InterpMonadC.mlab, examples/InterpMonadD.mlab,
+		    README, RELEASE-NOTES
+
+Data-Files:         MLabCompileStub.hs, mlab.sh
+
+Executable mlab {
+  Main-is:         FrontEnd.hs
+  Build-Depends:   base, haskell98, process
+}
+
+Library {
+  Build-Depends:   base
+  Build-Depends:   parsec
+  Build-Depends:   template-haskell
+
+  Exposed-Modules: MonadLab.MonadLab, MonadLab.CommonTypes, MonadLab.MLabParser
+
+  Other-Modules:   MonadLab.TypeParser, MonadLab.Reduction, MonadLab.Writer,
+                   MonadLab.Identity, MonadLab.Io, MonadLab.IoList,
+                   MonadLab.ListIo, MonadLab.List, MonadLab.State,
+                   MonadLab.Env, MonadLab.Error, MonadLab.Cont, MonadLab.Run,
+                   MonadLab.Declarations
+}

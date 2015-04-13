@@ -1,0 +1,48 @@
+Name:                Geodetic
+Version:             0.4
+License:             BSD3
+License-File:        LICENSE
+Synopsis:            Geodetic calculations
+Description:         Geodetic calculations including Vincenty and Great Circle using a Latitude and Longitude pair
+Homepage:            http://code.google.com/p/geodetic/
+Category:            Utils
+Author:              Tony Morris
+Maintainer:          code@tmorris.net
+Copyright:           2009 Tony Morris
+build-type:          Simple
+cabal-version:       >= 1.2
+
+Flag small_base
+  Description:     Choose the new, split-up base package.
+
+Library
+  Build-Depends:     base < 5 && >= 3
+
+  GHC-Options:    -Wall
+  Exposed-Modules: Data.Geo
+                   Data.Geo.Azimuth
+                   Data.Geo.Bearing
+                   Data.Geo.Coord
+                   Data.Geo.DMS
+                   Data.Geo.ElevatedCurve
+                   Data.Geo.Elevation
+                   Data.Geo.Ellipsoid
+                   Data.Geo.GeodeticCurve
+                   Data.Geo.GreatCircle
+                   Data.Geo.Haversine
+                   Data.Geo.Latitude
+                   Data.Geo.Longitude
+                   Data.Geo.Position
+                   Data.Geo.Radians
+                   Data.Geo.Sphere
+                   Data.Geo.Vincenty
+                   Data.Geo.Accessor.Azi
+                   Data.Geo.Accessor.Coordinate
+                   Data.Geo.Accessor.Curve
+                   Data.Geo.Accessor.Ele
+                   Data.Geo.Accessor.EllipsoidalDistance
+                   Data.Geo.Accessor.Lat
+                   Data.Geo.Accessor.Lon
+                   Data.Geo.Accessor.ReverseAzi
+                   Data.Geo.Accessor.Value
+

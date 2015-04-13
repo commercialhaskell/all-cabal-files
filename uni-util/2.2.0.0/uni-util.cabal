@@ -1,0 +1,63 @@
+name:           uni-util
+version:        2.2.0.0
+build-type:     Simple
+license:        LGPL
+license-file:   LICENSE
+author:         uniform@informatik.uni-bremen.de
+maintainer:     Christian.Maeder@dfki.de
+homepage:       http://www.informatik.uni-bremen.de/uniform/wb/
+category:       Uniform
+synopsis:       Utilities for the uniform workbench
+description:
+ This package contains various miscellaneous utilities used for the
+ old HTk- und uDrawGraph bindings as well as for the MMiSS Workbench.
+ They are kept for compatibility reason and put on hackage to ease
+ installation.
+cabal-version:  >= 1.4
+Tested-With:    GHC==6.8.3, GHC==6.10.4, GHC==6.12.3
+
+extra-source-files: include/new_object.h include/default_options.h
+
+flag base4
+
+flag debug
+  description: add debug traces
+  default: False
+
+library
+ exposed-modules:
+  Util.Huffman, Util.CompileFlags, Util.Queue,
+  Util.ExtendedPrelude, Util.Computation, Util.Dynamics, Util.WBFiles,
+  Util.Object, Util.Debug, Util.Maybes, Util.LineShow, Util.Cache,
+  Util.FileNames, Util.IOExtras, Util.QuickReadShow, Util.AtomString,
+  Util.Registry,
+  Util.Thread, Util.UniqueString, Util.UniqueFile, Util.TempFile, Util.Sink,
+  Util.VariableSet, Util.VariableMap, Util.CommandStringSub,
+  Util.DeepSeq, Util.NameMangle,
+  Util.KeyedChanges, Util.Sources, Util.Broadcaster, Util.ReferenceCount,
+  Util.Delayer, Util.VariableList, Util.Myers, Util.VariableSetBlocker,
+  Util.IntPlus, Util.UnionFind, Util.ICStringLen, Util.VisitedSet,
+  Util.HostName, Util.Bytes, Util.Binary, Util.BinaryUtils,
+  Util.BinaryInstances, Util.BinaryExtras, Util.BinaryAll,
+  Util.ThreadDict, Util.TSem, Util.Store, Util.Messages,
+  Util.ClockTimeToString, Util.UTF8, Util.VSem
+
+ include-dirs: include
+ c-sources: new_object.c, default_options.c
+
+ build-depends: base >= 3 && < 4, parsec < 3, mtl, directory,
+  network, containers, bytestring, array, old-time
+
+ if flag(base4)
+   build-depends: ghc-prim
+
+ if flag(debug)
+   cpp-options: -DDEBUG
+
+ if os(windows)
+   cpp-options: -DWINDOWS
+
+ if impl(ghc < 6.10)
+   extensions: PatternSignatures
+ else
+   ghc-options: -fwarn-unused-imports -fno-warn-warnings-deprecations

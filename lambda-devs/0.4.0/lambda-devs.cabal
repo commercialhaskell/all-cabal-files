@@ -1,0 +1,81 @@
+name:                lambda-devs
+version:             0.4.0
+stability:           alpha
+synopsis:            a Paralell-DEVS implementaion based on distributed-process
+description:         The Discrete Event System Sepcification (DEVS) formalism
+                     defines discrete event simulation models in a hierachical, 
+                     modular manner.
+homepage:            http://github.com/alios/lambda-devs
+license:             BSD3
+license-file:        LICENSE
+author:              Markus Barenhoff
+maintainer:          alios@alios.org
+category:            Control, Simulation
+build-type:          Simple
+extra-source-files:  README.md, LICENSE
+cabal-version:       >=1.10
+tested-with:         GHC == 7.6.3
+
+source-repository head
+  type:     git
+  location: https://github.com/alios/lambda-devs.git
+
+
+library
+  exposed-modules:     Data.DEVS, 
+                       Data.DEVS.Devs
+                       Data.DEVS.Simulation 
+                       Data.DEVS.Simulation.Processor
+                       Data.DEVS.Simulation.Simulator 
+                       Data.DEVS.Simulation.Coordinator  
+  other-modules:       Data.DEVS.Simulation.Infinite
+  other-extensions:    MultiParamTypeClasses,
+                       DeriveDataTypeable,
+                       GADTs,
+                       TypeFamilies, 
+                       FlexibleInstances,
+                       FlexibleContexts,
+                       UndecidableInstances,
+                       ExistentialQuantification,
+                       FunctionalDependencies
+  build-depends:       base >=4.6 && < 5, 
+                       binary >=0.5, 
+                       containers >=0.5, 
+                       distributed-process >=0.4,
+                       dimensional >= 0.12  
+  default-language:    Haskell2010
+  ghc-options:         -Wall 
+
+Test-suite lambda-devs-tests
+  hs-source-dirs:      Test, .
+  main-is:             Tests.hs
+  type:                exitcode-stdio-1.0
+  build-depends:       base >=4.6 && < 5, 
+                       binary >=0.5, 
+                       containers >=0.5, 
+                       distributed-process >=0.4,
+                       dimensional >= 0.12  
+  default-language:    Haskell2010
+  ghc-options:         -Wall 
+  other-extensions:    MultiParamTypeClasses,
+                       DeriveDataTypeable,
+                       TypeFamilies
+  build-depends:       test-framework,
+                       test-framework-hunit,
+                       test-framework-quickcheck2,
+                       HUnit,
+                       QuickCheck
+                       
+executable lambda-devs-example
+  main-is:             Example.hs
+  hs-source-dirs:      Example
+  build-depends:       base >= 4.6 && < 5,
+                       binary >= 0.5,
+                       containers >= 0.5,
+                       distributed-process >= 0.4,
+                       lambda-devs >= 0.4,
+                       numtype >= 1.0,
+                       dimensional >= 0.12
+  default-language:    Haskell2010
+  ghc-options:         -Wall 
+  

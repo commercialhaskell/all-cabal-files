@@ -1,0 +1,41 @@
+name:            shakespeare
+version:         0.10.0
+license:         BSD3
+license-file:    LICENSE
+author:          Michael Snoyman <michael@snoyman.com>
+maintainer:      Michael Snoyman <michael@snoyman.com>
+synopsis:        A toolkit for making compile-time interpolated templates
+description:
+    Shakespeare is a template family for type-safe, efficient templates with simple variable interpolation . Shakespeare templates can be used inline with a quasi-quoter or in an external file. Shakespeare interpolates variables according to the type being inserted.
+    .
+    Note there is no dependency on haskell-src-extras.
+    .
+    packages that use this: shakespeare-js, shakespeare-css, shakespeare-interpolated, hamlet, and xml-hamlet
+    Please see the documentation at <http://docs.yesodweb.com/book/hamlet/> for more details.
+
+category:        Web, Yesod
+stability:       Stable
+cabal-version:   >= 1.8
+build-type:      Simple
+homepage:        http://www.yesodweb.com/book/templates
+
+library
+    build-depends:   base             >= 4       && < 5
+                   , bytestring       >= 0.9     && < 0.10
+                   , template-haskell
+                   , blaze-html       >= 0.4     && < 0.5
+                   , parsec           >= 2       && < 4
+                   , failure          >= 0.1     && < 0.2
+                   , text             >= 0.7     && < 0.12
+                   , containers       >= 0.2     && < 0.5
+                   , blaze-builder    >= 0.2     && < 0.4
+                   , process          >= 1.0     && < 1.2
+    exposed-modules: 
+                     Text.Shakespeare
+                     Text.Shakespeare.Base
+    ghc-options:     -Wall
+
+
+source-repository head
+  type:     git
+  location: git://github.com/yesodweb/hamlet.git

@@ -1,0 +1,49 @@
+Cabal-version: >= 1.2.0.0
+version: 0.0.6.0
+
+name: only
+license: GPL
+license-file: LICENSE
+author: Andrew Robbins <and_j_rob@yahoo.com>
+maintainer: Andrew Robbins <and_j_rob@yahoo.com>
+copyright: 2008 Andrew Robbins
+category: Console
+build-type: Simple
+stability: Experimental
+synopsis: A grep-like tool for filtering on words or lines.
+description: The 'only' command-line tool lets you search based
+ on word patterns or line patterns like never before! Not only can
+ you search with 'only -l patt' but you can select the n-th match
+ with '-l n\/patt\/' and the next 3 lines with '-l \/patt\/0:3'.
+extra-source-files:
+ ChangeLog
+ AUTHORS
+ LICENSE
+ README
+ only.1
+ tests/e-both.txt
+ tests/e-semi.txt
+ tests/i-all.sh
+ tests/Makefile
+ tests/README
+ tests/t-cut-2.sh
+ tests/t-cut-semi.sh
+ tests/t-eq-abs.sh
+ tests/t-eq-nil.sh
+ tests/t-eq-no-debug.sh
+ tests/t-eq-regex-char.sh
+ tests/t-eq-regex-zero.sh
+ tests/t-eq-regex.sh
+ tests/t-grep-after.sh
+ tests/t-grep-before.sh
+ tests/t-grep-dot.sh
+ tests/t-grep-to.sh
+ tests/t-head.sh
+ tests/t-tail.sh
+
+executable only
+ main-is: only.hs
+ build-depends:
+  base,
+  parsec,
+  regex-compat

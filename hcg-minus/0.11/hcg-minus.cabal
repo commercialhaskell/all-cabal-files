@@ -1,0 +1,33 @@
+name:              hcg-minus
+version:           0.11
+synopsis:          haskell cg (minus)
+description:       cg (minus) library
+license:           BSD3
+category:          Math
+author:            Rohan Drape
+maintainer:        rd@slavepianos.org
+homepage:          http://slavepianos.org/rd/?t=hcg-minus
+tested-with:       GHC==7.2.2
+build-type:        Simple
+cabal-version:     >= 1.8
+
+data-files:        README
+
+library
+  build-depends:   base==4.*,cairo,colour,SG
+  ghc-options:     -Wall -fwarn-tabs
+  exposed-modules: Data.CG.Minus
+                   Data.CG.Minus.Arrow
+                   Data.CG.Minus.Bearing
+                   Data.CG.Minus.Colour
+                   Data.CG.Minus.Colour.Planck
+                   Render.CG.Minus
+                   Render.CG.Minus.Arrow
+
+Source-Repository  head
+  Type:            darcs
+  Location:        http://slavepianos.org/rd/sw/hcg-minus
+
+-- Local Variables:
+-- truncate-lines:t
+-- End:

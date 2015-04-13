@@ -1,0 +1,41 @@
+Name:                Chitra
+Version:             0.1
+Synopsis:            Haskell library for platform independent graphics using VNC.
+Homepage:            http://github.com/ckkashyap/Chitra
+License:             BSD3
+License-file:        LICENSE
+Author:              C K Kashyap
+Maintainer:          ckkashyap@gmail.com
+synopsis:		Simple, VNC based graphics rendering system
+description: Chitra in most Indian languages means "Image". This aim of this project is to build an VNC library that can be used to develop interactive graphical application. What I think will be the strength of Chitra would be its "platform independence". So, the idea is, the library would have a "putpixel" function which when called would render a pixel on an image buffer that would be rendered via the vnc server. For viewing and interactive with the aplication, one would use a standard VNC client. Eventually, I might chose to do this using the RDP protocol that even has support for sound.  
+
+	To try out -
+
+	Just do a make and you should have the executable *Main* created. 
+
+	Run ./Main <width> <height> <port> 
+
+	Now try connecting a vnc client to localhost:5900
+
+Category:            Graphics
+
+Build-type:          Simple
+
+Cabal-version:       >=1.2
+
+Library
+  Exposed-modules:     Chitra.Canvas,
+                       RFB.ClientToServer,
+                       RFB.Handshake,
+                       RFB.CommandLoop,
+                       RFB.Server
+  Hs-source-dirs:      ./
+  Build-depends:       base >= 4.2 && < 4.3,
+                       binary >= 0.5 && < 0.6,
+                       bytestring >= 0.9 && < 1.0,
+                       network >= 2.2 && < 2.3,
+                       mtl >= 1.1 && < 1.2
+
+Executable Chitra
+  Main-is:             Main.hs
+  Build-depends:       base >= 4.2 && < 4.3

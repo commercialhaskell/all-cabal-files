@@ -1,0 +1,45 @@
+Name:           glpk-hs
+Version:        0.2.1
+Author:         Louis Wasserman
+License:        GPL
+License-file:   LICENSE
+Maintainer:     Louis Wasserman <wasserman.louis@gmail.com>
+Stability:      experimental
+Synopsis:       Comprehensive GLPK linear programming bindings
+Description:
+    Friendly interface to GLPK's linear programming and mixed integer programming features.  Intended for easy extensibility,
+    with a general, pure-Haskell representation of linear programs.  Also includes usefully general algebraic structures.
+    
+    To design a linear programming problem, 
+    use "Data.LinearProgram.LPMonad" to construct the constraints and specifications.  Linear functions are essentially specified
+    as @Data.Map@s from variables to their coefficients, and functions for manipulating them are available in "Data.LinFunc".
+    Then "Data.LinearProgram.GLPK" provides facilities for using the GLPK solver system on your problem, with a sizable number
+    of options available.
+
+Category:      Math
+
+cabal-version:  >= 1.2
+build-type:     Simple
+
+extra-source-files: examples/example1.hs
+
+Build-Depends:    base >= 4 && < 5, array, containers, mtl
+Exposed-modules:  Data.LinearProgram,
+                  Data.LinearProgram.Common,
+                  Data.LinearProgram.GLPK,
+                  Data.LinearProgram.GLPK.Solver,
+                  Data.LinearProgram.GLPK.IO,
+                  Data.LinearProgram.LPMonad,
+                  Data.Algebra
+Other-modules:    Data.LinearProgram.GLPK.Internal,	
+                  Data.LinearProgram.GLPK.Types,
+                  Data.LinearProgram.GLPK.Common,
+                  Data.LinearProgram.GLPK.IO.Internal,
+                  Data.LinearProgram.LPMonad.Internal,
+                  Data.LinearProgram.Spec,
+                  Data.LinearProgram.Types,
+                  Data.Algebra.Group,
+                  Data.Algebra.Ring,
+                  Data.Algebra.Module
+c-sources:        glpk/glpk.c
+extra-libraries:  glpk

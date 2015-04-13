@@ -1,0 +1,15 @@
+Name: DebugTraceHelpers
+Version: 0.10
+License: GPL
+License-file: gpl.txt
+Description: Convenience functions and instances for tracing, based on Debug.Trace. 
+Synopsis: Convenience functions and instances for Debug.Trace
+Maintainer: Thomas Hartman <thomashartman1 at gmail>
+Author: Thomas Hartman
+Stability: Beta
+Copyright: Copyright (c) 2008 Thomas Hartman
+Exposed-Modules: Debug.Trace.Helpers
+Build-Depends: base, mtl 
+Category: System
+Build-type: Simple
+

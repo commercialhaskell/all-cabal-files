@@ -1,0 +1,21 @@
+name:                core-haskell
+version:             0.6.3
+build-type:          Simple
+synopsis:            A subset of Haskell using in UCC for teaching purpose
+description:         A subset of Haskell using in UCC for teaching purpose.
+                     It enables a tiny subset of Haskell default, but the syntax can be customized,
+                     teacher can enable more syntax along with the teaching progress.
+category:            Language, Compilers/Interpreters
+homepage:            https://github.com/happlebao/Core-Haskell
+license:             BSD3
+license-file:        LICENSE
+author:              ChengXi Bao
+maintainer:          c.x.bao@student.ucc.ie
+cabal-version:       >= 1.8
+source-repository head
+  type: git
+  location: https://github.com/happlebao/Core-Haskell.git
+executable core-haskell
+  main-is:           core-haskell.hs
+  other-modules:     SyntaxChecker
+  build-depends:     base >= 4.5 && < 5, haskell-src-exts, hint, haskeline

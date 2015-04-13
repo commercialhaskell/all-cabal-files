@@ -1,0 +1,45 @@
+name:          ntp-control
+version:       0.1
+synopsis:      Client library for NTP control messaging
+description:   Support for monitoring NTP server performance, including quering NTP system variables and system status.
+category:      Network, Time
+license:       BSD3
+license-file:  LICENSE
+author:        Scrive
+maintainer:    magnus@scrive.com
+
+Cabal-Version: >= 1.8
+build-type:    Simple
+
+
+Library
+
+       exposed-modules: Network.NTP.Control, Network.NTP.Control.Packet
+
+       build-depends:    base >= 3 && < 5
+       build-depends:    bytestring
+       build-depends:    bytestring-lexing
+       build-depends:    cereal
+       build-depends:    network
+       build-depends:    old-locale
+       build-depends:    time
+
+       ghc-options:      -Wall
+
+Test-Suite test-query
+       type: exitcode-stdio-1.0
+       main-is: Test/Query.hs
+
+       build-depends:    base >= 3 && < 5
+       build-depends:    bytestring
+       build-depends:    bytestring-lexing
+       build-depends:    cereal
+       build-depends:    network
+       build-depends:    old-locale
+       build-depends:    time
+
+       ghc-options:      -Wall
+
+source-repository head
+  type:         git
+  location:     https://github.com/scrive/ntp-control

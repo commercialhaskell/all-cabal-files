@@ -1,0 +1,32 @@
+Cabal-Version: >= 1.2
+Name: hexpat
+Version: 0.2
+Synopsis: wrapper for expat, the fast XML parser
+Description:
+  Expat (<http://expat.sourceforge.net/>) is a stream-oriented XML parser
+  written in C.  It is known for being simple and fast.
+  .
+  There are already nice XML libraries in the Text.XML hierarchy.  The
+  reason to use Expat is when speed is of concern.  From a benchmark
+  that compares getting the length of the root node of a HaXml tree
+  (presumably forcing parsing the entire file) against running an Expat
+  parser with a registered start node handler, Expat is about 12 times
+  faster.  This is not a fair benchmark; HaXml does a lot more than this
+  Expat library.  But if Expat suffices, it is good for what it does.
+Category: XML
+License: BSD3
+License-File: LICENSE
+Author: Evan Martin
+Maintainer: martine@danga.com
+Copyright: (c) 2008 Evan Martin <martine@danga.com>
+Homepage: http://neugierig.org/software/darcs/browse/?r=hexpat;a=summary
+Extra-Source-Files: test.hs, perf.hs
+Build-Type: Simple
+
+Library
+  Build-Depends: base, haskell98, bytestring
+  Exposed-Modules: Text.XML.Expat.IO, Text.XML.Expat.Tree
+  Other-Modules: C2HS
+  Extensions: ForeignFunctionInterface
+  Extra-Libraries: expat
+

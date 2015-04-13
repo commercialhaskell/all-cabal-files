@@ -1,0 +1,55 @@
+cabal-version: >= 1.2
+name: bindings
+synopsis:
+  Low level bindings for foreign libraries
+  following community driven guidelines
+description: 
+  This package aims at beeing a wide collection of low-level bindings
+  covering as much as possible of the functionality of good quality
+  libraries, following a common set of community driven guidelines.
+  (The current set of guidelines is shown at "Bindings" module
+  documentation.) It has been created as an attempt to relieve the
+  common situation where developers of high-level modules can't waste
+  effort with all details of low-level work, and for those writing
+  compreensive and reliable low-level bindings little time is left to
+  get the best of Haskell. Developers with good understanding of their
+  favorite foreign language libraries and Haskell FFI can benefict
+  from contributing to this package by sharing guidelines, tests and
+  code facilities, and help each other in issues of reliability and
+  portability; and developers of higher-level modules can put their
+  efforts where they are needed, with a reliable set of low-level code
+  at hand.
+version: 0.0.1
+license: BSD3
+license-file: LICENSE
+maintainer: Maurício C. Antunes
+author: Maurício C. Antunes
+build-type: Simple
+category: FFI
+
+library
+  hs-source-dirs: src
+  extensions:
+    ForeignFunctionInterface
+    TypeSynonymInstances
+    ScopedTypeVariables
+  build-depends: base
+  exposed-modules:
+    Bindings
+    Bindings.Utilities
+    Bindings.Sqlite3
+    Bindings.StandardC
+  c-sources:
+    src/Bindings.c
+    src/Bindings/Sqlite3.c
+    src/Bindings/StandardC.c
+    packageCode/sqlite3.c
+  include-dirs:
+    packageCode/include
+  cc-options:
+    -D SQLITE_ENABLE_FTS3
+    -D SQLITE_ENABLE_FTS3_PARENTHESIS
+    -D SQLITE_ENABLE_LOCKING_STYLE
+    -D SQLITE_ENABLE_MEMORY_MANAGEMENT
+    -D SQLITE_ENABLE_MEMSYS5
+    -D SQLITE_ENABLE_RTREE

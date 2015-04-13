@@ -1,0 +1,41 @@
+Name:              hsc3-utils
+Version:           0.14
+Synopsis:          Haskell SuperCollider Utilities
+Description:       Haskell SuperCollider Utilities
+License:           GPL
+Category:          Sound
+Copyright:         (c) Rohan Drape, 2013
+Author:            Rohan Drape
+Maintainer:        rd@slavepianos.org
+Stability:         Experimental
+Homepage:          http://rd.slavepianos.org/?t=hsc3-utils
+Tested-With:       GHC == 7.6.1
+Build-Type:        Simple
+Cabal-Version:     >= 1.8
+
+Data-files:        README
+
+executable hsc3-hash-paren
+  build-depends:   base == 4.*,
+                   hsc3-rw == 0.14.*
+  hs-source-dirs:  hs
+  main-is:         hash-paren.hs
+  ghc-options:     -Wall -fwarn-tabs
+
+executable hsc3-id-rewrite
+  build-depends:   base == 4.*,
+                   hsc3-rw == 0.14.*
+  hs-source-dirs:  hs
+  main-is:         id-rewrite.hs
+  ghc-options:     -Wall -fwarn-tabs
+
+executable hsc3-id-clear
+  build-depends:   base == 4.*,
+                   hsc3-rw == 0.14.*
+  hs-source-dirs:  hs
+  main-is:         id-clear.hs
+  ghc-options:     -Wall -fwarn-tabs
+
+Source-Repository  head
+  Type:            darcs
+  Location:        http://rd.slavepianos.org/sw/hsc3-utils/

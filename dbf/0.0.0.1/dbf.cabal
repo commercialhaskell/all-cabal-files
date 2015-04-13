@@ -1,0 +1,26 @@
+name:                   dbf
+version:                0.0.0.1
+stability:              experimental
+
+cabal-version:          >= 1.2
+build-type:             Simple
+
+author:                 James Cook <james.cook@usma.edu>
+maintainer:             James Cook <james.cook@usma.edu>
+license:                PublicDomain
+homepage:               http://code.haskell.org/~mokus/dbf
+
+category:               Database
+synopsis:               Read and write XBase ".dbf" files
+description:            A simple interface for reading and writing XBase dbf
+                        files.  Provides whole-file parser and serializer as
+                        well as a handle-based interface for reading and writing
+                        records from a file.
+
+Library
+  hs-source-dirs:       src
+  exposed-modules:      Database.XBase.Dbf
+                        Database.XBase.Dbf.Handle
+                        Database.XBase.Dbf.Structures
+                        Database.XBase.Dbf.Year8
+  build-depends:        base >= 3 && <5, binary, bytestring, rwlock, monad-loops

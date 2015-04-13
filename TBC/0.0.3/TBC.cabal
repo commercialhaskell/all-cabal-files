@@ -1,0 +1,44 @@
+Name: TBC
+Version: 0.0.3
+Cabal-version: >= 1.7
+Build-type: Simple
+Copyright: Peter Gammie, Mark Wotton
+Maintainer: peteg42@gmail.com
+Author: Peter Gammie, Mark Wotton
+License: BSD3
+License-file: LICENSE
+Synopsis: Testing By Convention
+Category: Testing
+Description:
+
+ TBC is a harness for running tests, relying on other libraries such
+ as QuickCheck and HUnit to do the actual testing. TBC lets you skip a
+ lot of boilerplate by adopting naming conventions for tests. It also
+ supports test-driven development (TDD) by running as many tests as it
+ can compile, whatever the state of the project as a whole.
+
+ For further information see the examples that accompany the
+ distribution.
+
+Extra-Source-Files: README
+
+source-repository head
+  type:     git
+  location: git://github.com/peteg/TBC.git
+
+Library
+  Build-depends: base >= 4 && < 5, Cabal >= 1.10 && < 2, deepseq, directory, filepath, process
+  Extensions:
+  Ghc-options: -Wall
+  Exposed-Modules: Test.TBC
+  Other-modules:
+    Test.TBC.Convention
+    Test.TBC.Core
+    Test.TBC.Drivers
+    Test.TBC.Renderers
+
+Executable tbc
+  Build-depends: base, Cabal, directory, filepath, process, unix
+  Extensions:
+  Ghc-options: -Wall
+  main-is: Test/Main.hs

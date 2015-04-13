@@ -1,0 +1,28 @@
+Name:                   io-choice
+Version:                0.0.0
+Author:                 Kazu Yamamoto <kazu@iij.ad.jp>
+Maintainer:             Kazu Yamamoto <kazu@iij.ad.jp>
+License:                BSD3
+License-File:           LICENSE
+Synopsis:               Choice for IO and lifted IO
+Description:            Choice for IO and lifted IO
+Category:               Control
+Cabal-Version:          >= 1.6
+Build-Type:             Simple
+
+Library
+  if impl(ghc >= 6.12)
+    GHC-Options:        -Wall -fno-warn-unused-do-bind
+  else
+    GHC-Options:        -Wall
+  Exposed-Modules:      Control.Exception.IOChoice
+                        Control.Exception.IOChoice.Lifted
+  Build-Depends:        base >= 4 && < 5
+                      , lifted-base
+                      , monad-control
+                      , transformers
+                      , transformers-base
+
+Source-Repository head
+  Type:                 git
+  Location:             git clone git://github.com/kazu-yamamoto/alternative-io

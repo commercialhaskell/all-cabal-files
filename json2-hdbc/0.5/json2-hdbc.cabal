@@ -1,0 +1,29 @@
+Name:                json2-hdbc
+Version:             0.5
+Synopsis:            Support JSON for SQL Database.
+Category:            Database, JSON
+Description:         Library contains instances of ToJson(JSON2) class
+                     for SqlValue(HDBC) and functions for manipulation
+                     JSON.
+License:             BSD3
+License-file:        LICENSE
+Author:              YuriyIskra
+Maintainer:          YuriyIskra  <iskra.yw@gmail.com>
+Stability:           Experimental
+Copyright:           Copyright (c) 2011 Yuriy Iskra
+Build-type:          Simple
+Cabal-version:       >= 1.6
+
+extra-source-files:  examples/ExampleSqlite.hs
+
+library
+  Exposed-modules:
+                     Database.JSON2.HDBC
+
+  Build-Depends:     base         >= 4 && < 5,
+                     containers   >= 0.2 && < 1,
+                     time         >= 1.1,
+                     json2        >= 0.8,
+                     json2-types  -any,
+                     utf8-string  -any,
+                     HDBC         -any

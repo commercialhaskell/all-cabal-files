@@ -1,0 +1,23 @@
+name:          ParserFunction
+version:       0.0.4
+cabal-version: >= 1.6
+license:       BSD3
+license-file:  LICENSE
+author:        Enzo Haussecker
+maintainer:    ehaussecker@gmail.com
+category:      Parsing
+synopsis:      Utilities for parsing and evaluating string-expressions.
+description:
+    ParserFunction provides utilities for parsing and evaluating string-expressions.
+    The centerpiece of this module is a function called @evalStrExpr@,
+    which evaluates a string-expression using a variable lookup map.
+    Example: @evalStrExpr@ \"exp(x)\" [(\'x\',1)] gives 2.718281828459045.
+    More examples can be found by viewing the source code for this module.
+    This module also exports all supporting functionality.
+
+build-type: Simple
+
+Library
+  exposed-modules:
+    Text.ParserCombinators.Parsec.ParserFunction
+  build-depends: base < 6, parsec, containers

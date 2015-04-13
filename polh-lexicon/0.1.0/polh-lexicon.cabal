@@ -1,0 +1,43 @@
+name:               polh-lexicon
+version:            0.1.0
+synopsis:           Interface to a historical dictionary of Polish 
+description:
+    Interface to a historical dictionary of Polish.
+license:            BSD3
+license-file:       LICENSE
+cabal-version:      >= 1.6
+copyright:          Copyright (c) 2012 IPI PAN
+author:             Jakub Waszczuk
+maintainer:         waszczuk.kuba@gmail.com
+stability:          experimental
+category:           Natural Language Processing
+homepage:           https://github.com/kawu/synat
+build-type:         Simple
+
+library
+  exposed-modules:    NLP.Polh.Types
+                      NLP.Polh.LMF
+                      NLP.Polh.LMF.Parse
+                      NLP.Polh.LMF.Show
+                      NLP.Polh.Binary
+                      NLP.Polh.Util
+  build-depends:      base >= 4 && < 5 
+                    , containers
+                    , directory
+                    , filepath
+                    , text
+                    , binary
+                    , text-binary >= 0.1 && < 0.2
+                    , polysoup >= 0.1 && < 0.2
+                    , transformers
+                    , mtl
+
+  ghc-options: -Wall
+
+executable polh-binarize
+  hs-source-dirs: ., tools
+  main-is: polh-binarize.hs
+
+executable polh-show
+  hs-source-dirs: ., tools
+  main-is: polh-show.hs

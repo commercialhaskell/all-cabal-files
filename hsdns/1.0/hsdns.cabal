@@ -1,0 +1,25 @@
+Name:			hsdns
+Version:		1.0
+Author:			Peter Simons <simons@cryp.to>
+Maintainer:		simons@cryp.to
+License:		LGPL
+Homepage:		http://cryp.to/hsdns/
+Synopsis:		Asynchronous DNS Resolver
+Description:		An asynchronous DNS resolver based on GNU ADNS.
+Category:		Foreign, Network
+Build-Depends:		base, network
+Extensions:		ForeignFunctionInterface
+Extra-Libraries:	adns
+Includes:		"adns.h", "errno.h"
+Exposed-Modules:	ADNS,
+			ADNS.Base,
+			ADNS.Endian,
+			ADNS.Resolver
+GHC-Options:		-O -Wall
+Data-Files:		README, prologue.txt
+
+Executable:		adns-reverse-lookup
+Hs-Source-Dirs:		example, .
+Main-Is:		adns-reverse-lookup.hs
+Extra-Libraries:	adns
+GHC-Options:		-O -Wall -threaded

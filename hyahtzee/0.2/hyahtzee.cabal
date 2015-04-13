@@ -1,0 +1,30 @@
+Name:                hyahtzee
+Version:             0.2
+Author:              Damien Cassou
+Maintainer:          damien.cassou@gmail.com
+
+Homepage:            http://github.com/DamienCassou/HYahtzee
+Synopsis:            A Yahtzee game implementation in Haskell
+Description:         The classic dice game Yahtzee implemented in Haskell.
+
+License:             BSD3
+License-file:        LICENSE
+
+Category:            Game
+Build-type:          Simple
+Extra-source-files:  README.markdown
+Cabal-version:       >=1.2
+
+
+Executable hyahtzee
+  Main-is:           Game/HYahtzee/Main.hs
+
+  Build-depends:     random, base >= 4 && < 5, containers, HUnit
+
+  Other-modules:     Game.HYahtzee.Engine.Combination
+                     Game.HYahtzee.Engine.Logic
+                     Game.HYahtzee.Engine.Model
+                     Game.HYahtzee.Engine.Transition
+                     Game.HYahtzee.Tests.EngineTest
+                     Game.HYahtzee.UI.SimpleIO
+

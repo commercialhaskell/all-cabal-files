@@ -1,0 +1,57 @@
+-- The name of the package.
+Name:                forkable-monad
+
+-- The package version. See the Haskell package versioning policy
+-- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
+-- standards guiding when and how versions should be incremented.
+Version:             0.1.1
+
+-- A short (one-line) description of the package.
+Synopsis:            An implementation of forkIO for monad stacks.
+
+Description:
+  This module defines a more generic version of Control.Concurrent's
+  forkIO, which can directly run some complex monadic actions as well
+  as plain IO actions.
+
+
+-- URL for the project homepage or repository.
+Homepage:            http://code.google.com/p/forkable-monad/
+
+-- The license under which the package is released.
+License:             BSD3
+
+-- The file containing the license text.
+License-file:        LICENSE
+
+-- The package copyright.
+Copyright:           Google Inc. 2010
+
+-- The package author(s).
+Author:              David Anderson
+
+-- An email address to which users can send suggestions, bug reports,
+-- and patches.
+Maintainer:          dave@natulte.net
+
+-- Stability of the pakcage (experimental, provisional, stable...)
+Stability:           Experimental
+
+Category:            Concurrent
+
+Build-type:          Simple
+
+-- Constraint on the version of Cabal needed to build this package.
+Cabal-version:       >=1.2
+
+Library
+  -- Modules exported by the library.
+  Exposed-modules:   Control.Concurrent.Forkable
+
+  -- Packages needed in order to build this package.
+  Build-depends:     base >3.0 && <4.4,
+                     transformers >=0.2.2
+
+  -- Compiler options, for normal and profiling builds.
+  Ghc-options:       -Wall
+  Ghc-prof-options:  -auto-all

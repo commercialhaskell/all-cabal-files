@@ -1,0 +1,37 @@
+Name:                secure-sockets
+Version:             1.2.9
+Synopsis:            Secure point-to-point connectivity library
+Description:
+    This library simplifies the task of securely connecting two
+    servers to each other, with strong authentication and
+    encryption on the wire.
+Homepage:            http://code.google.com/p/secure-hs/
+License:             BSD3
+License-file:        LICENSE
+Author:              David Anderson <dave@natulte.net>
+Maintainer:          Iavor S. Diatchi <iavor.diatchki@gmail.com>
+Copyright:           Google Inc. 2010, Galois Inc. 2012
+Stability:           Experimental
+Category:            Network
+Build-type:          Simple
+Cabal-version:       >=1.6
+
+Library
+  Exposed-modules:     Network.Secure
+                       Network.Secure.Identity
+  Other-modules:       Network.Secure.Connection
+  Build-depends:       base ==4.*,
+                       bytestring ==0.9.*,
+                       directory,
+                       HsOpenSSL >=0.10.2,
+                       network ==2.*,
+                       transformers >=0.2,
+                       process
+  ghc-prof-options:    -auto-all
+  ghc-options:         -Wall -funbox-strict-fields -fwarn-tabs
+
+Source-repository      head
+  Type:                git
+  Location:            git://github.com/GaloisInc/secure-sockets.git
+
+

@@ -1,0 +1,39 @@
+Name:               ABList
+Version:            0.0.1
+Author:             Dylan Just <dylan@techtangents.com>
+License:            BSD3
+Copyright:          Dylan Just, Travis Cardwell
+Maintainer:         Dylan Just
+Category:           Control
+Synopsis:           An alternating list of two types
+Description:        An alternating list of two types
+Cabal-version:      >= 1.10
+Build-Type:         Simple
+
+
+Library
+  default-language: Haskell2010
+  Build-Depends:    base < 5 && >= 3,
+                    linear,
+                    newtype
+
+  GHC-Options:      -Wall
+                    -fno-warn-type-defaults
+                    -fno-warn-name-shadowing
+
+  Exposed-Modules:  Data.AbList
+                    Data.AbneList
+  hs-source-dirs:   src
+
+
+test-suite the-tests
+  default-language:  Haskell2010
+  type:              exitcode-stdio-1.0
+  hs-source-dirs:    test, src
+  main-is:           Tests.hs
+  build-depends:     base,
+                     HUnit,
+                     QuickCheck,
+                     test-framework,
+                     test-framework-hunit,
+                     test-framework-quickcheck2

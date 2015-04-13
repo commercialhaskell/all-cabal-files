@@ -1,0 +1,21 @@
+Name:                GoogleSB
+Version:             0.1
+Synopsis:            Interface to Google Safe Browsing API
+License:             BSD3
+License-file:        LICENSE
+Author:              Alex Ott
+Copyright:           (c) Alex Ott, 2009
+Maintainer:          alexott@gmail.com
+Build-Type:          Simple
+Cabal-Version:       >=1.2
+Category:            Security
+-- Homepage:            
+Description:
+  This package implements support for Google Safe Browsing API, that provides
+  almost real-time information about malware & other malicious sites on the Web
+
+Extra-Source-Files: README
+
+Library
+        Exposed-modules: GoogleSB
+        Build-depends: base >= 3, base <= 5, HTTP, mtl, binary, Crypto, split, network, haskell98

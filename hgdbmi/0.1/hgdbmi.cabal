@@ -1,0 +1,21 @@
+Cabal-Version: >= 1.2
+Build-Type: Simple
+Name: hgdbmi
+Version: 0.1
+Synopsis: GDBMI interface (program-driven control of GDB)
+Description:
+  GDB\/MI lets programs drive GDB.  It can be used, for example, by GDB
+  frontends.  This module wraps attaching GDB to a process and parsing the
+  (surprisingly complicated) GDB\/MI output.
+Category: Development
+License: BSD3
+License-File: LICENSE
+Author: Evan Martin
+Maintainer: martine@danga.com
+Copyright: (c) 2008 Evan Martin <martine@danga.com>
+Homepage: http://neugierig.org/software/darcs/browse/?r=hgdbmi;a=summary
+Extra-Source-Files: Test.hs
+
+Library
+  Build-Depends: base, parsec, process, unix
+  Exposed-Modules: GDBMI

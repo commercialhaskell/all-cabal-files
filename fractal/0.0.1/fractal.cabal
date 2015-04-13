@@ -1,0 +1,19 @@
+Name:           fractal
+Version:        0.0.1
+Cabal-Version:  >= 1.2
+Synopsis:       Draw Newton, Julia and Mandelbrot fractals
+Description:    Functions to generate fractals, with a command-line interface
+                to render them as PGM files.
+License:        BSD3
+License-file:   LICENSE
+Author:         Max Rabkin
+Maintainer:     max.rabkin@gmail.com
+Stability:      Experimental
+Build-Type:     Simple
+Category:       Graphics
+
+Extra-Source-Files: README
+
+Executable fractal
+    Build-Depends:  base >= 2 && < 5
+    Main-Is:        Fractal.hs

@@ -1,0 +1,75 @@
+name:            persistent
+version:         0.8.0.2
+license:         BSD3
+license-file:    LICENSE
+author:          Michael Snoyman <michael@snoyman.com>
+maintainer:      Michael Snoyman <michael@snoyman.com>
+synopsis:        Type-safe, multi-backend data serialization.
+description:     Type-safe, data serialization. You must use a specific backend in order to make this useful.
+category:        Database, Yesod
+stability:       Stable
+cabal-version:   >= 1.8
+build-type:      Simple
+homepage:        http://www.yesodweb.com/book/persistent
+
+flag nooverlap
+    default: False
+    description: test out our assumption that OverlappingInstances is just for String
+
+library
+    if flag(nooverlap)
+        cpp-options: -DNO_OVERLAP
+
+    build-depends:   base                     >= 4       && < 5
+                   , bytestring               >= 0.9     && < 0.10
+                   , transformers             >= 0.2.1   && < 0.3
+                   , time                     >= 1.1.4
+                   , text                     >= 0.8     && < 1
+                   , containers               >= 0.2     && < 0.5
+                   , conduit                  >= 0.2     && < 0.3
+                   , monad-control            >= 0.3     && < 0.4
+                   , lifted-base              >= 0.1     && < 0.2
+                   , pool-conduit             >= 0.0     && < 0.1
+                   , blaze-html               >= 0.4     && < 0.5
+                   , path-pieces              >= 0.1     && < 0.2
+                   , mtl                      >= 2.0     && < 2.1
+                   , aeson                    >= 0.5     && < 0.7
+                   , transformers-base
+                   , base64-bytestring
+                   , unordered-containers
+                   , vector
+                   , attoparsec
+
+    exposed-modules: Database.Persist
+                     Database.Persist.EntityDef
+                     Database.Persist.Store
+                     Database.Persist.Quasi
+                     Database.Persist.GenericSql
+                     Database.Persist.GenericSql.Raw
+                     Database.Persist.GenericSql.Migration
+                     Database.Persist.TH.Library
+                     Database.Persist.Util
+                     Database.Persist.Query
+                     Database.Persist.Query.Internal
+                     Database.Persist.Query.GenericSql
+                     Database.Persist.Query.Join
+                     Database.Persist.Query.Join.Sql
+                     Database.Persist.GenericSql.Internal
+
+    ghc-options:     -Wall
+
+test-suite test
+    type:          exitcode-stdio-1.0
+    main-is:       test/main.hs
+
+    build-depends:   base >= 4 && < 5
+                   , hspec
+                   , containers
+                   , text
+                   , HUnit
+
+    cpp-options: -DTEST
+
+source-repository head
+  type:     git
+  location: git://github.com/yesodweb/persistent.git

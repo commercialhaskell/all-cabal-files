@@ -1,0 +1,27 @@
+Name:             orchid-demo
+Version:          0.0.6
+Description:      Haskell Wiki Demo
+Synopsis:         Haskell Wiki Demo
+Category:         Network, Web
+Cabal-version:    >= 1.6
+License:          BSD3
+License-file:     LICENSE
+Author:           Sebastiaan Visser
+Maintainer:       sfvisser@cs.uu.nl
+Build-Type:       Simple
+Build-Depends:    base ==3.0.*,
+                  salvia ==0.1.*,
+                  salvia-extras ==0.1.*,
+                  orchid ==0.0.*,
+                  mtl ==1.1.*,
+                  network ==2.2.*,
+                  extensible-exceptions ==0.1.*,
+                  Pipe ==2.1.*,
+                  stm ==2.1.*
+Data-Files:       data.zip
+
+Executable:       orchid-demo
+Main-is:          Demo.hs
+GHC-Options:      -fglasgow-exts -threaded -Wall
+HS-Source-Dirs:   src
+

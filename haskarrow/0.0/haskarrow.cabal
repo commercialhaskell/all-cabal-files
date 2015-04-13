@@ -1,0 +1,29 @@
+Name: haskarrow
+Version: 0.0
+Synopsis: A dialect of haskell with order of execution based on dependency resolution
+Description: This haskell preprocessor will allow you to write "haskarrow" code.  Haskarrow is a semi-impertive language.  In a normal imperitive language evaluation happens top to bottom.  In haskarrow, each command is given a set of dependencies.  Commands are then excecuted in order of dependency resolution, those commands that have the fewest dependencies comming before those with the most.
+Category:Language
+
+License: GPL-3
+License-file:COPYING 
+Author: Timothy Hobbs
+Maintainer: Timothy Hobbs <timothyhobbs@seznam.cz>
+build-type:Simple
+
+cabal-version: >= 1.6
+
+Executable haskarrowPrecompiler
+ build-depends:base<5,
+               containers >=0,
+               her-lexer  >=0.1,
+               split      >=0,
+               cpphs      >=1.13,
+               directory  >=1.1,
+               cmdargs    >=0.9.5
+ Main-is: haskarrowPrecompiler.lhs
+ Extensions: DoAndIfThenElse,DeriveDataTypeable
+
+source-repository head
+ type:    git 
+ location: https://github.com/timthelion/haskarrow.git
+

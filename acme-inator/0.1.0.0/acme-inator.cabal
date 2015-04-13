@@ -1,0 +1,22 @@
+Name:            acme-inator
+Version:         0.1.0.0
+License:         PublicDomain
+Author:          Mark Lentczner <mzero@glyphic.com>
+Maintainer:      Mark Lentczner <mzero@glyphic.com>
+Category:        Acme
+Build-type:      Simple
+Cabal-version:   >=1.8
+Synopsis:        Evil inventions in the Tri-State area
+Description:
+    Construction and operation of evil inventions in the Tri-State area.
+    Based on the pioneering work of Dr. Heinz Doofenshmirtz.
+
+Library
+  Exposed-modules: Acme.Inator
+  Build-depends: base == 4.*
+  Ghc-options: -fwarn-tabs -Wall
+
+Executable evilplan
+  Main-is: EvilPlan.hs
+  Build-depends: base == 4.*
+  Ghc-options: -fwarn-tabs -Wall

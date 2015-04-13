@@ -1,0 +1,41 @@
+Name:               probability
+Version:            0.1
+License:            BSD3
+Author:             Martin Erwig <erwig@eecs.oregonstate.edu>
+Maintainer:         Henning Thielemann <haskell@henning-thielemann.de>
+Homepage:           http://darcs.haskell.org/probability
+Category:           Math, Monads, Graphics
+Build-Depends:      base, haskell98
+Synopsis:           Computations with discrete random variables
+Description:
+   The Library allows exact computation with discrete random variables
+   in terms of their distributions by using a monad.
+   The monad is similar to the List monad for non-deterministic computations,
+   but extends the List monad by a measure of probability.
+   Small interface to R plotting.
+Tested-With:        GHC==6.4
+Build-Type:         Simple
+License-File:       COPYRIGHT
+Hs-Source-Dirs:     .
+Exposed-Modules:
+    Alarm
+    Barber
+    Bayesian
+    Boys
+    Collection
+    Dice
+    MontyHall
+    NBoys
+    Predator
+    Probability
+    Queuing
+    TreeGrowth
+    Visualize
+Other-Modules:
+    ListUtils
+    PrintList
+    Show
+Extra-Source-Files:
+    README
+    ToDo
+GHC-Options:        -Wall -O2

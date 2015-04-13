@@ -1,0 +1,37 @@
+Name:                snaplet-redis
+Version:             0.1
+Synopsis:            Redis support for Snap Framework
+Description:         This package provides a snaplet which wraps Redis
+                     interface as implemented by Hedis library. Inline
+                     documentation contains usage examples.
+Homepage:            https://github.com/dzhus/snaplet-redis/
+Bug-reports:         https://github.com/dzhus/snaplet-redis/issues
+License:             BSD3
+License-file:        LICENSE
+Author:              Dmitry Dzhus
+Maintainer:          dima@dzhus.org
+Category:            Web
+
+Build-type:          Simple
+Cabal-version:       >=1.6
+
+source-repository head
+  type:     git
+  location: git://github.com/dzhus/snaplet-redis.git
+
+Library
+  ghc-options: -Wall
+  hs-source-dirs: src
+
+  Exposed-modules:   Snap.Snaplet.RedisDB
+  
+  Build-depends:
+    base >= 4 && < 5,
+    data-lens >= 2.0.1 && < 2.1,
+    data-lens-template >= 2.1 && < 2.2,
+    hedis == 0.3.*,
+    mtl >= 2 && < 3,
+    snap == 0.7.*,
+    text == 0.11.*,
+    transformers == 0.2.*
+  

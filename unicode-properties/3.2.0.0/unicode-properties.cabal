@@ -1,0 +1,35 @@
+name:	unicode-properties
+version: 3.2.0.0
+category:	Text
+description:	Unicode 3.2.0 character properties
+synopsis:	Unicode 3.2.0 character properties
+author:	Ashley Yakeley <ashley@semantic.org>
+license:	BSD3
+license-file:	LICENSE
+maintainer:	Ashley Yakeley <ashley@semantic.org>
+build-depends:
+	base,
+	containers>=0.1,
+	array>=0.1
+build-type: Simple
+extensions:
+	EmptyDataDecls
+exposed-modules:
+	Data.Char.Properties.GeneralCategory
+	Data.Char.Properties.BidiCategory
+	Data.Char.Properties.Case
+	Data.Char.Properties.Misc
+	Data.Char.Properties.Decomposition
+	Data.Char.Properties
+other-modules:
+	Data.Char.Properties.Version
+	Data.Char.Properties.GeneralCategoryData
+	Data.Char.Properties.GeneralCategoryTypes
+	Data.Char.Properties.BidiCategoryData
+	Data.Char.Properties.BidiCategoryTypes
+	Data.Char.Properties.CaseData
+	Data.Char.Properties.MiscData
+	Data.Char.Properties.Derivation
+	Data.Char.Properties.DecompositionData
+	Data.Char.Properties.DecompositionTypes
+	Data.Char.Properties.PrivateData

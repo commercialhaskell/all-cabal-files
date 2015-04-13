@@ -1,0 +1,37 @@
+Cabal-Version:      >= 1.2
+Name:               ycextra
+Version:            0.1
+Copyright:          2008, Dmitry Golubovsky and The Yhc Team
+Maintainer:         golubovsky@gmail.com
+Homepage:           http://www.haskell.org/haskellwiki/Yhc
+License:            BSD3
+License-File:       LICENSE
+Build-Type:         Simple
+Data-Files:         configure, csvprim/GenPrimTable.hs
+                    csvprim/20080629.csv
+Author:             Dmitry Golubovsky
+Synopsis:           Additional utilities to work with Yhc Core.
+Description:
+    Additional utilities for Yhc Core developed as by-products
+    of front- and back-ends, also for possible inclusion 
+    to the Yhc Core package.
+Category:           Development
+
+Flag splitBase
+    Description: Choose the new smaller, split-up base package.
+
+Library
+    if flag(splitBase)
+        build-depends: base >= 3, mtl, containers
+    else
+        build-depends: base < 3, mtl
+    build-depends: mtl, uniplate, yhccore, csv
+
+    Exposed-modules:
+        Yhc.Core.Extra, Yhc.Core.AnnotatePrims, Yhc.Core.StrictAnno
+        Yhc.Core.Unreachable, Yhc.Core.MapNames, Yhc.Core.Annotation,
+        Yhc.Core.Selector
+    Other-modules:
+        Yhc.Core.PrimAnnoRaw
+
+

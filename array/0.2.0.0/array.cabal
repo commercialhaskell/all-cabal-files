@@ -1,0 +1,47 @@
+name:       array
+version:    0.2.0.0
+x-revision: 1
+license:    BSD3
+license-file:    LICENSE
+maintainer:    libraries@haskell.org
+synopsis:   Mutable and immutable arrays
+category:   Data Structures
+description:
+    This package defines the classes @IArray@ of immutable arrays and
+    @MArray@ of arrays mutable within appropriate monads, as well as
+    some instances of these classes.
+cabal-version: >=1.2
+build-type: Simple
+extra-source-files: include/Typeable.h
+
+library
+  build-depends: base < 4.3
+  if !impl(nhc98)
+    build-depends: syb
+  exposed-modules:
+      Data.Array
+  extensions: CPP
+  if !impl(nhc98)
+    exposed-modules:
+      Data.Array.Base
+      Data.Array.Diff
+      Data.Array.IArray
+      Data.Array.IO
+      Data.Array.IO.Internals
+      Data.Array.MArray
+      Data.Array.ST
+      Data.Array.Storable
+      Data.Array.Unboxed
+    extensions:
+      MultiParamTypeClasses,
+      FlexibleContexts,
+      FlexibleInstances,
+      TypeSynonymInstances
+  if impl(ghc)
+    extensions:
+      Rank2Types,
+      MagicHash,
+      UnboxedTuples,
+      ForeignFunctionInterface,
+      UnliftedFFITypes
+  include-dirs: include

@@ -1,0 +1,36 @@
+Name:             enumset
+Version:          0.0
+License:          BSD3
+License-File:     LICENSE
+Author:           Henning Thielemann <haskell@henning-thielemann.de>
+Maintainer:       Henning Thielemann <haskell@henning-thielemann.de>
+Homepage:         http://code.haskell.org/~thielema/enumset/
+Category:         Data, Foreign
+Synopsis:         Sets of enumeration values represented by machine words
+Description:
+  With this package you can create a type safe interface to flag sets.
+  It is intended for interfacing to C libraries via FFI,
+  where Word8, Word16, or Word32 types are commonly used to store bit vectors.
+  E.g. the type @EnumSet Word16 Ordering@
+  represents a flag set stored in a Word16
+  that supports the flags @LT@, @EQ@, @GT@.
+  .
+  This package is similar to the @bitset@ package
+  the @Data.Edison.Coll.EnumSet@ module in the edison package,
+  however our implementation allows you to choose the embedding type
+  and thus the maximum size of the set.
+-- Portability:      Haskell98
+Cabal-Version:    >=1.2
+Tested-With:      GHC==6.10.4, GHC==6.12.3
+Build-Type:       Simple
+
+Library
+  Build-Depends:
+    storable-record >=0.0.1 && <0.1,
+    base >= 4 && <6
+
+  GHC-Options:      -Wall
+  Hs-Source-Dirs:   src
+  Exposed-Modules:
+    Data.EnumSet
+    Data.EnumSet.PackedEnum

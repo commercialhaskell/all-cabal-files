@@ -1,0 +1,41 @@
+name:           haskell-src
+version:        1.0.1.4
+x-revision: 1
+license:        BSD3
+license-file:   LICENSE
+author:         Simon Marlow, Sven Panne and Noel Winstanley
+maintainer:     libraries@haskell.org
+category:       Language
+synopsis:       Support for manipulating Haskell source code
+description:
+    The 'haskell-src' package provides support for manipulating Haskell
+    source code. The package provides a lexer, parser and
+    pretty-printer, and a definition of a Haskell abstract syntax tree
+    (AST). Common uses of this package are to parse or generate Haskell
+    98 code.
+build-type:     Simple
+cabal-version:  >=1.6
+
+flag split-base
+
+source-repository head
+    type:     darcs
+    location: http://code.haskell.org/haskell-src
+
+library
+  exposed-modules:
+        Language.Haskell.Lexer,
+        Language.Haskell.Parser,
+        Language.Haskell.ParseMonad,
+        Language.Haskell.Pretty,
+        Language.Haskell.Syntax,
+        Language.Haskell.ParseUtils
+  if flag(split-base)
+    build-depends:      base >= 4 && < 4.4, syb, pretty, array
+  else
+    build-depends:      base < 3
+  build-depends: haskell98
+  -- The dependency on Haskell 98 is only because
+  -- Happy generates a parser that imports Array
+  extensions:   CPP
+  nhc98-options:        -K11M

@@ -1,0 +1,80 @@
+Name:          HsSVN
+Synopsis:      Partial Subversion (SVN) binding for Haskell
+Description:
+    .
+    HsSVN is a partial Subversion (SVN) binding for Haskell. Currently
+    it covers the most part of Subversion FS but others are left
+    uncovered.
+    .
+    Please note that you need to pass an extra option to @cabal
+    configure@ to build HsSVN (assuming you have installed Subversion
+    to @\/usr\/local@):
+    .
+    > cabal configure --configure-option="--with-subversion-prefix=/usr/local"
+    > cabal build
+    > cabal install
+    .
+    You need the following external libraries to be installed:
+    .
+    * apr, apr-util >= 1.3 (<http://apr.apache.org/>)
+    .
+    * subversion >= 1.6 (<http://subversion.apache.org/>)
+    .
+Version:       0.4.3.3
+License:       PublicDomain
+License-File:  COPYING
+Author:        PHO <pho at cielonegro dot org>
+Maintainer:    PHO <pho at cielonegro dot org>
+Stability:     experimental
+Homepage:      https://github.com/phonohawk/HsSVN
+Bug-Reports:   https://github.com/phonohawk/HsSVN/issues
+Category:      System, Development
+Tested-With:   GHC == 7.6.2
+Cabal-Version: >= 1.6
+Build-Type: Configure
+Extra-Source-Files:
+    ChangeLog
+    HsSVN.buildinfo.in
+    README.rst
+    cbits/HsSVN.h
+    configure
+    configure.ac
+    examples/Makefile
+    examples/HelloWorld.hs
+
+Source-Repository head
+    Type: git
+    Location: git://github.com/phonohawk/HsSVN.git
+
+Library
+    Build-Depends:
+        base       == 4.*,
+        bytestring >= 0.9 && < 0.11,
+        mtl        >= 2.0 && < 2.2,
+        stm        >= 2.2 && < 2.5
+    Exposed-Modules:
+        Subversion
+        Subversion.Config
+        Subversion.FileSystem
+        Subversion.FileSystem.DirEntry
+        Subversion.FileSystem.PathChange
+        Subversion.FileSystem.Revision
+        Subversion.FileSystem.Root
+        Subversion.FileSystem.Transaction
+        Subversion.Error
+        Subversion.Repository
+        Subversion.Types
+    Other-Modules:
+        Subversion.Hash
+        Subversion.Pool
+        Subversion.Stream
+        Subversion.Stream.Pipe
+        Subversion.String
+    GHC-Options:
+        -Wall
+    C-Sources:
+        cbits/HsSVN.c
+    Include-Dirs:
+        cbits
+    Install-Includes:
+        HsSVN.h

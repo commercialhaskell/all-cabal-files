@@ -1,0 +1,29 @@
+Name:                JYU-Utils
+Version:             0.1.1
+Synopsis:            Some utility functions for JYU projects
+Description:         List, function and monad utility functions. 
+                     Includes an old variant of MonadRandom that is used in 
+                     CV-package. 
+
+                     Pretty much the only reason to ever use this
+                     is to compile CV-package, and that is also just
+                     due legacy reasons.  
+Category:            Utility
+License:             MIT
+License-File:        LICENSE
+Author:              Ville Tirronen
+Maintainer:          ville.tirronen@jyu.fi
+Build-Type:          Simple
+Cabal-Version:       >=1.4
+
+Library
+    Build-Depends:     haskell98, base >= 3 && < 5, mtl >= 1.1.0, random >= 1.0.0, template-haskell, 
+                       process >= 1.0, QuickCheck >= 2.1, containers >= 0.2, stm >= 2.1, array >= 0.2, binary >= 0.5,
+                       zlib >= 0.5, bytestring >= 0.9, parallel >= 1.0, directory >= 1.0, filepath >= 1.1,
+                       unix >= 2.3, lazysmallcheck >= 0.5, mwc-random >= 0.8 && <0.9, deepseq >= 1.1 && < 2
+    Exposed-modules:   Utils.Darcs, Utils.Function, Utils.Numeric, Utils.Sampling, Utils.String, 
+                       Utils.DynMap,Utils.Parallel, Utils.SemanticEditors, 
+                       Utils.Table, Utils.File, Utils.List, Utils.Point, Utils.Shuffle, Utils.ShuffleMWC, Utils.Vector, 
+                       Utils.Monad, Utils.Rectangle, Utils.Stream, Utils.MonadRandom,
+                       Utils.BinaryInstances, Utils.Exception
+

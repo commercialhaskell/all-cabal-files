@@ -1,0 +1,47 @@
+name: text-xml-generic
+version: 0.1.1
+cabal-version: -any
+build-type: Simple
+license: OtherLicense 
+license-file: "COPYING.txt"
+copyright:
+maintainer: Oscar Finnsson
+build-depends: base >= 4.2 && < 5, not-in-base >= 0.1.1, template-haskell, haskell98,  xml >= 1.3.4, syb >= 0.1.0.2, split >= 0.1.2, containers >= 0.3, bytestring >= 0.9.1.5, mtl >= 1.1
+stability:
+homepage: http://github.com/finnsson/Text.XML.Generic
+package-url:
+bug-reports:
+synopsis: Serialize Data to XML (strings).
+description:
+   @Text.XML.Generic@ can automatically serialize from the Data-type class to XML-strings.
+category: XML
+author: Oscar Finnsson
+tested-with:
+data-files:
+data-dir: ""
+extra-source-files:
+extra-tmp-files:
+exposed-modules: Text.XML.Generic
+exposed: True
+buildable: True
+build-tools:
+cpp-options:
+cc-options:
+ld-options:
+pkgconfig-depends:
+frameworks:
+c-sources:
+extensions:
+extra-libraries:
+extra-lib-dirs:
+includes:
+install-includes:
+include-dirs:
+hs-source-dirs: src
+other-modules:
+ghc-prof-options:
+ghc-shared-options:
+ghc-options:
+hugs-options:
+nhc98-options:
+jhc-options:

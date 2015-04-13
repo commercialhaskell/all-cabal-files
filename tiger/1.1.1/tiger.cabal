@@ -1,0 +1,23 @@
+cabal-version: >=1.2
+build-type: Custom
+name: tiger
+version: 1.1.1
+license: BSD3
+license-file: LICENSE
+maintainer: Doaitse Swierstra
+homepage: http://www.cs.uu.nl/wiki/HUT/WebHome
+description: Tiger compiler
+synopsis: Tiger Compiler of Universiteit Utrecht
+category: Compiler
+stability: Experimental
+copyright: Universiteit Utrecht
+extra-source-files: INSTALL, LICENSE, uuagc_options, src/TigerAS.ag, src/TigerError.ag, src/TigerSem.ag
+
+executable tiger
+  build-depends: base >= 4, base < 5
+  build-depends: array >= 0.3.0.2
+  build-depends: uulib >= 0.9.14, containers >= 0.4.0.0
+  build-depends: uuagc >= 0.9.39.1, uuagc-cabal >= 1.0.0.5
+  main-is: Tiger.hs
+  hs-source-dirs: src
+  other-modules: TigerAS, TigerSem, TigerError, TigerScanner, TigerTypes

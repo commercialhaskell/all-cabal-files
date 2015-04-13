@@ -1,0 +1,14 @@
+Name: ranges
+Version: 0.1
+Description: Ranges and various functions on them.
+License: BSD3
+Author: George Pollard <porges@porg.es>
+Maintainer: George Pollard <porges@porg.es>
+Build-Type: Simple
+Cabal-Version: >=1.2
+Category: data
+
+Library
+ Build-Depends: base
+ Exposed-modules: Data.Ranges
+ ghc-options: -O2 -Wall

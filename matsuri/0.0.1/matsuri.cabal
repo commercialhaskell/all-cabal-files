@@ -1,0 +1,27 @@
+Name:                matsuri
+Version:             0.0.1
+Category:            Network
+License:             GPL
+License-File:        LICENSE
+Author:              Kagami <newanon@yandex.ru>,
+                     Grigory Holomiev <omever@gmail.com>,
+                     Maxim Taldykin <jorpic@gmail.com>
+Maintainer:          newanon@yandex.ru
+Homepage:            http://kagami.touhou.ru/projects/show/matsuri
+Build-Type:          Simple
+Cabal-Version:       >=1.2
+Description:         ncurses XMPP client. Read README file before use.
+
+Data-Files:          README, matsurirc.example
+Extra-Source-Files:  debug.sh
+
+Executable matsuri
+  Main-Is:           Main.hs
+
+  Other-Modules:     Buffers, Config, Help, Jabber, UI, Utils,
+                     Widgets.EditBox, Widgets.PrettyBorders,
+                     Widgets.TextBox, Widgets.Tree
+
+  Build-Depends:     base >= 4 && < 5, vty >= 4, vty-ui >= 0.2,
+                     containers, mtl, network, split, directory,
+                     ConfigFile, XMPP==0.0.4, time, old-locale

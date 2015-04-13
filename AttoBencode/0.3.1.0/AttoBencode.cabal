@@ -1,0 +1,52 @@
+Name:                AttoBencode
+Version:             0.3.1.0
+Synopsis:            Fast Bencode encoding and parsing library
+Homepage:            http://bitbucket.org/FlorianHartwig/attobencode
+License:             BSD3
+License-file:        LICENSE
+Author:              Florian Hartwig <florian.j.hartwig@gmail.com>
+Maintainer:          Florian Hartwig <florian.j.hartwig@gmail.com>
+Category:            Data
+Build-type:          Simple
+Cabal-version:       >=1.8
+Description:
+    A library for encoding and decoding the Bencode data serialisation format
+    used by BitTorrent. The focus of this library are good performance (good
+    enough to be used in a BitTorrent client) and ease of
+    use.
+
+Library
+  Exposed-modules:
+    Data.AttoBencode,
+    Data.AttoBencode.Parser
+  
+  Other-modules:
+    Data.AttoBencode.Encode,
+    Data.AttoBencode.Types
+
+  Build-depends:
+    attoparsec,
+    base == 4.*,
+    blaze-builder,
+    blaze-textual,
+    bytestring,
+    containers
+  
+  Ghc-options: -O2 -Wall 
+  Hs-source-dirs: src
+
+Test-suite tests
+  Type:           exitcode-stdio-1.0
+  Hs-source-dirs: tests
+  Main-is:        qc.hs
+  Build-depends:  AttoBencode,
+                  base == 4.*, 
+                  bytestring,
+                  containers,
+                  test-framework,
+                  test-framework-quickcheck2,
+                  QuickCheck >= 2.4 && < 2.6
+
+source-repository head
+  Type: mercurial
+  Location: https://bitbucket.org/FlorianHartwig/attobencode

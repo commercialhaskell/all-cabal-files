@@ -1,0 +1,38 @@
+name:           snaplet-postmark
+version:        0.1.0
+synopsis:       Postmark snaplet for the Snap Framework
+description:    This snaplet contains support for using the Postmark
+                email system with a Snap Framework application.
+license:        BSD3
+author:         Luke Hoersten
+maintainer:     luke@hoersten.org
+build-type:     Simple
+cabal-version:  >= 1.6
+homepage:       https://github.com/LukeHoersten/snaplet-postmark
+category:       Web, Snap
+
+data-files:
+  resources/postmark/devel.cfg
+
+source-repository head
+  type:     git
+  location: https://github.com/LukeHoersten/snaplet-postmark
+
+Library
+  hs-source-dirs: src
+
+  exposed-modules:
+    Snap.Snaplet.Postmark
+
+  build-depends:
+    base         >= 4.4     && < 5,
+    snap         >= 0.11    && < 0.14,
+    text         >= 0.11    && < 0.12,
+    configurator >= 0.2     && < 0.3,
+    transformers >= 0.3     && < 0.4,
+    mtl          >= 2       && < 3,
+    postmark     >= 0.0.2   && < 0.2
+
+
+  ghc-options: -Wall -fwarn-tabs -funbox-strict-fields
+               -fno-warn-orphans -fno-warn-unused-do-bind

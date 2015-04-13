@@ -1,0 +1,44 @@
+Name          : blaze-builder-enumerator
+Version       : 0.2.0.3
+Synopsis      : Enumeratees for the incremental conversion of builders to
+                bytestrings.
+Description   :
+
+  This package integrates the builders from the blaze-builder package with
+  the enumerator package. It provides infrastructure and enumeratees for
+  incrementally executing builders and pass the filled chunks to a bytestring
+  iteratee.
+
+Author        : Simon Meier <iridcode@gmail.com>
+Maintainer    : Simon Meier <iridcode@gmail.com>
+Copyright     : Copyright (c) 2010, 2011 Simon Meier
+                
+                original package by Thomas Sutton <me@thomas-sutton.id.au>
+
+License       : BSD3
+License-file  : LICENSE
+Build-type    : Simple
+Cabal-version : >=1.6
+Category      : Data, Enumerator
+Stability     : Experimental
+Bug-reports   : https://github.com/meiersi/blaze-builder-enumerator
+Homepage      : https://github.com/meiersi/blaze-builder-enumerator 
+
+Extra-source-files:
+  CHANGES
+
+Source-repository head
+  Type: git
+  Location: https://github.com/meiersi/blaze-builder-enumerator.git
+
+
+Library
+  GHC-options: -Wall
+  Build-depends:
+      base          >= 4       && < 5
+    , blaze-builder >= 0.2.1.4 && < 0.4
+    , bytestring    >= 0.9     && < 0.10
+    , enumerator    >= 0.4.3.1 && < 0.5
+    , transformers  >= 0.2     && < 0.3
+  Exposed-modules:
+    Blaze.ByteString.Builder.Enumerator

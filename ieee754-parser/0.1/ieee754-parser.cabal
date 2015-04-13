@@ -1,0 +1,14 @@
+Name: ieee754-parser
+Version: 0.1
+Description: Parser for IEEE-754 floating-point values
+License: GPL
+License-file: License.txt
+Author: John Millikin
+maintainer: jmillikin@gmail.com
+Build-Type: Simple
+Cabal-Version: >=1.2
+Category: Data
+
+Library
+  Build-Depends: base, binary, bytestring
+  Exposed-modules: Data.Binary.IEEE754

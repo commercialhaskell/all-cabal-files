@@ -1,0 +1,72 @@
+Name:                time-http
+Version:             0.2
+Synopsis:            Parse and format HTTP/1.1 Date and Time strings
+Description:
+        This package provides functionalities to parse and format
+        various Date and Time formats allowed in HTTP\/1.1 (RFC 2616).
+
+Homepage:            http://cielonegro.org/HTTPDateTime.html
+Bug-Reports:         http://static.cielonegro.org/ditz/time-http/
+License:             PublicDomain
+License-file:        COPYING
+Author:              PHO <pho AT cielonegro DOT org>
+Maintainer:          PHO <pho AT cielonegro DOT org>
+Stability:           Experimental
+Category:            Web
+Build-type:          Simple
+Tested-With:         GHC == 7.0.3
+Cabal-version:       >= 1.10
+Extra-Source-Files:
+    COPYING
+    ChangeLog
+
+Source-Repository head
+    Type: git
+    Location: git://git.cielonegro.org/time-http.git
+
+Library
+    Exposed-modules:
+        Data.Time.Asctime
+        Data.Time.HTTP
+        Data.Time.RFC1123
+        Data.Time.RFC733
+        Data.Time.RFC822
+
+    Other-modules:
+        Data.Time.Asctime.Internal
+        Data.Time.HTTP.Common
+        Data.Time.HTTP.Internal
+        Data.Time.RFC1123.Internal
+        Data.Time.RFC733.Internal
+        Data.Time.RFC822.Internal
+
+    Build-depends:
+        ascii                == 0.0.*,
+        attoparsec           == 0.9.*,
+        blaze-builder        == 0.3.*,
+        blaze-textual        == 0.2.*,
+        base                 == 4.*,
+        base-unicode-symbols == 0.2.*,
+        time                 == 1.2.*
+
+    Default-Language:
+         Haskell2010
+
+    GHC-Options:
+        -Wall
+
+Test-Suite test-time-http
+    Type:    exitcode-stdio-1.0
+    Main-Is: Test/Time/HTTP.hs
+    Default-Language: Haskell2010
+    Build-depends:
+        QuickCheck           == 2.4.*,
+        ascii                == 0.0.*,
+        attoparsec           == 0.9.*,
+        blaze-builder        == 0.3.*,
+        blaze-textual        == 0.2.*,
+        base                 == 4.*,
+        base-unicode-symbols == 0.2.*,
+        time                 == 1.2.*
+    GHC-Options:
+        -Wall -fno-warn-orphans

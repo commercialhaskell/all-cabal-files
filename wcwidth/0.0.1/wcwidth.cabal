@@ -1,0 +1,40 @@
+name                          : wcwidth
+version                       : 0.0.1
+category                      : Text
+license                       : BSD3
+license-file                  : LICENSE
+author                        : Jason Dusek
+maintainer                    : wcwidth@solidsnack.be 
+homepage                      : http://github.com/solidsnack/wcwidth/
+synopsis                      : Native wcwidth.
+description                   :
+  Bindings for your system's native wcwidth and a command line tool to examine
+  the widths assigned by it. The command line tool can compile a width table
+  to Haskell code that assigns widths to the Char type.
+
+
+cabal-version                 : >= 1.6.0
+build-type                    : Simple
+extra-source-files            : CompileRanges.hs
+
+
+library
+  build-depends               : base >= 2 && < 4
+                              , containers
+  exposed-modules             : Data.Char.WCWidth
+  extensions                  : StandaloneDeriving
+                                ForeignFunctionInterface
+
+
+executable                      wcwidth-tools
+  main-is                     : WCWidthTableaux.hs
+  build-depends               : base >= 2 && < 4
+                              , containers
+                              , bytestring
+                              , setlocale >= 0.0.3
+                              , utf8-string >= 0.3
+                              , bytestringparser-temporary >= 0.4.1
+  extensions                  : StandaloneDeriving
+                                ForeignFunctionInterface
+
+

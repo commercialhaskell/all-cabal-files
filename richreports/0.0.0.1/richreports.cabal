@@ -1,0 +1,19 @@
+Name:              richreports
+Version:           0.0.0.1
+Cabal-Version:     >= 1.6
+License:           GPL-3
+License-File:      LICENSE
+Synopsis:          Integrated pretty-printing and error/static analysis reporting.
+Description:       Integrated pretty-printing and error/static analysis reporting.
+Category:          Text
+Author:            Andrei Lapets
+Maintainer:        Andrei Lapets <lapets@bu.edu>
+Build-Type:        Simple
+
+library
+  exposed-modules: Text.RichReports
+  build-depends:   base >= 3 && < 5, ascetic, MissingH
+
+source-repository head
+  type:            git
+  location:        https://github.com/lapets/richreports

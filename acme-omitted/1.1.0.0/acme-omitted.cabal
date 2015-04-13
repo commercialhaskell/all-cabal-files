@@ -1,0 +1,57 @@
+Name:                acme-omitted
+Version:             1.1.0.0
+Synopsis:            Purely functional omitted content for Haskell
+Category:            Acme
+Stability:           stable
+Description:
+    Standard Haskell lacks the ability to express the notion of \"omitted content\",
+    making it impossible to distinguish the truly \"undefined\" and the
+    merely \"omitted\".
+    .
+    acme-omitted implements a universal definition of \"omitted\" and provides
+    means of observing whether a definition has been omitted or if it is truly
+    undefined.
+    .
+    The library is standards-compliant, type-safe, and user-friendly.
+
+License:             BSD3
+License-file:        COPYING
+
+Author:              Joachim Fasting
+Maintainer:          joachim.fasting@gmail.com
+Copyright:           (c) 2013 Joachim Fasting
+Homepage:            https://github.com/joachifm/acme-omitted#readme
+
+Extra-source-files:
+    README.markdown
+
+Build-type:          Simple
+Cabal-version:       >= 1.10
+
+Source-repository head
+  Type: git
+  location: git@github.com:joachifm/acme-omitted.git
+
+Library
+  Default-language: Haskell2010
+
+  Exposed-modules:     Acme.Omitted
+
+  Build-depends:
+    base >= 3.0.3 && < 5
+
+  Hs-Source-Dirs: src
+
+  ghc-options:
+    -Wall
+
+Test-Suite specs
+  default-language: Haskell2010
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  Hs-Source-Dirs: src tests
+
+  Build-depends:
+      base >= 3.0.3
+    , hspec
+    , hspec-discover

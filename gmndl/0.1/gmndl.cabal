@@ -1,0 +1,32 @@
+Name:               gmndl
+Version:            0.1
+Synopsis:           Mandelbrot Set explorer using GTK
+
+Description:
+                    A Mandelbrot Set explorer, with (currently) only one
+                    control (left-click to center and zoom in).  Multple
+                    render threads use higher precision maths at higher
+                    zoom levels.  Suggested usage:
+                    .
+                    @gmndl +RTS -N -qa -RTS --width=640 --height=480@
+
+Cabal-version:      >=1.4
+License:            GPL-2
+License-file:       LICENSE
+Author:             Claude Heiland-Allen
+Maintainer:         claudiusmaximus@goto10.org
+Category:           Graphics
+Build-type:         Simple
+
+Executable gmndl
+  Main-is:          gmndl.hs
+  Build-depends:    base >= 4 && < 5,
+                    array >= 0.3 && < 0.4,
+                    gtk >= 0.11 && < 0.12,
+                    gtkglext >= 0.11 && < 0.12,
+                    mtl,
+                    OpenGL >= 2.4 && < 2.5,
+                    priority-queue >= 0.2.1 && < 0.3,
+                    qd >= 0.2 && < 0.3
+  GHC-options:      -O2 -Wall -threaded -fno-excess-precision -funbox-strict-fields
+  GHC-prof-options: -O2 -Wall -threaded -fno-excess-precision -funbox-strict-fields -prof -auto-all -caf-all

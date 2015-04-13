@@ -1,0 +1,43 @@
+name:                koofr-client
+version:             0.1.1.0
+synopsis:            Client to Koofr API
+homepage:            https://github.com/edofic/koofr-api-hs                       
+description:         
+  Koofr is a storage as a service provider located in Europe. See https://koofr.eu for more info. This is an API wrapper that simplifies working with files. 
+  Filesystem roots are called mounts and cannot be manipulated through api. 
+  The API is contained in a type class in order to allow mocking. Mock runner and wider API coverage coming soon.
+
+license:             MIT
+license-file:        LICENSE
+author:              Andraz Bajt
+maintainer:          edofic@gmail.com
+category:            Network
+build-type:          Simple
+cabal-version:       >=1.10
+
+library
+  exposed-modules:     Koofr.Class
+                       Koofr.Client
+                       Koofr.Mount
+                       Koofr.File
+                       Koofr.Internal
+  build-depends:       base                  >= 4.7  && <4.8
+                     , mtl                   >= 2.2  && <2.3
+                     , http-client           >= 0.4  && <0.5
+                     , http-types            >= 0.8  && <0.9
+                     , http-client-tls       >= 0.2  && <0.3
+                     , bytestring            >= 0.10 && <0.11
+                     , aeson                 >= 0.8  && <0.9
+                     , filepath              >= 1.3  && <1.4
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+  default-extensions:  MultiParamTypeClasses
+                       FlexibleInstances
+                       FlexibleContexts
+                       FunctionalDependencies
+                       OverloadedStrings
+                       TemplateHaskell
+
+source-repository head
+  type:     git
+  location: https://github.com/edofic/koofr-api-hs.git

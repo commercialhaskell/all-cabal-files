@@ -1,0 +1,20 @@
+name:                system-random-effect
+version:             0.1.0.0
+synopsis:            Random number generation for extensible effects.
+homepage:            https://github.com/wowus/system-random-effect
+license:             BSD3
+license-file:        LICENSE
+author:              Clark Gaebel
+maintainer:          cgaebel@uwaterloo.ca
+category:            System
+build-type:          Simple
+cabal-version:       >=1.10
+
+library
+  exposed-modules:     System.Random.Effect
+
+  build-depends:       base >=4.6 && <4.7
+                     , extensible-effects == 1.1.*
+                     , mersenne-random-pure64 == 0.2.*
+
+  default-language:    Haskell2010

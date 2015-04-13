@@ -1,0 +1,51 @@
+name: dataenc
+version: 0.14.0.7
+license: BSD3
+license-file: LICENSE
+cabal-version: >= 1.6
+build-type: Simple
+author: Magnus Therning
+maintainer: Gracjan Polak <gracjanpolak@gmail.com>
+homepage: http://www.haskell.org/haskellwiki/Library/Data_encoding
+copyright: Magnus Therning, 2007-2012, Gracjan Polak, 2014
+category: Codec
+synopsis: Data encoding library
+description: Data encoding library currently providing Base16, Base32,
+        Base32Hex, Base64, Base64Url, Base85, Python string escaping,
+        Quoted-Printable, URL encoding, uuencode, xxencode, and yEncoding.
+extra-source-files: test-src/DataencUT.hs test-src/DataencQC.hs test-src/Test.hs GNUmakefile
+
+flag tests
+    Description: Build unit and quickcheck tests.
+    Default: False
+
+library
+    hs-source-dirs: src
+    build-depends: array, base >= 3.0.0 && < 4.8, containers
+    exposed-modules:
+            Codec.Binary.Base16
+            Codec.Binary.Base32
+            Codec.Binary.Base32Hex
+            Codec.Binary.Base64
+            Codec.Binary.Base64Url
+            Codec.Binary.Base85
+            Codec.Binary.DataEncoding
+            Codec.Binary.PythonString
+            Codec.Binary.QuotedPrintable
+            Codec.Binary.Url
+            Codec.Binary.Uu
+            Codec.Binary.Xx
+            Codec.Binary.Yenc
+    other-modules:
+            Codec.Binary.Util
+
+executable tests
+    main-is: Test.hs
+    hs-source-dirs: test-src src
+    -- ghc-options: -fhpc
+    if flag(tests)
+        build-depends: test-framework, test-framework-hunit, HUnit,
+            test-framework-quickcheck2, QuickCheck ==2.5.*,
+            test-framework-th
+    else
+        buildable: False

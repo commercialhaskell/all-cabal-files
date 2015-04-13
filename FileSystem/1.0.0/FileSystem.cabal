@@ -1,0 +1,42 @@
+Name:           FileSystem
+Version:        1.0.0
+Author:         Daniel Diaz
+Homepage:       http://ddiaz.asofilak.es/packages/FileSystem
+License:        BSD3
+License-file:   license
+Maintainer:     Daniel Diaz <danieldiaz@asofilak.es>
+Category:       System
+Synopsis:       File system data structure and monad transformer.
+Description:
+   FileSystem allows you to create a virtual file system. This package defines:
+   .
+   * A data structure of a file system, with directories and files.
+   .
+   * A monad transformer which adds a file system environment, where
+     you can do standard system operations, like write and read files
+     or create directories.
+   .
+   * An IO interface for create these virtual file systems from
+     existing real directories.
+Build-type:     Simple
+Cabal-version:  >= 1.6
+
+Library
+  Build-depends:  base == 4.*
+                , mtl == 2.0.*
+                , directory
+                , bytestring == 0.9.*
+                , filepath
+                , old-time
+                , binary == 0.5.*
+  Extensions: GeneralizedNewtypeDeriving
+  Exposed-modules: 
+             System.FileSystem
+           , System.FileSystem.Operators
+           , System.FileSystem.Computations
+           , System.FileSystem.IO
+           , System.FileSystem.Types
+           , System.FileSystem.Instances
+           , System.FileSystem.Across
+           , System.FileSystem.Utils
+           , System.FileSystem.Class

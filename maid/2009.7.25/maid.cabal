@@ -1,0 +1,23 @@
+Name:                 maid
+Version:              2009.7.25
+Build-type:           Simple
+Synopsis:             A simple static web server
+Description:
+        
+    Serve files from the current path
+
+License:              BSD3
+License-file:         LICENSE
+Author:               Wang, Jinjing
+Maintainer:           Wang, Jinjing <nfjinjing@gmail.com>
+Build-Depends:        base
+Cabal-version:        >= 1.2
+category:             Web
+homepage:             http://github.com/nfjinjing/maid/tree/master
+data-files:           readme.md, changelog.md, known-issues.md, Nemesis
+
+Executable            maid
+  ghc-options:        -Wall
+  build-depends:      base >= 4 && < 5, mps, loli, hack-handler-happstack, haskell98, hack-contrib, data-default, hack
+  hs-source-dirs:     src/
+  main-is:            maid.hs

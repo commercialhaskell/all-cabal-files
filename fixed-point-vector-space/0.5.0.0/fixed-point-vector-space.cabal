@@ -1,0 +1,32 @@
+Name:                fixed-point-vector-space
+Version:             0.5.0.0
+Synopsis:            vector-space instances for the fixed-point package
+Description:         This package provides instances of VectorSpace,
+                     AffineSpace, etc. for the fixed-point package.
+License:             MIT
+License-file:        LICENSE
+Author:              Jake McArthur
+Maintainer:          Jake McArthur <Jake.McArthur@gmail.com>
+Category:            Data, Game, Math, Numerical
+
+Build-type:          Simple
+Cabal-version:       >=1.6
+
+
+Library
+  Exposed-modules:   Data.Fixed.Binary.VectorSpace
+  Extensions:        FlexibleContexts,
+                     TypeFamilies
+  Build-depends:     base == 4.3.*,
+                     fixed-point == 0.5.0.0,
+                     vector-space == 0.7.3.*
+  GHC-options:       -Wall -fno-warn-orphans -fwarn-tabs -funfolding-use-threshold=16
+
+Source-repository head
+  type:     darcs
+  location: http://patch-tag.com/r/jmcarthur/fixed-point
+
+source-repository this
+  type:     darcs
+  location: http://patch-tag.com/r/jmcarthur/fixed-point
+  tag:      v0.5.0.0

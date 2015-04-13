@@ -1,0 +1,18 @@
+name:          DimensionalHash
+version:       0.0
+build-Type:    Simple
+cabal-version: >= 1.6
+tested-with:   GHC == 7.0.3
+license:       BSD3
+license-File:  LICENSE
+author:        Ghassen Hamrouni
+maintainer:    ghamrouni@iptechinside.com
+category:      Data, Algorithms
+synopsis:      2 and 3 dimensional hash using Morton numbers.
+description:   This library compute the Morton numbers in 2d and 3d. 
+			   It transforms integers x, y to a single integer z.
+               The hash z has the property : if (x, y) and (x2, y2) 
+               are close then their Morton numbers are close.
+library				
+  build-Depends:  base >= 3 && < 5
+  exposed-modules:  Data.DimensionalHash

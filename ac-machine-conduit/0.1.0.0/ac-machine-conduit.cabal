@@ -1,0 +1,25 @@
+name:                ac-machine-conduit
+version:             0.1.0.0
+synopsis:            Drive Aho-Corasick machines in Conduit pipelines
+description:         Drive Aho-Corasick machines in Conduit pipelines.
+license:             BSD3
+license-file:        LICENSE
+author:              Yuta Taniguchi <yuta.taniguchi.y.t@gmail.com>
+maintainer:          Yuta Taniguchi <yuta.taniguchi.y.t@gmail.com>
+category:            Data
+build-type:          Simple
+extra-source-files:  examples/Simple.hs
+cabal-version:       >=1.10
+
+library
+  exposed-modules:     Data.AhoCorasick.Conduit
+  build-depends:       base       >=4.6  && <4.7
+                     , ac-machine >=0.2  && <0.3
+                     , conduit    >=1.0  && <1.1
+                     , text       >=0.11 && <0.12
+  default-language:    Haskell2010
+  ghc-options:         -Wall
+
+source-repository head
+  type:     git
+  location: git://github.com/yuttie/ac-machine-conduit.git

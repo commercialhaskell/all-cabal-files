@@ -1,0 +1,31 @@
+Name:           EdisonAPI
+Version:        1.2.1
+License:        OtherLicense
+License-File:   COPYRIGHT
+Author:         Chris Okasaki
+Maintainer:     robdockins AT fastmail DOT fm
+Synopsis:       A library of efficient, purely-functional data structures (API)
+Category:       Data Structures
+Stability:      stable
+Description:
+   This package provides the typeclasses that form the Edison
+   API and other common utility modules.
+Hs-Source-Dirs: src
+Exposed-modules:
+     Data.Edison
+     Data.Edison.Prelude
+     Data.Edison.Sym
+     Data.Edison.Assoc
+     Data.Edison.Coll
+     Data.Edison.Coll.Utils
+     Data.Edison.Seq
+     Data.Edison.Seq.ListSeq
+Build-Depends:
+     base >= 1.0,
+     haskell98 >= 1.0,
+     mtl >= 1.0
+Extensions:
+     MultiParamTypeClasses
+     FunctionalDependencies
+     UndecidableInstances
+Ghc-Options: -funbox-strict-fields -fwarn-incomplete-patterns -O2

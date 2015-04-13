@@ -1,0 +1,13 @@
+Name:           swf
+Version:        1.0
+License:        BSD3
+License-File:	debian/copyright
+Author:         Jeremy Shaw
+Maintainer:     Jeremy Shaw
+Homepage:       http://www.n-heptane.com/nhlab
+Category:       Compilers/Interpreters
+Build-Type:     Simple
+Build-Depends:  base, mtl, pretty
+Synopsis:       A library for create Shockwave Flash (SWF) files
+Description:    A library for create Shockwave Flash (SWF) files
+Exposed-modules: Swf.Bin Swf.Util Swf.Tags Swf.Assembly Swf.Assembler

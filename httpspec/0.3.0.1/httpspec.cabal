@@ -1,0 +1,67 @@
+Name:                httpspec
+Version:             0.3.0.1
+Synopsis:            Specification of HTTP request/response generators and parsers
+License:             LGPL
+License-file:        LICENSE
+Author:              David Leuschner, Stefan Wehr
+Maintainer:          David Leuschner <leuschner@openfactis.org>
+Category:            Data, Web
+Description:
+  Using httpspec you can write a specification for a HTTP request/response
+  defining the method, headers, url parameters and the body.  This
+  specification bidirectionally maps an abstract request/response data
+  type to a concrete realisation as a HTTP request/response.  The
+  specification can be used to generate HTTP requests/responses from an
+  abstract description and it can be used to parse a HTTP request/response
+  into such an abstract description.  The idea is very similar to the way
+  pickling of XML data is described in HXT.
+
+  For example, the abstract representation of an authentication request
+  and response could be described as
+
+  data AuthUserReq
+      = AuthUserReq
+        { authUser_user :: String
+        , authUser_pass :: String
+        }
+
+  data AuthUserRes
+      = AuthUserOk { authUserOk_sid :: String }
+      | AuthUserFailed
+
+  Using httpspec you can define a mapping between HTTP and these types:
+
+  instance HasReqSpec AuthUserReq where
+    reqSpec =
+        rsMeth Http.POST $
+        rsPath "/authenticate-user" $
+        rsWrap (uncurry AuthUserReq, \(AuthUserReq a b) -> (a,b)) $
+        rsPair (rsParam "uid") (rsParam "pass")
+
+  instance HasResSpec AuthUserRes where
+    resSpec =
+        rsSwitch
+        [ rsCase (AuthUserOk,authUserOk_sid) $
+          rsStatus 200 $
+          rsContentType "text/plain" $
+          rsEncodingFixed UTF8 $
+          rsBody
+        , rsCaseConst AuthUserFailed $
+          rsStatus 403
+        ]
+Build-Type:          Simple
+Cabal-Version:       >= 1.2
+
+Library
+  Hs-Source-Dirs:    src
+  GHC-Options: -Wall
+               -fno-warn-name-shadowing
+               -fno-warn-orphans
+               -fno-warn-overlapping-patterns
+  Build-Depends:     base >= 4 && < 5, bytestring, bidispec, mtl,
+                     hxt > 8.3, pretty, MissingH,
+                     safe, cgi, network, HTTP, filepath, containers,
+                     encoding >= 0.6, hxthelper
+  Exposed-Modules:   Data.HttpSpec,Data.HttpSpec.HttpTypes
+                     Data.HttpSpec.Pretty
+                     Data.HttpSpec.EncodingHelper

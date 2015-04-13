@@ -1,0 +1,45 @@
+Name:           dephd
+Version:        0.1.6
+License:        GPL
+License-File:   LICENSE
+
+Author:         Ketil Malde
+Maintainer:     Ketil Malde <ketil@malde.org>
+
+Category:       Bioinformatics
+Synopsis:       Analyze quality of nucleotide sequences.
+Description:    dephd - A simple tool for base calling and quality appraisal.
+                .
+                Reads files in phd-format (phred output), either specified individually,
+                or in a directory (use the --input-dirs option to read directories 
+		or --input-list to read from an index file).  Can also read FASTA with an 
+		associated quality file.
+		.
+		Can trim according to Lucy or Phred parameters, can mask by quality, can plot
+		graphs (via gnuplot) of sequence quality to a window, or to JPG/EPS files.  Can
+		categorize sequences according to overall quality.  Also constructs files suitable for
+		submission to dbEST.  More information at <http://blog.malde.org/index.php/2010/09/07/submitting-ests-upstream/>.
+		.
+		Also provides 'fakequal', a utility to generate bogus quality values,
+		which are sometimes needed by less flexible tools.
+		.
+                The Darcs repository is at <http://malde.org/~ketil/biohaskell/dephd>.
+
+HomePage:	http://malde.org/~ketil/biohaskell/dephd
+Build-Type:     Simple
+Cabal-Version:	>= 1.6
+Tested-with:    GHC==6.12.1
+Data-files:     README, TODO
+
+Executable dephd
+  Main-Is:        Dephd.hs
+  Hs-Source-Dirs: src
+  Extensions: 	  BangPatterns
+  Build-Depends:  base >= 3 && <5, bio > 0.4, bytestring, regex-compat, process, directory
+  Ghc-Options:    -Wall
+
+Executable fakequal
+  Main-Is:	  FakeQual.hs
+  Hs-Source-Dirs: src
+  Build-Depends:  bio > 0.4, cmdargs >= 0.5
+  Extensions:	  DeriveDataTypeable

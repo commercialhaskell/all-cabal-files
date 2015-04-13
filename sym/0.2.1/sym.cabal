@@ -1,0 +1,55 @@
+Name:                sym
+Version:             0.2.1
+Synopsis:            Permutations, patterns, and statistics
+Description:         
+  Definitions for permutations with an emphasis on permutation
+  patterns and statistics.
+  .
+  ["Math.Sym"] Provides an efficient definition of standard
+  permutations, @StPerm@, together with a typeclass, @Perm@,  whose
+  functionality is largely inherited from @StPerm@ using a group
+  action and the standardization map.
+  .
+  ["Math.Sym.D8"] The dihedral group of order 8 acting on permutations.
+  .
+  ["Math.Sym.Stat"] Common permutation statistics, such as @des@,
+  @inv@, @exc@, @maj@, @fp@, @comp@, @lmin@, @lmax@, ...
+
+Homepage:            http://github.com/akc/sym
+
+License:             BSD3
+License-file:        LICENSE
+Author:              Anders Claesson
+Maintainer:          anders.claesson@gmail.com
+Category:            Math
+Build-type:          Simple
+
+Extra-source-files:  tests/Properties.hs
+
+Cabal-version:       >=1.6
+
+source-repository head
+  type:                git
+  location:            git://github.com/akc/sym.git
+
+Library
+  Exposed-modules:     Math.Sym
+                       Math.Sym.D8
+                       Math.Sym.Stat
+                       Math.Sym.Internal
+
+  Build-depends:       base >= 3 && < 5, random, vector
+  
+  ghc-prof-options:    -auto-all
+  ghc-options:         -Wall -O2
+  cc-options:          -Wall
+
+  c-sources:           cbits/stat.c
+                       cbits/sortop.c
+                       cbits/ordiso.c
+                       cbits/simple.c
+                       cbits/bit.c
+
+  include-dirs:        include
+  includes:            stat.h, sortop.h, ordiso.h, simple.h, bit.h
+  install-includes:    stat.h, sortop.h, ordiso.h, simple.h, bit.h

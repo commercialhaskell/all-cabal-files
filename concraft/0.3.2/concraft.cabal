@@ -1,0 +1,74 @@
+name:               concraft
+version:            0.3.2
+synopsis:           Morphosyntactic tagging tool based on constrained CRFs
+description:
+    A morphosyntactic tagging tool based on constrained conditional
+    random fields.
+license:            BSD3
+license-file:       LICENSE
+cabal-version:      >= 1.6
+copyright:          Copyright (c) 2011 Jakub Waszczuk, 2012 IPI PAN
+author:             Jakub Waszczuk
+maintainer:         waszczuk.kuba@gmail.com
+stability:          experimental
+category:           Natural Language Processing
+homepage:           http://zil.ipipan.waw.pl/Concraft
+build-type:         Simple
+
+library
+    build-depends:
+        base >= 4 && < 5
+      , array
+      , containers
+      , binary
+      , text
+      , text-binary >= 0.1 && < 0.2
+      , vector
+      , vector-binary
+      , crf-chain1-constrained >= 0.1.2 && < 0.2
+      , monad-ox >= 0.2 && < 0.3
+      , sgd >= 0.2.2 && < 0.3
+      , tagset-positional >= 0.2 && < 0.3
+      , crf-chain2-generic >= 0.3 && < 0.4
+      , monad-codec >= 0.2 && < 0.3
+      , data-lens
+      , comonad-transformers
+      , temporary
+
+    exposed-modules:
+        NLP.Concraft
+      , NLP.Concraft.Morphosyntax
+      , NLP.Concraft.Format
+      , NLP.Concraft.Format.Plain
+      , NLP.Concraft.Schema
+      , NLP.Concraft.Guess
+      , NLP.Concraft.Disamb
+      , NLP.Concraft.Disamb.Tiered
+      , NLP.Concraft.Disamb.Positional
+
+    ghc-options: -Wall -O2
+
+source-repository head
+    type: git
+    location: https://github.com/kawu/concraft.git
+
+-- executable concraft-guess
+--     build-depends:
+--         cmdargs
+--     hs-source-dirs: ., tools
+--     main-is: concraft-guess.hs    
+--     ghc-options: -Wall -O2 -threaded -rtsopts
+-- 
+-- executable concraft-disamb
+--     build-depends:
+--         cmdargs
+--     hs-source-dirs: ., tools
+--     main-is: concraft-disamb.hs    
+--     ghc-options: -Wall -O2 -threaded -rtsopts
+
+executable concraft
+    build-depends:
+        cmdargs
+    hs-source-dirs: ., tools
+    main-is: concraft.hs    
+    ghc-options: -Wall -O2 -threaded -rtsopts

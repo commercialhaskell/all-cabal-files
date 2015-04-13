@@ -1,0 +1,47 @@
+name:          unicode-symbols
+version:       0.1.1.2
+cabal-version: >=1.6
+build-type:    Simple
+stability:     experimental
+author:        Roel van Dijk
+maintainer:    vandijk.roel@gmail.com
+copyright:     (c) 2009 Roel van Dijk
+license:       BSD3
+license-file:  LICENSE
+category:
+synopsis:      Unicode alternatives for common functions and operators
+description:
+  * /Important note:/ This package will soon be deprecated.
+  Use <http://hackage.haskell.org/package/base-unicode-symbols>
+  and\/or
+  <http://hackage.haskell.org/package/containers-unicode-symbols>
+  instead.
+  .
+  This package defines new symbols for a number of functions and
+  operators in the base package and for the containers package.
+  .
+  All symbols are documented with their actual definition and
+  information regarding their Unicode code point. They should be
+  completely interchangeable with their definitions.
+  .
+  This package was inspired by unicode-prelude from P&#xE9;ter
+  Divi&#xE1;nszky:
+  <http://hackage.haskell.org/package/unicode-prelude>
+
+Library
+  exposed-modules: 
+      -- base
+      Prelude.Unicode
+    , Control.Applicative.Unicode
+    , Control.Category.Unicode
+    , Data.Monoid.Unicode
+      -- containers
+    , Data.IntMap.Unicode
+    , Data.IntSet.Unicode
+    , Data.Map.Unicode
+    , Data.Set.Unicode
+    , Data.Sequence.Unicode
+
+  build-depends: 
+      base >= 3.0.3.1 && < 4.3
+    , containers >= 0.2.0.1 && < 0.4

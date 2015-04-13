@@ -1,0 +1,36 @@
+Cabal-Version: >= 1.6
+Name:          AC-Terminal
+Version:       1.0
+Stability:     Stable
+Synopsis:      Trivial wrapper over ansi-terminal.
+
+Description:
+
+  This trivial package presents a simplified interface to
+  the most excellent @ansi-terminal@ package, exposing only
+  the functionallity that I personally use. It is very
+  limited, but very easy to use.
+  .
+  This package allows you to manipulate the text output
+  terminal (assuming your program has one). Specifically,
+  it supports colour changes and title changes (for
+  virtual terminals). Impressively, it (or rather, the
+  package it wraps) works on both Windows and Unix.
+  Under Windows, it uses native Win32 calls, while under
+  Unix it uses ANSI escape codes.
+
+Category:      Data, Math, Numerical
+License:       BSD3
+License-file:  License.txt
+Author:        Andrew Coppin
+Maintainer:    MathematicalOrchid@hotmail.com
+Build-Type:    Simple
+Tested-With:   GHC == 6.10.3
+
+Library
+  Exposed-modules:
+    System.Terminal.Core
+    System.Terminal.Utility
+    System.Terminal
+  Build-Depends:   base >= 4 && < 5, ansi-terminal >= 0.5
+  HS-Source-Dirs:  .

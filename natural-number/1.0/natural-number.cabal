@@ -1,0 +1,23 @@
+Name:                natural-number
+Version:             1.0
+License:             BSD3
+License-file:        LICENSE
+Author:              Gregory Crosswhite
+Maintainer:          Gregory Crosswhite <gcross@phys.washington.edu>
+Stability:           Provisional
+Synopsis:            Natural numbers tagged with a type-level representation of the number.
+Description:         This package provides a simple data structure for
+                     repesenting natural numbers with a type that is tagged
+     	             with the type-level natural number corresponding to the
+                     value of the natural number.
+Cabal-version:       >=1.2.3
+Build-type:          Simple
+Category:	     Type System,Data
+
+Library
+    Build-depends:   base >= 3 && < 5,
+                     type-level-natural-number >= 1.0 && < 1.2,
+                     type-level-natural-number-induction >= 1.0 && < 1.1,
+                     type-equality >= 0.1 && < 0.2
+    Exposed-modules: Data.NaturalNumber
+    Extensions:	     GADTs

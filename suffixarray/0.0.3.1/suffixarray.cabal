@@ -1,0 +1,25 @@
+Name:           suffixarray
+Version:        0.0.3.1
+Description:    n log n implementation of suffix array.
+Synopsis:       n log n implementation of suffix array.
+Copyright:	2010 Daniël de Kok, 2012 Victor Denisov
+License:        GPL-2
+License-file:   LICENSE
+Author:	        Daniël de Kok <me@danieldk.eu>, Victor Denisov <denisovenator@gmail.com>
+Maintainer:     Victor Denisov <denisovenator@gmail.com>
+Build-type:     Simple
+Homepage:       https://github.com/VictorDenisov/suffixarray
+Category:       Data
+Cabal-version:  >=1.4
+
+Executable runTests
+        main-is:        Tests/Tests.hs
+        build-depends:  base >= 3 && <= 4.5.0.0, HUnit
+Executable benchmark
+        main-is:        Tests/Benchmark.hs
+        build-depends:  base >= 3 && <= 4.5.0.0
+        ghc-options:    -rtsopts
+
+Library
+        exposed-modules:        Data.SuffixArray, Data.CountingSort
+        build-depends:          base >= 3.0.3.1 && <= 4.5.0.0, vector >= 0.5

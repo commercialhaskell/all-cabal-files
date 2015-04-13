@@ -1,0 +1,22 @@
+Name:           binary-state
+Version:        0.1
+Cabal-Version:  >= 1.6
+License:        BSD3
+License-File:   LICENSE
+Author:         Ilya V. Portnov
+Maintainer:     portnov84@rambler.ru
+Synopsis:       Simple wrapper around Data.Binary, which adds StateT to Get/Put monads.
+Category:       Jvm
+Build-Type:     Simple
+Description:    This package declares BinaryState type class, which is similar to
+                Data.Binary.Binary, but Get/Put monads can track state.
+
+library
+  Exposed-Modules: Data.BinaryState
+
+  Build-Depends:  base >= 3 && <= 5, haskell98, containers, binary,
+                  mtl > 1, bytestring
+
+  ghc-options: -fwarn-unused-imports
+
+

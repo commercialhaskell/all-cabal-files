@@ -1,0 +1,56 @@
+Name:               Yampa
+Version:            0.9.1.1
+License:            BSD3
+License-File:       LICENSE.txt
+Copyright:          Henrik Nilsson, Antony Courtney and Yale University, (c) 2003
+Author:             Antony Courtney, Paul Hudak, Henrik Nilsson, John Peterson
+Maintainer:         Antony Courtney	<antony@apocalypse.org>, Paul Hudak	<paul.hudak@yale.edu>, Henrik Nilsson	<nilsson@cs.yale.edu>, John Peterson	<peterson-john@cs.yale.edu>
+Stability:          provisional
+Homepage:           http://www.haskell.org/yampa/
+Category:           Reactivity, FRP
+Synopsis: Library for programming hybrid systems.
+Description: 
+  Domain-specific language embedded in Haskell for programming hybrid (mixed discrete-time and continuous-time) systems.
+  .
+  Yampa is based on the concepts of Functional Reactive Programming (FRP) and is structured using arrow combinators. So, this library is known as AFRP (Arrowized FRP).
+  .
+  This package is just cabalizing afrp-0.4. This isn't GADTed version, and doesn't include any extensions. If you want to see and use GADTed version, you must download higher version.
+Build-Type: Simple
+Tested-With:        GHC
+Extra-Source-Files:
+  tests/AFRPTests.hs,         tests/AFRPTestsFirstSecond.hs,   tests/AFRPTestsSwitch.hs,
+  tests/AFRPTestsAccum.hs,    tests/AFRPTestsKSwitch.hs,       tests/AFRPTestsTask.hs,
+  tests/AFRPTestsArr.hs,      tests/AFRPTestsLaws.hs,          tests/AFRPTestsUtils.hs,
+  tests/AFRPTestsBasicSF.hs,  tests/AFRPTestsLoop.hs,          tests/AFRPTestsWFG.hs,
+  tests/AFRPTestsCOC.hs,      tests/AFRPTestsLoopIntegral.hs,  tests/AFRPTestsCommon.hs,
+  tests/AFRPTestsLoopLaws.hs, tests/AFRPTestsComp.hs,          tests/AFRPTestsLoopPre.hs,
+  tests/AFRPTestsDelay.hs,    tests/AFRPTestsPSwitch.hs,       tests/AFRPTestsDer.hs,
+  tests/AFRPTestsRPSwitch.hs, tests/AFRPTestsEmbed.hs,         tests/AFRPTestsRSwitch.hs,
+  tests/AFRPTestsEvSrc.hs,    tests/AFRPTestsReact.hs,         tests/testAFRPMain.hs,
+  tests/Setup.lhs,            tests/testAFRP.cabal,
+
+  examples/Setup.lhs,         examples/examples.cabal,
+  examples/TailgatingDetector/TailgatingDetector.hs,
+  examples/TailgatingDetector/TestTGMain.hs
+
+Build-Depends:  base, haskell98
+GHC-Options : -O2
+Hs-Source-Dirs: src
+Extensions: MultiParamTypeClasses, FunctionalDependencies, FlexibleInstances, PolymorphicComponents, RankNTypes
+Exposed-modules:
+    AFRP, 
+    AFRPAffineSpace, 
+    AFRPDiagnostics,
+    AFRPEvent,
+    AFRPForceable,
+    AFRPGeometry,
+    AFRPInternals,
+    AFRPMiscellany,
+    AFRPMergeableRecord,
+    AFRPPoint2,
+    AFRPPoint3,
+    AFRPTask,
+    AFRPUtilities,
+    AFRPVector2,
+    AFRPVector3,
+    AFRPVectorSpace

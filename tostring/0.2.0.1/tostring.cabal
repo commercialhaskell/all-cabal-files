@@ -1,0 +1,22 @@
+name:                tostring
+version:             0.2.0.1
+synopsis:            The ToString class
+description:         A type class for converting text types to String.
+license:             BSD3
+author:              Silk B.V.
+maintainer:          code@silk.co
+category:            Data
+build-type:          Simple
+cabal-version:       >=1.8
+license-file:        LICENSE
+
+library
+  exposed-modules:     Data.String.ToString
+  build-depends:       base        == 4.*
+                     , utf8-string == 0.3.*
+                     , text        >= 0.11 && < 1.2
+  hs-source-dirs:      src
+
+source-repository head
+  type:                Git
+  location:            https://github.com/silkapp/tostring.git

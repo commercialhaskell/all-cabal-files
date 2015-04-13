@@ -1,0 +1,19 @@
+Name:                tconfig
+Version:             0.5.1
+Synopsis:            Simple text configuration file parser library.
+Description:         
+  This Library can be used to keep track of simple information
+  in simple games and other programs.
+Category:            Parsing
+License:             BSD3
+License-File:        LICENSE
+Author:              Anthony Simpson
+Maintainer:          DiscipleRayne@gmail.com
+Build-Type:          Simple
+Cabal-Version:	>= 1.2
+Tested-With:	GHC == 6.10
+extra-source-files:  test,README
+
+Library
+  Exposed-Modules: Data.TConfig
+  Build-Depends:   base >= 2 && <= 4, containers >= 0.2.0.1

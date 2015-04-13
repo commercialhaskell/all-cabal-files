@@ -1,0 +1,50 @@
+name:           hedis-tags
+version:        0.1.0
+cabal-version:  >= 1.8
+build-type:     Simple
+stability:      Experimental
+author:         Alexander Dorofeev <aka.spin@gmail.com>
+maintainer:     Alexander Dorofeev <aka.spin@gmail.com>
+synopsis:       Tags for hedis
+license:        BSD3
+description:    Brain-free tags for Redis.
+category:       Database
+license-file:   LICENSE
+homepage:       https://github.com/akaspin/hedis-tags
+
+source-repository head
+  type:         git
+  location:     git://github.com/akaspin/hedis-tags.git
+
+library
+  hs-source-dirs:  src
+  build-depends:   base >= 4 && < 5,
+                   bytestring >= 0.9 && < 0.10,
+                   hedis >= 0.3 && < 0.4
+  ghc-options:     -Wall
+  exposed-modules:   Database.Redis.Tags
+
+test-suite test
+  type:            exitcode-stdio-1.0
+  x-uses-tf:       true
+  hs-source-dirs: test
+  build-depends:   
+                   base >= 4,
+                   HUnit >= 1.2 && < 2,
+                   QuickCheck >= 2.4,
+                   test-framework >= 0.4.1,
+                   test-framework-quickcheck2,
+                   test-framework-hunit,
+                  
+                   hedis-tags,
+                   
+                   -- from lib
+                   bytestring >= 0.9 && < 0.10,
+                   hedis >= 0.3 && < 0.4,
+ 
+                   lifted-base,
+                   transformers
+  ghc-options:     -Wall -rtsopts -threaded
+  main-is:         Main.hs
+  other-modules:   Database.Redis.Tags.Test.Tags
+

@@ -1,0 +1,44 @@
+Name:                obj
+Cabal-Version:       >= 1.2
+Version:             0.1.2
+Synopsis:            Reads and writes obj models.
+Description:         Reads and writes obj models.
+License:             BSD3
+License-file:        LICENSE
+Author:              Thomas Davie
+Maintainer:          Thomas Davie (tom.davie@gmail.com)
+extra-source-files:  README
+                     examples/loadObject.cabal
+                     examples/Setup.lhs
+                     examples/LoadObject.hs
+                     examples/exampleModels/TieFighter.obj
+                     examples/exampleModels/TieFighter.mtl
+Category:            Graphics
+Stability:           experimental
+build-type:          Simple
+
+Library
+  Build-Depends:        base              >= 3.0,
+                        haskell98         >= 1.0,
+                        QuickCheck        >= 1.1,
+                        graphicsFormats   >= 0.1,
+                        OpenGL            >= 2.2,
+                        checkers          >= 0.1.1,
+                        array             >= 0.1,
+                        containers        >= 0.1,
+                        directory         >= 1.0,
+                        filepath          >= 1.1,
+                        OpenGLCheck       >= 0.1,
+                        bytestring        >= 0.9,
+                        binary            >= 0.4.2,
+                        Codec-Image-DevIL >= 0.1,
+                        InfixApplicative  >= 1.0
+  Hs-Source-Dirs:       src
+  Exposed-Modules:      Graphics.Formats.Obj
+  Other-Modules:        Graphics.Formats.Obj.Parse
+                        Graphics.Formats.Obj.ParserBits
+                        Graphics.Formats.Obj.ObjModel
+                        Graphics.Formats.Obj.Contents
+                        Graphics.Formats.Mtl.Parse
+                        Graphics.Formats.Mtl.Contents
+                        Graphics.Formats.Obj.Tests

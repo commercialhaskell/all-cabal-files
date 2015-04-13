@@ -1,0 +1,19 @@
+Name:             tga
+Version:          0.1
+Synopsis:         Reading and writing of tga image files
+Description:      TGA is a very simple format (like Bitmap), but in contrast to Bitmap also stores an alpha channel for transparency. Although tga might be outdated it had to be implemented because stb-image only supports reading. This version supports raw RGB24 and RGB32 data without palettes or run length encoding
+category:         Graphics
+License:          BSD3
+License-file:     LICENSE
+Author:           Tillmann Vogt
+Maintainer:       Tillmann.Vogt@rwth-aachen.de
+Build-Type:       Simple
+Cabal-Version:    >=1.6
+
+Library
+    hs-source-dirs: src
+    build-depends:
+        base == 4.*,
+        bytestring == 0.9.1.*
+    exposed-modules:
+        Graphics.Formats.TGA.TGA

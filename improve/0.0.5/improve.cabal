@@ -1,0 +1,46 @@
+name:    improve
+version: 0.0.5
+
+category: Language
+
+synopsis: An imperative, verifiable programming language for high assurance applications.
+
+description:
+  ImProve is an imperative DSL intended for high assurance, embedded applications.
+  ImProve uses infinite state, unbounded model checking to verify programs adhere
+  to specifications, which are written in the form of assertion statements.
+  Yices (required) is the backend SMT solver.
+
+author:     Tom Hawkins <tomahawkins@gmail.com>
+maintainer: Tom Hawkins <tomahawkins@gmail.com>
+
+license:      BSD3
+license-file: LICENSE
+
+homepage: http://tomahawkins.org
+
+build-type:    Simple
+cabal-version: >= 1.6
+
+library
+    build-depends:
+        base  >= 4.2     && < 5,
+        mtl   >= 1.1.0.1 && < 1.2,
+        yices >= 0.0.0.7 && < 0.0.1
+
+    exposed-modules:
+        Language.ImProve
+        Language.ImProve.Code
+        Language.ImProve.Core
+        Language.ImProve.Examples
+        Language.ImProve.Tree
+        Language.ImProve.Verify
+
+    extensions: GADTs, FlexibleInstances, TypeSynonymInstances
+
+    ghc-options: -W
+
+source-repository head
+    type:     git
+    location: git://github.com/tomahawkins/atom.git
+

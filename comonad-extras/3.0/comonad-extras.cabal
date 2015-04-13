@@ -1,0 +1,49 @@
+name:          comonad-extras
+category:      Control, Comonads
+version:       3.0
+license:       BSD3
+cabal-version: >= 1.6
+license-file:  LICENSE
+author:        Edward A. Kmett
+maintainer:    Edward A. Kmett <ekmett@gmail.com>
+stability:     experimental
+homepage:      http://github.com/ekmett/comonad-extras/
+bug-reports:   http://github.com/ekmett/comonad-extras/issues
+copyright:     Copyright (C) 2011 Edward A. Kmett
+synopsis:      Comonad transformers requiring extensions to Haskell 98
+description:   Comonads and comonad transformers that require extensions to Haskell 98
+build-type:    Simple
+extra-source-files: .travis.yml
+
+source-repository head
+  type: git
+  location: git://github.com/ekmett/comonad-extras.git
+
+library
+  hs-source-dirs: src
+  extensions: CPP
+
+  other-extensions:
+    FlexibleInstances
+    MultiParamTypeClasses
+    FunctionalDependencies
+    UndecidableInstances
+    Rank2Types
+    MultiParamTypeClasses
+
+  build-depends:
+    array                >= 0.3     && < 0.5,
+    base                 >= 4       && < 5,
+    containers           >= 0.4     && < 0.6,
+    comonad              >= 3.0     && < 3.1,
+    comonad-transformers >= 3.0     && < 3.1,
+    comonads-fd          >= 3.0     && < 3.1,
+    distributive         >= 0.2.2   && < 0.3,
+    semigroupoids        >= 3.0     && < 3.1,
+    transformers         >= 0.2     && < 0.4
+
+  exposed-modules:
+    Control.Comonad.Store.Zipper
+    Control.Comonad.Store.Pointer
+
+  ghc-options:      -Wall

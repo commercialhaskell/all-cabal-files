@@ -1,0 +1,46 @@
+Name:                bitstring
+Version:             0.0.0
+Synopsis:            Lazy bit strings
+Description:         Lazy bit strings, built on the top of bytestrings.
+License:             BSD3
+License-file:        LICENSE
+Author:              Balazs Komuves
+Maintainer:          bkomuves (plus) hackage (at) gmail (dot) com
+Homepage:            http://code.haskell.org/~bkomuves/
+Stability:           Experimental
+Category:            Data
+Tested-With:         GHC == 6.10.1 
+Cabal-Version:       >= 1.6
+Build-Type:          Custom
+
+Flag base4
+  Description: Base v4 
+
+Flag withQuickCheck
+  Description: Build with QuickCheck test. Note that Show instances will be different.
+  Default: False
+
+Library
+
+  if flag(base4)
+    Build-Depends:        base >= 4 && < 5
+    cpp-options:          -DBASE_MAJOR_VERSION=4
+  else
+    Build-Depends:        base >= 3 && < 4
+    cpp-options:          -DBASE_MAJOR_VERSION=3
+
+  if flag(withQuickCheck)
+    Build-Depends:        QuickCheck == 2.*
+    cpp-options:          -DWITH_QUICKCHECK
+
+  Build-Depends:       bytestring
+  
+  Exposed-Modules:     Data.BitString,
+                       Data.BitString.BigEndian
+  
+  Hs-Source-Dirs:      .
+    
+  Extensions:          CPP
+  ghc-options:         -Wall 
+  
+  

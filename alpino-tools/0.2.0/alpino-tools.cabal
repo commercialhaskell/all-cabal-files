@@ -1,0 +1,60 @@
+Name:          alpino-tools
+Version:       0.2.0
+License:       OtherLicense
+License-file:  LICENSE
+Copyright:     Copyright 2010-2012 Daniël de Kok
+Author:        Daniël de Kok <me@danieldk.eu>
+Maintainer:    Daniël de Kok <me@danieldk.eu>
+Homepage:      http://github.com/danieldk/alpino-tools
+Category:      Natural Language Processing, Data
+Synopsis:      Alpino data manipulation tools
+Description:   Tools for manipulating data for the Alpino parser for Dutch.
+Cabal-Version: >= 1.8
+Build-Type:    Simple
+
+Library
+  Exposed-Modules:      Data.Alpino.DepStruct, Data.Alpino.DepStruct.Pickle,
+                        Data.Alpino.DepStruct.Triples, Data.Alpino.Model,
+                        Data.Alpino.Model.Conduit
+  Build-Depends:        base >= 4 && < 5, bytestring == 0.9.2.*,
+                        containers == 0.4.*, utf8-string == 0.3.*,
+                        bytestring-lexing == 0.4.*,
+                        conduit == 0.4.*, MonadRandom == 0.1.*,
+                        random-shuffle == 0.0.3, hexpat-pickle == 0.5,
+                        resourcet == 0.3.*, rosezipper == 0.2,
+                        mtl == 2.0.1.*
+  HS-Source-Dirs:       src
+  Ghc-Options:          -O2 -Wall
+
+Executable at_model_rescore_data
+  HS-Source-Dirs:       utils
+  main-is:              model_rescore_data.hs
+  Build-Depends:        base >= 4 && < 5, alpino-tools, conduit == 0.4.*
+  Ghc-Options:          -O2 -Wall
+
+Executable at_model_filter_data
+  HS-Source-Dirs:       utils
+  main-is:              model_filter_data.hs
+  Build-Depends:        base >= 4 && < 5, alpino-tools, conduit == 0.4.*,
+                        containers == 0.4.*, utf8-string == 0.3.*
+  Ghc-Options:          -O2 -Wall
+
+Executable at_model_oracle
+  HS-Source-Dirs:       utils
+  main-is:              model_oracle.hs
+  Build-Depends:        base >= 4 && < 5, alpino-tools, conduit == 0.4.*
+  Ghc-Options:          -O2 -Wall
+
+Executable at_model_random_sample
+  HS-Source-Dirs:       utils
+  main-is:              model_random_sample.hs
+  Build-Depends:        base >= 4 && < 5, alpino-tools, conduit == 0.4.*,
+                        resourcet == 0.3.*, mtl == 2.0.1.*,
+                        MonadRandom == 0.1.*
+  Ghc-Options:          -O2 -Wall -fno-warn-orphans
+
+Executable at_model_statistics_data
+  HS-Source-Dirs:       utils
+  main-is:              model_statistics_data.hs
+  Build-Depends:        base >= 4 && < 5, alpino-tools, conduit == 0.4.*
+  Ghc-Options:          -O2 -Wall

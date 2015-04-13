@@ -1,0 +1,31 @@
+name:                Emping
+version:             0.6
+license:             GPL
+license-file:        LICENSE
+build-depends:       base, parsec, fgl, mtl, array, gtk
+copyright:           Hans van Thiel 2006 - 2009
+author:              Hans van Thiel
+maintainer:          hthiel.char@zonnet.nl
+build-depends:       containers
+build-type:          Simple
+
+stability:           experimental
+homepage:            http://www.muitovar.com
+synopsis:            derives heuristic rules from nominal data
+description:         interactive (prototype) tool for discovery and analysis of predictive relations in nominal data
+                     reads tables in Open Office Calc .csv format, saves results in .csv and .dot (GraphViz)                             
+category:            Data Mining
+extra-source-files:  HaskellM.png
+
+executable:          emping
+hs-source-dirs:      src
+main-is:             Main.hs
+
+ghc-options:         -Wall 
+other-modules:       CsvParse
+                     Codec
+                     DefRules
+                     Reduce
+                     Abduce
+                     CsvTable
+

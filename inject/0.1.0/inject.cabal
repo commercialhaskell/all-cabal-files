@@ -1,0 +1,64 @@
+name:             inject
+version:          0.1.0
+license:          MIT
+license-file:     LICENSE
+copyright:        (c) 2013 Simon Hengel
+author:           Simon Hengel <sol@typeful.net>
+maintainer:       Simon Hengel <sol@typeful.net>
+build-type:       Simple
+cabal-version:    >= 1.8
+category:         Text
+synopsis:         A minimalistic template engine
+description:      Inject expands shell commands in arbitrary text templates.
+                  .
+                  <https://github.com/sol/inject#readme>
+
+source-repository head
+  type: git
+  location: https://github.com/sol/inject
+
+library
+  ghc-options:
+      -Wall
+  hs-source-dirs:
+      src
+  exposed-modules:
+      Text.Inject
+  other-modules:
+      Util
+  build-depends:
+      base    == 4.*
+    , text
+    , process
+    , attoparsec
+
+executable inject
+  ghc-options:
+      -Wall
+  hs-source-dirs:
+      driver
+  main-is:
+      Main.hs
+  build-depends:
+      base    == 4.*
+    , text
+    , inject
+
+test-suite spec
+  type:
+      exitcode-stdio-1.0
+  ghc-options:
+      -Wall -Werror
+  cpp-options:
+      -DTEST
+  hs-source-dirs:
+      src, test
+  main-is:
+      Spec.hs
+  build-depends:
+      base    == 4.*
+    , text
+    , process
+    , attoparsec
+    , hspec >= 1.3
+    , hspec-expectations

@@ -1,0 +1,43 @@
+name:            ripple-federation
+version:         0.1
+cabal-version:   >= 1.8
+license:         OtherLicense
+license-file:    COPYING
+category:        Data
+copyright:       © 2014 Stephen Paul Weber
+author:          Stephen Paul Weber <singpolyma@singpolyma.net>
+maintainer:      Stephen Paul Weber <singpolyma@singpolyma.net>
+stability:       experimental
+tested-with:     GHC == 7.4.1
+synopsis:        Utilities and types to work with the Ripple federation protocol
+homepage:        https://github.com/singpolyma/ripple-federation-haskell
+bug-reports:     https://github.com/singpolyma/ripple-federation-haskell/issues
+build-type:      Simple
+description:
+        To resolve federation names, etc.
+
+extra-source-files:
+        README
+
+library
+        exposed-modules:
+                Ripple.Federation
+
+        build-depends:
+                base == 4.*,
+                bytestring,
+                text,
+                errors,
+                aeson,
+                attoparsec,
+                blaze-builder,
+                network,
+                http-types,
+                http-streams,
+                io-streams,
+                unexceptionalio,
+                base58address
+
+source-repository head
+        type:     git
+        location: git://github.com/singpolyma/ripple-federation-haskell.git

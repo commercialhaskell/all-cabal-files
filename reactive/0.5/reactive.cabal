@@ -1,0 +1,42 @@
+Name:                reactive
+Version:             0.5
+Synopsis: 	     Simple foundation for functional reactive programming
+Category:            reactivity, FRP
+Description:
+  /Reactive/ is a simple foundation for programming reactive systems
+  functionally.  Like Fran\/FRP, it has a notions of (reactive) behaviors and
+  events.  Like DataDriven, Reactive has a data-driven implementation.
+  The main difference between Reactive and DataDriven is that Reactive
+  builds on functional \"futures\" (using threading), while DataDriven
+  builds on continuation-based computations.
+  .
+  Please see the project wiki page: <http://haskell.org/haskellwiki/reactive>
+  .
+  The module documentation pages have links to colorized source code and
+  to wiki pages where you can read and contribute user comments.  Enjoy!
+  .
+  &#169; 2007 by Conal Elliott; BSD3 license.
+Author:              Conal Elliott 
+Maintainer:          conal@conal.net
+Homepage:            http://haskell.org/haskellwiki/reactive
+Package-Url:	     http://darcs.haskell.org/packages/reactive
+Copyright:           (c) 2007-2008 by Conal Elliott
+License:             BSD3
+Stability:           provisional
+build-type:	     Simple
+Hs-Source-Dirs:      src
+Extensions:          
+Build-Depends:       base, TypeCompose>=0.3
+Exposed-Modules:     
+		     Data.SFuture
+		     Data.Future
+		     Data.Fun
+		     Data.Reactive
+Extra-Source-Files:
+ghc-options:         -Wall
+
+-- Experimental modules:
+-- 		     Data.SEvent
+-- 		     Data.MEvent
+-- 		     Data.EventExtras
+-- 		     Data.SReactive

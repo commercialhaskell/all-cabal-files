@@ -1,0 +1,47 @@
+Name:              hosc-utils
+Version:           0.12
+Synopsis:          Haskell Open Sound Control Utilities
+Description:       hosc-utils
+License:           GPL
+Category:          Sound
+Copyright:         (c) Stefan Kersten and others, 2006-2012
+Author:            Stefan Kersten
+Maintainer:        rd@slavepianos.org
+Stability:         Experimental
+Homepage:          http://rd.slavepianos.org/?t=hosc-utils
+Tested-With:       GHC == 7.6.1
+Build-Type:        Simple
+Cabal-Version:     >= 1.8
+Data-Files:        README
+
+Executable hosc-utils-benchmark
+    Hs-Source-Dirs: benchmarks, .
+    Main-Is: benchmark.hs
+    Other-Modules:
+        Sound.OpenSoundControl.NFData
+    Build-Depends:
+        base == 4.*
+      , bytestring
+      , hosc == 0.12.*
+      , criterion
+      , deepseq
+    GHC-Options:      -Wall -fno-warn-orphans -fwarn-tabs -rtsopts
+    GHC-Prof-Options: -Wall -fwarn-tabs -rtsopts -auto-all
+
+Test-Suite hosc-utils-test
+    Type: exitcode-stdio-1.0
+    Hs-Source-Dirs: tests, .
+    Main-Is: test.hs
+    Other-Modules:
+        Sound.OpenSoundControl.Arbitrary
+    Build-Depends:
+        hosc == 0.12.*
+      , QuickCheck >= 2
+      , test-framework >= 0.2
+      , test-framework-quickcheck2 >= 0.2
+    GHC-Options:      -Wall -fno-warn-orphans -fwarn-tabs -rtsopts
+    GHC-Prof-Options: -Wall -fwarn-tabs -rtsopts -auto-all
+
+Source-Repository  head
+  Type:            darcs
+  Location:        http://rd.slavepianos.org/sw/hosc-utils

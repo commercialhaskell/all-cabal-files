@@ -1,0 +1,69 @@
+Name:                hbro-contrib
+Version:             1.2.0.0
+Synopsis:            Third-party extensions to hbro.
+Description:         Cf README
+Homepage:            https://bitbucket.org/k0ral/hbro-contrib
+Category:            Browser,Web
+
+License:             OtherLicense
+License-file:        LICENSE
+-- Copyright:
+Author:              koral <koral at mailoo dot org>
+Maintainer:          koral <koral at mailoo dot org>
+
+Cabal-version:       >=1.8
+Build-type:          Simple
+Extra-source-files:  README.rst examples/hbro.hs
+Data-files:          examples/ui.xml
+
+Source-repository head
+    Type:     git
+    Location: https://github.com/k0ral/hbro-contrib.git
+Source-repository head
+    Type:     hg
+    Location: https://bitbucket.org/k0ral/hbro-contrib
+Source-repository head
+    Type:     hg
+    Location: http://hgweb.twyk.org/hbro-contrib
+
+Library
+    Build-depends:
+        base == 4.*,
+        classy-prelude,
+        containers,
+        glib,
+        gtk3 >= 0.12.3,
+        hbro >= 1.2.0.0,
+        monad-control,
+        mtl >= 2.2.1,
+        network-uri,
+        pango,
+        parsec,
+        process,
+        -- random-extras,
+        -- random-fu,
+        safe,
+        system-fileio,
+        text,
+        time,
+        transformers-base,
+        unix,
+        webkitgtk3
+    Exposed-modules:
+        Hbro.Bookmarks,
+        Hbro.Download,
+        Hbro.History,
+        Hbro.Misc,
+        Hbro.Settings,
+        Hbro.StatusBar
+    Extensions:
+        ConstraintKinds,
+        DeriveDataTypeable,
+        FlexibleContexts,
+        FunctionalDependencies,
+        GeneralizedNewtypeDeriving,
+        MultiParamTypeClasses,
+        NoImplicitPrelude,
+        OverloadedStrings,
+        RankNTypes
+    Ghc-options: -Wall -fno-warn-unused-do-bind -threaded

@@ -1,0 +1,21 @@
+cabal-version: >= 1.2
+build-type: Simple
+name: twilight-stm
+version: 1.2
+license: LGPL
+license-file: LICENSE
+maintainer: Annette Bieniusa <bieniusa@informatik.uni-freiburg.de>
+homepage: http://proglang.informatik.uni-freiburg.de/projects/twilight/
+description: A STM library with safe irrevocable I/O and inconsistency repair
+category: Concurrency
+stability: Experimental
+synopsis: STM library with safe irrevocable I/O and inconsistency repair
+copyright: Annette Bieniusa
+
+library
+  build-depends: base >= 4, base < 5
+  build-depends: haskell98 >= 1.0, containers >= 0.2, mtl >= 1.1
+  exposed-modules: Control.Concurrent.STM.Monadish
+  exposed-modules: Control.Concurrent.STM.Twilight
+  exposed-modules: Control.Concurrent.STM.Counter
+  hs-source-dirs: src

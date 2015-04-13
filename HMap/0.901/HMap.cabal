@@ -1,0 +1,20 @@
+Name:                HMap
+Version:             0.901
+Synopsis:	     Fast heterogeneous maps.
+Description:         Fast heterogeneous maps based on Data.Map.
+License:             BSD3
+License-file:        LICENSE
+Author:              Atze van der Ploeg
+Maintainer:          atzeus@gmail.com
+Homepage:            https://github.com/atzeus/HMap
+Build-Type:          Simple
+Cabal-Version:       >=1.6
+Category:            Data, Data Structures
+Library
+  Build-Depends: base >= 2 && <= 6, containers >= 0.1.0.0
+  Exposed-modules: Data.HMap
+  Extensions:	RankNTypes, GADTs, CPP
+
+source-repository head
+    type:     git
+    location: https://github.com/atzeus/HMap

@@ -1,0 +1,54 @@
+Name:           lambdacube-core
+Version:        0.2.0
+Cabal-Version:  >= 1.10
+Build-Type:     Simple
+License:        BSD3
+License-File:   LICENSE
+Author:         Csaba Hruska, Gergely Patai
+Maintainer:     csaba (dot) hruska (at) gmail (dot) com
+Stability:      experimental
+Homepage:       http://lambdacube3d.wordpress.com/
+Bug-Reports:    https://github.com/csabahruska/lc-dsl/issues
+Category:       Graphics
+Tested-With:    GHC == 7.8.2
+Synopsis:       LambdaCube 3D IR
+
+Library
+  Build-Depends:
+        base >=4.6 && <5,
+        containers >=0.5 && <0.6,
+        mtl >=2.2 && <2.3,
+        bytestring >=0.10 && <0.11,
+        bytestring-trie >=0.2 && <0.3,
+        vector >=0.10 && <0.11
+
+  default-language:  Haskell2010
+  hs-source-dirs:    src/lib
+
+  Exposed-modules:
+        LambdaCube.Core.Util.BiMap
+        LambdaCube.Core.Traversals
+        LambdaCube.Core.PrimFun
+        LambdaCube.Core.Type
+        LambdaCube.Core.DeBruijn
+--        LambdaCube.Core.DeBruijnRec
+
+  GHC-options:
+--        -Werror
+        -Wall
+        -fno-warn-missing-signatures
+        -fno-warn-name-shadowing
+        -fno-warn-orphans
+        -fno-warn-unused-binds
+        -fno-warn-unused-do-bind
+        -fspec-constr-count=10
+        -funbox-strict-fields
+        -O0
+-- for profiling
+--        -auto-all
+--        -caf-all
+
+  default-extensions:
+        DeriveDataTypeable
+        BangPatterns
+        TypeSynonymInstances

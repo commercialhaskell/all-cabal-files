@@ -1,0 +1,24 @@
+Name:                general-prelude
+Version:             0.1
+Synopsis:            Prelude replacement using generalized type classes where possible
+Description:         This Prelude prefers more general and performance-oriented types,
+                     such as Category, Foldable, Traversable, Data.Text and Control.Lens.
+License:             BSD3
+License-file:        LICENSE
+Author:              John Wiegley, Svein Ove Aas
+Maintainer:          johnw@newartisans.com
+Category:            Control, Data
+Build-type:          Simple
+Cabal-version:       >=1.10
+Stability:           Experimental
+
+Library
+  default-language:   Haskell2010
+  default-extensions: NoImplicitPrelude
+
+  Build-Depends:        base >= 4 && < 5
+                      , lens            >= 3.0
+                      , pointless-fun   >= 1.1.0.1
+                      , strict          >= 0.3.2
+                      , system-filepath >= 0.4.7
+  Exposed-modules:      Prelude.General

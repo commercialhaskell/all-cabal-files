@@ -1,0 +1,34 @@
+name:                SFML-control
+version:             0.2.0.2
+synopsis:            Higher level library on top of SFML
+license:             MIT
+license-file:        LICENSE
+author:              Alfredo Di Napoli
+maintainer:          alfredo.dinapoli@gmail.com
+category:            Graphics
+build-type:          Simple
+homepage:            https://github.com/SFML-haskell/SFML-control
+extra-source-files:  README.md
+cabal-version:       >=1.10
+
+library
+  exposed-modules:
+      Control.Monad.SFML
+      Control.Monad.SFML.Audio
+      Control.Monad.SFML.Graphics
+      Control.Monad.SFML.Window
+      Control.Monad.SFML.System
+      Control.Monad.SFML.Types
+  other-modules:
+      Control.Monad.SFML.Types.TH
+      Control.Monad.SFML.Types.Internal
+      Control.Monad.SFML.Conversions
+  build-depends:
+      base >= 4.6 && < 5,
+      mtl >= 2.0.0.0,
+      SFML >= 0.2.0.0,
+      template-haskell -any
+  hs-source-dirs:
+      src
+  default-language:
+      Haskell2010

@@ -1,0 +1,24 @@
+Name:			fckeditor
+Version:		0.1
+License:                BSD3
+License-file:           LICENSE
+Author:			Peter Gammie <peteg42@gmail.com>
+Maintainer:		Peter Gammie <peteg42@gmail.com>
+Homepage:               http://peteg.org/
+Category:               Web
+Synopsis:               Server-Side Integration for FCKeditor
+Description:            Provides Server-Side Integration for FCKeditor.
+Build-type:		Simple
+Build-depends: 
+  base,
+  cgi >= 3001.1.0,
+  HaXml >=1.13 && <1.14,
+  xhtml >= 3000.0.1
+Exposed-Modules:
+  Text.XHtml.FCKeditor
+Other-modules:
+  Text.XHtml.FCKeditor.FileBrowser
+  Text.XHtml.FCKeditor.Validate
+  Text.XHtml.FCKeditor.Widget
+Extensions: GeneralizedNewtypeDeriving
+Ghc-options: -Wall

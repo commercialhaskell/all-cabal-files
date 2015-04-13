@@ -1,0 +1,45 @@
+Name:           adhoc-network
+Version:        1.0.3
+License:        GPL
+License-File:   LICENSE
+Author:         Stephan Friedrichs,
+                Henning Günther,
+                Oliver Mielentz,
+                Martin Wegner
+
+Stability:      Beta
+Category:       Network
+Synopsis:       Ad-hoc P2P network protocol
+Description:    This is a library for ad hoc P2p networking, developed for the Barracuda
+                chat client (by Stephan Friedrichs,
+                Henning Günther, Oliver Mielentz and Martin Wegner).
+                .
+                This library implements the RFCs (see for example
+                <http://tools.ietf.org/html/draft-strauss-p2p-chat>).
+                .
+                The Darcs repository can be found at <http://repos.mroot.net/sep07-adhoc>
+Homepage:       http://sep07.mroot.net/
+
+Build-Depends:  base>=3, containers, network, old-locale, random, time, parsec, bytestring>0.9, HaXml>1.0,
+                utf8-string, dataenc, Crypto>4, hsgnutls>=0.2.3-barracuda, pkcs1>=1.0.2, xml-parsec>=1.0.2
+Build-Type:     Simple
+
+Extensions:     ExistentialQuantification,
+                FlexibleContexts,
+                FlexibleInstances,
+                RelaxedPolyRec,
+                TypeSynonymInstances
+
+Exposed-Modules:
+                Network.AdHoc.Channel
+                Network.AdHoc.Encryption
+                Network.AdHoc.Generator
+                Network.AdHoc.Message
+                Network.AdHoc.MessageID
+                Network.AdHoc.ParserStrict
+                Network.AdHoc.Routing
+                Network.AdHoc.Signature
+                Network.AdHoc.UserID
+                Network.AdHoc.XMLRenderer
+ghc-options:    -Wall
+

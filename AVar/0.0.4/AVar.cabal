@@ -1,0 +1,29 @@
+Name:                   AVar
+Version:                0.0.4
+Category:               Concurrency
+Synopsis:               Mutable variables with Exception handling and concurrency support.
+Description:            AVars emulate mutable variables, by providing a queue based
+                        interface to interacting with the variable. Each variable runs
+                        a 'handler' function, which reads requests from a queue and
+                        processes them one by one. They can be used in concurrent
+                        systems safely, and should handle exceptions thrown by
+                        modifying functions gracefully.
+                        
+                        There is also an unsafe interface through Data.AVar.Unsafe,
+                        which will throw any errors encountered while modifying
+                        the variable.
+License:                BSD3
+License-file:           LICENSE.txt
+Author:                 Alex Mason
+Maintainer:             Alex Mason <axman6@gmail.com>
+build-type:             Simple
+Cabal-Version:          >= 1.2
+Extra-Source-Files:
+        Data/AVar/Internal.hs
+
+Library
+        Build-Depends:
+                base >= 4.0.0.0
+        Exposed-modules:
+                Data.AVar, Data.AVar.Unsafe
+

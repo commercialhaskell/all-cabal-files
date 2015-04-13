@@ -1,0 +1,39 @@
+name:                properties
+version:             0.0.2
+synopsis:            check quickCheck properties in real time.
+description:         Test.Properties is flexible and readable way of codifing and executing assertions.
+                     The properties can be defined right within the class or the code for which the
+                     properties apply.
+                     .
+                     Instead of testing properties with automatically generate values in a separate
+                     test program,this package permits to test them on the fly while the real application run,
+                     with the data produced within. So somehow it unites the readability of
+                     QuickCheck and the flexibility of assert.  It is simple and straighforward
+                     But is by no means perfect. no statistics and so on. Just trace messages are
+                     sent.
+                     .
+                     The primary purpose of this package was to define class properties
+                     and to check their instances. The properties can be defined within a class.
+                     so no additional exports are necessary. checking instaces can be done within
+                     the instance declarations. But it can be used anywhere assertions
+                     are used. It can be attached to arbitrary piece of code for which
+                     the property group holds. The defined properties can be used for casual
+                     debugging.
+                     .
+                     The package includes  complete examples.
+
+
+                     
+
+category:            Testing
+license:             BSD3
+license-file:        LICENSE
+author:              Alberto Gómez Corona
+maintainer:          agocorona@gmail.com
+Tested-With:         GHC == 6.10.4
+Build-Type:          Simple
+build-Depends:       base >=3 && <4
+Cabal-Version:       >= 1.2
+
+exposed-modules:     Test.Properties
+ghc-options:    -O2

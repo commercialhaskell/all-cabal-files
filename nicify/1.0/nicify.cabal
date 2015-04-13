@@ -1,0 +1,35 @@
+Name:           nicify
+Version:        1.0
+Synopsis:       Pretty print the standard output of show for algebraic datatypes
+Description:    Pretty print the standard output of show for algebraic datatypes
+                
+License:        MIT
+License-File:   LICENSE
+Author:         Julian Fleischer <julian.fleischer@fu-berlin.de>
+Maintainer:     Julian Fleischer <julian.fleischer@fu-berlin.de>
+Build-Type:     Simple
+Cabal-Version:  >= 1.8
+Category:       Text, Tools
+Stability:      stable
+
+Source-Repository head
+    type: darcs
+    location: http://hub.darcs.net/scravy/nicify
+
+Library
+    Exposed-Modules:    Text.Nicify
+    Build-Depends:      base >= 4 && < 5
+                        , parsec >= 3
+                        , transformers >= 0.3
+    Hs-Source-Dirs:     src
+
+Executable nicify
+    Build-Depends:      base >= 4 && < 5
+                        , nicify
+                        , parsec >= 3
+                        , transformers >= 0.3
+
+    Hs-Source-Dirs:     src
+    Main-Is:            nicify.hs
+    
+

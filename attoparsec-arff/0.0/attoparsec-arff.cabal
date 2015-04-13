@@ -1,0 +1,20 @@
+Name:                attoparsec-arff
+Version:             0.0
+Synopsis:            An ARFF file parser using Attoparsec
+Description:         Parse ARFF files
+Category:            Data, Text, AI
+License:             GPL-2
+License-file:        LICENSE
+Build-Type:          Simple
+Cabal-version:       >= 1.6
+Author:              Paul Wilson
+Maintainer:          Paul Wilson <paul@statusfailed.com>
+
+Library
+  Build-Depends:     base >= 4 && < 5, attoparsec >= 0.10.1.0, bytestring >= 0.9.1.10
+  Hs-Source-Dirs:    src
+  Exposed-modules:   Text.ARFF
+
+source-repository head
+  type:              git
+  location:          git://github.com/statusfailed/attoparsec-arff.git

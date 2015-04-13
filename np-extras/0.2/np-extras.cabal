@@ -1,0 +1,22 @@
+name:           np-extras
+version:        0.2
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+cabal-version:  >= 1.2.3
+tested-with:    GHC == 6.10.3
+author:         Brent Yorgey
+maintainer:     Brent Yorgey <byorgey@cis.upenn.edu>
+category:       Math
+synopsis:       NumericPrelude extras
+description:    Various extras to extend the NumericPrelude, including
+                multivariate polynomials and factored rationals.
+
+Library
+  build-depends: base >= 3.0 && < 4.2, numeric-prelude >= 0.1.1 && < 0.2,
+                 primes >= 0.1.1 && < 0.2, containers >= 0.2 && < 0.3
+  exposed-modules:
+    MathObj.FactoredRational
+    MathObj.Monomial
+    MathObj.MultiVarPolynomial
+  extensions: NoImplicitPrelude

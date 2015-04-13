@@ -1,0 +1,37 @@
+Name:                jack-bindings
+Version:             0.1
+License:	     MIT
+Description:         
+  Low level bindings to the JACK Audio Connection Kit ( <http://jackaudio.org/> )
+  .
+  This package provides bindings to the functionality providet in the jack.h include file
+  and should be sufficient to write a fully functional client
+  .
+  For now, please refer to the Jack documentation for a complete description of the api.
+  .
+  <http://jackaudio.org/files/docs/html/jack_8h.html>
+Synopsis:	     Bindings to the JACK Audio Connection Kit
+Author:              Philipp Balzarek
+Maintainer:          p.balzarek@googlemail.com
+Stability:           experimental
+License-File:	     LICENSE
+Category:	     Sound
+Build-Type:          Simple
+Cabal-Version:	     >= 1.6
+Extra-Source-Files: src/Sound/Jack/wrapper.h
+
+Library
+  Build-Depends:     base >= 4 && < 5, mtl >= 1.1.0.0
+  Exposed-modules:   Sound.Jack
+                     , Sound.Jack.Bindings
+                     , Sound.Jack.JackMonad
+                     
+  Other-modules:     C2HS
+                     , Sound.Jack.RawBindings
+  Includes:	     jack/jack.h
+  Include-Dirs:	     src/Sound/Jack
+  C-Sources:	     src/Sound/Jack/wrapper.c
+  ghc-options:       -Wall
+  hs-source-dirs:    src
+  build-tools:	     c2hs
+  pkgconfig-depends: jack

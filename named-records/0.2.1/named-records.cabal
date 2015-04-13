@@ -1,0 +1,28 @@
+Name:           named-records
+Version:        0.2.1
+Synopsis:       Flexible records with named fields.
+Description:    Flexible records with named fields.
+                .
+                [@v0.2@] Default values with @record@.
+                .
+                [@v0.2.1@] Requires @names-0.2.1@.
+License:        MIT
+License-File:   LICENSE
+Author:         Julian Fleischer <julian.fleischer@fu-berlin.de>
+Maintainer:     Julian Fleischer <julian.fleischer@fu-berlin.de>
+Build-Type:     Simple
+Cabal-Version:  >= 1.6
+Category:       Data, Records
+Stability:      experimental
+
+Library
+    Exposed-Modules:    Data.NamedRecord,
+                        Data.NamedRecord.TH
+
+    Build-Depends:      base >= 4 && < 5,
+                        names == 0.2.1,
+                        template-haskell >= 2.7
+
+    Hs-Source-Dirs:     src
+
+

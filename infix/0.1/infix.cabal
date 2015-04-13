@@ -1,0 +1,32 @@
+name:                infix
+version:             0.1
+synopsis:            Infix expression re-parsing (for HsParser library)
+description:         The Haskell parser does not consider the fixity
+                     of operators when parsing infix applications.
+                     All infix applications are thus parsed as
+                     if the operators were all left associative with
+                     the same precedence.
+
+                     This module contains code for re-parsing infix
+                     applications taking into account the fixity of
+                     operators.
+
+                     The important algorithm is the well known
+                     operator precedence parsing algorithm. See
+                     comments in the code for more detailed
+                     information.
+category:            Parsing
+license:             GPL
+license-file:        LICENSE
+author:              Bernie Pope <bjpop@csse.unimelb.edu.au>
+maintainer:          None
+homepage:            http://www.cs.mu.oz.au/~bjpop/code.html
+
+build-depends:       base, containers, haskell-src, FiniteMap
+build-type:          Simple
+tested-with:         GHC==6.5
+
+exposed-modules:     Language.Haskell.Infix
+
+ghc-options:         -O2 -Wall -optl-Wl,-s
+ghc-prof-options:    -prof -auto-all

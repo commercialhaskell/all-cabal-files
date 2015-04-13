@@ -1,0 +1,37 @@
+name:            wai-hastache
+version:         0.1
+cabal-version:   >= 1.8
+license:         OtherLicense
+license-file:    COPYING
+category:        Web
+copyright:       © 2012 Stephen Paul Weber
+author:          Stephen Paul Weber <singpolyma@singpolyma.net>
+maintainer:      Stephen Paul Weber <singpolyma@singpolyma.net>
+stability:       experimental
+tested-with:     GHC == 7.0.3
+synopsis:        Nice wrapper around hastache for use with WAI
+homepage:        https://github.com/singpolyma/wai-hastache
+bug-reports:     https://github.com/singpolyma/wai-hastache/issues
+build-type:      Simple
+description:
+        Provides smart constructors for WAI responses using Hastache for
+        rendering mustache templates.
+
+extra-source-files:
+        README
+
+library
+        exposed-modules:
+                Network.Wai.Hastache
+
+        build-depends:
+                base == 4.*,
+                hastache,
+                wai,
+                http-types,
+                bytestring,
+                transformers
+
+source-repository head
+        type:     git
+        location: git://github.com/singpolyma/wai-hastache.git

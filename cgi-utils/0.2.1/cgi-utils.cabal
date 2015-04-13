@@ -1,0 +1,21 @@
+Name: cgi-utils
+Version: 0.2.1
+x-revision: 1
+Author: Chris Done (chrisdone@gmail.com)
+Maintainer: none
+Copyright: 2010 Chris Done
+License: BSD3
+Category: CGI, Web
+Synopsis: Simple modular utilities for CGI/FastCGI (sessions, etc.)
+Description: Simple modular utilities for CGI/FastCGI that one tends to always need including sessions state.
+Homepage: http://github.com/chrisdone/haskell-cgi-utils
+Build-Type: Simple
+Cabal-Version: >= 1.2
+License-File: LICENSE
+
+Library
+  Exposed-Modules: Network.CGI.Session
+  Hs-Source-Dirs: src
+  Build-Depends: base >= 2 && < 5, cgi, random, containers, mtl
+  Extensions: TypeSynonymInstances
+  GHC-Options: -Wall

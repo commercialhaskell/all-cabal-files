@@ -1,0 +1,34 @@
+Name:          dnscache
+Version:       0.1.0
+Category:      Network
+Synopsis:      Caching DNS resolver library and mass DNS resolver utility
+Maintainer:    Ertugrul Söylemez <es@ertes.de>
+Author:        Ertugrul Söylemez <es@ertes.de>
+Copyright:     (c) 2010 Ertugrul Söylemez
+License:       BSD3
+License-file:  LICENSE
+Build-type:    Simple
+Stability:     experimental
+Cabal-version: >= 1.6
+Description:
+
+    This library implements a caching, asynchronous DNS resolver and
+    provides a command line utility for mass DNS resolution.
+
+Library
+    Build-depends:
+        base >= 4 && <= 5,
+        containers >= 0.3.0.0,
+        contstuff >= 0.7.0,
+        dns >= 0.1.0,
+        iproute >= 1.2.0,
+        time >= 1.1.4
+    GHC-Options: -W
+    Exposed-modules:
+        Network.DnsCache
+
+Executable massdns
+    Build-depends:
+        base >= 4 && <= 5
+    GHC-Options: -W -threaded
+    Main-is: MassDns.hs

@@ -1,0 +1,61 @@
+Name:                   Hach
+Version:                0.1.1
+Category:               Network
+Synopsis:               Simple chat
+Description:            Simple example of chat application. Consists of 3 components: hach-server, hach-client (simple console client), hach-nclient (vty-ui client).
+
+License:                MIT
+License-file:           LICENSE
+
+Author:                 Matvey Aksenov,
+                        Dmitry Malikov
+
+Maintainer:             Dmitry Malikov <malikov.d.y@gmail.com>
+
+Build-type:             Simple
+Cabal-version:          >= 1.6
+Homepage:               http://github.com/dmalikov/HaCh
+
+Library
+  Build-Depends:        base >= 3 && <5,
+                        containers,
+                        old-locale,
+                        network
+
+  HS-Source-Dirs:       libhach
+
+  Exposed-Modules:      Hach.Types
+
+  GHC-Options:          -Wall
+
+Executable hach-client
+  Main-is:              Client.hs
+  HS-Source-Dirs:       client, libhach
+  Other-modules:        Client.Args,
+                        Client.Connect
+
+Executable hach-nclient
+  Build-Depends:        vty >= 4.7,
+                        vty-ui >= 1.5,
+                        text
+  Main-is:              Client.hs
+  HS-Source-Dirs:       nclient, libhach
+  Other-modules:        NClient.Args,
+                        NClient.Connect,
+                        NClient.Message.Format,
+                        NClient.Message.History,
+                        NClient.Message.Split,
+                        NClient.GUI
+
+Executable hach-server
+  Build-Depends:        time
+  Main-is:              Server.hs
+  HS-Source-Dirs:       server, libhach
+  Other-modules:        Server.Client
+                        Server.History
+                        Server.Message
+                        Server.Storage
+
+Source-repository head
+  type: git
+  location: https://github.com/dmalikov/HaCh

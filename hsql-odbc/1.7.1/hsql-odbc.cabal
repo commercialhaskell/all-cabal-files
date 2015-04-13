@@ -1,0 +1,15 @@
+name:		hsql-odbc
+version:	1.7.1
+license:	BSD3
+author:		Krasimir Angelov <kr.angelov@gmail.com>
+maintainer:     nick.rudnick@googlemail.com
+category:	Database
+description:	ODBC driver for HSQL.
+exposed-modules:Database.HSQL.ODBC
+build-depends:	base >= 4 && < 5, hsql >= 1.7, old-time >= 1.0.0.1
+extensions:     ForeignFunctionInterface, CPP
+include-dirs:   Database/HSQL
+c-sources:      Database/HSQL/HsODBC.c
+extra-source-files: Database/HSQL/HsODBC.h 
+build-type: Simple
+extra-libraries: odbc

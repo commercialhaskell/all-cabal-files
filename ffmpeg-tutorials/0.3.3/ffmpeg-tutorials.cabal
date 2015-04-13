@@ -1,0 +1,35 @@
+name:           ffmpeg-tutorials
+version:        0.3.3
+cabal-version:  >= 1.6
+license:        BSD3
+author:         Vasyl Pasternak
+synopsis:       Tutorials on ffmpeg usage to play video/audio
+maintainer:     vasylpasternak@gmail.com
+homepage:       http://patch-tag.com/r/VasylPasternak/ffmpeg-tutorials
+bug-reports:    http://code.google.com/p/hs-ffmpeg/issues/list
+description:    A set of tutorials with raising complexity
+copyright:      (c) 2009 Vasyl Pasternak
+stability:      alpha
+category:       Media
+
+build-type:     Simple
+
+executable tutorial01
+           main-is:             tutorial01/Main.hs
+           hs-source-dirs:      src
+           build-depends:       base < 4, haskell98, hs-ffmpeg >= 0.3.0
+
+executable tutorial02
+           main-is:             tutorial02/Main.hs
+           hs-source-dirs:      src
+           build-depends:       base < 4, haskell98, SDL, hs-ffmpeg >= 0.3.0
+
+executable tutorial03
+           main-is:             tutorial03/Main.hs
+           hs-source-dirs:      src
+           build-depends:       base < 4, haskell98, 
+                                SDL >= 0.5.100, hs-ffmpeg >= 0.3.1,
+                                stm, bytestring
+           ghc-options:         -threaded
+
+

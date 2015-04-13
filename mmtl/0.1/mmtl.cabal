@@ -1,0 +1,48 @@
+name:         mmtl
+version:      0.1
+license:      BSD3
+license-file: LICENSE
+author:       Mauro Jaskelioff
+maintainer:   mjj@cs.nott.ac.uk
+category:     Control
+synopsis:     Modular Monad transformer library
+description:
+    A modular monad transformer library, (almost) a drop-in replacement for
+    the monad transformer library (mtl). It provides a uniform lifting of
+    operations through any monad transformer.
+    
+    Known differences with mtl:
+	- It provides a uniform lifting of operations for 
+	  any monad transformer.
+	- It does not provide a RWS monad (but you can build it yourself ;)
+        - The class MonadTrans requires a new member function tmap.
+        - The lifting of callCC through StateT coincides with 
+	  the lifting in MonadLib, but not with the lifting in mtl.
+build-type: Simple
+ghc-options: -Wall
+exposed-modules:
+    Control.Monad.Codensity
+    Control.Monad.Cont
+    Control.Monad.Cont.Class
+    Control.Monad.Error
+    Control.Monad.Error.Class
+    Control.Monad.Identity
+    Control.Monad.List
+    Control.Monad.Reader
+    Control.Monad.Reader.Class
+    Control.Monad.State
+    Control.Monad.State.Class
+    Control.Monad.State.Lazy
+    Control.Monad.State.Strict
+    Control.Monad.Trans
+    Control.Monad.Writer
+    Control.Monad.Writer.Class
+    Control.Monad.Writer.Lazy
+    Control.Monad.Writer.Strict
+build-depends: base
+extensions: MultiParamTypeClasses,
+            FunctionalDependencies,
+            FlexibleInstances,
+	    FlexibleContexts,
+            TypeSynonymInstances,
+	    Rank2Types

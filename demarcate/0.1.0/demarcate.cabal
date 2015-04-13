@@ -1,0 +1,40 @@
+Name:                   demarcate
+Version:                0.1.0
+Author:                 Nickolay Kudasov<nickolay.kudasov@gmail.com>
+Maintainer:             Nickolay Kudasov<nickolay.kudasov@gmail.com>
+License:                BSD3
+License-File:           LICENSE
+Synopsis:               Demarcating transformed monad.
+Description:
+  This library provides 'Demarcate' type constructor which makes
+  possible transformations of @t m a@ monadic values.
+Cabal-Version:          >= 1.10
+Build-Type:             Simple
+Stability:              experimental
+Homepage:               https://github.com/fizruk/demarcate
+Bug-Reports:            https://github.com/fizruk/demarcate/issues
+Category:               Control
+
+Library
+  Default-Language:     Haskell2010
+  Default-Extensions:   Trustworthy
+  HS-Source-Dirs:       src
+  GHC-Options:          -Wall
+  Exposed-Modules:      Control.Monad.Trans.Demarcate
+                        Control.Monad.Trans.Demarcate.Internal
+  Build-Depends:        base >= 4 && < 5
+                      , free >= 3.4.2
+                      , transformers >= 0.3
+
+Test-Suite spec
+  Type:                 exitcode-stdio-1.0
+  Default-Language:     Haskell2010
+  Hs-Source-Dirs:       test
+  Ghc-Options:          -Wall
+  Main-Is:              Spec.hs
+  Build-Depends:        base
+                      , hspec
+
+Source-Repository head
+  Type:                 git
+  Location:             https://github.com/fizruk/demarcate.git

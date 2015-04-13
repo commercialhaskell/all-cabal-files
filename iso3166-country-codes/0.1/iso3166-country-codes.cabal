@@ -1,0 +1,24 @@
+Name:		iso3166-country-codes
+Version:	0.1
+Cabal-Version:  >= 1.6
+Build-type:	Make
+License:	LGPL
+License-File:	COPYING.LESSER
+Author:		Jón Fairbairn
+maintainer:	jon.fairbairn@cl.cam.ac.uk
+Category:	Data
+Synopsis:	A datatype for ISO 3166 country codes
+
+Description: Defines datatype CountryCode that has a two
+             letter constructor corresponding to each of the two letter
+	     ISO 3166 country codes, and mappings from that type to the
+	     official name of the country.
+
+Extra-source-files: Data/ISO3166_CountryCodes/GenerateDataDeclaration.hs, Data/ISO3166_CountryCodes/Getter.hs, Data/ISO3166_CountryCodes.preamble.hs, Makefile
+
+extra-tmp-files: Data/ISO3166_CountryCodes.hs, Data/ISO3166_CountryCodes/GenerateDataDeclaration
+
+Library
+  Build-Depends:	base ==4.*, HTTP == 4000.*, utf8-string ==0.*
+  Exposed-modules: Data.ISO3166_CountryCodes
+

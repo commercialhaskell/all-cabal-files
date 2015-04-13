@@ -1,0 +1,19 @@
+name:                fay-uri
+version:             0.2.0.0
+synopsis:            Persistent FFI bindings for using jsUri in Fay
+homepage:            https://github.com/faylang/fay-uri
+bug-reports:         https://github.com/faylang/fay-uri/issues
+license:             BSD3
+license-file:        LICENSE
+author:              Adam Bergmark
+maintainer:          adam@edea.se
+copyright:           2013 Adam Bergmark
+category:            Web
+build-type:          Simple
+cabal-version:       >=1.8
+data-files:          src/Uri.hs
+
+library
+  hs-source-dirs: src
+  exposed-modules: Uri
+  build-depends: fay-base

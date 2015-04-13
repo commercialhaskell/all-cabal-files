@@ -1,0 +1,31 @@
+Cabal-Version:      >= 1.2
+Name:               firstify
+Version:            0.1
+Copyright:          2007-8, Neil Mitchell
+Maintainer:         ndmitchell@gmail.com
+Homepage:           http://www-users.cs.york.ac.uk/~ndm/firstify/
+License:            BSD3
+License-File:       LICENSE
+Build-Type:         Simple
+Author:             Neil Mitchell
+Category:           Development
+Synopsis:           Defunctionalisation for Yhc Core
+Description:
+    A library to transform Yhc Core programs to first-order.
+
+Library
+    build-depends: base >= 3, yhccore, Safe, filepath, directory, homeomorphic, mtl, containers
+
+    Exposed-modules:
+        Yhc.Core.Firstify
+        Yhc.Core.Firstify.Mitchell
+        Yhc.Core.Firstify.MitchellOld
+        Yhc.Core.Firstify.Paper
+        Yhc.Core.Firstify.Reynolds
+        Yhc.Core.Firstify.Super
+        Yhc.Core.Firstify.Mitchell.BiMap
+        Yhc.Core.Firstify.Mitchell.Template
+        Yhc.Core.Firstify.Mitchell.Terminate
+
+Executable firstify
+    Main-Is: Firstify.hs

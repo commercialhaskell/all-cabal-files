@@ -1,0 +1,103 @@
+Name:           hledger
+-- updated by build process from VERSION
+Version:        0.5.1
+Category:       Finance
+Synopsis:       A ledger-compatible text-based accounting tool.
+Description:    hledger is a partial haskell clone of John Wiegley's "ledger" text-based
+                accounting tool. It generates ledger-compatible register & balance reports
+                from a plain text journal, and demonstrates a functional implementation of ledger.
+License:        GPL
+Stability:      beta
+Author:         Simon Michael <simon@joyful.com>
+Maintainer:     Simon Michael <simon@joyful.com>
+Homepage:       http://hledger.org
+Tested-With:    GHC
+Build-Type:     Simple
+License-File:   LICENSE
+Extra-Source-Files: README sample.ledger
+Extra-Tmp-Files: 
+Cabal-Version:  >= 1.2
+
+Flag vty
+  description: enable the curses ui
+  default:     False
+
+Flag happs
+  description: enable the web ui
+  default:     False
+
+Library
+  Build-Depends:  base, containers, haskell98, directory, parsec, regex-compat,
+                  old-locale, time, HUnit, filepath, utf8-string
+
+  Exposed-modules:Ledger
+                  Ledger.Account
+                  Ledger.AccountName
+                  Ledger.Amount
+                  Ledger.Commodity
+                  Ledger.Dates
+                  Ledger.IO
+                  Ledger.LedgerTransaction
+                  Ledger.RawLedger
+                  Ledger.Ledger
+                  Ledger.Posting
+                  Ledger.Parse
+                  Ledger.TimeLog
+                  Ledger.Transaction
+                  Ledger.Types
+                  Ledger.Utils
+
+Executable hledger
+  Main-Is:        hledger.hs
+
+  Build-Depends:  base, containers, haskell98, directory, parsec,
+                  regex-compat, regexpr>=0.5.1, old-locale, time,
+                  HUnit, mtl, bytestring, filepath, process, testpack,
+                  regex-pcre, csv, split, utf8-string
+
+  Other-Modules:  
+                  AddCommand
+                  BalanceCommand
+                  ConvertCommand
+                  HistogramCommand
+                  Options
+                  PrintCommand
+                  RegisterCommand
+                  Setup
+                  Tests
+                  Utils
+                  Version
+                  Ledger
+                  Ledger.Account
+                  Ledger.AccountName
+                  Ledger.Amount
+                  Ledger.Commodity
+                  Ledger.Dates
+                  Ledger.IO
+                  Ledger.LedgerTransaction
+                  Ledger.Ledger
+                  Ledger.Parse
+                  Ledger.RawLedger
+                  Ledger.Posting
+                  Ledger.TimeLog
+                  Ledger.Transaction
+                  Ledger.Types
+                  Ledger.Utils
+
+  -- need to set patchlevel here (darcs changes --from-tag=. --count)
+  cpp-options:    -DPATCHES=0
+
+  if flag(vty)
+    cpp-options: -DVTY
+    Build-Depends:vty >= 3.1.8.2 && < 3.2
+    Other-Modules:UICommand
+
+  if flag(happs)
+    cpp-options: -DHAPPS
+    Build-Depends:happstack >= 0.2 && < 0.3
+                  ,happstack-data >= 0.2 && < 0.3
+                  ,happstack-server >= 0.2 && < 0.3
+                  ,happstack-state >= 0.2 && < 0.3
+                  ,utf8-string >= 0.3 && < 0.4
+    Other-Modules:WebCommand
+

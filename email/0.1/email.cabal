@@ -1,0 +1,24 @@
+Name:                   email
+Version:                0.1
+Author:                 Johannes Weiss <weiss@tux4u.de>, Dirk Spoeri,
+                        Gero Kriependorf
+License:                BSD3
+License-File:           LICENSE
+Maintainer:             Johannes Weiss <weiss@tux4u.de>
+Category:               Network
+Synopsis:               Sending eMail in Haskell made easy
+Cabal-Version:          >=1.6
+Build-Type:             Simple
+Tested-With:            GHC == 6.12.1
+Description:            A simple and small library for sending eMail.
+
+Library
+    Build-Depends:      base == 4.*, bytestring, HaskellNet, encoding, process,
+                        hsemail >= 1.4, old-locale, old-time, time, parsec,
+                        array
+    Exposed-Modules:    Network.EmailSend
+                        Network.EmailSend.SMTP
+                        Network.EmailSend.SendMail
+                        Data.Email
+                        Data.EmailRepr
+                        Data.EmailSerializer

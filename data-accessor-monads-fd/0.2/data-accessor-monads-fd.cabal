@@ -1,0 +1,19 @@
+Name:             data-accessor-monads-fd
+Version:          0.2
+License:          BSD3
+License-File:     LICENSE
+Author:           Henning Thielemann <haskell@henning-thielemann.de>
+Maintainer:       Henning Thielemann <haskell@henning-thielemann.de>
+Homepage:         http://www.haskell.org/haskellwiki/Record_access
+Package-URL:      http://code.haskell.org/data-accessor/
+Category:         Data
+-- Portability:      Haskell98
+Build-Type:       Simple
+Build-Depends:    base>=1.0, data-accessor >=0.2 && <0.3, monads-fd >=0.0 && <0.1, transformers >=0.0.1 && <0.2
+Synopsis:         Use Accessor to access state in monads-fd State monad class
+Description:      Use Accessor to access state in monads-fd State monad class
+GHC-Options:      -Wall
+Tested-With:      GHC==6.8.2
+Hs-Source-Dirs:   src
+Exposed-Modules:
+  Data.Accessor.Monad.FD.State

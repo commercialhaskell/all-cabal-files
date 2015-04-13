@@ -1,0 +1,17 @@
+Name:           swf
+Version:        1.0.1
+License:        BSD3
+License-File:	LICENSE
+Author:         Jeremy Shaw
+Maintainer:     Jeremy Shaw
+Homepage:       http://www.n-heptane.com/nhlab
+Category:       Compilers/Interpreters
+Build-Type:	Simple
+Build-Depends:  base, mtl, pretty
+Synopsis:       A library for creating Shockwave Flash (SWF) files
+Description: Provides Haskell datatypes which closely reflect the
+ internal specification of SWF, and routines to convert the data
+ values into a valid .swf file. Currently the assembly language
+ portion is best supported, with many other features missing, such as
+ images, sounds, and much more.
+Exposed-modules: Swf.Bin Swf.Util Swf.Tags Swf.Assembly	Swf.Assembler

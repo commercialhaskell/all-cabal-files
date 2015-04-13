@@ -1,0 +1,39 @@
+name:            wai-digestive-functors
+version:         0.1
+cabal-version:   >= 1.8
+license:         OtherLicense
+license-file:    COPYING
+category:        Web
+copyright:       © 2013 Stephen Paul Weber
+author:          Stephen Paul Weber <singpolyma@singpolyma.net>
+maintainer:      Stephen Paul Weber <singpolyma@singpolyma.net>
+stability:       experimental
+tested-with:     GHC == 7.6.2
+synopsis:        Helpers to bind digestive-functors onto wai requests
+homepage:        https://github.com/singpolyma/wai-digestive-functors
+bug-reports:     https://github.com/singpolyma/wai-digestive-functors/issues
+build-type:      Simple
+description:
+        Allows forms build with 'digestive-functors' to easy get their data
+        out of wai requests.
+
+extra-source-files:
+        README
+
+library
+        exposed-modules:
+                Network.Wai.Digestive
+
+        build-depends:
+                base == 4.*,
+                wai,
+                wai-extra,
+                wai-util >= 0.6,
+                resourcet,
+                text,
+                http-types,
+                digestive-functors
+
+source-repository head
+        type:     git
+        location: git://github.com/singpolyma/wai-digestive-functors.git

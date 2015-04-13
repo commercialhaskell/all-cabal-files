@@ -1,0 +1,40 @@
+Name:                macosx-make-standalone
+Version:             0.1
+Synopsis:            Make a macosx app standalone deployable
+Description:         Make a macosx app standalone by bundling all dylibs into it.
+License:             BSD3
+license-file:		 LICENSE
+Author:              Atze Dijkstra
+Maintainer:          atze@uu.nl
+Homepage:            https://github.com/atzedijkstra/macosx-make-standalone
+Bug-Reports:         https://github.com/atzedijkstra/macosx-make-standalone/issues
+Copyright:           2012 Utrecht University
+Category:            Development
+Build-type:          Simple
+Cabal-version:       >=1.6
+source-repository head
+  type:        git
+  location:    git://github.com/atzedijkstra/macosx-make-standalone.git
+
+
+Executable macosx-make-standalone
+  HS-Source-Dirs: src
+  Main-is: MakeStandalone.hs
+  GHC-Options: 
+  Extensions: ScopedTypeVariables, TemplateHaskell, DeriveDataTypeable
+  Build-depends:
+    base >= 4 && < 5,
+    data-lens >= 2 && < 3,
+    data-lens-template >= 2 && < 3,
+    mtl >= 2 && < 3,
+    containers >= 0.4 && < 0.5,
+    transformers >= 0.3 && < 0.4,
+    directory >= 1 && < 2,
+    filepath >= 1 && < 2,
+    process >= 1 && < 2,
+    unix >= 2 && < 3,
+    deepseq >= 1 && < 2,
+    graph-visit >= 0.1.0.1 && < 0.2
+
+  Other-modules:
+    Opts, State, LibDepGraph, Plan, Cmds

@@ -1,0 +1,40 @@
+name:                mueval
+version:             0.4.6
+
+license:             BSD3
+license-file:        LICENSE
+author:              Gwern
+maintainer:          Gwern <gwern0@gmail.com>
+
+category:            Development, Language
+synopsis:            Safely evaluate Haskell expressions
+description:         Mueval is a Haskell interpreter. It
+                     uses the GHC API to evaluate arbitrary Haskell expressions.
+                     Importantly, mueval takes many precautions to defang and avoid \"evil\"
+                     code.  It uses resource limits, whitelisted modules,
+                     special Show instances for IO, threads, changes of directory, and so
+                     on to sandbox the Haskell code.
+                     .
+                     It is, in short, intended to be a standalone version of Lambdabot's famous
+                     evaluation functionality. For examples and explanations, please see the README file.
+                     .
+                     Mueval is currently POSIX-only.
+homepage:            http://code.haskell.org/mubot/
+
+build-type:          Simple
+cabal-version:       >= 1.2
+tested-with:         GHC==6.8.2
+
+data-files:          README
+extra-source-files:  build.sh, tests.sh
+
+Library
+        exposed-modules:     Mueval.Concurrent, Mueval.Context, Mueval.Interpreter,
+                             Mueval.ParseArgs, Mueval.Resources
+        build-Depends:       base, directory, mtl, unix, hint>=0.2.3, show
+        ghc-options:         -Wall -static
+
+Executable mueval
+           main-is:       main.hs
+           build-depends: base
+           ghc-options:   -Wall -threaded -static

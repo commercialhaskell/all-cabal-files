@@ -1,0 +1,35 @@
+Name:                hashmap
+Version:             1.0.0.3
+Synopsis:            Persistent containers HashMap and HashSet.
+Description:         An implementation of persistent 'HashMap' and 'HashSet' on
+                     top of 'Data.IntMap.IntMap' and 'Data.IntSet.IntSet',
+                     with very similar API.
+                     .
+                     The class 'Hashable' is providing the 'Hashable.hash'
+                     method.
+                     .
+                     The @'HashMap' key value@ is an 'Data.IntMap.IntMap'
+                     indexed by the hash value, containing @'Data.Map.Map' key value@
+                     for all keys with the same hash value.
+                     .
+                     The @'HashSet' elem@ is an 'Data.IntMap.IntMap' indexed by
+                     the hash value, containing @'Data.Set.Set' elem@ for
+                     all elements with the same hash value.
+License:             BSD3
+License-file:        LICENSE
+Author:              Milan Straka
+Maintainer:          fox@ucw.cz
+Stability:           Provisional
+Category:            Data
+Build-type:          Simple
+Cabal-version:       >= 1.2
+Extra-source-files:  CHANGES
+
+Library
+  Exposed-modules:   Data.Hashable, Data.HashMap, Data.HashSet
+
+  Build-depends:     base >= 4.0 && < 5,
+                     containers >= 0.3,
+                     bytestring >= 0.9
+
+  C-sources:         src/hashByteString.c

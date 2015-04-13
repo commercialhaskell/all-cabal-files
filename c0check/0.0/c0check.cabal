@@ -1,0 +1,25 @@
+Name:                c0check
+Version:             0.0
+Synopsis:            Simple C0 Parser
+Description:         The package contains a parser for C0-language that is introduced in the basic programming course \"Algorithmisches Denken und imperative Programmierung\" (WS 2011/12 and later) at the University of Bonn.
+                     The program contained in the package will take a C source code file and test the content if it is conform to the C0-language specifications. 
+                     The answer is simply yes or no.
+License:             GPL
+Author:              Daniel Seidel
+Maintainer:          ds@iai.uni-bonn.de
+Build-Type:          Simple
+Cabal-Version:       >=1.8
+Category:            Language
+Stability:           Experimental
+
+Library
+  hs-source-dirs:    src
+  Exposed-modules:   Language.C0.Parser.C0Parser
+                     Language.C0.Types.C0Types
+  Build-Depends:     base >= 3 && < 6,
+                     parsec >=3 && < 4
+
+Executable c0check
+  Main-is:           src/c0check.hs
+  Build-Depends:     base >= 3 && < 6,
+                     c0check

@@ -1,0 +1,16 @@
+Name:                press
+Version:             0.1.1
+Synopsis:            Text template library targeted at the web / HTML generation
+Description:         Press is a general purpose text templating engine that is targeted at generating HTML / Web content.  It uses the same syntax Django/Jinja templates use.
+Category:            Text, Web
+License:             GPL
+License-File:        LICENSE
+Author:              Brandon Bickford <bickfordb@gmail.com>
+Maintainer:          bickfordb@gmail.com
+Homepage:            http://github.com/bickfordb/text-press
+Build-Type:          Simple
+Cabal-Version:       >= 1.2
+
+Library
+  Build-Depends:     base >= 3 && < 5, containers, mtl, parsec >= 3.0.0, json
+  Exposed-Modules:   Text.Press.Render, Text.Press.Parser, Text.Press.Tags, Text.Press.Run, Text.Press.Types

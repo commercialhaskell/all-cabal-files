@@ -1,0 +1,28 @@
+Name:                geocalc
+Version:             1.0.0
+-- A short (one-line) description of the package.
+Synopsis:            Libary for calculating distances between two coordinates in WSG84
+-- A longer description of the package.
+Description:         Algorithm used embraces the earth as a perfect sphere 
+License:             BSD3
+License-file:        LICENSE
+Author:              Gero Kriependorf
+Maintainer:          gero-dev@physra.net
+Category:            Math
+Build-type:          Simple
+Cabal-version:       >=1.2
+
+Library
+  -- Modules exported by the library.
+  Exposed-modules:   Numeric.Geocalc
+  Hs-Source-Dirs:    src
+  
+  -- Packages needed in order to build this package.
+  Build-depends:     base>=4.0.0, base<5
+  
+  -- Modules not exported by this package.
+  -- Other-modules:       
+  
+  -- Extra tools (e.g. alex, hsc2hs, ...) needed to build the source.
+  -- Build-tools:         
+  

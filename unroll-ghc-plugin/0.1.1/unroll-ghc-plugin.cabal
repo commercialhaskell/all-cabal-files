@@ -1,0 +1,42 @@
+name:                unroll-ghc-plugin
+version:             0.1.1
+synopsis:            Compiler plugin for loop unrolling
+description:
+  This plugin gives an example of defining a compiler plugin for
+  GHC. It unrolls/peels loops loops that are properly annoted. See the
+  included tests for examples.
+homepage:            http://thoughtpolice.github.com/unroll-ghc-plugin
+bug-reports:         http://github.com/thoughtpolice/unroll-ghc-plugin/issues
+license:             BSD3
+license-file:        LICENSE.txt
+copyright:           Copyright (c) the GHC authors
+author:              Max Bolingbroke
+maintainer:          Austin Seipp <mad.one@gmail.com>
+category:            Compiler Plugin
+build-type:          Simple
+cabal-version:       >=1.10
+tested-with:         GHC == 7.4.1
+
+extra-source-files:
+  AUTHORS.txt README.md
+  tests/*.hs tests/Makefile
+
+source-repository head
+  type: git
+  location: https://github.com/thoughtpolice/unroll-ghc-plugin.git
+
+library
+  exposed-modules:
+    LoopUnrolling.Plugin
+    LoopUnrolling.Annotations
+  other-modules:
+    LoopUnrolling.Pass
+    LoopUnrolling.Utilities
+  build-depends:
+    base < 5,
+    ghc >= 7.4
+
+  ghc-options:        -Wall -O2 -funbox-strict-fields
+                      -fwarn-tabs
+  default-extensions: CPP
+  default-language:   Haskell2010

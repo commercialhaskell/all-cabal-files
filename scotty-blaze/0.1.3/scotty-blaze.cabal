@@ -1,0 +1,28 @@
+name:                scotty-blaze
+version:             0.1.3
+description:         blaze-html integration for Scotty
+synopsis:            blaze-html integration for Scotty
+
+license:             MIT
+license-file:        LICENSE
+author:              William Casarin
+maintainer:          will@casarin.me
+
+category:            Web
+build-type:          Simple
+cabal-version:       >= 1.6
+
+source-repository head
+  type:     git
+  location: https://github.com/jb55/scotty-blaze.git
+
+Library
+  hs-source-dirs: src
+  exposed-modules: Web.Scotty.Blaze
+
+  Build-depends: base          >= 4 && < 5
+               , blaze-html    >= 0.5
+               , blaze-builder >= 0.3
+               , scotty        >= 0.4
+               , wai           >= 1.2
+               , mtl           >= 2

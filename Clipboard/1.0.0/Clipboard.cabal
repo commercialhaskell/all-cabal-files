@@ -1,0 +1,19 @@
+Name:           Clipboard
+Version:        1.0.0
+Author:         Daniel Diaz
+Homepage:       http://ddiaz.asofilak.es/packages/Clipboard
+License:        BSD3
+License-file:   license
+Maintainer:     Daniel Diaz <danieldiaz@asofilak.es>
+Category:       System
+Synopsis:       Access to the Windows Clipboard.
+Description:    
+         /Clipboard/ is a package that allows you to interact with the Windows Clipboard easily.
+         .
+         Based on the Win32 package.
+Build-type:     Simple
+Build-depends:  base == 4.*
+              , Win32
+Cabal-version:  >= 1.6
+Exposed-modules:
+         System.Windows.Clipboard

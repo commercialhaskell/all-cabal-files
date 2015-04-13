@@ -1,0 +1,27 @@
+Name:              hsharc
+Version:           0.11
+Synopsis:          Haskell SHARC bindings
+Description:       Parser for SHARC data (the Sandell Harmonic Archive)
+License:           GPL
+Category:          Sound
+Copyright:         Rohan Drape, 2007-2011
+Author:            Rohan Drape
+Maintainer:        rd@slavepianos.org
+Stability:         Experimental
+Homepage:          http://slavepianos.org/rd/?t=hsharc
+Tested-With:       GHC == 7.2.2
+Build-Type:        Simple
+Cabal-Version:     >= 1.8
+
+Library
+  Build-Depends:   base == 4.*,xml
+  GHC-Options:     -Wall -fwarn-tabs
+  Exposed-modules: Sound.Analysis.SHARC
+
+Source-Repository  head
+  Type:            darcs
+  Location:        http://slavepianos.org/rd/sw/hsharc
+
+-- Local Variables:
+-- truncate-lines:t
+-- End:

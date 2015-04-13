@@ -1,0 +1,16 @@
+Name: count
+Version: 0.0.1
+Cabal-Version: >= 1.2
+License: BSD3
+License-File: LICENSE
+Author: Max Zerzouri
+Maintainer: Max Zerzouri
+Category: Data
+Synopsis: Bijective mappings between values and possibly infinite prefixes of [0..]
+Description: Combinators and a class for creating bijective functions between conceivably any data type definable and prefixes of the list of natural numbers.
+Build-Type: Simple
+
+Library
+  Build-Depends: base < 5
+  Exposed-modules:
+    Data.Count, Data.Count.Counter

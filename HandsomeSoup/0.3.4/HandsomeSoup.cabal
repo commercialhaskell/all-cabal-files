@@ -1,0 +1,60 @@
+Name:               HandsomeSoup
+Version:            0.3.4
+Synopsis:           Work with HTML more easily in HXT
+Description:        See examples and full readme on the Github page: https:\/\/github.com\/egonSchiele\/HandsomeSoup
+Homepage:           https://github.com/egonSchiele/HandsomeSoup
+License:            BSD3
+License-file:       LICENSE
+Author:             Aditya Bhargava
+Maintainer:         bluemangroupie@gmail.com
+Category:           Text
+Build-type:         Simple
+Cabal-version:      >=1.8
+
+Extra-source-files: README.markdown
+                  , examples/*.hs
+Data-files:         tests/test.html
+library
+  hs-source-dirs:     src
+  Exposed-modules:    Text.HandsomeSoup
+                    , Text.CSS.Parser
+  Other-modules:      Text.CSS.Utils
+  Build-depends:      base            >= 4.6  &&  < 5
+                    , transformers
+                    , HTTP
+                    , parsec
+                    , containers
+                    , mtl
+                    , MaybeT
+                    , hxt
+                    , network == 2.5.0.0
+                    , network-uri == 2.5.0.0
+                    , hxt-http
+
+test-suite hspec
+  hs-source-dirs:      tests
+  main-is:             AllTests.hs
+  type:                exitcode-stdio-1.0
+  Other-modules:       Paths_HandsomeSoup
+  Build-depends:       base                >= 4.6  &&  < 5
+                     -- currently uses HSpec.Monadic submodule, removed in 1.10.0
+                     , hspec               >= 1.11
+                     , HandsomeSoup
+                     , hxt
+
+Flag buildExamples
+  description:       Build examples
+  default:           False
+
+executable handsomesoup
+  If flag(buildExamples)
+    Buildable:        True
+  Else
+    Buildable:        False
+
+  hs-source-dirs:  examples
+  main-is:         GoogleSearch.hs
+  Build-depends:   base            >= 4.6  &&  < 5
+                 , HandsomeSoup
+                 , hxt
+

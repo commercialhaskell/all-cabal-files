@@ -1,0 +1,33 @@
+Name:           atom
+Version:        0.0.4
+Synopsis:       A DSL for embedded hard realtime applications.
+Description:    Atom is a Haskell DSL for designing hard realtime embedded programs.
+                Based on conditional term rewriting, atom will compile
+                a collection of atomic state transition rules
+                to a C program with constant memory use and deterministic execution time.
+License:        BSD3
+License-File:   LICENSE
+Author:         Tom Hawkins
+Maintainer:     tomahawkins@gmail.com
+Category:       Language
+Build-Type:     Simple
+Cabal-Version:  >= 1.2.3
+Extra-Source-Files:
+  RELEASE-NOTES
+
+Library
+  Build-Depends:   base, mtl, process >= 1.0.1.1
+  Exposed-Modules:
+    Language.Atom,
+    Language.Atom.Code,
+    Language.Atom.Common,
+    Language.Atom.Compile,
+    Language.Atom.Elaboration,
+    Language.Atom.Example,
+    Language.Atom.Expressions,
+    Language.Atom.Language,
+    Language.Atom.Scheduling
+  extensions:      GADTs
+  ghc-options:     -W
+  Other-Modules:   
+

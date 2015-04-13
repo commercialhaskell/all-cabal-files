@@ -1,0 +1,20 @@
+name:            pcap
+version:         0.4
+license:         BSD4
+license-file:    LICENSE
+synopsis:        A system-independent interface for user-level packet capture
+description:     A system-independent interface for user-level packet capture
+maintainer:      Bryan O'Sullivan <bos@serpentine.com>
+author:          Bryan O'Sullivan, Nick Burlett, Dominic Steinitz, Gregory Wright (original author)
+category:        Network
+exposed-modules: Network.Pcap.Base
+                 Network.Pcap
+build-depends:   base >= 2.0, haskell98, network, time
+extensions:      ForeignFunctionInterface
+ghc-options:     -W -O -funbox-strict-fields
+include-dirs:    include
+includes:        pcapconfig.h pcap.h
+install-includes: pcapconfig.h
+extra-source-files:
+                 configure.ac configure include/pcapconfig.h.in
+                 pcap.buildinfo.in

@@ -1,0 +1,61 @@
+name:               adict
+version:            0.4.0
+synopsis:           Approximate dictionary searching
+description:
+    Approximate dictionary searching library.
+license:            BSD3
+license-file:       LICENSE
+cabal-version:      >= 1.8
+copyright:          Copyright (c) 2012 IPI PAN
+author:             Jakub Waszczuk
+maintainer:         waszczuk.kuba@gmail.com
+stability:          experimental
+category:           Natural Language Processing
+homepage:           https://github.com/kawu/adict
+build-type:         Simple
+
+library
+    hs-source-dirs: src
+
+    build-depends:
+        base            >= 4 && <= 5
+      , containers
+      , vector
+      , array
+      , PSQueue         >= 1.1 && < 1.2
+      , binary
+      , dawg            >= 0.11 && < 0.12
+
+    exposed-modules:
+        NLP.Adict
+      , NLP.Adict.CostDiv
+      , NLP.Adict.Dist
+
+    other-modules:
+        NLP.Adict.Core
+      , NLP.Adict.Graph
+      , NLP.Adict.Brute
+      , NLP.Adict.Basic
+      , NLP.Adict.Nearest
+
+    ghc-options: -Wall -O2
+
+test-suite tests
+    type: exitcode-stdio-1.0
+    hs-source-dirs: tests
+    main-is: Properties.hs
+    build-depends:
+        base >= 4 && < 5.0
+      , QuickCheck
+      , containers
+      , vector
+      , test-framework >= 0.3.3
+      , test-framework-quickcheck2 >= 0.2.9
+      , dawg            >= 0.11 && < 0.12
+      , adict
+
+  ghc-options: -Wall
+
+source-repository head
+    type: git
+    location: git://github.com/kawu/adict.git

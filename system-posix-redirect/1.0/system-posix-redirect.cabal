@@ -1,0 +1,36 @@
+Name:               system-posix-redirect
+Version:            1.0
+Synopsis:           A toy module that allows you to temporarily redirect
+                    a program's stdout.
+Description:        Due to the design of POSIX, it is possible to
+                    temporarily overload the file descriptors
+                    corresponding to stdout and stderr to point to an
+                    arbitrary pipe.  It is, however, tricky to get
+                    right.  This module gets it right, as far as such
+                    a terrible hack can be made right.  It can be used
+                    to make misbehaving third-party C libraries stop
+                    spewing to standard output. Warning: the module
+                    author has concluded that due to lack of
+                    portability, this module should not be used in any
+                    serious sytem.  But, for those who like living
+                    dangerously...
+License:            BSD3
+License-file:       LICENSE
+Author:             Galois Inc.
+Maintainer:         ezyang@galois.com
+Copyright:          (c) 2010 Galois Inc.
+Category:           System
+Build-type:         Simple
+Extra-source-files: include/*.h
+                    cbits/*.c
+Cabal-Version: >= 1.6
+
+Library
+  Exposed-modules:      System.Posix.Redirect
+  Extensions:           ForeignFunctionInterface,
+                        EmptyDataDecls
+  Build-depends:        base == 4.*,
+                        unix >= 2.4.0 && < 2.5
+  C-sources:            cbits/hsredirect.c
+  Include-dirs:         include
+  Install-includes:     include/hsredirect.h

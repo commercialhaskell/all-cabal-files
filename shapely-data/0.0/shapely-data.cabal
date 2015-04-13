@@ -1,0 +1,55 @@
+Name:                shapely-data
+
+Version:             0.0
+
+Synopsis:            Template haskell conversion of types to a "structural form" built from primitive sum, product, and unit types.
+
+Description:         This is an experimental package providing template haskell
+                     code to convert to and from normal algebraic data types and a
+                     representation using only haskell's primitive product, sum
+                     and unit types: (,), Either, and ().
+                     .
+                     This is something like light-weight Structural Typing.
+                     .
+                     Please send any comments along.
+
+Homepage:            http://brandon.si/code/shapely-data/
+
+License:             BSD3
+License-file:        LICENSE
+
+Author:              Brandon Simmons
+
+Maintainer:          brandon.m.simmons@gmail.com
+
+-- Copyright:           
+
+Category:            Data
+
+Build-type:          Simple
+
+Extra-source-files:  README.md
+
+Cabal-version:       >=1.6
+
+source-repository head   
+    type:     git
+    location: https://github.com/jberryman/shapely-data.git
+    branch:   master
+
+Library
+  Exposed-modules:     Data.Shapely
+  
+  Build-depends:       base <5
+                     , template-haskell >= 2 && < 3
+  
+  Extensions:          MultiParamTypeClasses
+                     , FunctionalDependencies
+                     , TemplateHaskell
+
+  -- Modules not exported by this package.
+  -- Other-modules:       
+  
+  -- Extra tools (e.g. alex, hsc2hs, ...) needed to build the source.
+  -- Build-tools:         
+  

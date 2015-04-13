@@ -1,0 +1,28 @@
+Name:                sequor
+Version:             0.1
+Description:         A sequence labeler based on Collins's sequence perceptron.
+Synopsis:	     A sequence labeler based on Collins's sequence perceptron.
+Homepage:	     http://code.google.com/p/sequor/
+License:             BSD3
+License-file:        LICENSE
+Author:              Grzegorz Chrupała
+Maintainer:          gchrupala@lsv.uni-saarland.de
+Build-Type:          Simple
+Cabal-Version:       >=1.2
+Category:            Natural Language Processing
+Extra-source-files:  README, Makefile
+Data-dir:  	     data
+Data-files:	     all.features, example.features, train.conll
+		     devel.conll, test.conll
+
+Executable sequor
+  Main-is:           Main.hs
+  Other-modules:     ListZipper, Utils, Text, CorpusReader, Atom, 
+                     FeatureTemplate, Config, Perceptron.Vector,
+                     Perceptron.Sequence, Features, Labeler
+  Build-Depends:     base >= 3 && < 5, containers >= 0.2, 
+                     bytestring >= 0.9, utf8-string >= 0.3,
+                     binary >= 0.5, mtl >= 1.1,
+                     vector >= 0.5, array >= 0.2
+  hs-source-dirs:    src,lib/haskell-utils
+  ghc-options:	     -O2

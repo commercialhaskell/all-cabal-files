@@ -1,0 +1,75 @@
+name:		word24
+version:        1.0.0
+synopsis:       24-bit word and int types for GHC
+description:	24-bit Word and Int data types.
+category:       Data
+author:		John W. Lato, jwlato@gmail.com
+maintainer:	John W. Lato, jwlato@gmail.com
+license:	BSD3
+license-file:	LICENSE
+homepage:       http://www.tiresiaspress.us/haskell/word24
+tested-with:    GHC == 6.12.3, GHC == 7.0.3
+stability:	experimental
+
+cabal-version:  >= 1.6
+build-type:     Simple
+
+extra-source-files:
+  README
+  LICENSE
+
+flag splitBase
+  description: Use the new split-up base package.
+
+flag buildTests
+  description: Build test executables.
+  default:     False
+
+library
+ hs-source-dirs:
+   src
+
+ if flag(splitBase)
+   build-depends:
+     base >= 3 && < 5
+ else
+   build-depends:
+     base < 3
+
+ build-depends:
+   haskell98
+
+ exposed-modules:
+   Data.Int.Int24
+   Data.Word.Word24
+
+ ghc-options:   -O2 -Wall
+ if impl(ghc >= 6.8)
+   ghc-options: -fwarn-tabs
+
+executable testWord24
+  hs-source-dirs:
+    src
+    tests
+
+  main-is: testword24.hs
+
+  other-modules:
+    QCUtils
+
+  if flag(buildTests)
+    build-depends:
+      QuickCheck                 >= 2 && < 3,
+      test-framework             >= 0.2 && < 0.3,
+      test-framework-quickcheck2 >= 0.2 && < 0.3
+  else
+    buildable:  False
+
+  if flag(splitBase)
+    build-depends:  base >= 3 && < 5
+  else
+    build-depends:  base < 3
+
+source-repository head
+  type:     darcs
+  location: http://www.tiresiaspress.us/haskell/word24

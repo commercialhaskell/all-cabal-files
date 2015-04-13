@@ -1,0 +1,18 @@
+Name: DysFRP-Cairo
+Version: 0.1
+License: BSD3
+License-File: LICENSE
+Author: Marek Materzok
+Maintainer: Marek Materzok
+Build-Type: Simple
+Stability: experimental
+Cabal-Version: >= 1.2
+Homepage: https://github.com/tilk/DysFRP
+Category: FRP
+Synopsis: dysFunctional Reactive Programming on Cairo
+Description: Simple Cairo bindings for DysFRP.
+
+Library
+    Build-Depends: base >= 4 && <5, cairo, gtk, mtl, DysFRP
+    Exposed-modules: Control.DysFRP.Cairo
+

@@ -1,0 +1,37 @@
+name:           hs-ffmpeg
+version:        0.3.2
+cabal-version:  >= 1.6
+license:        BSD3
+author:         Vasyl Pasternak
+synopsis:       Bindings to FFMPEG library
+maintainer:     vasylpasternak@gmail.com
+description:    Bindings to FFMPEG library
+copyright:      (c) 2009 Vasyl Pasternak
+homepage:       http://patch-tag.com/r/VasylPasternak/hs-ffmpeg
+bug-reports:    http://code.google.com/p/hs-ffmpeg/issues/list
+stability:      alpha
+category:       Media
+
+
+build-type:     Simple
+extra-source-files: src/macros.hsc2hs.h
+
+library
+        build-depends:   base < 4, haskell98, bytestring
+        hs-source-dirs:  src
+        include-dirs:    /usr/local/include
+                         src
+        exposed-modules: Media.FFMpeg
+                         Media.FFMpeg.Format
+                         Media.FFMpeg.SWScale
+                         Media.FFMpeg.Util
+                         Media.FFMpeg.Codec
+        other-modules:   Media.FFMpeg.UtilEnums_
+                         Media.FFMpeg.CodecEnums_
+                         Media.FFMpeg.SWScaleEnums_
+                         Media.FFMpeg.Common
+        c-sources:       src/Media/FFMpeg/_c_utils.c
+        extra-lib-dirs:  /usr/local/lib
+        extra-libraries: avformat, avcodec, avutil, avfilter,
+                         avdevice, swscale, vorbisfile, vorbis, vorbisenc, 
+                         theora, mp3lame, faac, z, dc1394_control

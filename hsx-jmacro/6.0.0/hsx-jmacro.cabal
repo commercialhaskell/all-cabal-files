@@ -1,0 +1,23 @@
+Name:                hsx-jmacro
+Version:             6.0.0
+Synopsis:            hsx+jmacro support
+Description:         HSX allows for the use of literal XML in Haskell program text. JMacro allows for the use of javascript-syntax for generating javascript in Haskell. This library makes it easy to embed JMacro generated javascript in HSX templates.
+Homepage:            http://www.happstack.com/
+License:             BSD3
+License-file:        LICENSE
+Author:              Jeremy Shaw
+Maintainer:          jeremy@n-heptane.com
+Stability:           Provisional
+Category:            Web
+Build-type:          Simple
+Cabal-version:       >=1.2
+
+Library
+  Exposed-modules:   HSX.JMacro
+
+  Build-depends:       
+                     base >4 && <5,
+                     hsx,
+                     jmacro,
+                     mtl,
+                     pretty

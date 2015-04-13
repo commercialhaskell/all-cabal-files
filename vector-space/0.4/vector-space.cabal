@@ -1,0 +1,62 @@
+Name:                vector-space
+Version:             0.4
+Cabal-Version:       >= 1.2
+Synopsis:            Vector & affine spaces, linear maps, and derivatives (requires ghc 6.9)
+Category:            math
+Description:
+  '''vector-space''' provides classes and generic operations for vector
+  spaces and affine spaces.  It also defines a type of infinite towers
+  of generalized derivatives.  A generalized derivative is a linear
+  transformation rather than one of the common concrete representations
+  (scalars, vectors, matrices, ...).
+  .
+  '''Warning''': this package depends on type families working fairly well,
+  and requires ghc version at least 6.9.
+  .
+  Project wiki page: <http://haskell.org/haskellwiki/vector-space>
+  .
+  The module documentation pages have links to colorized source code and
+  to wiki pages where you can read and contribute user comments.  Enjoy!
+  .
+  &#169; 2008 by Conal Elliott; BSD3 license.
+Author:              Conal Elliott 
+Maintainer:          conal@conal.net
+Homepage:            http://haskell.org/haskellwiki/vector-space
+Package-Url:         http://code.haskell.org/vector-space
+Copyright:           (c) 2008 by Conal Elliott
+License:             BSD3
+Stability:           experimental
+build-type:          Simple
+
+Library
+  hs-Source-Dirs:      src
+  Extensions:          
+  Build-Depends:       base, MemoTrie
+  Exposed-Modules:     
+                     Data.VectorSpace
+                     Data.Basis
+                     Data.LinearMap
+                     Data.Maclaurin
+--                   Data.Horner
+                     Data.Derivative
+                     Data.Cross
+                     Data.AffineSpace
+                     Data.NumInstances
+    
+  -- This library relies on type families working as well as in 6.9.
+  if impl(ghc < 6.9) {
+    buildable: False
+  }
+  -- More bug fixes in 6.10 allow replacing some fundeps.  After a while,
+  -- when 6.10 is widespread, I'll switch over entirely and eliminate the
+  -- earlier versions.
+  if impl(ghc >= 6.10) {
+    Exposed-Modules:
+                     Data.AVectorSpace
+                     Data.ABasis
+                     Data.ALinearMap
+  }
+  ghc-options:         -Wall -O2
+  ghc-prof-options:    -prof -auto-all 
+
+-- For ghc-options: -ddump-simpl-stats -ddump-rules -ddump-simpl -ddump-simpl-phases

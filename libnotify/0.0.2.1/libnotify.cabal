@@ -1,0 +1,24 @@
+Name: libnotify
+Version: 0.0.2.1
+Description: Usable binding to libnotify library.
+License: MIT
+License-file: LICENSE
+Author: Emon Tsukimiya, Matvey Aksenov
+Maintainer: Matvey Aksenov <matvey.aksenov@gmail.com>
+Category: System, Desktop
+Synopsis: Haskell binding for Libnotify
+Cabal-Version: >= 1.6
+Build-Type: Simple
+
+Library
+  Build-Depends: base >= 3 && < 5, bytestring, glib, gtk, mtl
+  Exposed-Modules: System.Libnotify
+                   System.Libnotify.Internal
+                   System.Libnotify.Server
+                   System.Libnotify.Types
+  GHC-Options: -Wall
+  Extra-Libraries: notify
+
+source-repository head
+  type:     git
+  location: https://github.com/supki/haskell-libnotify

@@ -1,0 +1,15 @@
+name:                uhexdump
+version:             0.1
+synopsis:            hex dumper for UTF-8 text
+description:         hex dumper for UTF-8 text
+category:            Text
+license:             BSD3
+license-file:        LICENSE
+author:              Eric Kow
+maintainer:          <E.Y.Kow@brighton.ac.uk>
+build-Depends:       base, utf8-string
+build-type:          Simple
+
+executable:          uhexdump
+main-is:             uhexdump.hs
+ghc-options:         -Wall

@@ -1,0 +1,16 @@
+Name:                hack-contrib-press
+Version:             0.1.1
+Synopsis:            Hack helper that renders Press templates
+Description:         Hack helper that renders Press templates
+Category:            Text, Web
+License:             GPL
+License-File:        LICENSE
+Author:              Brandon Bickford <bickfordb@gmail.com>
+Maintainer:          bickfordb@gmail.com
+Homepage:            http://github.com/bickfordb/hack-contrib-press
+Build-Type:          Simple
+Cabal-Version:       >= 1.2
+
+Library
+  Build-Depends:     base >= 3 && < 5, bytestring, bytestring-class, containers, mtl, hack >= 2009.7.15, parsec >= 3.0.0, press, json
+  Exposed-Modules:   Hack.Contrib.Press

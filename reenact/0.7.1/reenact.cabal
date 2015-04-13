@@ -1,0 +1,44 @@
+
+name:               reenact
+version:            0.7.1
+cabal-version:      >= 1.2
+author:             Hans Hoglund
+maintainer:         Hans Hoglund
+license:            BSD3
+license-file:       COPYING
+synopsis:           A reimplementation of Conal Elliott's Reactive.
+category:           Music
+tested-with:        GHC
+build-type:         Simple
+
+description: 
+    Reenact is a reimplementation of the "Reactive" library by Conal Elliot.
+
+    It preserves semantics and most operators of the original library. In
+    particular the @Monoid@, @Applicative@ and @Monad@ instances for 
+    @Events@, @Reactives@ and @Behaviours@ are available and have the original semantics.
+
+    The implementation however is completely different, based on asynchronous
+    channels instead of the @unamb@ operator.
+
+library                    
+    ghc-options: -threaded -O3
+    build-depends: 
+        base       >= 4 && < 5,
+        stm,
+        time,
+        hamid      >= 0.6,
+        HCodecs    >= 0.2.2,
+        hosc       == 0.13,
+        -- semigroups,
+        -- semigroupoids,
+        vector-space
+    hs-source-dirs: src
+    exposed-modules:
+        Control.Reactive
+        Control.Reactive.Chan
+        Control.Reactive.Var
+        Control.Reactive.Midi
+        Control.Reactive.Osc
+    other-modules:
+        Control.Reactive.Util

@@ -1,0 +1,30 @@
+Name:                   git-object
+Version:                0.0.0
+Author:                 Kazu Yamamoto <kazu@iij.ad.jp>
+Maintainer:             Kazu Yamamoto <kazu@iij.ad.jp>
+License:                BSD3
+License-File:           LICENSE
+Synopsis:               Git object and its parser
+Description:            This package provides data types for
+                        Git objects, enumerator-based parser
+                        of Git object files and manipulation
+                        functions.
+Homepage:               http://www.mew.org/~kazu/
+Category:               Data
+Cabal-Version:          >= 1.6
+Build-Type:             Simple
+library
+  if impl(ghc >= 6.12)
+    GHC-Options:        -Wall -fno-warn-unused-do-bind
+  else
+    GHC-Options:        -Wall
+  Exposed-Modules:      Data.Git
+                        System.Git
+  Other-Modules:        Data.Git.Types
+                        Data.Git.Parser
+  Build-Depends:        base >= 4 && < 5, bytestring, zlib-enum,
+                        filepath, directory,
+                        attoparsec, enumerator, attoparsec-enumerator
+Source-Repository head
+  Type:                 git
+  Location:             git://github.com/kazu-yamamoto/git-object.git

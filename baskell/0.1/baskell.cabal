@@ -1,0 +1,53 @@
+Name:         baskell
+Version:      0.1
+Copyright:    2004-2005, Bernard Pope
+License:      GPL
+License-File: LICENSE
+Author:       Bernard Pope
+Maintainer:   Bernard Pope <bjpop@cs.mu.oz.au>
+Homepage:     http://www.cs.mu.oz.au/~bjpop/code.html
+Category:     Compilers/Interpreters
+Synopsis:     An interpreter for a small functional language
+Description:
+              Baskell is an interpreter for a small functional
+              language. It supports type inference, lazy
+              evaluation and strict evaluation.
+
+Build-Depends: base, unix, parsec, containers, pretty, mtl
+Build-Type:    Simple
+Tested-With:   GHC==6.8.2
+Data-Files:    Prelude.bs
+               examples/TupleList.bs
+               examples/NameSupply.bs
+               examples/PolyRec.bs
+               examples/Rec.bs
+               examples/Sig.bs
+               examples/MutRec.bs
+               examples/Simple.bs
+               examples/Fix.bs
+               examples/Sort.bs
+               examples/Bomb.bs
+               examples/InfiniteNestedList.bs
+               examples/FDotF.bs
+               examples/SortStrict.bs
+
+Executable: baskell
+Extensions: CPP
+Main-Is:    Main.hs
+hs-source-dirs: src
+Other-Modules:
+           AST,
+           Depend,
+           Lexer,
+           ParserUtils,
+           Primitives,
+           Rename,
+           CmdLine,
+           Help,
+           Parser,
+           Pretty,
+           Reduce,
+           Type
+ghc-options:         -O2 -Wall -optl-Wl,-s
+ghc-prof-options:    -prof -auto-all
+

@@ -1,0 +1,29 @@
+name:                rosa
+version:             0.1.0.0
+synopsis:            Query the namecoin blockchain
+description:
+
+  Rosa is a commmand line tool to query the namecoin blockhain.
+  It gets the JSON value of a name and other infos using namecoind
+  local server or the dnschain REST api and display them in a pretty 
+  format.
+                     
+license:             MIT
+license-file:        LICENSE
+author:              Rnhmjoj
+maintainer:          micheleguerinirocco@me.com
+copyright:           (C) Michele Guerini Rocco 2014
+category:            Utility
+build-type:          Simple
+extra-source-files:  README.md, LICENSE
+cabal-version:       >=1.10
+
+executable rosa
+  main-is:             Main.hs
+  default-language:    Haskell2010
+  other-extensions:    RecordWildCards, OverloadedStrings
+  build-depends:       base ==4.7.*, aeson ==0.8.*, text ==1.2.*,
+                       vector ==0.10.*, unordered-containers ==0.2.*,
+                       wreq ==0.3.*, lens >=4.4, bytestring ==0.10.*,
+                       argparser ==0.3.*, process ==1.2.*   
+  ghc-options:         -O2

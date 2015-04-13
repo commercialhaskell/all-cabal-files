@@ -1,0 +1,32 @@
+name:                lambda-canvas
+version:             0.1
+synopsis:            Educational drawing canvas for FP explorers.
+description:         This package is an experimental teaching tool that
+                     provides the foundation for presenting functional
+                     idioms with graphical metaphors. The OpenGL canvas
+                     boilerplate is abstracted away to a simple interface,
+                     which allows to focus on program logic instead of the
+                     graphics API. It's also arguably fun.
+license:             MIT
+license-file:        LICENSE
+author:              Dimitry Solovyov <dimituri@gmail.com>
+maintainer:          Dimitry Solovyov <dimituri@gmail.com>
+category:            Education, Graphics
+build-type:          Simple
+cabal-version:       >= 1.8
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     Graphics.LambdaCanvas
+
+  build-depends: base   >= 4 && < 5
+               , GLUT   == 2.3.0.*
+               , mtl    == 2.1.*
+               , OpenGL == 2.5.*
+               , time   == 1.4.*
+
+  ghc-options: -Wall -funbox-strict-fields
+
+source-repository head
+  type:     git
+  location: git://github.com/dimituri/lambda-canvas.git

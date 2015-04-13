@@ -1,0 +1,15 @@
+name:                rangemin
+version:             1.1.2
+synopsis:            Linear range-min algorithms.
+description:	     Rapidly and lazily preprocesses an array or list so that the smallest element in an arbitrary subrange can be found in constant time.
+tested-with:	     GHC
+category:            Algorithms
+license:             BSD3
+license-file:	     LICENSE
+author:              Louis Wasserman
+maintainer:          wasserman.louis@gmail.com
+build-Depends:       base, array, containers, ghc-prim, mtl
+build-type:	     Simple
+Exposed-modules:     Data.RangeMin
+Other-modules:	     Data.RangeMin.Internal.Combinators, Data.RangeMin.Internal.HandyArray, Data.RangeMin.Internal.HandyList, Data.RangeMin.Internal.HandyNumeric, Data.RangeMin.Internal.HandyOrdering
+ghc-options:         -O2 -fvia-c -optc-O3

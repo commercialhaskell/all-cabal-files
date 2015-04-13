@@ -1,0 +1,21 @@
+Name: clevercss
+Version: 0.1
+Category: Text
+Synopsis: A CSS preprocessor
+Description: CleverCSS is a CSS preprocessing library that allows defining variables and nesting selectors so that you don't need to Repeat Yourself.
+License: BSD3
+License-File: LICENSE
+Author: Georg Brandl
+Maintainer: georg@python.org
+Homepage: http://sandbox.pocoo.org/clevercss-hs/
+Stability: experimental
+Build-Depends: base, parsec, mtl, haskell98
+Extra-Source-Files: documentation.html, example.ccs
+Extensions: PatternGuards
+GHC-Options: -O1 -funbox-strict-fields
+Exposed-Modules: Text.CSS.CleverCSS
+Other-Modules: Text.CSS.CleverCSSUtil
+
+Executable: clevercss
+Main-is: CCMain.hs
+

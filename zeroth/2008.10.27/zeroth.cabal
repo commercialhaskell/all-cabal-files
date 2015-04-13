@@ -1,0 +1,21 @@
+Name:          zeroth
+Version:       2008.10.27
+License:       BSD3
+License-file:  LICENSE
+Maintainer:    Lemmih <lemmih@gmail.com>
+Build-type:    Simple
+Build-depends: base, haskell-src-exts, directory, process
+Copyright:     2005-2008 Lemmih <lemmih@gmail.com>
+Category:      Language
+Synopsis:      ZeroTH - remove unnecessary TH depdendencies.
+Description:   TemplateHaskell is fairly useful for generating new
+               Haskell programs. This, however, incur a dependency on
+               TH on subsequent uses where none theoretically should exist.
+               ZeroTH solves this by scanning a file for top-level TH
+               declarations, evaluates them, and then puts the generated
+               code back.
+
+Executable:    zeroth
+Main-is:       Main.hs
+GHC-Options:   -Wall
+Hs-Source-Dirs: src

@@ -1,0 +1,40 @@
+name:               vacuum
+version:            0.0.93
+cabal-version:      >= 1.6
+build-type:         Simple
+license:            LGPL
+license-file:       LICENSE
+category:           Interpreter, GHC
+author:             Matt Morrow
+copyright:          (c) Matt Morrow 2008
+maintainer:         Matt Morrow <morrow@moonpatio.com>
+homepage:           http://moonpatio.com/vacuum/
+stability:          experimental
+synopsis:           Extract graph representations of ghc heap values.
+description:        .
+
+flag ghc-six-ten-one
+  description:  ghc-6.10.1
+  default:      True
+
+library
+  hs-source-dirs:   src
+  ghc-options:      -O2 -fglasgow-exts
+  extensions:
+  exposed-modules:  GHC.Vacuum,
+                    GHC.Vacuum.ClosureType,
+                    GHC.Vacuum.Dot,
+                    GHC.Vacuum.GHC.Internal
+  other-modules:    GHC.Vacuum.GHC,
+                    GHC.Vacuum.GHC.Imports
+
+  if flag(ghc-six-ten-one)
+    build-depends:    base==4.*, ghc-prim, ghc-paths,
+                      ghc == 6.10.1, Cabal == 1.6.0.1,
+                      array, containers, array,
+                      pretty, haskell-src-meta
+  else
+    build-depends:    base==4.*, ghc-prim, ghc-paths,
+                      ghc == 6.10.2, Cabal == 1.6.0.3,
+                      array, containers, array,
+                      pretty, haskell-src-meta

@@ -1,0 +1,66 @@
+name:                terrahs
+version:        0.6
+license:        BSD3 
+author:                Sergio Costa <skosta@gmail.com>
+maintainer:     Sergio Costa <skosta@gmail.com>
+homepage:      http://lucc.ess.inpe.br/doku.php?id=terrahs
+category: GIS Programs
+build-type: Simple
+license-file: LICENSE
+cabal-version: >= 1.6
+synopsis: Simple library for GIS Programs in Haskell.
+Description:
+   a software component that enables the development of geographical 
+   applications in a functional language, using the data handling capabilities
+    of TerraLib. TerraLib is a C++ library that supports different spatial 
+    database management systems, and that includes a large number 
+    of spatial algorithms. 
+   .
+   More info on package and its features at <http://lucc.ess.inpe.br/doku.php?id=terrahs>
+   
+   
+library
+    exposed-modules: 
+        TerraHS.Algebras.Spatial.Points ,
+        TerraHS.Algebras.Spatial.Lines ,
+        TerraHS.Algebras.Spatial.Polygons ,
+        TerraHS.Algebras.Spatial.Geometries,
+        TerraHS.Algebras.Spatial.Raster,
+        TerraHS.Algebras.Spatial.GeoObjects,
+        TerraHS.TerraLib.TeCoord2D,
+        TerraHS.TerraLib.TePoint,
+        TerraHS.TerraLib.TeLine2D,
+        TerraHS.TerraLib.TeBox,
+        TerraHS.TerraLib.TeCell,
+        TerraHS.TerraLib.TePolygon,
+         TerraHS.TerraLib.TeRaster,
+         TerraHS.TerraLib.TeTable,
+         TerraHS.TerraLib.TeLayer,
+         TerraHS.TerraLib.TeGeometry ,
+         TerraHS.TerraLib.TeDatabase,
+         TerraHS.TerraLib.TeTopologyOps,
+         TerraHS.TerraLib.TeSTInstance,
+          TerraHS.TerraLib.TeGeoObject,
+         TerraHS.TerraLib.TeQuerier,
+         TerraHS.TerraLib.TeGeometryAlgorithms,
+        TerraHS.Algebras.Base.Object,
+        TerraHS.Misc.StrFunctions,
+        TerraHS.Misc.GenericFunctions,
+        TerraHS.Algebras.Temporal.TimeFunctions,
+        TerraHS.Algebras.Temporal.Interval
+        TerraHS.Algebras.Base.Attribute,
+        TerraHS.Algebras.Base.Ids,
+        TerraHS.Algebras.Base.Category,
+        TerraHS.Algebras.Base.Operations,
+        TerraHS.Algebras.DB.Databases,
+        TerraHS.Algebras.DB.Model,
+        TerraHS.Algebras.Spatial,
+        TerraHS.Algebras.Base,
+        TerraHS.TerraLib,
+         TerraHS
+        TerraHS.Misc,
+        TerraHS.Algebras.DB
+    extra-libraries: terrahsc
+    ghc-options: -fglasgow-exts 
+    build-depends:        base==3.*, haskell98, old-time
+    extensions:     MultiParamTypeClasses, Generics, ForeignFunctionInterface, TypeSynonymInstances, CPP, RankNTypes, DeriveDataTypeable

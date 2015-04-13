@@ -1,0 +1,23 @@
+Name:                iteratee-stm
+Version:             0.1
+Synopsis:            Concurrent iteratees using STM
+Description:         Enumerators and iteratees which read from/write to STM
+                     channels.  This allows for processes with dedicated IO
+                     threads.
+Homepage:            http://www.tiresiaspress.us/~jwlato/haskell/iteratee-stm
+License:             BSD3
+License-file:        LICENSE
+Author:              John W. Lato
+Maintainer:          jwlato@gmail.com
+Category:            Data
+Build-type:          Simple
+Cabal-version:       >=1.6
+
+Library
+  Hs-Source-Dirs:     src
+  Exposed-modules:    Data.Iteratee.STM
+  Build-depends:      base         >= 3      && < 5
+                     ,iteratee     == 0.8.*
+                     ,stm          == 2.2.*
+                     ,stm-chans    == 1.2.*
+                     ,transformers >= 0.2

@@ -1,0 +1,36 @@
+name:                epub-metadata
+version:             1.0.2
+cabal-version:       >= 1.2
+build-type:          Simple
+license:             BSD3
+license-file:        LICENSE
+copyright:           2010 Dino Morelli
+author:              Dino Morelli
+maintainer:          Dino Morelli <dino@ui3.info>
+stability:           experimental
+homepage:            http://ui3.info/d/proj/epub-metadata.html
+synopsis:            Library and utility for parsing and manipulating 
+                     ePub metadata
+description:         Library for parsing and manipulating ePub OPF 
+                     metadata. An attempt has been made here to very 
+                     thoroughly implement the metadata portion of the OPF 
+                     Package Document specification. Also included is a 
+                     command-line utility to dump ePub metadata to stdout 
+                     in a human-readable form.
+category:            Codec, Text
+tested-with:         GHC>=6.12.1
+
+library
+   exposed-modules:  Codec.Epub.IO,
+                     Codec.Epub.Opf.Metadata,
+                     Codec.Epub.Opf.Metadata.Format,
+                     Codec.Epub.Opf.Metadata.Parse
+   hs-source-dirs:   src
+   build-depends:    base >= 3 && < 5, HSH, hxt, mtl
+   ghc-options:      -Wall
+
+executable           epub-meta
+   main-is:          Codec/Epub/Opf/epub-meta.hs
+   hs-source-dirs:   src
+   build-depends:    base >= 3 && < 5
+   ghc-options:      -Wall

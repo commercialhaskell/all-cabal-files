@@ -1,0 +1,34 @@
+Name          : blaze-builder-enumerator
+Version       : 0.1
+Synopsis      : Use blaze-builder Builder's in an Iteratee.
+Description   :
+
+  This package simplifies the process of using blaze-builder with the
+  enumerator package by converting a function that constructs a Builder into
+  an Iteratee.
+
+Author        : Thomas Sutton <me@thomas-sutton.id.au>
+Maintainer    : me@thomas-sutton.id.au
+Copyright     : Copyright (c) Thomas Sutton 2010
+License       : BSD3
+License-file  : LICENSE
+Build-type    : Simple
+Cabal-version : >=1.6
+Category      : Data, Text, Enumerator
+Stability     : Experimental
+Bug-reports   : mailto:me@thomas-sutton.id.au
+Homepage      : http://github.com/thsutton/blaze-builder-enumerator
+
+Source-repository head
+  Type: git
+  Location: https://github.com/thsutton/blaze-builder-enumerator.git
+
+Library
+  GHC-options: -Wall -fno-warn-unused-do-bind
+  Build-depends:
+      base >= 4 && < 5
+    , blaze-builder >= 0.2 && < 0.3
+    , bytestring >= 0.9 && < 0.10
+    , enumerator >= 0.4 && < 0.5
+  Exposed-modules:
+    Blaze.ByteString.Builder.Enumerator

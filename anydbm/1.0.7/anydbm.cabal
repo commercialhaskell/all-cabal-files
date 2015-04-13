@@ -1,0 +1,38 @@
+Name: anydbm
+Version: 1.0.7
+License: GPL
+Maintainer: John Goerzen <jgoerzen@complete.org>
+Copyright: Copyright (c) 2004-2008 John Goerzen
+license-file: COPYRIGHT
+extra-source-files: COPYING
+build-type: Simple
+homepage: http://software.complete.org/anydbm
+synopsis: Interface for DBM-like database systems
+Description:  This module provides a generic infrastructure for supporting storage
+ of hash-like items with String-to-String mappings.  It can be used
+ for in-memory or on-disk storage.
+ .
+ Two simple backend drivers are included with this package: one
+ that is RAM-only, and one that is persistent and disk-backed.
+ The hdbc-anydbm package provides another driver, which lets you use
+ simple tables in any SQL database to provide a DBM-like interface.
+ MissingPy also provides a Python driver which lets you use any
+ Python anydbm driver under Haskell AnyDBM.
+Category: Database
+Stability: Stable
+Hs-Source-Dirs: src
+Exposed-Modules: Database.AnyDBM,
+    Database.AnyDBM.MapDBM,
+    Database.AnyDBM.StringDBM
+Extensions: ExistentialQuantification, OverlappingInstances, 
+   UndecidableInstances, CPP, FlexibleInstances, TypeSynonymInstances
+Build-Depends: base < 5,
+               mtl, MissingH>=1.0.0, containers
+GHC-Options: -O2
+
+Executable: runtests
+Buildable: False
+Main-Is: runtests.hs
+HS-Source-Dirs: testsrc, .
+Extensions: ExistentialQuantification, OverlappingInstances,
+    UndecidableInstances, CPP, FlexibleInstances

@@ -1,0 +1,21 @@
+Name:		HARM
+Version:	0.1.1
+Cabal-Version:  >= 1.2
+License:	OtherLicense
+License-File:	LICENSE.txt
+Author:		Jeffrey A. Meunier (and Alex Mason)
+Homepage:	http://www.engr.uconn.edu/~jeffm/Classes/CSE240-Spring-2001/Lectures/index.html
+Category:	Compilers/Interpreters
+Synopsis:	A simple ARM emulator in haskell
+build-type:	Simple
+description:	A simple ARM virtual machine designed for teaching assembly
+Maintainer:	Alex Mason (axman6@gmail.com)
+
+Executable runarm
+  Main-Is:        runarm.hs
+  Build-Depends:  base
+
+
+Executable dbgarm
+  Main-Is:        dbgarm.hs
+  Build-Depends:  base, array

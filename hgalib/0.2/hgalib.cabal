@@ -1,0 +1,20 @@
+name:                hgalib
+version:             0.2
+synopsis:            Haskell Genetic Algorithm Library
+description:         Haskell Genetic Algorithm Library
+category:            AI
+license:             PublicDomain
+license-file:        LICENSE
+author:              Kevin Ellis
+maintainer:          Kevin Ellis <ellisk@catlin.edu>
+build-type:          Simple
+Cabal-Version: >= 1.2
+Library
+    exposed-modules: GA,
+                     Population.List,
+                     Population.Array,
+                     Chromosome.Bits,
+                     Chromosome.ANN,
+                     Chromosome.GP
+    ghc-options:     -O2
+    build-depends:   base >= 3, array, mtl, haskell98

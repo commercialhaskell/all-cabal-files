@@ -1,0 +1,24 @@
+Name:              generic-binary
+Version:           1.0.0
+Description:       Generic Data.Binary derivation using GHC generics.
+Synopsis:          Generic Data.Binary derivation using GHC generics.
+Category:          Generics, Data
+License:           BSD3
+License-file:      LICENSE
+Author:            Sebastiaan Visser
+Maintainer:        haskell@fvisser.nl
+Cabal-Version:     >= 1.6
+Build-Type:        Simple
+Stability:         provisional
+
+Source-Repository head
+  Type: git
+  Location: https://github.com/sebastiaanvisser/generic-binary
+
+Library
+  GHC-Options:       -Wall
+  HS-Source-Dirs:    src
+  Exposed-modules:   Data.Binary.Generic
+  Build-Depends:     base >= 4.0 && < 4.5
+                   , ghc-prim < 0.3
+                   , binary >= 0.5 && < 0.6

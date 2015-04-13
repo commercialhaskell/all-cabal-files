@@ -1,0 +1,42 @@
+Name:                osm-download
+Version:             0.3
+Synopsis:            Download Open Street Map tiles
+Description:         Download and locally cache open street map tiles based on HTTP
+                     cache control headers.
+License:             BSD3
+License-file:        LICENSE
+Author:              Rob Stewart, Thomas M. DuBuisson
+Maintainer:          Thomas.DuBuisson@gmail.com
+-- Copyright:
+Category:            Network
+Build-type:          Simple
+-- Extra-source-files:  
+Cabal-version:       >=1.6
+
+Library
+  Exposed-modules:     Network.OSM
+  Build-depends:       base >= 4 && < 5
+                     , conduit >= 0.2 && < 0.3
+                     , pool-conduit >= 0.0.0.1
+                     , http-conduit >= 1.2 && < 1.3
+                     , http-types >= 0.6 && < 0.7
+                     , bytestring >= 0.8 && < 1.0
+                     , gps >= 1.0.1 && < 1.1
+                     , containers >= 0.3 && < 0.5
+                     , persistent-sqlite >= 0.8 && < 0.9
+                     , persistent-template >= 0.8 && < 0.9
+                     , persistent >= 0.8 && < 0.9
+                     , mtl >= 2.0 && < 2.1
+                     , transformers-base >= 0.4 && < 0.5
+                     , transformers >= 0.2 && < 0.3
+                     , time >= 1.2 && < 1.3
+                     , stm >= 2.2 && < 2.3 
+                     , monadIO >= 0.10 && < 0.11
+                     , stm-chans >= 1.2 && < 1.3
+                     , text >= 0.11 && < 0.12
+                     , monad-control >= 0.3 && < 0.4
+                     , data-default >= 0.3 && < 0.4
+  Other-modules:      Paths_osm_download 
+  -- Extra tools (e.g. alex, hsc2hs, ...) needed to build the source.
+  -- Build-tools:         
+  

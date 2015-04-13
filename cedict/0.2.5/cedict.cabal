@@ -1,0 +1,40 @@
+name:               cedict
+version:            0.2.5
+category:           Text
+description:        Convenient Chinese phrase & character lookup.
+synopsis:           Convenient Chinese phrase & character lookup.
+license:            GPL
+license-file:       LICENSE
+author:             Jason Dusek
+maintainer:         jason.dusek@gmail.com
+cabal-version:      >= 1.2
+build-type:         Simple
+extra-tmp-files:    c/data.h
+extra-source-files: d/cedict_readme.txt
+                    d/utf8-cedict
+                    c/data.h
+                    Data/Char/CEDICT/GenerateCode.hs
+
+library
+  build-depends:      base
+                    , containers
+                    , parsec < 2.2
+                    , utf8-string
+                    , bytestring
+                    , mtl
+  exposed-modules:  Data.Char.CEDICT
+                    Data.Char.CEDICT.C.Declarations
+                    Data.Char.CEDICT.C.Walker
+                    Data.Char.CEDICT.C.PtrWalker
+                    Data.Char.CEDICT.C.Data
+                    Data.Char.CEDICT.Reader.ListRebuild
+                    Data.Char.CEDICT.Reader.RoseBush
+                    Data.Char.CEDICT.Reader.Parser
+  includes:         c/data.h
+  c-sources:        c/data.c
+
+executable          zi4pu3
+  main-is:          Zi4Pu3.hs
+  includes:         c/data.h
+  c-sources:        c/data.c
+

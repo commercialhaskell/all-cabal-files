@@ -1,0 +1,31 @@
+Name:              minimung
+Version:           0.0
+Cabal-Version: >= 1.2
+License:           BSD3
+License-File:      LICENSE
+Synopsis:          Shows how to run grabber on Mac OS X
+Category:          Foreign, Graphics
+Description:         
+  minimung is capable to do real time CIF??
+  .
+  Only 'Mac', 'Mac.Carbon', 'Mac.QuickDraw', 'Mac.QuickTime' are stable and good. The rest is quick hack
+  .
+Author:            Yakov Zaytsev
+Maintainer:        Yakov Zaytsev <yakov@yakov.cc>
+build-type:        Simple
+extra-source-files:LICENSE
+-- if os(darwin)
+Executable         minimung
+  build-depends:   base >= 4.0 && < 4.2, haskell98, unix, GLUT
+  Main-Is:         Minimung.hs
+  hs-source-dirs:  .
+  Other-modules:   Mac
+                   Mac.Carbon
+                   Mac.QuickTime
+                   Mac.QuickDraw
+                   Data.Image
+                   Data.Geometry
+                   Data.Camera
+  frameworks:      QuickTime Carbon
+  ld-options:      -threaded
+--  ghc-options:     -fglasgow-exts

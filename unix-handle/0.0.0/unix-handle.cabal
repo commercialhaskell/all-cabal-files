@@ -1,0 +1,36 @@
+Name:		unix-handle
+Version:	0.0.0
+Cabal-Version:	>= 1.6
+Build-Type:	Simple
+License:	BSD3
+License-File:	LICENSE
+Copyright:	2010, Anders Kaseorg
+Author:		Anders Kaseorg <andersk@mit.edu>
+Maintainer:	andersk@mit.edu
+Stability:	experimental
+Synopsis:	POSIX operations on Handles
+Description:
+  This package provides versions of functions from
+  "System.Posix.Files" that operate on 'System.IO.Handle' instead of
+  'System.IO.FilePath' or 'System.Posix.Fd'.  This is useful to
+  prevent race conditions that may arise from looking up the same path
+  twice.
+Category:	System
+
+Library
+  Exposed-Modules:
+    System.Posix.Handle
+    System.Posix.Handle.Internals
+  Build-Depends:
+    base >= 3 && < 5,
+    unix
+  GHC-Options: -Wall
+
+Source-Repository head
+  Type:			git
+  Location:		git://andersk.mit.edu/haskell/unix-handle.git
+
+Source-Repository head
+  Type:			git
+  Location:		git://andersk.mit.edu/haskell/unix-handle.git
+  Tag:			0.0.0

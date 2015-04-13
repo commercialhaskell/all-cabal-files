@@ -1,0 +1,45 @@
+Name:            pointless-lenses
+Version:         0.0.9
+License:         BSD3
+License-file:    LICENSE
+Author:          Alcino Cunha <alcino@di.uminho.pt>, Hugo Pacheco <hpacheco@di.uminho.pt>
+Maintainer:      Hugo Pacheco <hpacheco@di.uminho.pt>
+Synopsis:        Pointless Lenses library
+Description:
+	Pointless Lenses is library of bidirectional lenses (<http://www.cis.upenn.edu/~bcpierce/papers/newlenses-popl.pdf>) defined in the point-free style of programming.
+	Generic bidirectional lenses can be defined over inductive types by relying in a set of lifted lens combinators from the standard point-free combinators.
+	Recursive lenses can be defined by combining the lenses for the recursion patterns of catamorphisms and anamorphism.
+	More refined lens behavior can be achieved a more operation-based variant of delta-lenses (<>).
+	The library also provides QuickCheck procedures to test the well-behavedness of user-defined lens transformations.
+	More details can be found in the accompanying papers <http://alfa.di.uminho.pt/~hpacheco/publications/mpc10.pdf> and <http://alfa.di.uminho.pt/~hpacheco/publications/hdlenses.pdf>
+Homepage:        http://haskell.di.uminho.pt/wiki/Pointless+Lenses
+
+Category: Generics
+
+extra-source-files: README, Test.hs
+
+Build-type: Simple
+Cabal-Version:  >= 1.4
+
+Library
+  Hs-Source-Dirs: src
+  Build-Depends:        base >= 3 && < 5, derive >= 2.5.4, pointless-haskell >= 0.0.7, containers >= 0.4.0.0, QuickCheck >= 2.4.0.1, process
+  exposed-modules:
+         Generics.Pointless.Lenses.Combinators,
+         Generics.Pointless.Lenses.RecursionPatterns,
+         Generics.Pointless.Lenses.Examples.Examples,
+         Generics.Pointless.Lenses.Examples.Imdb,
+         Generics.Pointless.Lenses.Examples.Recs,
+         Generics.Pointless.Lenses.Examples.MapExamples,
+         Generics.Pointless.Lenses.PartialCombinators,
+         Generics.Pointless.Lenses,
+         Generics.Pointless.DLenses,
+         Generics.Pointless.DLenses.Combinators,
+         Generics.Pointless.DLenses.RecursionPatterns,
+         Generics.Pointless.DLenses.ShapeCombinators,
+         Generics.Pointless.DLenses.Examples.Examples,
+         Data.Diff,
+         Data.Relation,
+         Data.Shape
+
+  extensions: MultiParamTypeClasses, ScopedTypeVariables, FlexibleInstances, FlexibleContexts, TypeOperators, TypeFamilies, GADTs, Rank2Types, ViewPatterns

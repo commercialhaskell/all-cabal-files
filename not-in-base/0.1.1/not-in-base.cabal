@@ -1,0 +1,46 @@
+name: not-in-base
+version: 0.1.1
+cabal-version: -any
+build-type: Simple
+license: OtherLicense
+license-file: "COPYING.txt"
+copyright:
+maintainer: Oscar Finnsson
+build-depends: base >= 4 && < 5
+stability:
+homepage: http://github.com/finnsson/not-in-base
+package-url:
+bug-reports:
+synopsis: Useful utility functions that only depend on base. 
+description: Useful utility functions that only depend on base.
+category: Utility
+author: Oscar Finnsson
+tested-with: GHC -any
+data-files:
+data-dir: ""
+extra-source-files:
+extra-tmp-files:
+exposed-modules: NIB.String, NIB.Pointfree, NIB.List
+exposed: True
+buildable: True
+build-tools:
+cpp-options:
+cc-options:
+ld-options:
+pkgconfig-depends:
+frameworks:
+c-sources:
+extensions:
+extra-libraries:
+extra-lib-dirs:
+includes:
+install-includes:
+include-dirs:
+hs-source-dirs: src
+other-modules:
+ghc-prof-options:
+ghc-shared-options:
+ghc-options:
+hugs-options:
+nhc98-options:
+jhc-options:

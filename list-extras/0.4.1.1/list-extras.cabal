@@ -1,0 +1,62 @@
+----------------------------------------------------------------
+-- wren ng thornton <wren@community.haskell.org>    ~ 2012.09.26
+----------------------------------------------------------------
+
+-- By and large Cabal >=1.2 is fine; but >= 1.6 gives tested-with:
+-- and source-repository:.
+Cabal-Version:  >= 1.6
+Build-Type:     Simple
+
+Name:           list-extras
+Version:        0.4.1.1
+Stability:      stable
+Homepage:       http://code.haskell.org/~wren/
+Author:         wren ng thornton
+Maintainer:     wren@community.haskell.org
+Copyright:      Copyright (c) 2007--2012 wren ng thornton
+License:        BSD3
+License-File:   LICENSE
+
+Category:       List
+Synopsis:       Common not-so-common functions for lists
+Description:    Common not-so-common functions for lists.
+                .
+                Since "Data.List.Extras" is prime realestate for
+                extensions to "Data.List", if you have something
+                you'd like to contribute feel free to contact the
+                maintainer (I'm friendly). I'm amenable to adopting
+                code if you think your functions aren't enough for
+                a package on their own. Or if you would rather
+                maintain a separate package I can share the
+                @Data.List.Extras.Foo@ namespace.
+
+Extra-source-files:
+    VERSION
+Source-Repository head
+    Type:     darcs
+    Location: http://community.haskell.org/~wren/list-extras
+
+----------------------------------------------------------------
+Flag base4
+    Description: base-4.0 deprecated Prelude which is imported qualified
+    Default:     True
+
+----------------------------------------------------------------
+Library
+    Exposed-Modules: Prelude.Listless
+                   -- , Data.List.BoehmBerarducci
+                   -- , Data.List.Scott
+                   , Data.List.Extras
+                   , Data.List.Extras.Argmax
+                   , Data.List.Extras.LazyLength
+                   , Data.List.Extras.Pair
+    if flag(base4)
+        -- TODO: What else do we need to do?
+        Build-Depends: base >= 4 && < 5
+    else
+        -- TODO: What else do we need to do?
+        Build-Depends: base < 4
+    -- Build-Depends: data-or
+
+----------------------------------------------------------------
+----------------------------------------------------------- fin.

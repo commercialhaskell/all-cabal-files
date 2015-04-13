@@ -1,0 +1,40 @@
+name:                   event-monad
+version:                0.0.2.0
+stability:              experimental
+license:                PublicDomain
+
+cabal-version:          >= 1.2
+build-type:             Simple
+
+author:                 James Cook <james.cook@usma.edu>
+maintainer:             James Cook <james.cook@usma.edu>
+homepage:               http://code.haskell.org/~mokus/event-monad
+
+category:               Control
+synopsis:               Event-graph simulation monad transformer
+description:            An interface for and simple implementation of an
+                        event-graph simulation system as a monad transformer,
+                        as well as a version using mutable state references
+                        for performance and for concurrency support.
+
+tested-with:            GHC
+
+Library
+  hs-source-dirs:       src
+  exposed-modules:      Control.Monad.Event
+                        Control.Monad.Event.BasicEvents
+                        Control.Monad.Event.Classes
+                        Control.Monad.EventT
+                        Control.Monad.EventM
+  other-modules:        Control.Monad.Event.Internal.Types
+                        Control.Monad.Event.Internal.EventID
+  build-depends:        base >= 3 && <5, 
+                        containers, 
+                        event-handlers >= 0.0.0.2, 
+                        haskell98,
+                        monad-loops, 
+                        mtl, 
+                        pretty,
+                        prettyclass,
+                        priority-queue >= 0.2, 
+                        stateref >= 0.3 && <0.4

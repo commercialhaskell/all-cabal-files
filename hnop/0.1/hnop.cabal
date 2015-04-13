@@ -1,0 +1,8 @@
+Name:                hnop
+Version:             0.1
+License-file:        LICENSE
+Author:              Ashley Yakeley <ashley@semantic.org>
+build-depends:       base
+
+Executable:          hnop
+Main-Is:             Main.hs

@@ -1,0 +1,46 @@
+name:                rsagl-frp
+version:             0.6.0.0
+license:             BSD3
+license-file:        LICENSE
+author:              Christopher Lane Hinson
+maintainer:          Christopher Lane Hinson <lane@downstairspeople.org>
+
+category:            FRP
+synopsis:            The RogueStar Animation and Graphics Library: Functional Reactive Programming
+description:         RSAGL, the RogueStar Animation and Graphics Library,
+                     was specifically designed for a computer game called
+                     roguestar, but effort has been made to make it accessable
+                     to other projects that might benefit from it.
+                     .
+                     This package implements the RSAGL functional reactive
+                     programming architecture.
+cabal-version:       >= 1.2
+homepage:            http://roguestar.downstairspeople.org/
+
+build-type:          Simple
+tested-with:         GHC==6.12.1
+
+Library
+    exposed-modules:     RSAGL.FRP,
+                         RSAGL.FRP.Accumulation
+                         RSAGL.FRP.FactoryArrow
+                         RSAGL.FRP.FRP
+                         RSAGL.FRP.FRPModel
+                         RSAGL.FRP.Message
+                         RSAGL.FRP.RecombinantState
+                         RSAGL.FRP.RK4
+                         RSAGL.FRP.Time
+
+    ghc-options:         -fno-warn-type-defaults -fexcess-precision
+    ghc-prof-options:    -prof -auto-all
+
+    build-depends:       base>=4 && <5,
+                         rsagl-math==0.6.0.0,
+                         random>= 1.0.0.2 && < 1.1,
+                         old-time>= 1.0.0.3 && < 1.1,
+                         array>= 0.3.0.0 && < 0.4,
+                         arrows>= 0.4.1.2 && < 0.5,
+                         containers>= 0.3.0.0 && < 0.4,
+                         mtl>= 1.1.0.2 && < 1.2,
+                         stm>= 2.1.1.2 && < 2.2
+

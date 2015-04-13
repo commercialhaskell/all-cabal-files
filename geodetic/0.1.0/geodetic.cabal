@@ -1,0 +1,76 @@
+name:               geodetic
+version:            0.1.0
+license:            BSD3
+license-File:       etc/LICENCE
+author:             Tony Morris <ʇǝu˙sıɹɹoɯʇ@ןןǝʞsɐɥ>
+maintainer:         Tony Morris
+copyright:          Copyright (C) 2013,2014 Tony Morris
+synopsis:           Geodetic calculations
+category:           Development
+description:        Geodetic calculations including Vincenty and Great Circle using a Latitude and Longitude pair
+homepage:           https://github.com/tonymorris/geodetic
+bug-reports:        https://github.com/tonymorris/geodetic/issues
+cabal-version:      >= 1.10
+build-type:         Custom
+
+source-repository   head
+  type:             git
+  location:         git@github.com:tonymorris/geodetic.git
+
+flag                small_base
+  description:      Choose the new, split-up base package.
+
+library
+  default-language:
+                    Haskell2010
+
+  build-depends:
+                    base < 5 && >= 3
+                    , lens >= 3.10
+                    , coordinate >= 0.0.8
+                    , optional >= 0.0.1
+
+  ghc-options:
+                    -Wall
+
+  default-extensions:
+                      NoImplicitPrelude
+
+  hs-source-dirs:
+                    src
+
+  exposed-modules:
+                    Data.Geo.Geodetic
+                    Data.Geo.Geodetic.Azimuth
+                    Data.Geo.Geodetic.Bearing
+                    Data.Geo.Geodetic.Curve
+                    Data.Geo.Geodetic.Ellipsoid
+                    Data.Geo.Geodetic.GreatCircle
+                    Data.Geo.Geodetic.Haversine
+                    Data.Geo.Geodetic.Sphere
+                    Data.Geo.Geodetic.Vincenty
+
+test-suite doctests
+  type:
+                    exitcode-stdio-1.0
+
+  main-is:
+                    doctests.hs
+
+  default-language:
+                    Haskell2010
+
+  build-depends:
+                    base < 5 && >= 3,
+                    doctest >= 0.9.7,
+                    filepath >= 1.3,
+                    directory >= 1.1,
+                    QuickCheck >= 2.0
+
+  ghc-options:
+                    -Wall
+                    -threaded
+
+  hs-source-dirs:
+                    test
+

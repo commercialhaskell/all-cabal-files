@@ -1,0 +1,20 @@
+Name:          schonfinkeling
+Version:       0.1.0.0
+Synopsis:      Transformation of n-ary functions to unary functions
+Description:   Transformation of n-ary functions to unary functions
+License:       BSD3
+License-file:  LICENSE
+Author:        Denis Defreyne <denis.defreyne@stoneship.org>
+Maintainer:    Denis Defreyne <denis.defreyne@stoneship.org>
+Category:      Control
+Build-type:    Simple
+Cabal-version: >= 1.2
+
+Library
+  Hs-source-dirs: src
+
+  Exposed-modules:
+    Control.Schonfinkeling
+  
+  Build-depends:       
+    base >= 4 && < 5

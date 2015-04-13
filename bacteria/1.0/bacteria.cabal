@@ -1,0 +1,18 @@
+name:               bacteria
+version:            1.0
+synopsis:           braindead utility to compose Xinerama backgrounds
+description:        Compose a sequence of images by centering them on rectangles the size of the Xinerama screens available.  Supports jpg, png, and gif input, and produces png output.
+category:           Graphics
+license:            OtherLicense
+license-file:       LICENSE
+author:             Daniel Wagner
+maintainer:         daniel@wagner-home.com
+homepage:           http://www.dmwit.com/bacteria
+bug-reports:        http://dmwit.fogbugz.com/
+package-url:        http://www.dmwit.com/bacteria/bacteria-current.tar.gz
+build-Type:         Simple
+cabal-Version:      >=1.2
+
+executable bacteria
+    main-is:        bacteria.hs
+    build-depends:  base<=5, gd, X11>=1.4

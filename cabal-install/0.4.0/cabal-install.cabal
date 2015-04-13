@@ -1,0 +1,55 @@
+Name:               cabal-install
+Version:            0.4.0
+Synopsis:           Automatic package handling for Haskell
+Description:        
+    apt-get like tool for Haskell. The \'cabal\' command-line program
+    simplifies the process of managing Haskell software by automating the
+    fetching, configuration, compilation and installation of Haskell
+    libraries and programs.
+License:            BSD3
+License-File:       LICENSE
+Author:             Lemmih <lemmih@gmail.com>, Paolo Martini <paolo@nemail.it>
+Maintainer:         cabal-devel@haskell.org
+Copyright:          2005 Lemmih <lemmih@gmail.com>, 2006 Paolo Martini <paolo@nemail.it>
+Stability:          Experimental
+Category:           Distribution
+Build-type:         Simple
+Extra-Source-Files: README
+Cabal-Version:      >= 1.2
+
+flag old-base
+  description: Old, monolithic base
+  default: False
+
+flag bytestring-in-base
+
+Executable cabal
+    Main-Is:            Main.hs
+    Ghc-Options:        -Wall
+    Other-Modules:
+        Hackage.Clean
+        Hackage.Config
+        Hackage.Dependency
+        Hackage.Fetch
+        Hackage.Index
+        Hackage.Info
+        Hackage.Install
+        Hackage.List
+        Hackage.Setup
+        Hackage.Tar
+        Hackage.Types
+        Hackage.Update
+        Hackage.Utils
+
+    build-depends: Cabal >= 1.2, filepath >= 1.0, network,
+                   zlib >= 0.3, HTTP >= 3000.0 && < 3001.1
+
+    if flag(old-base)
+      build-depends: base < 3
+    else
+      build-depends: base >= 3, process, directory, pretty
+
+    if flag(bytestring-in-base)
+      build-depends: base >= 2.0 && < 2.2
+    else
+      build-depends: base < 2.0 || >= 3.0, bytestring >= 0.9

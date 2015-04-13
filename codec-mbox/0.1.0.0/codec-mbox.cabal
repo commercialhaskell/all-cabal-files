@@ -1,0 +1,22 @@
+name:            codec-mbox
+cabal-Version:   >=1.8
+version:         0.1.0.0
+license:         BSD3
+license-File:    LICENSE
+copyright:       (c) Nicolas Pouillard
+author:          Nicolas Pouillard
+maintainer:      Nicolas Pouillard <nicolas.pouillard@gmail.com>
+category:        Codec
+synopsis:        A library to read and write mailboxes in mbox format
+description:     The library provides functions to read, write, and
+                 manipulate mbox's. This library focuses on three points:
+                 robustness, efficency, and scalability. It's using lazy
+                 bytestrings and can handle very big mailboxes.
+stability:       Provisional
+build-type:      Simple
+
+library
+  build-depends:   base (==3.* || ==4.*), bytestring>=0.9, fclabels>=1.0
+  exposed-modules: Codec.Mbox
+  ghc-options:     -Wall
+  extensions:      BangPatterns, TypeOperators

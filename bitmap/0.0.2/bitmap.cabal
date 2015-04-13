@@ -1,0 +1,49 @@
+Name:                bitmap
+Version:             0.0.2
+Synopsis:            A library for handling and manipulating bitmaps (rectangular pixel arrays).
+Description:         A library for handling and manipulating bitmaps (that is,
+                     rectangular pixel arrays).
+License:             BSD3
+License-file:        LICENSE
+Copyright:           (c) 2009-2011 Balazs Komuves
+Author:              Balazs Komuves
+Maintainer:          bkomuves (plus) hackage (at) gmail (dot) com
+Homepage:            http://code.haskell.org/~bkomuves/
+Stability:           Experimental
+Category:            Graphics, Data
+Tested-With:         GHC == 6.10.1
+Cabal-Version:       >= 1.2
+Build-Type:          Simple
+
+extra-source-files:  cbits/bm.h
+
+Flag base4
+  Description: Base v4
+
+Library
+  if flag(base4)
+    Build-Depends:   base >= 4 && < 5, bytestring >= 0.9
+    cpp-options:     -DBASE_VERSION=4
+  else
+    Build-Depends:   base >= 3 && < 4, bytestring >= 0.9
+    cpp-options:     -DBASE_VERSION=3
+    
+  Exposed-Modules:     Data.Bitmap,
+                       Data.Bitmap.Base,
+                       Data.Bitmap.Simple,
+                       Data.Bitmap.Pure,
+                       Data.Bitmap.Pure.File,
+                       Data.Bitmap.Pure.Pixels,
+                       Data.Bitmap.IO,
+                       Data.Bitmap.IO.File,
+                       Data.Bitmap.IO.Pixels
+
+  Other-Modules:       Data.Bitmap.Internal
+
+  Hs-Source-Dirs:      .
+  Extensions:          ForeignFunctionInterface, CPP
+
+  C-Sources:           cbits/bm.c 
+  Include-Dirs:        cbits
+  cc-options:          -O3
+                       

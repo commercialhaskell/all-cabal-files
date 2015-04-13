@@ -1,0 +1,39 @@
+Name:                v4l2-examples
+Version:             0.1.0.2
+Synopsis:            video for linux two examples
+
+Description:
+  This package contains examples using the v4l2 package:
+  .
+    * v4l2-capture - dumps PPM frames from a video device to stdout:
+  .
+    @$ v4l2-capture /dev/video0 > out.ppm@
+  .
+    * v4l2-histogram - shows RGB histogram overlaid on mirror image, using OpenGL/GLUT for display.
+  .
+    @$ v4l2-histogram /dev/video0@
+
+Homepage:            https://gitorious.org/hsv4l2
+License:             BSD3
+License-file:        LICENSE
+Author:              Claude Heiland-Allen
+Maintainer:          claude@mathr.co.uk
+
+Category:            Graphics
+Build-type:          Simple
+Cabal-version:       >=1.2
+
+Executable v4l2-capture
+  Main-is: v4l2-capture/v4l2-capture.hs
+  Build-depends:
+    base >= 3 && < 5,
+    v4l2 >= 0.1 && < 0.2
+  ghc-options: -Wall
+
+Executable v4l2-histogram
+  Main-is: v4l2-histogram/v4l2-histogram.hs
+  Build-depends:
+    base >= 3 && < 5,
+    GLUT >= 2.1 && < 2.4,
+    v4l2 >= 0.1 && < 0.2
+  ghc-options: -Wall

@@ -1,0 +1,39 @@
+Name:           primitive
+Version:        0.3
+x-revision: 1
+License:        BSD3
+License-File:   LICENSE
+Author:         Roman Leshchinskiy <rl@cse.unsw.edu.au>
+Maintainer:     Roman Leshchinskiy <rl@cse.unsw.edu.au>
+Copyright:      (c) Roman Leshchinskiy 2009-2010
+Homepage:       http://code.haskell.org/primitive
+Category:       Data
+Synopsis:       Wrappers for primitive operations
+Description:
+        .
+        This package provides wrappers for primitive array operations from
+        GHC.Prim.
+        .
+
+Cabal-Version:  >= 1.2
+Build-Type:     Simple
+
+Library
+  Exposed-Modules:
+        Control.Monad.Primitive
+        Data.Primitive
+        Data.Primitive.MachDeps
+        Data.Primitive.Types
+        Data.Primitive.Array
+        Data.Primitive.ByteArray
+        Data.Primitive.Addr
+
+  Build-Depends: base >= 4 && < 4.7, ghc-prim
+
+  Ghc-Options: -O2
+
+  Include-Dirs: cbits
+  Install-Includes: primitive-memops.h
+  includes: primitive-memops.h
+  c-sources: cbits/primitive-memops.c
+

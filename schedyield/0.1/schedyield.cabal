@@ -1,0 +1,21 @@
+name:                schedyield
+version:             0.1
+synopsis:            Exposes standard POSIX function sched_yield.
+description:         sched_yield is useful, when starting many processes, and waiting for them to complete. It yields CPU time (forces context switch.)
+category:            System
+license:             BSD3
+license-file:        LICENSE
+author:              Michal J. Gajda
+maintainer:          mjgajda@googlemail.com
+bug-reports:         https://github.com/zhensydow/opencl/issues
+build-depends:       base
+cabal-version:       >=1.8
+build-type:          Simple
+source-repository	head
+   type:		git
+   location:	https://github.com/mgajda/SchedYield
+
+Library
+   build-depends:    base>=4.0, base <4.6
+   exposed-modules:  System.Posix.SchedYield
+   other-extensions: ForeignFunctionInterface

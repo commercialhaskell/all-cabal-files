@@ -1,0 +1,62 @@
+name:                free-game
+version:             0.9.4.3
+synopsis:            Cross-platform GUI library based on free monads
+description:         free-game is a library that abstracts graphical applications with simple interfaces. Twitter: #hs_free_game
+homepage:            https://github.com/fumieval/free-game/tree/maintainance0.9
+bug-reports:         https://github.com/fumieval/free-game/issues
+license:             BSD3
+license-file:        LICENSE
+author:              Fumiaki Kinoshita
+maintainer:          Fumiaki Kinoshita <fumiexcel@gmail.com>
+copyright:           Copyright (C) 2012-2013 Fumiaki Kinoshita
+category:            Graphics, Monads
+build-type:          Simple
+stability:           experimental
+cabal-version:       >=1.10
+
+source-repository head
+  type: git
+  location: https://github.com/fumieval/free-game.git
+
+library
+  default-language:   Haskell2010
+  exposed-modules:
+    Graphics.UI.FreeGame
+    Graphics.UI.FreeGame.Base
+    Graphics.UI.FreeGame.Data.Bitmap
+    Graphics.UI.FreeGame.Data.Font
+    Graphics.UI.FreeGame.Text
+    Graphics.UI.FreeGame.GUI
+    Graphics.UI.FreeGame.GUI.GLFW
+    Graphics.UI.FreeGame.Internal.Finalizer
+    Graphics.UI.FreeGame.Internal.Raindrop
+    Graphics.UI.FreeGame.Types
+    Graphics.UI.FreeGame.Util
+
+  ghc-options: -Wall -fexcess-precision -O2
+
+  build-depends:
+    base == 4.*,
+    array >= 0.4,
+    containers >= 0.4,
+    directory >= 1.0,
+    filepath >= 1.3,
+    free >= 3.2 && <5,
+    repa,
+    freetype2 >= 0.1,
+    GLFW-b == 0.1.*,
+    hashable >= 1.2,
+    mtl >= 2.1,
+    OpenGL == 2.9.*,
+    OpenGLRaw == 1.4.*,
+    random == 1.*,
+    transformers >= 0.3,
+    void >= 0.5,
+    template-haskell,
+    linear >= 1.1 && < 1.4,
+    vector == 0.10.*,
+    JuicyPixels-repa >= 0.7 && < 1,
+    data-default,
+    reflection == 1.*,
+    colors == 0.1.*,
+    control-bool

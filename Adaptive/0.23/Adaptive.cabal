@@ -1,0 +1,35 @@
+Name:                Adaptive
+Category:            Algorithms
+Cabal-Version:       >= 1.6
+Build-Type:          Simple
+Version:             0.23
+
+Synopsis:            Library for incremental computing.
+
+Description:         This is a Haskell (plus some extensions) implementation
+                     of a library for incremental computing.  It closely
+                     follows the implementation in the nice POPL 2002 paper
+                     "Adaptive Functional Programming", by Umut Acar,
+                     Guy Blelloch and Bob Harper.
+
+License:             BSD3
+License-file:        LICENSE
+Author:              Magnus Carlsson
+Maintainer:          Magnus Carlsson <magnus@carlssonia.org>
+
+Library
+  Build-Depends:     base < 5
+
+  Exposed-modules:   Control.Monad.Adaptive,
+                     Control.Monad.Adaptive.Ref,
+                     Control.Monad.Adaptive.PriorityQueue,
+                     Control.Monad.Adaptive.OrderedList,
+                     Control.Monad.Adaptive.CircularList,
+                     Control.Monad.Adaptive.MonadUtil
+
+Executable           spreadsheet
+  Main-is:           spreadsheet.hs
+
+source-repository head
+    type: git
+    location: git://github.com/carlssonia/adaptive.git

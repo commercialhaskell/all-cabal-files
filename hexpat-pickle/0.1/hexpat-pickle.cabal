@@ -1,0 +1,32 @@
+Cabal-Version: >= 1.2
+Name: hexpat-pickle
+Version: 0.1
+Synopsis: XML picklers based on hexpat, almost source code compatible with HXT
+Description:
+  A library of combinators that allows Haskell data structures to be pickled
+  to/from the Tree datatype defined in the hexpat package. It is almost source
+  code compatible with the pickling functionality of the HXT package, to allow
+  you to switch easily between the two implementations. This implementation is
+  simpler and more limited than HXT, but considerably faster.
+  This package does not depend on HXT.
+  .
+  DARCS repository:
+  <http://code.haskell.org/hexpat-pickle/>
+  .
+  Information/tutorial about the picklers found in the HXT package:
+  <http://www.haskell.org/haskellwiki/HXT/Conversion_of_Haskell_data_from/to_XML>
+Category: XML
+License: BSD3
+License-File: LICENSE
+Author: Stephen Blackheath, Matthew Pocock
+Maintainer: http://blacksapphire.com/antispam/
+Copyright: (c) 2009 Stephen Blackheath
+Homepage: http://code.haskell.org/hexpat-pickle/
+Extra-Source-Files: test.hs
+Build-Type: Simple
+Stability: alpha
+
+Library
+  Build-Depends: base, hexpat >= 0.3, utf8-string >= 0.3.3, bytestring >= 0.9
+  Exposed-Modules: Text.XML.Expat.Pickle
+

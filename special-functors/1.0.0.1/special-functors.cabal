@@ -1,0 +1,25 @@
+Name:                special-functors
+Version:             1.0.0.1
+Synopsis:            Control.Applicative, Data.Foldable, Data.Traversable (compatibility package)
+Category:            Generics
+Description:
+  This package contains Control.Applicative, Data.Foldable, Data.Traversable
+  from 6.8's base for use in earlier GHC versions
+License:             BSD3
+License-file:        LICENSE
+Author:              libraries@haskell.org
+Maintainer:          haskell@henning-thielemann.de
+Tested-With:         GHC==6.4.1
+Build-Depends:       base<2, mtl >=1.0 && <1.1.1
+Build-Type:          Simple
+Extensions:          CPP
+GHC-Options:         -funbox-strict-fields -Wall
+GHC-Prof-Options:    -funbox-strict-fields -auto-all -Wall
+Exposed-Modules:
+  Control.Monad.Instances
+  Control.Applicative
+  Data.Foldable
+  Data.Traversable
+Other-Modules:
+  Data.MonoidExample
+Extra-Source-Files:  README

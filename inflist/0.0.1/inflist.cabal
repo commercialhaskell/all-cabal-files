@@ -1,0 +1,35 @@
+Name:                inflist
+Version:             0.0.1
+Synopsis:	     An infinite list type and operations thereon.
+Description:         An infinite list type and operations thereon.
+Homepage: 	     https://bitbucket.org/eegg/inflist
+Category:	     Data
+License:             BSD3
+License-file:        LICENSE.txt
+Author:              James H. Fisher <jameshfisher@gmail.com>
+Maintainer:          James H. Fisher <jameshfisher@gmail.com>
+Copyright:	     Copyright: (c) 2012 James H. Fisher <jameshfisher@gmail.com>
+Bug-reports:   	     https://bitbucket.org/eegg/inflist/issues
+
+Build-type:          Simple
+Stability:	     experimental
+Cabal-version:	     >= 1.8
+
+Source-repository head
+  Type:              git
+  Location:	     https://bitbucket.org/eegg/inflist.git
+
+Library
+  Exposed-modules:
+    Data.InfList
+    Data.InfList.InfString
+    Data.InfList.Common
+    Data.InfList.Arbitrary
+  Build-Depends:
+    base >= 4 && < 5,
+    QuickCheck >= 2 && < 3
+
+Test-Suite test-inflist
+  Main-is:         tests/Test.hs
+  Type:            exitcode-stdio-1.0
+  Build-depends:   base, QuickCheck

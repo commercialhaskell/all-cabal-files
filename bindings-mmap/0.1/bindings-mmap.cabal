@@ -1,0 +1,25 @@
+Name:                bindings-mmap
+Version:             0.1
+Synopsis:            bindings to mmap for Linux
+
+Description:
+  Bindings to mmap for POSIX, wrapping:
+  <file:///usr/include/sys/mmap.h>
+
+Homepage:            https://gitorious.org/hsv4l2
+License:             BSD3
+License-file:        LICENSE
+Author:              Claude Heiland-Allen
+Maintainer:          claudiusmaximus@goto10.org
+Category:            System
+
+Build-type:          Simple
+
+Cabal-version:       >=1.2
+
+Library
+  Exposed-modules:     Bindings.MMap
+  Build-depends:
+    base >= 3 && < 5,
+    bindings-DSL >= 1.0.7 && < 1.1
+  Build-tools:         hsc2hs

@@ -1,0 +1,38 @@
+Name:                boolsimplifier
+Version:             0.1
+Synopsis:            Normal form representation for boolean expressions. Typically simplifies such expressions, but is not guaranteed to produce the absolute simplest form.
+
+-- A longer description of the package.
+-- Description:         
+
+License:             BSD3
+License-file:        LICENSE
+Author:              Gershom Bazerman, Jeff Polakow
+Maintainer:          gershomb@gmail.com
+
+-- A copyright notice.
+-- Copyright:           
+
+Category:            Math, Language
+
+Build-type:          Simple
+
+-- Constraint on the version of Cabal needed to build this package.
+Cabal-version:       >=1.2
+
+
+Library
+  -- Modules exported by the library.
+  Exposed-modules:     Data.BoolSimplifier
+  
+  -- Packages needed in order to build this package.
+  Build-depends: base >= 4, base < 7, containers >= 0.4
+  
+  ghc-options: -Wall
+
+  -- Modules not exported by this package.
+  -- Other-modules:       
+  
+  -- Extra tools (e.g. alex, hsc2hs, ...) needed to build the source.
+  -- Build-tools:         
+  

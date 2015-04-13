@@ -1,0 +1,69 @@
+Name:               global-variables
+Version:            1.0
+
+Synopsis:           Namespaced, global, and top-level mutable variables without
+                    unsafePerformIO.
+
+Description:
+
+  'Data.Global' provides a global namespace of 'IORef's, 'MVar's and
+  'TVar's. This namespace may be accessed in pure code. Yet reading
+  and writing to those 'IORef's, 'MVar's and 'TVar's happens still in
+  their respective monads.
+  .
+  'Data.Global' is designed to meet the following use cases:
+    .
+    * Simplify the declaration of top-level mutable variables, by
+      avoiding any pragmas as well as 'unsafePerformIO'.
+    .
+    * Avoid having to pass references explicitly throughout the
+      program in order to let distant parts communicate.
+    .
+    * Enable a communication by convention scheme, where
+      e.g. different libraries may communicate without code
+      dependencies.
+    .
+    * Simplify the \"configuration problem\" - at least for code in the
+      IO monad.
+   .
+   Note, that this library does not encourage sloppy software design
+   by re-introducing all bad effects of global
+   variables. Nevertheless, sometimes global variables are a suitable
+   solution to a problem. In that case "Data.Global" simplifies and
+   extends their handling significantly.
+   .
+   Examples are in the documentation of "Data.Global".
+
+License:            BSD3
+License-file:       LICENSE
+Author:             Jean-Marie Gaillourdet and Patrick Michel
+Maintainer:         Jean-Marie Gaillourdet <jmg@gaillourdet.net>
+Copyright:          2011 Jean-Marie Gaillourdet
+Bug-Reports:        http://bitbucket.org/jmg/global-variables/issues
+Stability:          stable
+
+Category:           Data, Reflection
+
+Build-type:         Simple
+
+-- Extra files to be distributed with the package, such as examples or
+-- a README.
+-- Extra-source-files:
+
+Cabal-version:      >=1.6
+
+Library
+  Exposed-modules:  Data.Global
+  Hs-Source-Dirs:   src
+
+  Build-depends:      base >= 4 && < 5
+                    , containers >= 0.3 && < 0.5
+                    , stm >= 2.1 && < 2.2
+
+  Other-modules:    Data.Global.Registry
+
+  Ghc-Options:      -Wall
+
+Source-Repository   head
+  Type:             mercurial
+  Location:         http://bitbucket.org/jmg/global-variables

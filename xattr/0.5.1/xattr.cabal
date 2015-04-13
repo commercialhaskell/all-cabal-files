@@ -1,0 +1,29 @@
+Author:        Evan Klitzke
+Maintainer:    Evan Klitzke <evan@eklitzke.org>
+Name:          xattr
+Version:       0.5.1
+Cabal-Version: >= 1.2
+License:       BSD3
+License-File:  LICENSE
+Category:      System
+Copyright:     (c) 2009 by Evan Klitzke
+Synopsis:      Haskell bindings to libattr
+Description:
+  Relatively low-level interface to work with extended attributes on Unix
+  systems. This is a fairly straightforward port of the API exposed by SGI's
+  libattr.
+ 
+Build-Type: Configure
+Extra-Source-Files:
+    README.md
+    LICENSE
+    configure.guess
+    configure.sub
+    configure.ac
+    configure
+ 
+Library
+  Exposed-Modules: System.Xattr
+  Build-Depends: base, bytestring, unix 
+  Extensions: ForeignFunctionInterface, CPP
+  Hs-Source-Dirs: src

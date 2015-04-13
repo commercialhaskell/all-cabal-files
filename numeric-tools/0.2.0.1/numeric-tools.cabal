@@ -1,0 +1,67 @@
+Name:           numeric-tools
+Version:        0.2.0.1
+Cabal-Version:  >= 1.8
+License:        BSD3
+License-File:   LICENSE
+Author:         Aleksey Khudyakov <alexey.skladnoy@gmail.com>
+Maintainer:     Aleksey Khudyakov <alexey.skladnoy@gmail.com>
+Homepage:       https://bitbucket.org/Shimuuar/numeric-tools
+bug-reports:    https://bitbucket.org/Shimuuar/numeric-tools/issues
+Category:       Math, Numerical
+Build-Type:     Simple
+Synopsis:       Collection of numerical tools for integration, differentiation etc.
+  
+Description:
+  Package provides function to perform numeric integration and
+  differentiation, function interpolation.
+  .
+  Changes in 0.2.0.0
+  .
+  * Equation solvers now use custom return type.
+  .
+  * Function to solve equations using Ridder and Newton methods.
+  .
+  * New function to test approximate equality for doubles.
+  .
+  * QuadRes contains best approximation achieved even if required
+    accuracy is not obtained
+  .
+  * Improve convergence test when integral converges to
+    zero. Convergence is still poor
+extra-source-files:
+  README.markdown
+
+source-repository head
+  type:     hg
+  location: https://bitbucket.org/Shimuuar/numeric-tools
+source-repository head
+  type:     git
+  location: https://github.com/Shimuuar/numeric-tools
+
+Library
+  Build-Depends:
+    base       >=3 && <5,
+    ieee754    >= 0.7.3,
+    primitive,
+    vector     >= 0.7.0.1
+  Exposed-modules:
+    Control.Monad.Numeric
+    Numeric.ApproxEq
+    Numeric.Classes.Indexing
+    Numeric.Tools.Equation
+    Numeric.Tools.Differentiation
+    Numeric.Tools.Integration
+    Numeric.Tools.Interpolation
+    Numeric.Tools.Mesh
+  c-sources:       cbits/ieee.c
+  ghc-options:	   -Wall -O2
+
+test-suite tests
+  type:           exitcode-stdio-1.0
+  hs-source-dirs: test
+  main-is:        test.hs
+  ghc-options:    -O2 -Wall -threaded -rtsopts
+  build-depends:
+    base,
+    numeric-tools,
+    HUnit

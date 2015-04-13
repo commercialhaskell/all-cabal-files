@@ -1,0 +1,37 @@
+name: hoauth
+version: 0.1.5
+category: Network,Protocol,OAuth
+license: BSD3
+license-file: LICENSE
+author: Diego Souza
+maintainer: Diego Souza <dsouza@bitforest.org>
+stability: experimental
+build-type: Simple
+cabal-version: >= 1.6
+tested-with: GHC==6.10.4
+synopsis: A Haskell implementation of OAuth 1.0a protocol.
+description: This library implements all PLAINTEXT, HMAC-SHA1 and RSA-SHA1
+             signatures as defined in the specification 1.0. Currently it
+             supports only /consumer/ related functions, but there are plans to
+             add support /service providers/ as well.
+
+             More info at: <http://oauth.net/>
+
+library
+  build-depends: base<5
+                ,bytestring
+                ,SHA
+                ,RSA
+                ,base64-string
+                ,utf8-string
+                ,binary
+                ,time
+                ,old-locale
+                ,system-uuid
+  exposed-modules: Network.Protocol.OAuth.Consumer,Network.Protocol.OAuth.Request,Network.Protocol.OAuth.Signature
+  hs-source-dirs: src/main/haskell
+  ghc-options: -Wall -fwarn-tabs
+
+source-repository head
+  type:     darcs
+  location: http://projects.bitforest.org/hoauth/

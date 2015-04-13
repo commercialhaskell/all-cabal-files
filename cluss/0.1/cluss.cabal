@@ -1,0 +1,59 @@
+name: cluss
+category: type system, constraints
+version: 0.1
+x-revision: 4
+license: BSD3
+license-file: LICENSE
+cabal-version: >= 1.10
+tested-with: GHC==7.8.3
+author: Yusuke Matsushita
+maintainer: Yusuke Matsushita <y.skm24t@gmail.com>
+stability: provinsional
+homepage: https://github.com/Kinokkory/cluss
+bug-reports: https://github.com/Kinokkory/cluss/issues
+copyright: Copyright (C) 2014 Yusuke Matsushita
+synopsis: simple alternative to type classes
+description:
+    A /cluss/ enables you to achieve /function overloading/, or ad-hoc polymorphism,
+    without creating a new type class.
+    .
+    In order to give ad-hoc polymorphism to a type variable @a@,
+    you simply use @In@ with a list of \"type patterns\" like @In [Type T, ...] a@,
+    which indicates that the type matches some of the patterns;
+    which is analogous to a type class indicating that a type matches some of its \"instances\".
+    The constraint @In [Type T, ...] a@ is what we call a \"cluss\".
+    .
+    Cluss instances are /closed/ and cluss methods are /open/,
+    unlike type classes, whose instances are open and whose methods are closed.
+    .
+    Clusses can easily be used in a nested way,
+    and can even be /recursive/, just like recursive type classes,
+    and therefore clusses are expressive enough to imitate Haskell-98-style type classes.
+    .
+    More information can be found in the Haddock or the comments in the source code.
+    The updated haddock is here: <http://kinokkory.github.io/cluss/>.
+
+build-type: Simple
+
+source-repository head
+    type: git
+    location: git@github.com:Kinokkory/cluss.git
+
+library
+    hs-source-dirs: src
+    default-language: Haskell2010
+    other-extensions:
+        TypeFamilies
+        PolyKinds
+        DataKinds
+        TypeOperators
+        MultiParamTypeClasses
+        FlexibleInstances
+        ScopedTypeVariables
+        UndecidableInstances
+        FlexibleContexts
+        ConstraintKinds
+        RankNTypes
+    build-depends: base == 4.*
+    exposed-modules: Type.Cluss
+    ghc-options: -Wall

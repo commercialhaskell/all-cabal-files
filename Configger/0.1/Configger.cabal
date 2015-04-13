@@ -1,0 +1,26 @@
+Name:          Configger
+Version:       0.1
+License:       MIT
+License-file:  LICENSE
+Category:      Configuration
+Synopsis:      Parse config files
+Description:   Parses a config file into [(String, [(String, String)])]
+Author:        Nate Soares
+Maintainer:    nate@natesoares.com
+Build-Type:    Simple
+Cabal-Version: >=1.6
+
+source-repository head
+    type: git
+    location: git://github.com/Soares/Configger.hs.git
+
+Library
+    Hs-Source-Dirs:   src
+    Build-Depends:    base >= 4 && < 5,
+                      Dangerous >= 0.2.2,
+                      MissingH >= 1.0,
+                      mtl >= 1.1,
+                      parsec >= 3.1
+    Exposed-modules:  Data.Configger
+    Ghc-Options:      -Wall
+    Ghc-Prof-Options: -auto-all

@@ -1,0 +1,43 @@
+Name: gtkrsync
+Version: 1.0.4
+License: GPL
+Maintainer: John Goerzen <jgoerzen@complete.org>
+Author: John Goerzen
+Stability: Beta
+Copyright: Copyright (c) 2007-2010 John Goerzen
+license-file: COPYRIGHT
+build-type: Simple
+extra-source-files: COPYING,
+                    docs/gtkrsync.1,
+                    docs/man.gtkrsync.sgml,
+                    docs/SConstruct,
+                    docs/sgml-common/ChangeLog,
+                    docs/sgml-common/COPYING,
+                    docs/sgml-common/COPYRIGHT,
+                    docs/sgml-common/Makefile.common,
+                    docs/sgml-common/ps2epsi,
+                    docs/sgml-common/SConstruct,
+                    gtkrsync.gladep,
+                    Makefile,
+                    screenshot1.png,
+                    screenshot2.png,
+                    RsyncGUI.hs,
+                    RsyncParser.hs
+homepage: http://hg.complete.org/gtkrsync
+Category: Network
+Synopsis: Gnome rsync progress display
+Description: gtkrsync is a simple GUI that displays a running status display
+ built from rsync.  This status display includes a per-file and overall status
+ bar, overall estimated time to completion, and an expandable button that shows
+ all rsync status output.
+Build-Depends: base < 5, unix, gtk, gconf, glade, regex-posix, MissingH, process
+data-files: gtkrsync.glade
+
+Executable: gtkrsync
+Main-Is: gtkrsync.hs
+GHC-Options: -O2
+
+Executable: gtkrsyncp
+Main-Is: gtkrsyncp.hs
+GHC-Options: -O2
+

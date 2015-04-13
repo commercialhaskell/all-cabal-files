@@ -1,0 +1,28 @@
+name:                Contract
+version:             0.1
+synopsis:            Practical typed lazy contracts. 
+description:      
+  Contracts describe properties of expressions (esp. functions) that are
+  checked at run-time.
+  For example, a contract states that an expression is a natural number,
+  a list has at least one element or a function requires a natural number
+  and a non-empty list of natural numbers as arguments and will produce a 
+  natural number as result.
+  Thus these properties are both documented and enforced.
+  Contracts are more expressive than static types.
+  If a contract is violated, then an informative exception is raised.
+  See homepage or Olaf Chitil: "Practical Typed Lazy Contracts", ICFP 2012, ACM.
+homepage:            http://www.cs.kent.ac.uk/~oc/contracts.html
+license:             BSD3
+license-file:        LICENSE
+author:              Olaf Chitil
+maintainer:          O.Chitil@kent.ac.uk
+-- copyright:           
+category:            Development
+build-type:          Simple
+cabal-version:       >=1.8
+
+library
+  exposed-modules:     Development.Contract
+  -- other-modules:       
+  build-depends:       base >=4.5 && < 5, template-haskell >= 2.7

@@ -1,0 +1,17 @@
+Name:                InfixApplicative
+Cabal-Version:       >= 1.2
+Version:             1.1
+Synopsis:            liftA2 for infix operators.
+Description:         liftA2 for infix operators.
+License:             BSD3
+License-file:        LICENSE
+Author:              Thomas Davie
+Maintainer:          Thomas Davie (tom.davie@gmail.com)
+Category:            Control
+build-type:          Simple
+
+Library
+  Build-Depends:        base       >= 3.0 && <= 5.0,
+                        haskell98  >= 1.0
+  Hs-Source-Dirs:       src
+  Exposed-Modules:      Control.Applicative.Infix

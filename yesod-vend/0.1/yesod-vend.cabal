@@ -1,0 +1,22 @@
+Name:                yesod-vend
+Version:             0.1
+Synopsis:            Simple CRUD classes for easy view creation for Yesod
+Description:         Simple CRUD classes for easy view creation for Yesod. See @Yesod.VEND@ for more informations and description how to use it.
+License:             BSD3
+License-file:        LICENSE
+Author:              Krzysztof Skrzętnicki
+Maintainer:          gtener@gmail.com
+Category:            Web, Yesod
+Build-type:          Simple
+Cabal-version:       >=1.2
+
+Library
+  Exposed-modules:     Yesod.VEND
+  Hs-source-dirs:      src
+  Build-depends:       base > 4 && <5
+                       , yesod-platform > 1.0 && < 1.1
+                       , persistent
+                       , text
+                       , blaze-html
+                       , hamlet
+                       , yesod

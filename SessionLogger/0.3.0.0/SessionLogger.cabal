@@ -1,0 +1,24 @@
+Name:                SessionLogger
+Version:             0.3.0.0
+Synopsis:            Easy Loggingframework
+Description:         Logger is a framework for making logging, especially web
+                     request, easy. It supports a special file hierachy where
+                     every request has its own directory with a main log file
+                     and serveral other files worth to log. In addition there
+                     is a main log file with important messages and an info file
+                     for things like performance meassuring. These two files
+                     are avaliable for each day separately.
+License:             LGPL-3
+License-file:        LICENSE
+Author:              Gero Kriependorf <gero-dev@physra.net>
+Maintainer:          Gero Kriependorf <gero-dev@physra.net>
+Stability:           Testing
+Category:            Logging
+Build-type:          Simple
+Cabal-version:       >=1.6
+Library
+  Exposed-modules:     System.Log.SessionLogger
+  Hs-Source-Dirs:      src
+  Build-depends:       base==4.*, mtl==1.1.1.*, time==1.*, hslogger==1.*,
+                       directory==1.*, filepath==1.*, old-locale==1.0.*,
+                       random==1.0.*

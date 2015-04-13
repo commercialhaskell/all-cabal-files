@@ -1,0 +1,26 @@
+Name: bytestringreadp
+Version: 0.1
+Stability: alpha
+Exposed-modules: Text.ParserCombinators.ReadP.ByteString
+License: BSD3
+License-File: LICENSE
+Copyright: 2007-2007, Gracjan Polak
+Author: Gracjan Polak <gracjanpolak@gmail.com>
+Maintainer: Gracjan Polak <gracjanpolak@gmail.com>
+Synopsis: A ReadP style parser library for ByteString
+Description:
+    This is a library of parser combinators, originally written by Koen Claessen.
+    It parses all alternatives in parallel, so it never keeps hold of
+    the beginning of the input string, a common source of space leaks with
+    other parsers.  The '(+++)' choice combinator is genuinely commutative;
+    it makes no difference which branch is \"shorter\".
+    .
+    Adapted to use Data.ByteString by Gracjan Polak. Designed as a drop-in
+    replacement for Text.ParserCombinators.ReadP.
+Category: Text
+Build-depends: base, bytestring
+Extensions: CPP
+Hs-source-dirs: src
+Ghc-options: -O2
+CC-options: -O2
+Include-dirs: src

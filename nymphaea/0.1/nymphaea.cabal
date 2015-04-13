@@ -1,0 +1,27 @@
+name:                nymphaea
+version:             0.1
+synopsis:            An interactive GUI for manipulating L-systems
+description:         An L-system is a small grammar specifying fractal functions, famous
+                     for their uncanny resemblance to plants and other lifeforms.
+                     nymphaea displays these L-systems in an attractive visual manner, and
+                     allows you to manipulate them.
+category:            Graphics
+license:             BSD3
+license-file:        LICENSE
+author:              Cale Gibbard, Paolo Martini
+maintainer:          Cale Gibbard <cgibbard@gmail.com>
+build-depends:       base, random, containers, mtl, parsec, glib, gtk>0.9, glade, cairo
+build-type:          Simple
+data-files:          nymphaea.glade, nymphaea.gladep, lsystems/branchyTree.l,
+                     lsystems/glyph.l, lsystems/snowflake.l, lsystems/branchyTree2.l,
+                     doc/IDEAS, doc/TODO
+
+tested-with:         GHC==6.8.2
+
+executable:          nymphaea
+main-is:             Nymphaea.hs
+hs-source-dirs:      src
+other-modules:       CairoExts, LSystem, MonadRandom, Parser
+
+ghc-options:         -O2 -Wall -optl-Wl,-s
+ghc-prof-options:    -prof -auto-all

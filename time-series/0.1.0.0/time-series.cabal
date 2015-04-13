@@ -1,0 +1,75 @@
+name:                time-series
+version:             0.1.0.0
+synopsis:            Time series analysis.
+license:             GPL-2
+license-file:        LICENSE
+author:              Atsuro Hoshino
+maintainer:          atsuro.hoshino@parsci.com
+copyright:           Copyright (C) 2013-2013 Parallel Scientific Labs, LLC.
+category:            Data
+build-type:          Simple
+cabal-version:       >=1.8
+description:
+  A package containing time series analysis prototyping.
+  .
+  The analysis is for finding time-shifted correlations from multiple
+  time series input data. In later phase, we might extend to do
+  analysis of burst detection, but other analysis than for finding
+  correlations are not considered yet.
+
+source-repository head
+    type:     git
+    location: git://github.com/ps-labs/time-series.git
+
+library
+  hs-source-dirs:
+    src
+  ghc-options:
+    -Wall
+  ghc-prof-options:
+    -auto-all -caf-all
+  exposed-modules:
+    TimeSeries.Correlation
+    TimeSeries.PRG64
+    TimeSeries.Plot
+    TimeSeries.Routing
+    TimeSeries.Scratch
+    TimeSeries.Utils
+    TimeSeries.Window
+  build-depends:
+    array      >= 0.4,
+    base       >= 4 && < 5,
+    containers >= 0.5,
+    mtl        >= 2.1
+
+executable time-series
+  hs-source-dirs:
+    exec
+  main-is:
+    Main.hs
+  ghc-options:
+    -Wall -rtsopts
+  ghc-prof-options:
+    -auto-all -caf-all
+  build-depends:
+    base        >= 4 && < 5,
+    time-series -any
+
+-- test-suite test-comparison
+--   type:
+--     exitcode-stdio-1.0
+--   hs-source-dirs:
+--     test
+--   main-is:
+--     comparison.hs
+--   ghc-options:
+--     -Wall -rtsopts -threaded
+--   ghc-prof-options:
+--     -auto-all -caf-all
+--   build-depends:
+--     base                 >= 4.0 && < 5,
+--     test-framework       >= 0.2,
+--     test-framework-hunit >= 0.2.7,
+--     test-framework-th    >= 0.2.2,
+--     HUnit                >= 1.2.5,
+--     time-series          -any

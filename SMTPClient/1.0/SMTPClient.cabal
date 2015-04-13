@@ -1,0 +1,24 @@
+name: SMTPClient
+version: 1.0
+license: BSD3
+license-file: LICENSE
+cabal-version: >= 1.2
+copyright: (c) Stephen Blackheath
+author: Stephen Blackheath
+maintainer: http://blacksapphire.com/antispam/
+stability: stable
+synopsis: A simple SMTP client
+description:
+    A simple SMTP client for applications that want to send emails.
+    .
+    DARCS repository:
+    <http://blacksapphire.com/SMTPClient/>
+extra-source-files:
+    example.hs
+    LICENSE
+category: Network
+build-type: Simple
+Library
+    exposed-modules: Network.SMTP.Client, Network.SMTP.ClientSession
+    build-depends: base >= 4, hsemail, network, old-time, old-locale, containers
+

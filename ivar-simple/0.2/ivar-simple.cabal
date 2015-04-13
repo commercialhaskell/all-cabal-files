@@ -1,0 +1,30 @@
+Name:          ivar-simple
+Version:       0.2
+Category:      Concurrency
+Stability:     experimental
+Copyright:     (c) 2008-2012 Bertram Felgenhauer
+Maintainer:    Bertram Felgenhauer <int-e@gmx.de>
+License:       MIT
+License-File:  LICENSE
+Synopsis:      Write once concurrency primitives.
+Description:
+  @IVar@s are write-once (immutable) variables.
+  .
+  They can be read, an operation that will block until a value was written
+  to the variable. They can be written to exactly once.
+Cabal-Version: >= 1.4
+Build-Type:    Simple
+Extra-Source-Files:
+    README
+    HISTORY
+
+Library
+    HS-Source-Dirs:     src
+    Exposed-Modules:
+        Data.IVar.Simple
+        Data.IVar.Simple.IChan
+        Data.IVar.Simple.MIChan
+    Build-Depends:      base < 5
+    -- workaround for http://hackage.haskell.org/trac/ghc/ticket/2756
+    if impl(ghc <= 6.10.1)
+        GHC-Options:        -fno-state-hack

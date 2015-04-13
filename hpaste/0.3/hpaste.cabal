@@ -1,0 +1,15 @@
+name:                hpaste
+version:             0.3
+description:         Haskell pastebin, using HAppS
+synopsis:            An online pastebin, written in Haskell.
+license:             BSD3
+license-file:        LICENSE
+category:            Web
+author:              Eric Mertens
+maintainer:          emertens@gmail.com
+homepage:            http://hpaste.org
+build-depends:       base, HAppS > 0.8.4, xhtml, mtl, network, hscolour >= 1.6, binary >= 0.2, zlib
+
+executable:          hpaste
+main-is:             HPaste.hs
+ghc-options:         -Wall -O -funbox-strict-fields -fasm -optl-Wl,-s

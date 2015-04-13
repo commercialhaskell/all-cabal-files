@@ -1,0 +1,48 @@
+Name:                hobbits
+Version:             1.0
+Synopsis:            A library for canonically representing terms with binding
+
+Description: A library for canonically representing terms with binding via a
+             constructor for introducing fresh names and a restricted API that avoids the
+             need for alpha-equivalence.
+
+License:             BSD3
+License-file:        LICENSE
+Author:              Eddy Westbrook, Nicolas Frisby, Paul Brauner
+Maintainer:          emw4@rice.edu
+
+Category:            Data Structures
+
+Cabal-version: >= 1.6.0.1
+Build-Type:    Simple
+
+Library
+  Build-Depends: base >= 4 && < 5
+  Build-Depends: template-haskell
+  Build-Depends: type-equality, tagged
+
+  Build-Depends: syb
+  Build-Depends: deepseq
+  Build-Depends: parsec
+  Build-Depends: mtl
+
+  GHC-Options: -fwarn-incomplete-patterns -fwarn-unused-imports
+
+  Exposed-Modules: Data.Type.List,
+                   Data.Type.List.List,
+                   Data.Type.List.Map,
+                   Data.Type.List.Proof.Append,
+                   Data.Type.List.Proof.Member,
+
+                   Data.Binding.Hobbits,
+                   Data.Binding.Hobbits.Mb,
+                   Data.Binding.Hobbits.SuperComb,
+                   Data.Binding.Hobbits.QQ,
+
+                   Data.Binding.Hobbits.Internal,
+                   Data.Binding.Hobbits.PatternParser,
+                   Data.Binding.Hobbits.NuElim,
+
+                   Data.Binding.Hobbits.Examples.LambdaLifting,
+                   Data.Binding.Hobbits.Examples.LambdaLifting.Terms,
+                   Data.Binding.Hobbits.Examples.LambdaLifting.Examples

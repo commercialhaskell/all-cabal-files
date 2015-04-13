@@ -1,0 +1,35 @@
+name:                twine
+version:             0.1.1
+synopsis:            very simple template language
+description:         very simple template language
+category:            Text
+license:             BSD3
+license-file:        LICENSE
+author:              James Sanders
+maintainer:          jimmyjazz14@gmail.com
+homepage:            http://twine.james-sanders.com
+build-depends:       base
+build-type:          Simple
+Cabal-Version:       >= 1.2
+
+Library
+     hs-source-dirs:    src
+     Build-Depends:     base >= 4 && < 5
+                        , mtl
+                        , bytestring >= 0.9.1.5
+                        , filepath >= 1.1.0.3
+                        , parsec >= 3
+                        , containers >= 0.3                                           
+
+     Exposed-modules:   Text.Twine
+
+     Other-modules:     Text.Twine.Parser
+                        ,Text.Twine.Parser.Types
+                        ,Text.Twine.Interpreter
+                        ,Text.Twine.Interpreter.Context
+                        ,Text.Twine.Interpreter.ContextWriter         
+                        ,Text.Twine.Interpreter.FancyContext
+                        ,Text.Twine.Interpreter.Types
+                        ,Text.Twine.Interpreter.Builtins
+
+     ghc-options:       -O2 -fvia-C

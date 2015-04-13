@@ -1,0 +1,25 @@
+Name:           monoid-statistics
+Version:        0.1
+Cabal-Version:  >= 1.6
+License:        BSD3
+License-File:   LICENSE
+Author:         Alexey Khudyakov <alexey.skladnoy@gmail.com>
+Maintainer:     Alexey Khudyakov <alexey.skladnoy@gmail.com>
+Homepage:       https://bitbucket.org/Shimuuar/monoid-statistics
+Category:       Statistics
+Build-Type:     Simple
+Synopsis:       
+  Monoids for calculation of statistics of sample
+Description:
+  Monoids for calculation of statistics of sample
+  .
+  Currently only mean and number of elements could be calculated
+
+
+source-repository head
+  type:     hg
+  location: http://bitbucket.org/Shimuuar/monoid-statistics
+
+Library
+  Build-Depends:   base >=3 && <5
+  Exposed-modules: Data.Monoid.Statistics

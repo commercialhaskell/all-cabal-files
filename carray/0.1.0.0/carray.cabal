@@ -1,0 +1,23 @@
+name:                carray
+version:             0.1.0.0
+synopsis:            A C-compatible array library.
+description:
+		     A C-compatible array library.
+		     .
+		     Provides both an immutable and mutable (in the IO monad) interface.
+		     Includes utilities for multi-dimensional arrays, slicing and norms.
+		     Memory is 16-byte aligned by default to enable use of SIMD instructions.
+		     .
+category:            Data
+license:             BSD3
+license-file:        LICENSE
+author:              Jed Brown
+maintainer:          Jed Brown <jed@59A2.org>
+stability:	     experimental
+build-depends:       base, array
+build-type:	     Simple
+exposed-modules:     Data.Array.CArray
+		     Data.Array.IOCArray
+		     Data.Array.CArray.Base
+extensions:
+ghc-options:

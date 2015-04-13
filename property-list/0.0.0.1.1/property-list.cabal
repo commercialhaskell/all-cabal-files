@@ -1,0 +1,30 @@
+name:                   property-list
+version:                0.0.0.1.1
+stability:              experimental
+license:                PublicDomain
+
+cabal-version:          >= 1.2
+build-type:             Simple
+
+author:                 James Cook <james.cook@usma.edu>
+maintainer:             James Cook <james.cook@usma.edu>
+homepage:               http://code.haskell.org/~mokus/property-list
+
+category:               Data, Parsing
+synopsis:               XML property list parser
+description:            Parser for Apple's XML property list 1.0 format.
+
+Library
+  hs-source-dirs:       src
+  exposed-modules:      Data.PropertyList
+  other-modules:        Data.PropertyList.Xml
+                        Data.PropertyList.Xml.Dtd
+  build-depends:        base >= 3 && <5,
+                        bytestring,
+                        containers, 
+                        dataenc,
+                        HaXml >= 1.19,
+                        old-locale,
+                        pretty,
+                        time,
+                        th-fold

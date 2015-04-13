@@ -1,0 +1,31 @@
+Name:                   simple-observer
+Version:                0.0.1
+Stability:              Alpha
+Synopsis:               The Observer pattern
+Description:
+    This is a simple Haskell implementation of the Observer pattern,
+    specified as a typeclass with one example instance (demonstrating
+    synchronous notifications).
+
+    It is based on Observable.hs by Bastiaan Heeren, originally from
+    <http://www.cs.uu.nl/wiki/bin/view/Afp0607/ExerciseWXHaskell>
+Category:               Control
+License:                BSD3
+License-file:           LICENSE
+Homepage:               http://github.com/gimbo/observer.hs
+Copyright:              Andy Gimblett <haskell@gimbo.org.uk>
+Author:                 Andy Gimblett <haskell@gimbo.org.uk>
+Maintainer:             Andy Gimblett <haskell@gimbo.org.uk>
+Build-Type:             Simple
+Cabal-Version:          >=1.6
+Extra-source-files:     README
+
+Source-Repository head
+    Type:         git
+    Location:     http://github.com/gimbo/observer.hs
+
+Library
+  Build-Depends:   base >= 4 && < 5
+  Exposed-modules: Control.Observer
+                   Control.Observer.Synchronous
+  ghc-options:     -fwarn-tabs -Wall

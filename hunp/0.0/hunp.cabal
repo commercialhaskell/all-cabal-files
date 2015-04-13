@@ -1,0 +1,20 @@
+name:          	    hunp
+version:       	    0.0
+synopsis:      	    Unpacker tool with DWIM
+description:
+  hünp is an unpacker tool which does what you mean.  By matching on regular expressions, it automagically calls the right unpacking program for you, e.g. "unrar" for files ending in ".rar", etc.
+license:       	    GPL
+license-file:  	    LICENSE
+author:        	    Deniz Dogan
+homepage:      	    git://github.com/skorpan/hunp.git
+maintainer:    	    deniz.a.m.dogan@gmail.com
+build-type:    	    Simple
+cabal-version: 	    >=1.2
+category:      	    Console, Utils
+tested-with:   	    GHC==6.10.3
+extra-source-files: Hunp.hs README CHANGELOG
+
+executable hunp
+  main-is:       Hunp.hs
+  build-depends: base>=3 && <5, filepath, process, directory, pcre-light, bytestring
+  ghc-options:   -Wall -fno-warn-orphans -threaded

@@ -1,0 +1,21 @@
+Name:                 hcheat
+Version:              2008.11.25
+Build-type:           Simple
+Synopsis:             A collection of code cheatsheet
+Description:          Starting with Google Analytics
+License:              GPL
+License-file:         LICENSE
+Author:               Wang, Jinjing
+Maintainer:           Wang, Jinjing <nfjinjing@gmail.com>
+Build-Depends:        base
+Cabal-version:        >= 1.2
+category:             Web
+homepage:             http://github.com/nfjinjing/hcheat/
+data-files:           readme.markdown, changelog.markdown, Rakefile, tasks/haskell.rake
+
+library
+  ghc-options: -Wall -fno-warn-missing-signatures -fno-warn-name-shadowing -fno-warn-orphans -fno-warn-type-defaults
+  build-depends: base, mps >= 2008.11.6
+  hs-source-dirs: src/
+  exposed-modules:  
+                    HCheat

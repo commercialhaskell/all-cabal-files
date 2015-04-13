@@ -1,0 +1,22 @@
+Name: libxml-sax
+Version: 0.1
+Stability: Alpha
+Synopsis: Bindings for the libXML2 SAX interface
+Description: Incrementally convert text to lists of XML events
+License: GPL
+License-file: License.txt
+Author: John Millikin
+maintainer: jmillikin@gmail.com
+Build-Type: Simple
+Cabal-Version: >=1.2
+Category: XML
+
+Library
+  Build-Depends: base >=3 && < 5
+  Exposed-modules: Text.XML.LibXML.SAX
+
+  extra-libraries: xml2
+  pkgconfig-depends: libxml-2.0
+  c-sources: incremental-xml.c
+
+  Extensions: ForeignFunctionInterface

@@ -1,0 +1,29 @@
+Name:                TYB
+Version:             0.2.2
+Synopsis:            Template Your Boilerplate - a Template Haskell version of SYB
+Description:         TYB is a generic-programming system that uses Template
+                     Haskell to generate boiler-plate traversals at compile
+                     time.  This results in significantly improved
+                     performance.  The paper documenting it is available at:
+                     <http://cs.pdx.edu/~adamsmic/projects/tyb/TYB.pdf>
+License:             BSD3
+License-file:        LICENSE
+Author:              Michael D. Adams, Thomas M. DuBuisson
+Maintainer:          Thomas M. DuBuisson <thomas.dubuisson@gmail.com>
+-- Copyright:           
+Category:            Generics
+Build-type:          Simple
+Extra-source-files:  README.md examples/*.hs util/makeVarSet.hs
+Cabal-version:       >=1.8
+
+Library
+  Exposed-modules:     Data.Generics.TH
+  Build-depends:         base >= 4 && < 5
+                       , template-haskell >= 2.5
+                       , array >= 0.3
+                       , containers >= 0.4
+                       , mtl >= 2.0
+                       , transformers >= 0.2
+  Other-modules:       Data.Generics.TH.Instances, Data.Generics.TH.VarSet,
+                       Debug.TH
+  -- Build-tools:         

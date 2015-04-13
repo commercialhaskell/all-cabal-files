@@ -1,0 +1,46 @@
+name: gnuidn
+version: 0.2.1
+license: GPL-3
+license-file: license.txt
+author: John Millikin
+maintainer: jmillikin@gmail.com
+build-type: Simple
+cabal-version: >= 1.6
+category: Codec, Text
+stability: experimental
+homepage: https://john-millikin.com/software/haskell-gnuidn/
+bug-reports: mailto:jmillikin@gmail.com
+
+synopsis: Bindings for GNU IDN
+
+source-repository head
+  type: git
+  location: https://john-millikin.com/code/haskell-gnuidn/
+
+source-repository this
+  type: git
+  location: https://john-millikin.com/code/haskell-gnuidn/
+  tag: haskell-gnuidn_0.2.1
+
+library
+  ghc-options: -Wall -O2
+  hs-source-dirs: lib
+
+  build-depends:
+      base >= 4.0 && < 5.0
+    , text
+    , bytestring
+
+  extra-libraries: idn
+  pkgconfig-depends: libidn
+
+  build-tools:
+    c2hs
+
+  exposed-modules:
+    Data.Text.IDN.IDNA
+    Data.Text.IDN.Punycode
+    Data.Text.IDN.StringPrep
+
+  other-modules:
+    Data.Text.IDN.Internal

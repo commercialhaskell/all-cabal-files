@@ -1,0 +1,44 @@
+name:                Workflow
+version:              0.5.6
+synopsis:            library for transparent execution  of interruptible  computations
+description:
+     Transparent support  for interruptable computations. A workflow can be seen as a persistent thread that executes any
+     monadic computation. Therefore, it can be used in very time consuming computations such are CPU intensive calculations
+     or procedures that are most of the time waiting for the action of a process or an user, that are prone to comunication
+     failures, timeouts or shutdowns.
+     .
+     The computantion can be restarted at the interrupted point because such monad is encapsulated inside
+     a state monad transformer that transparently checkpoint the computation state. Besides that, the package also provides
+     other services associated to workflows
+     The main features are:
+     .
+     * logging of each intermediate action results in disk.
+     .
+     * resume  the monadic computation at the last checkpoint after soft or hard interruption.
+     .
+     * suspend a computation until the input object meet certain conditions. useful for inter-workflow comunications.-
+     .
+     * Communications with other processes including other workflows trough persistent data objects,
+        inspection of intermediate workflow results ,  persistent  queues, persistent timeouts so that no data is lost due
+        to shutdowns
+      .
+      * A workflow can initiate anoter workflow and wait for the resutl
+      .
+      * workflow management and monitoriing, view workflow history and intermediate results.
+
+
+category:          Control, Workflow, Concurrent, Middleware
+Stability:           experimental
+license:             BSD3
+license-file:        LICENSE
+author:              Alberto Gómez Corona
+maintainer:          agocorona@gmail.com
+Tested-With:
+Build-Type:          Simple
+build-Depends:       base >=3 && <4, containers, RefSerialize>=0.2.4, TCache>=0.6.4,  stm > 2, old-time, mtl
+Cabal-Version:       >= 1.2
+
+exposed-modules:     Control.Workflow
+ghc-options:             -O2
+
+

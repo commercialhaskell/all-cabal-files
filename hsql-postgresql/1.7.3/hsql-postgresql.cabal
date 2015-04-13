@@ -1,0 +1,14 @@
+Name:		 hsql-postgresql
+Version:	 1.7.3
+Synopsis:	 A Haskell Interface to PostgreSQL via the PQ library. 
+License:	 BSD3
+License-file:	 LICENSE
+Author:		 Krasimir Angelov <kr.angelov@gmail.com>
+Category:	 Database
+Description: 	 PostgreSQL driver for HSQL.
+Exposed-modules: Database.HSQL.PostgreSQL
+Build-depends: 	 base >= 4.0.0.0, hsql, old-time
+Maintainer:	 nick.rudnick@googlemail.com
+Extensions:      ForeignFunctionInterface, CPP
+Build-Type:	 Custom
+Extra-libraries: pq

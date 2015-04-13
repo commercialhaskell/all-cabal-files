@@ -1,0 +1,16 @@
+Name:               cedict
+Version:            0.1.1
+Category:           Text
+Description:        Convenient Chinese character lookup.
+Synopsis:           Convenient Chinese character lookup.
+License:            GPL
+License-file:       LICENSE
+Author:             Jason Dusek
+Maintainer:         jason.dusek@gmail.com
+Build-Depends:      base, containers, utf8-string
+
+Exposed-modules:    Data.Char.CEDICT
+
+Executable:         zi4pu3
+Main-is:            Zi4Pu3.hs
+

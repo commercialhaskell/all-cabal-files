@@ -1,0 +1,45 @@
+name:           traced
+cabal-version:  >= 1.10
+version:        3000
+license:        BSD3
+author:         Lennart Augustsson
+maintainer:     Edward Kmett
+category:       Debug
+synopsis:       Simple evaluation trace
+stability:      experimental
+build-type:     Simple
+description:    The module defines a type constructor 'Traced', which allows evaluation
+                of values to be traced.  Instances for all numeric types make tracing
+                numeric evaluation especially easy.
+extra-source-files:
+  .gitignore
+  .travis.yml
+  README.markdown
+  CHANGELOG.markdown
+
+source-repository head
+  type: git
+  location: git://github.com/ekmett/traced.git
+
+flag base4
+  default:        True
+  description:    Should we build with version 4 of the Base library
+
+Library
+  default-language:   Haskell2010
+  hs-source-dirs:     src
+  exposed-modules:
+    Debug.Traced
+    Debug.Traced.Internal
+  other-modules:
+    Debug.Traced.StableMap
+    
+  build-depends: 
+    mtl,
+    pretty,
+    containers
+    
+  if flag(base4)
+    build-depends:  base >= 4 && < 5
+  else
+    build-depends:  base >= 3 && < 4

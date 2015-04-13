@@ -1,0 +1,33 @@
+name:           tag-bits
+version:        0.1.0
+license:        BSD3
+license-file:   LICENSE
+author:         Edward A. Kmett
+maintainer:     Edward A. Kmett <ekmett@gmail.com>
+stability:      experimental
+homepage:       http://github.com/ekmett/tag-bits
+category:       Concurrency
+copyright:      (c) 2010 Edward A. Kmett
+build-type:     Simple
+cabal-version:  >=1.6
+tested-with:    GHC==6.12.1
+synopsis:       Provides access to the dynamic pointer tagging bits used by GHC.
+description:    Provides access to the dynamic pointer tagging bits used by GHC.
+
+extra-source-files: 
+    README.markdown
+
+source-repository head
+  type:     git
+  location: http://github.com/ekmett/tag-bits.git
+  branch:   master
+
+library
+    ghc-options: -Wall
+
+    build-depends:
+      base >= 4 && < 6,
+      ghc-prim >= 0.2 && < 0.3
+
+    exposed-modules:
+      Data.TagBits

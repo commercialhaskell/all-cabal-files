@@ -1,0 +1,29 @@
+Name:                yaop
+Version:             0.1.2.1
+x-revision: 1
+Synopsis:            Yet another option parser
+Description:
+  A simple wrapper over the standard System.Console.GetOpt to make options
+  defining more convenient.
+License:             BSD3
+License-file:        LICENSE
+Homepage:            https://github.com/esmolanka/yaop
+Author:              Eugene Smolanka <esmolanka@gmail.com>
+Maintainer:          Eugene Smolanka <esmolanka@gmail.com>
+Category:            System
+Build-type:          Simple
+
+Extra-source-files:  examples/ex1.hs
+                   , examples/ex2.hs
+
+Cabal-version:       >=1.6
+
+Source-repository head
+    type: git
+    location: https://github.com/esmolanka/yaop.git
+
+Library
+  Exposed-modules:     System.Console.YAOP, System.Console.YAOP.Actions
+  Build-depends:       base>=4.2 && <5
+                     , template-haskell
+                     , mtl>=2.0 && <3.0

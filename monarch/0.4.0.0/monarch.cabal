@@ -1,0 +1,54 @@
+name:                monarch
+version:             0.4.0.0
+synopsis:            Monadic interface for TokyoTyrant.
+description:         This package provides simple monadic interface for TokyoTyrant.
+license:             BSD3
+license-file:        LICENSE
+author:              Noriyuki OHKAWA <n.ohkawa@gmail.com>
+maintainer:          Noriyuki OHKAWA <n.ohkawa@gmail.com>
+category:            Database
+build-type:          Simple
+cabal-version:       >=1.8
+homepage:            https://github.com/notogawa/monarch
+
+library
+  exposed-modules:     Database.Monarch
+                     , Database.Monarch.Raw
+                     , Database.Monarch.Binary
+                     , Database.Monarch.MessagePack
+  other-modules:       Database.Monarch.Utils
+  ghc-options:         -Wall
+  build-depends:       base ==4.*
+                     , mtl ==2.1.*
+                     , bytestring ==0.9.*
+                     , conduit ==0.5.*
+                     , network-conduit ==0.5.*
+                     , binary ==0.5.*
+                     , msgpack ==0.7.*
+                     , transformers ==0.3.*
+                     , network ==2.3.*
+                     , pool-conduit ==0.1.*
+                     , monad-control ==0.3.*
+                     , lifted-base ==0.1.*
+
+test-suite specs
+  hs-source-dirs:      test, .
+  type:                exitcode-stdio-1.0
+  main-is:             test.hs
+  build-depends:       base ==4.*
+                     , mtl ==2.1.*
+                     , bytestring ==0.9.*
+                     , conduit ==0.5.*
+                     , network-conduit ==0.5.*
+                     , binary ==0.5.*
+                     , msgpack ==0.7.*
+                     , network ==2.3.*
+                     , pool-conduit ==0.1.*
+                     , monad-control ==0.3.*
+                     , lifted-base ==0.1.*
+                     , hspec ==1.3.*
+                     , HUnit ==1.2.*
+
+source-repository head
+  type:                git
+  location:            https://github.com/notogawa/monarch

@@ -1,0 +1,104 @@
+name:               lgtk
+version:            0.5.4
+category:           GUI
+synopsis:           lens-based API for Gtk
+description:
+    The main interface module of LGtk is "LGtk".
+stability:          experimental
+license:            BSD3
+license-file:       LICENSE
+author:             Péter Diviánszky
+homepage:           http://www.haskell.org/haskellwiki/LGtk
+bug-reports:        http://hub.darcs.net/divip/lgtk/issues
+maintainer:         divipp@gmail.com
+cabal-version:      >= 1.8
+build-type:         Simple
+
+source-repository head
+  type:             darcs
+  location:         http://hub.darcs.net/divip/lgtk
+
+
+library
+
+  hs-source-dirs:
+                    src
+  build-depends:
+                    base < 5
+                  , containers
+                  , directory
+                  , system-filepath
+                  , fsnotify
+
+                  , transformers
+                  , transformers-base
+                  , mtl
+                  , monad-control
+
+                  , gtk
+
+--                  , threepenny-gui == 0.4.1.*
+
+                  , diagrams-lib
+                  , diagrams-cairo
+                  , SVGFonts
+                  , groups
+
+                  , lens
+  exposed-modules:
+                    LGtk
+
+                    LGtk.ADTEditor
+
+                    LGtk.Demos.Main
+                    LGtk.Demos.Tri
+                    LGtk.Demos.IntListEditor
+                    LGtk.Demos.TEditor
+
+--                    X
+--                    OT2
+--                    Demo
+  other-modules:
+                    Data.Lens.Common
+
+                    Control.Monad.Restricted
+
+                    Control.Monad.ExtRef
+                    Control.Monad.ExtRef.Pure
+                    Control.Monad.ExtRef.Test
+
+                    Control.Monad.Register
+                    Control.Monad.Register.Basic
+
+                    Control.Monad.EffRef
+
+                    GUI.Gtk.Structures
+                    GUI.Gtk.Structures.IO
+  ghc-options: 
+                    -threaded
+                    -Wall 
+                    -fno-warn-incomplete-patterns 
+                    -fno-warn-name-shadowing 
+                    -fno-warn-missing-signatures 
+                    -fno-warn-orphans
+                    -fno-warn-type-defaults
+
+executable lgtkdemo
+
+  build-depends:
+                    base < 5
+                  , lgtk
+  main-is:
+                    Main.hs
+  hs-source-dirs:
+                    main
+  ghc-options: 
+                    -threaded
+                    -Wall 
+                    -fno-warn-incomplete-patterns 
+                    -fno-warn-name-shadowing 
+                    -fno-warn-missing-signatures 
+                    -fno-warn-orphans
+                    -fno-warn-type-defaults
+
+

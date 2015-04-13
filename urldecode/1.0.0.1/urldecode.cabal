@@ -1,0 +1,26 @@
+name:                urldecode
+version:             1.0.0.1
+synopsis:            Decode percent-encoded strings.
+description:         Pass a list of percent-encoded strings to the executable as
+                     arguments and it will print the decoded versions, separated
+                     by newlines.
+license:             BSD3
+license-file:        LICENSE
+author:              Benedict Eastaugh
+maintainer:          benedict@eastaugh.net
+homepage:            https://github.com/beastaugh/urldecode
+copyright:           (c) 2012 Benedict Eastaugh
+category:            Text
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >= 1.8
+
+source-repository head
+    type:                git
+    location:            git://github.com/beastaugh/urldecode.git
+
+executable urldecode
+    main-is:             src/urldecode.hs
+    ghc-options:         -Wall
+    build-depends:       base    >= 4 && < 5,
+                         network >= 2 && < 3

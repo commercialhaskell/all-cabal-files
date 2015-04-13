@@ -1,0 +1,22 @@
+name:                gnome-desktop
+version:             1.0.0.0
+synopsis:            Randomly set a picture as the GNOME desktop background
+description:         gnome-desktop is a program for displaying random pictures on your GNOME desktop background.
+                     It reads a sub-directory of $HOME (by default: Pictures) every n
+                      minutes (default: 1440 = once/per day) and every s seconds (default:
+                      50) picks a random file and sets the gconf key
+                      /desktop/gnome/background/picture_filename to the absolute path to
+                      that file.
+category:            Utility
+license:             GPL
+license-file:        LICENSE
+author:              Colin Adams
+copyright:           2009 Colin Adams
+maintainer:          colin@colina.demon.co.uk
+build-depends:       base >= 4 && < 5,
+		     random >= 1.0.0.1, directory >= 1.0.0.3,
+		     gtk >= 0.10.1, glib >= 0.10.1, gconf >= 0.10.1		
+build-type:          Simple
+tested-with:         GHC == 6.10.3
+executable:          gnome-desktop
+main-is:             Gnome_desktop.hs

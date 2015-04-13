@@ -1,0 +1,45 @@
+Name: hsubconvert
+
+Version:  0.0.2
+Synopsis: One-time, faithful conversion of Subversion repositories to Git
+
+Description: One-time, faithful conversion of Subversion repositories to Git.
+
+Homepage:           https://github.com/jwiegley/hsubconvert
+License:            BSD3
+License-file:       LICENSE
+Author:             John Wiegley
+Maintainer:         John Wiegley <johnw@newartisans.com>
+Category:           Development
+Build-type:         Simple
+Cabal-version:      >= 1.8
+
+Extra-Source-Files: README.md
+
+Executable hsubconvert
+    Main-is: Main.hs
+    Ghc-options: -threaded
+
+    Build-depends: base >= 4 && < 5
+                 , svndump
+                 , gitlib
+                 , general-prelude >= 0.1
+                 , bytestring      >= 0.9.2.1
+                 , cmdargs         >= 0.10
+                 , hslogger        >= 1.2.0
+                 , lens            >= 3.0.2
+                 , mtl             >= 2.1.2
+                 , parallel-io     >= 0.3.2
+                 , regex-posix     >= 0.95.2
+                 , system-filepath >= 0.4.7
+                 , system-fileio   >= 0.3.10
+                 , text            >= 0.11.2.0
+                 , text-format     >= 0.3.0.8
+                 , time            >= 1.4
+                 , stringable      >= 0.1.1
+                 , transformers    >= 0.3.0
+                 , unix            >= 2.6.0.0
+
+Source-repository head
+  type:     git
+  location: https://github.com/jwiegley/hsubconvert

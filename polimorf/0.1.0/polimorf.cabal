@@ -1,0 +1,34 @@
+name:               polimorf
+version:            0.1.0
+synopsis:           Working with the PoliMorf dictionary
+description:
+    The library provides functionality for manipulating PoliMorf, the
+    morphological dictionary for Polish.
+    In particular, the library exports functions which can be used to
+    merge the PoliMorf with another dictionary resources.
+license:            BSD3
+license-file:       LICENSE
+cabal-version:      >= 1.6
+copyright:          Copyright (c) 2012 IPI PAN
+author:             Jakub Waszczuk
+maintainer:         waszczuk.kuba@gmail.com
+stability:          experimental
+category:           Natural Language Processing
+homepage:           https://github.com/kawu/polimorf
+build-type:         Simple
+
+library
+    build-depends:
+        base >= 4 && < 5
+      , containers
+      , text
+      , binary
+
+    exposed-modules:
+        Data.PoliMorf
+
+    ghc-options: -Wall
+
+source-repository head
+    type: git
+    location: git://github.com/kawu/polimorf.git

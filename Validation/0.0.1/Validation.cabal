@@ -1,0 +1,32 @@
+Name:               Validation
+Version:            0.0.1
+License:            BSD3
+License-File:       LICENSE
+Author:             Tony Morris <ʇǝu˙sıɹɹoɯʇ@ןןǝʞsɐɥ>, Nick Partridge
+Maintainer:         Tony Morris, Nick Partridge
+Synopsis:           A data-type like Either but with an accumulating Applicative
+Category:           Data
+Description:        A data-type like Either but with an accumulating Applicative
+Cabal-version:      >= 1.2
+Build-Type:         Simple
+
+Flag small_base
+  Description:      Choose the new, split-up base package.
+
+Library
+  Build-Depends:
+                    base < 5 && >= 4
+                    , Semigroup
+                    , category-extras
+                    , HUnit
+                    , QuickCheck
+                    , test-framework
+                    , test-framework-hunit
+                    , test-framework-quickcheck2
+
+  GHC-Options:
+                    -Wall
+
+  Exposed-Modules:
+                    Data.Validation
+

@@ -1,0 +1,42 @@
+name:                muon
+version:             0.1.0.6
+synopsis:            Static blog generator
+description:
+    Program which takes blog posts and pages written in Markdown and
+    compiles them into a tree of HTML pages which can then be served
+    by any web server.
+    .
+    As of now, Muon supports:
+    .
+        * Generating a site from Markdown and HTML
+    .
+        * Previewing a site locally using happstack-server
+    .
+        * Uploading a site to a server using rsync
+    .
+homepage:            https://code.kaashif.co.uk/kaashif/muon
+license:             BSD3
+license-file:        LICENSE
+author:              Kaashif Hymabaccus
+maintainer:          kaashifhymabaccus@gmail.com
+copyright:           Copyright (c) 2014 Kaashif Hymabaccus
+category:            Web
+build-type:          Simple
+cabal-version:       >=1.8
+data-dir:            src
+data-files:          def/style/style.css
+                     def/templates/*.st
+                     def/posts/*.post
+                     def/pages/about
+                     def/pages/contact
+                     def/config.ini
+extra-source-files:  src/*.hs README.md
+
+source-repository head
+    type: git
+    location: https://code.kaashif.co.uk/kaashif/muon.git
+
+executable muon
+  main-is:             Main.hs
+  build-depends:       base ==4.6.*, text ==0.11.*, HStringTemplate ==0.7.*, directory ==1.2.*, Glob ==0.7.*, process ==1.2.*, blaze-html ==0.7.*, markdown ==0.1.*, ConfigFile==1.1.*, MissingH==1.2.*, happstack-server==7.3.*
+  hs-source-dirs:      src

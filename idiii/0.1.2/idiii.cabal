@@ -1,0 +1,37 @@
+Name:                idiii
+Version:             0.1.2
+Synopsis:            Reading and writing of ID3v2 tags
+Description:         Reading and writing of ID3v2 tags
+Category:            Text, Sound
+License:             BSD3
+License-file:        LICENSE
+Author:              Alexey Alekhin, Chris Wagner
+Maintainer:          christopher.t.wagner@gmail.com, alekhin.alexey@gmail.com
+Build-Depends:       base < 5, haskell98, bytestring, polyparse, text, data-accessor, utf8-string, containers, MissingH
+Build-Type:          Simple
+hs-source-dirs:      src
+extra-source-files:  LICENSE read-idiii.hs
+Exposed-modules:     ID3,
+                     ID3.Simple,
+
+                     ID3.Parser,
+                     ID3.Parser.Header,
+                     ID3.Parser.ExtHeader,
+                     ID3.Parser.Frame,
+                     ID3.Parser.Tag,
+                     ID3.Parser.General,
+                     ID3.Parser.UnSync,
+                     ID3.Parser.NativeFrames,
+
+                     ID3.Type,
+                     ID3.Type.Header,
+                     ID3.Type.ExtHeader,
+                     ID3.Type.Frame,
+                     ID3.Type.FrameInfo,
+                     ID3.Type.Tag,
+                     ID3.Type.Flags,
+                     ID3.Type.Unparse,
+
+                     ID3.ReadTag,
+                     ID3.WriteTag
+ghc-options:         -Wall

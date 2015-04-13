@@ -1,0 +1,66 @@
+Name:           tagchup
+Version:        0.3.1
+License:        GPL
+License-File:   LICENSE
+Author:         Henning Thielemann <tagchup@henning-thielemann.de>
+Maintainer:     Henning Thielemann <tagchup@henning-thielemann.de>
+Homepage:       http://code.haskell.org/~thielema/tagchup/
+Category:       XML
+Synopsis:       alternative package for processing of tag soups
+Description:
+   Tagchup is a package for processing XML, HTML, XHTML documents
+   that can also be malformed.
+   It allows parsing, formatting and retrieval of such document.
+   All functions should be as lazy as possible.
+   .
+   I use a custom data structure based on types from xml-basic
+   for easy interchange with the wraxml package.
+   .
+   Its lazy monadic parser should be more comprehensible and easier to extend
+   than the one of tagsoup-0.6.
+   It also handles XML processing instructions and CDATA sections correctly.
+   .
+   The name Tagchup resembles Ketchup.
+Build-Type:  Simple
+Build-Depends:
+   xml-basic >=0.1 && <0.2,
+   transformers >=0.0 && <0.2,
+   explicit-exception >=0.1 && <0.2,
+   bytestring >=0.9.0.1 && <0.10,
+   containers >=0.1 && <0.3,
+   data-accessor >=0.2 && <0.3,
+   utility-ht >=0.0.1 && <0.1,
+   base >=3 && <4
+GHC-Options: -Wall
+Hs-Source-Dirs: src
+Exposed-Modules:
+   Text.HTML.Tagchup.Parser
+   Text.HTML.Tagchup.Format
+   Text.HTML.Tagchup.Tag
+   Text.HTML.Tagchup.Tag.Match
+   Text.HTML.Tagchup.PositionTag
+   Text.HTML.Tagchup.Process
+
+Other-Modules:
+   Text.HTML.Tagchup.Parser.Combinator
+   Text.HTML.Tagchup.Parser.Core
+   Text.HTML.Tagchup.Parser.Status
+   Text.HTML.Tagchup.Parser.Stream
+
+Executable: tagchuptest
+GHC-Options: -Wall
+Hs-Source-Dirs: src, .
+Other-Modules:
+   Text.HTML.Tagchup.Test
+Main-Is:     example/Test.hs
+
+Executable: tagchupspeed
+GHC-Options: -Wall
+Hs-Source-Dirs: src, .
+Build-Depends: old-time >=1.0 && <1.1
+Main-Is:     example/Speed.hs
+
+Executable: validate-tagchup
+GHC-Options: -Wall
+Hs-Source-Dirs: src, .
+Main-Is:     example/Validate.hs

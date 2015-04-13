@@ -1,0 +1,35 @@
+Name:               dbjava
+Version:            1.7
+Author:             Carlos Gomez
+Homepage:           http://devel.comunidadhaskell.org/dbjava/
+Description:        A serializer and deserializer of Jvm classfile format.
+Synopsis:           Decompiler Bytecode Java
+License:            BSD3
+License-file:       LICENSE
+Category:           Jvm
+Maintainer:         carliros.g@gmail.com
+Build-Type:         Simple
+Cabal-Version:      >=1.2
+Extra-source-files: README, LICENSE , src/test1.hs, src/test2.hs
+
+Executable dbjava
+    Hs-source-dirs:     src
+    Main-is:            Main.hs
+    Build-Depends:      base >= 3 && < 5,
+                        binary,
+                        bytestring,
+                        uulib,
+                        process,
+                        haskell98
+
+Library
+    Hs-source-dirs:     src
+    Build-Depends:      base >= 3 && < 5,
+                        binary,
+                        bytestring,
+                        uulib,
+                        process,
+                        haskell98
+    Exposed-modules:   Jvm.Data.ClassFormat,
+                       Jvm.BinaryClass,
+                       Jvm.PrettyClass

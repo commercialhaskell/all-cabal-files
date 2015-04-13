@@ -1,0 +1,20 @@
+Name:                porte
+Version:             0.0.4
+Cabal-Version:       >= 1.2
+Synopsis:            FreeBSD ports index search and analysis tool
+Description:         Porte provides a simple, fast and efficient interface to searching
+                     FreeBSD ports index fields. It also has a simple statistics mode which
+                     allows collecting frequency statistics for these fields.
+Category:            System
+License:             BSD3
+License-file:        LICENSE
+Author:              Samy Al Bahra
+Maintainer:          sbahra@repnop.org
+Build-Type:          Simple
+
+Library
+  Build-Depends:     base < 5, bytestring, containers, extensible-exceptions, stringsearch >= 0.3.0
+  Exposed-Modules:   Porte.Tool Porte.Statistics Porte.Ports
+
+Executable porte
+  Main-is:           Porte/porte.hs

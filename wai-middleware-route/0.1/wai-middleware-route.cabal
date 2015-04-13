@@ -1,0 +1,25 @@
+name:           wai-middleware-route
+version:        0.1
+cabal-version:  >= 1.8
+build-type:     Simple
+synopsis:       Wai dispatch middleware
+stability:      Experimental
+author:         Alexander Dorofeev
+category:       Web
+license:        BSD3
+description:    Request dispatching Middleware for Wai.
+maintainer:     aka.spin@gmail.com
+license-file:   LICENSE
+homepage:       https://github.com/akaspin/wai-middleware-route
+
+library
+  hs-source-dirs:  src
+  build-depends:   
+                   base >= 4 && < 5,
+                   wai,
+                   bytestring,
+                   regex-posix,
+                   http-types
+  ghc-options:     -Wall
+  exposed-modules: Network.Wai.Middleware.Route
+

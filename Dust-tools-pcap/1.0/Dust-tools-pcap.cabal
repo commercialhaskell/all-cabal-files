@@ -1,0 +1,99 @@
+Name:                Dust-tools-pcap
+Version:             1.0
+Description:         A set of tools for exploring network filtering
+Synopsis:            Network filtering exploration tools that rely on pcap
+Category:            Network
+License:             GPL
+License-file:        LICENSE
+Author:              Brandon Wiley
+Maintainer:          brandon@ischool.utexas.edu
+Build-Type:          Simple
+Cabal-Version:       >=1.8
+
+source-repository head
+  type: git
+  location: git@github.com:blanu/Dust-tools.git
+
+Executable replay-convert
+  Main-is: Dust/Services/Replay/convert.hs
+  Build-Depends:
+    base >= 3 && < 5,
+    Dust >= 2.1,
+    Dust-tools >=1.2,
+    bytestring,
+    entropy,
+    network,
+    cereal,
+    ghc-prim,
+    binary,
+    random,
+    random-extras,
+    random-source,
+    random-fu,
+    containers,
+    directory,
+    split,
+    pcap
+
+Executable update
+  Main-is:           Dust/Model/update.hs
+  Build-Depends:
+    base >= 3 && < 5,
+    Dust,
+    bytestring,
+    entropy,
+    network,
+    cereal,
+    ghc-prim,
+    binary,
+    random,
+    random-extras,
+    random-source,
+    random-fu,
+    containers,
+    directory,
+    split,
+    pcap,
+    csv
+
+Executable export
+  Main-is:           Dust/Model/export.hs
+  Build-Depends:
+    base >= 3 && < 5,
+    Dust,
+    bytestring,
+    entropy,
+    network,
+    cereal,
+    ghc-prim,
+    binary,
+    random,
+    random-extras,
+    random-source,
+    random-fu,
+    containers,
+    directory,
+    split,
+    pcap,
+    csv
+
+Executable show
+  Main-is:           Dust/Model/show.hs
+  Build-Depends:
+    base >= 3 && < 5,
+    Dust,
+    bytestring,
+    entropy,
+    network,
+    cereal,
+    ghc-prim,
+    binary,
+    random,
+    random-extras,
+    random-source,
+    random-fu,
+    containers,
+    directory,
+    split,
+    pcap,
+    csv

@@ -1,0 +1,32 @@
+Name:                dimensional
+Version:             0.7
+License:             BSD3
+License-File:        LICENSE
+Copyright:           Bjorn Buckwalter 2006-2007
+Author:              Bjorn Buckwalter 
+Maintainer:          bjorn.buckwalter@gmail.com
+Stability:           mostly stable
+Homepage:            http://dimensional.googlecode.com/
+Synopsis:            Statically checked physical dimensions.
+Description:
+    Dimensional is a library providing data types for performing arithmetic
+    with physical quantities and units. Information about the physical
+    dimensions of the quantities and units is embedded in their types and the
+    validity of operations is verified by the type checker at compile time.
+    The boxing and unboxing of numerical values as quantities is done by
+    multiplication and division with units. The library is designed to, as
+    far as is practical, enforce/encourage best practices of unit usage.
+    Requires GHC 6.6.1 or later.
+Category:            Math
+Build-Depends:       base,
+                     time
+Exposed-Modules:     Numeric.NumType, 
+                     Numeric.Units.Dimensional, 
+                     Numeric.Units.Dimensional.Prelude,
+                     Numeric.Units.Dimensional.Quantities,
+                     Numeric.Units.Dimensional.SIUnits,
+                     Numeric.Units.Dimensional.NonSI,
+                     Numeric.Units.Dimensional.Extensible,
+                     Numeric.Units.Dimensional.CGS
+ghc-options:         -O
+ 

@@ -1,0 +1,76 @@
+name:          ftdi
+version:       0.2
+cabal-version: >=1.6
+build-type:    Custom
+stability:     experimental
+author:        Roel van Dijk <vandijk.roel@gmail.com>
+maintainer:    Roel van Dijk <vandijk.roel@gmail.com>
+copyright:     (c) 2009, 2010 Roel van Dijk
+license:       BSD3
+license-file:  LICENSE
+category:      System
+synopsis:      A thin layer over USB to communicate with FTDI chips
+description:   
+  This library enables you to communicate with FTDI devices. It is
+  implemented as a lightweight wrapper around the usb library.
+
+source-repository head
+  type:     darcs
+  location: http://code.haskell.org/~roelvandijk/code/ftdi
+
+-------------------------------------------------------------------------------
+
+flag test
+  description: Build the testing suite
+  default:     False
+
+flag hpc
+  description: Enable program coverage on test executable
+  default:     False
+
+flag nolib
+  description: Don't build the library
+  default:     False
+
+-------------------------------------------------------------------------------
+
+
+library
+  exposed-modules: System.FTDI
+  other-modules: System.FTDI.Internal
+               , System.FTDI.Utils
+  build-depends: base                 >= 3.0.3 && < 4.3
+               , base-unicode-symbols >= 0.1.1 && < 0.3
+               , bytestring           >= 0.9.1 && < 0.10
+               , monads-fd            >= 0.1   && < 0.2
+               , safe                 >= 0.2   && < 0.3
+               , transformers         >= 0.2   && < 0.3
+               , usb                  >= 0.3   && < 0.4
+  ghc-options: -Wall
+
+  if flag(nolib)
+    buildable: False
+
+-------------------------------------------------------------------------------
+
+executable test
+  main-is: test.hs
+  other-modules: System.FTDI.Internal
+               , System.FTDI.Properties
+               , System.FTDI.Utils
+               , System.FTDI.Utils.Properties
+  ghc-options: -Wall -fno-warn-orphans
+
+  if flag(test)
+    build-depends: derive                     >= 2.3   && < 2.4
+                 , QuickCheck                 >= 2.1.0 && < 2.2
+                 , random                     >= 1.0.0 && < 1.1
+                 , tagged                     >= 0.0   && < 0.1
+                 , test-framework             >= 0.2.4 && < 0.3
+                 , test-framework-quickcheck2 >= 0.2.4 && < 0.3
+    buildable: True
+  else
+    buildable: False
+
+  if flag(hpc)
+    ghc-options: -fhpc

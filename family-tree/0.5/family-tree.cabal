@@ -1,0 +1,33 @@
+name:                family-tree
+version:             0.5
+package-url:         https://github.com/Taneb/family-tree
+synopsis:            A family tree library for the Haskell programming language.
+description:         A family tree library for the Haskell programming language.
+                     
+                     Uses "Control.Lens" for modification and "Data.Binary" for
+                     serialization.
+homepage:            https://github.com/Taneb/family-tree
+license:             BSD3
+license-file:        LICENSE
+author:              Nathan "Taneb" van Doorn
+maintainer:          nvd1234@gmail.com
+category:            Data, Genealogy
+build-type:          Simple
+cabal-version:       >=1.8
+library
+  exposed-modules:     Data.FamilyTree
+  build-depends:       base >= 4.3 && < 5,
+                       lens >= 3.8 && < 3.10,
+                       binary < 0.7,
+                       unordered-containers ==0.2.*,
+                       containers >=0.4.2 && < 0.6,
+                       text ==0.11.*,
+                       time < 1.5,
+                       intervals < 0.3,
+                       tables ==0.3.*,
+                       hashable >= 1.1.1.0 && < 1.3
+  hs-source-dirs:      src
+
+source-repository head
+  type: git
+  location: git://github.com/Taneb/family-tree.git

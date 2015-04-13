@@ -1,0 +1,52 @@
+name:             wumpus-basic
+version:          0.1.1
+license:          BSD3
+license-file:     LICENSE
+copyright:        Stephen Tetley <stephen.tetley@gmail.com>
+maintainer:       Stephen Tetley <stephen.tetley@gmail.com>
+homepage:         http://code.google.com/p/copperbox/
+category:         Graphics
+synopsis:         Common drawing utilities built on wumpus-core.
+description:
+  .
+  Very preliminary release...
+  .
+  .
+build-type:         Simple
+stability:          highly unstable
+cabal-version:      >= 1.2
+
+extra-source-files:
+  CHANGES,
+  LICENSE,
+  demo/FontPic.hs
+  
+library
+  hs-source-dirs:     src
+  build-depends:      base            <  5, 
+                      vector-space    >= 0.6,
+                      monadLib        >= 3.6,
+                      wumpus-core     >= 0.20.0
+
+  
+  exposed-modules:
+    Wumpus.Basic.Monads.TraceMonad,
+    Wumpus.Basic.Monads.TurtleMonad,
+    Wumpus.Basic.SafeFonts,
+    Wumpus.Basic.SVGColours,
+    Wumpus.Basic.X11Colours,
+    Wumpus.Basic.Utils.HList,
+    Wumpus.Basic.VersionNumber
+
+  other-modules:
+
+  extensions:
+    
+
+  ghc-options:
+  
+  includes: 
+  
+
+  
+  

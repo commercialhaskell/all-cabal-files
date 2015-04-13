@@ -1,0 +1,22 @@
+name:                custom-prelude
+version:             0.2.1.0
+synopsis:            My own custom prelude, based off Snoyman's basic-prelude
+description:         My own custom prelude, based off Snoyman's basic-prelude
+homepage:            https://github.com/ajnsit/custom-prelude
+license:             GPL
+license-file:        LICENSE
+author:              Anupam Jain
+maintainer:          ajnsit@gmail.com
+
+category:            Control
+build-type:          Simple
+cabal-version:       >=1.8
+
+library
+  exposed-modules:     CustomPrelude
+  build-depends:       base                     >= 4.5     && < 5
+                     , basic-prelude            >= 0.3     && < 0.4
+
+source-repository head
+  type:     git
+  location: git://github.com/ajnsit/custom-prelude.git

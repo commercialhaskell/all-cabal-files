@@ -1,0 +1,39 @@
+Name:                timers-updatable
+
+Version:             0.2.0.2
+
+Synopsis:            timers which are updatable in the remaining time
+
+Description:         Timers implemented in this package can be used to synchronise threads to continue all together when the timer rings. While the timer is running it can be updated in the remaining time. A parallel and serial update policy is provided.
+
+Homepage:            http://github.com/paolino/timers-updatable
+
+License:             BSD3
+
+License-file:        LICENSE
+
+Author:              Paolo Veronelli
+
+Maintainer:          paolo.veronelli@gmail.com
+
+Category:            Concurrency
+
+Build-type:          Simple
+
+Cabal-version:       >=1.6
+
+
+Library
+  
+  Exposed-modules:
+    System.Timer.Updatable
+    Control.Concurrent.Killable
+  
+  Build-depends:
+    base < 5,
+    stm
+  
+  
+Source-repository head
+  type:             git
+  location:         git://github.com/paolino/timers-updatable.git

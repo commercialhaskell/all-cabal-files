@@ -1,0 +1,35 @@
+name: xine
+version: 0.0.0.2
+license: LGPL
+license-file: COPYING
+copyright: Joachim Fasting 2010
+author: Joachim Fasting
+maintainer: Joachim Fasting <joachim.fasting@gmail.com>
+category: Media, Sound, Video
+synopsis: Bindings to xine-lib
+description:
+    A Haskell FFI binding to xine-lib, a multimedia playback engine.
+    .
+    See <http://xine-project.org> for more information.
+homepage: http://github.com/joachifm/hxine
+bug-reports: http://github.com/joachifm/hxine/issues
+extra-source-files: ChangeLog, README.md
+build-type: Simple
+cabal-version: >= 1.6
+
+source-repository head
+    type: git
+    location: git://github.com/joachifm/hxine.git
+
+library
+    hs-source-dirs: .
+    exposed-modules: Xine,
+                     Xine.Foreign
+    build-depends: base ==4.2.*,
+                   containers ==0.3.*
+    build-tools: c2hs
+    extensions: CPP, ForeignFunctionInterface, StandaloneDeriving
+    includes: xine.h
+    extra-libraries: xine
+    ghc-options: -Wall
+    ghc-prof-options: -prof -auto-all

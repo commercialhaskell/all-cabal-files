@@ -1,0 +1,72 @@
+name:                hedn
+version:             0.1.8.1
+synopsis:            EDN parsing and encoding
+homepage:            https://bitbucket.org/dpwiz/hedn
+license:             BSD3
+license-file:        LICENSE
+author:              Alexander Bondarenko
+maintainer:          aenor.realm@gmail.com
+copyright:           (c) 2012 Alexander Bondarenko
+category:            Data
+build-type:          Simple
+cabal-version:       >=1.8
+description:
+    A EDN parsing and encoding library inspired by Data.Aeson.
+    .
+    Based on specs published at <https://github.com/edn-format/edn>.
+
+extra-source-files:
+  tests/Main.hs
+  tests/Data/EDN/Test/*.hs
+  tests/Data/EDN/Test/QuickCheck/TH.hs
+
+flag developer
+  description: operate in developer mode
+  default: False
+  manual: True
+
+library
+  exposed-modules:
+      Data.EDN,
+      Data.EDN.Types,
+      Data.EDN.Types.Class,
+      Data.EDN.Parser,
+      Data.EDN.Encode
+
+  other-modules:
+      Data.Parser
+
+  hs-source-dirs: src/
+  build-depends:
+      base ==4.*,
+      attoparsec,
+      text,
+      bytestring >=0.10,
+      utf8-string,
+      containers,
+      vector,
+      stringsearch,
+      mtl,
+      deepseq,
+      old-locale,
+      time
+
+  if flag(developer)
+    ghc-options: -Werror
+    ghc-prof-options: -auto-all -fhpc
+
+  ghc-options: -O2 -Wall -fno-warn-unused-do-bind
+
+Test-Suite tests
+  type:              exitcode-stdio-1.0
+  main-is:           Main.hs
+  hs-source-dirs:    tests/
+  build-depends:     base, hedn, bytestring, text, containers, vector, template-haskell, time,
+                     QuickCheck >= 2.5.1, hspec == 1.5.*, HUnit >= 1.2.5
+  ghc-options:       -Wall
+  if flag(developer)
+    ghc-options: -Werror -fhpc
+
+source-repository head
+  type:     mercurial
+  location: https://bitbucket.org/dpwiz/hedn

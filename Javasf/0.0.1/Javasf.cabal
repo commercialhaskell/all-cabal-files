@@ -1,0 +1,45 @@
+Name:               Javasf
+Version:            0.0.1
+Author:             Tony Morris <ʇǝu˙sıɹɹoɯʇ@ןןǝʞsɐɥ>
+Maintainer:         Tony Morris
+Copyright:          Tony Morris
+License:            BSD3
+License-File:       LICENSE
+Synopsis:           A utility to print the SourceFile attribute of one or more Java class files.
+Category:           Language
+Description:
+  Installs a javasf executable to print the @SourceFile@ attribute of one or more Java class files.
+  .
+  For example:
+  .
+  @
+    \> javasf ThisClass.class ThatClass.class
+
+    ThisClass.java
+
+    ThatClass.java
+  @
+  .
+  Java VM Specification 4.7.7 The @SourceFile@ Attribute
+  .
+  <http://java.sun.com/docs/books/jvms/second_edition/html/ClassFile.doc.html#79868>
+Cabal-version:      >= 1.2
+Build-Type:         Simple
+
+Flag small_base
+  Description:      Choose the new, split-up base package.
+
+Executable javasf
+  Main-Is:
+                    Main.hs
+  Build-Depends:
+                    base < 5 && >= 3
+                    , language-java-classfile
+                    , binary
+                    , bytestring
+
+  GHC-Options:
+                    -Wall
+
+  Other-Modules:
+                    Language.Java.Javasf

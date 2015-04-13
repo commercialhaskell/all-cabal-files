@@ -1,0 +1,32 @@
+cabal-version: >= 1.2.3
+name: bindings-common
+homepage: http://bitbucket.org/mauricio/bindings
+synopsis:
+  Low-level library bindings, base package.
+description: 
+  Facilities to wrap foreign C libraries. Used as basis in
+  @bindings-*@ packages.
+version: 0.2.2
+license: BSD3
+license-file: LICENSE
+maintainer: Maurício C. Antunes <mauricio.antunes@gmail.com>
+author: Maurício C. Antunes
+stability: Needs users feedback
+build-type: Simple
+bug-reports: http://bitbucket.org/mauricio/bindings-common/issues
+category: FFI
+library
+  hs-source-dirs: src
+  include-dirs: src
+  install-includes:
+    bindings.macros.h
+  extensions:
+    ForeignFunctionInterface
+    ScopedTypeVariables
+    MultiParamTypeClasses
+    TypeFamilies
+  build-depends: base >=3 && <5
+  exposed-modules:
+    Bindings
+    Bindings.Utilities
+    Bindings.C

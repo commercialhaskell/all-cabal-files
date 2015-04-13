@@ -1,0 +1,33 @@
+name: Pollutocracy
+version: 1.0
+synopsis: An imaginary world
+description: This is a simulated world I invented.
+  It has pollution and energy and trees and mountains
+  and chaos storms.  It is randomly generated and
+  non-interactive at present.
+author: Isaac Dupree
+maintainer: Isaac Dupree <antispam@idupree.com>
+category: Game
+license: GPL
+license-file: COPYING
+build-type: Simple
+cabal-version: >= 1.6
+
+-- Without this extra-source-files, `cabal sdist` doesn't include this header
+-- that the .c includes; see e.g. this message for suggesting this workaround:
+-- "cabal sdist doesn't include c headers",
+-- http://osdir.com/ml/libraries@haskell.org/2010-01/msg00007.html
+extra-source-files: foreignPollution.h
+
+source-repository head
+  type:     git
+  location: https://github.com/idupree/Pollutocracy.git
+
+executable Pollutocracy
+  main-is: Main.hs
+  build-depends: base < 6, array, random, GLUT, clock
+  includes: foreignPollution.h
+  c-sources: foreignPollution.c
+  cc-options: -Wall
+  ghc-options: -Wall
+  other-modules: ArrayUtils, Clock, Display, Sim

@@ -1,0 +1,43 @@
+Name:                timecalc
+Version:             0.1
+Description:         A calculator for running times
+License:             MIT
+License-file:        LICENSE
+Category:            TODO
+Author:              Chris Eidhof
+Maintainer:          chris+hackage@eidhof.nl
+Build-Type:          Simple
+Cabal-Version:       >=1.6
+Homepage:            https://github.com/chriseidhof/TimeCalc
+Description:
+    TimeCalc is a very simple utility for calculating times. I use it for calculating splits or predicting race times. It is a calculator that supports doubles and times. For example:
+   .
+    If I run 5 kilometers at 3:30/kilometer, the race will take me 17:30.
+   .
+        > 5*3:30
+        17:30
+   .
+    If I want to know how fast my splits need to be in order to run a 10K in 37:00.
+   .
+        > 37:00/10
+        3:42
+   .
+    If I want to add two times:
+   .
+        > 3:42 + 3:30 + 3:49
+        11:01
+   .
+    Or calculating the splits Bekele needs to run on the marathon:
+   .
+        > 2:02:13 / 42.195
+        2:54
+   .
+    Which is very fast, indeed.
+
+source-repository head
+  type:     git
+  location: http://github.com/chriseidhof/TimeCalc
+
+Executable timecalc
+  Main-is:           TimeCalc.hs
+  Build-Depends:     base >= 3 && < 5, haskeline >= 0.6, uu-parsinglib >= 2.7

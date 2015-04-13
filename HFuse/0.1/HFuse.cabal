@@ -1,0 +1,39 @@
+Name:                   HFuse
+Version:                0.1
+License:                BSD3
+License-File:           LICENSE
+Author:                 Jérémy Bobbio
+Maintainer:             Jérémy Bobbio <jeremy.bobbio@etu.upmc.fr>
+Synopsis:               HFuse is a binding for the Linux FUSE library
+Description:            HFuse is a binding to the Linux C library, FUSE ('Filesystems in Userspace');
+                        FUSE allows you to construct interesting filesystems which can be used in many ways,
+                        such as a filesystem in which the files are Wikipedia files, or SSHFS where one mounts remote
+                        directories over SSH, or FlickrFS which represents your Flickr account as directories and files.
+Homepage:               http://darcs.haskell.org/hfuse
+Category:               System
+Stability:              Experimental
+
+Cabal-Version:          >= 1.2
+Build-Type:             Simple
+
+-- Examples
+Extra-Source-Files:     System/Posix/HelloFS.hs, System/Posix/LiveFS.hs
+Data-Files:             README
+
+Library
+        exposed-Modules:        System.Posix.HFuse
+
+        -- FIX: Remove this:
+        Includes:               sys/statfs.h, dirent.h, fuse.h, fcntl.h
+        Include-Dirs:           /usr/include, /usr/local/include
+        Extra-Libraries:        fuse
+        Extra-Lib-Dirs:         /usr/local/lib
+
+        Build-Depends:          base, unix
+        Extensions:             ForeignFunctionInterface, PatternSignatures, EmptyDataDecls
+        Ghc-Options:            -threaded -O2 -Wall -optl-Wl,-s
+        Ghc-Prof-Options:       -prof -auto-all
+
+        -- When compiling for a 64-bit architecture, we need special flags for hsc2hs
+        if arch(x86_64)
+              cc-options:         -D_FILE_OFFSET_BITS=64

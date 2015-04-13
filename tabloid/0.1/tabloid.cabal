@@ -1,0 +1,16 @@
+Name:	         tabloid
+Version:         0.1
+Description:     GUI for shell commands and log analysis
+Category:	 System Administration Utility
+Synopsis:	 View the output of shell commands in a table
+License:         BSD3
+License-file:    LICENSE
+Author:          Sven Heyll
+Maintainer:      sven.heyll@gmail.com
+Build-Type:      Simple
+Cabal-Version:   >=1.2
+
+Executable tabloid
+  Main-is:       Main.hs
+  Build-Depends: base, gtk, regex-base, regex-posix>=0.93, bytestring, process, containers
+  ghc-options:   -O9 -fforce-recomp -funbox-strict-fields -Wall -threaded

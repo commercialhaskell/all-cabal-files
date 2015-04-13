@@ -1,0 +1,49 @@
+name:            factual-api
+version:         0.1.0
+license:         BSD3
+license-file:    LICENSE.txt
+category:        API, Web
+copyright:       (c) 2011 Rudiger Lippert
+author:          Rudiger Lippert <rudy@factual.com>
+maintainer:      Rudiger Lippert <rudy@factual.com>
+stability:       experimental
+tested-with:     GHC == 7.0.4
+synopsis:        A driver for the Factual API
+cabal-version:   >= 1.8
+homepage:        https://github.com/rudyl313/factual-haskell-driver
+bug-reports:     https://github.com/rudyl313/factual-haskell-driver/issues
+build-type:      Simple
+description:
+    This is a driver for the Factual API. It provides a typesafe way to
+    generate queries, an easy way to setup OAuth authentication and a
+    simple way to send queries to the API.
+
+extra-source-files:
+    README.md
+    LICENSE.txt
+    examples/*.hs
+    test/Tests.hs
+
+library
+  exposed-modules:
+    Network.Factual.API
+    Data.Factual.Credentials
+    Data.Factual.CrosswalkQuery
+    Data.Factual.Query
+    Data.Factual.ReadQuery
+    Data.Factual.ResolveQuery
+    Data.Factual.Response
+    Data.Factual.SchemaQuery
+    Data.Factual.Table
+
+  other-modules:
+    Data.Factual.Utils
+
+  build-depends:
+    aeson >= 0.6.0.0,
+    base == 4.*,
+    hoauth >= 0.3.3
+
+source-repository head
+  type:     git
+  location: git://github.com/rudyl313/factual-haskel-driver.git

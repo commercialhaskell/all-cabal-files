@@ -1,0 +1,18 @@
+Name:                NumberSieves
+Version:             0.0
+Description:         This package includes the Sieve of O'Neill and two generalizations of the Sieve of Eratosthenes.   The Sieve of O'Neill is a fully incremental primality sieve based on priority queues.  The other two are array based, and are not incremental.   One sieves the smallest prime factor,  and is useful if you want to factor a large quantity of small numbers.   The other sieves Euler's Totient,  which is the number of positive integers relatively prime and less than a given number.
+License:             BSD3
+License-file:        LICENSE
+Author:              Melissa O'Neill, Leon P Smith 
+Maintainer:          Leon P Smith <leon@melding-monads.com>
+Build-Type:          Simple
+Category:            Number Theory, Algorithms
+Synopsis:            Number Theoretic Sieves:  primes, factorization, and Euler's Totient
+Cabal-Version:       >=1.2
+
+Library
+  Build-Depends:     base >= 3 && < 5,
+                     array >= 0 && < 1
+  Exposed-Modules:   NumberTheory.Sieve.ONeill
+                     NumberTheory.Sieve.Factor
+                     NumberTheory.Sieve.Phi

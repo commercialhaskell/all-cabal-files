@@ -1,0 +1,27 @@
+name:           zlib-enum
+version:        0.0
+license:        MIT
+license-file:   LICENSE
+author:         Malte Sommerkorn <malte.sommerkorn@googlemail.com>
+maintainer:     Malte Sommerkorn <malte.sommerkorn@googlemail.com>
+synopsis:       Enumerator interface for zlib compression
+description:    zlib-enum is a stop-gap package to provide enumeratees for
+                zlib compression/decompression.
+category:       Codec, Compression, Enumerator
+stability:      Experimental
+cabal-version:  >= 1.6
+build-type:     Simple
+homepage:       http://github.com/maltem/zlib-enum
+
+library
+    build-depends: base                  >= 4 && < 5
+                 , bytestring
+                 , mtl                   >= 2
+                 , enumerator            >= 0.4
+                 , zlib-bindings
+    exposed-modules: Codec.Zlib.Enum
+    ghc-options:     -Wall
+
+source-repository head
+  type:     git
+  location: git://github.com/maltem/zlib-enum.git

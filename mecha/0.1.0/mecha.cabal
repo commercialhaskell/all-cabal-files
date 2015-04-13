@@ -1,0 +1,42 @@
+name:    mecha
+version: 0.1.0
+
+category: Language
+
+synopsis: A constructive solid geometry (CSG) modeling language.
+
+description:
+  Mecha is a constructive solid geometry modeling language
+  and compiles to POV-Ray and OpenSCAD.
+
+author:     Tom Hawkins <tomahawkins@gmail.com>
+maintainer: Tom Hawkins <tomahawkins@gmail.com>
+
+license:      BSD3
+license-file: LICENSE
+
+homepage: http://tomahawkins.org
+
+build-type:    Simple
+cabal-version: >= 1.6
+
+library
+
+    build-depends:
+        base       >= 4       && < 5
+
+    exposed-modules:
+        Language.Mecha
+        Language.Mecha.Examples.CSG
+        Language.Mecha.Export
+        Language.Mecha.Solid
+        Language.Mecha.Types
+
+    ghc-options: -W
+
+executable mecha-examples
+    main-is: MechaExamples.hs
+ 
+source-repository head
+    type:     git
+    location: git://github.com/tomahawkins/mecha.git

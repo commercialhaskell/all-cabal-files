@@ -1,0 +1,22 @@
+Cabal-Version: >= 1.2
+
+Name:        Pipe
+Version:     2.0.1
+Homepage:    http://iki.fi/matti.niemenmaa/pipe/
+Synopsis:    Process piping library
+Category:    System
+Description:
+   A library with operations for piping data through a pipeline of processes.
+
+Author:       Matti Niemenmaa
+Maintainer:   Matti Niemenmaa <matti.niemenmaa+pipe@iki.fi>
+License:      BSD3
+License-File: LICENSE.txt
+
+Build-Type: Simple
+
+Library
+   Build-Depends: base     >= 3     && < 5,
+                  process  >= 1.0.1 && < 2,
+                  filepath >= 1.1   && < 2
+   Exposed-Modules: System.Process.Pipe

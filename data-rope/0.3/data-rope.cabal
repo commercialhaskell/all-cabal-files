@@ -1,0 +1,18 @@
+Name:		data-rope
+Version: 	0.3
+Synopsis:	Ropes, an alternative to (Byte)Strings.
+Description: 	Ropes : an alternative to Strings,
+		a time and space-efficient representation of character
+		strings.
+Category:	Data
+Maintainer:	Pierre-Etienne Meunier <pierreetienne.meunier@gmail.com>
+License:	GPL
+License-file:	LICENSE
+Build-Type:	Simple
+Cabal-Version:	>=1.6
+source-repository head
+        type: darcs
+        location: http://www.lama.univ-savoie.fr/~meunier/darcs/data-rope
+Library
+        Build-Depends:	base<5, bytestring-mmap, bytestring, unix
+        Exposed-modules: Data.Rope

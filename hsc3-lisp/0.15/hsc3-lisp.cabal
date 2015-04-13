@@ -1,0 +1,37 @@
+Name:              hsc3-lisp
+Version:           0.15
+Synopsis:          LISP SUPERCOLLIDER
+Description:       LISP SUPERCOLLIDER
+License:           GPL
+Category:          Sound
+Copyright:         (c) Rohan Drape, 2014
+Author:            Rohan Drape
+Maintainer:        rd@slavepianos.org
+Stability:         Experimental
+Homepage:          http://rd.slavepianos.org/t/hsc3-lisp
+Tested-With:       GHC == 7.8.2
+Build-Type:        Simple
+Cabal-Version:     >= 1.8
+
+Data-files:        README
+
+executable hsc3-lisp
+  build-depends:   base == 4.*,
+                   containers,
+                   directory,
+                   filepath,
+                   hashable,
+                   husk-scheme,
+                   hosc == 0.15.*,
+                   hsc3 == 0.15.*,
+                   hsc3-dot == 0.15.*,
+                   mtl,
+                   safe,
+                   unix
+  hs-source-dirs:  hs
+  main-is:         hsc3-lisp.hs
+  ghc-options:     -Wall -fno-warn-orphans -fwarn-tabs
+
+Source-Repository  head
+  Type:            darcs
+  Location:        http://rd.slavepianos.org/sw/hsc3-lisp/

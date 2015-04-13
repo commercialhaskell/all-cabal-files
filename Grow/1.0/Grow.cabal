@@ -1,0 +1,18 @@
+name:          Grow
+version:       1.0
+
+synopsis:      A declarative make-like interpreter.
+description:   
+author:        Marc Coiffier
+maintainer:    marc.coiffier@gmail.com
+license:       PublicDomain
+
+build-type:    Simple
+cabal-version: >=1.10
+
+library
+  exposed-modules: Grow Grow.Syntax
+  build-depends: base (== 4.6.*), definitive-base (== 1.0.*), containers (== 0.5.*), deepseq (== 1.3.*), array (== 0.5.*), bytestring (== 0.10.*), definitive-filesystem (== 1.0.*), clock (== 0.4.*), directory (== 1.2.*), filepath (== 1.3.*), time (== 1.4.*), old-locale (== 1.0.*), unix (== 2.7.*), definitive-parser (== 1.0.*), vector (== 0.10.*), primitive (== 0.5.*)
+  default-extensions: RebindableSyntax NoMonomorphismRestriction
+  ghc-options: 
+  default-language: Haskell2010

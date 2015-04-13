@@ -1,0 +1,31 @@
+Name:           type-spine
+Version:        0.1
+License:        BSD3
+License-File:   LICENSE
+Author:         Nicolas Frisby <nicolas.frisby@gmail.com>
+Maintainer:     Nicolas Frisby <nicolas.frisby@gmail.com>
+
+Category: Type System
+
+Synopsis:       A spine-view on types
+
+Description: Until
+  <http://research.microsoft.com/en-us/people/dimitris/fc-kind-poly.pdf>
+  reaches the mainline, this is a surprisingly effective workaround. We support
+  a limited number of kinds out-of-the-box, but it can be extended by the
+  power-user. Also, quasiquotation makes the code rather legible. Given a
+  finite set of kinds to support, generic type families can be defined that
+  will work for an infinite number of types. It is very much a \"bumping up\"
+  of the term-level /spine view/.
+  .
+  See the @type-cereal@ package for a use case.
+
+Cabal-Version: >= 1.6.0.1
+
+Build-Type: Simple
+
+
+Library
+  Build-Depends: base >= 4 && < 5, template-haskell
+
+  Exposed-Modules: Type.Spine, Type.Spine.Kinds, Type.Spine.Stage0, Type.Spine.TH

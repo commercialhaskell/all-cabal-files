@@ -1,0 +1,48 @@
+name:            clientsession
+version:         0.5.0
+license:         BSD3
+license-file:    LICENSE
+author:          Michael Snoyman <michael@snoyman.com>
+maintainer:      Michael Snoyman <michael@snoyman.com>
+synopsis:        Store session data in a cookie.
+description:     Achieves security through AES encryption and MD5 hashing.
+                 Uses base64 encoding to avoid any issues with characters.
+category:        Web
+stability:       stable
+cabal-version:   >= 1.6
+build-type:      Simple
+homepage:        http://github.com/snoyberg/clientsession/tree/master
+
+flag test
+  description: Build the executable to run unit tests
+  default: False
+
+library
+    build-depends:   base >=4 && <5,
+                     bytestring >= 0.9 && < 0.10,
+                     directory >= 1 && < 1.2,
+                     random >= 1.0.0.2 && < 1.1,
+                     ascii >= 0.0.2 && < 0.1,
+                     template-haskell
+    exposed-modules: Web.ClientSession
+    ghc-options:     -Wall
+    c-sources:       c/aestable.c c/helper.c
+
+executable             runtests
+    if flag(test)
+        Buildable: True
+        cpp-options:   -DTEST
+        build-depends: test-framework,
+                       test-framework-quickcheck2,
+                       test-framework-hunit,
+                       QuickCheck >= 2 && < 3,
+                       HUnit
+    else
+        Buildable: False
+    ghc-options:     -Wall
+    main-is:         runtests.hs
+    c-sources:       c/aestable.c c/helper.c
+
+source-repository head
+  type:     git
+  location: git://github.com/snoyberg/clientsession.git

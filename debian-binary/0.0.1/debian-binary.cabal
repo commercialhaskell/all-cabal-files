@@ -1,0 +1,29 @@
+name: debian-binary
+version: 0.0.1
+cabal-version: >= 1.2.3.0
+build-type: Simple
+license: OtherLicense
+license-file: LICENSE
+copyright: (c) 2008 Marco Túlio Gontijo e Silva <marcot@riseup.net>
+author: Marco Túlio Gontijo e Silva
+maintainer: Marco Túlio Gontijo e Silva <marcot@riseup.net>
+synopsis: Utilities to work with debian binary packages
+description:
+  This package provides a library and some tools to work with debian binary
+  packages.
+category: System
+tested-with: GHC == 6.8.2
+extra-source-files: README
+Library
+  build-depends: base, directory, filepath, HSH
+  exposed-modules:
+    System.Debian.Binary
+    , System.Debian.Binary.Utils
+    , System.Debian.Binary.Utils.Temp
+  ghc-options: -Wall
+Executable manual
+  main-is: manual.hs
+Executable query
+  main-is: query.hs
+Executable update
+  main-is: update.hs

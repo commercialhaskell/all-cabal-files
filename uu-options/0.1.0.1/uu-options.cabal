@@ -1,0 +1,39 @@
+Name:                uu-options
+Version:             0.1.0.1
+Build-Type:          Simple
+License:             MIT
+Copyright:           S Doaitse Swierstra 
+License-file:        LICENSE
+Author:              Doaitse Swierstra, Utrecht University
+Maintainer:          Doaitse Swierstra      
+Stability:           experimental
+Homepage:            http://www.cs.uu.nl/wiki/bin/view/HUT/ParserCombinators
+Bug-reports:         mailto:doaitse@swierstra.net      
+Synopsis:            Parse command line options using uu-interleave and uu-parsinglib
+Description:         Using the new Control.Applicative.Interleaved module we use the uu-parsinglib library to construct extremely concise command line processors, which provide
+                     helpful information when called incorrectly. 
+                     .
+                     The module contains a module `OptionsDemo` which serves as an example of how to use the various options of the module; you may take a look at the source code.
+                     .
+                     The package also installs the program `option-demo`
+                     which may be called from the command line to see what happens for the various options. It also contains a function demo which may be called from within ghci to experiment.
+                     .
+                     Background  information can be found in a Technical Report at <http://www.cs.uu.nl/research/techreps/UU-CS-2013-005.html>
+Category:            Options
+
+cabal-version:       >= 1.6
+
+source-repository head
+     type: svn
+     location: https://svn.science.uu.nl/repos/project.STEC.uu-parsinglib/uu-options
+
+executable           demo-options
+  Main-is:           Options/UU/Main.hs
+  hs-source-dirs:    src
+  Build-Depends:     base >= 4.2 && <5, uu-parsinglib >=2.8 && < 2.9, uu-interleaved >=0.1.0 && < 0.2, lenses >= 0.1.6 && < 0.1.7, transformers >= 0.3.0.0, mtl
+
+Library
+  hs-source-dirs:    src
+  Build-Depends:     base >= 4.2 && <5, uu-parsinglib >=2.8 && < 2.9, uu-interleaved >=0.1.0 && < 0.2, lenses >= 0.1.6 && < 0.1.7, transformers >= 0.3.0.0, mtl
+  Exposed-modules:   Options.UU.Interleaved
+                     

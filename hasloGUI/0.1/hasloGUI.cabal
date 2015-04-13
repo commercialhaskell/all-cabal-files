@@ -1,0 +1,21 @@
+Name:		hasloGUI
+Version:	0.1
+License:	BSD3
+License-file: license
+Author:		Bartosz Wojcik
+Maintainer:	Bartosz Wojcik <bartoszmwojcik@gmail.com>
+Copyright:  Copyright (c) 2012, Bartosz Wojcik
+Category:	Financial
+Synopsis:	Loan calculator Gtk GUI. Based on haslo (Haskell Loan) library.
+Stability:  experimental
+Build-type:	Simple
+Description: Example of usage of loan library named Haslo and of wtk-gtk wrapper over gtk.
+
+Cabal-Version: >=1.2.3
+
+Executable HasloGUI
+  include-dirs: .
+  Build-Depends:	base >= 3 && < 5, old-time, QuickCheck, mtl, time,
+                  lenses, convertible, gtk >= 0.10.1, haslo, wtk, wtk-gtk
+  Main-Is: HasloGUI.hs
+

@@ -1,0 +1,30 @@
+Name:           todos
+Version:        0.2
+Cabal-Version:  >= 1.6
+License:        BSD3
+License-File:   LICENSE
+Author:         Ilya V. Portnov
+Maintainer:     portnov84@rambler.ru
+Homepage:       http://gitorious.org/todos
+Synopsis:       Easy-to-use TODOs manager.
+Category:       Utils,Desktop
+Build-Type:     Simple
+Description:    todos is a simple TODO manager. TODO records theirself are described in
+                plain-text file, and todos allows you to show only needed of
+                them. So, todos works as specialized `grep' utility.
+
+Extra-source-files: CmdLine.hs CommandParser.hs Config.hs ConstrSet.hs Dates.hs IO.hs
+                    Makefile README README.ru Setup.hs test.hs test.txt TODO
+                    TodoLoader.hs TodoParser.hs todos.hs TodoTree.hs Types.hs
+                    Unicode.hs Dot.hs Color.hs Shapes.hs
+
+Executable todos
+  Build-Depends:  base >= 3 && <= 5, haskell98, utf8-string, containers, parsec >= 2 && < 3,
+                  syb, mtl, ansi-terminal, Glob, time, regex-pcre, directory, filepath,
+                  process, data-hash
+  Main-Is:        todos.hs
+
+Source-repository head
+  type:     git
+  location: git://gitorious.org/todos/todos.git
+

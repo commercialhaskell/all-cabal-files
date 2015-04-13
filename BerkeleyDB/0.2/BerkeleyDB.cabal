@@ -1,0 +1,31 @@
+name:		BerkeleyDB
+version:	0.2
+license:	BSD3
+license-file:	LICENSE
+copyright:	John McCall, 2007
+author:		John McCall
+maintainer:     rjmccall@gmail.com
+stability:	alpha
+homepage:	http://www.cs.pdx.edu/~rjmccall/hackage/BerkeleyDB/
+category:	Database
+build-depends:	base, unix
+synopsis:	Bindings for Berkeley DB v1.x
+description:
+	Provides Haskell bindings for Berkeley DB v1.x, a simple file-backed
+	database library which is included by default with many UNIX
+	distributions.  Databases may be organized in one of four methods:
+	in a hashtable, in a b-tree, in a stream of fixed-length records,
+	and in a stream of variable-length records.  Custom comparison
+	and hash functions are supported.  Most of the standard database
+	API is supported.
+	.
+	This implementation *seems* stable, inasmuch as I don't know of any
+	glaring flaws, but I haven't done anything that could even jokingly
+	be referred to as coverage testing.
+exposed-modules:
+	Database.BerkeleyDB
+extensions:
+	ForeignFunctionInterface
+	MultiParamTypeClasses
+	FunctionalDependencies
+includes:	db.h

@@ -1,0 +1,45 @@
+name:             hurdle
+version:          0.1.0
+license:          BSD3
+license-file:     LICENSE
+copyright:        Stephen Tetley <stephen.tetley@gmail.com>
+maintainer:       Stephen Tetley <stephen.tetley@gmail.com>
+homepage:         http://code.google.com/p/copperbox/
+category:         System
+synopsis:         Extract function names from Windows DLLs. 
+description:
+  Hurdle - (H)askell (U)tilty (R)egarding (DL)l (E)xports.
+  .
+  Extract function names from Windows DLLs a-la pexports.
+  . 
+  Hurdle has minimal dependencies: base, array and pretty.
+  .
+  Currently Hurdle also has minimal utility - please consider 
+  pexports instead as Hurdle doesn't yet print ordinals 
+  etcetera (Hurdle was a Sunday afternoon hack that took a wee 
+  bit longer). But... if anyone has a compelling use case that 
+  would benefit the community, I'm willing to look at extending 
+  Hurdle.
+  .
+build-type:         Simple
+stability:          unstable
+cabal-version:      >= 1.2
+
+Executable hurdle
+  Build-Depends:  base < 5, 
+                  array >= 0.2.0.0 && < 0.3,
+                  pretty 
+
+  Main-Is:        Hurdle.hs
+  Hs-Source-Dirs: src
+  Other-Modules:  Hurdle.Datatypes,
+                  Hurdle.DefOutput,
+                  Hurdle.ParseMonad,
+                  Hurdle.Parser,
+                  Hurdle.TextDump
+                  
+
+
+
+  
+  

@@ -1,0 +1,16 @@
+Name:   LargeCardinalHierarchy
+Version: 0.0.0
+Cabal-Version:  >= 1.2
+License: OtherLicense
+License-File: LICENSE
+Copyright: Copyright (c) 2010 Stephen E. A. Britton
+Author: Stephen E. A. Britton
+Maintainer: Stephen E. A. Britton
+Category: Math, Maths, Mathematics, Set Theory
+Synopsis: A transfinite cardinal arithmetic library including all known large cardinals
+Build-type:     Simple
+
+library
+  build-depends:      base >= 2 && < 4
+  exposed-modules:    LargeCardinalHierarchy
+  exposed: True

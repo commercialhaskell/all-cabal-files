@@ -1,0 +1,69 @@
+----------------------------------------------------------------
+-- wren ng thornton <wren@community.haskell.org>    ~ 2009.03.17
+----------------------------------------------------------------
+
+Name:           logfloat
+Version:        0.12.0.1
+Cabal-Version:  >= 1.2
+Build-Type:     Simple
+Stability:      experimental
+Copyright:      Copyright (c) 2007--2009 wren ng thornton
+License:        BSD3
+License-File:   LICENSE
+Author:         wren ng thornton
+Maintainer:     wren@community.haskell.org
+Homepage:       http://code.haskell.org/~wren/
+Category:       Data, Math, Natural Language Processing
+Synopsis:       Log-domain floating point numbers
+Description:    This module presents a type for storing numbers
+                in the log-domain. The main reason for doing this
+                is to prevent underflow when multiplying many
+                probabilities as is done in Hidden Markov Models.
+                It is also helpful for preventing overflow.
+
+
+Flag splitBase
+    Description: base-3.0 broke out array and other packages
+    Default:     False
+
+Flag useFFI
+    Description: Use FFI to link C's log1p. Improves accuracy and
+                 same performance. Disable only if your compiler
+                 doesn't support FFI.
+    Default:     True
+
+Library
+    Hs-Source-Dirs:  src
+    Exposed-Modules: Data.Number.LogFloat
+                   , Data.Number.RealToFrac
+                   , Data.Number.Transfinite
+                   , Data.Number.PartialOrd
+                   , Hugs.RealFloat
+    if flag(splitBase)
+        Build-depends: base >= 3.0, array
+    else
+        Build-depends: base < 3.0
+    
+    if flag(useFFI)
+        -- BUG (Cabal 1.2 + Haddock): See the INSTALL file.
+        --GHC-Options: -D__USE_FFI__
+        CPP-Options: -D__USE_FFI__
+        includes: math.h
+        extra-libraries: m
+    
+    -- BUG (GHC 6.10.1): Can't mix FFI and -fvia-C
+    -- <http://hackage.haskell.org/trac/ghc/ticket/3117>
+    -- This is a momentary hack to keep it for 6.8
+    -- TODO: see if -fasm suffices for the benefits
+    if impl(ghc < 6.10)
+        GHC-Options: -fvia-C -optc-O3
+    
+    -- BUG (Cabal <= 1.6 + Hugs): See the INSTALL file.
+    Hugs-Options: -98 +o
+    if impl(hugs)
+        -- BUG: (Cabal 1.2 + Haddock) See the INSTALL file.
+        --GHC-Options: -D__HUGS__=200609
+        CPP-Options: -D__HUGS__=200609
+
+----------------------------------------------------------------
+----------------------------------------------------------- fin.

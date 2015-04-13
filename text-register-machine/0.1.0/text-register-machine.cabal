@@ -1,0 +1,24 @@
+Name:                text-register-machine
+Version:             0.1.0
+Synopsis:            A Haskell implementation of the 1# Text Register Machine
+Description:         An implementation of Lawrence S. Moss' @1\#@ language and Text Register Machine (<http://www.indiana.edu/~iulg/trm/>). 
+Homepage:            https://github.com/acfoltzer/text-register-machine
+Bug-reports:         https://github.com/acfoltzer/text-register-machine/issues
+License:             BSD3
+License-file:        LICENSE
+Author:              Adam C. Foltzer
+Maintainer:          acfoltzer@gmail.com
+Category:            Language
+Build-type:          Simple
+Cabal-version:       >=1.8
+
+source-repository head
+  type:     git
+  location: git://github.com/acfoltzer/text-register-machine.git
+
+Library
+  Exposed-modules:   Language.TRM
+  Build-depends:     base       == 4.*,
+                     containers == 0.4.*,
+                     mtl        == 2.0.*,
+                     vector     == 0.9.*

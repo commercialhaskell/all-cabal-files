@@ -1,0 +1,48 @@
+Name:                hpuz
+Version:             1.1.0
+Cabal-Version:       >=1.6
+Build-Type:          Simple
+License:             OtherLicense
+License-file:        LICENSE
+Copyright:           Copyright (c) Chris Casinghino 2009-2011
+Author:              Chris Casinghino
+Maintainer:          chris.casinghino@gmail.com
+Category:            Crosswords
+
+Homepage:            http://sourceforge.net/projects/puzhs/
+
+Stability:           Stable
+Synopsis:            Haskell bindings for libpuz
+Tested-With:         GHC >= 7.0.4
+Extra-Source-Files:  INSTALL,
+                     LICENSE.GPL,
+                     LICENSE.MIT,
+                     contrib/libpuz/include/puz.h
+Description: {
+Provides support for reading and writing the .puz crossword puzzle 
+format from haskell.
+}
+
+Source-repository head
+  type:      svn
+  location:  https://puzhs.svn.sourceforge.net/svnroot/puzhs
+
+Library
+  Build-Depends:     base < 5, bytestring >= 0.9, array, 
+                     parsec >= 2.1 && < 3
+  Exposed-modules:   Codec.Game.Puz
+  Other-modules:     Codec.Game.Puz.Internal
+  build-tools:       c2hs >= 0.16.2
+  include-dirs:      contrib/libpuz/include
+  includes:          contrib/libpuz/include/puz.h
+  c-sources:         contrib/libpuz/src/cksum.c,
+                     contrib/libpuz/src/load.c,
+                     contrib/libpuz/src/save.c,
+                     contrib/libpuz/src/puzzle.c
+  ghc-options:       -Wall -O2
+
+  if os(darwin)
+    cc-options:  -U__BLOCKS__ -Wall
+  else
+    cc-options:  -Wall
+

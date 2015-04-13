@@ -1,0 +1,72 @@
+Name:           roundtrip-xml
+Version:        0.3.0.5
+Synopsis:       Bidirectional (de-)serialization for XML.
+Description:    Roundtrip allows the definition of bidirectional
+                (de-)serialization specifications. This package provides
+                concrete implementations of these specifications
+                for the serialization format XML. See the roundtrip
+                package for more details.
+License:        BSD3
+License-file:   LICENSE
+Author:         Stefan Wehr <wehr@factisresearch.com>,
+                David Leuschner <leuschner@factisresearch.com>
+Maintainer:     Stefan Wehr <wehr@factisresearch.com>,
+Category:       Text
+Build-type:     Simple
+Cabal-version:  >=1.8
+
+Source-repository head
+  Type:     darcs
+  location: http://darcs.factisresearch.com/pub/roundtrip-xml
+
+Flag tests
+  description: Build test suite
+  default:     False
+
+Executable tests
+  If flag(tests)
+    Build-Depends:
+        base >= 4 && < 5
+      , HTF
+      , filepath
+      , text
+      , bytestring
+      , roundtrip
+      , roundtrip-string
+      , roundtrip-xml
+      , enumerator
+      , xml-enumerator
+      , reference
+  Else
+    Buildable: False
+  Hs-Source-Dirs: tests
+  Main-Is:        Tests.hs
+
+Library
+  Hs-Source-Dirs: src
+  Exposed-modules:
+      Text.Roundtrip.Xml
+    , Text.Roundtrip.Xml.Printer
+    , Text.Roundtrip.Xml.Parser
+    , Text.Roundtrip.Xml.Enumerator
+    , Text.Roundtrip.Xml.Enumerator.Printer
+    , Text.Roundtrip.Xml.Enumerator.Parser
+  Other-modules:
+      Text.Roundtrip.Xml.ParserInternal
+    , Text.Roundtrip.Xml.Pretty
+  Build-depends:
+      base >= 4 && < 5
+    , safe
+    , bytestring
+    , containers
+    , mtl
+    , text
+    , enumerator
+    , xml-enumerator
+    , xml-types
+    , blaze-builder
+    , blaze-builder-enumerator
+    , pretty
+    , reference
+    , roundtrip
+    , roundtrip-string

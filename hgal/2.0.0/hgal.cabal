@@ -1,0 +1,21 @@
+name:           hgal
+version:        2.0.0
+license:        GPL
+license-file:   LICENSE
+author:         Jean-Philippe Bernardy
+maintainer:     jeanphilippe.bernardy (google mail)
+synopsis:       library for computation automorphism group and canonical labelling of a graph
+Category:       data structures, algorithms
+exposed-modules:
+        Data.Graph.Partition,
+        Data.Graph.Construction,
+        Data.Graph.Permutation,
+        Data.Graph.Automorphism
+
+build-depends: base>= 4, base < 5,
+               mtl >= 2, mtl < 3,
+               containers >= 0.4, containers < 0.5,
+               array >= 0.3 , array < 0.4
+
+build-type:     Simple
+ghc-options:    -Wall -O2

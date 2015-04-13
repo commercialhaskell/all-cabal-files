@@ -1,0 +1,32 @@
+name:          libstackexchange
+version:       0.2.0.0
+synopsis:      StackExchange API interface
+description:   Provides interface for StackExchange v2.1 API
+homepage:      https://github.com/supki/libstackexchange
+license:       MIT
+license-file:  LICENSE
+author:        Matvey Aksenov, Dmitry Malikov
+maintainer:    matvey.aksenov@gmail.com
+category:      NetworkAPIs
+build-type:    Simple
+cabal-version: >= 1.8
+
+library
+  build-depends: base >= 4.6 && < 5,
+                 bytestring,
+                 containers,
+                 data-default,
+                 attoparsec,
+                 text,
+                 aeson,
+                 aeson-lens,
+                 http-conduit,
+                 lens >= 3.0.4
+  hs-source-dirs: src
+  exposed-modules: Network.StackExchange
+                   Network.StackExchange.API
+                   Network.StackExchange.Auth
+                   Network.StackExchange.Request
+                   Network.StackExchange.Response
+  ghc-options: -Wall
+               -fno-warn-unused-do-bind

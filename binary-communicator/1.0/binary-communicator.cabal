@@ -1,0 +1,21 @@
+Name:           binary-communicator
+Description:    Simple datatype that makes easier to send and receive serializable values in any MonadIO. Inspired by Gregory Crosswhite's 'binary-protocol' package.
+Version:        1.0
+Category:       Data
+Cabal-Version:  >= 1.2
+License:        BSD3
+License-File:   LICENSE
+Author:         Yves Parès
+Maintainer:     Yves Parès <limestrael@gmail.com>
+Synopsis:       Send and receive binary data.
+Build-Type:     Simple
+
+Library
+  Build-Depends:    base >= 4 && < 5,
+                    binary >= 0.5 && < 0.6,
+                    bytestring >= 0.9.1 && < 1,
+                    mtl >= 1.1 && < 2
+  Hs-Source-Dirs:   .
+  Exposed-Modules:  Data.BinaryCom
+  GHC-Options:      -Wall
+

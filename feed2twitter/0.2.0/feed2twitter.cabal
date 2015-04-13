@@ -1,0 +1,47 @@
+name:                feed2twitter
+version:             0.2.0
+synopsis:            Send posts from a feed to Twitter
+description:         Reads feeds and tweets each post to a Twitter account.
+                     This is both a library and a simple executable build on top
+                     of it.
+                     .
+                     The feed is read only once. To keep updating, call this 
+                     program/library every few minutes.
+                     A local cache of earlier tweets is kept in a file to make
+                     sure no duplicates are sent.
+                     .
+                     To build your own program on top of this library use the
+                     `atom2twitter` or `rss2twitter` functions. If you need
+                     access to the complete feed instead of just individual
+                     individual items, use the `feed2twitter` function.
+                     .
+                     See the `hackage2twitter` program for an example of how to
+                     use this library.
+                     .
+                     The executable can be used as such:
+                     .
+                     > $ feed2twitter http://example.com/feed.rss username password cache-file 50 [--debug-mode]
+license:             BSD3
+license-file:        LICENSE
+author:              Tom Lokhorst
+maintainer:          Tom Lokhorst <tom@lokhorst.eu>
+homepage:            http://github.com/tomlokhorst/feed2twitter
+stability:           Experimental
+category:            Web
+build-type:          Simple
+cabal-version:       >= 1.6
+
+library
+  build-depends:     base >= 4,
+                     bytestring >= 0.9.1.4,
+                     download-curl >= 0.1.1,
+                     feed >= 0.3.6,
+                     hs-twitter >= 0.2.5
+  hs-source-dirs:    src
+  exposed-modules:   Web.Feed2Twitter
+  other-modules:     Web.Feed2Twitter.Twitter
+
+executable feed2twitter
+  main-is:           Main.hs
+  hs-source-dirs:    src
+

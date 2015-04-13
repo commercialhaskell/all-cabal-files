@@ -1,0 +1,83 @@
+name:                command-qq
+version:             0.1.0.0
+synopsis:            Quasiquoters for external commands
+description:
+  Features:
+  .
+  * Quasiquotation syntax for external commands:
+  .
+  > [sh| echo hello world! |]
+  .
+  * Easy way to define custom quasiquoters (see @examples/CustomQQ.hs@)
+  .
+  > ghci = QQ.quoter $ QQ.callCommand "ghc" ["-ignore-dot-ghci", "-e"]
+  .
+  * Can embed Haskell variables in scripts
+  .
+  > class Embed a where
+  >   embed :: a -> String
+  >
+  > instance Embed String
+  >   embed = id
+  >
+  > main :: IO ()
+  > main = let excl = replicate 3 '!' in -- I'd love to show an example but haddock markup fails here
+  .
+  * Can embed quasiquoters in DSLs (see @examples/CommandT.hs@)
+  .
+  > class Eval r where
+  >   eval :: String -> [String] -> r
+  >
+  > instance Eval (IO ExitCode) where
+  >   eval command args = System.Process.rawSystem command args
+  .
+homepage:            http://biegunka.github.io/command-qq/
+license:             BSD3
+license-file:        LICENSE
+author:              Matvey Aksenov
+maintainer:          matvey.aksenov@gmail.com
+category:            System
+build-type:          Simple
+cabal-version:       >= 1.10
+extra-source-files:
+  examples/CommandT.hs
+  examples/CustomQQ.hs
+
+
+library
+  default-language:  Haskell2010
+  build-depends:
+    base == 4.*,
+    process,
+    template-haskell,
+    unix
+  hs-source-dirs:    src
+  exposed-modules:   System.Command.QQ
+
+test-suite doctests
+  default-language:  Haskell2010
+  type:              exitcode-stdio-1.0
+  build-depends:
+    base == 4.*,
+    doctest
+  hs-source-dirs:    tests
+  main-is:           Doctests.hs
+
+test-suite spec
+  default-language:  Haskell2010
+  type:              exitcode-stdio-1.0
+  build-depends:
+    base == 4.*,
+    hspec,
+    command-qq,
+    template-haskell
+  hs-source-dirs:
+    tests,
+    examples
+  main-is:           Spec.hs
+  other-modules:     EmbeddingSpec
+
+
+source-repository head
+  type:              git
+  location:          https://github.com/biegunka/command-qq

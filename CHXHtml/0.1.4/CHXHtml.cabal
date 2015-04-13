@@ -1,0 +1,51 @@
+
+Name:                CHXHtml
+Version:             0.1.4
+
+Synopsis: A W3C compliant (X)HTML generating library            
+
+Description: An (X)Html generating library providing nearly full W3C compliance.  Non-compliant
+             content is exposed at compile time and fails type-check. 
+
+License:             BSD3
+
+License-file:        LICENSE
+
+Author:              Paul Talaga
+
+Maintainer:          paul@fuzzpault.com
+homepage:           http://fuzzpault.com/chxhtml
+
+-- A copyright notice.
+Copyright:           2010 Paul Talaga <paul@fuzzpault.com>
+
+Category:            Web
+
+Build-type:          Simple
+
+Extra-source-files: demo.hs demoFastCGI.hs htmlHelp.hs
+
+Cabal-version:       >=1.2
+Tested-With:         GHC ==6.10.3
+
+
+Library
+  -- Modules exported by the library.
+  Exposed-modules:     Text.CHXHtml.XHtml1_strict
+                       Text.CHXHtml.XHtml1_transitional
+                       Text.CHXHtml.XHtml1_frameset
+  
+  -- Packages needed in order to build this package.
+  Build-depends:    base >= 2 && < 5, 
+                    bytestring >= 0.9 , 
+                    utf8-string >= 0.3.1,
+                    pcre-light >= 0.4
+                    
+  Extensions: MultiParamTypeClasses FunctionalDependencies 
+   
+  -- Modules not exported by this package.
+  -- Other-modules:       
+  
+  -- Extra tools (e.g. alex, hsc2hs, ...) needed to build the source.
+  -- Build-tools:         
+  

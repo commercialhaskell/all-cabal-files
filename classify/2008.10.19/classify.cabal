@@ -1,0 +1,16 @@
+Name:           classify
+Version:        2008.10.19
+Copyright:      2004-2008, Lemmih
+Build-Depends:  base, mtl, containers, old-time
+Build-Type:     Simple
+License:        BSD3
+Author:         Lemmih <lemmih@gmail.com>
+Maintainer:     Lemmih <lemmih@gmail.com>
+Synopsis:       Library for classification of media files.
+Category:       Tool
+HS-Source-Dirs: src
+Exposed-Modules:
+  Data.Classify.DataTypes,
+  Data.Classify.Rank,
+  Data.Classify.Parser,
+  Data.Classify.Printer

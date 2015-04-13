@@ -1,0 +1,43 @@
+Name:                yesod-recaptcha
+Version:             0.1
+Synopsis:            Dead simple support for reCAPTCHA on Yesod applications.
+Homepage:            https://github.com/meteficha/yesod-recaptcha
+License:             BSD3
+License-file:        LICENSE
+Author:              Felipe Lessa
+Maintainer:          felipe.lessa@gmail.com
+Category:            Web
+Build-type:          Simple
+Cabal-version:       >=1.8
+-- Copyright:
+-- Extra-source-files:
+
+Description:
+  This package provides support for reCAPTCHA
+  (<http://www.google.com/recaptcha>) on Yesod applications.
+
+Source-repository head
+  type:     git
+  location: git://github.com/meteficha/yesod-recaptcha.git
+
+Library
+  Hs-source-dirs: src
+  GHC-options: -Wall
+  Exposed-modules: Yesod.ReCAPTCHA
+  Extensions: DeriveDataTypeable FlexibleContexts TemplateHaskell
+              QuasiQuotes OverloadedStrings
+  Build-depends:
+      base           == 4.*
+    , bytestring
+    , text
+    , data-default   == 0.3.*
+    , lifted-base    == 0.1.*
+    , yesod-core     == 0.10.*
+    , yesod-auth     == 0.8.*
+    , yesod-form     == 0.4.*
+    , wai
+    , network
+    , network-info   == 0.2.*
+    , http-conduit   == 1.2.*
+    , http-types
+    , conduit        >= 0.1   && < 0.3

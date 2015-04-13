@@ -1,0 +1,29 @@
+name:                     nextstep-plist
+version:                  0.0.1
+cabal-version:            >= 1.6
+stability:                alpha
+description:              Parser and pretty printer for NextStep style
+                          (old style) plist (property list) files as
+                          they are used for the project configuration files
+                          of Apple's Xcode.
+synopsis:                 NextStep style plist parser and printer
+license:                  BSD3
+license-file:             LICENSE
+author:                   Jan Christiansen
+maintainer:               Jan Christiansen <info@monoid-it.de>
+category:                 Data, Parsing
+build-type:               Simple
+extra-source-files:       Tests.hs
+bug-reports:              https://github.com/plancalculus/nextstep-plist/issues
+source-repository head
+  type:      git
+  location:  https://github.com/plancalculus/nextstep-plist.git
+
+
+library
+  build-depends:	  base >= 4 && < 5, QuickCheck >= 2, pretty, parsec >= 3
+  ghc-options:            -Wall
+  exposed-modules:        Text.NSPlist,
+                          Text.NSPlist.Pretty,
+                          Text.NSPlist.Parsec,
+                          Text.NSPlist.Types

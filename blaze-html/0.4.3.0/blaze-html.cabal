@@ -1,0 +1,59 @@
+Name:         blaze-html
+Version:      0.4.3.0
+x-revision: 1
+Homepage:     http://jaspervdj.be/blaze
+Bug-Reports:  http://github.com/jaspervdj/blaze-html/issues
+License:      BSD3
+License-file: LICENSE
+Author:       Jasper Van der Jeugt, Simon Meier
+Maintainer:   Jasper Van der Jeugt <m@jaspervdj.be>
+Stability:    Experimental
+Category:     Text
+Synopsis:     A blazingly fast HTML combinator library for Haskell
+Description:
+  A blazingly fast HTML combinator library for the Haskell
+  programming language. The Text.Blaze module is a good
+  starting point, as well as this tutorial:
+  <http://jaspervdj.be/blaze/tutorial.html>.
+
+Build-type:          Simple
+Cabal-version:       >=1.6
+
+Extra-source-files:  
+  Util/Sanitize.hs
+  Util/GenerateHtmlCombinators.hs
+
+Source-repository head
+  Type:              git
+  Location:          http://github.com/jaspervdj/blaze-html.git
+
+Library
+  Ghc-Options:       -Wall
+
+  Exposed-modules:
+    Text.Blaze
+    Text.Blaze.Html4.FrameSet
+    Text.Blaze.Html4.FrameSet.Attributes
+    Text.Blaze.Html4.Strict
+    Text.Blaze.Html4.Strict.Attributes
+    Text.Blaze.Html4.Transitional
+    Text.Blaze.Html4.Transitional.Attributes
+    Text.Blaze.Html5
+    Text.Blaze.Html5.Attributes
+    Text.Blaze.Internal
+    Text.Blaze.Renderer.Pretty
+    Text.Blaze.Renderer.String
+    Text.Blaze.Renderer.Text
+    Text.Blaze.Renderer.Utf8
+    Text.Blaze.XHtml1.FrameSet
+    Text.Blaze.XHtml1.FrameSet.Attributes
+    Text.Blaze.XHtml1.Strict
+    Text.Blaze.XHtml1.Strict.Attributes
+    Text.Blaze.XHtml1.Transitional
+    Text.Blaze.XHtml1.Transitional.Attributes
+  
+  Build-depends:
+    base          >= 4 && < 4.8,
+    blaze-builder >= 0.2 && < 0.4,
+    text          >= 0.10,
+    bytestring    >= 0.9

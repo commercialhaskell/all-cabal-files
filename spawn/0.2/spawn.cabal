@@ -1,0 +1,19 @@
+name:                spawn
+version:             0.2
+license:             BSD3
+license-file:        LICENSE
+synopsis:            Tiny library for joinable computations / threads with results.
+category:            Concurrency, Concurrent, Control
+author:              Keegan McAllister <mcallister.keegan@gmail.com>
+maintainer:          Keegan McAllister <mcallister.keegan@gmail.com>
+build-type:          Simple
+cabal-version:       >=1.2
+description:
+  Spawn a concurrent 'IO' computation and later demand its result.  Tiny API
+  and implementation.
+
+library
+  exposed-modules:   Control.Concurrent.Spawn
+  ghc-options:       -Wall
+  build-depends:
+      base >= 3 && < 5

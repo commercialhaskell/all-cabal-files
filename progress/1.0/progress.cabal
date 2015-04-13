@@ -1,0 +1,19 @@
+cabal-version: >= 1.6
+name:          progress
+version:       1.0
+build-type:    Simple
+license:       BSD3
+license-file:  LICENSE
+author:        marius a. eriksen
+category:      User Interfaces
+synopsis:      Simple progress tracking & projection library
+description:   Given a some "units of work" and points in time,
+               we (linearly) project the time until completion 
+               and also keep track of progress made thus far.
+maintainer:    marius a. eriksen
+copyright:     (c) 2009 marius a. eriksen
+
+library
+  build-depends: base == 4.*, time
+  exposed-modules:
+    System.Console.Progress

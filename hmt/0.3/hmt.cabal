@@ -1,0 +1,48 @@
+Name:              hmt
+Version:           0.3
+Synopsis:          Haskell Music Theory
+Description:       Haskell music theory library
+License:           GPL
+Category:          Music
+Copyright:         Rohan Drape, 2006-2011
+Author:            Rohan Drape
+Maintainer:        rd@slavepianos.org
+Stability:         Experimental
+Homepage:          http://slavepianos.org/rd/?t=hmt
+Tested-With:       GHC == 6.12.1
+Build-Type:        Simple
+Cabal-Version:     >= 1.6
+
+Data-files:        README
+                   Help/hmt.help.lhs
+
+Library
+  Build-Depends:   base == 4.*,
+                   containers,
+                   multiset-comb,
+                   parsec,
+                   permutation,
+                   split
+  GHC-Options:     -Wall -fwarn-tabs
+  Exposed-modules: Music.Theory.Bjorklund
+                   Music.Theory.Contour.Polansky_1992
+                   Music.Theory.Duration
+                   Music.Theory.Duration.Name
+                   Music.Theory.Duration.Sequence.Notate
+                   Music.Theory.Interval
+                   Music.Theory.Key
+                   Music.Theory.Parse
+                   Music.Theory.Pct
+                   Music.Theory.Permutations
+                   Music.Theory.Pitch
+                   Music.Theory.Pitch.Name
+                   Music.Theory.PitchClass
+                   Music.Theory.Prime
+                   Music.Theory.Set
+                   Music.Theory.Spelling
+                   Music.Theory.Table
+                   Music.Theory.Tuning
+
+Source-Repository  head
+  Type:            darcs
+  Location:        http://slavepianos.org/rd/sw/hmt

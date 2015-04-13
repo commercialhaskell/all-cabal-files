@@ -1,0 +1,65 @@
+Name:                sunroof-compiler
+Version:             0.2
+Synopsis:            Monadic Javascript Compiler
+Homepage:            https://github.com/ku-fpg/sunroof-compiler
+Bug-reports:         https://github.com/ku-fpg/sunroof-compiler
+License:             BSD3
+License-file:        LICENSE
+Author:              Andrew Gill <andygill@ku.edu>, Jan Bracker <jbra@informatik.uni-kiel.de>
+Maintainer:          Jan Bracker <jbra@informatik.uni-kiel.de>
+Copyright:           (c) 2012 The University of Kansas
+Category:            Web, Language, Embedded, Compiler, Javascript
+Stability:           experimental
+Build-type:          Simple
+Cabal-version:       >= 1.10
+Description:
+  Monadic Javascript Compiler.
+
+Extra-source-files:
+    README.md
+
+Library
+  Exposed-modules:     Language.Sunroof
+                       Language.Sunroof.Types
+                       Language.Sunroof.Classes
+                       Language.Sunroof.JavaScript
+                       Language.Sunroof.Compiler
+                       Language.Sunroof.Concurrent
+                       Language.Sunroof.Internal
+                       Language.Sunroof.Selector
+                       Language.Sunroof.TH
+                       Language.Sunroof.Utils
+                       Language.Sunroof.JS.Ref
+                       Language.Sunroof.JS.Bool
+                       Language.Sunroof.JS.Object
+                       Language.Sunroof.JS.String
+                       Language.Sunroof.JS.Number
+                       Language.Sunroof.JS.Array
+                       Language.Sunroof.JS.Date
+                       Language.Sunroof.JS.Chan
+                       Language.Sunroof.JS.MVar
+                       Language.Sunroof.JS.Canvas
+                       Language.Sunroof.JS.Browser
+                       Language.Sunroof.JS.JQuery
+                       Language.Sunroof.JS.Map
+                       
+  default-language:    Haskell2010
+  build-depends:       data-reify       >= 0.6,
+                       base             >= 4.3.1 && < 5,
+                       Boolean          >= 0.2,
+                       containers       >= 0.4,
+                       data-default     == 0.5.*,
+                       vector-space     >= 0.8.6,
+                       mtl              >= 2.0,
+                       template-haskell >= 2.8,
+                       operational      >= 0.2.0.3 && < 0.3,
+                       semigroups       >= 0.9,
+                       transformers     == 0.3.*,
+                       tagged           >= 0.4.4
+
+
+  GHC-options: -Wall -fno-warn-orphans
+
+source-repository head
+  type:     git
+  location: git://github.com/ku-fpg/sunroof-compiler.git

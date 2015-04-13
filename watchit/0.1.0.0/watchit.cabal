@@ -1,0 +1,102 @@
+Name:                watchit
+Version:             0.1.0.0
+Synopsis:            File change watching utility
+Description:         Watch a directory and run a command whenever a file changes.
+License:             BSD3
+License-File:        LICENSE
+Author:              Paulo Tanimoto
+Maintainer:          ptanimoto@gmail.com
+Category:            Development
+Build-Type:          Simple
+Cabal-version:       >= 1.10
+
+
+-------------------------------------------------------------------------------
+Source-Repository head
+  Type:              git
+  Location:          https://github.com/tanimoto/watchit
+
+
+-------------------------------------------------------------------------------
+Library
+  Hs-Source-Dirs:
+    src
+
+  Exposed-Modules:
+    WatchIt
+    WatchIt.Options
+    WatchIt.Types
+
+  Build-Depends:
+      base                           >=      4.0      && <      5.0
+    , fsnotify                       >=      0.1
+    , optparse-applicative           >=      0.11
+    , process                        >=      1.1
+    , resource-pool                  >=      0.2
+    , streaming-commons              >=      0.1
+    , system-filepath                >=      0.3
+    , text                           >=      1.1
+
+  Ghc-Options:
+    -Wall
+
+  Default-Language: Haskell2010
+
+
+-------------------------------------------------------------------------------
+Executable watchit
+  Hs-Source-Dirs:
+    src
+
+  Main-is:
+    Main.hs
+
+  Build-Depends:
+      base                           >=      4.0      && <      5.0
+    , fsnotify                       >=      0.1
+    , optparse-applicative           >=      0.11
+    , process                        >=      1.1
+    , resource-pool                  >=      0.2
+    , streaming-commons              >=      0.1
+    , system-filepath                >=      0.3
+    , text                           >=      1.1
+
+  Ghc-Options:
+    -Wall
+    -threaded
+    -rtsopts
+
+  Default-Language: Haskell2010
+
+
+-------------------------------------------------------------------------------
+Test-Suite Tests
+  Hs-Source-Dirs:
+    test
+
+  Main-is:
+    Test.hs
+
+  Type:
+    exitcode-stdio-1.0
+
+  Build-Depends:
+      watchit
+    , base                           >=      4.0      && <      5.0
+    , bytestring                     >=      0.9
+    , async                          >=      2.0
+    , system-fileio                  >=      0.3
+    , system-filepath                >=      0.3
+
+    , tasty                          >=      0.10
+    , tasty-hunit                    >=      0.9
+    , tasty-quickcheck               >=      0.8
+    , tasty-smallcheck               >=      0.8
+    , HUnit                          >=      1.2
+    , QuickCheck                     >=      2.7
+    , smallcheck                     >=      1.1
+
+  Ghc-Options:
+    -Wall
+
+  Default-Language:    Haskell2010

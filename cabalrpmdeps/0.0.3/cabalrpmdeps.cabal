@@ -1,0 +1,29 @@
+Name: cabalrpmdeps
+Version: 0.0.3
+License: GPL
+License-file: gpl.txt
+Category: Distribution
+Maintainer: Olivier Thauvin <nanardon@nanardon.zarb.org>
+Copyright: Copyright (c) 2007 Olivier Thauvin
+homepage: http://nanardon.zarb.org/darcsweb/darcsweb.cgi?r=haskell-CabalRpmDeps;a=summary
+synopsis: Autogenerate rpm dependencies from cabal files
+description: Autogenerate rpm dependencies from cabal files
+Stability: Beta
+Hs-Source-Dirs: .
+Exposed-Modules: Distribution.RpmDeps
+Extensions: CPP
+Build-Depends: haskell98, base, Cabal
+-- Cabal will automatically add unix here on non-Windows platforms
+GHC-Options: -O2
+
+Executable: cabalrpmprov
+Main-Is: cabalrpmprov.hs
+HS-Source-Dirs: .
+
+Executable: cabalrpmreq
+Main-Is: cabalrpmreq.hs
+HS-Source-Dirs: .
+
+Executable: cabalrpmbr
+Main-Is: cabalrpmbr.hs
+HS-Source-Dirs: .

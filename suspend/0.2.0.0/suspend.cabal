@@ -1,0 +1,37 @@
+name:                suspend
+version:             0.2.0.0
+synopsis:            Simple package that allows for long thread suspensions.
+description:         Simple package that allows for long thread suspensions. Uses newtype wrapper (of Int64 at the moment) to represent delay.
+license:             BSD3
+license-file:        LICENSE
+author:              Petr Pilař
+maintainer:          Petr Pilař <maintainer+the.palmik@gmail.com>
+copyright:           Petr Pilař 2012
+category:            Concurrency
+stability:           Experimental
+build-type:          Simple
+cabal-version:       >=1.8
+
+extra-source-files:
+    LICENSE
+  , README.md
+
+library
+    exposed-modules:
+        Control.Concurrent.Suspend
+      , Control.Concurrent.Suspend.Lifted
+
+    other-modules:
+        Control.Concurrent.Delay
+
+    build-depends:
+        base              >= 4.5 && < 5
+      , lifted-base       >= 0.1 && < 0.3
+      , transformers-base >= 0.4 && < 0.5
+
+    hs-source-dirs:      src
+    ghc-options:         -Wall -fwarn-unused-imports
+
+source-repository head
+  type:     git
+  location: git://github.com/Palmik/suspend.git

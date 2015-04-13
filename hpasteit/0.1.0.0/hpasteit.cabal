@@ -1,0 +1,34 @@
+name:                hpasteit
+version:             0.1.0.0
+synopsis:            A command-line client for hpaste.org
+-- description:         
+license:             BSD3
+license-file:        LICENSE
+author:              Patrick Palka
+maintainer:          patrick@parcs.ath.cx
+copyright:           Copyright (C) 2012 Patrick Palka
+category:            Web
+build-type:          Simple
+cabal-version:       >=1.8
+tested-with:         GHC == 7.6.1
+stability:           provisional
+homepage:            http://github.com/parcs/hpasteit
+bug-reports:         http://github.com/parcs/hpasteit/issues
+
+source-repository head
+  type: git
+  location: git://github.com/parcs/hpasteit.git
+
+executable hpasteit
+  main-is:             HPasteIt.hs
+
+  build-depends:       base                 ==4.6.*
+                     , bytestring           ==0.10.*
+                     , lifted-base          ==0.2.*
+                     , http-conduit         ==1.8.*
+                     , http-types           ==0.7.*
+                     , optparse-applicative ==0.5.*
+
+  ghc-options:         -Wall
+
+  extensions:          PatternGuards

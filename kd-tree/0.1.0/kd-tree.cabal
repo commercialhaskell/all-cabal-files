@@ -1,0 +1,28 @@
+name:                kd-tree
+version:             0.1.0
+synopsis:            A simple k-d tree implementation
+description:         A simple k-d tree implementation
+homepage:            http://github.com/bgamari/kd-tree
+license:             BSD3
+license-file:        LICENSE
+author:              Ben Gamari
+maintainer:          bgamari@gmail.com
+copyright:           (c) 2014 Ben Gamari <bgamari@gmail.com>
+category:            Data
+build-type:          Simple
+cabal-version:       >=1.10
+
+source-repository head
+  type:                git
+  location:            git@github.com:bgamari/kd-tree
+
+library
+  exposed-modules:     Data.KdTree
+  other-extensions:    ScopedTypeVariables
+  build-depends:       base >=4.7 && <4.8,
+                       linear >=1.10 && <1.11,
+                       lens >=4.2 && <4.3,
+                       vector >=0.10 && <0.11,
+                       vector-algorithms >=0.6 && <0.7
+  hs-source-dirs:      src
+  default-language:    Haskell2010

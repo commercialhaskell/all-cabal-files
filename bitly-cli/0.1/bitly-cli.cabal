@@ -1,0 +1,41 @@
+Name:          bitly-cli
+Version:       0.1
+Cabal-version: >= 1.2
+Build-type:    Simple
+
+Stability:     experimental
+Category:      Web, Utils
+License:       BSD3
+License-file:  LICENSE
+Maintainer:    Sergey Astanin <s.astanin@gmail.com>
+Homepage:      http://bitbucket.org/jetxee/hs-bitly/
+Bug-reports:   http://bitbucket.org/jetxee/hs-bitly/issues/
+
+Synopsis: A command line tool to access bit.ly URL shortener.
+Description:
+  This package provides a command line utility to shorten
+  and expand URLs using bit.ly/j.mp service. To use this tool, an API
+  key is required. Please find yours at <http://bit.ly/account/>.
+  .
+  Configuration file (`~/.bitly`) format:
+  .
+  > login = your_bit.ly_login
+  > apikey = your_API_key
+  .
+  Usage examples:
+  .
+  > $ echo "Text with an URL: http://example.com/" | bitly
+  > Text with an URL: http://bit.ly/2eSq1z
+  > $ bitly shorten http://example.com
+  > http://bit.ly/2eSq1z
+  > $ bitly expand http://bit.ly/2eSq1z
+  > http://example.com/
+
+Executable bitly
+  Main-is:     bitly.hs
+  Build-depends:
+               Bitly >= 0.0.6
+             , base >= 3 && < 5
+             , filepath >= 1.1
+             , directory >= 1.0 && < 1.1
+             , regexpr >= 0.5

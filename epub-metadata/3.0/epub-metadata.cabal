@@ -1,0 +1,55 @@
+name:                epub-metadata
+version:             3.0
+cabal-version:       >= 1.8
+build-type:          Simple
+license:             BSD3
+license-file:        LICENSE
+copyright:           2010-2013 Dino Morelli
+author:              Dino Morelli
+maintainer:          Dino Morelli <dino@ui3.info>
+stability:           stable
+homepage:            http://ui3.info/d/proj/epub-metadata.html
+synopsis:            Library for parsing and manipulating EPUB files and OPF package data
+description:         Library for parsing and manipulating EPUB files and OPF package data. An attempt has been made here to thoroughly implement the OPF Package Document specification.
+category:            Codec, Text
+tested-with:         GHC >= 7.6.2
+extra-source-files:  testsuite/*.epub,
+                     testsuite/*.hs,
+                     testsuite/*.opf,
+                     testsuite/bookfiles/mimetype,
+                     testsuite/bookfiles/foo,
+                     testsuite/bookfiles/content/bar
+
+source-repository    head
+   type:             darcs
+   location:         http://ui3.info/darcs/epub-metadata/
+
+library
+   exposed-modules:  Codec.Epub2.Archive
+                     Codec.Epub2.IO,
+                     Codec.Epub2.Opf.Common,
+                     Codec.Epub2.Opf.Format.Guide,
+                     Codec.Epub2.Opf.Format.Manifest,
+                     Codec.Epub2.Opf.Format.Metadata,
+                     Codec.Epub2.Opf.Format.Package,
+                     Codec.Epub2.Opf.Format.Spine,
+                     Codec.Epub2.Opf.Format.Util,
+                     Codec.Epub2.Opf.Package,
+                     Codec.Epub2.Opf.Package.Guide,
+                     Codec.Epub2.Opf.Package.Manifest,
+                     Codec.Epub2.Opf.Package.Metadata,
+                     Codec.Epub2.Opf.Package.Spine,
+                     Codec.Epub2.Opf.Parse
+   build-depends:    base >= 3 && < 5, bytestring, containers,
+                     directory, filepath, hxt >= 9, mtl, regex-compat,
+                     zip-archive
+   hs-source-dirs:   src
+   ghc-options:      -Wall
+
+test-suite           test-epub-metadata
+   type:             exitcode-stdio-1.0
+   main-is:          test-main.hs
+   build-depends:    base >= 3 && < 5, bytestring, directory, filepath,
+                     HUnit, hxt >= 9, mtl, regex-compat, zip-archive
+   hs-source-dirs:   src testsuite
+   ghc-options:      -Wall

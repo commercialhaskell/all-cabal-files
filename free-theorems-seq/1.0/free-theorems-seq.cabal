@@ -1,0 +1,72 @@
+name:           free-theorems-seq
+version:        1.0
+license:        PublicDomain
+author:         Daniel Seidel
+maintainer:     ds@iai.uni-bonn.de
+synopsis:       Taming Selective Strictness
+description:
+	Given a term, this program calculates a set of \"optimal\" free theorems 
+        that hold in a lambda calculus with selective strictness. It omits 	
+        totality (in general, bottom-reflection) and other restrictions when 
+        possible. The underlying theory is described in the paper \"Taming 
+        Selective Strictness\" (ATPS'09) by Daniel Seidel and Janis Voigtländer.
+	A webinterface for the program is running online at 
+	<http://www-ps.iai.uni-bonn.de/cgi-bin/polyseq.cgi>
+        or available offline via the package 
+        <http://hackage.haskell.org/package/free-theorems-seq-webui>.
+        .
+        Related to this package you may be interested in the online free theorem generator
+        at <http://www-ps.iai.uni-bonn.de/ft> that is also available offline via
+        <http://hackage.haskell.org/package/free-theorems-webui>.
+        Additionally interesting may be the counterexample generator for free theorems that
+        exemplifies the need of strictness conditions imposed by general recursion.
+        It can be downloaded at 
+        <http://hackage.haskell.org/package/free-theorems-counterexamples>
+        or used via a webinterface at
+        <http://www-ps.iai.uni-bonn.de/cgi-bin/exfind.cgi>.
+	
+category:       Language
+tested-with:    GHC==7.0.1
+build-type:	Simple
+cabal-version:  >= 1.6
+
+extra-source-files:
+    src/Tests.hs
+    README
+
+library
+    build-depends:
+        array == 0.*
+      , bytestring >= 0.9.0.1
+      , containers >= 0.1.0.1 
+      , free-theorems >= 0.3.1 && < 0.4
+      , haskell-src >= 1.0.1.1 
+      , mtl >= 1.1.0.0
+      , old-locale == 1.*
+      , old-time == 1.* 
+      , parsec == 3.*
+      , pretty == 1.*
+      , utf8-string >= 0.3.1.1 && < 0.4
+      , xhtml == 3000.*
+    if impl(ghc >= 6.10)
+      build-depends:
+          base >= 4
+        , syb >= 0.1.0.0
+    else
+      build-depends:
+          base >= 1 && < 4
+    exposed-modules:
+        Language.Haskell.FreeTheorems.Variations.PolySeq.PolySeq
+        Language.Haskell.FreeTheorems.Variations.PolySeq.PrettyPrint
+        Language.Haskell.FreeTheorems.Variations.PolySeq.TypeTranslator
+        Language.Haskell.FreeTheorems.Variations.PolySeq.TheoremGen
+        Language.Haskell.FreeTheorems.Variations.PolySeq.Parser.ParseTerm
+        Language.Haskell.FreeTheorems.Variations.PolySeq.Highlight
+    other-modules:
+        Language.Haskell.FreeTheorems.Variations.PolySeq.M
+        Language.Haskell.FreeTheorems.Variations.PolySeq.ConstraintSolver
+        Language.Haskell.FreeTheorems.Variations.PolySeq.Debug
+        Language.Haskell.FreeTheorems.Variations.PolySeq.PolySeqAlg
+        Language.Haskell.FreeTheorems.Variations.PolySeq.AlgCommon
+        Language.Haskell.FreeTheorems.Variations.PolySeq.Syntax
+    hs-source-dirs: src

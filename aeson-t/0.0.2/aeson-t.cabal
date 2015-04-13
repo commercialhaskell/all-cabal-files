@@ -1,0 +1,45 @@
+Name:                   aeson-t
+Version:                0.0.2
+Author:                 Joe Nelson <cred+github@begriffs.com>
+Maintainer:             Joe Nelson <cred+github@begriffs.com>
+Category:               Data
+License:                MIT
+License-File:           LICENSE
+Synopsis:               Transform JSON
+Homepage:               https://github.com/begriffs/aeson-t
+Description:
+  Provides a succinct DSL to transform one JSON document to another.
+Cabal-Version:          >= 1.10
+Build-Type:             Simple
+
+Library
+  Default-Language:     Haskell2010
+  GHC-Options:          -Wall
+  Exposed-Modules:      Data.Aeson.Transform
+  Other-Modules:        Data.Aeson.Transform.Internal
+  Build-Depends:        base >= 4 && < 5
+                      , aeson == 0.8.*
+                      , unordered-containers == 0.2.*
+                      , text == 1.1.*
+                      , bytestring == 0.10.*
+                      , vector == 0.10.*
+
+Test-Suite spec
+  Type:                 exitcode-stdio-1.0
+  Default-Language:     Haskell2010
+  Hs-Source-Dirs:       test
+  Ghc-Options:          -Wall
+  Main-Is:              Spec.hs
+  Build-Depends:        base
+                      , aeson-t
+                      , hspec2
+                      , aeson == 0.8.*
+                      , unordered-containers == 0.2.*
+                      , text == 1.1.*
+                      , bytestring == 0.10.*
+                      , vector == 0.10.*
+                      , aeson-qq
+
+Source-Repository head
+  Type:                 git
+  Location:             git://github.com:begriffs/aeson-t.git

@@ -1,0 +1,30 @@
+Name:           AGI
+Category:	Network
+Synopsis:       A library for writing AGI scripts for Asterisk
+Description: Asterisk is an open-source Voice over IP server
+ (VoIP). Asterisk provides an Asterisk Gateway Interface (AGI), which
+ can be used to write external programs that interact with
+ Asterisk. It is typically used for creating Interactive Voice
+ Response (IVR) systems. 
+Version:        1.1
+License:        BSD3
+License-File:	debian/copyright
+Author:         Jeremy Shaw
+Maintainer:	Jeremy Shaw <jeremy@n-heptane.com>
+Homepage:       http://www.n-heptane.com/nhlab/repos/haskell-agi
+Build-Depends:  base, parsec, mtl
+Exposed-modules:
+	Network.AGI 
+Extra-Source-Files:
+	debian/changelog  debian/compat  debian/control  debian/copyright  
+ 	debian/haskell-agi-doc.docs  debian/rules
+	examples/guessinggame/GuessingGame.hs
+	examples/guessinggame/sounds/guessing-game-correct.gsm
+	examples/guessinggame/sounds/guessing-game-intro.gsm
+	examples/guessinggame/sounds/guessing-game-yay.gsm
+	examples/guessinggame/sounds/guessing-game-higher.gsm
+	examples/guessinggame/sounds/guessing-game-lower.gsm
+	tests/Main.hs
+
+-- For more complex build options see:
+-- http://www.haskell.org/ghc/docs/latest/html/Cabal/

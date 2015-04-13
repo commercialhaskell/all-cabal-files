@@ -1,0 +1,22 @@
+Name:               lbfgs
+Version:            0.0.3
+License:            OtherLicense
+License-File:       LICENSE
+Copyright:          Daniël de Kok
+Maintainer:         Daniël de Kok <me@danieldk.eu>
+Author:             Daniël de Kok <me@danieldk.eu>
+Category:           Numeric
+Synopsis:           L-BFGS optimization
+Description:        Limited memory BFGS solver for non-linear optimization
+                    problems.
+Build-Type:         Simple
+Cabal-Version:      >= 1.4
+Extra-Source-Files: cbits/arithmetic_ansi.h cbits/arithmetic_sse_double.h
+                    cbits/arithmetic_sse_float.h cbits/lbfgs.h 
+
+Library
+  Build-Depends:        base >= 4 && < 5, array >= 0.3.0.0
+  Exposed-modules:      Numeric.LBFGS.Raw, Numeric.LBFGS
+  C-Sources:            cbits/lbfgs.c
+  Include-Dirs:         cbits
+  Includes:             lbfgs.h, arithmetic_ansi.h

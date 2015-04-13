@@ -1,0 +1,35 @@
+name:          containers-unicode-symbols
+version:       0.2.0.1
+cabal-version: >=1.6
+build-type:    Simple
+stability:     provisional
+author:        Roel van Dijk <vandijk.roel@gmail.com>
+maintainer:    Roel van Dijk <vandijk.roel@gmail.com>
+copyright:     (c) 2009–2010 Roel van Dijk <vandijk.roel@gmail.com>
+license:       BSD3
+license-file:  LICENSE
+category:
+homepage:      http://haskell.org/haskellwiki/Unicode-symbols
+synopsis:      Unicode alternatives for common functions and operators
+description:
+  This package defines new symbols for a number of functions and
+  operators in the containers package.
+  .
+  All symbols are documented with their actual definition and
+  information regarding their Unicode code point. They should be
+  completely interchangeable with their definitions.
+
+source-repository head
+  type:     darcs
+  location: http://code.haskell.org/~roelvandijk/code/containers-unicode-symbols
+
+library
+  exposed-modules: Data.IntMap.Unicode
+                 , Data.IntSet.Unicode
+                 , Data.Map.Unicode
+                 , Data.Sequence.Unicode
+                 , Data.Set.Unicode
+  build-depends: base                 >= 3.0.3.1 && < 4.3
+               , base-unicode-symbols >= 0.1.1   && < 0.2
+               , containers                         < 0.4
+  ghc-options: -Wall

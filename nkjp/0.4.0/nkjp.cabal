@@ -1,0 +1,51 @@
+name:               nkjp
+version:            0.4.0
+synopsis:           Manipulating the National Corpus of Polish (NKJP)
+description:
+    The library provides parsing and printing utilities for the
+    National Corpus of Polish (NKJP).
+license:            BSD3
+license-file:       LICENSE
+cabal-version:      >= 1.6
+copyright:          Copyright (c) 2012 IPI PAN
+author:             Jakub Waszczuk
+maintainer:         waszczuk.kuba@gmail.com
+stability:          experimental
+category:           Natural Language Processing
+homepage:           https://github.com/kawu/nkjp
+build-type:         Simple
+
+library
+    build-depends:
+        base >= 4 && < 5
+      , containers
+      , text
+      , polysoup
+      , bytestring
+      , zlib
+      , tar >= 0.4 && < 0.5
+      , filepath
+      , data-named >= 0.5.1 && < 0.6
+
+    exposed-modules:
+        Text.NKJP.Morphosyntax
+      , Text.NKJP.Named
+
+    other-modules:
+        Text.NKJP.Tar
+
+    ghc-options: -Wall
+
+source-repository head
+    type: git
+    location: git://github.com/kawu/nkjp.git
+
+executable named2enamex
+  hs-source-dirs: ., tools
+  main-is: named2enamex.hs
+  ghc-options: -Wall -O2
+
+executable nkjp2text
+  hs-source-dirs: ., tools
+  main-is: nkjp2text.hs
+  ghc-options: -Wall -O2

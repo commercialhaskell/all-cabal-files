@@ -1,0 +1,38 @@
+name:                domplate
+version:             0.1
+synopsis:            A simple templating library using HTML5 as its template
+                     language.
+description:         Add replacement, insertion, conditional and loop
+                     attributes to your HTML tags, then perform the
+                     corresponding substitutions directly on your HTML using
+                     a context built using standard JSON tools or parsed from
+                     a standard YAML file.
+homepage:            https://github.com/valderman/domplate
+license:             BSD3
+license-file:        LICENSE
+author:              Anton Ekblad
+maintainer:          anton@ekblad.cc
+-- copyright:           
+category:            Web, Text
+build-type:          Simple
+cabal-version:       >=1.10
+
+library
+  exposed-modules:
+    Text.Domplate
+  other-modules:
+    Text.Domplate.Context,
+    Text.Domplate.Replace
+  other-extensions:
+    OverloadedStrings
+  build-depends:
+    base >=4.5 && <4.8,
+    text >=1.1,
+    yaml >=0.8,
+    containers >=0.5,
+    unordered-containers >=0.2,
+    bytestring >=0.10,
+    tagsoup >=0.13,
+    vector >=0.10
+  default-language:
+    Haskell2010

@@ -1,0 +1,55 @@
+Name:                sized-types
+Version:             0.1
+Synopsis:            Sized types in Haskell.
+Description:         Providing indices, matrixes, sparse matrixes, and signed and unsigned bit vectors.
+Category:            Language
+License:             BSD3
+License-file:        LICENSE
+Author:              Andy Gill, Tristan Bull
+Maintainer:          Andy Gill <andygill@ku.edu>
+Copyright:           (c) 2009 The University of Kansas
+Homepage:            http://ittc.ku.edu/~andygill/sized-types.php
+Stability:	     alpha
+build-type: 	     Simple
+Cabal-Version:       >= 1.6
+
+Flag devel
+  Description: Enable full development tree
+  Default:     False
+
+Library
+  Build-Depends: base >= 4 && < 5, containers, array
+  Exposed-modules:
+       Data.Sized.Arith,
+       Data.Sized.Ix,
+       Data.Sized.Matrix,
+       Data.Sized.Sparse.Matrix,
+       Data.Sized.Signed,
+       Data.Sized.Unsigned
+  Ghc-Options:  -Wall
+
+Executable sized-types-test1
+    if flag(devel)
+      Build-Depends: base, QuickCheck >= 2.0
+      buildable: True
+      Other-modules:
+        Data.Sized.QC.Ix,
+        Data.Sized.QC.Matrix,
+        Data.Sized.QC.Signed
+    else
+      Build-depends: base
+      buildable: False
+    Main-Is:        Test1.hs
+    Hs-Source-Dirs: ., test
+    Ghc-Options: -Wall
+
+Executable sized-types-example1
+    if flag(devel)
+      Build-Depends: base
+      buildable: True
+    else
+      Build-depends: base
+      buildable: False
+    Main-Is:        Example1.hs
+    Hs-Source-Dirs: ., test
+    Ghc-Options: -Wall

@@ -1,0 +1,35 @@
+Name:               delimited-text
+Version:            0.2.1
+Synopsis:           Parse character delimited textual data
+Description:        Parse character delimited textual data
+License:            BSD3
+License-File:       LICENSE
+Category:           Data
+Copyright:          Copyright (c) Stefan Kersten 2008-2010
+Author:             Stefan Kersten <sk@xdv.org>
+Maintainer:         Stefan Kersten <sk@xdv.org>
+Stability:          provisional
+Homepage:           http://space.k-hornz.de/software/delimited-text
+Bug-Reports:        https://github.com/kaoskorobase/delimited-text/issues
+Tested-With:        GHC == 6.10, GHC == 6.12
+Build-Type:         Simple
+Cabal-Version:      >= 1.6
+
+Extra-Source-Files: ChangeLog.md
+                    examples/data.dlm
+                    examples/data.csv
+                    examples/test.hs
+
+Library
+  Exposed-Modules:  Text.Delimited
+  Other-Modules:    Text.Delimited.ByteString.Lazy
+                    Text.Delimited.Put
+                    Text.Delimited.Types
+                    
+  Build-Depends:    base >= 3 && < 5
+                  , binary >= 0.4
+                  , bytestring
+                  , attoparsec >= 0.7 && < 0.8
+                  , bytestring-show >= 0.2
+
+  Ghc-Options:      -W

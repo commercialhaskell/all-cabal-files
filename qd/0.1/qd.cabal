@@ -1,0 +1,28 @@
+Name:                 qd
+Version:              0.1
+Synopsis:             double-double and quad-double type via libqd
+Description:          This package supports both a double-double datatype (approx. 32 decimal digits)
+                      and a quad-double datatype (approx. 64 decimal digits), using libqd (which is
+                      implemented in C++ with C and Fortran wrappers).
+License:              BSD3
+License-file:         LICENSE
+Author:               Claude Heiland-Allen
+Maintainer:           claudiusmaximus@goto10.org
+Category:             Math
+Build-type:           Simple
+Cabal-version:        >=1.2
+Extra-source-files:   TODO
+
+Library
+  Build-depends:      base >= 4 && < 5
+  Extra-Libraries:    qd
+  Exposed-modules:    Numeric.QD
+                      Numeric.QD.Bits
+                      Numeric.QD.Bits.Raw
+                      Numeric.QD.DoubleDouble
+                      Numeric.QD.DoubleDouble.Raw
+                      Numeric.QD.FPU
+                      Numeric.QD.FPU.Raw
+                      Numeric.QD.QuadDouble
+                      Numeric.QD.QuadDouble.Raw
+                      Numeric.QD.Raw

@@ -1,0 +1,35 @@
+name:           syb
+version:        0.1.0.1
+x-revision: 1
+license:        BSD3
+license-file:   LICENSE
+maintainer:     libraries@haskell.org
+synopsis:       Scrap Your Boilerplate
+description:
+    This package contains the generics system described in the
+    /Scrap Your Boilerplate/ papers (see <http://www.cs.vu.nl/boilerplate/>).
+    It defines the @Data@ class of types permitting folding and unfolding
+    of constructor applications, instances of this class for primitive
+    types, and a variety of traversals.
+cabal-version:  >=1.2
+build-type: Simple
+
+Library {
+    build-depends: base < 4.4
+    Extensions: CPP, Rank2Types, ScopedTypeVariables
+    exposed-modules:
+            Data.Generics
+            Data.Generics.Aliases
+            Data.Generics.Basics
+            Data.Generics.Instances
+            Data.Generics.Schemes
+            Data.Generics.Text
+            Data.Generics.Twins
+    -- We need to set the package name to syb (without a version number)
+    -- as it's magic.
+    ghc-options: -package-name syb
+
+    if impl(ghc < 6.10) 
+       -- PatternSignatures was deprecated in 6.10
+       extensions: PatternSignatures
+}

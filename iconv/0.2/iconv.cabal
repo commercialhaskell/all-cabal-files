@@ -1,0 +1,24 @@
+Name:               iconv
+Version:            0.2
+License:            OtherLicense
+License-File:       COPYING
+Copyright:          Ian Lynagh, 2005
+Author:             Ian Lynagh
+Maintainer:         igloo@earth.li
+Stability:          experimental
+Homepage:           http://urchin.earth.li/~ian/cabal/iconv/
+Synopsis:           Perform character set conversion
+Description:
+    Provides an interface to the unix iconv functions for character
+    set conversion.
+    .
+    It makes use of some knowledge of glibc's iconv that isn't
+    guaranteed by the standard.
+Category:           Text
+Tested-with:        GHC==6.6
+Build-depends:      base
+Extensions:         EmptyDataDecls, ForeignFunctionInterface
+Extra-source-files: BSD3, GPL-2, Changelog
+Exposed-modules:
+    Text.Iconv
+

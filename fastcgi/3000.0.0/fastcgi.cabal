@@ -1,0 +1,17 @@
+Name: fastcgi
+Version: 3000.0.0
+Copyright: Bjorn Bringert
+Maintainer: bjorn@bringert.net
+Author: Bjorn Bringert
+Homepage: http://www.cs.chalmers.se/~bringert/darcs/haskell-fastcgi/doc/
+License: BSD3
+build-depends: base>=2.0, cgi >= 3000.0.0
+Extensions: ForeignFunctionInterface
+Synopsis: A Haskell library for writing FastCGI programs
+Description:
+ This library lets you write FastCGI programs. This package reuses the
+ cgi package API, making it very easy to port CGI programs to FastCGI.
+Exposed-Modules: 
+   Network.FastCGI
+ghc-options: -O2
+extra-libraries: fcgi

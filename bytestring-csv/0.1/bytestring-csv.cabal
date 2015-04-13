@@ -1,0 +1,29 @@
+Name:                bytestring-csv
+Version:             0.1
+Synopsis:            Parse CSV formatted data efficiently
+Description:         Parse CSV formatted data efficiently
+License:             BSD3
+License-file:        LICENSE
+Category:            Data
+Copyright:           Copyright (c) Don Stewart 2008
+Author:              Don Stewart
+Maintainer:          dons@galois.com
+Stability:           provisional
+Homepage:            http://code.haskell.org/~dons/code/bytestring-csv
+Tested-With:         GHC ==6.8.2
+Build-Type:          Simple
+Cabal-Version:       >= 1.2
+
+flag small_base
+    description: Choose the new smaller, split-up base package.
+
+library
+  exposed-modules:   Text.CSV.ByteString,
+                     Text.CSV.ByteString.Lex
+
+  if flag(small_base)
+      build-depends:     base >= 3, bytestring, array
+  else
+      build-depends: base < 3
+
+  ghc-options:       -O2 -funbox-strict-fields 

@@ -1,0 +1,35 @@
+Cabal-Version:      >= 1.6
+Name:               SDL-mixer
+Version:            0.6.0
+Maintainer:         Lemmih (lemmih@gmail.com)
+Author:             Lemmih (lemmih@gmail.com)
+Copyright:          2004-2010, Lemmih
+License-File:       LICENSE
+License:            BSD3
+Build-Type:         Custom
+Category:           Foreign binding
+Synopsis:           Binding to libSDL_mixer
+Extra-Source-Files: SDL-mixer.buildinfo.in, configure, config.mk.in, includes/HsSDLConfig.h.in
+Data-Files:         TODO, README, MACOSX
+
+Library
+  Build-Depends:    base >= 3 && < 5, SDL
+  GHC-Options:      -Wall
+  Extensions:       ForeignFunctionInterface, EmptyDataDecls
+  Exposed-Modules:
+    Graphics.UI.SDL.Mixer.General,
+    Graphics.UI.SDL.Mixer.Samples,
+    Graphics.UI.SDL.Mixer.Channels,
+    Graphics.UI.SDL.Mixer.Music,
+    Graphics.UI.SDL.Mixer.Types,
+    Graphics.UI.SDL.Mixer.Version,
+    Graphics.UI.SDL.Mixer
+  c-sources:        cbits/macros.c
+  include-dirs:     cbits
+  includes:         macros.h
+  install-includes: macros.h
+  Includes:         SDL.h SDL_mixer.h
+
+source-repository head
+    type:     darcs
+    location: http://mirror.seize.it/hsSDL/hssdl-mixer/

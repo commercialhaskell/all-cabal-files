@@ -1,0 +1,42 @@
+Name:                twentefp
+Version:             0.4.2
+Synopsis:            Lab Assignments Environment at Univeriteit Twente
+Description:         Lab Assignments Environment at Univeriteit Twente
+License:             BSD3
+License-file:        LICENSE
+Author:              Christiaan Baaij
+Maintainer:          christiaan.baaij@gmail.com
+Category:            Education
+Build-type:          Simple
+Cabal-version:       >=1.6
+
+Extra-Source-Files:  README,
+                     examples/CreateGraph.hs,
+                     examples/Graphics.hs,
+                     examples/Prac6.hs,
+                     examples/RBgraphics.hs,
+                     examples/RBrun.hs,
+                     examples/RoseTree.hs
+
+Library
+  Exposed-modules:     FPPrac
+                       FPPrac.Prelude
+                       FPPrac.Graphics
+                       FPPrac.Events
+
+  HS-Source-Dirs:      src
+
+  ghc-options:         -Wall -fwarn-tabs
+
+  Build-depends:       base >= 4 && < 5,
+                       gloss >= 1.7.5.2,
+                       time > 1.2,
+                       parsec > 3
+
+  Other-modules:       FPPrac.Prelude.Number
+                       FPPrac.GUI.Panel
+                       FPPrac.GUI.Prompt
+
+source-repository head
+  type:     git
+  location: git://github.com/christiaanb/fpprac.git

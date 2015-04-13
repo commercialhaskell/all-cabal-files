@@ -1,0 +1,29 @@
+Name:           PropLogic
+Version:        0.9
+Cabal-Version:  >= 1.2
+Build-type:     Simple
+License:        BSD3
+-- License:        PublicDomain
+-- License-file:   LICENSE.txt
+Author:         bucephalus
+Maintainer:     b@bucephalus.org
+Stability:      experimental
+Homepage:       http://www.bucephalus.org/PropLogic
+Bug-reports:    http://www-bucephalus-org.blogspot.com/PropLogic-bugs
+-- Package-url:    http://www.bucephalus.org/....
+Category:       Logic, Algorithms
+Synopsis:       A system for propositional logic with default and fast instances of propositional algebras.
+-- Description:    ....
+
+Library
+  exposed-modules:
+    PropLogic, Olist, PropLogicCore, DefaultPropLogic, FastPropLogic, PropLogicTest, Main
+  other-modules:
+    TextDisplay, Costack
+  build-depends:
+    base < 5, haskell98
+  extensions:
+    TypeSynonymInstances, FlexibleInstances, MultiParamTypeClasses
+
+Executable program
+  Main-Is: Main.hs

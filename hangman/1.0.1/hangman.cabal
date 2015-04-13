@@ -1,0 +1,47 @@
+Name:                hangman
+Version:             1.0.1
+
+Synopsis:            Hangman implementation in Haskell written in two hours.
+Description:
+  A command line implementation of the classic hangman game.
+  I wrote this when I was desperately bored during exam revision period
+  in a couple of hours.
+  
+  Hopefully you will find the implementation to be of use. It sort of began as
+  an assessment of the Haskell development experience, but I plan to continue
+  to maintain and extend the implementation to demonstrate how to apply good
+  software development practises to Haskell code.
+
+License:             MIT
+License-file:        LICENSE
+Author:              Hok Shun Poon <hok@hokshunpoon.me>
+Maintainer:          Hok Shun Poon <hok@hokshunpoon.me>
+Copyright:           (c) 2012 Hok Shun Poon
+Category:            Game
+Build-type:          Simple
+Cabal-version:       >=1.6
+
+Source-Repository head
+  type:     git
+  location: https://github.com/fushunpoon/haskell-hangman
+
+-- Extra files to be distributed with the package, such as examples or
+-- a README.
+-- Extra-source-files:  
+
+
+Executable hangman
+  -- Specify the source directory here
+  Hs-source-dirs:      src
+
+  -- .hs or .lhs file containing the Main module.
+  Main-is:             Main.hs
+  
+  -- Packages needed in order to build this package.
+  Build-depends:       base >= 2 && < 5, mtl, random, utility-ht
+  
+  -- Modules not exported by this package.
+  -- Other-modules:       
+  
+  -- Extra tools (e.g. alex, hsc2hs, ...) needed to build the source.
+  -- Build-tools:         

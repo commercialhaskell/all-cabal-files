@@ -1,0 +1,35 @@
+Name:                HAppS-IxSet
+Version:             0.9.3
+Description:         Web framework
+License:             BSD3
+Copyright:           2007 HAppS LLC
+Author:              Alex Jacobson, Einar Karttunen
+Maintainer:          AlexJacobson@HAppS.org
+Category:            Web, Distributed Computing
+Build-Type:          Simple
+Cabal-version:       >=1.2
+
+flag base4
+
+Library
+  if flag(base4)
+    Build-Depends:     base >=4 && < 5, syb
+  else
+    Build-Depends:     base < 4
+  Build-Depends:       base, mtl, hslogger >= 1.0.2, HAppS-Util >=0.9.3,
+                       HAppS-State >=0.9.3, HAppS-Data >=0.9.3, template-haskell,
+                       syb-with-class, containers
+  hs-source-dirs:      src
+  Exposed-modules:     
+                       HAppS.Data.IxSet
+                       HAppS.Data.IxSet.Ix
+                       HAppS.Data.IxSet.Usage
+  extensions:          CPP, ForeignFunctionInterface,
+                       OverlappingInstances, UndecidableInstances,
+                       RecursiveDo,
+                       RankNTypes, FlexibleInstances,
+                       TypeSynonymInstances
+  -- Should have ", DeriveDataTypeable", but Cabal complains
+  cpp-options:         -DUNIX
+  ghc-options:         -Wall -fno-warn-incomplete-patterns
+  GHC-Prof-Options:    -auto-all

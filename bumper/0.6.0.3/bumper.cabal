@@ -1,0 +1,42 @@
+name:                bumper
+version:             0.6.0.3
+synopsis:            Automatically bump package versions, also transitively.
+description:         Automatically bump package versions, also transitively.
+                     .
+                     Readme: <https://www.github.com/silkapp/bumper/blob/master/README.md>
+author:              Silk
+copyright:           (c) 2012, Silk
+maintainer:          code@silk.co
+homepage:            http://github.com/silkapp/bumper
+category:            Development
+license:             BSD3
+license-file:        LICENSE
+cabal-version:       >= 1.6
+build-type:          Simple
+
+extra-source-files:
+  CHANGELOG.md
+  LICENSE
+  README.md
+
+source-repository head
+  type:              git
+  location:          https://github.com/silkapp/bumper.git
+
+executable bumper
+  ghc-options:       -Wall
+  hs-source-dirs:    src
+  main-is:           Bumper.hs
+  other-modules:
+    Config
+    Package
+    Version
+  build-depends:
+      base == 4.*
+    , Cabal >= 1.6 && < 1.23
+    , containers >= 0.4 && < 0.6
+    , fclabels >= 1.0 && < 2.1
+    , process >= 1.0 && < 1.3
+    , regex-compat >= 0.93 && < 0.96
+    , split >= 0.1 && < 0.3
+    , strict == 0.3.2

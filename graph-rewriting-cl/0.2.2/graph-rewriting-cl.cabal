@@ -1,0 +1,34 @@
+Name:           graph-rewriting-cl
+Version:        0.2.2
+Copyright:      (c) 2010, Jan Rochel
+License:        BSD3
+License-File:   LICENSE
+Author:         Jan Rochel
+Maintainer:     jan@rochel.info
+Homepage:       http://rochel.info/#graph-rewriting
+Stability:      beta
+Build-Type:     Simple
+Synopsis:       Interactive graph rewriting system implementing various well-known combinators
+Description:    Currently the following combinators are supported: S K I B C S' B' C' W
+Category:       Graphs, Application
+Cabal-Version:  >= 1.6
+Data-Files:     examples/*.cl examples/combinator_birds/*.ski
+
+Executable cl
+  Main-Is:        Main.hs
+  Build-Depends:
+    base >= 4 && < 4.4,
+    base-unicode-symbols >= 0.2 && < 0.3,
+    graph-rewriting >= 0.4.4 && < 0.6,
+    graph-rewriting-layout >= 0.4.1 && < 0.5,
+    graph-rewriting-gl >= 0.6 && < 0.7,
+    parsec >= 2.1 && < 2.2,
+    GLUT >= 2.2 && < 2.3,
+    OpenGL >= 2.4 && < 2.5
+  Extensions:
+    UnicodeSyntax
+    FlexibleInstances
+    FlexibleContexts
+    MultiParamTypeClasses
+  GHC-Options:    -fno-warn-duplicate-exports
+  Other-Modules:  GL Graph Rules Term

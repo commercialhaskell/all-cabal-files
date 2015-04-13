@@ -1,0 +1,38 @@
+Name:                monadbi
+Version:             0.1
+Description:         This module provides a Class called @MonadBi@ which acts as a superset
+                     of @MonadTrans@, and provides @raise@ analogous to @lift@,
+                     i.e. lifts underlying monads into the transformer. It also provides
+                     @lower@ which is the opposite of @lift@, and extracts underlying monads from monad transformers.
+
+                     Generally speaking, MonadBi represents the relationship between monads that can be transformed into each other (atleast partially).
+
+                     Natural instances are provided for many Monad Transformers.
+
+Synopsis:            Extract underlying monads from monad transformers
+Homepage:            https://github.com/ajnsit/monadbi
+License:             GPL
+License-file:         LICENSE
+Author:              Anupam Jain
+Maintainer:          ajnsit@gmail.com
+Build-Type:          Simple
+Cabal-Version:       >=1.6
+stability:           Experimental
+Category:            Control
+Extra-source-files:   README
+
+source-repository head
+  type:     git
+  location: http://github.com/ajnsit/monadbi
+
+source-repository this
+  type:     git
+  location: http://github.com/ajnsit/monadbi/tree/v0.1
+  tag:      v0.1
+
+Library
+  hs-source-dirs:    src
+  Build-Depends:     base >= 3 && < 5
+               ,     mtl
+  exposed-modules:   Control.Monad.Bi
+

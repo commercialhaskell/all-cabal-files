@@ -1,0 +1,36 @@
+Name:                hsfcsh
+Version:             0.0.1
+Synopsis:            Incremental builder for flash
+Description:         It is a wrapper around fcsh. It allows to build flash/flex project incrementally. Can be used from Makefile
+Homepage:            https://github.com/Yuras/hsfcsh
+License:             BSD3
+License-file:        LICENSE
+Author:              Yuras Shumovich
+Maintainer:          shumovichy@gmail.com
+Category:            Development
+Build-type:          Simple
+Extra-source-files:
+                     README,
+                     example/Main.as,
+                     example/Makefile
+Cabal-version:       >=1.6
+Executable hsfcsh
+  Main-is:           hsfcsh.hs
+  Build-depends:
+                     base == 4.*,
+                     hslogger == 1.1.*,
+                     hdaemonize == 0.4.*,
+                     process == 1.*,
+                     network == 2.*
+Executable hsfcsh_do
+  Main-is:           hsfcsh_do.hs
+  Build-depends:
+                     base < 5,
+                     hslogger,
+                     hdaemonize,
+                     process,
+                     network
+
+Source-repository head
+  Type:              git
+  Location:          git@github.com:Yuras/hsfcsh.git

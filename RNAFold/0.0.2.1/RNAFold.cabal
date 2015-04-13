@@ -1,0 +1,64 @@
+name:           RNAFold
+version:        0.0.2.1
+author:         Christian Hoener zu Siederdissen (Haskell), Ivo L. Hofacker et al (ViennaRNA)
+maintainer:     choener@tbi.univie.ac.at
+copyright:      Christian Hoener zu Siederdissen, 2010
+category:       Bioinformatics
+synopsis:       RNA secondary structure prediction
+license:        GPL-3
+license-file:   LICENSE
+build-type:     Simple
+stability:      experimental
+cabal-version:  >= 1.4.0
+description:
+                Provides the folding functions as used in the ViennaRNA
+                package. Here, they are in Haskell form to be used by Haskell
+                programs.
+                .
+                - This is a release aimed at testing Data.Vector
+                - Expect major performance issues with GHC < 6.13!
+
+library
+  build-depends:
+    base >=4 && <5,
+    containers,
+    vector >=0.7,
+    primitive >=0.3,
+
+    Biobase >=0.0.2,
+    BiobaseTurner >=0.0.2,
+    BiobaseVienna >=0.0.2,
+    BiobaseTypes >=0.0.2,
+    HsTools >=0.0.1.1,
+    PrimitiveArray >=0.0.2 && <0.0.3
+
+  exposed-modules:
+    BioInf.RNAFold,
+    BioInf.RNAFold.Energy,
+    BioInf.RNAFold.EnergyInt,
+    BioInf.RNAEval,
+    BioInf.RNAFold.Functions
+
+  if impl(ghc > 6.13)
+    ghc-options:
+      -Odph
+      -fllvm
+      -fforce-recomp
+      -funbox-strict-fields
+      -fllvm
+      -optlo-O3
+      -optlc-O3
+      -fdicts-cheap
+      -fspec-constr
+      -funbox-strict-fields
+      -funfolding-use-threshold=100
+      -funfolding-creation-threshold=100
+  else
+    ghc-options:-Odph
+
+--    -fno-method-sharing -- performance does not improve!
+--    -fdicts-cheap
+--    -fspec-constr
+--    -funbox-strict-fields
+--    -funfolding-use-threshold=100
+--    -funfolding-creation-threshold=100

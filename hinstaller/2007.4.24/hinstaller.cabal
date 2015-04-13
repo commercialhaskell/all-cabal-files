@@ -1,0 +1,28 @@
+name: hinstaller
+version: 2007.4.24
+stability: Alpha
+copyright: Matthew Sackman
+category: System
+maintainer: matthew@wellquite.org
+author: Matthew Sackman
+homepage: http://www.wellquite.org/hinstaller/
+license: LGPL
+license-file: LICENSE
+build-depends: base, template-haskell, filepath, Cabal
+synopsis: Installer wrapper for Haskell applications
+description:
+  This module allows you to incorporate arbitrary files into a haskell module
+  during compilation. The files are then available to you through functions
+  which allows you to write installer-type applications which write out the
+  files when run. Thus this can be considered in the same model as Java .jar
+  files or executable zip or other file archives.
+  .
+  The current implementation is now reasonably efficient. However, it does
+  require that you have a C compiler installed which can be invoked through
+  @cc@.
+exposed-modules: System.Installer
+other-modules: System.Installer.TH, System.Installer.Foreign
+ghc-options: -O2 -Wall -fno-warn-name-shadowing
+hs-source-dirs: src, examples
+extra-source-files: examples/Example01.hs, examples/file01.txt, examples/file02.txt
+

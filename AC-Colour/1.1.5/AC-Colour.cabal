@@ -1,0 +1,30 @@
+Cabal-Version: >= 1.6
+Name:          AC-Colour
+Version:       1.1.5
+Stability:     Experimental
+Synopsis:      Efficient RGB colour types.
+
+Description:
+
+  This Haskell library is a basic RGB colour types, with
+  both @Double@ and @Word8@ channel types. It implements
+  efficient conversions between the two (GHC-specific),
+  and general arithmetic over colours.
+
+Category:      Data, Math, Numerical, Graphics
+License:       BSD3
+License-file:  License.txt
+Author:        Andrew Coppin
+Maintainer:    MathematicalOrchid@hotmail.com
+Build-Type:    Simple
+Tested-With:   GHC == 7.0.2
+
+Library
+  Exposed-modules:
+    Data.Colour.Double
+    Data.Colour.Map
+    Data.Colour.Word8
+    Data.Colour.Nonlinear
+    Data.Colour
+  Build-Depends:   base >= 4 && < 5
+  HS-Source-Dirs:  .

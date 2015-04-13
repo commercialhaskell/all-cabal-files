@@ -1,0 +1,21 @@
+name:               utf8-light
+version:            0.4
+cabal-version:      >= 1.5
+build-type:         Simple
+license:            BSD3
+license-file:       LICENSE
+category:           Codec
+author:             Matt Morrow
+copyright:          Matt Morrow
+maintainer:         Matt Morrow <mjm2002@gmail.com>
+stability:          experimental
+synopsis:           Unicode
+description:        Lightweight UTF8 handling.
+
+library
+  build-depends:      base, ghc-prim, bytestring
+  ghc-options:        -O2 -fglasgow-exts -fvia-C -optc-O3
+  extensions:         CPP
+  hs-source-dirs:     src
+  exposed-modules:    Codec.Binary.UTF8.Light
+

@@ -1,0 +1,56 @@
+name:                mongodb-queue
+version:             0.3
+synopsis:            message queue using MongoDB
+description:         simple messaging queue using MongoDB. Designed to be worse than real queueing infrastructure but easy to start using if you are already running MongoDB. Rather than polling it Uses tailable cursors, which should actually make this fairly efficient. However, tailable cursors have a bug that makes them use a large amount of CPU when the system is idle.
+homepage:            https://github.com/docmunch/haskell-mongodb-queue
+license:             MIT
+author:              Daggerboard Inc. Greg Weber
+maintainer:          Greg Weber <greg@gregweber.info>
+copyright:           Daggerboard Inc. makers of docmunch.com
+category:            Database
+build-type:          Simple
+cabal-version:       >=1.8
+
+library
+  ghc-options:   -Wall
+  exposed-modules:     
+    Database.MongoDB.Queue
+
+  extensions:
+    OverloadedStrings
+
+  -- other-modules:       
+  build-depends:
+      base > 4.5 && < 5
+    , lifted-base
+    , mongoDB >= 1.4.1.1 && < 1.5
+    , transformers
+    , monad-control
+    , text
+    , network
+    , data-default
+
+test-suite test
+  type: exitcode-stdio-1.0
+  main-is: main.hs
+  hs-source-dirs: test, .
+
+  extensions:
+    OverloadedStrings
+
+  build-depends:
+      base > 4.5 && < 5
+    , lifted-base
+    , mongoDB >= 1.4.1.1 && < 1.5
+    , transformers
+    , monad-control
+    , text
+    , network
+    , hspec
+    , data-default
+
+
+
+source-repository head
+  type: git
+  location: git://github.com/docmunch/haskell-mongodb-queue.git

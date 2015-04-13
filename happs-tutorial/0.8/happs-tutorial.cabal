@@ -1,0 +1,56 @@
+Name:                happs-tutorial
+Version:             0.8
+Synopsis:            A Happstack Tutorial that is its own web 2.0-type demo. 
+Description:         A nice way to learn how to build web sites with Happstack
+
+License:             BSD3
+License-file:        LICENSE
+Author:              Thomas Hartman, Eelco Lempsink, Creighton Hogg
+
+Maintainer:          Creighton Hogg <wchogg at gmail.com>
+Copyright:           2008 Thomas Hartman, 2009 Thomas Hartman & Creighton Hogg
+
+Stability:           Experimental
+Category:            Web
+Build-type:          Simple
+
+Extra-Source-Files:
+    recompile-and-kill-head.sh
+    hackInGhci.sh
+    static/*.png
+    static/*.css
+    templates/*.st
+    src/*.hs
+    src/migrationexample/*.hs
+    src/migrationexample/*.lhs
+    src/migrationexample/StateVersions/*.hs
+    src/migrationexample/README
+
+Cabal-Version:       >= 1.6
+
+Flag base4
+    Description: Choose the even newer, even smaller, split-up base package.
+
+Executable happs-tutorial
+    Main-is:             Main.hs
+    hs-source-dirs:
+        src
+    Other-Modules:
+        StateVersions.AppState1
+        ControllerBasic
+        ControllerGetActions
+        Controller
+        ControllerMisc
+        ControllerPostActions
+        FromDataInstances
+        Misc
+        MiscMap
+        ControllerStressTests
+        View
+    ghc-options: -Wall
+    Build-Depends:   base, HStringTemplate, HStringTemplateHelpers, mtl, bytestring,
+                     happstack-server, happstack-data, happstack-state,
+                     containers, pretty, pureMD5, directory, filepath, hscolour, HTTP, safe,
+                     old-time, parsec, happstack-helpers, DebugTraceHelpers
+    if flag(base4)
+      Build-Depends: base >=4 && <5, syb

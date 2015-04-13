@@ -1,0 +1,20 @@
+Cabal-Version:      >= 1.2
+Build-Type:         Simple
+Name:               termination-combinators
+Version:            0.1
+Maintainer:         Max Bolingbroke <batterseapower@hotmail.com>
+Homepage:           http://www.github.com/batterseapower/termination-combinators
+License:            BSD3
+License-File:       LICENSE
+Author:             Max Bolingbroke
+Synopsis:           Termination combinators for forcing non-terminating algorithms to terminate
+Category:           Language
+Description:        For more information see the paper at http://www.cl.cam.ac.uk/~mb566/papers/termination-combinators-hs11.pdf
+
+Library
+    Exposed-Modules: Control.Termination
+    Build-Depends:   base >= 4 && < 5,
+                     containers >= 0.4 && < 0.5,
+                     contravariant >= 0.1.2 && < 0.2
+
+    Ghc-Options:    -fwarn-unused-binds -fwarn-unused-imports -fwarn-unused-matches

@@ -1,0 +1,21 @@
+Name: hesql
+Version: 0.7
+Author: Christoph Bauer <ich@christoph-bauer.net>
+Maintainer: Christoph Bauer <ich@christoph-bauer.net>
+Cabal-Version: >= 1.2
+Build-Type: Simple
+Synopsis: Haskell's embedded SQL
+Category: Database
+Extra-Source-Files: README, Makefile, Setup.hs, example/Account.hesql
+Description: hesql rewrites SQL-function to Haskell/HDBC-functions
+license: GPL
+license-file: GPL
+
+Executable hesql
+  Main-is: HESQL.hs
+  Build-depends: base >= 4 && < 5, HDBC, HDBC-postgresql, haskell-src,
+                 filepath, parsec, hssqlppp >= 0.0.10
+  Extensions: FlexibleContexts
+  Ghc-Options: -funbox-strict-fields -Wall
+  Other-Modules: HESQL.Parser, HESQL.Translator, HESQL.Syntax,
+                 HESQL.Verifier, HESQL.Options

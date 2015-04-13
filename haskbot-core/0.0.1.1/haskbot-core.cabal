@@ -1,0 +1,75 @@
+name:                 haskbot-core
+version:              0.0.1.1
+maintainer:           Jonathan Childress <jon@childr.es>
+homepage:             https://github.com/jonplussed/haskbot-core
+
+license:              MIT
+license-file:         LICENSE.txt
+copyright:            (c) 2014 Jonathan Childress
+
+synopsis:             Easily-extensible chatbot for Slack messaging service
+description:          Haskbot melds together the Slack /slash command/ and /incoming/ API
+                      integrations to create an easily-extensible platform for adding your own
+                      custom /slash commands/ with arbitrary responses to your team's Slack
+                      service.
+                      .
+                      Sure, Hubot exists, but when I desire custom chatbot functionality, I'd rather
+                      write nice, clean Haskell than clunky Javascript any day of the week.
+
+stability:            volatile
+category:             web
+build-type:           Simple
+extra-source-files:   README.md
+cabal-version:        >= 1.10
+
+source-repository     head
+  type:               git
+  location:           https://github.com/jonplussed/haskbot-core
+
+library
+  hs-source-dirs:     src
+  exposed-modules:    Network.Haskbot
+                      Network.Haskbot.Incoming
+                      Network.Haskbot.Internal.Environment
+                      Network.Haskbot.Internal.Incoming
+                      Network.Haskbot.Internal.Plugin
+                      Network.Haskbot.Internal.Server
+                      Network.Haskbot.Internal.SlashCommand
+                      Network.Haskbot.Plugin
+                      Network.Haskbot.Plugin.Help
+                      Network.Haskbot.SlashCommand
+                      Network.Haskbot.Types
+  default-language:   Haskell2010
+  other-extensions:   OverloadedStrings,
+                      RecordWildCards
+  build-depends:      aeson        == 0.6.*,
+                      base         == 4.6.*,
+                      bytestring   == 0.10.*,
+                      connection   == 0.2.*,
+                      http-conduit == 2.1.*,
+                      http-types   == 0.8.*,
+                      monads-tf    == 0.1.*,
+                      scotty       == 0.8.*,
+                      stm          == 2.4.*,
+                      text         == 0.11.*,
+                      time         == 1.4.*
+
+test-suite            spec
+  hs-source-dirs:     src, test
+  main-is:            Spec.hs
+  default-language:   Haskell2010
+  other-extensions:   OverloadedStrings,
+                      RecordWildCards
+  type:               exitcode-stdio-1.0
+  build-depends:      aeson        == 0.6.*,
+                      base         == 4.6.*,
+                      bytestring   == 0.10.*,
+                      connection   == 0.2.*,
+                      hspec        == 1.8.*,
+                      http-conduit == 2.1.*,
+                      http-types   == 0.8.*,
+                      monads-tf    == 0.1.*,
+                      scotty       == 0.8.*,
+                      stm          == 2.4.*,
+                      text         == 0.11.*,
+                      time         == 1.4.*

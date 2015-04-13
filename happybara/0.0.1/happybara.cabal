@@ -1,0 +1,55 @@
+name:                happybara
+version:             0.0.1
+homepage:            https://github.com/cstrahan/happybara
+license:             MIT
+license-file:        LICENSE
+author:              Charles Strahan
+maintainer:          charles.c.strahan@gmail.com
+copyright:           Copyright (c) 2014 Charles Strahan
+category:            Development
+build-type:          Simple
+cabal-version:       >=1.10
+synopsis:            Acceptance test framework for web applications
+description:
+  /About/
+  .
+  Happybara is an acceptance test framework inspired by the popular Ruby library
+  \"Capybara\". A short example of Happybara's expressive DSL:
+  .
+  >visit "http://happybara-is-awesome.com"
+  >within $ xpath "//form[@id='vote-for-happybara']" $ do
+  >   fillIn (fillableField "First Name" [ ]) "Bob"
+  >   fillIn (fillableField "Last Name"  [ ]) "Smith"
+  >
+  >   click $ button "Vote!" [ disabled False ]
+  .
+  /Learning Happybara/
+  .
+  I would suggest start with these resources (in order):
+  .
+  * <https://github.com/cstrahan/happybara/ The Happybara Readme>
+  .
+  * <http://hackage.haskell.org/package/happybara/docs/Happybara.html The Happybara Module docs>
+  .
+  Happy web testing!
+
+library
+  exposed-modules:     Happybara,
+                       Happybara.Driver,
+                       Happybara.Exceptions,
+                       Happybara.Monad,
+                       Happybara.Query,
+                       Happybara.XPath
+  build-depends:       base >=4.6 && <4.7,
+                       mtl,
+                       monad-control,
+                       lifted-base,
+                       transformers,
+                       transformers-base,
+                       time,
+                       text,
+                       http-types,
+                       filepath,
+                       aeson
+  hs-source-dirs:      src
+  default-language:    Haskell2010

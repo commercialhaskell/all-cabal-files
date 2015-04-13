@@ -1,0 +1,22 @@
+Name:		yjtools
+Version:	0.6
+Cabal-Version:	>= 1.2
+Build-Type:	Simple
+License:	LGPL
+License-file:	LICENSE
+Author:		Yoshikuni Jujo
+Maintainer:	Yoshikuni Jujo <PAF01143@nifty.ne.jp>
+Stability:	experimental
+Homepage:	http://homepage3.nifty.com/salamander/second/projects/yjtools/index.xhtml
+Package-Url:	http://code.haskell.org/yjtools/
+Synopsis:	some tools for Monad, List, Tuple and so on.
+Description:	ifM, whenM, unlessM, doWhile, doWhile_ and so on.
+Category:	Unclassified
+Tested-With:	GHC
+Data-Files:
+Extra-Source-Files:
+Extra-Tmp-Files:
+
+Library
+  Build-Depends:	base, process, directory, old-time, regexpr
+  Exposed-Modules:	Control.Monad.Tools, Control.Applicative.Tools, Data.List.Tools, Data.Function.Tools YJTools.Tribial System.Directory.Tools

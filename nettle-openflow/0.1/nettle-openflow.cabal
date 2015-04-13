@@ -1,0 +1,56 @@
+Name:           nettle-openflow
+Version:        0.1
+Synopsis:       High level configuration and control of computer networks.
+Cabal-Version:  >=1.2
+Build-Type:     Simple
+Stability:      Experimental
+Category:       Network
+License: 	BSD3
+License-file:   LICENSE
+Author: 	Andreas Voellmy, Ashish Agarwal, Sam Burnett, John Launchbury
+Maintainer: 	andreas.voellmy@yale.edu
+
+Description:
+  This module provides a logical representation of the messages of the OpenFlow
+  protocol (<http://www.openflowswitch.org>) and implements the binary formats 
+  for these messages. This module also provides TCP servers that accept connections
+  from switches and provide methods to receive messages from and send messages to
+  connected switches.
+  The library is under active development and should still be considered experimental.
+
+
+extra-source-files: src/Examples/SimpleImperativeIONetworkControl/NetLearningSwitch.hs 
+		    src/Examples/SimpleImperativeIONetworkControl/SimpleImperativeIONetworkControl.hs
+
+Library
+  hs-source-dirs:       src
+  cpp-options: "-DOPENFLOW_VERSION=1"
+  exposed-modules:
+    Nettle.Ethernet.EthernetAddress
+    Nettle.Ethernet.EthernetFrame
+    Nettle.IPv4.IPAddress 
+    Nettle.IPv4.IPPacket
+    Nettle.Servers.TCPServer
+    Nettle.Servers.MultiplexedTCPServer
+    Nettle.Servers.MessengerServer
+    Nettle.Servers.TwoWayChannel
+    Nettle.OpenFlow.Messages
+    Nettle.OpenFlow.Port
+    Nettle.OpenFlow.Action
+    Nettle.OpenFlow.Switch
+    Nettle.OpenFlow.Match
+    Nettle.OpenFlow.FlowTable
+    Nettle.OpenFlow.Packet
+    Nettle.OpenFlow.Statistics
+    Nettle.OpenFlow.Error
+    Nettle.OpenFlow.MessagesBinary
+
+  build-depends:
+    base >= 4 && < 5
+    , bytestring
+    , binary 
+    , mtl
+    , parsec
+    , network
+    , containers
+    , bimap 

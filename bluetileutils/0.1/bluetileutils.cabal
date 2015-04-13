@@ -1,0 +1,31 @@
+Name:                bluetileutils
+Version:             0.1
+synopsis:            Utilities for Bluetile
+category:            Utils
+License:             BSD3
+License-file:        LICENSE
+Author:              Jan Vornberger
+Maintainer:          jan.vornberger@informatik.uni-oldenburg.de
+extra-source-files:  Utils.hs
+data-files:          bluetiledock.glade, bluetilegreet.glade,
+                     floating.svg, tiled1.svg, tiled2.svg, fullscreen.svg
+Build-Type:          Simple
+Cabal-Version:       >=1.2
+
+Executable bluetiledock
+  Main-is:           BluetileDock.hs
+  Build-Depends:     base>=3, base<4, unix,
+                     glade>=0.9, gtk>=0.9, X11>=1.4
+  C-sources:         gdk_property_change_wrapper.c
+  Ghc-options:       -Wall
+
+Executable bluetilemockwin
+  Main-is:           BluetileMockWin.hs
+  Build-Depends:     base>=3, base<4, gtk>=0.9
+  Ghc-options:       -Wall
+
+Executable bluetilegreet
+  Main-is:           BluetileGreet.hs
+  Build-Depends:     base>=3, base<4, directory, filepath,
+                     glade>=0.9, gtk>=0.9
+  Ghc-options:       -Wall

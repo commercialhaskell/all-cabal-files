@@ -1,0 +1,38 @@
+name:            ecdsa
+version:         0.2
+cabal-version:   >= 1.8
+license:         OtherLicense
+license-file:    COPYING
+category:        Crypto
+copyright:       © 2014 Stephen Paul Weber
+author:          Stephen Paul Weber <singpolyma@singpolyma.net>
+maintainer:      Stephen Paul Weber <singpolyma@singpolyma.net>
+stability:       experimental
+tested-with:     GHC == 7.4.1
+synopsis:        Basic ECDSA signing implementation
+homepage:        https://github.com/singpolyma/ecdsa-haskell
+bug-reports:     https://github.com/singpolyma/ecdsa-haskell/issues
+build-type:      Simple
+description:
+        Wraps the stuff in hecc to do ECDSA.
+
+extra-source-files:
+        README
+
+library
+        exposed-modules:
+                ECDSA
+
+        other-modules:
+                ECDSA.Util
+
+        build-depends:
+                base == 4.*,
+                bytestring,
+                hecc,
+                crypto-pubkey-types,
+                crypto-api
+
+source-repository head
+        type:     git
+        location: git://github.com/singpolyma/hecc.git

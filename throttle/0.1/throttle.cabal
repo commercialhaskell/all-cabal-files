@@ -1,0 +1,25 @@
+Name:                throttle
+Version:             0.1
+Synopsis:            Throttle TCP/IPv4 connections to a given server.
+Description:         Sometimes you want to pretend you're on a
+                     very slow connection to see how your program
+                     deals with delays, this program does that.
+Homepage:            http://github.com/chrisdone/throttle
+License:             BSD3
+License-file:        LICENSE
+Author:              Chris Done <chrisdone@gmail.com>
+Maintainer:          Chris Done <chrisdone@gmail.com>
+Copyright:           Chris Done 2010
+Category:            Network
+Build-type:          Simple
+Extra-source-files:  README.md
+Cabal-version:       >=1.6
+
+Executable throttle
+  Main-is: Main.hs
+  Ghc-options: -Wall -O2
+  Hs-source-dirs: src/
+  Build-depends: base >= 4 && < 5
+                ,unix == 2.4.0.*
+                ,network == 2.2.1.*
+                ,cmdargs == 0.6.*

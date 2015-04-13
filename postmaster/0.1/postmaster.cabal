@@ -1,0 +1,26 @@
+Name:                   postmaster
+Version:                0.1
+Synopsis:               Postmaster ESMTP Server
+Description:            Postmaster implements an ESMTP server. Given a configuration,
+                        it starts up and listens for incoming SMTP connections, handles
+                        them, and pipes the accepted e-mail messages into an arbitrary
+                        local mailer of your choice. A good local mailer is Procmail.
+                        Beyond that, you can configure and modify every little step
+                        of the SMTP transaction. All the real work is done through
+                        call-back functions.
+Homepage:               http://postmaster.cryp.to/
+Category:               Network
+License:                GPL
+License-File:           COPYING
+Author:                 Peter Simons
+Maintainer:             Peter Simons <simons@cryp.to>
+Data-Files:             README
+Build-Type:             Simple
+
+Executable:             postmaster
+Main-Is:                tutorial.lhs
+GHC-Options:            -Wall -threaded
+Extra-Libraries:        adns crypto
+Build-Depends:          base, haskell98, directory, mtl, network, unix, parsec,
+                        containers, bytestring, old-time, hsyslog, hsdns, hsemail,
+                        hopenssl

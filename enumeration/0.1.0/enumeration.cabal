@@ -1,0 +1,60 @@
+Name:                   enumeration
+Category:               Data, Serialization, Test, Testing
+Version:                0.1.0
+License:                BSD3
+License-File:           LICENSE
+Author:                 Eric McCorkle
+Maintainer:             Eric McCorkle <emc2@metricspace.net>
+Stability:              Beta
+Synopsis:               A practical API for building recursive enumeration
+                        procedures and enumerating datatypes.
+Homepage:               https://github.com/emc2/enumeration
+Bug-Reports:            https://github.com/emc2/enumeration/issues
+Copyright:              Copyright (c) 2014 Eric McCorkle.  All rights reserved.
+Description:
+  A library providing tools for building enumeration procedures for recursively-
+  enumerable datatypes.  This is built atop the arith-encode library, and makes
+  use of the natural number isomorphisms it provides to represent individual
+  decisions in the enumeration procedure.  As such, each enumeration result is
+  denoted by a unique path, consisting of a sequence of natural numbers.  An
+  enumeration procedure is simply a (partial) mapping between sequences
+  and a given datatype.
+  .
+  The library provides functionality for constructing enumeration procedures,
+  as well as facilities for performing enumeration according to various search
+  strategies (depth-first, breadth-first, etc).  These procedures can also be
+  "warm-started" using a path or a set of paths.  Obvious applications include
+  exhaustive search, testing, automated proving, and others.
+  .
+  Additionally, as a path is simply a sequence of natural numbers, an
+  enumeration procedure can double as a binary serializer/deserializer.  For
+  well-behaved enumeration procedures (ie. those where the mapping is an
+  isomorphism), the resulting binary format should be very nearly succinct.
+  .
+  This is the first release candidate for 1.0 (initial release)
+Build-type:             Simple
+Cabal-version:          >= 1.16
+
+Source-Repository head
+  Type: git
+  Location: git@github.com:emc2/enumeration.git
+
+Test-Suite UnitTest
+  default-language:     Haskell2010
+  type:                 exitcode-stdio-1.0
+  Main-Is:              UnitTest.hs
+  hs-source-dirs:       src test
+  build-depends:        base >= 4.4.0 && < 5, Cabal >= 1.16.0, HUnit-Plus, arith-encode,
+                        containers, binary, arithmoi, heap
+  ghc-options:          -fhpc
+
+Library
+  default-language:     Haskell2010
+  hs-source-dirs:       src
+  build-depends:        base >= 4.4.0 && < 5, Cabal >= 1.16.0, containers, arith-encode,
+                        binary, arithmoi, heap
+  exposed-modules:      Data.Enumeration
+                        Data.Enumeration.Binary
+                        Data.Enumeration.Traversal
+  other-modules:
+                        Data.Enumeration.Traversal.Class

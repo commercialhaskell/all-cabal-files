@@ -1,0 +1,70 @@
+Name:                vhd
+Version:             0.2
+Synopsis:            Provides functions to inspect and manipulate virtual hard disk (VHD) files.
+Description:         Provides functions to inspect and manipulate virtual hard disk (VHD) files, according to the VHD specification (version 1.0).
+Author:              Jonathan Knowles, Vincent Hanquez
+Maintainer:          jonathan.knowles@eu.citrix.com
+Copyright:           Citrix Systems Inc.
+License:             BSD3
+License-file:        LICENCE
+Stability:           Experimental
+Category:            System
+Build-type:          Simple
+Homepage:            https://github.com/jonathanknowles/hs-vhd
+Cabal-version:       >=1.6
+Data-files:          README
+
+Flag test
+  Description:       Build unit tests
+  Default:           False
+
+Flag executable
+  Description:       Build executables
+  Default:           False
+
+Library
+  Build-depends:     base >= 4 && < 5
+                   , bytestring
+                   , filepath
+                   , mmap
+                   , text
+                   , time
+                   , cereal
+                   , random
+                   , storable-endian
+  Exposed-modules:   Data.Vhd
+  Other-modules:     Data.BitSet
+                     Data.Range
+                     Data.Vhd.Bat
+                     Data.Vhd.Bitmap
+                     Data.Vhd.Block
+                     Data.Vhd.Checksum
+                     Data.Vhd.Node
+                     Data.Vhd.Geometry
+                     Data.Vhd.Serialize
+                     Data.Vhd.Types
+                     Data.Vhd.Utils
+
+Executable           Tests
+  Main-Is:           Tests.hs
+  if flag(test)
+    Buildable:       True
+    Build-depends:   base >= 3 && < 5
+                   , QuickCheck >= 2
+                   , bytestring
+                   , test-framework >= 0.3
+                   , test-framework-quickcheck2 >= 0.2
+  else
+    Buildable:       False
+
+Executable           vhd
+  Main-Is:           Vhd.hs
+  if flag(executable)
+    Buildable:       True
+    Build-depends:   base >= 3 && < 5
+  else
+    Buildable:       False
+
+source-repository head
+  type:     git
+  location: git://github.com/jonathanknowles/hs-vhd

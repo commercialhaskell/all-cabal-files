@@ -1,0 +1,52 @@
+name:                rsagl-math
+version:             0.6.0.0
+license:             BSD3
+license-file:        LICENSE
+author:              Christopher Lane Hinson
+maintainer:          Christopher Lane Hinson <lane@downstairspeople.org>
+
+category:            Math
+synopsis:            The RogueStar Animation and Graphics Library: Mathematics
+description:         RSAGL, the RogueStar Animation and Graphics Library,
+                     was specifically designed for a computer game called
+                     roguestar, but effort has been made to make it accessable
+                     to other projects that might benefit from it.  This
+                     package includes mathematical algorithms to support
+                     the project.
+cabal-version:       >= 1.2
+homepage:            http://roguestar.downstairspeople.org/
+
+build-type:          Simple
+tested-with:         GHC==6.12.1
+
+Library
+    exposed-modules:     RSAGL.Math
+                         RSAGL.Math.AbstractVector,
+                         RSAGL.Math.Affine,
+                         RSAGL.Math.Angle,
+                         RSAGL.Math.BoundingBox,
+                         RSAGL.Math.Curve,
+                         RSAGL.Math.CurveExtras,
+                         RSAGL.Math.FMod,
+                         RSAGL.Math.Interpolation,
+                         RSAGL.Math.ListUtils,
+                         RSAGL.Math.Matrix,
+                         RSAGL.Math.Orthogonal,
+                         RSAGL.Math.Ray,
+                         RSAGL.Math.Types
+                         RSAGL.Math.Vector
+
+    ghc-options:         -fno-warn-type-defaults -fexcess-precision
+    ghc-prof-options:    -prof -auto-all
+
+    build-depends:       base>=4 && <5,
+                         random>= 1.0.0.2 && < 1.1,
+                         array>= 0.3.0.0 && < 0.4,
+                         containers>= 0.3.0.0 && < 0.4,
+                         OpenGL>= 2.4.0.1 && < 2.5,
+                         OpenGLRaw>= 1.1.0.1 && < 1.2,
+                         parsec>=3.1.0 && < 3.2,
+                         parallel>=2.2.0.1 && < 2.3,
+                         Vec>=0.9.8 && < 0.10,
+                         Vec-OpenGLRaw>=0.2.0.0 && < 0.3
+

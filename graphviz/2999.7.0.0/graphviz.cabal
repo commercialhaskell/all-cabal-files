@@ -1,0 +1,82 @@
+Name:               graphviz
+Version:            2999.7.0.0
+Stability:          Beta
+Synopsis:           Graphviz bindings for Haskell.
+Description:        This library provides bindings for the Dot language
+                      used by the Graphviz (<http://graphviz.org/>)
+                      suite of programs.  Also provided are
+                      convenience functions to convert FGL graphs into
+                      Dot code with a large degree of customisation
+                      for layout, etc.
+
+                    Also allows a limited amount of parsing of Dot,
+                      and round-trip usage of Graphviz to attach
+                      positional data to each node and edge in the
+                      graph.
+Category:           Graphs, Graphics
+License:            BSD3
+License-File:       LICENSE
+Copyright:          Matthew Sackman, Ivan Lazar Miljenovic
+Author:             Matthew Sackman, Ivan Lazar Miljenovic
+Maintainer:         Ivan.Miljenovic@gmail.com
+Build-Type:         Simple
+Cabal-Version:      >= 1.6
+Extra-Source-Files: TODO
+                    Changelog
+                    README
+                    Data/GraphViz/AttributeGenerator.hs
+
+Source-Repository head
+    Type:         darcs
+    Location:     http://code.haskell.org/graphviz
+
+Flag test
+     Description: Build the test suite, including an executable to run it.
+     Default: False
+
+Library {
+        Build-Depends:     base >= 3 && < 5,
+                           extensible-exceptions,
+                           containers,
+                           process,
+                           fgl,
+                           filepath,
+                           polyparse >= 1.1,
+                           pretty,
+                           bytestring < 0.10,
+                           colour >= 2.3 && < 2.4
+
+        Exposed-Modules:   Data.GraphViz
+                           Data.GraphViz.Types
+                           Data.GraphViz.Types.Parsing
+                           Data.GraphViz.Types.Printing
+                           Data.GraphViz.Commands
+                           Data.GraphViz.Attributes
+                           Data.GraphViz.Attributes.Colors
+
+        Other-Modules:     Data.GraphViz.Types.Clustering
+                           Data.GraphViz.Types.Internal
+        if flag(test)
+           Build-Depends:       QuickCheck >= 2.1 && < 2.2
+
+           Exposed-Modules:     Data.GraphViz.Testing
+                                Data.GraphViz.Testing.Properties
+
+           Other-Modules:       Data.GraphViz.Testing.Instances
+                                Data.GraphViz.Testing.Instances.FGL
+
+        Ghc-Options:       -Wall
+        Ghc-Prof-Options:  -prof -auto-all
+}
+
+Executable graphviz-testsuite {
+
+        if flag(test)
+           Buildable: True
+        else
+           Buildable: False
+
+        Main-Is:           RunTests.hs
+
+        GHC-Options: -O2
+}

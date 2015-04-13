@@ -1,0 +1,31 @@
+name:            wai-handler-webkit
+version:         1.3.0.1
+license:         MIT
+license-file:    LICENSE
+author:          Michael Snoyman <michael@snoyman.com>
+maintainer:      Michael Snoyman <michael@snoyman.com>
+synopsis:        Turn WAI applications into standalone GUIs using QtWebkit.
+description:     Runs any WAI application using
+                 the simpleserver handler and then pops up a Webkit browser
+                 to view it.
+category:        Web
+stability:       unstable
+cabal-version:   >= 1.6
+build-type:      Simple
+homepage:        http://www.yesodweb.com/book/web-application-interface
+
+library
+    build-depends:     base      >= 4       && < 5
+                     , wai       >= 1.3     && < 1.5
+                     , warp      >= 1.3     && < 1.5
+    ghc-options:       -Wall
+    exposed-modules:   Network.Wai.Handler.Webkit
+    c-sources:         webkit.cpp
+    if os(windows)
+        extra-libraries: QtCore4, QtGui4, QtNetwork4, QtWebKit4
+    else
+        pkgconfig-depends: QtWebKit
+
+source-repository head
+  type:     git
+  location: git://github.com/yesodweb/wai.git

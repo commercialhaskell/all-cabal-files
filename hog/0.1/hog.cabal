@@ -1,0 +1,25 @@
+Name:                hog
+Version:             0.1
+Synopsis:            Simple IRC logger bot.
+Description:         Simple IRC logger bot, connects to given channels and
+                     logs lines to files of the corresponding channel names.
+License:             BSD3
+License-file:        LICENSE
+Author:              Chris Done
+Maintainer:          chrisdone@gmail.com
+Copyright:           2010 Chris Done
+Category:            Network
+Build-type:          Simple
+Cabal-version:       >=1.2
+
+Executable hog
+  Main-is:           Main.hs
+  Hs-source-dirs:    src
+  Build-depends:     base >4 && <5,
+                     unix >= 2.4 && <2.5,
+                     cmdargs >= 0.6 && <0.7,
+                     network >= 2.2 && <2.3,
+                     irc >= 0.4 && <0.5,
+                     filepath >= 1.1 && <1.2,
+                     time >= 1.1 && <1.2,
+                     old-locale >= 1 && <2

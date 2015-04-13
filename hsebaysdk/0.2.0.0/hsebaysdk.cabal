@@ -1,0 +1,46 @@
+name:                hsebaysdk
+version:             0.2.0.0
+copyright:           (c) 2014 Christopher Reichert
+synopsis:            Haskell eBay SDK
+homepage:            https://github.com/creichert/hsebaysdk
+license:             BSD3
+license-file:        LICENSE
+author:              Christopher Reichert
+maintainer:          creichert07@gmail.com
+build-type:          Simple
+category:            Web
+cabal-version:       >=1.10
+description:
+
+    eBay API wrapper in Haskell.
+
+    See the git repository for example usages.
+
+    WARNING:
+
+    The api of this package is still undergoing changes and
+    improvements and is subject to change. I am planning to remove the
+    unsafe (partial) functions in 0.3 release with a more stablized
+    api.
+
+library
+  exposed-modules:     Web.Ebay
+  default-language:    Haskell2010
+  ghc-options:         -Wall -O2
+  build-depends:
+                  base                 == 4.*
+                , aeson                >=0.8  && <0.9
+                , bytestring           >=0.10 && <0.11
+                , conduit              >=1.2  && <1.3
+                , conduit-extra        >=1.1  && <1.2
+                , http-conduit         >=2.1  && <2.2
+                , http-types           >=0.8  && <1.0
+                , resourcet            >=1.1  && <1.4
+                , text                 >=1.1  && <1.3
+                , time                 == 1.4.*
+                , transformers         >=0.3  && <0.4
+                , unordered-containers >=0.2  && <0.3
+
+source-repository head
+  type: git
+  location: https://github.com/creichert/hsebaysdk

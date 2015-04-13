@@ -1,0 +1,16 @@
+Name:                hood-off
+Version:             0.2
+Synopsis:            Dummy package to disable Hood without having to remove all the calls to observe
+Category:            Debug, Trace
+License:             BSD3
+License-file:        LICENSE
+Author:              Pepe Iborra
+Maintainer:          Pepe Iborra <pepeiborra@gmail.com>
+Stability:	     alpha
+build-type: 	     Simple
+Cabal-Version:       >= 1.6
+
+Library
+  Build-Depends: base >= 4 && < 5
+  Exposed-modules:
+      Debug.Hood.Observe

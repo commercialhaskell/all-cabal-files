@@ -1,0 +1,37 @@
+name:           gray-extended
+version:        1.2
+synopsis:       Gray encoding schemes
+description:    Gray codes satisfy the property that two successive values 
+                differ in only one digit. Usually the term \"Gray code\"
+                refers to the Binary Reflected Gray code (BRGC),  but 
+                non-binary Gray codes have also been discovered.
+category:       Math
+Homepage:       https://github.com/mhwombat/gray-extended
+cabal-version:  >=1.8
+build-type:     Simple
+author:         Amy de Buitléir
+copyright:      (c) Amy de Buitléir 2010-2012
+license:        BSD3
+stability:      experimental
+maintainer:     amy@nualeargais.ie
+license-file:   LICENSE
+
+library
+  hs-source-dirs:  src
+  build-depends:   base ==4.*,
+                   base-unicode-symbols ==0.2.*
+  ghc-options:     -Wall
+  exposed-modules: Codec.Gray
+
+test-suite gray-extended-tests
+  type:            exitcode-stdio-1.0
+  build-depends:   base ==4.*,
+                   test-framework-quickcheck2 == 0.2.*,
+                   QuickCheck == 2.4.*,
+                   test-framework == 0.*,
+                   base-unicode-symbols ==0.2.*,
+                   gray-extended
+  hs-source-dirs:  test
+  ghc-options:     -Wall -Werror -rtsopts
+  main-is:         Main.hs
+

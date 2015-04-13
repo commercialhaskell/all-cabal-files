@@ -1,0 +1,35 @@
+Name:           WxGeneric
+Version:        0.2.0
+Copyright:      Mads Lindstrøm <mads_lindstroem@yahoo.dk>
+License:        LGPL
+License-file:   COPYRIGHT.txt
+Author:         Mads Lindstrøm <mads_lindstroem@yahoo.dk>
+Maintainer:     Mads Lindstrøm <mads_lindstroem@yahoo.dk>
+Category:       GUI
+Build-Depends:  SybWidget>=0.4,base,haskell98,mtl,xtc>=1.0,wx>=0.10.3
+               ,wxcore>=0.10.3
+Tested-with:    GHC==6.8.2
+Synopsis:       Library which constructing generic (SYB3-based) widgets for WxHaskell
+Build-type:	Simple
+Stability:      experimental
+Description:
+	Constructs widgets for WxHaskell using SybWidget.
+Ghc-options:    -Wall
+Exposed-modules:
+    Graphics.UI.WxGeneric
+      , Graphics.UI.WxGeneric.GenericClass
+      , Graphics.UI.WxGeneric.Composite
+      , Graphics.UI.WxGeneric.GenericWidget
+      , Graphics.UI.WxGeneric.GenericList
+other-modules:
+Extra-Source-Files:
+        examples/makefile
+      , examples/Alarm.hs
+      , examples/AlarmMapValue.hs
+      , examples/AlarmSpecialized.hs
+      , examples/Examples.hs
+      , examples/TupleExample.hs
+Extensions:     
+hs-source-dirs: src
+
+

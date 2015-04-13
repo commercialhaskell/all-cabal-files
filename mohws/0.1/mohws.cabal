@@ -1,0 +1,41 @@
+Name:         mohws
+Version:      0.1
+Author:       Simon Marlow, Bjorn Bringert
+Copyright:    Simon Marlow, Bjorn Bringert
+Maintainer:   Bjorn Bringert <bjorn@bringert.net>
+License:      BSD3
+License-file: LICENSE
+Category:     Web
+Synopsis:     Modular Haskell Web Server
+Description:
+         A web server with a module system and support for CGI.
+          Based on Simon Marlow's original Haskell Web Server.
+Homepage: http://code.haskell.org/mohws/
+
+Build-depends:
+  base>3,
+  directory,
+  network,
+  unix,
+  parsec,
+  html,
+  process,
+  containers,
+  old-time,
+  old-locale,
+  array
+Data-files:  README
+Tested-with: GHC==6.8.2
+Build-Type:  Simple
+
+Executable: hws
+Main-is: Main.hs
+Hs-source-dirs: src
+Ghc-options: -threaded -Wall
+Extensions:  CPP
+other-modules: Options, AccessLogger, LogLevel, Headers,
+               Main, StaticModules, Parse, ErrorLogger,
+               MimeTypes, Config, ServerState, Logger, Util
+               Request, Response, ServerRequest, Module.Index,
+               Module.DynHS, Module.File, Module.DynHS, Module.DynHS.CGI,
+               Module.DynHS.GHCUtil, Module.Userdir, Module.CGI, ConfigParser

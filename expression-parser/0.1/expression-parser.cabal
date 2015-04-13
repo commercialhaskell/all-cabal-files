@@ -1,0 +1,25 @@
+Name:             expression-parser
+Version:          0.1
+Description:      Generalization of parsec's expression parser.
+Synopsis:         Generalization of parsec's expression parser.
+Category:         Text, Parsing
+License:          BSD3
+License-file:     LICENSE
+Author:           Daan Leijen, Paolo Martini
+Maintainer:       Sebastiaan Visser <haskell@fvisser.nl>
+Build-Type:       Simple
+Cabal-Version:    >= 1.6
+
+Library
+  GHC-Options:      -Wall
+  HS-Source-Dirs:   src
+
+  Build-Depends:
+      base       == 4.*
+
+  Exposed-modules:  Text.ParserCombinators.Expression
+
+Source-repository head
+  type:     git
+  location: https://github.com/sebastiaanvisser/expression-parser
+

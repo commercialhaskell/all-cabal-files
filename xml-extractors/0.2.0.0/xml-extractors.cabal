@@ -1,0 +1,50 @@
+name:                xml-extractors
+version:             0.2.0.0
+synopsis:            Simple wrapper over xml (Text.XML.Light) to extract data from parsed xml
+description:
+  This is a library to make it easier to extract data from parsed xml.
+  .
+  See the 'Text.XML.Light.Extractors' module for an example.
+  .
+  = Motivation
+  .
+  The xml package provides functions to parse and get information
+  from xml data. You can parse an xml string into a generic xml tree
+  representation. Then to extract information from that tree and into
+  you own data types you can use this library.
+  .
+  If there is an error during extraction (expected information is
+  absent or wrong), you will get an error value with position information.
+  .
+  = Some limitations
+  .
+    * Only handles unqualified names, so far.
+  .
+    * No column or line number reference in error values.
+ 
+homepage:            https://github.com/holmisen/xml-extractors
+license:             BSD3
+license-file:        LICENSE
+author:              Johan Holmquist
+maintainer:          holmisen@gmail.com
+-- copyright:           
+category:            Text, XML
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+
+library
+  exposed-modules:     Text.XML.Light.Extractors, 
+                       Text.XML.Light.Extractors.Internal,
+                       Text.XML.Light.Extractors.Internal.Result,
+                       Text.XML.Light.Extractors.Extra,
+                       Text.XML.Light.Extractors.ShowErr
+  -- other-modules:       
+  other-extensions:    NoMonomorphismRestriction
+  build-depends:       base >=4.6 && <4.8,
+                       xml >=1.3 && <1.4,
+                       mtl >=2.1 && <2.2,
+                       transformers >=0.3 && <0.4,
+                       safe >=0.3 && <0.4
+  hs-source-dirs:      src
+  default-language:    Haskell2010

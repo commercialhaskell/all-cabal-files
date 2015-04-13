@@ -1,0 +1,48 @@
+Name:                 nemesis
+Version:              2012.5.24.1
+Build-type:           Simple
+Synopsis:             a Rake like task management tool
+Description:          smart per project code snippets
+
+License:              BSD3
+License-file:         LICENSE
+Author:               Jinjing Wang
+Maintainer:           Jinjing Wang <nfjinjing@gmail.com>
+Build-Depends:        base
+Cabal-version:        >= 1.2
+category:             Web
+homepage:             http://github.com/nfjinjing/nemesis
+data-files:           readme.md, changelog.md, known-issues.md, Nemesis
+
+library
+  ghc-options: -Wall
+  build-depends:      base >= 4 && < 100, old-time, time, mtl, process, containers, air >= 2011.6.19
+                      , dlist
+                      , filepath
+                      , transformers
+                      
+  hs-source-dirs: src/
+  exposed-modules:  
+                      System.Nemesis
+                      System.Nemesis.DSL
+                      System.Nemesis.Env
+  other-modules:
+                      System.Nemesis.Util
+                      
+                      System.FilePath.Glob
+                      System.FilePath.Glob.Primitive
+                      System.FilePath.Glob.Base
+                      System.FilePath.Glob.Directory
+                      System.FilePath.Glob.Match
+                      System.FilePath.Glob.Simplify
+                      System.FilePath.Glob.Utils
+                      
+
+Executable            nemesis
+  build-depends:      base >= 4 && < 100, mtl, process, containers, data-default, directory, air >= 2011.6.19
+                      
+  hs-source-dirs:     src/
+  main-is:            System/Nemesis/Runner.hs
+  other-modules:      System.Nemesis.Util
+                      System.Nemesis.DSL
+                      

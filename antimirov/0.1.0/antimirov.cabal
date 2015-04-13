@@ -1,0 +1,26 @@
+name:           antimirov
+version:        0.1.0
+license:        GPL
+license-file:   LICENSE
+copyright:      Copyright (c) 2009 Marcel Manthe
+maintainer: 	Rick Kaudewitz <rick.kaudewitz@yahoo.de>
+stability:      experimental
+category:	Language, Math
+synopsis:       Define the language containment (=subtyping) relation on regulare expressions.
+description:	This is a generalization of regex-"matching". We use Antimirovs algorithm. 
+		Tests are provided, too.
+ghc-options:    -Wall -fno-warn-missing-signatures
+exposed-Modules:
+ 		Data.Regex.Antimirov
+ 		Data.Regex.Antimirov.Regex
+		Data.Regex.Antimirov.Subtyping
+		Data.Regex.Antimirov.SubtypingList
+		Data.Regex.Antimirov.Simplify
+build-depends:  containers, base, QuickCheck
+hs-source-dirs: .
+build-type: 	Simple
+
+executable:     test
+ghc-options:    -Wall -fno-warn-orphans -fno-warn-missing-signatures
+main-is:        TestAntimirov.hs
+hs-source-dirs: test .

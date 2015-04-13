@@ -1,0 +1,39 @@
+Name:           repa-series
+Version:        1.0.0.1
+License:        BSD3
+License-File:   LICENSE
+Cabal-Version:  >= 1.10
+Build-Type:     Simple
+Author:         The DPH Team
+Maintainer:     Ben Lippmeier <benl@ouroborus.net>
+Category:       Data Structures
+Synopsis:       Series Expressionss API
+Description:   
+        Series expression API for writing programs subjected to the
+        Data Flow Fusion performed by the repa-plugin.
+
+Library
+  Exposed-Modules:
+        Data.Array.Repa.Series
+        Data.Array.Repa.Series.Series
+        Data.Array.Repa.Series.Vector
+        Data.Array.Repa.Series.Sel
+        Data.Array.Repa.Series.Fallback
+        Data.Array.Repa.Series.Ref
+        Data.Array.Repa.Series.Prim
+
+  Build-Depends:
+        base       == 4.6.*,
+        ghc        >= 7.5,
+        ghc-prim   >= 0.3,
+        vector     == 0.10.*
+
+  Default-Language:
+        Haskell2010
+
+  Default-Extensions:
+        TypeSynonymInstances
+        BangPatterns
+        RankNTypes
+        MagicHash
+        UnboxedTuples

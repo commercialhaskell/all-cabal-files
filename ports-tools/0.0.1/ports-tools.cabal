@@ -1,0 +1,32 @@
+name:                ports-tools
+
+version:             0.0.1
+
+synopsis:            Library to interact with port tools on FreeBSD
+description:
+   A set of wrappers for command line utilities used to manage port and
+   packages on FreeBSD.
+
+homepage:            http://github.com/ppenzin/hs-ports-tools/
+bug-reports:         http://github.com/ppenzin/hs-ports-tools/issues
+-- BSD2 license
+license:             OtherLicense
+license-file:        LICENSE.md
+author:              Petr Penzin
+maintainer:          penzin.dev@gmail.com
+-- copyright:           
+category:            System Tools
+build-type:          Simple
+cabal-version:       >=1.8
+data-files:          
+
+Library
+  hs-source-dirs:      src
+  exposed-modules:     Config.FreeBSD.PortTools, Config.FreeBSD.Package
+  build-depends:       base<5, process, directory
+
+-- Test-suite test-all
+--   type:                exitcode-stdio-1.0
+--   hs-source-dirs:      test, src
+--   main-is:             TestAll.hs
+--   build-depends:       base, text, aeson, yaml, bytestring, tasty, tasty-hunit, tasty-smallcheck, tasty-quickcheck

@@ -1,0 +1,22 @@
+Name:		cmonad
+Version:	0.1.0.1
+License:	BSD3
+Author:		Lennart Augustsson
+Maintainer:	Lennart Augustsson
+Category:	Language
+Synopsis:	A library for C-like programming
+Stability:      experimental
+Build-type:	Simple
+Description:	A library for C-like programming
+Hs-Source-Dirs: src
+Build-Depends:	base, array
+Exposed-modules:
+	Language.CMonad
+Other-modules:
+	Language.CMonad.CPrelude
+	Language.CMonad.MonadRef
+	Language.CMonad.Prim
+	Language.CMonad.Ops
+Extra-source-files:
+	examples/Makefile
+	examples/Inf.hs

@@ -1,0 +1,23 @@
+name:          kibro
+version:       0.1
+synopsis:      Web development framework.
+description:   Web development framework.
+category:      Web
+license:       BSD3
+license-file:  LICENSE
+author:        Chris Done <chrisdone@gmail.com>
+maintainer:    Chris Done <chrisdone@gmail.com>
+build-Depends: base,directory,haskell98
+build-type:    Simple
+cabal-Version: >= 1.2
+
+library
+   build-depends: base,HDBC,mtl,regex-compat,random,safe,xhtml,containers,fastcgi,cgi,HDBC-sqlite3,data-default
+   exposed-modules: Kibro,Kibro.DB,Kibro.DB.Sqlite3
+   hs-source-dirs: library/
+   GHC-Prof-options: -auto-all
+
+executable kibro
+  main-is: Main.hs
+  build-depends: base,regex-compat,directory,filepath,haskell98,validate,process
+  hs-source-dirs: executable/

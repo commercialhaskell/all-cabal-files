@@ -1,0 +1,22 @@
+name:                extractelf
+version:             0.1.0.0
+synopsis:            Extract an ELF's metadata and sections into files
+homepage:            https://github.com/Peaker/extractelf
+license:             BSD3
+license-file:        LICENSE
+author:              Eyal Lotem
+maintainer:          eyal.lotem@gmail.com
+category:            Development
+build-type:          Simple
+cabal-version:       >=1.10
+
+executable extractelf
+  main-is:             extractelf.hs
+  build-depends:       base >=4.6 && <4.7
+                     , directory < 1.3
+                     , optparse-applicative >= 0.5.2 && < 0.5.3
+                     , elf >= 0.27 && < 0.28
+                     , bytestring >= 0.9 && < 0.11
+                     , bytestring-mmap >= 0.2 && < 0.3
+                     , filepath >= 1.3 && < 1.4
+  default-language:    Haskell2010

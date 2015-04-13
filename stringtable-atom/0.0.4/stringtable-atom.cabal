@@ -1,0 +1,25 @@
+Name:                stringtable-atom
+Version:             0.0.4
+Category:            Data, Pugs
+Synopsis:            Memoize Strings as Atoms for fast comparison and sorting, with maps and sets
+Description:         Memoize Strings as Atoms for fast comparison and sorting, with maps and sets
+License:             BSD3
+License-File:        LICENSE
+Author:              John Meacham
+Maintainer:          audreyt@audreyt.org
+Copyright:           John Meacham 2008, Audrey Tang 2008
+Exposed-modules:     StringTable.Atom StringTable.AtomMap StringTable.AtomSet
+
+Build-Depends:       base, bytestring>=0.9.0.1, binary, containers
+Build-Type:          Simple
+Tested-With:         GHC==6.8.2, GHC==6.8.3
+
+extensions:          ForeignFunctionInterface, TypeSynonymInstances,
+                     DeriveDataTypeable, FlexibleInstances,
+                     GeneralizedNewtypeDeriving
+
+c-sources:           cbits/StringTable_cbits.c
+extra-source-files:  cbits/StringTable_cbits.h
+include-dirs:        cbits
+cc-options:          -O2 -std=c99
+hs-source-dirs:      src

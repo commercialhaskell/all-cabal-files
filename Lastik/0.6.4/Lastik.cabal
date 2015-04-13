@@ -1,0 +1,42 @@
+Name:               Lastik
+Version:            0.6.4
+License:            BSD3
+License-File:       LICENSE
+Author:             Tony Morris <code@tmorris.net>
+Maintainer:         Tony Morris
+Synopsis:           A library for compiling programs in a variety of languages
+Category:           Development
+Description:        A library for compiling programs in a variety of languages including Java, Scala and C#.
+Homepage:           http://code.google.com/p/lastik
+Cabal-version:      >= 1.2
+Build-Type:         Simple
+
+Flag small_base
+  Description:     Choose the new, split-up base package.
+
+Library
+  if flag(small_base)
+    Build-Depends: base < 4 && >= 3, bytestring, directory, filepath, process, zip-archive, pureMD5, SHA, containers
+  else
+    Build-Depends: base < 3, filepath, process, zip-archive, pureMD5, SHA, containers
+
+  GHC-Options:    -Wall
+  Exposed-Modules:
+          System.Build,
+          System.Build.Directory,
+          System.Build.FilePather,
+          System.Build.Args,
+          System.Build.Runner,
+          System.Build.Scala.Access,
+          System.Build.Scala.Debug,
+          System.Build.Scala.Scalac,
+          System.Build.Scala.Scaladoc,
+          System.Build.Scala.Target,
+          System.Build.Command,
+          System.Build.CompilePaths,
+          System.Build.Extensions,
+          System.Build.OutputDirectory,
+          System.Build.OutputReferenceGet,
+          System.Build.OutputReferenceSet,
+          System.Build.Java.Javac,
+          System.Build.Java.Javadoc

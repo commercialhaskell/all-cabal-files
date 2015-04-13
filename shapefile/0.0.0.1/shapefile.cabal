@@ -1,0 +1,32 @@
+name:                   shapefile
+version:                0.0.0.1
+stability:              experimental
+
+cabal-version:          >= 1.2
+build-type:             Simple
+
+author:                 James Cook <james.cook@usma.edu>
+maintainer:             James Cook <james.cook@usma.edu>
+license:                PublicDomain
+homepage:               http://code.haskell.org/~mokus/shapefile
+
+category:               Database
+synopsis:               Parser and related tools for ESRI shapefile format
+description:            A very simple interface for processing data in ESRI 
+                        shapefile format.  Includes functions for reading or  
+                        writing whole .shp and .shx files, as well as for
+                        generating .shx index files from .shp data files.
+                        Also includes an interface to read individual records
+                        on-demand from shapefiles, useful for very large databases.
+
+Library
+  hs-source-dirs:       src
+  exposed-modules:      Database.Shapefile
+                        Database.Shapefile.ShapeTypes
+                        Database.Shapefile.Shp
+                        Database.Shapefile.Shp.Handle
+                        Database.Shapefile.Shx
+                        Database.Shapefile.Shx.Handle
+  other-modules:        Database.Shapefile.Misc
+  build-depends:        base >= 3 && <5, binary, bytestring, dbf >= 0.0.0.2,
+                        data-binary-ieee754, filepath, rwlock

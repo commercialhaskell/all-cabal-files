@@ -1,0 +1,13 @@
+Name:		Useful
+Version:	0.0.2
+Cabal-Version:  >= 1.2
+License:	BSD3
+Author:		Daniel Holden
+Maintainer: contact@theorangeduck.com  
+Synopsis:	Some useful functions and shorthands.
+Build-Type: Simple
+Description: A library of some useful functions and some other short-hand or alias functions which I commonly use to make coding quicker and easier. This also includes a lightweight implementation of a dictionary using Data.Map.
+
+Library
+  Build-Depends:   base >= 4 && < 5, random, containers
+  Exposed-Modules: Useful, Useful.General, Useful.Dictionary, Useful.List, Useful.String, Useful.IO

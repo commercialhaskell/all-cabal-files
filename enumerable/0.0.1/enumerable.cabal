@@ -1,0 +1,22 @@
+name:          enumerable
+version:       0.0.1
+license:       BSD3
+license-file:  LICENSE
+author:	       Daniel Peebles
+maintainer:    Daniel Peebles <pumpkingod@gmail.com>
+stability:     experimental
+category:      Data
+synopsis:      Provides a typeclass for enumerating all values in types
+copyright:     2009 Daniel Peebles
+description:   Enumerate any type, including functions of enumerable types!
+build-type:    Simple
+cabal-version: >=1.2
+
+library
+  build-depends: 
+    base >= 4 && < 5, tagged, control-monad-omega
+  exposed-modules:
+    Data.Enumerable
+    Data.Enumerable.FunctionEquality
+    Data.Enumerable.ControversialFunctionEquality
+  ghc-options: 

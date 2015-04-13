@@ -1,0 +1,34 @@
+name:          wp-archivebot
+version:       0.1
+license:       BSD3
+license-file:  LICENSE
+author:        Gwern
+maintainer:    gwern0@gmail.com
+stability:     Experimental
+tested-with:   GHC==6.10.2
+category:      Network
+synopsis:      Subscribe to a wiki's RSS feed and archive external links
+description:   A MediaWiki's RecentChanges or NewPages links to every new edit or article; this bot will
+               poll the corresponding RSS feeds (easier and more reliable than parsing the HTML), follow
+               the links to the new edit/article, and then use TagSoup to filter out every off-wiki link
+               (eg. to http://cnn.com).
+               .
+               With this list of external links, the bot will then fire off requests to http://webcitation.org/,
+               which will make a backup (similar to the Internet Archive, but on-demand).
+               .
+               Example: to archive links from every article in the English Wikipedia's RecentChanges:
+               .
+               > wp-archivebot gwern0@gmail.com 'http://en.wikipedia.org/w/index.php?title=Special:RecentChanges&feed=rss'
+               .
+cabal-version: >= 1.2
+build-type:    Simple
+
+executable wp-archivebot
+    main-is:       Main.hs
+
+    build-depends: feed,
+                   tagsoup,
+                   network,
+                   HTTP
+    build-depends: base >= 3 && < 4, parallel
+    ghc-options:   -Wall

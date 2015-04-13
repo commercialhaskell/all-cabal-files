@@ -1,0 +1,24 @@
+cabal-version: >= 1.2
+name: web-browser-in-haskell
+synopsis:
+  Web Browser In Haskell
+description:
+  The package is my first attempt to build a WEB BROWSER by using webkit.
+  
+  Its a multitab web browser which doesn't store any history but provides previous and next tab facility.
+  
+  The following links is to my blog article containing some screenshots of this browser including steps to install adobe flash player to this web browser.  
+
+  Link : "http://ilovehaskell.blogspot.in/2014/05/web-browser-in-haskell.html" 
+
+version: 1.0
+license: GPL
+license-file: LICENSE
+maintainer: Akash Fulchand Jagdhane <akashjagdhane@gmail.com>
+author: Akash Fulchand Jagdhane <akashjagdhane@gmail.com>
+build-type: Simple
+category: Browser
+library
+  build-depends: base >=3 && < 5, gtk, webkit
+  exposed-modules:
+    WebBrowser.Browser

@@ -1,0 +1,35 @@
+name:                StrictBench
+version:             0.1
+
+license:             GPL
+license-file:        LICENSE
+author:              Remco Niemeijer
+maintainer:          Remco Niemeijer <R.A.Niemeijer@tue.nl>
+
+stability:           Stable
+category:            Testing
+synopsis:            Benchmarking code through strict evaluation
+description:         A benchmarking library with a simple purpose:
+                     to strictly evaluate a value and report how long it takes.
+                     .
+                     Can be useful to identify the slow part of an
+                     algorithm, since Haskell's lazy evaluation can make
+                     it hard to see where the bottleneck lies.
+homepage:            http://bonsaicode.wordpress.com/2009/06/07/strictbench-0-1/
+
+build-depends:       base
+build-type:          Simple
+data-files:          README
+tested-with:         GHC==6.10.2
+
+Cabal-Version:       >= 1.2
+
+library
+  exposed-modules:   Test.StrictBench
+
+  build-depends:     base >= 2.0 && < 5.0,
+                     parallel >= 1.0,
+                     benchpress >= 0.2
+
+  ghc-options:       -funbox-strict-fields -Wall
+  ghc-prof-options:  -prof -auto-all

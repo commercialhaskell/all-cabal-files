@@ -1,0 +1,26 @@
+name:                yi-emacs-colours
+version:             0.1.0.0
+synopsis:            Simple mapping from colour names used in emacs to Color
+description:         Simple mapping from colour names used in emacs to Color
+homepage:            https://github.com/yi-emacs-colours
+license:             GPL-2
+license-file:        LICENSE
+author:              Mateusz Kowalczyk
+maintainer:          fuuzetsu@fuuzetsu.co.uk
+copyright:           © Mateusz Kowalczyk, 2014
+category:            Yi
+build-type:          Simple
+cabal-version:       >=1.10
+
+library
+  exposed-modules:
+    Yi.Style.EmacsColours
+    Yi.Style.EmacsColours.Internal
+
+  build-depends:       base >= 4 && < 5, containers, split, yi-language
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+
+source-repository head
+  type:     git
+  location: https://github.com/Fuuzetsu/yi-emacs-colours.git

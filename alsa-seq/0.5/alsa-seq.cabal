@@ -1,0 +1,206 @@
+Name: alsa-seq
+Version: 0.5
+Copyright: Bjorn Bringert, Iavor S. Diatchki, Henning Thielemann
+Maintainer: Henning Thielemann <alsa@henning-thielemann.de>
+Author: Bjorn Bringert <bjorn@bringert.net>, Iavor S. Diatchki <iavor.diatchki@gmail.com>
+Category: Sound, Music
+License: BSD3
+License-file: LICENSE
+Homepage: http://www.haskell.org/haskellwiki/ALSA
+Stability: Experimental
+Build-Type: Simple
+Cabal-Version: >= 1.8
+
+Synopsis: Binding to the ALSA Library API (MIDI sequencer).
+Description:
+  This package provides access to ALSA sequencer (MIDI support).
+  For audio support see alsa-pcm.
+
+Source-Repository head
+  type:     darcs
+  location: http://code.haskell.org/~thielema/alsa-seq/
+
+Source-Repository this
+  type:     darcs
+  location: http://code.haskell.org/~thielema/alsa-seq/
+  tag:      0.5
+
+Flag buildExamples
+  description: Build example executables
+  default:     False
+
+Library
+  Build-depends:
+    alsa-core >=0.5 && <0.6,
+    array >= 0.1 && <0.4,
+    extensible-exceptions >=0.1.1 && <0.2,
+    base >= 3 && <5
+
+  GHC-Options: -Wall
+  Extensions:
+    ForeignFunctionInterface
+    GeneralizedNewtypeDeriving
+    EmptyDataDecls
+
+  Hs-Source-Dirs: src
+
+  Exposed-Modules:
+    Sound.ALSA.Sequencer
+    Sound.ALSA.Sequencer.Address
+    Sound.ALSA.Sequencer.Client
+    Sound.ALSA.Sequencer.Client.Info
+    Sound.ALSA.Sequencer.Port
+    Sound.ALSA.Sequencer.Port.Info
+    Sound.ALSA.Sequencer.Event
+    Sound.ALSA.Sequencer.RealTime
+    Sound.ALSA.Sequencer.Queue
+    Sound.ALSA.Sequencer.Queue.Info
+    Sound.ALSA.Sequencer.Queue.Status
+    Sound.ALSA.Sequencer.Queue.Tempo
+    Sound.ALSA.Sequencer.Queue.Timer
+
+  Other-modules:
+    Sound.ALSA.Sequencer.Marshal.Sequencer
+    Sound.ALSA.Sequencer.Marshal.Address
+    Sound.ALSA.Sequencer.Marshal.Client
+    Sound.ALSA.Sequencer.Marshal.Port
+    Sound.ALSA.Sequencer.Marshal.Queue
+    Sound.ALSA.Sequencer.Marshal.QueueTimer
+    Sound.ALSA.Sequencer.Marshal.Event
+    Sound.ALSA.Sequencer.Marshal.RealTime
+    Sound.ALSA.Sequencer.Area
+    Sound.ALSA.Sequencer.Sequencer
+    Sound.ALSA.Sequencer.Utility
+
+  Includes: alsa/asoundlib.h
+  Extra-libraries: asound
+
+Executable test1
+  Main-Is: test1.hs
+  If !flag(buildExamples)
+    Buildable: False
+  Hs-Source-Dirs: src, examples
+  GHC-Options: -Wall -threaded
+  Extensions:
+    ForeignFunctionInterface
+    GeneralizedNewtypeDeriving
+    EmptyDataDecls
+  Other-modules:
+    Sound.ALSA.Sequencer.Marshal.Sequencer
+    Sound.ALSA.Sequencer.Marshal.Address
+    Sound.ALSA.Sequencer.Marshal.Client
+    Sound.ALSA.Sequencer.Marshal.Port
+    Sound.ALSA.Sequencer.Marshal.Queue
+    Sound.ALSA.Sequencer.Marshal.QueueTimer
+    Sound.ALSA.Sequencer.Marshal.Event
+    Sound.ALSA.Sequencer.Marshal.RealTime
+    Sound.ALSA.Sequencer.Area
+    Sound.ALSA.Sequencer.Sequencer
+  Build-Depends:
+    alsa-core >=0.5 && <0.6,
+    array >= 0.1 && <0.4,
+    base >=3 && <5
+
+Executable test2
+  Main-Is: test2.hs
+  If !flag(buildExamples)
+    Buildable: False
+  Hs-Source-Dirs: src, examples
+  GHC-Options: -Wall -threaded
+  Extensions:
+    ForeignFunctionInterface
+    GeneralizedNewtypeDeriving
+    EmptyDataDecls
+  Other-modules:
+    Sound.ALSA.Sequencer.Marshal.Sequencer
+    Sound.ALSA.Sequencer.Marshal.Address
+    Sound.ALSA.Sequencer.Marshal.Client
+    Sound.ALSA.Sequencer.Marshal.Port
+    Sound.ALSA.Sequencer.Marshal.Queue
+    Sound.ALSA.Sequencer.Marshal.QueueTimer
+    Sound.ALSA.Sequencer.Marshal.Event
+    Sound.ALSA.Sequencer.Marshal.RealTime
+    Sound.ALSA.Sequencer.Area
+    Sound.ALSA.Sequencer.Sequencer
+  Build-Depends:
+    alsa-core >=0.5 && <0.6,
+    array >= 0.1 && <0.4,
+    base >=3 && <5
+
+Executable test3
+  Main-Is: test3.hs
+  If !flag(buildExamples)
+    Buildable: False
+  Hs-Source-Dirs: src, examples
+  GHC-Options: -Wall -threaded
+  Extensions:
+    ForeignFunctionInterface
+    GeneralizedNewtypeDeriving
+    EmptyDataDecls
+  Other-modules:
+    Sound.ALSA.Sequencer.Marshal.Sequencer
+    Sound.ALSA.Sequencer.Marshal.Address
+    Sound.ALSA.Sequencer.Marshal.Client
+    Sound.ALSA.Sequencer.Marshal.Port
+    Sound.ALSA.Sequencer.Marshal.Queue
+    Sound.ALSA.Sequencer.Marshal.QueueTimer
+    Sound.ALSA.Sequencer.Marshal.Event
+    Sound.ALSA.Sequencer.Marshal.RealTime
+    Sound.ALSA.Sequencer.Area
+    Sound.ALSA.Sequencer.Sequencer
+  Build-Depends:
+    alsa-core >=0.5 && <0.6,
+    array >= 0.1 && <0.4,
+    base >=3 && <5
+
+Executable test4
+  Main-Is: test4.hs
+  If !flag(buildExamples)
+    Buildable: False
+  Hs-Source-Dirs: src, examples
+  GHC-Options: -Wall -threaded
+  Extensions:
+    ForeignFunctionInterface
+    GeneralizedNewtypeDeriving
+    EmptyDataDecls
+  Other-modules:
+    Sound.ALSA.Sequencer.Marshal.Sequencer
+    Sound.ALSA.Sequencer.Marshal.Address
+    Sound.ALSA.Sequencer.Marshal.Client
+    Sound.ALSA.Sequencer.Marshal.Port
+    Sound.ALSA.Sequencer.Marshal.Queue
+    Sound.ALSA.Sequencer.Marshal.QueueTimer
+    Sound.ALSA.Sequencer.Marshal.Event
+    Sound.ALSA.Sequencer.Marshal.RealTime
+    Sound.ALSA.Sequencer.Area
+    Sound.ALSA.Sequencer.Sequencer
+  Build-Depends:
+    alsa-core >=0.5 && <0.6,
+    array >= 0.1 && <0.4,
+    base >=3 && <5
+
+Executable test5
+  Main-Is: test5.hs
+  If !flag(buildExamples)
+    Buildable: False
+  Hs-Source-Dirs: src, examples
+  GHC-Options: -Wall -threaded
+  Extensions:
+    ForeignFunctionInterface
+    GeneralizedNewtypeDeriving
+    EmptyDataDecls
+  Other-modules:
+    Sound.ALSA.Sequencer.Marshal.Sequencer
+    Sound.ALSA.Sequencer.Marshal.Address
+    Sound.ALSA.Sequencer.Marshal.Client
+    Sound.ALSA.Sequencer.Marshal.Port
+    Sound.ALSA.Sequencer.Marshal.Queue
+    Sound.ALSA.Sequencer.Marshal.QueueTimer
+    Sound.ALSA.Sequencer.Marshal.Event
+    Sound.ALSA.Sequencer.Marshal.RealTime
+    Sound.ALSA.Sequencer.Area
+    Sound.ALSA.Sequencer.Sequencer
+  Build-Depends:
+    alsa-core >=0.5 && <0.6,
+    array >= 0.1 && <0.4,
+    base >=3 && <5

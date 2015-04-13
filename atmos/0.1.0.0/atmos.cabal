@@ -1,0 +1,29 @@
+name:                atmos
+version:             0.1.0.0
+synopsis:            1976 US Standard Atmosphere
+description: {
+1976 US Standard Atmosphere
+.
+Adapted by Greg Horn from original programs by Ralph L. Carmichael, Public Domain Aeronautical Software
+.
+The original code can be found at <http://www.pdas.com/atmos.html>
+}
+license:             PublicDomain
+author:              Greg Horn
+maintainer:          gregmainland@gmail.com
+-- copyright:           
+category:            Science
+build-type:          Simple
+cabal-version:       >=1.8
+
+library
+   exposed-modules:     Atmosphere
+   other-modules:       Atmosphere.Atmosphere
+                        Atmosphere.Constants
+                        Atmosphere.Tests
+
+   build-depends:       base >= 4 && < 5
+
+source-repository head
+  type:     git
+  location: git://github.com/ghorn/atmosphere.git

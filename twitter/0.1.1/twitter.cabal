@@ -1,0 +1,16 @@
+Name:                twitter
+Version:             0.1.1
+Synopsis:            A Haskell-based CLI Twitter client
+Description:         A really basic twitter client. 
+License:             BSD3
+License-file:        LICENSE
+Author:              Chris Eidhof
+Maintainer:          Chris Eidhof <ce@tupil.com>
+Build-Depends:       base, filepath, curl, directory, xml, readline, old-locale, 
+                     time, json, mtl
+build-type:          Simple
+category:            Network
+
+Executable:          twitter
+Main-is:             Twitter.hs
+

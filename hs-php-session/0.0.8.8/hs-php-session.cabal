@@ -1,0 +1,26 @@
+name:                hs-php-session
+version:             0.0.8.8
+synopsis:            PHP session serialization
+-- description:         
+homepage:            https://github.com/elblake/hs-php-session
+license:             BSD3
+license-file:        LICENSE
+author:              Edward L. Blake
+maintainer:          edwardlblake@gmail.com
+-- copyright:           
+category:            Data
+build-type:          Simple
+cabal-version:       >=1.8
+
+extra-source-files:
+    README.md
+    Test/General.hs
+
+library
+  exposed-modules:
+    Data.PHPSession
+    Data.PHPSession.Types
+  -- other-modules:       
+  build-depends:       
+                       base ==4.6.*,
+                       bytestring

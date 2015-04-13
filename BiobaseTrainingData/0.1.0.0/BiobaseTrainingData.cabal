@@ -1,0 +1,50 @@
+name:           BiobaseTrainingData
+version:        0.1.0.0
+author:         Christian Hoener zu Siederdissen
+maintainer:     choener@tbi.univie.ac.at
+homepage:       http://www.tbi.univie.ac.at/~choener/
+copyright:      Christian Hoener zu Siederdissen, 2011
+category:       Bioinformatics
+synopsis:       RNA folding training data
+license:        GPL-3
+license-file:   LICENSE
+build-type:     Simple
+stability:      experimental
+cabal-version:  >= 1.6.0
+description:
+                Parameter training for RNA secondary structure prediction tools
+                requires data to train on. Since there are a number of
+                different available formats, and handling them all in the
+                training tools is a pain, we have this library and programs.
+                "MkTrainingData" transforms different formats and they all
+                produce a common "training data" format. This format is
+                Haskell-readable (and only partially human-readable)
+                line-by-line. Generating additional training data is therefor
+                easy as one can just "cat" together different training files.
+                .
+                Note that several features are designed around /extended/ RNA
+                secondary structures.
+
+library
+  build-depends:
+    base >3 && <5,
+    bytestring,
+    iteratee,
+    BiobaseDotP,
+    BiobaseFR3D,
+    BiobaseXNA >= 0.5.0.1
+
+  exposed-modules:
+    Biobase.TrainingData
+    Biobase.TrainingData.Import
+
+  ghc-options:
+    -O2
+
+executable MkTrainingData
+  build-depends:
+    cmdargs == 0.7.*
+  main-is:
+    MkTrainingData.hs
+  ghc-options:
+    -O2

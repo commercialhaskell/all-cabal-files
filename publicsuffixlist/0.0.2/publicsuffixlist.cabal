@@ -1,0 +1,38 @@
+name:            publicsuffixlist
+version:         0.0.2
+license:         BSD3
+license-file:    LICENSE
+author:          Myles C. Maxfield <myles.maxfield@gmail.com>
+maintainer:      Myles C. Maxfield <myles.maxfield@gmail.com>
+synopsis:        Is a given string a domain suffix?
+description:     Is a given string a domain suffix?
+category:        Network
+stability:       Experimental
+cabal-version:   >= 1.8
+build-type:      Simple
+homepage:        https://github.com/litherum/publicsuffixlist
+
+library
+    build-depends: base       >= 4       && < 5
+                 , containers
+                 , data-default
+                 , bytestring >= 0.9
+                 , text       >= 0.11
+    exposed-modules: Network.PublicSuffixList.Lookup
+                   , Network.PublicSuffixList.DataStructure
+                   , Network.PublicSuffixList.Internal.Types
+    ghc-options:     -Wall
+
+Test-Suite test-public-suffix-list
+    type: exitcode-stdio-1.0
+    main-is: Test/PublicSuffixList.hs
+    build-depends: base     >= 4 && < 5
+                 , containers
+                 , data-default
+                 , text     >= 0.11
+                 , HUnit
+                 , idna     >= 0.1.1   && < 1.0
+
+source-repository head
+  type:     git
+  location: git://github.com/litherum/publicsuffixlist.git

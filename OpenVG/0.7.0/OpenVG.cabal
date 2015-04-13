@@ -1,0 +1,89 @@
+name:             OpenVG
+version:          0.7.0
+license:          BSD3
+license-file:     LICENSE
+copyright:        Stephen Tetley <stephen.tetley@gmail.com>
+maintainer:       Stephen Tetley <stephen.tetley@gmail.com>
+homepage:         http://code.google.com/p/copperbox/
+category:         Graphics
+synopsis:         OpenVG (ShivaVG-0.2.1) binding
+description:
+  .
+  A Haskell binding for the OpenVG vector graphics API version 
+  1.0.1, specifically the ShivaVG-0.2.1 implementation.
+  .
+  This version (0.7.0) should be compatible with the Haskell 
+  Platform (2013.2.0.0).
+  .
+  \*\* WARNING - large parts of the API (particular the Paths 
+  module) are untested and may be revised in future. \*\*.
+  .
+  Changelog
+  .
+  0.6.0 to 0.7.0
+  .
+  * Updated to work with GHC 7.6 and Platform 2013.2.0.0.
+  .
+  * Updated Windows install instructions.
+  . 
+  0.5.0 to 0.6.0
+  .
+  * Added an opaque matrix type to RenderingQuality. 
+    Acknowledgement - this was derived from the Matrix class
+    in HOpenGL.
+  .
+  * Revised Image module - PixelData is now an opaque type rather
+    than a raw pointer.
+  .
+  * Work on Path module - pathBounds implemented. This module is
+    entirely untested and may change again in the future.
+  .
+  .
+ 
+build-type:         Simple
+stability:          experimental
+cabal-version:      >= 1.2
+
+extra-source-files:
+  InstallWindows.txt,
+  Changes,
+  README.txt,
+  demo/VguUtils.hs,
+  demo/TestVgu.hs
+
+library
+  hs-source-dirs:     src
+  build-depends:      base < 5, 
+                      OpenGL    >= 2.8, 
+                      GLUT      >= 2.4,
+                      OpenGLRaw >= 1.3, 
+                      OpenVGRaw >= 0.4.0
+  
+  exposed-modules:
+    Graphics.Rendering.OpenVG,
+    Graphics.Rendering.OpenVG.VG,
+    Graphics.Rendering.OpenVG.VGU,
+    Graphics.Rendering.OpenVG.VG.Blending,
+    Graphics.Rendering.OpenVG.VG.DrawingContext,
+    Graphics.Rendering.OpenVG.VG.Extending,
+    Graphics.Rendering.OpenVG.VG.Images,
+    Graphics.Rendering.OpenVG.VG.Paint,
+    Graphics.Rendering.OpenVG.VG.Parameters,
+    Graphics.Rendering.OpenVG.VG.Paths,
+    Graphics.Rendering.OpenVG.VG.RenderingQuality,
+    Graphics.Rendering.OpenVG.VG.Scissoring,
+    Graphics.Rendering.OpenVG.VG.ShivaExtensions,
+    Graphics.Rendering.OpenVG.VGU.VGU
+  
+  other-modules:
+    Graphics.Rendering.OpenVG.VG.Utils,
+    Graphics.Rendering.OpenVG.VGU.ErrorsInternal    
+  
+  extensions:
+
+  ghc-options:  -Wall 
+  
+
+  
+  
+  

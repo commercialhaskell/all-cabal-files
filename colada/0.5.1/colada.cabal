@@ -1,0 +1,58 @@
+Name:                colada
+Version:             0.5.1
+Synopsis:            Colada implements incremental word class class induction 
+                     using online LDA
+Description:  Colada implements incremental word class class induction using 
+              Latent Dirichlet Allocation (LDA) with an Online Gibbs sampler. 
+Homepage:            https://bitbucket.org/gchrupala/colada
+License:             BSD3
+License-file:        LICENSE
+Author:              Grzegorz Chrupała
+Maintainer:          pitekus@gmail.com
+Category:            Natural Language Processing
+Build-type:          Simple
+Cabal-version:       >=1.2
+
+Library
+  Build-depends: base >= 3 && < 5
+               , containers >= 0.4
+               , ListZipper >= 1.2
+               , fclabels >= 1.1
+               , ghc-prim >= 0.2
+               , vector >= 0.9
+               , split >= 0.1.4
+               , text >= 0.11.1
+               , monad-atom >= 0.4.1 && < 1
+               , cereal >= 0.3.5
+               , cmdargs >= 0.9
+               , bytestring >= 0.9
+               , mtl >= 2.0
+               , swift-lda >= 0.4 && <= 0.5
+  Exposed-modules:  Colada.WordClass
+                  , NLP.CoNLL
+  Other-modules: Colada.Features
+               , NLP.Symbols
+  GHC-options: -O2
+
+
+Executable colada
+  Main-is: colada.hs
+  Build-depends: base >= 3 && < 5
+               , containers >= 0.4
+               , ListZipper >= 1.2
+               , fclabels >= 1.1
+               , ghc-prim >= 0.2
+               , vector >= 0.9
+               , split >= 0.1.4
+               , text >= 0.11.1
+               , monad-atom >= 0.4.1 && < 1
+               , cereal >= 0.3.5
+               , cmdargs >= 0.9
+               , bytestring >= 0.9
+               , mtl >= 2.0
+               , swift-lda >= 0.4 && <= 0.5
+  Other-modules: Colada.WordClass
+               , Colada.Features
+               , NLP.CoNLL
+               , NLP.Symbols
+  GHC-options: -O2 -rtsopts

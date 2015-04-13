@@ -1,0 +1,35 @@
+name:          lca
+category:      Algorithms, Data Structures
+version:       0.2
+license:       BSD3
+cabal-version: >= 1.6
+license-file:  LICENSE
+author:        Edward A. Kmett
+maintainer:    Edward A. Kmett <ekmett@gmail.com>
+stability:     provisional
+homepage:      http://github.com/ekmett/lca/
+bug-reports:   http://github.com/ekmett/lca/issues
+copyright:     Copyright (C) 2011-2012 Edward A. Kmett
+synopsis:      O(log n) persistent on-line lowest common ancestor calculation without preprocessing with optional monoidal annotations
+description:   O(log n) persistent on-line lowest common ancestor calculation without preprocessing with optional monoidal annotations
+build-type:    Simple
+
+extra-source-files: .travis.yml
+
+source-repository head
+  type: git
+  location: git://github.com/ekmett/lca.git
+
+library
+  hs-source-dirs: src
+
+  build-depends:
+    base >= 4 && < 5
+
+  exposed-modules:
+    Data.LCA.Online
+    Data.LCA.Online.Monoidal
+    Data.LCA.Online.Naive
+    Data.LCA.View
+
+  ghc-options: -Wall -O2 -fspec-constr

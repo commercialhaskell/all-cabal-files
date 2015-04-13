@@ -1,0 +1,48 @@
+name:           hyena
+version:        0.1.0.1
+synopsis:       Simple web application server
+description:
+  A simple web application server using iteratees.
+license:        BSD3
+license-file:   LICENSE
+author:         Johan Tibell <johan.tibell@gmail.com>
+maintainer:     Johan Tibell <johan.tibell@gmail.com>
+build-type:     Simple
+cabal-version:  >= 1.6
+homepage:       http://github.com/tibbe/hyena
+category:       Network
+
+library
+  exposed-modules:
+    Hyena.Config
+    Hyena.Server
+    Network.Wai
+  other-modules:
+    Data.Enumerator
+    Hyena.Http
+    Hyena.Logging
+    Hyena.Parser
+
+  build-depends:
+    base               == 4.*,
+    bytestring         < 1.0,
+    containers         >= 0.3 && < 0.4,
+    directory,
+    extensible-exceptions,
+    filepath,
+    mtl                >= 1 && < 2.0.2,
+    network            >= 2.1 && < 2.3,
+    network-bytestring >= 0.1.1.2 && < 0.2
+
+  if !os(windows)
+    build-depends:
+      unix
+
+  extensions: Rank2Types
+  ghc-options: -funbox-strict-fields -Wall
+  if impl(ghc >= 6.8)
+    ghc-options: -fwarn-tabs
+
+source-repository head
+  type:     git
+  location: git://github.com/tibbe/hyena.git

@@ -1,0 +1,22 @@
+Name:              hsc3-dot
+Version:           0.5
+Synopsis:          haskell supercollider graph drawing
+Description:       dot format graph generator for unit generator graphs
+License:           GPL
+Category:          Sound
+Copyright:         (c) Rohan Drape, 2006-2008
+Author:            Rohan Drape
+Maintainer:        rd@slavepianos.org
+Stability:         Experimental
+Homepage:          http://slavepianos.org/rd/f/890257/
+Tested-With:       GHC==6.10.1
+Build-Type:        Simple
+Cabal-Version:     >= 1.2
+
+Data-files:        README
+                   Help/hsc3-dot.help.lhs
+
+Library
+  Build-Depends:   base, directory, filepath, hsc3 == 0.5, process
+  GHC-Options:     -Wall -fwarn-tabs
+  Exposed-modules: Sound.SC3.UGen.Dot

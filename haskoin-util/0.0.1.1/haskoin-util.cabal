@@ -1,0 +1,57 @@
+name:                  haskoin-util
+version:               0.0.1.1
+synopsis:              Utility functions for the Network.Haskoin project
+description:           
+    This package contains utility functions used across the Network.Haskoin
+    modules such as ByteString and Data.Binary helpers. It also defines a Build
+    monad describing computations that can be Complete, Partial or Broken.
+    Additionally, this package defines constants tied to specific Bitcoin
+    networks such as prodnet and testnet.
+homepage:              http://github.com/plaprade/haskoin-util
+bug-reports:           http://github.com/plaprade/haskoin-util/issues
+stability:             experimental
+license:               PublicDomain
+license-file:          UNLICENSE
+author:                Philippe Laprade
+maintainer:            plaprade+hackage@gmail.com
+category:              Bitcoin, Finance, Network
+build-type:            Simple
+cabal-version:         >= 1.9.2
+
+source-repository head
+    type:     git
+    location: git://github.com/plaprade/haskoin-util.git
+
+library
+    exposed-modules:   Network.Haskoin.Util,
+                       Network.Haskoin.Util.Arbitrary,
+                       Network.Haskoin.Util.Network,
+                       Network.Haskoin.Util.BuildMonad
+    other-modules:     Network.Haskoin.Util.Network.Prodnet,
+                       Network.Haskoin.Util.Network.Testnet
+    build-depends:     base        == 4.6.*,
+                       binary      == 0.7.*,
+                       bytestring  == 0.10.*,
+                       either      == 4.0.*,
+                       mtl         == 2.1.*,
+                       QuickCheck  == 2.6.*
+    ghc-options:       -Wall -fno-warn-orphans
+
+Test-Suite test-haskoin-util
+    type:              exitcode-stdio-1.0
+    main-is:           Main.hs
+    other-modules:     Network.Haskoin.Util.Tests
+    build-depends:     base                       == 4.6.*,
+                       binary                     == 0.7.*,
+                       bytestring                 == 0.10.*,
+                       either                     == 4.0.*,
+                       containers                 == 0.5.*,
+                       mtl                        == 2.1.*,
+                       QuickCheck                 == 2.6.*,
+                       HUnit                      == 1.2.*,
+                       test-framework             == 0.8.*, 
+                       test-framework-quickcheck2 == 0.3.*, 
+                       test-framework-hunit       == 0.3.* 
+    hs-source-dirs:    . tests
+    ghc-options:       -Wall -fno-warn-orphans
+

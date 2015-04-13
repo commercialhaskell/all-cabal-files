@@ -1,0 +1,15 @@
+Name: infinite-search
+Description:
+    An implementation of Martin Escardo's exhaustively searchable sets.
+Version: 0.10
+Stability: experimental
+Synopsis: Exhaustively searchable infinite sets.
+License: BSD3
+Category: Data, Algorithms, Monads, Search
+Author: Martin Escardo
+Homepage: http://github.com/luqui/infinite-search
+Maintainer: Luke Palmer <lrpalmer@gmail.com>
+Build-Type: Simple
+Build-Depends: base
+Exposed-Modules: Data.Searchable
+Extensions:

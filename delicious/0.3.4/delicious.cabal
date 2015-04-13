@@ -1,0 +1,42 @@
+Name:            delicious
+Version:         0.3.4
+License:         BSD3
+License-file:    LICENSE
+Category:        Web
+Synopsis:        Accessing the del.icio.us APIs from Haskell (v2)
+Description:
+  A Haskell binding to the del.icio.us API, letting you
+  programmatically access its tagged content.
+Author:          Sigbjorn Finne <sof@forkIO.com>
+Maintainer:      Sigbjorn Finne <sof@forkIO.com>
+Homepage:        https://github.com/sof/delicious
+Copyright:       (c) 2008-2014 Sigbjorn Finne.
+Cabal-version:   >= 1.8
+Build-type:      Simple
+
+Source-repository head
+  type:     git
+  location: https://github.com/sof/delicious.git
+
+Library
+    Exposed-modules:
+      Network.Delicious.Types,
+      Network.Delicious.User,
+      Network.Delicious.RSS,
+      Network.Delicious.JSON,
+      Network.Delicious.Fetch,
+      Network.Delicious
+
+
+    Build-depends:   base >= 3 && < 5,
+                     xml        >= 1.2.6,
+                     feed       >= 0.3.9.2,
+                     curl       >= 1.1,
+                     bytestring,
+                     nano-md5,
+                     json       >= 0.3.3
+
+    Ghc-options:     -Wall
+
+-- Executable:     dtest
+-- Main-is:        Main.hs

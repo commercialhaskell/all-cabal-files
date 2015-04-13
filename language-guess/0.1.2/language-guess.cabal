@@ -1,0 +1,29 @@
+Name:                language-guess
+Version:             0.1.2
+Description:         Guess at which language a text is written in using
+                     trigrams, based on the PEAR module Text_LanguageDetect.
+Synopsis:            Guess at which language a text is written in using
+                     trigrams.
+License:             BSD3
+License-file:        LICENSE
+Author:              Christian Rødli Amble
+Maintainer:          cra+code@cra.no
+Copyright:           (c) 2011-2014 Tingtun AS
+Category:            Language
+Build-type:          Simple
+Extra-Source-Files:  php2hs.php
+Data-files:          lang.dat
+Cabal-version:       >=1.6
+
+source-repository head
+  Type:              git
+  Location:          git://github.com/tingtun/language-guess.git
+
+Library
+  Other-Modules:     Paths_language_guess
+  Exposed-modules:   Language.Guess
+  Build-depends:     base ==4.*, cereal >= 0.3 && <0.5,
+                     bytestring >=0.9 && <0.11, containers >=0.4 && <0.6
+  if impl(ghc < 7.0.0)
+    Build-depends:     utility-ht -any
+  Extensions:        CPP

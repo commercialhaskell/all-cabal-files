@@ -1,0 +1,15 @@
+Name:		setlocale
+Version:	0.0.3
+Cabal-Version:	>= 1.2
+Build-Type:	Simple
+License:	PublicDomain
+Author:		Lukas Mai
+Maintainer:	l.mai @web.de
+Synopsis:	A Haskell interface to setlocale()
+Description:	A Haskell interface to @setlocale()@.
+Category:	System
+
+Library
+  Exposed-Modules:	System.Locale.SetLocale
+  Build-Depends:	base
+  Ghc-Options:		-O2 -Wall

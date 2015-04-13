@@ -1,0 +1,34 @@
+name:                xtc
+version:             1.0
+synopsis:            eXtended & Typed Controls for wxHaskell.
+description:         The XTC library provides a typed interface to several wxHaskell controls.
+                     .
+                     * radio view (typed radio box)
+                     .
+                     * single-selection list view (typed single-selection list box)
+                     .
+                     * muliple-selection list view (typed multiple-selection list box)
+                     .
+                     * choice view (typed choice box)
+                     .
+                     * value entry (typed text entry)
+                     .
+                     XTC controls keep track of typed values and items, rather than being string based. Selections in XTC controls consist of actual values instead of indices.  
+category:            GUI, User Interfaces
+license:             BSD3
+license-file:        LICENSE
+author:              Martijn Schrage
+maintainer:          martijn@cs.uu.nl
+build-Depends:       base, wx, wxcore
+build-type:          Simple
+exposed-modules:     Graphics.UI.XTC
+extensions:          EmptyDataDecls
+                     FunctionalDependencies
+                     FlexibleContexts
+                     FlexibleInstances
+                     MultiParamTypeClasses
+                     PatternSignatures
+                     ScopedTypeVariables
+                     TypeSynonymInstances
+ghc-options:
+data-files:          xtc-example.hs

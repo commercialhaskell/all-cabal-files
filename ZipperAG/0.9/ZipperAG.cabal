@@ -1,0 +1,37 @@
+Name:		   ZipperAG
+Version:	   0.9
+Cabal-Version: >= 1.6
+License:	   BSD3
+Author:		   Pedro Martins <pedromartins4@gmail.com>
+Maintainer:    Pedro Martins <pedromartins4@gmail.com>
+Homepage:	   www.di.uminho.pt/~prmartins
+Category:	   Experimental
+Synopsis:	   An implementationg of Attribute Grammars using Functional Zippers
+Description:   An implementationg of Attribute Grammars using Functional Zippers
+build-type:    Simple
+Copyright:     Pedro Martins
+Extra-source-files: README
+license-file:  LICENSE
+
+Library
+  Build-Depends:	base == 4.*, syz
+  Exposed-modules:  Language.Grammars.ZipperAG,
+                    Language.Grammars.ZipperAG.Examples.Algol68,
+                    Language.Grammars.ZipperAG.Examples.BreadthFirst,
+                    Language.Grammars.ZipperAG.Examples.HTMLTableFormatter,
+                    Language.Grammars.ZipperAG.Examples.RepMin,
+                    Language.Grammars.ZipperAG.Examples.SmartParentesis
+                    Language.Grammars.ZipperAG.Examples.DESK.DESK_circular,
+                    Language.Grammars.ZipperAG.Examples.DESK.DESK_HighOrder,
+                    Language.Grammars.ZipperAG.Examples.DESK.DESK_references,
+                    Language.Grammars.ZipperAG.Examples.DESK.DESK,
+                    Language.Grammars.ZipperAG.Examples.LET.ExampleLet,
+                    Language.Grammars.ZipperAG.Examples.LET.Let_Bidi,
+                    Language.Grammars.ZipperAG.Examples.LET.Let_DataTypes_Boilerplate,
+                    Language.Grammars.ZipperAG.Examples.LET.Let_Meaning_HO_NestedST_Circ,
+                    Language.Grammars.ZipperAG.Examples.LET.Let_No_Blocks,
+                    Language.Grammars.ZipperAG.Examples.LET.Let_Scope
+                    Language.Grammars.ZipperAG.Examples.LET.Let_Circular_Flatening
+  hs-source-dirs:   src 
+
+

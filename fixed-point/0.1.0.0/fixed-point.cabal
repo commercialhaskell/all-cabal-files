@@ -1,0 +1,30 @@
+Name:                fixed-point
+Version:             0.1.0.0
+Synopsis:            Binary fixed-point arithmetic
+Description:         This package defines a type for binary
+                     fixed-precision arithmetic. Its interface is
+                     intended to be almost the same as the one
+                     provided by Data.Fixed. The main differences are
+                     that this is binary fixed-point and it's
+                     polymorphic in the underlying representation.
+License:             MIT
+License-file:        LICENSE
+Author:              Jake McArthur
+Maintainer:          Jake McArthur <Jake.McArthur@gmail.com>
+Category:            Data
+Build-type:          Simple
+Cabal-version:       >=1.6
+
+Library
+  Build-depends:       base == 4.3.*
+  Exposed-modules:     Data.Fixed.Binary
+  GHC-options:         -Wall -fwarn-tabs -funfolding-use-threshold=16
+
+Source-repository head
+  type:     darcs
+  location: http://patch-tag.com/r/jmcarthur/fixed-point
+
+source-repository this
+  type:     darcs
+  location: http://patch-tag.com/r/jmcarthur/fixed-point
+  tag:      v0.1.0.0

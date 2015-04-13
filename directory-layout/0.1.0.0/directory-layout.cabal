@@ -1,0 +1,31 @@
+name:          directory-layout
+version:       0.1.0.0
+synopsis:      Declare, construct and verify directory layout
+description:   Friendly language to express directory layouts
+category:      System
+license:       MIT
+license-file:  LICENSE
+author:        Matvey Aksenov
+maintainer:    matvey.aksenov@gmail.com
+build-type:    Simple
+cabal-version: >= 1.8
+
+library
+  exposed-modules: System.Directory.Layout
+                   System.Directory.Layout.Check
+                   System.Directory.Layout.Make
+                   System.Directory.Layout.Parser
+                   System.Directory.Layout.Internal
+  hs-source-dirs: src
+  build-depends: base >= 3 && < 5,
+                 directory,
+                 filepath,
+                 transformers,
+                 parsec,
+                 text
+  ghc-options: -Wall
+               -fno-warn-unused-do-bind
+
+source-repository head
+  type: git
+  location: https://github.com/supki/directory-layout

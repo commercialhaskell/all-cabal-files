@@ -1,0 +1,55 @@
+name:           wai-middleware-cache
+version:        0.3.4
+cabal-version:  >= 1.8
+build-type:     Simple
+stability:      Stable
+author:         Alexander Dorofeev <aka.spin@gmail.com>
+maintainer:     Alexander Dorofeev <aka.spin@gmail.com>
+synopsis:       Caching middleware for WAI.
+homepage:       https://github.com/akaspin/wai-middleware-cache
+bug-reports:    https://github.com/akaspin/wai-middleware-cache/issues
+description:    This package provides cache middleware and abstract type for
+    creating cache backends.
+license:        BSD3
+license-file:   LICENSE
+category:       Web
+
+source-repository head
+  type:      git
+  location:  git://github.com/akaspin/wai-middleware-cache.git
+
+library
+  hs-source-dirs:   src
+  build-depends:    base >= 4 && < 5,
+                   binary,
+                   blaze-builder-conduit >= 0.5,
+                   bytestring >= 0.9 && < 0.10,
+                   conduit >= 0.5 && < 0.6,
+                   crypto-conduit >= 0.4 && < 0.5,
+                   http-types >= 0.7 && < 0.8,
+                   pureMD5,
+                   wai >= 1.3
+  ghc-options:      -Wall
+  exposed-modules:  Network.Wai.Middleware.Cache
+
+test-suite test
+  type:            exitcode-stdio-1.0
+  x-uses-tf:       true
+  build-depends:   
+                   base >= 4,
+                   HUnit >= 1.2 && < 2,
+                   QuickCheck >= 2.4,
+                   test-framework >= 0.4.1,
+                   test-framework-quickcheck2,
+                   test-framework-hunit,
+
+                   wai-middleware-cache,
+
+                   wai >= 1.3,
+                   bytestring >= 0.9 && < 0.10,
+                   wai-test >= 1.3,
+                   http-types >= 0.7 && < 0.8
+  ghc-options:     -Wall -rtsopts
+  hs-source-dirs:  test
+  main-is:         Main.hs
+

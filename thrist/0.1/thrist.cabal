@@ -1,0 +1,39 @@
+Name:                thrist
+Version:             0.1
+Synopsis:            Type-threaded list
+
+Description:
+    Thrist is a list-like data structure (GADT)
+    whose elements are values of a two-parameter
+    datatype. The typing constraint ensures that
+    the second type parameter of a former value
+    unifies with the first type parameter of the
+    latter.
+    .
+    This threading of types is the foundation for
+    thrists' nice properties. E.g., paired with a
+    suitable semantics, function composition (.)
+    can be embedded.
+    .
+    For further ideas, please consult the companion
+    (draft) paper \"Thrists: Dominoes of Data\" at
+    <http://www.opendylan.org/~gabor/Thrist-draft-2008-07-18.pdf>
+
+Category:            Data Structures
+License:             BSD3
+License-File:        LICENSE
+Copyright:           (c) 2008 Gabor Greif
+
+Author:              Gabor Greif
+Maintainer:          ggreif@gmail.com
+Homepage:            http://heisenbug.blogspot.com/search/label/thrist
+
+Stability:           experimental
+Build-Depends:       base
+Extensions:          GADTs, RankNTypes, KindSignatures, FlexibleInstances
+
+Exposed-Modules:     Data.Thrist
+Ghc-Options:         -Wall
+
+Build-Type:          Simple
+

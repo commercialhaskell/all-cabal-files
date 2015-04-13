@@ -1,0 +1,39 @@
+name:                blakesum-demo
+version:             0.5
+synopsis:            The BLAKE SHA-3 candidate hashes, in Haskell
+description:         
+    .
+    This provides an executable which relies on the `blakesum` library, `Data.Digest.BLAKE`.
+    .
+    Usage:
+      blakesum [--algorithm=BITS] [--check] [--salt=SALT] FILE(S)
+    .
+    Contributions and optimizations are welcome!
+    .
+category:            Cryptography
+stability:           experimental
+license:             BSD3
+license-file:        LICENSE
+author:              Kevin Cantu <me@kevincantu.org>
+maintainer:          Kevin Cantu <me@kevincantu.org>
+copyright:           (c) 2011 Kevin Cantu
+homepage:            https://github.com/killerswan/Haskell-BLAKE
+bug-reports:         https://github.com/killerswan/Haskell-BLAKE/issues
+build-type:          Simple
+cabal-version:       >=1.8
+
+source-repository head
+   type:       git
+   location:   https://github.com/killerswan/Haskell-BLAKE
+
+executable blakesum
+   main-is:          Main.hs
+   hs-source-dirs:   .
+   build-depends:    base           >= 4 && < 5,
+                     blakesum       >= 0 && < 1,
+                     bytestring     >= 0 && < 1,
+                     haskell98      >= 1 && < 2,
+                     text           >= 0 && < 1,
+                     vector         >= 0 && < 1
+
+

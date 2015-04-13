@@ -1,0 +1,52 @@
+Name:                chalkboard
+Version:             0.2
+Synopsis:            Combinators for building and processing 2D images. 
+Description:	     Chalkboard is a Haskell hosted Domain Specific Language (DSL) for image generation and processing.
+		The basic structure is a chalk board, a two-dimensional canvas of values, typically colors. 
+		Chalkboard provides the usual image processing functions (masking, overlaying, function mapping,
+		cropping, warping, rotating) as well as a few more unusual ones. 
+		Images can be imported into Chalkboard, as first-class color chalk boards. 
+		Chalkboard also provides combinators for drawing shapes on directly on boards.
+		The system is based loosely on PAN, but the principal image type, a Board, is abstract. 
+
+Category:            Graphics
+License:             BSD3
+License-file:        LICENSE
+Author:              Andy Gill
+Maintainer:          Andy Gill <andygill@ku.edu>
+Copyright:           (c) 2009 Andy Gill
+Homepage:            http://ittc.ku.edu/~andygill/chalkboard.php
+Stability:	     alpha
+build-type: 	     Simple
+Cabal-Version:       >= 1.6
+extra-source-files: test/liam.ppm, test/Makefile
+	
+Library
+  Build-Depends:        base, array
+  Exposed-modules:
+       Graphics.Chalkboard,
+       Graphics.Chalkboard.Array,
+       Graphics.Chalkboard.Ascii,
+       Graphics.Chalkboard.Board,
+       Graphics.Chalkboard.Color,
+       Graphics.Chalkboard.PPM,
+       Graphics.Chalkboard.Shapes,
+       Graphics.Chalkboard.Utils,
+       Graphics.Chalkboard.Types
+
+
+  Ghc-Options:  -Wall
+
+--Executable chalkboard-test
+--  Build-Depends:        base, array, process
+--  Ghc-Options:    -O2
+--  Main-Is:        Test.hs
+--  Hs-Source-Dirs: ., test
+--  buildable: True
+--
+--Executable chalkboard-test2
+--  Build-Depends:        base, array, process
+--  Ghc-Options:    -O2
+--  Main-Is:        Test2.hs
+--  Hs-Source-Dirs: ., test
+--  buildable: True

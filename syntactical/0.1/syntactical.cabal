@@ -1,0 +1,28 @@
+Name:                syntactical
+Version:             0.1
+Synopsis:            Distfix expression parsing library
+Description:         Syntactical is an expression parsing library. It supports
+                     distfix operators and function application written as
+                     juxtaposition of symbols.
+License:             BSD3
+License-file:        LICENSE
+Author:              Vo Minh Thu <noteed@gmail.com>
+Maintainer:          Vo Minh Thu <noteed@gmail.com>
+Stability:           Provisional
+Category:            Parsing
+Build-type:          Simple
+Extra-source-files:  README.md, tests/*.hs
+Cabal-version:       >=1.6
+
+Source-repository head
+  type: git
+  location: git://github.com/noteed/syntactical.git
+
+Library
+  Exposed-modules:     Text.Syntactical.Data,
+                       Text.Syntactical.Yard,
+                       Text.Syntactical
+
+  Build-depends:    base >= 4 && < 5
+
+  ghc-options:         -Wall

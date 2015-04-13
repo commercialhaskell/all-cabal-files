@@ -1,0 +1,14 @@
+Name:                FiniteMap
+Version:             0.1
+Synopsis:            A finite map implementation, derived from the paper: Efficient sets: a balancing act, S. Adams, Journal of functional programming 3(4) Oct 1993, pp553-562
+Description:         This is the deprecated Data.FiniteMap library, often useful to get old code to build when you are too lazy to update it.
+License:             BSD4
+License-file:        LICENSE
+Category:            Data
+Author:              The University of Glasgow 2001
+copyright:           The University of Glasgow 2001
+Maintainer:          Pepe Iborra <mnislaih@gmail.com>
+Build-Depends:       haskell98, base
+exposed-modules:     Data.FiniteMap
+buildable:           True
+ghc-options:         -O2

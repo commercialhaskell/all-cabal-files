@@ -1,0 +1,40 @@
+Name:               pipes-rt
+Version:            0.5.0
+License:            BSD3
+License-File:       LICENSE
+Copyright:          (c) 2013 Greg Hale
+Author:             Greg Hale
+Maintainer:         Greg Hale <imalsogreg@gmail.com>
+Stability:          Experimental
+Homepage:           http://github.com/ImAlsoGreg/pipes-rt
+Bug-Reports:        http://github.com/ImAlsoGreg/pipes-rt/issues
+Category:           Control, Pipes
+Build-Type:         Simple
+Synopsis:           A few pipes to control the timing of yields
+Cabal-Version:      >=1.8
+tested-with:        GHC==7.4.1, GHC==7.4.2, GHC==7.6.2, GHC==7.6.3, GHC==7.8.4, GHC==7.10.1
+Extra-Source-Files: README.md
+Description:
+  Use this library to yield values downstream according to different timing rules.  For example, use the relTimeCat pipe, and your data will be yielded according to their timestamps.  Or use poissonCat to yield values with poisson timing.
+
+Source-Repository head
+  Type:     git
+  Location: git://github.com/ImAlsoGreg/pipes-rt
+
+Library
+  Hs-Source-Dirs: lib
+  Build-Depends:
+    base        >= 4.2 && < 4.9
+   ,pipes       >= 4   && < 4.2
+   ,time        >= 1.4 && < 1.6
+   ,mwc-random  >= 0.13 && < 0.14
+  Exposed-Modules:
+    Pipes.RealTime
+
+Executable PipesRealTimeExample
+  Hs-Source-Dirs: examples
+  Build-Depends:  base
+                , pipes
+                , pipes-rt
+                , time
+  Main-Is:        Examples.hs

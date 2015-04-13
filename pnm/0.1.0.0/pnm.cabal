@@ -1,0 +1,28 @@
+name:                pnm
+version:             0.1.0.0
+synopsis:            PNM image format header parsing and pretty printing
+description:
+  PNM image format header parsing and pretty printing.  PNM is PBM + PGM + PPM,
+  a family of lowest common denominator image file formats.  This library makes
+  no attempt to interpret raster data, instead providing a lazy ByteString.
+
+license:             BSD3
+license-file:        LICENSE
+author:              Claude Heiland-Allen
+maintainer:          claude@mathr.co.uk
+category:            Graphics
+build-type:          Simple
+cabal-version:       >=1.8
+
+library
+  exposed-modules:     Codec.PNM, Codec.PNM.Parse
+  build-depends:       base < 5, bytestring
+
+source-repository head
+  type:                git
+  location:            git://gitorious.org/maximus/pnm.git
+                       
+source-repository this
+  type:                git
+  location:            git://gitorious.org/maximus/pnm.git
+  tag:                 v0.1.0.0

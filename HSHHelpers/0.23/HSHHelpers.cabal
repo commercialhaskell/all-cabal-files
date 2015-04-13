@@ -1,0 +1,25 @@
+Name: HSHHelpers
+Version: 0.23
+License: GPL
+License-file: gpl.txt
+Description: 
+
+  Functions I found I was using repeatedly when doing shell programming with HSH.
+
+  Rather than duplicate code, released on hackage.
+
+  A lot of this is cruft. For instance, you are probably better off having a look at System.Posix.Files and
+  System.Posix.Users, which I overlooked when writing, before making too much use of hsh helpers. 
+
+Synopsis: Convenience functions that use HSH, instances for HSH. 
+Maintainer: Thomas Hartman <thomashartman1 at gmail>
+Author: Thomas Hartman
+Stability: Beta
+Copyright: Copyright (c) 2008 Thomas Hartman
+Exposed-Modules: HSH.Helpers, HSH.Helpers.Instances, HSH.Helpers.UnixUsers, HSH.Helpers.FileManip, 
+                 HSH.Helpers.Utils, HSH.Helpers.Email
+Build-Depends: base >= 0.4 && <5, HSH >= 1 && <1.27, unix, HStringTemplateHelpers, MissingH <= 1.0.3, regex-pcre, directory, bytestring, filepath, mtl,
+               DebugTraceHelpers
+Category: System
+Build-type: Simple
+

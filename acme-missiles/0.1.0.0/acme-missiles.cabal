@@ -1,0 +1,18 @@
+name:                acme-missiles
+version:             0.1.0.0
+synopsis:            Cause serious international side effects.
+description:
+    The highly effectful 'launchMissiles' action, as mentioned in /Beautiful concurrency/,
+    Simon Peyton Jones, 2007.
+license:             PublicDomain
+author:              Joey Adams
+maintainer:          joeyadams3.14159@gmail.com
+-- copyright:           
+category:            Acme
+build-type:          Simple
+cabal-version:       >=1.8
+
+library
+  exposed-modules:     Acme.Missiles
+  build-depends:       base >= 3 && < 5
+  ghc-options:         -Wall

@@ -1,0 +1,14 @@
+Name:                HTTP-Simple
+Version:             0.2
+Description:         DEPRECATED Enable simple wrappers to Network.HTTP
+Synopsis:	     DEPRECATED Enable simple wrappers to Network.HTTP
+Category:            Network
+Stability:           Deprecated
+Homepage:            http://www.b7j0c.org/content/haskell-http.html
+License:             BSD3
+License-file:        LICENSE
+Author:              brad clawsie
+Maintainer:          haskell@fastmail.fm
+Build-Depends:	     base, network, HTTP
+Exposed-modules:     
+Build-Type:	     Simple

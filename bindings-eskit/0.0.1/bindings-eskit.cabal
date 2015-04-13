@@ -1,0 +1,37 @@
+name:           bindings-eskit
+version:        0.0.1
+synopsis:       Bindings to ESKit.
+description:
+  Bindings to ESKit <http://www.marmakoide.org/api-doc/eskit/>.
+license:        BSD3
+license-file:   LICENSE
+author:         Andrew Miller <andrew@amxl.com>
+maintainer:     Andrew Miller <andrew@amxl.com>
+homepage:       http://github.com/a1kmm/bindings-eskit
+bug-reports:    http://github.com/a1kmm/bindings-eskit/issues
+category:       Numerical, FFI
+
+build-type:     Simple
+cabal-version:  >= 1.2.3
+
+library
+  hs-source-dirs:
+    src
+  exposed-modules:
+    Bindings.ESKitLowlevel,
+    Bindings.ESKit
+  build-depends:
+    base         >= 3    && < 5,
+    bindings-DSL >= 1.0  && < 1.1,
+    array        >= 0.3  && < 0.4
+  ghc-options:
+    -Wall
+  extensions:
+    ForeignFunctionInterface
+  includes:
+    eskit.h
+  extra-libraries:
+    eskit
+  pkgconfig-depends:
+    eskit >= 1.1.1
+  c-sources: src/Bindings/eskit_support.c

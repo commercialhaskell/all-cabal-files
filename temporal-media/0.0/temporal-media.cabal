@@ -1,0 +1,28 @@
+Name:          temporal-media
+Version:       0.0
+License-file:  LICENSE
+Cabal-Version: >= 1.2
+License:       BSD3
+Author:	       Anton Kholomiov
+Maintainer:    <anton.kholomiov@gmail.com>
+Synopsis:      data types for temporal media
+Description:   
+      Ispired by the paper /An Algebraic Theory of Polymorphic Temporal Media/, 
+      Paul Hudak 
+      <http://haskell.cs.yale.edu/yale/papers/polymedia/hudak-RR-1259.pdf>, 
+      Haskore and Hommage
+
+Category:      Media, Music
+Stability:     Experimental
+Tested-With:   GHC==6.13.1
+Build-Type:    Simple
+
+
+Library
+  Build-Depends:
+        base >= 4, base < 5
+  Hs-Source-Dirs:      src/
+  Exposed-Modules:
+        Temporal.Media
+        Temporal.Media.Double
+

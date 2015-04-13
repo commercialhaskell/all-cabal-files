@@ -1,0 +1,44 @@
+name:    statechart
+version: 0.0.0
+
+category: Compiler
+
+synopsis: Compiles Rhapsody statecharts to C.
+
+description:
+  TODO
+
+author:     Tom Hawkins <tomahawkins@gmail.com>
+maintainer: Tom Hawkins <tomahawkins@gmail.com>
+
+license:      BSD3
+license-file: LICENSE
+
+homepage: http://tomahawkins.org
+
+build-type:    Simple
+cabal-version: >= 1.6
+
+extra-source-files:
+
+executable statechart
+  hs-source-dirs: src
+
+  main-is: Statechart.hs
+
+  other-modules:
+    Code,
+    Model,
+    Rhapsody
+
+  build-depends:
+    base       >= 4.0 && < 5.0,
+    polyparse  >= 1.4
+
+  ghc-options:  -W
+  extensions:
+
+source-repository head
+  type:     git
+  location: git://github.com/tomahawkins/statechart.git
+

@@ -1,0 +1,36 @@
+name:                minirotate
+version:             0.1.2.2
+synopsis:            Minimalistic file rotation utility
+description:
+         minirotate is minimalistic file rotation utility designed for calling from cron or similar tool.
+category:            Utils
+license:             BSD3
+license-file:        LICENSE
+author:              Krzysztof Skrzetnicki <krzysztof.skrzetnicki+hackage@gmail.com>
+maintainer:          Krzysztof Skrzetnicki <krzysztof.skrzetnicki+hackage@gmail.com>
+homepage:            http://tener.github.com/haskell-minirotate/
+stability:           Beta
+build-type:          Simple
+cabal-version: >= 1.6
+extra-source-files: README
+
+source-repository    head
+    Type:     Git
+    Location: http://github.com/Tener/haskell-minirotate.git
+
+executable            minirotate
+      hs-source-dirs: src
+      other-modules:  Pattern, Options
+      main-is:        Main.hs
+      build-depends:  filepath >= 1.1.0 && < 1.2.0,
+                      base >= 4 && < 5,
+                      directory >= 1,
+                      template-haskell >= 2.4,
+                      data-accessor-template == 0.2.1.3,
+                      data-accessor == 0.2.1.2,
+                      old-time >= 1,
+                      old-locale,
+                      safe == 0.2,
+                      split == 0.1.2,
+                      mtl >= 1.1.0,
+                      process > 1

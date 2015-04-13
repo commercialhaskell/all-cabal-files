@@ -1,0 +1,63 @@
+Name:                idiii
+Cabal-version:       >= 1.8
+Version:             0.1.3
+Synopsis:            ID3v2 (tagging standard for MP3 files) library
+Description:         ID3v2 (tagging standard for MP3 files) library
+Category:            Text, Sound
+License:             BSD3
+License-file:        LICENSE
+Author:              Alexey Alekhin, Chris Wagner
+Maintainer:          christopher.t.wagner@gmail.com, alekhin.alexey@gmail.com
+Build-Type:          Simple
+extra-source-files:  LICENSE read-idiii.hs
+data-dir:            test/resources
+data-files:          *.mp3
+
+Executable read-idiii
+    hs-source-dirs:  ., src
+    build-depends:   base
+    main-is:         read-idiii.hs
+    
+Library
+    Build-Depends:       base < 5, bytestring, polyparse, text, data-accessor, utf8-string, containers, MissingH
+    hs-source-dirs:  src
+    Exposed-modules: ID3,
+                     ID3.Simple,
+
+                     ID3.Parser,
+                     ID3.Parser.Header,
+                     ID3.Parser.ExtHeader,
+                     ID3.Parser.Frame,
+                     ID3.Parser.Tag,
+                     ID3.Parser.General,
+                     ID3.Parser.UnSync,
+                     ID3.Parser.NativeFrames,
+
+                     ID3.Type,
+                     ID3.Type.Header,
+                     ID3.Type.ExtHeader,
+                     ID3.Type.Frame,
+                     ID3.Type.FrameInfo,
+                     ID3.Type.Tag,
+                     ID3.Type.Flags,
+                     ID3.Type.Unparse,
+
+                     ID3.ReadTag,
+                     ID3.WriteTag
+    ghc-options:     -Wall
+
+Test-Suite test
+    type:            exitcode-stdio-1.0
+    hs-source-dirs:  test, src
+    main-is:         Tests.hs
+    build-depends:   base, filepath, process, directory, HUnit
+    other-modules:   Paths_idiii
+
+Source-repository head
+    type:            bazaar
+    location:        lp:idiii
+
+Source-repository this
+    type:            bazaar
+    location:        lp:idiii
+    tag:             0.1.3

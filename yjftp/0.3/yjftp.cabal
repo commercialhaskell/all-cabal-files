@@ -1,0 +1,30 @@
+Name:		yjftp
+Version:	0.3
+License:	GPL
+License-file:	LICENSE
+Author:		Yoshikuni Jujo
+Maintainer:	Yoshikuni Jujo <PAF01143@nifty.ne.jp>
+Category:	Network
+Synopsis:	CUI FTP client like 'ftp', 'ncftp'
+Description:	FTP client
+		Just CUI FTP client
+Stability:	experimental
+Homepage:	http://homepage3.nifty.com/salamander/second/projects/yjftp/index.xhtml
+Package-Url:	http://homepage3.nifty.com/salamander/second/portage/distfiles/yjftp-0.3.tar.gz
+Cabal-Version:	>= 1.2
+Build-Type:	Simple
+Tested-With:	GHC
+Data-Files:	yjftp.hs
+Extra-Source-Files:
+Extra-Tmp-Files:
+
+Library
+  GHC-Options:		-Wall
+  Build-Depends:	base, unix, directory, process, ftphs
+  Exposed-Modules:	Network.Yjftp
+  Other-Modules:	Network.CommandList
+
+Executable yjftp
+  GHC-Options:		-Wall
+  Build-Depends:	hsConfigure
+  Main-Is:		Main.hs

@@ -1,0 +1,62 @@
+Name:                vk-posix-pty
+Version:             0.2.0.1
+
+Homepage:            https://bitbucket.org/merijnv/posix-pty
+                     https://github.com/proger/posix-pty/tree/fork
+Bug-Reports:         https://github.com/proger/posix-pty/issues
+
+Author:              Merijn Verstraaten
+Maintainer:          Vladimir Kirillov <proger@hackndev.com>
+Copyright:           Copyright © 2013 Merijn Verstraaten;
+                     Copyright © 2014 Vladimir Kirillov
+
+License:             BSD3
+License-File:        LICENSE
+
+Category:            System
+Cabal-Version:       >= 1.10
+Build-Type:          Simple
+
+Synopsis:            Pseudo terminal interaction with subprocesses.
+
+Description:
+    This package simplifies the creation of subprocesses that interact with
+    their parent via a pseudo terminal (see @man pty@).
+
+    Included @ptywrap@ utility spawns a process with a @pty@, forwards its
+    output to stdout as plain text without buffering and forwards the exit code.
+    Note that it __does not__ handle standard input.
+
+    > ptywrap: usage: ptywrap [command to run]
+
+Extra-Source-Files:   cbits/fork_exec_with_pty.h cbits/pty_size.h
+
+Library
+  Default-Language:     Haskell2010
+  GHC-Options:          -Wall
+  GHC-Prof-Options:     -auto-all -caf-all -rtsopts
+  Exposed-Modules:      System.Posix.Pty
+  Other-Modules:        
+
+  C-Sources:            cbits/fork_exec_with_pty.c cbits/pty_size.c
+  CC-Options:           -Wall -Wextra -pedantic -std=c99
+  Include-Dirs:         cbits
+
+  Build-Depends:        base >= 4.7 && < 5
+               ,        bytestring >= 0.10
+               ,        unix >= 2.6
+               ,        process >= 1.2.0.0
+
+Executable ptywrap
+  Default-Language:     Haskell2010
+  Main-Is:              ptywrap.hs
+  Build-Depends:        base >= 4.7 && < 5
+               ,        bytestring >= 0.10
+               ,        unix >= 2.6
+               ,        process >= 1.2.0.0
+               ,        vk-posix-pty
+
+Source-Repository head
+  Type:     git
+  Location: https://github.com/proger/posix-pty
+  Tag:      fork-0.2

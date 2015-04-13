@@ -1,0 +1,25 @@
+Name:               PostgreSQL
+Version:            0.1
+License:            OtherLicense
+License-File:       COPYING
+Copyright:          Ian Lynagh, 2006, 2007
+Author:             Ian Lynagh
+Maintainer:         igloo@earth.li
+Stability:          experimental
+Synopsis:           Thin wrapper over the C postgresql library
+Description:
+    A thin wrapper over the C postgresql library. Not yet complete,
+    but certainly usable. Designed for PostgreSQL 8.1, but may be usable
+    with other versions.
+Category:           Database
+Tested-With:        GHC==6.6
+Build-Depends:      base, mtl
+Extensions:         EmptyDataDecls
+                    ForeignFunctionInterface
+                    OverlappingInstances
+                    UndecidableInstances
+Extra-source-files: "BSD3", "GPL-2"
+Exposed-modules:
+    Database.PostgreSQL
+GHC-Options: -Wall
+

@@ -1,0 +1,93 @@
+name:                  krpc
+version:               0.1.0.0
+license:               MIT
+license-file:          LICENSE
+author:                Sam T.
+maintainer:            Sam T. <pxqr.sta@gmail.com>
+copyright:             (c) 2013, Sam T.
+category:              Network
+build-type:            Simple
+cabal-version:         >=1.8
+homepage:              https://github.com/pxqr/krpc
+bug-reports:           https://github.com/pxqr/krpc/issues
+synopsis:              KRPC remote procedure call protocol implementation.
+description:
+
+  KRPC remote procedure call protocol implementation.
+  .
+  [/Release Notes/]
+  .
+    * /0.1.0.0:/ Initial version.
+
+
+source-repository head
+  type:                git
+  location:            git://github.com/pxqr/krpc.git
+
+
+
+library
+  exposed-modules:     Remote.KRPC
+                     , Remote.KRPC.Protocol
+                     , Remote.KRPC.Scheme
+
+  build-depends:       base          == 4.*
+
+                     , lifted-base   >= 0.1.1
+                     , transformers  >= 0.2
+                     , monad-control >= 0.3
+
+                     , bytestring   >= 0.10
+                     , containers   >= 0.4
+                     , bencoding    >= 0.1
+
+                     , network      >= 2.3
+
+
+  hs-source-dirs:      src
+  extensions:          PatternGuards
+  ghc-options:         -Wall
+
+
+
+test-suite test-client
+  type:                exitcode-stdio-1.0
+  main-is:             Client.hs
+  other-modules:       Shared
+  build-depends:       base        == 4.*
+                     , bytestring
+                     , process
+                     , filepath
+
+                     , krpc
+
+                     , HUnit
+                     , test-framework
+                     , test-framework-hunit
+
+  hs-source-dirs:      tests
+
+executable test-server
+  main-is:             Server.hs
+  other-modules:       Shared
+  build-depends:       base        == 4.*
+                     , bytestring
+                     , krpc
+
+  hs-source-dirs:      tests
+
+
+
+
+executable bench-server
+  main-is:             Server.hs
+  build-depends:       base        == 4.*, krpc, bytestring
+  hs-source-dirs:      bench
+  ghc-options:         -fforce-recomp
+
+benchmark bench-client
+  type:                exitcode-stdio-1.0
+  main-is:             Main.hs
+  hs-source-dirs:      bench
+  build-depends:       base == 4.5.*, krpc, criterion, bytestring
+  ghc-options:         -O2 -fforce-recomp

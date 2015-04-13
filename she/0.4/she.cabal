@@ -1,0 +1,57 @@
+name:               she
+version:            0.4
+homepage:           http://personal.cis.strath.ac.uk/~conor/pub/she
+synopsis:           A Haskell preprocessor adding miscellaneous features
+description:
+    The Strathclyde Haskell Enhancement is a somewhat inglorious bodge,
+    equipping ghc with automatic lifting of types to kinds, pattern
+    synonyms, and some kit for higgledy-piggledy literate programming.
+category:           Language
+license:            PublicDomain
+license-file:       LICENCE
+author:             Conor McBride
+maintainer:         conor@strictlypositive.org
+extra-source-files: src/Makefile
+                    examples/Binding.lhs
+                    examples/Fix.lhs
+                    examples/FH.lhs
+                    examples/Hig.lhs
+                    examples/IFunctor.lhs
+                    examples/IMonad.lhs
+                    examples/Jig.lhs
+                    examples/Parsley.lhs
+                    examples/Path.lhs
+                    examples/Pig.lhs
+                    examples/Tree.lhs
+                    examples/Vec.lhs
+cabal-version:      >= 1.6
+build-type:         Simple
+
+executable she
+    main-is:            Main.lhs
+
+    build-depends:      base >=3 && < 5,
+                        mtl >=2 && <3,
+                        filepath >= 1 && < 2
+    hs-source-dirs:     src
+
+    other-modules:      Aspect
+                        DeBruijn
+                        IdiomBrackets
+                        Imports
+                        HaLay
+                        Parsley
+                        Patsy
+                        Superclass
+                        TypesToKinds
+
+library
+    exposed-modules:    ShePrelude
+    build-depends:      base >=3 && < 5,
+                        mtl >=2 && <3,
+                        filepath >= 1 && < 2
+    hs-source-dirs:     src    
+
+source-repository head
+  type:     darcs
+  location: http://personal.cis.strath.ac.uk/~conor/pub/she

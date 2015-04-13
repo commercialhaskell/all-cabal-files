@@ -1,0 +1,19 @@
+Name:		concurrent-sa
+Version:	1.0.1
+Category:	Algorithms, Concurrency
+Author:		Louis Wasserman
+License:	BSD3
+License-file:	LICENSE
+Stability:	experimental
+Synopsis:	Concurrent simulated annealing system.
+Description:	An extremely lightweight system for concurrent simulated annealing.
+Maintainer:	Louis Wasserman <wasserman.louis@gmail.com>
+Build-type:	Simple
+cabal-version:  >= 1.6
+Library{
+  build-depends: base >= 4 && < 5, MonadRandom
+  exposed-modules:
+    Control.Concurrent.Annealer
+  other-modules:
+    Control.Concurrent.Annealer.Population
+}

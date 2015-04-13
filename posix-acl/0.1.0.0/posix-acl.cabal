@@ -1,0 +1,26 @@
+Name:           posix-acl
+Version:        0.1.0.0
+Cabal-Version:  >= 1.8
+Build-Type:     Simple
+License:        LGPL-2.1
+License-File:   LICENSE
+Copyright:      Copyright © 2013 Nicola Squartini
+Author:         Nicola Squartini
+Maintainer:     Nicola Squartini <tensor5@gmail.com>
+Bug-Reports:    mailto:tensor5@gmail.com
+Synopsis:       Support for Posix ACL
+Category:       System
+Description:
+
+  Support for POSIX.1e /Access Control Lists/ (ACL), defined in
+  section 23 of the draft standard IEEE Std 1003.1e.
+
+Library
+  Build-Depends:        base == 4.*,
+--                        bytestring == 0.10.*,
+                        containers == 0.5.*
+  Ghc-Options:          -Wall
+  Exposed-Modules:      System.Posix.ACL
+--                        System.Posix.ACL.Internals
+  Other-Modules:        System.Posix.ACL.Acl_h System.Posix.ACL.Internals
+  Extra-Libraries:      acl

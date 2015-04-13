@@ -1,0 +1,40 @@
+Name: FTPLine
+Version: 1.1.0
+Cabal-Version: >= 1.6
+License: BSD3
+License-file: license
+Author: Daniel Diaz
+Maintainer: Daniel Diaz <danieldiaz@asofilak.es>
+Homepage: http://ddiaz.asofilak.es/packages/FTPLine
+Category: Network
+Synopsis: A command-line FTP client.
+Description: A command-line FTP client. Type @help@ for a list of commands. Online documentation at the homepage.
+             .
+             Changes from last version:
+             .
+             * State becomes a record (was a tuple).
+             .
+             * File content changes from @String@ to @ByteString@.
+             .
+             * Added modes (local and remote).
+             .
+             * Changed lazy state to strict state,
+             and it has been instantiated at haskeline's @MonadException@ class.
+             .
+             * The way FTP results are shown has varied.
+             .
+             * Memory usage has been reduced considerably.
+Build-Type: Simple
+
+Executable FTPLine
+  Build-depends: base == 4.*
+               , mtl
+               , ftphs
+               , directory
+               , network
+               , haskeline >=0.6.2.4 && < 0.7
+               , ansi-terminal
+               , strict
+               , bytestring
+  Extensions: FlexibleInstances
+  Main-is: Main.hs

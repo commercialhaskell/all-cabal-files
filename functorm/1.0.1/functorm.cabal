@@ -1,0 +1,15 @@
+Name:                functorm
+Version:             1.0.1
+Synopsis:            Data.FunctorM (compatibility package)
+Category:            Generics
+Description:
+  This is the Data.FunctorM module from 6.6's base, deleted from HEAD still used
+  by some projects (notably jhc); this package can be used for compatibility.
+License:             BSD3
+License-file:        LICENSE
+Maintainer:          libraries@haskell.org
+Build-Depends:       base
+ghc-options:         -O2 -funbox-strict-fields -Wall -Werror
+ghc-prof-options:    -O2 -funbox-strict-fields -auto-all -Wall -Werror
+Exposed-Modules:     Data.FunctorM
+Extra-Source-Files:  README

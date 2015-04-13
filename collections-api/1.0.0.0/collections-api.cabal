@@ -1,0 +1,27 @@
+name:           collections-api
+build-type:     Simple
+version:        1.0.0.0
+category:       Data Structures
+
+license:        BSD3
+license-file:   LICENSE
+
+author:         Jean-Philippe Bernardy
+maintainer:     jeanphilippe.bernardy (google mail)
+
+synopsis:       API for collection data structures.
+description:    This package provides classes for a consistent API to data
+                structures. The behaviour of the interface is specified by QuickCheck properties. 
+                It is intended as an evolution of the API of the data structures in the @containers@ package.
+homepage:       http://code.haskell.org/collections/
+cabal-version: >= 1.6
+
+tested-with:    GHC==6.12.1
+
+exposed-modules:
+        Data.Collections,
+        Data.Collections.Foldable,
+        Data.Collections.Properties
+build-depends:  base >= 3 && < 5, QuickCheck == 2.*, array
+extensions:     CPP, MultiParamTypeClasses, FunctionalDependencies, FlexibleContexts, FlexibleInstances
+ghc-options:    -Wall

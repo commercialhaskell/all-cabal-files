@@ -1,0 +1,41 @@
+name:                distributed-process-p2p
+version:             0.1.0.1
+synopsis:            Peer-to-peer node discovery for Cloud Haskell
+description:         Bootstraps a peer-to-peer connection network from a set of known hosts.
+homepage:            https://bitbucket.org/dpwiz/distributed-process-p2p/
+license:             BSD3
+license-file:        LICENSE
+author:              Alexander Bondarenko
+maintainer:          aenor.realm@gmail.com
+copyright:           Alexander Bondarenko
+category:            Network
+build-type:          Simple
+cabal-version:       >=1.8
+
+source-repository head
+  type:     mercurial
+  location: http://bitbucket.org/dpwiz/distributed-process-p2p
+
+library
+  exposed-modules:     Control.Distributed.Backend.P2P
+  -- other-modules:       
+  hs-source-dirs:      src
+  build-depends:
+    base ==4.*,
+    mtl ==2.1.*,
+    bytestring ==0.9.*,
+    containers ==0.4.*,
+    binary ==0.5.*,
+
+    distributed-process ==0.4.*,
+    network-transport ==0.3.*,
+    network-transport-tcp ==0.3.*
+
+executable jollycloud
+  hs-source-dirs:      tests/
+  main-is:             JollyCloud.hs
+  build-depends:
+    base ==4.*,
+    mtl ==2.*,
+    distributed-process,
+    distributed-process-p2p

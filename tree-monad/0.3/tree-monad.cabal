@@ -1,0 +1,31 @@
+Name:          tree-monad
+Version:       0.3
+Cabal-Version: >= 1.6
+Synopsis:      Non-Determinism Monad for Tree Search
+Description:   
+
+  This Haskell library provides an implementation of the MonadPlus
+  type class that represents the search space as a tree whose
+  constructors represent mzero, return, and mplus.
+
+Category:      Control, Monads
+License:       BSD3
+License-File:  LICENSE
+Author:        Sebastian Fischer
+Maintainer:    sebf@informatik.uni-kiel.de
+Bug-Reports:   mailto:sebf@informatik.uni-kiel.de
+Homepage:      http://sebfisch.github.com/tree-monad
+Build-Type:    Simple
+Stability:     experimental
+
+Extra-Source-Files: README
+
+Library
+  Build-Depends:    base >= 3 && < 5
+  Exposed-Modules:  Control.Monad.SearchTree
+  Ghc-Options:      -Wall
+  Extensions:       Rank2Types
+
+Source-Repository head
+  type:     git
+  location: git://github.com/sebfisch/tree-monad.git

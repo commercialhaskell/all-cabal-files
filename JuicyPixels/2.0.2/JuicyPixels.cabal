@@ -1,0 +1,88 @@
+Name:                JuicyPixels
+Version:             2.0.2
+Synopsis:            Picture loading/serialization (in png, jpeg, bitmap and gif)
+Description:
+    This library can load and store images in PNG/Bitmap and Jpeg, and
+    read Gif images.
+    .
+    Version 2.0.2 changelog:
+    .
+      * Decoding of interleaved gif image, and delta coded gif animation.
+    .
+      * Bumping dependencies.
+    .
+    Version 2.0.1 changelog:
+    .
+      * Documentation enhancements.
+    .
+      * Fixing some huge gif file loading.
+    .
+      * Fixing performance problem of Bitmap and Jpeg savings.
+    .
+    Version 2.0 changelog:
+    .
+      * New extractComponent version with type safe plane
+        extraction
+    .
+      * Gif file reading
+    .
+    Version 1.3 changelog:
+    .
+      * Fix extractComponent function
+    .
+      * Adding saving for YA8 functions
+    .
+
+homepage:            https://github.com/Twinside/Juicy.Pixels
+License:             BSD3
+License-file:        LICENSE
+Author:              Vincent Berthoux
+Maintainer:          vincent.berthoux@gmail.com
+Category:            Codec, Graphics
+Build-type:          Simple
+
+-- Extra-source-files:  
+
+-- Constraint on the version of Cabal needed to build this package.
+Cabal-version:       >= 1.10
+
+Source-Repository head
+    Type:      git
+    Location:  git://github.com/Twinside/Juicy.Pixels.git
+
+Source-Repository this
+    Type:      git
+    Location:  git://github.com/Twinside/Juicy.Pixels.git
+    Tag:       v2.0.2
+
+Library
+  Default-Language: Haskell2010
+  Exposed-modules:  Codec.Picture,
+                    Codec.Picture.Bitmap,
+                    Codec.Picture.Gif,
+                    Codec.Picture.Png,
+                    Codec.Picture.Jpg,
+                    Codec.Picture.Saving,
+                    Codec.Picture.Types
+
+  Ghc-options: -O3 -Wall
+  Build-depends: base                >= 4       && < 5,
+                 bytestring          >= 0.9     && < 0.11,
+                 mtl                 >= 1.1     && < 2.2,
+                 cereal              >= 0.3.3.0 && < 0.4,
+                 zlib                >= 0.5.3.1 && < 0.6,
+                 transformers        >= 0.2.2   && < 0.4,
+                 vector              >= 0.10    && < 0.11,
+                 primitive           >= 0.5     && < 0.6,
+                 deepseq             >= 1.1     && < 1.4
+
+  -- Modules not exported by this package.
+  Other-modules: Codec.Picture.Jpg.DefaultTable,
+                 Codec.Picture.Jpg.FastIdct,
+                 Codec.Picture.Jpg.FastDct,
+                 Codec.Picture.Jpg.Types,
+                 Codec.Picture.Gif.LZW,
+                 Codec.Picture.Png.Export,
+                 Codec.Picture.Png.Type,
+                 Codec.Picture.BitWriter
+

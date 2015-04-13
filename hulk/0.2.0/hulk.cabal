@@ -1,0 +1,93 @@
+Name:                hulk
+Version:             0.2.0
+Synopsis:            IRC server written in Haskell.
+Description:         An IRC server with (mandatory) server authentication, log recall, bumping.
+                     Intended for private business use or hobby work.
+License:             BSD3
+Stability:           Stable
+License-file:        LICENSE
+Author:              Chris Done
+Maintainer:          chrisdone@gmail.com
+Copyright:           2010-2013 Chris Done
+Category:            Network
+Build-type:          Simple
+Cabal-version:       >=1.2
+Extra-source-files:
+  README.md
+  example/log/events.log
+  example/auth/passwd
+  example/auth/passwd-key
+  example/txt/PREFACE
+  example/txt/MOTD
+  example/hulk.conf
+  example/users/hulk2
+  example/users/hulk
+
+Library
+  Exposed-Modules:
+     Hulk.Server
+     Hulk.Options
+     Hulk.Client
+     Hulk.Config
+     Hulk.Types
+     Hulk.Auth
+  Ghc-options:       -threaded -O2 -Wall
+  Hs-Source-Dirs:    src
+  Build-depends:     base >= 4 && <5,
+                     text,
+                     ConfigFile,
+                     fastirc,
+                     network,
+                     ghc-prim,
+                     time,
+                     containers,
+                     aeson,
+                     mtl,
+                     utf8-string,
+                     Crypto,
+                     cmdargs,
+                     strict,
+                     filepath,
+                     directory,
+                     bytestring,
+                     split,
+                     unix,
+                     case-insensitive,
+                     monad-extras == 0.3.2.0
+
+Executable hulk
+  Main-is:           Main.hs
+  Other-Modules:     Hulk.Auth,
+                     Hulk.Client,
+                     Hulk.Config,
+                     Hulk.Server,
+                     Hulk.Types
+  Ghc-options:       -threaded -O2 -Wall
+  Hs-Source-Dirs:    src
+  Build-depends:     base >= 4 && <5,
+                     text,
+                     ConfigFile,
+                     fastirc,
+                     network,
+                     ghc-prim,
+                     time,
+                     containers,
+                     aeson,
+                     mtl,
+                     utf8-string,
+                     Crypto,
+                     cmdargs,
+                     strict,
+                     filepath,
+                     directory,
+                     bytestring,
+                     split,
+                     unix,
+                     case-insensitive,
+                     monad-extras == 0.3.2.0
+
+Executable hulk-generate-pass
+  Main-is:          GeneratePass.hs
+  Hs-Source-Dirs:   src
+  Build-depends:    base
+  Ghc-options:       -threaded -O2 -Wall

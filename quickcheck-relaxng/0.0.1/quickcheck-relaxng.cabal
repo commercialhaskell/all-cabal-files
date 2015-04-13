@@ -1,0 +1,17 @@
+Name:                quickcheck-relaxng
+Version:             0.0.1
+Homepage:            http://github.com/audreyt/quickcheck-relaxng/
+Category:            QuickCheck, test, hxt, xml, relaxng
+Synopsis:            Generate RelaxNG-constrained XML documents for QuickCheck
+Description:         Generate RelaxNG-constrained XML documents for QuickCheck
+License:             PublicDomain
+Author:              Audrey Tang
+Maintainer:          audreyt@audreyt.org
+Copyright:           Audrey Tang 2014 (CC0)
+Cabal-Version:       >= 1.2
+Build-Type:          Simple
+
+Library
+    Build-Depends:   base>=3 && <5, QuickCheck >= 2, quickcheck-regex, hxt-relaxng, hxt
+    Exposed-modules: Test.QuickCheck.RelaxNG
+    Hs-source-dirs:  src

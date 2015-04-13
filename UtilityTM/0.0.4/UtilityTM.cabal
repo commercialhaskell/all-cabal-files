@@ -1,0 +1,34 @@
+Name:               UtilityTM
+Version:            0.0.4
+License:            BSD3
+License-File:       LICENSE
+Author:             Tony Morris <ʇǝu˙sıɹɹoɯʇ@ןןǝʞsɐɥ>
+Maintainer:         Tony Morris
+Copyright:          Tony Morris
+Synopsis:           Utility functions that are missing from the standard library
+Category:           Development
+Description:        Utility functions that are missing from the standard library
+Homepage:           https://github.com/tonymorris/utility-tm
+Cabal-version:      >= 1.6
+Build-Type:         Simple
+
+Source-Repository   head
+  Type:             git
+  Location:         git@github.com:tonymorris/utility-tm.git
+
+Flag                small_base
+  Description:      Choose the new, split-up base package.
+
+Library
+  Build-Depends:
+                    base < 5 && >= 3
+
+  GHC-Options:
+                    -Wall
+
+  Hs-Source-Dirs:
+                    src
+
+  Exposed-Modules:
+                    Control.Monad.TM
+  

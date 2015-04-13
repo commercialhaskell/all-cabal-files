@@ -1,0 +1,34 @@
+name:            gsl-random
+version:         0.2.2
+homepage:        http://github.com/patperry/gsl-random
+synopsis:        Bindings the the GSL random number generation facilities.
+description:
+    Bindings to the GNU Scientific Library random number generators and random
+    distributions.
+    .
+category:        Math
+license:         BSD3
+license-file:    LICENSE
+copyright:       (c) 2008. Patrick Perry <patperry@stanford.edu>
+author:          Patrick Perry
+maintainer:      Patrick Perry <patperry@stanford.edu>
+cabal-version:   >= 1.2.0
+build-type:      Configure
+tested-with:     GHC == 6.10.1
+
+extra-source-files:     README configure.ac configure
+                        aclocal.m4 m4/ax_cblas.m4 m4/ax_gsl.m4
+                        gsl-random.buildinfo.in
+
+extra-tmp-files:        config.log config.status autom4te.cache
+                        gsl-random.buildinfo
+                        
+library
+    hs-source-dirs:     lib
+    exposed-modules:    GSL.Random.Gen
+                        GSL.Random.Dist
+    other-modules:      GSL.Random.Gen.Internal
+
+    ghc-options:        -Wall
+    extensions:         ForeignFunctionInterface
+    build-depends:      base

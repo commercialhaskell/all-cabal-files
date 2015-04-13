@@ -1,0 +1,32 @@
+name:          safer-file-handles-bytestring
+version:       0.3.0.1
+cabal-version: >=1.6
+build-type:    Simple
+license:       BSD3
+license-file:  LICENSE
+copyright:     2010-2011 Bas van Dijk
+author:        Bas van Dijk
+maintainer:    Bas van Dijk <v.dijk.bas@gmail.com>
+homepage:      https://github.com/basvandijk/safer-file-handles-bytestring/
+bug-reports:   https://github.com/basvandijk/safer-file-handles-bytestring/issues
+stability:     experimental
+category:      System, Monadic Regions
+synopsis:      Extends safer-file-handles with ByteString operations
+description:   Extends @safer-file-handles@ with @ByteString@ operations
+
+source-repository head
+  Type:     git
+  Location: git://github.com/basvandijk/safer-file-handles-bytestring.git
+
+Library
+  GHC-Options: -Wall
+  build-depends: base               	     >= 4    && < 4.5
+               , bytestring         	     >= 0.9  && < 0.10
+               , regions            	     >= 0.9  && < 0.12
+               , transformers       	     >= 0.2  && < 0.3
+               , explicit-iomodes-bytestring >= 0.2  && < 0.3
+               , safer-file-handles          >= 0.10 && < 0.12
+  exposed-modules: Data.ByteString.SaferFileHandles
+                   Data.ByteString.Char8.SaferFileHandles
+                   Data.ByteString.Lazy.SaferFileHandles
+                   Data.ByteString.Lazy.Char8.SaferFileHandles

@@ -1,0 +1,32 @@
+Name:               JSON-Combinator
+Version:            0.0.1
+License:            BSD3
+License-File:       LICENSE
+Author:             Tony Morris <ʇǝu˙sıɹɹoɯʇ@ןןǝʞsɐɥ>
+Maintainer:         Tony Morris
+Synopsis:           A combinator library on top of Text.JSON
+Category:           Education
+Description:        A combinator library on top of Text.JSON http://hackage.haskell.org/package/JSONb
+Cabal-version:      >= 1.2
+Build-Type:         Simple
+
+Flag small_base
+  Description:      Choose the new, split-up base package.
+
+Library
+  Build-Depends:    base < 5 && >= 4,
+                    JSONb,
+                    bytestring,
+                    bytestring-trie,
+                    HUnit,
+                    QuickCheck,
+                    test-framework,
+                    test-framework-hunit,
+                    test-framework-quickcheck2
+
+  GHC-Options:      -Wall
+                    -fno-warn-orphans
+                    -fno-warn-type-defaults
+                    -fno-warn-name-shadowing
+
+  Exposed-Modules:  Text.JSONb.Combinator

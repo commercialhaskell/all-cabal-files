@@ -1,0 +1,15 @@
+Name:            printf-mauke
+Version:         0.5.2
+Cabal-Version:   >= 1.2
+Build-Type:      Simple
+License:         BSD3
+License-File:    LICENSE
+Author:          Lukas Mai
+Maintainer:      <l.mai@web.de>
+Category:        Text
+Synopsis:        A Perl printf like formatter.
+
+Library
+  Build-Depends:     base >= 3 && < 5, containers, utf8-string, data-default, bytestring, template-haskell
+  Exposed-Modules:   Text.Printf.Mauke, Text.Printf.Mauke.TH
+  Other-Modules:     Text.Printf.Mauke.Internal

@@ -1,0 +1,27 @@
+name:                tsp-viz
+version:             0.1.0.0
+synopsis:            Real time TSP tour visualization.
+
+license:             BSD3
+license-file:        LICENSE
+author:              David Nilsson
+homepage:            https://github.com/davnils/tsp-viz
+maintainer:          nilsson.dd+code@gmail.com
+description:
+  Real time TSP tour visualization using Gloss.
+
+  This program is used as a standalone binary and exposes an interface which
+  communicates over a stream, such as stdout or a file handle.
+
+  It supports a single set vertices with multiple tours rendered and updated 
+  during execution, with overlapping edges being bended appropriately.
+
+  Currently there is only a C++ interface available in the git repository.
+
+category:            Graphics
+build-type:          Simple
+cabal-version:       >=1.8
+
+executable tsp-viz
+  main-is:           TSPViz.hs
+  build-depends:     base ==4.5.*, stm ==2.3.*, vector ==0.9.*, gloss ==1.7.*

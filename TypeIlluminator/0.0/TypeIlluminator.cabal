@@ -1,0 +1,22 @@
+name:                TypeIlluminator
+version:             0.0
+synopsis:            TypeIlluminator is a prototype tool exploring debugging of type errors/
+description:         TypeIlluminator is a prototype tool implementing the ideas presented in the paper
+                     Compositional Explanation of Types and Algorithmic Debugging of Type Errors.
+                     It constructs the type explanation graph for programs written in a simple
+                     Haskell-like language and enables free navigation through the graph
+                     in various ways and algorithmic debugging.
+category:            Compilers/Interpreters
+license:             BSD3
+license-file:        LICENSE
+author:              Olaf Chitil
+maintainer:          Olaf Chitil <O.Chitil@kent.ac.uk>
+homepage:            http://www.cs.kent.ac.uk/people/staff/oc/TypeIlluminator/
+build-depends:       base, haskell98
+build-type:          Simple
+
+executable:          typeilluminator
+main-is:             TypeIlluminator.hs
+
+ghc-options:         -O2 -Wall -optl-Wl,-s
+ghc-prof-options:    -prof -auto-all

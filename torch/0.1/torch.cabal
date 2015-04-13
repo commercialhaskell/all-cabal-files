@@ -1,0 +1,27 @@
+name:                torch
+version:             0.1
+synopsis:            Simple unit test library (or framework)
+description:         Unit test writing and running with writer monads.
+
+cabal-version:       >= 1.2.3
+category:            Testing
+license:             BSD3
+license-file:        LICENSE
+author:              Yusaku Hashimoto 
+maintainer:          nonowarn@gmail.com
+homepage:            http://patch-tag.com/repo/torch/home
+stability:           experimental
+build-depends:       base >= 4, mtl, QuickCheck, parallel
+build-type:          Simple
+extensions :         GADTs
+                   , GeneralizedNewtypeDeriving
+
+exposed-modules:     Test.Torch
+                   , Test.Torch.Types
+                   , Test.Torch.Types.Instances
+                   , Test.Torch.Build
+                   , Test.Torch.Run
+                   , Test.Torch.Report
+                   , Test.Torch.Hook
+
+extra-source-files:  examples/Tests.hs

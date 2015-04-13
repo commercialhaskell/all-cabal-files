@@ -1,0 +1,43 @@
+Name:              leankit-api
+Version:           0.2
+Synopsis:          LeanKit API
+Description:       A lightweight API for LeanKit (http:\/\/leankit.com)
+License:           MIT
+License-file:      LICENSE
+Author:            Daniel Torok
+Maintainer:        daniel.torok@prezi.com
+Category:          API
+Build-Type:        Simple
+Cabal-Version:     >= 1.6
+
+Source-repository head
+  Type:            git
+  Location:        https://github.com/dtorok/leankit-hsapi
+
+Library
+  Build-Depends:   base >= 4 && < 5,
+                   aeson >= 0.6.2.1,
+                   bytestring,
+                   colour,
+                   curl,
+                   split
+  Exposed-modules: Leankit.Api
+                   Leankit.Types
+                   Leankit.Types.AssignedUser
+                   Leankit.Types.Board
+                   Leankit.Types.BoardHistoryItem
+                   Leankit.Types.BoardIdentifierSet
+                   Leankit.Types.BoardShort
+                   Leankit.Types.Card
+                   Leankit.Types.CardComment
+                   Leankit.Types.CardContext
+                   Leankit.Types.CardHistoryItem
+                   Leankit.Types.Common
+                   Leankit.Types.Credentials
+                   Leankit.Types.Lane
+                   Leankit.Types.LaneLayout
+                   Leankit.Types.LaneShort
+                   Leankit.Types.TH
+                   Leankit.Types.User
+  extensions:      OverloadedStrings
+  ghc-options:     -Wall

@@ -1,0 +1,27 @@
+name:                yesod-s3
+version:             0.1.0.0
+synopsis:            Simple Helper Library for using Amazon's Simple Storage Service (S3) with Yesod
+-- description:         
+homepage:            https://github.com/tvh/yesod-s3
+bug-reports:         http://github.com/tvh/yesod-s3/issues
+license:             MIT
+license-file:        LICENSE
+author:              Timo von Holtz
+maintainer:          tvh@tvholtz.de
+copyright:           Copyright (C) 2013 Timo von Holtz
+category:            Yesod
+build-type:          Simple
+cabal-version:       >=1.8
+
+library
+  exposed-modules:
+    Yesod.S3
+  -- other-modules:       
+  build-depends:
+    base ==4.*,
+    hS3,
+    yesod-core,
+    bytestring,
+    text,
+    conduit >= 1.0.5,
+    network

@@ -1,0 +1,17 @@
+name: hsSqlite3
+cabal-version: >= 1.2.3
+version: 0.0.6
+build-type: Simple
+synopsis: Database package using sqlite3.
+author: Evgeny Jukov
+maintainer: Maurício C. Antunes <mauricio.antunes@gmail.com>
+stability: experimental, not usable yet
+homepage: http://bitbucket.org/mauricio/hssqlite3
+license: BSD3
+license-file: LICENSE
+category: database
+library
+  hs-source-dirs: src
+  build-depends: base, bindings-sqlite3, utf8-string
+  exposed-modules:
+    Database.HsSqlite3

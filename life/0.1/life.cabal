@@ -1,0 +1,30 @@
+name:          life
+version:       0.1
+category:      Game
+synopsis:      Conway's Life cellular automaton
+homepage:      http://github.com/sproingie/haskell-cells/
+
+description: Conway's life as an OpenGL example. Special thanks to
+ 	     Will Donnelly for his pure-functional Brians Brain code
+ 	     that got this started (cabal unpack brians-brain).
+
+stability:     example
+author:        Chuck Adams
+maintainer:    Chuck Adams <cja987@gmail.com>
+copyright:     (c) 2009 Chuck Adams
+license:       BSD3
+license-file:  LICENSE
+
+build-type:    Simple
+cabal-version: >= 1.6
+
+data-files: README
+
+executable "life"
+  main-is:       Life.hs
+  build-depends: base >= 4 && < 5, OpenGL, GLUT, random, array
+
+source-repository head
+  type: git
+  location: git://github.com/sproingie/haskell-cells.git
+  

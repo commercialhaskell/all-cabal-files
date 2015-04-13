@@ -1,0 +1,19 @@
+name:               hunit-parsec
+synopsis:           An HUnit Testable instance for Parsec parser unit tests.
+description:        An HUnit Testable instance for Parsec parser unit tests.
+version:            0.3
+category:           Testing
+license:            BSD3
+license-file:       LICENSE
+author:             Nathan Wilcox
+maintainer:         nejucomo@gmail.com
+cabal-version:      >= 1.8
+build-type:         Simple
+
+library
+  exposed-Modules: Test.HUnit.Parsec
+  hs-source-dirs:  src
+  ghc-options:     -Wall -fno-warn-name-shadowing -fno-warn-unused-do-bind
+  build-depends:   base == 4.*,
+                   parsec >= 2.1,
+                   HUnit >= 1.2

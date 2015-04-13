@@ -1,0 +1,40 @@
+name:              denominate
+version:           0.4.1
+cabal-version:     >= 1.2
+license:           BSD3
+license-file:      LICENSE.txt
+author:            Calvin Smith
+copyright:         (c) Calvin Smith
+maintainer:        cs-haskell@protempore.net
+homepage:          http://protempore.net/denominate/
+category:          System
+stability:         Experimental
+synopsis:          Functions supporting bulk file and directory name 
+                   normalization.
+description:       Denominate provides a main program for performing bulk 
+                   file and directory renaming, using a built-in filename
+                   converter or user-defined converters.
+                   .
+                   Additionally, it provides a module that exposes some 
+                   functions related to renaming and name normalization 
+                   that might be otherwise useful.
+
+flag small_base
+  description:     Choose the new smaller, split-up base package.
+
+library
+  exposed-modules: System.Denominate
+  if flag(small_base)
+    build-depends: base >= 3, directory, filepath
+  else
+    build-depends: base < 3, filepath
+  ghc-options:     -O -Wall -fno-warn-name-shadowing -fno-warn-missing-signatures -fno-warn-orphans
+
+executable denominate
+  main-is:         Main.hs
+  if flag(small_base)
+    build-depends: base >= 3, directory, filepath
+  else
+    build-depends: base < 3, filepath
+  ghc-options:     -O -Wall -fno-warn-name-shadowing -fno-warn-missing-signatures -fno-warn-orphans
+

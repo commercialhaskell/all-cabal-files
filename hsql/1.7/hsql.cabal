@@ -1,0 +1,11 @@
+name:		hsql
+version:	1.7
+license:	BSD3
+author:		Krasimir Angelov <ka2_mail@yahoo.com>
+category:	Database
+description:	Simple library for database access from Haskell.
+exposed-modules:
+	Database.HSQL,
+	Database.HSQL.Types
+build-depends:	base
+extensions:     ForeignFunctionInterface, TypeSynonymInstances, CPP

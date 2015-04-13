@@ -1,0 +1,33 @@
+Name: herbalizer
+Version: 0.4.9
+
+Synopsis: HAML to ERB translator
+Description:
+  HAML to ERB translator
+Author: Daniel Choi
+Maintainer: dhchoi@gmail.com
+Homepage: https://github.com/danchoi/herbalizer
+Bug-reports: https://github.com/danchoi/herbalizer/issues
+Build-Type: Simple
+Category: Utility
+License:             MIT
+License-file:        LICENSE
+Cabal-Version: >= 1.6
+Source-repository head
+  type:     git
+  location: git@github.com:danchoi/herbalizer.git
+Executable herbalizer
+  Hs-Source-Dirs: src
+  main-is: Main.hs
+
+  GHC-Options: -Wall 
+  Build-Depends: 
+    base >= 4 && < 5, 
+    ghc-prim,
+    parsec,
+    indents,
+    containers,
+    regex-posix,
+    mtl
+
+  

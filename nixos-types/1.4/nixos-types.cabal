@@ -1,0 +1,17 @@
+Name:                   nixos-types
+Version:                1.4
+Copyright:              Peter Simons, Andres Loeh
+License:                BSD3
+License-File:           LICENSE
+Author:                 Peter Simons <simons@cryp.to>, Andres Loeh <mail@andres-loeh.de>
+Maintainer:             Nix Developers <nix-dev@lists.science.uu.nl>
+Homepage:               http://github.com/haskell4nix/cabal2nix
+Category:               Distribution
+Synopsis:               this package is obsolete; see cabal2nix instead
+Cabal-Version:          >= 1.2
+Build-Type:             Simple
+Tested-With:            GHC == 6.10.4, GHC == 6.12.3, GHC == 7.0.4, GHC == 7.4.1
+Description:
+  This package is obsolete. It's functionality has been merged into <http://hackage.haskell.org/package/cabal2nix>.
+
+Library

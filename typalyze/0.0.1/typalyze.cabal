@@ -1,0 +1,23 @@
+Name:		typalyze
+Version:	0.0.1
+License:	BSD4
+License-file:   LICENSE
+Author:		Matthew Danish <mrd@debian.org>
+Maintainer:	mrd@debian.org
+Build-Depends:	base, ghc, filepath, process
+Synopsis:	Analyzes Haskell source files and dumps info in parsable format
+data-files:     README, INSTALL
+build-type:     Simple
+Homepage:       http://www.decidable.org/haskell/typalyze
+Category:       Development
+Description:
+	A tool to assist developers of IDEs and other code analyzing
+	programs.  Processes Haskell source files and outputs
+	information about types in an efficient machine-readable
+	format.
+
+
+Executable:	typalyze
+Main-Is:	Main.hs
+Hs-Source-Dirs:	src
+Other-Modules:	SST

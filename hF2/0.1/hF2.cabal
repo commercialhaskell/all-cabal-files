@@ -1,0 +1,25 @@
+Name:                hF2
+Version:             0.1
+Synopsis:	     F(2^e) math for cryptography
+Description:         A timing attack resistant F(2^e) backend, all operations on little-endian data in unboxed bit vectors
+License:             BSD3
+License-file:        COPYING
+Copyright:	     (c) Marcel Fourné, 2011-2012
+Author:              Marcel Fourné
+Maintainer:          Marcel Fourné (hF2@bitrot.dyndns.org)
+Category:	     Cryptography
+Stability:	     alpha
+Build-Type:          Simple
+Cabal-Version:       >=1.6
+Data-Files:	     README
+Library
+ hs-source-dirs:
+  src
+ Build-Depends:
+  base >= 4 && < 5,
+  bitvec,
+  vector
+ Exposed-modules:
+  Data.F2
+ ghc-options:
+  -Wall -fllvm -feager-blackholing -O2

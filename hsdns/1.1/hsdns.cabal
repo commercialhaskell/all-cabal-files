@@ -1,0 +1,27 @@
+Name:            hsdns
+Version:         1.1
+Author:          Peter Simons <simons@cryp.to>
+License:         GPL
+License-File:    LICENSE
+Maintainer:      simons@cryp.to
+Homepage:        http://cryp.to/hsdns/
+Category:        Network
+Description:     Asynchronous DNS Resolver; requires the GNU ADNS library to be installed.
+
+Build-Depends:   base, network
+Extra-Libraries: adns
+Includes:        "<adns.h>", "<sys/poll.h>", "<sys/time.h>",
+                 "<errno.h>"
+Exposed-Modules:
+    Data.Endian,
+    Network.DNS,
+    Network.DNS.ADNS,
+    Network.DNS.PollResolver,
+    Network.IP.Address,
+    System.Posix.GetTimeOfDay,
+    System.Posix.Poll
+
+Extensions:      ForeignFunctionInterface, PatternSignatures, EmptyDataDecls
+Build-Type:      Simple
+Tested-With:     GHC==6.8.2
+ghc-options:     -Wall -O2

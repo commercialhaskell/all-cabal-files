@@ -1,0 +1,42 @@
+name: harchive
+version: 0.1
+copyright: (c) David Brown
+license: GPL
+license-file: COPYING
+author: David Brown <harchive@davidb.org>
+maintainer: David Brown <harchive@davidb.org>
+build-depends: base, binary >= 0.2, network, zlib, unix, parsec
+category: System
+synopsis: Networked content addressed backup and restore software.
+description:
+  Implements software to perform backups and restores of filesystem
+  data to a content addressed storage pool.  Very preliminary version.
+homepage: http://www.davidb.org/darcs/harchive/
+
+executable: hfile
+main-is: FileServer.hs
+hs-source-dirs: src
+extensions: ForeignFunctionInterface
+extra-libraries: ssl
+-- ghc-options: -Wall -Werror
+ghc-options: -Wall -Werror -O2 -fvia-C
+other-modules:
+  Hash
+  Protocol
+  Status
+  Devid
+  Attributes
+
+executable: hpool
+main-is: PoolServer.hs
+hs-source-dirs: src
+extensions: ForeignFunctionInterface
+extra-libraries: ssl sqlite3
+-- ghc-options: -Wall -Werror
+-- ghc-options: -Wall
+ghc-options: -Wall -Werror -O2 -fvia-C
+ld-options: -threaded
+other-modules:
+  Protocol
+  Sqlite3
+  Store

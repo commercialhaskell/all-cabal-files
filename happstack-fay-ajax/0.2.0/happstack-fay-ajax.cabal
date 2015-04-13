@@ -1,0 +1,27 @@
+name:                happstack-fay-ajax
+version:             0.2.0
+synopsis:            Support for using Fay with Happstack
+description:         Fay is strict subset of Happstack which can be compiled
+                     to Javascript. This library provides some utilities for client-server RPC.
+                     .
+                     This package provides the client-side libraries. See also happstack-fay.
+homepage:            http://www.happstack.com/
+license:             BSD3
+license-file:        LICENSE
+author:              Jeremy Shaw
+maintainer:          jeremy@n-heptane.com
+category:            Happstack
+build-type:          Simple
+cabal-version:       >=1.8
+
+data-files:
+  src/AJAX.hs,
+  src/ResponseType.hs
+
+library
+  hs-source-dirs: src
+  exposed-modules:     AJAX,
+                       ResponseType
+
+  build-depends:       fay-base         == 0.14.*,
+                       fay-jquery       == 0.3.*

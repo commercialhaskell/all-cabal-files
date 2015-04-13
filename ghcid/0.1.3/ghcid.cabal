@@ -1,0 +1,40 @@
+cabal-version:      >= 1.10
+build-type:         Simple
+name:               ghcid
+version:            0.1.3
+license:            BSD3
+license-file:       LICENSE
+category:           Development
+author:             Neil Mitchell <ndmitchell@gmail.com>
+maintainer:         Neil Mitchell <ndmitchell@gmail.com>
+copyright:          Neil Mitchell 2014
+synopsis:           GHCi based bare bones IDE
+description:
+    Either \"GHCi as a daemon\" or \"GHC + a bit of an IDE\". A very simple Haskell development tool which shows you the errors in your project and updates them whenever you save. Run @ghcid --height=10 --topmost --command=ghci@, where @--height@ is the height of the console you will use, @--topmost@ makes the window on top of all others (Windows only) and @--command@ is the command to start GHCi on your project.
+homepage:           https://github.com/ndmitchell/ghcid#readme
+bug-reports:        https://github.com/ndmitchell/ghcid/issues
+tested-with:        GHC==7.8.2, GHC==7.6.3
+extra-source-files:
+    CHANGES.txt
+    README.md
+
+source-repository head
+    type:     git
+    location: https://github.com/ndmitchell/ghcid.git
+
+executable ghcid
+    hs-source-dirs: src
+    default-language: Haskell2010
+    main-is: Main.hs
+    build-depends:
+        base == 4.*,
+        filepath,
+        time,
+        directory,
+        process >= 1.1,
+        cmdargs >= 0.10
+
+    other-modules:
+        GHCi
+        Util
+        Test

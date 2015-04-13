@@ -1,0 +1,26 @@
+Name:                 panda
+Version:              0.0.0.1
+Build-type:           Simple
+Synopsis:             Simple Static Blog Engine
+Description:          Simple Static Blog Engine
+License:              BSD3
+License-file:         LICENSE
+Author:               Wang, Jinjing
+Maintainer:           Wang, Jinjing <nfjinjing@gmail.com>
+Build-Depends:        base
+Cabal-version:        >= 1.2
+category:             Web
+homepage:             http://github.com/nfjinjing/panda/
+
+library
+  build-depends: base, cgi, network, pandoc >= 0.46, old-locale, old-time, directory, filepath, mps >= 0.0, parsedate >= 3000.0.0, rss >= 3000.1.0, xhtml >= 3000.2.0.0, kibro >= 0.0
+  exposed-modules:  Panda
+                    Panda.Controller.Application
+                    Panda.Config.Global
+                    Panda.Helper.Helper
+                    Panda.Model.Blog
+                    Panda.Type.Pager
+                    Panda.View.Blog
+                    Panda.View.Static
+                    Panda.View.Template
+                    

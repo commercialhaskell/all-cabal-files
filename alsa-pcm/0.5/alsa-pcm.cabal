@@ -1,0 +1,112 @@
+Name: alsa-pcm
+Version: 0.5
+Copyright: Bjorn Bringert, Iavor S. Diatchki, Henning Thielemann
+Maintainer: Henning Thielemann <alsa@henning-thielemann.de>
+Author: Bjorn Bringert <bjorn@bringert.net>, Iavor S. Diatchki <iavor.diatchki@gmail.com>
+Category: Sound, Music
+License: BSD3
+License-file: LICENSE
+Homepage: http://www.haskell.org/haskellwiki/ALSA
+Stability: Experimental
+Build-Type: Simple
+Cabal-Version: >= 1.8
+
+Synopsis: Binding to the ALSA Library API (PCM audio).
+Description:
+  This package provides access to ALSA realtime audio signal input and output.
+  For MIDI support see alsa-seq.
+
+Source-Repository head
+  type:     darcs
+  location: http://code.haskell.org/~thielema/alsa-pcm/
+
+Source-Repository this
+  type:     darcs
+  location: http://code.haskell.org/~thielema/alsa-pcm/
+  tag:      0.5
+
+Flag buildExamples
+  description: Build example executables
+  default:     False
+
+Library
+  Build-depends:
+    alsa-core >=0.5 && <0.6,
+    sample-frame >=0.0.1 && <0.1,
+    array >= 0.1 && <0.4,
+    extensible-exceptions >=0.1.1 && <0.2,
+    base >= 3 && <5
+
+  Hs-Source-Dirs: src
+
+  Exposed-Modules:
+    Sound.ALSA.PCM
+
+  Other-modules:
+    Sound.ALSA.PCM.Core
+    Sound.ALSA.PCM.C2HS
+
+  GHC-Options: -Wall
+  Includes: alsa/asoundlib.h
+  Extra-libraries: asound
+
+
+Executable alsa-duplex
+  Main-Is: duplex.hs
+  If !flag(buildExamples)
+    Buildable: False
+  Hs-Source-Dirs: src, examples
+  GHC-Options: -Wall -threaded
+  Other-modules:
+    Sound.ALSA.PCM
+    Sound.ALSA.PCM.Core
+    Sound.ALSA.PCM.C2HS
+  Build-Depends:
+    alsa-core >=0.5 && <0.6,
+    sample-frame >=0.0.1 && <0.1,
+    base >=3 && <5
+
+Executable alsa-play
+  Main-Is: play.hs
+  If !flag(buildExamples)
+    Buildable: False
+  Hs-Source-Dirs: src, examples
+  GHC-Options: -Wall -threaded
+  Other-modules:
+    Sound.ALSA.PCM
+    Sound.ALSA.PCM.Core
+    Sound.ALSA.PCM.C2HS
+  Build-Depends:
+    alsa-core >=0.5 && <0.6,
+    sample-frame >=0.0.1 && <0.1,
+    base >=3 && <5
+
+Executable alsa-record
+  Main-Is: record.hs
+  If !flag(buildExamples)
+    Buildable: False
+  Hs-Source-Dirs: src, examples
+  GHC-Options: -Wall -threaded
+  Other-modules:
+    Sound.ALSA.PCM
+    Sound.ALSA.PCM.Core
+    Sound.ALSA.PCM.C2HS
+  Build-Depends:
+    alsa-core >=0.5 && <0.6,
+    sample-frame >=0.0.1 && <0.1,
+    base >=3 && <5
+
+Executable alsa-volume-meter
+  Main-Is: volume_meter.hs
+  If !flag(buildExamples)
+    Buildable: False
+  Hs-Source-Dirs: src, examples
+  GHC-Options: -Wall -threaded
+  Other-modules:
+    Sound.ALSA.PCM
+    Sound.ALSA.PCM.Core
+    Sound.ALSA.PCM.C2HS
+  Build-Depends:
+    alsa-core >=0.5 && <0.6,
+    sample-frame >=0.0.1 && <0.1,
+    base >=3 && <5

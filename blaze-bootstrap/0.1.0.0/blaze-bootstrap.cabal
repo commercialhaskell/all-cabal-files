@@ -1,0 +1,21 @@
+name:                blaze-bootstrap
+version:             0.1.0.0
+synopsis:            Blaze helper functions for bootstrap pages
+description:         Simplify building blaze and bootstrap powered pages
+homepage:            http://github.com/agrafix/blaze-bootstrap
+license:             MIT
+author:              Alexander Thiemann <mail@agrafix.net>
+maintainer:          mail@agrafix.net
+copyright:           (c) 2014 Alexander Thiemann
+category:            Web
+build-type:          Simple
+cabal-version:       >=1.10
+
+library
+  exposed-modules:     Text.Blaze.Bootstrap
+  build-depends:       base ==4.*,
+                       blaze-html >=0.7 && <0.8,
+                       text
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+  ghc-options: -Wall

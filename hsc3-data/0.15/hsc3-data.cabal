@@ -1,0 +1,40 @@
+Name:              hsc3-data
+Version:           0.15
+Synopsis:          haskell supercollider data
+Description:       Data related functions useful when working with SC3.
+License:           GPL
+Category:          Sound
+Copyright:         (c) Rohan Drape, 2013-2014
+Author:            Rohan Drape
+Maintainer:        rd@slavepianos.org
+Stability:         Experimental
+Homepage:          http://rd.slavepianos.org/t/hsc3-data
+Tested-With:       GHC == 7.8.2
+Build-Type:        Simple
+Cabal-Version:     >= 1.8
+
+Data-files:        README
+
+Library
+  Build-Depends:   base == 4.*,
+                   bifunctors,
+                   Glob,
+                   hcg-minus == 0.15.*,
+                   hmt == 0.15.*,
+                   hsc3-lang == 0.15.*,
+                   hsc3-plot == 0.15.*,
+                   hsc3-sf-hsndfile == 0.15.*,
+                   safe,
+                   split,
+                   SVGPath >= 1.1.1,
+                   xml
+  GHC-Options:     -Wall -fwarn-tabs
+  Exposed-modules: Sound.SC3.Data.Math.Bourke
+                   Sound.SC3.Data.Math.Loudness
+                   Sound.SC3.Data.Math.Sprott_1993a
+                   Sound.SC3.Data.SVG
+                   Sound.SC3.Data.Trace
+
+Source-Repository  head
+  Type:            darcs
+  Location:        http://rd.slavepianos.org/sw/hsc3-data

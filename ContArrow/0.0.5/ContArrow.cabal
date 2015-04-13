@@ -1,0 +1,20 @@
+Name:            ContArrow
+Version:         0.0.5
+License:         BSD3
+Maintainer:      Evgeny Jukov <masloed@gmail.com>
+Author:          Evgeny Jukov
+Stability:       Alpha
+Build-Type:      Simple
+license-file:    LICENSE
+
+Synopsis:        Control.Arrow.Transformer.Cont
+description:     A library providing Control.Arrow.Transformer.Cont
+Category:        Control
+
+Hs-Source-Dirs:  src
+Exposed-Modules: Control.Arrow.Transformer.Cont
+Tested-With:     GHC
+Build-Depends:   base <= 4, arrows
+Extensions:      FlexibleInstances, MultiParamTypeClasses
+GHC-Options:     -Wall
+

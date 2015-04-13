@@ -1,0 +1,15 @@
+Name:                bitset
+Version:             0.5
+Synopsis:            A functional data structure for efficient membership testing.
+Description:         A bit set is a data structure for keeping membership information efficiently.  This implementation uses Data.Bits on Integers, and thus should achieve reasonable speed.
+Category:            Data Structures
+License:             LGPL
+License-file:        COPYING
+Author:              Denis Bueno
+Maintainer:          Denis Bueno <dbueno@gmail.com>
+Stability:           provisional
+Build-Depends:       base, QuickCheck
+Build-type:          Simple
+
+Exposed-modules:     Data.BitSet
+Ghc-options:         -W

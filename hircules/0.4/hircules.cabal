@@ -1,0 +1,28 @@
+Name:          hircules
+Version:       0.4
+Synopsis:      IRC client
+Description:
+    Hircules is an IRC (Internet Relay Chat) client with a gtk GUI.
+
+    See the old project page http://haskell.org/hircules for more info.
+License:       GPL
+License-file:  LICENSE
+Author:        Jens Petersen <petersen@haskell.org>
+Maintainer:    Jens Petersen <petersen@haskell.org>
+Copyright:     2003 Andrew J. Bromage
+               2003, 2004, 2006 Jens-Ulrik Petersen <petersen@haskell.org>
+               2008-2010 Jens Petersen <petersen@haskell.org>
+Stability:     Experimental
+Category:      network
+Build-Type:    Simple
+Cabal-Version: >= 1.6
+
+source-repository head
+  type:     darcs
+  location: http://code.haskell.org/hircules
+
+Executable hircules
+    main-is:       Main.hs
+    ghc-options:   -Wall
+    build-depends: base >= 4 && < 5, gtk >= 0.10.0, utf8-string, time, containers, mtl, directory, network, old-time, old-locale
+    other-modules: Control.Monad.MaybeDo, Data.Ord.QuickSort, Debug.State, Graphics.UI.Gtk.Keymap, Hircules.Channel, Hircules.Config, Hircules.CTCP, Hircules.Directories, Hircules.EntryArea, Hircules.GUI, Hircules.IRC, Hircules.Main, Hircules.Threads, Text.WordString

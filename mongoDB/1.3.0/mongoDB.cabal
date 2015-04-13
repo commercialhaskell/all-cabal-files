@@ -1,0 +1,48 @@
+Name:           mongoDB
+Version:        1.3.0
+Synopsis:       Driver (client) for MongoDB, a free, scalable, fast, document
+                DBMS
+Description:    This package lets you connect to MongoDB servers and
+                update/query their data. Please see the example in
+                Database.MongoDB and the tutorial from the homepage. For
+                information about MongoDB itself, see www.mongodb.org.
+Category:       Database
+Homepage:       http://github.com/selectel/mongodb-haskell
+Author:         Tony Hannan
+Maintainer:     Fedor Gogolev <knsd@knsd.net>
+Copyright:      Copyright (c) 2010-2012 10gen Inc.
+License:        OtherLicense
+License-file:   LICENSE
+Cabal-version:  >= 1.2
+Build-type:     Simple
+Stability:      alpha
+
+Library
+  GHC-options:      -Wall
+  GHC-prof-options: -auto-all
+
+  Build-depends:      array -any
+                    , base <5
+                    , binary -any
+                    , bson >= 0.2.0 && < 0.3.0
+                    , text
+                    , bytestring -any
+                    , containers -any
+                    , mtl >= 2
+                    , cryptohash -any
+                    , network -any
+                    , parsec -any
+                    , random -any
+                    , random-shuffle -any
+                    , monad-control >= 0.3.1
+                    , lifted-base >= 0.1.0.3
+                    , transformers-base >= 0.4.1
+
+  Exposed-modules:  Database.MongoDB
+                    Database.MongoDB.Admin
+                    Database.MongoDB.Connection
+                    Database.MongoDB.Internal.Protocol
+                    Database.MongoDB.Internal.Util
+                    Database.MongoDB.Query
+                    System.IO.Pipeline
+                    System.IO.Pool

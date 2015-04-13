@@ -1,0 +1,65 @@
+Name:             supercollider-ht
+Version:          0.2.0.1
+License:          GPL
+License-File:     LICENSE
+Copyright:        Henning Thielemann, 2008-2013
+Author:           Henning Thielemann <supercollider@henning-thielemann.de>
+Maintainer:       Henning Thielemann <supercollider@henning-thielemann.de>
+Stability:        Experimental
+Homepage:         http://www.haskell.org/haskellwiki/SuperCollider
+Synopsis:         Haskell SuperCollider utilities
+Description:
+   Some additional modules I use
+   in connection with the SuperCollider wrapper hsc3 by Rohan Drape.
+   It contains:
+   .
+   * common play routines
+   .
+   * example effects
+Category:         Sound
+Tested-With:      GHC==7.4.2
+Cabal-Version:    >=1.6
+Build-Type:       Simple
+Source-Repository head
+  type:     darcs
+  location: http://code.haskell.org/~thielema/supercollider/
+
+Source-Repository this
+  type:     darcs
+  location: http://code.haskell.org/~thielema/supercollider/
+  tag:      0.2.0.1
+
+
+Flag splitBase
+  description: Choose the new smaller, split-up base package.
+
+Flag buildExamples
+  description: Build example executable
+  default:     False
+
+Library
+  Build-Depends:
+    hosc >=0.13 && <0.14,
+    hsc3 >=0.13 && <0.14,
+    opensoundcontrol-ht >=0.2 && <0.3,
+    transformers >=0.2 && <0.5
+  If flag(splitBase)
+    Build-Depends:
+      random >= 1.0 && <2,
+      process >= 1.0 && <1.2,
+      base >= 2 && <5
+  Else
+    Build-Depends: base >= 1.0 && < 2
+
+  GHC-Options:      -Wall
+  Hs-source-dirs:   src
+  Exposed-modules:
+     Sound.SC3.Server.PlayEasy
+     Sound.SC3.Example.Effect
+
+Executable timing-example
+  If !flag(buildExamples)
+    Buildable: False
+  Hs-source-dirs:   src
+  Main-is: Sound/SC3/Example/Timing.hs
+  GHC-Options: -Wall -threaded

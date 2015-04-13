@@ -1,0 +1,84 @@
+Name:                imm
+Version:             0.5.0.0
+Synopsis:            Retrieve RSS/Atom feeds and write one mail per new item in a maildir.
+Description:         Cf README
+--Homepage:
+Category:            Web
+
+License:             OtherLicense
+License-file:        LICENSE
+-- Copyright:
+Author:              kamaradclimber, koral
+Maintainer:          koral att mailoo dott org
+
+Cabal-version:       >=1.8
+Build-type:          Simple
+Extra-source-files:  README
+
+Source-repository head
+    Type:     git
+    Location: git@github.com:k0ral/imm.git
+
+Library
+    Exposed-modules:
+        Imm,
+        Imm.Boot,
+        Imm.Config,
+        Imm.Core,
+        Imm.Database,
+        Imm.Dyre,
+        Imm.Error,
+        Imm.Feed,
+        Imm.HTTP,
+        Imm.Mail,
+        Imm.Maildir,
+        Imm.OPML,
+        Imm.Options,
+        Imm.Util
+    Build-depends:
+        base == 4.*,
+        bytestring,
+        case-insensitive,
+        cond,
+        data-default,
+        directory,
+        dyre,
+        feed,
+        filepath,
+        http-conduit,
+        http-types,
+        lens,
+        mime-mail,
+        monad-control,
+        mtl,
+        network,
+        old-locale,
+        opml,
+        random,
+        text,
+        text-icu,
+        transformers-base,
+        time,
+        timerep >= 1.0.3,
+        tls,
+        utf8-string,
+        xdg-basedir,
+        xml
+    Extensions:
+        ConstraintKinds,
+        KindSignatures,
+        FlexibleContexts,
+        FunctionalDependencies,
+        GeneralizedNewtypeDeriving,
+        MultiParamTypeClasses,
+        RankNTypes
+
+    -- Other-modules:
+    -- Build-tools:
+    Ghc-options: -Wall
+
+Executable imm
+    Build-depends: imm, base == 4.*
+    Main-is: Executable.hs
+    Hs-Source-Dirs: Imm
+    Ghc-options: -Wall -threaded

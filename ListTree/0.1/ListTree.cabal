@@ -1,0 +1,24 @@
+Name:                ListTree
+Version:             0.1
+Category:            Algorithms
+Synopsis:            Combinatoric search using ListT
+Description:
+    Searching and pruning
+    trees expressed as 'List's whose underlying monad
+    is also a List.
+License:             BSD3
+License-file:        LICENSE
+Author:              Yair Chuchem
+Maintainer:          yairchu@gmail.com
+Homepage:            http://github.com/yairchu/generator/tree
+Cabal-Version:       >= 1.2
+Stability:           experiemental
+Build-type:          Simple
+
+Library
+  hs-Source-Dirs:      src
+  Extensions:
+  Build-Depends:       base >= 3 && < 5, List >= 0.2, mtl
+  Exposed-modules:     Data.List.Tree
+  Ghc-Options:         -O2 -Wall
+

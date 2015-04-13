@@ -1,0 +1,14 @@
+name:		stateful-mtl
+version:	1.0.4
+synopsis:	Stateful monad transformers with pure evaluation semantics.
+description:	Stateful monad transformers with pure evaluation semantics, useful for monadically pulling out implementation details of array manipulation and operations in the ST monad.  Includes typeclasses suitable for guaranteeing single-threaded monad behavior, avoiding previously encountered problems with ST monad transformers.  This package remains in a state of flux, so please notify the author about features you like or dislike.
+tested-with:	GHC
+category:	Monads
+license:	BSD3
+license-file:	LICENSE
+author:		Louis Wasserman
+maintainer:	wasserman.louis@gmail.com
+build-Depends:	base, array, ghc-prim, mtl, containers, MaybeT
+build-type:	Simple
+Exposed-modules:Control.Monad.Array, Control.Monad.Array.ArrayT, Control.Monad.Array.IntMap, Control.Monad.Array.MArray, Control.Monad.Array.Class, Control.Monad.ST.Class, Control.Monad.Trans.Operations
+ghc-options:

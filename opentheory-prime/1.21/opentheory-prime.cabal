@@ -1,0 +1,43 @@
+name: opentheory-prime
+version: 1.21
+category: Number Theory
+synopsis: Prime numbers
+license: MIT
+license-file: LICENSE
+cabal-version: >= 1.8.0.6
+build-type: Simple
+author: Joe Leslie-Hurd <joe@gilith.com>
+maintainer: Joe Leslie-Hurd <joe@gilith.com>
+description:
+  Prime numbers - automatically generated from the opentheory package
+  haskell-prime-1.21
+
+library
+  build-depends:
+    base >= 4.0 && < 5.0,
+    random >= 1.0.1.1 && < 2.0,
+    QuickCheck >= 2.4.0.1 && < 3.0,
+    opentheory-primitive >= 1.0 && < 2.0,
+    opentheory >= 1.73 && <= 1.74
+
+  hs-source-dirs: src
+
+  ghc-options: -Wall
+
+  exposed-modules:
+    OpenTheory.Number.Natural.Prime
+    OpenTheory.Number.Natural.Prime.Sieve
+
+executable opentheory-prime-test
+  build-depends:
+    base >= 4.0 && < 5.0,
+    random >= 1.0.1.1 && < 2.0,
+    QuickCheck >= 2.4.0.1 && < 3.0,
+    opentheory-primitive >= 1.0 && < 2.0,
+    opentheory >= 1.73 && <= 1.74
+
+  hs-source-dirs: src, testsrc
+
+  ghc-options: -Wall
+
+  main-is: Test.hs

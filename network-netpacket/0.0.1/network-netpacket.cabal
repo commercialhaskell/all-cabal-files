@@ -1,0 +1,25 @@
+Name: network-netpacket
+Synopsis: Haskell bindings for low-level packet sockets (AF_PACKET)
+Description: Haskell bindings for low-level packet sockets (AF_PACKET)
+License: BSD3
+License-File: LICENSE
+Category: Network
+Maintainer: Andrew Miller (andrew.miller@lanthaps.com)
+Cabal-Version: >= 1.6
+Build-Type: Simple
+
+Version: 0.0.1
+Library
+  Build-tools: hsc2hs
+  HS-Source-Dirs: hssrc
+  Exposed-Modules: Network.Socket.NetPacket
+  Build-depends: network >= 2 && < 3,
+                 ioctl < 0.1,
+                 base >= 4 && < 5,
+                 bytestring < 0.10,
+                 network-interfacerequest,
+                 foreign-storable-asymmetric
+
+Source-Repository head
+  type: git
+  location: https://github.com/A1kmm/network-netpacket

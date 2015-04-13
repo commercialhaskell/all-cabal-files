@@ -1,0 +1,28 @@
+Name:           linux-blkid
+Version:        0.2.0.0
+Cabal-Version:  >= 1.8
+Build-Type:     Simple
+License:        LGPL-2.1
+License-File:   LICENSE
+Copyright:      © 2013 Nicola Squartini
+Author:         Nicola Squartini
+Maintainer:     Nicola Squartini <tensor5@gmail.com>
+Bug-Reports:    mailto:tensor5@gmail.com
+Category:       System
+Stability:      experimental
+Synopsis:       Linux libblkid
+Description:    Bindings to the Linux libblkid library.
+
+Library
+  Build-Depends:      base == 4.*,
+                      monad-control == 0.3.*,
+                      transformers == 0.3.*,
+                      transformers-base == 0.4.*
+--                      uuid == 1.2.*
+  Ghc-Options:        -Wall
+  Exposed-modules:    System.Linux.Blkid
+                      System.Linux.Blkid.Cache
+                      System.Linux.Blkid.Evaluate
+                      System.Linux.Blkid.Probe
+                      System.Linux.Blkid.Utils
+  Pkgconfig-Depends:  blkid == 2.23.0

@@ -1,0 +1,29 @@
+name:                snaplet-ses-html
+version:             0.1.0.0
+synopsis:            Snaplet for the ses-html package
+description:         Send HTML formatted emails using Amazon's SES REST API with blaze
+license:             BSD3
+license-file:        LICENSE
+author:              David Johnson
+maintainer:          djohnson.m@gmail.com
+copyright:           David Johnson
+category:            Web, AWS, Email, Snap, Network
+build-type:          Simple
+cabal-version:       >=1.10
+
+library
+  exposed-modules:     Snap.Snaplet.SES
+  hs-source-dirs:      src
+  build-depends:       base >=4.7 && <4.8
+                     , blaze-html
+                     , bytestring 
+                     , configurator
+                     , ses-html 
+                     , snap
+                     , text
+                     , transformers
+  default-language:    Haskell2010
+
+source-repository head
+  type:     git
+  location: https://github.com/dmjio/snaplet-ses-html

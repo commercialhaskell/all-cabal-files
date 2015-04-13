@@ -1,0 +1,54 @@
+name:           zlib-enum
+version:        0.2.2.1
+license:        MIT
+license-file:   LICENSE
+author:         Paulo Tanimoto <ptanimoto@gmail.com>
+maintainer:     Malte Sommerkorn <malte.sommerkorn@googlemail.com>
+synopsis:       Enumerator interface for zlib compression
+description:    zlib-enum is a stop-gap package to provide enumeratees for
+                zlib compression/decompression.
+category:       Codec, Compression, Enumerator
+stability:      Experimental
+cabal-version:  >= 1.6
+build-type:     Simple
+homepage:       http://github.com/maltem/zlib-enum
+
+-------------------------------------------------------------------------------
+flag test
+  description: Build the test executable.
+  default: False
+
+-------------------------------------------------------------------------------
+library
+    if flag(test)
+         Buildable: False
+    build-depends: base                  >= 4 && < 5
+                 , bytestring            >= 0.9 && < 0.10
+                 , transformers          >= 0.2 && < 0.4
+                 , enumerator            == 0.4.*
+                 , zlib-bindings         == 0.1.*
+    exposed-modules: Codec.Zlib.Enum
+    ghc-options:     -Wall
+
+-------------------------------------------------------------------------------
+executable zlib-enum-test
+    main-is: test.hs
+    if flag(test)
+        Buildable: True
+        build-depends:
+              base                       >= 4.0   &&   < 5.0
+            , bytestring                 >= 0.9   &&   < 0.10
+            , transformers               >= 0.2   &&   < 0.4
+            , enumerator                 >= 0.4   &&   < 0.5
+            , zlib-bindings              >= 0.1
+            , test-framework             >= 0.6   &&   < 0.7
+            , test-framework-quickcheck2 >= 0.2.12.1 &&   < 0.3.0
+            , QuickCheck                 >= 2.4   &&   < 2.5
+    else
+        Buildable: False
+    ghc-options:     -Wall
+
+-------------------------------------------------------------------------------
+source-repository head
+  type:     git
+  location: git://github.com/maltem/zlib-enum.git

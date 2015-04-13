@@ -1,0 +1,74 @@
+name:               FunGEn
+version:            0.4.5
+copyright:          (C) 2002 Andre Furtado <awbf@cin.ufpe.br>
+license:            BSD3
+license-file:       LICENSE
+author:             Andre Furtado <awbf@cin.ufpe.br>
+maintainer:         Simon Michael <simon@joyful.com>
+homepage:           http://joyful.com/fungen
+category:           Game
+synopsis:           FUNctional Game ENgine
+description:        A lightweight, cross-platform, OpenGL/GLUT-based game engine
+stability:          alpha
+cabal-version:      >= 1.8
+build-type:         Simple
+tested-with:        GHC==7.8.2
+extra-source-files: 
+                    README.md,
+                    CHANGES
+data-files:
+                    examples/pong/*.bmp,
+                    examples/worms/*.bmp
+
+library
+  ghc-options:      -W
+  exposed-modules:  
+                    Graphics.UI.Fungen,
+                    Graphics.UI.Fungen.Display,
+                    Graphics.UI.Fungen.Game,
+                    Graphics.UI.Fungen.Init,
+                    Graphics.UI.Fungen.Input,
+                    Graphics.UI.Fungen.Loader,
+                    Graphics.UI.Fungen.Map,
+                    Graphics.UI.Fungen.Objects,
+                    Graphics.UI.Fungen.Text,
+                    Graphics.UI.Fungen.Timer,
+                    Graphics.UI.Fungen.Types,
+                    Graphics.UI.Fungen.Util,
+                    Graphics.UI.GLUT.Input
+
+  build-depends:
+                    base   == 4.*
+                   ,OpenGL == 2.9.*
+                   ,GLUT   == 2.5.*
+                   ,random
+
+executable fungen-hello
+  ghc-options: -W
+  hs-source-dirs: examples
+  main-is:          hello.hs
+  build-depends:    FunGEn
+                   ,base
+                   ,OpenGL
+                   ,GLUT
+                   ,random
+
+executable fungen-pong
+  ghc-options: -W
+  hs-source-dirs: examples
+  main-is:          pong/pong.hs
+  build-depends:    FunGEn == 0.4.*
+                   ,base
+                   ,OpenGL
+                   ,GLUT
+                   ,random
+
+executable fungen-worms
+  ghc-options: -W
+  hs-source-dirs: examples
+  main-is:          worms/worms.hs
+  build-depends:    FunGEn == 0.4.*
+                   ,base
+                   ,OpenGL
+                   ,GLUT
+                   ,random

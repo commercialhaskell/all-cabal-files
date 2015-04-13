@@ -1,0 +1,19 @@
+Name:           isiz
+Version:        0.0.1
+Synopsis:       A program to show the size of image and whether suitable for wallpaper.
+License:        BSD3
+License-file:   COPYING
+Author:         Hironao Komatsu
+Maintainer:     Hironao Komatsu <hirkmt@gmail.com>
+Build-Type:     Simple
+Cabal-Version:  >= 1.8
+Stability:      alpha
+Category:       Graphics
+Tested-With:    GHC == 7.6.3
+
+Extra-Source-Files: COPYING
+
+Executable      isiz
+    build-depends:  base >= 4 && < 5, gtk3
+    Main-is:        isiz.hs
+    Hs-Source-Dirs: src

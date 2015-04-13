@@ -1,0 +1,43 @@
+Name:          grapefruit-records
+Version:       0.0.0.0
+Cabal-Version: >= 1.2.3
+Build-Type:    Simple
+License:       BSD3
+License-File:  LICENSE
+Copyright:     © 2007–2009 Brandenburgische Technische Universität Cottbus
+Author:        Wolfgang Jeltsch
+Maintainer:    jeltsch@informatik.tu-cottbus.de
+Stability:     provisional
+Homepage:      http://haskell.org/haskellwiki/Grapefruit
+Package-URL:   http://hackage.haskell.org/packages/archive/grapefruit-records/0.0.0.0/grapefruit-records-0.0.0.0.tar.gz
+Synopsis:      A record system
+Description:   Grapefruit is a library for Functional Reactive Programming (FRP) with a focus on
+               user interfaces. FRP makes it possible to implement reactive and interactive systems
+               in a declarative style. To learn more about FRP, have a look at
+               <http://haskell.org/haskellwiki/Functional_Reactive_Programming>.
+               .
+               This package provides a record system for use with FRP.
+Category:      Data, FRP, Reactivity
+Tested-With:   GHC == 6.8.3
+               GHC == 6.10.1
+
+Library
+    Build-Depends:   arrows              >= 0.2 && < 0.5,
+                     base                >= 3.0 && < 4.1,
+                     grapefruit-frp      >= 0.0 && < 0.1,
+                     type-level          >= 0.1 && < 0.3,
+                     type-equality-check >= 0.0 && < 0.1
+    Extensions:      Arrows
+                     EmptyDataDecls
+                     FlexibleContexts
+                     FlexibleInstances
+                     FunctionalDependencies
+                     MultiParamTypeClasses
+                     Rank2Types
+                     TypeFamilies
+                     TypeOperators
+                     UndecidableInstances
+    Exposed-Modules: FRP.Grapefruit.Record
+                     FRP.Grapefruit.Record.Context
+                     FRP.Grapefruit.Record.Optionality
+    HS-Source-Dirs:  src

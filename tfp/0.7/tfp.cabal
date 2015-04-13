@@ -1,0 +1,76 @@
+name:           tfp
+version:        0.7
+build-type:     Simple
+license:        BSD3
+license-file:   LICENSE
+copyright:      Copyright (c) 2013 Henning Thielemann, 2008 Peter Gavin
+author:         Peter Gavin, Henning Thielemann
+maintainer:     haskell@henning-thielemann.de
+homepage:       http://www.haskell.org/haskellwiki/Type_arithmetic
+stability:      alpha
+synopsis:       Type-level integers, booleans, lists using type families
+description:
+  TFP is an abbreviation for Type Family Programming.
+  It provides implementations of type-level integers and booleans,
+  and (eventually) simple type-level data structures.
+  It uses type families as functions to produce new types,
+  which provides an intuitive way to parameterize data types
+  and functions on numerical values at compile time.
+category:       Type System
+tested-with:    GHC == 7.4.2
+cabal-version:  >= 1.6
+
+source-repository head
+  type:         darcs
+  location:     http://code.haskell.org/~thielema/tfp/
+
+source-repository this
+  tag:          0.7
+  type:         darcs
+  location:     http://code.haskell.org/~thielema/tfp/
+
+
+flag build-test
+  description: Build the tfp-test test program
+  default: False
+
+library {
+  extensions:     TypeFamilies, UndecidableInstances, TypeOperators,
+                  EmptyDataDecls, DeriveDataTypeable, ScopedTypeVariables,
+                  FlexibleInstances, TemplateHaskell, TypeSynonymInstances,
+                  MultiParamTypeClasses, GeneralizedNewtypeDeriving,
+                  Rank2Types, FlexibleContexts
+  build-depends:  base >= 3.0 && < 5, template-haskell >= 2.0
+  exposed-modules:
+    Data.SizedInt
+    Data.SizedWord
+    Types
+    Types.Base
+    Types.Data.Bool
+    Types.Data.Num
+    Types.Data.Num.Ops
+    Types.Data.Num.Decimal
+    Types.Data.Num.Decimal.Literals
+    Types.Data.Num.Decimal.Literals.TH
+    Types.Data.Num.Decimal.Digits
+    Types.Data.List
+    Types.Data.Ord
+  other-modules:
+    Types.Data.Num.Decimal.Ops
+}
+
+
+executable tfp-test {
+  if flag(build-test) {
+    buildable: True
+    build-depends:  base >= 3.0 && < 5, template-haskell >= 2.0, QuickCheck >= 1.2.0.0
+  } else {
+    buildable: False
+  }
+  extensions:     TypeFamilies, UndecidableInstances, TypeOperators,
+                  EmptyDataDecls, DeriveDataTypeable, ScopedTypeVariables,
+                  FlexibleInstances, TemplateHaskell, TypeSynonymInstances,
+                  MultiParamTypeClasses, GeneralizedNewtypeDeriving,
+                  FunctionalDependencies, Rank2Types, FlexibleContexts
+  main-is: Test.hs
+}

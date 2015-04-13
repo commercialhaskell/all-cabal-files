@@ -1,0 +1,14 @@
+Name:           parsely
+Version:        0.1
+Description:    Typeclasses for parsing monads, and some instances
+Category:       Parsing
+License:        BSD3
+Homepage:       http://naesten.dyndns.org:8080/repos/parsely
+Author:         Samuel Bronson
+Maintainer:     naesten@gmail.com
+Build-Depends:  base, mtl, parsec
+Extensions:     MultiParamTypeClasses, OverlappingInstances
+Exposed-Modules: Text.ParserCombinators.Parsely.Char,
+                 Text.ParserCombinators.Parsely.Class,
+                 Text.ParserCombinators.Parsely.Combinator,
+                 Text.ParserCombinators.Parsely.Instances

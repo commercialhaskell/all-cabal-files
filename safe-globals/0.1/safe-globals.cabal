@@ -1,0 +1,59 @@
+name:                safe-globals
+version:             0.1
+license:             BSD3
+license-file:        LICENSE
+synopsis:            Safe top-level mutable variables which scope like ordinary values
+category:            Data
+author:              Keegan McAllister <mcallister.keegan@gmail.com>
+maintainer:          Keegan McAllister <mcallister.keegan@gmail.com>
+build-type:          Simple
+cabal-version:       >=1.6
+description:
+    This library provides a way to declare @IORef@s, @TVar@s, @Chan@s, etc.
+    at the top level of a module.
+    .
+    * Declarations are safe.  User code does not invoke @unsafePerformIO@
+      or compiler pragmas.
+    .
+    * Variables are ordinary module-level bindings.  Their scope can be
+      controlled through the usual module import/export mechanism.  Unrelated
+      code cannot interfere with private variables by guessing some global
+      identifier.
+    .
+    * References are statically typed, and polymorphic references are statically
+      forbidden.
+    .
+    * The implementation is simple, and closely follows existing common practice.
+    .
+    This library does not prevent the software design problems caused by global
+    state.  Rather, it provides some implementation safety for those
+    circumstances where global state really is necessary.
+    .
+    Fundamentally this library just provides Template Haskell macros for the
+    usual @unsafePerformIO@ trick, so it is subject to the same caveats.  In
+    particular, linking a module and then loading the same module dynamically
+    through the GHC API may produce two copies of the same top-level variable.
+
+extra-source-files:
+    README
+  , examples/all.hs
+  , examples/isolation/A.hs
+  , examples/isolation/B.hs
+  , examples/isolation/main.hs
+
+library
+  exposed-modules:
+      Data.Global
+  ghc-options:      -Wall
+  build-depends:
+      base >= 3 && < 5
+    , stm  >= 2.1
+    , template-haskell >= 2.4
+
+  other-extensions:
+      TemplateHaskell
+    , CPP
+
+source-repository head
+    type:     git
+    location: git://github.com/kmcallister/safe-globals

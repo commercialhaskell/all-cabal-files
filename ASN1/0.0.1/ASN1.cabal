@@ -1,0 +1,74 @@
+Name:            ASN1
+Version:         0.0.1
+License:         BSD3
+Author:          Dominic Steinitz
+Maintainer:	 dominic.steinitz@blueyonder.co.uk
+Copyright:       Dominic Steinitz 2003 - 2007
+Stability:	 Alpha
+Category:	 Language
+Homepage:	 http://www.haskell.org/asn1
+Synopsis:        General ASN.1 support.
+Description:     Enough ASN.1 suppport for X.509 
+                 identity and attribute certificates, PKCS8, PKCS1v15.
+                 Only the Basic Encoding Rules (BER) are supported.
+Build-Depends:   base, mtl, QuickCheck, HUnit, NewBinary
+Ghc-options:     -fglasgow-exts
+Exposed-Modules: Language.ASN1
+                 Language.ASN1.BER
+                 Language.ASN1.InformationFramework
+                 Language.ASN1.TLV
+                 Language.ASN1.X509
+                 Language.ASN1.X509.AttributeCertificateDefinitions
+                 Language.ASN1.PKCS1v15
+                 Language.ASN1.PKCS8
+                 Language.ASN1.Utils
+                 Language.ASN1.Raw
+
+Executable:      BERTest
+Main-Is:         BERTest.hs
+Ghc-options:     -fglasgow-exts
+Other-modules:	 Language.ASN1
+                 Language.ASN1.BER
+
+Executable:      BERTest2
+Main-Is:         BERTest2.hs
+Ghc-options:     -fglasgow-exts
+Other-modules:	 Language.ASN1
+                 Language.ASN1.BER
+                 Language.ASN1.X509
+                 Language.ASN1.InformationFramework
+                 Language.ASN1.X509.AttributeCertificateDefinitions
+                 Language.ASN1.TLV
+
+Executable:      X509Example
+Main-Is:         X509Example.hs
+Ghc-options:     -fglasgow-exts
+Other-modules:   Language.ASN1.BER
+                 Language.ASN1
+                 Language.ASN1.TLV
+                 Language.ASN1.X509
+                 Language.ASN1.Utils
+
+Executable:      PKCS8Example
+Main-Is:         PKCS8Example.hs
+Ghc-options:     -fglasgow-exts
+Other-modules:   Language.ASN1.BER
+                 Language.ASN1
+                 Language.ASN1.TLV
+                 Language.ASN1.PKCS8
+                 Language.ASN1.X509
+
+Executable:      AttributeCertificate
+Main-Is:         AttributeCertificate.hs
+Ghc-options:     -fglasgow-exts
+Other-modules:   Language.ASN1.BER
+                 Language.ASN1
+                 Language.ASN1.X509                
+                 Language.ASN1.InformationFramework
+                 Language.ASN1.X509.AttributeCertificateDefinitions
+                 Language.ASN1.Utils
+                 Language.ASN1.TLV
+                 Language.ASN1.Raw
+
+
+

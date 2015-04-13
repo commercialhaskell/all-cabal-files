@@ -1,0 +1,49 @@
+name:           BiobaseVienna
+version:        0.0.2.1
+author:         Christian Hoener zu Siederdissen
+maintainer:     choener@tbi.univie.ac.at
+copyright:      Christian Hoener zu Siederdissen, 2010
+category:       Bioinformatics
+synopsis:       ViennaRNA parameter library
+license:        GPL-3
+license-file:   LICENSE
+build-type:     Simple
+stability:      experimental
+cabal-version:  >= 1.4.0
+description:
+                Import and export of ViennaRNA-style parameters for RNA
+                secondary structure prediction.
+
+extra-source-files:
+  parfiles/Turner2004GH.par,
+  templates/cheader
+
+library
+  build-depends:
+    base >=4 && <5,
+    bytestring,
+    containers,
+    file-embed >=0.0.3,
+    parsec >=3,
+    split >=0.1.2,
+    tuple >=0.2.0.1,
+    vector >=0.7 && <0.8,
+
+    PrimitiveArray >=0.0.2 && <0.0.3,
+    ParsecTools >=0.0.2 && <0.0.3,
+    HsTools >=0.0.1.1,
+    Biobase >=0.0.2,
+    BiobaseTurner >=0.0.2,
+    BiobaseTypes >=0.0.2
+
+  exposed-modules:
+    Biobase.Vienna
+    Biobase.Vienna.Import.Turner
+    Biobase.Vienna.Import.ViennaPar
+    Biobase.Vienna.Export.ViennaPar
+    Biobase.Vienna.Modification.NonStandard
+    Biobase.Vienna.Modification.Temperature
+    Biobase.Vienna.Default
+
+  ghc-options:
+    -O2

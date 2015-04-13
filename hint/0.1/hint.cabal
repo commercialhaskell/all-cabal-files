@@ -1,0 +1,23 @@
+Name:                hint
+Version:             0.1
+x-revision: 1
+Description:
+	This library defines an @Interpreter@ monad, inside which modules can be
+        loaded, and strings with Haskell expressions can be evaluated, coerced
+	into values, or type-checked. The library is thread-safe and all
+	operations (even the coertion of expressions to values) are type-safe.
+	It is, esentially, a huge subset of the GHC API wrapped in a simpler
+	API. Tested with GHC 6.6.1.
+Synopsis:            Runtime Haskell interpreter (GHC API wrapper)
+Category:            Language, Compilers/Interpreters
+License:             BSD3
+License-file:        LICENSE
+Author:              Daniel Gorin
+Maintainer:          jcpetruzza@gmail.com
+Build-Depends:       base < 4.3, haskell-src, ghc < 7, mtl
+Exposed-modules:     Language.Haskell.Interpreter.GHC
+Other-modules:       Language.Haskell.Interpreter.GHC.Conversions
+                     Language.Haskell.Interpreter.GHC.Parsers
+                     Language.Haskell.Interpreter.GHC.LibDir
+ghc-options:         -Wall -O2
+hs-source-dirs:      src

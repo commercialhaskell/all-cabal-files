@@ -1,0 +1,32 @@
+Name:                metaplug
+Version:             0.1.1
+Synopsis:            a tiny ghc api wrapper
+Description:         a ghc-api wrapper, designed
+		     to make the api more transparent
+		     across releases and offer eval and
+		     plugin esque facilities in the form
+		     of a simple, easy to modify library.
+License:             BSD3
+License-file:        LICENSE
+Author:              Austin Seipp
+Maintainer:          austin@youareinferior.net
+Stability:           experimental
+Build-Depends:       base, ghc>=6.6, filepath, haskell98, Cabal
+ghc-options:         -O
+hs-source-dirs:      src
+exposed-modules:     Metaplug.Initialize,
+		     Metaplug.Packages,
+                     Metaplug.Eval,
+                     Metaplug.Loader,
+		     Metaplug.Types,
+		     Metaplug
+extra-source-files:  README,
+		     tests/Makefile,
+		     tests/Simple.hs,
+		     tests/Eval.hs,
+		     tests/Callback.hs,
+		     tests/Pkgs.hs
+		     tests/dynst/Makefile,
+		     tests/dynst/API.hs,
+		     tests/dynst/Backend.hs,
+		     tests/dynst/Main.hs

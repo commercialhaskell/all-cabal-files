@@ -1,0 +1,36 @@
+name:                urlencoded
+Cabal-Version:       >= 1.6
+version:             0.1.0.1
+synopsis:            Generate or process x-www-urlencoded data
+
+description:         Generate or process x-www-urlencoded data as it
+                     appears in HTTP or HTTPS URIs and HTTP POSTs. See
+                     <http://www.w3.org/TR/html401/interact/forms.html#h-17.13.4.1>
+
+category:            Web
+homepage:            http://patch-tag.com/repo/urlencoded
+stability:           alpha
+license:             BSD3
+license-file:        LICENSE
+author:              Josh Hoyt
+maintainer:          joshhoyt@gmail.com
+build-type:          Custom
+Library
+  build-depends:       base == 4.*, network == 2.2.*, mtl, split == 0.1.*
+  ghc-options:         -Wall
+  hs-source-dirs:      src
+  exposed-modules:     Data.URLEncoded
+
+-- This executable is not installed by the (custom) Setup program. It is
+-- used by the test hook (cabal test)
+Executable test
+  build-depends:
+    base == 4.*,
+    network == 2.2.*,
+    mtl,
+    QuickCheck >= 1.2 && < 1.3,
+    split == 0.1.*
+  GHC-Options: -Wall
+  Main-is: TestDriver.hs
+  HS-Source-Dirs: src, test
+  X-Test-Executable: true

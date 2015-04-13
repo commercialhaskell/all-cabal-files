@@ -1,0 +1,29 @@
+name:                fugue
+version:             0.1
+category:            Development
+synopsis:            A recapitulated prelude with minimal dependencies
+                     and profligate exports.
+description:         Fugue intends to scratch that itchy feeling you
+                     get when you realize you need to import `Data.Foldable`,
+                     then hide `foldr` from the prelude; when you can't decide
+                     whether to go all the way to the top of your buffer to
+                     import `Control.Monad` to get `forM` or just use
+                     (`flip` `mapM`) instead. Importing `Control.Applicative`
+                     just for (\<$\>) is annoying, but so is writing ``fmap``
+                     everywhere. Fugue exports a bunch of useful stuff so you
+                     don't have to, tending to prefer more general functions
+                     from various and sundry corners of the base libraries to
+                     those in `Prelude`.
+license:             BSD3
+license-file:        LICENSE
+author:              Alec Heller
+maintainer:          alec@deviant-logic.net
+build-type:          Simple
+cabal-version:       >=1.8
+source-repository head
+  type: git
+  location: git://github.com/deviant-logic/fugue.git
+
+library
+  build-depends:       base < 5
+  exposed-modules:     Fugue

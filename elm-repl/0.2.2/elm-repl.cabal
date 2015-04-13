@@ -1,0 +1,78 @@
+Name:                elm-repl
+Version:             0.2.2
+Synopsis:            a REPL for Elm
+Description:         A read-eval-print-loop (REPL) for evaluating Elm expressions,
+                     definitions, ADTs, and module imports. This tool is meant to
+                     help you play with small expressions and interact with
+                     functions deep inside of larger projects.
+
+Homepage:            https://github.com/elm-lang/elm-repl
+
+License:             BSD3
+License-file:        LICENSE
+
+Author:              Evan Czaplicki
+Maintainer:          info@elm-lang.org
+Copyright:           Copyright: (c) 2011-2014 Evan Czaplicki
+
+Category:            Tool
+
+Build-type:          Simple
+Extra-source-files:  changelog.txt
+Cabal-version:       >=1.8
+
+source-repository head
+  type:     git
+  location: git://github.com/elm-lang/elm-repl.git
+
+Executable elm-repl
+  ghc-options:         -W
+  Hs-Source-Dirs:      src
+  Main-is:             Main.hs
+  other-modules:       Action,
+                       Command,
+                       Completion,
+                       Environment,
+                       Evaluator,
+                       Flags,
+                       Monad,
+                       Parse
+
+  Build-depends:       base >=4.2 && <5,
+                       bytestring,
+                       bytestring-trie,
+                       cmdargs,
+                       containers >= 0.3,
+                       directory,
+                       Elm >= 0.12,
+                       filepath,
+                       haskeline,
+                       mtl >= 2,
+                       parsec >= 3.0,
+                       process,
+                       transformers >= 0.2
+
+
+Test-Suite test
+  Type:                exitcode-stdio-1.0
+  ghc-options:         -W
+  Hs-Source-Dirs:      tests, src
+  Main-is:             Main.hs
+  build-depends:       test-framework,
+                       test-framework-hunit,
+                       test-framework-quickcheck2 >= 0.3,
+                       HUnit,
+                       QuickCheck,
+                       base >=4.2 && <5,
+                       bytestring,
+                       bytestring-trie,
+                       cmdargs,
+                       containers >= 0.3,
+                       directory,
+                       Elm >= 0.10.1,
+                       filepath,
+                       haskeline,
+                       mtl >= 2,
+                       parsec >= 3.0,
+                       process,
+                       transformers >= 0.2

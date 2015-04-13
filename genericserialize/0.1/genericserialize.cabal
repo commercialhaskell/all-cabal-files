@@ -1,0 +1,35 @@
+Name:                genericserialize
+Version:             0.1
+License:             BSD3
+License-file:        LICENSE
+Author:              Stefan O'Rear
+Maintainer:          Stefan O'Rear <stefanor@cox.net>
+
+Stability:           Alpha
+Category:            Data
+Synopsis:            Serialization library using Data.Generics
+Description:         GenericSerialize is a library for serialization using the
+                     existing generic-programming framework.
+                     .
+                     It is often advocated that support for serialization should be added to
+                     the compiler (e.g. in the form of a deriving(Binary)).  With this I
+                     intend to show that the existing infrastructure is sufficient, and
+                     has some advantages over a dedicated serialization interface.
+                     .
+                     The main advantage that generic serialization posseses is that it is
+                     possible to simultaneously have several serialization modes.  While
+                     interfaces such as AltBinary allow writing to any type of stream, the
+                     data format is fixed.  By contrast, GenericSerialize supports multiple
+                     serialization modes; while the only currently existing module is for a
+                     subset of R5RS s-expressions, that module is less than 100 lines of code
+                     and is almost pure grammar.
+
+Build-Depends:       base
+Build-Type:          Simple
+Tested-With:         GHC==6.8.2
+Data-Files:          README
+
+Exposed-Modules:     Data.Generics.Serialization.Standard, Data.Generics.Serialization.SExp, Data.Generics.Serialization.Streams
+ghc-options:         -Wall
+Extensions:          Rank2Types, MultiParamTypeClasses, FunctionalDependencies, FlexibleInstances
+

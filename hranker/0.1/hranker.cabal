@@ -1,0 +1,21 @@
+name:                hranker
+version:             0.1
+Cabal-Version:	     >= 1.6
+synopsis:            Basic utility for ranking a list of items
+description:         A CLI utility for helping the user to rank a list of items in order.
+                     Ties are permitted.
+category:            Console
+license:             BSD3
+license-file:        LICENSE
+copyright:	     Copyright (C) Robin Green 2009
+author:              Robin Green
+maintainer:          Robin Green <greenrd@greenrd.org>
+build-type:	     Simple
+stability:	     experimental
+bug-reports:	     mailto:greenrd@greenrd.org
+tested-with:	     GHC == 6.10.1
+
+Executable hranker
+  build-Depends:	base, HCL >= 1.4, HCL < 1.5, NonEmpty >= 0.1, NonEmpty < 0.2
+  main-is:	Hranker.hs
+  ghc-options:          -Wall -fno-warn-type-defaults

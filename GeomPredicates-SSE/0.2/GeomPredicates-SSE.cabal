@@ -1,0 +1,27 @@
+name:                GeomPredicates-SSE
+version:             0.2
+synopsis:            Geometric predicates (Intel SSE) 
+description:         Exact, hardware based computation of geometric predicates using an SSE based interval filter and the ESSA algorithm.
+                     See \"Exact computation of Voronoi diagram and Delaunay triangulation\" by Marina Gavrilova, Helmut Ratschek and Jon Rokne. 
+					 This package is a specialization of the @GeomPredicates@ package and uses it's primitives defined under @Numeric.Geometric.Primitives@.
+					 This package requires a CPU with @Streaming SIMD Extensions 2@.
+category:            Math
+license:             BSD3
+license-file:        LICENSE
+author:              Neal Alexander
+maintainer:          NHAlxr@gmail.com
+Build-Type:          Simple
+Cabal-Version:       >=1.6
+   
+Library
+  Build-Depends:     base >= 3 && < 5, GeomPredicates
+  Exposed-modules:   Numeric.Geometric.Predicates.Interval, Numeric.Geometric.Predicates.ESSA
+  ghc-options:       -Wall 
+  c-sources:         Numeric/Geometric/Predicates/ESSA/ESSAPrimitives.c, Numeric/Geometric/Predicates/Interval/IntervalFilterPrimitives.c
+  cc-options:        -msse2 -Wall
+
+source-repository head
+  type:     darcs
+  location: http://code.haskell.org/~hexpuem/GeomPredicates-SSE
+
+       

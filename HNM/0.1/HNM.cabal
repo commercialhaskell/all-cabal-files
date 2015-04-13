@@ -1,0 +1,52 @@
+name:                HNM
+version:             0.1
+copyright:           (c) 2008 Cetin Sert
+cabal-version:       >= 1.2
+description:         A quick and dirty applet to help you connect
+                     to wireless networks.
+license:             BSD3
+license-file:        LICENSE
+author:              Cetin Sert <cetin@sertcom.de>
+maintainer:          Cetin Sert <cetin@sertcom.de>
+category:            Network, System
+homepage:            http://sert.homedns.org/hs/hnm/
+synopsis:            Happy Network Manager
+stability:           experimental
+
+build-type:          Simple
+
+data-files:          settings.conf,
+                     Makefile
+
+extra-source-files:  AUTHORS,
+                     README
+
+Library
+  buildable:         True
+  exposed-modules:   HNM.WLAN
+  extensions:        NoMonomorphismRestriction
+  ghc-options:       -O2 -fglasgow-exts
+  build-depends:     base,
+                     gtk >= 0.9.13,
+                     glib,
+                     mtl,
+                     unix,
+                     regex-posix,
+                     process,
+                     containers,
+                     haskell98
+
+Executable           HNM
+  buildable:         True
+  main-is:           Main.hs
+  extensions:        NoMonomorphismRestriction
+  ghc-options:       -O2 -fglasgow-exts
+  build-depends:     base,
+                     gtk >= 0.9.13,
+                     glib,
+                     mtl,
+                     unix,
+                     regex-posix,
+                     process,
+                     containers,
+                     haskell98

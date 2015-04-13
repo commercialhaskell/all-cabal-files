@@ -1,0 +1,42 @@
+name:           CabalSearch
+version:        0.0.1
+license:        BSD3
+license-file:   LICENSE
+category:       Utils
+copyright:      Copyright 2011 Johan Brinch
+author:         Johan Brinch <brinchj@gmail.com>
+maintainer:     Johan Brinch <brinchj@gmail.com>
+stability:      experimental
+tested-with:    GHC == 6.12.3
+cabal-version:  >= 1.8
+homepage:       http://github.com/brinchj/cabalsearch
+bug-reports:    http://github.com/brinchj/cabalsearch/issues
+build-type:     Simple
+synopsis:
+        Search cabal packages by name
+description:
+
+        CabalSearch builds an index of cabal packages and search through them by
+        name. It acts as a 'cabal list' replacement. To get started, install the
+        package and run: @cabalsearch --rebuild@. Now try it out with a query:
+        @cabalsearch cabal@.
+
+executable cabalsearch
+    main-is: Main.hs
+
+    build-depends:
+        base == 4.*,
+        HDBC == 2.3.*,
+        HDBC-sqlite3 == 2.3.*,
+        bytestring,
+        directory,
+        filepath,
+        process,
+        unix
+
+    ghc-options: -Wall
+    ghc-prof-options: -auto-all
+
+source-repository head
+    type:     git
+    location: http://github.com/brinchj/cabalsearch

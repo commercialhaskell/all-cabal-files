@@ -1,0 +1,38 @@
+Name:                HAppS-State
+Version:             0.9.2
+Synopsis:            Event-based distributed state.
+Description:         Web framework
+License:             BSD3
+Copyright:           2007 HAppS LLC
+Author:              HAppS LLC
+Maintainer:          AlexJacobson@HAppS.org
+Category:            Web, Distributed Computing
+Build-Depends:       base, HaXml >= 1.13 && < 1.14, mtl, network,
+                     stm, template-haskell, hslogger >= 1.0.2, HAppS-Util>=0.9.2,
+                     HAppS-Data>=0.9.2, bytestring, containers, random, old-time,
+                     old-locale, unix, directory, binary, filepath
+Build-Type:          Simple
+hs-source-dirs:      src
+Exposed-modules:     
+                     HAppS.State
+--                     HAppS.State.Logger
+                     HAppS.State.Saver
+                     HAppS.State.Control
+                     HAppS.State.Transaction
+                     HAppS.State.ComponentTH
+                     HAppS.State.ComponentSystem
+Other-modules:       
+                     HAppS.State.Checkpoint
+                     HAppS.State.Monad
+                     HAppS.State.Saver.Impl.File
+                     HAppS.State.Saver.Impl.Memory
+                     HAppS.State.Saver.Impl.Queue
+                     HAppS.State.Saver.Types
+--                     HAppS.State.OperationModes
+                     HAppS.State.Types
+                     HAppS.State.Util
+                     HAppS.State.TxControl
+Extensions:          CPP
+cpp-options:         -DUNIX
+ghc-options:         -W -fno-warn-incomplete-patterns
+GHC-Prof-Options:    -auto-all

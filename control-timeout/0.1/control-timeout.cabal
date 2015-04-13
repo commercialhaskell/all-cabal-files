@@ -1,0 +1,14 @@
+name:            control-timeout
+version:         0.1
+license:         BSD3
+license-file:    LICENSE
+author:          Adam Langley <agl@imperialviolet.org>
+description:     This package provides functions for running timeouts
+synopsis:        Timeout handling
+category:        Control
+build-depends:   base, containers, time, stm
+stability:       provisional
+tested-with:     GHC == 6.8.1
+exposed-modules: Control.Timeout
+ghc-options:     -O2
+extra-source-files: test/TimeoutTest.hs

@@ -1,0 +1,33 @@
+Name:                random-extras
+
+-- http://www.haskell.org/haskellwiki/Package_versioning_policy
+Version:             0.15
+Synopsis:            Additional functions for random values.
+Description:         Additional functions for random values, based on random-fu. Inspired by random-shuffle.
+Homepage:            http://github.com/aristidb/random-extras
+License:             BSD3
+License-file:        LICENSE
+Author:              Aristid Breitkreuz
+Maintainer:          aristidb@googlemail.com
+Copyright:           (c) 2010 Aristid Breitkreuz
+Category:            Data, Math
+Build-type:          Simple
+Extra-source-files:  README
+Cabal-version:       >=1.8
+
+Library
+  Exposed-modules:
+        Data.Random.Dovetail,
+        Data.Random.Extras
+  
+  Build-depends:
+        base >=4 && <5,
+        containers ==0.3.*,
+        array ==0.3.*,
+        random-fu ==0.1.*
+  
+  -- Other-modules:       
+  
+  -- Build-tools:         
+  
+  GHC-Options: -Wall

@@ -1,0 +1,26 @@
+name:		IPv6Addr
+version:	0.1
+license:	BSD3
+license-file:	LICENSE
+Copyright:      Copyright © 2011 - Michel Boucey
+author:		Michel Boucey <michel.boucey@gmail.com>
+maintainer:	Michel Boucey <michel.boucey@gmail.com>
+Bug-Reports:    mailto:michel.boucey@gmail.com
+synopsis:	Library to deal with the IPv6 address's text representation.
+description:	Library to deal with IPv6 addresse's text representation with validation against RFC 4291 and canonization in conformation with RFC 5952.
+category:	Network, Text
+stability:	stable
+build-type:	Simple
+cabal-version:	>= 1.6
+source-repository head
+  type: git
+  location: https://github.com/MichelBoucey/IPv6Addr
+
+Library
+  Build-Depends: base >= 3 && <= 5,
+                 bytestring >= 0.9,
+                 network-info >= 0.2,
+                 text,
+                 random
+
+  exposed-modules: Text.IPv6Addr

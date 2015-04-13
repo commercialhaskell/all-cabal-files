@@ -1,0 +1,19 @@
+Name:                has-th
+Version:             0.1
+Synopsis:            Template Haskell function for Has records.
+Description:         Template Haskell function for definining Has records.
+Homepage:            http://github.com/chrisdone/has-th
+License:             BSD3
+License-file:        LICENSE
+Author:              Chris Done
+Maintainer:          chrisdone@gmail.com
+Copyright:           Chris Done 2010
+Category:            Data
+Build-type:          Simple
+Cabal-version:       >=1.2
+Library
+   Exposed-modules:   Data.Has.TH
+   Hs-source-dirs:    src
+   Build-depends:     template-haskell,
+                      has >= 0.4.0.1,
+                      base >= 4 && < 5

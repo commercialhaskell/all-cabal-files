@@ -1,0 +1,21 @@
+Name:                bidispec-extras
+Version:             0.1
+Synopsis:            Extra helper functions for bidirectional specifications
+Description:
+ Provides generic helper functions for defining bidirectionally executable
+ specifications (a.k.a. parsers / generators).  The functions and types
+ from this module extend the core functionality provided by the bidispec
+ package.c
+License:             LGPL
+License-file:        LICENSE
+Category:            Data
+Author:              David Leuschner
+Maintainer:          David Leuschner <leuschner@openfactis.org>
+Build-Type:          Simple
+Cabal-Version:       >= 1.6
+
+Library
+  Hs-Source-Dirs:    src
+  GHC-Options: -Wall -fno-warn-orphans
+  Build-Depends:     base >= 4 && < 5, bytestring, mtl, dataenc == 0.13.*
+  Exposed-Modules:   Data.BidiSpec.Extras

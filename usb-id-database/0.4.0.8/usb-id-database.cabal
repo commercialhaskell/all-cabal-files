@@ -1,0 +1,58 @@
+name:          usb-id-database
+version:       0.4.0.8
+cabal-version: >=1.6
+build-type:    Simple
+stability:     provisional
+author:        Roel van Dijk <vandijk.roel@gmail.com>
+maintainer:    Roel van Dijk <vandijk.roel@gmail.com>
+copyright:     2009–2012 Roel van Dijk <vandijk.roel@gmail.com>
+license:       BSD3
+license-file:  LICENSE
+homepage:      https://github.com/roelvandijk/usb-id-database
+bug-reports:   https://github.com/roelvandijk/usb-id-database/issues
+category:      System
+synopsis:      A database of USB identifiers
+description:
+  Functions to find the names associated with various identifiers from the USB
+  specification. This is useful if you want to display full human-readable names
+  instead of cryptic numeric codes.
+
+extra-source-files: example.hs
+data-files: usb_dot_org_db.txt
+          , usb_id_repo_db.txt
+
+flag example
+  description: Build an example program
+  default:     False
+
+source-repository head
+  type:     git
+  location: git://github.com/roelvandijk/usb-id-database.git
+
+library
+  build-depends: base                       >= 3.0.3.1 && < 4.7
+               , base-unicode-symbols       >= 0.1.1   && < 0.3
+               , bytestring                 >= 0.9     && < 0.11
+               , containers                 <  0.6
+               , containers-unicode-symbols <  0.4
+               , parsimony                  >= 1 && < 1.4
+  ghc-options: -Wall
+  cpp-options: -DBUILD_WITH_CABAL
+  exposed-modules: System.USB.IDDB
+                 , System.USB.IDDB.UsbDotOrg
+                 , System.USB.IDDB.LinuxUsbIdRepo
+  other-modules: Paths_usb_id_database
+               , System.USB.IDDB.Base
+               , System.USB.IDDB.Misc
+
+executable example
+  extensions: CPP
+  cpp-options: -DBUILD_WITH_CABAL
+  main-is: example.hs
+  ghc-options: -Wall
+
+  if flag(example)
+    buildable: True
+  else
+    buildable: False
+

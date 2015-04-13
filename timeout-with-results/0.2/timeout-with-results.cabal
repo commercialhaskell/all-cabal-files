@@ -1,0 +1,32 @@
+Name:                timeout-with-results
+Version:             0.2
+Synopsis:
+    Runs a time-limited computation alowing it to return intermediate results.
+Description:
+    Evaluates a computation withing a given timeout limit, alowing it to return
+    intermediate results. Useful for AI algorithms that should return the best
+    result within a given wallclock time limit.
+Category:            Concurrency
+License:             LGPL
+License-file:        COPYING.LESSER
+Author:              Petr Pudlák
+Copyright:           (c) 2012 Petr Pudlák
+Maintainer:          Petr Pudlák <petr.mvd@gmail.com>
+Build-Type:          Simple
+Cabal-Version:       >=1.6
+Stability:           Experimental
+Homepage:            https://github.com/ppetr/timeout-with-results
+Bug-reports:         https://github.com/ppetr/timeout-with-results/issues
+Extra-Source-Files:  README.md, COPYING, COPYING.LESSER
+
+Source-repository head
+  type:     git
+  location: git://github.com/ppetr/timeout-with-results.git
+
+Library
+  Build-Depends:     base == 4.*, mtl >= 2, parallel >= 3, deepseq >= 1.1
+  Exposed-Modules:
+    System.Timeout.Returning,
+    System.Timeout.Returning.Writer
+  hs-source-dirs:    src
+  --ghc-options:       -O2

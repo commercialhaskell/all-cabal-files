@@ -1,0 +1,39 @@
+name:          text-locale-encoding
+version:       0.1.0.2
+synopsis:      Encode and decode Text to/from ByteString using TextEncoding
+homepage:      https://github.com/exbb2/text-locale-encoding
+license:       BSD3
+license-file:  LICENSE
+author:        kudah
+maintainer:    kudahkukarek@gmail.com
+category:      Codec, Text, Data
+build-type:    Simple
+cabal-version: >= 1.8
+
+source-repository head
+    type: git
+    location: https://github.com/exbb2/text-locale-encoding.git
+
+flag trustworthy
+  default: True
+  manual: True
+
+library
+    exposed-modules:
+        Data.Text.Encoding.Locale
+        Data.Text.Lazy.Encoding.Locale
+        Data.Text.IO.Locale
+
+    other-modules:
+        Import
+
+    build-depends:
+         base == 4.*
+        ,bytestring-handle == 0.1.*
+        ,bytestring
+        ,text
+
+    ghc-options: -Wall
+
+    if flag(trustworthy) && impl(ghc>=7.2)
+        cpp-options: -DTRUSTWORTHY=1

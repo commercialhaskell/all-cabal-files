@@ -1,0 +1,47 @@
+Name:                svgutils
+Version:             0.1
+
+Synopsis:            Helper functions for dealing with SVG files
+
+Description:         A library for performing simple manipulations with SVG
+                     files, primarily tiling several SVG files together into a
+                     single file (ready for printing).
+                     .
+                     As well as the exposed library modules, the package comes
+                     with an executable called SVGtile that can perform this
+                     SVG tiling from the command-line.  SVGtile takes a list
+                     of SVG files as command-line arguments, then generates
+                     lots of files of the form TiledFront-1.svg.  Paper-size
+                     (default A4) and other settings can be set using
+                     command-line options: see SVGtile --help.
+
+License:             BSD3
+License-file:        LICENSE
+Author:              Neil Brown
+Maintainer:          neil@twistedsquare.com
+Homepage:            https://patch-tag.com/r/twistedsquare/svgutils/home
+
+Copyright:           Copyright Neil Brown, 2010.
+
+Category:            Graphics
+
+Build-type:          Simple
+Cabal-version:       >=1.6
+
+Library
+  Exposed-modules:     Data.SVG.Paper Data.SVG.SVG Data.SVG.Tile
+  Other-modules:       Data.SVG.Internal.Fail
+  
+  Build-depends:       base >= 4 && < 5, xml==1.3.*
+
+  Extensions:          GeneralizedNewtypeDeriving
+  GHC-Options:         -Wall
+  
+Executable SVGtile
+  Main-is:             Data/SVG/TileMain.hs
+
+  Build-depends:       base >= 4 && < 5, xml==1.3.*, filepath==1.1.*
+
+  Extensions:          GeneralizedNewtypeDeriving
+  GHC-Options:         -Wall
+

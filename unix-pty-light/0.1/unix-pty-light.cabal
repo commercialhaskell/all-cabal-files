@@ -1,0 +1,23 @@
+cabal-version:       >= 1.2.3.0
+name:                unix-pty-light
+version:             0.1
+synopsis:            POSIX pseudo-terminal support
+description:
+    Support for POSIX 1003.1 pseudo-terminal functionality.
+    Unlike the @unix@ package's pseudo-terminal support, this
+    binding works with GHC 6.6.
+category:            System
+license:             BSD3
+license-file:        LICENSE
+author:              Stuart Cook
+maintainer:          scook0@gmail.com
+homepage:            http://code.haskell.org/~scook0/unix-pty-light
+build-type:          Simple
+
+Library
+    build-Depends:       base, unix
+    ghc-options:
+        -Wall
+        -optc "-D_XOPEN_SOURCE=600"
+    exposed-modules:
+        System.Posix.PtyLight

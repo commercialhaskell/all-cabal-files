@@ -1,0 +1,35 @@
+Name:          lax
+Version:       0.1.0.3
+Cabal-Version: >= 1.6
+Build-Type:    Simple
+License:       BSD3
+License-File:  LICENSE
+Copyright:     © 2007–2008 Brandenburg University of Technology, Cottbus;
+               © 2011–2012 Wolfgang Jeltsch
+Author:        Wolfgang Jeltsch
+Maintainer:    wolfgang@cs.ioc.ee
+Stability:     provisional
+Homepage:      http://darcs.wolfgang.jeltsch.info/haskell/lax
+Package-URL:   http://hackage.haskell.org/packages/archive/lax/0.1.0.3/lax-0.1.0.3.tar.gz
+Synopsis:      Lax arrows
+Description:   Lax arrows are variants of other arrows which are &#x201C;less strict&#x201D; than
+               the original arrows.  They can be used, for example, to produce I\/O fixpoints in
+               situations where @fixIO@ would fail.
+Category:      Control
+Tested-With:   GHC == 7.4.1
+
+Source-Repository head
+    type:     darcs
+    location: http://darcs.wolfgang.jeltsch.info/haskell/lax/main
+
+Source-Repository this
+    type:     darcs
+    location: http://darcs.wolfgang.jeltsch.info/haskell/lax/main
+    tag:      lax-0.1.0.3
+
+Library
+    Exposed-Modules: Control.Arrow.Lax
+    Build-depends:   base >= 2.1.1 && < 5
+    Extensions:      ExistentialQuantification
+                     Rank2Types
+    Hs-Source-Dirs:  src

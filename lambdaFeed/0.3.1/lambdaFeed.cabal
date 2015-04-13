@@ -1,0 +1,28 @@
+Name:		lambdaFeed
+Version:	0.3.1
+--Versnick:	'Lambdas are food for thought'
+--Versdate:     18 Jun 2006
+License:	GPL
+License-File:	COPYING
+Copyright:	Copyright (c) 2006 Manuel M T Chakravarty
+Author:		Manuel M T Chakravarty
+Maintainer:	chak@cse.unsw.edu.au
+Stability:	Experimental
+Homepage:	http://www.cse.unsw.edu.au/~chak/haskell/lambdaFeed/
+--Package-URL:	http://www.cse.unsw.edu.au/~chak/haskell/lambdaFeed/lambdaFeed-0.3.1.tar.gz
+Synopsis:	RSS 2.0 feed generator
+Description:	LambdaFeed generates RSS 2.0 XML feeds and matching HTML files.
+Category:       Web
+Build-Depends:  base, haskell98, html
+
+Executable:     lambdaFeed
+Main-Is:        LambdaFeedMain.hs
+Other-Modules:	Config
+		Date
+		Error
+		Feed
+		LambdaFeed
+		HTML
+		RSS
+		Stanza
+Ghc-Options:	-O

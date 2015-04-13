@@ -1,0 +1,36 @@
+Name:                HAppS-Util
+Version:             0.9.2.1
+Synopsis:            Web framework
+License:             BSD3
+License-file:        COPYING
+Copyright:           2007 HAppS LLC
+Author:              HAppS LLC
+Category:            Web, Distributed Computing
+Maintainer:          AlexJacobson@HAppS.org
+Build-Depends:       base, mtl, hslogger >= 1.0.2, template-haskell, array,
+                     bytestring, old-time, process, directory
+Build-type:          Simple
+hs-source-dirs:      src
+Exposed-modules:     
+                     HAppS.Crypto.Base64,
+                     HAppS.Crypto.DES,
+                     HAppS.Crypto.HMAC,
+                     HAppS.Crypto.SHA1,
+                     HAppS.Crypto.MD5,
+                     HAppS.Crypto.W64,
+                     HAppS.Util.ByteStringCompat
+                     HAppS.Util.Common,
+                     HAppS.Util.Concurrent,
+                     HAppS.Util.Daemonize,
+                     HAppS.Util.EventHandler,
+                     HAppS.Util.Exception
+                     HAppS.Util.TimeOut 
+                     HAppS.Util.TH
+extensions:          CPP, ForeignFunctionInterface,
+                     OverlappingInstances, UndecidableInstances,
+                     RecursiveDo,
+                     RankNTypes, FlexibleInstances,
+                     TypeSynonymInstances
+cpp-options:         -DUNIX
+ghc-options:         -W -fno-warn-incomplete-patterns
+GHC-Prof-Options:    -auto-all

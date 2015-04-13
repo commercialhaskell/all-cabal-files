@@ -1,0 +1,23 @@
+Name:                words
+Version:             0.1
+Synopsis:            Cross-platform access to a list of words
+Description:         This is a simple wrapper around getting a list of words,
+                     that works in a common across multiple platforms.
+License:             BSD3
+License-file:        LICENSE
+Author:              Chris Smith <cdsmith@gmail.com>
+Maintainer:          Chris Smith <cdsmith@gmail.com>
+Category:            Language
+Build-type:          Simple
+Cabal-version:       >=1.4
+
+Data-files:          words
+
+Library
+  Exposed-modules:   Language.Words
+  Other-modules:     Paths_words
+  Build-depends:     base >= 2 && < 5, directory, text
+
+  if impl(ghc >= 7.2)
+    Extensions:      CPP
+    Cpp-options:     -DTRUST

@@ -1,0 +1,90 @@
+name: rail-compiler-editor
+version:             0.3.0.0
+synopsis: Compiler and editor for the esolang rail.
+description: A compiler and a graphical editor for the esoteric programming language rail.
+homepage:            https://github.com/SWP-Ubau-SoSe2014-Haskell/SWPSoSe14
+license: MIT
+license-file: LICENSE
+author: see AUTHORS
+maintainer:  borgers@mi.fu-berlin.de
+-- A copyright notice.
+-- copyright:
+category:            Language
+build-type:          Simple
+extra-source-files:  README.md, tests/integration_tests, src/RailCompiler/stack.ll, src/RailCompiler/cmp.ll, src/RailCompiler/math.ll, src/RailCompiler/string.ll src/RailCompiler/linked_stack.ll src/RailCompiler/list.ll
+data-files: data/icon.png
+cabal-version:       >=1.10
+
+source-repository head
+  type: git
+  location: https://github.com/SWP-Ubau-SoSe2014-Haskell/SWPSoSe14.git
+
+library
+  build-depends: base (>=4.5.0.0 && <5), llvm-general-pure, llvm-general <3.3.12 || (>=3.4 && < 3.4.3), mtl, containers
+  ghc-prof-options: -fprof-auto
+  exposed-modules:
+    AST
+    Backend
+    ErrorHandling
+    InstructionPointer
+    InterfaceDT
+    IntermediateCode
+    Lexer
+    Preprocessor
+    SemanticalAnalysis
+    SyntacticalAnalysis
+    FunctionDeclarations
+    TypeDefinitions
+  hs-source-dirs: src/RailCompiler
+  default-language: Haskell2010
+
+executable RailCompiler
+  main-is: Main.hs
+  build-depends: base (>=4.5.0.0 && <5), rail-compiler-editor
+  ghc-options: -rtsopts
+  ghc-prof-options: -fprof-auto
+  --other-extensions:    DeriveDataTypeable, GADTs, StandaloneDeriving
+  --build-depends: base (>=4.5.0.0 && <5), llvm-general-pure, llvm-general <3.3.12 || (>=3.4 && < 3.4.3), mtl, containers
+
+  -- Directories containing source files.
+  hs-source-dirs: src/RailCompiler-command
+
+  -- Base language which the package is written in.
+  default-language:    Haskell2010
+
+executable RailEditor
+  main-is: Editor.hs
+  ghc-prof-options: -fprof-auto
+  other-modules:
+    FooterBar
+    Highlighter
+    InteractionField
+    Interpreter
+    KeyHandler
+    MainWindow
+    MenuBar
+    Execute
+    RedoUndo
+    TextAreaContent
+    Selection
+    TextAreaContentUtils
+    TextArea
+    ToolBar
+    Paths_rail_compiler_editor
+  build-depends: base (>=4.5.0.0 && <5), containers, transformers, gtk, cairo, process, mtl, rail-compiler-editor
+  hs-source-dirs: src/RailEditor
+  default-language: Haskell2010
+
+Test-suite testcases
+  main-is: Main.hs
+  other-modules:
+    TBackend
+    TInterCode
+    TLexer
+    TPreProc
+    TSemAna
+    TSynAna
+  build-depends: base (>=4.5.0.0 && <5), HUnit, rail-compiler-editor, process, containers
+  hs-source-dirs: tests
+  default-language: Haskell2010
+  type: exitcode-stdio-1.0

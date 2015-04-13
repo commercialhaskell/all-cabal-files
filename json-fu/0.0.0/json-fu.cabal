@@ -1,0 +1,71 @@
+name:             json-fu
+version:          0.0.0
+license:          MIT
+license-file:     LICENSE
+synopsis:         Generic JSON serialization / deserialization
+description:      A generic JSON serializer that converts fields to `snake_case`
+                  and optionally strips the constructor name from fields, so
+                  that the generated JSON is compatible with most web services.
+                  .
+                  Have a look at <https://github.com/sol/json-fu#readme> for
+                  examples.
+copyright:        (c) 2013 Simon Hengel
+author:           Simon Hengel <sol@typeful.net>
+maintainer:       Simon Hengel <sol@typeful.net>
+build-type:       Simple
+category:         JSON
+cabal-version:    >= 1.8
+
+source-repository head
+  type: git
+  location: https://github.com/sol/json-fu
+
+library
+  ghc-options:
+      -Wall
+  hs-source-dirs:
+      src
+  exposed-modules:
+      Data.JSON
+  other-modules:
+      Data.JSON.Generic
+      Data.JSON.Functions
+      Util
+  build-depends:
+      base    == 4.*
+    , bytestring
+    , vector
+    , text
+    , containers
+    , unordered-containers
+    , aeson
+    , hashable
+    , attoparsec
+    , time
+    , syb
+    , mtl
+
+test-suite spec
+  type:
+      exitcode-stdio-1.0
+  ghc-options:
+      -Wall -Werror
+  hs-source-dirs:
+      test, src
+  main-is:
+      Spec.hs
+  build-depends:
+      base    == 4.*
+    , bytestring
+    , vector
+    , text
+    , containers
+    , unordered-containers
+    , aeson
+    , hashable
+    , attoparsec
+    , time
+    , syb
+    , mtl
+
+    , hspec >= 1.3

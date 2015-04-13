@@ -1,0 +1,23 @@
+Name:		mtlparse
+Version:	0.0.1
+License:	LGPL
+License-File:	LICENSE
+Author:		Yoshikuni Jujo <PAF01143@nifty.ne.jp>
+Maintainer:	PAF01143@nifty.ne.jp
+Stability:	experimental
+Homepage:	http://homepage3.nifty.com/salamander/second/projects/mtlparse/
+Synopsis:	parse library use mtl package
+Description:
+	parse library on mtl package
+	.
+	Parse and ParseT is like State and StateT
+	.
+	the package ease implementation of look-ahead look-behind include-file
+	and so on.
+Category:	Parsing
+Build-Depends:	base, mtl
+Build-Type:     Simple
+Exposed-modules:Text.ParserCombinators.MTLParse
+Other-modules:	Text.ParserCombinators.MTLParse.MTLParseCore
+Extra-source-files: TODO.ja.utf-8
+ghc-options:    -Wall

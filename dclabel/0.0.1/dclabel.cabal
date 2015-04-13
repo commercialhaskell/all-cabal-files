@@ -1,0 +1,50 @@
+Name:           dclabel
+Version:        0.0.1
+build-type:     Simple
+License:        BSD3
+License-File:   LICENSE
+Copyright:      (c) 2011 Deian Stefan, David Mazieres, Alejandro Russo
+Author:         Deain Stefan, David Mazieres, Alejandro Russo
+Maintainer:	Deian Stefan  <deian at cs dot stanford dot edu>,
+		Alejandro Russo < russo at chalmers dot se >,
+Stability:      experimental
+Synopsis:       The Disjunction Category Label Format.
+Category:       Security
+Cabal-Version:  >=1.6
+
+Extra-source-files:
+     Examples/UsingEDSL.hs,
+     Examples/Labels.hs,
+     Examples/ExamplesDCLabels.hs,
+     Tests/Main.hs
+
+Description:
+        The /DC Label/ (DCLabel) library provides dynamic information
+	flow control label format in the form of conjunctions of
+	disjunctions of principals. Most code should import module
+	"DCLabel.Safe"; trusted code should import "DCLabel.TCB".
+	The core functionality of the library is documented in
+	"DCLabel.Core", while the small EDSL used to create labels is
+	documents in "DCLabel.NanoEDSL". DCLabel was implemented by David
+        Mazieres (<http://www.scs.stanford.edu/~dm/>), Deian Stefan
+        (<http://www.scs.stanford.edu/~deian/>), and Alejandro Russo
+        (<http://www.cse.chalmers.se/~russo/>).
+
+Source-repository head
+  Type:     git
+  Location: http://www.scs.stanford.edu/~deian/dclabels/dclabel.git
+
+
+Library 
+   Build-depends: base >= 4 && < 5, 
+                  pretty > 1.0.1 && < 2,
+                  QuickCheck >= 2.1
+
+   Exposed-modules:
+       DCLabel.Safe,
+       DCLabel.TCB,
+       DCLabel.Core, 
+       DCLabel.NanoEDSL,
+       DCLabel.PrettyShow,
+       DCLabel.Secrecy,
+       DCLabel.Integrity

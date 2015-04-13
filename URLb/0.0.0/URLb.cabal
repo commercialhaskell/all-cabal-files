@@ -1,0 +1,28 @@
+name                          : URLb
+version                       : 0.0.0
+category                      : Text
+license                       : BSD3
+license-file                  : LICENSE
+author                        : Jason Dusek
+maintainer                    : oss@solidsnack.be
+homepage                      : http://github.com/solidsnack/URLb
+synopsis                      : A liberal, simple URL parser.
+description                   : A liberal, simple URL parser.
+
+cabal-version                 : >= 1.6
+build-type                    : Simple
+
+source-repository               head
+  type                        : git
+  location                    : git://github.com/solidsnack/URLb.git
+
+
+library
+  build-depends               : base >= 2 && <= 5
+                              , bytestring >= 0.9
+                              , containers
+                              , attoparsec >= 0.10.1.1
+  exposed-modules             : Network.URLb
+  extensions                  : OverloadedStrings
+                                RecordWildCards
+

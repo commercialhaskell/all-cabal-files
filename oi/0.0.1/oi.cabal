@@ -1,0 +1,23 @@
+Name:			oi
+Version:		0.0.1
+Category:		Data
+Synopsis:		Purely Functional Lazy Interaction with the outer world
+Description:		This package implements a data structure and operations on it 
+			for making interactive program without using explicitly IO monads.
+Stability:		Experimental
+License:		BSD3
+License-File:		LICENSE
+Author:			Nobuo Yamashita
+Maintainer:		nobsun@sampou.org
+Build-Type:		Simple
+Cabal-Version:		>= 1.6
+
+Data-dir:		sample
+Data-files:		Makefile echo.hs recdircs.hs
+
+Library
+  Hs-Source-Dirs:	    src/
+  Build-Depends:	    base >= 4 && < 5, parallel, comonad
+  GHC-Options:		    -Wall -O0
+  Exposed-modules:	    Data.OI
+

@@ -1,0 +1,67 @@
+name:                liblinear-enumerator
+version:             0.1.2
+synopsis:            liblinear iteratee.
+description:
+  High level bindings to liblinear <http://www.csie.ntu.edu.tw/~cjlin/liblinear/>.
+  .
+license:             BSD3
+license-file:        LICENSE
+author:              Nathan Howell <nathan.d.howell@gmail.com>
+maintainer:          Nathan Howell <nathan.d.howell@gmail.com>
+homepage:            http://github.com/NathanHowell/liblinear-enumerator
+bug-reports:         http://github.com/NathanHowell/liblinear-enumerator/issues
+category:            AI, Classification, Statistics
+
+build-type:          Simple
+cabal-version:       >= 1.10
+
+extra-source-files:
+  cbits/COPYRIGHT
+
+library
+  default-language:
+    Haskell2010
+  hs-source-dirs:
+    src
+  exposed-modules:
+    Bindings.LibLinear
+    Data.LibLinear
+  other-modules:
+    Data.LibLinear.Solver
+  build-depends:
+    base         >= 3      && < 5,
+    bindings-DSL >= 1.0    && < 1.1,
+    enumerator   >= 0.4.10 && < 0.5,
+    mtl          >= 2      && < 3,
+    vector       >= 0.9    && < 0.10
+  ghc-options:
+    -Wall
+
+  build-tools:
+    hsc2hs
+
+  include-dirs:
+    cbits/
+  install-includes:
+    cbits/linear.h
+    cbits/tron.h
+    cbits/blas/blas.h
+    cbits/blas/blasp.h
+
+  c-sources:
+    cbits/linear.cpp
+    cbits/tron.cpp
+    cbits/blas/daxpy.c	
+    cbits/blas/dnrm2.c
+    cbits/blas/ddot.c	
+    cbits/blas/dscal.c
+
+  includes:
+    cbits/linear.h
+  extra-libraries:
+    stdc++
+
+source-repository head
+  type:     git
+  location: https://github.com/NathanHowell/liblinear-enumerator.git
+

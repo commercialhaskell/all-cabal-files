@@ -1,0 +1,16 @@
+name:               pony
+version:            1.0
+synopsis:           Can I have a pony?
+description:        You can have a pony!
+category:           System
+license:            BSD3
+license-file:       LICENSE
+author:             Don Stewart
+homepage:           http://www.ascii-art.de/ascii/uvw/unicorn.txt
+maintainer:         dons@galois.com
+cabal-version:      >= 1.2
+build-type:         Simple
+
+executable can-i-have-a-pony
+    main-is:            Main.hs
+    build-depends:      base

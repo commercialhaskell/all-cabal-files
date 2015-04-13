@@ -1,0 +1,17 @@
+Name: PBKDF2
+Version: 0.3
+License: BSD3
+License-file: bsd3.txt
+Description: Implementation of Password-Based Key Derivation Function, aka pbkdf2, from RSA labs.
+             I'll deprecate this if it gets folded into an already-existing crypto package.
+             
+Synopsis: Make password-based security schemes more secure.
+Maintainer: Thomas Hartman <thomashartman1 at gmail>
+Author: Thomas Hartman 
+Stability: Beta
+Copyright: Copyright (c) 2008 Thomas Hartman
+Exposed-Modules: Crypto.PBKDF2
+Build-Depends: base, bytestring, Crypto, haskell98, binary
+Category: Cryptography
+Build-type: Simple
+

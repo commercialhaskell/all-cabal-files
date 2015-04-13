@@ -1,0 +1,31 @@
+Name:                lambda2js
+Version:             0.1
+Synopsis:            Untyped Lambda calculus to JavaScript compiler
+Description:         Simple though savage untyped Lambda calculus to JavaScript compiler.
+                     I hope you will have same fun playing with it as I had writing it.
+Homepage:            https://patch-tag.com/r/mkollar/lambda2js/
+Stability:           experimental
+License:             GPL-3
+License-file:        LICENSE
+Author:              Matej Kollar <208115@mail.muni.cz>
+Maintainer:          Matej Kollar <208115@mail.muni.cz>
+
+-- A copyright notice.
+-- Copyright:
+
+Category:            Compiler
+
+Build-type:          Simple
+
+Extra-source-files:  examples/example.ulc
+
+Cabal-version:       >= 1.4
+
+
+Executable lambda2js
+  Main-is: lambda2js.hs
+  Build-depends: haskell2010,
+                 parsec >= 3
+  Hs-source-dirs: src
+  Other-modules: Parser, Types
+

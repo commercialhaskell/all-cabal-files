@@ -1,0 +1,63 @@
+Name:               idna2008
+Version:            0.0.1.0
+Cabal-Version:      >= 1.6
+Build-Type:         Simple
+License:            BSD3
+License-File:       LICENSE
+Copyright:          Copyright © 2011, Jon Kristensen
+Author:             Jon Kristensen
+Maintainer:         jon.kristensen@pontarius.org
+Stability:          alpha
+-- Homepage:
+Bug-Reports:        mailto:jon.kristensen@pontarius.org
+-- Package-URL:
+Synopsis:           Converts Unicode hostnames into ASCII
+Description:        Library to convert internationalized domain names between
+                    the ASCII (ACE) and Unicode encodings in accordance with
+                    IDNA2008 (RFC 5991: Internationalized Domain Names in
+                    Applications (IDNA): Protocol). Unlike IDNA2003, IDNA2008 is
+                    not based on RFC 3454: Preparation of Internationalized
+                    Strings (\"stringprep\").
+Category:           Network
+Tested-With:        GHC ==7.0.2
+-- Data-Files:
+-- Data-Dir:
+-- Extra-Source-Files:
+-- Extra-Tmp-Files:
+
+Library
+  Exposed-Modules:   Data.Text.IDNA2008
+  Exposed:           True
+  Build-Depends:     base >= 2 && < 5, punycode ==0.0.1.0, split
+  -- Other-Modules:
+  -- HS-Source-Dirs:
+  -- Extensions:
+  -- Build-Tools:
+  -- Buildable:
+  -- GHC-Options:
+  -- GHC-Prof-Options:
+  -- Hugs-Options:
+  -- NHC98-Options:
+  -- Includes:
+  -- Install-Includes:
+  -- Include-Dirs:
+  -- C-Sources:
+  -- Extra-Libraries:
+  -- Extra-Lib-Dirs:
+  -- CC-Options:
+  -- LD-Options:
+  -- Pkgconfig-Depends:
+  -- Frameworks:
+
+Source-Repository head
+  Type:     git
+  -- Module:
+  Location: git://github.com/jonkri/idna2008.git
+  -- Subdir:
+
+Source-Repository this
+  Type:     git
+  -- Module:
+  Location: git://github.com/jonkri/idna2008.git
+  Tag:      0.0.1.0
+  -- Subdir:

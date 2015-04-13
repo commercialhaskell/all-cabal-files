@@ -1,0 +1,107 @@
+Name:           memcache-haskell
+Version:        0.0.10
+Description:    Memcache procotol library
+License:        MIT
+license-file:   LICENSE
+Author:         Kiyoshi Ikehara
+Maintainer:     Kiyoshi Ikehara
+Copyright:      (c) 2015 GREE, Inc.
+Build-Type:     Simple
+Cabal-Version:  >=1.8
+Description:
+    A memcache protocol library for client and server applications.
+
+
+bug-reports:      https://github.com/gree/memcache-haskell/issues
+
+extra-source-files:
+  ChangeLog.md
+  README.md
+
+source-repository head
+  type:           git
+  location:       https://github.com/gree/memcache-haskell.git
+
+Flag sample
+  Description: Build sample programs
+  Default: False
+
+Library
+  Ghc-Options:     -O2 -Wall
+  Build-Depends:   base         >=4 && <5
+                 , bytestring
+                 , network      >= 2.3.2
+                 , attoparsec
+                 , transformers
+                 , split
+                 , hashable
+  Hs-source-dirs:  src
+  Exposed-modules: Network.Memcache
+                 , Network.Memcache.Response
+                 , Network.Memcache.Op
+                 , Network.Memcache.Class
+                 , Network.Memcache.Client
+                 , Network.Memcache.Stats
+                 , Network.Memcache.Types
+                 , Network.Memcache.IO
+  Other-modules:   Network.Memcache.IO.Internal
+  Extensions:      DeriveDataTypeable
+
+Executable memcache-sample-client
+  if flag(sample)
+    Buildable: True
+  else
+    Buildable: False
+  Ghc-Options:     -threaded -O2 -Wall -rtsopts
+  Extra-Libraries: 
+  Build-Depends:   base       >= 4 && < 5
+                 , bytestring >= 0.9
+                 , stm        >= 2.4
+                 , containers
+                 , transformers
+                 , resourcet
+                 , mtl
+                 , hashtables
+                 , network-conduit
+                 , memcache-haskell
+  Hs-source-dirs:  sample
+  Main-is:         sample-client.hs
+  Extensions:      DeriveDataTypeable
+
+Executable memcache-sample-retrieval
+  if flag(sample)
+    Buildable: True
+  else
+    Buildable: False
+  Ghc-Options:     -threaded -O2 -Wall -rtsopts
+  Extra-Libraries: 
+  Build-Depends:   base       >= 4 && < 5
+                 , bytestring >= 0.9
+                 , stm        >= 2.4
+                 , containers
+                 , transformers
+                 , resourcet
+                 , mtl
+                 , hashtables
+                 , network-conduit
+                 , memcache-haskell
+  Hs-source-dirs:  sample
+  Main-is:         sample-retrieval.hs
+  Extensions:      DeriveDataTypeable
+
+Test-Suite test-memcache
+  Ghc-Options:     -threaded -O2 -Wall
+  Build-depends:   base
+                 , bytestring
+                 , network >= 2.3.2
+                 , split
+                 , QuickCheck == 2.5.1.1
+                 , HUnit
+                 , test-framework
+                 , test-framework-th
+                 , test-framework-hunit
+                 , test-framework-quickcheck2
+                 , memcache-haskell
+  Type:            exitcode-stdio-1.0
+  Hs-source-dirs:  test
+  Main-is:         test-memcache.hs

@@ -1,0 +1,18 @@
+Name:             tuple-gen
+Version:          1.0
+Synopsis:         Generating all n-tuples without getting stuck in one infinity
+Description:      Generating tuples like this: [(x, y) | x <- [1..], y <- [1..]] generates tuples that change only in the second position. This library uses an automata to generate all tuples whose sum of digits is constant. This constant is increased and thereby all tuples are generated.
+category:         Data
+License:          BSD3
+License-file:     LICENSE
+Author:           Tillmann Vogt
+Maintainer:       Tillmann.Vogt@rwth-aachen.de
+Build-Type:       Simple
+Cabal-Version:    >=1.6
+
+Library
+    hs-source-dirs: src
+    build-depends:
+        base == 4.*
+    exposed-modules:
+        Data.Tuple.Gen

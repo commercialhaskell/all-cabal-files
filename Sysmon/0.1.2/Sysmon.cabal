@@ -1,0 +1,50 @@
+Name:                Sysmon
+Version:             0.1.2
+Description:         A library for processing Sybase 15 sysmon reports.
+                     .
+                     The library provides an interface to parse sysmon reports, to query the data, 
+                     to aggregate the multiple sysmon reports, to generate the optimization hints. 
+                     The hints parameters can be configured.
+                     . 
+                     See the Database.Sybase.Sysmon.Log package for the exported functions and 
+                     Sample.hs for the 
+                     usage example.
+License:             BSD3
+License-File:        LICENSE
+Author:              Vitaliy Rukavishnikov
+Maintainer:          virukav@gmail.com
+Homepage:            http://github.com/rukav/Sysmon
+Bug-Reports:         mailto:virukav@gmail.com
+Build-Type:          Simple
+Tested-with:	     GHC==6.12.3
+Category:            Database
+Synopsis:            Sybase 15 sysmon reports processor
+Data-Dir:            data
+Data-Files:	     sysmon_1.out,sysmon_2.out
+Cabal-Version:       >=1.2
+Extra-Source-Files:  README,
+                     src/Sample.hs
+
+Library
+    Hs-Source-Dirs:      src
+    Exposed-Modules:     Database.Sybase.Sysmon.LogTypes, 
+                         Database.Sybase.Sysmon.Log, 
+                         Database.Sybase.Sysmon.LogParserPrim, 
+                         Database.Sybase.Sysmon.SysmonTypes, 
+                         Database.Sybase.Sysmon.SysmonLog, 
+                         Database.Sybase.Sysmon.SysmonHints
+    Other-modules:  	 Database.Sybase.Sysmon.Average, 
+                         Database.Sybase.Sysmon.Derive
+    Build-Depends:       base >= 3.0.3.2 && < 5, 
+                         Glob >= 0.5.1,
+                         ConfigFile >= 1.0.6,
+                         time,
+                         old-locale,
+                         fingertree >= 0.0.1.0,
+                         pretty >= 1.0.1.1,
+                         filepath,
+                         mtl,
+                         template-haskell,
+                         MissingH,
+                         vector,
+                         statistics >= 0.8.0.4

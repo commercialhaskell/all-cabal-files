@@ -1,0 +1,27 @@
+Name:             happraise
+Version:          0.1
+License:          BSD3
+license-file:     LICENCE
+Author:           Allan Clark
+maintainer:       Allan Clark <allan.clark@gmail.com>
+category:         Development
+Homepage:
+Build-depends:    base, filepath, directory
+Synopsis:         A small program for counting the comments in haskell source
+Description:      A small program for counting the comments in the haskell source files of
+                  a project. It can work recursively over directories and/or over a list
+                  of given files. For example one can run: "happraise $(darcs query manifest)".
+                  Or put this as a command in your Setup.hs file.
+
+build-type:       Simple
+
+
+Executable:       happraise  
+Main-is:          Main.hs
+Other-modules:
+Include-dirs:
+C-sources:
+Extra-libraries: 
+Extensions:
+Ghc-options:      -Wall
+

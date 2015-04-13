@@ -1,0 +1,87 @@
+name:                hPDB-examples
+version:             0.99
+stability:           beta
+homepage:            https://github.com/mgajda/hpdb
+package-url:         http://hackage.haskell.org/package/hPDB
+synopsis:            Parser, print and manipulate structures in PDB file format.
+description:         Protein Data Bank file format is a most popular format for holding biomolecule data. This is a very fast parser (below 7s for the largest entry in PDB - 1HTQ which is over 70MB - as compared with 11s of RASMOL 2.7.5, or 2m15s of BioPython with Python 2.6 interpreter.) It is aimed to not only deliver event-based interface, but also a high-level data structure for manipulating data in spirit of BioPython's PDB parser. 
+category:            Bioinformatics 
+license:             BSD3
+license-file:        LICENSE
+
+author:              Michal J. Gajda
+copyright:           Copyright by Michal J. Gajda '2009-'2012
+maintainer:          mjgajda@googlemail.com
+bug-reports:         mailto:mjgajda@googlemail.com
+
+build-type:          Simple
+cabal-version:       >=1.8
+tested-with:         GHC==7.4.1, GHC==7.0.3, GHC==7.4.2
+--Need to re-test: GHC==6.12.1,  GHC==7.0.4, GHC==7.1.20101026 
+--data-files:          1CRN.pdb, 1HTQ.pdb, 3JYV.pdb
+
+source-repository head
+  type:     git
+  location: git://github.com:mgajda/hpdb-examples.git
+
+Executable PDB2Fasta
+  main-is:          examples/PDB2Fasta.hs
+  ghc-options:      -fspec-constr-count=4 -O3 
+  build-depends:    base>=4.0, base <4.7, bytestring, ghc-prim, directory, mtl, template-haskell, vector, AC-Vector, containers, deepseq, QuickCheck >= 2.5.0.0, text>=0.11.1.13, hPDB >= 0.99
+  other-extensions:       ScopedTypeVariables OverloadedStrings BangPatterns NoMonomorphismRestriction EmptyDataDecls MagicHash
+
+Executable ShiftToCenter
+  main-is:          examples/ShiftToCenter.hs
+  ghc-options:      -fspec-constr-count=4 -O3 
+  build-depends:    base>=4.0, base <4.7, ghc-prim, directory, mtl, template-haskell, vector, AC-Vector, containers, deepseq,QuickCheck >= 2.5.0.0, text>=0.11.1.13, hPDB >= 0.99, bytestring
+  other-extensions:       ScopedTypeVariables OverloadedStrings BangPatterns NoMonomorphismRestriction EmptyDataDecls MagicHash
+
+Executable CleanPDB
+  main-is:          examples/CleanPDB.hs
+  ghc-options:      -fspec-constr-count=4 -O3 
+  build-depends:    base>=4.0, base <4.7, bytestring, ghc-prim, directory, mtl, template-haskell, vector, AC-Vector, containers, deepseq,QuickCheck >= 2.5.0.0, text>=0.11.1.13, hPDB >= 0.99
+  other-extensions:       ScopedTypeVariables OverloadedStrings BangPatterns NoMonomorphismRestriction EmptyDataDecls MagicHash
+
+Executable SplitModels
+  main-is:          examples/SplitModels.hs
+  ghc-options:      -fspec-constr-count=4 -O3 
+  build-depends:    base>=4.0, base <4.7, ghc-prim, directory, mtl, template-haskell, vector, AC-Vector, containers, deepseq,QuickCheck >= 2.5.0.0, text>=0.11.1.13, hPDB >= 0.99, bytestring
+  other-extensions:       ScopedTypeVariables OverloadedStrings BangPatterns NoMonomorphismRestriction EmptyDataDecls MagicHash
+
+Executable CanonicalAxes
+  main-is:          examples/CanonicalAxes.hs
+  ghc-options:      -fspec-constr-count=4 -O3 
+  Build-depends:    base>=4.0, base <4.7, bytestring, ghc-prim, directory, mtl, template-haskell, vector, AC-Vector, containers, deepseq,QuickCheck >= 2.5.0.0, text>=0.11.1.13, hPDB >= 0.99
+  other-extensions:       ScopedTypeVariables OverloadedStrings BangPatterns NoMonomorphismRestriction EmptyDataDecls MagicHash
+
+Executable PrintEvents
+  Main-is:           tests/PrintEvents.hs
+  ghc-options:      -fspec-constr-count=4 -O3 
+  Build-depends:    base>=4.0, base <4.7, bytestring, ghc-prim, directory, mtl, template-haskell, vector, AC-Vector, containers, deepseq, QuickCheck >= 2.5.0.0, text>=0.11.1.13, hPDB >= 0.99
+  other-extensions:        ScopedTypeVariables OverloadedStrings BangPatterns NoMonomorphismRestriction EmptyDataDecls
+
+Executable PrintStructureObject
+  ghc-options:      -fspec-constr-count=4 -O3 
+  Build-depends:    base>=4.0, base <4.7, bytestring, ghc-prim, directory, mtl, template-haskell, vector, AC-Vector, containers, deepseq,QuickCheck >= 2.5.0.0, text>=0.11.1.13, hPDB >= 0.99
+  Main-is:          tests/PrintStructureObject.hs
+  other-extensions:        ScopedTypeVariables OverloadedStrings BangPatterns NoMonomorphismRestriction EmptyDataDecls
+
+Executable Rg
+  main-is:           examples/Rg.hs
+  ghc-options:      -fspec-constr-count=4 -O3 
+  Build-depends:    base>=4.0, base <4.7, ghc-prim, bytestring, directory, mtl, template-haskell, vector, AC-Vector, containers, deepseq,QuickCheck >= 2.5.0.0, text>=0.11.1.13, hPDB >= 0.99
+  other-extensions:        ScopedTypeVariables OverloadedStrings BangPatterns NoMonomorphismRestriction EmptyDataDecls
+
+Executable StericClashCheck
+  main-is:           examples/StericClashCheck.hs
+  ghc-options:      -fspec-constr-count=4 -O3 
+  Build-Depends:     base>=4.0, base<4.7, bytestring, ghc-prim, directory, mtl, template-haskell, vector, AC-Vector, containers, deepseq, Octree >= 0.5, QuickCheck, text, text-format, hPDB >= 0.4
+  other-extensions:        ScopedTypeVariables OverloadedStrings BangPatterns NoMonomorphismRestriction EmptyDataDecls
+
+-- if flag(haveOpenGL) -- why can't we make it conditionally available?
+Executable Viewer
+  main-is:          examples/Viewer.hs
+  ghc-options:      -fspec-constr-count=4 -O3 
+  Build-depends:    base>=4.0, base <4.7, ghc-prim, directory, mtl, template-haskell, vector, AC-Vector, containers, deepseq,QuickCheck >= 2.5.0.0, text>=0.11.1.13, OpenGL, GLUT, hPDB >= 0.4, bytestring
+  other-extensions:       ScopedTypeVariables OverloadedStrings BangPatterns NoMonomorphismRestriction EmptyDataDecls MagicHash
+

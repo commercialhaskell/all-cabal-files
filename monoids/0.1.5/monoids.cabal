@@ -1,0 +1,48 @@
+name:		    monoids
+version:	    0.1.5
+license:	    BSD3
+license-file:   LICENSE
+author:		    Edward A. Kmett
+maintainer:	    Edward A. Kmett <ekmett@gmail.com>
+stability:	    experimental
+homepage:	    http://comonad.com/reader
+category:	    Data
+synopsis:	    Lots of Monoids
+description:    Lots of Monoids
+copyright:      (c) 2009 Edward A. Kmett
+build-type:     Simple
+cabal-version:  >=1.2
+
+library
+  build-depends: base >= 4, text, fingertree, bytestring, category-extras, parallel, containers, mtl, stm, bitset, QuickCheck, array, parsec >= 3
+  exposed-modules:
+    Data.Group
+    Data.Group.Combinators
+    Data.Group.Sugar
+    Data.Monoid.Additive
+    Data.Monoid.Additive.Sugar
+    Data.Monoid.Applicative
+    Data.Monoid.Categorical
+    Data.Monoid.Combinators
+    Data.Monoid.FromString
+    Data.Monoid.Generator
+    Data.Monoid.Lexical.SourcePosition
+    Data.Monoid.Lexical.RunLengthEncoding
+    Data.Monoid.Lexical.UTF8.Decoder
+    Data.Monoid.Lexical.Words
+    Data.Monoid.Monad
+    Data.Monoid.Multiplicative
+    Data.Monoid.Multiplicative.Sugar
+    Data.Monoid.Ord
+    Data.Monoid.Reducer
+    Data.Monoid.Reducer.Char
+    Data.Monoid.Reducer.With
+    Data.Monoid.Union
+    Data.Ring
+    Data.Ring.Boolean
+    Data.Ring.Semi
+    Data.Ring.Semi.Near
+    Data.Ring.Semi.Ord
+    Data.Ring.FromNum
+    Data.Ring.Sugar
+  ghc-options: -Wall -fno-warn-duplicate-exports

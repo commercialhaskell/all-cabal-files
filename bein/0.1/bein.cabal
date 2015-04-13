@@ -1,0 +1,48 @@
+name:                bein
+version:             0.1
+synopsis:            Bein is a provenance and workflow management system for bioinformatics.
+description:         To avoid having thousands of files produced in a random way from a bunch of scripts, as is typically the case for a bioinformaticist, Bein keeps track of scripts, and their executions on various inputs.  It provides a web front end, and will integrate with LSF clusters.
+category:            Application
+license:             GPL-3
+license-file:        LICENSE
+author:              Fred Ross
+maintainer:          fred.ross@epfl.ch
+build-type:          Simple
+Cabal-Version:       >= 1.4
+
+Executable beinctl
+  Main-is:           Bein/BeinCtl.hs
+  Build-Depends:     base >= 3 && < 5, HDBC, HDBC-postgresql, process
+  Ghc-Options:       -Wall -threaded -fno-warn-unused-do-bind -optl-static -optl-pthread
+  Hs-Source-Dirs:    .
+  extra-libraries:   pgport xslt xml2 pam ssl crypto krb5 com_err gssapi_krb5 z readline crypt dl m
+
+Executable beind
+  Main-is:           Bein/Daemon.hs
+  Build-Depends:     base >= 3 && < 5, HDBC, HDBC-postgresql, process,
+                     hdaemonize >= 0.3, hsyslog, parsec, random, unix, network,
+                     convertible, stm, mtl, filepath
+  Ghc-Options:       -Wall -threaded -fno-warn-unused-do-bind -optl-static -optl-pthread
+  Hs-Source-Dirs:    .
+
+Executable beinclient
+  Main-is:           Bein/BeinClient.hs
+  Build-Depends:     base >= 3 && < 5, network
+  Ghc-Options:       -Wall -threaded -fno-warn-unused-do-bind -optl-static -optl-pthread
+  Hs-Source-Dirs:    .
+
+Executable beinminion
+  Main-is:           Bein/Minion.hs
+  Build-Depends:     base >= 3 && < 5, network, hsyslog, parsec, HDBC,
+                     HDBC-postgresql, process, unix, stm, mtl, filepath, directory
+  Ghc-Options:       -Wall -threaded -fno-warn-unused-do-bind -optl-static -optl-pthread
+  Hs-Source-Dirs:    .
+
+Executable beinhttpd
+  Main-is:           Bein/Web.hs
+  Build-Depends:     base >= 3 && < 5, HDBC, HDBC-postgresql, unix, stm, mtl, filepath,
+                     directory, hsyslog, hdaemonize, happstack-server, Crypto,
+                     happstack-util, containers, xhtml, time, old-locale, utf8-string,
+                     bytestring
+  Ghc-Options:       -Wall -threaded -fno-warn-unused-do-bind -optl-static -optl-pthread
+  Hs-Source-Dirs:    .

@@ -1,0 +1,32 @@
+Cabal-Version: >= 1.6
+Name:          AC-PPM
+Version:       1.1.1
+Stability:     Experimental
+Synopsis:      Trivial package for writing PPM images.
+
+Description:
+
+  This package is written in 100% Haskell and enables you to
+  write PPM (\"Portable Pixel Map\") images in human-readable
+  text format as well as the more efficient binary format.
+  It uses the ByteString library for maximum efficiency.
+
+  For those that don't know, PPM is an image file format
+  which is trivially simple, but therefore horribly inefficient.
+  None the less, many programs can read PPM files, so this
+  package represents an easy way to write Haskell code that
+  generates images, without having to depend on any external
+  C code.
+
+Category:      Codec, Graphics
+License:       BSD3
+License-file:  License.txt
+Author:        Andrew Coppin
+Maintainer:    Andrew Coppin <MathematicalOrchid@hotmail.com>
+Build-Type:    Simple
+Tested-With:   GHC == 6.10.3
+
+Library
+  Exposed-modules: Codec.PPM, Codec.PPM.Text, Codec.PPM.Binary
+  Build-Depends:   base >= 4 && < 5, bytestring >= 0.9  && < 1.0
+  HS-Source-Dirs:  .

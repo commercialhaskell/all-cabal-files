@@ -1,0 +1,43 @@
+name:    cil
+version: 0.0.0
+
+category: Language
+
+synopsis: An interface to CIL and ACSL through Frama-C.
+
+description:
+  TODO
+
+author:     Tom Hawkins <tomahawkins@gmail.com>
+maintainer: Tom Hawkins <tomahawkins@gmail.com>
+
+license:      BSD3
+license-file: LICENSE
+
+homepage: http://tomahawkins.org
+
+build-type:    Simple
+cabal-version: >= 1.6
+
+extra-source-files:
+  dumpcil/dump_cil.ml
+  dumpcil/Makefile
+
+library
+    build-depends:
+        base       >= 4.0 && < 5.0,
+        polyparse  >= 1.4
+
+    exposed-modules:
+        Language.CIL
+
+    extensions: GADTs, EmptyDataDecls
+
+    if impl(ghc > 6.8)
+          ghc-options: -fwarn-tabs
+    ghc-options:       -W
+
+source-repository head
+    type:     git
+    location: git://github.com/tomahawkins/cil.git
+

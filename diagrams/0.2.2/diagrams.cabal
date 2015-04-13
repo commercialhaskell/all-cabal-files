@@ -1,0 +1,37 @@
+Name:                diagrams
+Version:             0.2.2
+x-revision: 1
+Stability:           experimental
+Description:         An embedded domain-specific language (EDSL) for 
+                     creating simple diagrams, built on top of the Cairo
+                     rendering engine.  
+Homepage:            http://code.haskell.org/diagrams
+Synopsis:            An EDSL for creating simple diagrams
+License:             BSD3
+License-file:        LICENSE
+Extra-source-files:  README,CHANGES,example/*.hs
+Author:              Brent Yorgey
+Maintainer:          byorgey@gmail.com
+Category:            Graphics
+Build-type:          Simple
+Cabal-version:       >= 1.6
+Tested-with:         GHC==6.12.1, GHC==6.10.4
+
+flag testing
+  description: Testing mode
+  default: False
+
+library
+  ghc-options:       -Wall
+  if flag(testing)
+    ghc-options: -Werror
+  Build-Depends:     base >= 2 && < 4.8, mtl >= 2.0 && < 2.1,
+                     containers >= 0.2 && < 0.4,
+                     cairo >= 0.9 && < 0.12, colour >= 2.2.1 && < 2.4
+  Exposed-Modules:   Graphics.Rendering.Diagrams,
+                     Graphics.Rendering.Diagrams.Types,
+                     Graphics.Rendering.Diagrams.Paths,
+                     Graphics.Rendering.Diagrams.Shapes,
+                     Graphics.Rendering.Diagrams.Attributes,
+                     Graphics.Rendering.Diagrams.Layouts,
+                     Graphics.Rendering.Diagrams.Engine

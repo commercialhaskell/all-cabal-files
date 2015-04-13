@@ -1,0 +1,33 @@
+name:            elerea-sdl
+version:         0.1.1
+cabal-version:   >= 1.8
+license:         OtherLicense
+license-file:    COPYING
+category:        Data
+copyright:       © 2011-2012 Stephen Paul Weber
+author:          Stephen Paul Weber <singpolyma@singpolyma.net>
+maintainer:      Stephen Paul Weber <singpolyma@singpolyma.net>
+stability:       experimental
+tested-with:     GHC == 7.0.3
+synopsis:        Elerea FRP wrapper for SDL
+homepage:        http://github.com/singpolyma/elerea-sdl
+bug-reports:     http://github.com/singpolyma/elerea-sdl/issues
+build-type:      Simple
+description:
+        This is an FRP wrapper for SDL using Elerea.
+
+extra-source-files:
+        README
+
+library
+        exposed-modules:
+                FRP.Elerea.SDL
+
+        build-depends:
+                base == 4.*,
+                elerea,
+                SDL
+
+source-repository head
+        type:     git
+        location: git://github.com/singpolyma/elerea-sdl.git

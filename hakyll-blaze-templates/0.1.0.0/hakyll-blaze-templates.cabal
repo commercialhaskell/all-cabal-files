@@ -1,0 +1,57 @@
+-- The name of the package.
+name:                hakyll-blaze-templates
+
+-- The package version.  See the Haskell package versioning policy (PVP)
+-- for standards guiding when and how versions should be incremented.
+-- http://www.haskell.org/haskellwiki/Package_versioning_policy
+-- PVP summary:      +-+------- breaking API changes
+--                   | | +----- non-breaking API additions
+--                   | | | +--- code changes with no API change
+version:             0.1.0.0
+
+-- A short (one-line) description of the package.
+synopsis:            Blaze templates for Hakyll
+
+-- A longer description of the package.
+-- description:
+
+-- The license under which the package is released.
+license:             BSD3
+-- The file containing the license text.
+license-file:        LICENSE
+-- The package author(s).
+author:              Simonas Kazlauskas
+-- An email address to which users can send suggestions, bug reports, and
+-- patches.
+maintainer:          git@kazlauskas.me
+bug-reports:         https://github.com/simukis/hakyll-blaze-templates/issues
+
+-- A copyright notice.
+-- copyright:
+
+category:            Web
+build-type:          Simple
+
+-- Constraint on the version of Cabal needed to build this package.
+cabal-version:       >=1.8
+
+Source-Repository head
+  Type:     git
+  Location: git://github.com/simukis/hakyll-blaze-templates.git
+
+
+library
+  -- Modules exported by the library.
+  exposed-modules:     Hakyll.Web.Template.Blaze
+
+  -- Modules included in this library but not exported.
+  -- other-modules:
+
+  -- Other library packages from which modules are imported.
+  build-depends:       base       == 4.6.*,
+                       hakyll     == 4.2.*,
+                       blaze-html == 0.6.*
+
+  -- Directories containing source files.
+  hs-source-dirs:      src
+

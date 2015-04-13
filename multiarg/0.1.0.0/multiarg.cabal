@@ -1,0 +1,72 @@
+Name: multiarg
+Version: 0.1.0.0
+Cabal-version: >=1.8
+Build-Type: Simple
+License: MIT
+Copyright: 2011-2012 Omari Norman.
+author: Omari Norman
+maintainer: omari@smileystation.com
+stability: Experimental
+homepage: https://github.com/massysett/multiarg
+bug-reports: omari@smileystation.com
+Category: Console, Parsing
+License-File: LICENSE
+synopsis: Combinators to build command line parsers
+extra-source-files:
+        binaries/sample.hs
+
+description: multiarg is a parser combinator library to build command
+ line parsers. With it you can easily create parsers with options
+ that take more than one option argument--for example, I created
+ multiarg due to the apparent lack of such ability amongst other
+ parsers. Its basic design is loosely inspired by Parsec.
+ .
+ Provides ParserT, a monad you use to build parsers. ParserT is a monad
+ transformer, so you can layer it on top of other monads. For instance
+ you could layer it on the IO monad so that your parser can perform IO.
+ .
+ It also has a simple, pre-built parser built with the underlying
+ combinators, which works for many situtations and shields you from the
+ underlying complexity if you don't need it.
+ .
+ See the documentation in the System.Console.MultiArg module for
+ details.
+
+Flag newbase
+    Description: Builds package with base >= 4.4.0.0.
+
+source-repository head
+    type: git
+    location: git://github.com/massysett/multiarg.git
+
+Library
+    Build-depends:
+        base ==4.*,
+        text ==0.11.*,
+        explicit-exception ==0.1.*,
+        containers ==0.4.*,
+        QuickCheck ==2.4.*,
+        transformers == 0.2.*
+        
+    -- See documentation in System.Console.MultiArg.GetArgs for details
+    if flag(newbase)
+        Build-depends:
+            base >= 4.4 && < 5
+    else
+        Build-depends:
+            base < 4.4,
+            utf8-string == 0.3.7
+
+    Exposed-modules:
+        System.Console.MultiArg,
+        System.Console.MultiArg.Combinator,
+        System.Console.MultiArg.Error,
+        System.Console.MultiArg.GetArgs,
+        System.Console.MultiArg.Option,
+        System.Console.MultiArg.Prim,
+        System.Console.MultiArg.QuickCheckHelpers,
+        System.Console.MultiArg.SampleParser,
+        System.Console.MultiArg.SimpleParser,
+        System.Console.MultiArg.TextNonEmpty
+
+    ghc-options: -Wall

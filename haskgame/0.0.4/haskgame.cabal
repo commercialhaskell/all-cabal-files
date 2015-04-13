@@ -1,0 +1,43 @@
+Name:                haskgame
+Version:             0.0.4
+Cabal-Version:       >= 1.2
+Synopsis:            Haskell game library.
+Category:            graphics
+Description:
+  HaskGame is meant to provide a video/audio/event handling library
+  suitable for creating games or GUI's.
+  Currently it incompletely wraps the SDL so the SDL must be used.
+  In the future, it will abstract SDL completely and perhaps will also
+  have GLUT/OpenGL or X backends.
+  .
+  Project wiki page: <http://haskell.org/haskellwiki/HaskGame>
+  .
+  Git repository is at: <http://github.com/Peaker/haskgame>
+  .
+  &#169; 2009 by Eyal Lotem; BSD3 license.
+
+Author:              Eyal Lotem
+Maintainer:          eyal.lotem@gmail.com
+Homepage:            http://haskell.org/haskellwiki/HaskGame
+--Package-Url:         http://code.haskell.org/HaskGame
+Copyright:           (c) 2008 by Eyal Lotem
+License:             BSD3
+Stability:           experimental
+build-type:          Simple
+
+Library
+  hs-Source-Dirs:      src
+  Extensions:
+-- SDL-ttf prior to 0.5.5 can be used on x86-32, but on x86-64 bugs
+-- render it unusable
+  Build-Depends:       base, haskell98, containers, SDL, SDL-ttf >= 0.5.5
+  Exposed-Modules:     Graphics.UI.HaskGame,
+                       Graphics.UI.HaskGame.Color,
+                       Graphics.UI.HaskGame.Font,
+                       Graphics.UI.HaskGame.Key,
+                       Graphics.UI.HaskGame.Keys,
+                       Graphics.UI.HaskGame.Rect,
+                       Graphics.UI.HaskGame.Vector2
+  Other-Modules:       Graphics.UI.HaskGame.Utils
+  ghc-options:         -Wall
+--  ghc-prof-options:    -prof -auto-all 

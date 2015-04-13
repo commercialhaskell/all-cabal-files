@@ -1,0 +1,25 @@
+Name:           GroteTrap
+Version:        0.2
+Synopsis:       GroteTrap
+Description:    Allows quick definition of expression languages. You get a parser for free, as well as conversion from text selection to tree selection and back.
+
+Author:         Jeroen Leeuwestein, Martijn van Steenbergen
+Maintainer:     martijn@van.steenbergen.nl
+Copyright:      Copyright (c) 2007-2008 Jeroen Leeuwestein and Martijn van Steenbergen
+
+Cabal-Version:  >= 1.2
+License:        BSD3
+License-file:   LICENSE
+Category:       Language
+Build-type:     Simple
+
+Library
+  Build-Depends:    base, QuickCheck, parsec, mtl
+  Exposed-Modules:  Language.GroteTrap.Range
+                    Language.GroteTrap.Trees
+                    Language.GroteTrap.Language
+                    Language.GroteTrap.ParseTree
+                    Language.GroteTrap.Lexer
+                    Language.GroteTrap.Unparse
+                    Language.GroteTrap.Parser
+                    Language.GroteTrap.ShowTree

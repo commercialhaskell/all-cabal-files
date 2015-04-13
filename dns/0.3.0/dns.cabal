@@ -1,0 +1,42 @@
+Name:                   dns
+Version:                0.3.0
+Author:                 Kazu Yamamoto <kazu@iij.ad.jp>
+Maintainer:             Kazu Yamamoto <kazu@iij.ad.jp>
+License:                BSD3
+License-File:           LICENSE
+Synopsis:               DNS libary in Haskell
+Description:            DNS libary for clients and servers.
+Category:               Network
+Cabal-Version:          >= 1.6
+Build-Type:             Simple
+Extra-Source-Files:     Test.hs, TestProtocol.hs
+library
+  if impl(ghc >= 6.12)
+    GHC-Options:        -Wall -fno-warn-unused-do-bind
+  else
+    GHC-Options:        -Wall
+  Exposed-Modules:      Network.DNS
+                        Network.DNS.Lookup
+                        Network.DNS.Resolver
+                        Network.DNS.Types
+                        Network.DNS.Encode
+                        Network.DNS.Decode
+  Other-Modules:        Network.DNS.Internal
+                        Network.DNS.StateBinary
+  if impl(ghc >= 7)
+    Build-Depends:      base >= 4 && < 5,
+                        binary, iproute,
+                        containers, mtl, bytestring, random,
+                        network >= 2.3, blaze-builder,
+                        attoparsec, enumerator, attoparsec-enumerator,
+                        network-enumerator
+  else
+    Build-Depends:      base >= 4 && < 5,
+                        binary, iproute,
+                        containers, mtl, bytestring, random,
+                        network, network-bytestring, blaze-builder,
+                        attoparsec, enumerator, attoparsec-enumerator,
+                        network-enumerator
+Source-Repository head
+  Type:                 git
+  Location:             git://github.com/kazu-yamamoto/dns.git

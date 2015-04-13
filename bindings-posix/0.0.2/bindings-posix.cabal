@@ -1,0 +1,25 @@
+cabal-version: >= 1.2.3
+name: bindings-posix
+homepage: http://bitbucket.org/mauricio/bindings
+synopsis:
+  Check bindings-common package for directions.
+version: 0.0.2
+license: BSD3
+license-file: LICENSE
+maintainer: Maurício C. Antunes <mauricio.antunes@gmail.com>
+author: Maurício C. Antunes
+bug-reports: http://bitbucket.org/mauricio/bindings-posix/issues
+build-type: Simple
+stability: Needs users feedback
+category: FFI
+library
+  hs-source-dirs: src
+  extensions:
+    ForeignFunctionInterface
+    TypeSynonymInstances
+    ScopedTypeVariables
+    EmptyDataDecls
+    TypeFamilies
+  build-depends: base >= 3 && <5, bindings-common
+  exposed-modules:
+    Bindings.Posix

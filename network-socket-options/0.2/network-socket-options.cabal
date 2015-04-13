@@ -1,0 +1,49 @@
+name:                network-socket-options
+version:             0.2
+synopsis:            Type-safe, portable alternative to getSocketOption/setSocketOption
+description:
+    The network package provides getSocketOption and setSocketOption functions.
+    These work fine for socket options represented using the @int@ type
+    (namely, all boolean options, and a few quantity options).  However, it
+    doesn't work for, say, @SO_LINGER@, @SO_RCVTIMEO@, and @SO_SNDTIMEO@, as
+    these use different, platform-specific representations.
+    .
+    This package implements the getters and setters as separate functions.  At
+    the moment, it only provides socket options that are available for both
+    Unix and Windows.
+    .
+    This package also provides a workaround needed to time out network
+    operations in Windows without leaking resources.
+homepage:            https://github.com/joeyadams/haskell-network-socket-options
+license:             BSD3
+license-file:        LICENSE
+author:              Joey Adams
+maintainer:          joeyadams3.14159@gmail.com
+copyright:           Copyright (c) Joseph Adams 2012
+category:            Network
+build-type:          Simple
+cabal-version:       >=1.8
+
+extra-source-files:
+    testing/Log.hs
+    testing/hang.hs
+    testing/trivial.hs
+
+source-repository head
+    type:       git
+    location:   git://github.com/joeyadams/haskell-network-socket-options.git
+
+library
+    exposed-modules:
+        Network.Socket.Options
+
+    c-sources: cbits/sockopt.c
+
+    build-tools: hsc2hs
+
+    ghc-options: -Wall -fwarn-tabs
+
+    other-extensions: CPP, ForeignFunctionInterface
+
+    build-depends: base == 4.*
+                 , network

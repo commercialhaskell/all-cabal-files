@@ -1,0 +1,33 @@
+build-type:	Simple
+cabal-version:	>= 1.6
+
+name:		wxturtle
+version:	0.0.1
+stability:	alpha
+author:		Yoshikuni Jujo <PAF01143@nifty.ne.jp>
+maintainer:	Yoshikuni Jujo <PAF01143@nifty.ne.jp>
+
+license:	BSD3
+license-file:	LICENSE
+
+category:	Teaching
+synopsis:	turtle like LOGO with wxHaskell
+description:	turtle like LOGO with wxHaskell
+
+source-repository	head
+  type:		git
+  location:	git://github.com/YoshikuniJujo/wxturtle.git
+
+library
+  Hs-source-dirs:	src
+  Exposed-modules:	Graphics.UI.WX.Turtle
+  Build-depends:	base > 3 && < 5, yjtools >= 0.9.16, convertible >= 1.0.8,
+    yjsvg >= 0.1.14, Imlib >= 0.1.2, wx
+  Ghc-options:		-Wall
+  Other-modules:	Graphics.UI.WX.Turtle.Field, Graphics.UI.WX.Turtle.Input,
+    Graphics.UI.WX.Turtle.Move, Graphics.UI.WX.Turtle.State,
+    Graphics.UI.WX.Turtle.Data, Graphics.UI.WX.Turtle.Layers
+
+executable		testTurtle
+  Hs-source-dirs:	tests, src
+  Main-is:		testWX.hs

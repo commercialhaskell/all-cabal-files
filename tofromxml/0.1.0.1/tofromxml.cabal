@@ -1,0 +1,33 @@
+name:                tofromxml
+version:             0.1.0.1
+synopsis:            Reading and writing Haskell data from and to XML
+description:         A library for reading and writing Haskell data from and to XML. Only prerequisite is that the data type derives Generic.
+license:             BSD3
+license-file:        LICENSE
+author:              Robert Reitmeier
+maintainer:          Robert Reitmeier <concat ["public"," a t ","thinking-machines","dot",".net"]>
+stability:           provisional
+copyright:           (c) 2014 Robert Reitmeier
+category:            XML
+build-type:          Simple
+cabal-version:       >=1.10
+extra-source-files:  test/Example.hs test/TestToFromXML.hs test/test.xml
+
+library
+  exposed-modules:   Text.XML.ToFromXML
+  other-extensions:  DeriveGeneric, DefaultSignatures, UndecidableInstances, ScopedTypeVariables, OverlappingInstances, TypeOperators, FlexibleContexts, FlexibleInstances
+  build-depends:     base >=4.7 && <4.8, bytestring >=0.10 && <0.11, hexpat-pickle >=0.6 && <0.7, hexpat >=0.20 && <0.21, containers >=0.5 && <0.6, array >=0.5 && <0.6
+  hs-source-dirs:    .
+  default-language:  Haskell2010
+  ghc-options:       -fcontext-stack=50
+
+Test-Suite test
+  type:              exitcode-stdio-1.0
+  main-is:           test/TestToFromXML.hs
+  build-depends:     base,tofromxml,array,containers,hexpat,hexpat-pickle,bytestring,filepath
+  default-language:  Haskell2010
+
+source-repository head
+  type:              git
+  location:          https://github.com/theoremprover/tofromxml.git
+  subdir:            work

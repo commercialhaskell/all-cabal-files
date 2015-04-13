@@ -1,0 +1,48 @@
+Cabal-version:       >=1.2
+Name:                HAppS-Util
+Version:             0.9.3
+Synopsis:            Web framework
+License:             BSD3
+License-file:        COPYING
+Copyright:           2007 HAppS LLC
+Author:              HAppS LLC
+Category:            Web, Distributed Computing
+Maintainer:          AlexJacobson@HAppS.org
+Build-type:          Simple
+
+Flag base4
+    Description: Choose the even newer, even smaller, split-up base package.
+
+Library
+  Build-Depends:       mtl, hslogger >= 1.0.2, template-haskell, array,
+                       bytestring, old-time, process, directory
+  if flag(base4)
+    Build-Depends:       base >= 4
+  else
+    Build-Depends:       base < 4
+
+  hs-source-dirs:      src
+  Exposed-modules:     
+                       HAppS.Crypto.Base64,
+                       HAppS.Crypto.DES,
+                       HAppS.Crypto.HMAC,
+                       HAppS.Crypto.SHA1,
+                       HAppS.Crypto.MD5,
+                       HAppS.Crypto.W64,
+                       HAppS.Util.ByteStringCompat
+                       HAppS.Util.Common,
+                       HAppS.Util.Concurrent,
+                       HAppS.Util.Daemonize,
+                       HAppS.Util.EventHandler,
+                       HAppS.Util.TimeOut 
+                       HAppS.Util.TH
+  extensions:          CPP, ForeignFunctionInterface,
+                       OverlappingInstances, UndecidableInstances,
+                       RecursiveDo,
+                       RankNTypes, FlexibleInstances,
+                       TypeSynonymInstances
+  cpp-options:         -DUNIX
+  ghc-options:         -W -fno-warn-incomplete-patterns
+  GHC-Prof-Options:    -auto-all
+  if flag(base4)
+    cpp-options:         -DEXTENSIBLE_EXCEPTIONS

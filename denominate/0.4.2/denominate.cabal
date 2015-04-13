@@ -1,0 +1,44 @@
+name:               denominate
+version:            0.4.2
+synopsis:           Functions supporting bulk file and directory name
+                    normalization.
+description:        Denominate is a simple program and an associated library
+                    supporting bulk file and directory name normalization.
+                    .
+                    If you've ever spent a long time changing filenames to
+                    get rid of whitespace or convert periods and underscores
+                    to hyphens, you know why it exists.
+
+license:            BSD3
+license-file:       LICENSE.txt
+category:           System
+copyright:          (c) Calvin Smith
+author:             Calvin Smith
+maintainer:         cs-haskell@protempore.net
+stability:          Experimental
+homepage:           http://protempore.net/denominate/
+build-type:         Simple
+cabal-version:      >= 1.2
+tested-with:        GHC==6.6.1 GHC==6.8.2
+extra-source-files: quickcheck Makefile
+extra-tmp-files:    hugsin
+
+flag small_base
+  description:      Choose the new smaller, split-up base package.
+
+library
+  exposed-modules: System.Denominate
+  if flag(small_base)
+    build-depends:  base >= 3, directory, filepath
+  else
+    build-depends:  base < 3, filepath
+  ghc-options:      -Wall -fno-warn-name-shadowing -fno-warn-missing-signatures -fno-warn-orphans
+
+executable denominate
+  main-is:          Main.hs
+  if flag(small_base)
+    build-depends:  base >= 3, directory, filepath
+  else
+    build-depends:  base < 3, filepath
+  ghc-options:      -Wall -fno-warn-name-shadowing -fno-warn-missing-signatures -fno-warn-orphans
+

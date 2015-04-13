@@ -1,0 +1,21 @@
+Name:                hxmppc
+Version:             0.2
+
+Synopsis:            Haskell XMPP (Jabber Client) Command Line Interface (CLI)
+Description:         A simple command line interface to send and receive
+                     messages via XMPP
+
+License:             BSD3
+License-file:        LICENSE
+Author:              Nicolas Pouillard
+Maintainer:          nicolas.pouillard@gmail.com
+Category:            Network
+Build-type:          Simple
+Cabal-version:       >=1.6
+
+Executable hxmppc
+  Main-is:             hxmppc.hs
+  Build-depends:       base==4.3.*, text, xml-types, transformers, network,
+                       network-protocol-xmpp==0.4.*, fclabels
+  Other-modules:       EasyXMPP
+  GHC-options:         -Wall

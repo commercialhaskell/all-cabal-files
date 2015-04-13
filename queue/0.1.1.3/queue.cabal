@@ -1,0 +1,39 @@
+name:                   queue
+version:                0.1.1.3
+stability:              provisional
+license:                BSD3
+license-file:           LICENSE
+
+cabal-version:          >= 1.2
+build-type:             Simple
+
+author:                 James Cook <mokus@deepbondi.net>
+maintainer:             James Cook <mokus@deepbondi.net>
+homepage:               http://darcs.deepbondi.net/queue
+
+category:               Data
+synopsis:               Abstraction typeclasses for queue-like things.
+description:            A collection of abstract interfaces to mutable
+                        queue-like things.
+                        
+                        Note that I named this module before I realized that
+                        there was a module of the same name in (base<3).  I
+                        am open to suggestions for a new name.
+
+Flag useSTM
+  Description:          Include instances for STM types
+  Default:              True
+
+Library
+  hs-source-dirs:       src
+  exposed-modules:      Data.Queue
+                        Data.Queue.Classes
+                        Data.Queue.Instances
+  build-depends:        base >= 3
+  
+  extensions:           CPP
+  
+  if flag(useSTM)
+    build-depends:      stm
+    other-modules:      Data.Queue.Instances.STM
+    cpp-options:        -DuseSTM

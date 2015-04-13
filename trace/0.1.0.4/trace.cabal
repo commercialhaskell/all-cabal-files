@@ -1,0 +1,40 @@
+name:                trace
+version:             0.1.0.4
+x-revision: 1
+synopsis:            A monad transformer for tracing provenience of errors
+-- description:
+license:             MIT
+license-file:        LICENSE
+author:              Jon Sterling
+maintainer:          jon@jonmsterling.com
+copyright:           Copyright (c) 2014 AlephCloud, Inc
+category:            Control
+build-type:          Simple
+-- extra-source-files:
+cabal-version:       >=1.10
+
+source-repository head
+    type: git
+    location: https://github.com/alephcloud/hs-trace.git
+
+library
+  exposed-modules:
+    Control.Monad.Trace
+    Control.Monad.Trace.Class
+    Control.Monad.Trace.Codensity
+    Control.Monad.Trace.ErrorTrace
+    Control.Monad.Trans.Trace
+
+  build-depends:       base >=4.7 && <4.9
+                     , containers >=0.5.5
+                     , either >=4.3
+                     , kan-extensions >=4.2
+                     , monad-control >=0.3
+                     , mtl >=2.1
+                     , profunctors >=4.3
+                     , transformers >=0.2
+                     , transformers-base >=0.4
+                     , transformers-compat >=0.3
+
+  hs-source-dirs:      src
+  default-language:    Haskell2010

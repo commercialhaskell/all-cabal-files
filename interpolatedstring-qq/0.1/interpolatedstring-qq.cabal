@@ -1,0 +1,21 @@
+Name:          interpolatedstring-qq
+Version:       0.1
+License:       BSD3
+License-file:  LICENSE
+Category:      Data
+Author:        Erik Charlebois
+Copyright:     Erik Charlebois
+Maintainer:    Erik Charlebois <erikcharlebois@gmail.com>
+Stability:     unstable
+Cabal-Version: >= 1.2
+Build-Depends: base
+Build-Type:    Custom
+Synopsis:      QuasiQuoter for Ruby-style multi-line interpolated strings.
+Description:   QuasiQuoter for Ruby-style multi-line interpolated strings.
+Data-Files:    tests/Test.hs
+
+library
+    extensions:      TemplateHaskell
+    build-depends:   base, template-haskell, haskell-src-meta
+    hs-source-dirs:  src
+    exposed-modules: Text.InterpolatedString.QQ

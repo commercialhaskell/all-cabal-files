@@ -1,0 +1,26 @@
+Name:               WebBits-multiplate
+Version:            0.0.0.1
+Cabal-Version:      >= 1.4
+License:            MIT
+License-File:       LICENSE
+Build-Type:         Simple
+Copyright:          2011, Balazs Endresz
+Author:             Balazs Endresz
+Maintainer:         Balazs Endresz <balazs.endresz@gmail.com>
+Synopsis:           A Multiplate instance for JavaScript.
+Category:           Language
+Description:
+    Provides a Multiplate instance for the JavaScript AST in the WebBits package.
+    The MultiplateSimplified module is based on the multiplate-simplified package,
+    which makes it a bit more readable, and easier to work with
+    but the extra type class it uses might affect performance.
+Tested-with:        GHC == 6.12.3, GHC == 7.0.2
+data-files:         CHANGELOG
+
+Library
+    Build-Depends:     base >= 3 && < 5, transformers >= 0.2 && < 0.3, multiplate, multiplate-simplified, WebBits
+    Extensions: Rank2Types, MultiParamTypeClasses
+    Exposed-modules:
+        BrownPLT.JavaScript.Multiplate
+        BrownPLT.JavaScript.MultiplateSimplified
+

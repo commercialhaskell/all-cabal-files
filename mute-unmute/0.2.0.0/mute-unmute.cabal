@@ -1,0 +1,28 @@
+Name:                mute-unmute
+Version:             0.2.0.0
+Synopsis:            Watches your screensaver and (un)mutes music when you (un)lock the screen.
+Description:         This simple program will watch for the activation of screensaver in via it's DBus API. Current version works for Gnome (tested on: 2.30.0) and KDE (tested on: 4.5.0). Additionally it will only work for ALSA (usage of alsactl command), but this be simple to fix if needed.
+
+                     It could also serve as an example of simple program that works with DBus in Haskell.
+License:             GPL-3
+License-file:        LICENSE
+Author:              Krzysztof Skrzętnicki
+Maintainer:          gtener@gmail.com
+Category:            System
+Build-type:          Simple
+Cabal-version:       >=1.6
+Homepage:            http://github.com/Tener/mute-unmute
+Executable mute-unmute
+  Main-is:             mute-unmute.hs
+  Build-depends:       base >= 4 && < 5,
+                       process == 1.0.1.*,
+                       mtl == 1.1.0.*,
+                       network-dbus == 0.0,
+                       filepath == 1.1.0.*,
+                       directory == 1.0.1.*,
+                       hslogger == 1.1.0,
+                       hslogger-template == 1.1.0
+
+source-repository head
+  type:     git
+  location: git://github.com/Tener/mute-unmute.git

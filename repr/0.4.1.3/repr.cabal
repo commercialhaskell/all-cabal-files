@@ -1,0 +1,39 @@
+name:          repr
+version:       0.4.1.3
+cabal-version: >= 1.6
+build-type:    Simple
+stability:     experimental
+author:        Bas van Dijk
+maintainer:    v.dijk.bas@gmail.com
+copyright:     (c) 2009-2012 Bas van Dijk
+license:       BSD3
+license-file:  LICENSE
+homepage:      https://github.com/basvandijk/repr
+bug-reports:   https://github.com/basvandijk/repr/issues
+category:      Numeric, Text
+synopsis:      Render overloaded expressions to their textual representation.
+description:   This library allows you to render overloaded expressions to their
+               textual representation. For example:
+               .
+               @
+               *Repr> let r = 1.5 + 2 + (3 + (-4) * (5 - pi / sqrt 6)) :: Repr Double
+               *Repr> extract r
+               17.281195923884734
+               *Repr> show rd
+               \"1.5 + 2.0 + (3.0 + negate 4.0 * (5.0 - pi / sqrt 6.0))\"
+               @
+
+extra-source-files: README.markdown
+
+source-repository head
+  Type: git
+  Location: git://github.com/basvandijk/repr.git
+
+library
+  build-depends: base                 >= 3       && < 4.7
+               , base-unicode-symbols >= 0.1.1   && < 0.3
+               , random               >= 1.0     && < 1.1
+               , string-combinators   >= 0.6     && < 0.7
+               , dstring              >= 0.3.0.1 && < 0.5
+  exposed-modules: Text.Repr, Prelude.Repr
+  ghc-options: -Wall

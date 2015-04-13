@@ -1,0 +1,42 @@
+name:                   generic-deriving
+version:                0.3
+synopsis:               Generic programming library for generalized deriving.
+description:
+
+  This package provides functionality for generalizing the deriving mechanism
+  in Haskell to arbitrary classes. It is described in the paper:
+  .
+  *  /A generic deriving mechanism for Haskell/.
+     Jose Pedro Magalhaes, Atze Dijkstra, Johan Jeuring, and Andres Loeh.
+     Haskell'10.
+
+category:               Generics
+copyright:              (c) 2010 Universiteit Utrecht
+license:                BSD3
+license-file:           LICENSE
+author:                 José Pedro Magalhães
+maintainer:             generics@haskell.org
+stability:              experimental
+build-type:             Custom
+cabal-version:          >= 1.2.1
+tested-with:            GHC == 6.10.4
+extra-source-files:     examples/Examples.hs
+
+library
+  hs-source-dirs:       src
+  exposed-modules:      Generics.Deriving
+                        Generics.Deriving.Base
+
+                        -- Generics.Deriving.Data
+                        Generics.Deriving.Enum
+                        Generics.Deriving.Eq
+                        Generics.Deriving.Functor
+                        -- Generics.Deriving.GMapQ
+                        Generics.Deriving.Show
+                        Generics.Deriving.Typeable
+                        Generics.Deriving.Uniplate
+                        Generics.Deriving.TH
+                        
+  build-depends:        base <= 4.2.0.0, template-haskell >=2.4 && <2.5
+  extensions:           MultiParamTypeClasses, CPP
+  ghc-options:          -Wall

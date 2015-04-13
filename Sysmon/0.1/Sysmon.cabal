@@ -1,0 +1,39 @@
+Name:                Sysmon
+Version:             0.1
+Description:         A library for processing Sysbase 15 sysmon reports.
+License:             BSD3
+License-File:        LICENSE
+Author:              Vitaliy Rukavishnikov
+Maintainer:          virukav@gmail.com
+Homepage:            http://github.com/rukav/Sysmon
+Bug-Reports:         mailto:virukav@gmail.com
+Build-Type:          Simple
+Tested-with:	     GHC==6.12.3
+Category:            Database
+Synopsis:            Sybase 15 sysmon reports processor
+Data-Dir:            tests
+Data-Files:	     sysmon_100310_0952.out
+Cabal-Version:       >=1.2
+Extra-Source-Files:  README
+
+Library
+    Exposed-Modules:     Database.Sybase.Sysmon.LogTypes, 
+                         Database.Sybase.Sysmon.Log, 
+                         Database.Sybase.Sysmon.LogParserPrim, 
+                         Database.Sybase.Sysmon.SysmonTypes, 
+                         Database.Sybase.Sysmon.SysmonLog, 
+                         Database.Sybase.Sysmon.SysmonHints
+    Other-modules:  	 Database.Sybase.Sysmon.Average, 
+                         Database.Sybase.Sysmon.Derive
+    Build-Depends:       base >= 3.0.3.2 && < 5, 
+                         Glob >= 0.5.1,
+                         ConfigFile >= 1.0.6,
+                         datetime >= 0.2,
+                         fingertree >= 0.0.1.0,
+                         pretty >= 1.0.1.1,
+                         filepath,
+                         mtl,
+                         template-haskell,
+                         MissingH,
+                         vector,
+                         statistics >= 0.8.0.4

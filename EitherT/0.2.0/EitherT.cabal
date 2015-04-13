@@ -1,0 +1,16 @@
+Name:                EitherT
+Version:             0.2.0
+x-revision: 1
+Synopsis:            EitherT monad transformer
+Description:         Support for computations with informative failures.
+License:             BSD3
+License-file:        LICENSE
+Category:            Control
+Author:              Eyal Lotem <eyal.lotem+hackage@gmail.com>
+Maintainer:          Eyal Lotem <eyal.lotem+hackage@gmail.com>
+Stability:           experimental
+Build-Type:          Simple
+HS-Source-Dirs:      src
+Build-Depends:       base >= 4 && < 5, transformers >= 0.2, transformers-base >= 0.4, monad-control >= 0.3 && < 0.4
+Exposed-modules:     Control.Monad.Trans.Either
+ghc-options:         -Wall

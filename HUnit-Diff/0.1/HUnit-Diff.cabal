@@ -1,0 +1,25 @@
+Name:                HUnit-Diff
+Version:             0.1
+Synopsis:            Assertions for HUnit with difference reporting
+Description:         HUnit assertion operators that show a diff on failure.
+Homepage:            https://github.com/dag/HUnit-Diff
+Bug-Reports:         https://github.com/dag/HUnit-Diff/issues
+License:             BSD3
+License-file:        LICENSE
+Author:              Dag Odenhall
+Maintainer:          dag.odenhall@gmail.com
+Category:            Testing
+Build-type:          Simple
+Cabal-version:       >=1.6
+
+Source-Repository head
+  Type:                git
+  Location:            git://github.com/dag/HUnit-Diff.git
+
+Library
+  Exposed-modules:     Test.HUnit.Diff
+  Build-depends:       ansi-terminal == 0.5.*,
+                       base == 4.*,
+                       Diff == 0.1.*,
+                       groom == 0.1.*,
+                       HUnit == 1.2.*

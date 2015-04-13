@@ -1,0 +1,27 @@
+Name:                     ioctl
+Version:                  0.0.1
+Synopsis:                 Type-safe I/O control package
+Description:              Package allowing type-safe I/O control
+Category:                 Data, System
+License:                  MIT
+License-file:             LICENSE
+Author:                   Maciej Piechotka
+Maintainer:               uzytkownik2@gmail.com
+Build-Type:               Simple
+Cabal-Version:            >=1.4
+
+Library
+  Build-Depends:          base >= 3 && < 5,
+                          network
+  Exposed-Modules:        Network.Socket.IOCtl
+  Other-Modules:          System.IOControl
+  Extensions:             FunctionalDependencies,
+                          MultiParamTypeClasses
+  HS-Source-Dirs:         src
+  GHC-Options:            -Wall
+
+  if !os(windows)
+    Build-Depends:        unix
+    Exposed-Modules:      System.Posix.IOCtl
+    Extensions:           ForeignFunctionInterface
+    HS-Source-Dirs:       src-unix

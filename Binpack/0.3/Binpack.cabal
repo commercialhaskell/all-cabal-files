@@ -1,0 +1,34 @@
+Name:               Binpack
+Version:            0.3
+Cabal-Version:      >= 1.2
+License:            BSD3
+License-File:       LICENSE
+Author:             Björn B. Brandenburg
+Maintainer:         bbb@cs.unc.edu
+Category:           Algorithms, Heuristics
+Build-Type:         Simple
+Synopsis:           Common bin packing heuristics
+Description:
+
+  An implementation of the first-fit, modified-first-fit, last-fit, best-fit,
+  worst-fit, and almost-last-fit bin packing heuristics. Items can be packed in
+  order of both decreasing and increasing size (and, of course, in unmodified
+  order).
+  .
+  .
+  The module supports both the standard (textbook) minimization problem 
+  (/How many bins do I need?/) and the more practical fitting problem
+  (/I've got n bins; which items can I take?/).
+  .
+  The API is simple and the module is documented with Haddock (complete with
+  examples). The implementation of the above-mentioned heuristics is complete
+  and partially tested with QuickCheck. However, note that speed has not been a
+  primary concern to date.
+  .
+  Patches and feedback are very welcome.
+
+Extra-Source-Files: NEWS, LICENSE
+
+Library
+  Exposed-Modules:  Data.BinPack
+  build-depends:    base >= 3 && < 5, haskell98, QuickCheck

@@ -1,0 +1,25 @@
+Name:		hR
+Version:	0.1
+Cabal-Version:  >= 1.10
+Author:		Dylan Simon
+Maintainer:     dylan@dylex.net
+License:        BSD3
+Synopsis:	R bindings and interface
+Description:	This package aims to provide a comprehensive interface to the R libraries and native data structures.  It is currently quite light on documentation but fairly complete in terms of functionality.  It requires libR.so, which is an optional component of R.
+Category:	Foreign,Math
+build-type:	Custom
+tested-with:    GHC == 7.0.2
+extra-source-files: configure hR.buildinfo.in Foreign/R/Config.hs.in src/config.h.in
+
+Source-Repository head
+    Type:	darcs
+    Location:	https://dylex.net:9947/src/hr
+
+Library
+    Build-depends:	base == 4.*, unix, array, containers
+    Exposed-modules:	Foreign.R, Foreign.R.Types, Foreign.R.Internals, Foreign.R.SEXP, Foreign.R.SExp, Foreign.R.Error, Foreign.R.Embedded
+    Other-modules:      Foreign.R.Config, Foreign.R.Util
+    C-sources:		src/hr.c
+    default-language:	Haskell98
+    default-extensions: ForeignFunctionInterface, EmptyDataDecls
+    ghc-options:        -Wall -fno-warn-name-shadowing

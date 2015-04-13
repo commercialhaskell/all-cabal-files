@@ -1,0 +1,19 @@
+name:            attempt
+version:         0.4.0
+license:         BSD3
+license-file:    LICENSE
+author:          Michael Snoyman, Nicolas Pouillard
+maintainer:      Michael Snoyman <michael@snoyman.com>
+synopsis:        Concrete data type for handling extensible exceptions as failures.
+description:     Defines a data type, Attempt, which has a Success and Failure constructor. Failure contains an extensible exception.
+category:        Data, Failure
+stability:       stable
+cabal-version:   >= 1.2
+build-type:      Simple
+homepage:        http://github.com/snoyberg/attempt/tree/master
+
+library
+    build-depends:   base >= 4 && < 5,
+                     failure >= 0.2.0 && < 0.3
+    exposed-modules: Data.Attempt
+    ghc-options:     -Wall

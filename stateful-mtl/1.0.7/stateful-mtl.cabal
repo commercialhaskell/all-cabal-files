@@ -1,0 +1,22 @@
+name:		stateful-mtl
+version:	1.0.7
+synopsis:	Typeclass instances for monad transformer stacks with an ST thread at the bottom.
+description:	A MonadST type class, instances, and some helpful monad functions.
+tested-with:	GHC
+category:	Monads
+license:	BSD3
+license-file:	LICENSE
+author:		Louis Wasserman
+maintainer:	wasserman.louis@gmail.com
+build-Depends:	base, mtl, MaybeT
+build-type:	Simple
+Exposed-modules:
+--	Control.Monad.Array
+--	Control.Monad.Array.ArrayT
+--	Control.Monad.Array.IntMap
+--	Control.Monad.Array.MArray
+--	Control.Monad.Array.Class
+	Control.Monad.ST.Class
+	Control.Monad.Trans.Operations
+	--Control.Monad.Array.Unboxed
+ghc-options:

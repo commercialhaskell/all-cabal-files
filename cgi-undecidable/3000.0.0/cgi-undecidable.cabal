@@ -1,0 +1,17 @@
+Name: cgi-undecidable
+Version: 3000.0.0
+Copyright: Bjorn Bringert, Ian Lynagh
+Maintainer: bjorn@bringert.net
+License: BSD3
+License-file: LICENSE
+Build-depends: base, mtl, cgi >= 3000.0.0
+Extensions: OverlappingInstances, UndecidableInstances
+Synopsis: Undecidable instances for the cgi package.
+Description:
+ This package adds some useful type class instances to the
+  cgi package. This is in a separate package to allow the cgi
+  package to be compatible with Haskell implementations that
+  don't support undecidable instances.
+Exposed-Modules: 
+   Network.CGI.Undecidable
+ghc-options: -O2 -Wall

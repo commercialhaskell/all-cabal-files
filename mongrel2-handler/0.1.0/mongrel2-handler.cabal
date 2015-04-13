@@ -1,0 +1,30 @@
+Name:                mongrel2-handler
+Version:             0.1.0
+Synopsis:            Mongrel2 Handler Library
+Description:         Mongrel2 Handler Library.
+License:             MIT
+License-file:        LICENSE
+Category:            Web
+Cabal-version:       >=1.6.0.1
+Build-type:          Simple
+Author:              Bardur Arantsson
+Maintainer:          Bardur Arantsson <bardur@scientician.net>
+Stability:           Unstable
+
+Library
+  Build-Depends: base           >= 4.0 && <5
+               , aeson          >= 0.3 && <0.4
+               , attoparsec     >= 0.8.5.0 && < 0.9
+               , blaze-builder  >= 0.3 && < 0.4
+               , blaze-textual  >= 0.1 && < 0.2
+               , bytestring     >= 0.9.0.1
+               , containers     >= 0.3 && < 0.5
+               , http-types     >= 0.6 && < 0.7
+               , text           >= 0.11 && < 0.12
+               , zeromq-haskell >= 0.6 && < 0.7
+  Extensions:          OverloadedStrings
+  Ghc-options:         -Wall -fno-warn-unused-matches
+  Hs-source-dirs:      src
+  Exposed-modules:     Mongrel2.Parser
+                       Mongrel2.Response
+                       Mongrel2.Types

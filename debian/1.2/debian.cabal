@@ -1,0 +1,38 @@
+name: debian
+version: 1.2
+license: BSD3
+license-file: debian/copyright
+author: Jeremy Shaw
+maintainer: Jeremy Shaw <jeremy@n-heptane.com>
+stability: volitile
+tested-with: GHC
+build-depends: base, parsec, mtl, network, unix, regex-compat
+synopsis: A set of modules for working with debian control files and packages
+description: Modules for parsing debian control files, resolving
+ depedencies, comparing version numbers, and other useful stuff.
+category: System
+extensions: FlexibleInstances
+ghc-options: -O2 -funbox-strict-fields
+exposed-modules: 
+	Linspire.Debian.Control,
+	Linspire.Debian.Control.Common,
+	Linspire.Debian.Control.String,
+	Linspire.Debian.Control.ByteString,
+	Linspire.Debian.Control.PrettyPrint,
+	Linspire.Debian.Dependencies,
+	Linspire.Debian.Package,
+	Linspire.Debian.PackageDeprecated,
+	Linspire.Debian.Relation,
+	Linspire.Debian.Relation.Common,
+	Linspire.Debian.Relation.String,
+	Linspire.Debian.Relation.ByteString,
+	Linspire.Debian.SourcesList,
+	Linspire.Debian.Version,
+	Linspire.Debian.Version.Common,
+	Linspire.Debian.Version.String,
+	Linspire.Debian.Version.ByteString
+other-modules:
+	Linspire.Debian.Version.Internal
+extra-source-files:
+	tests/Dependencies.hs tests/Main.hs tests/SourcesList.hs tests/Versions.hs debian/changelog  
+	debian/compat debian/control debian/copyright debian/haskell-debian-doc.docs debian/rules

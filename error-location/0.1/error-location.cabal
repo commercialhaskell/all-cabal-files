@@ -1,0 +1,19 @@
+Name:                error-location
+Version:             0.1
+Synopsis:            error functions that show file location information
+Homepage:            https://github.com/gregwebs/ErrorLocation.hs
+License:             BSD3
+License-file:        LICENSE
+Author:              Greg Weber
+Maintainer:          greg@gregweber.info
+Category:            Development
+Build-type:          Simple
+Cabal-version:       >=1.2
+
+
+Library
+  Exposed-modules: ErrorLocation
+  
+  -- Packages needed in order to build this package.
+  Build-depends: base >= 0.4 && < 0.5,
+                 template-haskell

@@ -1,0 +1,86 @@
+name:             attoparsec-parsec
+version:          0.1.2
+license:          MIT
+license-file:     LICENSE
+copyright:        (c) 2011, 2012 Simon Hengel
+author:           Simon Hengel <sol@typeful.net>
+maintainer:       Simon Hengel <sol@typeful.net>
+build-type:       Simple
+cabal-version:    >= 1.8
+category:         Parsing
+synopsis:         An Attoparsec compatibility layer for Parsec
+description:      This package provides an implementation of
+                  "Data.Attoparsec.Text" in terms of Parsec.
+                  It can be used to write parsers that can be compiled against
+                  both Attoparsec and Parsec.
+                  .
+                  Attoparsec is an awesome and very fast library, but it still
+                  has a weak point: It does not generate very useful error
+                  messages on parse errors.  Compiling an Attoparsec parser
+                  against Parsec can be useful for at least two scenarios.
+                  .
+                  - Parsec can be used while developing Attoparsec parsers, so
+                    that you get better error messages on failing test cases.
+                  .
+                  - You can use Attoparsec for parsing, so that you benefit
+                    from it's speed.  And on parse errors you can re-parse the
+                    input with Parsec, so that you can display a useful error
+                    message to the user.
+                  .
+                  A simple usage example is here:
+                  <https://github.com/sol/attoparsec-parsec#readme>
+
+source-repository head
+  type: git
+  location: https://github.com/sol/attoparsec-parsec
+
+library
+  ghc-options:
+      -Wall
+  hs-source-dirs:
+      src
+  build-depends:
+      base == 4.*
+    , parsec >= 3.1.2
+    , text
+    , attoparsec >= 0.10.0.0
+  exposed-modules:
+      Data.Attoparsec.Text.Parsec
+
+test-suite spec
+  type:
+      exitcode-stdio-1.0
+  ghc-options:
+      -Wall -Werror
+  hs-source-dirs:
+      test
+  main-is:
+      Spec.hs
+  build-depends:
+      base
+    , attoparsec-parsec
+    , text
+    , hspec >= 1.5
+    , QuickCheck
+
+test-suite readme-parsec
+  type:
+      exitcode-stdio-1.0
+  ghc-options:
+      -Wall -Werror -pgmL markdown-unlit
+  main-is:
+      README.lhs
+  build-depends:
+      base, attoparsec-parsec, text, markdown-unlit
+
+test-suite readme-attoparsec
+  type:
+      exitcode-stdio-1.0
+  ghc-options:
+      -Wall -Werror -pgmL markdown-unlit
+  cpp-options:
+      -DUSE_ATTOPARSEC
+  main-is:
+      README.lhs
+  build-depends:
+      base, attoparsec, text, markdown-unlit

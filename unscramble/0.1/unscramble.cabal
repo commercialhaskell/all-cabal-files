@@ -1,0 +1,17 @@
+Name:           unscramble
+Category:       Utils
+Synopsis:       Solve Boggle-like word games
+Version:        0.1
+Description:    Solve Boggle-like word games
+License:        GPL
+Author:         Joel Taylor
+Maintainer:     barebonesgraphics@gmail.com
+Build-Type:     Simple
+Cabal-Version:  >=1.10
+Data-Files:     lists/enable.txt
+
+Executable unscramble
+    Main-is:                Main.hs
+    Build-Depends:          base == 4.*, hashmap == 1.3.*, lens == 3.7.*, mtl == 2.1.*, optparse-applicative == 0.4.*
+    Default-extensions:     TemplateHaskell, TupleSections
+    Default-Language:       Haskell2010

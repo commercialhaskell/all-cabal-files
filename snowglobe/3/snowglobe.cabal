@@ -1,0 +1,48 @@
+Name:                snowglobe
+Version:             3
+Synopsis:            randomized fractal snowflakes demo
+Description:         @snowglobe@ generates random snowflakes using iterated
+                     function systems via OpenGL texture feedback.  The
+                     snowflakes interact in a particle system.
+                     .
+                     Keyboard controls:
+                     .
+                       * f, F11: toggle full screen
+                     .
+                       * shift-R: toggle recording PPM images to stdout
+                     .
+                       * shift-S: toggle recording PGM images of each
+                         generated flake to the current working directory
+                     .
+                       * any other key: quit
+
+License:             GPL-3
+License-file:        LICENSE
+Author:              Claude Heiland-Allen
+Maintainer:          claude@mathr.co.uk
+Category:            Demo
+Build-type:          Simple
+Cabal-version:       >=1.6
+
+Executable snowglobe
+  Main-is:             SnowGlobe.hs
+  other-modules:       Vector 
+  GHC-options:         -Wall
+  Build-depends:
+    base < 5,
+    bytestring,
+    containers,
+    gl-capture,
+    GLUT,
+    OpenGL == 2.9.*,
+    OpenGLRaw,
+    random
+
+Source-repository head
+  type:                git
+  location:            git://gitorious.org/maximus/snowglobe.git
+
+Source-repository this
+  type:                git
+  location:            git://gitorious.org/maximus/snowglobe.git
+  tag:                 v3

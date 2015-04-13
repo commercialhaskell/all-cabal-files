@@ -1,0 +1,19 @@
+Name:            backdropper
+Version:         1.1
+Cabal-Version:   >= 1.2
+License:         GPL
+license-file:    LICENSE
+copyright:       (c) 2008, Yann Golanski.
+Author:          Yann Golanski <yann@kierun.org>
+maintainer:      yann@kierun.org
+Synopsis:        Rotates backdrops for X11 displays using qiv.
+Build-Type:      Simple
+
+Library
+  Exposed-Modules: Rotating_backdrop_logic
+  hs-source-dirs:  ./src
+
+Executable backdropper_consol
+  Main-Is:         backdropper_consol.hs
+  build-depends:   old-time, base, process, random, Cabal, haskell98, hslogger
+  hs-source-dirs:  ./src

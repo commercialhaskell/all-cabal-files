@@ -1,0 +1,19 @@
+Name: libxslt
+Version: 0.1
+Maintainer: Lemmih (lemmih@gmail.com)
+Author: Lemmih (lemmih@gmail.com)
+Copyright: 2006, Lemmih
+License-File: LICENSE
+License: BSD3
+Build-Depends: base >= 2 && < 4, libxml, bytestring
+Category: Text, XML, Foreign binding
+Synopsis: Binding to libxslt
+Extensions: CPP, ForeignFunctionInterface
+Hs-Source-Dirs: src
+Exposed-Modules:
+  Text.XML.XSLT
+Includes: libxslt/xslt.h libxslt/xsltInternals.h libxslt/transform.h libxslt/xsltutils.h
+Extra-Libraries: xslt
+GHC-Options: -Wall -O2
+build-type: Simple
+Description: Uses libxlst.

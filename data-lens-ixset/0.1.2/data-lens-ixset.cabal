@@ -1,0 +1,29 @@
+Name          : data-lens-ixset
+Version       : 0.1.2
+Synopsis      : A Lens for IxSet
+Description   : Integrates Data.IxSet with Data.Lens.
+Homepage      : https://github.com/dag/data-lens-ixset
+License       : BSD3
+License-file  : LICENSE
+Author        : Dag Odenhall
+Maintainer    : dag.odenhall@gmail.com
+Category      : Control, Comonads, Data Structures
+Build-type    : Simple
+Cabal-version : >= 1.9.2
+
+Source-repository head
+  Type     : git
+  Location : git://github.com/dag/data-lens-ixset.git
+
+Library
+  GHC-Options     : -Wall
+  Exposed-modules : Data.Lens.IxSet
+  Build-depends   : base == 4.*,
+                    data-lens == 2.0.*,
+                    ixset == 1.0.*
+
+Test-Suite test-data-lens-ixset
+  Type          : exitcode-stdio-1.0
+  GHC-Options   : -Wall
+  Main-is       : test-data-lens-ixset.hs
+  Build-depends : QuickCheck == 2.4.*

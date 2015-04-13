@@ -1,0 +1,56 @@
+Name:           fixed-vector
+Version:        0.1
+Synopsis:       Generic vectors with fixed length
+Description:
+  Generic vectors with fixed length. Package is structured as follows:
+  .
+  [@Data.Vector.Fixed@]
+  Generic API. It's suitable for both ADT-based vector like @Complex@
+  and array-based ones.
+  .
+  [@Data.Vector.Fixed.Mutable@]
+  Type classes for array-based implementation.
+  .
+  [@Data.Vector.Fixed.Unboxed@]
+  Unboxed vectors.
+  .
+  [@Data.Vector.Fixed.Boxed@]
+  Boxed vector which can hold elements of any type.
+  .
+  [@Data.Vector.Fixed.Storable@]
+  Unboxed vectors of @Storable@  types.
+  .
+  [@Data.Vector.Fixed.Primitive@]
+  Unboxed vectors based on pritimive package.
+
+Cabal-Version:  >= 1.6
+License:        BSD3
+License-File:   LICENSE
+Author:         Aleksey Khudyakov <alexey.skladnoy@gmail.com>
+Maintainer:     Aleksey Khudyakov <alexey.skladnoy@gmail.com>
+Bug-reports:    https://github.com/Shimuuar/fixed-vector/issues
+Category:       Data
+Build-Type:     Simple
+
+source-repository head
+  type:     hg
+  location: http://bitbucket.org/Shimuuar/fixed-vector
+source-repository head
+  type:     git
+  location: http://github.com/Shimuuar/fixed-vector
+
+Library
+  Ghc-options:          -Wall
+  Build-Depends:
+    base >=3 && <5,
+    primitive
+  Exposed-modules:
+    -- API
+    Data.Vector.Fixed
+    Data.Vector.Fixed.Internal
+    -- Arrays
+    Data.Vector.Fixed.Mutable
+    Data.Vector.Fixed.Boxed
+    Data.Vector.Fixed.Primitive
+    Data.Vector.Fixed.Unboxed
+    Data.Vector.Fixed.Storable

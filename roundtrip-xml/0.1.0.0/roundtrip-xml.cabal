@@ -1,0 +1,47 @@
+Name:           roundtrip-xml
+Version:        0.1.0.0
+Synopsis:       Bidirectional (de-)serialization for XML.
+Description:    Roundtrip allows the definition of bidirectional
+                (de-)serialization specifications. This package provides
+                concrete implementations of these specifications
+                for the serialization format XML. See the roundtrip
+                package for more details.
+License:        BSD3
+License-file:   LICENSE
+Author:         Stefan Wehr <wehr@factisresearch.com>,
+                David Leuschner <leuschner@factisresearch.com>
+Maintainer:     Stefan Wehr <wehr@factisresearch.com>,
+Category:       Text
+Build-type:     Simple
+Cabal-version:  >=1.8
+
+Library
+  GHC-Prof-Options: -auto-all -caf-all
+  Hs-Source-Dirs: src
+  Exposed-modules:
+      Text.Roundtrip.Xml
+    , Text.Roundtrip.Xml.Classes
+    , Text.Roundtrip.Xml.Combinators
+    , Text.Roundtrip.Xml.Printer
+    , Text.Roundtrip.Xml.Parser
+    , Text.Roundtrip.Xml.Enumerator
+    , Text.Roundtrip.Xml.Enumerator.Printer
+    , Text.Roundtrip.Xml.Enumerator.Parser
+  Other-modules:
+      Text.Roundtrip.Xml.ParserInternal
+    , Text.Roundtrip.Xml.Pretty
+  Build-depends:
+      base == 4.*
+    , safe == 0.3.*
+    , bytestring == 0.9.*
+    , containers >= 0.3 && < 0.6
+    , mtl >= 1.1.1.1
+    , text == 0.11.*
+    , enumerator >= 0.4.8 && < 0.5
+    , xml-enumerator == 0.3.*
+    , xml-types == 0.3.*
+    , blaze-builder == 0.2.*
+    , blaze-builder-enumerator == 0.2.*
+    , pretty == 1.0.*
+    , parsec == 3.1.*
+    , roundtrip == 0.1.*

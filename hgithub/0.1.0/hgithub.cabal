@@ -1,0 +1,38 @@
+name:                hgithub
+version:             0.1.0
+Cabal-Version:       >= 1.8
+synopsis:            Haskell bindings to the GitHub API
+description:         Haskell bindings to the GitHub API
+category:            Network
+license:             BSD3
+license-file:        LICENSE
+author:              Vo Minh Thu
+maintainer:          thu@hypered.be
+homepage:            https://github.com/noteed/hgithub
+bug-reports:         https://github.com/noteed/hgithub/issues
+build-type:          Simple
+
+source-repository head
+  type: git
+  location: https://github.com/noteed/hgithub
+
+library
+  build-depends:       base == 4.*,
+                       aeson == 0.4.*,
+                       attoparsec == 0.10.*,
+                       base64-bytestring == 0.1.*,
+                       bytestring == 0.9.*,
+                       case-insensitive == 0.4.*,
+                       http-enumerator == 0.7.*,
+                       text == 0.11.*
+  exposed-modules:     Network.GitHub
+  ghc-options:         -Wall
+
+executable hgithub
+  hs-source-dirs:      bin
+  main-is:             hgithub.hs
+  build-depends:       base == 4.*,
+                       cmdargs == 0.9.*,
+                       directory == 1.1.*,
+                       hgithub
+  ghc-options:         -Wall

@@ -1,0 +1,20 @@
+name:                pretty-tree
+version:             0.1.0.0
+synopsis:            Pretty-print trees
+description:         Alternative pretty-printing functions for Data.Tree.
+license:             BSD3
+license-file:        LICENSE
+author:              Ivan Lazar Miljenovic
+maintainer:          Ivan.Miljenovic@gmail.com
+copyright:           Ivan Lazar Miljenovic
+category:            Data
+build-type:          Simple
+cabal-version:       >=1.6
+
+source-repository head
+  type:           darcs
+  location:       http://hub.darcs.net/ivanm/pretty-tree
+
+library
+  exposed-modules:     Data.Tree.Pretty
+  build-depends:       base < 5, containers, boxes >= 0.1.1 && < 0.2

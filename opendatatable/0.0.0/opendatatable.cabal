@@ -1,0 +1,32 @@
+name:              opendatatable
+version:           0.0.0
+synopsis:          A library for working with Open Data Tables
+description:       Open Data Table definition, parser and pickler.
+homepage:          https://github.com/fabianbergmark/OpenDataTable
+category:          Web
+author:            Fabian Bergmark
+maintainer:        fabian.bergmark@gmail.com
+license:           BSD2
+license-file:      LICENSE
+cabal-version:     >= 1.10
+build-type:        Simple
+
+extra-source-files: LICENSE
+
+source-repository head
+  type:     git
+  location: https://github.com/fabianbergmark/OpenDataTable.git
+
+library
+    default-language: Haskell2010
+
+    exposed-modules: Data.OpenDataTable
+                     Data.OpenDataTable.Parser
+                     Data.OpenDataTable.Pickle
+
+    ghc-options: -fno-warn-orphans -fno-warn-unused-binds -fno-warn-unused-matches
+
+    build-depends: base             == 4.*
+                 , template-haskell == 2.9.*
+                 , th-lift          == 0.6.*
+                 , hxt              == 9.3.*

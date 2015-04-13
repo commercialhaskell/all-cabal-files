@@ -1,0 +1,43 @@
+name:			manatee-all
+version:		0.2.2
+Cabal-Version:	>= 1.6
+license:		GPL-3
+license-file:	LICENSE
+copyright:		(c) 2011 Andy Stewart
+synopsis:		Virtual package to install all Manatee packages.
+description:    Virtual package to install all Manatee packages, please type command `manatee` to play it. :)
+author:			Andy Stewart
+maintainer:		Andy Stewart <lazycat.manatee@gmail.com>
+stability:		provisional
+category:       Manatee, Operating System, Desktop Environment, IDE
+
+tested-with:	GHC==7.0.3
+build-type:		Simple
+
+Source-Repository head
+  type:         darcs
+  location:     http://patch-tag.com/r/AndyStewart/manatee-all
+  
+Library
+     build-depends: base >= 4 && < 5, 
+                    manatee-core >= 0.1.1, 
+                    manatee-browser >= 0.1.1, 
+                    manatee-curl >= 0.1.1,
+                    manatee-editor >= 0.1.1,
+                    manatee-filemanager >= 0.1.1,
+                    manatee-imageviewer >= 0.1.1,
+                    manatee-ircclient >= 0.1.1,
+                    manatee-mplayer >= 0.1.1,
+                    manatee-pdfviewer >= 0.1.1,
+                    manatee-processmanager >= 0.1.1,
+                    manatee-reader >= 0.1.1,
+                    manatee-terminal >= 0.1.1,
+                    manatee-welcome >= 0.1.1,
+                    manatee >= 0.2.2
+     exposed-modules:
+     other-modules:							
+     extensions:  
+     ghc-options: -fwarn-unused-matches -fwarn-unused-binds -fwarn-unused-imports -fwarn-overlapping-patterns -fwarn-duplicate-exports -fwarn-unrecognised-pragmas -fwarn-hi-shadowing 
+     
+Executable manatee-all
+     main-is: Main.hs

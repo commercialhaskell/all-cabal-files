@@ -1,0 +1,30 @@
+name:                murmurhash3
+version:             1.0
+synopsis:            32-bit non-cryptographic hashing
+category:            Data, Digest
+stability:      	   provisional
+license:             PublicDomain
+license-file:        LICENSE
+author:              Nis N. Wegmann
+maintainer:          niswegmann@gmail.com
+homepage:            https://github.com/niswegmann/murmurhash3
+extra-source-files:  README.md
+build-type:          Simple
+cabal-version:       >= 1.10
+
+description:         
+
+  MurmurHash is a family of non-cryptographic hash functions suitable for
+  general hash-based lookup. This implementation uses the MurmurHash3
+  algorithm and provides a type class for computing 32-bit hashes from all
+  prevalent data types in the Haskell 2010 Standard.
+
+source-repository head
+  type:     git
+  location: https://github.com/niswegmann/murmurhash3.git
+
+library
+  default-language:  Haskell2010
+  build-depends:     haskell2010
+  ghc-options:       -O2 -Wall -fwarn-tabs
+  exposed-modules:   Data.Digest.Murmur

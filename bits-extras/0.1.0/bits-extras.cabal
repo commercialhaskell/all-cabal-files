@@ -1,0 +1,52 @@
+Name:               bits-extras
+Version:            0.1.0
+License:            BSD3
+License-File:       License.txt
+Maintainer:         Gabriel Wicke <wicke@wikidev.net>
+Author:             Gabriel Wicke <wicke@wikidev.net>
+Synopsis:       Efficient atomic and non-atomic bit operations not found in Data.Bits
+Description:        Mostly wraps low-level bit operations provided by GCC
+                    builtins, which translate to specialized instructions
+                    where available. 
+                    .
+                    Atomic operations include CAS
+                    (compare-and-swap), lock, fetch & add and similar
+                    primitives suitable for low-level shared-memory
+                    synchronization.
+                    .
+                    Primitives from the 'Extras' subpackage would be useful to
+                    have in the proper 'Data.Bits' package, although this
+                    would probably require broader support across different
+                    compiler backends.
+                    .
+                    Relevant Hackage tickets:
+                    .
+                    * <http://hackage.haskell.org/trac/ghc/ticket/3563>
+                    .
+                    * <http://hackage.haskell.org/trac/ghc/ticket/4102>
+Category:           Data
+Stability:          experimental
+Build-Type:         Simple
+Cabal-Version: >= 1.6
+Extra-Source-Files: cbits/bitops-gcc.c cbits/bitops-gcc.h
+Source-Repository head
+    type: mercurial
+    location: http://dev.wikidev.net/hg/bits-extras/
+--extra-tmp-files: cbits/bitops-gcc.h
+library
+    Exposed-Modules:  Data.Bits.Extras Data.Bits.Atomic
+    Build-Depends:    base >= 4 && < 6
+    GHC-Options:      -Wall -O2 -funbox-strict-fields
+    GHC-Prof-Options: -auto-all
+    C-Sources:        cbits/bitops-gcc.c cbits/atomic-bitops-gcc.c
+    --CC-Options:       -O3 -fomit-frame-pointer -march=native -Wall
+    -- Try link-time optimization (inlining) with gcc 4.5:
+    -- CC-Options:       -fomit-frame-pointer -march=native -Wall -flto
+    CC-Options:       -fomit-frame-pointer -march=native -Wall
+    Extra-Libraries:  gcc_s
+    Include-Dirs:     cbits
+    Install-Includes: bitops-gcc.h atomic-bitops-gcc.h
+    Extensions:       ForeignFunctionInterface
+    --Includes:       bitops-gcc.h
+    --LD-Options:     -flto
+    --hs-source-dirs: .

@@ -1,0 +1,36 @@
+Name:                hissmetrics
+Version:             0.2.1
+Synopsis:            Unofficial API bindings to KISSmetrics.
+Homepage:            https://github.com/meteficha/hissmetrics
+License:             BSD3
+License-file:        LICENSE
+Author:              Felipe Lessa
+Maintainer:          Felipe Lessa <felipe.lessa@gmail.com>
+Category:            Web
+Build-type:          Simple
+Cabal-version:       >=1.6
+
+Description:
+  This package provides simple functions that allow you to access
+  KISSmetrics using Haskell.
+
+
+Source-repository head
+  type:     git
+  location: git://github.com/meteficha/hissmetrics.git
+
+
+Library
+  hs-source-dirs: src
+  Exposed-modules:
+    Web.KISSmetrics
+  Build-depends:   base         >= 4.3     && < 5
+                 , time         >= 1.1     && < 2
+                 , bytestring
+                 , text         >= 0.7     && < 0.12
+                 , conduit      == 0.4.*
+                 , http-types
+                 , http-conduit == 1.4.*
+  Extensions:
+    RecordWildCards,
+    OverloadedStrings

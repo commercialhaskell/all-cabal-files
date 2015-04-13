@@ -1,0 +1,31 @@
+Name:                darcs-graph
+Version:             1.0
+License:             BSD3
+License-file:        LICENSE
+Category:            Distribution
+Synopsis:            Generate graphs of darcs repository activity
+Description:         Generate graphs of darcs repository activity
+Author:              Don Stewart
+Maintainer:          dons@galois.com
+build-type:          Simple
+Cabal-Version: >= 1.2
+
+flag small_base
+    description: Choose the new smaller, split-up base package.
+
+Executable darcs-graph
+    Main-is:             Graph.hs
+    Extensions:          CPP, PatternGuards
+    Ghc-options:         -Wall
+
+    build-depends:     time
+    if flag(small_base)
+        build-depends: base >= 3 && < 4,
+                       process,
+                       directory,
+                       old-time,
+                       old-locale,
+                       bytestring,
+                       containers
+    else
+        build-depends: base <  3

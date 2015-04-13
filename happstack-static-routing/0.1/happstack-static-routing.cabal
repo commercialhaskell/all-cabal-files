@@ -1,0 +1,43 @@
+Name:                happstack-static-routing
+Version:             0.1
+Synopsis: Support for static URL routing with overlap detection for Happstack.
+
+Description: If you have a large routing table in Happstack and want
+  to insert a new handler, you might run into overlap problems
+  (ambiguity).  The new handler might not fire because it matches
+  against a URL that is already handled earlier.  Or if you put your
+  new handler first, it might steal requests from existing handlers.
+
+  This Happstack support library allows you to detect overlap cases
+  and build unambiguous routing tables where the order of the handlers
+  is irrelevant.
+
+License:             BSD3
+License-file:        LICENSE
+Author:              Scrive
+Maintainer:          magnus@scrive.com
+Homepage:            https://github.com/carlssonia/happstack-static-routing
+Stability:           Development
+Category:            Web, Distributed Computing
+Build-type:          Simple
+Cabal-version:       >=1.6
+
+
+library
+  exposed-modules:
+     Happstack.StaticRouting
+
+  other-modules:
+     Happstack.StaticRouting.Internal
+
+  hs-source-dirs: src
+
+  build-depends: base >= 4 && <= 10
+  build-depends: happstack-server >= 6
+  build-depends: containers >= 0.3
+  build-depends: list-tries >= 0.4
+  build-depends: transformers >= 0.2
+
+source-repository head
+  type: git
+  location: git://github.com/carlssonia/happstack-static-routing.git

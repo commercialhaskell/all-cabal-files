@@ -1,0 +1,20 @@
+name:               lazyarray
+version:            0.1
+cabal-version:      >= 1.2
+synopsis:           Efficient implementation of lazy monolithic arrays (lazy in indexes).
+description:        This package built on standard array package adds support for lazy monolithic arrays. Such arrays are lazy not only in their values, but in their indexes as well. Read the paper \"Efficient Graph Algorithms Using Lazy Monolithic Arrays\" (<http://citeseer.ist.psu.edu/95126.html>) for further details.
+license:            BSD3
+license-file:       LICENSE
+category:           Data
+author:             Milan Straka
+maintainer:         fox@ucw.cz
+build-type:         Simple
+build-depends:      base
+tested-with:        GHC == 6.8.2
+extra-source-files: bench/bench.hs
+
+library
+  build-depends:    base, array
+  exposed-modules:  Data.LazyArray, Data.LazyArray.Lowlevel
+  ghc-options:      -funbox-strict-fields -O
+  hugs-options:     -98

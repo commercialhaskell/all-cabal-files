@@ -1,0 +1,26 @@
+Name:           names
+Version:        0.1
+Synopsis:       Types that symbolise Names.
+Description:    Types that symbolise Names.               
+License:        MIT
+License-File:   LICENSE
+Author:         Julian Fleischer <julian.fleischer@fu-berlin.de>
+Maintainer:     Julian Fleischer <julian.fleischer@fu-berlin.de>
+Build-Type:     Simple
+Cabal-Version:  >= 1.6
+Category:       Data, Type System
+Stability:      experimental
+
+Library
+    Exposed-Modules:    Data.Name,                     
+                        Data.Name.TH
+
+    Other-Modules:      Data.Name.Internal.Names,
+                        Data.Name.Internal.TH
+
+    Build-Depends:      base >= 4.5 && < 5,
+                        template-haskell >= 2.7
+
+    Hs-Source-Dirs:     src
+
+

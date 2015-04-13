@@ -1,0 +1,29 @@
+name: chell-hunit
+version: 0.1
+synopsis: Quiet test runner (HUnit support)
+license: MIT
+license-file: license.txt
+author: John Millikin <jmillikin@gmail.com>
+build-type: Simple
+cabal-version: >= 1.6
+category: Testing
+bug-reports: mailto:jmillikin@gmail.com
+homepage: https://john-millikin.com/software/chell/
+tested-with: GHC==6.12.1
+
+source-repository head
+  type: bazaar
+  location: https://john-millikin.com/software/chell/
+
+library
+  ghc-options: -Wall
+  hs-source-dirs: src
+
+  build-depends:
+      base >= 4 && < 5
+    , chell >= 0.1 && < 0.2
+    , HUnit >= 1.1 && < 1.3
+    , text
+
+  exposed-modules:
+    Test.Chell.HUnit

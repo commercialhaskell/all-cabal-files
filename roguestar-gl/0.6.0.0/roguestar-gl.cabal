@@ -1,0 +1,54 @@
+name:                roguestar-gl
+version:             0.6.0.0
+cabal-version:       >=1.2
+license:             OtherLicense
+license-file:        LICENSE
+author:              Christopher Lane Hinson <lane@downstairspeople.org>
+maintainer:          Christopher Lane Hinson <lane@downstairspeople.org>
+
+category:            Game
+synopsis:            Sci-fi roguelike game.  Client library.
+description:         Roguestar-glut and roguestar-gtk depend on this library for the bulk of their functionality.
+homepage:            http://roguestar.downstairspeople.org/
+
+build-type:          Simple
+tested-with:         GHC==6.12.1
+
+Library
+  hs-source-dirs:      src
+  exposed-modules:     Processes, Initialization, DrawString, Config, KeyStroke, PrintText, Globals
+  other-modules:       Quality, ProtocolTypes, VisibleObject,
+                       Strings, WordGenerator, Driver,
+                       PrintTextData, Animation,
+                       Actions, Limbs, Tables, CommandLine,
+                       Models.Androsynth, Models.QuestionMark, Models.Terrain, Models.RecreantFactory,
+                       Models.Recreant, Models.Glows, Models.Materials, Models.Reptilian,
+                       Models.Hellion,
+                       Models.Library, Models.MachineParts, Models.LibraryData, Models.Caduceator,
+                       Models.Tree, Models.Encephalon, Models.PhaseWeapons, RenderingControl,
+                       Keymaps.BuiltinKeymaps, Keymaps.CommonKeymap, Keymaps.NumpadKeymap,
+                       Keymaps.Keymaps, Keymaps.VIKeymap, AnimationBuildings, Models.Node,
+                       Models.Stargate, Statistics, Models.Sky, Scene, Models.Spheres,
+                       Models.EnergySwords, Models.EnergyThings, Models.CyborgType4,
+                       AnimationEvents, AnimationMenus, AnimationTerrain, AnimationTools,
+                       AnimationExtras, AnimationCreatures, AnimationBuildings, MaybeArrow,
+                       EventUtils, Sky, CreatureData, AnimationVortex,
+                       Paths_roguestar_gl
+  build-depends:       base>=4&&<5,
+                       GLUT>=2.2 && < 2.3,
+                       rsagl==0.6.0.0,
+                       rsagl-math==0.6.0.0,
+                       rsagl-frp==0.6.0.0,
+                       containers>=0.3.0.0 && < 0.4,
+                       arrows>=0.4.1.2 && < 0.5,
+                       mtl>=1.1.0.2 && < 1.2,
+                       MonadRandom>=0.1.4 && < 1.2,
+                       OpenGL>=2.4.0.1 && < 2.5,
+                       filepath>=1.1.0.3 && < 1.2,
+                       random>=1.0.0.2 && < 1.1,
+                       bytestring>=0.9.1.5 && < 0.10,
+                       stm>=2.1.1.2 && < 2.2,
+                       priority-sync>=0.2.1.0 && < 0.2.2
+  ghc-options:         -fno-warn-type-defaults -fexcess-precision
+  ghc-prof-options:    -prof -auto-all
+

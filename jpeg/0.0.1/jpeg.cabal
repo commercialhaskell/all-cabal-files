@@ -1,0 +1,18 @@
+Name:                jpeg
+Version:             0.0.1
+Category:            Graphics
+Description:         JPEG Decompression library
+License:             BSD3
+License-file:        license.txt
+Author:              Jeroen Fokker
+Maintainer:          jeroen@cs.uu.nl
+Build-Type:          Simple
+Cabal-Version:       >=1.2
+Synopsis:            A library for decoding JPEG files written in pure Haskell
+
+   
+Library
+  Build-Depends:     base >= 3 && < 5, mtl
+  Exposed-modules:   Graphics.JPEG
+  ghc-options:       -Wall
+  hs-source-dirs:    src

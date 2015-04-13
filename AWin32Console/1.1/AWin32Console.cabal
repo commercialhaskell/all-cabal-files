@@ -1,0 +1,19 @@
+Name:                AWin32Console
+Version:             1.1
+Synopsis:            A binding to a part of the ANSI escape code for the console
+Description:         ANSI escape code
+Author:              Harald Wolfsgruber
+Maintainer:          Harald Wolfsgruber
+License:             BSD3
+License-File:        LICENSE
+Category:            System
+C-Sources:           c/BWin32Console.c
+Include-Dirs:        include
+Includes:            "BWin32Console.h"
+Install-Includes:    "BWin32Console.h"
+Extensions:          ForeignFunctionInterface
+Extra-Source-Files:  README
+Build-Type:          Simple
+Cabal-Version:       >=1.6
+Build-Depends:       base >= 4 && < 5, regex-compat, Win32
+Exposed-modules:     System.Win32.AWin32Console

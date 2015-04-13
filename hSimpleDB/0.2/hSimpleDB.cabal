@@ -1,0 +1,22 @@
+name:                hSimpleDB
+version:             0.2
+synopsis:            Interface to Amazon's SimpleDB service.
+description:         Interface to Amazon's SimpleDB service.
+category:            Database, Web, Network
+license:             BSD3
+license-file:        LICENSE
+author:              David Himmelstrup 2009, Greg Heartsfield 2007
+maintainer:          David Himmelstrup <lemmih@gmail.com>
+build-Depends:       base>=3 && <=4, hxt, old-locale, old-time, utf8-string, Crypto, dataenc,
+                     bytestring, network, HTTP
+build-type:          Simple
+ghc-options:         
+hs-source-dirs:      src
+exposed-modules:
+  Network.AWS.SimpleDB
+other-modules:
+  Network.AWS.Authentication
+  Network.AWS.Actions
+  Network.AWS.AWSConnection
+  Network.AWS.AWSResult
+  Network.AWS.ArrowUtils

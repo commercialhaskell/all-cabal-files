@@ -1,0 +1,25 @@
+Name:           Hmpf
+Version:        0.1
+License:        GPL
+Maintainer:         Thomas L. Bevan <thomas.bevan@gmail.com>
+Author:         Thomas L. Bevan
+License-file:   LICENCE
+extra-source-files: 	README, hmpf.conf.sample, src/Hmpf/ApplicationTypes.hs, src/Hmpf/AudioScrobbler.hs, 
+                        src/Hmpf/Config.hs, src/Hmpf/Control.hs, src/Hmpf/Keys.hs, src/Hmpf/LCDProc.hs, 
+			src/Hmpf/LIRC.hs, src/Hmpf/MPD.hs, src/Hmpf/MPDSession.hs, src/Hmpf/Monitor.hs, 
+			src/Hmpf/RelatedArtist.hs, src/Hmpf/Tree.hs, src/Hmpf/UTF8Stream.hs, src/Hmpf/Util.hs
+Category:       Application
+Build-Depends:  base, Crypto, time, HTTP, network, ConfigFile, mtl, unix,
+                utf8-string
+Synopsis:	An MPD client designed for a Home Theatre PC
+Description:    An MPD client designed to be used on a Home Theatre PC equipt with an infrared remote
+                and VDU display. 
+		.
+		Hmpf is designed to allow the user to navigate through a large digital music collection with
+		a standard infrared remote and VDU. The client does not need or accept input from the keyboard
+		.
+		Hmpf also implements the LastFM protocol and is able to intelligently generate dynamic playlists
+
+Executable:	hmpf
+Main-is:	Main.hs
+hs-source-dirs:	src

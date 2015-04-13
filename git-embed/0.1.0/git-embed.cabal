@@ -1,0 +1,32 @@
+name:                git-embed
+version:             0.1.0
+synopsis:            Use TH to embed Git repo information.
+description:         Use Template Haskell to embed Git revision, branch, and
+                     tag information.
+homepage:            https://github.com/borsboom/git-embed
+license:             BSD2
+license-file:        LICENSE
+author:              Emanuel Borsboom <emanuel@borsboom.io>
+maintainer:          Emanuel Borsboom <emanuel@borsboom.io>
+copyright:           2014 Emanuel Borsboom
+category:            Git
+build-type:          Simple
+--extra-source-files:
+cabal-version:       >=1.10
+
+library
+  exposed-modules:     Git.Embed
+  -- other-modules:
+  -- other-extensions:
+  build-depends:       base >=4.7 && <5
+                      ,template-haskell >=2.9
+                      ,directory >=1.2
+                      ,filepath >=0.4
+                      ,process >=1.2
+  hs-source-dirs:      src/
+  default-language:    Haskell2010
+  ghc-options:         -Wall
+
+source-repository head
+  type:     git
+  location: https://github.com/borsboom/git-embed.git

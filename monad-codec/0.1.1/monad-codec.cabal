@@ -1,0 +1,34 @@
+name:               monad-codec
+version:            0.1.1
+synopsis:           Monadic conversion between complex data structures and unique integers
+description:
+    The library provides functions for encoding and decoding complex data
+    structures with unique integer numbers.  The codec structure can be
+    explicitly defined which distinguishes this package from a monad-atom
+    library.
+license:            BSD3
+license-file:       LICENSE
+cabal-version:      >= 1.6
+copyright:          Copyright (c) 2012 IPI PAN
+author:             Jakub Waszczuk
+maintainer:         waszczuk.kuba@gmail.com
+stability:          experimental
+category:           Control
+homepage:           https://github.com/kawu/monad-codec
+build-type:         Simple
+
+library
+    build-depends:
+        base >= 4 && < 5
+      , containers
+      , data-lens
+      , mtl >= 2
+
+    exposed-modules:
+        Control.Monad.Codec
+
+    ghc-options: -Wall
+
+source-repository head
+    type: git
+    location: git://github.com/kawu/monad-codec.git

@@ -1,0 +1,26 @@
+Name:           hslogger4j
+Version:        0.2
+License:        LGPL
+license-file:   COPYRIGHT
+Copyright:      Copyright (c) 2004-2008 John Goerzen
+Author:         Bjorn Buckwalter
+Maintainer:     bjorn.buckwalter@gmail.com
+Stability:      Deprecated
+Homepage:       http://hslogger4j.googlecode.com/
+Synopsis: DEPRECATED hslogger handlers for log4j's XMLLayout
+Description: 
+    The hslogger4j code has been contributed to hslogger (included in
+    version 1.0.6) and this package has been DEPRECATED.
+    This version contains no code.
+Category:       Interfaces
+Build-Type:     Simple
+Build-Depends:  hslogger >= 1.0.6
+Exposed-Modules: 
+    -- System.Log.Handler.Log4jXML
+Extra-source-files:
+    -- COPYING, README, hslogger4j.jar,
+    -- hslogger4j-plugins.xml, build.xml,
+    -- java/org/haskell/hslogger/HsloggerLevel.java,
+    -- java/org/haskell/hslogger/XMLDecoder.java,
+    -- java/org/haskell/hslogger/LogFileXMLReceiver.java
+

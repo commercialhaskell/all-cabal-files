@@ -1,0 +1,15 @@
+Name: HDBC
+Version: 1.0.1
+License: LGPL
+Maintainer: John Goerzen <jgoerzen@complete.org>
+Stability: Alpha
+Copyright: Copyright (c) 2005-2006 John Goerzen
+Exposed-Modules: Database.HDBC, Database.HDBC.Types, Database.HDBC.DriverUtils,
+  Database.HDBC.ColTypes
+Other-Modules: Database.HDBC.Utils
+--Extensions: ExistentialQuantification, AllowOverlappingInstances,
+--    AllowUndecidableInstances
+Extensions: ExistentialQuantification
+Build-Depends: base, mtl
+GHC-Options: -O2 -Wall
+

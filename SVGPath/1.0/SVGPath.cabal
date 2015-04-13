@@ -1,0 +1,19 @@
+Name:             SVGPath
+Version:          1.0
+Synopsis:         Parsing the path command from SVG
+Description:      Parsing the path command from SVG
+category:         Graphics
+License:          BSD3
+License-file:     LICENSE
+Author:           Tillmann Vogt
+Maintainer:       Tillmann.Vogt@rwth-aachen.de
+Build-Type:       Simple
+Cabal-Version:    >=1.6
+
+Library
+    hs-source-dirs: src
+    build-depends:
+        base == 4.*,
+        parsec == 2.1.*
+    exposed-modules:
+        Graphics.SVG.ReadPath

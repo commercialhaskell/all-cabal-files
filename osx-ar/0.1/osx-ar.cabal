@@ -1,0 +1,20 @@
+Name:          osx-ar
+Version:       0.1
+License:       BSD3
+License-file:  LICENSE
+Category:      Data
+Author:        Erik Charlebois
+Copyright:     Erik Charlebois
+Maintainer:    Erik Charlebois <erikcharlebois@gmail.com>
+Stability:     unstable
+Cabal-Version: >= 1.2
+Build-Depends: base
+Build-Type:    Custom
+Synopsis:      Parser for OS X static archive format.
+Description:   Parser for OS X static archive format.
+Data-Files:    tests/Test.hs tests/libfoo.a
+
+library
+    build-depends:   base, bytestring, binary, containers
+    hs-source-dirs:  src
+    exposed-modules: Data.OSXAr

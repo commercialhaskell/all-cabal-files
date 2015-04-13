@@ -1,0 +1,53 @@
+Name:                Graphalyze
+Version:             0.8.0.0
+Synopsis:            Graph-Theoretic Analysis library.
+Description:         A library to use graph theory to analyse the relationships
+                        inherent in discrete data.
+Category:            Graphs, Algorithms
+License:             OtherLicense
+License-File:        LICENSE
+Copyright:           (c) Ivan Lazar Miljenovic
+Author:              Ivan Lazar Miljenovic
+Maintainer:          Ivan.Miljenovic@gmail.com
+Extra-Source-Files:  TODO
+Cabal-Version:       >= 1.6
+Build-Type:          Simple
+
+Source-Repository head
+    Type:         darcs
+    Location:     http://code.haskell.org/Graphalyze
+
+
+Library {
+        Build-Depends:   base >= 3 && < 5,
+                         extensible-exceptions,
+                         array,
+                         containers,
+                         directory,
+                         filepath,
+                         old-locale,
+                         process,
+                         random,
+                         time,
+                         bktrees >= 0.2,
+                         fgl >= 5.4.2.2,
+                         graphviz >= 2999.6.0.0 && < 2999.7.0.0,
+                         pandoc
+
+        Exposed-Modules:     Data.Graph.Analysis
+                             Data.Graph.Analysis.Types
+                             Data.Graph.Analysis.Utils
+                             Data.Graph.Analysis.Visualisation
+                             Data.Graph.Analysis.Algorithms
+                             Data.Graph.Analysis.Algorithms.Common
+                             Data.Graph.Analysis.Algorithms.Directed
+                             Data.Graph.Analysis.Algorithms.Clustering
+                             Data.Graph.Analysis.Reporting
+                             Data.Graph.Analysis.Reporting.Pandoc
+
+        Other-Modules:       Data.Graph.Analysis.Internal,
+                             Paths_Graphalyze
+
+        Ghc-Options:         -Wall
+        Ghc-Prof-Options:    -prof -auto-all
+}

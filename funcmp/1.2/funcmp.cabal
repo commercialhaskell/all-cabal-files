@@ -1,0 +1,57 @@
+-- -*- coding: utf-8; -*-
+
+Name:           funcmp
+Version:        1.2
+Author:         Meik Hellmund, Ralf Hinze, Joachim Korittky,
+                Marco Kuhlmann, Ferenc Wágner, Peter Simons
+Category:       Graphics
+License:        GPL
+License-file:   COPYING
+Maintainer:     simons@cryp.to
+Homepage:       http://cryp.to/funcmp/
+Description:    Functional MetaPost is a Haskell frontend
+                to the MetaPost language by John Hobby.
+                Users write their graphics as Haskell
+                programs, which then emit MetaPost code
+                that can be compiled into encapsulated
+                PostScript files and smoothly included into
+                e.g. LaTeX.
+Synopsis:       Functional MetaPost
+Build-Depends:  base, haskell98, process, filepath
+Build-Type:     Simple
+Exposed-Modules:
+    Paths_funcmp,
+    FMP,
+    FMP.Canvas,
+    FMP.Color,
+    FMP.Core,
+    FMP.File,
+    FMP.Frames,
+    FMP.Matrix,
+    FMP.PP,
+    FMP.Picture,
+    FMP.RedBlack,
+    FMP.Resolve,
+    FMP.Symbols,
+    FMP.Syntax,
+    FMP.Term,
+    FMP.Tree,
+    FMP.Turtle,
+    FMP.Types
+Data-files:
+    AUTHORS,
+    ChangeLog,
+    README,
+    prologue.txt,
+    texmf/FuncMP.mp,
+    texmf/fmp1.mf,
+    texmf/fmp24.mf,
+    texmf/fmp8.mf,
+    doc/FMPMain.lhs
+    doc/Manual.lhs
+    doc/Manual_eng.lhs
+    doc/README.doc
+    doc/Tutorial.lhs
+    doc/Tutorial_eng.lhs
+    doc/fmp.ini
+    doc/lhs2TeX.fmt

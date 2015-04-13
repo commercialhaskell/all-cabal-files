@@ -1,0 +1,24 @@
+Name:                hole
+Version:             0.1
+Synopsis:            Higher kinded type removal
+Description:         A type that can be used to cut out a type. This can be useful in records, for instance.
+License:             BSD3
+License-file:        LICENSE
+Author:              Thomas Eding
+Maintainer:          thomasedingcode@gmail.com
+-- Copyright:           
+Category:            Data
+Build-type:          Simple
+Cabal-version:       >=1.2
+
+
+
+Library
+  Exposed-modules:      Data.Hole
+                        Data.Hole.Lazy
+                        Data.Hole.Strict
+  
+  -- Build-depends:       
+  
+  hs-source-dirs:       src
+  

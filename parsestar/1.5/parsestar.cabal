@@ -1,0 +1,49 @@
+name:                parsestar
+version:             1.5
+synopsis:            NMR-STAR file format parser.
+description:         Parser for NMR-STAR data used by BMRB databank repository
+                     of biological nuclear magnetic resonance data.
+category:            Data
+license:             BSD3
+license-file:        LICENSE
+author:              Michal J. Gajda
+maintainer:          mjgajda@gmail.com
+build-type:          Simple
+cabal-version:       >=1.12
+tested-with:         GHC==7.8.3
+
+library
+  default-language:    Haskell2010
+  exposed-modules:     Data.STAR        Data.STAR.Type Data.STAR.ChemShifts   Data.STAR.Coords
+                       Data.STAR.Parser Data.STAR.Path Data.STAR.ResidueCodes
+  other-modules:       Data.STAR.StringUtil Data.STAR.Tokens 
+  ghc-options:
+  build-depends:       array, base < 4.8,mtl, binary, bytestring >= 0.10,
+                       bytestring-mmap, bytestring-show, bytestring-nums, deepseq,
+                       derive, zlib >= 0.5, containers >= 0.5
+  build-tools:         happy
+
+executable  PrintCSTypes
+  Hs-Source-Dirs: test
+  main-is: PrintCSTypes.hs
+  build-depends:       array, base < 4.8, mtl, binary, bytestring, deepseq, containers, parsestar
+  default-language:    Haskell2010
+
+executable  MergeCoord
+  Hs-Source-Dirs: test
+  main-is: MergeCoord.hs
+  build-depends:       array, base < 4.8,mtl, binary, bytestring, deepseq, parsestar
+  default-language:    Haskell2010
+
+executable TestChemShifts
+  Hs-Source-Dirs: test
+  main-is: TestChemShifts.hs
+  build-depends:       array, base < 4.8,mtl, binary, bytestring, deepseq, parsestar
+  default-language:    Haskell2010
+
+executable STAR2Fasta
+  Hs-Source-Dirs: example 
+  main-is: STAR2Fasta.hs
+  build-depends:       array, base < 4.8,mtl, binary, bytestring, deepseq, containers, parsestar
+  default-language:    Haskell2010
+

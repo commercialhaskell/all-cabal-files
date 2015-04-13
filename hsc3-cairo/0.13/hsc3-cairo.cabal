@@ -1,0 +1,31 @@
+Name:              hsc3-cairo
+Version:           0.13
+Synopsis:          haskell supercollider cairo drawing
+Description:       haskell supercollider cairo drawing
+License:           GPL
+Category:          Sound
+Copyright:         (c) Rohan Drape, 2012
+Author:            Rohan Drape
+Maintainer:        rd@slavepianos.org
+Stability:         Experimental
+Homepage:          http://rd.slavepianos.org/?t=hsc3-cairo
+Tested-With:       GHC == 7.6.1
+Build-Type:        Simple
+Cabal-Version:     >= 1.8
+
+Data-files:        README
+
+Library
+  Build-Depends:   base == 4.*,
+                   cairo,
+                   gtk,
+                   hcg-minus,
+                   hosc == 0.13.*,
+                   hsc3 == 0.13.*,
+                   split
+  GHC-Options:     -Wall -fwarn-tabs
+  Exposed-modules: Sound.SC3.Cairo.Scope.Shell
+
+Source-Repository  head
+  Type:            darcs
+  Location:        http://rd.slavepianos.org/sw/hsc3-cairo

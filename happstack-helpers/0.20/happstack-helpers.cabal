@@ -1,0 +1,25 @@
+Name: happstack-helpers
+Version: 0.20
+License: BSD3
+License-file: bsd3.txt
+Description: Functions I found I was using repeatedly when programming Happstack based web-apps. 
+  I'll deprecate whatever bits of this make their way into the Happstack core on hackage.
+Synopsis: Convenience functions for Happstack. 
+Maintainer: Creighton Hogg <wchogg at gmail>
+Author: Thomas Hartman, Eelco Lempsink, Jeremy Shaw, Creighton Hogg
+Stability: Beta
+Copyright: Copyright (c) 2008 Thomas Hartman
+Exposed-Modules: Happstack.Helpers,Happstack.Helpers.DirBrowse, Happstack.Helpers.HtmlOutput, 
+                 Happstack.Helpers.HtmlOutput.Common, 
+                 Happstack.Helpers.HtmlOutput.Menu, 
+                 Happstack.Helpers.ParseRequest,Happstack.Helpers.Redirect, 
+                 Happstack.Data.User.Password, Happstack.Server.CookieFixer, 
+                 Happstack.Data.IxSet.Helpers
+                 Happstack.Server.Helpers
+                 
+Build-Depends: base, mtl, happstack-server, hscolour, filepath, directory, bytestring,
+               HStringTemplate, HStringTemplateHelpers, safe, MissingH, containers, parsec, haskell98,
+               happstack-ixset, happstack-state, random, happstack-data, old-time, pureMD5, PBKDF2
+ghc-options: -Wall
+Category: Distributed Computing
+Build-type: Simple

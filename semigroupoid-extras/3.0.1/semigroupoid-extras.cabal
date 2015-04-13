@@ -1,0 +1,45 @@
+name:          semigroupoid-extras
+category:      Control
+version:       3.0.1
+license:       BSD3
+cabal-version: >= 1.6
+license-file:  LICENSE
+author:        Edward A. Kmett
+maintainer:    Edward A. Kmett <ekmett@gmail.com>
+stability:     provisional
+homepage:      http://github.com/ekmett/semigroupoid-extras
+bug-reports:   http://github.com/ekmett/semigroupoid-extras/issues
+copyright:     Copyright (C) 2011 Edward A. Kmett
+build-type:    Simple
+synopsis:      Semigroupoids requiring Haskell extensions
+description:   Semigroupoids and semigroupoid operations requiring Haskell extensions
+
+extra-source-files:
+  .ghci
+  .gitignore
+  .travis.yml
+  .vim.custom
+
+source-repository head
+  type: git
+  location: git://github.com/ekmett/semigroupoid-extras.git
+
+library
+  hs-source-dirs: src
+
+  build-depends:
+    base          == 4.*,
+    distributive  >= 0.2.2,
+    semigroupoids >= 3,
+    groupoids     >= 3,
+    comonad       >= 3
+
+  exposed-modules:
+    Data.Semifunctor
+    Data.Semifunctor.Associative
+    Data.Semifunctor.Braided
+    Data.Semigroupoid.Ob
+    Data.Semigroupoid.Product
+    Data.Semigroupoid.Coproduct
+
+  ghc-options: -Wall

@@ -1,0 +1,74 @@
+Name: HDBC-sqlite3
+Version: 2.3.3.0
+License: BSD3
+Maintainer: Nicolas Wu <nick@well-typed.com>
+Author: John Goerzen
+Copyright: Copyright (c) 2005-2011 John Goerzen
+license-file: LICENSE
+extra-source-files: LICENSE, hdbc-sqlite3-helper.h, Makefile
+homepage: http://software.complete.org/hdbc-sqlite3
+Category: Database
+synopsis: Sqlite v3 driver for HDBC
+Description: This is the Sqlite v3 driver for HDBC, the generic
+ database access system for Haskell
+Stability: Stable
+Build-Type: Simple
+Cabal-Version: >=1.2.3
+
+Flag splitBase
+  description: Choose the new smaller, split-up package.
+Flag buildtests
+  description: Build the executable to run unit tests
+  default: False
+
+Library
+  Build-Depends: base>=4 && < 5, bytestring, mtl, HDBC>=2.3.0.0, utf8-string
+
+  C-Sources: hdbc-sqlite3-helper.c
+  include-dirs: .
+  Extra-Libraries: sqlite3
+  Exposed-Modules: Database.HDBC.Sqlite3
+  Other-Modules: Database.HDBC.Sqlite3.Connection,
+   Database.HDBC.Sqlite3.ConnectionImpl,
+   Database.HDBC.Sqlite3.Statement,
+   Database.HDBC.Sqlite3.Types,
+   Database.HDBC.Sqlite3.Utils,
+   Database.HDBC.Sqlite3.Consts
+  GHC-Options: -O2
+  Extensions: ExistentialQuantification,
+              ForeignFunctionInterface,
+              EmptyDataDecls,
+              ScopedTypeVariables,
+              ScopedTypeVariables
+
+Executable runtests
+   if flag(buildtests)
+      Buildable: True
+      Build-Depends: HUnit, testpack, containers, convertible, 
+                  old-time, time, old-locale
+   else
+      Buildable: False
+   Main-Is: runtests.hs
+   Other-Modules: SpecificDB,
+                  SpecificDBTests,
+                  TestMisc,
+                  TestSbasics,
+                  TestUtils,
+                  Testbasics,
+                  Tests,
+                  Database.HDBC.Sqlite3.Connection,
+                  Database.HDBC.Sqlite3.ConnectionImpl,
+                  Database.HDBC.Sqlite3.Statement,
+                  Database.HDBC.Sqlite3.Types,
+                  Database.HDBC.Sqlite3.Utils,
+                  Database.HDBC.Sqlite3.Consts
+   C-Sources: hdbc-sqlite3-helper.c
+   include-dirs: .
+   Extra-Libraries: sqlite3
+   Hs-Source-Dirs: ., testsrc
+   GHC-Options: -O2
+   Extensions: ExistentialQuantification,
+               ForeignFunctionInterface,
+               EmptyDataDecls,
+               ScopedTypeVariables,
+               ScopedTypeVariables

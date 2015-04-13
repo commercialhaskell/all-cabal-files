@@ -1,0 +1,80 @@
+Name:           AERN-Real
+Version:        2011.1
+Cabal-Version:  >= 1.2
+Build-Type:     Simple
+License:        BSD3
+License-File:   LICENCE
+Author:         Michal Konecny (Aston University)
+Copyright:      (c) 2011 Michal Konecny, Jan Duracz
+Maintainer:     mikkonecny@gmail.com
+Homepage:       http://code.google.com/p/aern/
+Stability:      experimental
+Category:       Data, Math
+Synopsis:       arbitrary precision real interval arithmetic
+Tested-with:    GHC ==6.12.3
+Description:
+    Type classes abstracting typical approximate real number arithmetic operations
+    including rounded
+    field operations and common elementary operations.
+    Two kinds of rounding are supported: rounding up/down in the numerical order
+    or rounding in/out in a refinement order.
+    .
+    A concrete implementation of refinement order rounded operations
+    is given for intervals in the package AERN-Real-Interval.
+    Concrete implementations of up/down rounded operations is
+    given in AERN-Real-Double for ordinary Double
+    fixed-precision numbers.  These can serve as interval
+    endpoints.  In a future release also MPFR arbitrary-precision numbers
+    will be made available as interval endpoints.
+
+Extra-Source-Files:
+    CHANGES
+
+Library
+  hs-source-dirs: src
+  ghc-options:     -O2
+  Build-Depends:
+        base >= 4 && < 5,
+        QuickCheck >= 2.1 && < 3,
+        test-framework >= 0.2 && < 0.4, test-framework-quickcheck2 >= 0.2 && < 0.4,
+        criterion >= 0.5 && < 0.6,
+        AERN-Basics == 2011.1
+  Exposed-modules:
+    Numeric.AERN.RealArithmetic.ExactOps, 
+    Numeric.AERN.RealArithmetic.NumericOrderRounding, 
+    Numeric.AERN.RealArithmetic.NumericOrderRounding.OpsDefaultEffort,
+    Numeric.AERN.RealArithmetic.NumericOrderRounding.InPlace.OpsDefaultEffort,
+    Numeric.AERN.RealArithmetic.NumericOrderRounding.OpsImplicitEffort,
+    Numeric.AERN.RealArithmetic.NumericOrderRounding.InPlace.OpsImplicitEffort,
+    Numeric.AERN.RealArithmetic.RefinementOrderRounding,
+    Numeric.AERN.RealArithmetic.RefinementOrderRounding.ElementaryFromFieldOps.Exponentiation,
+    Numeric.AERN.RealArithmetic.RefinementOrderRounding.OpsDefaultEffort, 
+    Numeric.AERN.RealArithmetic.RefinementOrderRounding.InPlace.OpsDefaultEffort,
+    Numeric.AERN.RealArithmetic.RefinementOrderRounding.OpsImplicitEffort, 
+    Numeric.AERN.RealArithmetic.RefinementOrderRounding.InPlace.OpsImplicitEffort, 
+    Numeric.AERN.RealArithmetic.Measures, 
+    Numeric.AERN.RealArithmetic.Laws, 
+    Numeric.AERN.RealArithmetic.Bench, 
+    Numeric.AERN.Misc.IntegerArithmetic
+    
+  Other-modules:
+    Numeric.AERN.RealArithmetic.Auxiliary
+    Numeric.AERN.RealArithmetic.NumericOrderRounding.Conversion
+    Numeric.AERN.RealArithmetic.NumericOrderRounding.FieldOps
+    Numeric.AERN.RealArithmetic.NumericOrderRounding.MixedFieldOps
+    Numeric.AERN.RealArithmetic.NumericOrderRounding.Elementary
+    Numeric.AERN.RealArithmetic.NumericOrderRounding.SpecialConst
+    Numeric.AERN.RealArithmetic.NumericOrderRounding.InPlace
+    Numeric.AERN.RealArithmetic.NumericOrderRounding.InPlace.FieldOps
+    Numeric.AERN.RealArithmetic.NumericOrderRounding.InPlace.MixedFieldOps
+    Numeric.AERN.RealArithmetic.NumericOrderRounding.InPlace.Elementary
+    Numeric.AERN.RealArithmetic.RefinementOrderRounding.Conversion
+    Numeric.AERN.RealArithmetic.RefinementOrderRounding.FieldOps
+    Numeric.AERN.RealArithmetic.RefinementOrderRounding.MixedFieldOps
+    Numeric.AERN.RealArithmetic.RefinementOrderRounding.Elementary
+    Numeric.AERN.RealArithmetic.RefinementOrderRounding.SpecialConst
+    Numeric.AERN.RealArithmetic.RefinementOrderRounding.InPlace
+    Numeric.AERN.RealArithmetic.RefinementOrderRounding.InPlace.FieldOps
+    Numeric.AERN.RealArithmetic.RefinementOrderRounding.InPlace.MixedFieldOps
+    Numeric.AERN.RealArithmetic.RefinementOrderRounding.InPlace.Elementary
+

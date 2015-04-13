@@ -1,0 +1,59 @@
+name:         language-dot
+version:      0.0.7
+category:     Language
+synopsis:     A library for the analysis and creation of Graphviz DOT files
+description:  A library for the analysis and creation of Graphviz DOT files.
+author:       Brian Lewis <brian@lorf.org>
+maintainer:   Brian Lewis <brian@lorf.org>
+copyright:    (c) 2009 Galois, Inc.
+license:      BSD3
+license-file: LICENSE
+
+cabal-version: >= 1.6
+build-type:    Custom
+
+extra-source-files:
+  src/test.hs
+
+flag executable
+  description: Build the `ppdot' executable.
+  default:     True
+
+library
+  hs-source-dirs:
+    src
+
+  exposed-modules:
+    Language.Dot
+    Language.Dot.Parser
+    Language.Dot.Pretty
+    Language.Dot.Syntax
+
+  build-depends:
+    base    == 4.*,
+    mtl     == 1.* || == 2.*,
+    parsec3 == 1.*,
+    pretty  == 1.*
+
+  ghc-options: -Wall
+  if impl(ghc >= 6.8)
+    ghc-options: -fwarn-tabs
+
+executable ppdot
+  if flag(executable)
+    buildable: True
+  else
+    buildable: False
+
+  hs-source-dirs:
+    src
+
+  main-is: ppdot.hs
+
+  ghc-options: -Wall
+  if impl(ghc >= 6.8)
+    ghc-options: -fwarn-tabs
+
+source-repository head
+  type:     git
+  location: git://github.com/bsl/language-dot.git

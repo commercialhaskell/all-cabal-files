@@ -1,0 +1,35 @@
+name:                wordsearch
+version:             1.0.0
+cabal-version:       >= 1.6
+build-type:          Simple
+license:             BSD3
+license-file:        LICENSE
+copyright:           Copyright (C) 2010 Byron James Johnson
+author:              Byron James Johnson
+maintainer:          KrabbyKrap@gmail.com
+synopsis:            A word search solver library and executable
+description:         A word search solver library and executable
+category:            Algorithms
+tested-with:         GHC == 6.12.3
+
+library
+  build-depends:     base >= 4.2.0.0 && < 5, containers, array >= 0.3.0.1, fclabels >= 0.9.1, data-default >= 0.2
+  exposed-modules:   Text.WordSearchSolver
+  exposed:           True
+  build-tools:       ghc >= 6.12.3
+  buildable:         True
+  ghc-options:       -Wall -O2
+  extensions:        TemplateHaskell, ExistentialQuantification, ScopedTypeVariables, FlexibleContexts, KindSignatures, DeriveDataTypeable
+
+executable wordSearch
+  main-is:           Main.hs
+  build-depends:     base >= 4.2.0.0 && < 5, fclabels >= 0.9.1
+  other-modules:     Text.WordSearchSolver
+  build-tools:       ghc >= 6.12.3
+  buildable:         True
+  ghc-options:       -Wall -O2
+  extensions:        TemplateHaskell
+
+source-repository head
+  type:              darcs
+  location:          http://patch-tag.com/r/bob/wordsearch

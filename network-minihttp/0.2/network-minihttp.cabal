@@ -1,0 +1,29 @@
+name:            network-minihttp
+version:         0.2
+license:         BSD3
+license-file:    LICENSE
+author:          Adam Langley <agl@imperialviolet.org>
+description:     A ByteString based HTTP(S) library
+synopsis:        A ByteString based library for writing HTTP(S) servers and clients.
+homepage:        http://darcs.imperialviolet.org/network-minihttp
+category:        Network
+build-depends:   base, containers, bytestring>=0.9, network-bytestring>=0.1.1.2, network>=2.1, stm>=2.1, binary>=0.4, binary-strict>=0.3, filepath>=1.1.0.0, mtl>=1.1.0.0, unix>=2.3.0.0, time>=1.1.2.0, old-locale>=1.0.0.0, HsOpenSSL>=0.4.1, network-connection>=0.1, network-dns>=0.1.2, tagsoup>=0.5
+stability:       provisional
+tested-with:     GHC == 6.8.2
+exposed-modules: Network.MiniHTTP.Server,
+                 Network.MiniHTTP.Marshal,
+                 Network.MiniHTTP.Client,
+                 Network.MiniHTTP.HTTPConnection,
+                 Network.MiniHTTP.OpenID,
+                 Network.MiniHTTP.Session,
+                 Network.MiniHTTP.URL
+other-modules:   Network.MiniHTTP.MimeTypesParse
+extra-source-files: examples/test.hs,
+                    examples/example.tmpl,
+                    examples/css/screen.css,
+                    examples/css/print.css,
+                    examples/css/ie.css
+                    examples/webcat.hs
+ghc-options:     -Wall -fno-warn-name-shadowing
+extensions:      OverloadedStrings
+build-type: Simple

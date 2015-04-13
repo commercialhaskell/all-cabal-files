@@ -1,0 +1,28 @@
+Name:          fair-predicates
+Version:       0.1
+Cabal-Version: >= 1.6
+Synopsis:      Fair Predicates
+Description:   
+
+  This Haskell library provides an implementation of Boolean
+  predicates with an interleaved evaluation of arguments.
+
+Category:      Data
+License:       PublicDomain
+License-File:  LICENSE
+Data-Files:    README
+Author:        Sebastian Fischer
+Maintainer:    sebf@informatik.uni-kiel.de
+Bug-Reports:   mailto:sebf@informatik.uni-kiel.de
+Homepage:      http://sebfisch.github.com/fair-predicates
+Build-Type:    Simple
+Stability:     experimental
+
+Library
+  Build-Depends:    base
+  Exposed-Modules:  Data.Answer
+  Ghc-Options:      -Wall
+
+Source-Repository head
+  type:     git
+  location: git://github.com/sebfisch/fair-predicates.git

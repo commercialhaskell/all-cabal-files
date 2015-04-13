@@ -1,0 +1,17 @@
+Name:             subtitles
+Version:          0.0.1
+Description:      Simple program to cut, select prefix/suffix of, reindex and shift SRT subtitle files.
+Synopsis:         Modify SRT subtitle files.
+Category:         Utils
+License:          BSD3
+License-file:     LICENSE
+Author:           Sebastiaan Visser
+Maintainer:       sfvisser@cs.uu.nl
+Build-Type:       Simple
+Build-Depends:    base, split
+
+Executable:       subtitles
+GHC-Options:      -Wall
+HS-Source-Dirs:   src
+Main-is:          Subtitles.hs
+

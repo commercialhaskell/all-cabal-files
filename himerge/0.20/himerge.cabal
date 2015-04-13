@@ -1,0 +1,66 @@
+Name:           himerge
+Version:        0.20
+License:        GPL
+License-File:	LICENSE
+Author:         Luis Francisco Araujo
+Maintainer:	araujo@gentoo.org
+Homepage:	http://www.haskell.org/himerge
+Stability:	Beta
+Synopsis:       Haskell Graphical User Interface for Emerge
+Description:
+		Himerge is a graphical user interface for emerge (Gentoo's Portage system) 
+		written in Haskell using gtk2hs.
+Category:	GUI
+Build-Type:	Simple
+Build-Depends:  haskell98, base, unix, directory, process, 
+		old-time, parallel, gtk, mozembed, glib
+Extra-Source-Files:
+	ChangeLog install_data.sh readme.txt
+	data/himerge/doc/himerge.css data/himerge/doc/himerge_doc.html
+	data/himerge/icons/add.png
+	data/himerge/icons/all.png
+	data/himerge/icons/binary.png
+	data/himerge/icons/category.png
+	data/himerge/icons/clear.png
+	data/himerge/icons/ebuild.png
+	data/himerge/icons/edit.png
+	data/himerge/icons/emerge.png
+	data/himerge/icons/fetch.png
+	data/himerge/icons/himerge-16.png
+	data/himerge/icons/himerge-22.png
+	data/himerge/icons/himerge-32.png
+	data/himerge/icons/himerge-bigger.png
+	data/himerge/icons/himerge.png
+	data/himerge/icons/list-add.png
+	data/himerge/icons/list-remove.png
+	data/himerge/icons/neworld.png
+	data/himerge/icons/package.png
+	data/himerge/icons/process-stop.png
+	data/himerge/icons/queue.png
+	data/himerge/icons/refresh.png
+	data/himerge/icons/remove.png
+	data/himerge/icons/revdep.png
+	data/himerge/icons/search.png
+	data/himerge/icons/small-add.png
+	data/himerge/icons/small-remove.png
+	data/himerge/icons/small-clear.png
+	data/himerge/icons/sync.png
+	data/himerge/icons/system.png
+	data/himerge/icons/unmerge.png
+	data/himerge/icons/usepkg.png
+	data/himerge/icons/world.png
+
+Executable: 	himerge
+Main-Is:        Main.hs
+Hs-Source-Dirs: src
+Other-Modules:
+	Init,
+	Browser,
+	Components,
+	Emerge,
+	Menus,
+	Render,
+	UseFlag,
+	Util,
+	Web
+Ghc-Options:	-O2 -Wall

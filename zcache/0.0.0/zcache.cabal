@@ -1,0 +1,16 @@
+name:                zcache
+version:             0.0.0
+synopsis:            Zobrist keys for game state tracking
+description:         ZCache provides zobrist key generation for perfect information games.
+                     It also includes convenience data structures  (maps and sets) that
+                     use zobrist keys internally. 
+category:            Data
+license:             BSD3
+license-file:        LICENSE
+author:              Sam Anklesaria
+maintainer:          amsay@amsay.net
+build-depends:       base
+build-type:          Simple
+exposed-modules:     Data.ZCache
+build-depends:       base >= 3 && < 5, array < 1, mersenne-random-pure64 < 1, containers < 1
+Homepage:            https://patch-tag.com/r/salazar/zcache/

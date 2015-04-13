@@ -1,0 +1,91 @@
+Name:           haskore-supercollider
+Version:        0.0.2
+License:        GPL
+License-File:   LICENSE
+Author:         Henning Thielemann <haskell@henning-thielemann.de>
+Homepage:       http://www.haskell.org/haskellwiki/SuperCollider
+Package-URL:    http://darcs.haskell.org/haskore-supercollider/
+Category:       Sound
+Synopsis:       Haskore back-end for SuperCollider
+Description:
+  This package lets you play Haskore music via Supercollider
+  using the packages @hosc@ and @hsc3@.
+  The functions manage NodeIds and SuperCollider buffers for you.
+  We support realtime replay and rendering to disk.
+Stability:      Experimental
+Tested-With:    GHC==6.4.1, GHC==6.8.2
+Cabal-Version:  >=1.2
+Build-Type:     Simple
+
+Extra-Source-Files:
+  Makefile
+  Readme
+
+Flag splitBase
+  description: Choose the new smaller, split-up base package.
+
+Flag buildTests
+  description: Build test executables
+  default:     False
+
+Library
+  Build-Depends:
+    haskore-realtime >= 0.0.2 && < 0.1,
+    haskore >=0.0.5 && <0.1,
+    -- for SuperCollider support
+    hosc >=0.1 && <0.2, hsc3 >=0.1 && <0.2, supercollider-ht >=0.0 && <0.1,
+    bytestring >=0.9 && <1.0,
+    -- dependency on non-negative for Haddock
+    non-negative >=0.0.1 && <0.1,
+    event-list >=0.0.6 && <0.1,
+    data-accessor >=0.1 && <0.2,
+    unix >= 2.0 && <3,
+    mtl >=1.0 && <2
+
+  If flag(splitBase)
+    Build-Depends:
+      base >= 3, random >= 1.0 && < 1.1, array >= 0.1 && < 1, process >= 1.0 && < 1.1
+  Else
+    Build-Depends:
+      base >= 1.0 && < 2
+
+  GHC-Options:    -Wall
+  Hs-source-dirs: src
+  Exposed-modules:
+    Haskore.Interface.SuperCollider.Channel,
+    Haskore.Interface.SuperCollider.Channel.State,
+    Haskore.Interface.SuperCollider.Channel.File,
+    -- needs 'unix' package
+    Haskore.Interface.SuperCollider.Channel.Env,
+    Haskore.Interface.SuperCollider.Example,
+    Haskore.Interface.SuperCollider.SoundMap,
+    -- needs Haskore.Interface.SuperCollider.Channel.Env and thus 'unix' package
+    Haskore.Interface.SuperCollider.Note,
+    Haskore.Interface.SuperCollider.Performance,
+    Haskore.Interface.SuperCollider.Play,
+    Haskore.Interface.SuperCollider.Play.Install,
+    Haskore.Interface.SuperCollider.Play.Channel,
+    Haskore.Interface.SuperCollider.Play.Life,
+    Haskore.Interface.SuperCollider.Render,
+    Haskore.Interface.SuperCollider.Schedule,
+    Haskore.Interface.SuperCollider.Schedule.Install,
+    Haskore.Interface.SuperCollider.Schedule.Channel
+  Other-modules:
+    Haskore.Interface.SuperCollider.Example.Air,
+    Haskore.Interface.SuperCollider.Example.Morph
+
+Executable song-air
+  Hs-source-dirs: src
+  GHC-Options:    -Wall
+  Main-Is: Haskore/Interface/SuperCollider/Example/AirMain.hs
+
+Executable test
+  If !flag(buildTests)
+    Buildable: False
+
+  Build-Depends:
+    QuickCheck >=1 && <2, HUnit >=1.2 && <1.3
+  Hs-source-dirs: src
+  GHC-Options:    -Wall
+  Main-Is: Test/Main.hs
+  Buildable: False

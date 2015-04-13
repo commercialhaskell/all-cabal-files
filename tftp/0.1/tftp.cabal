@@ -1,0 +1,116 @@
+name:              tftp
+version:           0.1
+license:           BSD3
+license-file:      LICENSE
+category:          network
+synopsis:          A library for building tftp servers
+description:       A library for building tftp servers
+build-type:        Simple
+cabal-version:     >= 1.9.2
+copyright:         (c) 2012 Sven Heyll
+author:            Sven Heyll
+maintainer:        sven.heyll@gmail.com
+homepage:          http://github.com/sheyll/tftp
+
+
+extra-source-files: src/*.hs Makefile README.md tftp.cabal LICENSE
+
+source-repository head
+   type:     git
+   location: git://github.com/sheyll/tftp.git
+
+library
+   exposed-modules: Network.TFTP.Message
+                  , Network.TFTP.UDPIO
+                  , Network.TFTP.Protocol
+                  , Network.TFTP.Types
+                  , Network.TFTP.Server
+   hs-source-dirs: src
+   build-depends:
+      base >= 4 && <= 5,
+      containers,
+      binary,
+      bytestring,
+      mtl,
+      transformers,
+      hslogger,
+      directory,
+      network >= 2.3 && < 2.4
+   extensions: CPP
+              , DoAndIfThenElse
+              , UnicodeSyntax
+              , ScopedTypeVariables
+              , FlexibleInstances
+              , FlexibleContexts
+              , MultiParamTypeClasses
+              , FunctionalDependencies
+              , GeneralizedNewtypeDeriving
+
+executable tftp_upload
+    hs-source-dirs: src/
+    main-is:        TFTPUpload.hs
+    build-depends:  base
+                  , tftp
+                  , hslogger
+                  , directory
+                  , transformers
+                  , mtl
+                  , bytestring
+                  , network
+                  , binary
+    ghc-options:    -threaded
+    extensions: CPP
+                , DoAndIfThenElse
+                , UnicodeSyntax
+                , ScopedTypeVariables
+                , FlexibleInstances
+                , FlexibleContexts
+                , MultiParamTypeClasses
+                , FunctionalDependencies
+                , GeneralizedNewtypeDeriving
+
+Test-Suite message-decoding
+    type:           exitcode-stdio-1.0
+    hs-source-dirs: tests
+    main-is:        MessageDecoding.hs
+    build-depends:  base, tftp, QuickCheck
+    extensions: CPP
+                , DoAndIfThenElse
+                , UnicodeSyntax
+                , ScopedTypeVariables
+                , FlexibleInstances
+                , FlexibleContexts
+                , MultiParamTypeClasses
+                , FunctionalDependencies
+                , GeneralizedNewtypeDeriving
+
+Test-Suite protocol
+    type:           exitcode-stdio-1.0
+    hs-source-dirs: tests
+    main-is:        Protocol.hs
+    build-depends:  base, tftp, hslogger, mtl, transformers
+    extensions: CPP
+                , DoAndIfThenElse
+                , UnicodeSyntax
+                , ScopedTypeVariables
+                , FlexibleInstances
+                , FlexibleContexts
+                , MultiParamTypeClasses
+                , FunctionalDependencies
+                , GeneralizedNewtypeDeriving
+
+Test-Suite udp-io
+    type:           exitcode-stdio-1.0
+    hs-source-dirs: tests
+    main-is:        UDPIO.hs
+    build-depends:  base, tftp, hslogger, network
+    ghc-options: -threaded
+    extensions: CPP
+                , DoAndIfThenElse
+                , UnicodeSyntax
+                , ScopedTypeVariables
+                , FlexibleInstances
+                , FlexibleContexts
+                , MultiParamTypeClasses
+                , FunctionalDependencies
+                , GeneralizedNewtypeDeriving

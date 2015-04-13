@@ -1,0 +1,13 @@
+Name: predicates
+Version: 0.1
+Synopsis: A couple of convenience functions for forming predicates.
+License: BSD3
+Author: George Pollard
+Maintainer: George Pollard <porges@porg.es>
+Build-Depends: base
+Exposed-modules: Data.Function.Predicate
+Build-Type: Simple
+Category: Combinators
+Description: A couple of convenience functions for forming predicates (currently 'is', 'isn't', and 'equals'). Also my first library as a test ;)
+Extensions: UnicodeSyntax
+Cabal-Version: >= 1.2.3

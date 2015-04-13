@@ -1,0 +1,63 @@
+name:                system-lifted
+version:             0.2.0.1
+synopsis:            Lifted versions of System functions.
+description:         Lifted versions of functions provided in System.Directory,
+                     System.Environment and others.
+                     User can derive instances for EitherT, ErrorT, MaybeT, etc.
+homepage:            https://github.com/jcristovao/system-lifted
+license:             BSD3
+license-file:        LICENSE
+author:              João Cristóvão
+maintainer:          jmacristovao@gmail.com
+category:            System
+build-type:          Simple
+
+extra-source-files: README.md
+
+-- Constraint on the version of Cabal needed to build this package.
+cabal-version:       >=1.16
+
+
+library
+  exposed-modules:    System.Lifted
+                      System.Directory.Lifted
+                      System.Environment.Lifted
+                      System.Posix.User.Lifted
+  
+  other-extensions:   FlexibleInstances
+                    , FlexibleContexts
+                    , MultiParamTypeClasses
+                    , ScopedTypeVariables
+                    , FunctionalDependencies
+                    , OverlappingInstances
+                    , UndecidableInstances
+                    , TemplateHaskell
+  
+  build-depends:      base              >=4.6    && < 5.0
+                    , text              >=0.11.3 && < 1.4
+                    , transformers      >=0.3    && < 0.5
+                    , either            >=4.1    && < 4.4
+                    , template-haskell  >=2.8    && < 2.10
+                    , haskell-src-meta  >=0.6.0.4 && < 0.7
+                    , directory         >=1.2    && < 1.3
+                    , time              >= 1.4.0 && < 1.5
+                    , unix              >= 2.6   && < 2.8
+  
+  hs-source-dirs:    src
+  ghc-options:      -Wall 
+  default-language:    Haskell2010
+  
+executable main
+  main-is: main.hs
+  hs-source-dirs:   src,example
+  ghc-options:      -Wall
+  build-depends:      base              >=4.6 
+                    , text              >=0.11.3 
+                    , transformers      >=0.3 
+                    , either            >=4.1 
+                    , template-haskell  >=2.8 
+                    , haskell-src-meta  >=0.6.0.4
+                    , directory         >=1.2 
+                    , time              >= 1.4.0
+                    , unix              >= 2.6
+  default-language:    Haskell2010

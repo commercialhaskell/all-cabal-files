@@ -1,0 +1,50 @@
+name: nibblestring
+version: 0.0.1
+cabal-version: >=1.10
+build-type: Simple
+author: Jamshid
+license-file:  LICENSE
+maintainer:    jamshidnh@gmail.com
+synopsis: Packed, strict nibble arrays with a list interface (ByteString for nibbles)
+category:      Data Structures
+license: BSD3
+description:  
+    Data.NibbleString holds an array of Nibbles (4-bit values), and provides an interface similar to that in Data.ByteString.
+    Although similar to Bytestring, there are obvious differences.  The "length" of a nibblestring will be twice that of bytestring,
+    unpacking a nibblestring will result in two items per byte, etc.
+    Data.NibbleString is intended to be imported qualified.
+
+source-repository head
+  type:     git
+  location: https://github.com/jamshidh/nibblestring
+
+source-repository this
+  type:     git
+  location: https://github.com/jamshidh/nibblestring
+  branch:   master
+  tag:      v0.0.2
+ 
+library
+    default-language: Haskell98
+    build-depends: 
+                   base >= 4 && < 5
+                 , bytestring -any
+                 , base16-bytestring
+    exposed-modules:
+                   Data.NibbleString
+    ghc-options: -Wall
+    buildable: True
+    hs-source-dirs: src
+
+Test-Suite test-nibblestring
+    default-language: Haskell98
+    type:               exitcode-stdio-1.0
+    main-is:            Main.hs
+    hs-source-dirs:     test, src
+    build-depends:      base >=4 && < 5
+                    , base16-bytestring
+                    , bytestring
+                    , test-framework
+                    , test-framework-hunit
+                    , HUnit
+                    , containers

@@ -1,0 +1,27 @@
+name:           alpha
+version:        0.9.0.2
+synopsis:       A compiler for the Alpha language
+description:    Alpha is a programming language that aims at being very simple and 
+                low-level, so as to be efficient, while at the same time
+                being able to climb in abstraction through introspection
+                in the Lisp Way.
+category:       Compiler
+homepage:       http://www.alpha-lang.info/
+author:         Marc Coiffier
+maintainer:     marc.coiffier@gmail.com
+stability:      alpha
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+cabal-version:  >= 1.6
+
+source-repository head
+  type: git
+  location: git://github.com/lih/Alpha.git
+
+executable alpha
+  build-depends:  base<=4.6.0.0, unix, containers, array, mtl, bytestring, bimap, ghc-prim, directory, filepath, cereal, parsec, transformers
+  main-is:        Alpha.hs
+  other-modules:  Alpha, Compile, Compile.State, Compile.Utils, Context, Context.Language, Context.Types, Elf, ID, My.Control.Monad, My.Control.Monad.State, My.Control.Monad.TimeLine, My.Data.Graph, My.Data.List, My.Prelude, Options, PCode, PCode.Builtin, PCode.Instruction, PCode.Value, Serialize, Specialize, Specialize.Architecture, Specialize.Types, Specialize.X86, Syntax, Syntax.Parse, Translate
+  hs-source-dirs: src
+  c-sources:      src/writeElf.c

@@ -1,0 +1,21 @@
+name:                   gsl-random-fu
+version:                0.0.0.1
+stability:              provisional
+
+cabal-version:          >= 1.2
+build-type:             Simple
+
+author:                 James Cook <james.cook@usma.edu>
+maintainer:             James Cook <james.cook@usma.edu>
+license:                PublicDomain
+homepage:               http://code.haskell.org/~mokus/gsl-random-fu
+
+category:               Math
+synopsis:               Instances for using gsl-random with random-fu
+description:            Instances for using gsl-random's RNG type as a
+                        random-fu RandomSource.
+
+Library
+  hs-source-dirs:       src
+  exposed-modules:      Data.Random.Source.GSL
+  build-depends:        gsl-random, random-fu >= 0.0.1.1, base >= 3

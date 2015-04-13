@@ -1,0 +1,26 @@
+
+
+name: turni 
+version: 2011.1.15
+license: BSD3
+license-file: LICENSE
+maintainer: Paolo Veronelli <paolo.veronelli@gmail.com> 
+stability: unstable
+category: scheduling, commerce
+synopsis: shifts scheduling tool
+description:  ..
+homepage: http://wiki.github.com/paolino/turni
+copyright: Copyright (c) 2010 Paolo Veronelli 
+build-type: Simple
+cabal-version: >= 1.6
+
+
+Executable settimana
+ ghc-options: -Wall 
+ main-is: settimana.hs
+ other-modules: Generazione, Generazione.Parser, Generazione.Validazione, Riposo, Shuffle, Turni, Split 
+ build-depends: base  >=4.2 && <5   , 
+                containers,
+                random      ,
+                MonadRandom
+

@@ -1,0 +1,30 @@
+-------------------------------------------------------------------------------
+-- $Id: lava.cabal#1 2009/10/01 10:31:09 REDMOND\\satnams $
+-------------------------------------------------------------------------------
+Name:            xilinx-lava
+Version:         4.0
+License:         BSD3
+License-file:    LICENSE
+Author:          Satnam Singh
+Maintainer:      Satnam Singh <s.singh@ieee.org>
+Bug-reports:	 Satnam Singh <s.singh@ieee.org>
+Synopsis:        The Lava system for FPGA design.
+Copyright:	 Satnam Singh, 2010.
+Build-Type:      Simple
+Description:	 A libray for generating circuits for Xilinx FPGAs with layout.
+Stability:       Experimental
+Category:        Hardware
+Build-Type:      Simple
+Package-URL:     http://www.raintown.org/wiki/index.php/Lava
+cabal-version:    >= 1.6
+library {
+  build-depends:	base >= 4.0 && < 5,
+                        directory,
+                        old-time,
+                        array,
+                        mtl
+  extensions: MultiParamTypeClasses
+  exposed-modules: Lava, Xilinx, Xilinx.Adder, Xilinx.OneBitAdder, Xilinx.OneBitSubtractor, Xilinx.Subtractor, Xilinx.Comparator, Lava.Samples.TwoSorter, Lava.Samples.BatchersBitonicSorter, Lava.COmega
+Other-Modules:   Lava.Below, Lava.Beside, Lava.Bit, Lava.Classes, Lava.CombinationalSimulation, Lava.Col, Lava.Combinators, Lava.Elaborate, Lava.Gates, Lava.Instance, Lava.Netlist, Lava.Primitives, Lava.PutTreeNetlist, Lava.RPM, Lava.Row Lava.Serial, Lava.SequentialSimulation, Lava.Sim, Lava.Simulation, Lava.TypeExpr, Lava.Utils, Lava.XST_VHDL, Xilinx.Components               
+}	 
+

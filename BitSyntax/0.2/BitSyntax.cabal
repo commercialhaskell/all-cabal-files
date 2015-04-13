@@ -1,0 +1,11 @@
+Name: BitSyntax
+Version: 0.2
+License: BSD3
+Author: Adam Langley
+Homepage: http://www.imperialviolet.org/binary/bitsyntax
+Stability: experimental
+Synopsis: A module to aid in the (de)serialisation of binary data
+Build-Depends: base, QuickCheck, template-haskell
+Exposed-modules: Data.BitSyntax
+Extensions: ForeignFunctionInterface
+Description: This provides a simple function for the construction of binary data (a cross between Erlang's bit syntax and Python's struct module) as well as a Template Haskell function which deconstructs similar binary data.

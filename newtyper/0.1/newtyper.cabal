@@ -1,0 +1,22 @@
+Name:                newtyper 
+Version:             0.1
+Synopsis:            Extra functions for the Control.Newtype typeclass
+Description:         Extra functions for the Control.Newtype typeclass
+Homepage:            https://github.com/techtangents/Newtyper
+License:             BSD3
+License-file:        LICENSE
+Author:              Dylan Just
+Maintainer:          dylan@techtangents.com
+Category:            Control
+Build-type:          Simple
+Cabal-version:       >=1.2
+
+Library
+  Exposed-modules:     
+                    Control.Newtyper
+ 
+  Build-depends:    
+                    base < 5 && >= 3,
+                    Kleislify >= 0.0.4,
+                    newtype >= 0.2
+  

@@ -1,0 +1,15 @@
+name:                pointfree
+version:             1.0.2
+synopsis:            Pointfree refactoring tool
+description:         Stand-alone command-line version of the point-less plugin for lambdabot.
+license:             OtherLicense
+license-file:        LICENSE
+author:              Thomas Jäger
+homepage:            http://haskell.org/haskellwiki/Pointfree
+category:            Tool
+build-depends:       base, parsec, mtl, containers, array
+build-type:          Simple
+
+executable:          pointfree
+main-is:             Main.hs
+ghc-options:         -Wall -funbox-strict-fields -fglasgow-exts

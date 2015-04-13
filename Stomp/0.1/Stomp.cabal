@@ -1,0 +1,28 @@
+Name:                Stomp
+Version:             0.1
+Description:         Stomp is a client library for communicating with message servers through the 
+                     STOMP protocol (http://stomp.github.com/stomp-specification-1.1.html)
+License:             BSD3
+License-File:        LICENSE
+Author:              Vitaliy Rukavishnikov
+Maintainer:          virukav@gmail.com
+Homepage:            http://github.com/rukav/Stomp
+Bug-Reports:         mailto:virukav@gmail.com
+Build-Type:          Simple
+Category:            Network
+Synopsis:            Client library for Stomp brokers.
+Cabal-Version:       >=1.2
+Extra-Source-Files:  README
+                     test/Tests.hs
+                     examples/Example.hs
+Library
+  Hs-Source-Dirs:    src
+  Exposed-Modules:   Network.Stomp
+  Build-Depends:     base >= 4 && < 5,
+                     network >= 2.3.0.2,
+                     binary,
+                     time,
+                     bytestring >= 0.9,
+                     utf8-string >= 0.3.6
+                   
+                         

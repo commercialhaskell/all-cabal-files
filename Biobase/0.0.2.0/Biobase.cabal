@@ -1,0 +1,39 @@
+name:           Biobase
+version:        0.0.2.0
+author:         Christian Hoener zu Siederdissen
+maintainer:     choener@tbi.univie.ac.at
+homepage:       http://www.tbi.univie.ac.at/~choener/Haskell/
+copyright:      Christian Hoener zu Siederdissen, 2010
+category:       Bioinformatics
+synopsis:       Base library for bioinformatics
+license:        GPL-3
+license-file:   LICENSE
+build-type:     Simple
+stability:      experimental
+cabal-version:  >= 1.4.0
+description:
+                Base library for bioinformatics providing a number of im- and
+                export functions for commonly used filetypes. Provided are
+                functions and Haskell data types for RNA primary and secondary
+                structure. Otherwise, this library provides the basis for other
+                libraries to build on.
+
+
+
+library
+  build-depends:
+    array,
+    base >= 4 && < 5,
+    vector >= 0.6 && < 7,
+    primitive >= 0.3 && < 0.4,
+    PrimitiveArray >= 0.0.2.1 && < 0.0.3
+
+  exposed-modules:
+    Biobase.Constants
+    Biobase.RNA
+    Biobase.Structure
+    Biobase.Structure.DotBracket
+    Biobase.Structure.Shapes
+
+  ghc-options:
+    -O2

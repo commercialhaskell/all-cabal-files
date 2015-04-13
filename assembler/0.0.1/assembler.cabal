@@ -1,0 +1,72 @@
+name: assembler
+version: 0.0.1
+cabal-version: -any
+build-type: Simple
+license: BSD3
+license-file: LICENSE
+copyright: (c) 2010 Jeff Douglas
+maintainer: Jeff Douglas <inbuninbu@gmail.com>
+build-depends: base <=0, containers -any, ghc-binary -any,
+               parsec -any
+stability: experimental
+homepage:
+package-url:
+bug-reports:
+synopsis: Haskell Assembler
+description: An assembler framework written in Haskell.
+category: Development
+author: Jeff Douglas
+tested-with:
+data-files:
+data-dir: ""
+extra-source-files:
+extra-tmp-files:
+exposed-modules: Text.Assembler.PPC64
+exposed: True
+buildable: True
+build-tools:
+cpp-options:
+cc-options:
+ld-options:
+pkgconfig-depends:
+frameworks:
+c-sources:
+extensions:
+extra-libraries:
+extra-lib-dirs:
+includes:
+install-includes:
+include-dirs:
+hs-source-dirs: src
+other-modules:
+ghc-prof-options:
+ghc-shared-options:
+ghc-options:
+hugs-options:
+nhc98-options:
+jhc-options:
+ 
+executable: has
+main-is: Main.hs
+buildable: True
+build-tools:
+cpp-options:
+cc-options:
+ld-options:
+pkgconfig-depends:
+frameworks:
+c-sources:
+extensions:
+extra-libraries:
+extra-lib-dirs:
+includes:
+install-includes:
+include-dirs:
+hs-source-dirs: src
+other-modules:
+ghc-prof-options:
+ghc-shared-options:
+ghc-options:
+hugs-options:
+nhc98-options:
+jhc-options:

@@ -1,0 +1,27 @@
+Name:                language-guess
+Version:             0.1
+Synopsis:            Guess at which human language a text is written in.
+Description:         Guess at which human language a text is written in,
+                     based on the PEAR module Text_LanguageDetect.
+License:             BSD3
+License-file:        LICENSE
+Author:              Christian Rødli Amble
+Maintainer:          cra+code@cra.no
+Category:            Language
+Build-type:          Simple
+Extra-Source-Files:  php2hs.php
+Data-files:          lang.dat
+Cabal-version:       >=1.6
+
+Source-Repository head
+  Type:              git
+  Location:          git://egovmon.no/language-guess
+
+Library
+  Other-Modules:     Paths_language_guess
+  Exposed-modules:   Language.Guess
+  Build-depends:     base ==4.*, cereal ==0.3.*, bytestring ==0.9.*,
+                     containers
+  if impl(ghc < 7.0.0)
+    Build-depends:     utility-ht -any
+  Extensions:        CPP

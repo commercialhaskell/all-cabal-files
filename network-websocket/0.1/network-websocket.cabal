@@ -1,0 +1,15 @@
+Name:		network-websocket
+Synopsis: 	WebSocket library
+Version:	0.1
+Cabal-Version:	>= 1.2
+License:	BSD3
+License-File:   LICENSE
+Author:		Michael Melanson <michael@michaelmelanson.net>
+Maintainer:     Michael Melanson <michael@michaelmelanson.net>
+Category:	Network
+Build-Type:	Simple
+
+Library
+  Build-Depends:	base >= 2 && < 4, network, haskell98
+  Exposed-Modules:	Network.Websocket
+

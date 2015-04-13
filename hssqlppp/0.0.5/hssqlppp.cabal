@@ -1,0 +1,88 @@
+Name:                hssqlppp
+Version:             0.0.5
+Synopsis:            Sql parser, pretty printer and type checker
+Description:         Sql parser, pretty printer and type checker, targets PostGreSQL SQL and PL/pgSQL, uses Parsec and UUAGC.
+License:             BSD3
+License-file:        LICENSE
+Author:              Jake Wheat
+Maintainer:          jakewheatmail@gmail.com
+Build-Type:          Simple
+Cabal-Version:       >=1.2
+copyright:           Copyright 2009 Jake Wheat
+stability:           pre-alpha
+homepage:            https://launchpad.net/hssqlppp
+bug-reports:         mailto:jakewheatmail@gmail.com
+category:            Database
+
+extra-source-files:  README,
+                     TODO,
+                     development,
+                     questions,
+                     usage,
+                     LICENSE,
+                     Database/HsSqlPpp/Ast.ag
+                     Database/HsSqlPpp/TypeChecking.ag
+                     Database/HsSqlPpp/DefaultScopeEmpty.hs
+
+Library
+  Build-Depends:     base >= 3 && < 5,
+                     mtl,
+                     parsec >= 3,
+                     pretty,
+                     containers
+  Exposed-modules:   Database.HsSqlPpp.Ast,
+                     Database.HsSqlPpp.DefaultScope,
+                     Database.HsSqlPpp.Lexer,
+                     Database.HsSqlPpp.ParseErrors,
+                     Database.HsSqlPpp.Parser,
+                     Database.HsSqlPpp.PrettyPrinter,
+                     Database.HsSqlPpp.Scope,
+                     Database.HsSqlPpp.ScopeReader
+
+Executable HsSqlSystem
+  Main-is:           HsSqlSystem.lhs
+  Build-Depends:     base,
+                     haskell98,
+                     regex-posix,
+                     HDBC,
+                     HDBC-postgresql,
+                     directory
+  Other-Modules:     Database.HsSqlPpp.Ast,
+                     Database.HsSqlPpp.AstUtils,
+                     Database.HsSqlPpp.DatabaseLoader,
+                     Database.HsSqlPpp.DBAccess,
+                     Database.HsSqlPpp.DefaultScope,
+                     Database.HsSqlPpp.Lexer,
+                     Database.HsSqlPpp.ParseErrors,
+                     Database.HsSqlPpp.Parser,
+                     Database.HsSqlPpp.PrettyPrinter,
+                     Database.HsSqlPpp.Scope,
+                     Database.HsSqlPpp.ScopeReader,
+                     Database.HsSqlPpp.TypeCheckingH,
+                     Database.HsSqlPpp.TypeConversion,
+                     Database.HsSqlPpp.TypeType
+
+Executable HsSqlPppTests
+  Main-is:           HsSqlPppTests.lhs
+  Build-Depends:     base,
+                     HUnit,
+                     test-framework,
+                     test-framework-hunit
+
+  Other-Modules:     Database.HsSqlPpp.AstCheckTests,
+                     Database.HsSqlPpp.Ast,
+                     Database.HsSqlPpp.AstUtils,
+                     Database.HsSqlPpp.DatabaseLoader,
+                     Database.HsSqlPpp.DatabaseLoaderTests,
+                     Database.HsSqlPpp.DBAccess,
+                     Database.HsSqlPpp.DefaultScope,
+                     Database.HsSqlPpp.Lexer,
+                     Database.HsSqlPpp.ParseErrors,
+                     Database.HsSqlPpp.Parser,
+                     Database.HsSqlPpp.ParserTests,
+                     Database.HsSqlPpp.PrettyPrinter,
+                     Database.HsSqlPpp.Scope,
+                     Database.HsSqlPpp.ScopeReader,
+                     Database.HsSqlPpp.TypeCheckingH,
+                     Database.HsSqlPpp.TypeConversion,
+                     Database.HsSqlPpp.TypeType

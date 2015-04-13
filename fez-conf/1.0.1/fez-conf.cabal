@@ -1,0 +1,21 @@
+name:                fez-conf
+version:             1.0.1
+cabal-version:       >= 1.2
+build-type:          Simple
+license:             BSD3
+license-file:        LICENSE
+copyright:           2009 Dino Morelli 
+author:              Dino Morelli 
+maintainer:          Dino Morelli <dino@ui3.info>
+stability:           experimental
+homepage:            http://ui3.info/d/proj/fez-conf.html
+synopsis:            Simple functions for loading config files
+description:         Simple functions for loading config files
+category:            Parsing
+tested-with:         GHC>=6.10.1
+
+library
+   build-depends:    base >= 3 && < 5, containers, regex-compat
+   exposed-modules:  Fez.Data.Conf
+   ghc-options:      -Wall
+   hs-source-dirs:   src

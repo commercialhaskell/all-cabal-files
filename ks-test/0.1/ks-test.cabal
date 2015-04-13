@@ -1,0 +1,32 @@
+name:                   ks-test
+version:                0.1
+stability:              provisional
+
+cabal-version:          >= 1.6
+build-type:             Simple
+
+author:                 James Cook <mokus@deepbondi.net>
+maintainer:             James Cook <mokus@deepbondi.net>
+license:                PublicDomain
+
+category:               Math, Numerical
+synopsis:               Kolmogorov distribution and Kolmogorov-Smirnov test.
+description:            Kolmogorov distribution and Kolmogorov-Smirnov test.
+
+tested-with:            GHC == 6.10.4,
+                        GHC == 6.12.1, GHC == 6.12.3
+
+source-repository head
+  type: darcs
+  location: http://code.haskell.org/~mokus/ks-test
+
+Library
+  hs-source-dirs:       src
+  exposed-modules:      Data.Random.Distribution.Kolmogorov
+                        Math.Statistics.KSTest
+  other-modules:        Numeric.LinearAlgebra
+  build-depends:        base >= 3 && <5, 
+                        gamma, 
+                        random-fu >= 0.1 && < 0.3, 
+                        roots, 
+                        vector

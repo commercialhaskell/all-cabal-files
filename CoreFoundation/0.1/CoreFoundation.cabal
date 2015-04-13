@@ -1,0 +1,83 @@
+Name:                CoreFoundation
+Version:             0.1
+Synopsis:            Bindings to Mac OSX's CoreFoundation framework
+Description:         Bindings to Mac OSX's CoreFoudnation framework
+License:             BSD3
+License-file:        LICENSE
+Author:              Reiner Pope
+Maintainer:          reiner.pope@gmail.com
+homepage:            https://github.com/reinerp/CoreFoundation
+bug-reports:         https://github.com/reinerp/CoreFoundation/issues
+-- Copyright:
+Category:            System
+Build-type:          Simple
+Extra-source-files:
+  cbits/cbits.h
+Cabal-version:       >=1.6
+
+source-repository head
+  type:                 git
+  location:             git://github.com/reinerp/CoreFoundation.git
+
+Library
+  Exposed-modules:
+     CoreFoundation.Types.Base
+     CoreFoundation.Types.String
+     CoreFoundation.Types.Data
+     CoreFoundation.Types.Type
+     CoreFoundation.Types.Array
+     CoreFoundation.Types.Dictionary
+     CoreFoundation.Types.Date
+     CoreFoundation.Types.Boolean
+     CoreFoundation.Types.Number
+     CoreFoundation.Types.PropertyList
+     CoreFoundation.Types
+     CoreFoundation.Marshal
+     CoreFoundation.Preferences
+     CoreFoundation.URI
+  Frameworks:
+     CoreFoundation
+
+  Extensions:
+     ForeignFunctionInterface,
+     TypeFamilies,
+     GeneralizedNewtypeDeriving,
+     EmptyDataDecls,
+     ScopedTypeVariables,
+     ViewPatterns,
+     FlexibleInstances,
+     FlexibleContexts,
+     MultiParamTypeClasses,
+     DeriveDataTypeable,
+     OverloadedStrings
+
+
+  Build-depends:
+     base < 5,
+     bytestring >= 0.9 && < 0.10,
+     containers < 0.5,
+     text >= 0.7 && <0.12,
+     vector >= 0.5 && < 0.10,
+     time < 1.5,
+     tagged == 0.2.*,
+     transformers == 0.2.*,
+     property-list >= 0.0.1 && < 0.2,
+     network < 2.4,
+     filepath < 1.4,
+     deepseq >= 1.1 && < 1.4
+
+  Build-tools:
+    c2hs
+
+  Include-dirs:
+    cbits
+  C-Sources:
+    cbits/cbits.c
+
+  Ghc-options:
+    -funbox-strict-fields
+
+  Other-modules:
+    C2HS
+    CoreFoundation.Types.Array.Internal
+  -- Build-tools:

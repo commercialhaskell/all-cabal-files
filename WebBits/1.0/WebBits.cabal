@@ -1,0 +1,39 @@
+Name:           WebBits
+Version:        1.0
+Cabal-Version:	>= 1.2.3
+Copyright:      Copyright (c) 2007-2009 Arjun Guha and Spiridon Eliopoulos
+License:        BSD3
+License-file:   LICENSE
+Author:         Arjun Guha, Spiridon Eliopoulos
+Maintainer:     Arjun Guha <arjun@cs.brown.edu>
+Homepage:       http://www.cs.brown.edu/research/plt/
+Stability:      provisional
+Category:       Language
+Build-Type:     Custom
+Synopsis:       JavaScript analysis tools
+Description:
+
+	WebBits is a collection of libraries for working with JavaScript.
+ 
+Library
+  Hs-Source-Dirs:
+    src
+  Build-Depends:
+    base >= 4 && < 5,
+    mtl >= 1.1.0.1,
+    parsec < 3.0.0,
+    pretty >= 0.1,
+    containers >= 0.1,
+    syb >= 0.1
+  ghc-options:
+    -fwarn-incomplete-patterns
+  Extensions:     
+    Generics DeriveDataTypeable
+  Exposed-Modules:
+    BrownPLT.JavaScript 
+    BrownPLT.JavaScript.Instances
+    BrownPLT.JavaScript.Lexer 
+    BrownPLT.JavaScript.Parser
+    BrownPLT.JavaScript.PrettyPrint
+    BrownPLT.JavaScript.Syntax 
+    BrownPLT.JavaScript.Environment

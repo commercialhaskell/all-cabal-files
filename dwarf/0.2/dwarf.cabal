@@ -1,0 +1,20 @@
+Name:          dwarf
+Version:       0.2
+License:       BSD3
+License-file:  LICENSE
+Category:      Data
+Author:        Erik Charlebois
+Copyright:     Erik Charlebois
+Maintainer:    Erik Charlebois <erikcharlebois@gmail.com>
+Stability:     unstable
+Cabal-Version: >= 1.2
+Build-Depends: base
+Build-Type:    Custom
+Synopsis:      Parser for DWARF debug format.
+Description:   Parser for DWARF debug format.
+Data-Files:    tests/Test.hs
+
+library
+    build-depends:   base >= 2 && < 5, bytestring, containers, binary
+    hs-source-dirs:  src
+    exposed-modules: Data.Dwarf

@@ -1,0 +1,44 @@
+name:          void
+category:      Data Structures
+version:       0.5.12
+x-revision: 1
+license:       BSD3
+cabal-version: >= 1.6
+license-file:  LICENSE
+author:        Edward A. Kmett
+maintainer:    Edward A. Kmett <ekmett@gmail.com>
+stability:     portable
+homepage:      http://github.com/ekmett/void
+bug-reports:   http://github.com/ekmett/void/issues
+copyright:     Copyright (C) 2008-2012 Edward A. Kmett
+synopsis:      A Haskell 98 logically uninhabited data type
+description:   A Haskell 98 logically uninhabited data type, used to indicate that a given term should not exist.
+build-type:    Simple
+
+extra-source-files: .travis.yml CHANGELOG.markdown README.markdown
+
+source-repository head
+  type: git
+  location: git://github.com/ekmett/void.git
+
+flag safe
+  manual: True
+  default: False
+
+library
+  exposed-modules:
+    Data.Void
+    Data.Void.Unsafe
+
+  build-depends:
+    base       >= 3 && < 4.8,
+    semigroups >= 0.8.2
+
+  ghc-options: -Wall
+
+  if flag(safe)
+    cpp-options: -DSAFE
+
+  if impl(ghc)
+    extensions: DeriveDataTypeable
+    cpp-options: -DLANGUAGE_DeriveDataTypeable

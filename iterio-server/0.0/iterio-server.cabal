@@ -1,0 +1,32 @@
+Name:           iterio-server
+Version:        0.0
+build-type:     Simple
+License:        BSD3
+License-File:   LICENSE
+Homepage:       https://github.com/alevy/iterio-server
+Author:         Amit Levy
+Maintainer:     Amit Levy <levya at cs.stanford dot edu>
+Stability:      experimental
+Synopsis:       Library for building servers with IterIO
+Category:       Network, Enumerator
+Cabal-Version:  >= 1.6
+
+Description:
+  This module contains a set of generic building blocks for building servers with IterIO.
+
+Source-repository head
+  Type: git
+  Location: git://github.com/alevy/iterio-server.git
+
+Library
+  Build-Depends: base >= 4 && < 5,
+                 bytestring >= 0.9 && < 1,
+                 ListLike >= 3 && < 4,
+                 monadIO >= 0.10 && < 0.20,
+                 iterIO >= 0.2 && < 0.3,
+                 network >= 2.3 && < 2.4
+
+  ghc-options: -Wall
+
+  Exposed-modules:
+    Data.IterIO.Server.TCPServer

@@ -1,0 +1,22 @@
+name:                GeomPredicates
+version:             0.1
+synopsis:            Geometric predicates 
+description:         Exact computation of common geometric predicates. 
+category:            Math
+license:             BSD3
+license-file:        LICENSE
+author:              Neal Alexander
+maintainer:          NHAlxr@gmail.com
+Build-Type:          Simple
+Cabal-Version:       >=1.6
+   
+Library
+  Build-Depends:     base >= 3 && < 5
+  Exposed-modules:   Numeric.Geometric.Predicates.Rational, Numeric.Geometric.Primitives  
+  ghc-options:       -Wall 
+
+source-repository head
+  type:     darcs
+  location: http://code.haskell.org/~hexpuem/GeomPredicates
+
+       

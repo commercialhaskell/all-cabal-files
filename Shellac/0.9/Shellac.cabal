@@ -1,0 +1,43 @@
+Name:           Shellac
+Version:        0.9
+License:        BSD3
+License-File:   LICENSE
+Author:         Robert Dockins
+Maintainer:     robdockins AT fastmail DOT fm
+Category:       User Interfaces
+Stability:      Beta
+Synopsis:       A framework for creating shell envinronments
+Description:
+  Shellac is a framework for building read-eval-print style shells.  
+  Shells are created by declaratively defining a set of shell commands
+  and an evaluation function.  Shellac supports multiple shell backends,
+  including a 'basic' backend which uses only Haskell IO primitives and
+  a full featured 'readline' backend based on the the Haskell readline
+  bindings found in the standard libraries.
+  This library attempts to allow users to write shells at a high level
+  and still enjoy the advanced features that may be available from a
+  powerful line editing package like readline.
+Hs-Source-Dirs:
+   src
+Build-Depends:
+   base >= 1.0,
+   haskell98 >= 1.0,
+   mtl >= 1.0
+Extensions:
+   MultiParamTypeClasses
+   FunctionalDependencies
+   ExistentialQuantification
+   CPP
+   UndecidableInstances
+Exposed-modules:
+   System.Console.Shell
+   System.Console.Shell.Backend
+   System.Console.Shell.Backend.Basic
+   System.Console.Shell.ShellMonad
+Other-modules:
+   System.Console.Shell.Regex
+   System.Console.Shell.PPrint
+   System.Console.Shell.Types
+   System.Console.Shell.RunShell
+   System.Console.Shell.Commands
+   System.Console.Shell.ConsoleHandler

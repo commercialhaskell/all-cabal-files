@@ -1,0 +1,63 @@
+Name:            mp3decoder
+Version:         0.0.1
+Synopsis:        MP3 decoder for teaching.
+Description:
+  This is an MP3 decoder written (almost) completely in Haskell. 
+  The current version is experimental software, written for 
+  teaching purposes, and is currently too slow to be usable in 
+  practice. For the accompanying article, se www.bjrn.se/mp3dec
+
+Copyright:       Bjorn Edstrom, 2008
+Author:          Bjorn Edstrom
+Maintainer:      be@bjrn.se
+Homepage:        http://www.bjrn.se/mp3dec
+License:         OtherLicense
+License-file:    LICENSE
+
+Category:        Codec
+Stability:       experimental
+Build-type:      Simple
+Cabal-version:   >= 1.2
+
+Extra-source-files: README,
+                    Codec/Audio/MP3/c_synth.h,
+                    Codec/Audio/MP3/c_imdct.h
+
+-- Comment out for library.
+
+--Library
+--  Build-depends:   base, bytestring, mtl, binary-strict
+--  Exposed-modules: Codec.Audio.MP3.Decoder
+--  Other-modules:   Codec.Audio.MP3.Types,
+--                   Codec.Audio.MP3.Huffman,
+--                   Codec.Audio.MP3.SynthesisFilterBank,
+--                   Codec.Audio.MP3.Tables,
+--                   Codec.Audio.MP3.Unpack,
+--                   Codec.Audio.MP3.IMDCT,
+--                   Codec.Audio.MP3.HybridFilterBank
+--                   
+--  hs-source-dirs:  .
+--  c-sources:       Codec/Audio/MP3/c_synth.c,
+--                   Codec/Audio/MP3/c_imdct.c
+--  cc-options:      -O2
+--  ghc-options:     -O2
+
+Executable mp3driver
+   build-depends:   base, bytestring, mtl, binary-strict, haskell98
+   Main-Is:         Driver.hs
+   hs-source-dirs:  example, .
+   Other-Modules:   Codec.Audio.MP3.Decoder
+                    Codec.Audio.MP3.Types,
+                    Codec.Audio.MP3.Huffman,
+                    Codec.Audio.MP3.SynthesisFilterBank,
+                    Codec.Audio.MP3.Tables,
+                    Codec.Audio.MP3.Unpack,
+                    Codec.Audio.MP3.IMDCT,
+                    Codec.Audio.MP3.HybridFilterBank
+                    PCMWriter
+   c-sources:       Codec/Audio/MP3/c_synth.c,
+                    Codec/Audio/MP3/c_imdct.c
+   cc-options:      -O2
+   ghc-options:     -O2
+
+

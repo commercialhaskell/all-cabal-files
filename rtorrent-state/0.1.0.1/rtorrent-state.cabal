@@ -1,0 +1,52 @@
+name:                rtorrent-state
+version:             0.1.0.1
+synopsis:            Parsing and manipulation of rtorrent state file contents
+description:         Parsing and manipulation of rtorrent state file contents
+homepage:            http://github.com/Fuuzetsu/rtorrent-state
+license:             GPL-3
+license-file:        LICENSE
+author:              Mateusz Kowalczyk
+maintainer:          fuuzetsu@fuuzetsu.co.uk
+copyright:           (c) Mateusz Kowalczyk, 2014
+category:            Data
+build-type:          Simple
+cabal-version:       >=1.10
+
+library
+  exposed-modules:     Data.Rtorrent.StateFile
+                       Data.Rtorrent.StateFile.Types
+  build-depends:       base >=4.5 && <5.0, bencoding, utf8-string,
+                       lens, directory, bytestring, filepath, containers
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+
+test-suite spec
+  type:             exitcode-stdio-1.0
+  default-language: Haskell2010
+  main-is:          Spec.hs
+  hs-source-dirs:   test
+
+  ghc-options: -Wall
+
+  cpp-options:
+      -DTEST
+
+  other-modules:
+      Data.Rtorrent.StateFileSpec
+
+  build-depends:
+      base
+    , bencoding
+    , bytestring
+    , containers
+    , directory
+    , filepath
+    , hspec
+    , rtorrent-state
+    , temporary
+    , utf8-string
+    , QuickCheck == 2.*
+
+source-repository head
+  type:     git
+  location: https://github.com/Fuuzetsu/rtorrent-state.git

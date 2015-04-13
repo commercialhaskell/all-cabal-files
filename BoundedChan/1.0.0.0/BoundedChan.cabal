@@ -1,0 +1,20 @@
+name:       BoundedChan
+category:   Concurrency
+version:    1.0.0.0
+license:    BSD3
+author:     Adam Wick <awick@galois.com>
+maintainer: Adam Wick <awick@galois.com>
+stability:  stable
+build-type: Simple
+cabal-version: >= 1.6
+tested-with: GHC ==6.10
+synopsis:      Implementation of bounded Chans.
+description:   This library introduces BoundedChan. BoundedChan works exactly
+               like Chan -- and, indeed, has the exact same interface -- but
+               is guaranteed to operate in a bounded amount of space.
+
+Library
+  build-depends: base >= 3, array
+  exposed-modules: Control.Concurrent.BoundedChan
+  GHC-Options: -O2 -Wall -funbox-strict-fields
+

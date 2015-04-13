@@ -1,0 +1,32 @@
+Name:                biosff
+Version:             0.1
+Synopsis:            Library and executables for working with SFF files
+Description:         The library contains the functionality for reading and writing
+		     SFF files (sequencing data from 454 and Ion Torrent).  It duplicates
+		     code from (and is incompatible with) the "bio" library.
+Homepage:            http://biohaskell.org/
+License:             LGPL
+Author:              Ketil Malde
+Maintainer:          ketil@malde.org
+Stability:           Experimental
+Category:            Bioinformatics
+Build-type:          Simple
+Cabal-version:       >=1.2
+
+Library
+  Exposed-modules: Bio.Sequence.SFF
+  Other-modules:   Bio.Sequence.SFF_name, Bio.Sequence.SFF_filters
+  Build-depends:   base >= 3 && < 5, biocore >= 0.1, binary < 0.5, bytestring, array
+  Hs-Source-Dirs:  src
+  Ghc-Options:     -Wall
+
+Executable flower
+  Main-Is:         Main.hs
+  Other-Modules:   Fork, Options, Metrics, Print
+  Build-Depends:   base >= 3 && < 5, cmdargs, mtl >= 2
+  Hs-Source-Dirs:  src, src/Flower
+  Ghc-Options:     -Wall
+
+-- Executable flowt
+
+-- Executable flowselect  

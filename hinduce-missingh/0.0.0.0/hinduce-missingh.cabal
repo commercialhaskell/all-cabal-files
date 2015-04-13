@@ -1,0 +1,17 @@
+Name:           hinduce-missingh
+Version:        0.0.0.0
+License:        BSD3
+Author:         Robert Hensing
+Maintainer:     hackage@roberthensing.nl
+Homepage:       https://github.com/roberth/hinduce-missingh
+Synopsis:       Utility functions
+Description:    Extends base with all sorts of utility functions. Very easy, useful and portable
+Build-Type:     Simple
+Category:       Utility
+Cabal-Version:  >= 1.2
+
+Library
+    Build-Depends:      base >= 4 && < 5
+    Exposed-Modules:    Data.List.HIUtils
+                        , Data.String.HIUtils
+    Hs-Source-Dirs:     src

@@ -1,0 +1,15 @@
+Name:          pointedlist
+Version:       0.0.1
+Synopsis:      A zipper-like comonad which works as a list, tracking a position.
+Category:      Data
+Description:
+    A PointedList tracks the position in a non-empty list which works similarly
+    to a zipper. A current item is always required, and therefore the list may
+    never be empty.
+License:       BSD3
+License-file:  LICENSE
+Author:        Jeff Wheeler
+Maintainer:    jeffwheeler@gmail.com
+Build-type:    Simple
+Build-depends: base>=4
+Exposed-modules: Data.List.PointedList

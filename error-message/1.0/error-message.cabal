@@ -1,0 +1,31 @@
+Name:           error-message
+Version:        1.0
+Cabal-Version:  >= 1.6
+License:        BSD3
+License-File:   LICENSE
+Author:         Gregory Crosswhite
+Copyright:      (c) 2009 Gregory Crosswhite
+Maintainer:     gcross@phys.washington.edu
+Stability:      stable
+Homepage:       http://github.com/gcross/error-message
+Category:       Distribution
+Synopsis:       Composable error messages.
+Build-Type:     Simple
+Description:
+    This philosophy behind this package is that it is often better to find
+    out all of the errors that have occured in a computation and report them
+    simultaneously, rather than aborting as soon as the first error is
+    encountered.  Towards this end, this module supplies a type of
+    /combinable error messages/ so that all of the errors from subcomputations
+    can be gathered and presented together.
+Extra-Source-Files: tests/runtests.hs
+
+Library
+    Exposed:            True
+    Exposed-Modules:    Data.ErrorMessage
+    Build-Depends:      base == 4.*,
+                        mtl == 1.*,
+                        containers == 0.2.*,
+                        either-unwrap >= 1.1 && < 2,
+                        InfixApplicative == 1.*,
+                        ansi-wl-pprint == 0.5.*

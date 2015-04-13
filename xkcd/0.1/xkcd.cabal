@@ -1,0 +1,23 @@
+Name:             xkcd
+Version:          0.1
+Description:      Downloads the most recent xkcd comic into a folder on a disk.
+Synopsis:         Downloads the most recent xkcd comic.
+License:          BSD3
+Homepage:         http://github.com/sellweek/xkcd
+category:         Application
+License-file:     LICENSE
+Author:           Róbert Selvek
+Maintainer:       robert.selvek@gmail.com
+Cabal-Version:    >= 1.6
+Build-Type:       Simple
+
+Executable xkcd
+  Main-is:        main.hs
+  Build-Depends:  base >= 4 && < 5, HTTP >= 4000.1.2, tagsoup >= 0.12.6, 
+    bytestring >= 0.9, network >= 2.3, haskell98 >= 1.1, directory >= 1.1, filepath >= 1.2
+  Hs-Source-Dirs: src
+  ghc-options:    -Wall
+
+source-repository head
+  type:     git
+  location: git://github.com/sellweek/xkcd.git

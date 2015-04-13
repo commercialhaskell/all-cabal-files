@@ -1,0 +1,23 @@
+name:            yesod-json
+version:         1.2.0
+license:         MIT
+license-file:    LICENSE
+author:          Michael Snoyman <michael@snoyman.com>
+maintainer:      Michael Snoyman <michael@snoyman.com>
+synopsis:        Generate content for Yesod using the aeson package. (deprecated)
+category:        Web, Yesod
+stability:       Stable
+cabal-version:   >= 1.8
+build-type:      Simple
+homepage:        http://www.yesodweb.com/
+description:     Since version 1.2 of Yesod, the functionality provided by this module is provided by yesod-core itself. You no longer need to use this package.
+
+library
+    build-depends:   base                  >= 4        && < 5
+                   , yesod-core            >= 1.2
+    exposed-modules: Yesod.Json
+    ghc-options:     -Wall
+
+source-repository head
+  type:     git
+  location: https://github.com/yesodweb/yesod

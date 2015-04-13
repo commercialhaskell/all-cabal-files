@@ -1,0 +1,30 @@
+Name:            MonadCatchIO-transformers
+Version:         0.3.0.0
+x-revision: 1
+Cabal-Version:   >= 1.6
+License:         BSD3
+License-file:    LICENSE
+Description:
+  Provides functions to throw and catch exceptions. Unlike the functions from
+  @Control.Exception@, which work in @IO@, these work in any stack of monad
+  transformers (from the 'transformers' package) with @IO@ as the base monad.
+  You can extend this functionality to other monads, by creating an instance
+  of the @MonadCatchIO@ class.
+Maintainer:      ariep@xs4all.nl
+Category:        Control
+Synopsis:        Monad-transformer compatible version of the Control.Exception module
+Build-Type:      Simple
+
+Source-repository head
+  Type:     darcs
+  Location: http://patch-tag.com/r/AriePeterson/MonadCatchIO-transformers
+
+Library
+  Build-Depends:
+    base < 4.7,
+    extensible-exceptions == 0.1.*,
+    transformers >= 0.2 && < 0.4
+  Exposed-Modules:
+    Control.Monad.CatchIO
+  Hs-Source-Dirs:  src
+  Ghc-options:     -Wall

@@ -1,0 +1,59 @@
+name:                     foldl-incremental
+version:                  0.1.0.0
+synopsis:                 incremental folds 
+author:                   Tony Day
+Maintainer:               tonyday
+license:                  MIT
+license-File:             LICENSE
+copyright:                Copyright (c) Tony Day 2014
+author:                   Tony Day
+category:                 Control,Statistics
+build-type:               Simple
+stability:                Experimental
+cabal-version:            >= 1.10
+extra-source-files:       README.markdown
+synopsis:                 incremental folds
+description:
+    `foldl-incremental` allows you to create incremental folds and scans such as moving averages or moving deviations.
+    .
+    It supplies `Incremental` which represents a state of an exponential moving average calculation, and `incrementalize`, which turns functions into suitable step functions.
+
+Homepage:                 https://github.com/tonyday567/foldl-incremental
+bug-reports:              https://github.com/tonyday567/foldl-incremental/issues
+tested-With:              GHC==7.6.3
+source-repository         head
+  type:                   git
+  location:               git://github.com/tonyday567/foldl-incremental.git
+
+library
+  exposed-modules:        Control.Foldl.Incremental
+
+  build-depends:          base >= 4 && < 5,
+                          foldl >= 1.0.3 && < 2
+                          
+  default-language:       Haskell2010
+  hs-source-dirs:         src
+
+test-suite test
+  type:                   exitcode-stdio-1.0
+  main-is:                test.hs
+  default-language:       Haskell2010
+  hs-source-dirs:         src, test
+  build-depends:          base >= 4 && < 5,
+                          bytestring >= 0.10.0.2,
+                          foldl >= 1.0.3 && < 2,
+                          tasty >= 0.7 && < 1,
+                          tasty-golden >= 2.2.0.2 && < 3,
+                          tasty-quickcheck >= 0.8,
+                          tasty-hunit >= 0.4.1 && < 5,
+                          foldl-incremental >= 0.1.0.0
+
+benchmark bench
+  type:                   exitcode-stdio-1.0
+  main-is:                bench.hs
+  default-language:       Haskell2010
+  hs-source-dirs:         test
+  build-depends:          base >= 4 && < 5,
+                          foldl >= 1.0.3 && < 2,
+                          criterion >= 0.10.0.0,
+                          foldl-incremental >= 0.1.0.0

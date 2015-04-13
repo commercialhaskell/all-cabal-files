@@ -1,0 +1,20 @@
+Name:                hxthelper
+Version:             0.2.2
+Synopsis:            Helper functions for HXT
+License:             LGPL
+License-file:        LICENSE
+Author:              David Leuschner, Stefan Wehr
+Maintainer:          David Leuschner <leuschner@openfactis.org>
+Category:            XML
+Description:         Helper functions for HXT including pure parsing and serialization
+                     functions, easier pickling of sum-types, ensuring all XML content
+                     is parsed during unpickling.
+Build-Type:          Custom
+Cabal-Version:       >= 1.6
+
+Library
+  Hs-Source-Dirs:    src
+  GHC-Options:       -W -fno-warn-unused-imports -fno-warn-orphans
+                     -fno-warn-unused-binds -fno-warn-unused-matches
+  Build-Depends:     base >= 4 && < 5, hxt >= 8.3 && < 8.6, bytestring, mtl, encoding == 0.6.*
+  Exposed-Modules:   Text.XML.HXT.Helper

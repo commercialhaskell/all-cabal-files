@@ -1,0 +1,23 @@
+Name:                reflection-without-remorse
+Version:             0.9.1
+Synopsis:	         Efficient free and operational monads. 
+Description:         Free and operational monads that efficiently support alternating between building and observing.
+License:             BSD3
+License-file:        LICENSE
+Author:              Atze van der Ploeg
+Maintainer:          atzeus@gmail.com
+Homepage:            https://github.com/atzeus/reflection-without-remorse
+Build-Type:          Simple
+Cabal-Version:       >=1.6
+Data-files:          ChangeLog
+Category:            Control, Monads
+Tested-With:         GHC==7.6.3
+Library
+  Build-Depends: base >= 2 && <= 6, type-aligned
+  Exposed-modules: Control.Monad.Free.Reflectable, Control.Monad.Operational.Reflectable
+
+  Extensions:	 GADTs, TypeSynonymInstances,FlexibleInstances, ViewPatterns, TypeOperators
+
+source-repository head
+    type:     git
+    location:  https://github.com/atzeus/reflection-without-remorse

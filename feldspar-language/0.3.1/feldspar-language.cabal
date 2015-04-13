@@ -1,0 +1,64 @@
+name:           feldspar-language
+version:        0.3.1
+synopsis:       A functional embedded language for DSP and parallelism
+description:    Feldspar (Functional Embedded Language for DSP and PARallelism)
+                is an embedded DSL for describing digital signal processing
+                algorithms. This package contains the language front-end and an
+                interpreter.
+category:       Language
+copyright:      Copyright (c) 2009-2010, ERICSSON AB
+author:         Functional programming group at Chalmers University of Technology
+maintainer:     Emil Axelsson <emax@chalmers.se>
+license:        BSD3
+license-file:   LICENSE
+stability:      experimental
+homepage:       http://feldspar.inf.elte.hu/feldspar/
+build-type:     Simple
+cabal-version:  >= 1.6
+tested-with:    GHC==6.10.*
+
+data-files:
+  examples/Memocode2010.hs
+
+library
+  exposed-modules:
+    Feldspar.Prelude
+    Feldspar.Utils
+    Feldspar.Haskell
+    Feldspar.Range
+    Feldspar.Core.Types
+    Feldspar.Core.Ref
+    Feldspar.Core.Expr
+    Feldspar.Core.Graph
+    Feldspar.Core.Show
+    Feldspar.Core.Reify
+    Feldspar.Core.Functions
+    Feldspar.Core.Trace
+    Feldspar.Core
+    Feldspar.Vector
+    Feldspar.Matrix
+    Feldspar.FixedPoint
+    Feldspar.Stream
+    Feldspar
+
+  build-depends:
+    base >= 4 && < 4.3,
+    containers,
+    mtl,
+    random,
+    QuickCheck >= 2 && < 3
+
+  extensions:
+    FlexibleInstances
+    FlexibleContexts
+    GADTs
+    MultiParamTypeClasses
+    NoMonomorphismRestriction
+    OverlappingInstances
+    PatternGuards
+    Rank2Types
+    ScopedTypeVariables
+    TypeFamilies
+    TypeOperators
+    TypeSynonymInstances
+    UndecidableInstances

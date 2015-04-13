@@ -1,0 +1,15 @@
+Name:		numbers
+Version:	2007.4.29
+License:	BSD3
+Author:		Lennart Augustsson
+Maintainer:	Lennart Augustsson
+Category:	Data, Math
+Synopsis:	Various number types
+Description:	Instances of the numerical classes for a variety of
+		different numbers: (computable) real numbers, arbitrary
+		precion fixed numbers, differentiable numbers, symbolic numbers.
+Build-Depends:	base
+Exposed-modules:	Data.Number.Symbolic Data.Number.Dif
+			Data.Number.CReal Data.Number.Fixed
+			Data.Number.Interval
+Other-modules:	Data.Number.Vectorspace Data.Number.FixedFunctions

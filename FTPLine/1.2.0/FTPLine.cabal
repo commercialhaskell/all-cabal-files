@@ -1,0 +1,37 @@
+Name: FTPLine
+Version: 1.2.0
+Cabal-Version: >= 1.6
+License: BSD3
+License-file: license
+Author: Daniel Diaz
+Maintainer: Daniel Diaz <danieldiaz@asofilak.es>
+Homepage: http://ddiaz.asofilak.es/packages/FTPLine
+Category: Network
+Synopsis: A command-line FTP client.
+Description: A command-line FTP client. Type @help@ for a list of commands. Online documentation at the homepage.
+             .
+             Changes from last version:
+             .
+             * Echoing of @stdin@ is turned off while running @pause@ command.
+             .
+             * New field (@interactive@) in the state record.
+             .
+             * New login method, with hidden password. Now haskeline dependency is @>= 0.6.3 && < 0.7@.
+             .
+             * Added history.
+             .
+             * Added a few notes in the @help@ command.
+Build-Type: Simple
+
+Executable FTPLine
+  Build-depends: base == 4.*
+               , mtl
+               , ftphs
+               , directory
+               , network
+               , haskeline >= 0.6.3 && < 0.7
+               , ansi-terminal
+               , strict
+               , bytestring
+  Extensions: FlexibleInstances
+  Main-is: Main.hs

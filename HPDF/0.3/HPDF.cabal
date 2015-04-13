@@ -1,0 +1,20 @@
+Name: HPDF
+Version: 0.3
+License: LGPL
+Copyright: Copyright (c) 2006, alpha
+category: Graphics
+synopsis: PDF API for Haskell
+maintainer: misc@NOSPAMalpheccar.org
+homepage: http://www.alpheccar.org
+exposed-Modules: 
+   Graphics.PDF,
+   Graphics.PDF.Geometry,
+   Graphics.PDF.Shape,
+   Graphics.PDF.Text,
+   Graphics.PDF.Font,
+   Graphics.PDF.Color,
+   Graphics.PDF.Shading,
+   Graphics.PDF.File,
+   Graphics.PDF.LowLevel
+build-depends: base, haskell98,mtl,regex-compat
+ghc-options:         -Wall -O2

@@ -1,0 +1,82 @@
+Name:           phybin
+Version:        0.2.2
+License: BSD3
+License-file:   LICENSE
+Stability: Beta
+Author:			Ryan Newton <rrnewton@gmail.com>
+Maintainer:		Ryan Newton <rrnewton@gmail.com>
+
+
+-- Version history:
+-- 0.1.2   -- first significant release
+-- 0.1.2.1 -- 
+-- 0.1.2.4 -- new release, several new features
+-- 0.1.2.5 -- bump for graphviz API changes
+-- 0.2 -- Add Robinson-Foulds distance, use Int labels.
+-- 0.2.2 -- misc changes and expose library
+
+-- homepage: http://code.haskell.org/phybin
+homepage: http://people.csail.mit.edu/newton/phybin/
+
+Copyright: Copyright (c) 2010 Ryan Newton
+Synopsis: Utility for clustering phylogenetic trees in Newick format based on Robinson-Foulds distance.
+Description: 
+   This package provides a libary and executable for dealing with Newick tree files.
+   .
+   It can do simple binning of identical trees or more complex clustering based on 
+   an all-to-all Robinson-Foulds distance matrix.
+   .
+   Output files that characterize the size and contents of each bin or cluster (including
+   generating GraphViz-based visual representations of the tree topologies).
+
+Category: Bioinformatics
+Cabal-Version: >=1.8
+
+Extra-source-files: README.md
+
+Build-type: Simple
+
+Source-repository head
+  type:     git
+  location: git://github.com/rrnewton/PhyBin.git
+
+Library
+  Exposed-modules:   Bio.Phylogeny.PhyBin
+                     Bio.Phylogeny.PhyBin.RFDistance
+                     Bio.Phylogeny.PhyBin.Parser
+                     Bio.Phylogeny.PhyBin.CoreTypes
+                     Bio.Phylogeny.PhyBin.Binning
+                     Bio.Phylogeny.PhyBin.Util
+                     Bio.Phylogeny.PhyBin.Visualize
+--  Other-modules:     Data.BitList
+  Build-Depends:     base >= 3 && < 5, directory, process, containers, unix, 
+                     async, time,
+                     filepath, 
+                     graphviz >= 2999.16, 
+                     text >= 0.11 && < 0.12,
+                     prettyclass, fgl,
+                     HSH, HUnit, bytestring, 
+                     -- For bytestring.lazy support:
+                     parsec >= 3.1.0, 
+                     bitvec >= 0.1, vector >= 0.10,
+                     hierarchical-clustering >= 0.4
+--                     lattice-par, 
+  GHC-Options: -O2 -funbox-strict-fields -rtsopts
+
+Executable phybin
+  Main-is:           Main.hs
+  Build-Depends:     phybin
+  -- DUPLICATE:
+  Build-Depends:     base >= 3 && < 5, directory, process, containers, unix, 
+                     async, time,
+                     filepath, 
+                     graphviz >= 2999.16, 
+                     text >= 0.11 && < 0.12,
+                     prettyclass, fgl,
+                     HSH, HUnit, bytestring, 
+                     -- For bytestring.lazy support:
+                     parsec >= 3.1.0, 
+                     bitvec >= 0.1, vector >= 0.10,
+                     hierarchical-clustering >= 0.4
+--                     lattice-par, 
+  GHC-Options: -O2 -funbox-strict-fields -rtsopts

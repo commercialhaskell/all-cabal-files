@@ -1,0 +1,39 @@
+
+
+Name:           wordsetdiff
+Version:        0.0.1
+License: BSD3
+License-file:   LICENSE
+Stability: Beta
+Author:			Ryan Newton <rrnewton@gmail.com>
+Maintainer:		Ryan Newton <rrnewton@gmail.com>
+
+-- homepage: 
+-- Copyright: Copyright (c) 2009-2010 Ryan Newton
+Synopsis: Compare two files as sets of words or sets of N-tuples of words.
+
+Description: This utility is useful for finding out if some old,
+             misplaced version of a file (say from your old laptop)
+             has any new text in it that never got checked in, synced,
+             or copied over to your newest version of the file.
+
+	     The basic unix diff tool is sometimes incredibly
+	     unsatisfactory for this purpose, for example when text has
+	     been moved around, or when there are widespread whitespace
+	     differences.
+
+Category: system
+Cabal-Version: >=1.6
+
+build-type: Simple
+
+-- source-repository head
+--   type:     darcs
+--   location: 
+
+Executable wordsetdiff
+  Main-is:           Text/WordSetDiff/Main.hs
+  Build-Depends:     base >= 3 && < 5, directory, process, filepath, ansi-terminal,
+                     bytestring >= 0.9.1, containers >= 0.3
+  GHC-Options:       -O2 
+

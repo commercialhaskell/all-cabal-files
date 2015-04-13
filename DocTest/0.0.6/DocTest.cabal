@@ -1,0 +1,38 @@
+name:                DocTest
+version:             0.0.6
+stability:           experimental
+synopsis:            Test interactive Haskell examples
+description:         DocTest checks examples in source code comments.
+                     It is modeled after doctest for Python
+                     (<http://docs.python.org/library/doctest.html>).
+                     .
+                     Documentation is at <http://haskell.org/haskellwiki/DocTest>.
+category:            Testing
+homepage:            http://haskell.org/haskellwiki/DocTest
+license:             MIT
+license-file:        LICENSE
+author:              Simon Hengel
+maintainer:          simon.hengel@wiktory.org
+build-type:          Simple
+cabal-version:       >= 1.6
+
+source-repository head
+    type:            git
+    location:        http://code.haskell.org/~sih/code/DocTest.git/
+
+executable doctest
+    main-is:         Main.hs
+    other-modules:
+                       Test.DocTest
+                     , Test.DocTest.Error
+                     , Test.DocTest.Parser
+                     , Test.DocTest.Util
+
+    build-depends:
+                       base >= 3 && < 5
+                     , HUnit
+                     , parsec
+                     , haskell-src
+                     , directory
+                     , filepath
+                     , process

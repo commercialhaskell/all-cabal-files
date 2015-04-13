@@ -1,0 +1,33 @@
+name:                     kif-parser
+version:                  0.0.3
+cabal-version:            >= 1.6
+stability:                alpha
+description:              Converts KIF (Keep It Functional) iOS integration test logs into other formats, i.e., JUnit XML format 
+synopsis:                 Process KIF iOS test logs
+license:                  BSD3
+license-file:             LICENSE
+author:                   Jan Christiansen
+maintainer:               Jan Christiansen <j.christiansen@monoid-it.de>
+category:                 Distribution
+build-type:		  Simple
+bug-reports:              https://github.com/plancalculus/kif-parser/issues
+data-files:
+  templates/junit.tmpl,
+  templates/markdown.tmpl,
+  templates/json.tmpl
+
+source-repository head
+  type:      git
+  location:  https://github.com/plancalculus/kif-parser.git
+
+executable kif-parser
+  main-is:                  Main.hs
+  ghc-options:              -Wall -fno-warn-unused-do-bind
+  build-depends:
+    base >= 4 && < 5,
+    parsec,
+    twine,
+    bytestring,
+    old-time,
+    hostname,
+    cmdargs

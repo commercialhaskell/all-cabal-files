@@ -1,0 +1,33 @@
+Name:           hCsound
+Version:        0.2
+Cabal-Version:  >= 1.2
+Description:    Haskell interface to Csound API.
+License:        LGPL
+License-file:   LICENSE
+Author:	        John W. Lato, jwlato@gmail.com
+Maintainer:     John W. Lato, jwlato@gmail.com
+Stability:      experimental
+synopsis:       interface to CSound API
+category:       Sound, Music
+build-type:     Simple
+tested-with:    GHC == 6.8.2, GHC == 6.8.1, GHC == 6.6.1
+extra-source-files: README COPYRIGHT examples/test1.csd examples/simple.hs examples/test2.hs examples/test3.hs
+
+flag splitBase
+  description: Choose the new split-up base package.
+
+Library
+ Hs-Source-Dirs:        src
+                        src/Sound
+                        src/Sound/Csound
+ ghc-options:           -O2
+ build-depends:         base, haskell98, mtl
+ build-tools:           c2hs
+ other-modules:         C2HS
+ exposed-modules:       Sound.Csound
+                        Sound.Csound.Interface
+ Extensions:            ForeignFunctionInterface
+ include-dirs:          "/usr/local/include/csound"
+ includes:              csound.h
+ extra-libraries:       csound64, sndfile
+ extra-lib-dirs:        /usr/local/lib

@@ -1,0 +1,83 @@
+
+name:               music-score
+version:            1.3
+cabal-version:      >= 1.2
+author:             Hans Hoglund
+maintainer:         Hans Hoglund
+license:            BSD3
+license-file:       COPYING
+synopsis:           Musical score and part representation.
+category:           Music
+tested-with:        GHC
+build-type:         Simple
+
+description: 
+    Musical score and part representation.
+    
+    This library is part of the Music Suite, see <http://musicsuite.github.com>.
+
+library                    
+    build-depends: 
+        base >= 4 && < 5,
+        QuickCheck >= 1.2 && < 1.3,
+        unix,
+        time,
+        random,
+        process,
+        data-default,           
+        containers,       
+        parsec,
+        transformers,
+        monadplus,
+        prettify,
+        HCodecs,
+        musicxml2,
+        lilypond,
+        semigroups,
+        nats,          
+        pointed,
+        semigroupoids,
+        vector-space,
+        music-pitch-literal,
+        music-dynamics-literal,
+        reenact
+
+    hs-source-dirs: src
+    exposed-modules:
+        Music.Time
+        Music.Time.Time
+        Music.Time.Duration
+        Music.Time.Delayable
+        Music.Time.Stretchable
+        Music.Time.Performable
+        Music.Time.Onset
+        Music.Time.Pos
+
+        Music.Score.Rhythm
+        
+        Music.Score
+
+        Music.Score.Track
+        Music.Score.Voice
+        Music.Score.Score
+
+        Music.Score.Combinators
+        Music.Score.Ties
+        Music.Score.Zip
+        Music.Score.Part
+        Music.Score.Chord
+        Music.Score.Pitch
+        Music.Score.Articulation
+        Music.Score.Dynamics
+        Music.Score.Ornaments
+
+        Music.Score.Export.Midi
+        Music.Score.Export.Lilypond
+        Music.Score.Export.MusicXml
+    other-modules:
+        Music.Score.Instances
+        Music.Score.Export.Util
+        
+-- executable "music-score-tests"
+--     hs-source-dirs: src test
+--     main-is: Main.hs

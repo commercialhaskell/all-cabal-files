@@ -1,0 +1,29 @@
+Name:                bindings-dc1394
+Version:             0.1
+Synopsis:            Library for using firewire (iidc-1394) cameras
+Description:         Low level bindings for libdc1394 (for driving firewire cameras).
+    .
+    Version 0.1:
+    .
+    Partial bindings that allow setting basic camera flags and acquiring
+    images without dma.
+    .
+Homepage:            http://github.com/aleator/bindings-dc1394
+License:             BSD3
+License-file:        LICENSE
+Author:              Ville Tirronen
+Maintainer:          aleator@gmail.com
+Category:            System
+Build-type:          Simple
+Cabal-version:       >=1.2
+
+Library
+  Exposed-modules:     
+    Bindings.DC1394
+  Build-depends: 
+    bindings-DSL >= 1.0.7 && < 1.1,
+    base         > 4 && <5,
+    CV           >= 0.3      
+  Build-tools: c2hs >= 0.16.0
+  Includes:    dc1394/dc1394.h
+  Extra-Libraries: dc1394

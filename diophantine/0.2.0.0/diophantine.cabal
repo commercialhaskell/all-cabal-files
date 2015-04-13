@@ -1,0 +1,38 @@
+name:                diophantine
+version:             0.2.0.0
+synopsis:            A quadratic diophantine equation solving library.
+description:
+    A library for solving quadratic diophantine equations.
+    .
+    This library is designed to solve for equations where:
+    .
+      * the form is: ax^2 + bxy + cy^2 + dx + ey + f = 0
+    .
+      * a,b,c,d,e,f are integers.
+    .
+      * soltutions are restricted to x and y are also integers.
+    .
+    This library breaks down equations based on their type to solve them most
+    efficiently. This library supports linear, simple hyperbolic, eliptical, and
+    parabolic equations, with hyperbolics on the way.
+    .
+    Please send feedback or bugs to joejev\@gmail.com.
+homepage:            https://github.com/llllllllll/Math.Diophantine
+license:             GPL-2
+license-file:        LICENSE
+author:              Joe Jevnik
+maintainer:          Joe Jevnik <joejev@gmail.com>
+copyright:           Joe Jevnik 2013
+category:            Math
+build-type:          Simple
+cabal-version:       >=1.8
+extra-source-files:  README.md
+source-repository head
+  type:     git
+  location: https://github.com/llllllllll/Math.Diophantine.git
+
+library
+  exposed-modules:     Math.Diophantine, Math.Diophantine.Internal
+  other-modules:       Math.Diophantine.Parser
+  build-depends:       base ==4.6.*
+  hs-source-dirs:      .

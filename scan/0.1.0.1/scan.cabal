@@ -1,0 +1,25 @@
+cabal-version:      >= 1.6
+build-type:         Simple
+name:               scan
+version:            0.1.0.1
+license:            BSD3
+license-file:       doc/LICENSE
+category:           Development
+author:             chr.maeder@web.de
+maintainer:         chr.maeder@web.de
+copyright:          Christian Maeder 2010
+synopsis:           lexical style suggestions for source code
+description:
+  scan checks the format of your haskell source code regarding:
+  comments, white spaces and line breaks.
+
+homepage:           http://projects.haskell.org/style-scanner
+stability:          experimental
+
+executable scan
+    build-depends:      base < 5, parsec < 3 || >= 3
+    hs-source-dirs:     src
+    main-is:            scan.hs
+    other-modules:      Language.Haskell.Scanner
+
+    ghc-options: -Wall

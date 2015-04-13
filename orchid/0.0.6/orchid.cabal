@@ -1,0 +1,93 @@
+Name:             orchid
+Version:          0.0.6
+Description:      Haskell Wiki Library
+Synopsis:         Haskell Wiki Library
+Category:         Network, Web
+License:          BSD3
+License-file:     LICENSE
+Author:           Sebastiaan Visser
+Maintainer:       sfvisser@cs.uu.nl
+Build-Type:       Simple
+Build-Depends:    base,
+                  bytestring,
+                  salvia == 0.0.4,
+                  xml,
+                  containers,
+                  QuickCheck,
+                  parsec <= 2.1.0.1,
+                  time,
+                  mtl ==1.1.0.2,
+                  stm,
+                  process,
+                  unix,
+                  nano-md5,
+                  hscolour,
+                  encoding,
+                  utf8-string,
+                  directory
+
+GHC-Options:      -fglasgow-exts -threaded
+Extensions:       CPP
+HS-Source-Dirs:   src
+Other-modules:    Paths_orchid,
+                  Misc.Commons
+Exposed-modules:  Text.Document.Document,
+                  Text.Document.Core.Type,
+                  Text.Document.Core.Processing,
+                  Text.Document.Parser.Wiki,
+                  Text.Document.Parser.WikiHelper,
+                  Text.Document.Plugin.Formula,
+                  Text.Document.Plugin.HsColour,
+                  Text.Document.Plugin.TOC,
+                  Text.Document.Plugin,
+                  Text.Document.PluginRegister,
+                  Text.Xhtml.Xhtml,
+                  Text.Xml.Xml,
+                  Network.Orchid.Backend.CachingBackend,
+                  Network.Orchid.Backend.DarcsBackend,
+                  Network.Orchid.Core.Backend,
+                  Network.Orchid.Core.Format,
+                  Network.Orchid.Core.Handler,
+                  Network.Orchid.Core.Liaison,
+                  Network.Orchid.Format.Haskell,
+                  Network.Orchid.Format.History,
+                  Network.Orchid.Format.Html,
+                  Network.Orchid.Format.Latex,
+                  Network.Orchid.Format.Pdf,
+                  Network.Orchid.Format.Plain,
+                  Network.Orchid.Format.Xml,
+                  Network.Orchid.FormatRegister,
+                  Network.Orchid.Wiki
+Data-Files:       viewer/favicon.gif
+                  viewer/img/shadow00.png
+                  viewer/img/shadow01.png
+                  viewer/img/shadow02.png
+                  viewer/img/shadow03.png
+                  viewer/img/shadow04.png
+                  viewer/img/shadow10.png
+                  viewer/img/shadow14.png
+                  viewer/img/shadow20.png
+                  viewer/img/shadow24.png
+                  viewer/img/shadow30.png
+                  viewer/img/shadow34.png
+                  viewer/img/shadow40.png
+                  viewer/img/shadow41.png
+                  viewer/img/shadow42.png
+                  viewer/img/shadow43.png
+                  viewer/img/shadow44.png
+                  viewer/img/stripes.png
+                  viewer/img/uu.png
+                  viewer/img/loading.gif
+                  viewer/js/app.js
+                  viewer/js/jquery-1.2.6.js
+                  viewer/js/jquery.history.js
+                  viewer/js/ui.js
+                  viewer/js/utils.js
+                  viewer/show.html
+                  viewer/style/main.css
+                  viewer/style/page.css
+                  viewer/style/plugins.css
+                  viewer/style/ui.ccss
+                  viewer/style/viewer.css
+
+

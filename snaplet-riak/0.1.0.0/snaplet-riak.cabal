@@ -1,0 +1,30 @@
+name:                snaplet-riak
+version:             0.1.0.0
+synopsis:            A Snaplet for the Riak database
+-- description:         
+license:             MIT
+license-file:        LICENSE
+author:              Paul Wilson
+maintainer:          paul@statusfailed.com
+copyright:           
+category:            Database
+build-type:          Simple
+cabal-version:       >=1.8
+
+library
+  hs-source-dirs:      src
+
+  -- exposed-modules:     
+  -- other-modules:       
+  Build-depends:
+    base                      >= 4     && < 5,
+    transformers              >= 0.3.0 && < 0.4,
+    mtl                       >= 2.1.2 && < 2.2,
+    snap                      >= 0.9.2 && < 0.10,
+    snap-core                 >= 0.9.2 && < 0.10,
+    data-lens-template        >= 2.1.7 && < 2.2,
+    data-lens                 >= 2.10.2 && < 2.11,
+    riak                      >= 0.7.0 && < 0.8,
+    time                      >= 1.4.0 && < 1.5
+
+  Exposed-modules:            Snap.Snaplet.Riak

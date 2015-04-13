@@ -1,0 +1,16 @@
+Name:                snowglobe
+Version:             1
+Synopsis:            randomized fractal snowflakes demo
+Description:         @snowglobe@ generates random snowflakes using iterated
+                     function systems via OpenGL texture feedback.  The
+                     snowflakes interact in a particle system.
+License:             GPL-3
+License-file:        LICENSE
+Author:              Claude Heiland-Allen
+Maintainer:          claudiusmaximus@goto10.org
+Category:            Demo
+Build-type:          Simple
+Cabal-version:       >=1.6
+Executable snowglobe
+  Main-is:             SnowGlobe.hs
+  Build-depends:       base < 5, containers == 0.4.*, random == 1.0.*, GLUT == 2.2.*, OpenGLRaw == 1.1.*, hmatrix == 0.13.*

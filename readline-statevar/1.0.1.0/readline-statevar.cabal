@@ -1,0 +1,40 @@
+name:                readline-statevar
+version:             1.0.1.0
+synopsis:            Readline with variables (setX/getY) wrapped in state vars
+description:         readline package is a good wrapping library around libreadline.
+                    .
+                     Unfortunately, there is a lot of set/get pairs of functions, which clutter namespace.
+                     This kind of API can be nicely expressed as StateVars, as in HOpenGL.
+                     .
+                     readline-statevar seeks to fill this gap and provide nicer API based on StateVars.
+                     .
+                     For clarity: this module wraps only System.Console.Readline module.
+                     System.Console.SimpleLineEditor is left untouched.
+
+category:            Utils
+license:             BSD3
+license-file:        LICENSE
+author:              Krzysztof Skrzetnicki <krzysztof.skrzetnicki+hackage@gmail.com>
+maintainer:          Krzysztof Skrzetnicki <krzysztof.skrzetnicki+hackage@gmail.com>
+build-type:          Simple
+Cabal-Version: >= 1.6
+
+source-repository    head
+    Type:     Git
+    Location: http://github.com/Tener/haskell-readline-statevar.git
+
+source-repository    this
+    Type:     Git
+    Location: http://github.com/Tener/haskell-readline-statevar.git
+    Tag: 1.0.1.0
+
+flag debug
+      default: False
+
+library
+        exposed-modules: System.Console.Readline.StateVar
+        build-depends: readline >= 1.0.1 && < 1.1.0,
+                       base >= 4.1.0 && < 5,
+                       StateVar >= 1.0.0 && < 1.1.0
+        if flag(debug)
+           cpp-options: -DDEBUG

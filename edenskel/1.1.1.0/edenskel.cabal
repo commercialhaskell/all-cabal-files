@@ -1,0 +1,48 @@
+name:		edenskel
+version:	1.1.1.0
+license:	BSD3
+license-file:	LICENSE
+maintainer:	eden@mathematik.uni-marburg.de
+homepage:       http://www.mathematik.uni-marburg.de/~eden
+synopsis:	Semi-explicit parallel programming skeleton library
+description:
+    This package provides a skeleton library for semi-explicit parallel programming with Eden.
+
+    Eden and the skeleton library depend on GHC, and should normally use a GHC extension to support parallel execution using message passing.
+    This modified GHC-Eden compiler is available from
+    <http://www.mathematik.uni-marburg.de/~eden>.
+    When built using a standard GHC, this package will use a 
+    threaded simulation of Eden. 
+
+    The Eden homepage     <http://www.mathematik.uni-marburg.de/~eden>
+    provides more documentation and a tutorial.
+category:       Control, Distributed Computing, Eden, Parallelism
+build-type:     Simple
+cabal-version:  >=1.6
+
+source-repository head
+    type:     git
+    location: git://james.mathematik.uni-marburg.de/edenskel.git
+
+Flag par
+  Description: Enable parallel support
+  Default:     True
+
+library {
+  exposed-modules:
+        Control.Parallel.Eden.EdenSkel.Auxiliary
+        Control.Parallel.Eden.EdenSkel.IterSkels
+        Control.Parallel.Eden.EdenSkel.MapSkels
+        Control.Parallel.Eden.EdenSkel.MapRedSkels
+        Control.Parallel.Eden.EdenSkel.DCSkels
+        Control.Parallel.Eden.EdenSkel.WPSkels
+        Control.Parallel.Eden.EdenSkel.TopoSkels
+  extensions:	CPP
+
+  if flag(par)
+    CPP-Options: -D__PARALLEL_HASKELL__
+
+  build-depends: base >= 4 && < 5,
+                 edenmodules >= 1.1.0.1 && < 2,
+                 parallel >= 3.1 && <4
+  }

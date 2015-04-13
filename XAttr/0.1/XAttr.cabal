@@ -1,0 +1,17 @@
+Name:		XAttr
+Version:	0.1
+Cabal-Version:	>= 1.2
+License:	GPL
+License-File:	LICENSE
+Author:		Nicola Squartini <tensor5@gmail.com>
+Maintainer:	tensor5@gmail.com
+Synopsis:	Read, set, and list extended attributes
+Category:	System
+Bug-Reports:	mailto:tensor5@gmail.com
+Build-Type:	Simple
+Description:	XAttr provides bindings to the glibc function for reading and manipulating extended attributes (setxattr, getxattr, listxattr, ...).
+
+Library
+  Build-Depends:	base >=4.0 && < 5.0, unix
+  Exposed-modules:	System.XAttr
+  Extensions:		ForeignFunctionInterface

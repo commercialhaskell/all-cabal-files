@@ -1,0 +1,26 @@
+Name:		blink1
+Version:	0.1
+Author:		Dylan Simon
+Maintainer:     dylan@dylex.net
+License:        BSD3
+License-File:	LICENSE
+Synopsis:	Control library for blink(1) LED from ThingM
+Description:    Provides an interface to the ThingM blink(1) LED <http://thingm.com/products/blink-1.html> similar to (but not dependent on) <http://github.com/todbot/blink1>.  Currently only a partially-functional Linux HIDRAW-based interface is defined, but a libusb-based one is planned.
+Category:	Hardware
+Build-Type:	Simple
+Cabal-Version:	>= 1.6
+tested-with:	GHC == 7.6.1
+
+Source-Repository head
+    Type:	git
+    Location:   http://github.com/dylex/blink
+
+Library
+    Build-Depends:	base == 4.*
+    Exposed-Modules:    System.Hardware.Blink1
+    Other-Modules:      System.Hardware.Blink1.Types, System.Hardware.Blink1.Class
+
+    if os(linux)
+        Build-Depends:	unix, ioctl
+        Exposed-Modules: System.Hardware.Blink1.Linux
+        Other-Modules:	System.Linux.HIDRaw

@@ -1,0 +1,16 @@
+Name:                reactive-haskell
+Version:             0.0.1
+
+Synopsis:            minimal fork of io-reactive
+Description:	     API for generating reactive objects
+Category:            Control, Reactivity
+
+License:             BSD3
+License-file:        LICENSE
+
+Author:              Andy Gill, Heather Cynede
+Maintainer:          Heather Cynede <heather@live.ru>
+
+Build-Depends:       base >= 4.3 && < 5
+Exposed-Modules:     Control.Concurrent.Reactive
+build-type: 	     Simple

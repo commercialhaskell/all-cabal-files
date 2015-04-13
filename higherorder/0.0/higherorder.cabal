@@ -1,0 +1,17 @@
+name:                higherorder
+version:             0.0
+x-revision: 1
+synopsis:            Some higher order functions for Bool and []
+description:         Some higher order functions
+category:            Composition
+license:             BSD3
+license-file:        LICENSE
+author:              Chris Done <chrisdone@gmail.com>
+maintainer:          none
+build-Depends:       base
+cabal-Version:       >= 1.2
+build-type:          Simple
+
+library
+  build-depends: base
+  exposed-modules: Data.Bool.Higher,Data.List.Higher

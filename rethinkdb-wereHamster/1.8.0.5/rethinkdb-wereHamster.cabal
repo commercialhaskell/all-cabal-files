@@ -1,0 +1,56 @@
+name:                rethinkdb-wereHamster
+version:             1.8.0.5
+description:         RethinkDB is a distributed document store with a powerful query language.
+synopsis:            RethinkDB driver for Haskell
+homepage:            http://github.com/atnnn/haskell-rethinkdb
+license:             Apache
+license-file:        LICENSE
+author:              Etienne Laurin
+maintainer:          Etienne Laurin <etienne@atnnn.com>
+category:            Database
+build-type:          Simple
+cabal-version:       >=1.8
+
+library
+  exposed-modules:     Database.RethinkDB
+                       Database.RethinkDB.NoClash
+                       Database.RethinkDB.Driver
+                       Database.RethinkDB.Functions
+                       Database.RethinkDB.Time
+                       Database.RethinkDB.Objects
+                       Database.RethinkDB.ReQL
+                       Database.RethinkDB.Network
+                       Database.RethinkDB.MapReduce
+                       Database.RethinkDB.Protobuf.Ql2
+                       Database.RethinkDB.Protobuf.Ql2.Backtrace
+                       Database.RethinkDB.Protobuf.Ql2.Datum
+                       Database.RethinkDB.Protobuf.Ql2.Datum.AssocPair
+                       Database.RethinkDB.Protobuf.Ql2.Datum.DatumType
+                       Database.RethinkDB.Protobuf.Ql2.Frame
+                       Database.RethinkDB.Protobuf.Ql2.Frame.FrameType
+                       Database.RethinkDB.Protobuf.Ql2.Query
+                       Database.RethinkDB.Protobuf.Ql2.Query.AssocPair
+                       Database.RethinkDB.Protobuf.Ql2.Query.QueryType
+                       Database.RethinkDB.Protobuf.Ql2.Response
+                       Database.RethinkDB.Protobuf.Ql2.Response.ResponseType
+                       Database.RethinkDB.Protobuf.Ql2.Term
+                       Database.RethinkDB.Protobuf.Ql2.Term.AssocPair
+                       Database.RethinkDB.Protobuf.Ql2.Term.TermType
+                       Database.RethinkDB.Protobuf.Ql2.VersionDummy
+                       Database.RethinkDB.Protobuf.Ql2.VersionDummy.Version
+  build-depends:       base >= 4 && < 5,
+                       protocol-buffers,
+                       unordered-containers,
+                       text,
+                       aeson,
+                       bytestring,
+                       containers,
+                       attoparsec,
+                       data-default,
+                       network,
+                       ghc-prim,
+                       mtl,
+                       vector,
+                       protocol-buffers-descriptor,
+                       time,
+                       utf8-string

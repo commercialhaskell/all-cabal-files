@@ -1,0 +1,58 @@
+name:                scp-streams
+version:             0.1.0
+Cabal-Version:       >= 1.8
+synopsis:            An SCP protocol implementation.
+description:         An SCP protocol implementation.
+category:            System
+license:             BSD3
+license-file:        LICENSE
+author:              Vo Minh Thu
+maintainer:          thu@hypered.io
+build-type:          Simple
+homepage:            https://github.com/noteed/scp-streams
+
+source-repository head
+  type: git
+  location: git://github.com/noteed/scp-streams.git
+
+library
+  build-depends:       attoparsec == 0.10.*,
+                       base == 4.*,
+                       bytestring == 0.9.*,
+                       io-streams == 1.1.*,
+                       process == 1.1.*
+  exposed-modules:     Network.SCP.Protocol,
+                       Network.SCP.Types
+  ghc-options:         -Wall
+
+executable scp-streams
+  hs-source-dirs:      bin
+  main-is:             scp-streams.hs
+  build-depends:       cmdargs == 0.9.*,
+                       base == 4.*,
+                       bytestring == 0.9.*,
+                       io-streams == 1.1.*,
+                       scp-streams,
+                       SHA >= 1.6.3,
+                       sha-streams >= 0.1,
+                       unix == 2.5.*
+  ghc-options:         -Wall
+
+executable scp-broken-upload
+  hs-source-dirs:      bin
+  main-is:             scp-broken-upload.hs
+  build-depends:       base == 4.*,
+                       bytestring == 0.9.*,
+                       io-streams == 1.1.*,
+                       scp-streams
+  ghc-options:         -Wall
+
+test-suite run-tests
+  hs-source-dirs: tests
+  main-is: main.hs
+  type: exitcode-stdio-1.0
+  build-depends:       base == 4.*,
+                       bytestring == 0.9.*,
+                       io-streams == 1.1.*,
+                       scp-streams
+  ghc-options:         -Wall

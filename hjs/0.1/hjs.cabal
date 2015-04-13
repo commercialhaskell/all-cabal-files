@@ -1,0 +1,24 @@
+Name:           hjs
+Version:        0.1
+Copyright:      Mark Wassell 2007
+License:        BSD3
+license-file:	LICENSE
+Author:         Mark Wassell<mwassell@bigpond.net.au>
+Maintainer:     mwassell@bigpond.net.au
+Stability:	experiemental
+Homepage:       
+Category:       Compilers/Interpreters
+Build-Depends:  base,happy>=1.16,alex>=2.1.0,mtl
+Synopsis:       Javascript Parser
+Description:
+          A Javascript parser to be extended to an interpreter in later versions.
+          Parses as per ECMA-262 plus some parts of JS >=1.5
+
+Executable: 	FixHappy
+Main-Is: 	FixHappy.hs
+Hs-Source-Dirs:	utils
+ 
+Executable: 	hjs
+Main-Is: 	Main.hs
+Hs-Source-Dirs:	src
+

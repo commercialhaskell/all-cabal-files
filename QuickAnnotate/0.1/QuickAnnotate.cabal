@@ -1,0 +1,22 @@
+Name:                QuickAnnotate
+Version:             0.1
+Synopsis:            Annotation Framework
+Homepage:            darcs repository    http://code.haskell.org/QuickAnnotate/
+License:             BSD3 
+License-file:        LICENSE
+Author:              Shayan Najd
+Maintainer:          sh.najd@gmail.com
+Category:            Development
+Build-type:          Simple
+Cabal-version:       >=1.2
+description:         A framework introducing annotation by preprocessing 
+
+Executable qapp
+    Main-is: QuickAnnotate/Preprocessor.hs             
+    Build-depends: base >= 4 && < 4.5,       
+                   haskell-src-exts >= 1.11.1 &&  < 1.12	
+    Other-modules: Examples.TestPP       
+   
+Library 
+  Exposed-modules: QuickAnnotate  
+  Build-depends: base >= 4 && < 4.5       

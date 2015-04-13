@@ -1,0 +1,56 @@
+name:          levmar
+version:       0.3
+cabal-version: >= 1.6
+build-type:    Simple
+stability:     experimental
+author:        Roel van Dijk <vandijk.roel@gmail.com>
+               Bas van Dijk <v.dijk.bas@gmail.com>
+maintainer:    Roel van Dijk <vandijk.roel@gmail.com>
+               Bas van Dijk <v.dijk.bas@gmail.com>
+copyright:     (c) 2009 - 2010 Roel van Dijk & Bas van Dijk
+license:       BSD3
+license-file:  LICENSE
+category:      Numerical, Math
+synopsis:      An implementation of the Levenberg-Marquardt algorithm
+description:
+  The Levenberg-Marquardt algorithm is an iterative technique that
+  finds a local minimum of a function that is expressed as the sum of
+  squares of nonlinear functions. It has become a standard technique
+  for nonlinear least-squares problems and can be thought of as a
+  combination of steepest descent and the Gauss-Newton method. When
+  the current solution is far from the correct one, the algorithm
+  behaves like a steepest descent method: slow, but guaranteed to
+  converge. When the current solution is close to the correct
+  solution, it becomes a Gauss-Newton method.
+  .
+  Optional box- and linear constraints can be given. Both single and
+  double precision floating point types are supported.
+  .
+  The actual algorithm is implemented in a C library which is bundled
+  with bindings-levmar which this package depends on. See:
+  <http://www.ics.forth.gr/~lourakis/levmar/>.
+  .
+  All modules are self-contained; i.e. each module re-exports all the
+  things you need to work with it.
+  .
+  Also see the @levmar-safe@ package which adds extra type-safety on
+  top of this package.
+  .
+  A note regarding the license:
+  .
+  This library depends on bindings-levmar which is bundled together
+  with a C library which falls under the GPL. Please be aware of this
+  when distributing programs linked with this library. For details see
+  the description and license of bindings-levmar.
+
+source-repository head
+  Type: darcs
+  Location: http://code.haskell.org/levmar
+
+library
+  build-depends: base                 >= 3     && < 4.4
+               , base-unicode-symbols >= 0.1.1 && < 0.3
+               , bindings-levmar      >= 0.2   && < 0.3
+  exposed-modules: Numeric.LevMar, Numeric.LevMar.Fitting
+  other-modules: Bindings.LevMar.CurryFriendly
+  ghc-options: -Wall

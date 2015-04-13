@@ -1,0 +1,40 @@
+name:            AhoCorasick
+version:         0.0.1
+license:         BSD3
+license-file:    LICENSE
+category:        Text
+copyright:       Sergey S Lymar (c) 2012
+author:          Sergey S Lymar <sergey.lymar@gmail.com>
+maintainer:      Sergey S Lymar <sergey.lymar@gmail.com>
+stability:       experimental
+tested-with:     GHC == 7.0.3
+synopsis:        Aho-Corasick string matching algorithm
+cabal-version:   >= 1.8
+homepage:        http://github.com/lymar/AhoCorasick
+bug-reports:     http://github.com/lymar/AhoCorasick/issues
+build-type:      Simple
+description:
+    Aho-Corasick string matching algorithm.
+    .
+    See homepage for examples of usage: <http://github.com/lymar/AhoCorasick>
+
+extra-source-files:
+    README.md
+
+library
+  exposed-modules:
+    Text.AhoCorasick
+
+  other-modules:
+    Text.AhoCorasick.Internal.Deque
+
+  build-depends:
+    base == 4.*
+    ,unordered-containers
+    ,hashable
+    ,array
+    ,mtl
+
+source-repository head
+  type:     git
+  location: http://github.com/lymar/AhoCorasick

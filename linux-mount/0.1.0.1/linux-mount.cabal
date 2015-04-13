@@ -1,0 +1,22 @@
+Name:           linux-mount
+Version:        0.1.0.1
+Cabal-Version:  >= 1.8
+Build-Type:     Simple
+License:        LGPL-3
+License-File:   LICENSE
+Copyright:      © 2013 Nicola Squartini
+Author:         Nicola Squartini
+Maintainer:     Nicola Squartini <tensor5@gmail.com>
+Bug-Reports:    mailto:tensor5@gmail.com
+Synopsis:       Mount and unmount filesystems
+Category:       System
+Description:
+
+  This module provides an interface to the system mount and umount
+  functions.
+
+Library
+  Build-Depends:    base ==4.*,
+                    bytestring
+  Ghc-Options:      -Wall
+  Exposed-Modules:  System.Linux.Mount

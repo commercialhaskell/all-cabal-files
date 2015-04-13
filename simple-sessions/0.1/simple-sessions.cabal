@@ -1,0 +1,32 @@
+Name:           simple-sessions
+Version:        0.1
+Cabal-Version:  >= 1.2
+License:        BSD3
+License-File:   LICENSE
+Stability:      experimental
+Author:         Jesse A. Tov <tov@ccs.neu.edu>
+Maintainer:     tov@ccs.neu.edu
+Homepage:       http://www.ccs.neu.edu/~tov/session-types
+Category:       Control
+Synopsis:       A simple implementation of session types
+Build-type:     Simple
+Description:
+        This library is based on the session types implementation
+        from "Haskell Session Types with Almost No Class," from the 2008
+        Haskell Symposium.  For a full-featured session types library,
+        see the sessions package.
+
+Extra-Source-Files:
+    TODO
+    Control/Concurrent/SimpleSession/Examples/Implicit.lhs
+    Control/Concurrent/SimpleSession/Examples/Positional.lhs
+
+Library
+  Build-Depends:        base, category-extras
+  Exposed-modules:
+    Control.Concurrent.SimpleSession.SessionTypes,
+    Control.Concurrent.SimpleSession.Implicit,
+    Control.Concurrent.SimpleSession.Positional
+  Other-modules:
+    Control.Concurrent.SimpleSession.TChan,
+    Control.Concurrent.SimpleSession.UChan

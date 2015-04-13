@@ -1,0 +1,23 @@
+name:               ThreadObjects
+version:            0.0
+synopsis:           Mutable objects that reside in their own threads.
+description:
+    Provides mutable objects that reside in their own threads and have increadible resilience to runtime errors.  Are really usefull for a Model-View program archtecture.
+category:           Concurrency
+license:            GPL-3
+license-file:       COPYING
+author:             Timothy Hobbs
+maintainer:         Timothy Hobbs<timothyhobbs@seznam.cz>
+cabal-version:      >= 1.6
+build-type:         Simple
+
+library
+    exposed-modules:    Control.Concurrent.ThreadObject
+                        Control.Concurrent.StateRecords
+    build-depends:      base >=3 && < 5
+    Extensions : DoAndIfThenElse
+
+source-repository head
+  type:    git 
+  location: https://github.com/timthelion/threadObjects.git
+

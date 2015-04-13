@@ -1,0 +1,21 @@
+name:                whiskers
+version: 0.1.0.2.20141027
+description:         TODO
+synopsis:            Moustache templates with Template Haskell.
+license:             BSD3
+license-file:        LICENSE
+author:              Peter Johnson
+maintainer:          peter@peterjohnson.io
+-- copyright:           
+category:            Text
+build-type:          Simple
+cabal-version:       >=1.8
+
+library
+  exposed-modules:     Text.Whiskers
+  -- other-modules:       
+  build-depends:       base ==4.6.*, template-haskell ==2.8.*, parsec ==3.1.*
+
+source-repository head
+  type:     git
+  location: http://github.com:nejstastnejsistene/whiskers.git

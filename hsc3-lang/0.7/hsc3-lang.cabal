@@ -1,0 +1,70 @@
+Name:              hsc3-lang
+Version:           0.7
+Synopsis:          Haskell SuperCollider Language
+Description:       Haskell library defining operations from the
+                   SuperCollider language class library
+License:           GPL
+Category:          Sound
+Copyright:         (c) Rohan Drape, 2007-2009
+Author:            Rohan Drape
+Maintainer:        rd@slavepianos.org
+Stability:         Experimental
+Homepage:          http://slavepianos.org/rd/f/649352/
+Tested-With:       GHC == 6.8.2
+Build-Type:        Simple
+Cabal-Version:     >= 1.6
+
+Data-files:        README
+                   -- The below is appended by:
+                   -- find Help -name "*.*hs" | sort | \
+                   -- sed "s/^/                   /" >> hsc3-lang.cabal
+                   Help/Collection/collection.help.lhs
+                   Help/Math/pitch.help.lhs
+                   Help/Pattern/pattern.help.lhs
+                   Help/Pattern/pclutch.help.lhs
+                   Help/Pattern/pcollect.help.lhs
+                   Help/Pattern/pcountpre.help.lhs
+                   Help/Pattern/pdegreeToKey.help.lhs
+                   Help/Pattern/pdrop.help.lhs
+                   Help/Pattern/pexprand.help.lhs
+                   Help/Pattern/pfilter.help.lhs
+                   Help/Pattern/pfin.help.lhs
+                   Help/Pattern/pgeom.help.lhs
+                   Help/Pattern/pif.help.lhs
+                   Help/Pattern/pinterleave.help.lhs
+                   Help/Pattern/pn.help.lhs
+                   Help/Pattern/prand.help.lhs
+                   Help/Pattern/preject.help.lhs
+                   Help/Pattern/prorate.help.lhs
+                   Help/Pattern/prsd.help.lhs
+                   Help/Pattern/pseq.help.lhs
+                   Help/Pattern/pser.help.lhs
+                   Help/Pattern/pseries.help.lhs
+                   Help/Pattern/pstutter.help.lhs
+                   Help/Pattern/pswitch1.help.lhs
+                   Help/Pattern/pswitch.help.lhs
+                   Help/Pattern/ptail.help.lhs
+                   Help/Pattern/ptrigger.help.lhs
+                   Help/Pattern/pwhite.help.lhs
+                   Help/Pattern/pwrap.help.lhs
+                   Help/Pattern/pxrand.help.lhs
+
+Library
+  Build-Depends:   array,
+                   base == 3.*,
+                   containers,
+                   random
+  GHC-Options:     -Wall -fwarn-tabs
+  Exposed-modules: Sound.SC3.Lang
+                   Sound.SC3.Lang.Collection
+                   Sound.SC3.Lang.Math
+                   Sound.SC3.Lang.Pattern
+  Other-modules:   Sound.SC3.Lang.Collection.Collection
+                   Sound.SC3.Lang.Collection.Numerical
+                   Sound.SC3.Lang.Collection.SequenceableCollection
+                   Sound.SC3.Lang.Math.Pitch
+                   Sound.SC3.Lang.Pattern.Pattern
+                   Sound.SC3.Lang.Pattern.Extend
+                   Sound.SC3.Lang.Pattern.Control
+                   Sound.SC3.Lang.Pattern.List
+                   Sound.SC3.Lang.Pattern.Random

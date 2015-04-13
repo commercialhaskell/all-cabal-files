@@ -1,0 +1,37 @@
+Name: vcs-revision
+Category: System, Data, Parsing
+Version: 0.0.2
+Cabal-version: >= 1.2
+Build-type: Simple
+Copyright: Eugene Kirpichov
+Maintainer: ekirpichov@gmail.com    
+Author: Eugene Kirpichov
+License: BSD3
+License-File: LICENSE
+Synopsis: 
+  Facilities for accessing the version control revision of the current directory.
+Description:
+  Facilities for accessing the version control revision of the current directory.
+  Useful e.g. to make your program output its revision using Template Haskell.
+Cabal-Version: >= 1.6
+
+Source-repository head
+  type: git
+  location: git://github.com/jkff/vcs-revision
+
+Flag split-base
+
+Library
+  if flag(split-base)
+    Build-depends: base >= 3.0 && < 5.0
+  else
+    Build-depends: base < 3.0
+  Build-Depends: process
+  Exposed-modules: 
+    Distribution.VcsRevision
+    Distribution.VcsRevision.Git
+    Distribution.VcsRevision.Mercurial
+    Distribution.VcsRevision.Svn
+--    Distribution.VcsRevision.Cvs
+--    Distribution.VcsRevision.Darcs
+

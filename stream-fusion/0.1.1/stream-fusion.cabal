@@ -1,0 +1,25 @@
+Name:                stream-fusion
+Version:             0.1.1
+Author:              Duncan Coutts, Don Stewart
+Maintainer:          duncan.coutts@worc.ox.ac.uk, dons@galois.com
+License:             BSD3
+License-file:        LICENSE
+Synopsis:            Faster Haskell lists using stream fusion
+Homepage:            http://www.cse.unsw.edu.au/~dons/streams.html
+Description:
+        This package provides the standard Haskell list library
+        reimplemented to allow stream fusion. This should in general
+        provide faster list operations, and faster code for list-heavy
+        programs.  See the paper "Stream Fusion: From Lists to Streams to Nothing at All",
+        Coutts, Leshchinskiy and Stewart, 2007.
+        To use, simply import Data.List.Stream in place of Data.List,
+        and hide list functions from the Prelude.
+Category:            Data
+Build-Depends:       base
+Stability:           experimental
+Tested-with:         GHC==6.8
+Exposed-modules:     Data.Stream
+                     Data.List.Stream
+                     Control.Monad.Stream
+Extensions:          CPP, BangPatterns, ExistentialQuantification
+ghc-options:         -fglasgow-exts -O2 -Wall -fno-warn-orphans -DEXTERNAL_PACKAGE -fliberate-case-threshold100 -fdicts-cheap -fno-method-sharing

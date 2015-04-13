@@ -1,0 +1,60 @@
+Name:		sndfile-enumerators
+Version:        0.4.0
+Cabal-Version:  >= 1.2
+Description:	encode and decode soundfiles using Iteratees.
+                Audio files may be read or written, with classes and 
+                data structures to facilitate conversion between different
+                formats.  Currently only wave format is supported.
+License:	BSD3
+License-file:	LICENSE
+Author:		John W. Lato, jwlato@gmail.com
+Maintainer:	John W. Lato, jwlato@gmail.com
+homepage:       http://tanimoto.us/~jwlato/haskell/sndfile-enumerators
+Stability:	experimental
+synopsis:       Audio file reading/writing
+category:       Codec, Sound
+build-type:     Simple
+cabal-version:  >= 1.2
+tested-with:    GHC == 6.10.4, GHC == 6.12.1
+extra-source-files:
+  LICENSE
+  examples/wave_reader.hs
+  examples/wave_writer.hs
+  examples/writer2.hs
+
+flag splitBase
+  description: Choose the new split-up base package.
+
+Library
+ hs-Source-Dirs:
+   src
+ ghc-options:
+   -Wall
+   -fexcess-precision
+ if flag(splitBase)
+   build-depends:
+     base >= 3, base < 5
+ else
+   build-depends:
+     base < 3
+ build-depends:
+   binary                    >= 0.5 && < 0.6,
+   containers                >= 0.2 && < 0.5,
+   transformers              >= 0.2 && < 0.3,
+   iteratee                  >= 0.4 && < 0.6,
+   bytestring                >= 0.9.1 && < 0.10,
+   extensible-exceptions     >= 0.1 && < 0.2,
+   word24                    >= 0.1 && < 0.2,
+   mutable-iter              >= 0.1 && < 0.3,
+   MonadCatchIO-transformers >= 0.2 && < 0.3
+ exposed-modules:
+   Sound.Iteratee
+   Sound.Iteratee.Base
+   Sound.Iteratee.Codecs
+   Sound.Iteratee.Codecs.Wave
+   Sound.Iteratee.Codecs.Raw
+   Sound.Iteratee.Writer
+ other-modules:
+   Sound.Iteratee.Codecs.WaveWriter
+   Sound.Iteratee.Codecs.Common
+

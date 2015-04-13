@@ -1,0 +1,39 @@
+name:                not-gloss
+version:             0.1.0
+synopsis:            Painless 3D graphics, no affiliation with gloss
+-- description:         
+license:             BSD3
+license-file:        LICENSE
+author:              Greg Horn
+maintainer:          gregmainland@gmail.com
+-- copyright:           
+category:            Graphics
+build-type:          Simple
+cabal-version:       >=1.8
+
+library
+  exposed-modules:     Vis
+
+  other-modules:       Vis.Camera
+
+  build-depends:       base == 4.5.*,
+                       GLUT == 2.3.*,
+                       time == 1.4.*,
+                       OpenGLRaw == 1.2.*,
+                       spatial-math >= 0.1.2 && < 0.2
+
+  ghc-options:
+
+executable not-gloss-example
+  main-is:             Example.hs
+  build-depends:       base == 4.5.*,
+                       GLUT == 2.3.*,
+                       spatial-math >= 0.1.2 && < 0.2,
+                       OpenGLRaw == 1.2.*,
+                       time == 1.4.*,
+                       not-gloss
+  ghc-options:         -threaded
+
+source-repository head
+  type:     git
+  location: git://github.com/ghorn/not-gloss.git

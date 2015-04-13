@@ -1,0 +1,33 @@
+Name:                fixed-point-vector
+Version:             0.5.0.0
+Synopsis:            Unbox instances for the fixed-point package
+Description:         This package allows you to construct unboxed
+                     vectors of binary fixed-point numerals.
+License:             MIT
+License-file:        LICENSE
+Author:              Jake McArthur
+Maintainer:          Jake McArthur <Jake.McArthur@gmail.com>
+Category:            Data, Game, Math, Numerical
+
+Build-type:          Simple
+Cabal-version:       >=1.6
+
+
+Library
+  Exposed-modules:   Data.Fixed.Binary.Unboxed
+  Extensions:        FlexibleContexts,
+                     MultiParamTypeClasses,
+                     TypeFamilies
+  Build-depends:     base == 4.3.*,
+                     fixed-point == 0.5.0.0,
+                     vector == 0.7.*
+  GHC-options:       -Wall -fno-warn-orphans -fwarn-tabs -funfolding-use-threshold=16
+
+Source-repository head
+  type:     darcs
+  location: http://patch-tag.com/r/jmcarthur/fixed-point
+
+source-repository this
+  type:     darcs
+  location: http://patch-tag.com/r/jmcarthur/fixed-point
+  tag:      v0.5.0.0

@@ -1,0 +1,30 @@
+Cabal-Version: >= 1.6
+Name:          AC-Vector
+Version:       1.2.2
+Stability:     Experimental
+Synopsis:      Efficient geometric vectors.
+
+Description:
+
+  This Haskell library implements several small vectors types
+  with @Double@ fields, with seperate types for each size of
+  vector, and a type class for handling vectors generally.
+
+  Changes:
+
+  * /All prior versions/ of this library have a faulty
+    implementation of 'vcross'. Specifically, the sign of
+    the Y-coordinate is inverted. Oops!
+
+Category:      Data, Math, Numerical
+License:       BSD3
+License-file:  License.txt
+Author:        Andrew Coppin
+Maintainer:    MathematicalOrchid@hotmail.com
+Build-Type:    Simple
+Tested-With:   GHC == 6.10.3
+
+Library
+  Exposed-modules: Data.Vector
+  Build-Depends:   base >= 4 && < 5
+  HS-Source-Dirs:  .

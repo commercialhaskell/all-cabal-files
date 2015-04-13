@@ -1,0 +1,24 @@
+Name:               polar
+Version:            0.0.0
+Synopsis:           Complex numbers in polar form
+Description:        Complex numbers in polar form
+License:            BSD3
+License-File:       LICENSE
+Category:           Math
+Copyright:          Copyright (c) Stefan Kersten 2008-2010
+Author:             Stefan Kersten
+Maintainer:         Stefan Kersten <sk@xdv.org>
+Stability:          provisional
+Homepage:           http://space.k-hornz.de/polar
+Bug-Reports:        http://github.com/kaoskorobase/polar/issues/
+Tested-With:        GHC == 6.10.1, GHC == 6.10.4
+Build-Type:         Simple
+Cabal-Version:      >= 1.6
+
+Library
+  Exposed-Modules:  Data.Complex.Polar
+  Build-Depends:    base >= 3 && < 5
+
+Source-Repository head
+    Type:               git
+    Location:           git://github.com/kaoskorobase/polar.git

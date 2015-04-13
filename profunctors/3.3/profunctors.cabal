@@ -1,0 +1,43 @@
+name:          profunctors
+category:      Control, Categories
+version:       3.3
+x-revision: 1
+license:       BSD3
+cabal-version: >= 1.6
+license-file:  LICENSE
+author:        Edward A. Kmett
+maintainer:    Edward A. Kmett <ekmett@gmail.com>
+stability:     experimental
+homepage:      http://github.com/ekmett/profunctors/
+bug-reports:   http://github.com/ekmett/profunctors/issues
+copyright:     Copyright (C) 2011-2013 Edward A. Kmett
+synopsis:      Haskell 98 Profunctors
+description:   Haskell 98 Profunctors
+build-type:    Simple
+extra-source-files:
+  .ghci
+  .gitignore
+  .travis.yml
+  .vim.custom
+  README.markdown
+  CHANGELOG.markdown
+
+source-repository head
+  type: git
+  location: git://github.com/ekmett/profunctors.git
+
+library
+  -- reject base-4.4 incorrect CPP guard in "Data.Profunctor.Unsafe"
+  build-depends: base <  4.4 || >= 4.5
+
+  build-depends:
+    base          == 4.*,
+    comonad       >= 3,
+    tagged        >= 0.4.4
+
+  exposed-modules:
+    Data.Profunctor
+    Data.Profunctor.Unsafe
+
+  ghc-options:     -Wall
+  hs-source-dirs:  src

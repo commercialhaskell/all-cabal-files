@@ -1,0 +1,34 @@
+Name:		   Zora
+Version:	   1.1.21
+Synopsis:      Graphing library wrapper + assorted useful functions 
+Description:   A library of assorted useful functions for working with lists, doing mathematical operations and graphing custom data types.
+Category:      Unclassified
+Cabal-Version: >= 1.6
+License:	   BSD3
+License-File:  LICENSE
+Stability:	Experimental
+Author:		Brett Wines
+Maintainer: bgwines@cs.stanford.edu
+Homepage:	http://github.com/bgwines/zora
+Build-Type: Simple
+Source-Repository head
+    type:     git
+    location: git://github.com/bgwines/zora.git
+
+Library
+  Build-Depends:
+    base >= 4 && < 5,
+    random,
+    containers,
+    bytestring,
+    text,
+    graphviz,
+    fgl,
+    shelly >= 1.5.4.1,
+    directory
+
+  Exposed-Modules:
+    Zora.List
+    Zora.Math
+    Zora.Graphing.TreeGraphing
+    Zora.Graphing.DAGGraphing

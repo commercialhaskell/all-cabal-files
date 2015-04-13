@@ -1,0 +1,65 @@
+Cabal-Version: >= 1.2
+Name: hexpat
+Version: 0.6
+Synopsis: wrapper for expat, the fast XML parser
+Description:
+  Expat (<http://expat.sourceforge.net/>) is a stream-oriented XML parser
+  written in C.
+  .
+  This package provides a Haskell binding for Expat, with a choice of /tree/ or
+  /SAX-style/ representation, and it includes an /XML formatter/.  It is extensible
+  to any string type, with @String@, @ByteString@ and @Text@ provided out of the box.
+  .
+  The emphasis is on speed and simplicity. If you want more complete and powerful
+  XML libraries, consider using /HaXml/ or /HXT/ instead.
+  .
+  Examples and benchmarks: <http://haskell.org/haskellwiki/Hexpat/>
+  .
+  DARCS repository: <http://code.haskell.org/hexpat/>
+Category: XML
+License: BSD3
+License-File: LICENSE
+Author: Stephen Blackheath (blackh), Evan Martin, Matthew Pocock (drdozer)
+Maintainer: http://blacksapphire.com/antispam/
+Copyright:
+  (c) 2009 Stephen Blackheath <http://blacksapphire.com/antispam/>,
+  (c) 2008 Evan Martin <martine@danga.com>,
+  (c) 2009 Matthew Pocock <matthew.pocock@ncl.ac.uk>
+Homepage: http://haskell.org/haskellwiki/Hexpat/
+Extra-Source-Files:
+  test/tests.hs,
+  test/test.xml,
+  test/benchmark.hs,
+  test/lazySAX.hs,
+  test/lazyTree.hs,
+  test/lazyTreeThrow.hs,
+  test/leak.hs,
+  test/errorHandlingWay1.hs,
+  test/errorHandlingWay2.hs,
+  test/helloworld.hs,
+  test/locations.hs,
+  test/Makefile
+Build-Type: Simple
+Stability: beta
+
+Library
+  Build-Depends:
+    base,
+    haskell98,
+    bytestring,
+    mtl >= 1.1.0.0,
+    text >= 0.1,
+    binary >= 0.4,
+    utf8-string >= 0.3.3,
+    parallel,
+    containers,
+    extensible-exceptions >= 0.1 && < 0.2
+  Exposed-Modules:
+    Text.XML.Expat.Tree,
+    Text.XML.Expat.Format,
+    Text.XML.Expat.Namespaced,
+    Text.XML.Expat.Qualified,
+    Text.XML.Expat.IO
+  Extensions: ForeignFunctionInterface
+  Extra-Libraries: expat
+

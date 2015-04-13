@@ -1,0 +1,27 @@
+Name:                ports
+Version:             0.4.3.2
+Synopsis:            The Haskell Ports Library
+Description:         
+    The Haskell Ports Library (HPL) supports /concurrent/ and /distributed Haskell/
+    programming in the IO monad _without_ relying on mutable variables.
+    Instead, it supplies monotone single-assignment variable and ports
+    abstractions.
+Homepage:            http://www.cse.unsw.edu.au/~chak/haskell/ports/
+License:             LGPL
+License-file:        LICENSE
+Author:              Manuel M T Chakravarty
+Maintainer:          dons@cse.unsw.edu.au
+Category:            Control
+Build-Depends:       base>=1.0, haskell98, unix
+Ghc-options:         -O2
+extensions:          CPP
+Extra-source-files:  AUTHORS COPYING.LIB ChangeLog INSTALL NEWS README TODO doc/ports.sgml
+Exposed-modules:     
+    Control.Concurrent.HPL
+    Control.Concurrent.PortThreads
+    Control.Concurrent.Ports
+    Control.Concurrent.Processes
+    Control.Concurrent.SVars
+    Control.Concurrent.ThreadUtils
+    Control.Concurrent.PortsConfig
+    Control.Concurrent.PortsVersion

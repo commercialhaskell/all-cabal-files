@@ -1,0 +1,16 @@
+Name:		quickcheck-poly
+Version:	0.2.0.1
+License:	BSD3
+License-file:	LICENSE
+Author:		Ahn, Ki Yung
+Maintainer:	Ahn, Ki Yung <kya@pdx.edu>
+Category:	Testing	
+Synopsis:	Automating QuickCheck for polymorphic and overlaoded properties
+Stability:      experimental
+Build-type:	Simple
+Description:	Automating QuickCheck for polymorphic and overlaoded properties  in a small world of types
+Build-Depends:	base >= 2 && < 6, haskell98, QuickCheck,
+                hint >= 0.3, regex-tdfa >= 1.1, regex-compat,
+                MonadCatchIO-mtl >= 0.2
+Exposed-modules: Test.QuickCheck.PolyQC, Test.QuickCheck.UnsafeShowIO
+Extra-source-files: test/Main.hs, test/Prop.hs

@@ -1,0 +1,33 @@
+name:                estimators
+version:             0.1.1
+synopsis:            Tool for managing probability estimation
+description:         This library provides data structures for collecting counts 
+                     and estimating distributions from observed data. It is designed for natural language
+                     systems that need to handle large, discrete observation sets and 
+                     perform smoothing. 
+category:            Natural Language Processing
+license:             BSD3
+license-file:        LICENSE
+author:              Sasha Rush
+maintainer:          <srush@mit.edu>
+build-Type:          Simple
+cabal-version:       >= 1.2
+
+library
+    exposed-modules:     NLP.Probability.Distribution
+                         NLP.Probability.Observation
+                         NLP.Probability.ConditionalDistribution
+                         NLP.Probability.Example.Trigram 
+
+    other-modules:       NLP.Probability.SmoothTrie
+
+    build-Depends:   base       >= 3   && < 4,
+                     containers >= 0.1 && < 0.3,
+                     binary,
+                     list-tries,
+                     pretty,
+                     prettyclass, 
+                     text 
+
+                    
+                  

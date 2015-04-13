@@ -1,0 +1,33 @@
+Name:                vty-ui-extras
+Version:             0.1
+Synopsis:
+  Extra vty-ui functionality not included in the core library
+
+Description:
+  Extra vty-ui functionality not included in the core library
+
+Category:            User Interfaces
+Author:              Jonathan Daugherty <jtd@galois.com>
+Maintainer:          Jonathan Daugherty <jtd@galois.com>
+Build-Type:          Simple
+License:             BSD3
+License-File:        LICENSE
+Cabal-Version:       >= 1.6
+
+Source-Repository head
+  type:     git
+  location: git://github.com/jtdaugherty/vty-ui-extras.git
+
+Library
+  Build-Depends:
+    base >= 4 && < 5,
+    vty >= 4.6 && < 4.8,
+    vty-ui >= 1.4 && < 1.5,
+    regex-pcre >= 0.94 && < 0.95,
+    regex-base >= 0.93 && < 0.94
+
+  GHC-Options:       -Wall
+
+  Hs-Source-Dirs:    src
+  Exposed-Modules:
+      Graphics.Vty.Widgets.Extras.Text

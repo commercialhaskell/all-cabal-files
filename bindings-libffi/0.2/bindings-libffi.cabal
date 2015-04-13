@@ -1,0 +1,23 @@
+cabal-version: >= 1.2.3
+name: bindings-libffi
+homepage: http://bitbucket.org/mauricio/bindings-libffi
+synopsis:
+  Low level bindings to libffi.
+version: 0.2
+license: BSD3
+license-file: LICENSE
+maintainer: Maurício C. Antunes
+author: Maurício C. Antunes
+build-type: Simple
+category: FFI
+bug-reports: http://bitbucket.org/mauricio/bindings-libffi/issues
+library
+  hs-source-dirs: src
+  extensions:
+    ForeignFunctionInterface
+  build-depends:
+    base >= 3 && <5,
+    bindings-common >= 1.3 && < 1.4
+  exposed-modules:
+    Bindings.Libffi
+  pkgconfig-depends: libffi >= 3.0.7

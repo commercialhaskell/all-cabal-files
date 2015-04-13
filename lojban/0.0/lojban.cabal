@@ -1,0 +1,17 @@
+name:                lojban
+version:             0.0
+synopsis:            <Project description>
+description:         <Project description>
+category:            Language
+license:             BSD3
+license-file:        LICENSE
+author:              Chris Done <chrisdone@gmail.com>
+maintainer:          chrisdone@gmail.com
+build-Depends:       base
+cabal-Version:       >= 1.2
+build-type:          Simple
+
+library
+  build-depends: base,xml,strict,parsec
+  exposed-modules: Lojban.Jbovlaste,Lojban.Lujvo
+  ghc-options: -O2

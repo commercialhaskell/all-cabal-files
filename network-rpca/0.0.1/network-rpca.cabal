@@ -1,0 +1,19 @@
+name:            network-rpca
+version:         0.0.1
+license:         BSD3
+license-file:    LICENSE
+author:          Adam Langley <agl@imperialviolet.org>
+description:     A cross-platform RPC library
+synopsis:        A cross-platform RPC library
+category:        Networking
+build-depends:   base, containers, array, bytestring>=0.9, codec-libevent>=0.1.2, network-bytestring, network>=2.1, control-timeout>=0.1.1, stm>=2.1, binary>=0.4, binary-strict
+stability:       provisional
+tested-with:     GHC == 6.8.2
+exposed-modules:   Network.RPCA.Channel
+                 , Network.RPCA.Connection
+                 , Network.RPCA.ExportedService
+		 , Network.RPCA.Port
+		 , Network.RPCA.Structs
+		 , Network.RPCA.Util
+hs-source-dirs:  src
+extra-source-files: examples/service.hs, examples/client.hs, examples/testrpc.rpc, evrpca/evrpca.c, SEMANTICS.html, rpca.rpc, examples/README

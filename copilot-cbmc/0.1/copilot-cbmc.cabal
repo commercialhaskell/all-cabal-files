@@ -1,0 +1,39 @@
+cabal-version             : >= 1.10
+name                      : copilot-cbmc
+version                   : 0.1
+synopsis                  : .
+description               : .
+license                   : BSD3
+license-file              : LICENSE
+maintainer                : leepike@galois.com
+stability                 : Experimental
+category                  : Language, Embedded
+build-type                : Custom
+extra-source-files        : README.md
+
+author                    : Lee Pike
+                          , Robin Morisset
+                          , Alwyn Goodloe
+                          , Sebastian Niller
+                          , Nis Nordby Wegmann
+
+source-repository head
+    type:       git
+    location:   git://github.com/niswegmann/copilot-cbmc.git
+
+library
+  default-language        : Haskell2010
+  hs-source-dirs          : src
+  ghc-options             : -Wall -fwarn-tabs
+  ghc-prof-options        : -auto-all -caf-all
+
+  build-depends           : base >= 4.3 && < 5
+                          , bytestring
+                          , copilot-core
+                          , directory >= 1.1
+                          , process >= 1.0
+                          , pretty
+                          , copilot-sbv
+                          , copilot-c99
+
+  exposed-modules         : Copilot.Tools.CBMC

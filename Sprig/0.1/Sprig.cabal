@@ -1,0 +1,22 @@
+Name: Sprig
+Version: 0.1
+Maintainer: Liam O'Connor (liamoc@cse.unsw.edu.au)
+Author: Liam O'Connor (liamoc@cse.unsw.edu.au)
+Copyright: 2010 Liam O'Connor
+Build-Type: Custom
+License-File: LICENSE
+Tested-With: GHC ==6.10
+License: BSD3
+Build-Depends: base<5, SDL>=0.5.9
+Category: Foreign binding
+Synopsis: Binding to Sprig
+Description: Foreign Binding to Jonny D's SDL Primitives Generator (SPriG) library, a fork of SGE.
+Extensions: CPP, ForeignFunctionInterface, EmptyDataDecls
+Exposed-Modules:
+  Graphics.UI.SDL.Sprig
+  Graphics.UI.SDL.Sprig.Primitives
+  Graphics.UI.SDL.Sprig.Control
+  Graphics.UI.SDL.Sprig.Transform
+  Graphics.UI.SDL.Sprig.Drawing
+Includes: SDL.h sprig.h sprig_inline.h
+Extra-Source-files: configure, configure.ac, sprig.buildinfo.in, config.mk.in, includes/HsSDLConfig.h.in, README

@@ -1,0 +1,29 @@
+name:               xmobar
+version:            0.8
+homepage:           http://code.haskell.org/~arossato/xmobar
+synopsis:           A Minimalistic Text Based Status Bar
+description: 	    Xmobar is a minimalistic text based status bar.
+		    .
+                    Inspired by the Ion3 status bar, it supports similar features, 
+		    like dynamic color management, output templates, and extensibility 
+                    through plugins.
+category:           System
+license:            BSD3
+license-file:       LICENSE
+author:             Andrea Rossato
+maintainer:         andrea.rossato@unibz.it
+cabal-version:      >= 1.2
+flag small_base
+  description: Choose the new smaller, split-up base package.
+
+executable xmobar
+    main-is:            Main.hs
+    other-Modules:      Xmobar, Config, Parsers, Commands, Runnable, Plugins
+    ghc-options:        -funbox-strict-fields -O2 -fasm -Wall -optl-Wl,-s -threaded
+    ghc-prof-options:   -prof -auto-all
+    if flag(small_base)
+       build-depends:   base >= 3, containers, process, old-time, old-locale, bytestring
+    else
+       build-depends:   base < 3
+    build-depends:      X11>=1.3.0, mtl, unix, parsec, filepath, stm
+

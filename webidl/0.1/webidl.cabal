@@ -1,0 +1,65 @@
+Name:           webidl
+Version:        0.1
+Author:         Dmitry Golubovsky
+Maintainer:     Dmitry Golubovsky <golubovsky@gmail.com>
+License:        BSD3
+License-File:   LICENSE
+Stability:      Experimental
+Category:       Language
+
+Synopsis:       Parser and Pretty Printer for the Web IDL Language
+Description:    Web IDL is a dialect of OMG IDL used by the Web App group to specify
+                component interfaces of Web applications. See also:
+                .
+                <http://www.w3.org/TR/WebIDL/> - working draft of the specification
+                .
+                <http://www.w3.org/2008/webapps/wiki/Main_Page> - Web App group wiki
+                .
+                <http://code.google.com/p/es-operating-system/> - an experimental
+                Google - Nintendo project from which the lexer/parser files for Web IDL
+                are borrowed.
+                .
+                The package provides a Web IDL parsing\/pretty-printing library, and
+                the two executable programs:
+                .
+                * @idltestlex@: a debugging program which reads a Web IDL source
+                from its standard input, and prints the list of tokens in raw format,
+                as returned from the lexer.
+                .
+                * @idlppr@: a debugging program which reads a Web IDL source
+                from its standard input, parses, and pretty-prints it on its
+                standard output. Non-JavaDoc comments, and preprocessor directives
+                that the input might contain will not appear in the output. 
+                The program may be used to test the parser and pretty printer 
+                in the way that when @idlppr@ reads a pretty-printed Web IDL source, 
+                the output should be identical to the input. 
+                
+
+Build-Type:     Custom
+Build-Depends:  base >= 4.0.0 && < 5.0, utf8-env, utf8-string, 
+                cpphs, bytestring >= 0.9, LEXER, HSFFIG >= 1.1, 
+                parsec >= 2.0 && < 3.0, pretty >= 1.0
+Extra-source-files: cbits/lexer.ll include/esidl.h include/lexer.h include/parser.h
+                    cbits/Makefile
+
+Exposed-modules: Language.WebIDL.Lexer, Language.WebIDL.Parser, Language.WebIDL.Syntax,
+                 Language.WebIDL.PrettyPrint, Language.WebIDL
+
+Executable:     idlppr
+Main-is:        IdlPpr.hs
+Hs-source-dirs: .
+Include-dirs:   include
+Includes:       esidl.h parser.h lex.yy.h lexer.h
+C-sources:      cbits/lexer.c cbits/lex.yy.c
+Other-modules:  Language.WebIDL.Lexer, Language.WebIDL.Parser, Language.WebIDL.Syntax,
+                Language.WebIDL.PrettyPrint
+
+Executable:     idltestlex
+Main-is:        TestLex.hs
+Hs-source-dirs: .
+Include-dirs:   include
+Includes:       esidl.h parser.h lex.yy.h lexer.h
+C-sources:      cbits/lexer.c cbits/lex.yy.c
+Other-modules:  Language.WebIDL.Lexer
+
+

@@ -1,0 +1,55 @@
+name:                wai-middleware-preprocessor
+version:             0.2.0.0
+synopsis:            WAI middleware for preprocessing static files
+homepage:            https://github.com/taktoa/wai-middleware-preprocessor
+bug-reports:         https://github.com/taktoa/wai-middleware-preprocessor/issues
+license:             GPL-3
+license-file:        LICENSE
+author:              Remy Goldschmidt <taktoa@gmail.com>
+maintainer:          Remy Goldschmidt <taktoa@gmail.com>
+category:            Web
+stability:           experimental
+build-type:          Simple
+cabal-version:       >= 1.10
+description:         WAI middleware that preprocesses and caches files (e.g.: for Fay, purescript, etc.)
+
+library
+  hs-source-dirs: src
+  exposed-modules:     Network.Wai.Middleware.Preprocessor
+  default-extensions:  OverloadedStrings
+                     , TupleSections
+  default-language:    Haskell2010
+  build-depends:       base       >=4.6  && <5
+                     , directory  >=1.2  && <1.3
+                     , mtl        >=2.1  && <2.3
+                     , split      >=0.2  && <0.3
+                     , text       >=0.11 && <1.3
+                     , wai        >=3.0  && <3.1
+                     , wai-middleware-static
+                                  >=0.6  && <0.7
+  ghc-options: -Wall
+
+test-suite wai-middleware-preprocessor-tests
+  type:                detailed-0.9
+  test-module:         Network.Wai.Middleware.Preprocessor.Tests
+  other-modules:       Network.Wai.Middleware.Preprocessor
+  buildable:           True
+  hs-source-dirs:      src test
+  default-extensions:  OverloadedStrings
+                     , TupleSections
+  default-language:    Haskell2010
+  build-depends:       base       >=4.6  && <5
+                     , Cabal      >=1.20
+                     , directory  >=1.2  && <1.3
+                     , mtl        >=2.1  && <2.3
+                     , split      >=0.2  && <0.3
+                     , text       >=0.11 && <1.3
+                     , wai        >=3.0  && <3.1
+                     , wai-middleware-static
+                                  >=0.6  && <0.7
+                     , warp       >=3.0  && <3.1
+  ghc-options: -Wall
+
+source-repository head
+  type:     git
+  location: git://github.com/taktoa/wai-middleware-preprocessor.git

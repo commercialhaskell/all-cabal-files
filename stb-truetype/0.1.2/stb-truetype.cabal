@@ -1,0 +1,43 @@
+Name:                stb-truetype
+Version:             0.1.2
+Synopsis:            A wrapper around Sean Barrett's TrueType rasterizer library.
+Description:         A wrapper around Sean Barrett's TrueType rasterizer library.
+License:             PublicDomain
+License-file:        LICENSE
+Author:              Balazs Komuves
+Maintainer:          bkomuves (plus) hackage (at) gmail (dot) com
+Homepage:            http://code.haskell.org/~bkomuves/
+Stability:           Experimental
+Category:            Graphics
+Tested-With:         GHC == 6.10.1
+Cabal-Version:       >= 1.2
+Build-Type:          Simple
+
+extra-source-files:  cbits/stb_truetype.h
+
+Flag splitBase
+  Description: Choose the new smaller, split-up base package.
+
+Flag base4
+  Description: Base v4
+
+Library
+  if flag(splitBase)
+    if flag(base4)
+      Build-Depends:   base >= 4 && < 5, array, containers, bytestring
+      cpp-options:     -DBASE_VERSION=4
+    else
+      Build-Depends:   base >= 3 && < 4, array, containers, bytestring
+      cpp-options:     -DBASE_VERSION=3
+  else
+    Build-Depends:   base >=2 && < 3
+    cpp-options:     -DBASE_VERSION=2
+    
+  Exposed-Modules:     Graphics.Rendering.TrueType.STB
+
+  Hs-Source-Dirs:      .
+  Extensions:          ForeignFunctionInterface, CPP
+
+  C-Sources:           cbits/wrapper.c 
+  Include-Dirs:        cbits
+                       

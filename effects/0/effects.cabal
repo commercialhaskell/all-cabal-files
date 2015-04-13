@@ -1,0 +1,36 @@
+name:                effects
+version:             0
+synopsis:            Computational Effects
+
+description:         An alternative to Monad Transformers.
+
+category:            Control, Monads
+license:             BSD3
+license-file:        LICENSE
+author:              Sjoerd Visscher
+maintainer:          sjoerd@w3future.com
+stability:           experimental
+homepage:            http://github.com/sjoerdvisscher/effects
+bug-reports:         http://github.com/sjoerdvisscher/effects/issues
+
+build-type:          Simple
+cabal-version:       >= 1.6
+
+Library
+  HS-Source-Dirs:      src
+  build-depends:       base >= 3 && < 5, 
+                       containers  >= 0.4 && < 0.5,
+                       transformers >= 0.2 && < 0.3,
+                       void
+  exposed-modules:     
+    Control.Effects
+    Control.Effects.Cont
+    Control.Effects.Either
+    Control.Effects.Error
+    Control.Effects.Set
+    Control.Effects.State
+    Control.Effects.Writer
+    
+source-repository head
+  type:     git
+  location: git://github.com/sjoerdvisscher/effects.git

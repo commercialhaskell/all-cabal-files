@@ -1,0 +1,61 @@
+--Package-properties
+Name:			squeeze
+Version:		1.0.2.4
+Cabal-Version:		>= 1.6
+Copyright:		(C) 2010 Dr. Alistair Ward
+License:		GPL
+License-file:		LICENSE
+Author:			Dr. Alistair Ward
+Stability:		Stable interface, incomplete features.
+Synopsis:		A file-packing application.
+Build-Type:		Simple
+Description:		Returns progressively better subsets of the specified files, selected to fit into a limited space, without wasting more than the specific ratio.
+Category:		Utils
+Tested-With:		GHC == 6.10, GHC == 6.12, GHC == 7.0, GHC == 7.4
+Homepage:		http://functionalley.eu
+Maintainer:		squeeze <at> functionalley <dot> eu
+Bug-reports:		squeeze <at> functionalley <dot> eu
+Data-files:
+Extra-Source-Files:	changelog copyright debian/DEBIAN/control makefile man/man1/*.1 *.spec
+
+flag llvm
+    Description:	Whether the 'llvm' compiler-backend has been installed and is required for code-generation.
+    manual:		True
+    default:		False
+
+Executable squeeze
+    hs-source-dirs:	src
+    Main-Is:		Main.hs
+    Other-modules:
+        Squeeze.Data.CommandOptions
+        Squeeze.Data.File
+        Squeeze.Data.FileCombination
+        Squeeze.Squeeze
+        Squeeze.Test.Performance
+        Squeeze.Test.QC
+
+    Build-depends:
+        base == 4.*,
+        Cabal >= 1.6 && < 2,
+        directory,
+        factory >= 0.1,
+        filepath,
+        mtl,
+        QuickCheck >= 2.4,
+        random,
+        toolshed >= 0.13,
+        unix
+
+    GHC-options:	-Wall -O2
+
+    if impl(ghc >= 7.4.1)
+        GHC-prof-options:	-prof -fprof-auto -fprof-cafs
+    else
+        GHC-prof-options:	-prof -auto-all -caf-all
+
+    if impl(ghc >= 7.0)
+        GHC-options:	-rtsopts
+
+        if flag(llvm)
+            GHC-options:	-fllvm
+

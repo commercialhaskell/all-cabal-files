@@ -1,0 +1,32 @@
+name:		stm
+version:        2.2.0.1
+license:	BSD3
+license-file:	LICENSE
+maintainer:	libraries@haskell.org
+synopsis:	Software Transactional Memory
+category:       Concurrency
+description:	A modular composable concurrency abstraction.
+build-type:     Simple
+cabal-version:  >=1.2
+
+flag base4
+
+library
+  exposed-modules:
+    Control.Concurrent.STM
+    Control.Concurrent.STM.TArray
+    Control.Concurrent.STM.TVar
+    Control.Concurrent.STM.TChan
+    Control.Concurrent.STM.TMVar
+    Control.Monad.STM
+  other-modules:
+    Control.Sequential.STM
+  build-depends: base < 5, array
+  if flag(base4)
+    build-depends: base >=4
+    cpp-options:   -DBASE4
+  else
+    build-depends: base <4
+  if impl(ghc >= 6.10)
+    build-depends: base >=4
+  extensions:    CPP

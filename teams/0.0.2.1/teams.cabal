@@ -1,0 +1,20 @@
+Name:                teams
+Version:             0.0.2.1
+Description:         Graphical modeling tools for sequential teams
+License:             GPL
+License-file:        LICENSE
+Author:              Aditya Mahajan
+Maintainer:          aditya DOT mahajan AT yale DOT edu
+Build-Type:          Simple
+Cabal-Version:       >=1.2
+Category:            Algorithms, Stochastic Control
+Stability:           experimental
+Synopsis:            Graphical modeling tools for sequential teams
+Library
+   Build-Depends:     base, fgl>=5.4, containers, graphviz>=2009.5.1
+   Exposed-modules:   Data.Teams.Graph
+                      Data.Teams.Structure
+                      Data.Teams.Examples.Wit79
+                      Data.Teams.Examples.DecMdp
+                      Data.Teams.Examples.MAB
+   ghc-options:       -Wall

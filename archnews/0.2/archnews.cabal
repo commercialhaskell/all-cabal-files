@@ -1,0 +1,15 @@
+Name:                archnews
+Version:             0.2
+homepage:            http://archhaskell.wordpress.com/
+Synopsis:            Convert Arch Linux package updates in RSS to pretty markdown
+Description:         Convert Arch Linux package updates in RSS to pretty markdown
+Category:            Distribution
+License:             BSD3
+License-file:        LICENSE
+Author:              Don Stewart 
+Maintainer:          <dons@galois.com>
+Build-Depends:       base < 5, tagsoup, download-curl, containers, feed
+Build-type:          Simple
+
+Executable:          archnews
+Main-is:             Main.hs

@@ -1,0 +1,40 @@
+name:                spawn
+version:             0.3
+license:             BSD3
+license-file:        LICENSE
+synopsis:            Tiny library for concurrent computations
+category:            Concurrency, Concurrent, Control
+author:              Keegan McAllister <mcallister.keegan@gmail.com>
+maintainer:          Keegan McAllister <mcallister.keegan@gmail.com>
+build-type:          Simple
+cabal-version:       >=1.6
+description:
+  Spawn a concurrent 'IO' computation and later demand its result.  Tiny API
+  and implementation.
+  .
+  New in version 0.3:
+  .
+    * Added functions @parMapIO@, @parMapIO_@, and @(|*|)@, which capture
+      common use cases of @spawn@.
+  .
+    * Updated code to avoid using deprecated functions with @base-4.3@ and
+      later (GHC 7.0 and later).  The old code is still used with older
+      @base@ libraries.
+  .
+    * Added public GitHub repository.
+
+extra-source-files:
+  README
+
+library
+  exposed-modules:   Control.Concurrent.Spawn
+  ghc-options:       -Wall
+  build-depends:
+      base >= 3 && < 5
+
+  other-extensions:
+      CPP
+
+source-repository head
+    type:     git
+    location: git://github.com/kmcallister/spawn.git

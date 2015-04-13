@@ -1,0 +1,31 @@
+Name:              hsc3-db
+Version:           0.11
+Synopsis:          Haskell SuperCollider Unit Generator Database
+Description:       Database of SuperCollider Unit Generators
+License:           GPL
+Category:          Sound
+Copyright:         (c) Rohan Drape, 2006-2011
+Author:            Rohan Drape
+Maintainer:        rd@slavepianos.org
+Stability:         Experimental
+Homepage:          http://slavepianos.org/rd/?t=hsc3-db
+Tested-With:       GHC == 7.2.2
+Build-Type:        Simple
+Cabal-Version:     >= 1.8
+
+Data-files:        README
+                   mk/config
+                   mk/mk.scd
+                   sclang/UGenDB.sc
+                   sclang/Utilities.sc
+
+Library
+  Build-Depends:   base == 4.*,
+                   hsc3 == 0.11.*
+  GHC-Options:     -Wall -fwarn-tabs
+  Exposed-modules: Sound.SC3.UGen.DB
+                   Sound.SC3.UGen.DB.Data
+
+Source-Repository  head
+  Type:            darcs
+  Location:        http://slavepianos.org/rd/sw/hsc3-db/

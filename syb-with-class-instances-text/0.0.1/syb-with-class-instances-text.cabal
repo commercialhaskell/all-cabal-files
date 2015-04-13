@@ -1,0 +1,26 @@
+Name:               syb-with-class-instances-text
+Version:            0.0.1
+License:            BSD3
+License-file:       LICENSE
+Copyright:          2010 Jeremy Shaw
+Author:             Jeremy Shaw
+Maintainer:         jeremy@seereason.org
+Stability:          experimental
+Synopsis:           Scrap Your Boilerplate With Class Text instance
+Description:        Provides SYB-with-class instances for Text from the text package.
+Category:           Data
+Build-Type:         Simple
+Cabal-Version:      >= 1.6
+
+source-repository head
+  type:     darcs
+  location: http://src.seereason.com/syb-with-class-instances-text
+
+Library 
+    Build-Depends:      base >= 3 && < 5, syb-with-class, text >= 0.7.1
+    Exposed-modules:
+        Data.Generics.SYB.WithClass.Instances.Text
+
+    Extensions: FlexibleContexts, FlexibleInstances, MultiParamTypeClasses, UndecidableInstances
+
+    GHC-Options: -Wall

@@ -1,0 +1,39 @@
+Name:           preprocessor-tools
+Version:        0.1
+Cabal-Version:  >= 1.2
+License:        BSD3
+License-File:   LICENSE
+Stability:      experimental
+Author:         Jesse A. Tov <tov@ccs.neu.edu>
+Maintainer:     tov@ccs.neu.edu
+Homepage:       http://www.ccs.neu.edu/~tov/session-types
+Category:       Source-tools, Language, Code Generation
+Synopsis:       A framework for extending Haskell's syntax via quick-and-dirty preprocessors
+Build-type:     Simple
+Description:
+        This library provides a quick-and-dirty (but often effective)
+        method for extending Haskell's syntax using a custom
+        preprocessor.  It parses Haskell into a bare-bones AST with just
+        enough knowledge of the syntax to preserve nesting, and then
+        allows transformations on the AST.
+        .
+        See the package ixdopp for an example of how to do this.
+
+Extra-Source-Files:
+    TODO
+
+Library
+  Build-Depends:        haskell98, base, mtl, parsec
+  Extensions:           DeriveDataTypeable
+  Exposed-modules:
+    Language.Haskell.Preprocessor,
+    Language.Haskell.Preprocessor.Ast,
+    Language.Haskell.Preprocessor.Error,
+    Language.Haskell.Preprocessor.Loc,
+    Language.Haskell.Preprocessor.Parser,
+    Language.Haskell.Preprocessor.Printer,
+    Language.Haskell.Preprocessor.SynSpec,
+    Language.Haskell.Preprocessor.Token,
+    Language.Haskell.Preprocessor.Util
+  Other-modules:
+    Language.Haskell.Preprocessor.Lexer

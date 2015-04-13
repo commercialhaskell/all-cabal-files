@@ -1,0 +1,37 @@
+Name:                   barrie
+Version:                0.4
+Synopsis:               Pure Gtk GUI library
+Description:
+    Implementation of an idea for supporting certain kinds of GUI:
+    that is state based, user-driven ones.  The GUI is intended to
+    manipulate a state, and it is responsive rather than active.
+    Configuration is an example.
+
+Category:               GUI
+License:                GPL
+License-file:           LICENSE
+Author:                 Fraser Wilson
+Maintainer:             blancolioni@gmail.com
+Copyright:              (c) Fraser Wilson
+Stability:              unstable
+cabal-version: >= 0.2
+build-type: Simple
+
+Library
+   Build-Depends:       base,filepath,gtk>=0.10.0,glib>=0.10.0,containers
+   Exposed-modules:     Barrie
+   ghc-options:         -Wall -optl-Wl,s
+   ghc-prof-options:    -prof -auto-all
+   other-modules:
+        Barrie.Config
+        Barrie.DrawPrimitive
+        Barrie.Gadgets
+        Barrie.Gadgets.Connections
+        Barrie.Render
+        Barrie.Render.Gtk
+        Barrie.Style
+        Barrie.Trace
+        Barrie.Widgets
+  extensions:           MultiParamTypeClasses,FunctionalDependencies,
+                        GeneralizedNewtypeDeriving,RankNTypes,ExistentialQuantification
+  hs-source-dirs:       src

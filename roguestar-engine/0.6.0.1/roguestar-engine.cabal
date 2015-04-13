@@ -1,0 +1,42 @@
+name: roguestar-engine
+version: 0.6.0.1
+cabal-version:       >=1.2
+build-type: Simple
+license: OtherLicense
+license-file: LICENSE
+maintainer: Christopher Lane Hinson <lane@downstairspeople.org>
+homepage: http://roguestar.downstairspeople.org/
+synopsis: Sci-fi roguelike game.  Backend.
+description: Requires roguestar and roguestar-glut.
+category: Game
+author: Christopher Lane Hinson
+tested-with: GHC ==6.12.1
+ 
+executable roguestar-engine
+  main-is: Main.hs
+  hs-source-dirs: src
+  build-depends: hslogger >=1.1.0 ,
+               priority-sync >=0.2.1.1 && <0.3, PSQueue >=1.1 && <1.2,
+               bytestring >=0.9.1.5, parallel >=2.2.0.1 ,
+               stm >=2.1.1.2, data-memocombinators >=0.4.0 && <0.5,
+               MonadRandom >=0.1.4 && <0.2, MaybeT >=0.1.2 && <0.2,
+               mtl >=1.1.0.2, random >=1.0.0.2 && <1.1,
+               old-time >=1.0.0.3 && <1.1, array >=0.3.0.0 && <0.3.1,
+               containers >=0.3.0.0, base >=4 && <5
+  other-modules: TravelData VisibilityData Stats FactionData Behavior
+               Alignment PlaneData Grids Perception PlaneVisibility Turns Plane
+               CreatureData StatsData Protocol Character Tool Substances
+               HierarchicalDatabase Travel ToolData CharacterData Creature Facing
+               DBPrivate RNG Species Position TerrainData Combat Tests DBData
+               GridRayCaster BeginGame SpeciesData TimeCoordinate DB
+               AttributeGeneration CreatureAttribute Building BuildingData Town
+               Random PlayerState MakeData DBErrorFlag Construction Make Activate
+               Contact DeviceActivation WorkCluster Planet PlanetData Logging
+               NodeData CharacterAdvancement
+  ghc-prof-options: -prof -auto-all
+  ghc-shared-options: -prof -auto-all
+  if impl(ghc >= 7.0)
+    ghc-options: -threaded -fno-warn-type-defaults -rtsopts=all
+  else
+    ghc-options: -threaded -fno-warn-type-defaults
+  

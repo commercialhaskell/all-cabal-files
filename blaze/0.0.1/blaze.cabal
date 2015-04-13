@@ -1,0 +1,24 @@
+name:                blaze
+version:             0.0.1
+synopsis:            Blaze-html-based HTML5 library
+description:         A host of HTML5 functions to make writing HTML5 with blaze-html practical.
+license:             BSD3
+license-file:        LICENSE
+author:              Chris Done
+maintainer:          chrisdone@gmail.com
+copyright:           2013 Chris Done
+category:            HTML, Web
+build-type:          Simple
+cabal-version:       >=1.8
+
+library
+  exposed-modules:   Blaze,
+                     Blaze.Html5,
+                     Blaze.Elements,
+                     Blaze.Attributes,
+                     Blaze.Bootstrap
+  hs-source-dirs:    src/
+  build-depends:     base > 4 && <5,
+                     blaze-markup,
+                     blaze-html
+  ghc-options:       -Wall

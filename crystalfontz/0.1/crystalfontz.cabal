@@ -1,0 +1,23 @@
+name:                crystalfontz
+version:             0.1
+license:             BSD3
+license-file:        LICENSE
+synopsis:            Control Crystalfontz LCD displays.
+category:            Hardware, System, User Interfaces
+author:              Keegan McAllister <mcallister.keegan@gmail.com>
+maintainer:          Keegan McAllister <mcallister.keegan@gmail.com>
+build-type:          Simple
+cabal-version:       >=1.2
+description:
+  Control a Crystalfontz LCD display over a serial (often USB) port.  Devices
+  and commands are implemented as needed, so the library is not comprehensive.
+  Suggestions and patches are welcome.
+
+library
+  exposed-modules:   Hardware.LCD.CFA635
+  ghc-options:       -Wall
+  build-depends:
+      base        >= 3 && < 5
+    , crc16-table >= 0.1
+    , serialport  >= 0.3
+    , MaybeT      >= 0.1

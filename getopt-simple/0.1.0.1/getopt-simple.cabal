@@ -1,0 +1,19 @@
+name:                getopt-simple
+version:             0.1.0.1
+synopsis:            A "System.Console.GetOpt" wrapper to make simple use case easy.
+description:         There's no need to invoke full 'getOpt' power in everyday use. So, here it is a most common use case implemented to be as painless as possible while retaining some functionality. It's divided into three layers, each built upon another. You can start at highest and peel of layers to gradually unlock more 'getOpt' features.
+homepage:            https://bitbucket.org/dpwiz/getopt-simple
+license:             BSD3
+license-file:        LICENSE
+author:              Alexander Bondarenko
+maintainer:          aenor.realm@gmail.com
+copyright:           Alexander Bondarenko 2012
+category:            System
+build-type:          Simple
+cabal-version:       >=1.8
+
+library
+  exposed-modules:     System.Console.GetOpt.Simple
+  -- other-modules:       
+  hs-source-dirs:      src/
+  build-depends:       base ==4.5.*, containers

@@ -1,0 +1,44 @@
+name:                language-boogie
+version:             0.2
+synopsis:            Interpreter and language infrastructure for Boogie.
+description:         Boogaloo is an interpreter and run-time assertion checker for the Boogie intermediate verification language.
+                     The package also provides a language infrastructure library, including a Boogie AST, parser, type checker, and pretty-printer.
+homepage:            https://bitbucket.org/nadiapolikarpova/boogaloo
+license:             BSD3
+license-file:        LICENSE
+author:              Nadia Polikarpova
+maintainer:          nadia.polikarpova@gmail.com
+category:            Language
+tested-with:         GHC==7.4.1 
+build-type:          Simple
+cabal-version:       >=1.8
+
+source-repository head
+  type:     hg
+  location: https://bitbucket.org/nadiapolikarpova/boogaloo
+
+flag boogaloo
+  Description: Build the boogaloo executable
+  Default:     True
+
+flag tests
+  Description: Build boogaloo-tests executable
+  Default:     False
+
+library
+  exposed-modules:     Language.Boogie.Util, Language.Boogie.TypeChecker, Language.Boogie.Tokens, Language.Boogie.PrettyPrinter, Language.Boogie.Position, Language.Boogie.Parser, Language.Boogie.NormalForm, Language.Boogie.Intervals, Language.Boogie.Interpreter, Language.Boogie.Heap, Language.Boogie.Generator, Language.Boogie.ErrorAccum, Language.Boogie.Environment, Language.Boogie.BasicBlocks, Language.Boogie.AST
+  -- other-modules:       
+  build-depends:       base ==4.*, random ==1.0.*, containers >=0.4 && <0.6, mtl ==2.1.*, pretty ==1.1.*, parsec ==3.1.*, transformers ==0.3.*, stream-monad ==0.4.*, random ==1.0.*, lens ==3.7.*
+    
+executable boogaloo
+  main-is:             Boogaloo.hs             
+  build-depends:       base ==4.*, language-boogie ==0.2.*, containers >=0.4 && <0.6, parsec ==3.1.*, cmdargs ==0.10.*, random ==1.0.*, time ==1.4.*, mtl ==2.1.*, pretty ==1.1.*, transformers ==0.3.*, stream-monad ==0.4.*, ansi-terminal ==0.5.*, random ==1.0.*, lens ==3.7.*
+  If !flag(boogaloo)
+    buildable: False  
+  
+executable boogaloo-tests
+  main-is:             Tests.hs
+  build-depends:       base ==4.*, language-boogie ==0.2.*, containers >=0.4 && <0.6, filepath ==1.3.*, parsec ==3.1.*, HUnit ==1.2.*, mtl ==2.1.*, pretty ==1.1.*, transformers ==0.3.*, stream-monad ==0.4.*, random ==1.0.*, lens ==3.7.*
+  If !flag(tests)
+    buildable: False  
+  

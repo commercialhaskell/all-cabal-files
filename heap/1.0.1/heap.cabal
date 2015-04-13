@@ -1,0 +1,60 @@
+Name:                heap
+Version:             1.0.1
+
+Category:            Data Structures
+Synopsis:            Heaps in Haskell
+Description:         A flexible Haskell implementation of minimum, maximum,
+                     minimum-priority, maximum-priority and custom-ordered
+                     heaps.
+
+License:             BSD3
+License-File:        LICENSE
+Copyright:           (c) 2008-2009, Stephan Friedrichs
+Author:              Stephan Friedrichs
+Maintainer:          Manuel Eberl (last name + m _at_ in.tum.de)
+
+Build-Type:          Simple
+Cabal-Version:       >= 1.10
+Tested-With:         GHC == 7.8.3
+Extra-Source-Files:  changes
+
+Flag Test
+  Description:       Build a binary running test cases
+  Default:           False
+  
+
+Library
+  Build-Depends:     base >= 3 && < 5
+  Exposed-Modules:
+      Data.Heap
+  Other-Modules:
+      Data.Heap.Internal
+    , Data.Heap.Item
+  GHC-Options:       -Wall -fwarn-tabs
+  Other-Extensions:
+      DeriveDataTypeable
+    , EmptyDataDecls
+    , FlexibleContexts
+    , FlexibleInstances
+    , MultiParamTypeClasses
+    , TypeFamilies
+    , Trustworthy
+  Default-Language:    Haskell2010
+
+Executable heap-tests
+  if !flag( Test )
+    Buildable:       False
+  Main-Is:
+      Test.hs
+  Other-Modules:
+      Data.Heap
+    , Data.Heap.Internal
+    , Data.Heap.Item
+    , Test.Heap
+    , Test.Heap.Common
+    , Test.Heap.Internal
+    , Test.Heap.Item
+  Build-Depends:     base >= 3 && < 5, QuickCheck >= 2.3 && < 3
+  CPP-Options:       -D__TEST__
+  GHC-Options:       -Wall -fwarn-tabs -fno-ignore-asserts
+  Default-Language:  Haskell2010

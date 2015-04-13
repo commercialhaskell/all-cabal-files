@@ -1,0 +1,37 @@
+name:                clckwrks-theme-clckwrks
+version:             0.4.0
+synopsis:            simple bootstrap based template for clckwrks
+homepage:            http://www.clckwrks.com/
+license:             BSD3
+license-file:        LICENSE
+author:              Jeremy Shaw
+maintainer:          Jeremy Shaw <jeremy@n-heptane.com>
+category:            Clckwrks
+build-type:          Custom
+cabal-version:       >=1.8
+
+data-files:
+  data/css/bootstrap.css
+  data/css/bootstrap.min.css
+  data/css/bootstrap-responsive.css
+  data/css/bootstrap-responsive.min.css
+  data/css/hscolour.css
+  data/img/glyphicons-halflings-white.png
+  data/img/glyphicons-halflings.png
+
+source-repository head
+    type:     darcs
+    subdir:   clckwrks-theme-clckwrks
+    location: http://hub.darcs.net/stepcut/clckwrks
+
+library
+  build-tools:
+    hsx2hs
+
+  exposed-modules:     Theme
+                       Paths_clckwrks_theme_clckwrks
+  build-depends:       base             >= 4.5 && < 5,
+                       clckwrks         >= 0.21 && < 0.22,
+                       containers       >= 0.4 && < 0.6,
+                       hsp              >= 0.9 && < 0.11,
+                       text             == 0.11.*

@@ -1,0 +1,58 @@
+name:                stunclient
+version:             0.1.0.0
+synopsis:            RFC 5389: Session Traversal Utilities for NAT (STUN) client
+description:         RFC 5389: Session Traversal Utilities for NAT (STUN) client
+license:             MIT
+license-file:        LICENSE
+author:              Philipp Balzarek
+maintainer:          p.balzarek@googlemail.com
+copyright:           Philipp Balzarek
+category:            Network
+build-type:          Simple
+cabal-version:       >=1.8
+bug-reports:         https://github.com/Philonous/hs-stun/issues
+
+library
+  exposed-modules:     Network.Stun
+                     , Network.Stun.Internal
+  other-modules:       Network.Stun.Base
+                     , Network.Stun.Error
+                     , Network.Stun.MappedAddress
+                     , Network.Stun.Credentials
+                     , Network.Endian
+  hs-source-dirs:      source
+  build-depends:       base >= 4.5 && < 5
+                     , network >= 2.4
+                     , transformers >= 0.3
+                     , cereal >= 0.3
+                     , bytestring >= 0.10
+                     , text >= 0.11
+                     , stringprep >= 0.1
+                     , random >= 1.0
+                     , digest >= 0.0
+                     , unbounded-delays >= 0.1
+                     , cryptohash-cryptoapi >= 0.1
+                     , cryptohash >= 0.9
+                     , crypto-api >= 0.12
+  ghc-options: -Wall
+
+test-suite test-serialize
+    type:          exitcode-stdio-1.0
+    main-is:       Tests.hs
+    hs-source-dirs: source
+    build-depends: base >= 4.5
+                 , network >= 2.4
+                 , transformers >= 0.3
+                 , cereal >= 0.3
+                 , bytestring >= 0.10
+                 , text >= 0.11
+                 , random >= 1.0
+                 , digest >= 0.0
+                 , unbounded-delays >= 0.1
+                 , QuickCheck >= 2.6
+                 , test-framework >= 0.8
+                 , test-framework-quickcheck2 >= 0.3
+
+Source-Repository head
+  Type: git
+  Location: git://github.com/Philonous/hs-stun.git

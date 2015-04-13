@@ -1,0 +1,86 @@
+name:            darcsden
+version:         0.5
+synopsis:        darcs project hosting and collaboration
+description:
+    A web and SSH server for hosting darcs projects and collaborating with
+    others.
+    .
+    See darcsden --readme for installation instructions.
+cabal-version:   >=1.6
+build-type:      Simple
+license:         GPL
+license-file:    LICENSE
+author:          Alex Suraci
+maintainer:      i.am@toogeneric.com
+homepage:        http://darcsden.com/
+category:        Web
+
+source-repository   head
+    type:           darcs
+    location:       http://darcsden.com/alex/darcsden
+
+executable darcsden
+  hs-source-dirs:   src
+
+  main-is:          WebServer.hs
+
+  if impl(ghc >= 6.12)
+    ghc-options:   -Wall -threaded -fno-warn-unused-do-bind
+  else
+    ghc-options:   -Wall -threaded
+
+  build-depends:
+    { base >= 4 && < 5
+    , base64-string
+    , blaze-html >= 0.4.0.0 && < 0.5
+    , bytestring
+    , CouchDB
+    , containers
+    , darcs >= 2.5.1
+    , directory
+    , filepath
+    , harp
+    , hashed-storage
+    , highlighter
+    , hsp >= 0.6 && < 0.7
+    , json
+    , mtl >= 2 && < 2.1
+    , old-locale
+    , old-time
+    , pandoc
+    , pcre-light
+    , pureMD5
+    , process
+    , random
+    , redis
+    , SHA
+    , ssh >= 0.2.6
+    , snap-core >= 0.4 && < 0.4.1
+    , snap-server >= 0.4 && < 0.4.1
+    , system-uuid
+    , split
+    , text
+    , time
+    , xhtml
+    , xml
+    }
+
+executable darcsden-ssh
+  hs-source-dirs:   src
+
+  main-is:          SSHServer.hs
+
+  if impl(ghc >= 6.12)
+    ghc-options:   -Wall -threaded -fno-warn-unused-do-bind
+  else
+    ghc-options:   -Wall -threaded
+
+executable darcsden-post-hook
+  hs-source-dirs:   src
+
+  main-is:          PostHook.hs
+
+  if impl(ghc >= 6.12)
+    ghc-options:   -Wall -threaded -fno-warn-unused-do-bind
+  else
+    ghc-options:   -Wall -threaded

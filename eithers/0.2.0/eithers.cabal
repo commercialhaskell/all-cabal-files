@@ -1,0 +1,9 @@
+name:                eithers
+version:             0.2.0
+synopsis:            None
+description:         None
+license:             BSD3
+author:              None
+build-type:          Simple
+cabal-version:       >=1.2
+library

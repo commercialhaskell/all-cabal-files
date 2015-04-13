@@ -1,0 +1,30 @@
+Name:                g-npm
+Version:             0.0.1
+Description:         Generate Gentoo ebuilds from NodeJS/npm packages.
+License:             MIT
+License-file:        LICENSE
+Category:            Tools
+Synopsis:            Generate Gentoo ebuilds from NodeJS/npm packages.
+Author:              Jesus Rivero (Neurogeek)
+Maintainer:          neurogeekster@gmail.com
+Package-url:         https://github.com/neurogeek/g-npm
+Build-Type:          Simple
+Cabal-Version:       >=1.6
+
+source-repository head
+  type: git
+  location: git://github.com/neurogeek/g-npm.git
+
+Executable g-npm
+  Main-is:           Main.hs
+  hs-source-dirs:    ., src
+
+  Build-Depends:     
+    base >= 3 && < 5,
+    HTTP >= 4000.2,
+    json
+
+  Other-modules:
+    Npm
+
+  GHC-Options: -fPIC

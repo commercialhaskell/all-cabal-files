@@ -1,0 +1,48 @@
+Name: HPDF
+Version: 1.0
+License: LGPL
+License-file:LICENSE
+Copyright: Copyright (c) 2007, alpheccar
+category: Graphics
+synopsis: Generation of PDF documents
+maintainer: misc@NOSPAMalpheccar.org
+homepage: http://www.alpheccar.org/en/posts/show/80
+build-depends: base, haskell98,mtl,encoding >= 0.1 ,zlib >= 0.3
+ghc-options: -Wall -funbox-strict-fields  -fglasgow-exts  -O2
+extensions: ForeignFunctionInterface, CPP
+description: A PDF library allowing to generate multipage PDF documents with outlines, links ...
+extra-source-files:
+  c/ctext.h
+  c/metrics.h
+  Test/AFMParser.hs
+  Test/logo.jpg
+  Test/Makefile
+  Test/Penrose.hs
+  Test/test.hs
+  README.txt
+C-Sources:	
+   c/metrics.c
+Include-Dirs: c
+Install-Includes: 
+   ctext.h
+exposed-Modules: 
+   Graphics.PDF
+   Graphics.PDF.Colors
+   Graphics.PDF.Coordinates
+   Graphics.PDF.Document
+   Graphics.PDF.Shapes
+   Graphics.PDF.Text
+   Graphics.PDF.Navigation
+   Graphics.PDF.Image
+   Graphics.PDF.Action
+   Graphics.PDF.Annotation
+   Graphics.PDF.Pattern
+   Graphics.PDF.Shading
+   Graphics.PDF.Demo
+Other-Modules:
+   Graphics.PDF.LowLevel.Types
+   Graphics.PDF.Data.PDFTree
+   Graphics.PDF.Pages
+   Graphics.PDF.Resources
+   Graphics.PDF.Draw
+   Graphics.PDF.LowLevel.Kern

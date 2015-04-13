@@ -1,0 +1,9 @@
+name:                holey-format
+version:             2.1.0
+synopsis:            None
+description:         None
+license:             BSD3
+author:              None
+build-type:          Simple
+cabal-version:       >=1.2
+library

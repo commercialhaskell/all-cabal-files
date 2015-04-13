@@ -1,0 +1,25 @@
+Name:fix-parser-simple
+Version:15320.3
+Description:Simple fix-expression parser
+License:LGPL
+License-File:license.txt
+Author:Matthew Farkas-Dyck
+Maintainer:strake888@gmail.com
+Category:Parser
+Synopsis:Simple fix-expression parser
+Build-Type:Simple
+Cabal-Version: >= 1.2
+
+Flag use_mtl {
+  Description: Use mtl rather than mmtl
+  Default:     False
+}
+
+Library {
+  Build-Depends: base >= 4 && < 5
+  if flag(use_mtl) { Build-Depends:  mtl }
+  else             { Build-Depends: mmtl }
+  Extensions: PatternGuards
+  Exposed-Modules: Parser.Fix.Simple
+  Other-Modules: Util
+}

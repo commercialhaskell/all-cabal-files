@@ -1,0 +1,42 @@
+name:                rsagl
+version:             0.2.2
+license:             BSD3
+license-file:        LICENSE
+author:              Christopher Lane Hinson <lane@downstairspeople.org>
+maintainer:          Christopher Lane Hinson <lane@downstairspeople.org>
+
+category:            Game, Graphics
+synopsis:            The RogueStar Animation and Graphics Library
+description:         RSAGL, the RogueStar Animation and Graphics Library, includes a
+                     domain-specific monad for 3D modelling of arbitrary parametric surfaces,
+                     as well as an animation monad and arrow, which is more or less like YAMPA
+                     as a stack of arrow transformers.  RSAGL was specifically designed for
+                     roguestar, but every effort has been made (including the license) to make
+                     it accessable to other projects that might benefit from it.
+                     .
+                     The git repository is available at <http://www.downstairspeople.org/git/rsagl.git>.
+homepage:            http://roguestar.downstairspeople.org/
+
+build-depends:       base>3, old-time, random, array, arrows, containers, parallel, mtl, OpenGL, GLUT, QuickCheck<2
+build-type:          Simple
+tested-with:         GHC==6.8.2
+
+exposed-modules:     RSAGL.FRPBase, RSAGL.RayTrace, RSAGL.StatefulArrow,
+                     RSAGL.Material, RSAGL.Auxiliary, RSAGL.BoundingBox,
+                     RSAGL.Vector, RSAGL.KinematicSensors, RSAGL.RSAGLColors,
+                     RSAGL.Extrusion, RSAGL.Color,
+                     RSAGL.SwitchedArrow, RSAGL.Time, RSAGL.Matrix,
+                     RSAGL.Joint, RSAGL.ArrowTransformerOptimizer, RSAGL.ProcessColors,
+                     RSAGL.Affine, RSAGL.WrappedAffine, RSAGL.CurveExtras,
+                     RSAGL.Scene, RSAGL.InverseKinematics, RSAGL.FRP,
+                     RSAGL.RK4, RSAGL.AnimationExtras, RSAGL.Interpolation,
+                     RSAGL.Model, RSAGL.Deformation, RSAGL.QualityControl,
+                     RSAGL.Noise, RSAGL.ApplicativeWrapper, RSAGL.Tesselation,
+                     RSAGL.Bottleneck, RSAGL.ModelingExtras, RSAGL.Animation,
+                     RSAGL.Curve, RSAGL.Angle, RSAGL.Optimization,
+                     RSAGL.Tests, RSAGL.CoordinateSystems, RSAGL.Orthagonal,
+                     RSAGL.AbstractVector, RSAGL.ThreadedArrow, RSAGL.Edge,
+                     RSAGL.Homogenous
+
+ghc-options:         -Wall -threaded -fno-warn-type-defaults -fexcess-precision
+ghc-prof-options:    -prof -auto-all

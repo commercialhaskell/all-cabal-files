@@ -1,0 +1,52 @@
+name:                hlcm
+version:             0.2.1
+synopsis:            Fast algorithm for mining closed frequent itemsets
+description:         Closed frequent itemsets are patterns that occur more 
+		     than a defined threshold in a transactional database. 
+		     This program is a Haskell implementation of the LCM2
+		     algorithm by Takeaki Uno and Hiroki Arimura, which
+		     is the fastest algorithm for this task. 
+		     This implementation can make use of several threads. 
+category: 	     Algorithms, Data Mining           
+license:             BSD3
+license-file:        LICENSE
+author:              Alexandre Termier
+maintainer:          Alexandre.Termier@imag.fr
+homepage:	     http://membres-liglab.imag.fr/termier/HLCM/hlcm.html
+build-depends:       base >=3 && < 4,
+		     bytestring,
+		     haskell98,
+		     array >= 0.2,
+		     parallel >= 1.1,
+		     containers >= 0.3,
+		     bytestring-csv
+build-type:          Simple
+cabal-version:       >= 1.2
+data-files:          README,
+                     Data/datasets.tgz
+
+library
+  exposed-modules:   HLCM
+  build-depends:     base,
+                     bytestring,
+                     haskell98,
+                     array >= 0.2,
+                     parallel >= 2.2
+  ghc-options:       -O2 -threaded
+
+
+executable hlcm
+  main-is:             Main.hs
+  ghc-options:         -O2 -threaded
+  build-depends:       base >=3 && < 4,
+                       bytestring,
+                       haskell98,
+                       array >= 0.2,
+                       parallel >= 2.2,
+                       containers >= 0.3,
+                       bytestring-csv
+
+executable benchHLCM
+  main-is:             Bench.hs
+  ghc-options:         -O2 -threaded
+

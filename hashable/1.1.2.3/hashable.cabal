@@ -1,0 +1,55 @@
+Name:                hashable
+Version:             1.1.2.3
+x-revision: 1
+Synopsis:            A class for types that can be converted to a hash value
+Description:         This package defines a class, 'Hashable', for types that
+                     can be converted to a hash value.  This class
+                     exists for the benefit of hashing-based data
+                     structures.  The package provides instances for
+                     basic types and a way to combine hash values.
+Homepage:            http://github.com/tibbe/hashable
+License:             BSD3
+License-file:        LICENSE
+Author:              Milan Straka <fox@ucw.cz>
+                     Johan Tibell <johan.tibell@gmail.com>
+Maintainer:          johan.tibell@gmail.com
+bug-reports:         https://github.com/tibbe/hashable/issues
+Stability:           Provisional
+Category:            Data
+Build-type:          Simple
+Cabal-version:       >=1.8
+-- tests/Properties.hs shouldn't have to go here, but the source files
+-- for the test-suite stanzas don't get picked up by `cabal sdist`.
+Extra-source-files:
+  CHANGES, README.md, tests/Properties.hs, benchmarks/Benchmarks.hs
+  benchmarks/Makefile
+
+Library
+  Exposed-modules:   Data.Hashable
+  Build-depends:     base >= 4.0 && < 4.8,
+                     bytestring >= 0.9 && < 1.0,
+                     ghc-prim < 0.3,
+                     text >= 0.11.0.5 && < 0.12
+
+  C-sources:         cbits/hashByteString.c
+  Ghc-options:       -Wall
+  if impl(ghc >= 6.8)
+    Ghc-options: -fwarn-tabs
+
+Test-suite tests
+  Type:              exitcode-stdio-1.0
+  Hs-source-dirs:    tests
+  Main-is:           Properties.hs
+  Build-depends:     base >= 4.0 && < 4.8,
+                     hashable,
+                     test-framework >= 0.3.3 && < 0.6,
+                     test-framework-quickcheck2 >= 0.2.9 && < 0.3,
+                     QuickCheck >= 2.4.0.1,
+                     random == 1.0.*,
+                     text >= 0.11.0.5
+
+  Ghc-options:       -Wall -fno-warn-orphans
+
+source-repository head
+  type:     git
+  location: https://github.com/tibbe/hashable.git

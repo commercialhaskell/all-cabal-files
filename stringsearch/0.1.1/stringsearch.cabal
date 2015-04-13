@@ -1,0 +1,15 @@
+Name:            stringsearch
+Category:        Text, Data, Search
+Version:         0.1.1
+x-revision: 1
+Description:     Fast search of ByteStrings
+License:         BSD3
+License-file:    LICENSE
+Author:          Daniel Fischer, Chris Kuklewicz
+Maintainer:      bos@serpentine.com
+Build-Depends:   base < 3
+Exposed-modules: Data.ByteString.Search.BoyerMoore
+                 Data.ByteString.Search.KnuthMorrisPratt
+Extensions:      CPP
+ghc-options:     -O2 -Wall -Werror
+nhc98-options:   -K4M

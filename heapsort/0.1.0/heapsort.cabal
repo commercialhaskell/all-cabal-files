@@ -1,0 +1,35 @@
+Name: heapsort
+Build-Type: Custom
+Description: Heapsort of MArrays
+Version: 0.1.0
+Cabal-Version: >= 1.2
+License: BSD3
+License-File: COPYING
+Author: Bart Massey <bart@cs.pdx.edu>
+Copyright: Copyright © 2010 Bart Massey
+Maintainer: Bart Massey <bart@cs.pdx.edu>
+Homepage: http://wiki.cs.pdx.edu/bartforge/heapsort
+Category: Algorithms
+Synopsis: Heapsort of MArrays as a demo of imperative programming
+Stability: Alpha
+
+Flag test
+  Description: Build test program
+  Default: False
+
+Library
+  Exposed-Modules: Data.Array.MArray.Heapsort
+
+Executable heapsort-example
+  Main-Is:         heapsort-example.hs
+  Build-Depends:   base >= 4 && < 5, array < 1
+  Other-Modules:   Data.Array.MArray.Heapsort
+
+-- http://gbacon.blogspot.com/2009/06/setting-up-simple-test-with-cabal.html
+
+Executable heapsort-tests
+  Main-Is:         heapsort-tests.hs
+  Build-Depends:   base >= 4 && < 5, array < 1, QuickCheck >= 2.1.1.1
+  Other-Modules:   Data.Array.MArray.Heapsort
+  if !flag(test)
+    Buildable:       False

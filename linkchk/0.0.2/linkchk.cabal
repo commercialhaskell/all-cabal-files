@@ -1,0 +1,26 @@
+name:                linkchk
+version:             0.0.2
+synopsis:            linkchk is a network interface link ping monitor.
+description:          It supports both IPv4 and IPv6. It works by monitoring
+                      the routing table and pinging the gateway (next hop)
+                      of a network interface. When the link is up and functioning
+                      the ping time is displayed in a small gtk window, otherwise
+                      the link status is displayed. linkchk can also run in a tty.
+category:            System
+license:             GPL
+license-file:        LICENSE
+author:              Jens-Ulrik Petersen
+maintainer:          Jens-Ulrik Petersen <juhp@01.246.ne.jp>
+homepage:            http://www.haskell.org/~petersen/haskell/linkchk/
+build-type:          Simple
+Cabal-Version:       >= 1.2
+data-files:          AUTHORS, INSTALL, NEWS, README, TODO, ChangeLog, index.html
+
+Executable linkchk
+        main-is:          Linkchk.hs
+        -- The GTK dependency was tested with gtk-0.9.12.1; I don't version it because
+        -- GTK doesn't change too fast.
+        build-depends:    base, haskell98, regex-compat, unix, popenhs, gtk
+
+        ghc-options:      -O2 -Wall -optl-Wl,-s
+        ghc-prof-options: -prof -auto-all

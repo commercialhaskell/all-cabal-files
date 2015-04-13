@@ -1,0 +1,26 @@
+Name:                tsession-happstack
+Version:             0.1
+Synopsis:            A Transaction Framework for Happstack         
+Description:         This is the integration of tsession to Happstack 
+  .
+  For more information check my master thesis:
+  .
+  <http://stud.micheler.net/master.pdf>
+        
+License:             BSD3
+License-file:        LICENSE
+Author:              Florian Micheler <hackage@micheler.net>
+Maintainer:          Florian Micheler <hackage@micheler.net>
+Copyright:           2014 Florian Micheler
+Category:            Web
+Build-type:          Simple
+Cabal-version:       >=1.6
+
+
+Library
+  Exposed-modules:     Control.TSession.Happstack
+  Build-depends:       base >4 && <5,
+                       transformers,
+                       happstack-server,
+                       tsession == 0.1
+                       

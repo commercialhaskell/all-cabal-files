@@ -1,0 +1,34 @@
+name:           haar
+version:        0.1
+synopsis:       Haar wavelet transforms
+description:    A Haar wavelet transform represents a sequence using
+                square waves as basis vectors.
+category:       Math
+Homepage:       https://github.com/mhwombat/haar
+cabal-version:  >=1.8
+build-type:     Simple
+author:         Amy de Buitléir
+copyright:      (c) Amy de Buitléir 2010-2012
+license:        BSD3
+stability:      experimental
+maintainer:     amy@nualeargais.ie
+license-file:   LICENSE
+
+library
+  hs-source-dirs:  src
+  build-depends:   base ==4.*, 
+                   split ==0.2.*
+  ghc-options:     -Wall
+  exposed-modules: Codec.Haar
+
+test-suite haar-tests
+  type:            exitcode-stdio-1.0
+  build-depends:   base ==4.*,
+                   test-framework-quickcheck2 == 0.3.*,
+                   QuickCheck == 2.7.*,
+                   test-framework == 0.8.*,
+                   haar
+  hs-source-dirs:  test
+  ghc-options:     -Wall -Werror -rtsopts
+  main-is:         Main.hs
+

@@ -1,0 +1,46 @@
+name:                pwstore-cli
+version:             0.3
+synopsis:            Command line interface for the pwstore library
+description:
+  This program provides a command line interface for Peter Scott's
+  pwstore library.  Specifically, it is possible to generate,
+  validate, and strengthen passwords hashed in the pwstore format.
+homepage:            http://darcsden.com/rycee/pwstore-cli/
+bug-reports:         http://darcsden.com/rycee/pwstore-cli/issues
+license:             GPL-3
+license-file:        LICENSE
+author:              Robert Helgesson
+maintainer:          robert@rycee.net
+stability:           Experimental
+category:            Cryptography, Console
+build-type:          Simple
+cabal-version:       >=1.8
+extra-source-files:  README NEWS tests/test.hs
+
+flag fast
+  description: Depend on pwstore-fast rather than pwstore-purehaskell
+  default: True
+
+executable pwstore
+  main-is:           src/pwstore.hs
+  other-modules:     Paths_pwstore_cli
+  ghc-options:       -Wall
+  extensions:        DeriveDataTypeable, RecordWildCards
+  build-depends:     base < 5, bytestring, text, cmdargs >= 0.7 && < 1.0
+
+  if flag(fast)
+     build-depends:   pwstore-fast >= 2.2 && < 3.0
+  else
+     build-depends:   pwstore-purehaskell >= 2.0 && < 3.0
+
+test-suite test-pwstore-cli
+  type:              exitcode-stdio-1.0
+  hs-source-dirs:    tests
+  main-is:           test.hs
+  build-depends:     base < 5
+                   , bytestring
+                   , process
+                   , test-framework == 0.4.*
+                   , test-framework-hunit == 0.2.*
+                   , HUnit
+                   , pwstore-fast >= 2.2 && < 3.0

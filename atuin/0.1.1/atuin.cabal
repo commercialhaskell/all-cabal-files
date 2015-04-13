@@ -1,0 +1,26 @@
+Name:		atuin
+Version:	0.1.1
+Author:		Edwin Brady
+License:	BSD3
+License-file:	LICENSE
+Maintainer:	eb@cs.st-andrews.ac.uk
+Homepage:	http://www.dcs.st-and.ac.uk/~eb/epic.php
+Stability:	experimental
+Category:       Compilers/Interpreters
+Synopsis:	Embedded Turtle language compiler in Haskell, with Epic output
+Description:    This language is a demonstration of the Epic compiler API.
+                It is a dynamically typed language with higher order
+		functions and system interaction (specifically graphics). 
+                Requires SDL and SDL_gfx libraries, and their C headers.
+Data-files:     sdl/sdlrun.o sdl/sdlrun.h
+Extra-source-files: sdl/Makefile sdl/sdlrun.c sdl/sdlrun.h src/Makefile
+
+Cabal-Version:  >= 1.6
+Build-type:     Custom
+
+Executable     atuin
+               Main-is: Main.lhs
+               hs-source-dirs: src
+               Other-modules: Turtle MkEpic SDLprims Lexer Parser Paths_atuin
+               Build-depends: base >=4 && <5, haskell98, Cabal, array,
+                              directory, epic

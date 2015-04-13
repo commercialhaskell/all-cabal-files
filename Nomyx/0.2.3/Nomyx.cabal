@@ -1,0 +1,45 @@
+name: Nomyx
+version: 0.2.3
+cabal-version: >=1.6
+build-type: Simple
+license: BSD3
+license-file: LICENSE
+maintainer: corentin.dupont@gmail.com
+synopsis: A Nomic game in haskell
+description: A Nomic game in Haskell, with a dedicated language to create new rules.
+             .
+             Nomyx is a fabulous and strange game where you have the right to change the rules in the middle of the game!
+             Indeed, changing the rules is the goal of the game. Changing a rule is considered as a move. Of course even that could be changed! The original (paper) game: www.nomic.net
+category: game
+author: Corentin Dupont
+data-files: static/css/nomyx.css static/nomyx.js
+data-dir: data
+extra-source-files: AUTHORS README TODO
+ 
+executable Nomyx
+    build-depends: Cabal -any, DebugTraceHelpers -any, MissingH -any,
+                   MonadCatchIO-mtl -any, Nomyx-Language ==0.2.3, QuickCheck -any,
+                   Unixutils -any, acid-state -any, base <5, binary -any,
+                   blaze-html ==0.5.*, blaze-markup -any, bytestring -any,
+                   containers -any, data-accessor-transformers -any, data-lens -any,
+                   data-lens-fd -any, data-lens-template -any, directory -any,
+                   eprocess -any, extensible-exceptions -any, fb -any, filepath -any,
+                   happstack-authenticate -any, happstack-server ==7.*,
+                   hdaemonize -any, hint -any, hint-server -any, hscolour -any,
+                   hslogger -any, ixset -any, lenses -any, mime-mail -any,
+                   monad-loops -any, mtl ==2.*, mueval -any, network -any,
+                   process -any, reform -any, reform-blaze -any,
+                   reform-happstack -any, regular -any, safe -any, safecopy -any,
+                   stm -any, syb -any, template-haskell -any, text -any, time -any,
+                   unix -any, utf8-string -any, web-routes ==0.27.*,
+                   web-routes-happstack ==0.23.*, web-routes-regular ==0.19.*,
+                   web-routes-th -any
+    main-is: Main.hs
+    buildable: True
+    extensions: CPP
+    hs-source-dirs: src
+    other-modules: Types Mail Test Multi Serialize Utils Interpret
+                   Quotes Web.Common Web.Help Web.NewGame Web.Game Web.Login
+                   Web.Settings Web.MainPage
+    ghc-options: -W -threaded
+ 

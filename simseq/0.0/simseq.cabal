@@ -1,0 +1,28 @@
+Name:           simseq
+Version:        0.0
+License:        GPL
+License-File:   LICENSE
+
+Author:         Ketil Malde
+Maintainer:     Ketil Malde <ketil@malde.org>
+
+Stability:      Alpha
+Category:       Bioinformatics
+Synopsis:       Simulate sequencing with different models for priming and errors
+Description:    This is a simulator that can generate simulated sequences -- primarily EST type sequences,
+                but quite possibly other types as well. Mail me for further information on usage etc.
+Homepage:       http://malde.org/~ketil/
+
+
+Build-Depends:  base, bio >= 0.2, random, bytestring
+        -- add fps for ghc-6.4.2
+Build-Type:     Simple
+
+data-files:     README, idea.txt
+
+Executable:     simseq
+Main-Is:        Simseq.hs
+Hs-Source-Dirs: src
+Other-modules:  Options, R454, UnfoldMut, Sanger
+
+Ghc-Options:    -Wall -funbox-strict-fields

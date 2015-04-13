@@ -1,0 +1,21 @@
+name:           time-extras
+version:        1.1.4
+stability:      stable
+license:        BSD3
+license-file:   LICENSE
+author:         Ashley Yakeley
+maintainer:     <ashley@semantic.org>
+homepage:       http://semantic.org/TimeLib/
+synopsis:       Data instances for the time package
+description:    Data instances for the time package
+category:       System
+build-type:     Simple
+cabal-version:  >=1.6
+
+library
+{
+    build-depends: base == 4.*, time == 1.1.4
+    exposed-modules:
+        Data.Time.Instances
+    extensions: StandaloneDeriving, DeriveDataTypeable, RankNTypes
+}

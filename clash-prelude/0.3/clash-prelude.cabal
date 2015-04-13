@@ -1,0 +1,45 @@
+Name:                 clash-prelude
+Version:              0.3
+Synopsis:             CAES Language for Synchronous Hardware - Prelude library
+-- Description:
+Homepage:             http://clash.ewi.utwente.nl/
+bug-reports:          http://github.com/christiaanb/clash-prelude/issues
+License:              BSD3
+License-file:         LICENSE
+Author:               Christiaan Baaij
+Maintainer:           Christiaan Baaij <christiaan.baaij@gmail.com>
+Copyright:            Copyright © 2013-2014 University of Twente
+Category:             Hardware
+Build-type:           Simple
+
+Extra-source-files:   README.md
+
+Cabal-version:        >=1.10
+
+source-repository head
+  type: git
+  location: https://github.com/christiaanb/clash-prelude.git
+
+Library
+  HS-Source-Dirs:     src
+
+  default-language:   Haskell2010
+  ghc-options:        -Wall -fwarn-tabs
+
+  Exposed-modules:    CLaSH.Bit
+                      CLaSH.Class.BitVector
+                      CLaSH.Prelude
+                      CLaSH.Promoted.Bool
+                      CLaSH.Promoted.Nat
+                      CLaSH.Promoted.Nat.TH
+                      CLaSH.Promoted.Nat.Literals
+                      CLaSH.Promoted.Ord
+                      CLaSH.Signal
+                      CLaSH.Sized.Signed
+                      CLaSH.Sized.Unsigned
+                      CLaSH.Sized.Vector
+
+  Build-depends:      base                 >= 4.7.0.0 && < 5,
+                      data-default         >= 0.5.3,
+                      template-haskell     >= 2.9.0.0,
+                      th-lift              >= 0.5.6

@@ -1,0 +1,32 @@
+Name:                   fast-logger
+Version:                0.2.1
+Author:                 Kazu Yamamoto <kazu@iij.ad.jp>
+Maintainer:             Kazu Yamamoto <kazu@iij.ad.jp>
+License:                BSD3
+License-File:           LICENSE
+Synopsis:               A fast logging system
+Description:            A fast logging system
+Category:               System
+Cabal-Version:          >= 1.6
+Build-Type:             Simple
+library
+  GHC-Options:          -Wall
+  Exposed-Modules:      System.Log.FastLogger
+                        System.Log.FastLogger.File
+                        System.Log.FastLogger.Date
+  Build-Depends:        base >= 4 && < 5
+                      , blaze-builder
+                      , bytestring
+                      , directory
+                      , filepath
+                      , text
+  if os(windows)
+    Cpp-Options:        -DWINDOWS
+    Build-Depends:      old-locale
+                      , time
+  else
+    Build-Depends:      unix
+                      , unix-time
+Source-Repository head
+  Type:                 git
+  Location:             git://github.com/kazu-yamamoto/logger.git

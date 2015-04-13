@@ -1,0 +1,32 @@
+name:           java-bridge-extras
+version:        0.99
+
+license:        MIT
+license-file:   LICENSE
+
+author:         Julian Fleischer <julian.fleischer@fu-berlin.de>
+maintainer:     Julian Fleischer <julian.fleischer@fu-berlin.de>
+
+stability:      experimental
+category:       Foreign, Java, JVM, FFI Tools
+
+cabal-version:  >= 1.8
+
+synopsis:       Utilities for working with the java-bridge package.
+description:    Utilities for working with the java-bridge package.
+
+build-type:     Simple
+
+
+Library
+    build-depends:      base >= 4.5 && < 5
+                        , java-bridge == 0.99
+                        , transformers >= 0.3
+
+    hs-source-dirs:     src
+
+    exposed-modules:    Foreign.Java.Control
+                        , Foreign.Java.IO
+                        , Foreign.Java.Maybe
+
+

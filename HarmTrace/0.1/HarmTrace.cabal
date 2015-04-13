@@ -1,0 +1,43 @@
+name:                   HarmTrace
+version:                0.1
+synopsis:               HarmTrace: Harmony Analysis and Retrieval of Music 
+                        with Type-level Representations of Abstract
+                        Chords Entities
+description:            This is the first public release of HarmTrace, a system
+                        for automatically analysing the harmony of music
+                        sequences. HarmTrace is described in the paper:
+                        .
+                        * José Pedro Magalhães and W. Bas de Haas.
+                        /Experience Report: Functional Modelling of Musical Harmony./
+                        International Conference on Functional Programming,
+                        2011.
+                        <http://dreixel.net/research/pdf/fmmh.pdf>
+
+copyright:              (c) 2010--2011 Universiteit Utrecht
+license:                OtherLicense
+license-file:           LICENSE
+author:                 W. Bas de Haas and José Pedro Magalhães
+stability:              experimental
+maintainer:             bash@cs.uu.nl, jpm@cs.uu.nl
+category:               Music
+build-type:             Custom
+cabal-version:          >= 1.6
+tested-with:            GHC == 7.0.3
+
+executable mir
+  hs-source-dirs:       .
+  main-is:              Main.hs
+  build-depends:        base >= 4.2 && < 4.4, template-haskell >=2.4 && <2.6,
+                        mtl, directory, filepath, array, parallel >= 3,
+                        Diff == 0.1.*, parseargs >= 0.1.3.2, 
+                        regex-tdfa == 1.1.*, process >= 1.0,
+                        uu-parsinglib == 2.7.1, ListLike >= 3.0.1,
+                        vector == 0.7.*, deepseq,
+                        -- temporary
+                        containers, syb, ghc-prim
+  ghc-options:          -Wall
+                        -O2 -fno-spec-constr-count -funbox-strict-fields
+                        -fcontext-stack=50
+                        -threaded -feager-blackholing -rtsopts
+
+  ghc-prof-options:     -auto-all

@@ -1,0 +1,22 @@
+-- cabal configure --prefix=$HOME --user
+-- cabal build
+name:                PastePipe
+version:             1.0
+synopsis:            CLI for pasting to hpaste.org
+description:         PastePipe reads from standard in and posts to hpaste.org.
+							It will auto-detect your username, but that can be 
+							overridden with command line options (-u username)
+							Titles are set with -t, language with -l.
+category:            Utils
+license:             GPL
+License-file:        LICENSE
+author:              Rogan Creswick
+maintainer:          creswick@gmail.com
+Cabal-Version:       >=1.2	 
+build-type:          Simple
+
+
+Executable pastepipe
+  Main-is:           pastepipe.hs
+  Build-Depends:     base >= 4 && < 5, HTTP, network
+  ghc-options:       -Wall

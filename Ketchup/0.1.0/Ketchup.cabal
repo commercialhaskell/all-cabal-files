@@ -1,0 +1,29 @@
+Name:           Ketchup
+Version:        0.1.0
+Cabal-Version:  >= 1.6
+Build-Type:     Simple
+License:        MIT
+License-File:   LICENSE
+Author:         Alessandro Gatti
+Maintainer:     zikyky@gmail.com
+Homepage:       https://github.com/Hamcha/Ketchup
+Category:       Web, Ketchup
+Synopsis:       A super small web framework for those who don't like big and fancy codebases
+
+Library
+  Exposed-Modules:
+    Ketchup.Httpd,
+    Ketchup.Routing
+
+  Other-Modules:
+    Ketchup.Utils
+
+  Build-Depends:
+    base          ==4.*,
+    containers    >=0.2 && <0.6,
+    network        <2.5,
+    bytestring    >=0.9 && <0.11
+
+Source-Repository head
+  type:       git
+  location:   git://github.com/Hamcha/Ketchup.git

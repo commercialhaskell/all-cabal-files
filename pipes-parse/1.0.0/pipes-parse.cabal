@@ -1,0 +1,38 @@
+Name: pipes-parse
+Version: 1.0.0
+Cabal-Version: >=1.8.0.2
+Build-Type: Simple
+License: BSD3
+License-File: LICENSE
+Copyright: 2013 Gabriel Gonzalez
+Author: Gabriel Gonzalez
+Maintainer: Gabriel439@gmail.com
+Bug-Reports: https://github.com/Gabriel439/Haskell-Pipes-Parse-Library/issues
+Synopsis: Parsing infrastructure for the pipes ecosystem
+Description: This package defines the generic machinery necessary for common
+    parsing tasks using @pipes@:
+    .
+    * /End of input/: Detect and handle end of input
+    .
+    * /Push-back/: Save unused input for later steps
+    .
+    * /Lens Support/: Mix proxies with different leftover buffers using lenses
+    .
+    * /Compatibility/: Transparently upgrade proxies to work with @pipes-parse@
+    .
+    Import @Control.Proxy.Parse@ to use this library.
+    .
+    Read @Control.Proxy.Parse.Tutorial@ for an introductory tutorial.
+Category: Control, Pipes, Proxies, Parsing
+Source-Repository head
+    Type: git
+    Location: https://github.com/Gabriel439/Haskell-Pipes-Parse-Library
+
+Library
+    Build-Depends:
+        base  >= 4       && < 5  ,
+        pipes >= 3.3     && < 3.4
+    Exposed-Modules:
+        Control.Proxy.Parse,
+        Control.Proxy.Parse.Tutorial
+    GHC-Options: -O2

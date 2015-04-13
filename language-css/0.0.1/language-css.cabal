@@ -1,0 +1,33 @@
+Name:          language-css
+Version:       0.0.1
+Cabal-Version: >= 1.2
+License:       BSD3
+License-file:  LICENSE
+Author:	       Anton Kholomiov
+Synopsis:      CSS 2.1 syntax 
+Description:   library for building and pretty printing CSS 2.1 code
+Stability:     Experimental
+Tested-With:   GHC==6.13.1
+Build-Type:    Simple
+Category:      Language
+Maintainer:    <anton.kholomiov@gmail.com>
+
+Library
+  Build-Depends:
+        base >= 4, base < 5, pretty  
+  Hs-Source-Dirs:      src/
+  Exposed-Modules:
+        Language.Css.Syntax
+        Language.Css.Build
+        Language.Css.Build.Idents
+        Language.Css.Build.Tags
+        Language.Css.Build.Attributes
+        Language.Css.Build.Pseudos
+
+
+---------------------------------------------------------------------------------- 		
+  Other-Modules:
+
+
+
+

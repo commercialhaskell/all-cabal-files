@@ -1,0 +1,17 @@
+name:       labeled-graph
+version:    1.0.0.0
+license:    BSD3
+license-file:    LICENSE
+maintainer:    jeanphilippe.bernardy@gmail.com
+synopsis:   Labeled graph structure
+category:   Data Structures
+description:
+        Labeled tree structure, on the model of the standard Data.Graph
+build-type: Simple
+cabal-version:  >=1.6
+
+Library 
+ build-depends: base >= 1 && < 6
+ build-depends: labeled-tree >= 1 && < 1000
+ exposed-modules:
+  Data.LabeledGraph    

@@ -1,0 +1,41 @@
+Name: zoneinfo
+Version: 0.1.0.0
+Cabal-Version: >= 1.2
+License: BSD3
+License-File: LICENSE
+Author:  Mark.Aylett
+Maintainer: Mark Aylett <mark.aylett@gmail.com>
+Category: System
+Synopsis: ZoneInfo library.
+Build-Type: Simple
+
+Extra-Source-Files:
+  cbits/asctime.c.orig
+  cbits/difftime.c.orig
+  cbits/localtime.c.orig
+  include/private.h
+  include/tzfile.h
+  Tests.hs
+  tzinstall.sh
+
+Library
+  Build-Depends: base, time
+  Exposed-Modules:
+    Data.Time.ZoneInfo
+  Extensions: EmptyDataDecls, ForeignFunctionInterface
+
+  Ghc-Options: -Wall
+  Cc-Options:
+
+  Include-Dirs: include
+  Includes:
+    olson.h
+    private.h
+    tzfile.h
+
+  Install-Includes: olson.h
+
+  C-Sources:
+    cbits/asctime.c
+    cbits/difftime.c
+    cbits/localtime.c

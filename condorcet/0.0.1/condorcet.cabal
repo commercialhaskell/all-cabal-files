@@ -1,0 +1,22 @@
+name:                condorcet
+version:             0.0.1
+stability:           Experimental
+category:            Data
+synopsis:            Library for Condorcet voting
+description:         This is a small library for determining the winner of a Condorcet election;
+                     for what a Condorcet election is, see <https://secure.wikimedia.org/wikipedia/en/wiki/Condorcet_method>
+license:             BSD3
+license-file:        LICENSE
+author:              Evan Martin
+maintainer:          Evan Martin <martine@danga.com>
+homepage:            http://neugierig.org/software/darcs/condorcet
+
+build-depends:       base, array
+build-type:          Simple
+tested-with:         GHC==6.8.2
+
+exposed-modules:     Condorcet
+extra-source-files:  Demo.hs
+
+ghc-options:         -O2 -Wall -optl-Wl,-s
+ghc-prof-options:    -prof -auto-all

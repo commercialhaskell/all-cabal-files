@@ -1,0 +1,37 @@
+name:                bff-mono
+version:             0.2.2
+synopsis:            "Bidirectionalization for Free" for Monomorphic Transformations
+description:         This package provides a way to make a bidirectional 
+                     transformation (a getter/setter pair, or so-called lens) 
+                     from a description of unidirectional transformation. 
+                     Like 'bff' package, the package constructs bidirectional 
+                     transformations based on the free theorem. 
+                     Unlike 'bff' package,
+                     the package supports some of monomorphic transformations. 
+                     
+                     
+license:             BSD3
+license-file:        LICENSE
+author:              Kazutaka Matsuda, 
+                     Meng Wang
+maintainer:          kztk@is.s.u-tokyo.ac.jp
+category:            Data, Lenses
+build-type:          Simple
+cabal-version:       >=1.8
+
+homepage:            https://bitbucket.org/kztk/bff-mono/
+
+library
+  exposed-modules:     Data.BffMono
+                       Data.BffMono.Utility
+
+  other-modules:       Data.BffMono.Base 
+                       Data.BffMono.CheckHistory 
+                       Data.BffMono.EquivMap 
+                       Data.BffMono.EquivWitness 
+                       
+  build-depends:       base >= 4 && < 5, mtl, containers
+  
+source-repository head
+  type:   git
+  location: https://bitbucket.org/kztk/bff-mono.git 

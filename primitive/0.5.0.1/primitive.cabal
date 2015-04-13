@@ -1,0 +1,58 @@
+Name:           primitive
+Version:        0.5.0.1
+x-revision: 1
+License:        BSD3
+License-File:   LICENSE
+Author:         Roman Leshchinskiy <rl@cse.unsw.edu.au>
+Maintainer:     Roman Leshchinskiy <rl@cse.unsw.edu.au>
+Copyright:      (c) Roman Leshchinskiy 2009-2012
+Homepage:       http://code.haskell.org/primitive
+Category:       Data
+Synopsis:       Primitive memory-related operations
+Description:
+        .
+        This package provides various primitive memory-related operations.
+        .
+        Changes in version 0.5.0.1
+        .
+        * Disable array copying primitives for GHC 7.6.* and earlier
+        .
+        Changes in version 0.5
+        .
+        * New in "Data.Primitive.MutVar": @atomicModifyMutVar@
+        .
+        * Efficient block fill operations: @setByteArray@, @setAddr@
+        .
+
+Cabal-Version:  >= 1.2
+Build-Type:     Simple
+
+Library
+  Extensions: CPP
+  Exposed-Modules:
+        Control.Monad.Primitive
+        Data.Primitive
+        Data.Primitive.MachDeps
+        Data.Primitive.Types
+        Data.Primitive.Array
+        Data.Primitive.ByteArray
+        Data.Primitive.Addr
+        Data.Primitive.MutVar
+
+  Other-Modules:
+        Data.Primitive.Internal.Compat
+        Data.Primitive.Internal.Operations
+
+  Build-Depends: base >= 4 && < 4.7, ghc-prim
+
+  Ghc-Options: -O2
+
+  Include-Dirs: cbits
+  Install-Includes: primitive-memops.h
+  includes: primitive-memops.h
+  c-sources: cbits/primitive-memops.c
+  cc-options: -O3 -ftree-vectorize -fomit-frame-pointer
+  if arch(i386) || arch(x86_64) {
+    cc-options: -msse2
+  }
+

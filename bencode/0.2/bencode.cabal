@@ -1,0 +1,18 @@
+Name: bencode
+Version: 0.2
+Maintainer: Lemmih (lemmih@gmail.com)
+Author: Lemmih (lemmih@gmail.com), Jesper Louis Andersen
+Copyright: 2005-2007, Lemmih
+License-File: LICENSE
+License: BSD3
+Build-Depends: base, parsec, binary
+Category: Text
+Synopsis: Parser and printer for bencoded data.
+Tested-with: GHC ==6.6
+Extensions: PatternGuards
+Exposed-Modules:
+  Data.BEncode
+  Data.BEncode.Lexer
+  Data.BEncode.Parser
+GHC-Options: -Wall -Werror
+Hs-Source-Dirs: src

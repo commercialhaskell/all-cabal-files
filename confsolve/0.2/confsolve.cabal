@@ -1,0 +1,19 @@
+Name:          confsolve
+Version:       0.2
+License:       BSD3
+License-file:  LICENSE
+Author:        Daniel Trstenjak
+Maintainer:    daniel.trstenjak@gmail.com
+Build-Type:    Simple
+Category:      Utils
+Cabal-Version: >=1.6
+Synopsis:      A command line tool for resolving conflicts of file synchronizers. Currently supported are Dropbox and Wuala.
+Description:   A command line tool for resolving conflicts of file synchronizers. Currently supported are Dropbox and Wuala.
+
+source-repository head
+  type:     git
+  location: https://github.com/dan-t/confsolve
+
+Executable confsolve
+  Main-is:       confsolve.hs
+  Build-Depends: base >= 3 && < 5, regex-posix >= 0.94 && < 0.95, time >= 1.2 && < 1.3, process >= 1.0 && < 1.1, filepath >= 1.2 && < 1.3, directory >= 1.1 && < 1.2, haskell98 >= 1.1 && < 1.2, hashmap >= 1.2.0.1 && < 1.3

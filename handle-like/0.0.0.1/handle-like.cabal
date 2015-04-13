@@ -1,0 +1,39 @@
+cabal-version:	>= 1.6
+build-type:	Simple
+
+name:		handle-like
+version:	0.0.0.1
+stability:	Experimental
+author:		Yoshikuni Jujo <PAF01143@nifty.ne.jp>
+maintainer:	Yoshikuni Jujo <PAF01143@nifty.ne.jp>
+
+license:	BSD3
+license-file:	LICENSE
+
+category:	Common-Parts
+synopsis:	HandleLike class
+description:
+    A tiny package. It's contain the following class.
+    .
+    > class HandleLike h where
+    >     hlPut :: h -> ByteString -> IO ()
+    >     hlGet :: h -> Int -> IO ByteString
+    >     hlGetByte :: h -> IO Word8
+    >     hlGetLine :: h -> IO ByteString
+    >     hlGetContent :: h -> IO ByteString
+    >     hlClose :: h -> IO ()
+
+source-repository	head
+    type:	git
+    location:	git://github.com/YoshikuniJujo/forest
+
+source-repository	this
+    type:	git
+    location:	git://github.com/YoshikuniJujo/forest
+    tag:	handle-like-0.0.0.1
+
+library
+    hs-source-dirs:	src
+    exposed-modules:	Data.HandleLike
+    build-depends:	base == 4.*, bytestring == 0.10.*
+    ghc-options:	-Wall

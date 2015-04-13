@@ -1,0 +1,46 @@
+Name:                disjoint-set
+Version:             0.2
+Synopsis:            Persistent disjoint-sets, a.k.a union-find.
+Description:         This is a persistent data structure for disjoint sets.
+                     .
+                     The algorithm is described in "Introduction to
+                     Algorithms" by Cormen, et al. The implementation here
+                     uses both union by rank and path compression. We
+                     incur an O(logn) overhead because of the use of
+                     persistent maps.
+                     .
+                     Data.IntDisjointSet is as strict as possible.
+License:             BSD3
+License-file:        LICENSE
+Author:              Maxwell Sayles, Myles Maxfield
+Maintainer:          <maxwellsayles@gmail.com>, <myles.maxfield@gmail.com>
+Category:            Data
+Build-type:          Simple
+Stability:           stable
+Homepage:            https://github.com/maxwellsayles/disjoint-set
+Cabal-version:       >= 1.8
+
+source-repository head
+  type:              git
+  location:          git://github.com/maxwellsayles/disjoint-set.git
+
+Library
+  Exposed-modules:   Data.IntDisjointSet
+  GHC-Options:       -O3 -Wall
+  Build-depends:     base >= 3 && < 5,
+                     containers >= 0.3,
+                     mtl >= 2,
+                     transformers >= 0.3
+
+test-suite test
+  main-is: Test.hs
+  type: exitcode-stdio-1.0
+  hs-source-dirs: .
+
+  ghc-options:   -Wall
+  build-depends: base >= 3 && < 5,
+                 HUnit,
+                 QuickCheck,
+                 containers >= 0.3,
+                 mtl >= 2,
+                 transformers >= 0.3

@@ -1,0 +1,30 @@
+name:                uacpid
+version:             0.0.3
+cabal-version:       >= 1.2
+build-type:          Simple
+license:             BSD3
+license-file:        LICENSE
+copyright:           2009 Dino Morelli
+author:              Dino Morelli
+maintainer:          Dino Morelli <dino@ui3.info>
+stability:           experimental
+homepage:            http://ui3.info/d/proj/uacpid.html
+synopsis:            Userspace Advanced Configuration and Power Interface 
+                     event daemon
+description:         uacpid is a daemon designed to be run in userspace 
+                     that will monitor the local system's acpid socket 
+                     for hardware events. These events can then be acted 
+                     upon by handlers with access to the user's
+                     environment.
+category:            System
+tested-with:         GHC>=6.10.3
+data-dir:            resources
+data-files:          uacpid/uacpid.conf, uacpid/events/anything
+
+executable           uacpid
+   main-is:          main.hs
+   hs-source-dirs:   src
+   build-depends:    base >= 3 && < 5, containers, directory, filepath, 
+                     hslogger, mtl, network, old-locale, process, 
+                     regex-compat, time, unix
+   ghc-options:      -Wall

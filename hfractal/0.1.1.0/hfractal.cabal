@@ -1,0 +1,16 @@
+name:                hfractal
+version:             0.1.1.0
+cabal-version:		 >= 1.2
+synopsis:            OpenGL fractal renderer
+category:            Graphics
+license:             BSD3
+author:              Chris Holdsworth <chrisholdsworth@gmail.com>
+maintainer:          Chris Holdsworth <chrisholdsworth@gmail.com>
+build-type:          Simple
+extra-source-files:  README
+
+Executable hfractal
+    main-is:            Hfractal.hs
+    build-depends:      base >=3 && <5, array, gd < 3000.3.0 && >= 3000.2.0, data-accessor >=0.2 && <=0.3, data-accessor-template >=0.2 && <=0.3, OpenGL >= 2.3 && < 2.4, GLUT
+    other-Modules:      FracComp, FracState, FracImg, Bindings
+    ghc-options:        -O2

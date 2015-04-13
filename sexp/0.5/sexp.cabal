@@ -1,0 +1,48 @@
+Name:           sexp
+Version:        0.5
+Cabal-Version:  >= 1.8
+License:        GPL-3
+License-File:   LICENSE
+Stability:      experimental
+Author:         Alexandru Scvortov <scvalex@gmail.com>
+Maintainer:     scvalex@gmail.com
+Homepage:       https://github.com/scvalex/sexp
+Category:       Language, Parsing
+Synopsis:       S-Expression parsing/printing made fun and easy
+Build-Type:     Simple
+Description:
+        See the @README.md@ file and the homepage for details.
+
+Extra-Source-Files:     Makefile
+
+Data-Files:             README.md, LICENSE
+
+Source-repository head
+  Type:                 git
+  Location:             https://github.com/scvalex/sexp.git
+
+Library
+  Build-depends:        base >= 4 && < 5, attoparsec, bytestring, mtl, syb
+  Ghc-options:          -Wall
+  Extensions:           ScopedTypeVariables
+  Exposed-modules:      Data.Sexp, Language.Sexp, Language.Sexp.Parser,
+                        Language.Sexp.Printer
+
+Executable sexp
+  Build-depends:        base >= 4 && < 5, attoparsec, bytestring, cmdargs,
+                        mtl, syb
+  Ghc-options:          -Wall
+  Extensions:           ScopedTypeVariables
+  Main-is:              sexp-tool.hs
+
+Test-suite conversions
+  Hs-Source-Dirs:       Test, .
+  Main-Is:              Conversions.hs
+  Type:                 exitcode-stdio-1.0
+
+  Build-Depends:        base >= 4.6 && <5, attoparsec, bytestring, mtl, syb
+  Ghc-Options:          -Wall
+  Extensions:           ScopedTypeVariables
+
+  Build-Depends:        test-framework, test-framework-hunit, HUnit,
+                        test-framework-quickcheck2, QuickCheck

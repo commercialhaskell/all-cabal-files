@@ -1,0 +1,29 @@
+Name:                   webserver
+Version:                0.2.0
+Author:                 Kazu Yamamoto <kazu@iij.ad.jp>
+Maintainer:             Kazu Yamamoto <kazu@iij.ad.jp>
+License:                BSD3
+License-File:           LICENSE
+Synopsis:               HTTP server library
+Description:            A simple but practical library of HTTP server
+Category:               Network
+Cabal-Version:          >= 1.6
+Build-Type:             Simple
+library
+  GHC-Options:          -Wall -O2
+  Exposed-Modules:      Network.Web.HTTP
+                        Network.Web.Server
+                        Network.Web.Server.Basic
+                        Network.Web.Utils
+  Other-Modules:        Network.Web.Date
+                        Network.Web.Params
+                        Network.Web.Server.CGI
+                        Network.Web.Server.Lang
+                        Network.Web.Server.Params
+                        Network.Web.Server.Range
+  Build-Depends:        base >= 4 && < 10, parsec >= 3,
+                        haskell98, network, bytestring, containers,
+                        filepath, time, unix, process, c10k
+Source-Repository head
+  Type:                 git
+  Location:             git://github.com/kazu-yamamoto/webserver.git

@@ -1,0 +1,35 @@
+name:                effects-parser
+version:             0.1
+synopsis:            Parser Effect for the Control.Effects Library
+
+description:         Control.Effects.Parser is a parsing effect for the Control.Effects library.
+                     Control.Effects is a library for programming with effects, like in the the Eff language by 
+                     Andrej Bauer and Matija Pretnar. Effects can be used instead of monad transformers.
+                     .
+                     See the home page for some example code.
+
+category:            Control, Monads
+license:             BSD3
+license-file:        LICENSE
+author:              Jesse McDonald
+maintainer:          nybble41@gmail.com
+stability:           experimental
+homepage:            http://github.com/nybble41/effects-parser
+bug-reports:         http://github.com/nybble41/effects-parser/issues
+
+build-type:          Simple
+cabal-version:       >= 1.6
+
+Extra-Source-Files:
+  examples.hs
+
+Library
+  HS-Source-Dirs:      src
+  build-depends:       base >= 3 && < 5, 
+                       effects >= 0.2.2
+  exposed-modules:     
+    Control.Effects.Parser
+    
+source-repository head
+  type:     git
+  location: git://github.com/nybble41/effects-parser.git

@@ -1,0 +1,25 @@
+Name:                blaze-html-contrib
+Version:             0.2.2
+Synopsis:            Some contributions to add handy things to blaze html.
+Description:         Some contributions to add handy things to blaze html. Please
+                     send your contributions as pull requests. See homepage for basic usage.
+Homepage:            https://github.com/egonSchiele/blaze-html-contrib
+License:             BSD3
+License-file:        LICENSE
+Author:              Aditya Bhargava, Chris Done
+Maintainer:          adit@adit.io
+Copyright:           2011 Chris Done
+Category:            Web
+Build-type:          Simple
+Cabal-version:       >=1.2
+
+Library
+  Hs-source-dirs:    src
+  Exposed-modules:   Text.Blaze.Extra, Text.Blaze.Pagination, Data.Pagination, Network.URI.Params
+  Build-depends:     base > 4 && < 5,
+                     network,
+                     blaze-html,
+                     safe,
+                     data-default,
+                     text,
+                     cgi

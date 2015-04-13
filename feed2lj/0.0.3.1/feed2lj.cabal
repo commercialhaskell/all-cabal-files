@@ -1,0 +1,32 @@
+name:                feed2lj
+version:             0.0.3.1
+synopsis:            (unsupported)
+description:         (unsupported)
+
+stability:           experimental
+license:             BSD3
+license-file:        LICENSE
+
+cabal-version:       >= 1.2
+build-type:          Simple
+
+flag nano-md5
+  description: Use MD5 digest from OpenSSL bindings (default: use pureMD5)
+  default: False
+
+executable feed2lj
+  main-is:             Feed2Lj.hs
+  other-modules:       LjPost
+  extensions:          CPP
+  build-depends:       haskell98
+                       , base >= 3 && < 5
+                       , old-locale, directory, time
+                       , utf8-string, regex-posix
+                       , HTTP, curl, feed
+                       , tagsoup >= 0.6
+  if flag(nano-md5)
+    build-depends:  nano-md5
+    cpp-options:    -DNANOMD5
+  else
+    build-depends:  pureMD5
+    cpp-options:    -DPUREMD5

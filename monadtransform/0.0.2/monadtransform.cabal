@@ -1,0 +1,35 @@
+Name:               monadtransform
+Version:            0.0.2
+License:            BSD3
+License-File:       LICENSE
+Author:             Tony Morris <ʇǝu˙sıɹɹoɯʇ@ןןǝʞsɐɥ>
+Maintainer:         Tony Morris
+Copyright:          Tony Morris
+Synopsis:           A type-class for transforming monads (homomorphism) in a transformer
+Category:           Development
+Description:        A type-class for transforming monads (homomorphism) in a transformer
+Homepage:           https://github.com/tonymorris/monadtransform
+Cabal-Version:      >= 1.6
+Build-Type:         Simple
+
+Source-Repository   head
+  Type:             git
+  Location:         git@github.com:tonymorris/monadtransform.git
+
+Flag                small_base
+  Description:      Choose the new, split-up base package.
+
+Library
+  Build-Depends:
+                      base < 5 && >= 3
+                    , transformers >= 0.3.0.0
+
+  GHC-Options:
+                    -Wall
+
+  Hs-Source-Dirs:
+                    src
+
+  Exposed-Modules:
+                    Control.Monad.Transform.Class
+

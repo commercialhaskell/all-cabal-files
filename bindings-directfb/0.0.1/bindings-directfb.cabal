@@ -1,0 +1,41 @@
+cabal-version: >= 1.2.3
+name: bindings-directfb
+homepage: http://bitbucket.org/mauricio/bindings-directfb
+synopsis:
+  Low level bindings to DirectFB
+version: 0.0.1
+license: BSD3
+license-file: LICENSE
+maintainer: Maurício C. Antunes <mauricio.antunes@gmail.com>
+author: Maurício C. Antunes
+build-type: Simple
+bug-reports: http://bitbucket.org/mauricio/bindings-directfb/issues
+category: FFI
+stability: Affected by GHC ticket #2615
+library
+  hs-source-dirs: src
+  extensions:
+    ForeignFunctionInterface
+  build-depends:
+    base >=3 && <5,
+    bindings-common >=1 && <2,
+    bindings-posix >=1.2 && <1.3
+  exposed-modules:
+    Bindings.DirectFB
+    Bindings.DirectFB.Types
+    Bindings.DirectFB.IDirectFB
+    Bindings.DirectFB.IDirectFBSurface
+    Bindings.DirectFB.IDirectFBPalette
+    Bindings.DirectFB.IDirectFBInputDevice
+    Bindings.DirectFB.IDirectFBDisplayLayer
+    Bindings.DirectFB.IDirectFBWindow
+    Bindings.DirectFB.IDirectFBEventBuffer
+    Bindings.DirectFB.IDirectFBFont
+    Bindings.DirectFB.IDirectFBImageProvider
+    Bindings.DirectFB.IDirectFBVideoProvider
+    Bindings.DirectFB.IDirectFBDataBuffer
+    Bindings.DirectFB.IDirectFBScreen
+    Bindings.DirectFB.IDirectFBGL
+  pkgconfig-depends:
+    directfb >=1.2.7 && <2
+  c-sources: src/inlines.c

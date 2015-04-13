@@ -1,0 +1,16 @@
+Name:                   streamproc
+Version:                1.2
+Author:                 Shawn Garbett <shawn@garbett.org>, Peter Simons <simons@cryp.to>
+License:                BSD3
+License-file:           LICENSE
+Maintainer:             simons@cryp.to
+Homepage:               http://cryp.to/streamproc/
+Category:               Control
+Description:            A continuation-based stream processor implemented as an
+			Arrow. This version generalizes the SP type described
+			in John Hughes \"Generalising Monads to Arrows\" to
+			function as a wrapper for arbitrary monads.
+Synopsis:               Stream Processer Arrow
+Build-Depends:          base
+Build-Type:             Simple
+Exposed-Modules:        Control.Arrow.SP

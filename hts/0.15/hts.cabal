@@ -1,0 +1,34 @@
+Name:              hts
+Version:           0.15
+Synopsis:          Haskell Music Typesetting
+Description:       A simple music typesetting model in haskell
+License:           GPL
+Category:          Music
+Copyright:         (c) Rohan Drape, 2010-2014
+Author:            Rohan Drape
+Maintainer:        rd@slavepianos.org
+Stability:         Experimental
+Homepage:          http://rd.slavepianos.org/t/hts
+Tested-With:       GHC == 7.8.2
+Build-Type:        Simple
+Cabal-Version:     >= 1.8
+Data-Files:        README
+
+Library
+  Build-Depends:   base == 4.*,
+                   hmt == 0.15.*,
+                   xml
+  GHC-Options:     -Wall -fwarn-tabs
+  Exposed-modules: Music.Typesetting.Ascribe
+                   Music.Typesetting.Literal
+                   Music.Typesetting.Literal.Dynamic
+                   Music.Typesetting.Model
+                   Music.Typesetting.Note.Name
+                   Music.Typesetting.Output.MusicXML
+                   Music.Typesetting.Output.MusicXML.Binding
+                   Music.Typesetting.Process
+                   Music.Typesetting.Query
+
+Source-Repository  head
+  Type:            darcs
+  Location:        http://rd.slavepianos.org/sw/hts

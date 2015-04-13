@@ -1,0 +1,26 @@
+Name:                Finance-Treasury
+Version:             0.1.2
+Description:         Obtain Treasury yield curve data from Department of Treasury website
+Synopsis:            Obtain Treasury yield curve data
+Category:            Web
+Stability:           experimental
+Homepage:            http://www.ecoin.net/haskell/Finance-Treasury.html
+License:             BSD3
+License-file:        LICENSE
+Author:              Stephen Lihn
+Maintainer:          stevelihn@gmail.com
+cabal-version:       >=1.2
+build-type:          Simple
+
+Flag splitBase
+  Description: Choose the new smaller, split-up base package.
+
+Library 
+
+  if flag(splitBase)
+    build-depends: base >= 3, containers, old-locale
+  else
+    build-depends: base < 3
+  build-depends:       network, HTTP, HTTP-Simple, time>=1.1.1, old-locale, hxt>=7.3, hxt-filter
+
+  Exposed-modules:     Finance.Treasury

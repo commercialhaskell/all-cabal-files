@@ -1,0 +1,69 @@
+Name:                   accelerate-io
+Version:                0.12.1.0
+Cabal-version:          >= 1.6
+Tested-with:            GHC >= 7.0.3
+Build-type:             Simple
+
+Synopsis:               Read and write Accelerate arrays in various formats
+Description:            This package provides efficient conversion routines between a range of array types
+                        and Accelerate arrays.
+
+License:                BSD3
+License-file:           LICENSE
+Author:                 Manuel M T Chakravarty,
+                        Gabriele Keller,
+                        Sean Lee,
+                        Trevor L. McDonell
+Maintainer:             Manuel M T Chakravarty <chak@cse.unsw.edu.au>
+Homepage:               http://www.cse.unsw.edu.au/~chak/project/accelerate/
+Bug-reports:            https://github.com/AccelerateHS/accelerate/issues
+
+Category:               Compilers/Interpreters, Concurrency, Data
+Stability:              Experimental
+
+Extra-source-files:     include/accelerate.h
+
+Flag bounds-checks
+  Description:          Enable bounds checking
+  Default:              True
+
+Flag unsafe-checks
+  Description:          Enable bounds checking in unsafe operations
+  Default:              False
+
+Flag internal-checks
+  Description:          Enable internal consistency checks
+  Default:              False
+
+Library
+  Include-Dirs:         include
+  Build-depends:        accelerate      >= 0.12.1 && < 0.13,
+                        array           >= 0.3,
+                        base            == 4.*,
+                        bytestring      >= 0.9,
+                        repa            >= 3.2,
+                        vector          >= 0.9
+
+  Exposed-modules:      Data.Array.Accelerate.IO
+  Other-modules:        Data.Array.Accelerate.IO.BlockCopy
+                        Data.Array.Accelerate.IO.ByteString
+                        Data.Array.Accelerate.IO.Ptr
+                        Data.Array.Accelerate.IO.Repa
+                        Data.Array.Accelerate.IO.Vector
+
+  if flag(bounds-checks)
+    cpp-options:        -DACCELERATE_BOUNDS_CHECKS
+
+  if flag(unsafe-checks)
+    cpp-options:        -DACCELERATE_UNSAFE_CHECKS
+
+  if flag(internal-checks)
+    cpp-options:        -DACCELERATE_INTERNAL_CHECKS
+
+  ghc-options:          -O2 -Wall -funbox-strict-fields
+
+  Extensions:           TypeFamilies
+
+Source-repository head
+  Type:                 git
+  Location:             git://github.com/AccelerateHS/accelerate-io.git

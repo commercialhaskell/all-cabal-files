@@ -1,0 +1,19 @@
+Name:                bindings-mmap
+Version:             1.0
+Synopsis:            (deprecated) see bindings-posix instead
+
+Description:
+  Deprecated.  Use bindings-posix >= 1.2.3 Bindings.Posix.Sys.Mman instead.
+
+License:             BSD3
+License-file:        LICENSE
+Author:              Claude Heiland-Allen
+Category:            System
+
+Build-type:          Simple
+
+Cabal-version:       >=1.2
+
+Library
+  Exposed-modules:     Bindings.MMap
+  Build-depends:       bindings-posix >= 1.2.3

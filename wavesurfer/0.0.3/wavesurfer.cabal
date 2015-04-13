@@ -1,0 +1,27 @@
+name:               wavesurfer
+version:            0.0.3
+synopsis:           Parse WaveSurfer files
+description:        Parse WaveSurfer files
+license:            BSD3
+license-file:       LICENSE
+category:           Data, Sound, Text
+copyright:          Copyright (c) Stefan Kersten 2008
+author:             Stefan Kersten
+maintainer:         Stefan Kersten
+stability:          provisional
+homepage:           http://code.haskell.org/~StefanKersten/code/wavesurfer
+tested-with:        GHC == 6.10.1
+build-type:         Simple
+cabal-version:      >= 1.2
+
+library
+  exposed-modules:  Sound.WaveSurfer
+
+  build-depends:    base >= 3,
+                    binary == 0.4.*,
+                    bytestring == 0.9.*,
+                    bytestring-lexing == 0.2.*,
+                    bytestring-show == 0.2.*,
+                    delimited-text == 0.0.*
+
+  ghc-options:      -O2 -funbox-strict-fields 

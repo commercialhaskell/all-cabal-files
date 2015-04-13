@@ -1,0 +1,30 @@
+Name:                haste
+Version:             0.1
+Description:         A universal pastebin tool, written in Haskell.
+category:            Web
+synopsis:            A universal pastebin tool, written in Haskell.
+License:             BSD3
+License-file:        LICENSE
+Author:              David Siegel
+Maintainer:          djsiegel@gmail.com
+Build-Type:          Simple
+Cabal-Version:       >=1.4
+
+Executable:          haste
+Main-is:             Main.hs
+Build-Depends:       base >= 3 && < 4, filepath, mtl, curl
+hs-source-dirs:      src
+extensions:          ViewPatterns
+ghc-options:         -Wall
+
+other-modules:       Haste.LanguageDetection
+                     Haste.Monad
+										 Haste.Options
+										 Haste.PasteProviders
+										 Haste.PasteProviders.All
+										 Haste.PasteProviders.Console
+										 Haste.PasteProviders.HPaste
+										 Haste.PasteProviders.Paste2
+										 Haste.PasteProviders.Pastebin
+										 Haste.Post
+                     Haste.Types

@@ -1,0 +1,61 @@
+Name:                   barrie
+Version:                0.4.1
+Synopsis:               Declarative Gtk GUI library
+Description:
+    Implementation of an idea for supporting certain kinds of GUI:
+    that is state based, user-driven ones.  The GUI is intended to
+    manipulate a state, and it is responsive rather than active.
+
+Category:               GUI
+License:                GPL
+License-file:           LICENSE
+Author:                 Fraser Wilson
+Maintainer:             Fraser Wilson <blancolioni@gmail.com>
+Homepage:               http://thewhitelion.org/haskell/barrie
+Copyright:              (c) 2009 Fraser Wilson
+Stability:              unstable
+cabal-version: >= 0.2
+build-type: Simple
+Tested-With:    GHC==6.10.0
+Extra-Source-Files:
+        Makefile
+        doc/barrie.tex
+        demos/AutoCalc.hs
+        demos/BarrieCalc.hs
+        demos/ButtonDemo.hs
+        demos/CalcGadget.hs
+        demos/CalcState.hs
+        demos/CalcWidget.hs
+        demos/ChooserDemo.hs
+        demos/DynamicLabelDemo.hs
+        demos/FileChooserDemo.hs
+        demos/InnerDemo.hs
+        demos/LabelDemo.hs
+        demos/LauncherDemo.hs
+        demos/LayoutDemo.hs
+        demos/Layout.hs
+        demos/ListDemo.hs
+        demos/MultiColumnList.hs
+        demos/SliderDemo.hs
+        demos/TextBoxDemo.hs
+
+Library
+   Build-Depends:       base,filepath,gtk>=0.10.0,glib>=0.10.0,containers
+   Exposed-modules:
+        Barrie
+        Barrie.DrawPrimitive
+        Barrie.Gadgets
+        Barrie.Packing
+        Barrie.Render
+        Barrie.Render.Gtk
+        Barrie.Style
+        Barrie.Trace
+        Barrie.Widgets
+   ghc-options:         -Wall -optl-Wl,s,-O2
+   ghc-prof-options:    -prof -auto-all
+   other-modules:
+        Barrie.Config
+        Barrie.Gadgets.Connections
+  extensions:           MultiParamTypeClasses,FunctionalDependencies,
+                        GeneralizedNewtypeDeriving,RankNTypes,ExistentialQuantification
+  hs-source-dirs:       src

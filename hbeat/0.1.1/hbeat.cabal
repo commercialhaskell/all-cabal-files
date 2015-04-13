@@ -1,0 +1,15 @@
+Name: hbeat
+Version: 0.1.1
+License: BSD3
+License-file: LICENSE
+Copyright: Tim Docker, 2007
+Author: Tim Docker
+Maintainer: Tim Docker
+Homepage: http://www.dockerz.net/software/hbeat.html
+Build-Depends:  base, containers, old-time, OpenGL, SDL, SDL-mixer, mtl
+Synopsis: A simple step sequencer GUI.
+Description: A toy step sequencer program written using OpenGL and the SDL libraries. Configuration (including the audio samples used) is controlled via an external file.
+Category: Sound
+Executable: hbeat
+Main-Is: Main.hs
+Extra-Libraries: SDL, SDL_mixer

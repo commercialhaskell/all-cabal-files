@@ -1,0 +1,35 @@
+name:            css-text
+version:         0.1.1
+license:         BSD3
+license-file:    LICENSE
+author:          Michael Snoyman <michael@snoyman.com>
+maintainer:      Michael Snoyman <michael@snoyman.com>
+synopsis:        CSS parser and renderer.
+category:        Web, Yesod
+stability:       Stable
+cabal-version:   >= 1.8
+build-type:      Simple
+homepage:        http://www.yesodweb.com/
+extra-source-files: runtests.hs
+
+library
+    build-depends:   base                      >= 4        && < 5
+                   , text                      >= 0.11
+                   , attoparsec                >= 0.10
+    exposed-modules: Text.CSS.Parse
+                     Text.CSS.Render
+    ghc-options:     -Wall
+
+test-suite runtests
+    type: exitcode-stdio-1.0
+    main-is: runtests.hs
+    build-depends:   base                      >= 4        && < 5
+                   , text                      >= 0.11
+                   , attoparsec                >= 0.10
+                   , HUnit                     >= 1.2
+                   , hspec                     >= 0.6.1
+                   , QuickCheck
+
+source-repository head
+  type:     git
+  location: git://github.com/yesodweb/css-text.git

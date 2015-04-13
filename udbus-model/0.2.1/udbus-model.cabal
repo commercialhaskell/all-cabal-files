@@ -1,0 +1,45 @@
+Name:                udbus-model
+Version:             0.2.1
+Description:         Model API for udbus introspection and definitions
+License:             BSD3
+License-file:        LICENSE
+Copyright:           Vincent Hanquez <vincent@snarc.org>
+Author:              Vincent Hanquez <vincent@snarc.org>
+Maintainer:          Vincent Hanquez <vincent@snarc.org>
+Synopsis:            Model API for udbus introspection and definitions
+Build-Type:          Simple
+Category:            Network
+stability:           experimental
+Cabal-Version:       >=1.8
+Homepage:            http://github.com/vincenthz/hs-udbus
+
+Flag executable
+  Description:       Build the executable
+  Default:           False
+
+Library
+  Build-Depends:     base >= 3 && < 5
+                   , bytestring
+                   , xml
+                   , udbus >= 0.2.0
+  Exposed-modules:   Network.DBus.Model
+  Other-modules:     Network.DBus.Model.Types
+                     Network.DBus.Model.Parse
+  ghc-options:       -Wall -fno-warn-missing-signatures
+
+Executable           dbus-model-parse
+  hs-source-dirs:    Test
+  Main-is:           Test.hs
+  if flag(executable)
+    Buildable:       True
+    Build-Depends:   base
+                   , groom
+                   , udbus
+                   , udbus-model
+  else
+    Buildable:       False
+
+
+source-repository head
+  type: git
+  location: git://github.com/vincenthz/hs-udbus

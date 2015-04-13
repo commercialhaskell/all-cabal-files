@@ -1,0 +1,18 @@
+Name:                Aurochs
+Version:             0.1
+Description:         A parser generator for Parsing Expression Grammars (PEGs)
+		     based on the technique of packrat parsing.
+License:             BSD3
+License-file:        LICENSE
+Author:              Xinyu Jiang
+Maintainer:          fnnirvana@gmail.com
+Category:            Development
+Synopsis:            Yet another parser generator for C/C++
+Build-Type:          Simple
+Cabal-Version:       >=1.2
+
+Extra-Source-Files:  Data.hs Gen.hs Parse.hs LICENSE test.aur
+
+Executable Aurochs
+  Main-Is:           Aurochs.hs
+  Build-Depends:     base < 5, containers, parsec, pretty

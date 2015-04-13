@@ -1,0 +1,83 @@
+Name: bitstream
+Synopsis: Fast, packed, strict and lazy bit streams with stream fusion
+Description:
+
+        Fast, packed, strict and lazy bit vectors with stream
+        fusion. This is like @bytestring@ but stores bits instead of
+        bytes.
+
+        NOTE: GHC 7.0.1 fails to fuse almost every cases of bitstream
+        fusion, producing very large and not-so-fast object code. See:
+        <http://hackage.haskell.org/trac/ghc/ticket/4397>
+
+Version: 0.1
+License: PublicDomain
+License-File: COPYING
+Author: PHO <pho at cielonegro dot org>
+Maintainer: PHO <pho at cielonegro dot org>
+Stability: experimental
+Homepage: http://cielonegro.org/Bitstream.html
+Category: Data
+Tested-With: GHC == 7.0.1
+Cabal-Version: >= 1.10
+Build-Type: Simple
+Extra-Source-Files:
+    COPYING
+
+Source-Repository head
+    Type: git
+    Location: git://git.cielonegro.org/bitstream.git
+
+Library
+    Build-Depends:
+        base                 == 4.*,
+        base-unicode-symbols == 0.2.*,
+        bytestring           == 0.9.*,
+        vector               == 0.7.*
+
+    Exposed-Modules:
+        Data.Bitstream
+        Data.Bitstream.Fusion
+        Data.Bitstream.Fusion.Monadic
+        Data.Bitstream.Generic
+        Data.Bitstream.Lazy
+        Data.Bitstream.Packet
+
+    Other-Modules:
+        Data.Bitstream.Internal
+
+    Default-Language:
+         Haskell2010
+
+    GHC-Options:
+        -Wall
+
+Test-Suite test-strict-bitstream
+    Type:    exitcode-stdio-1.0
+    Main-Is: Test/Bitstream.hs
+    Other-Modules:
+        Test.Bitstream.Utils
+    Build-Depends:
+        QuickCheck           == 2.4.*,
+        base                 == 4.*,
+        base-unicode-symbols == 0.2.*,
+        bytestring           == 0.9.*,
+        vector               == 0.7.*
+    Default-Language: Haskell2010
+    GHC-Options:
+        -Wall -fno-warn-orphans
+
+Test-Suite test-lazy-bitstream
+    Type:    exitcode-stdio-1.0
+    Main-Is: Test/Bitstream/Lazy.hs
+    Other-Modules:
+        Test.Bitstream.Utils
+    Build-Depends:
+        QuickCheck           == 2.4.*,
+        base                 == 4.*,
+        base-unicode-symbols == 0.2.*,
+        bytestring           == 0.9.*,
+        vector               == 0.7.*
+    Default-Language: Haskell2010
+    GHC-Options:
+        -Wall -fno-warn-orphans

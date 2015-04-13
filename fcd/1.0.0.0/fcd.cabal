@@ -1,0 +1,41 @@
+name:                fcd
+version:             1.0.0.0
+synopsis:            A faster way to navigate directories using the command line.
+description:         Bookmark directories, then select a bookmark by fuzzy matching. You need to set up a small shell function for this to work properly (see the README).
+license:             MIT
+license-file:        LICENSE
+author:              Benoît Faucon
+maintainer:          faucon.benoit@cegetel.net
+homepage:            https://github.com/Neki/fcd
+category:            Utility
+build-type:          Simple
+cabal-version:       >=1.10
+bug-reports:         https://github.com/Neki/fcd/issues
+
+source-repository    head
+  type: git
+  location: git@github.com:Neki/fcd.git
+
+executable fcd
+  main-is:             Main.hs
+  build-depends:       base, fcd
+  hs-source-dirs:      src-exec
+  default-language:    Haskell2010
+
+library
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+  build-depends:       base >= 4.6 && < 5 , array, vty, vty-ui >= 1.7.1 && < 2, unix, directory, text, process >= 1.2.0.0
+  exposed-modules:     Fcd
+  other-modules:       Paths_fcd
+
+test-suite test
+  default-language:    Haskell2010
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      tests
+  main-is:             Tests.hs
+  build-depends:
+    base >= 4.6 && < 5
+    , tasty
+    , tasty-hunit >= 0.9
+    , fcd

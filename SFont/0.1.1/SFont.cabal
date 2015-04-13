@@ -1,0 +1,15 @@
+name:                SFont
+version:             0.1.1
+synopsis:            SFont SDL Bitmap Fonts
+description:         A haskell port of Karl Bartel's bitmap SFont library. Haddock documentation is available from the homepage
+category:            Graphics
+license:             BSD3
+license-file:        LICENSE
+homepage:            http://liamoc.net/static/SFont
+author:              Liam O'Connor-Davis
+maintainer:          liamoc@cse.unsw.edu.au
+build-type:          Simple
+cabal-version:       >=1.2
+Library
+  exposed-modules:     Graphics.UI.SDL.SFont
+  build-depends:       base<5, SDL>=0.5.9, Sprig>=0.1, array>=0.2

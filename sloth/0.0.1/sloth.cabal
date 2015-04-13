@@ -1,0 +1,30 @@
+Name:                     sloth
+Version:                  0.0.1
+stability:                alpha
+Description:              Sloth is a library for testing whether functions are minmally strict.
+Synopsis:                 Testing for minimal strictness
+License:                  BSD3
+Author:                   Jan Christiansen    
+Maintainer:               Jan Christiansen <jac@informatik.uni-kiel.de>
+homepage:                 http://www.informatik.uni-kiel.de/en/computer-aided-program-development/research/sloth/
+Category:                 Testing
+Build-Depends:            base >= 4 && < 5, process, mtl
+Exposed-modules:          Test.Sloth
+ghc-options:              -Wall
+build-type:               Simple
+extensions:               CPP
+extra-source-files:
+  Examples.lhs
+other-modules:
+  Test.Sloth.CharSet
+  Test.Sloth.CoMonad
+  Test.Sloth.Pos
+  Test.Sloth.PVal
+  Test.Sloth.Search
+  Test.Sloth.TestCase
+  Test.Sloth.Refine
+  Test.Sloth.Poly
+  Test.Sloth.Color
+  Test.Sloth.Generics
+  Test.Sloth.Function
+  Test.Sloth.Config

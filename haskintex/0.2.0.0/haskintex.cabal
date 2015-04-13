@@ -1,0 +1,35 @@
+name:                haskintex
+version:             0.2.0.0
+synopsis:            Haskell Evaluation inside of LaTeX code.
+description:
+  The /haskintex/ program is a tool that reads a LaTeX file and evaluates Haskell expressions contained
+  in some specific commands and environments. It allows you to define your own functions, use any GHC Haskell language
+  extension and, in brief, anything you can do within Haskell. You can freely add any Haskell code you need, and make
+  this code appear /optionally/ in the LaTeX output. It is a tiny program, and therefore, easy to understand, use and
+  predict.
+homepage:            http://daniel-diaz.github.io/projects/haskintex
+bug-reports:         https://github.com/Daniel-Diaz/haskintex/issues
+license:             BSD3
+license-file:        LICENSE
+author:              Daniel Díaz
+maintainer:          dhelta.diaz@gmail.com
+category:            LaTeX
+build-type:          Simple
+extra-source-files:  README.md
+                     -- examples
+                     examples/fact.tex
+cabal-version:       >=1.10
+
+executable haskintex
+  main-is:             Main.hs
+  other-modules:       Paths_haskintex
+  build-depends:       base >= 4.6 && < 4.7
+               ,       transformers == 0.3.*
+               ,       text >= 0.11.2.3 && < 0.12
+               ,       directory >= 1.2.0.0 && < 1.3
+               ,       filepath >= 1.1.0.0 && < 1.4
+               ,       process >= 1.1.0.2 && < 1.2
+               ,       HaTeX >= 3.6 && < 3.9
+               ,       attoparsec >= 0.10.2.0 && < 0.11
+  default-language:    Haskell2010
+  ghc-options: -Wall

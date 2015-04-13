@@ -1,0 +1,19 @@
+Build-Type: Custom
+Name: digits
+Category: Data
+Version: 0.2
+Cabal-Version: >= 1.2
+Synopsis: Converts integers to lists of digits and back.
+Description: Converts integers to lists of digits and back.
+License: BSD3
+License-File: LICENSE
+Copyright: (c) 2009 Henry Bucklow
+Author: Henry Bucklow
+Maintainer: henry@elsie.org.uk
+Tested-With: GHC==6.12
+Build-Depends: base >= 4 && < 5, QuickCheck
+Exposed-Modules: Data.Digits
+Hs-Source-Dirs: src
+Extra-Source-Files: src/Tests.hs
+GHC-Options: -Wall
+

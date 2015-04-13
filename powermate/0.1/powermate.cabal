@@ -1,0 +1,27 @@
+name:                powermate
+version:             0.1
+synopsis:            PowerMate bindings
+description:         PowerMate bindings for Haskell,
+                     MPD bindings (barely) for Haskell.
+Stability:           Experimental
+category:            System
+license:             BSD3
+license-file:        LICENSE
+author:              Evan Martin
+maintainer:          Evan Martin <martine@danga.com>
+homepage:            http://neugierig.org/software/darcs/powermate/
+
+tested-with:         GHC==6.8.2
+Cabal-Version:       >= 1.2
+build-type:          Simple
+extra-source-files:  src/PowerMate.hsc
+
+Library
+        build-depends:          base>3, unix, directory, network
+        extensions:             ForeignFunctionInterface
+        hs-source-dirs:         src, .
+
+        ghc-options:            -O2 -Wall -optl-Wl,-s
+        ghc-prof-options:       -prof -auto-all
+
+        Exposed-modules:        MPD, PowerMate

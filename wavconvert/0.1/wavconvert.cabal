@@ -1,0 +1,15 @@
+name:                wavconvert
+version:             0.1
+description:         Command-line tool for converting audio files and filling in ID3 tags
+synopsis:            Command-line tool for converting audio files and filling in ID3 tags
+category:            Sound
+license:             BSD3
+license-file:        LICENSE
+author:              Tim Chevalier
+maintainer:          chevalier@alum.wellesley.edu
+copyright:           (c) Tim Chevalier, 2008
+build-depends:       base, directory, filepath, process
+build-type:          Simple
+executable:          wavconvert
+main-is:             fixtags.hs
+ghc-options:         -Wall

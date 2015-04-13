@@ -1,0 +1,88 @@
+name:                Referees
+version:             0.0.0
+synopsis:
+  A utility for computing distributions of material to review among reviewers.
+description:
+  A utility for computing distributions of material to review among reviewers.
+  @Referees@ takes into consideration the areas of expertise of the referees,
+  the number of items that they accept for review, the languages they
+  understand, and the minimum and maximum number of copies we may want to
+  distribute per each item to review.
+
+license:             GPL-3
+license-file:        LICENSE
+author:              Pablo Couto <pablo@infty.in>
+copyright:           (c) Pablo Couto 2014
+maintainer:          Pablo Couto <pablo@infty.in>
+
+category:            Utils
+homepage:            https://github.com/pablocouto/Referees
+bug-reports:         https://github.com/pablocouto/Referees/issues
+
+tested-with:         GHC ==7.8.3
+
+build-type:          Simple
+cabal-version:       >=1.10
+extra-source-files:  README.org
+
+source-repository head
+  type:              git
+  location:          https://github.com/pablocouto/Referees.git
+
+flag debug
+  default: False
+
+flag documentation
+  default: False
+
+library
+  exposed-modules:
+    Referees,
+    Referees.Internal,
+    Referees.Types,
+    Referees.Types.Internal,
+    Referees.Solver,
+    Referees.Solver.Internal,
+    Referees.Solver.Types,
+    Referees.Solver.Types.Internal
+  build-depends:
+    base == 4.7.*,
+    containers == 0.5.*,
+    bytestring == 0.10.*,
+    matrix == 0.3.*,
+    vector == 0.10.*,
+    cassava == 0.4.*,
+    MissingH == 1.3.*,
+    glpk-hs == 0.3.*
+  hs-source-dirs:
+    src
+  default-language:
+    Haskell2010
+
+  if flag(documentation)
+       build-depends:  hscolour >= 1.20
+  if flag(debug)
+       cpp-options:    -DDEBUG
+
+executable referees
+  main-is:
+    Main.hs
+  other-modules:
+    Referees.CLI.Main,
+    Referees.CLI.Args
+  build-depends:
+    base == 4.7.*,
+    cond == 0.4.*,
+    containers == 0.5.*,
+    cmdargs == 0.10.*,
+    directory == 1.2.*,
+    Referees == 0.0.0
+  hs-source-dirs:
+    src-cli
+  default-language:
+    Haskell2010
+
+  if flag(documentation)
+       build-depends:  hscolour >= 1.20
+  if flag(debug)
+       cpp-options:    -DDEBUG

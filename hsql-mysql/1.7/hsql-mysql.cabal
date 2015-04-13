@@ -1,0 +1,11 @@
+name:		 hsql-mysql
+version:	 1.7
+license:	 BSD3
+author:		 Krasimir Angelov <kr.angelov@gmail.com>
+category:	 Database
+description: 	 MySQL driver for HSQL.
+exposed-modules: Database.HSQL.MySQL
+build-depends: 	 base, hsql
+extensions:      ForeignFunctionInterface, CPP
+cc-options: -IDatabase/HSQL
+extra-source-files: Database/HSQL/HsMySQL.h

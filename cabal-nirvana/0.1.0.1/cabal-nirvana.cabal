@@ -1,0 +1,33 @@
+Name:                cabal-nirvana
+Version:             0.1.0.1
+Synopsis:            Avoid Cabal dependency hell by constraining to known good versions.
+Description:         This tool takes a list of known compatible versions of libraries and forces them to be used, via constraints in your cabal config file. This should bypass a lot of cabal dependency hell, thereby inducing nirvana.
+Homepage:            http://github.com/snoyberg/cabal-nirvana
+License:             BSD3
+License-file:        LICENSE
+Author:              Michael Snoyman
+Maintainer:          michael@snoyman.com
+Category:            Distribution
+Build-type:          Simple
+Cabal-version:       >=1.2
+
+flag generate
+    default: False
+
+Executable cabal-nirvana
+  Main-is:             cabal-nirvana.hs
+  Build-depends:       base < 5
+                     , HTTP
+                     , process
+                     , directory
+
+Executable cabal-nirvana-generate
+  Main-is:             generate.hs
+  if flag(generate)
+    Buildable: True
+  else
+    Buildable: False
+  Build-depends:       Cabal
+                     , containers
+                     , transformers
+                     , packdeps >= 0.3 && < 0.4

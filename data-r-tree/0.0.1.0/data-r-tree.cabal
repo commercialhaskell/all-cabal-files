@@ -1,0 +1,63 @@
+name:                data-r-tree
+version:             0.0.1.0
+synopsis:            R-Tree is a spartial data structure similar to Quadtrees or B-Trees.
+description:         R-Tree is a spartial data structure similar to Quadtrees or B-Trees.
+  
+  An R-Tree is a balanced tree and optimized for lookups. This implemetation useses an R-Tree to privide
+  a map to arbitrary values. 
+
+license:             MIT
+license-file:        LICENSE
+author:              Sebastian Philipp, Birte Wagner
+maintainer:          sebastian@spawnhost.de
+copyright:           Sebastian Philipp, Birte Wagner
+category:            Data
+build-type:          Simple
+
+-- extra-source-files:  
+cabal-version:       >=1.10
+
+bug-reports:         https://github.com/sebastian-philipp/r-tree/issues
+homepage:            https://github.com/sebastian-philipp/r-tree
+       
+
+source-repository head
+  type:         git
+  location:     https://github.com/sebastian-philipp/r-tree.git
+
+library
+  exposed-modules:     Data.RTree,
+                       Data.RTree.MBB
+                       Data.RTree.Base
+  -- other-modules: 
+  other-extensions:    NoMonomorphismRestriction
+  build-depends:       base        == 4.*,
+                       deepseq     == 1.*,
+                       binary      == 0.*
+                       
+  -- hs-source-dirs:      
+  default-language:    Haskell2010
+  ghc-options:  -Wall -fwarn-tabs
+
+
+test-suite properties
+  type:         exitcode-stdio-1.0
+  main-is:      RTreeProperties.hs
+
+  build-depends:
+            data-r-tree
+          , base                       == 4.*
+          , HUnit                      >= 1.2
+          , QuickCheck                 >= 2.4
+          , test-framework             >= 0.6
+          , test-framework-quickcheck2 >= 0.2
+          , test-framework-hunit       >= 0.2
+          , gnuplot >= 0.5
+          , containers
+
+  default-language:    Haskell2010
+  other-extensions:    NoMonomorphismRestriction
+  ghc-options:  -Wall -fwarn-tabs
+
+  hs-source-dirs:
+                test

@@ -1,0 +1,47 @@
+name:           kit
+version:        0.7.9
+cabal-version:  >=1.6
+build-type:     Simple
+license:        BSD3
+license-file:   LICENSE
+maintainer:     nkpart@gmail.com
+homepage:       http://github.com/nkpart/kit
+synopsis:       A dependency manager for Xcode (Objective-C) projects
+description:    A dependency manager for Xcode (Objective-C) projects
+category:       Development
+author:         Nick Partridge
+
+Executable kit
+  main-is:        Main.hs
+  buildable:      True
+  build-depends:  base >=3 && <5,
+                  Glob >= 0.5.1 && < 6, 
+                  attoparsec,
+                  HTTP,
+                  ansi-terminal >= 0.5.5,
+                  bytestring -any, 
+                  cabal-file-th >= 0.2.2,
+                  cmdargs >= 0.6.2,
+                  containers -any, 
+                  yaml,
+                  directory -any, 
+                  filepath -any, 
+                  mtl -any,
+                  network -any, 
+                  process -any,
+                  template-haskell,
+                  unordered-containers,
+                  text,
+                  unix 
+
+  hs-source-dirs: .
+  other-modules:  Kit.Spec Kit.Main Kit.Package Kit.Project Kit.Repository Kit.Util Kit.Xcode.Builder
+                  Kit.Xcode.Common Kit.Xcode.ProjectFileTemplate Kit.Xcode.XCConfig Text.PList Text.PList.PrettyPrint
+                  Kit.Contents Kit.Commands Kit.CmdArgs Kit.Util.FSAction Kit.WorkingCopy Kit.FilePath
+                  Kit.Dependency
+  Ghc-options:    -Wall
+
+source-repository head
+  type: git
+  location: git://github.com/nkpart/kit.git
+  

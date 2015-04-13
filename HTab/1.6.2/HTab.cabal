@@ -1,0 +1,60 @@
+Name:                HTab
+Version:             1.6.2
+Synopsis:            Tableau based theorem prover for hybrid logics
+Description:         Tableau based theorem prover for hybrid logics
+Homepage:            http://www.glyc.dc.uba.ar/intohylo/htab.php
+Bug-reports:         http://code.google.com/p/intohylo/
+Category:            Theorem provers
+License:             GPL
+License-file:        COPYING
+Author:              Guillaume Hoffmann, Carlos Areces, Daniel Gorín, Juan Heguiabehere
+Maintainer:          guillaumh@gmail.com
+Cabal-version:       >= 1.6.0
+Build-type:          Simple
+Extra-source-files:  tests/test-example-formulas.hs
+                     tests/coverage.sh
+Data-files:  NEWS
+             examples/*.sh
+             examples/sat/*.frm
+             examples/unsat/*.frm
+source-repository head
+    type:     darcs
+    location: http://www.glyc.dc.uba.ar/intohylo/repos/htab/
+
+Flag static
+  Description: Build a static binary
+  Default:     False
+
+Executable          htab
+  Main-is:             htab.hs
+  Other-modules:       HTab.Branch
+                       HTab.CommandLine
+                       HTab.DisjSet
+                       HTab.DMap
+                       HTab.Formula
+                       HTab.Literals
+                       HTab.Main
+                       HTab.ModelGen
+                       HTab.Relations
+                       HTab.RuleId
+                       HTab.Rules
+                       HTab.Statistics
+                       HTab.Tableau
+  Build-Depends:       base >= 4, base < 5,
+                       mtl >= 2, mtl < 3,
+                       containers < 0.4.2,
+                       deepseq < 1.2,
+                       strict < 1,
+                       cmdargs >= 0.10.1,
+                       hylolib == 1.4.*
+  Extensions:          GADTs
+                       DeriveDataTypeable
+                       FlexibleContexts
+                       Rank2Types
+                       ScopedTypeVariables
+  Hs-Source-Dirs:      src
+  ghc-options:         -O2 -Wall
+  ghc-prof-options:    -auto-all
+
+  if flag(static)
+    ghc-options: -static -optl-static -optl-pthread

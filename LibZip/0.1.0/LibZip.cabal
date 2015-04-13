@@ -1,0 +1,47 @@
+Name:          LibZip
+Version:       0.1.0
+License:       BSD3
+License-File:  LICENSE
+Author:        Sergey Astanin
+Maintainer:    Sergey Astanin <s.astanin@gmail.com>
+Homepage:      http://bitbucket.org/jetxee/hs-libzip/
+Bug-reports:   http://bitbucket.org/jetxee/hs-libzip/issues/
+
+Category:      Codec, Foreign
+Synopsis:      Bindings to libzip, a library for manipulating zip archives.
+Description:
+  libzip is a C library for reading, creating, and modifying zip archives.
+  This package allows to use it from Haskell code.
+
+Build-Type:     Simple
+Cabal-Version:  >= 1.2.3
+Tested-With:    GHC == 6.12.1
+
+Extra-Source-Files:
+    examples/legacyUnzip.hs, examples/hzip.hs
+  , runTests.hs, Tests/Common.hs, Tests/LegacyTests.hs
+  , Tests/MonadicTests.hs, Tests/test.zip
+
+Library
+  Extensions:
+      ForeignFunctionInterface
+  Exposed-Modules:
+      Codec.Archive.LibZip
+      Codec.Archive.LibZip.LowLevel
+      Codec.Archive.LibZip.Types
+      Codec.Archive.LibZip.LegacyZeroZero
+  Other-Modules:
+      Codec.Archive.LibZip.Errors
+  Build-Depends:
+      base >= 4.0 && < 4.3
+    , bindings-DSL >= 1.0 && < 1.1
+    , bytestring
+    , filepath
+    , time
+    , mtl
+  PkgConfig-Depends:
+      libzip >= 0.9
+  GHC-Options:
+      -Wall
+
+

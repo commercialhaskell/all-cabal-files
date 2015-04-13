@@ -1,0 +1,35 @@
+Name:                ZipFold
+Version:             0.1
+Cabal-Version:       >= 1.2
+Synopsis:            Zipping folds
+Category:            Data
+Description:
+  ZipFold is a small package zipping folds, as described in a collection of
+  blog posts, <http://conal.net/blog/tag/zip>, inspired by a post by Max Rabkin
+  <http://squing.blogspot.com/2008/11/beautiful-folding.html>.
+  .
+  Project wiki page: <http://haskell.org/haskellwiki/ZipFold>
+  .
+  The module documentation pages have links to colorized source code and
+  to wiki pages where you can read and contribute user comments.  Enjoy!
+  .
+  &#169; 2008 by Conal Elliott; BSD3 license.
+Author:              Conal Elliott 
+Maintainer:          conal@conal.net
+Homepage:            http://haskell.org/haskellwiki/ZipFold
+Package-Url:         http://code.haskell.org/ZipFold
+Copyright:           (c) 2008 by Conal Elliott
+License:             BSD3
+Stability:           experimental
+build-type:          Simple
+
+Library
+  hs-Source-Dirs:      src
+  Extensions:
+  Build-Depends:       base, TypeCompose >= 0.5.2
+  Exposed-Modules:     
+                       Data.Zip.FoldL
+                       
+  ghc-options:         -Wall
+
+--  ghc-prof-options:    -prof -auto-all 

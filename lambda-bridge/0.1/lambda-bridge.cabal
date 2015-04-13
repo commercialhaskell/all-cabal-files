@@ -1,0 +1,44 @@
+Name:                lambda-bridge
+Version:             0.1
+Synopsis:            A bridge from Haskell (on a CPU) to VHDL on a FPGA.
+Description:         A bridge from Haskell (on a CPU) to VHDL on a FPGA.
+License:             BSD3
+License-file:        LICENSE
+Author:              Andy Gill <andygill@ku.edu>
+Maintainer:          Andy Gill <andygill@ku.edu>
+Homepage:            http://www.ittc.ku.edu/csdl/fpg/Tools/LambdaBridge
+Stability:           Experimental
+Category:            Foreign, Hardware, Middleware, Network
+Tested-With:         GHC == 6.12.1
+Cabal-Version:       >= 1.8
+Build-Type:          Simple
+
+extra-source-files:  connect/lb_board_connect.c
+		     connect/lb_board_connect.h
+		     Makefile
+		     README
+		     bridges/cat/lb_cat.c
+		     bridges/cat/Makefile
+
+Flag example
+  Default: True
+  Description: build the single example
+
+Library
+  Build-Depends:   base >= 4 && < 5
+  Exposed-Modules:     Foreign.LambdaBridge
+  Hs-Source-Dirs:      .
+  Extensions:          ForeignFunctionInterface
+  C-Sources:           connect/lb_board_connect.c
+  Include-Dirs:        connect                       
+
+Executable haskell-test1
+   if flag(example)
+     Build-Depends: 	base >= 4 && < 5
+     Hs-Source-Dirs: 	.  examples/haskell-test1
+   else
+     Build-Depends:
+   C-Sources:           connect/lb_board_connect.c
+   Include-Dirs:        connect
+   Main-Is: Main.hs
+

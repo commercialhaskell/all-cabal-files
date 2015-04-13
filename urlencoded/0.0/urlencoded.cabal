@@ -1,0 +1,21 @@
+name:                urlencoded
+Cabal-Version:       >= 1.6
+version:             0.0
+synopsis:            Generate or process x-www-urlencoded data
+
+description:         Generate or process x-www-urlencoded data as it
+                     appears in HTTP or HTTPS URIs and HTTP POSTs. See
+                     <http://www.w3.org/TR/html401/interact/forms.html#h-17.13.4.1>
+
+category:            Web
+homepage:            http://patch-tag.com/repo/urlencoded
+stability:           alpha
+license:             BSD3
+license-file:        LICENSE
+author:              Josh Hoyt
+maintainer:          joshhoyt@gmail.com
+build-depends:       base == 4.*, network == 2.2.*, mtl, split == 0.1.*
+build-type:          Simple
+ghc-options:         -Wall
+hs-source-dirs:      src
+exposed-modules:     Data.URLEncoded

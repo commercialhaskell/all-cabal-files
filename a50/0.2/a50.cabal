@@ -1,0 +1,35 @@
+Name:           a50
+Version:        0.2
+License:        GPL
+
+Author:         Ketil Malde
+Maintainer:     Ketil Malde <ketil@malde.org>
+
+Category:       Bioinformatics
+Synopsis:       Compare genome assemblies
+Description:    a50 - a simple tool for graphing genome coverage and fragmentation.
+                .
+                Reads files of contigs, and compares them by plotting each as a line in a graph. 
+		The x-axis represents contig number, the y-axis represents total (cumulative) size.
+		An ideal assembly contains a few, large contigs, thus this curve should rise steeply, and 
+		stop early (but at the expected genome size).  Conversely, a poor assembly consisting of
+		many small fragments will have a less steep curve extending far to the right.
+		.
+		The graphs produced by a50 gives a simple and easy to grasp comparison between assemblies,
+		and yet produces a more detailed and informative view than the usual metrics like largest
+		contig size or N50.
+		.
+                The Darcs repository is at <http://malde.org/~ketil/biohaskell/a50>.
+
+-- HomePage:	http://blog.malde.org/area50
+Build-Depends:  base>=3 && <5, bio > 0.4, process, containers, cmdargs >= 0.5, directory
+Build-Type:     Simple
+Cabal-Version:	>= 1.2.3
+Tested-with:    GHC==6.12.1
+
+Data-files:     README
+Executable:     a50
+Main-Is:        A50.hs
+Other-Modules:	Gnuplot, Options, Blat
+Hs-Source-Dirs: src
+Ghc-Options:    -Wall

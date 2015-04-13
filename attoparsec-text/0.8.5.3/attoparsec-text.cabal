@@ -1,0 +1,50 @@
+name:            attoparsec-text
+version:         0.8.5.3
+license:         BSD3
+license-file:    LICENSE
+category:        Text, Parsing
+author:          Felipe Lessa <felipe.lessa@gmail.com>, Bryan O'Sullivan <bos@serpentine.com>
+maintainer:      Felipe Lessa <felipe.lessa@gmail.com>
+stability:       experimental
+tested-with:     GHC == 6.12.1, GHC == 7.0.1
+synopsis:        (deprecated)
+cabal-version:   >= 1.6
+homepage:        http://patch-tag.com/r/felipe/attoparsec-text/home
+build-type:      Simple
+description:
+    This package has been deprecated.  Now the @attoparsec@
+    includes all functionality from this library.
+extra-source-files:
+    README.markdown
+    benchmarks/Makefile
+    benchmarks/Double.hs
+    benchmarks/Tiny.hs
+    benchmarks/med.txt.bz2
+    benchmarks/double_test.txt.bz2
+    tests/Makefile
+    tests/QC.hs
+    tests/QCSupport.hs
+    tests/TestFastSet.hs
+--    examples/Makefile
+--    examples/Parsec_RFC2616.hs
+--    examples/RFC2616.hs
+--    examples/TestRFC2616.hs
+--    examples/rfc2616.c
+
+source-repository head
+  type: darcs
+  location: http://patch-tag.com/r/felipe/attoparsec-text
+
+library
+  build-depends: base       >= 3       && < 5,
+                 attoparsec >= 0.7     && < 0.10,
+                 text       >= 0.10    && < 0.12,
+                 containers >= 0.1.0.1 && < 0.5,
+                 array      >= 0.1     && < 0.4
+  extensions:      CPP
+  exposed-modules: Data.Attoparsec.Text
+                   Data.Attoparsec.Text.FastSet
+                   Data.Attoparsec.Text.Lazy
+  other-modules:   Data.Attoparsec.Text.Internal
+  ghc-options:     -Wall
+--  ghc-prof-options: -auto-all

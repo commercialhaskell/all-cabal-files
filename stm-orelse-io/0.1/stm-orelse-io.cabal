@@ -1,0 +1,34 @@
+Name:                stm-orelse-io
+Version:             0.1
+Synopsis:	     Choose between the return value of an STM operation and an IO action.
+Homepage:            http://nonempty.org/software/stm-orelse-io
+License:             BSD3
+License-file:        LICENSE
+Author:              Gard Spreemann
+Maintainer:          Gard Spreemann <gspreemann@gmail.com>
+Copyright:           2012 Gard Spreemann
+Category:            Concurrency
+Build-type:          Simple
+Cabal-version:       >=1.2
+Description:         While tinkering on a project, I frequently found myself
+		     wanting to wait for an IO operation /unless/ something
+		     more important came up. The "Control.Concurrent.STM.OrElseIO"
+		     module is meant to reduce the boilerplate needed when choosing
+		     between IO actions and STM operations.
+		     .
+		     You must use the threaded runtime with this package.
+		     .
+		     TODO:
+		     .
+		     * Kill off IO threads whose return values will never be needed.
+		     .
+		     * Possibly rename @runOrElse@ and friends to @orElseIO@ or similar. 
+
+
+Library
+  Exposed-modules:     Control.Concurrent.MVarIO,
+                       Control.Concurrent.STM.TMVarIO,
+                       Control.Concurrent.STM.OrElseIO  
+  hs-source-dirs:      src
+  Build-depends:       base >= 4 && <5, stm
+

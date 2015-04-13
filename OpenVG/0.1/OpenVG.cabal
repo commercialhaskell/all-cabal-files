@@ -1,0 +1,64 @@
+name:             OpenVG
+version:          0.1
+license:          BSD3
+license-file:     LICENSE
+copyright:        Stephen Tetley <stephen.tetley@gmail.com>
+maintainer:       Stephen Tetley <stephen.tetley@gmail.com>
+homepage:         http://code.google.com/p/copperbox/
+category:         Graphics
+synopsis:         OpenVG (shivag-0.2.0) binding
+description:
+  A Haskell binding for the OpenVG vector graphics API version 1.0.1
+  (specifically the shivavg-0.2.0 implementation).
+
+build-type:         Simple
+stability:          alpha
+cabal-version:      >= 1.2
+
+extra-source-files:
+  InstallWindows.txt,
+  README.txt,
+  examples/TestUtils.hs,
+  examples/TestVgu.hs
+
+library
+  hs-source-dirs:     src
+  build-depends:      base, OpenGL >= 2.2, GLUT >= 2.1.1.2
+
+  
+  exposed-modules:
+    Graphics.Rendering.OpenVG,
+    Graphics.Rendering.OpenVG.VG,
+    Graphics.Rendering.OpenVG.VGU,
+    Graphics.Rendering.OpenVG.VG.BasicTypes,
+    Graphics.Rendering.OpenVG.VG.Blending,
+    Graphics.Rendering.OpenVG.VG.DrawingContext,
+    Graphics.Rendering.OpenVG.VG.Extending,
+    Graphics.Rendering.OpenVG.VG.Images,
+    Graphics.Rendering.OpenVG.VG.Paint,
+    Graphics.Rendering.OpenVG.VG.Parameters,
+    Graphics.Rendering.OpenVG.VG.Paths,
+    Graphics.Rendering.OpenVG.VG.RenderingQuality,
+    Graphics.Rendering.OpenVG.VG.Scissoring,
+    Graphics.Rendering.OpenVG.VG.ShivaExtensions,
+    Graphics.Rendering.OpenVG.VGU.VGU,
+    Graphics.Rendering.OpenVG.VGU.Errors
+  
+  other-modules:
+    Graphics.Rendering.OpenVG.VG.Constants,
+    Graphics.Rendering.OpenVG.VG.Utils,
+    Graphics.Rendering.OpenVG.VG.CFunDecls,
+    Graphics.Rendering.OpenVG.VGU.CInternals,
+    Graphics.Rendering.OpenVG.VGU.ErrorsInternal    
+  
+  extensions:
+    ForeignFunctionInterface, TypeSynonymInstances, CPP
+
+  ghc-options:  -Wall 
+  
+  includes: vg/openvg.h, vg/vgu.h
+  
+
+  
+  
+  

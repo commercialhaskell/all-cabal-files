@@ -1,0 +1,33 @@
+Cabal-Version:      >= 1.2
+Name:               hugs2yc
+Version:            0.1
+Copyright:          2008, Dmitry Golubovsky and The Yhc Team
+Maintainer:         golubovsky@gmail.com
+Homepage:           http://www.haskell.org/haskellwiki/Yhc
+License:            BSD3
+License-File:       LICENSE
+Build-Type:         Simple
+Author:             Dmitry Golubovsky
+Synopsis:           Hugs Front-end to Yhc Core.
+Description:
+    A converter of Hugs Core output to Yhc Core format for further conversion by a back-end.
+Category:           Development
+
+Flag splitBase
+    Description: Choose the new smaller, split-up base package.
+
+Library
+    if flag(splitBase)
+        build-depends: base >= 3, mtl, containers
+    else
+        build-depends: base < 3, mtl
+    build-depends: mtl, uniplate, yhccore, ycextra, 
+                   parsec, directory, filepath
+
+    Exposed-modules:
+        Yhc.Core.FrontEnd.Hugs 
+    Other-modules:
+        Yhc.Core.FrontEnd.Hugs.ParseUtil, Yhc.Core.FrontEnd.Hugs.UnDict,
+        Yhc.Core.FrontEnd.Hugs.LinkUtil, Yhc.Core.FrontEnd.Hugs.PrimTable
+
+

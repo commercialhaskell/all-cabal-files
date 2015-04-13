@@ -1,0 +1,26 @@
+Name:                 spata
+Version:              2009.9.18.1
+Build-type:           Simple
+Synopsis:             bruteforce form validation
+Description:
+        
+    who needs a brain when it can be solved with fists
+
+License:              BSD3
+License-file:         LICENSE
+Author:               Wang, Jinjing
+Maintainer:           Wang, Jinjing <nfjinjing@gmail.com>
+Build-Depends:        base
+Cabal-version:        >= 1.2
+category:             Web
+homepage:             http://github.com/nfjinjing/spata/tree/master
+data-files:           readme.md, changelog.md, known-issues.md, Nemesis, src/test.hs
+
+library
+  ghc-options: -Wall
+  build-depends: base >= 4 && < 5, mps >= 2009.9.18, mtl, dlist
+  hs-source-dirs: src/
+  exposed-modules:  
+                      Network.Spata
+                      Network.Spata.Type
+                      Network.Spata.DSL

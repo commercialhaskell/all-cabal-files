@@ -1,0 +1,52 @@
+name:                snap-web-routes
+version:             0.4.0.0
+synopsis:            Type safe URLs for Snap
+description:
+    Type safe URL generation and routing for Snap using web-routes.
+    .
+    To get started, there is a __<https://github.com/lukerandall/snap-web-routes/blob/master/README.md tutorial on GitHub>__.
+    .
+    This builds on <https://github.com/stepcut/snap-web-routes-demo work>
+    done by Jeremy Shaw. Thanks Jeremy!
+
+homepage:            https://github.com/lukerandall/snap-web-routes
+bug-reports:         https://github.com/lukerandall/snap-web-routes/issues
+license:             BSD3
+license-file:        LICENSE
+author:              Luke Randall
+maintainer:          luke.randall@gmail.com
+category:            Web, Snap
+build-type:          Simple
+cabal-version:       >=1.10
+
+extra-source-files:
+  LICENSE,
+  README.md
+  TODO.md
+  changelog
+
+library
+  hs-source-dirs:      src
+
+  exposed-modules:
+    Snap.Snaplet.Router
+    Snap.Snaplet.Router.Heist
+    Snap.Snaplet.Router.Internal.Types
+    Snap.Snaplet.Router.Types
+    Snap.Snaplet.Router.URL
+
+  build-depends:
+    base                      >= 4.4     && < 5,
+    heist                     >= 0.13    && < 0.14,
+    mtl                       >= 2       && < 3,
+    snap-core                 >= 0.9     && < 0.11,
+    snap                      >= 0.13    && < 0.14,
+    text                      >= 0.11    && < 1.2,
+    web-routes                >= 0.27    && < 0.28,
+    xmlhtml                   >= 0.1
+
+  default-language:    Haskell2010
+
+source-repository head
+  type:     git
+  location: https://github.com/lukerandall/snap-web-routes.git

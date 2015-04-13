@@ -1,0 +1,38 @@
+name:               hinotify
+version:            0.3.1
+build-type:         Simple
+synopsis:           Haskell binding to INotify
+description:
+    .
+    This library provides a wrapper to the Linux Kernel's inotify feature,
+    allowing applications to subscribe to notifications when a file is
+    accessed or modified.
+    .
+category:           System
+homepage:           http://haskell.org/~kolmodin/code/hinotify/README.html
+license:            BSD3
+license-file:       LICENSE
+author:             Lennart Kolmodin
+maintainer:         Lennart Kolmodin <kolmodin@gentoo.org>
+extra-source-files: README
+cabal-version:      >= 1.2
+
+flag split-base
+    description: Choose the new smaller, split-up base package.
+
+library
+    build-depends:  unix
+    if flag(split-base)
+        build-depends:  base >= 3 && < 5, containers, directory
+    else
+        build-depends:  base < 3
+    extensions:     ForeignFunctionInterface
+
+    exposed-modules:
+        System.INotify
+    other-modules:
+        System.INotify.Masks
+
+    ghc-options:    -fvia-C -Wall
+
+    hs-source-dirs: src

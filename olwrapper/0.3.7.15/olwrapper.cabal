@@ -1,0 +1,102 @@
+Name:           olwrapper
+Version:        0.3.7.15
+x-revision: 1
+Synopsis:       An OpenLayers JavaScript Wrapper and Webframework with snaplet-fay
+Description:    Haskell OpenLayers Wrapper
+                .
+                * the project has development status
+                .
+                * the library is also the tutorial
+                .
+                * for a full documentation please read my diploma thesis 2015 (TU Vienna) - fully available in summer 2015
+Author:         Thomas Edelmann
+Maintainer:     tomnobleman@gmail.com
+Stability:      Experimental
+Category:       Web, Map, OpenLayers, Webframework, snaplet-fay
+Build-type:     Simple
+Cabal-version:  >=1.12
+license:        GPL
+license-file:   LICENSE
+
+extra-source-files:
+    LICENSE
+    README.md
+    snaplets/fay/devel.cfg
+    snaplets/heist/templates/index.tpl
+    static/dummy
+    snaplets/fay/src/Index.hs
+    src/Application.hs
+    src/Main.hs
+    src/Site.hs
+
+Flag development
+  Description:  Whether to build the server in development (interpreted) mode
+  Default:      False
+
+library
+  hs-source-dirs:      wrapper, web
+  default-language:    Haskell2010
+  exposed-modules:
+    OpenLayers
+    OpenLayers.Func
+    OpenLayers.Html
+    OpenLayers.HtmlInternal
+    OpenLayers.Internal
+    OpenLayers.Types
+    OlApp
+  other-modules:
+    Tutorial.OlApp
+    Tutorial.Traffic
+  other-extensions:    
+  build-depends:       
+    base                      >= 4 && < 4.8,
+    bytestring                >= 0.10      ,
+    lens                      == 4.4.0.2   ,
+    mtl                       >= 2         ,
+    text                      >= 0.11      ,
+    fay                       == 0.21.2    ,
+    fay-text                  == 0.3.2     ,
+    fay-jquery                == 0.6.0.2   ,
+    snap                      == 0.13.3.1  ,
+    snap-core                 == 0.9.6.3   ,
+    snap-server               == 0.9.4.5   ,
+    snaplet-fay               >= 0.3       ,
+    snap-loader-static        == 0.9.0.2   ,
+    snap-loader-dynamic       == 0.10.0.2
+
+executable olwrapper
+  hs-source-dirs:      src, snaplets/fay/src
+  main-is:             Main.hs
+  default-language:    Haskell2010
+  build-depends:   
+    base                      ,
+    bytestring                ,
+    lens                      ,
+    mtl                       ,
+    text                      ,
+    fay                       ,
+    fay-text                  ,
+    fay-jquery                ,
+    snap                      ,
+    snap-core                 ,
+    snap-server               ,
+    snaplet-fay               ,
+    snap-loader-static        
+
+  if flag(development)
+    build-depends:  snap-loader-dynamic == 0.10.0.2
+    cpp-options:    -DDEVELOPMENT
+    ghc-options:    -threaded -w -Wall
+  else
+    if impl(ghc >= 6.12.0)
+      ghc-options:  
+                   -threaded -Wall -fwarn-tabs -funbox-strict-fields
+                   -fno-warn-orphans -fno-warn-unused-do-bind
+    else
+      ghc-options:  
+                   -threaded -Wall -fwarn-tabs -funbox-strict-fields
+                   -fno-warn-orphans
+
+source-repository head
+  type:       git
+  location:   https://github.com/olwrapper/olwrapper.git

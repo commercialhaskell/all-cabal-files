@@ -1,0 +1,34 @@
+Name:           WXDiffCtrl
+Version:        0.0.1
+License:        BSD3
+License-file:   license.txt
+Homepage:       http://wewantarock.wordpress.com
+Author:         Jeremy O'Donoghue
+Build-Type:     Simple
+Category:       GUI, User interfaces
+Cabal-Version:  >= 1.6
+Description:    A very simple diff control, written as an example of how to create a
+                custom control in wxHaskell.
+Maintainer:     jeremy.odonoghue@gmail.com
+Synopsis:       WXDiffCtrl
+Data-Files:     WXDiffCtrl.cabal
+
+Flag splitBase
+    Description: Choose the new smaller, split-up base package.
+
+Library
+    if flag(splitBase)
+        build-depends: base >= 3 && < 5, 
+                       wx > 0.12.1.2,
+                       wxcore >= 0.12.1.2,
+                       containers >= 0.2.0.1
+    else
+        build-depends: base <  3, 
+                       wx > 0.12.1.2,
+                       wxcore >= 0.12.1.2 
+
+ Exposed-Modules:
+  Graphics.UI.WXContrib.WXDiffCtrl
+  Graphics.UI.WXContrib.WXFontMetrics
+
+ Hs-Source-Dirs: src

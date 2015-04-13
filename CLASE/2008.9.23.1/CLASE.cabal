@@ -1,0 +1,39 @@
+Name:           CLASE
+Version:        2008.9.23.1
+Cabal-Version:  >= 1.2
+License:        BSD3
+Build-Type:     Simple
+License-File:   LICENSE
+Author:         Tristan Allwood
+Maintainer:     clase@zonetora.co.uk
+Homepage:       http://www.zonetora.co.uk/clase/
+Stability:      alpha
+Synopsis:       Cursor Library for A Structured Editor
+Description:    A library to aid the development of structured editors that
+                require a zipper-like interface to the language being edited.
+Category:       Data
+Tested-With:    GHC ==6.8.3
+
+Library
+  Build-Depends:    base,
+                    parsec >= 2.1.0.1,
+                    containers >= 0.1.0.1,
+                    template-haskell,
+                    filepath >= 1.1.0.0,
+                    mtl >= 1.1.0.1
+
+  Exposed-Modules:  
+    Data.Cursor.CLASE.Language,
+    Data.Cursor.CLASE.Bound,
+    Data.Cursor.CLASE.Persistence,
+    Data.Cursor.CLASE.Traversal,
+    Data.Cursor.CLASE.Util,
+    Data.Cursor.CLASE.Gen.Language,
+    Data.Cursor.CLASE.Gen.Adapters,
+    Data.Cursor.CLASE.Gen.Persistence
+
+  Other-Modules:
+    Data.Cursor.CLASE.Gen.Util,
+    Data.Cursor.CLASE.Gen.PrintM
+
+  Extensions: 

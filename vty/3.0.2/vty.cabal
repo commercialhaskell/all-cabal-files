@@ -1,0 +1,35 @@
+Name:                vty
+Version:             3.0.2
+License:             BSD3
+License-file:        LICENSE
+Author:              Stefan O'Rear
+Maintainer:          Corey O'Connor (coreyoconnor@gmail.com)
+Category:            User Interfaces
+Synopsis:            A simple terminal access library
+Description:
+  vty is a *very* simplistic library in the niche of ncurses.  It is intended
+  to be easy to use, have no confusing corner cases, and good support for common
+  terminal types.
+  .
+  If you want to use it, currently the best reference is the test module (Test.hs).
+  .
+  Notable infelicities: requires an ANSI-type terminal, poor efficiency,
+                        requires Linux\/xterm style UTF8 support.
+  .
+  You can 'darcs get' it from <http://code.haskell.org/vty/>
+  &#169; 2006-2007 Stefan O'Rear; BSD3 license.
+
+Build-Depends:       base>3, bytestring, containers, unix
+Build-Type:          Simple
+Data-Files:          README, TODO
+Extra-Source-Files:  test/Test.hs, cbits/gwinsz.h, test/Bench.hs
+
+Exposed-Modules:     Graphics.Vty
+C-Sources:           cbits/gwinsz.c
+Include-Dirs:        cbits
+Install-Includes:    gwinsz.h
+Other-Modules:       Graphics.Vty.Types, Graphics.Vty.Cursor, Graphics.Vty.LLInput
+
+ghc-options:         -funbox-strict-fields -Wall
+ghc-prof-options:    -funbox-strict-fields -auto-all -Wall
+

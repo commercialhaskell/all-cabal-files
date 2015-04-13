@@ -1,0 +1,29 @@
+Name:                NXTDSL
+Version:             0.1
+Synopsis:            Generate NXC Code from DSL
+Description:         Typesafe code generation for the LEGO-NXT
+License:             BSD3
+License-File:        LICENSE
+Author:              Alexander Thiemann
+Maintainer:          Alexander Thiemann <mail@agrafix.net>
+Copyright:           Copyright (c) 2013 Alexander Thiemann
+Build-Type:          Simple
+Cabal-Version:       >=1.6
+Category:            Language, Compilers/Interpreters
+Homepage:               https://github.com/agrafix/legoDSL
+Bug-reports:            https://github.com/agrafix/legoDSL/issues
+
+Library
+   Build-Depends:     base >= 3 && < 5, mtl, unordered-containers, resourcet >= 0.4.4, stm >= 2.4.2
+   Exposed-modules:   NXT.Core, NXT.Interpretation, NXT.Common, NXT.Motor, NXT.Sensor
+
+Executable ExampleRun
+   Main-Is: Example.hs
+
+Executable ExampleVM
+   Main-Is: ExampleVM.hs
+   ghc-options:       -threaded
+
+Source-repository head
+   Type:                 git
+   Location:             git://github.com/agrafix/legoDSL.git

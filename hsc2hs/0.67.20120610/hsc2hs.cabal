@@ -1,0 +1,43 @@
+Name: hsc2hs
+Version: 0.67.20120610
+Copyright: 2000, Marcin Kowalczyk
+Build-Depends: base, directory, process
+License: BSD3
+License-File: LICENSE
+Author: Marcin Kowalczyk <qrczak@knm.org.pl>
+Maintainer: cvs-fptools@haskell.org
+Synopsis: A preprocessor that helps with writing Haskell bindings to C code
+Description:
+    The hsc2hs program can be used to automate some parts of the
+    process of writing Haskell bindings to C code.  It reads an
+    almost-Haskell source file with embedded special constructs, and
+    outputs a real Haskell file with these constructs processed, based
+    on information taken from some C headers.  The extra constructs
+    provide Haskell counterparts of C types, values of C constants,
+    including sizes of C types, and access to fields of C structs.
+    .
+    For more details, see
+    <http://www.haskell.org/ghc/docs/latest/html/users_guide/hsc2hs.html>.
+Category: Development
+Data-Files: template-hsc.h
+build-type: Simple
+cabal-version: >=1.2
+
+Executable hsc2hs
+    Main-Is: Main.hs
+    Other-Modules: HSCParser,
+                   DirectCodegen,
+                   CrossCodegen,
+                   UtilsCodegen,
+                   Common,
+                   C,
+                   Flags
+    -- needed for ReadP (used by Data.Version)
+    Hugs-Options: -98
+    Extensions: CPP, ForeignFunctionInterface
+
+    Build-Depends: base       >= 4   && < 5,
+                   containers >= 0.2 && < 0.5,
+                   directory  >= 1   && < 1.2,
+                   process    >= 1   && < 1.2
+

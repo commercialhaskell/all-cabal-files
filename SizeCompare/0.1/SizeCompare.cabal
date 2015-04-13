@@ -1,0 +1,34 @@
+Name:                SizeCompare
+Version:             0.1
+License:             GPL
+License-file:        LICENSE
+Author:              Bram Schuur
+Maintainer:          bschuur@cs.uu.nl
+Build-Type:          Simple
+Cabal-Version:       >=1.2
+Category:            Data
+Synopsis:            Fast size comparison for standard containers.
+Description:         SizeCompare is a small library providing size comparison functions standard Haskell data-types.
+                     Size compare runs in O(min(n,m)) for both arguments, possibly faster.
+
+                     Instead of measuring both containers and comparing the result, SizeCompare iteratively deconstructs both
+                     sides of the equality equation until a conclusion can be made.
+
+                     A common expression like:
+
+                     length xs > 0
+
+                     runs O(n) in the length of the list. Sizecompare runs (O(1)) in this particular case:
+
+                     xs |>| 0
+                     
+                     This is still an initial version of the library and updates may follow after some more profiling.
+
+Library  
+  Build-Depends:     base >= 3 && < 5, containers >= 0.2
+  Exposed-modules:   Data.SizeCompare
+  ghc-options:       -Wall
+  hs-source-dirs:    src
+
+
+

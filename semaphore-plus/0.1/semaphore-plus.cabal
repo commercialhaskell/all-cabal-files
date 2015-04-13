@@ -1,0 +1,25 @@
+name:                semaphore-plus
+version:             0.1
+Cabal-Version:	     >= 1.6
+synopsis:            Various concurrency abstractions built on top of semaphores
+description:         Provides the LightSwitch and the non-starvable Readers-Writer lock
+		     from "A Little Book of Semaphores"
+category:            Concurrency
+license:             BSD3
+license-file:        LICENSE
+copyright:	     Copyright (C) Swansea University 2009
+author:              Robin Green
+maintainer:          Robin Green <greenrd@greenrd.org>
+build-type:	     Simple
+stability:	     experimental
+bug-reports:	     mailto:greenrd@greenrd.org
+tested-with:	     GHC == 6.10.1
+
+source-repository head
+  type:     darcs
+  location: http://patch-tag.com/publicrepos/semaphore-plus
+
+Library
+  build-Depends:	base
+  exposed-modules:      Control.Concurrent.LightSwitch, Control.Concurrent.ReadWriteLock, Control.Concurrent.Util
+  ghc-options:          -Wall

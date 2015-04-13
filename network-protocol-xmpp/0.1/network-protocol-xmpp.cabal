@@ -1,0 +1,27 @@
+name: network-protocol-xmpp
+version: 0.1
+synopsis: Client <-> Server communication over XMPP
+license: GPL
+license-file: License.txt
+author: John Millikin
+maintainer: jmillikin@gmail.com
+build-type: Simple
+cabal-version: >=1.6
+category: Network
+stability: experimental
+bug-reports: mailto:jmillikin@gmail.com
+
+source-repository head
+  type: bzr
+  location: bzr+ssh://bazaar.launchpad.net/~jmillikin/%2Bjunk/network-protocol-xmpp/
+
+library
+  build-depends: base >=3 && < 5, hxt, libxml-sax >= 0.2, hsgnutls, gsasl, network
+  exposed-modules:
+    Network.Protocol.XMPP
+    Network.Protocol.XMPP.Client
+    Network.Protocol.XMPP.JID
+    Network.Protocol.XMPP.SASL
+    Network.Protocol.XMPP.Stanzas
+    Network.Protocol.XMPP.Stream
+    Network.Protocol.XMPP.Util

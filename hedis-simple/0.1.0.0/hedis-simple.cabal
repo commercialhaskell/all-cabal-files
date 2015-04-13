@@ -1,0 +1,22 @@
+name:                hedis-simple
+version:             0.1.0.0
+synopsis:            A simplified API for hedis
+description:         hedis-simple wraps most hedis commands in an EitherT monad to simplify a lot of the verbose error checking that one would normally have to perform.
+homepage:            http://github.com/sanetracker/hedis-simple
+license:             MIT
+license-file:        LICENSE
+author:              Ian Duncan
+maintainer:          ian@iankduncan.com
+category:            Database
+build-type:          Simple
+cabal-version:       >=1.8
+source-repository    head
+  type:                git
+  location:            http://github.com/sanetracker/hedis-simple
+
+
+
+library
+  exposed-modules:     Database.Redis.Simple
+  build-depends:       base ==4.6.*, mtl ==2.1.*, either ==3.4.*, bytestring ==0.10.*, hedis ==0.6.*
+  hs-source-dirs:      src

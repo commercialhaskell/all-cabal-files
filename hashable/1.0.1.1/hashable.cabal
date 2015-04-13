@@ -1,0 +1,51 @@
+Name:                hashable
+Version:             1.0.1.1
+x-revision: 1
+Synopsis:            A class for types that can be converted to a hash value
+Description:         This package defines a class, 'Hashable', for types that
+                     can be converted to a hash value.  This class
+                     exists for the benefit of hashing-based data
+                     structures.  The package provides instances for
+                     basic types and a way to combine hash values.
+Homepage:            http://github.com/tibbe/hashable
+License:             BSD3
+License-file:        LICENSE
+Author:              Milan Straka
+Maintainer:          Milan Straka <fox@ucw.cz>
+                     Johan Tibell <johan.tibell@gmail.com>
+Stability:           Provisional
+Category:            Data
+Build-type:          Simple
+Cabal-version:       >=1.10
+-- tests/Properties.hs shouldn't have to go here, but the source files
+-- for the test-suite stanzas don't get picked up by `cabal sdist`.
+Extra-source-files:
+  CHANGES, README.md, tests/Properties.hs, benchmarks/Benchmarks.hs
+  benchmarks/Makefile
+
+Library
+  Default-language:  Haskell98
+  Exposed-modules:   Data.Hashable
+  Build-depends:     base >= 4.0 && < 4.6,
+                     bytestring >= 0.9 && < 1.0
+
+  C-sources:         cbits/hashByteString.c
+  Ghc-options:       -Wall
+  if impl(ghc >= 6.8)
+    Ghc-options: -fwarn-tabs
+
+Test-suite tests
+  Default-language:  Haskell98
+  Type:              exitcode-stdio-1.0
+  Hs-source-dirs:    tests
+  Main-is:           Properties.hs
+  Build-depends:     base >= 4.0 && < 5,
+                     hashable,
+                     QuickCheck == 1.2.*,
+                     random == 1.0.*
+
+  Ghc-options:       -Wall
+
+source-repository head
+  type:     git
+  location: https://github.com/tibbe/hashable.git

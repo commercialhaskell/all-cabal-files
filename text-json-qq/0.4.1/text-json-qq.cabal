@@ -1,0 +1,39 @@
+name:                text-json-qq
+version:             0.4.1
+synopsis:            Json Quasiquatation for Haskell.
+
+-- A longer description of the package.
+description:  
+    @text-json-qq@ provides json quasiquatation for Haskell.
+    .
+    This package expose the function @jsonQQ@ that compile time converts json code into a @Text.JSON.JSValue@.
+    @jsonQQ@ got the signature
+    .
+    > jsonQQ :: QuasiQuoter.
+    .
+    Consult documentation in the module @Text.JSON.QQ@.
+
+homepage:            http://github.com/finnsson/text-json-qq
+license:             OtherLicense
+license-file:        COPYING.txt
+author:              Oscar Finnsson
+maintainer:          oscar.finnsson@gmail.com
+category:            JSON
+build-type:          Simple
+cabal-version:       >=1.6
+
+library
+  hs-source-dirs: src
+  exposed-modules: Text.JSON.QQ
+  build-depends: base >= 4.3 && < 5, 
+                 json-qq == 0.4.1, 
+                 json, 
+                 parsec >= 2, 
+                 template-haskell, 
+                 haskell-src-meta >= 0.1.0
+
+source-repository head
+  type:     git
+  location: https://github.com/finnsson/text-json-qq/
+
+

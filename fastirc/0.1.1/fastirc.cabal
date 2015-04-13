@@ -1,0 +1,47 @@
+Name:          fastirc
+Version:       0.1.1
+Category:      Network
+Synopsis:      Fast Internet Relay Chat (IRC) library
+Maintainer:    Ertugrul Söylemez
+Author:        Ertugrul Söylemez
+Copyright:     (c) 2010 Ertugrul Söylemez
+License:       BSD3
+License-file:  LICENSE
+Build-type:    Simple
+Stability:     experimental
+Cabal-version: >= 1.2
+Description:   Fast Internet Relay Chat (IRC) library.
+
+
+Flag debug
+  Description: Build the test program
+  Default:     False
+
+
+Library
+  Build-depends:
+    attoparsec >= 0.8,
+    base >= 4 && < 5,
+    bytestring >= 0.9.1.4,
+    containers >= 0.2.0.1,
+    monadLib >= 3.6.1
+  GHC-Options: -O2
+  Exposed-modules:
+    Network.FastIRC,
+    Network.FastIRC.Messages,
+    Network.FastIRC.ServerSet,
+    Network.FastIRC.Session,
+    Network.FastIRC.Users
+    Network.FastIRC.Utils
+
+
+Executable test
+  Build-depends:  base >= 4 && < 5
+  Main-is:        Test.hs
+  GHC-Options:    -O2
+  if flag(debug)
+    Buildable: True
+  else
+    Buildable: False
+  Other-modules:
+    Network.FastIRC

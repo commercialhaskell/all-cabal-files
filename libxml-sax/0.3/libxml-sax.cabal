@@ -1,0 +1,27 @@
+Name: libxml-sax
+Version: 0.3
+Stability: Alpha
+Synopsis: Bindings for the libXML2 SAX interface
+Description: Incrementally convert text to lists of XML events
+License: GPL-3
+License-file: License.txt
+Author: John Millikin
+maintainer: jmillikin@gmail.com
+copyright: Copyright (c) John Millikin 2009-2010,
+                     (c) Dmitry Astapov 2010
+Build-Type: Simple
+Cabal-Version: >=1.4
+Category: XML
+homepage: http://ianen.org/haskell/bindings/libxml-sax/
+tested-with: GHC==6.10.4
+extra-source-files: Tests.hs
+
+Library
+  Build-Depends: base >=3 && < 5
+  build-tools: c2hs
+  Exposed-modules: Text.XML.LibXML.SAX
+
+  extra-libraries: xml2
+  pkgconfig-depends: libxml-2.0
+
+  Extensions: ForeignFunctionInterface

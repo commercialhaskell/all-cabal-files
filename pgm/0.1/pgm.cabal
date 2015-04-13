@@ -1,0 +1,17 @@
+name:                pgm
+version:             0.1
+synopsis:            Pure Haskell implementation of PGM image format
+description:         Reads and writes 8 and 16 bit PGM images, loading them into Haskell as arrays.
+category:            Graphics
+license:             LGPL
+license-file:        LICENSE
+author:              Frederick Ross
+maintainer:          fred.ross@epfl.ch
+build-type:          Simple
+Cabal-Version:       >=1.2
+extra-source-files:  README
+
+Library
+  build-depends:     base >= 3 && < 4, parsec >= 3, bytestring, array
+  Exposed-Modules:   Graphics.Pgm
+  ghc-options:       -Wall

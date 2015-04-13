@@ -1,0 +1,18 @@
+Name:           ralist
+Cabal-Version:  >= 1.2
+Version:        0.1.0.0
+License:        BSD3
+Author:         Lennart Augustsson
+Maintainer:     Lennart Augustsson
+Category:       Data Structures
+Synopsis:       Random access list with a list compatible interface.
+Stability:      experimental
+Build-type:     Simple
+Description:    Random access list with a list compatible interface.
+                Random access list have same complexity as lists with some exceptions,
+                the notable one being that (!!) is O(log n) instead of O(n).
+                RALists have to be finite.
+
+Library
+  Build-Depends: base >= 3 && < 6
+  Exposed-modules:      Data.RAList

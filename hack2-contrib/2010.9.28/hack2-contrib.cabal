@@ -1,0 +1,69 @@
+Name:                 hack2-contrib
+Version:              2010.9.28
+Build-type:           Simple
+Synopsis:             Hack2 contrib
+Description:          Common middlewares and utilities that helps working with Hack2
+License:              BSD3
+License-file:         LICENSE
+Author:               Jinjing Wang
+Maintainer:           Jinjing Wang <nfjinjing@gmail.com>
+Build-Depends:        base
+Cabal-version:        >= 1.2
+category:             Web
+homepage:             http://github.com/nfjinjing/hack2-contrib
+data-files:           readme.md, changelog.md
+
+library
+  ghc-options: -Wall
+  build-depends: 
+                    base >=4 && < 5
+                  , cgi
+                  , network
+                  , haskell98
+                  , old-locale
+                  , old-time
+                  , directory
+                  , filepath
+                  , containers
+                  , bytestring
+                  , data-default >= 0.2
+                  , time
+                  , air >= 2011.6.11
+                  , air-extra >= 2011.6.11
+                  , hack2 >= 2009.10.30
+                  , utf8-string
+                  , ansi-wl-pprint
+                  
+  hs-source-dirs: src/
+  exposed-modules:  
+                    
+                    Hack2.Contrib.Constants
+                    Hack2.Contrib.Middleware.BounceFavicon
+                    Hack2.Contrib.Middleware.Censor
+                    Hack2.Contrib.Middleware.Config
+                    Hack2.Contrib.Middleware.ContentLength
+                    Hack2.Contrib.Middleware.ContentType
+                    Hack2.Contrib.Middleware.Debug
+                    -- Hack2.Contrib.Middleware.ETag
+                    Hack2.Contrib.Middleware.File
+                    Hack2.Contrib.Middleware.Head
+                    Hack2.Contrib.Middleware.Inspect
+                    Hack2.Contrib.Middleware.NotFound
+                    Hack2.Contrib.Middleware.RegexpRouter
+                    Hack2.Contrib.Middleware.ShowExceptions
+                    Hack2.Contrib.Middleware.SimpleAccessLogger
+                    Hack2.Contrib.Middleware.Hub
+                    Hack2.Contrib.Middleware.Static
+                    Hack2.Contrib.Middleware.URLMap
+                    Hack2.Contrib.Middleware.IOConfig
+                    Hack2.Contrib.Middleware.UserMime
+                    Hack2.Contrib.Middleware.UTF8Body
+                    Hack2.Contrib.Middleware.Cascade
+                    Hack2.Contrib.Mime
+                    Hack2.Contrib.Request
+                    Hack2.Contrib.Response
+                    Hack2.Contrib.Utils
+
+
+
+

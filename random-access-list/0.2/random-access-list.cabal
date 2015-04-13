@@ -1,0 +1,32 @@
+
+Name:               random-access-list
+Version:            0.2
+Stability:          beta
+
+Category:           Data Structures
+Synopsis:           Random-access lists in Haskell
+Description:        A purely functional random-access list implementation
+                    using skew binary number representation. These lists
+		    offer indexed random-access in logarithmic time while
+		    still providing typical list functionality (head, tail,
+		    cons) in constant time. See \"Purely Functional Data
+		    Structures\" by Chris Okasaki.
+
+License:            BSD3
+License-File:       LICENSE
+Copyright:          (c) 2008, Stephan Friedrichs
+
+Author:             Stephan Friedrichs
+Maintainer:         Stephan Friedrichs (deduktionstheorem at web dot de)
+
+Build-Type:         Custom
+Cabal-Version:      >=1.2
+
+Library
+  Build-Depends:   array >= 0.1.0.0,
+                   base >= 3.0.1.0,
+                   containers >= 0.1.0.0
+  Exposed-Modules: Data.RandomAccessList
+  ghc-options:     -Wall
+  Extensions:      CPP
+

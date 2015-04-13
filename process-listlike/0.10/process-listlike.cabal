@@ -1,0 +1,60 @@
+Name:               process-listlike
+Version:            0.10
+Synopsis:           Process extras
+Description:        Extra functionality for the Process library
+                    <http://hackage.haskell.org/package/process>.
+Homepage:           https://github.com/ddssff/process-listlike
+License:            MIT
+License-file:       LICENSE
+Author:             David Lazar, Bas van Dijk
+Maintainer:         David Lazar <lazar6@illinois.edu>
+Category:           System
+Build-type:         Simple
+Cabal-version:      >= 1.8
+Extra-source-files:
+  README.md
+
+source-repository head
+  Type:             git
+  Location:         https://github.com/ddssff/process-listlike
+
+Library
+  ghc-options:      -Wall
+
+  Hs-source-dirs:   src
+
+  Exposed-modules:
+    System.Process.ByteString
+    System.Process.ByteString.Lazy
+    System.Process.Chunks
+    System.Process.ListLike
+    System.Process.ListLike.Classes
+    System.Process.ListLike.Instances
+    System.Process.ListLike.LazyString
+    System.Process.ListLike.Read
+    System.Process.ListLike.ReadNoThreads
+    System.Process.ListLike.StrictString
+    System.Process.String
+    System.Process.Text
+    System.Process.Text.Lazy
+
+  Other-modules:
+    Utils
+
+  Build-depends:
+    base >= 4 && < 5,
+    process,
+    bytestring,
+    ListLike >= 4,
+    mtl,
+    text,
+    deepseq
+
+Executable process-listlike-tests
+  Main-Is: tests/Main.hs
+  Build-depends: base >= 4, bytestring, deepseq, process, process-listlike, utf8-string, unix, text, HUnit, ListLike, regex-posix
+
+Executable process-listlike-interactive-tests
+  Main-Is: tests/Interactive.hs
+  GHC-Options: -Wall -O2 -threaded -rtsopts
+  Build-Depends: base >= 4, bytestring, deepseq, HUnit, ListLike, mtl, process, process-listlike, text, utf8-string, unix

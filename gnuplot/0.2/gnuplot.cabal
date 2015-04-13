@@ -1,0 +1,69 @@
+Name:             gnuplot
+Version:          0.2
+License:          GPL
+License-File:     LICENSE
+Author:           Henning Thielemann <haskell@henning-thielemann.de>
+Maintainer:       Henning Thielemann <haskell@henning-thielemann.de>
+Homepage:         http://www.haskell.org/haskellwiki/Gnuplot
+Package-URL:      http://code.haskell.org/gnuplot/
+Category:         Graphics, Math
+Synopsis:         2D and 3D plots using gnuplot
+Description:
+   This is a wrapper to gnuplot
+   which lets you create 2D and 3D plots.
+   .
+   With the Cabal flags executePipe and executeShell
+   you can switch to more convenient
+   but probably less portable ways
+   of running gnuplot.
+   .
+   Start a simple session with @make ghci@.
+   .
+   In the past this was part of the htam package.
+Tested-With:       GHC==6.8.2
+Cabal-Version:     >=1.2
+Build-Type:        Simple
+Extra-Source-Files:
+  Makefile
+  execute/tmp/Graphics/Gnuplot/Execute.hs
+  execute/pipe/Graphics/Gnuplot/Execute.hs
+  execute/shell/Graphics/Gnuplot/Execute.hs
+
+Flag splitBase
+  description: Choose the new smaller, split-up base package.
+
+Flag buildTests
+  description: Build test executables
+  default:     False
+
+Flag executePipe
+  description: Avoid a temporary gnuplot script by running gnuplot with runInteractiveProcess
+  default:     False
+
+Flag executeShell
+  description: Avoid a temporary gnuplot script by calling gnuplot via a UNIX shell and its piping syntax
+  default:     False
+
+Library
+  If flag(splitBase)
+    Build-Depends: base >= 2, process >= 1.0 && < 1.1, time >= 1.1 && < 1.2, old-locale >= 1.0 && < 1.1
+  Else
+    Build-Depends: base >= 1.0 && < 2
+
+  GHC-Options: -Wall
+
+  Hs-Source-Dirs: src
+  If flag(executePipe)
+    Hs-Source-Dirs: execute/pipe
+  Else
+    If flag(executeShell)
+      Hs-Source-Dirs: execute/shell
+    Else
+      Hs-Source-Dirs: execute/tmp
+
+  Exposed-Modules:
+    Graphics.Gnuplot.Simple
+    Graphics.Gnuplot.Time
+  Other-Modules:
+    Graphics.Gnuplot.Utility
+    Graphics.Gnuplot.Execute

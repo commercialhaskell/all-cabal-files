@@ -1,0 +1,35 @@
+Name:              hsc3-plot
+Version:           0.15
+Synopsis:          Haskell SuperCollider Plotting
+Description:       Plotting functions for hsc3
+License:           GPL
+Category:          Sound
+Copyright:         (c) Rohan Drape and others, 2013-2014
+Author:            Rohan Drape
+Maintainer:        rd@slavepianos.org
+Stability:         Experimental
+Homepage:          http://rd.slavepianos.org/t/hsc3-plot
+Tested-With:       GHC == 7.8.2
+Build-Type:        Simple
+Cabal-Version:     >= 1.8
+
+Data-files:        README
+
+Library
+  Build-Depends:   base == 4.*,
+                   directory,
+                   hosc == 0.15.*,
+                   hsc3 == 0.15.*,
+                   hsc3-lang == 0.15.*,
+                   filepath,
+                   process,
+                   split,
+                   statistics,
+                   vector
+  GHC-Options:     -Wall -fwarn-tabs
+  Exposed-modules: Sound.SC3.Plot
+                   Sound.SC3.Plot.Histogram
+
+Source-Repository  head
+  Type:            darcs
+  Location:        http://rd.slavepianos.org/sw/hsc3-plot

@@ -1,0 +1,33 @@
+Name:                smallpt-hs
+Version:             0.1
+Synopsis:            A Haskell port of the smallpt path tracer.
+Description:         A Haskell port of smallpt. smallpt is a global
+                     illumination path tracer written in 99 lines of C++.
+                     The Haskell port is also written in 99 lines. Please
+                     see the Homepage for more information, included
+                     easier to read code waiting for your contribution.
+License:             BSD3
+License-file:        LICENSE
+Author:              Vo Minh Thu <noteed@gmail.com>
+Maintainer:          Vo Minh Thu <noteed@gmail.com>
+Stability:           Provisional
+Category:            Graphics
+Homepage:            http://github.com/noteed/smallpt-hs
+Build-type:          Simple
+Extra-source-files:  README.md
+Cabal-version:       >=1.6
+
+Source-repository head
+  type: git
+  location: git://github.com/noteed/smallpt-hs.git
+
+executable smallpt-hs
+  main-is:             smallpt-hs.hs
+
+  build-depends:       base >= 4 && < 5,
+                       vector == 0.6.*
+
+  extensions:          ForeignFunctionInterface
+
+  -- no -Wall as type signature are purposely missing
+  ghc-options:         -O2

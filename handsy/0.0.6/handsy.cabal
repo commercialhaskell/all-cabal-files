@@ -1,0 +1,29 @@
+name:          handsy
+version:       0.0.6
+synopsis:      A DSL to describe common shell operations and interpeters for running them locally and remotely.
+-- description:   
+Homepage:      https://github.com/utdemir/handsy
+license:       BSD3
+author:        Utku Demir
+maintainer:    utdemir@gmail.com
+category:      System
+build-type:    Simple
+cabal-version: >=1.10
+
+
+source-repository head
+  type:     git
+  location: https://github.com/utdemir/master
+
+library
+  exposed-modules:  System.Handsy
+                    System.Handsy.Remote
+                    System.Handsy.Internal
+  build-depends:    base >=4.6 && <4.8
+                  , bytestring
+                  , process
+                  , transformers
+                  , free
+                  , process-extras 
+  hs-source-dirs:   src
+  default-language: Haskell2010

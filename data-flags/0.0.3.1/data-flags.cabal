@@ -1,0 +1,28 @@
+Name: data-flags
+Version: 0.0.3.1
+Category: Data
+Stability: experimental
+Synopsis: A package for working with bit masks and flags in general.
+Description:
+  This package provides type classes for flags and corresponding instances
+  for standard numeric types viewed as bit masks.
+
+Author: Mikhail Vorozhtsov <mikhail.vorozhtsov@gmail.com>
+Maintainer: Mikhail Vorozhtsov <mikhail.vorozhtsov@gmail.com>
+Copyright: 2010 Mikhail Vorozhtsov <mikhail.vorozhtsov@gmail.com>
+License: BSD3
+License-File: LICENSE
+
+Cabal-Version: >= 1.6.0
+Build-Type: Simple
+
+Library
+  Build-Depends: base < 5, template-haskell
+  Hs-Source-Dirs: src
+  GHC-Options: -Wall
+  Exposed-Modules:
+    Data.Flags
+    Data.Flags.TH
+  Other-Modules:
+    Data.Flags.Base
+

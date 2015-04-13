@@ -1,0 +1,27 @@
+Name:		PlslTools
+Version:	0.0.1
+Cabal-Version:  >= 1.2
+License:	BSD3
+License-File:	LICENSE
+Author:		Larry Layland
+Maintainer:		Larry Layland
+Homepage:	LLayland.wordpress.com  
+Category:	PL/SQL tools
+Synopsis: Tools for PL/SQL developers
+Description: So far just a lint like program for PL/SQL. Diff and refactoring tools are planned
+Build-Type: Simple
+
+Executable PlslLint
+  Build-Depends: old-locale >= 1.0.0.0,
+                 old-time >= 1.0.0.0,
+                 filepath >= 1.1.0.0,
+                 directory >= 1.0.0.1,
+                 process >= 1.0.0.1,
+                 random >= 1.0.0.0,
+                 array >= 0.1.0.0,
+                 haskell98, base,
+                 parsec >= 2.1.0.1
+  Main-Is:        Main.hs
+  Hs-Source-Dirs: plsl_lint
+
+

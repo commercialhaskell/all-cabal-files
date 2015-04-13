@@ -1,0 +1,34 @@
+Name:           Yogurt-Standalone
+Version:        0.4
+Synopsis:       A functional MUD client
+Description:   	Yogurt is a functional MUD client featuring prioritized, regex-based hooks, variables, timers, logging, dynamic loading of Yogurt scripts and more. For example programs, please see Yogurt's home page.
+                .
+                This is the standalone executable built on top of the Yogurt library. Invoke @yogurt@ on a Haskell file that defines one or more sessions to have it load that module and connect to the specified MUD. See module @Network.Yogurt.Session@ in package Yogurt for more details.
+
+
+Author:         Martijn van Steenbergen
+Maintainer:     martijn@van.steenbergen.nl
+Stability:      Experimental
+Copyright:      Some Rights Reserved (CC) 2008-2009 Martijn van Steenbergen
+Homepage:       http://code.google.com/p/yogurt-mud/
+
+
+Cabal-Version:  >= 1.2
+License:        BSD3
+License-file:   LICENSE
+Category:       Network
+Build-type:     Simple
+Extra-Source-Files: Examples/Minimal.hs, Examples/NewMoon.hs
+
+
+Executable yogurt
+  Main-Is:            YogurtExec.hs
+  GHC-Options:        -threaded
+  Build-Depends:      mtl, regex-posix, containers, time, old-locale, Yogurt, network, process, hint
+  Extra-Libraries:    readline
+
+  if impl(ghc >= 6.10) {
+        Build-Depends:  base >= 4, base < 5, syb
+  } else {
+        Build-Depends:  base >= 3, base < 4
+  }

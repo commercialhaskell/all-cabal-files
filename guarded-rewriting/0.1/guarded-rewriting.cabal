@@ -1,0 +1,62 @@
+category:               Generics
+copyright:              (c) 2010 Universiteit Utrecht
+name:                   guarded-rewriting
+version:                0.1
+license:                BSD3
+license-file:           LICENSE
+author:                 Thomas van Noort, Alexey Rodriguez Yakushev,
+                        Stefan Holdermans, Johan Jeuring, Bastiaan Heeren,
+                        Jose Pedro Magalhaes
+maintainer:             generics@haskell.org
+homepage:               http://www.cs.uu.nl/wiki/GenericProgramming/GuardedRewriting
+synopsis:               Datatype-generic rewriting with preconditions
+description:               
+
+  This package provides rewriting functionality for datatypes. Most forms of 
+  datatypes are supported, including parametrized and mutually-recursive.
+  .
+  This library has been described in the paper:
+  .
+  *  Thomas van Noort, Alexey Rodriguez Yakushev, Stefan Holdermans, 
+     Johan Jeuring, Bastiaan Heeren, Jose Pedro Magalhaes.
+     /A Lightweight Approach to Datatype-Generic Rewriting./
+     Journal of Functional Programming, Special Issue on Generic Programming, 
+     2010.
+  .
+  More information about this library can be found at
+  <http://www.cs.uu.nl/wiki/GenericProgramming/GuardedRewriting>.
+
+stability:              provisional
+build-type:             Simple
+cabal-version:          >= 1.6
+tested-with:            GHC == 6.10.4, GHC == 6.12.1
+extra-source-files:     examples/BadRules.hs,
+                        examples/Test.hs,
+                        performance/Main.hs,
+                        performance/Makefile,
+                        performance/Common/*.hs,
+                        performance/Gen/Rules.hs,
+                        performance/Gen/Arith/*.hs,
+                        performance/Gen/DNF1/*.hs,
+                        performance/Gen/DNF2/*.hs,
+                        performance/Gen/DNF3/*.hs,
+                        performance/Gen/DNF4/*.hs,
+                        performance/PM/Rules.hs,
+                        performance/PM/Arith/*.hs,
+                        performance/PM/DNF1/*.hs,
+                        performance/PM/DNF2/*.hs,
+                        performance/PM/DNF3/*.hs,
+                        performance/PM/DNF4/*.hs,
+                        performance/Uni/Rules.hs,
+                        performance/Uni/DNF1/*.hs,
+                        performance/Uni/DNF2/*.hs,
+                        performance/Uni/DNF3/*.hs,
+                        performance/Uni/DNF4/*.hs,
+                        performance/out/description.txt,
+                        performance/bin/description.txt
+
+library
+  ghc-options:            -Wall
+  build-depends:          base >= 3.0 && < 5, instant-generics >= 0.1 && < 1.0
+  exposed-modules:        Generics.Instant.Rewriting
+  hs-source-dirs:         src

@@ -1,0 +1,70 @@
+Name:                imm
+Version:             0.4.1.0
+Synopsis:            Retrieve RSS/Atom feeds and write one mail per new item in a maildir.
+--Description:         
+--Homepage:
+Category:            Web
+
+License:             OtherLicense
+License-file:        LICENSE
+-- Copyright:           
+Author:              kamaradclimber, koral
+Maintainer:          koral att mailoo dott org
+
+Cabal-version:       >=1.8
+Build-type:          Simple
+-- Extra-source-files:  
+
+Source-repository head
+    Type:     git
+    Location: git@github:k0ral/imm.git
+
+Library
+    Exposed-modules:
+        Imm.Boot,
+        Imm.Config,
+        Imm.HTTP,
+        Imm.Main,
+        Imm.Feed,
+        Imm.OPML,
+        Imm.Types,
+        Imm.Util,
+        Imm.Mail,
+        Imm.Maildir
+    Build-depends:
+        base == 4.*,
+        bytestring,
+        case-insensitive,
+        cmdargs,
+        cond,
+        data-default,
+        directory,
+        dyre,
+        feed,
+        filepath,
+        http-conduit,
+        http-types,
+        mime-mail,
+        mtl,
+        network,
+        old-locale,
+        opml,
+        random,
+        text,
+        text-icu,
+        time,
+        timerep,
+        tls,
+        utf8-string,
+        xdg-basedir,
+        xml
+    
+    -- Other-modules:       
+    -- Build-tools:         
+    Ghc-options: -Wall
+
+Executable imm
+    Build-depends: imm, base == 4.*
+    Main-is: Executable.hs
+    Hs-Source-Dirs: Imm
+    Ghc-options: -Wall -threaded

@@ -1,0 +1,21 @@
+Name:                 hack
+Version:              2009.4.20
+Build-type:           Simple
+Synopsis:             a sexy Haskell Webserver Interface
+Description:          a sexy Haskell Webserver Interface
+License:              GPL
+License-file:         LICENSE
+Author:               Wang, Jinjing
+Maintainer:           Wang, Jinjing <nfjinjing@gmail.com>
+Build-Depends:        base
+Cabal-version:        >= 1.2
+category:             Web
+homepage:             http://www.haskell.org/haskellwiki/Panda
+data-files:           readme.md, changelog.md
+
+library
+  ghc-options: -Wall -fno-warn-missing-signatures -fno-warn-name-shadowing -fno-warn-orphans -fno-warn-type-defaults
+  build-depends: base, cgi, network, haskell98, old-locale, old-time, directory, filepath, containers, mps >= 2009.4.20, kibro >= 0.4.3, data-default >= 0.2
+  hs-source-dirs: src/
+  exposed-modules:  
+                    Hack, Hack.Handler.Kibro

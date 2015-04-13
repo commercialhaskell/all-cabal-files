@@ -1,0 +1,22 @@
+name:                 winio
+version:              0.1
+copyright:            2007-2009 Felix Martini
+license:              BSD3
+license-file:         LICENSE
+maintainer:           felix@felixmartini.com
+stability:            Experimental
+synopsis:             I/O library for Windows
+description:          I/O library for Windows with I/O completion port support.
+category:             System, Network
+homepage:             http://github.com/felixmar/winio
+build-type:           Simple
+cabal-version:        >= 1.2
+
+library
+  build-depends:      base >= 3, bytestring, extensible-exceptions,
+                      network >= 2.2.1, winerror
+  exposed-modules:    System.Windows.IO
+                      Network.Socket.Compat
+                      Network.Socket.ByteString.Compat
+  c-sources:          cbits/HsWinIO.c
+  extra-libraries:    kernel32, ws2_32

@@ -1,0 +1,34 @@
+Name:                jarfind
+Version:             0.1.0.1
+Cabal-version:       >= 1.6
+Build-type:          Simple
+Synopsis:            Tool for searching java classes, members and fields in classfiles and JAR archives
+Description:         Search classfiles and JARs: like, all public 'close' methods in classes with 'Stream' in their name in a JAR. 
+                     Mostly for debugging NoSuchMethodError's etc. resulting from an outdated JAR and alike.
+Category:            Language, Utils, Development
+License:             GPL
+License-file:        LICENSE
+Author:              Eugene Kirpichov
+Maintainer:          ekirpichov@gmail.com
+Build-Depends:       base
+Extra-Source-Files:  COPYING
+
+flag splitBase
+  Description:       Choose the new, smaller, split-up base package.
+  Default:           True
+
+Source-repository head
+  type: darcs
+  location: http://patch-tag.com/r/jkff/jarfind
+
+Executable jarf
+  if flag(splitBase)
+    Build-depends:   base >= 3 && < 4
+  else
+    Build-depends:   base < 3
+  Build-depends:     binary, bytestring >= 0.9.0, array, zip-archive >= 0.1.1.2, regex-pcre >= 0.94.1
+  Hs-Source-Dirs:    .
+  Main-Is:           Main.hs
+  Ghc-Options:       -O2
+  Extensions:        BangPatterns
+

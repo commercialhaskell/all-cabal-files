@@ -1,0 +1,15 @@
+Name:                array-utils
+Version:             0.1
+category:            Data, Data Structures
+Synopsis:            Primitive functions for updating many elements in mutable arrays at once
+Description:         An collection of functions for working with multiple elements in
+                     mutable arrays. It is hoped some or all of these functions will be
+                     included in the array package for GHC 7.2.
+License:             BSD3
+License-file:        LICENSE
+Author:              Alex Mason
+Maintainer:          Alex Mason <axman6@gmail.com>
+
+build-type:          Simple
+Build-Depends:       base > 3.2 && < 5, array > 0.3.0.1
+Exposed-modules:     Data.Array.Util

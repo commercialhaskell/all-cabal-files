@@ -1,0 +1,29 @@
+Name:           DTC
+Version:        1.1.0.1
+Author:         Daniel Diaz
+Homepage:       https://github.com/Daniel-Diaz/DTC
+Bug-reports:    https://github.com/Daniel-Diaz/DTC/issues
+License:        BSD3
+License-file:   license
+Maintainer:     Daniel Diaz [dhelta `dot` diaz `at` gmail `dot` com]
+Category:       Language
+Synopsis:       Data To Class transformation.
+Description:    Create a class definition from a data declaration.
+                .
+                How this package works is explained in /Data Declarations to Class Definitions/ (see <http://daniel-diaz.github.io/projects/dtc/dtc.pdf>).
+Build-type:     Simple
+Cabal-version:  >= 1.6
+
+Source-repository head
+  type: git
+  location: git://github.com/Daniel-Diaz/DTC.git
+
+Library
+  Build-depends: base == 4.*
+               , haskell-src-exts
+  Exposed-modules: 
+             Language.Haskell.DTC
+           , Language.Haskell.DTC.Parser
+           , Language.Haskell.DTC.Mod
+           , Language.Haskell.DTC.Class
+           , Language.Haskell.DTC.DataInfo

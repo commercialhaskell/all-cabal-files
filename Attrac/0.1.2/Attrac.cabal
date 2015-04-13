@@ -1,0 +1,18 @@
+name:                Attrac
+version:             0.1.2
+author:              Ruben Henner Zilibowitz <rzilibowitz at yahoo dot com dot au>
+maintainer:          Ruben Henner Zilibowitz <rzilibowitz at yahoo dot com dot au>
+homepage:            http://patch-tag.com/r/rhz/StrangeAttractors
+license:             BSD3
+license-file:        LICENSE
+category:            Graphics
+extra-source-files:  README Setup.hs Attrac.hs SprottCodes.hs
+build-depends:       base >= 2 && < 4, haskell98, OpenGL, GLUT, colour, random
+tested-with:         GHC ==6.10.4
+build-type:          Simple
+synopsis:            Visualisation of Strange Attractors in 3-Dimensions
+description:         This software uses innovative techniques to achieve 3-D visualisation
+		     of the point sets known as Strange Attractors resulting from iteration
+		     of non-linear maps on points in Euclidean Space.
+executable:          Attrac
+main-is:             AttracCloudView.hs

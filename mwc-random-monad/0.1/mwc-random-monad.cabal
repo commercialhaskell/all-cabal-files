@@ -1,0 +1,23 @@
+Name:                mwc-random-monad
+Version:             0.1
+Synopsis:            Monadic interface for mwc-random
+License:             BSD3
+License-file:        LICENSE
+Author:              Alexey Khudyakov <alexey.skladnoy@gmail.com>
+Maintainer:          Alexey Khudyakov <alexey.skladnoy@gmail.com>
+Category:            Math, Statistics
+Build-type:          Simple
+Cabal-version:       >=1.6
+Description:         
+  Simple monadit interface for mwc-random.
+
+Library
+  build-depends:     base >= 3 && < 5,
+                     primitive,
+                     vector >= 0.6.0.2,
+                     mwc-random >= 0.8
+  Exposed-modules:   System.Random.MWC.Monad
+  
+source-repository head
+  type:     mercurial
+  location: http://bitbucket.org/Shimuuar/mwc-random-monad

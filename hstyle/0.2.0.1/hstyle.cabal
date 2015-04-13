@@ -1,0 +1,40 @@
+Name:           hstyle
+Version:        0.2.0.1
+Synopsis:       Checks Haskell source code for style compliance.
+Description:    Originally intended to automate style checking for the Snap
+                project.  But the project should be general enough to work
+                with other style guides.
+License:        BSD3
+License-file:   LICENSE
+Author:         Doug Beardsley <mightybyte@mightybyte.net>
+                Jasper Van der Jeugt <m@jaspervdj.be>
+Maintainer:     Doug Beardsley <mightybyte@mightybyte.net>
+                Jasper Van der Jeugt <m@jaspervdj.be>
+Build-type:     Simple
+Cabal-version:  >= 1.6
+Category:       Development
+
+Extra-source-files:
+  README.md
+
+Executable hstyle
+  Hs-source-dirs: src
+  Main-is:        Main.hs
+  Ghc-options:    -Wall
+
+  Other-modules:
+    HStyle
+    HStyle.Alignment
+    HStyle.Block
+    HStyle.Checker
+    HStyle.Selector
+
+  Build-depends:
+    base             >= 4    && < 5,
+    haskell-src-exts >= 1.11 && < 1.12,
+    text             >= 0.11 && < 0.12,
+    vector           >= 0.7  && < 0.8
+
+Source-repository head
+  type:     git
+  location: http://github.com/mightybyte/hstyle

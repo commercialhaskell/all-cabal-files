@@ -1,0 +1,46 @@
+name:                msgpack-rpc
+version:             0.8.0
+synopsis:            A MessagePack-RPC Implementation
+description:         A MessagePack-RPC Implementation <http://msgpack.org/>
+homepage:            http://msgpack.org/
+license:             BSD3
+license-file:        LICENSE
+author:              Hideyuki Tanaka
+maintainer:          Hideyuki Tanaka <tanaka.hideyuki@gmail.com>
+copyright:           (c) 2010-2012, Hideyuki Tanaka
+category:            Network
+stability:	     Experimental
+cabal-version:       >=1.8
+build-type:          Simple
+
+source-repository head
+  type:              git
+  location:          git://github.com/msgpack/msgpack-haskell.git
+
+library
+  build-depends:     base               == 4.*
+                   , bytestring         == 0.9.*
+                   , text               == 0.11.*
+                   , network            >= 2.2 && < 2.4
+                   , random             == 1.0.*
+                   , mtl                >= 2.0
+                   , monad-control      >= 0.3
+                   , conduit            >= 0.5
+                   , network-conduit    >= 0.5
+                   , attoparsec-conduit >= 0.5
+                   , msgpack            == 0.7.*
+
+  exposed-modules:   Network.MessagePackRpc.Server
+                     Network.MessagePackRpc.Client
+
+test-suite msgpack-rpc-test
+  type:              exitcode-stdio-1.0
+  hs-source-dirs:    dist
+  main-is:           ../test.hs
+
+  build-depends:     base
+                   , mtl
+                   , network
+                   , async >= 2.0
+                   , hspec >= 1.3
+                   , msgpack-rpc

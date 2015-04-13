@@ -1,0 +1,60 @@
+name:               derive-gadt
+version:            0.1.1
+cabal-version:      >= 1.6
+build-type:         Simple
+license:            BSD3
+license-file:       LICENSE
+category:           Language, Development
+author:             Matt Morrow
+copyright:          (c) Matt Morrow 2009
+maintainer:         Matt Morrow <morrow@moonpatio.com>
+stability:          experimental
+synopsis:           Instance deriving for (a subset of) GADTs.
+description:        Very preliminary. Haddock-generated documentation in located at
+                    <http://moonpatio.com/repos/derive-gadt/haddocks>.
+
+library
+  hs-source-dirs:   lib
+  ghc-options:      -O2 -fglasgow-exts -funbox-strict-fields
+  extensions:       TemplateHaskell, BangPatterns
+  build-depends:    base == 4.*,
+                    containers, pretty,
+                    template-haskell==2.3.*,
+                    haskell-src-meta==0.0.4,
+                    haskell-src-exts==1.0.*
+  exposed-modules:  Language.Haskell.Derive.Gadt
+                    Language.Haskell.Derive.Gadt.Unify
+                    Language.Haskell.Derive.Gadt.Common
+                    Language.Haskell.Derive.Gadt.Class.Ord
+                    Language.Haskell.Derive.Gadt.Class.Read
+                    Language.Haskell.Derive.Gadt.Class.Eq
+                    Language.Haskell.Derive.Gadt.Class.Show
+
+executable derive-gadt
+  executable:       derive-gadt
+  main-is:          derive-gadt.hs
+  hs-source-dirs:   src, lib
+  ghc-options:      -O2 -fglasgow-exts -funbox-strict-fields
+  extensions:
+  build-depends:    base == 4.*,
+                    template-haskell==2.3.*,
+                    haskell-src-meta==0.0.4
+  other-modules:    Language.Haskell.Derive.Gadt
+                    Language.Haskell.Derive.Gadt.Unify
+                    Language.Haskell.Derive.Gadt.Common
+                    Language.Haskell.Derive.Gadt.Class.Ord
+                    Language.Haskell.Derive.Gadt.Class.Read
+                    Language.Haskell.Derive.Gadt.Class.Eq
+                    Language.Haskell.Derive.Gadt.Class.Show
+
+executable hstidy
+  executable:       hstidy
+  main-is:          hstidy.hs
+  hs-source-dirs:   tools
+  ghc-options:      -O2 -fglasgow-exts -funbox-strict-fields
+  extensions:
+  build-depends:    base == 4.*,
+                    haskell-src-meta==0.0.4,
+                    haskell-src-exts==1.0.*
+  other-modules:
+

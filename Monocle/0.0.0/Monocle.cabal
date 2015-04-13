@@ -1,0 +1,21 @@
+Name:                Monocle
+Cabal-Version:       >= 1.2
+Version:             0.0.0
+Synopsis:            Symbolic computations in strict monoidal categories with LaTeX output.
+Description:         Symbolic computations in strict monoidal categories with LaTeX output.
+                     See monocle-test.hs.
+                     One of goals of this project is to develop the tool for automatic 
+                     drawing of diagrams of morphisms and proofs in form suitable for LaTeX (e.g. for XY-pic).
+License:             BSD3
+License-file:        LICENSE
+Author:              Osman Bineev
+Maintainer:          Osman Bineev (bineev AT gmail DOT com)
+Category:            Math
+Build-type:          Simple
+Extra-source-files:  monocle-test.hs
+Stability:           alpha
+
+Library
+    exposed-modules:     Monocle.Utils, Monocle.Core, Monocle.Markup, Monocle.Tex, Monocle
+    build-depends:       base >= 3 && < 5
+  

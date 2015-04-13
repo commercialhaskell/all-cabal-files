@@ -1,0 +1,22 @@
+build-type:	Simple
+cabal-version:	>= 1.6
+
+name:		cakyrespa
+version:	0.0.1
+stability:	Alpha
+license:	BSD3
+license-file:	LICENSE
+
+category:	Teaching
+synopsis:	run turtle like LOGO with lojban
+description:	run turtle like LOGO with lojban
+	.
+	This is alpha version.
+
+executable	cakyrespa
+    hs-source-dirs:	src
+    main-is:		cakyrespa.hs
+    other-modules:	Language.Lojban.Read
+    build-depends:	base >3 && <5, lojbanParser >= 0.1.4,
+        gluturtle >= 0.0.7, GLUT
+    ghc-options:	-Wall

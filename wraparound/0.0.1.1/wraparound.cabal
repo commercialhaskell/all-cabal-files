@@ -1,0 +1,62 @@
+Name:                wraparound
+
+-- The package version. See the Haskell package versioning policy
+-- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
+-- standards guiding when and how versions should be incremented.
+Version:             0.0.1.1
+
+-- A short (one-line) description of the package.
+Synopsis:            Convenient handling of points on a seamless 2-dimensional plane
+
+-- A longer description of the package.
+Description:
+        WrapAround helps you perform calculations involving points on a finite,
+	unbounded plane, in which objects that move across one edge of the map
+	appear on the other. Add points, calculate distance, and so forth
+	without worrying about the edge cases and frustrating math mistakes.
+
+-- URL for the project homepage or repository.
+Homepage:            http://frigidcode.com
+
+-- The license under which the package is released.
+License:             BSD3
+
+-- The file containing the license text.
+License-file:        LICENSE
+
+-- The package author(s).
+Author:              Christopher Howard
+
+-- An email address to which users can send suggestions, bug reports,
+-- and patches.
+Maintainer:          christopher.howard@frigidcode.com
+
+-- A copyright notice.
+-- Copyright:           
+
+Category:            Data
+
+Build-type:          Simple
+
+-- Extra files to be distributed with the package, such as examples or
+-- a README.
+Extra-source-files:  wrap-around-example.hs
+
+-- Constraint on the version of Cabal needed to build this package.
+Cabal-version:       >=1.10
+
+Library
+  -- Modules exported by the library.
+  Exposed-modules:     Data.WrapAround
+  
+  -- Packages needed in order to build this package.
+  Build-depends:       base >= 4 && < 5
+  
+  Default-language:    Haskell2010
+
+  -- Modules not exported by this package.
+  -- Other-modules:       
+  
+  -- Extra tools (e.g. alex, hsc2hs, ...) needed to build the source.
+  -- Build-tools:         
+  

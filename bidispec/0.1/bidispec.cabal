@@ -1,0 +1,20 @@
+Name:                bidispec
+Version:             0.1
+Synopsis:            Specification of generators and parsers
+Description:
+ This is a generalisation of the idea behind the XML pickle/unpickle
+ functions of HXT.  It allows to simulatanously specify functions for
+ parsing and generating.
+License:             LGPL
+License-file:        LICENSE
+Category:            Data
+Author:              David Leuschner
+Maintainer:          David Leuschner <leuschner@openfactis.org>
+Build-Type:          Simple
+Cabal-Version:       >= 1.2
+
+Library
+  Hs-Source-Dirs:    src
+  GHC-Options: -Wall
+  Build-Depends:     base >= 3 && < 4, bytestring, mtl
+  Exposed-Modules:   Data.BidiSpec

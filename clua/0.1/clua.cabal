@@ -1,0 +1,22 @@
+Name:                clua
+Version:             0.1
+Synopsis:            C to Lua data wrapper generator
+Homepage:            http://zwizwa.be/-/meta
+License:             BSD3
+License-file:        LICENSE
+Author:              Tom Schouten
+Maintainer:          tom@zwizwa.be
+Category:            Language
+Build-type:          Simple
+Extra-source-files:  README, parse-bin.lua
+Cabal-version:       >=1.2
+
+Description: Gather enums and packed struct definitions from a C file
+             and generate a Lua table that can be used in conjunction
+             with parse-bin.lua to convert between Lua tables and
+             binary data.
+
+Executable clua
+  Main-is: clua.hs
+  Build-depends: base < 5, haskell98, pretty, containers,
+                 language-c, pretty-show, bytestring

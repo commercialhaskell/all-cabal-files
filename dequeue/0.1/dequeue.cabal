@@ -1,0 +1,22 @@
+Build-Type: Custom
+Name: dequeue
+Category: "Data Structures"
+Version: 0.1
+Cabal-Version: >= 1.2
+Synopsis: A typeclass and an implementation for double-ended queues.
+Description:
+    A typeclass for double-ended queues, and an implementation of Banker's
+    Dequeues, as described in Chris Okasaki's Purely Functional Data
+    Structures.
+License: BSD3
+License-File: LICENSE
+Copyright: (c) 2009 Henry Bucklow
+Author: Henry Bucklow
+Maintainer: Henry Bucklow <henry@elsie.org.uk>
+Tested-With: GHC==6.10
+Build-Depends: base, safe, QuickCheck
+Exposed-Modules: Data.Dequeue
+Hs-Source-Dirs: src
+Extra-Source-Files: src/Tests.hs
+GHC-Options: -Wall
+

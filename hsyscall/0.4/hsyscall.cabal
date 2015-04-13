@@ -1,0 +1,49 @@
+Name:                hsyscall
+Version:             0.4
+Synopsis:            FFI to syscalls
+Description:         FFI to OS syscalls (open, close, sendfile etc...).
+Homepage:            http://github.com/aycanirican/hsyscall 
+License:             BSD3
+License-file:        LICENSE
+Author:              Aycan iRiCAN
+Maintainer:          aycan.irican@core.gen.tr
+Stability:           Experimental
+Category:            Foreign
+Build-type:          Simple
+
+-- Extra files to be distributed with the package, such as examples or
+-- a README.
+-- Extra-source-files:  
+
+-- Constraint on the version of Cabal needed to build this package.
+Cabal-version:       >=1.6
+
+Library
+  -- Modules exported by the library.
+  Exposed-modules: System.Syscall
+  
+  ghc-options: -Wall    
+  
+  if os(linux)
+    cpp-options: -DLINUX
+    other-modules: System.Syscall.Linux
+  if os(darwin)
+    cpp-options: -DDARWIN
+    other-modules: System.Syscall.Darwin    
+  if os(freebsd)
+    cpp-options: -DFREEBSD
+    other-modules: System.Syscall.FreeBSD
+
+  -- Packages needed in order to build this package.
+  Build-depends: base >= 4 && < 5
+  
+  -- Modules not exported by this package.
+  -- Other-modules:
+  
+  -- Extra tools (e.g. alex, hsc2hs, ...) needed to build the source.
+  Build-tools: hsc2hs
+  
+source-repository head
+  type:     git
+  location: git://github.com/aycanirican/hsyscall.git
+

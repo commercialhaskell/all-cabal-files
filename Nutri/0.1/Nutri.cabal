@@ -1,0 +1,34 @@
+name:                Nutri
+version:             0.1
+synopsis:            A little library to calculate nutrition values of food items.
+description:         This is the start of a library that helps to calculate with 
+                     nutrition values of food items. There is a basic datatype for 
+                     weight information and one for the nutrient information of food. 
+                     One can combine variouse foods together and let the library 
+                     calculate the overall protein, carbohydrate and fat percentages 
+                     as well as the caloric value. 
+homepage:            https://github.com/frosch03/Nutri
+license:             PublicDomain
+license-file:        LICENSE
+author:              Matthias Brettschneider
+maintainer:          frosch03@frosch03.de
+category:            Utils
+build-type:          Simple
+extra-source-files:  Readme.md
+cabal-version:       >=1.10
+
+library
+  exposed-modules:     Data.Nutri, 
+                       Data.Nutrition.Food, 
+                       Data.Nutrition.VariousFoods, 
+                       Data.Nutrition.Defaults, 
+                       Data.Nutrition.Macros, 
+                       Data.Nutrition.Weight
+
+  build-depends:       base >=4.6 && <4.7
+  default-language:    Haskell2010
+  hs-source-dirs:      src
+
+source-repository head
+  type:     git
+  location: https://github.com/frosch03/Nutri.git

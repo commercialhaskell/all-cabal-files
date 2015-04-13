@@ -1,0 +1,32 @@
+name: ssv
+version: 0.1
+cabal-version: >= 1.4
+build-type: Simple
+license: MIT
+license-file: COPYING
+copyright: Copyright © 2011 Bart Massey
+author: Bart Massey
+maintainer: bart@cs.pdx.edu
+stability: alpha
+homepage: http://wiki.cs.pdx.edu/bartforge/ssv
+package-url: http://wiki.cs.pdx.edu/cabal-packages/csvconvert-0.1.tar.gz
+synopsis: Comma-separated-value (CSV) read, show and write routines
+description:
+   This modules provides conversion routines to and
+   from the infamous "comma separated value" (CSV) format.
+   It attempts to adhere to the spirit and (mostly) to the
+   letter of RFC 4180, which defines the 'text/csv' MIME
+   type.
+category: Text
+tested-with: GHC == 6.12.1
+
+library
+  exposed-modules: Text.SSV
+  build-depends: base >= 3 && < 5,
+                 containers >= 0.3 && < 1
+  ghc-options: -Wall
+
+executable csvclean
+  main-is: csvclean.hs
+  build-depends: base >= 3 && < 5
+  ghc-options: -Wall

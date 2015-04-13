@@ -1,0 +1,17 @@
+Name:                randproc
+Version:             0.1
+Description:         Data structures for working with random processes
+Category:            Data Structures
+License:             BSD3
+License-file:        LICENSE
+Author:              David Banas
+Maintainer:          dbanas@banasfamily.net
+Build-Type:          Simple
+Cabal-Version:       >=1.2
+extra-source-files: test/Test.hs README TODO
+
+Library
+  Build-Depends:     base >= 3 && < 5
+  Exposed-modules:   Data.RandProc
+  ghc-options:       -Wall
+

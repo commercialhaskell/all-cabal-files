@@ -1,0 +1,44 @@
+name: rosso
+version: 1.0
+stability: provisional
+tested-with: GHC ==7.0.3
+cabal-version: >=1.8
+
+license: BSD3
+license-file: LICENSE
+author: Robert Henderson
+maintainer: robh dot junpi at gmail dot com
+
+category: Utility
+synopsis: General purpose utility library
+description:
+  A miscellaneous collection of re-usable functions and data
+  structures. Many of Rosso's modules are direct extensions of the
+  Haskell base libraries; for example, Data.Map.Rosso1 extends
+  Data.Map, Control.Monad.Rosso1 extends Control.Monad, etc.
+  .
+  Rosso is designed to remain backward-compatible with any client code
+  that works with an older version of itself. To this end, all module
+  names include explicit version numbers.
+
+build-type: Simple
+
+source-repository head
+  type: git
+  location: git://github.com/robhenderson/rosso.git
+
+library
+  build-depends: base >=4 && <5, containers, deepseq
+
+  exposed-modules: Control.Monad.Rosso1,
+
+                   Data.Bool.Rosso1,
+                   Data.Either.Rosso1,
+                   Data.List.Rosso1,
+                   Data.Map.Rosso1,
+                   Data.Maybe.Rosso1,
+                   Data.MultiMap.Rosso1,
+                   Data.Set.Rosso1,
+                   Data.Tuple.Rosso1,
+
+                   System.IO.Rosso1

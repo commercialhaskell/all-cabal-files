@@ -1,0 +1,24 @@
+
+name:                SimpleGL
+version:             0.9.1
+synopsis:            A Simple Graphics Library from the SimpleH framework.
+description: 
+  synopsis: A Simple Graphics Library from the SimpleH framework.         
+license:             BSD3
+license-file:        LICENSE
+author:              Marc Coiffier
+maintainer:          marc.coiffier@gmail.com
+category:            Graphics
+build-type:          Simple
+cabal-version:       >=1.8
+
+library
+  exposed-modules: SimpleH.GL SimpleH.GL.Texture
+  other-modules: SimpleH.GL.Base       
+  build-depends:       base ==4.6.*, SimpleH ==1.0.*, GLFW ==0.5.*, OpenGL ==2.8.*, JuicyPixels ==3.1.*, vector ==0.10.*
+  hs-source-dirs:      src
+  extensions:  RebindableSyntax, NoMonomorphismRestriction
+  ghc-options:  -W
+source-repository head
+  type: git
+  location: git://github.com/lih/SimpleGL.git

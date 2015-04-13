@@ -1,0 +1,22 @@
+Name:                Ranka
+Version:             0.1
+Synopsis:            HTTP to XMPP omegle chats gate.
+Category:            Network
+Description:         HTTP to XMPP omegle chats gate. Simple example of 
+                     Network.XMPP library usage.
+License:             GPL
+License-file:        LICENSE
+Author:              Kagami <newanon@yandex.ru>
+Maintainer:          newanon@yandex.ru
+Homepage:            http://kagami.touhou.ru/projects/show/ranka
+
+Build-Type:          Simple
+Cabal-Version:       >=1.2
+
+Data-Files:          INSTALL
+Extra-Source-Files:  Omegle.hs, install.sh
+
+Executable Ranka
+  Main-is:           Main.hs
+  Build-Depends:     base >= 4.0 && < 5, XMPP>0.0.1, network, utf8-string,
+                     json, HTTP

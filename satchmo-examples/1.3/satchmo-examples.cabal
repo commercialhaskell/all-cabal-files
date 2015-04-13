@@ -1,0 +1,31 @@
+Name:           satchmo-examples
+Version:        1.3
+
+License:        GPL
+License-file:	gpl-2.0.txt
+Author:         Johannes Waldmann
+Maintainer:	Johannes Waldmann
+Homepage:       http://dfa.imn.htwk-leipzig.de/satchmo/
+Synopsis:       examples that show how to use satchmo
+description:	examples that show how to use satchmo
+Cabal-version: >= 1.2
+Build-type: Simple
+
+Executable Factor
+    Main-is: Factor.hs
+    hs-source-dirs:	.
+    Build-depends: satchmo, satchmo-minisat, process, base, containers, array
+
+Executable HC
+    Main-is: HC.hs
+    hs-source-dirs:	.
+    Build-depends: satchmo, satchmo-minisat, process, base, containers, array
+
+Executable VC
+    Main-is: VC.hs
+    hs-source-dirs:	.
+    Build-depends: satchmo, satchmo-funsat, process, base, containers, array
+
+
+
+

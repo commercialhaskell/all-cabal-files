@@ -1,0 +1,42 @@
+name:                Workflow
+version:             0.1
+synopsis:            library for transparent execution of computations across shutdowns and restarts
+description:  
+                   transparent low level support (state logging, resume of the computation state, wait for data condition) for very long time 
+                   long living event driven processes. Workflow give the two first services to any monadic computation of type  (a-> m a)   
+                    
+                         f x >>=\x'-> g x' >>= \x''->... z by 
+                    
+                    prefixing the user with the method "step": 
+                    
+                         step f  x >>= \x'-> step g  x' >>= \x''->...  
+                   
+                   This means that a workflow can be described with the familiar "do" notation. In principle, there is no other limitation
+                   on the syntax but the restriction (a -> m a): All computations consume and produce the same type of data.
+                                             
+                   for a monadic computation, Workflow provides:
+                   - transparent checkpointing for each step in permanent storage (using TCache)
+                   - resume of the monadic computation at the last checkpoint after soft or hard interruption
+                   - use of versioning techniques for storing object changes (using RefSerialize)
+                   - retrieval of the object at any previous step
+                   - suspend the computation until the input object meet certain conditions. useful for inter-workflow 
+                     comunications.
+                   
+                   For various reasons, this package force the use of TCache for storage and refSerialize for writing to/from strings 
+                   at the end of the workflow all the intermediate data is erased.
+                   see demo.hs and the header of Control.TCache for documentation.
+
+
+
+category:            Control
+license:             BSD3
+license-file:        LICENSE
+author:              Alberto Gómez Corona
+maintainer:          agocorona@gmail.com
+Tested-With:         GHC == 6.8.2
+Build-Type:          Simple
+build-Depends:       base, RefSerialize>=0.2.3, TCache>=0.5.4,  stm > 2
+Cabal-Version:       >= 1.2
+
+exposed-modules:     Control.Workflow
+ghc-options:       

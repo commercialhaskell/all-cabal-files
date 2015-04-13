@@ -1,0 +1,35 @@
+name:               dgs
+version:            0.2
+author:             Daniel Wagner
+maintainer:         daniel@wagner-home.com
+homepage:           http://www.dmwit.com/dgs
+bug-reports:        http://dmwit.fogbugz.com/
+synopsis:           Haskell front-end for DGS' bot interface
+description:
+    The Dragon Go Server exposes a convenient interface for bots.  This module
+    provides some functions for accessing that interface to log in to the
+    server, retrieve your status page, retrieve the state of any games you are
+    playing, and make moves in games.
+category:           Game, Network, Web
+license:            BSD3
+license-file:       LICENSE
+cabal-version:      >= 1.6
+build-type:         Simple
+
+library
+    exposed-modules:    Network.DGS
+
+    build-depends:  base >=3 && < 4,
+                    mtl >= 1.1,
+                    HTTP,
+                    network,
+                    split
+
+source-repository head
+    type:       git
+    location:   http://www.dmwit.com/dgs/.git
+
+source-repository this
+    type:       git
+    location:   http://www.dmwit.com/dgs/.git
+    tag:        0.2

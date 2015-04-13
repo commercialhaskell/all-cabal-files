@@ -1,0 +1,76 @@
+Name:                yall
+
+Version:             0.2.0.1
+
+Synopsis:            Lenses with a southern twang
+
+Description:         Why yet /another/ lens library? 
+
+                     First, none of the existing libraries for Lenses were
+                     adequate for my needs (specifically for my use of lenses
+                     in "pez"). And anyway, why not try to create something
+                     novel and better?
+                     .
+                     Distinguishing features:
+                     .
+                     - Lenses are parameterized over two Monads (by convention
+                       @m@ and @w@), and look like @a -> m (b -> w a, b)@. this
+                       lets us define lenses for sum types, that perform
+                       validation, that do IO (e.g. persist data to disk),
+                       etc., etc.
+                     .
+                     - a module "Data.Yall.Iso" that complements @Lens@ powerfully
+                     .
+                     - a rich set of category-level class instances (for now
+                       from "categories") for 'Lens' and 'Iso'. These along
+                       with the pre-defined primitive lenses and combinators
+                       give an interface comparable to Arrow
+                     .
+                     You should import either "Data.Yall" or "Data.Yall.Lens",
+                     and optionally "Data.Yall.Iso". "Data.Yall" is a simplified,
+                     but mostly-compatible, version of a subset of "Data.Yall.Lens".
+                     .
+                     /TODOs/:
+                     .
+                     - a module providing template haskell deriving of Lenses
+                     .
+                     - pre-define lenses for prelude types, State
+                     .
+                     /CHANGES/:
+                     .
+                     - remove 'setEmpty' variants only useful on lenses better expressed in Iso
+                     .
+                     - create a class for lens operations, supporting...
+                     .
+                     - use newtype wrappers for different monadic lifting schemes
+                     .
+                     - better ordering for set, allowing let-floating for partial application
+
+
+Homepage:            http://brandon.si/code/yall/
+
+License:             BSD3
+
+License-file:        LICENSE
+
+Author:              Brandon Simmons
+
+Maintainer:          brandon.m.simmons@gmail.com
+
+Category:            Data
+
+Build-type:          Simple
+
+Cabal-version:       >=1.6
+
+source-repository head   
+    type:     git
+    location: https://github.com/jberryman/yall.git
+    branch:   master
+
+Library
+  Exposed-modules:     Data.Yall, Data.Yall.Lens, Data.Yall.Iso
+  
+  Build-depends:       categories < 1.0
+                     , transformers
+                     , base < 5 && >= 4

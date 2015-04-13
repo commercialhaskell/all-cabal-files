@@ -1,0 +1,35 @@
+name:                markup-preview
+version:             0.2.0.1
+synopsis:            A simple markup document preview (markdown, textile, reStructuredText)
+description:         
+    A GUI application that renders the markup documents (markdown, textile, reStructuredText) into
+    HTML and presents them into a web view. It also reloads the content automatically when the source
+    file changes.
+    .
+    Changes from 0.1.0.0:
+    .
+    * Added command line options e.g. markup file can be specified when starting the program.
+
+license:             OtherLicense
+license-file:        LICENSE
+author:              Marius Ghita
+maintainer:          mhitza@gmail.com
+-- copyright:           
+category:            Text
+build-type:          Simple
+cabal-version:       >=1.8
+data-files:          Resources/layout.html
+
+source-repository head
+    type:            git
+    location:        https://github.com/mhitza/markup-preview
+
+executable markup-preview
+  main-is:             Main.hs
+  ghc-options:         -threaded -Wall
+  cpp-options:         -DCABAL
+  other-modules:       Paths_markup_preview,
+                       Application.FileHandling,
+                       Application.CommandLine,
+                       Application.GUI
+  build-depends:       base == 4.*, gtk, webkit, pandoc, directory, temporary, transformers, mtl, cmdargs

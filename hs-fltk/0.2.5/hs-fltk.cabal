@@ -1,0 +1,46 @@
+name:          hs-fltk
+version:       0.2.5
+license:       BSD3
+license-file:  LICENSE
+stability:     Alpha
+category:      User Interfaces
+synopsis:      Binding to GUI library FLTK
+description:   hs-fltk is a Haskell interface to the FLTK.
+               FLTK is a small and portable GUI toolkit and
+               the interface tries to be quite highlevel.
+               .
+               The library is very much a work in progress.
+Copyright:     (c) 2004 Einar Karttunen
+author:        Einar Karttunen
+maintainer:    Einar Karttunen <ekarttun@cs.helsinki.fi>
+homepage:      http://www.cs.helsinki.fi/u/ekarttun/hs-fltk/
+
+Cabal-Version: >= 1.2
+build-type:    Simple
+data-files:    README
+tested-with:   GHC==6.8.2
+
+extra-source-files: example/hello.hs, example/menu.hs, example/ask.hs,
+                    example/image.hs, example/progress.hs, example/hirc_fltk.hs,
+                    example/test.hs, example/notepad.lhs, example/talk.hs
+
+Library
+    build-depends:    base
+    exposed-modules:  Graphics.UI.FLTK, Graphics.UI.FLTK.Ask, Graphics.UI.FLTK.Group, Graphics.UI.FLTK.Input, Graphics.UI.FLTK.Menu,
+                      Graphics.UI.FLTK.Widget, Graphics.UI.FLTK.Image, Graphics.UI.FLTK.Window, Graphics.UI.FLTK.MultiBrowser,
+                      Graphics.UI.FLTK.Button, Graphics.UI.FLTK.Browser, Graphics.UI.FLTK.WidgetMisc
+    hs-source-dirs:   src
+    extra-libraries:  fltk, fltk_images
+
+    extensions:       CPP, ForeignFunctionInterface, ExistentialQuantification,
+                      MultiParamTypeClasses, FunctionalDependencies, TypeSynonymInstances
+
+    ghc-options:      -O2 -Wall -optl-Wl,-s
+    ghc-prof-options: -prof -auto-all
+
+-- Executable notepad
+--            hs-source-dirs: example
+--            main-is:        notepad.lhs
+--            build-depends:  hs-fltk>=0.2.5
+-- --           extra-libraries: fltk, fltk_images
+--            include-dirs:    /usr/include/fltk-1.1/

@@ -1,0 +1,39 @@
+name:          representable-profunctors
+category:      Control, Categories
+version:       3.0
+license:       BSD3
+cabal-version: >= 1.6
+license-file:  LICENSE
+author:        Edward A. Kmett
+maintainer:    Edward A. Kmett <ekmett@gmail.com>
+stability:     experimental
+homepage:      http://github.com/ekmett/representable-profunctors/
+bug-reports:   http://github.com/ekmett/representable-profunctors/
+copyright:     Copyright (C) 2011-2012 Edward A. Kmett
+synopsis:      Representable profunctors
+description:   Representable profunctors
+build-type:    Simple
+extra-source-files: .travis.yml
+
+source-repository head
+  type: git
+  location: git://github.com/ekmett/representable-profunctors.git
+
+library
+  other-extensions:
+    TypeFamilies
+    FlexibleContexts
+    UndecidableInstances
+
+  build-depends:
+    base              >= 4       && < 5,
+    comonad           == 3.0.*,
+    profunctors       == 3.0.*,
+    profunctor-extras == 3.0.*,
+    transformers      >= 0.2     && < 0.4
+
+  exposed-modules:
+    Data.Profunctor.Representable
+    Data.Profunctor.Corepresentable
+
+  ghc-options:      -Wall

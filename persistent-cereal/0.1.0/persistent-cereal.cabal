@@ -1,0 +1,20 @@
+name:                persistent-cereal
+version:             0.1.0
+synopsis:            Helper functions for writing Persistent instances
+description:         Minor boilerplate for writing Persistance instances for values that are serializable with the 'cereal' library.
+homepage:            http://hub.darcs.net/co-dan/persistent-cereal
+license:             PublicDomain
+license-file:        LICENSE
+author:              Dan Frumin
+maintainer:          difrumin@gmail.com
+category:            Database
+build-type:          Simple
+cabal-version:       >=1.8
+
+library
+  exposed-modules:     Database.Persist.Cereal,
+                       Database.Persist.Cereal.Instances
+  build-depends:       base       >= 4.5 && <= 4.8,
+                       cereal     >= 0.1 && < 0.4,
+                       persistent >= 1.2.3.2 && < 1.4,
+                       text       >= 0.8

@@ -1,0 +1,83 @@
+name:             data-aviary
+version:          0.4.0
+license:          BSD3
+license-file:     LICENSE
+copyright:        Stephen Tetley <stephen.tetley@gmail.com>
+maintainer:       Stephen Tetley <stephen.tetley@gmail.com>
+homepage:         http://code.google.com/p/copperbox/
+category:         Combinators
+synopsis:         Combinator birds.
+description:
+  .
+  A catalogue of the combinator birds (Data.Aviary.Birds etc.) - 
+  these modules are intended for illustration and-or reference
+  (i.e. looking up combinators by their type signature).
+  .
+  Using @Data.Aviary@ as a library (i.e. depending on it for 
+  other packages) is not recommended: combinator-mania leads to 
+  inscrutable code.
+  .
+  .
+  Changelog
+  .
+  v0.4.0:
+  .
+  * Removed the \"useful\" combinators (to emphasize that 
+    Data.Aviary is not a utility library). 
+  . 
+  * Fixed typos in Haddock docs - thanks to Christopher Young for 
+    spotting them.
+  .
+  v0.3.0:
+  .
+  * Added Monadic variations.
+  .
+  v0.2.3: 
+  . 
+  * Added Data.Aviary.BirdsVersion - same as the original Birds 
+    module, but with type signatures following a revised naming 
+    scheme. 
+  .
+  v0.2.2: 
+  . 
+  * Added Data.Aviary.Functional - the Applicative, Monad etc. 
+    combinatorswith implementations and signatures specialized to 
+    the (simple) functional type cf. the Reader monad. 
+  .
+  v0.2.1: 
+  .
+  * Added @dup@ and the /combiner/ variants of cardinal-prime.
+  .
+  v0.2.0:
+  . 
+  * Added Haddock docs for @(\#\#)@.
+  
+build-type:         Simple
+stability:          unstable
+cabal-version:      >= 1.2
+
+extra-source-files:
+
+library
+  hs-source-dirs:     src
+  build-depends:      base < 5
+
+  
+  exposed-modules:
+    Data.Aviary.Birds,
+    Data.Aviary.BirdsInter,
+    Data.Aviary.BirdsVersion,
+    Data.Aviary.Functional
+
+  other-modules:
+    
+  extensions:
+    
+
+  ghc-options:
+  
+  includes: 
+  
+
+  
+  

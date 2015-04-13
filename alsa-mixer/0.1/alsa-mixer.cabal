@@ -1,0 +1,25 @@
+Name:                alsa-mixer
+Version:             0.1
+Synopsis:            Bindings to the ALSA simple mixer API.
+Description:         This package provides bindings to the ALSA simple mixer API.
+License:             BSD3
+License-file:        LICENSE
+Author:              Thomas Tuegel <ttuegel@gmail.com>
+Maintainer:          Thomas Tuegel <ttuegel@gmail.com>
+Copyright:           Thomas Tuegel
+Category:            Sound
+Build-type:          Simple
+Cabal-version:       >=1.6
+
+Source-repository head
+  Type:     darcs
+  Location: http://community.haskell.org/~ttuegel/alsa-mixer
+
+Library
+  Exposed-modules:     Sound.ALSA.Mixer
+  Other-modules:       Sound.ALSA.Mixer.Internal, Sound.ALSA.Mixer.Templates
+  Extra-libraries:     asound
+  Build-depends:       base == 4.*,
+                       alsa-core == 0.5.*,
+                       bytestring == 0.9.*,
+                       template-haskell

@@ -1,0 +1,37 @@
+name:                haskell-in-space
+version:             0.1.1
+
+license:             BSD3
+license-file:        LICENSE
+author:              Christoph Lueth <christoph.lueth@dfki.de>, University of Bremen students
+maintainer:          Gwern Branwen <gwern0@gmail.com>
+
+category:            Game
+synopsis:            'Asteroids' arcade games.
+description:         A collection of clones of the arcade game 'Asteroids'.
+                     There are two demos for moving around ('asteroids-space', 'asteroids-aufgabe');
+                     there is a basic Asteroids game ('asteroids-basic'); and then there is a full
+                     elaborate one ('asteroids-haskelly').
+homepage:            http://www.informatik.uni-bremen.de/~cxl/lehre/pi3.ws01/asteroids/
+
+build-depends:       base, random, HGL
+
+build-type:          Simple
+tested-with:         GHC==6.8.2
+
+extra-source-files:  Asteroids/Geometry.hs
+
+executable:          asteroids-space
+main-is:             Asteroids-space.hs
+
+executable:          asteroids-aufgabe
+main-is:             Asteroids-aufgabe.hs
+
+executable:          asteroids-basic
+main-is:             Asteroids-basic.hs
+
+executable:          asteroids-haskelly
+main-is:             Asteroids-haskelly.hs
+
+ghc-options:         -O2 -Wall
+ghc-prof-options:    -prof -auto-all

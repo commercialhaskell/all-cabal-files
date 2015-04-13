@@ -1,0 +1,22 @@
+Name:           hasparql-client
+Version:        0.1
+License:        BSD3
+License-file:   LICENSE
+Author:         Luiz Damascena <luizscence@gmail.com>
+Maintainer:     Luiz Damascena
+Homepage:       https://github.com/lhpaladin/HaSparql-Client
+Category:       Semantic Web, Database
+Synopsis:       This package enables to write SPARQL queries to remote endpoints.
+Description:    This package enables to write SPARQL queries to remote endpoints. It provides many of the options provided through the SPARQL protocol.
+                It was inspired by HSparql and SPARQL Python Wrapper (Python). For more information see also:
+                    http://www.w3.org/TR/rdf-sparql-protocol/
+                    http://www.w3.org/2005/sparql-results#
+                TODO list:
+                   Add internal conversion to RDFXML, N3, Turtle and JSON.
+                   Implement a parser to validate SPARQL queries.
+Stability:     experimental
+Build-type:    Simple
+Build-depends: base >= 4 && < 5, HTTP >= 4, monads-fd, xml, network
+extra-source-files: Tests/Tests.hs
+
+Exposed-Modules: Database.HaSparqlClient, Database.HaSparqlClient.Types, Database.HaSparqlClient.Values, Database.HaSparqlClient.Queries

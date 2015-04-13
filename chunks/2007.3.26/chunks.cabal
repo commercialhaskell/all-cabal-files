@@ -1,0 +1,23 @@
+name: chunks
+version: 2007.3.26
+stability: Alpha
+copyright: Matthew Sackman
+category: Text
+maintainer: matthew@wellquite.org
+author: Matthew Sackman
+homepage: http://www.wellquite.org/chunks/
+license: LGPL
+license-file: LICENSE
+build-depends: haskell98, base, parsec, template-haskell
+synopsis: Simple template library with static safety
+description:
+  This library supports templates inspired by the Perl HTML::Chunks
+  module, but this Haskell implementation checks at compile time that
+  the templates used exist and are used correctly. The templates are
+  combined within the compiled Haskell, removing the dependency on the
+  external template file.
+exposed-modules: Text.HTML.Chunks
+other-modules: Text.HTML.Chunks.TH, Text.HTML.Chunks.Parser
+ghc-options: -O2 -Wall -fno-warn-name-shadowing
+extra-source-files: examples/Example01.hs, examples/template01.html
+hs-source-dirs: src, examples

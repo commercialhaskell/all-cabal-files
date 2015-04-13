@@ -1,0 +1,18 @@
+Name: hmark
+Version: 1.0.0
+Synopsis: A tool and library for Markov chains based text generation.
+Description: A tool and library for Markov chains based text generation.
+Author: Voker57
+Maintainer: voker57@gmail.com
+Build-type: Simple
+Cabal-version: >= 1.4
+License: BSD3
+License-file: COPYING
+Homepage: http://bitcheese.net/wiki/code/hmark
+Category: Text
+library
+ Exposed-Modules: Text.Generators.Markov
+ Build-Depends: base >= 4.2 && < 5, tokyocabinet-haskell, random, safe, utf8-string, bytestring
+Executable hmark
+ Main-is: hmark.hs
+ Build-Depends: base

@@ -1,0 +1,40 @@
+name:           archlinux
+version:        1.3
+license:        BSD3
+license-file:   LICENSE
+author:         Don Stewart <dons@galois.com>,
+                Rémy Oudompheng <remyoudompheng@gmail.com>,
+                Peter Simons <simons@cryp.to>,
+                Magnus Therning <magnus@therning.org>,
+                Linus Arver <linusarver@gmail.com>
+maintainer:     ArchHaskell Team <arch-haskell@haskell.org>
+homepage:       http://github.com/archhaskell/
+category:       Distribution
+synopsis:       Support for working with Arch Linux packages.
+description:    Support for working with Arch Linux packages.
+                See also the cabal2arch tool <http://hackage.haskell.org/package/cabal2arch>
+                for conversion between Hackage and AUR.
+build-type:     Simple
+stability:      stable
+cabal-version:  >= 1.8
+
+source-repository head
+  type:         git
+  location:     git://github.com/archhaskell/archlinux.git
+
+library
+  ghc-Options:	-Wall
+  build-depends:
+    base >= 4 && < 6,
+    Cabal >= 1.6,
+    pretty,
+    containers,
+    directory,
+    filepath
+
+  exposed-modules:
+    Distribution.ArchLinux.PkgBuild
+    Distribution.ArchLinux.SrcRepo
+    Distribution.ArchLinux.CabalTranslation
+    Distribution.ArchLinux.SystemProvides
+    Distribution.ArchLinux.HackageTranslation

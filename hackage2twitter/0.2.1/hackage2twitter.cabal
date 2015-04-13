@@ -1,0 +1,33 @@
+name:                hackage2twitter
+version:             0.2.1
+synopsis:            Send new Hackage releases to Twitter
+description:         Build on the `feed2twitter` library, this program reads
+                     the Hackage RSS feed and tweets each new release to
+                     Twitter.
+                     .
+                     The Hackage feed is read only once. To keep updating, call
+                     this program every few minutes in a cron job.
+                     .
+                     A local cache of the last 20 tweets is kept in a file to
+                     make sure no duplicates are sent.
+                     .
+                     Usage:
+                     .
+                     > $ hackage2twitter username password cache-file [--debug-mode]
+license:             BSD3
+license-file:        LICENSE
+author:              Tom Lokhorst
+maintainer:          Tom Lokhorst <tom@lokhorst.eu>
+homepage:            http://github.com/tomlokhorst/hackage2twitter
+stability:           Experimental
+category:            Distribution, Web
+build-type:          Simple
+cabal-version:       >= 1.6
+
+executable hackage2twitter
+  build-depends:     base >= 4,
+                     feed >= 0.3.6,
+                     feed2twitter >= 0.2
+  main-is:           Main.hs
+  hs-source-dirs:    src
+

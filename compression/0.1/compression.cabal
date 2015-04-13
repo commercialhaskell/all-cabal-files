@@ -1,0 +1,30 @@
+Name:               compression
+Version:            0.1
+License:            OtherLicense
+License-File:       COPYING
+Copyright:          Ian Lynagh, 2004, 2007
+Author:             Ian Lynagh
+Maintainer:         igloo@earth.li
+Stability:          experimental
+Homepage:           http://urchin.earth.li/~ian/cabal/compression/
+Synopsis:           Common compression algorithms.
+Description:
+    Currently contains:
+    * An implementation of the inflate algorithm from RFC 1951
+      (decompression only).
+    * An implementation of the gzip algorithm from RFC 1952
+      (decompression only).
+Category:           Codec
+Extensions:         MultiParamTypeClasses, BangPatterns
+Tested-With:        GHC==6.6
+Build-Depends:      base, mtl
+Extra-source-files: "BSD3", "GPL-2"
+Exposed-modules:
+    Codec.Compression.Deflate.Inflate
+    Codec.Compression.GZip.GUnZip
+Other-modules:
+    Codec.Compression.LazyStateT
+    Codec.Compression.UnsafeInterleave
+    Codec.Compression.Utils
+GHC-Options: -O -Wall
+

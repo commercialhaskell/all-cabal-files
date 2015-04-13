@@ -1,0 +1,25 @@
+Name:            yahoo-web-search
+Version:         0.2
+Stability:       experimental
+Homepage:        http://www.people.fas.harvard.edu/~stewart5/code/yahoo-web-search
+Synopsis:        Yahoo Web Search Services
+Description:     Documentation of the Yahoo Web Search APIs is available
+                 from the following URL: http:\/\/developer.yahoo.com\/search\/web\/.
+                 .
+                 Example code is provided in the base of the project directory.
+Cabal-version:   >= 1.2
+Category:        Web
+License:         BSD3
+License-File:    LICENSE
+Author:          Gordon Stewart
+Maintainer:      gstew5@gmail.com
+Copyright:       (c) Gordon Stewart, 2008
+Build-depends:   base, HTTP, network, xml
+Tested-with:     GHC==6.8.2
+Ghc-options:     -Wall
+Build-type:      Simple
+Exposed-modules: Text.Yahoo.WebSearch, Text.Yahoo.ContextSearch,
+                 Text.Yahoo.RelatedSuggestion, Text.Yahoo.SpellingSuggestion,
+                 Text.Yahoo.Types
+Other-modules:   Text.Yahoo.Internal, Text.Yahoo.InternalRS, Text.Yahoo.InternalXml
+Extra-source-files: Example.hs, ExampleRelated.hs

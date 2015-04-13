@@ -1,0 +1,140 @@
+name: missing-py2
+version: 1.0.1
+license: GPL-2
+maintainer: Dom De Re
+author: John Goerzen
+license-file: COPYRIGHT
+extra-source-files:
+        COPYING
+    ,   genexceptions.hs
+    ,   README.md
+    ,   MissingPy.md
+    ,   INSTALL
+    ,   glue/excglue.h
+    ,   glue/glue.h
+    ,   testfiles/bz2files/empty.bz2
+    ,   testfiles/bz2files/t1.bz2
+    ,   testfiles/bz2files/t2.bz2
+    ,   testfiles/bz2files/zeros.bz2
+    ,   testfiles/gzfiles/empty.gz
+    ,   testfiles/gzfiles/t1.gz
+    ,   testfiles/gzfiles/t1bad.gz
+    ,   testfiles/gzfiles/t2.gz
+    ,   testfiles/gzfiles/zeros.gz
+
+stability: Alpha
+copyright: Copyright (c) 2005-2008 John Goerzen
+synopsis: Haskell interface to Python
+category: Foreign
+homepage: https://github.com/domdere/missing-py2
+bug-reports: https://github.com/domdere/missing-py2/issues
+
+description:
+
+    A Haskell Interface into the standard Python Interpreter
+    .
+    A fork of John Goerzen's MissingPy library, hlinted and updated to run with GHC 7.6.3,
+    this is for legacy projects.
+    .
+    For newer projects you might want to consider http://hackage.haskell.org/package/cpython
+    instead.
+    .
+    Original Documentation:
+    .
+    MissingPy is two things:
+    .
+    A Haskell binding for many C and Python libraries for tasks such as
+    data compression, databases, etc.  This can be found in the
+    MissingPy module tree.
+    .
+    Also, it's a low-level Haskell binding to the Python interpreter to
+    enable development of hybrid applications that use both
+    environments.  This can be found in the Python module tree.  The
+    Haskell bindings above use this environment.
+    .
+    MissingPy permits you to call Python code from Haskell.  It does NOT
+    permit you to call Haskell code from Python.
+    .
+    MissingPy is the companion to my MissingH library, and integrates with
+    it.
+
+build-type: Custom
+cabal-version: >= 1.10
+
+source-repository   head
+    type:       git
+    location:   git://github.com/domdere/missing-py2.git
+
+source-repository   this
+    type:       git
+    location:   git://github.com/domdere/missing-py2.git
+    tag:        1.0.1
+
+library
+    default-language:
+        Haskell2010
+
+    exposed-modules: Python.Types,
+        Python.Utils,
+        Python.Objects,
+        Python.Interpreter,
+        Python.Exceptions,
+        Python.Exceptions.ExcTypes,
+        Python.Objects.File,
+        Python.Objects.Dict,
+        MissingPy.FileArchive.GZip,
+        MissingPy.FileArchive.BZip2,
+        MissingPy.AnyDBM
+
+    other-modules:
+        Python.ForeignImports
+
+    build-depends:
+            base < 5 && >= 4
+        ,   MissingH >= 1.0.1
+        ,   anydbm >= 1.0.5
+
+    hs-source-dirs:
+        src
+
+    c-sources: glue/glue.c glue/excglue.c
+
+    default-extensions:
+        ForeignFunctionInterface,
+        TypeSynonymInstances,
+        FlexibleInstances
+
+test-suite  originalunittests
+    type:       exitcode-stdio-1.0
+    main-is:    Main.hs
+
+    other-modules:
+        AnyDBMPytest
+        AnyDBMtest
+        BZip2test
+        Dicttest
+        Exceptionstest
+        GZiptest
+        Interpretertest
+        Objectstest
+        Tests
+        Testutil
+
+    default-language:
+            Haskell2010
+
+    build-depends:
+        base < 5 && >=  4,
+        Cabal,
+        anydbm >= 1.0.5,
+        directory,
+        MissingH >= 1.0.1,
+        HUnit,
+        missing-py2
+
+    ghc-options:
+        -Wall
+        -threaded
+
+    hs-source-dirs:
+        originaltests

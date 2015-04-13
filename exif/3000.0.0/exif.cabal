@@ -1,0 +1,18 @@
+Name: exif
+Version: 3000.0.0
+Copyright: Bjorn Bringert
+Maintainer: bjorn@bringert.net
+Author: Bjorn Bringert
+License: BSD3
+build-depends: base
+Extensions: ForeignFunctionInterface
+Synopsis: A Haskell binding to a subset of libexif
+Description:
+  This is a Haskell binding to a subset of libexif.
+  Only tag reading is currently supported.
+  Image files containing EXIF data can be read from memory or 
+  disk.
+Exposed-Modules: Graphics.Exif, Graphics.Exif.Internals
+Includes: libexif/exif-data.h
+Ghc-options: -O2 -Wall
+Extra-libraries: exif, m

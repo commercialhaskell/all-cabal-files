@@ -1,0 +1,51 @@
+name:    improve
+version: 0.3.4
+
+category: Language, Formal Methods, Embedded
+
+synopsis: An imperative, verifiable programming language for high assurance applications.
+
+description:
+  ImProve is an imperative programming language for high assurance applications.
+  ImProve uses infinite state, unbounded model checking to verify programs adhere
+  to specifications.  Yices (required) is the backend SMT solver.
+  ImProve compiles to C, Ada, Simulink, and Modelica.
+
+author:     Tom Hawkins <tomahawkins@gmail.com>
+maintainer: Tom Hawkins <tomahawkins@gmail.com>
+
+license:      BSD3
+license-file: LICENSE
+
+homepage: http://github.com/tomahawkins/improve/wiki/ImProve
+
+build-type:    Simple
+cabal-version: >= 1.6
+
+library
+    build-depends:
+        base      >= 4.0     && < 5,
+        mtl       >= 1.1.0.1 && < 2.1,
+        yices     >= 0.0.0.7 && < 0.0.1
+
+    exposed-modules:
+        Language.ImProve
+        Language.ImProve.Code
+        Language.ImProve.Code.Ada
+        Language.ImProve.Code.C
+        Language.ImProve.Code.Common
+        Language.ImProve.Code.Modelica
+        Language.ImProve.Code.Simulink
+        Language.ImProve.Core
+        Language.ImProve.Path
+        Language.ImProve.Tree
+        Language.ImProve.Verify
+
+    extensions: GADTs, FlexibleInstances, TypeSynonymInstances, UndecidableInstances
+
+    ghc-options: -W
+
+source-repository head
+    type:     git
+    location: git://github.com/tomahawkins/improve.git
+

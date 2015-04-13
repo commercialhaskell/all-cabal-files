@@ -1,0 +1,28 @@
+name:          prelude-extras
+category:      Polymorphism, Combinators
+version:       0.1
+license:       BSD3
+cabal-version: >= 1.2
+license-file:  LICENSE
+author:        Edward A. Kmett
+maintainer:    Edward A. Kmett <ekmett@gmail.com>
+stability:     provisional
+homepage:      http://comonad.com/reader/
+copyright:     Copyright (C) 2011 Edward A. Kmett
+synopsis:      Haskell 98 - higher order versions of Prelude classes 
+description:   Haskell 98 - higher order versions of Prelude classes to ease programming with polymorphic recursion and reduce UndecidableInstances
+build-type:    Simple
+
+library
+  build-depends: 
+    base >= 4 && < 4.4
+
+  extensions: CPP
+
+  ghc-options: -Wall 
+
+  exposed-modules:
+    Prelude.Extras,
+    Text.Show.Extras,
+    Text.Read.Extras
+  

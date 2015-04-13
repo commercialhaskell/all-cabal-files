@@ -1,0 +1,25 @@
+name:                selfrestart
+version:             0.1.0
+license:             MIT
+author:              Niklas Hambüchen <mail@nh2.me>
+maintainer:          Niklas Hambüchen <mail@nh2.me>
+build-type:          Simple
+cabal-version:       >=1.8
+homepage:            https://github.com/nh2/selfrestart
+bug-reports:         https://github.com/nh2/selfrestart/issues
+synopsis:            Restarts the current executable (on binary change)
+description:
+  Allows restarting the currently running executable.
+  .
+  Can restart the running program binary using @exec()@,
+  either manually or when the binary changes.
+  .
+  Also works with runhaskell/runghc.
+
+
+library
+  exposed-modules:     System.SelfRestart
+  build-depends:       base >= 4.5 && < 5
+                     , directory >= 1.2
+                     , executable-path >= 0.0.3
+                     , unix >= 2.6

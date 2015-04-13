@@ -1,0 +1,34 @@
+name:         Monatron
+version:      0.3
+license:      BSD3
+license-file: LICENSE
+author:       Mauro Jaskelioff
+maintainer:   mauro@fceia.unr.edu.ar
+category:     Control
+synopsis:     Monad transformer library with uniform liftings
+description:
+	An extensible monad transformer library with uniform liftings, a 
+	fairly portable core, and option of explicit naming of liftings.
+	See http:\/\/www.fceia.unr.edu.ar\/~mjj\/Monatron\/ for more information.
+
+	The monad zipper allows modular composition of components with Monatron effects.
+        It is a contribution of Bruno Oliveira and Tom Schrijvers.
+        See http:\/\/www.cs.kuleuven.be\/~toms\/Haskell\/ for more information.
+build-type: Simple
+ghc-options: -Wall
+exposed-modules:
+	Control.Monatron.MonadT
+	Control.Monatron.AutoInstances
+	Control.Monatron.Operations
+	Control.Monatron.Codensity
+	Control.Monatron.Transformer
+	Control.Monatron.Monad
+	Control.Monatron.AutoLift
+	Control.Monatron.Monatron
+	Control.Monatron.IdT
+	Control.Monatron.Zipper
+	Control.Monatron.Open
+	Control.Monatron.ZipperExamples
+build-depends: base >= 2 && < 3
+extensions: 
+	Rank2Types

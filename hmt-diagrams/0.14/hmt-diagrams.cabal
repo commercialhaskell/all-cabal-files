@@ -1,0 +1,39 @@
+Name:              hmt-diagrams
+Version:           0.14
+Synopsis:          Haskell Music Theory Diagrams
+Description:       Haskell Music Theory Diagrams
+License:           GPL
+Category:          Music
+Copyright:         Rohan Drape, 2006-2013
+Author:            Rohan Drape
+Maintainer:        rd@slavepianos.org
+Stability:         Experimental
+Homepage:          http://rd.slavepianos.org/?t=hmt-diagrams
+Tested-With:       GHC == 7.0.4
+Build-Type:        Simple
+Cabal-Version:     >= 1.8
+
+Data-files:        README
+
+Library
+  Build-Depends:   base==4.*,
+                   cairo,
+                   colour,
+                   hcg-minus==0.14.*,
+                   hcg-minus-cairo==0.14.*,
+                   hmt==0.14.*,
+                   html-minimalist==0.14.*,
+                   filepath,
+                   xml
+  GHC-Options:     -Wall -fwarn-tabs
+  Exposed-modules: Music.Theory.Diagram.Grid
+                   Music.Theory.Diagram.Path
+                   Music.Theory.Diagram.Render.Circular
+                   Music.Theory.Diagram.Render.Contour.WT
+                   Music.Theory.Diagram.Render.Grid
+                   Music.Theory.Diagram.Render.Path
+                   Music.Theory.Tuning.Table
+
+Source-Repository  head
+  Type:            darcs
+  Location:        http://rd.slavepianos.org/sw/hmt-diagrams

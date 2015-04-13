@@ -1,0 +1,45 @@
+name:                   hsndfile
+version:                0.3.3
+category:               Sound
+license:                GPL
+license-file:           COPYING
+copyright:              Stefan Kersten, 2007-2008
+author:                 Stefan Kersten
+maintainer:             Stefan Kersten <sk@k-hornz.de>
+stability:              Experimental
+homepage:               http://darcs.k-hornz.de/cgi-bin/darcsweb.cgi?r=hsndfile;a=summary
+synopsis:               Haskell bindings for libsndfile
+description:            Haskell bindings for libsndfile.
+                        .
+                        Libsndfile is a comprehensive C library for reading
+                        and writing a large number of soundfile formats:
+                        <http://www.mega-nerd.com/libsndfile/>.
+                        .
+                        Changelog and source tarballs can be found at
+                        <http://space.k-hornz.de/files/software/hsndfile>
+tested-with:            GHC
+build-type:             Simple
+cabal-version:          >= 1.2
+
+extra-source-files:
+                        ChangeLog.md
+                        README.md
+                        libsndfile/sndfile.h
+
+library
+  build-depends:        array, base >= 4.0.0.0, carray >= 0.1.2, haskell98
+  build-tools:          c2hs >= 0.15
+  extensions:           DeriveDataTypeable
+                        ForeignFunctionInterface
+                        MultiParamTypeClasses
+  exposed-modules:      Sound.File.Sndfile
+  other-modules:        C2HS
+                        Sound.File.Sndfile.Buffer
+                        Sound.File.Sndfile.Buffer.IOCArray
+                        Sound.File.Sndfile.Buffer.Storable
+                        Sound.File.Sndfile.Exception
+                        Sound.File.Sndfile.Interface
+  ghc-options:          -Wall -fno-warn-name-shadowing
+  extra-libraries:      sndfile
+  if os(windows)
+    include-dirs:       libsndfile

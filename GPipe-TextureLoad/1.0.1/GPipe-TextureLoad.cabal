@@ -1,0 +1,46 @@
+name: GPipe-TextureLoad
+version: 1.0.1
+cabal-version: >=1.2.3
+build-type: Simple
+license: BSD3
+license-file: ""
+copyright: Tobias Bexelius
+maintainer: Tobias Bexelius
+build-depends: GPipe >= 1.1.0, base ==4.1.0.0, stb-image >=0.2, bitmap -any
+stability: Experimental
+homepage: http://www.haskell.org/haskellwiki/GPipe
+package-url:
+bug-reports: mailto:tobias_bexelius@hotmail.com
+synopsis: Load GPipe textures from filesystem
+description: The functions of this package helps loading GPipe textures from file. It is based on the stb-image package, and supports subsets of the JPG, PNG, TGA, BMP and PSD formats.
+category: Graphics
+author: Tobias Bexelius
+tested-with:
+data-files:
+data-dir: ""
+extra-source-files:
+extra-tmp-files:
+exposed-modules: Graphics.GPipe.Texture.Load
+exposed: True
+buildable: True
+build-tools:
+cpp-options:
+cc-options:
+ld-options:
+pkgconfig-depends:
+frameworks:
+c-sources:
+extensions: FlexibleContexts FlexibleInstances
+extra-libraries:
+extra-lib-dirs:
+includes:
+install-includes:
+include-dirs:
+hs-source-dirs: src
+other-modules:
+ghc-prof-options:
+ghc-shared-options:
+ghc-options:
+hugs-options:
+nhc98-options:
+jhc-options:

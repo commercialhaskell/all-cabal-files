@@ -1,0 +1,20 @@
+name:                twentefp-rosetree
+version:             0.1.0.0
+synopsis:            RoseTree type and show functions for lab assignment of University of Twente.        
+license:             BSD3
+license-file:        LICENSE
+author:              Sebastiaan la Fleur
+maintainer:          sebastiaan.la.fleur@gmail.com          
+build-type:          Simple 
+cabal-version:       >=1.10
+
+library
+  exposed-modules:     RoseTree
+   
+  build-depends:       
+        base >=4.7 && <4.8, 
+        twentefp-number >= 0.1.0.1, 
+        twentefp-eventloop-graphics == 0.1.0.0
+        
+  hs-source-dirs:      src
+  default-language:    Haskell2010

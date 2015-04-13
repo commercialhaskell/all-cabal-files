@@ -1,0 +1,38 @@
+----------------------------------------------------------------
+-- wren ng thornton <wren@cpan.org>                 ~ 2008.07.25
+----------------------------------------------------------------
+
+Name:           list-extras
+Version:        0.2.0
+Cabal-Version:  >= 1.2
+Build-Type:     Simple
+Stability:      stable
+Copyright:      Copyright (c) 2007--2008 wren ng thornton
+License:        BSD3
+License-File:   LICENSE
+Author:         wren ng thornton
+Maintainer:     wren@community.haskell.org
+Homepage:       http://code.haskell.org/~wren/
+Category:       List
+Synopsis:       Common not-so-common functions for lists
+Description:    Common not-so-common functions for lists.
+                .
+                Since "Data.List.Extras" is prime realestate for
+                extensions to "Data.List", if you have something
+                you'd like to contribute feel free to contact the
+                maintainer (I'm friendly). I'm amenable to adopting
+                code if you think your functions aren't enough for
+                a package on their own. Or if you would rather
+                maintain a separate package I can share the
+                @Data.List.Extras.Foo@ namespace.
+
+Library
+    Exposed-Modules: Prelude.Listless
+                   , Data.List.Extras
+                   , Data.List.Extras.Argmax
+                   , Data.List.Extras.LazyLength
+                   , Data.List.Extras.Pair
+    Build-Depends:   base
+
+----------------------------------------------------------------
+----------------------------------------------------------- fin.

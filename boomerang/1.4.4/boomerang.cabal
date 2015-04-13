@@ -1,0 +1,45 @@
+Name:             boomerang
+Version:          1.4.4
+License:          BSD3
+License-File:     LICENSE
+Author:           jeremy@seereason.com
+Maintainer:       partners@seereason.com
+Bug-Reports:      http://code.google.com/p/happstack/issues/list
+Category:         Parsing, Text
+Synopsis:         Library for invertible parsing and printing
+Description:      Specify a single unified grammar which can be used for parsing and pretty-printing
+Cabal-Version:    >= 1.6
+Build-type:       Simple
+
+Library
+        Build-Depends:    base             >= 4    && < 5,
+                          mtl              >= 2.0  && < 2.3,
+                          template-haskell,
+                          text             >= 0.11 && < 1.2
+        Exposed-Modules:  Text.Boomerang
+                          Text.Boomerang.Combinators
+                          Text.Boomerang.Error
+                          Text.Boomerang.HStack
+                          Text.Boomerang.Pos
+                          Text.Boomerang.Prim
+                          Text.Boomerang.String
+                          Text.Boomerang.Strings
+                          Text.Boomerang.Texts
+                          Text.Boomerang.TH
+
+        Extensions:       DeriveDataTypeable,
+                          FlexibleContexts,
+                          FlexibleContexts,
+                          FlexibleInstances,
+                          RankNTypes,
+                          ScopedTypeVariables,
+                          TemplateHaskell,
+                          TypeFamilies,
+                          TypeFamilies,
+                          TypeOperators,
+                          TypeSynonymInstances
+
+source-repository head
+    type:     darcs
+    location: http://hub.darcs.net/stepcut/boomerang
+

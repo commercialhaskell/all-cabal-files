@@ -1,0 +1,26 @@
+name:                storable-static-array
+version:             0.4.1.0
+synopsis:            Statically-sized array wrappers with Storable instances
+                     for FFI marshaling
+description:         Uses type-level numeric literals to wrap arrays in a type
+                     that statically fixes their size. The wrapper has
+                     a @Storable@ instance, for easy integration with
+                     fixed-size native arrays.
+
+license:             BSD3
+license-file:        LICENSE
+author:              Carl Howells
+maintainer:          chowells79@gmail.com
+category:            FFI
+build-type:          Simple
+cabal-version:       >=1.8
+
+source-repository head
+  type:              git
+  location:          https://github.com/chowells79/storable-static-array.git
+
+library
+  exposed-modules:   Foreign.Marshal.StaticArray,
+                     Foreign.Marshal.StaticArray.Unpromoted
+  build-depends:     base ==4.6.*, array ==0.4.*, tagged ==0.6.*
+  ghc-options:       -Wall

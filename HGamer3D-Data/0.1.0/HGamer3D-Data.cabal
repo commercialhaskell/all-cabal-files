@@ -1,0 +1,38 @@
+Name:                HGamer3D-Data
+Version:             0.1.0
+Synopsis:            Library to enable 3D game development for Haskell - API
+Description:         
+	Library, to enable 3D game development for Haskell,
+	based on bindings to 3D Graphics, pyhsics engine and additional libraries.
+    Current implementation contains the following features: 
+      OGRE Binding, OIS Binding (limited functionality)
+      Platform: Windows only
+    Install following packages in sequence: HGamer3D-Data, HGamer3D-Ogre-Binding, HGamer3D-OIS-Binding, HGamer3D-API
+	License: Apache License, Version 2.0
+	
+	This part contains different Data types of the HGamer3D API
+	
+License:             OtherLicense
+License-file:        LICENSE
+Author:              Dr. Peter Althainz
+Maintainer:          althainz@googlemail.com
+Build-Type:          Simple
+Cabal-Version:       >=1.2
+Homepage:            http://www.althainz.de/HGamer3D.html
+Category:            Game
+Extra-source-files:  Setup.hs 
+
+Library
+  Build-Depends:     base >= 3 && < 5
+
+  Exposed-modules:   HGamer3D.Data.Vector2,HGamer3D.Data.Vector3,HGamer3D.Data.Vector4,HGamer3D.Data.ColourValue,HGamer3D.Data.Quaternion,HGamer3D.Data.HG3DClass,HGamer3D.Data.Radian,HGamer3D.Data.Degree,HGamer3D.Data.Angle
+  Other-modules:     
+
+  c-sources:         
+  
+  ghc-options:       
+  cc-options:        -Wno-attributes 
+  hs-source-dirs:    .
+  Include-dirs:      . 
+  build-depends:     haskell98
+  extra-libraries:   stdc++.dll

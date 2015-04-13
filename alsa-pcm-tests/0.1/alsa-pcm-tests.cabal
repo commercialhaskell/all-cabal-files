@@ -1,0 +1,33 @@
+Name:           alsa-pcm-tests
+License:        BSD3
+License-file:   LICENSE
+Version:        0.1
+Author:         Iavor S. Diatchki <iavor.diatchki@gmail.com>
+Maintainer:     Henning Thielemann <alsa@henning-thielemann.de>
+Category:       Sound, Music
+Synopsis:       Tests for the ALSA audio signal library.
+Description:    Tests for the ALSA audio signal library.
+Build-type:     Simple
+Cabal-Version: >= 1.2
+Extra-Source-Files:
+  Makefile
+
+Executable duplex
+  Main-Is: duplex.hs
+  GHC-Options: -Wall -threaded
+  Build-Depends:  base >=3 && <6, alsa >=0.4 && <0.5
+
+Executable play
+  Main-Is: play.hs
+  GHC-Options: -Wall -threaded
+  Build-Depends:  base >=3 && <6, alsa >=0.4 && <0.5
+
+Executable record
+  Main-Is: record.hs
+  GHC-Options: -Wall -threaded
+  Build-Depends:  base >=3 && <6, alsa >=0.4 && <0.5
+
+Executable volume_meter
+  Main-Is: volume_meter.hs
+  GHC-Options: -Wall -threaded
+  Build-Depends:  base >=3 && <6, alsa >=0.4 && <0.5

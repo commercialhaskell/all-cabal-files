@@ -1,0 +1,49 @@
+name:           global-config
+version:        0.1.0
+cabal-version:  >= 1.8
+build-type:     Simple
+author:         Alexander Dorofeev <aka.spin@gmail.com>spin
+maintainer:     Alexander Dorofeev <aka.spin@gmail.com>
+stability:      Experimental
+synopsis:       Global mutable configuration
+homepage:       https://github.com/akaspin/global-config
+bug-reports:    https://github.com/akaspin/global-config/issues
+category:       Configuration
+license-file:   LICENSE
+license:        BSD3
+description:    
+    @Data.Global.Config@ provides brain-free pattern to work with global 
+    configurations. Use wisely.
+
+source-repository head
+  type:         git
+  location:     git://github.com/akaspin/global-config.git
+
+library
+  hs-source-dirs:   src
+  build-depends:    base >= 4 && < 5,
+                   global-variables,
+                   data-default
+  ghc-options:      -Wall
+  exposed-modules:  Data.Global.Config
+
+test-suite test
+  type:            exitcode-stdio-1.0
+  x-uses-tf:       true
+  build-depends:   
+                   base >= 4 && < 5,
+                   HUnit >= 1.2 && < 2,
+                   QuickCheck >= 2.4,
+                   test-framework >= 0.4.1,
+                   test-framework-quickcheck2,
+                   test-framework-hunit,
+
+                   global-config,
+
+                   transformers,
+                   bytestring,
+                   data-default
+  ghc-options:     -Wall -rtsopts
+  hs-source-dirs:  test
+  main-is:         Main.hs
+

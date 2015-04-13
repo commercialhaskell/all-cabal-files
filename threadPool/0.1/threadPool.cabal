@@ -1,0 +1,19 @@
+Name:           threadPool
+Version:        0.1
+Cabal-Version:  >= 1.2
+License:        GPL
+License-File:   COPYING
+Author:         Brian Jaress
+Homepage:       http://brian-jaress.livejournal.com/
+Bug-Reports:    mailto:jaress@hawaii.edu
+Synopsis:       Runs other programs in the manner of a thread pool
+Description:    Takes a single, optional argument which is the number
+    of threads (the default is three).  Give it the commands to run, one
+    per line, through standard input.
+Category:       System
+Build-Type:     Simple
+
+Executable threadpool
+    Main-Is:        threadPool.lhs
+    Build-Depends: base, process
+    ghc-options:    -threaded

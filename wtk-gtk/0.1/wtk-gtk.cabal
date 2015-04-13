@@ -1,0 +1,29 @@
+Name:		wtk-gtk
+Version:	0.1
+License:	BSD3
+License-file: license
+Author:		Bartosz Wojcik
+Maintainer:	Bartosz Wojcik <bartoszmwojcik@gmail.com>
+Copyright:  Copyright (c) 2012 Bartosz Wojcik
+Category:	Tool Kit
+Synopsis:	GTK tools within Wojcik Tool Kit
+Stability:  experimental
+Build-type:	Simple
+Description: Set of simple tools for standardized development of UI where
+             input is set of fields of certain (though various) types
+             and there is defined business logic between the fields, values
+             they can accept. Helps with error messages for user.
+             It's idea is separation of presentation layer and business logic.
+             This succeed but at certain costs.
+             Tool is definetely experimental. Contains lots of awkward hacks.
+             
+
+Cabal-Version: >=1.2.3
+
+Library
+   Build-Depends:     base >= 3 && < 5, parsec >= 2.1, old-locale >= 1.0, time >= 1.1.0,
+                      containers >= 0.2, gtk >= 0.10, mtl >= 1.1.0.2, wtk, lenses
+   Exposed-modules:   Graphics.UI.Gtk.WtkGui,
+                      Graphics.UI.Gtk.WtkGtk,
+                      Graphics.UI.Gtk.WtkGtkBp
+

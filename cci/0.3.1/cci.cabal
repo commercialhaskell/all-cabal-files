@@ -1,0 +1,86 @@
+Name:          cci
+Version:       0.3.1
+Synopsis:      Bindings for the CCI networking library
+Description:   The CCI project is an open source communication interface that
+               aims to provide a simple and portable API, high performance,
+               scalability for the largest deployments, and robustness in the
+               presence of faults. It is developed and maintained by a
+               partnership of research, academic, and industry members.
+               .
+               See <http://cci-forum.com> for details.
+Copyright:     (C) 2012-2013 Parallel Scientific Labs, LLC
+Maintainer:    Facundo Domínguez <facundo.dominguez@parsci.com>
+License:       BSD3
+License-file:  LICENSE
+Category:      Network
+Build-Type:    Simple
+Cabal-Version: >= 1.10
+
+source-repository head
+    type:     git
+    location: git://github.com/ps-labs/haskell-cci.git
+
+Library
+  default-language: Haskell2010
+  exposed-modules:  Network.CCI
+  build-depends:    base >= 4.3 && < 5,
+                    bytestring >= 0.9
+  ghc-options:      -Wall
+  extra-libraries:  cci
+
+Flag examples
+  Description: Build examples
+  Default: False
+
+Executable cci-example-client
+  default-language: Haskell2010
+  main-is:        examples/Client.hs
+  ghc-options:    -Wall -idist/build
+  if flag(examples)
+    build-depends:  base, bytestring, cci
+  else
+    buildable: False
+
+Executable cci-example-pingpong
+  default-language: Haskell2010
+  main-is:        examples/pingpong.hs
+  ghc-options:    -Wall -idist/build -threaded
+  if flag(examples)
+    build-depends:  base, bytestring, cci, time
+  else
+    buildable: False
+
+Executable cci-example-server
+  default-language: Haskell2010
+  main-is:        examples/Server.hs
+  ghc-options:    -Wall -idist/build
+  if flag(examples)
+    build-depends:  base, bytestring, cci
+  else
+    buildable: False
+
+Executable cci-example-registration-benchmark
+  default-language: Haskell2010
+  main-is:        examples/registration-benchmark.hs
+  ghc-options:    -Wall -idist/build
+  if flag(examples)
+    build-depends:  base, bytestring, cci, time
+  else
+    buildable: False
+
+Test-Suite test-cci
+  default-language: Haskell2010
+  type: exitcode-stdio-1.0
+  main-is:        test_cci.hs
+  hs-source-dirs: test
+  ghc-options:    -Wall -fno-warn-name-shadowing -idist/build
+  build-depends:  base, bytestring, cci, containers, binary, process,
+                  filepath, mtl, random, cmdargs < 0.11, pretty
+
+Test-Suite test-worker
+  default-language: Haskell2010
+  type: exitcode-stdio-1.0
+  main-is:        Worker.hs
+  ghc-options:    -Wall -idist/build -threaded
+  hs-source-dirs: test
+  build-depends:  base, bytestring, cci, time, containers, binary

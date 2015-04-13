@@ -1,0 +1,47 @@
+Name:                Etage-Graph
+Version:             0.1
+Synopsis:            Data-flow based graph algorithms
+Description:         Data-flow based graph algorithms using the "Control.Etage" framework, showcasing its use for data-flow
+                     computations. It is meant to be used with the "Data.Graph.Inductive" package which provides graph structures
+                     these algorithms take as an input.
+                     .
+                     Currently only the shortest paths computation is implemented (from all to all nodes).
+                     .
+                     Also a benchmarking @test@ program is provided, comparing the performance with algorithms found in the
+                     "Data.Graph.Inductive" package.
+License:             LGPL-3
+License-file:        LICENSE
+Author:              Mitar Milutinovic
+Maintainer:          mitar.haskell@tnode.com
+Copyright:           (c) 2011 Mitar Milutinovic
+Category:            Data Structures
+Build-type:          Simple
+Cabal-version:       >= 1.8
+Stability:           experimental
+Homepage:            http://mitar.tnode.com
+
+Library
+  Exposed-modules:     Data.Graph.Etage
+  Build-depends:       base >= 4.3 && < 5,
+                       Etage >= 0.1.8 && < 0.2,
+                       fgl >= 5.4.2 && < 5.5,
+                       mtl >= 2.0 && < 3,
+                       containers >= 0.4 && < 1
+  HS-source-dirs:      lib
+  GHC-options:         -Wall
+  GHC-prof-options:    -Wall
+  GHC-shared-options:  -Wall
+
+Executable test
+  Main-is:             Test.hs
+  HS-source-dirs:      src
+  Build-depends:       base >= 4.3 && < 5,
+                       fgl >= 5.4.2 && < 5.5,
+                       random >= 1.0 && < 2,
+                       containers >= 0.4 && < 1,
+                       deepseq >= 1.1 && < 2,
+                       array >= 0.3 && < 1,
+                       time >= 1.1 && < 2,
+                       Etage == 0.1.8,
+                       Etage-Graph == 0.1
+  GHC-options:         -Wall -rtsopts -threaded

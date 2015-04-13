@@ -1,0 +1,34 @@
+Name:             non-negative
+Version:          0.0.1
+License:          GPL
+License-File:     LICENSE
+Author:           Henning Thielemann <haskell@henning-thielemann.de>
+Maintainer:       Henning Thielemann <haskell@henning-thielemann.de>
+Homepage:         http://darcs.haskell.org/non-negative/
+Category:         Math
+Build-Type:       Simple
+Build-Depends:    base>=1.0, QuickCheck
+Synopsis:         Non-negative numbers
+Description:
+   Provides a class for non-negative numbers,
+   a wrapper which can turn any ordered numeric type into a member of that class,
+   and a lazy number type for non-negative numbers
+   (a generalization of Peano numbers).
+   This library is used by the 'event-list' package.
+GHC-Options:      -Wall
+Tested-With:      GHC==6.4.1
+Hs-Source-Dirs:   src
+Exposed-Modules:
+  Numeric.NonNegative.Class
+  Numeric.NonNegative.Wrapper
+  Numeric.NonNegative.Chunky
+Other-Modules:
+  Numeric.NonNegative.Utility
+
+Executable:       test
+Hs-source-dirs:   src, .
+GHC-Options:      -Wall
+Main-Is:          Test/Main.hs
+Other-Modules:
+  Test.Utility
+  Test.Numeric.NonNegative.Chunky

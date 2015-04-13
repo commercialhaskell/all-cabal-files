@@ -1,0 +1,29 @@
+Name:           traced
+Cabal-Version:  >= 1.2
+Version:        2009.7.20
+License:        BSD3
+Author:         Lennart Augustsson
+Maintainer:     Lennart Augustsson
+Category:       Debug
+Synopsis:       Simple evaluation trace
+Stability:      experimental
+Build-type:     Simple
+Description:    The module defines a type constructor Traced, which allows evaluation
+                of values to be traced.  Instances for all numeric types make tracing
+                numeric evaluation especially easy.
+
+Flag base4
+    Default:        True
+    Description:    Should we build with version 4 of the Base library
+
+Library
+    Hs-Source-Dirs:     src
+    Exposed-modules:    Debug.Traced Debug.TracedInternal
+    Other-modules:      Debug.StableMap
+    
+    Build-Depends:      mtl, pretty, containers
+    
+    if flag(base4)
+        Build-Depends:  base >= 4 && < 5
+    else
+        Build-Depends:  base >= 3 && < 4

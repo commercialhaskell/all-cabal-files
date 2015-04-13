@@ -1,0 +1,33 @@
+name:               foo
+version:            1.0
+homepage:           http://sourceforge.net/projects/fooengine/?abmode=1
+synopsis:           Paper soccer, an OpenGL game.
+description:
+    Foo (abbreviation from football) is a playing machine of Paper Soccer, a
+    pencil and paper game for two players, described in WIKIPEDIA. Written
+    in Haskell, contains also simply interface using HOpenGL library.
+    Provides bunch of playing algorithms.
+category:           Game
+license:            GPL
+license-file:       copying.txt
+author:             Bartosz Wójcik
+maintainer:         none
+extra-source-files: fooDocu.tex
+cabal-version:      >= 1.2
+build-type:         Simple
+
+flag small_base
+    description: Choose the new smaller, split-up base package.
+
+executable foo
+    main-is:            PlayFoo.hs
+    other-modules:      Court
+                        Foo
+                        FooField
+                        FooMove
+                        MyPrimitives
+                        TestCourt
+
+    extensions:         CPP
+    ghc-options:        -O2 -funbox-strict-fields
+    build-depends:      base, OpenGL, GLUT, haskell98, containers

@@ -1,0 +1,37 @@
+Name: Hermes
+Synopsis: Message-based middleware layer
+Description: A middleware providing best-effort unicast, remote procedure calls,
+             probabilistic (and slow!) broadcast and automatic membership
+             management, meant for small to medium networks
+Version: 0.0.3
+License: BSD3
+Author: Svein Ove Aas <svein.ove@aas.no>
+Maintainer: Svein Ove Aas <svein.ove@aas.no>
+Copyright: Copyright (c) 2010, University of Tromsø
+License-file: COPYING
+Stability: experimental
+Category: Middleware, Network
+Tested-With: GHC == 6.12-rc2
+Cabal-Version: >= 1.6
+Build-Type: Simple
+
+Library
+  Build-Depends: base == 4.*, bytestring, cereal >= 0.2, stm, hslogger >= 1.0.7,
+                 old-time, containers, AES >= 0.2.4, SHA2 >= 0.1.1, RSA >= 1.0.2,
+                 network, yjtools >= 0.9.7, random, monads-tf == 0.1.*,
+                 syb == 0.1.*, unamb >= 0.2.2, time >= 1.1.4, transformers >= 0.1.4.0
+
+  ghc-options:
+                 
+  Exposed-Modules:
+        Network.Hermes,
+        Network.Hermes.Protocol,
+        Network.Hermes.Types,
+        Network.Hermes.Core,
+        Network.Hermes.Misc,
+        Network.Hermes.Net,
+        Network.Hermes.RPC,
+        Network.Hermes.Signature,
+        Network.Hermes.MChan,
+        Network.Hermes.Gossip,
+        Network.Hermes.Address

@@ -1,0 +1,38 @@
+Name:                happstack-hamlet
+Version:             0.1
+Synopsis:            Support for Hamlet HTML templates in Happstack
+
+Description:         Happstack is a web application development framework. 
+                     Hamlet provides HTML templates which are checked for 
+                     correctness at compile time. This package add support
+                     for using Hamlet templates with Happstack.
+Homepage:            http://www.happstack.com/
+License:             BSD3
+License-file:        LICENSE
+Author:              Jeremy Shaw
+Maintainer:          jeremy@seereason.com
+Copyright:           2010 Jeremy Shaw
+Category:            Web
+Build-type:          Simple
+Cabal-version:       >=1.6
+
+source-repository head
+    type:     darcs
+    subdir:   happstack-hamlet
+    location: http://patch-tag.com/r/mae/happstack/pullrepo
+
+Library
+  Exposed-modules:     Happstack.Server.Hamlet
+  Build-depends:       base >= 3 && <5,
+                       bytestring,
+                       containers,
+                       happstack-server >= 0.4.3 && <0.6 ,
+                       hamlet,
+                       text
+  
+  -- Modules not exported by this package.
+  -- Other-modules:       
+  
+  -- Extra tools (e.g. alex, hsc2hs, ...) needed to build the source.
+  -- Build-tools:         
+  

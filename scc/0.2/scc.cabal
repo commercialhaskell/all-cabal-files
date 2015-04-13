@@ -1,0 +1,34 @@
+Name:                scc
+Version:             0.2
+Cabal-Version:       >= 1.2
+Build-Type:          Simple
+Synopsis:            Streaming component combinators
+Category:            Control, Combinators
+Description:
+  SCC is a layered library of Streaming Component Combinators. The lowest layer defines a Pipe monad transformer that
+  enables building of producer-consumer coroutine pairs. The next layer adds streaming component
+  types, a number of primitive streaming components and a set of component combinators. Finally,
+  there is an executable that exposes all functionality in a command-line shell.
+  .
+  The original library design is based on paper <http://www.idealliance.org/papers/extreme/Proceedings/html/2006/Blazevic01/EML2006Blazevic01.html>
+  .
+  Mario Bla&#382;evi&#263;, Streaming component combinators, Extreme Markup Languages, 2006.
+  
+License:             GPL
+License-file:        LICENSE.txt
+Copyright:           (c) 2008 Mario Blazevic
+Author:              Mario Blazevic
+Maintainer:          blamario@yahoo.com
+Extra-source-files:  grammar.bnf Makefile LICENSE.txt Test.hs
+
+Executable shsh
+  Main-is:           Shell.hs
+  Other-Modules:     Control.Concurrent.SCC.Foundation, Control.Concurrent.SCC.ComponentTypes,
+                     Control.Concurrent.SCC.Components, Control.Concurrent.SCC.Combinators
+  Build-Depends:     base, containers, mtl, parallel, process, readline, parsec >= 3
+  GHC-options:       "-threaded"
+
+Library
+  Exposed-Modules:   Control.Concurrent.SCC.Foundation, Control.Concurrent.SCC.ComponentTypes,
+                     Control.Concurrent.SCC.Components, Control.Concurrent.SCC.Combinators
+  Build-Depends:     base, containers, mtl, parallel

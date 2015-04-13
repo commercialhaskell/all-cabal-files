@@ -1,0 +1,30 @@
+Name:                prolog-graph
+Version:             0.1
+Synopsis:            A command line tool to visualize query resolution in Prolog.
+Description:         This package installs the command line tool `hsprolog-graph` that
+                     generates images of resolution trees for given Prolog queries.
+                     .
+                     See @hsprolog-graph --help@ for more information on usage.
+License:             PublicDomain
+Author:              Matthias Bartsch
+Maintainer:          bartsch@cs.uni-bonn.de
+Homepage:            https://github.com/Erdwolf/prolog
+Category:            Language
+Build-type:          Simple
+Cabal-version:       >=1.6
+
+Source-repository head
+   type: git
+   location: git://github.com/Erdwolf/prolog.git
+
+Executable hsprolog-graph
+  Main-is: Main.hs
+
+  Build-depends:
+    prolog == 0.1.*,
+    base >=4 && <5,
+    fgl >= 5.4.2.4,
+    mtl >= 2.0.1.0,
+    cmdargs >= 0.8,
+    text >= 0.11.1.5,
+    graphviz

@@ -1,0 +1,31 @@
+name:           java-reflect
+version:        0.99
+
+license:        MIT
+license-file:   LICENSE
+
+author:         Julian Fleischer <julian.fleischer@fu-berlin.de>
+maintainer:     Julian Fleischer <julian.fleischer@fu-berlin.de>
+
+stability:      experimental
+category:       Foreign, Java, JVM, FFI Tools
+
+cabal-version:  >= 1.8
+
+synopsis:       Tools for reflecting on Java classes.
+description:    Tools for reflecting on Java classes.
+               
+build-type:     Simple
+
+Library
+    build-depends:      base >= 4.5 && < 5
+                        , java-bridge == 0.99
+                        , containers >= 0.4.2.1
+                        , hx >= 0.4
+
+    hs-source-dirs:     src
+
+    exposed-modules:    Language.Java.Reflect
+                        , Language.Java.Reflect.Types
+
+

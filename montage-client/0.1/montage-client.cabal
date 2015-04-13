@@ -1,0 +1,62 @@
+Name:                montage-client
+Version:             0.1
+Synopsis:            Riak Resolution Proxy Client
+Homepage:            http://github.com/bumptech/montage-haskell-client
+License:             BSD3
+License-file:        LICENSE
+Author:              Bump Technologies, Inc
+Maintainer:          dev@bu.mp
+Category:            Network
+Build-type:          Simple
+Cabal-version:       >=1.8
+
+Library
+  Exposed-modules:     Network.Riak.MontageClient,
+                       Network.Riak.MontageClient.MontageClient,
+                       Network.Riak.MontageClient.Proto.MontageClient.MontageCommand,
+                       Network.Riak.MontageClient.Proto.MontageClient.MontageCommandResponse,
+                       Network.Riak.MontageClient.Proto.MontageClient.MontageDelete,
+                       Network.Riak.MontageClient.Proto.MontageClient.MontageDeleteResponse,
+                       Network.Riak.MontageClient.Proto.MontageClient.MontageEnvelope,
+                       Network.Riak.MontageClient.Proto.MontageClient.MontageError,
+                       Network.Riak.MontageClient.Proto.MontageClient.MontageGet,
+                       Network.Riak.MontageClient.Proto.MontageClient.MontageGetMany,
+                       Network.Riak.MontageClient.Proto.MontageClient.MontageGetReference,
+                       Network.Riak.MontageClient.Proto.MontageClient.MontageGetResponse,
+                       Network.Riak.MontageClient.Proto.MontageClient.MontageGetStatus,
+                       Network.Riak.MontageClient.Proto.MontageClient.MontageObject,
+                       Network.Riak.MontageClient.Proto.MontageClient.MontagePut,
+                       Network.Riak.MontageClient.Proto.MontageClient.MontagePutMany,
+                       Network.Riak.MontageClient.Proto.MontageClient.MontagePutManyResponse,
+                       Network.Riak.MontageClient.Proto.MontageClient.MontagePutResponse,
+                       Network.Riak.MontageClient.Proto.MontageClient.MontageSubrequestSpec,
+                       Network.Riak.MontageClient.Proto.MontageClient.MontageWireMessages
+
+  -- Packages needed in order to build this package.
+  Build-depends:  base >= 4 && < 5,
+                  mtl >= 2.0 && < 2.2,
+                  bytestring>=0.9,
+                  time>=1.2,
+                  old-locale,
+                  containers,
+                  system-uuid>=2,
+                  aeson>=0.3,
+                  text>=0.11,
+                  text-format,
+                  ListLike,
+                  stm>=2.2,
+                  riak-bump>=0.7.3.4,
+                  pool-conduit>=0.1.0.2&&<0.2,
+                  unordered-containers >= 0.2.1 && < 0.3,
+                  zeromq-haskell>=0.8 && < 0.9,
+                  protocol-buffers >= 2.0.11,
+                  protocol-buffers-descriptor >= 2.0.11,
+                  stats-web,
+                  safe
+
+  Extensions: OverloadedStrings,DeriveDataTypeable
+  Extensions: FlexibleInstances,DoAndIfThenElse,ScopedTypeVariables
+  Extensions: BangPatterns,GADTs,MultiParamTypeClasses,FunctionalDependencies
+  Extensions: RankNTypes,FlexibleContexts,OverlappingInstances,TupleSections
+
+  Ghc-Options: -Wall -O2 -threaded -rtsopts -funfolding-use-threshold=16 -fexcess-precision -feager-blackholing

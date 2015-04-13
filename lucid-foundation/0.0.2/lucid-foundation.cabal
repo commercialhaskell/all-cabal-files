@@ -1,0 +1,81 @@
+Name:                   lucid-foundation
+Version:                0.0.2
+Author:                 Athan Clark <athan.clark@gmail.com>
+Maintainer:             Athan Clark <athan.clark@gmail.com>
+License:                BSD3
+License-File:           LICENSE
+Synopsis:               Basic Zurb Foundation API in Lucid
+-- Description:            
+Cabal-Version:          >= 1.10
+Build-Type:             Simple
+
+Library
+  Default-Language:     Haskell2010
+  HS-Source-Dirs:       src
+  GHC-Options:          -Wall
+  Exposed-Modules:      Lucid.Foundation
+                        Lucid.Foundation.Media
+                        Lucid.Foundation.Navigation
+                        Lucid.Foundation.Structure
+                        Lucid.Foundation.Typography
+                        Lucid.Foundation.Buttons
+                        Lucid.Foundation.Callouts
+                        Lucid.Foundation.Content
+                        Lucid.Foundation.Forms
+  Other-Modules:        Lucid.Foundation.Media.Clearing
+                        Lucid.Foundation.Media.Flex
+                        Lucid.Foundation.Media.Orbit
+                        Lucid.Foundation.Media.Thumbnails
+                        Lucid.Foundation.Navigation.Breadcrumbs
+                        Lucid.Foundation.Navigation.IconBar
+                        Lucid.Foundation.Navigation.Magellan
+                        Lucid.Foundation.Navigation.OffCanvas
+                        Lucid.Foundation.Navigation.Pagination
+                        Lucid.Foundation.Navigation.SideNav
+                        Lucid.Foundation.Navigation.SubNav
+                        Lucid.Foundation.Navigation.TopBar
+                        Lucid.Foundation.Structure.BlockGrid
+                        Lucid.Foundation.Structure.Grid
+                        Lucid.Foundation.Structure.Utils
+                        Lucid.Foundation.Structure.Visibility
+                        Lucid.Foundation.Typography.InlineList
+                        Lucid.Foundation.Typography.Labels
+                        Lucid.Foundation.Typography.Types
+                        Lucid.Foundation.Buttons.ButtonGroup
+                        Lucid.Foundation.Buttons.Buttons
+                        Lucid.Foundation.Buttons.SplitButtons
+                        Lucid.Foundation.Callouts.AlertBoxes
+                        Lucid.Foundation.Callouts.Joyride
+                        Lucid.Foundation.Callouts.Panels
+                        Lucid.Foundation.Callouts.Reveal
+                        Lucid.Foundation.Callouts.Tooltips
+                        Lucid.Foundation.Content.Accordion
+                        Lucid.Foundation.Content.Dropdown
+                        Lucid.Foundation.Content.Equalizer
+                        Lucid.Foundation.Content.PricingTables
+                        Lucid.Foundation.Content.ProgressBars
+                        Lucid.Foundation.Content.Tables
+                        Lucid.Foundation.Content.Tabs
+                        Lucid.Foundation.Forms.Abide
+                        Lucid.Foundation.Forms.Forms
+                        Lucid.Foundation.Forms.RangeSlider
+                        Lucid.Foundation.Forms.Switch
+  Build-Depends:        base >= 4 && < 5
+                      , lucid >= 2.9
+                      , text
+
+Test-Suite spec
+  Type:                 exitcode-stdio-1.0
+  Default-Language:     Haskell2010
+  Hs-Source-Dirs:       src
+                      , test
+  Ghc-Options:          -Wall
+  Main-Is:              Spec.hs
+  Build-Depends:        base
+                      , hspec
+                      , QuickCheck
+                      , quickcheck-instances
+
+Source-Repository head
+  Type:                 git
+  Location:             https://github.com/athanclark/lucid-foundation

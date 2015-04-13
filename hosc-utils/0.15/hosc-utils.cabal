@@ -1,0 +1,90 @@
+Name:              hosc-utils
+Version:           0.15
+Synopsis:          Haskell Open Sound Control Utilities
+Description:       hosc-utils
+License:           GPL
+Category:          Sound
+Copyright:         (c) Rohan Drape and others, 2006-2014
+Author:            Rohan Drape
+Maintainer:        rd@slavepianos.org
+Stability:         Experimental
+Homepage:          http://rd.slavepianos.org/?t=hosc-utils
+Tested-With:       GHC == 7.8.2
+Build-Type:        Simple
+Cabal-Version:     >= 1.8
+Data-Files:        README
+
+executable hosc-json-cat
+  build-depends:   base == 4.*,
+                   bytestring,
+                   hosc == 0.15.*,
+                   hosc-json == 0.15.*,
+                   json,
+                   text,
+                   transformers,
+                   utf8-string
+  hs-source-dirs:  hs
+  main-is:         json-cat.hs
+  ghc-options:     -Wall -fwarn-tabs
+
+executable hosc-json-cgi
+  build-depends:   base == 4.*,
+                   bytestring,
+                   cgi,
+                   hosc == 0.15.*,
+                   hosc-json == 0.15.*,
+                   json,
+                   text,
+                   transformers,
+                   utf8-string,
+                   www-minus == 0.15.*
+  hs-source-dirs:  hs
+  main-is:         json-cgi.hs
+  ghc-options:     -Wall -fwarn-tabs
+
+executable hosc-json-console
+  build-depends:   base == 4.*,
+                   bytestring,
+                   haskeline,
+                   hosc == 0.15.*,
+                   hosc-json == 0.15.*,
+                   json,
+                   text,
+                   transformers,
+                   utf8-string
+  hs-source-dirs:  hs
+  main-is:         json-console.hs
+  ghc-options:     -Wall -fwarn-tabs
+
+executable hosc-json-nrt
+  build-depends:   base == 4.*,
+                   bytestring,
+                   hosc == 0.15.*,
+                   hosc-json == 0.15.*,
+                   hsc3 == 0.15.*,
+                   json,
+                   text,
+                   transformers,
+                   utf8-string
+  hs-source-dirs:  hs
+  main-is:         json-nrt.hs
+  ghc-options:     -Wall -fwarn-tabs
+
+executable hosc-json-ws
+  build-depends:   base == 4.*,
+                   bytestring,
+                   hosc == 0.15.*,
+                   hosc-json == 0.15.*,
+                   bytestring,
+                   json,
+                   text,
+                   transformers,
+                   utf8-string,
+                   websockets >= 0.8.2.4
+  hs-source-dirs:  hs
+  main-is:         json-ws.hs
+  ghc-options:     -Wall -fwarn-tabs
+
+Source-Repository  head
+  Type:            darcs
+  Location:        http://rd.slavepianos.org/sw/hosc-utils

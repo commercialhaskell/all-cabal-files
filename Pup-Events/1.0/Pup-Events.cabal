@@ -1,0 +1,32 @@
+name:                   Pup-Events
+version:                1.0
+synopsis:               A networked event handling framework for hooking
+                        into other programs.
+description:            Pup-Events is a networking enabled event handling
+                        framework. This is a virtual package to install all
+                        of the Pup-Events modules.
+category:               Networking, Pup-Events
+author:                 Daniel Wilson
+maintainer:             wilsonhardrock@gmail.com
+copyright:              (c) 2012 Daniel Wilson
+license:                GPL-3
+license-file:           LICENSE
+cabal-version:          >= 1.10.2.0
+tested-with:            GHC == 7.0.4
+build-type:             Simple
+
+source-repository head
+    type:               git
+    location:           https://github.com/RocketPuppy/PupEvents.git
+
+library
+    exposed-modules:    
+    other-modules:      
+    default-language:   Haskell98
+    build-depends:      base == 4.*, Pup-Events-Server, Pup-Events-Client,
+                        Pup-Events-PQueue
+
+executable pupevents-all
+    main-is:            Main.hs
+    default-language:   Haskell98
+    build-depends:      base == 4.*

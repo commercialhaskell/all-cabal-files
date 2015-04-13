@@ -1,0 +1,29 @@
+name:                happstack-fay
+version:             0.1.0.0
+synopsis:            Support for using Fay with Happstack
+description:         Fay is strict subset of Happstack which can be compiled
+                     to Javascript. This library provides some utilities for client-server
+                     communication, client-side HTML generation, and more.
+homepage:            http://www.happstack.com/
+license:             BSD3
+license-file:        LICENSE
+author:              Jeremy Shaw
+maintainer:          jeremy@n-heptane.com
+category:            Happstack
+build-type:          Simple
+cabal-version:       >=1.8
+
+data-files:
+  Language/Fay/AJAX.hs,
+  Language/Fay/HTML.hs
+
+library
+  exposed-modules:     Language.Fay.AJAX,
+                       Language.Fay.HTML,
+                       Happstack.Fay,
+                       Paths_happstack_fay
+  build-depends:       base             > 4 && <5,
+                       fay              == 0.9.*,
+                       fay-jquery       == 0.1.*,
+                       aeson            == 0.6.*,
+                       happstack-server >= 7.0 && <7.2

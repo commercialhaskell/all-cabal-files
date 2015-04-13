@@ -1,0 +1,96 @@
+name:          gentlemark
+synopsis:      Gentle markup language
+category:      Web, Text
+version:       1.0.0
+cabal-version: >= 1.10
+author:        Andriy Polishchuk
+maintainer:    Andriy Polishchuk <andriy.s.polishchuk@gmail.com>
+homepage:      http://github.com/andriyp/gentlemark
+bug-reports:   http://github.com/andriyp/gentlemark/issues
+copyright:     (c) 2012 Andriy Polishchuk
+license:       BSD3
+license-file:  LICENSE
+build-type:    Simple
+description:
+  GentleMark is a gentle markup language which is designed to fit forum-like systems.     
+  .
+  Styles:
+  .
+  @    
+    \*\*Bold\*\*
+    ~~Italic~~
+    __Underlined__  
+    !!Striked!!
+    %%Spoiler%%
+    \`\`Monospace\`\`
+    $$Latex$$
+  @
+  .
+  Accents:
+  .
+  @
+    /(Quote)/     > I think I can safely say that nobody understands quantum mechanics.
+    /(Reference)/ >>19991
+    /(Hyperlink)/ http:.., https:.., ftp:.., mailto:.., news:.., irc:..
+  @
+  .
+  Unordered lists:
+  .
+  @
+    \- Monad axioms:
+    \- Kleisli composition forms
+    \- a Category
+  @
+  .
+  Ordered lists:
+  .
+  @
+    1. cabal update
+    2. cabal install gentlemark
+  @  
+  .
+  Custom tags:
+  .
+  @
+    [code|haskell] fibs = 0 : 1 : zipWith (+) fibs (tail fibs) [/code]
+    [some-tag|some-option-1|...|some-option-n] something [/some-tag]
+    [foo] bar [/foo]
+  @
+
+source-repository head
+  type:     git
+  location: git://github.com/andriyp/gentlemark.git
+
+library
+  hs-source-dirs: src
+  build-depends:
+    base         >= 4 && < 5,
+    transformers == 0.3.*,
+    parsec       >= 3 && < 4
+  exposed-modules:
+    Text.GentleMark
+    Text.GentleMark.Term
+    Text.GentleMark.Parsec
+  default-language: Haskell2010
+  other-extensions:
+    FlexibleContexts
+    GADTs
+    ConstraintKinds
+    KindSignatures
+    StandaloneDeriving
+  ghc-options: -Wall -fwarn-tabs -O2
+
+test-suite hunit
+  type:           exitcode-stdio-1.0
+  hs-source-dirs: src tests
+  main-is:        hunit.hs
+  build-depends:
+    base         >= 4 && < 5,
+    transformers == 0.3.*,
+    parsec       >= 3 && < 4,
+    HUnit        == 1.2.*
+  default-language: Haskell2010
+  other-extensions:
+    TemplateHaskell
+  ghc-options: -w -threaded
+  

@@ -1,0 +1,16 @@
+Name:                template
+Version:             0.1
+Description:         Simple string substitution library that supports
+                     \"$\"-based substitution.  Meant to be used when
+                     Text.Printf or string concatenation would lead to
+                     code that is hard to read but when a full blown
+                     templating system might be overkill.
+Synopsis:            Simple string substitution
+Category:            Text
+License:             BSD3
+License-file:        LICENSE
+Author:              Johan Tibell
+Maintainer:          johan.tibell@gmail.com
+Build-Depends:       base, mtl
+Exposed-modules:     Text.Template
+ghc-options:         -Wall -O2 -funbox-strict-fields

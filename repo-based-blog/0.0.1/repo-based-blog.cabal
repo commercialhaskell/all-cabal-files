@@ -1,0 +1,119 @@
+name:               repo-based-blog
+version:            0.0.1
+synopsis:           Blogging module using blaze html for markup
+description:
+  This package contains a module that can be used in web applications. It's use
+  cases are only limited by the use of blaze for the markup of pages. If anynoe
+  cares to abstract that away, I would not stand in the way.
+  .
+  This package also contains an executable that uses the dyre library to allow
+  a configuration of a web application in the way xmonad or yi does. An examle
+  can be fount in the 'RBB' module.
+  .
+  The blog contents are managed via a version control system. The filestore
+  library has been used as a backend for this and hence the supported
+  repository types mainly depend on the filestore version used. Thes currently
+  suppored repository types are git, mercurial and darcs. The entries are
+  rendered using the pandoc library.
+  .
+  For more information see the haddock documentation of the exported modules or
+  the README.md included in this package.
+
+license:            BSD3
+license-file:       LICENSE
+author:             Sebastian Witte
+maintainer:         woozletoff@gmail.com
+copyright:          Copyright (C) 2014 Sebastian Witte
+category:           Web
+homepage:           https://github.com/saep/repo-based-blog
+bug-reports:        https://github.com/saep/repo-based-blog/issues
+build-type:         Simple
+extra-source-files: README.md changelog.md
+cabal-version:      >=1.10
+
+executable rbb
+  main-is:              Main.hs
+  hs-source-dirs:       executable
+  build-depends:        base >=4.6 && <5,
+                        repo-based-blog
+
+  hs-source-dirs:       executable
+  default-language:     Haskell2010
+  ghc-options:          -threaded -rtsopts -with-rtsopts=-N
+
+library
+  hs-source-dirs:       library
+  ghc-options:          -threaded -rtsopts -with-rtsopts=-N
+  default-language:     Haskell2010
+
+  build-depends:        base >=4.6 && <5,
+                        blaze-html >=0.7.0.2,
+                        containers,
+                        data-default,
+                        directory,
+                        dyre,
+                        filepath,
+                        filestore >=0.6.0.3,
+                        ixset,
+                        mtl,
+                        lens,
+                        old-locale,
+                        pandoc >=1.12.3.3,
+                        parsec >=3,
+                        stm,
+                        text,
+                        time,
+                        transformers,
+                        transformers-base,
+                        transformers-compat
+
+  exposed-modules:      Web.RBB,
+                        Web.RBB.Blog.Query
+
+  other-modules:        Web.RBB.Blog,
+                        Web.RBB.Config,
+                        Web.RBB.Converter,
+                        Web.RBB.Crawler,
+                        Web.RBB.Crawler.MetaCombiner,
+                        Web.RBB.Crawler.MetaParser,
+                        Web.RBB.Crawler.Repository,
+                        Web.RBB.Main,
+                        Web.RBB.Templates.Default,
+                        Web.RBB.Types,
+                        Web.RBB.Types.Blog,
+                        Web.RBB.Types.CachedEntry,
+                        Web.RBB.Types.Entry,
+                        Web.RBB.Types.FileType,
+                        Web.RBB.Util
+
+test-suite hspec
+  type:                 exitcode-stdio-1.0
+  hs-source-dirs:       test-suite, library
+  main-is:              Spec.hs
+  default-language:     Haskell2010
+  build-depends:        base,
+                        repo-based-blog,
+
+                        hspec ==2.*,
+                        hspec-discover,
+                        QuickCheck >=2.6,
+
+                        blaze-html,
+                        containers,
+                        filepath,
+                        directory,
+                        filestore,
+                        ixset,
+                        lens,
+                        mtl,
+                        old-locale,
+                        parsec >=3,
+                        stm,
+                        text,
+                        time,
+                        transformers,
+                        transformers-base,
+                        transformers-compat
+
+  cpp-options:          -DHTEST
+  ghc-options:          -threaded -rtsopts -with-rtsopts=-N

@@ -1,0 +1,30 @@
+Name: hask-home
+Version: 2007.12.6
+Cabal-version: >= 1.2
+Build-type: Simple
+Copyright: Bjorn Bringert 2006
+Maintainer: bjorn@bringert.net
+Author: Bjorn Bringert
+Homepage: http://www.cs.chalmers.se/~bringert/darcs/hask-home/doc/
+License: BSD3
+Synopsis: Generate homepages for cabal packages
+Description:
+ This program generates simple homepages for cabalized 
+ Haskell packages.
+
+Flag split-base
+
+Executable hask-home
+  Main-Is: hask-home.hs
+  Build-depends: Cabal >= 1.2, regex-compat, network, hmarkup >= 3000.0.1, xhtml >= 3000.0.2.1
+  if flag(split-base)
+    Build-depends: base >= 3.0, process, directory
+  else
+    Build-depends: base < 3.0
+
+Executable hask-home-upload
+  Main-Is: hask-home-upload.hs
+  if flag(split-base)
+    Build-depends: base >= 3.0, process
+  else
+    Build-depends: base < 3.0

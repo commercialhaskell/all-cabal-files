@@ -1,0 +1,46 @@
+Name:            simple-atom
+Version:         0.2
+License:         BSD3
+License-File:    LICENSE
+Author:          Koen Claessen, Niklas Sorensson
+Maintainer:      Thomas Schilling <nominolo@googlemail.com>
+Homepage:        http://github.com/nominolo/simple-atom
+Synopsis:        Atom (or symbol) datatype for fast comparision and sorting.
+Description:
+  This module provides an abstract datatype for atoms, such that:
+  .
+   * Each atom string is only in memory once
+  .
+   * @O(n)@ creation time
+  .
+   * @O(1)@ equality-comparison
+  .
+   * @O(1)@ (in practice) ord-comparison
+  .
+   * @Ord@-comparison results are independent on evaluation order
+  .
+  This module is thread-safe.
+                 
+Category:        Data, Compilers/Interpreters, Parsing
+Stability:       provisional
+Build-Type:      Simple
+Cabal-Version:   >= 1.6
+
+Flag debug
+  default: False
+
+Library
+  Build-Depends:
+    base          >= 3.0 && < 4.4,
+    containers    >= 0.2 && < 0.5,
+    deepseq       == 1.1.*
+
+  if (flag(debug))
+    Build-Depends: murmur-hash == 0.1.*
+  else
+    Cpp-Options: -DNDEBUG
+  Extensions: CPP
+
+  exposed-modules:
+    Data.Atom.Simple
+    Data.Atom.UF

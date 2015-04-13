@@ -1,0 +1,59 @@
+name:           bogre-banana
+description:	Boge-Banana is a 3D game engine using the Reactive-Banana FRP library, the HOIS library for input, and the HOGRE library for output. An introductory tutorial is avilable at http:\/\/www.haskell.org\/haskellwiki\/User_talk:DavidE.
+category:		Game Engine
+license:		BSD3
+license-file:	LICENSE
+version:        0.0.1
+cabal-version:	>= 1.4
+build-type:     Simple
+Maintainer:		EichmannD at gmail dot com
+author:         David Eichmann
+copyright:      David Michael Taro Eichmann
+
+extra-source-files:
+                   src/Workarounds/makefile
+                   src/Workarounds/BB/Types.hs
+                   src/Workarounds/BB/Workarounds.hs
+                   src/Workarounds/cbits/Workarounds.cpp
+                   src/Workarounds/cbits/Workarounds.h
+                   src/Workarounds/cpp/Workarounds.h
+                   src/Workarounds/interface/Workarounds.gr
+                   src/Workarounds/interface/Workarounds.if
+                   
+library
+  hs-source-dirs:  src
+  build-depends:   
+                   base >= 4,
+                   base < 5,
+                   random,
+                   reactive-banana >= 0.7.1.0,
+                   hois,
+                   monad-control,
+                   hogre
+  ghc-options:     -Wall
+  extensions: 	   ForeignFunctionInterface ImpredicativeTypes
+  extra-libraries: stdc++
+  C-sources:       src/Workarounds/cbits/Workarounds.cpp
+  Exposed-modules:
+                   BB.Util.Vec
+                   Reactive.Banana.BOGRE
+                   Reactive.Banana.BOGRE.OIS
+                   Reactive.Banana.BOGRE.OGRE
+  other-modules:
+                   BB.Types
+                   BB.Workarounds
+
+executable bogre-banana-snake
+  hs-source-dirs:  src
+  main-is:         Main.hs
+  build-depends:   
+                   base >= 4,
+                   random,
+                   hois,
+                   hogre
+  ghc-options:     -Wall
+  extensions: 	   ForeignFunctionInterface ImpredicativeTypes
+  C-sources: 	   ./src/Workarounds/cbits/Workarounds.cpp
+  other-modules:
+                   BB.Examples.Snake
+

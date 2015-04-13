@@ -1,0 +1,69 @@
+Name:                   serial-test-generators
+Version:                0.1.0
+Author:                 Scott <scottmurphy09@gmail.com>
+Maintainer:             Scott <scottmurphy09@gmail.com>
+License:                MIT
+License-File:           LICENSE
+Category:               Test
+Synopsis:               Test your 'Aeson' 'Serialize' and 'Binary' instances for stability over time
+Description:            
+                        When I am programming haskell I write a lot of
+                        @
+                        instance ToJSON ... where
+                        instance FromJSON ... where
+                        instance Binary ... where
+                        @
+                        These libraries are often associated with state.
+
+                        So, I end up writing a lot of tests of the form ...
+
+                        >>> expect (encode someTestAeson) `toBe` "{\"someSerializedThing\":\"expected encoding\"}
+
+                        so I have to write all these pieces down... but what I would really like is
+
+
+
+                        >>> runAesonSerializeTest someTestAeson outputfile.txt
+
+
+                        That is what these libraries do for Serialize, Binary and Aeson
+                        They make very little assumption about what version of the library you are using. 
+
+
+Cabal-Version:          >= 1.10
+Build-Type:             Simple
+
+Library
+  Default-Language:     Haskell2010
+  HS-Source-Dirs:       src
+  GHC-Options:          -Wall
+  Exposed-Modules:      Test.Serial
+  Other-Modules:        
+  Build-Depends:        base >= 4 && < 5
+                      , aeson
+                      , binary
+                      , cereal
+                      , bytestring >= 0.9.0
+                        
+
+Test-Suite spec
+  Type:                 exitcode-stdio-1.0
+  Default-Language:     Haskell2010
+  Hs-Source-Dirs:       src
+                      , test
+  Ghc-Options:          -Wall
+  Main-Is:              Spec.hs
+  Build-Depends:        base
+                      , hspec
+                      , QuickCheck 
+                      , aeson
+                      , binary
+                      , cereal
+                      , bytestring
+                      , transformers >= 0.3.0
+                      , system-fileio
+
+
+Source-Repository head
+  Type:                 git
+  Location:             https://github.com/smurphy8/serial-test-generators.git

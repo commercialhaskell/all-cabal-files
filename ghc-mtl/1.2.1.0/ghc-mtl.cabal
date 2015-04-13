@@ -1,0 +1,31 @@
+name:               ghc-mtl
+version:            1.2.1.0
+description:        Provides an 'mtl' compatible version of the 'GhcT'
+                    monad-transformer defined in the 'GHC-API' since version
+                    6.10.1.
+synopsis:           An mtl compatible version of the Ghc-Api monads
+                    and monad-transformers.
+category:           Development
+license:            BSD3
+license-file:       LICENSE
+author:             Daniel Gorin
+maintainer:         jcpetruzza@gmail.com
+homepage:           http://hub.darcs.net/jcpetruzza/ghc-mtl
+cabal-version:      >= 1.6
+build-type:         Simple
+tested-with:        GHC==6.10
+
+source-repository   head
+  type: darcs
+  location: http://hub.darcs.net/jcpetruzza/ghc-mtl
+
+
+Library
+  build-depends:      base >= 4, base <= 5,
+                      ghc >= 6.10,
+                      mtl,
+                      exceptions >= 0.6,
+                      extensible-exceptions
+  exposed-modules:    Control.Monad.Ghc
+  extensions:         GeneralizedNewtypeDeriving, CPP
+  ghc-options:        -Wall -O2

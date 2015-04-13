@@ -1,0 +1,18 @@
+Name:		typography-geometry
+Version: 	1.0
+Synopsis:	Drawings for printed text documents
+Description: 	Drawings for printed text documents
+Category:	Typography
+Maintainer:	Pierre-Etienne Meunier <pierreetienne.meunier@gmail.com>
+License:	GPL
+License-file:	LICENSE
+Build-Type:	Simple
+Cabal-Version:	>=1.6
+source-repository this
+        type: darcs
+        location: http://www.lama.univ-savoie.fr/~meunier/darcs/typography-geometry
+        tag: 1.0
+Library
+        Build-Depends:	base<5, vector,polynomials-bernstein,containers,parallel
+        Exposed-modules: Graphics.Typography, Graphics.Typography.Bezier,
+                         Graphics.Typography.Approximation, Graphics.Typography.Outlines

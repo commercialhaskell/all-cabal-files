@@ -1,0 +1,42 @@
+name:           BiobaseFR3D
+version:        0.1.0.1
+author:         Christian Hoener zu Siederdissen
+maintainer:     choener@tbi.univie.ac.at
+homepage:       http://www.tbi.univie.ac.at/~choener/
+copyright:      Christian Hoener zu Siederdissen, 2011
+category:       Bioinformatics
+synopsis:       Importer for FR3D resources
+license:        GPL-3
+license-file:   LICENSE
+build-type:     Simple
+stability:      experimental
+cabal-version:  >= 1.4.0
+description:
+                Provides importers for FR3D resource files. Of particular
+                interest are basepairs files which describe canonical and
+                non-canonical (non-Watson-Crick) base pairings in RNA secondary
+                structure.
+                .
+                The original FR3D paper is:
+                .
+                FR3D: Finding Local and Composite Recurrent Structural Motifs
+                in RNA 3D Structures, Michael Sarver; Craig L. Zirbel; Jesse
+                Stombaugh; Ali Mokdad; Neocles B. Leontis. /Journal of
+                Mathematical Biology/ (2008) 56:215–252.
+
+
+extra-source-files:
+
+library
+  build-depends:
+    base >3 && <5,
+    bytestring,
+    filemanip,
+    iteratee
+
+  exposed-modules:
+    Biobase.FR3D
+    Biobase.FR3D.Import
+
+  ghc-options:
+    -O2

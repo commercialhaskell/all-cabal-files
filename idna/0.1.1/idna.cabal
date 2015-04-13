@@ -1,0 +1,16 @@
+Name: idna
+Version: 0.1.1
+Description: Implements IDNA -- Internationalized Domain Names in Applications (RFC 3490).
+Synopsis: Implements IDNA (RFC 3490).
+License: BSD3
+Author: George Pollard <porges@porg.es>
+Maintainer: George Pollard <porges@porg.es>
+Build-Type: Simple
+Cabal-Version: >=1.6
+License-file: LICENSE
+Category: Data, Text, RFC
+
+Library
+ Build-Depends: base, encoding>=0.5.1, stringprep>=0.1.2, text>=0.1
+ Exposed-modules: Text.IDNA
+ ghc-options: -O2 -Wall

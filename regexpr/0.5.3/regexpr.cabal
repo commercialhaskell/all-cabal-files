@@ -1,0 +1,46 @@
+Name:		regexpr
+Version:	0.5.3
+License:	LGPL
+License-File:	LICENSE
+Author:		Yoshikuni Jujo <PAF01143@nifty.ne.jp>
+Maintainer:	PAF01143@nifty.ne.jp
+Stability:	experimental
+Homepage:	http://homepage3.nifty.com/salamander/second/projects/regexpr/
+Synopsis:	regular expression like Perl/Ruby in Haskell
+Description:
+  Regular expression library like Perl and Ruby's regular expressions.
+  This package has a module RegexPR.
+  And RegexPR export functions matchRegexPR and gsubRegexPR.
+  .
+  > matchRegexPR      :: String -> String -> Maybe ((String, (String, String)), [(Int, String)])
+  > multiMatchRegexPR :: String -> String -> [ ((String, (String, String)), [(Int, String)]) ]
+  > gmatchRegexPR     :: String -> String -> [ ((String, (String, String)), [(Int, String)]) ]
+  > getbrsRegexPR     :: String -> String -> [ String ]
+  > ggetbrsRegexPR    :: String -> String -> [ [ String ] ]
+  > subRegexPR        :: String -> String -> String -> String
+  > subRegexPRBy      :: String -> (String -> String) -> String -> String
+  > gsubRegexPR       :: String -> String -> String -> String
+  > gsubRegexPRBy     :: String -> (String -> String) -> String -> String
+  > splitRegexPR      :: String -> String -> [String]
+  .
+  Examples
+  .
+  > matchRegexPR "ab(cde)f\\1" "kkkabcdefcdefgh" =>
+  >              Just (("abcdefcde", ("kkk", "fgh")),[(1,"cde")])
+  > matchRegexPR "(?<=hij)abc" "kkkabchijabcde" =>
+  >              Just (("abc",("kkkabchij","de")),[])
+  > gsubRegexPR "\\G(\\d\\d\\d)" "\\1," "123456 789" => "123,456, 789"
+  > subRegexPR "(?<=(.)(.)(.))e" " \\3\\2\\1 " "abcdefg" => "abcd dcb fg"
+  > gsubRegexPR "(?ixm)  aBc  . # comment \n\n" "abc!" "abc\nABCDAbcAbc" =>
+  >             "abc!abc!abc!bc"
+  > gmatchRegexPR "(?=(?<!(?!abc)))abc" "abcdefdefabc" =>
+  >              [(("abc", ("", "defdefabc")), []), (("abc", ("defdef", "")), [])]
+  > splitRegexPR "\\s*,\\s*" "a,b ,c\t ,d , e" => ["a","b","c","d","e"]
+Category:	Text
+Build-Depends:	base < 5, mtl, HUnit, mtlparse >= 0.1.0
+Build-Type:     Simple
+Exposed-modules: Text.RegexPR
+Other-modules:	Hidden.RegexPRTypes, Hidden.Tools, Hidden.RegexPRCore,
+		Hidden.ParseRegexStr, Hidden.SrcRegActList
+Extra-source-files:
+ghc-options:    -Wall

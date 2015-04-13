@@ -1,0 +1,27 @@
+name:                aeson-streams
+version:             0.1.0
+Cabal-Version:       >= 1.8
+synopsis:            An HTTP client library for JSON-based APIs
+description:         An HTTP client library for JSON-based APIs using aeson and http-streams.
+category:            Web
+license:             BSD3
+license-file:        LICENSE
+author:              Vo Minh Thu
+maintainer:          thu@hypered.io
+build-type:          Simple
+homepage:            https://github.com/noteed/aeson-streams
+
+source-repository head
+  type: git
+  location: git://github.com/noteed/aeson-streams.git
+
+library
+  build-depends:       aeson == 0.6.*,
+                       attoparsec == 0.10.*,
+                       base == 4.*,
+                       bytestring > 0.9 && < 0.11,
+                       HsOpenSSL == 0.10.*,
+                       http-streams >= 0.7 && <= 0.9,
+                       io-streams == 1.1.*
+  exposed-modules:     Network.Aeson.Client
+  ghc-options:         -Wall

@@ -1,0 +1,18 @@
+name: ObjectName
+version: 1.0.1.0
+license: BSD3
+license-file: LICENSE
+maintainer: Sven Panne <svenpanne@gmail.com>
+bug-reports: https://github.com/haskell-opengl/ObjectName/issues
+homepage: https://github.com/haskell-opengl/ObjectName
+category: Data
+synopsis: Explicitly handled object names
+description:
+   This tiny package contains the class ObjectName, which corresponds to the
+   general notion of explicitly handled identifiers for API objects, e.g. a
+   texture object name in OpenGL or a buffer object name in OpenAL.
+build-type: Simple
+exposed-modules: Data.ObjectName
+hs-Source-Dirs: src
+ghc-options: -Wall
+build-depends: base >= 3 && < 5

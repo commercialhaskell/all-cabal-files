@@ -1,0 +1,54 @@
+Name:                   Hach
+Version:                0.0.1
+Category:               Network
+Description:            Simple chat
+Synopsis:               Simple chat
+
+License:                MIT
+License-file:           LICENSE
+
+Author:                 Matvey Aksenov,
+                        Dmitry Malikov
+
+Maintainer:             Dmitry Malikov <malikov.d.y@gmail.com>
+
+Build-type:             Simple
+Cabal-version:          >= 1.6
+Homepage:               http://github.com/dmalikov/HaCh
+
+Library
+  Build-Depends:        base >= 3 && < 5,
+                        containers,
+                        old-locale,
+                        network,
+                        time
+
+  HS-Source-Dirs:       libhach
+
+  Exposed-Modules:      Hach.Types
+
+  GHC-Options:          -Wall
+
+Executable hach-client
+  Main-is:              Client.hs
+  HS-Source-Dirs:       client, libhach
+  Other-modules:        Format
+
+Executable hach-nclient
+  Build-Depends:        vty == 4.7.0.12,
+                        vty-ui == 1.5
+  Main-is:              Client.hs
+  HS-Source-Dirs:       nclient, libhach
+  Other-modules:        NClient.Args,
+                        NClient.Connect,
+                        NClient.Format,
+                        NClient.GUI
+
+Executable hach-server
+  Main-is:              Server.hs
+  HS-Source-Dirs:       server, libhach
+  Other-modules:        Storage
+
+Source-repository head
+  type: git
+  location: https://github.com/dmalikov/HaCh

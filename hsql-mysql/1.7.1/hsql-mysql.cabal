@@ -1,0 +1,19 @@
+name: hsql-mysql 
+version: 1.7.1 
+license: BSD3 
+author: Krasimir Angelov <kr.a...@gmail.com> 
+category: Database 
+description: MySQL driver for HSQL. 
+synopsis: MySQL driver for HSQL.
+ghc-options: -O2 
+build-depends: base==3.*, hsql, Cabal, old-time 
+extensions: ForeignFunctionInterface, CPP 
+include-dirs: Database/HSQL, /usr/include/mysql 
+build-type: Simple 
+extra-source-files: Database/HSQL/HsMySQL.h 
+extra-libraries: mysqlclient 
+extra-lib-dirs: /usr/lib/mysql 
+exposed-modules: Database.HSQL.MySQL 
+maintainer: Chris Done <chrisdone@gmail.com>
+license-file: LICENSE
+cabal-version: >= 1.6

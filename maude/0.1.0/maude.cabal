@@ -1,0 +1,18 @@
+Name:               maude
+Version:            0.1.0
+Synopsis:           An interface to the Maude rewriting system.
+Description:        This package provides a simple interface for doing Maude
+                    rewrites from within Haskell.        
+Homepage:           http://git.mzero.org/maude/
+License:            BSD3
+License-file:       LICENSE
+Author:             David Lazar
+Maintainer:         David Lazar <lazar6@illinois.edu>
+Category:           Foreign
+Build-type:         Simple
+Cabal-version:      >=1.2
+
+
+Library
+  Exposed-modules:  Foreign.Maude
+  Build-depends:    base >= 4 && < 5, process, directory

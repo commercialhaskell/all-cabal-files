@@ -1,0 +1,34 @@
+name:               th-orphans
+version:            0.8.3
+cabal-version:      >= 1.6
+build-type:         Simple
+license:            BSD3
+license-file:       LICENSE
+category:           Template Haskell
+author:             Matt Morrow
+copyright:          (c) Matt Morrow
+maintainer:         Michael Sloan <mgsloan at gmail>
+bug-reports:        https://github.com/mgsloan/th-orphans/issues
+stability:          experimental
+tested-with:        GHC == 6.12.3, GHC == 7.0.4, GHC == 7.2.2, GHC == 7.4.2,
+                    GHC == 7.6.1, GHC == 7.8
+synopsis:           Orphan instances for TH datatypes
+description:        Orphan instances for TH datatypes.  In particular, instances
+                    for Ord and Lift, as well as a few missing Show / Eq.  These
+                    instances used to live in haskell-src-meta, and that's where
+                    the version number started.
+
+library
+  build-depends:   base >= 4.2 && < 5,
+                   template-haskell,
+                   th-lift >= 0.5,
+                   th-reify-many >= 0.1 && < 0.2
+
+  hs-source-dirs:  src
+  ghc-options:     -Wall
+  exposed-modules: Language.Haskell.TH.Instances
+  other-modules:   Language.Haskell.TH.Instances.Internal
+
+source-repository head
+  type:     git
+  location: git://github.com/mgsloan/th-orphans.git

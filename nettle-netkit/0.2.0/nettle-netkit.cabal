@@ -1,0 +1,38 @@
+Name:           nettle-netkit
+Version:        0.2.0
+Synopsis:       DSL for describing OpenFlow networks, and a compiler generating NetKit labs. 
+Cabal-Version:  >=1.2
+Build-Type:     Simple
+Stability:      Experimental
+Category:       Network
+License: 	BSD3
+License-file:   LICENSE
+Author: 	Andreas Voellmy
+Maintainer: 	andreas.voellmy@yale.edu
+
+Description:
+  DSL for describing OpenFlow networks, and a compiler generating NetKit labs. 
+
+extra-source-files: 
+  LICENSE
+  README
+  src/Examples/OneSwitchLab.hs
+  src/Examples/TwoSwitchLab.hs
+  src/Examples/ThreeSwitchLab.hs
+  src/Examples/FourSwitchLab.hs
+ 
+
+Library
+  hs-source-dirs: src
+
+  exposed-modules:
+    Nettle.Netkit.LabUtil Nettle.Netkit.UnionFind
+
+  build-depends:
+    base >= 4 && < 5
+    , unix
+    , filepath
+    , directory
+    , containers
+    , mtl
+    , nettle-openflow >= 0.2.0

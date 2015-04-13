@@ -1,0 +1,29 @@
+Name:		unusable-pkg
+Version:	0.1
+License:	BSD3
+License-file:	LICENSE
+Author:		Yuriy Iskra <iskra.yw@gmail.com>
+Maintainer:	Yuriy Iskra 
+Category:	Utils 
+Synopsis:	Utility construction of the graph depending unusable packages.
+Description:
+  Utility construction of the graph (/dot/ format) dependencies unusable packets
+  from the output of /stderr ghc -v/. 
+  .
+  Usage(tested only /Ubuntu/):
+  .
+  @#!\/bin\/bash
+  .
+  ghc -v 2>&1 | unusablepkg | tred | dot -Tpdf > unusable.pdf
+  .
+  #evince unusable.pdf@
+
+Build-type:     Simple
+Cabal-version:  >=1.2
+
+Executable unusablepkg
+  Build-depends:  base >= 3 && < 6
+  GHC-Options: -Wall
+  Hs-Source-Dirs: src
+  Main-Is: Main.hs
+

@@ -1,0 +1,33 @@
+name:                vector-instances
+version:             2.1
+synopsis:            Orphan Instances for 'Data.Vector'
+homepage:            http://github.com/ekmett/vector-instances
+bug-reports:         http://github.com/ekmett/vector-instances/issues
+license:             BSD3
+license-file:        LICENSE
+author:              Edward Kmett
+maintainer:          ekmett@gmail.com
+category:            Data, Data Structures
+build-type:          Simple
+cabal-version:       >=1.6
+extra-source-files: .travis.yml
+
+source-repository head
+  type: git
+  location: git://github.com/ekmett/vector-instances.git
+
+library
+  other-extensions:
+    TypeFamilies
+
+  exposed-modules:
+    Data.Vector.Instances
+
+  build-depends:
+    base          >= 4       && < 5,
+    vector        >= 0.9     && < 0.10,
+    semigroupoids >= 1.3.1.2 && < 1.4,
+    semigroups    >= 0.8.3.1 && < 0.9,
+    comonad       >= 1.1.1.5 && < 1.2,
+    pointed       >= 2.1.0.1 && < 2.2,
+    keys          >= 2.2     && < 2.3

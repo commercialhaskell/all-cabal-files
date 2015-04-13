@@ -1,0 +1,41 @@
+name:                selenium
+version:             0.2.5
+cabal-version:       >= 1.6
+synopsis:            Test web applications through a browser.
+description:         NOTE: This package is considered deprecated as of April
+                     2012. The 'webdriver' package on Hackage is more complete
+                     and uses the more modern WebDriver protocol used by
+                     recent Selenium versions.
+
+                     Haskell bindings to communicate with a Selenium Remote
+                     Control server. This package makes it possible to use
+                     Haskell to write test scripts that exercise web
+                     applications through a web browser.
+
+category:            Web
+license:             BSD3
+license-file:        LICENSE
+author:              Aaron Tomb <atomb@galois.com>
+maintainer:          Aaron Tomb <atomb@galois.com>
+build-type:          Simple
+
+source-repository head
+  type:     darcs
+  location: http://code.haskell.org/selenium
+
+flag small_base
+  description: Choose the new smaller, split-up base package.
+
+library
+    if flag(small_base)
+        build-depends: base >= 3 && < 6, pretty, HTTP, network, mtl, HUnit
+    else
+        build-depends: base < 3, HTTP, network, mtl, HUnit
+    extensions: CPP, GeneralizedNewtypeDeriving
+    ghc-options: -Wall
+    ghc-prof-options: -prof -auto-all
+    exposed-modules: Test.Selenium.Syntax
+                     Test.Selenium.Server
+                     Test.Selenium.Pretty
+                     Test.Selenium.HUnit
+                     Test.Selenium.Interactive

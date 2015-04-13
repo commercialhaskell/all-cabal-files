@@ -1,0 +1,35 @@
+name:           exception-monads-tf
+version:        0.3.0.1
+cabal-version:  >= 1.10
+license:        BSD3
+license-file:   LICENSE
+copyright:      (c) 2008-2011 Harvard University
+author:         Geoffrey Mainland <mainland@eecs.harvard.edu>
+maintainer:     mainland@eecs.harvard.edu
+stability:      alpha
+homepage:       http://www.eecs.harvard.edu/~mainland/
+category:       Control, Monad, Error Handling, Failure
+synopsis:       Exception monad transformer instances for monads-tf classes.
+description:    This package provides exception monad transformer instances for
+                the classes defined by monads-tf.
+
+build-type:     Simple
+
+library
+  default-language: Haskell98
+
+  exposed-modules:
+    Control.Monad.Exception.Instances
+
+  build-depends:
+    base >= 4 && < 5,
+    exception-transformers >= 0.3 && < 0.4,
+    monads-tf >= 0.1 && < 0.2,
+    transformers >=0.2 && <0.3
+
+  ghc-options:
+    -Wall
+
+source-repository head
+  type:     git
+  location: git://github.com/mainland/exception-monads-tf.git

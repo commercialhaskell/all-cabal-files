@@ -1,0 +1,51 @@
+Name:                texmath
+Version:             0.1.0.1
+Cabal-version:       >= 1.2
+Build-type:          Simple
+Synopsis:            Conversion of LaTeX math formulas to MathML.
+Description:         The texmathml library provides functions to convert LaTeX
+                     math formulas to presentation MathML. It supports
+                     basic LaTeX and AMS extensions, but not macros.
+Category:            Text
+Stability:           Experimental
+License:             GPL
+License-File:        LICENSE
+Author:              John MacFarlane
+Maintainer:          jgm@berkeley.edu
+Homepage:            http://github.com/jgm/texmath
+Data-Files:          cgi/texmath.xhtml, examples
+
+Flag cgi
+  description:       Compile cgi executable.
+  default:           True
+
+Flag test
+  description:       Compile test executable.
+  default:           True
+
+Library
+    Build-depends:       base >= 4 && < 5, xml, parsec >= 2 && < 3, containers
+
+    Exposed-modules:     Text.TeXMath, Text.TeXMath.Parser, Text.TeXMath.MathMLWriter
+
+    Ghc-Options:         -Wall
+    Ghc-Prof-Options:    -auto-all
+
+Executable testTeXMathML
+    Main-is:             testTeXMathML.hs
+    Ghc-Options:         -Wall
+    Ghc-Prof-Options:    -auto-all
+    if flag(test)
+      Buildable:         True
+    else
+      Buildable:         False
+
+Executable texmath-cgi
+    Main-is:             cgi/texmath-cgi.hs
+    Build-depends:       cgi, json
+    Ghc-Options:         -Wall
+    Ghc-Prof-Options:    -auto-all
+    if flag(cgi)
+      Buildable:         True
+    else
+      Buildable:         False

@@ -1,0 +1,45 @@
+Name:                   wai-app-file-cgi
+Version:                0.4.3
+Author:                 Kazu Yamamoto <kazu@iij.ad.jp>
+Maintainer:             Kazu Yamamoto <kazu@iij.ad.jp>
+License:                BSD3
+License-File:           LICENSE
+Synopsis:               File/CGI App of WAI
+Description:            This WAI application handles static files and
+                        executes CGI scripts.
+Homepage:               http://www.mew.org/~kazu/
+Category:               Web, Yesod
+Cabal-Version:          >= 1.6
+Build-Type:             Simple
+library
+  if impl(ghc >= 6.12)
+    GHC-Options:        -Wall -fno-warn-unused-do-bind
+  else
+    GHC-Options:        -Wall
+  Exposed-Modules:      Network.Wai.Application.Classic
+  Other-Modules:        Network.Wai.Application.Classic.CGI
+                        Network.Wai.Application.Classic.EnumLine
+                        Network.Wai.Application.Classic.Field
+                        Network.Wai.Application.Classic.File
+                        Network.Wai.Application.Classic.FileInfo
+                        Network.Wai.Application.Classic.Header
+                        Network.Wai.Application.Classic.Lang
+                        Network.Wai.Application.Classic.MaybeIter
+                        Network.Wai.Application.Classic.Range
+                        Network.Wai.Application.Classic.RevProxy
+                        Network.Wai.Application.Classic.Status
+                        Network.Wai.Application.Classic.Types
+                        Network.Wai.Application.Classic.Utils
+  Build-Depends:        base >= 4 && < 5, process,
+                        network, transformers,
+                        filepath, directory, unix,
+                        containers, attoparsec >= 0.10.0.0,
+                        wai, enumerator >= 0.4.9,
+                        bytestring, blaze-builder,
+                        wai-app-static >= 0.3, http-types, http-date,
+                        case-insensitive, static-hash,
+                        wai-logger, wai-logger-prefork,
+                        http-enumerator
+Source-Repository head
+  Type:                 git
+  Location:             https://github.com/kazu-yamamoto/wai-app-file-cgi

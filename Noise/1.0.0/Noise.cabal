@@ -1,0 +1,69 @@
+name:          Noise
+version:       1.0.0
+maintainer:    Hugo Daniel <hugodaniel@hackological.com>
+cabal-version: >= 1.6
+build-type:    Simple
+category:      Math
+synopsis:      A Haskell coherent noise generator
+description:   A Haskell coherent noise generator roughly based on libnoise.
+               For more information on libnoise, please check: <http://libnoise.sourceforge.net>.
+               .
+               The noise modules were extensively profiled and benchmarked,
+               the slower pure functions were rewritten in C.
+               The main objective of this packer is to provide a simple interface 
+               to compose noise modules.
+               .
+               You could compose several noise modules like this:
+               .
+               > myPerlin = perlin `isSourceOf` scalebias { scale = 1.0 } 
+                                   `isSourceOf` absolute
+               > myComposition = perlin { perlinFrequency = 0.123 } 
+                                 `andModule` billow { billowOctaves = 12 } 
+                                 `andModule` myPerlin 
+                                 `areSourcesOf` 
+                                 select { upperBound = 0.7, lowerBound = 0.2 }
+               .
+               This is a 3D noise package, to get a value you need to specify a
+               triple:
+               .
+               > getValue myComposition (-0.1, -0.5, 0.76)
+               .
+               For more information please read the documentation of each module 
+               bellow.
+
+license:       BSD3
+license-file:  LICENSE
+
+extra-source-files:
+  README.txt
+  Math/Noise/common.h
+  Math/Noise/noisegen.h
+  Math/Noise/Modules/perlin.h
+
+library
+  build-depends:
+    base < 5, vector, array, data-default
+
+  exposed-modules:
+    Math.Noise
+    Math.Noise.NoiseGen
+    Math.Noise.NoiseModule
+    Math.Noise.Modules.Abs
+    Math.Noise.Modules.Billow
+    Math.Noise.Modules.Perlin
+    Math.Noise.Modules.Select
+    Math.Noise.Modules.ScaleBias
+  other-modules:
+    Math.Noise.Interpolation
+    Math.Noise.VectorTable
+
+  ghc-options: -O2 -funbox-strict-fields
+  extensions: BangPatterns 
+  include-dirs:
+    Math/Noise
+    Math/Noise/Modules
+
+  c-sources:
+    Math/Noise/noisegen.c
+    Math/Noise/Modules/perlin.c
+    

@@ -1,0 +1,22 @@
+Name:                lha
+Version:             0.1
+Synopsis:            Data structures for the Les Houches Accord
+Description:         This package provides data structures for HEP events, as outlined by the Les Houches Accord (hep-ph/0109068v1)
+Homepage:            https://github.com/bytbox/lha.hs
+License:             MIT
+License-file:        LICENSE
+Author:              Scott Lawrence
+Maintainer:          bytbox@gmail.com
+Category:            Physics
+Build-type:          Simple
+Cabal-version:       >=1.10
+
+Library
+  Exposed-modules:   Data.LHA
+  Default-language:    Haskell2010
+  Build-depends: haskell2010 >= 1.0
+   
+source-repository head
+  type:  git
+  location: https://github.com/bytbox/lha.hs.git
+ 

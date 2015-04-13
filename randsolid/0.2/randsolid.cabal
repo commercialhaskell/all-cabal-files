@@ -1,0 +1,15 @@
+Name:                randsolid
+Version:             0.2
+Synopsis:            Set the background of your root window to a random colour.
+Description:         Set the background of your root window to a random colour (or just print the colour).
+Category:            System
+License:             PublicDomain
+License-file:        LICENSE
+Author:              Johannes Martinsson
+Maintainer:          w+randsolid@antiklimax.se
+Cabal-version:       >= 1.2
+Build-type:          Simple
+
+Executable           randsolid
+    Main-is:         Randsolid.hs
+    Build-depends:   base >= 3 && < 4, X11, random

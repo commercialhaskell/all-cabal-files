@@ -1,0 +1,22 @@
+Name:                external-sort
+Version:             0.1
+Synopsis:            Sort large arrays on your hard drive. Kind of like the unix util sort.
+Description:         Sort arrays too large to fit in ram, by using your hard drive.
+Category:            Algorithms
+License:             BSD3
+Author:              Ben Midfield
+
+Maintainer:          thomashartman1 at gmail dot com
+
+Stability:           ExperimentalCategory:            Other
+Build-type:          Simple
+Cabal-version: >=1.2
+
+Build-Depends:   base >= 3, EdisonCore, EdisonAPI, bytestring, binary
+
+hs-source-dirs:      src
+Exposed-modules:
+                     Algorithms.ExternalSort
+
+Extra-Source-Files:
+                     demo.hs

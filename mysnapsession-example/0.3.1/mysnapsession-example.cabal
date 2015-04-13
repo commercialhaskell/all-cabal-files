@@ -1,0 +1,60 @@
+Name:                mysnapsession-example
+Version:             0.3.1
+Synopsis:            Example projects using mysnapsession
+Description:         This is a collection of simple web applications that use
+                     the mysnapsession package for stateful HTTP.
+                     .
+                     As of version 0.3, this uses Cabal's data file mechanism,
+                     so you'll need to install before you run to copy the
+                     data files to where they are expected.
+License:             BSD3
+License-file:        LICENSE
+Author:              Chris Smith <cdsmith@gmail.com>
+Maintainer:          Chris Smith <cdsmith@gmail.com>
+Stability:           Experimental
+Category:            Web
+Build-type:          Simple
+Cabal-version:       >=1.6
+
+Data-files:  animalgame/resources/static/*.css,
+             animalgame/resources/templates/*.tpl,
+             clientcount/resources/static/*.css,
+             clientcount/resources/templates/*.tpl
+
+Executable animalgame
+  Hs-source-dirs:      animalgame/src
+  Main-is:             Main.hs
+  Other-modules:       Main, Application, Site
+
+  Build-depends:
+    base >= 4 && < 5,
+    bytestring >= 0.9.1 && < 0.10,
+    heist >= 0.4 && < 0.5,
+    mtl >= 2 && < 3,
+    snap >= 0.3 && < 0.4,
+    snap-core >= 0.3 && < 0.4,
+    snap-server >= 0.3 && <0.4,
+    mysnapsession == 0.3.1,
+    clientsession == 0.4.*
+
+  Ghc-options: -threaded -Wall -fwarn-tabs -funbox-strict-fields
+               -fno-warn-orphans
+
+Executable clientcount
+  Hs-source-dirs:      clientcount/src
+  Main-is:             Main.hs
+  Other-modules:       Main, Application, Site
+
+  Build-depends:
+    base >= 4 && < 5,
+    bytestring >= 0.9.1 && < 0.10,
+    heist >= 0.4 && < 0.5,
+    mtl >= 2 && < 3,
+    snap >= 0.3 && < 0.4,
+    snap-core >= 0.3 && < 0.4,
+    snap-server >= 0.3 && <0.4,
+    time >= 1.1 && < 1.3,
+    mysnapsession == 0.3.*
+
+  Ghc-options: -threaded -Wall -fwarn-tabs -funbox-strict-fields
+               -fno-warn-orphans

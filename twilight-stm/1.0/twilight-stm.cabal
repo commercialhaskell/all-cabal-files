@@ -1,0 +1,19 @@
+cabal-version: >=1.1
+build-type: Simple
+name: twilight-stm
+version: 1.0
+license: GPL
+maintainer: Annette Bieniusa
+homepage: http://proglang.informatik.uni-freiburg.de/projects/twilight/
+description: STM with safe irrevocable I/O and inconsistency repair
+synopsis: Twilight STM library
+category: Concurrency
+stability: Unstable
+copyright: Annette Bieniusa
+library
+  build-depends: base>=4 && <10
+  build-depends: haskell98, liboleg, containers
+  exposed-modules: STM, STMHelpers, Semaphore, Counter
+  extensions:  
+  ghc-options: 
+  hs-source-dirs: src

@@ -1,0 +1,24 @@
+Name:                DarcsHelpers
+Version:             0.1
+Synopsis:            Code used by Patch-Shack that seemed sensible to open for reusability
+Description:         Parse darcs output
+
+License:             GPL
+License-file:        gpl.txt
+Author:              Thomas Hartman
+
+Maintainer:          thomashartman1 at gmail dot com
+Copyright:           2008 Thomas Hartman
+
+Stability:           Experimental
+Category:            Web
+Build-type:          Simple
+
+Cabal-Version:       >= 1.2
+
+Exposed-Modules: Darcs.Helpers, Darcs.Helpers.Parse
+Build-Depends:  base >= 3, mtl, safe, parsec, xml-parsec, HaXml == 1.19.4
+
+
+
+

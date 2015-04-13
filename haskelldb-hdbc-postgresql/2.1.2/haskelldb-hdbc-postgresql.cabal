@@ -1,0 +1,38 @@
+Name: haskelldb-hdbc-postgresql
+Version: 2.1.2
+Cabal-version: >= 1.6
+Build-type: Simple
+Homepage: https://github.com/m4dc4p/haskelldb
+Copyright: The authors
+Maintainer: haskelldb-users@lists.sourceforge.net
+Author: Daan Leijen, Conny Andersson, Martin Andersson, Mary Bergman, Victor Blomqvist, Bjorn Bringert, Anders Hockersten, Torbjorn Martin, Jeremy Shaw
+License: BSD3
+License-file: LICENSE
+Synopsis: HaskellDB support for the HDBC PostgreSQL driver.
+Description: HaskellDB requires this driver if HDBC will be used to connect to a PostgreSQL database.
+Category: Database
+
+Library
+  Build-depends: 
+    mtl >= 1 && < 3, 
+    haskelldb >= 2 && < 3,
+    haskelldb-hdbc >= 2 && < 3,
+    HDBC >= 2 && < 3,
+    HDBC-postgresql >= 2 && < 3,
+    base >= 3 && < 5
+
+  Exposed-Modules:
+        Database.HaskellDB.HDBC.PostgreSQL
+  ghc-options: -fwarn-incomplete-patterns
+
+-- Note: Extra library and include directories must be passed on commandline:
+-- cabal install --extra-include-dirs="F:\Program Files\PostgreSQL\8.4\include" --extra-include-dirs="F:\Program Files\PostgreSQL\8.4\include\server" --extra-lib-dirs="F:\Program Files\PostgreSQL\8.4\bin"
+Executable DBDirect-hdbc-postgresql
+  Main-is: DBDirect.hs
+  Include-dirs: .
+  Extra-Libraries: pq
+
+Source-repository head
+  Type:       git
+  Location:   https://github.com/m4dc4p/haskelldb
+

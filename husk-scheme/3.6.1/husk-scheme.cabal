@@ -1,0 +1,77 @@
+Name:                husk-scheme
+Version:             3.6.1
+Synopsis:            R5RS Scheme interpreter, compiler, and library.
+Description:         A dialect of R5RS Scheme written in Haskell. Provides advanced 
+                     features including continuations, hygienic macros, a Haskell FFI,
+                     and the full numeric tower.
+License:             MIT
+License-file:        LICENSE
+Author:              Justin Ethier
+Maintainer:          Justin Ethier <github.com/justinethier>
+Homepage:            http://justinethier.github.com/husk-scheme
+Cabal-Version:       >= 1.8
+Build-Type:          Simple
+Category:            Compilers/Interpreters, Language
+Tested-with:         GHC == 7.2.2, GHC == 7.0.2, GHC == 6.12.3, GHC == 6.10.4
+
+Extra-Source-Files:  README.markdown
+                     ChangeLog.markdown
+                     LICENSE
+                     AUTHORS
+Data-Files:          stdlib.scm srfi/srfi-1.scm srfi/srfi-55.scm
+
+Source-Repository head
+    Type:            git
+    Location:        git://github.com/justinethier/husk-scheme.git
+
+flag useffi
+    description: Turn off FFI to decrease build times and minimize executable sizes
+    default: True
+
+flag useptrs
+    description: Turn off pointers to increase performance at the expense of severely restricting the functionality of mutable variables. Setting this flag to false will revert back to the behavior from previous versions of husk.
+    default: True
+
+Library
+  Build-Depends:   base >= 2.0 && < 5, array, containers, haskeline, transformers, mtl, parsec, directory
+  Extensions:      ExistentialQuantification
+  Hs-Source-Dirs:  hs-src
+  Exposed-Modules: Language.Scheme.Core
+                   Language.Scheme.Types
+                   Language.Scheme.Variables
+                   Language.Scheme.Compiler
+                   Language.Scheme.Plugins.CPUTime
+-- Other-Modules:
+                   Language.Scheme.Macro
+                   Language.Scheme.Macro.ExplicitRenaming
+                   Language.Scheme.Macro.Matches
+                   Language.Scheme.Numerical
+                   Language.Scheme.Parser
+                   Language.Scheme.Primitives
+  if flag(useffi)
+    Build-Depends: ghc, ghc-paths
+    Exposed-Modules:  Language.Scheme.FFI
+    cpp-options: -DUseFfi
+
+  if flag(useptrs)
+    cpp-options: -DUsePointers
+
+Executable         huski
+  Build-Depends:   husk-scheme, base >= 2.0 && < 5, array, containers, haskeline, transformers, mtl, parsec, directory
+  if flag(useffi)
+    Build-Depends: ghc, ghc-paths
+    cpp-options: -DUseFfi
+  Extensions:      ExistentialQuantification
+  Main-is:         shell.hs
+  Hs-Source-Dirs:  hs-src/Interpreter
+
+Executable huskc
+  Build-Depends: husk-scheme, base >= 2.0 && < 5, array, containers, haskeline, transformers, mtl, parsec, directory, ghc-paths, process, filepath
+  if flag(useffi)
+    Build-Depends: ghc, ghc-paths
+    cpp-options: -DUseFfi
+  if flag(useptrs)
+    cpp-options: -DUsePointers
+  Extensions:      ExistentialQuantification
+  Main-is: huskc.hs
+  Hs-Source-Dirs: hs-src/Compiler

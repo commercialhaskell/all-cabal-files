@@ -1,0 +1,35 @@
+name:                hackage-proxy
+version:             0.1.0.0
+synopsis:            Provide a proxy for Hackage which modifies responses in some way.
+description:         The motivating use case for this is testing packages with newer versions of GHC. In this case, upper bounds on base, process, and a few other packages will often prevent compilation. This proxy will allow you to strip those upper bounds and proceed with compilation. In the future, other features may be added as well, such as package replacement.
+homepage:            http://github.com/snoyberg/hackage-proxy
+license:             MIT
+license-file:        LICENSE
+author:              Michael Snoyman
+maintainer:          michael@snoyman.com
+category:            Development
+build-type:          Simple
+cabal-version:       >=1.8
+
+executable hackage-proxy
+  main-is:             hackage-proxy.hs
+  other-modules:       HackageProxy
+                       TweakCabal
+  build-depends:       base >= 4.5 && < 5
+                     , classy-prelude >= 0.5
+                     , Cabal >= 1.12
+                     , wai >=1.3
+                     , warp >=1.3
+                     , http-conduit >=1.8
+                     , transformers >= 0.2
+                     , case-insensitive
+                     , conduit >= 0.5
+                     , tar >=0.4
+                     , filepath
+                     , blaze-builder >= 0.3
+                     , zlib-conduit >= 0.5
+                     , http-types >= 0.7
+                     , zlib >=0.5
+                     , bytestring >= 0.9
+                     , text >= 0.11
+                     , optparse-applicative >= 0.5

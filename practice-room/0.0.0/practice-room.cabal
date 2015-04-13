@@ -1,0 +1,27 @@
+Name:                 practice-room
+Version:              0.0.0
+Build-type:           Simple
+Synopsis:             Watch the practice time for whatever practice you are trying to make, e.g. a piano?
+Description:          
+
+License:              BSD3
+License-file:         LICENSE
+Author:               Jinjing Wang
+Maintainer:           Jinjing Wang
+Build-Depends:        base
+Cabal-version:        >= 1.2
+category:             
+homepage:             
+data-files:           changelog.md, known-issues.md, Nemesis
+
+Executable            practice-room
+  ghc-options:        -Wall -threaded
+  build-depends:      base >= 4 && < 5
+                    , mps >= 2010.1.26
+                    , bytestring
+                    , directory
+                    , data-default
+                    , json
+  hs-source-dirs:     src/
+  other-modules:      PracticeRoom.Type
+  main-is:            Main.hs

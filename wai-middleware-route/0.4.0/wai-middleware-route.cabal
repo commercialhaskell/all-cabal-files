@@ -1,0 +1,31 @@
+name:           wai-middleware-route
+version:        0.4.0
+cabal-version:  >= 1.8
+build-type:     Simple
+synopsis:       Wai dispatch middleware
+stability:      Experimental
+author:         Alexander Dorofeev <aka.spin@gmail.com>
+maintainer:     Alexander Dorofeev <aka.spin@gmail.com>
+category:       Web
+license:        BSD3
+description:    \"Just enough\" helpers for use @yesod-routes@ with @WAI@.
+license-file:   LICENSE
+homepage:       https://github.com/akaspin/wai-middleware-route
+
+Source-repository head
+  type:      git
+  location:  git://github.com/akaspin/wai-middleware-route.git
+
+library
+  hs-source-dirs:   src
+  build-depends:    
+                   base >= 4 && < 5,
+                   bytestring >= 0.9 && < 0.10,
+                   http-types >= 0.6 && < 0.7,
+                   text,
+                   wai >= 1.2,
+                   yesod-routes
+  ghc-options:      -Wall -rtsopts
+  exposed-modules:  Network.Wai.Middleware.Route
+
+

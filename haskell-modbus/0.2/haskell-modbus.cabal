@@ -1,0 +1,22 @@
+name:                haskell-modbus
+version:             0.2
+synopsis:            A haskell implementation of the Modbus protocol
+description:         A haskell implementation of the Modbus protocol
+homepage:            http://www.github.com/jhickner/haskell-modbus
+license:             BSD3
+license-file:        LICENSE
+author:              Jason Hickner
+maintainer:          jhickner@gmail.com
+-- copyright:           
+category:            Network
+build-type:          Simple
+cabal-version:       >=1.8
+
+library
+  exposed-modules:     Data.Modbus, Data.Digest.CRC16
+  -- other-modules:       
+  build-depends:       base ==4.5.*, 
+                       bytestring ==0.9.*, 
+                       network ==2.3.*, 
+                       attoparsec ==0.10.*, 
+                       array ==0.4.*

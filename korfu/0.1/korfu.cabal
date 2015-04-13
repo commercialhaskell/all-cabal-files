@@ -1,0 +1,20 @@
+Name:           korfu
+Version:        0.1
+License:        GPL
+Author:         Ketil Malde
+Maintainer:	Ketil Malde <ketil@malde.org>
+Homepage:	http://blog.malde.org/
+
+Synopsis:       The Korfu ORF Utility
+Description:	Reads nucleotide sequences in FASTA format, and generates
+		predicted protein sequences, based on BLASTX hits.  
+		The predictions are constructed by merging information from
+		multiple BLAST hits.  Korfu can also also generate all (six-frame)
+		translations (with the '--all' option)
+Build-Type:	Simple
+
+Executable:     korfu
+Build-Depends:  base, bio >= 0.3, haskell98, simpleargs, bytestring
+Hs-Source-Dirs: src
+Main-Is:        Korfu.hs
+Ghc-Options:    -Wall -fglasgow-exts -O2 -funbox-strict-fields

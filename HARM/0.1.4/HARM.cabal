@@ -1,0 +1,41 @@
+Name:			HARM
+Version:		0.1.4
+Cabal-Version:  	>= 1.2
+License:		OtherLicense
+License-File:		LICENSE.txt
+Author:			Jeffrey A. Meunier (and Alex Mason)
+Homepage:		http://www.engr.uconn.edu/~jeffm/Classes/CSE240-Spring-2001/Lectures/index.html
+Category:		Compilers/Interpreters
+Synopsis:		A simple ARM emulator in haskell
+build-type:		Simple
+description:		A simple ARM virtual machine designed for teaching 
+			assembly. See 
+			http://tinyurl.com/639v6u for details on internals and 
+			examples of how to use it. It is advised you look through the 
+			source on the site and try following along to really learn 
+			what's going on. Currently the emulator does not use standard 
+			ARM assembly, but a custom variant. This will hopefully be 
+			changed in the near future.
+			.
+			Two programs, runarm and dbgarm, are provided which can be 
+			used to run and debug the assembly.
+Maintainer:		Alex Mason (axman6@gmail.com)
+bug-reports:		mailto:axman6@gmail.com
+stability:		experimental
+extra-source-files:	p1.arm
+			p2.arm
+			README
+
+Executable runarm
+  Main-Is:        runarm.hs
+  Build-Depends:  base
+
+
+Executable dbgarm
+  Main-Is:        dbgarm.hs
+  Build-Depends:  base, array
+
+Library
+  Build-Depends:	base, array
+  Exposed-modules:
+    Arm.Arm, Arm.Assembler, Arm.BinaryNumber, Arm.CPU, Arm.Debugger, Arm.Decoder, Arm.Encoder, Arm.ExecutionUnit, Arm.Format, Arm.Instruction, Arm.Loader, Arm.Memory, Arm.Operand, Arm.ParseLib, Arm.Parser, Arm.Program, Arm.Register, Arm.RegisterName, Arm.Swi

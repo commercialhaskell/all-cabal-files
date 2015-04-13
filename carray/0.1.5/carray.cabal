@@ -1,0 +1,47 @@
+name:                carray
+version:             0.1.5
+synopsis:            A C-compatible array library.
+description:
+		     A C-compatible array library.
+		     .
+		     Provides both an immutable and mutable (in the IO monad) interface.
+		     Includes utilities for multi-dimensional arrays, slicing and norms.
+		     Memory is 16-byte aligned by default to enable use of SIMD instructions.
+		     .
+category:            Data
+license:             BSD3
+license-file:        LICENSE
+author:              Jed Brown
+maintainer:          Jed Brown <jed@59A2.org>
+stability:	     experimental
+cabal-version:       >=1.2
+build-type:	     Simple
+
+flag splitBase
+  description: array was in base < 3
+flag bytestringInBase
+  description: bytestring was included in base for 2.0 and 2.1
+flag base4
+  description: syb was split from base >= 4 
+
+library
+  build-depends:   ix-shapable
+  if flag(bytestringInBase)
+    build-depends: base >= 2.0 && < 2.2, binary
+  else
+    build-depends: base < 2.0 || >= 3, bytestring, binary
+
+  if flag(splitBase)
+    build-depends: base >= 3, array, binary
+  else
+    build-depends: base < 3, binary
+
+  if flag(base4)
+    build-depends: base >= 4 && < 5, syb >= 0.1
+  else
+    build-depends: base < 4
+
+  exposed-modules:   Data.Array.CArray
+                     Data.Array.IOCArray
+                     Data.Array.CArray.Base
+  ghc-options: -Wall

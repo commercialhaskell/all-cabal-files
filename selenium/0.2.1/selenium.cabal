@@ -1,0 +1,21 @@
+Name:                selenium
+Version:             0.2.1
+Synopsis:            Test web applications through a browser.
+Description:         Haskell bindings to communicate with a Selenium Remote
+                     Control server. This package makes it possible to use 
+                     Haskell to write test scripts that exercise web 
+                     applications through a web browser.
+Category:            Web
+License:             BSD3
+License-file:        LICENSE
+Author:              Aaron Tomb <atomb@galois.com>
+Maintainer:          Aaron Tomb <atomb@galois.com>
+Build-Depends:       base, HTTP, network, mtl, HUnit
+extensions:          GeneralizedNewtypeDeriving
+ghc-options:         -O2 -Wall -Werror
+ghc-prof-options:    -prof -auto-all
+Exposed-Modules:     Selenium.Syntax
+                     Selenium.Server
+                     Selenium.Pretty
+                     Selenium.HUnit
+                     Selenium.Interactive

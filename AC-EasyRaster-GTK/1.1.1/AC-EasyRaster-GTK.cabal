@@ -1,0 +1,27 @@
+Cabal-Version: >= 1.6
+Name:          AC-EasyRaster-GTK
+Version:       1.1.1
+Stability:     Experimental
+Synopsis:      GTK+ pixel plotting.
+
+Description:
+
+  This package is a thin layer over Gtk2hs providing an easy
+  interface for people who want to do bitmapped graphics.
+  Cairo already provides easy access to /vector/ graphics;
+  this package is directed at /bitmap/ graphics (i.e.,
+  reading and writing individual pixels). This is useful for
+  applications such as fractal generators, ray tracers, etc.
+
+Category:      Graphics
+License:       BSD3
+License-file:  Licence.txt
+Author:        Andrew Coppin
+Maintainer:    Andrew Coppin <MathematicalOrchid@hotmail.com>
+Build-Type:    Simple
+Tested-With:   GHC == 6.10.3
+
+Library
+  Exposed-modules: Graphics.EasyRaster.GTK, Graphics.EasyRaster.GTK.Paranoid
+  Build-Depends:   base >= 4 && < 5, array >= 0.2.0.0 && < 0.3, gtk >= 0.10 && < 0.11
+  HS-Source-Dirs:  .

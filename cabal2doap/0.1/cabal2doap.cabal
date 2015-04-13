@@ -1,0 +1,25 @@
+Name:           cabal2doap
+Version:        0.1
+License:        BSD3
+License-file:   LICENSE
+Cabal-Version: >= 1.6
+Copyright: 
+  Copyright (c) 2009, Greg Heartsfield
+Author:         Greg Heartsfield <scsibug@imap.cc>
+Maintainer:     Greg Heartsfield <scsibug@imap.cc>
+Homepage:       http://gregheartsfield.com/cabal2doap/
+Category:       Distribution
+Stability:      Alpha
+build-type:     Simple
+Synopsis:       Cabal to Description-of-a-Project (DOAP)
+Description:    A converter from Cabal build description files, to
+                Description-of-a-Project (DOAP) RDF files, giving visibility on
+                the semantic web to cabalized Haskell projects.
+
+source-repository head
+  type:     darcs
+  location: http://gregheartsfield.com/repos/cabal2doap/
+
+Executable     cabal2doap
+  build-depends:  base, hxt, Cabal >= 1.6, parsec, hsemail >= 1.1, process
+  main-is:        cabal2doap.hs

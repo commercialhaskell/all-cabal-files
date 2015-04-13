@@ -1,0 +1,23 @@
+Name:                eddie
+Version:             0.1
+Synopsis:	     Command line file filtering with haskell
+Description:	     A tool to let you use short haskell expressions to filter
+		     files at the command line.
+Category:	     CLI tool
+License:             BSD3
+License-file:	     LICENSE
+Author:              Mike Meyer
+Copyright:	     (c) 2011 Mike Meyer
+Maintainer:          mwm@mired.org
+Build-type:          Simple
+Homepage:	     http://eddie.googlecode.com/
+Cabal-version:       >=1.8
+Extra-source-files:  test.sh eddie.1
+
+Executable eddie
+    Main-is:         eddie.hs
+    Build-Depends:   hint >= 0.3.3.2, base >= 4.3.1 && < 5, cmdargs >= 0.7
+
+Source-repository head
+    Type: hg
+    Location: http://eddie.googlecode.com/hg/

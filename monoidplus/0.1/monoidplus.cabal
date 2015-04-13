@@ -1,0 +1,15 @@
+Name:                monoidplus
+Version:             0.1
+Synopsis:            Extra classes/functions about monoids
+License:             PublicDomain
+Category:            Data, Math
+Build-type:          Simple
+Cabal-version:       >=1.6
+
+X-Printout-Mode:     PlainTeX
+X-Printout-Main:     Data/Monoid/Plus.lhs
+X-Printout-Require:  birdstyle.tex
+
+Library
+  Exposed-modules:     Data.Monoid.Plus
+  Build-depends:       base == 4.*, transformers, semigroups, contravariant

@@ -1,0 +1,22 @@
+Name:                type-prelude
+Version:             0.1
+Synopsis:            Partial port of prelude to the type level. Requires GHC 7.6.1.
+Description:         This module contains functions from the prelude implemented at the type level as both type classes and type families. It comes with an Integer kind.
+Homepage:            http://code.atnnn.com/projects/type-prelude
+License:             BSD3
+license-file:        LICENSE
+Author:              Etienne Laurin
+Maintainer:          Etienne Laurin <etienne@atnnn.com>
+-- Copyright:           
+Category:            Development
+Build-type:          Simple
+Extra-source-files:  Prelude/Type/Example.hs
+Cabal-version:       >=1.6
+
+source-repository head
+  type:     darcs
+  location: http://code.atnnn.com/darcs/type-prelude/
+
+library
+  Exposed-modules: Prelude.Type, Prelude.Type.Value, Prelude.Type.Integer, Prelude.Type.Families, Prelude.Type.Match
+  Build-depends: base >= 4.5 && < 5, ghc-prim >= 0.3 && < 1

@@ -1,0 +1,20 @@
+Name:                bluetileutils
+Version:             0.2
+synopsis:            Utilities for Bluetile
+description:
+  This package is OBSOLETE.
+  The contents of this package has been merged in with the package 'bluetile'.
+category:            Utils
+License:             BSD3
+License-file:        LICENSE
+Author:              Jan Vornberger
+Maintainer:          jan.vornberger@informatik.uni-oldenburg.de
+extra-source-files:  THIS_PACKAGE_IS_OBSOLETE
+Build-Type:          Simple
+Cabal-Version:       >=1.2
+
+Executable bluetilemockwin-obsolete
+  Hs-Source-Dirs:    bluetilemockwin
+  Main-is:           BluetileMockWin.hs
+  Build-Depends:     base>=3, base<4, gtk
+  Ghc-options:       -Wall

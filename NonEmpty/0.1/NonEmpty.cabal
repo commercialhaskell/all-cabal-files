@@ -1,0 +1,25 @@
+name:                NonEmpty
+version:             0.1
+Cabal-Version:	     >= 1.6
+synopsis:            Library providing a non-empty list datatype, and total functions operating on it
+description:         When you want to state that a list should always be non-empty, you can use this type.
+		     This enables you to avoid the error of taking the head or tail of an empty list.
+category:            Data
+license:             BSD3
+license-file:        LICENSE
+copyright:	     Copyright (C) Robin Green 2009
+author:              Robin Green
+maintainer:          Robin Green <greenrd@greenrd.org>
+build-type:	     Simple
+stability:	     experimental
+bug-reports:	     mailto:greenrd@greenrd.org
+tested-with:	     GHC == 6.10.1
+
+source-repository head
+  type:     darcs
+  location: http://patch-tag.com/publicrepos/NonEmpty
+
+Library
+  build-Depends:	base
+  exposed-modules:      Data.List.NonEmpty
+  ghc-options:          -Wall

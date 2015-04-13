@@ -1,0 +1,19 @@
+Name:                Moe
+Version:             0.1
+Description:         A FRP library based on signal functions.
+License:             BSD3
+License-file:        LICENSE
+Author:              Xinyu Jiang
+Maintainer:          fnnirvana@gmail.com
+Category:            FRP
+Synopsis:         A FRP library based on signal functions.
+Build-Type:          Simple
+Cabal-Version:       >=1.2
+
+Library
+  Exposed-Modules:   FRP.Moe, FRP.MoePure, FRP.MoeGLUT FRP.Moe.Core FRP.Moe.Combinators
+  Build-Depends:     base >=3 && <5, random, GLUT
+
+Executable MoeExample
+  Main-Is:           FRP/MoeExample.hs
+  Build-Depends:     base, random, GLUT

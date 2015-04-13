@@ -1,0 +1,21 @@
+name:            json2yaml
+version:         0.3.2
+license:         BSD3
+license-file:    LICENSE
+author:          Michael Snoyman <michael@snoyman.com>
+maintainer:      Michael Snoyman <michael@snoyman.com>
+synopsis:        Utility to convert a file from JSON to YAML format.
+description:     Uses the yaml package, which is built off of libyaml.
+category:        Web
+stability:       stable
+cabal-version:   >= 1.2
+build-type:      Simple
+homepage:        http://github.com/snoyberg/json2yaml/tree/master
+
+executable           json2yaml
+    build-depends:   base             >= 4       && < 5
+                 ,   aeson            >= 0.6     && < 0.7
+                 ,   yaml             >= 0.7     && < 0.9
+                 ,   bytestring       >= 0.9.1.4 && < 0.10
+    ghc-options:     -Wall
+    main-is:         json2yaml.hs

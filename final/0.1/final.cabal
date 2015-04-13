@@ -1,0 +1,41 @@
+name: final
+version: 0.1
+license: BSD3
+license-file: LICENSE
+author: Gergely Risko <gergely@risko.hu>, Mihaly Barasz <klao@google.com>
+maintainer: Gergely Risko <gergely@risko.hu>
+build-type: Simple
+cabal-version: >= 1.6
+homepage: http://github.com/errge/final
+bug-reports: http://github.com/errge/final/issues
+
+synopsis: utility to add extra safety to monadic returns
+description:
+  The @Final@ library makes it possible to point out return values in
+  (monadic) functions.  This adds extra compile-time safety to your
+  code, because the compiler will warn you if marked return values
+  accidentally became middle parts of a big function written with do
+  notation.
+  .
+  Documentation and examples provided in the @Control.Final@ module's
+  own documentation.
+
+extra-source-files:
+  examples.hs
+
+source-repository head
+  type: git
+  location: http://github.com/errge/final
+
+library
+  ghc-options: -Wall
+
+  build-depends:
+      base >= 4 && < 5
+    , transformers
+    , stm
+
+  exposed-modules:
+    Control.Final
+    Control.Final.Alternatives
+    Control.Final.Example

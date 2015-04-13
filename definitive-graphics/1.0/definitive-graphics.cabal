@@ -1,0 +1,19 @@
+name:          definitive-graphics
+version:       1.0
+
+synopsis:      A definitive package allowing you to open windows, read image files and render text to be displayed or saved
+description:   
+author:        Marc Coiffier
+maintainer:    marc.coiffier@gmail.com
+license:       OtherLicense
+license-file:  LICENSE
+
+build-type:    Simple
+cabal-version: >=1.10
+
+library
+  exposed-modules: Data.Raster Data.Font
+  build-depends: base (== 4.6.*), definitive-base (== 1.0.*), containers (== 0.5.*), deepseq (== 1.3.*), array (== 0.5.*), bytestring (== 0.10.*), definitive-parser (== 1.0.*), vector (== 0.10.*), primitive (== 0.5.*), cpu (== 0.1.*), utf8-string (== 0.3.*), JuicyPixels (== 3.1.*), binary (== 0.7.*), mtl (== 2.1.*), transformers (== 0.3.*), zlib (== 0.5.*), stb-truetype (== 0.1.*)
+  default-extensions: RebindableSyntax NoMonomorphismRestriction TypeOperators ViewPatterns FlexibleInstances MultiParamTypeClasses
+  ghc-options: -W -threaded
+  default-language: Haskell2010

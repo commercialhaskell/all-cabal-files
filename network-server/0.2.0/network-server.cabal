@@ -1,0 +1,24 @@
+name:           network-server
+version:        0.2.0
+license:        GPL
+license-file:   LICENSE
+copyright:      Copyright (c) 2009 Rick Kaudewitz
+maintainer: 	Rick Kaudewitz <rick.kaudewitz@yahoo.de>
+stability:      experimental
+category:	Network, System
+synopsis:       A light abstraction over sockets & co. for servers
+description:	With these routines it is very easy to write a server, have it accept
+		connections on multiple ports via IP4, IP6 or unix sockets and associate
+		each of these bindings with a server routine.
+ghc-options:    -Wall
+exposed-Modules:
+ 		Network.Server
+build-depends:  base, network>=2.2.0.1, unix>=2.3.1.0
+hs-source-dirs: .
+build-type: 	Simple
+
+executable:     example
+ghc-options:    -Wall
+main-is:        example.hs
+hs-source-dirs: .
+

@@ -1,0 +1,38 @@
+name:          keys
+category:      Data Structures, Containers
+version:       3.0.1
+license:       BSD3
+cabal-version: >= 1.6
+license-file:  LICENSE
+author:        Edward A. Kmett
+maintainer:    Edward A. Kmett <ekmett@gmail.com>
+stability:     provisional
+homepage:      http://github.com/ekmett/keys/
+bug-reports:   http://github.com/ekmett/keys/issues
+copyright:     Copyright (C) 2011 Edward A. Kmett
+synopsis:      Keyed functors and containers
+description:   Keyed functors and containers
+build-type:    Simple
+extra-source-files: .travis.yml
+
+source-repository head
+  type: git
+  location: git://github.com/ekmett/keys.git
+
+library
+  build-depends:
+    array                >= 0.3.0.2 && < 0.5,
+    base                 >= 4       && < 5,
+    containers           >= 0.3     && < 0.6,
+    transformers         >= 0.2     && < 0.4,
+    semigroups           >= 0.8.3.1 && < 0.9,
+    semigroupoids        >= 3.0     && < 3.1,
+    comonad-transformers >= 3.0     && < 3.1,
+    comonads-fd          >= 3.0     && < 3.1,
+    free                 >= 3.0     && < 3.3
+
+  exposed-modules:
+    Data.Key
+
+  ghc-options: -Wall
+

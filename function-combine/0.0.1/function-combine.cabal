@@ -1,0 +1,24 @@
+Name:            function-combine
+Version:         0.0.1
+Cabal-version:   >= 1.2
+Build-Type:      Simple
+Synopsis:        Combining functions
+Description:     MPTC/FD generalisations of (.) and flip
+Category:        Control
+License:         BSD3
+License-File:    LICENSE
+Author:          Iain Alexander <ia@stryx.demon.co.uk>
+Maintainer:      Iain Alexander <ia@stryx.demon.co.uk>
+Build-Type:      Simple
+Extra-source-files:   Control/Combine/Test.hs
+                    , Control/Combine/SmallCheck.hs
+                    , .ghci
+Tested-with:     GHC==6.4.1, GHC==6.6.1, GHC==6.8.3, GHC==6.10.4, GHC==6.12.3
+               , GHC==7.0.1
+Library
+    Exposed-Modules:   Control.Combine
+    if impl(ghc < 6.6.1)
+        Extensions:      UndecidableInstances
+        Ghc-options:     -fglasgow-exts
+    Build-Depends:   base < 5, data-type < 0.1
+-- vim: expandtab:tabstop=4:shiftwidth=4

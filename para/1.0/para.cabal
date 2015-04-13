@@ -1,0 +1,22 @@
+Name:                para
+Version:             1.0
+Synopsis:			 Text paragraph formatting
+Description:          A paragraph formatting utility.  Provided with input text that is
+   arbitrarily split amongst several strings, this utility will
+   reformat the text into paragraphs which do not exceed the
+   specified width.  Paragraphs are delimited by blank lines in the
+   input.
+License:             BSD3
+License-file:        LICENSE
+Author:              Kevin Quick
+Maintainer:          Kevin Quick <quick@sparq.org>
+Build-Type:          Simple
+Cabal-Version:       >=1.2
+Category:            Text
+Stability:           Unstable
+
+
+Library
+  Build-Depends:     base >= 4 && < 5
+  Exposed-modules:   Text.Format.Para
+  ghc-options:       -Wall

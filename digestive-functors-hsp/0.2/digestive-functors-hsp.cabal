@@ -1,0 +1,24 @@
+Name:                digestive-functors-hsp
+Version:             0.2
+Synopsis:            HSP support for digestive-functors
+Description:         This is an HSP frontend for the digestive-functors library.
+Homepage:            http://src.seereason.com/digestive-functors-hsp
+License:             BSD3
+License-file:        LICENSE
+Author:              Jeremy Shaw
+Maintainer:          jeremy@n-heptane.com
+Category:            Web
+Build-type:          Simple
+Cabal-version:       >=1.6
+
+
+Library
+  Exposed-modules:     Text.Digestive.HSP.Html4
+  Build-depends:       base == 4.*,
+                       digestive-functors == 0.0.2.*,
+                       hsp,
+                       hsx,
+                       text
+  if !os(windows)
+    -- Cabal has a bug on windows and cannot find trhsx
+    Build-Tools: trhsx

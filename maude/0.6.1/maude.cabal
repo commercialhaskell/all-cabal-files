@@ -1,0 +1,42 @@
+Name:               maude
+Version:            0.6.1
+Synopsis:           An interface to the Maude rewriting system.
+Description:        This package provides a simple interface for doing Maude
+                    rewrites from within Haskell.
+Homepage:           https://github.com/davidlazar/maude-hs
+License:            MIT
+License-file:       LICENSE
+Author:             David Lazar
+Maintainer:         David Lazar <lazar6@illinois.edu>
+Category:           Language
+Build-type:         Simple
+Cabal-version:      >=1.6
+Extra-source-files:
+  README.md
+
+source-repository head
+  Type:             git
+  Location:         https://github.com/davidlazar/maude-hs
+
+Library
+  ghc-options:      -Wall
+
+  Hs-source-dirs:   src
+
+  Exposed-modules:
+    Language.Maude.Exec
+    Language.Maude.Exec.Types
+    Language.Maude.Syntax
+
+  Other-modules:
+    Language.Maude.Exec.XML
+
+  Build-depends:
+    base >= 4 && < 5,
+    process,
+    process-extras,
+    filepath,
+    directory,
+    temporary,
+    text,
+    xml

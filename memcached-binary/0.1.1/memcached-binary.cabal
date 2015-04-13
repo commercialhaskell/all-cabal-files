@@ -1,0 +1,54 @@
+name:                memcached-binary
+version:             0.1.1
+synopsis:            memcached client using binary protocol.
+description:         memcached client using binary protocol.
+license:             MIT
+license-file:        LICENSE
+author:              HirotomoMoriwaki<philopon.dependence@gmail.com>
+maintainer:          HirotomoMoriwaki<philopon.dependence@gmail.com>
+Homepage:            https://github.com/philopon/memcached-binary
+Bug-reports:         https://github.com/philopon/memcached-binary/issues
+copyright:           (c) 2014 Hirotomo Moriwaki
+category:            Database
+build-type:          Simple
+cabal-version:       >=1.10
+extra-source-files:  src/Database/Memcached/Binary/Common.hs
+                     src/Database/Memcached/Binary/Header.txt
+
+library
+  exposed-modules:     Database.Memcached.Binary
+                       Database.Memcached.Binary.Maybe
+                       Database.Memcached.Binary.Either
+                       Database.Memcached.Binary.IO
+
+                       Database.Memcached.Binary.Types
+                       Database.Memcached.Binary.Types.Exception
+  other-modules:       Database.Memcached.Binary.Internal
+                       Database.Memcached.Binary.Internal.Definition
+  build-depends:       base                 >=4.6  && <4.8
+                     , bytestring           >=0.10 && <0.11
+                     , network              >=2.6  && <2.7
+                     , storable-endian      >=0.2  && <0.3
+                     , data-default-class   >=0.0  && <0.1
+                     , resource-pool        >=0.2  && <0.3
+                     , unordered-containers >=0.2  && <0.3
+                     , time                 >=1.4  && <1.5
+  ghc-options:         -Wall -O2
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+
+test-suite test
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             test.hs
+  ghc-options:         -Wall -O2
+  build-depends:       base                 >=4.6  && <4.8
+                     , memcached-binary
+                     , test-framework       >=0.8  && <0.9
+                     , test-framework-hunit >=0.3  && <0.4
+                     , process              >=1.2  && <1.3
+                     , network              >=2.6  && <2.7
+                     , HUnit                >=1.2  && <1.3
+                     , data-default-class   >=0.0  && <0.1
+                     , bytestring           >=0.10 && <0.11
+  default-language:    Haskell2010

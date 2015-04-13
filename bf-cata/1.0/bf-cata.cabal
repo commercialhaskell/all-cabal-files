@@ -1,0 +1,16 @@
+cabal-version: >=1.2
+build-type: Simple
+name: bf-cata
+version: 1.0
+license: LGPL
+maintainer: Arie Middelkoop <ariem@cs.uu.nl>
+homepage: http://www.cs.uu.nl/wiki/HUT/WebHome
+description: Evaluation combinators for breadth-first evaluated catamorphisms
+category: Development
+stability: Experimental
+copyright: Arie Middelkoop
+
+library
+  build-depends: base >= 4, base < 5
+  exposed-modules: Data.BreadthFirstCata.Cata
+  hs-source-dirs: src

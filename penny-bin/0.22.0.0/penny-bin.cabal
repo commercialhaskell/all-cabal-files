@@ -1,0 +1,137 @@
+Name: penny-bin
+Version: 0.22.0.0
+Cabal-version: >=1.8
+Build-Type: Simple
+License: BSD3
+Copyright: 2012-2013 Omari Norman
+author: Omari Norman
+maintainer: omari@smileystation.com
+stability: Experimental
+homepage: http://www.github.com/massysett/penny
+bug-reports: omari@smileystation.com
+Category: Console, Finance
+License-File: LICENSE
+synopsis: Deprecated - use penny package instead
+
+description:
+  This package is now deprecated.  Use the penny package instead.
+
+extra-source-files:
+    install-docs
+  , README
+  , doc/*.org
+  , doc/*.dot
+  , doc/*.hs
+  , examples/*.pny
+  , man/*.1
+  , man/*.7
+  
+
+source-repository head
+    type: git
+    location: git://github.com/massysett/penny.git
+
+Executable penny
+  Build-depends:
+    base ==4.*,
+    penny-lib ==0.22.*
+
+  Main-is: penny-main.hs
+  Other-modules: Paths_penny_bin
+  GHC-Options: -Wall
+  if flag(debug)
+    GHC-Options: -rtsopts -auto-all -caf-all
+
+  if ! flag(build-penny)
+    buildable: False
+
+Executable penny-selloff
+  Build-depends:
+    base == 4.*,
+    penny-lib ==0.22.*,
+    explicit-exception ==0.1.*,
+    containers ==0.5.*,
+    semigroups ==0.9.*,
+    text ==0.11.*,
+    parsec ==3.1.*,
+    multiarg ==0.18.*,
+    transformers ==0.3.*
+
+  Main-is: penny-selloff.hs
+  GHC-Options: -Wall
+  if flag(debug)
+    GHC-Options: -rtsopts -auto-all -caf-all
+
+  if ! flag(build-selloff)
+    buildable: False
+
+Executable penny-diff
+  Build-depends:
+    base ==4.*,
+    penny-lib ==0.22.*,
+    text ==0.11.*,
+    multiarg ==0.18.*,
+    explicit-exception == 0.1.*
+
+  Main-is: penny-diff.hs
+  Other-modules: Paths_penny_bin
+  GHC-Options: -Wall
+  if flag(debug)
+    GHC-Options: -rtsopts -auto-all -caf-all
+
+  if ! flag(build-diff)
+    buildable: False
+
+Executable penny-reprint
+  Build-depends:
+      base ==4.*
+    , multiarg ==0.18.*
+    , penny-lib ==0.22.*
+    , pretty-show ==1.5.*
+    , text ==0.11.*
+
+  main-is: penny-reprint.hs
+  Other-modules: Paths_penny_bin
+  ghc-options: -Wall
+  if ! flag(build-reprint)
+    buildable: False
+
+Executable penny-reconcile
+  Build-depends:
+      base ==4.*
+    , penny-lib ==0.22.*
+    , text ==0.11.*
+    , multiarg ==0.18.*
+    , explicit-exception ==0.1.*
+
+  main-is: penny-reconcile.hs
+  Other-modules: Paths_penny_bin
+  ghc-options: -Wall
+  if ! flag(build-reconcile)
+    buildable: False
+
+
+Flag debug
+  Description: Turns on debugging options
+  Default: False
+
+Flag build-penny
+  Description: Build the penny executable
+  Default: True
+
+Flag build-selloff
+  Description: Build the penny-selloff executable
+  Default: True
+
+Flag build-diff
+  Description: Build the penny-diff executable
+  Default: True
+
+Flag build-reprint
+  Description: Build the penny-reprint executable
+  Default: True
+
+Flag build-reconcile
+  Description: Build the penny-reconcile executable
+  Default: True
+

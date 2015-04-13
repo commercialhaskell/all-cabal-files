@@ -1,0 +1,27 @@
+Name:             salvia-websocket
+Version:          1.0.0
+Description:      Websocket implementation for the Salvia Webserver.
+Synopsis:         Websocket implementation for the Salvia Webserver.
+Category:         Network, Web
+License:          BSD3
+License-file:     LICENSE
+Author:           Sebastiaan Visser
+Maintainer:       sfvisser@cs.uu.nl
+Cabal-version:    >= 1.6
+Build-Type:       Simple
+
+Library
+  GHC-Options:      -Wall
+  HS-Source-Dirs:   src
+
+  Build-Depends:    base ==4.*,
+                    bytestring ==0.9.*,
+                    salvia ==1.0.*,
+                    salvia-protocol ==1.0.*,
+                    fclabels ==0.4.*,
+                    monads-fd ==0.0.*,
+                    stm ==2.1.*,
+                    utf8-string ==0.3.*
+
+  Exposed-modules:  Network.Salvia.Handler.WebSocket
+

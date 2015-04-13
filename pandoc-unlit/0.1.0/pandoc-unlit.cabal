@@ -1,0 +1,27 @@
+name:             pandoc-unlit
+version:          0.1.0
+synopsis:         Literate Haskell support for GitHub's Markdown flavor
+category:         Development
+license:          MIT
+license-file:     LICENSE
+copyright:        (c) 2012 Simon Hengel
+author:           Simon Hengel <sol@typeful.net>
+maintainer:       Simon Hengel <sol@typeful.net>
+build-type:       Simple
+cabal-version:    >= 1.6
+description:      Documentation is here: <https://github.com/sol/pandoc-unlit#readme>
+
+source-repository head
+  type: git
+  location: https://github.com/sol/pandoc-unlit
+
+executable pandoc-unlit
+  ghc-options:
+      -Wall
+  hs-source-dirs:
+      src
+  build-depends:
+      base    < 5
+    , pandoc
+  main-is:
+      Main.hs

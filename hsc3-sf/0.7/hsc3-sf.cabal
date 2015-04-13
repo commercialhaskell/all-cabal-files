@@ -1,0 +1,29 @@
+Name:              hsc3-sf
+Version:           0.7
+Synopsis:          Haskell SuperCollider SoundFile
+Description:       Trivial NeXT/Sun sound file input/output.
+                   For almost all use cases please see Stefan 
+                   Kersten's hsndfile package.
+License:           GPL
+Category:          Sound
+Copyright:         (c) Rohan Drape, 2006-2009
+Author:            Rohan Drape
+Maintainer:        rd@slavepianos.org
+Stability:         Experimental
+Homepage:          http://slavepianos.org/rd/f/924736/
+Tested-With:       GHC == 6.8.2
+Build-Type:        Simple
+Cabal-Version:     >= 1.6
+
+Data-files:        README
+                   Help/rescale.help.hs
+
+Library
+  Build-Depends:   base == 3.*,
+                   bytestring,
+                   hosc == 0.7
+  GHC-Options:     -Wall -fwarn-tabs
+  Exposed-modules: Sound.File.NeXT
+  Other-modules:   Sound.File.Encoding
+                   Sound.File.Encode
+                   Sound.File.Decode

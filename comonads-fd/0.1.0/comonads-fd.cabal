@@ -1,0 +1,31 @@
+name:          comonads-fd
+category:      Control, Comonads
+version:       0.1.0
+license:       BSD3
+cabal-version: >= 1.2
+license-file:  LICENSE
+author:        Edward A. Kmett
+maintainer:    Edward A. Kmett <ekmett@gmail.com>
+stability:     experimental
+homepage:      http://comonad.com/reader/
+copyright:     Copyright (C) 2008-2011 Edward A. Kmett
+synopsis:      Comonad transformers using functional dependencies.
+description:   Comonad transformers using functional dependencies.
+build-type:    Simple
+
+library
+  build-depends: 
+    base > 4 && < 5,
+    transformers >= 0.2.0 && < 0.3,
+    comonad >= 0.1 && < 0.2,
+    comonad-transformers >= 0.1 && < 0.2
+
+  exposed-modules:
+    Control.Comonad.Env
+    Control.Comonad.Env.Class
+    Control.Comonad.Store
+    Control.Comonad.Store.Class
+    Control.Comonad.Traced
+    Control.Comonad.Traced.Class
+
+  ghc-options:      -Wall 

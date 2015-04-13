@@ -1,0 +1,30 @@
+name:                faceted
+version:             0.0.1.0
+synopsis:            Faceted computation for dynamic information flow security
+homepage:            http://github.com/haskell-faceted/haskell-faceted
+license:             Apache-2.0
+license-file:        LICENSE
+author:              Kenneth Knowles, Thomas Austin
+maintainer:          kenn@kennknowles.com
+category:            Security
+build-type:          Simple
+cabal-version:       >=1.8
+description:
+  This library provides faceted values and computations for
+  enforcing secure information flow.
+  .
+  A faceted value represents many value simultaneously, depending
+  on who is observing, and prevents any observer from viewing
+  confidential information that they do not have privileges
+  to access.
+
+source-repository head
+  type: git
+  location: git://github.com/haskell-faceted/haskell-faceted.git
+
+library
+  exposed-modules: Faceted
+  other-modules: Faceted.Internal, Faceted.FIORef, Faceted.FHandle, Faceted.Pure
+  hs-source-dirs: .
+  build-depends: base ==4.6.*,
+                 free >=4.6

@@ -1,0 +1,87 @@
+
+name:                text-ldap
+version:             0.1.1.3
+synopsis:            Parser and Printer for LDAP text data stream
+description:         This package contains Parser and Printer for
+                     LDAP text data stream like OpenLDAP backup LDIF.
+license:             BSD3
+license-file:        LICENSE
+author:              Kei Hibino
+maintainer:          ex8k.hibino@gmail.com
+copyright:           Copyright (c) 2014 Kei Hibino
+category:            Text
+build-type:          Simple
+cabal-version:       >=1.8
+
+library
+  exposed-modules:
+                       Text.LDAP.Data
+                       Text.LDAP.Parser
+                       Text.LDAP.Printer
+  other-modules:
+                       Text.LDAP.InternalParser
+
+  build-depends:         base <5
+                       , bytestring
+                       , containers
+                       , transformers
+                       , attoparsec
+                       , dlist
+                       , semigroups
+                       , base64-bytestring
+  hs-source-dirs:        src
+  ghc-options:         -Wall
+  ghc-prof-options:    -prof -fprof-auto
+
+
+executable parseTest
+  main-is:             parseTest.hs
+  build-depends:         base <5
+                       , bytestring
+                       , text-ldap
+  hs-source-dirs:      mains
+  ghc-options:         -Wall -rtsopts
+  ghc-prof-options:    -prof -fprof-auto
+
+executable ppTest
+  main-is:             ppTest.hs
+  build-depends:         base <5
+                       , bytestring
+                       , text-ldap
+  hs-source-dirs:      mains
+  ghc-options:         -Wall -rtsopts
+  ghc-prof-options:    -prof -fprof-auto
+
+flag test-cabal114
+  description: This flag make sense when Cabal 1.14 is used.
+               If true, use Cabal 1.14 test-suite interface.
+  default:     False
+
+Test-suite pp
+  build-depends:         base <5
+                       , bytestring
+                       , random
+                       , semigroups
+                       , text-ldap
+                       , QuickCheck >=2
+                       , Cabal
+
+  type:                detailed-0.9
+  test-module:         Tests
+  other-modules:
+                       Error
+                       Suite
+                       PrintParse
+  if flag(test-cabal114)
+    hs-source-dirs:      test, test114
+  else
+    hs-source-dirs:      test, test118
+  ghc-options:         -Wall
+
+source-repository head
+  type:       git
+  location:   https://github.com/khibino/haskell-text-ldap
+
+source-repository head
+  type:       mercurial
+  location:   https://bitbucket.org/khibino/haskell-text-ldap

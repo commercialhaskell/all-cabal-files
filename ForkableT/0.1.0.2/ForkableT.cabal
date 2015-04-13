@@ -1,0 +1,23 @@
+name:                ForkableT
+version:             0.1.0.2
+synopsis:            Forkable monad transformers
+description:         Provides two classes for modular handling of forking
+license:             BSD3
+license-file:        LICENSE
+maintainer:          Andras Slemmer
+homepage:            https://github.com/exFalso/ForkableT/
+category:            Control
+build-type:          Simple
+cabal-version:       >=1.8
+
+source-repository head
+  type:                git
+  location:            https://github.com/exFalso/ForkableT/
+
+library
+  exposed-modules:     Control.Concurrent.ForkableT, Control.Concurrent.ForkableT.Instances
+  build-depends:       base == 4.*
+                     , mtl == 2.*
+                     , monad-control == 1.*
+                     , resourcet == 1.*
+  hs-source-dirs:      src

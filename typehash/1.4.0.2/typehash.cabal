@@ -1,0 +1,18 @@
+Name:           typehash
+Cabal-Version:  >= 1.2
+Version:        1.4.0.2
+License:        BSD3
+Author:         Lennart Augustsson
+Maintainer:     Lennart Augustsson
+Category:       Reflection
+Synopsis:       Create a unique hash value for a type.
+Stability:      experimental
+Build-type:     Simple
+Description:    Produce a hash for a type that is unique for that type.
+                The hash takes both actual type names and type structure into account.
+                This is useful for checking the type of persisted values.
+
+Library
+  Hs-Source-Dirs: src
+  Build-Depends: base >= 4 && < 4.4, syb, mtl, bytestring, pureMD5, binary
+  Exposed-modules:      Data.TypeHash

@@ -1,0 +1,17 @@
+Name:                hiccup
+Version:             0.35
+Description:         Interpreter for a subset of tcl 
+License:             GPL
+License-file:        LICENSE
+Author:              Kyle Consalus
+Stability:           experimental
+Homepage:            http://code.google.com/p/hiccup/
+Category:            Compilers/Interpreters
+Synopsis:            Relatively efficient Tcl interpreter with support for basic operations 
+Maintainer:          consalus+hiccup@google.com
+Build-Depends:       base, HUnit, mtl, haskell98, readline
+extra-source-files:  Hiccup.hs TclObj.hs BSParse.hs README example.tcl atests.tcl include.tcl
+
+Executable:          hiccup
+Main-is:             Main.hs
+ghc-options:         -O2 -fglasgow-exts -fbang-patterns -funbox-strict-fields -funfolding-use-threshold=16 -fvia-c

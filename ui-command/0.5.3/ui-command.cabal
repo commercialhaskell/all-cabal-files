@@ -1,0 +1,44 @@
+Name:                ui-command
+Version:             0.5.3
+License:             BSD3
+License-file:        LICENSE
+Author:              Conrad Parker <conrad@metadecks.org>
+Maintainer:          Conrad Parker <conrad@metadecks.org>
+Category:            Development
+Synopsis:            A framework for friendly commandline programs
+Description:         This is a framework for creating commandline applications. It
+		     provides various features which give a polished feel to your
+		     application.
+		     .
+                     It is designed to encourage you to provide clear documentation
+		     and working examples. It implements default ''help''
+		     and ''man'' commands for your application, which will layout help
+		     text and generate Unix-style man pages.
+		     .
+                     It provides special handling for applications of the form
+		     ''program command args'', the style of interaction common in revision
+		     control systems. It will dispatch to handler functions that you
+		     provide for each command, and also provide command-specific
+		     help to the user.
+Stability:           experimental
+Build-Type:          Simple
+Cabal-Version:       >= 1.2
+
+------------------------------------------------------------
+library
+    Build-Depends:   base < 5, transformers, monads-fd, time, old-locale, data-default
+    Exposed-modules: UI.Command
+    Other-modules:   UI.Command.App
+                     UI.Command.Application
+                     UI.Command.Command
+                     UI.Command.Doc
+                     UI.Command.Main
+                     UI.Command.Render
+
+------------------------------------------------------------
+-- hello example
+--
+
+Executable ui-cmd-hello
+    Main-Is:         ui-cmd-hello.hs
+    Hs-Source-Dirs:  ., examples

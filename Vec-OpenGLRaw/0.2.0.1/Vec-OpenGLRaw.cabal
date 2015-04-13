@@ -1,0 +1,21 @@
+Name:                Vec-OpenGLRaw
+Version:             0.2.0.1
+Synopsis:            Instances and functions to interoperate Vec and OpenGL.
+Description:         Provides:
+                     * NearZero instances for all OpenGL numeric types
+Homepage:            http://www.downstairspeople.org/darcs/Vec-opengl
+License:             BSD3
+License-file:        LICENSE
+Author:              Christopher Lane Hinson
+Maintainer:          lane@downstairspeople.org
+Category:            Graphics, Math
+Build-type:          Simple
+
+Cabal-version:       >=1.2
+
+Library
+  Exposed-modules:     Data.Vec.OpenGLRaw
+  Build-depends:       base>=4&&<5,
+                       Vec>=0.9.7,
+                       OpenGLRaw
+

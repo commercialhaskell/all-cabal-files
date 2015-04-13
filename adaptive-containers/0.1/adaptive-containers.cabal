@@ -1,0 +1,36 @@
+name:               adaptive-containers
+version:            0.1
+homepage:           http://code.haskell.org/~dons/code/adaptive-containers
+synopsis:           Self optimizing container types
+description:
+    Self optimizing polymorphic container types.
+    
+    We use type families to specialize polymorphic container types to
+    specific representations via class-associated data types.
+
+    A self-optimizing pair, for example, will unpack the constructors,
+    yielding a representation for (Int,Char) requiring 8 bytes, instead
+    of 24.
+
+    Currently supported adaptive types: pairs
+
+category:           Data
+license:            BSD3
+license-file:       LICENSE
+author:             Don Stewart
+maintainer:         Don Stewart (dons@galois.com)
+cabal-version:      >= 1.2.3
+build-type:         Simple
+
+library
+    exposed-modules:    Data.Adaptive.Tuple
+
+    ghc-options:        -O2 -funbox-strict-fields -Wall
+    ghc-prof-options:   -prof -auto-all
+
+    extensions:         TypeFamilies,
+                        MultiParamTypeClasses,
+                        FlexibleInstances,
+                        OverlappingInstances
+
+    build-depends:      base

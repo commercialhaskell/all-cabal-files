@@ -1,0 +1,50 @@
+Name:               aig
+Version:            0.2
+License:            BSD3
+License-file:       LICENSE
+Author:             Galois Inc.
+Maintainer:         jhendrix@galois.com
+Copyright:          (c) 2014 Galois Inc.
+Category:           Data
+build-type:         Simple
+cabal-Version:      >= 1.10
+Synopsis:           And-inverter graphs in Haskell.
+Description:
+  This package provides a generic interfaces for working
+  with And-Inverter graphs (AIGs) in Haskell.  And-Inverter graphs
+  are a useful format for representing combinatorial and
+  sequential boolean circuits in a way that is amenable to
+  simulation and analysis.
+
+  These interfaces allow clients to write code that can create
+  and use AIGs without depending on a particular AIG package.
+
+-- Ugh. Temporary fix to make Hackage happy.
+--flag enable-hpc
+--  Description: Collect HPC coverage information.
+--  Default: False
+
+source-repository head
+  type: git
+  location: https://github.com/GaloisInc/aig.git
+
+library
+  hs-source-dirs:   src
+  exposed-modules:
+    Data.AIG
+    Data.AIG.Interface
+    Data.AIG.Operations
+    Data.AIG.Trace
+
+  default-Language: Haskell2010
+  ghc-options:      -Wall -fno-ignore-asserts -O2
+  ghc-prof-options: -prof -auto-all -caf-all
+  build-depends:
+    base == 4.*,
+    mtl,
+    vector,
+    QuickCheck >= 2.7
+
+-- Ugh. Temporary fix to make Hackage happy.
+--  if flag(enable-hpc)
+--    ghc-options: -fhpc -hpcdir .hpc

@@ -1,0 +1,31 @@
+Name:               FermatsLastMargin
+Version:            0.1
+License:            GPL
+license-file:       LICENSE
+Author:             Shae Erisson
+Maintainer:         Shae Erisson <shae@ScannedInAvian.com>
+
+Stability:          Alpha
+category:           Web
+Synopsis:           Annotate ps and pdf documents
+Description:        Distributed annotation for PostScript and PDF documents.
+homepage:           http://www.scannedinavian.com/
+
+Build-Depends:      base>3, mtl, random, old-time, template-haskell, syb-with-class,
+                    HaXml, HAppS-Data >= 0.9.1, HAppS-State >= 0.9.1, HAppS-Server >= 0.9.1,
+                    haskell98, HAppS-IxSet >= 0.9.1, HAppS-Util >= 0.9.1
+Build-Type:         Simple
+-- extra-source-files: README
+
+executable:         flm
+main-is:            Main.hs
+other-modules:      FLM.State
+                    FLM.Types
+                    FLM.Control
+                    FLM.WikiPages
+                    FLM.HAppS
+ghc-options:        -Wall -fno-warn-orphans
+ghc-prof-options:   -prof -auto-all
+Extensions:         UndecidableInstances, OverlappingInstances, Rank2Types, TemplateHaskell,
+                    FlexibleInstances, IncoherentInstances
+

@@ -1,0 +1,38 @@
+Name: AES
+Synopsis: Fast AES encryption/decryption for bytestrings
+Description: A zero-copy binding to Brian Gladman's AES implementation, including a copy of that implementation
+Version: 0.2.0
+License: BSD3
+License-file: COPYING
+Copyright: Copyright (c) 2009 University of Tromsø
+Author: Svein Ove Aas <svein.ove@aas.no>
+Maintainer: Svein Ove Aas <svein.ove@aas.no>
+Stability: provisional
+Category: Cryptography
+Tested-With: GHC == 6.12-rc2
+Cabal-Version: >= 1.6
+Build-Type: Simple
+Extra-source-files: cbits/aes.h, cbits/aesopt.h, cbits/aestab.h,
+                    cbits/brg_endian.h, cbits/brg_types.h, cbits/aes.txt,
+                    cbits/aes_via_ace.h, cbits/ctr_inc.h
+
+Library
+  Build-Depends:
+        base >= 4 && < 5 , bytestring, monads-tf >= 0.0.0.1 && < 0.1, transformers >= 0.1.4.0 && < 0.2
+  Extensions:
+        ForeignFunctionInterface,
+        ViewPatterns,
+        Rank2Types,
+        EmptyDataDecls
+  Exposed-Modules:
+        Control.Monad.UnsafeIO,
+        Codec.Crypto.AES,
+        Codec.Crypto.AES.Monad,
+        Codec.Crypto.AES.IO
+
+  ghc-options: -Wall
+  
+  C-sources: cbits/aescrypt.c, cbits/aeskey.c, cbits/aestab.c,
+             cbits/aes_modes.c, cbits/ctr_inc.c
+  Include-Dirs: cbits
+  

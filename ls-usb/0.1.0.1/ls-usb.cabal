@@ -1,0 +1,25 @@
+name:          ls-usb
+version:       0.1.0.1
+cabal-version: >= 1.6
+build-type:    Simple
+stability:     experimental
+author:        Roel van Dijk, Bas van Dijk
+maintainer:    vandijk.roel@gmail.com
+copyright:     2009 Roel van Dijk, Bas van Dijk
+license:       BSD3
+license-file:  LICENSE
+category:      System
+synopsis:      List USB devices
+description:
+  A small utility that lists USB devices connected to your system.
+
+executable ls-usb
+  build-depends: ansi-wl-pprint  >= 0.5.1   && < 0.6
+               , base            >= 4.0     && < 4.2
+               , bytestring      >= 0.9.1.4 && < 0.10
+               , cmdargs         == 0.1.*
+               , usb             >= 0.1     && < 0.3
+               , usb-id-database == 0.4.*
+  ghc-options: -Wall -fno-warn-orphans
+  main-is: ls-usb.hs
+  other-modules: PrettyDevList

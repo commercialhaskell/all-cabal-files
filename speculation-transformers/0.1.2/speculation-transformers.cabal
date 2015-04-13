@@ -1,0 +1,24 @@
+name:          speculation-transformers
+category:      Control
+version:       0.1.2
+license:       BSD3
+cabal-version: >= 1.6
+license-file:  LICENSE
+author:        Edward A. Kmett
+maintainer:    Edward A. Kmett <ekmett@gmail.com>
+stability:     provisional
+homepage:      http://github.com/ekmett/speculation/
+copyright:     Copyright (C) 2011 Edward A. Kmett, Jake McArthur
+synopsis:      Merged into 'speculation'. Use that instead.
+description:   Merged into 'speculation'. Use that instead.
+build-type:    Simple
+
+source-repository head
+  type: git
+  location: git://github.com/ekmett/speculation.git
+
+library
+  build-depends: 
+    speculation >= 1.1
+
+  ghc-options: -Wall 

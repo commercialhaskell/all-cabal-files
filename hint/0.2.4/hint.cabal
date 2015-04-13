@@ -1,0 +1,74 @@
+name:                hint
+version:             0.2.4
+x-revision: 2
+description:
+        This library defines an @Interpreter@ monad. It allows to load Haskell
+        modules, browse them, type-check and evaluate strings with Haskell
+        expressions and even coerce them into values. The library is
+        thread-safe and type-safe (even the coercion of expressions to
+        values).
+
+        It is, esentially, a huge subset of the GHC API wrapped in a simpler
+        API. Works with GHC 6.6.x and 6.8.x.
+synopsis:           Runtime Haskell interpreter (GHC API wrapper)
+category:           Language, Compilers/Interpreters
+license:            BSD3
+license-file:       LICENSE
+author:             Daniel Gorin
+maintainer:         jcpetruzza@gmail.com
+
+cabal-version:      >= 1.2
+build-type:         Simple
+tested-with:        GHC==6.6.1, GHC==6.8.2
+
+extra-source-files: README
+                    AUTHORS
+                    Changes
+                    examples/example.hs
+                    examples/SomeModule.hs
+                    unit-tests/run-unit-tests.hs
+
+Library
+  if impl(ghc >= 6.8) {
+    build-depends:      base >= 3 && < 4.3,
+                        haskell-src,
+                        ghc < 7,
+                        ghc-paths,
+                        mtl,
+                        random,
+                        filepath,
+                        directory,
+                        utf8-string < 1
+  } else {
+    build-depends:      base < 3,
+                        haskell-src,
+                        ghc > 6.6 && < 7,
+                        ghc-paths,
+                        mtl,
+                        filepath,
+                        utf8-string < 0.3
+  }
+
+  exposed-modules:    Language.Haskell.Interpreter.GHC
+                      Language.Haskell.Interpreter.GHC.Unsafe
+  other-modules:      Hint.Base
+                      Hint.Compat
+                      Hint.Configuration
+                      Hint.Context
+                      Hint.Conversions
+                      Hint.Eval
+                      Hint.Parsers
+                      Hint.Reflection
+                      Hint.Typecheck
+                      Hint.Sandbox
+
+  hs-source-dirs:     src
+
+  ghc-options:        -Wall -O2
+  extensions:         CPP
+                      GeneralizedNewtypeDeriving
+                      MultiParamTypeClasses
+                      DeriveDataTypeable
+                      MagicHash
+                      TypeSynonymInstances
+                      FlexibleInstances

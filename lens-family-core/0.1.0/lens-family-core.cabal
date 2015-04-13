@@ -1,0 +1,53 @@
+name:               lens-family-core
+category:           Data, Lenses
+version:            0.1.0
+license:            BSD3
+cabal-version:      >= 1.6
+license-file:       LICENSE
+author:             Russell O'Connor
+maintainer:         Russell O'Connor <roconnor@theorem.ca>
+stability:          experimental
+copyright:          Copyright (C) 2012 Russell O'Connor
+synopsis:           Haskell 98 Lens Families
+description:        Haskell 98 Lens Families
+build-type:         Simple
+extra-source-files: CHANGELOG
+description:        This package provides first class(†) functional references.
+                    In addition to the usual operations of getting, setting and composition, plus integration with the state monad, lens families provide some unique features:
+                    .
+                    * Polymorphic updating
+                    .
+                    * Cast projection functions to read-only lenses
+                    .
+                    * Cast semantic editor combinators to modify-only lenses
+                    .
+                    (†) For optimal first-class support use the @lens-family@ package with rank 2 / rank N polymorphism.
+                    "Lens.Family.Clone" allows for first-class support of lenses for those who require Haskell 98.
+
+source-repository head
+  type:     darcs
+  location: http://r6.ca/lens-family
+
+library
+  build-depends:
+    base                 >= 4       && < 5,
+    containers           >= 0.3     && < 0.6,
+    transformers         >= 0.2.0   && < 0.4
+
+  exposed-modules:
+    Lens.Family.Unchecked
+    Lens.Family.Clone
+    Lens.Family
+    Lens.Family.Stock
+    Lens.Family.State.Lazy
+    Lens.Family.State.Strict
+    Lens.Family.State
+  other-modules:
+    Lens.Family.State.Focus
+    Lens.Family.Setting
+
+  ghc-options:      -Wall
+
+  hs-source-dirs:
+                    src
+

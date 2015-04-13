@@ -1,0 +1,42 @@
+Name:                postgresql-libpq
+Version:             0.5
+Synopsis:            libpq binding for Haskell
+
+Description:         This is a binding to libpq: the C application
+                     programmer's interface to PostgreSQL. libpq is a
+                     set of library functions that allow client
+                     programs to pass queries to the PostgreSQL
+                     backend server and to receive the results of
+                     these queries.
+
+Homepage:            http://github.com/lpsmith/haskell-libpq
+License:             BSD3
+License-file:        LICENSE
+Author:              Grant Monroe, Leon P Smith
+Maintainer:          leon@melding-monads.com
+-- Copyright:
+Category:            Database
+Build-type:          Custom
+-- Extra-source-files:
+Cabal-version:       >=1.8
+Library
+  Exposed-modules:     Database.PostgreSQL.LibPQ
+
+  Build-depends:       base >= 4 && < 5
+                     , bytestring
+                     , unix
+
+  GHC-Options:       -Wall
+  Extra-Libraries:   pq
+  -- Other-modules:
+  Build-tools:       hsc2hs
+
+source-repository head
+  type:     git
+  location: http://github.com/lpsmith/haskell-libpq
+
+source-repository this
+  type:     git
+  location: http://github.com/lpsmith/haskell-libpq
+  tag:      v0.5
+

@@ -1,0 +1,22 @@
+Name:		network-dbus
+Version:	0.0
+Author:		Will Thompson, Dafydd Harries
+Maintainer:	Dafydd Harries
+Cabal-Version:	>= 1.2
+License:	OtherLicense
+License-file:	COPYING
+Category:	Network
+Stability:	experimental
+Build-Type:	Custom
+Synopsis:	D-Bus
+Description: D-Bus protocol library
+
+Library
+  Build-Depends: base < 4, binary, bytestring, containers, mtl, network,
+                 parsec, unix, utf8-string
+  GHC-Options:  -Wall -fno-warn-unused-imports
+  Exposed-Modules:
+    Network.DBus.Connection
+    Network.DBus.Message
+    Network.DBus.Type
+    Network.DBus.Value

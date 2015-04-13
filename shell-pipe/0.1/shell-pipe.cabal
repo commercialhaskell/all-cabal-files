@@ -1,0 +1,40 @@
+Name:           shell-pipe
+Version:        0.1
+License:        GPL
+Author:         David J. Sankel <camior@gmail.com>
+Maintainer:     Henning Thielemann <haskell@henning-thielemann.de>
+Homepage:       http://gnu.rtin.bz/directory/devel/prog/other/shell-haskell.html
+Package-URL:    http://darcs.haskell.org/shell-pipe/
+Category:       System
+-- ffi
+Build-Depends:  base
+Synopsis:       Pipe streams through external shell commands
+Description:    Beginning with GHC-6.4 System.Process is available, which is the better choice. Original name was shell-haskell.
+GHC-Options:    -Wall -cpp
+Tested-With:    GHC
+C-sources:      shell_stub.c
+Hs-source-dirs: .
+Exposed-modules: Shell
+Data-Files:
+    Makefile
+    README
+    README.darcs
+
+
+Executable: Example1
+Hs-Source-Dirs: .
+Main-Is: Example1.hs
+GHC-Options:    -Wall -cpp
+C-sources:      shell_stub.c
+
+Executable: Example2
+Hs-Source-Dirs: .
+Main-Is: Example2.hs
+GHC-Options:    -Wall -cpp
+C-sources:      shell_stub.c
+
+Executable: Bug1
+Hs-Source-Dirs: .
+Main-Is: Bug1.hs
+GHC-Options:    -Wall -cpp
+C-sources:      shell_stub.c

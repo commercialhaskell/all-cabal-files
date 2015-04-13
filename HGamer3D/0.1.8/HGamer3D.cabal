@@ -1,0 +1,39 @@
+Name:                HGamer3D
+Version:             0.1.8
+Synopsis:            Library to enable 3D game development for Haskell
+Description:         
+	Library, to enable 3D game development for Haskell,
+	based on bindings to 3D Graphics, Audio and GUI libraries.
+	
+	This is the module, which includes all other needed modules and provides
+	an higher level API for primary
+	use.
+	
+    Platform: Windows only
+	License: Apache License, Version 2.0
+	Install: see http://www.althainz.de/HGamer3D/Download-and-Installation.html
+	
+License:             OtherLicense
+License-file:        LICENSE
+Author:              Peter Althainz
+Maintainer:          althainz@googlemail.com
+Build-Type:          Simple
+Cabal-Version:       >=1.2
+Homepage:            http://www.althainz.de/HGamer3D.html
+Category:            Game
+Extra-source-files:  Setup.hs 
+
+Library
+  Build-Depends:     base >= 3 && < 5, text, directory, Win32, mtl, HGamer3D-Data == 0.1.8, HGamer3D-Ogre-Binding == 0.1.8, HGamer3D-SFML-Binding == 0.1.8
+
+  Exposed-modules:   HGamer3D.APIs.Base.Common,HGamer3D.APIs.Base.Audio,HGamer3D.APIs.Base.InputSystem,HGamer3D.APIs.Base.Graphics3D.Engine3D,HGamer3D.APIs.Base.Graphics3D.Light,HGamer3D.APIs.Base.Graphics3D.Object3D,HGamer3D.BaseAPI
+  Other-modules:     
+
+  c-sources:         
+  
+  ghc-options:       
+  cc-options:        -Wno-attributes 
+  hs-source-dirs:    .
+  Include-dirs:      . 
+  build-depends:     
+  extra-libraries:   stdc++.dll

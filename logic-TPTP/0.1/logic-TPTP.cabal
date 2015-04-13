@@ -1,0 +1,69 @@
+name: logic-TPTP    
+version: 0.1
+cabal-version: >= 1.6
+build-type: Simple
+license: GPL
+license-file: LICENSE
+maintainer: Daniel Schüssler <daniels@community.haskell.org>
+bug-reports: mailto:daniels@community.haskell.org 
+synopsis: Import, export and other utilities for TPTP, a syntax for first-order logic
+description: 
+ For information about the TPTP format, see <http://www.cs.miami.edu/~tptp/>.
+ .
+ Components:
+ .
+ - Parser ('parse')
+ .
+ - Exporter ('toTPTP')
+ .
+ - Pretty-printer ('pretty')
+ .
+ - QuickCheck instances (generation of random formulae)
+ .  
+ - 'diff' : Get a \"formula\" which concisely represents the differences between two given formulae (equal subexpressions are truncated; so are the subexpressions of subexpressions whose heads already differ)
+ .
+ Tests passed:
+ .
+ - For randomly generated formulae, @parse . toTPTP == id@
+ .
+ - For each problem in the TPTP library (v 3.7.0.0) which doesn't contain the string \"thf(\", @parse . toTPTP . parse == parse@ 
+ .
+ Not yet implemented: The new /thf/ formula type.
+ .
+ 
+ 
+category: Codec,Math,Theorem Provers
+author: Daniel Schüssler
+cabal-version: >= 1.6
+extra-source-files: testing/compileTests.sh
+                    testing/TestImportExportRandom.hs
+                    testing/TestImportExportImportFile.hs
+                    testing/PrettyPrintFile.hs
+                    testing/PrettyPrintFile.hs
+                    
+tested-with: GHC==6.10.2
+
+source-repository head
+ type: darcs
+ location: http://code.haskell.org/~daniels/logic-TPTP
+ 
+ 
+
+Library
+ ghc-options:     -O2
+ 
+ build-depends:    base >=4 ,array, syb, containers, haskell98
+                   , ansi-wl-pprint, QuickCheck>=2               
+                   , utf8-prelude
+ 
+ exposed-modules:   Codec.TPTP.Import
+                   ,Codec.TPTP.Base
+                   ,Codec.TPTP
+                   ,Codec.TPTP.Pretty
+                   ,Codec.TPTP.Export
+                   ,Codec.TPTP.Diff
+ 
+ other-modules:
+                    Lexer     
+                  , Parser
+                   ,Codec.TPTP.QuickCheck

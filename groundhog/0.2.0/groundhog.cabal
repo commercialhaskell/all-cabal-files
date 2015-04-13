@@ -1,0 +1,37 @@
+name:            groundhog
+version:         0.2.0
+license:         BSD3
+license-file:    LICENSE
+author:          Boris Lykah <lykahb@gmail.com>
+maintainer:      Boris Lykah <lykahb@gmail.com>
+synopsis:        Type-safe ADT-database mapping library.
+description:     This library provides just the general interface and helper functions. You must use a specific backend in order to make this useful.
+category:        Database
+stability:       Non-stable
+cabal-version:   >= 1.6
+build-type:      Simple
+
+extra-source-files:  examples/*.hs
+
+library
+    build-depends:   base                     >= 4         && < 5
+                   , bytestring               >= 0.9
+                   , transformers             >= 0.2.1     && < 0.4
+                   , time                     >= 1.1.4
+                   , text                     >= 0.8       && < 0.12
+                   , containers               >= 0.2
+                   , monad-control            >= 0.3       && < 0.4
+                   , transformers-base
+    exposed-modules: Database.Groundhog
+                     Database.Groundhog.Core
+                     Database.Groundhog.Expression
+                     Database.Groundhog.Generic
+                     Database.Groundhog.Generic.Migration
+                     Database.Groundhog.Generic.Sql
+                     Database.Groundhog.Generic.PersistBackendHelpers
+                     Database.Groundhog.Instances
+    ghc-options:     -Wall
+    
+source-repository head
+  type:     git
+  location: git://github.com/lykahb/groundhog.git

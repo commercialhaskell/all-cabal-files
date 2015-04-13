@@ -1,0 +1,27 @@
+name:                whois
+version:             1.1.1
+synopsis:            WHOIS client library.
+homepage:            http://github.com/CodeBlock/whois-hs
+bug-reports:         https://github.com/CodeBlock/whois-hs/issues
+
+license:             BSD3
+license-file:        LICENSE
+
+author:              Ricky Elrod
+maintainer:          ricky@elrod.me
+
+description:         Provides a simple client to return WHOIS information about
+                     IP addresses or hostnames.
+
+category:            Network
+build-type:          Simple
+cabal-version:       >=1.8
+stability:           experimental, may change (open to suggestions!)
+
+library
+  exposed-modules:     Network.Whois
+  build-depends:       base ==4.6.*, split ==0.2.*, network ==2.4.*
+
+source-repository head
+  type:     git
+  location: git://github.com/CodeBlock/whois-hs.git

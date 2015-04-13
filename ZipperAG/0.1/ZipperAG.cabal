@@ -1,0 +1,20 @@
+Name:		   ZipperAG
+Version:	   0.1
+Cabal-Version: >= 1.2
+License:	   BSD3
+Author:		   Pedro Martins <pedromartins4@gmail.com>
+Maintainer:    Pedro Martins <pedromartins4@gmail.com>
+Homepage:	   www.di.uminho.pt/~prmartins
+Category:	   Experimental
+Synopsis:	   An implementationg of Attribute Grammars using Funcitonal Zippers
+Description:   An implementationg of Attribute Grammars using Funcitonal Zippers
+build-type:    Simple
+Copyright:     Pedro Martins
+Extra-source-files: README
+license-file:  LICENSE
+
+Library
+  Build-Depends:	base >= 2 && <= 4.6.0.1, syz
+  Exposed-modules:  Language.Grammars.ZipperAG
+  hs-source-dirs:   src 
+

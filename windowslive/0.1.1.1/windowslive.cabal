@@ -1,0 +1,47 @@
+Name:                windowslive
+Cabal-Version:       >= 1.6
+Version:             0.1.1.1
+Synopsis:            Implements Windows Live Web Authentication and
+                     Delegated Authentication
+
+Description:         Implements functions for initiating and processing
+                     Web Authentication requests, as well as Delegated
+                     Authentication. See
+                     <http://msdn.microsoft.com/en-us/library/bb404787.aspx>
+
+Category:            Web
+License:             BSD3
+License-File:        LICENSE
+Author:              Josh Hoyt
+Maintainer:          joshhoyt@gmail.com
+Homepage:            http://patch-tag.com/repo/windowslive
+Stability:           alpha
+Build-Type:          Custom
+
+Library
+  GHC-Options: -Wall
+  Build-Depends:
+    base == 4.*,
+    Crypto == 4.2.*,
+    dataenc == 0.12,
+    mtl == 1.*,
+    network == 2.2.*,
+    pretty == 1.*,
+    split == 0.1.*,
+    time == 1.1.*,
+    parsec >= 3.0.0 && < 3.1,
+    HUnit == 1.2.*,
+    urlencoded
+  HS-Source-Dirs: src
+  Exposed-Modules:
+    Network.WindowsLive.Token,
+    Network.WindowsLive.Login,
+    Network.WindowsLive.ConsentToken
+
+-- This executable is not installed by the (custom) Setup program. It is
+-- used by the test hook (cabal test)
+Executable windowslive-library-test
+  GHC-Options: -Wall
+  Main-is: Test.hs
+  HS-Source-Dirs: src, test
+  X-Test-Executable: true

@@ -1,0 +1,42 @@
+name:            sock2stream
+version:         0.1
+cabal-version:   >= 1.8
+license:         OtherLicense
+license-file:    COPYING
+category:        Network
+copyright:       © 2011 Stephen Paul Weber
+author:          Stephen Paul Weber <singpolyma@singpolyma.net>
+maintainer:      Stephen Paul Weber <singpolyma@singpolyma.net>
+stability:       experimental
+tested-with:     GHC == 7.0.3
+synopsis:        Tunnel a socket over a single datastream (stdin/stdout)
+homepage:        https://github.com/singpolyma/sock2stream
+bug-reports:     https://github.com/singpolyma/sock2stream/issues
+build-type:      Simple
+description:
+        This is an initial implementation of a socket multiplexer\/demultiplexer to tunnel Unix domain sockets over pipes\/streams.
+        .
+        The primary envisioned use is to tunnel Unix domain sockets over SSH like so:
+        .
+        > mkfifo /tmp/sockin
+        > ssh user@host socket2stream -l /path/to/remotesocket < /tmp/sockin | socket2stream -r /path/to/localsocket > /tmp/sockin
+
+extra-source-files:
+        README
+
+executable sock2stream
+        main-is: sock2stream.hs
+
+        build-depends:
+                base == 4.*,
+                haskell98,
+                directory,
+                containers,
+                network,
+                bytestring,
+                binary,
+                chp == 2.2.*
+
+source-repository head
+        type:     git
+        location: git://github.com/singpolyma/sock2stream.git

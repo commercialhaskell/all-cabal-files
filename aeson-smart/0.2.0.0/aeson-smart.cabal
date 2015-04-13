@@ -1,0 +1,22 @@
+name:                aeson-smart
+version:             0.2.0.0
+synopsis:            Smart derivation of Aeson instances
+description:         Aeson-smart generates ToJSON and FromJSON instances that ignore extra fields
+                     and fill in missing fields with default values. 
+homepage:            https://github.com/lassoinc/aeson-smart
+license:             MIT
+author:              Sam Anklesaria
+maintainer:          amsay@amsay.net
+license-file:        LICENSE
+-- copyright:           
+category:            Web
+build-type:          Simple
+cabal-version:       >=1.8
+source-repository head
+  type:     git
+  location: git://github.com/lassoinc/aeson-smart.git
+
+library
+  exposed-modules:     Data.Aeson.TH.Smart, Data.Default.TH
+  -- other-modules:       
+  build-depends:       base ==4.5.*, aeson ==0.6.*, data-default, unordered-containers ==0.2.*, template-haskell ==2.7.*, text ==0.11.*, vector ==0.9.*

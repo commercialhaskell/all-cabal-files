@@ -1,0 +1,19 @@
+name:                yi-monokai
+version:             0.1.0.0
+synopsis:            Monokai colour scheme for the Yi text editor
+homepage:            https://github.com/Fuuzetsu/yi-monokai
+license:             BSD3
+license-file:        LICENSE
+author:              Mateusz Kowalczyk
+maintainer:          fuuzetsu@fuuzetsu.co.uk
+category:            Yi
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+
+library
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+  exposed-modules:     Yi.Style.Monokai
+
+  build-depends:       base >=4.6 && <4.7, yi >=0.7

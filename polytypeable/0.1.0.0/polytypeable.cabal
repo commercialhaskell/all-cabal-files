@@ -1,0 +1,12 @@
+Name:		polytypeable
+Version:	0.1.0.0
+License:	BSD3
+Author:		Oleg Kiselyov, Lennart Augustsson
+Maintainer:	Lennart Augustsson
+Category:	Data
+Synopsis:	Typeable for polymorphic types.
+Stability:      experimental
+Build-type:	Simple
+Description:	Typeable for polymorphic types.
+Build-Depends:	base
+Exposed-modules:	Data.PolyTypeable

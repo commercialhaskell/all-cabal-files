@@ -1,0 +1,31 @@
+cabal-version:      >= 1.6
+build-type:         Simple
+name:               loopy
+version:            0.0
+stability:          Alpha
+license:            BSD3
+license-file:       LICENSE
+category:           Unclassified
+author:             Emily Mitchell <emily.g.h.mitchell@gmail.com>
+maintainer:         Emily Mitchell <emily.g.h.mitchell@gmail.com>
+copyright:          Emily Mitchell 2009-2011
+synopsis:           Find all biological feedback loops within an ecosystem graph.
+description:        Find all biological feedback loops within an ecosystem graph.
+homepage:           http://www.esc.cam.ac.uk/people/research-students/emily-king
+
+executable loopy
+    main-is:
+        Main.hs
+
+    build-depends:
+        base == 4.*, hmatrix, GoogleChart, cmdargs, containers, filepath, process, directory, random
+
+    other-modules:
+        Avalon
+        DotFile
+        FeedingRates
+        Graph
+        LoopProp
+        Mlw
+        Stab
+        Types

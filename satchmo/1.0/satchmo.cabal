@@ -1,0 +1,30 @@
+Name:           satchmo
+Version:        1.0
+License:        GPL
+License-file:	gpl-2.0.txt
+Author:         Johannes Waldmann
+Maintainer:	Johannes Waldmann
+Homepage:       http://dfa.imn.htwk-leipzig.de/satchmo/
+Category:       Testing
+Synopsis:       SAT encoding monad
+description:	Encoding for boolean and integral constraints into CNF-SAT.
+		The encoder is provided as a State monad (hence the "mo" in "satchmo").
+		Requires SAT solver minisat installed.
+Build-depends:  mtl, process, containers, base, array
+Exposed-modules:
+        Satchmo.Boolean
+        Satchmo.Solve
+	Satchmo.Counting
+	Satchmo.Binary
+	Satchmo.Code
+Other-modules:
+        Satchmo.Boolean.Data
+	Satchmo.Boolean.Op
+	Satchmo.Internal
+	Satchmo.Data
+hs-source-dirs:	.
+extra-source-files: test/Binary.hs  test/HC.hs      test/Schur.hs
+		    test/Cage.hs    test/Ramsey.hs  test/VC.hs
+		    TODO
+extensions: 
+build-type: Simple

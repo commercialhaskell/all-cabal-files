@@ -1,0 +1,15 @@
+Name: HSHHelpers
+Version: 0.11
+License: GPL
+License-file: gpl.txt
+Description: Convenience functions and instances for HSH. I will deprecate this package if its contents are integrated into HSH.
+Synopsis: Convenience functions and instances for HSH
+Maintainer: Thomas Hartman <thomashartman1 at gmail>
+Author: Thomas Hartman
+Stability: Beta
+Copyright: Copyright (c) 2006-2008 Thomas Hartman
+Exposed-Modules: HSH.Helpers, HSH.Helpers.Instances, HSH.Helpers.UnixUsers, HSH.Helpers.FileManip
+Build-Depends: base, HSH, unix, HStringTemplateHelpers, MissingH, regex-pcre, directory, bytestring, filepath
+Category: System
+Build-type: Simple
+

@@ -1,0 +1,42 @@
+name: Rasenschach
+version: 0.1.2
+cabal-version: >=1.2
+build-type: Simple
+license: BSD3
+license-file: LICENSE
+maintainer: mwoehrle@arcor.de
+homepage: http://hub.darcs.net/martingw/Rasenschach
+synopsis: Soccer simulation
+description: Soccer simulation with simple graphics and highly configurable AI
+category: Game
+author: Martin Wöhrle
+data-files: 20redball.png 23redball.png 26redball.png 20THCENT.TTF
+            30redball.png 35redball.png 40redball.png SqueakyChalkSound.ttf ballM.wav
+            chalkboard.png tockH.wav whistle.wav
+data-dir: ""
+extra-source-files: AI.hs AL.hs Animate.hs BallFSM.hs BasicTypes.hs
+                    Command.hs Data/FSM.hs GameFSM.hs GameLoop.hs Global.hs Grid.hs
+                    Helper.hs Lineup.hs Message.hs Object.hs ObjectBehaviour.hs
+                    ParseTeam.hs Parser.hs Physics.hs PlayerFSM.hs README Render.hs
+                    RenderBall.hs RenderGame.hs RenderPlayer.hs RenderUtil.hs Rules.hs
+                    States.hs
+ 
+executable Rasenschach
+    build-depends: SDL -any, SDL-gfx -any, SDL-image -any,
+                   SDL-mixer -any, SDL-ttf -any, Yampa -any, array -any,
+                   base >=3 && <5, containers -any, convertible -any, directory -any,
+                   filepath -any, ghc -any, monad-loops -any, template-haskell -any,
+                   time -any
+    main-is: Main.hs
+    buildable: True
+    cpp-options: -D NO_DEBUG_MODE
+    extensions: CPP
+    hs-source-dirs: .
+    other-modules: GameLoop Physics ParseTeam PlayerFSM Render Main AL
+                   ObjectBehaviour GameFSM Message Rules Object BasicTypes Animate
+                   Helper RenderGame Global Command RenderUtil BallFSM RenderPlayer
+                   Main States AI Grid RenderBall Parser Lineup Main Data.FSM
+    ghc-prof-options: --enable-executable-profiling
+--    ghc-options: -O2 -prof -Wall
+    ghc-options: -O2 -Wall
+  

@@ -1,0 +1,53 @@
+name: plist
+version: 0.0.1
+cabal-version: -any
+build-type: Simple
+license: BSD3
+license-file: LICENSE
+copyright: (c) 2009, Yuras Shumovich
+maintainer: shumovichy@gmail.com
+build-depends: base >=3 && < 5, dataenc -any, hxt >= 8.3.0 && < 8.4
+stability: experimental
+homepage:
+package-url:
+bug-reports:
+synopsis: Generate and parse Mac OX property list format
+description: Simple helper to generate and parse Mac OS X plist format.
+             Currently it supports only 'xml1' format.
+             It is based on Haskell XML Toolbox.
+             .
+             See
+             <http://developer.apple.com/mac/library/documentation/Darwin/Reference/ManPages/man5/plist.5.html>
+             for details about plist format.
+category: XML
+author: Yuras Shumovich<shumovichy@gmail.com>
+tested-with:
+data-files: LICENSE README
+data-dir: ""
+extra-source-files:
+extra-tmp-files:
+exposed-modules: Text.XML.Plist Text.XML.Plist.PlObject
+                 Text.XML.Plist.Write Text.XML.Plist.Read
+exposed: True
+buildable: True
+build-tools:
+cpp-options:
+cc-options:
+ld-options:
+pkgconfig-depends:
+frameworks:
+c-sources:
+extensions:
+extra-libraries:
+extra-lib-dirs:
+includes:
+install-includes:
+include-dirs:
+hs-source-dirs: src
+other-modules:
+ghc-prof-options:
+ghc-shared-options:
+ghc-options: -Wall
+hugs-options:
+nhc98-options:
+jhc-options:

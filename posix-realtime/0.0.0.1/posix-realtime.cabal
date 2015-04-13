@@ -1,0 +1,36 @@
+name:		posix-realtime
+version:	0.0.0.1
+license:	BSD3
+license-file:	LICENSE
+category:       System
+maintainer:	libraries@haskell.org
+synopsis:	POSIX Realtime functionality
+description:
+	This package gives you access to the set of operating system
+	services standardised by POSIX 1003.1b (or the IEEE Portable
+	Operating System Interface for Computing Environments -
+	IEEE Std. 1003.1).
+	.
+	The package is not supported under Windows (except under Cygwin).
+build-type: Configure
+exposed-modules:
+                System.Posix.Realtime.MQueue
+                System.Posix.Realtime.RTSched
+                System.Posix.Realtime.LockedMem
+                System.Posix.Realtime.RTDataTypes
+                System.Posix.Realtime.RTTime
+                System.Posix.Realtime.Aio
+extra-source-files:
+		configure.ac configure
+		unix.buildinfo.in include/HsUnixConfig.h.in
+		include/HsUnix.h
+extra-tmp-files:
+		config.log config.status autom4te.cache
+		unix.buildinfo include/HsUnixConfig.h
+build-depends:  base, unix	
+extensions:	CPP, ForeignFunctionInterface
+include-dirs: 	include
+includes:       HsUnix.h execvpe.h
+install-includes:
+		HsUnix.h HsUnixConfig.h execvpe.h
+c-sources:	cbits/HsUnix.c cbits/execvpe.c

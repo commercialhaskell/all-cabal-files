@@ -1,0 +1,71 @@
+name:               unicoder
+version:            0.4.1
+stability:          beta
+synopsis:           Make writing in unicode easy.
+description:        Unicoder is a command-line tool transforms text documents, replacing simple
+                    patterns with unicode equivalents. The patterns can be easily configured by
+                    the user.
+                    This package is especially meant to open the vast and expressive array
+                    of unicode identifiers to programmers and language designers, but there's
+                    nothing wrong with a technically savvy user putting unicoder to work
+                    on documents for human consumption.
+                    Any system of special characters can be made easy to type on any keyboard 
+                    and in any context as long as unicode supports it.
+                    .
+                    Cabal wants to fight me over typesetting some examples, so check out
+                    <http://zankoku-okuno.viewdocs.io/unicoder/ the real docs>
+                    for a decent look at the features.
+                    .
+                    In the interests of giving readers /some/ idea whats going on,
+                    with the default settings,
+                    .
+                    > \E x. \A y. x \-> y
+                    > \l x,y. x \of x \of y
+                    .
+                    becomes
+                    .
+                    > ∃x ∀y x → y
+                    > λ x,y. x ∘ x ∘ y
+                    .
+                    except that the newline isn't removed (thanks, cabal!). Also, there are a couple
+                    important features that I can't seem to get cabal to even parse (thanks again!).
+license:            BSD3
+license-file:       LICENSE
+copyright:          Copyright © 2013, 2014, Okuno Zankoku
+author:             Zankoku Okuno
+maintainer:         zankoku.okuno@gmail.com
+homepage:           https://github.com/Zankoku-Okuno/unicoder
+bug-reports:        https://github.com/Zankoku-Okuno/unicoder/issues
+category:           Text
+build-type:         Simple
+cabal-version:      >=1.9.2
+data-dir:           data
+data-files:         *.conf
+extra-source-files: README.md, changes.md,
+                    test/*.in, test/*.out, test/test.config
+
+executable unicoder
+  main-is:             unicoder.hs
+  -- other-modules:       
+  build-depends:       base ==4.6.*,
+                       text ==0.11.*,
+                       attoparsec >=0.10.0.0,
+                       directory ==1.2.*
+
+library
+  exposed-modules:     Text.Unicoder
+  other-modules:       Paths_unicoder
+  build-depends:       base ==4.6.*,
+                       text ==0.11.*,
+                       attoparsec >=0.10.0.0
+
+Test-Suite test-unicoder
+    type:              exitcode-stdio-1.0
+    main-is:           test/test.hs
+    build-depends:     base ==4.6.*,
+                       text ==0.11.*,
+                       attoparsec >=0.10.0.0
+
+source-repository head
+  type: git
+  location: https://github.com/Zankoku-Okuno/unicoder.git

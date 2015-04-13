@@ -1,0 +1,25 @@
+Name:                bluetile
+Version:             0.1
+synopsis:            A modern tiling window manager with a gentle learning curve
+description:
+  Bluetile is a tiling window manager for X based on xmonad. Windows are arranged
+  automatically to tile the screen without gaps or overlap, maximising
+  screen use. Bluetile's focus lies on making the tiling paradigm easily
+  accessible for users coming from traditional window managers by drawing
+  on known conventions and making all features available using the mouse.
+  It also tries to be usable 'out of the box', making configuration unnecessary.
+category:            System
+License:             BSD3
+License-file:        LICENSE
+Author:              Jan Vornberger
+Maintainer:          jan.vornberger@informatik.uni-oldenburg.de
+extra-source-files:  Config.hs
+Build-Type:          Simple
+Cabal-Version:       >=1.2
+
+Executable bluetile
+  Main-is:           Main.hs
+  Build-Depends:     base>=3, base<4, containers, process,
+                     xmonad-bluetilebranch>=0.8, xmonad-bluetilebranch<0.9,
+                     xmonad-contrib-bluetilebranch>=0.8, xmonad-contrib-bluetilebranch<0.9
+  Ghc-Options:       -Wall

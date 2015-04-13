@@ -1,0 +1,85 @@
+Name:            stomp-queue
+Version:         0.0.7
+Cabal-Version:   >= 1.8
+Copyright:       Copyright (c) Tobias Schoofs, 2011 - 2013
+License:         LGPL
+license-file:    license/lgpl-3.0.txt
+Author:          Tobias Schoofs
+Maintainer:      tobias dot schoofs at gmx dot net
+Homepage:        http://github.com/toschoo/mom
+Category:        Network, Message-oriented Middleware, Stomp, Client
+Build-Type:      Simple
+Synopsis:        Stompl Client Library 
+Description:
+  The Stomp Protocol specifies message-oriented interoperability.
+  Applications connect to a message broker to send (publish)
+  or receive (subscribe) messages through queues. 
+  Interoperating applications do not know 
+  the location or internal structure of each other.
+  They see only each other's interfaces, /i.e./ the messages
+  published and subscribed through the broker.
+  
+  The Stomp Queue library provides 
+  a Stomp client, using abstractions like
+  'Connection', 'Transaction', 'Queue' and 'Message'.
+
+  More information, examples and a test suite are available 
+  on <http://github.com/toschoo/mom>.
+  The Stomp specification can be found at
+  <http://stomp.github.com>.
+
+  .
+
+  Release History:
+
+  .
+
+  [0.0.7] Fighting with hackagedb...
+
+  .
+
+  [0.0.6] Heartbeats caused a memory leak by creating 
+          many Connection instances in the connection state list.
+          The connections were lazily deleted, /i.e./ were
+          not deleted at all.
+          Connection state is now cleaned up by a strict delete.
+
+  .
+
+  [0.0.5] Underscore functions removed; 
+          with* functions: withWriter, withPair;
+          new option for connection (ClientId);
+          Headers for broker-specific options can be passed to connection.
+
+  .
+
+  [0.0.3] New interface writeAdHoc
+
+  .
+
+  [0.0.2] Minor corrections
+          
+  .
+
+  [0.0.1] Initial release
+
+
+Library
+  Build-Depends:   base        >= 4.0 && <= 5.0,
+                   bytestring  >= 0.9 && < 0.10,
+                   utf8-string >= 0.3.6,
+                   attoparsec  >= 0.9.1.1,
+                   split       >= 0.1.4.1,
+                   network     >= 2.3.0.4,
+                   stompl      >= 0.0.3,
+                   mime        >= 0.3.3,
+                   time        >= 1.1.4
+
+  hs-source-dirs: Network/Mom/Stompl/Client, .
+                   
+  Exposed-Modules: Network.Mom.Stompl.Client.Queue, 
+                   Network.Mom.Stompl.Client.Exception
+                   -- Network.Mom.Stompl.Client.Client,
+                   -- Network.Mom.Stompl.Client.Server
+  other-modules: Socket, Protocol, State, Factory
+

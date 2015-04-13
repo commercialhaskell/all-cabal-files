@@ -1,0 +1,20 @@
+name:                hplaylist
+version:             0.1
+synopsis:            Application for managing playlist files on a music player
+description:         Application for managing playlist files on a music player
+category:            Sound
+license:             GPL
+license-file:        LICENSE
+author:              Tim Chevalier
+maintainer:          Tim Chevalier <chevalier@alum.wellesley.edu>
+stability:           alpha
+tested-with:         GHC==6.10.4
+data-files:          README
+build-type:          Simple
+cabal-version:       >=1.6
+
+Executable hplaylist
+  Main-is: Main.hs
+  other-modules: Applescript Utils
+  Build-Depends: base >= 4 && < 5, filepath, directory, process
+  ghc-options: -Wall

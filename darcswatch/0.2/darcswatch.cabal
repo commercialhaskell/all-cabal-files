@@ -1,0 +1,75 @@
+Name:            darcswatch
+version:         0.2
+Category:        Distribution
+name:            darcswatch
+author:          Joachim Breitner
+maintainer:      Joachim Breitner <mail@joachim-breitner.de>
+Synopsis:        Track application of Darcs patches
+Description:     DarcsWatch is a tool to track the state of darcs patches
+                 that have been submitted to some project, usually by
+                 using the "darcs send" command. It allows both submitters
+                 and project maintainers to get an overview of patches that
+                 have been submitted but not yet applied. Some notable features are:
+                 .
+                 * Reads both darcs1 and darcs2.0 (hashed) format repositories.
+                 .
+                 * Displays patch summaries per user and per repository.
+                 .
+                 * Patch diff can be reviewed directly.
+                 .
+                 * Download link for each patch, to apply without searching for the email.
+                 .
+                 * Knows about inverse and amend-recorded patches and uses them to consider
+                 patches obsolete.
+Homepage:        http://darcswatch.nomeata.de/
+Cabal-Version:   >= 1.6
+License:         GPL
+License-File:    LICENSE
+extra-source-files: mailfilter.sh
+data-files:      documentation.html,
+                 README, 
+                 example/config
+                 example/keyring,
+                 example/mails/patchInvTest,
+                 example/mails/patch_1f03d40fbe9d0593a9eb7fbefc3bfa85,
+                 example/mails/patchsmaJcF,
+                 example/mails/patchBEbWYh,
+                 example/mails/patchOKsIKA,
+                 example/mails/patch_a963212153b4f5e3f1777daa562dd989
+Build-Type:      Simple
+
+Executable darcswatch
+        Executable:     darcswatch
+        Main-Is:        Main.hs
+        hs-source-dirs: src
+        Other-modules:  HTML
+                        , MultiMap
+                        , Darcs
+                        , OldDate
+                        , StringCrypto
+                        , CachedGet
+                        , LockRestart
+        Build-Depends:  base > 3 && < 4
+                        , network
+                        , HTTP >= 4000
+                        , old-time
+                        , Crypto
+                        , parsec
+                        , containers
+                        , xhtml
+                        , unix
+                        , directory
+                        , nano-md5
+                        , zlib
+                        , filepath
+                        , bytestring
+                        , concurrentoutput
+
+source-repository head
+  type:     darcs
+  location: http://darcs.nomeata.de/darcswatch/
+
+source-repository this
+  type:     darcs
+  location: http://darcs.nomeata.de/darcswatch/
+  tag:      v0.2

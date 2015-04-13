@@ -1,0 +1,12 @@
+Name:           ipprint
+Category:       Text
+Version:        0.1
+License:        BSD3
+License-file:   LICENSE
+Author:         Gleb Alexeyev
+Maintainer:     gleb.alexeev@gmail.com
+Build-Depends:  base, haskell-src
+Synopsis:       Tiny helper for pretty-printing values in ghci console
+Description:    Tiny helper for pretty-printing values in ghci console
+Exposed-modules:
+	IPPrint

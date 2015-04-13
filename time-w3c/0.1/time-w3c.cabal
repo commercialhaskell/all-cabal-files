@@ -1,0 +1,77 @@
+Name:                time-w3c
+Version:             0.1
+Synopsis:            Parse, format and convert W3C Date and Time
+Description:
+        This package provides functionalities to parse and format W3C
+        Date and Time. The package can also be used to convert it
+        from/to 'Data.Time.Calendar.Day' and
+        'Data.Time.LocalTime.ZonedTime'.
+
+        See: <http://www.w3.org/TR/NOTE-datetime>
+
+License:             PublicDomain
+License-file:        COPYING
+Author:              PHO <pho AT cielonegro DOT org>
+Maintainer:          PHO <pho AT cielonegro DOT org>
+Stability:           Experimental
+Homepage:            http://cielonegro.org/W3CDateTime.html
+Category:            Web
+Build-type:          Simple
+Cabal-version:       >= 1.6
+Extra-source-files:
+
+Source-Repository head
+    Type: git
+    Location: git://git.cielonegro.org/time-w3c.git
+
+Flag build-test-suite
+    Description: Build the tst suite.
+    Default:     False
+
+Library
+    Exposed-modules:
+        Data.Time.W3C
+        Data.Time.W3C.Format
+        Data.Time.W3C.Parser
+        Data.Time.W3C.Parser.Parsec
+        Data.Time.W3C.Types
+
+    Build-depends:
+        base >= 4 && < 5,
+        convertible >= 1.0 && < 2,
+        parsec >= 3 && < 4,
+        time >= 1.1 && < 2
+
+    Extensions:
+        DeriveDataTypeable
+        FlexibleContexts
+        MultiParamTypeClasses
+
+    GHC-Options:
+        -Wall
+
+Executable W3CDateTimeUnitTest
+    Main-Is:
+        W3CDateTimeUnitTest.hs
+
+    if flag(build-test-suite)
+        Buildable: True
+        Build-Depends: HUnit >= 1.2 && < 2
+    else
+        Buildable: False
+
+    Hs-Source-Dirs:
+        ., tests
+
+    Other-Modules:
+        ConversionTest
+        FormatterTest
+        ParsecParserTest
+
+    Extensions:
+        DeriveDataTypeable
+        FlexibleContexts
+        MultiParamTypeClasses
+
+    GHC-Options:
+        -Wall

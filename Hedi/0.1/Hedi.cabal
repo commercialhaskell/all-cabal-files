@@ -1,0 +1,29 @@
+Name:                    Hedi
+Version:                 0.1
+Cabal-Version:           >= 1.2
+Description:             Haskell line editor. Cloned from ed manual.
+Category:                Editor
+Synopsis:                Line oriented editor
+License:                 BSD3
+License-file:            LICENSE
+Author:                  Paolo Veronelli
+Maintainer:              paolo.veronelli@gmail.com
+Build-type:              Simple
+data-files:		 command.help
+
+Library
+    Exposed-Modules:     Engine,Editor,Operation,Eval,Parser,Helper,Offset,
+                         Main,Test,Buffer,Undo
+    Build-Depends:       base,mtl,parsec,regex-posix,readline,QuickCheck,
+                         process,pretty
+	
+Executable hedi
+    Build-Depends:       base,mtl,parsec,regex-posix,readline,QuickCheck,
+                         process,pretty
+    Main-is:             Main.hs
+    other-modules:  	 Engine,Editor,Operation,Eval,Parser,Helper,Offset,
+                         Test,Buffer,Undo
+    extensions:          NoMonomorphismRestriction,MultiParamTypeClasses,
+                         FlexibleContexts,FlexibleInstances,
+                         GeneralizedNewtypeDeriving
+

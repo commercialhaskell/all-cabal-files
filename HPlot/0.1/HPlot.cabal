@@ -1,0 +1,41 @@
+Name:		HPlot
+Version:	0.1
+Cabal-Version:  >= 1.2
+License:	BSD3
+License-File: license
+Author:		Yakov Z <iakovz@gmail.com>
+Maintainer:     Yakov Z <iakovz@gmail.com>
+Category:	Graphics, Foreign
+Synopsis:	A minimal monadic PLplot interface for Haskell
+Description:
+  This package provides simple monadic interface to the PLplot cross-platform software 
+  package for creating scientific plots. 
+  .
+  PlplotCanvas widget is implemented to be compatible with gtk2hs. PLplot type class allows
+  addition of other display drivers without need to adopt application code
+  .
+  The idea was that with the help of PLplotM monad it should be easy to make 
+  more abstract interfaces and combinators to do plots
+  .
+build-type: Simple
+extra-source-files: example.glade, license
+
+Library
+  Build-Depends:	base, gtk, glade, glib
+  Exposed-modules:
+    Graphics.PLplot
+--  ghc-options: -Wall -fglasgow-exts
+  ghc-options: -Wall 
+  extensions: ForeignFunctionInterface, FlexibleContexts, FlexibleInstances
+  build-tools: c2hs
+  pkgconfig-depends: plplotd-gnome2
+
+Executable           Example
+  build-depends:     base, gtk, glade, glib
+  Main-Is:           Example.hs
+  hs-source-dirs:    .
+  Other-Modules:     Graphics.PLplot
+--  ghc-options: -Wall -fglasgow-exts
+  ghc-options: -Wall
+  extensions: ForeignFunctionInterface, FlexibleContexts, FlexibleInstances
+  pkgconfig-depends: plplotd-gnome2

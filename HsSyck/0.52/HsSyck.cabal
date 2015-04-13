@@ -1,0 +1,44 @@
+Name:                HsSyck
+Version:             0.52
+Cabal-version:       >= 1.6
+Category:            Text, Pugs
+Synopsis:            Fast, lightweight YAML loader and dumper
+Description:         This is a simple YAML ('Yet Another Markup Language') processor,
+                     used by the Pugs project for handling data serialization; this can be
+                     useful for optimization and caching purposes.
+                     .
+                     This is an interface to the @syck@ C library for parsing and
+                     dumping YAML data. It lets you transform textual YAML data into an
+                     object of type 'YamlNode', and vice versa, fast.
+
+-- License is really "MIT", but Cabal doesn't have that constant yet
+License:             BSD3
+License-File:        LICENSE
+Author:              Audrey Tang
+Maintainer:          audreyt@audreyt.org
+Copyright:           Audrey Tang, Gaal Yahas, Oliver Charles, 2005, 2006, 2007, 2008, 2009, 2013, 2014
+Bug-Reports: https://github.com/audreyt/hssyck/issues
+
+Build-Type:          Simple
+Tested-With:         GHC==6.8.2, GHC==6.8.3, GHC==6.10.1, GHC==6.10.2, GHC==7.6.3
+Data-Files:          Changes
+Extra-Source-Files:  syck/syck.h syck/syck_st.h syck/gram.h syck/yamlbyte.h
+
+source-repository head
+    type:     git
+    location: http://github.com/audreyt/hssyck
+
+Library
+    Build-Depends: base>=4 && <6, bytestring>=0.9.0.1, syb, utf8-string>=0.3, hashtables
+
+    exposed-modules: Data.Yaml.Syck
+
+    ghc-options: -funbox-strict-fields
+
+    extensions: ForeignFunctionInterface, MagicHash, CPP,
+                DeriveDataTypeable, TypeSynonymInstances, PatternGuards, RecursiveDo
+
+    c-sources: syck/bytecode.c syck/emitter.c syck/gram.c syck/handler.c
+               syck/implicit.c syck/node.c syck/syck.c syck/syck_st.c
+               syck/token.c syck/yaml2byte.c
+    include-dirs:        syck

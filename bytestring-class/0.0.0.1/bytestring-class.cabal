@@ -1,0 +1,19 @@
+name:            bytestring-class
+version:         0.0.0.1
+x-revision: 1
+license:         BSD3
+license-file:    LICENSE
+author:          Michael Snoyman <michael@snoyman.com>
+maintainer:      Michael Snoyman <michael@snoyman.com>
+synopsis:        Classes for automatic conversion to and from strict and lazy bytestrings. (deprecated)
+description:     In theory, this allows the design of more data-agnostic
+                 APIs.
+category:        Data
+stability:       stable
+cabal-version:   >= 1.2
+build-type:      Simple
+
+library
+    build-depends:   base < 4.4, bytestring, utf8-string
+    exposed-modules: Data.ByteString.Class
+    ghc-options:     -Wall

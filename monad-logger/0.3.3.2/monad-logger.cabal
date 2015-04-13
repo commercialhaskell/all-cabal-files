@@ -1,0 +1,31 @@
+name:                monad-logger
+version:             0.3.3.2
+synopsis:            A class of monads which can log messages.
+description:         This package uses template-haskell for determining source code locations of messages.
+homepage:            https://github.com/kazu-yamamoto/logger
+license:             MIT
+license-file:        LICENSE
+author:              Michael Snoyman
+maintainer:          michael@snoyman.com
+category:            System
+build-type:          Simple
+cabal-version:       >=1.8
+
+
+library
+  exposed-modules:     Control.Monad.Logger
+  build-depends:       base               >= 4         && < 5
+                     , template-haskell
+                     , transformers
+                     , text
+                     , stm
+                     , stm-chans
+                     , lifted-base
+                     , resourcet          >= 0.4       && < 0.5
+                     , conduit            >= 1.0       && < 1.1
+                     , fast-logger        >= 2.0       && < 2.1
+                     , transformers-base
+                     , monad-control
+                     , monad-loops
+                     , mtl
+                     , bytestring

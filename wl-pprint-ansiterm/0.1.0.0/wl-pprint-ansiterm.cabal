@@ -1,0 +1,38 @@
+name:                wl-pprint-ansiterm
+version:             0.1.0.0
+synopsis:            ANSI Terminal support with wl-pprint-extras
+description:         ANSI Terminal support with wl-pprint-extras
+license:             BSD3
+license-file:        LICENSE
+author:              Hiroki Hattori
+maintainer:          seagull.kamome@gmail.com
+copyright:           Copyright (C) 2015 Hiroki Hattori; Copyright (C) 2011 Edward A. Kmett
+homepage:            https://github.com/seagull-kamome/wl-pprint-ansiterm
+bug-reports:          https://github.com/seagull-kamome/wl-pprint-ansiterm/issues
+category:            System, Text
+build-type:          Simple
+-- extra-source-files:  
+cabal-version:       >=1.10
+
+source-repository head
+  type: git
+  location: git://github.com/seagull-kamome/wl-pprint-ansiterm.git
+
+library
+  exposed-modules:     System.Console.ANSI.PrettyPrint
+  -- other-modules:       
+  other-extensions:    TypeFamilies
+  build-depends:       base == 4.*,
+                     mtl >=2.2 && <2.3,
+                     wl-pprint-extras >= 3.5,
+                     ansi-terminal >= 0.6,
+                     bytestring       >= 0.9.1   && < 0.11,
+                     containers       >= 0.4     && < 0.6,
+                     nats             >= 0.1     && < 2,
+                     semigroups       >= 0.9     && < 1,
+                     wl-pprint-extras >= 3.4     && < 4,
+                     transformers     >= 0.2     && < 0.5,
+                     text             >= 0.11    && < 1.3
+  hs-source-dirs:      src
+  ghc-options:        -Wall
+  default-language:    Haskell2010

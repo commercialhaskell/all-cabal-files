@@ -1,0 +1,133 @@
+name:                 apache-md5
+version:              0.5.0.0
+synopsis:             Apache server specific MD5 digest algorighm.
+description:
+  Haskell implementation of Apache HTTP server specific MD5 digest algorithm
+  that uses OpenSSL @MD5()@ function.
+license:              BSD3
+license-File:         LICENSE
+copyright:            2009, 2010, 2012, 2013 Peter Trško
+author:               Peter Trško <peter.trsko@gmail.com>
+maintainer:           peter.trsko@gmail.com
+category:             Data, Cryptography
+build-Type:           Custom
+cabal-Version:        >= 1.9.1
+  -- Benchmark section is available since Cabal >= 1.9.1
+extra-source-files:   README.md
+
+
+flag pedantic
+  description:
+    Pass additional warning flags including -Werror to GHC during compilation.
+  default:            False
+
+library
+  hs-Source-Dirs:       src
+  exposed-Modules:      Data.Digest.ApacheMD5
+  other-Modules:        Data.Digest.ApacheMD5.Internal
+  build-Depends:
+      base >= 4 && < 5
+    , bytestring >= 0.10 && < 0.11
+  includes:             openssl/md5.h
+  extra-Libraries:      crypto
+
+  ghc-options:          -Wall
+  if impl(ghc >= 6.8)
+    ghc-options:        -fwarn-tabs
+  if flag(pedantic)
+    ghc-options:        -Werror
+
+test-suite apache-md5-unit-tests
+  hs-source-dirs:       src, test
+  type:                 exitcode-stdio-1.0
+  main-is:              unit-tests-main.hs
+  other-modules:
+      Data.Digest.ApacheMD5
+    , Data.Digest.ApacheMD5.Internal
+
+  build-depends:
+      base >= 4 && < 5
+    , bytestring >= 0.10 && < 0.11
+    , transformers < 0.4
+
+    , MonadRandom
+    , process
+    , random
+
+    -- Test dependencies:
+    , HUnit >= 1.2 && < 2
+      -- ^ Same constraints as test-framework-hunit
+ -- , QuickCheck >= 2.4 && < 2.6
+      -- ^ Same constraints as test-framework-quickcheck2
+    , test-framework >= 0.8 && < 1
+      -- ^ Same constraint as test-framework-skip, other packages that
+      -- depend on it have less restrictive bounds.
+    , test-framework-hunit >= 0.2.6
+      -- ^ Lower versions have more restrictive bounds on test-framework.
+ -- , test-framework-quickcheck2 >= 0.3
+      -- ^ There were changes in QuickCheck bounds in 0.2 branch and last one
+      -- on it had a compilation failure on Hackage.
+
+      -- Not required right now:
+ -- , test-framework-skip == 1.*
+      -- ^ Currently there is only version 1.0.
+
+  Includes:             openssl/md5.h
+  Extra-Libraries:      crypto
+
+  ghc-options:          -Wall
+  if impl(ghc >= 6.8)
+    ghc-options:        -fwarn-tabs
+  if flag(pedantic)
+    ghc-options:        -Werror
+
+benchmark apache-md5-benchmark
+  hs-source-dirs:       src, test
+  type:                 exitcode-stdio-1.0
+  main-is:              benchmark-main.hs
+  other-modules:
+      Data.Digest.ApacheMD5
+    , Data.Digest.ApacheMD5.Internal
+
+  build-depends:
+      base >= 4 && < 5
+    , bytestring >= 0.10 && < 0.11
+
+    , criterion
+    , MonadRandom
+
+    -- Test dependencies:
+    , HUnit >= 1.2 && < 2
+      -- ^ Same constraints as test-framework-hunit
+ -- , QuickCheck >= 2.4 && < 2.6
+      -- ^ Same constraints as test-framework-quickcheck2
+    , test-framework >= 0.8 && < 1
+      -- ^ Same constraint as test-framework-skip, other packages that
+      -- depend on it have less restrictive bounds.
+    , test-framework-hunit >= 0.2.6
+      -- ^ Lower versions have more restrictive bounds on test-framework.
+ -- , test-framework-quickcheck2 >= 0.3
+      -- ^ There were changes in QuickCheck bounds in 0.2 branch and last one
+      -- on it had a compilation failure on Hackage.
+
+      -- Not required right now:
+ -- , test-framework-skip == 1.*
+      -- ^ Currently there is only version 1.0.
+
+  includes:             openssl/md5.h
+  extra-libraries:      crypto
+
+  ghc-options:          -Wall
+  if impl(ghc >= 6.8)
+    ghc-options:        -fwarn-tabs
+  if flag(pedantic)
+    ghc-options:        -Werror
+
+source-repository head
+  type:                 git
+  location:             git://github.com/trskop/apache-md5.git
+
+source-repository this
+  type:                 git
+  location:             git://github.com/trskop/apache-md5.git
+  tag:                  v0.5.0.0

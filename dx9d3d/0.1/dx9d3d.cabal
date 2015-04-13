@@ -1,0 +1,51 @@
+name:               dx9d3d
+version:            0.1
+author:             Esa Ilari Vuokko
+maintainer:         none
+license:            BSD3
+license-file:       LICENSE
+category:           Graphics
+Synopsis:           A binding to the Microsoft DirectX 9 API.
+Description:        A Haskell binding for the Microsoft DirectX 9.
+                    .
+                    This package doesn't have any sample code. But mokehehe wrote sample code below blog article. 
+                    <http://mokehehe.blogspot.com/2009/04/using-directx-from-haskell.html>
+                    .
+                    This version lacks D3DX support and some functionality to build with MinGW's library.
+stability:          alpha
+build-type:         Simple
+build-depends:      base >= 3 && < 5, Win32, dx9base
+extra-source-files:
+   gen/Parser.hs, gen/extract-dx.hs, gen/extract-d3dx.hs
+   gen/d3d_h.h,   gen/d3dx_h.h,      gen/fix_decl_x.h
+   gen/d3d_c.h,   gen/d3dx_c.h,      gen/fix_decl.h
+exposed-modules:
+    DirectX9.D3D
+    DirectX9.D3D.Base
+    DirectX9.D3D.Constant
+    DirectX9.D3D.Device
+    DirectX9.D3D.Format
+    DirectX9.D3D.Perf
+    DirectX9.D3D.Raw
+    DirectX9.D3D.Resource
+    DirectX9.D3D.Texture
+    DirectX9.D3D.Utility
+    DirectX9.D3D.Utility.Basic
+    DirectX9.D3D.Utility.FVF
+    DirectX9.D3D.Utility.Init
+    DirectX9.D3D.Surface
+    DirectX9.D3D.Shader
+    DirectX9.D3D.Shader.Assembly
+    DirectX9.D3D.Shader.Text
+extensions: CPP
+c-sources:
+    cbits/d3d_raw.c
+include-dirs: ./gen
+ghc-options:
+    -Wall
+    -fno-warn-name-shadowing
+    -fno-warn-unused-do-bind
+    -fno-warn-orphans
+    -funbox-strict-fields
+cc-options:
+extra-libraries: d3d9

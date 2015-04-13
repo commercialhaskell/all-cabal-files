@@ -1,0 +1,80 @@
+cabal-version:      >= 1.6
+build-type:         Simple
+name:               neil
+version:            0.2
+license:            BSD3
+license-file:       LICENSE
+category:           Development
+author:             Neil Mitchell <ndmitchell@gmail.com>
+maintainer:         Neil Mitchell <ndmitchell@gmail.com>
+copyright:          Neil Mitchell 2010-2014
+synopsis:           General tools for Neil
+description:
+    General tools for Neil.
+homepage:           http://community.haskell.org/~ndm/
+bug-reports:        https://github.com/ndmitchell/neil/issues
+tested-with:        GHC==7.8.2, GHC==7.6.3, GHC==7.4.2, GHC==7.2.2
+extra-source-files:
+    CHANGES.txt
+
+source-repository head
+    type:     git
+    location: https://github.com/ndmitchell/neil.git
+
+library
+    hs-source-dirs:     src
+    build-depends:      base == 4.*, filepath, directory, time, process, extra >= 0.3
+
+    exposed-modules:
+        Neil
+    other-modules:
+        Util
+
+flag small
+    default: False
+    description: Minimise dependencies
+
+executable neil
+    hs-source-dirs:     src
+    build-depends:      containers, cmdargs
+    if flag(small)
+        cpp-options: -DSMALL
+    else
+        build-depends: json, GoogleChart, old-time
+
+    main-is:            Main.hs
+
+    other-modules:
+        Paper.LatexError
+        Paper.Haskell.Latex.Parser
+        Paper.Haskell.Haskell.Provides
+        Paper.Haskell.Haskell.Tweak
+        Paper.Haskell.Fragment
+        Paper.Haskell.Check
+        Paper.Util.String
+        Paper.Util.CmdNumber
+        Paper.Haskell2.Haskell
+        Paper.Haskell2.Type
+        Paper.Haskell2.Stage3
+        Paper.Haskell2.Stage2
+        Paper.Util.IO
+        Paper.Util.Error
+        Paper.Haskell2.Stage1
+        Paper.Todo
+        Paper.Ref
+        Paper.Ftp
+        Paper.Sync
+        Paper.Push
+        Paper.Haskell2.All
+        Paper.WordCount
+        Paper.Talk
+        Paper.Make
+        Paper.Graph
+        Paper.Util.FileData
+        Paper.Haskell
+        Paper.Main
+        Arguments
+        Util
+        Cabal
+        Git
+        Travis

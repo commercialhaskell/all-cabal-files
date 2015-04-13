@@ -1,0 +1,20 @@
+name:                string
+version:             0.3.1
+synopsis:            Common things for strings
+description:         Common things for strings
+license:             BSD3
+license-file:        LICENSE
+author:              Chris Done
+maintainer:          chrisdone@gmail.com
+copyright:           2013 Chris Done
+category:            Data, Strings
+build-type:          Simple
+cabal-version:       >=1.8
+
+library
+  exposed-modules:   Data.Strings,
+                     Data.Strings.ISO88591Normalize
+  hs-source-dirs:    src/
+  build-depends:     base > 4 && <5,
+                     containers
+  ghc-options:       -Wall

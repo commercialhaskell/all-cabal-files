@@ -1,0 +1,15 @@
+Name:                Histogram
+Version:             0.1.0.1
+Description:         Easily create histograms of your data
+Category:            Charts
+License:             GPL
+License-file:        LICENSE
+Author:              Mike izbicki
+Maintainer:          mike@izbicki.me
+Build-Type:          Simple
+Cabal-Version:       >=1.2
+
+Library
+    Build-Depends:     base >= 3 && < 5, gnuplot >= 0.5, containers >= 0.4
+    Exposed-modules:   Graphics.Histogram
+    hs-source-dirs:    src

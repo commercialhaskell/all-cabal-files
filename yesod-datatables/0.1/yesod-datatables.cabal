@@ -1,0 +1,83 @@
+name:       yesod-datatables
+version:    0.1
+license:    BSD3
+license-file: LICENSE
+author:     Tero Laitinen
+maintainer: Tero Laitinen
+synopsis:   Yesod plugin for DataTables (jQuery grid plugin)
+description: DataTables (http://datatables.net) is a capable jQuery plugin. This package contains routines for implementing server-side processing (e.g. request parsing, database querying, and response formatting) for DataTables with Yesod platform. 
+category: Web, Yesod
+stability: Experimental
+cabal-version: >= 1.8
+build-type:     Simple
+homepage:  http://github.com/tlaitinen/yesod-datatables
+
+library
+    exposed-modules: Yesod.DataTables.Request
+                   , Yesod.DataTables.Reply
+                   , Yesod.DataTables.Query
+                   , Yesod.DataTables
+
+    extensions: TemplateHaskell
+                QuasiQuotes
+                OverloadedStrings
+                NoImplicitPrelude
+                CPP
+                MultiParamTypeClasses
+                TypeFamilies
+                GADTs
+                GeneralizedNewtypeDeriving
+                FlexibleContexts
+                EmptyDataDecls
+                NoMonomorphismRestriction
+
+    build-depends: base                          >= 4          && < 5
+                 , yesod                         >= 1.1.5      
+                 , yesod-core                    >= 1.1.7      
+                 , yesod-auth                    >= 1.1        
+                 , yesod-static                  >= 1.1        
+                 , yesod-default                 >= 1.1        
+                 , yesod-form                    >= 1.1        
+                 , bytestring                    >= 0.9        
+                 , text                          >= 0.11       
+                 , persistent                    >= 1.1        
+                 , attoparsec                    >= 0.10     
+                 , aeson                         >= 0.6
+                 , data-default
+
+
+Test-suite tests
+    Type:       exitcode-stdio-1.0
+    Hs-source-dirs:  tests
+    Main-is:    main.hs
+    ghc-options:       -Wall
+    Build-depends: base >= 4 && < 5,
+                 yesod-datatables >= 0.1
+                 , test-framework >= 0.3.3
+                 , test-framework-quickcheck2 >= 0.2.9
+                 , test-framework-hunit >= 0.3.0
+                 , QuickCheck >= 2.4.0
+                 , aeson >= 0.6
+                 , attoparsec                    >= 0.10     
+                 , text         >= 0.11       && < 0.12
+                 , bytestring                    >= 0.9       
+                 , persistent                    >= 1.1       
+                 , HUnit >= 1.2.5
+                 , persistent-sqlite             >= 1.1       
+                 , persistent-template           >= 1.1.1     
+                 , template-haskell
+                 , resourcet >= 0.4.4
+                 , transformers >= 0.2.2
+                 , monad-control >= 0.3.1
+
+
+
+
+
+
+    extensions: OverloadedStrings
+
+source-repository head
+  type: git
+  location: https://github.com/tlaitinen/yesod-datatables.git
+

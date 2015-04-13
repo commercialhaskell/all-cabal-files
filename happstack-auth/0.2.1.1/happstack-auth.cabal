@@ -1,0 +1,60 @@
+Name:                happstack-auth
+Version:             0.2.1.1
+License:             BSD3
+License-File:        LICENSE
+Author:              Nils Schweinsberg
+Maintainer:          mail@n-sch.de
+Category:            Web
+
+Synopsis:            A Happstack Authentication Suite
+Description:         An easy way to to implement user authentication for
+                     Happstack web applications.
+
+Homepage:            http://n-sch.de/happstack-auth
+Build-Type:          Simple
+Cabal-Version:       >= 1.8
+
+Source-Repository head
+    type:       git
+    location:   http://github.com/mcmaniac/happstack-auth
+
+Library
+
+    HS-Source-Dirs:         src
+    GHC-Options:            -Wall
+
+    Build-Depends:
+        base                == 4.*,
+        bytestring          == 0.*,
+        mtl                 == 1.*,
+        containers          == 0.*,
+        random              == 1.*,
+        old-time            == 1.*,
+        happstack           == 0.5.*,
+        happstack-state     == 0.5.*,
+        happstack-server    == 0.5.*,
+        happstack-ixset     == 0.5.*,
+        happstack-data      == 0.5.*,
+        convertible         == 1.*
+
+    Exposed-Modules:
+        Happstack.Auth
+        Happstack.Auth.Internal
+        Happstack.Auth.Internal.Data
+
+    Other-Modules:
+
+        Codec.Utils
+        Data.Digest.SHA2
+        Data.Digest.SHA512
+
+        Happstack.Auth.Internal.Data.AuthState
+        Happstack.Auth.Internal.Data.SaltedHash
+        Happstack.Auth.Internal.Data.SessionData
+        Happstack.Auth.Internal.Data.SessionKey
+        Happstack.Auth.Internal.Data.Sessions
+        Happstack.Auth.Internal.Data.User
+        Happstack.Auth.Internal.Data.UserId
+        Happstack.Auth.Internal.Data.Username
+
+        Happstack.Auth.Internal.Data.Old.SessionData0

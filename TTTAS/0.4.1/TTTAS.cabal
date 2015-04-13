@@ -1,0 +1,20 @@
+cabal-version:      >=1.2.3
+build-type:         Simple
+name:               TTTAS
+version:            0.4.1
+license:            LGPL
+license-file:       COPYRIGHT
+maintainer:         Marcos Viera <mviera@fing.edu.uy>
+homepage:           http://www.cs.uu.nl/wiki/bin/view/Center/TTTAS
+description:        Library for Typed Transformations of Typed Abstract Syntax
+synopsis:           Typed Transformations of Typed Abstract Syntax
+category:           Language 
+copyright:          Universiteit Utrecht
+extra-source-files: README, LICENSE-LGPL, TTTAS.bib
+library
+        build-depends:      base >= 4 && < 5, haskell98
+        exposed-modules:    Language.AbstractSyntax.TTTAS       
+        extensions:         Arrows, KindSignatures, RankNTypes, GADTs, CPP
+        hs-source-dirs:     src
+        ghc-options:        -Wall
+

@@ -1,0 +1,22 @@
+Name: state
+Version: 0.1
+License: LGPL
+Maintainer: Evgeny Jukov <masloed@gmail.com>
+Author: Evgeny Jukov
+Build-type: Simple
+Stability: Alpha
+Copyright: Copyright (c) 2007 Evgeny Jukov
+license-file: COPYRIGHT
+Synopsis: Data.State
+description: Data.State
+Category: Data
+Hs-Source-Dirs: src
+Exposed-Modules: Data.State
+Build-Depends:
+  base >=3 && <5,
+  arrows >= 0.4 && <0.4.1,
+  mtl >= 1.1 && <1.2
+Extensions:
+  Arrows
+  MultiParamTypeClasses
+  FlexibleInstances

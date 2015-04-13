@@ -1,0 +1,56 @@
+Name:                lrucache
+Version:             0.1.0.1
+Synopsis:            a simple pure LRU cache
+License:             BSD3
+License-file:        LICENSE
+Author:              Carl Howells
+Maintainer:          chowells79@gmail.com
+Copyright:           Carl Howells, 2010
+Homepage:            http://github.com/chowells79/lrucache
+Stability:           Experimental
+Category:            Data
+Build-type:          Simple
+Description:
+        This package contains a simple pure LRU cache, implemented in
+        terms of "Data.Map".
+        .
+        It also contains a mutable IO wrapper providing atomic updates to
+        an LRU cache.
+
+Extra-source-files:
+        README
+        TestDriver.hs
+
+Cabal-version:       >=1.6
+
+Flag Test
+  Description: Build test executables
+  Default: False
+
+Library
+  Exposed-modules:
+        Data.Cache.LRU
+        Data.Cache.LRU.IO
+        Data.Cache.LRU.Internal
+
+  Build-depends:
+        base < 5,
+        containers
+
+  GHC-Options:             -Wall
+
+
+Executable test
+  if flag(test)
+    Buildable: True
+
+    Build-Depends:
+        base < 4.2,
+        explicit-exception == 0.1.*,
+        QuickCheck == 2.1.*
+
+  else
+    Buildable: False
+
+  Main-is:                 TestDriver.hs
+  GHC-Options:             -Wall

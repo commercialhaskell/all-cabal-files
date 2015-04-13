@@ -1,0 +1,25 @@
+name:                scaleimage
+version:             0.1
+homepage:            http://code.haskell.org/~dons/code/scaleimage
+license:             BSD3
+license-file:        LICENSE
+author:              Don Stewart
+maintainer:          dons@galois.com
+category:            Graphics
+synopsis:            Scale an image to a new geometry
+description:         Scale image is a small command line tool to scale
+                     an image file to a specified geometry. File types
+                     supported: png, jpg, gif. Input and output formats
+                     can differ. Example:
+                     .
+                     > scaleimage 128 128 photo.gif photo.png
+                     .
+cabal-version:       >= 1.2
+build-type:          Simple
+
+flag small_base
+  description: Choose the new smaller, split-up base package.
+
+executable scaleimage
+    build-depends:   base, gd, filepath
+    main-is:         Main.hs

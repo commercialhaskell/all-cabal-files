@@ -1,0 +1,117 @@
+Name:           cabal-debian
+Version:        3.8.1
+License:        BSD3
+License-File:   debian/copyright
+Author:         David Fox <dsf@seereason.com>
+Category:       Debian, Distribution, System
+Maintainer:     David Fox <dsf@seereason.com>
+Homepage:       http://src.seereason.com/debian-tools/cabal-debian
+Build-Type:     Simple
+Synopsis:       Create a debianization for a cabal package
+Cabal-Version: >= 1.8
+Extra-Source-Files:
+  changelog,
+  debian/Debianize.hs
+Description:
+ Tool for creating debianizations of Haskell packages based on the
+ .cabal file.  If apt-file is installed it will use it to discover
+ what is the debian package name of a C library.  Basic usage is via
+ the cabal-debian executable.  A more powerful but still undocumented
+ programmatic interface is also provided.  Normal usage for this is to
+ put a script in debian/Debianize.hs (such as the one in this source
+ package) which is run to create the debianization.
+
+Flag tests
+  Description: enable the unit test executable (disabled by default because it has a lot of wacky dependencies.)
+  Default: False
+  Manual: True
+
+Source-Repository head
+  type: darcs
+  location: http://src.seereason.com/debian-tools
+
+Library
+ Hs-Source-Dirs: src
+ GHC-Options: -threaded -Wall -O2
+ Build-Depends:
+   ansi-wl-pprint,
+   base < 5,
+   Cabal >= 1.9,
+   containers,
+   data-lens,
+   debian >= 3.71,
+   Diff,
+   directory,
+   filepath,
+   hsemail,
+   HUnit,
+   mtl,
+   parsec >= 3,
+   process,
+   pureMD5,
+   regex-tdfa,
+   syb,
+   text,
+   unix,
+   utf8-string
+ Exposed-Modules:
+   Data.Algorithm.Diff.Context
+   Data.Algorithm.Diff.Pretty
+   Debian.Debianize
+   Debian.Debianize.Atoms
+   Debian.Debianize.Bundled
+   Debian.Debianize.ControlFile
+   Debian.Debianize.Debianize
+   Debian.Debianize.Dependencies
+   Debian.Debianize.Details
+   Debian.Debianize.Files
+   Debian.Debianize.Finalize
+   Debian.Debianize.Goodies
+   Debian.Debianize.Interspersed
+   Debian.Debianize.Input
+   Debian.Debianize.Options
+   Debian.Debianize.SubstVars
+   Debian.Debianize.Tests
+   Debian.Debianize.Types
+   Debian.Debianize.Types.VersionSplits
+   Debian.Debianize.Utility
+   Debian.Debianize.VersionSplits
+   Debian.Orphans
+   Debian.Policy
+   Distribution.Version.Invert
+
+Executable cabal-debian
+ Main-is: src/CabalDebian.hs
+ ghc-options: -threaded -Wall -O2
+ Build-Depends:
+   base,
+   Cabal,
+   cabal-debian,
+   containers,
+   data-lens
+
+-- Executable cabal-debian-tests
+--  Main-Is: src/Tests.hs
+--  GHC-Options: -Wall -O2 -threaded -rtsopts
+--  Build-Depends:
+--    ansi-wl-pprint,
+--    base,
+--    Cabal,
+--    cabal-debian,
+--    containers,
+--    data-lens,
+--    debian,
+--    Diff,
+--    directory,
+--    filepath,
+--    hsemail,
+--    HUnit,
+--    mtl,
+--    parsec,
+--    process,
+--    pureMD5,
+--    regex-tdfa,
+--    syb,
+--    text,
+--    unix,
+--    utf8-string

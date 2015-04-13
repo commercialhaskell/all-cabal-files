@@ -1,0 +1,23 @@
+Name:             triangulation
+Version:          0.1
+Synopsis:         triangulation of polygons
+Description:      An implementation of a simple triangulation algorithm for polygons without holes, crossings (and maybe other anomalies that I am not aware of). The code is explained in this diploma thesis: <www.dinkla.net/download/GeomAlgHaskell.pdf>. The original author made a very big library that needs a long time to compile. Thats why only one algorithm was extracted and freed from a big net of inner dependencies and types.
+category:         Graphics
+License:          GPL
+License-file:     LICENSE
+Author:           Joern Dinkla
+Maintainer:       Tillmann.Vogt@rwth-aachen.de
+Homepage:         http://www.dinkla.net/
+Build-Type:       Simple
+Cabal-Version:    >=1.6
+
+Library
+    hs-source-dirs: src
+    build-depends:
+        haskell98,
+        base == 4.*,
+        array,
+        collada-types
+    exposed-modules:
+        Graphics.Triangulation.Triangulation
+        Graphics.Triangulation.KETTriangulation

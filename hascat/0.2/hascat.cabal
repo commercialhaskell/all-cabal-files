@@ -1,0 +1,48 @@
+name:		 hascat
+version:	 0.2
+license:	 OtherLicense
+Build-Type:  Simple
+license-file:	 LICENSE
+copyright:	 Björn Teegen 2006, Florian Micheler 2010
+author:		 Björn Teegen, Florian Micheler
+maintainer:	 fmi@informatik.uni-kiel.de
+stability:	 experimental
+synopsis:	 Hascat Web Server
+description:	 Hascat Web Server
+  .
+  How to install:
+  .
+  1. install with cabal-install
+  .
+  2. make a directory where you want the hascat-apps (hasclets) to be installed
+  .
+  3. run 
+  .
+  $ hascat-setup \<directory\>
+  .
+  4. in that directory run:
+  .
+  $ hascat config.xml
+  .
+  .
+  For more information check my bachelor thesis:
+  .
+  <http://www.informatik.uni-kiel.de/~fmi/bachelor.pdf>
+category:	 Network
+tested-with:	 GHC
+build-depends:	 
+		 base     >=4 && <5,
+		 hascat-lib ==0.2,
+		 hascat-system ==0.2,
+		 network,
+		 HTTP,
+		 HaXml		<=1.13.3,
+		 haxr     ==3000.2.1,
+		 HTTP,
+		 unix,
+		 html,
+		 bytestring,
+		 hascat-setup
+executable:	 hascat
+main-is:	 Main.hs
+ghc-options:	 -fglasgow-exts -threaded

@@ -1,0 +1,48 @@
+name:           hscd
+version:        0.0.2
+category:       Network
+license:        BSD3
+license-file:   LICENSE
+copyright:      (c) 2012 Sebastián Ramírez Magrí
+author:         Sebastián Ramírez Magrí
+maintainer:     Sebastián Ramírez Magrí <sebasmagri@gmail.com>
+stability:      experimental
+tested-with:    GHC == 7.4.1
+cabal-version:  >= 1.8
+build-type:     Simple
+homepage:       https://bitbucket.org/sebasmagri/hscd
+bug-reports:    https://bitbucket.org/sebasmagri/hscd/issues
+synopsis:       Command line client and library for SoundCloud.com
+description:
+    A command line client and library to access SoundCloud.com.
+    .
+    Supports fetching tracks and getting information about tracks,
+    users, sets, groups and SoundCloud apps.
+extra-source-files:
+    README.rst
+    LICENSE
+
+source-repository head
+    type:     mercurial
+    location: https://bitbucket.org/sebasmagri/hscd
+
+executable hscd
+    build-depends: aeson        == 0.6.*
+                 , base         == 4.*
+                 , bytestring
+                 , ghc-prim
+                 , HTTP
+    main-is: hscd.hs
+    other-modules:
+        Network.SoundCloud
+        Network.SoundCloud.App
+        Network.SoundCloud.Comment
+        Network.SoundCloud.Const
+        Network.SoundCloud.Group
+        Network.SoundCloud.MiniUser
+        Network.SoundCloud.Set
+        Network.SoundCloud.Track
+        Network.SoundCloud.User
+        Network.SoundCloud.Util
+    hs-source-dirs: src/
+    ghc-options: -W -Wall

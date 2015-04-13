@@ -1,0 +1,29 @@
+Name:                snippet-extractor
+Version:             0.1
+Synopsis:            Extracts labeled snippets of code to files.
+-- Description:         
+License:             BSD3
+License-file:        LICENSE
+Author:              Jason Dagit
+Maintainer:          dagitj@gmail.com
+-- Copyright:           
+Category:            Text
+Build-type:          Simple
+Cabal-version:       >=1.6
+source-repository head
+  type:     git
+  location: git://github.com/dagit/snippet-extractor.git
+
+Executable snippet-extractor
+  -- .hs or .lhs file containing the Main module.
+  Main-is: Main.hs
+  Hs-Source-Dirs: src  
+  Build-depends: base == 4.*,
+                 parsec == 3.1.*
+  
+  -- Modules not exported by this package.
+  -- Other-modules:       
+  
+  -- Extra tools (e.g. alex, hsc2hs, ...) needed to build the source.
+  -- Build-tools:         
+  

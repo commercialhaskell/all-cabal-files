@@ -1,0 +1,52 @@
+Name:                cabal2ebuild
+Version:             0.0.15.9
+Stability:           Experimental
+Synopsis:            make gentoo's .ebuild file from .cabal file
+Description:
+	> % ls
+	> hoge.cabal ...
+	> % cabal2ebuild
+	> % ls
+	> hoge.cabal hoge-0.1.2.3.ebuild ...
+	>
+	> % hackage2ebuild cabal2ebuild 0.0.15.8 -d ebuilds
+	> % ls ebuilds
+	> cabal2ebuild-0.0.15.8.ebuild
+Homepage:            yet
+License:             BSD3
+License-file:        LICENSE
+Author:              Yoshikuni Jujo <PAF01143@nifty.ne.jp>
+Maintainer:          Yoshikuni Jujo <PAF01143@nifty.ne.jp>
+-- Copyright:           
+Category:            Distribution
+Build-type:          Simple
+-- Extra-source-files:  
+Cabal-version:       >=1.8
+
+source-repository head
+  type:		git
+  location:	https://github.com/YoshikuniJujo/cabal2ebuild.git
+
+source-repository this
+  type:		git
+  location:	https://github.com/YoshikuniJujo/cabal2ebuild.git
+  tag:		0.0.15.4
+
+library
+  hs-source-dirs:  src-lib
+  build-depends:   base > 3 && < 5, directory, Cabal, filepath
+  exposed-modules: Gentoo.Cabal2Ebuild
+  other-modules:   Gentoo.Depend
+
+executable cabal2ebuild
+  hs-source-dirs: src-exec
+  main-is:        cabal2ebuild.hs
+  other-modules:
+  build-depends:  base > 3 && < 5, cabal2ebuild, directory
+  Ghc-options:    -Wall
+
+executable hackage2ebuild
+  hs-source-dirs: src-exec
+  main-is:        hackage2ebuild.hs
+  build-depends:  base > 3 && < 5, cabal2ebuild, curl
+  ghc-options:    -Wall

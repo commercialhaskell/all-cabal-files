@@ -1,0 +1,45 @@
+name:             joinlist
+version:          0.2.0
+license:          BSD3
+license-file:     LICENSE
+copyright:        Stephen Tetley <stephen.tetley@gmail.com>
+maintainer:       Stephen Tetley <stephen.tetley@gmail.com>
+homepage:         http://code.google.com/p/copperbox/
+category:         Data
+synopsis:         Join list - symmetric list type 
+description:
+  A JoinList - a list type with with cheap catenation.
+  Currently somewhat /minimal/.
+  .
+  Changelog
+  . 
+  0.2.0 - more operations and some bugfixes (toList...), @wrap@
+  renamed to @singleton@.
+  
+
+build-type:         Simple
+stability:          highly unstable
+cabal-version:      >= 1.2
+
+extra-source-files:
+
+library
+  hs-source-dirs:     src
+  build-depends:      base<5, dlist
+
+  
+  exposed-modules:
+    Data.JoinList
+
+  other-modules:
+
+  extensions:
+    
+
+  ghc-options:
+  
+  includes: 
+  
+
+  
+  

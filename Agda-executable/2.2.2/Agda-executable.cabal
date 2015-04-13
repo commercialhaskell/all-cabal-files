@@ -1,0 +1,32 @@
+name:            Agda-executable
+version:         2.2.2
+cabal-version:   >= 1.6 && < 2
+build-type:      Simple
+license:         OtherLicense
+license-file:    LICENSE
+author:          Ulf Norell, Catarina Coquand, Makoto Takeyama, Nils Anders Danielsson, Andreas Abel, ...
+maintainer:      Ulf Norell <ulfn@chalmers.se>
+homepage:        http://wiki.portal.chalmers.se/agda/
+bug-reports:     http://code.google.com/p/agda/issues/list
+category:        Dependent types
+synopsis:        Command-line program for type-checking and compiling Agda programs
+description:
+  This package provides a command-line program for type-checking and
+  compiling Agda programs. The program can also generate hyperlinked,
+  highlighted HTML files from Agda sources.
+tested-with:     GHC == 6.8.3 && == 6.10.2
+
+source-repository head
+  type:     darcs
+  location: http://code.haskell.org/Agda/
+
+source-repository this
+  type:     darcs
+  location: http://code.haskell.org/Agda/
+  tag:      2.2.2
+
+executable agda
+  main-is:       Main.hs
+  build-depends: Agda == 2.2.2,
+                 base
+

@@ -1,0 +1,45 @@
+name:                modular-prelude
+version:             0.3.0.0
+synopsis:            A new Prelude featuring first class modules
+
+homepage:            https://github.com/DanBurton/modular-prelude#readme
+license:             MIT
+license-file:        LICENSE
+author:              Dan Burton
+maintainer:          danburton.email@gmail.com
+
+category:            Control
+build-type:          Simple
+cabal-version:       >=1.8
+
+library
+  exposed-modules:     ModularPrelude
+
+                     ,   ModularPrelude.From
+
+                     ,     ModularPrelude.Module.FilePath
+                     ,     ModularPrelude.Module.Set
+                     ,     ModularPrelude.Module.List
+                     ,     ModularPrelude.Module.LByteString
+                     ,     ModularPrelude.Module.Vector
+                     ,     ModularPrelude.Module.HashSet
+                     ,     ModularPrelude.Module.UVector
+                     ,     ModularPrelude.Module.Text
+                     ,     ModularPrelude.Module.Map
+                     ,     ModularPrelude.Module.LHashMap
+                     ,     ModularPrelude.Module.ByteString
+                     ,     ModularPrelude.Module.LText
+                     ,     ModularPrelude.Module.HashMap
+
+  build-depends:       base==4.*
+                     , basic-prelude==0.2.0.*
+                     , data-default==0.5.0.*
+                     , system-filepath==0.4.*
+                     , hashable
+                     , bytestring
+                     , text
+                     , transformers
+                     , containers
+                     , unordered-containers
+                     , vector
+

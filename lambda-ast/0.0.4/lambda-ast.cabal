@@ -1,0 +1,23 @@
+category:               Compilers/Interpreters
+copyright:              (c) 2012 Jonathan Fischoff 
+name:                   lambda-ast
+version:                0.0.4
+license:                BSD3
+license-file:           LICENSE
+author:                 Jonathan Fischoff
+maintainer:             jonathangfischoff@gmail.com
+synopsis:               Untyped Lambda Calculus Abstract Syntax Tree
+description:            An AST for the untyped lambda calculus. The AST is parameterized by symbol type.
+
+stability:              experimental
+build-type:             Simple
+cabal-version:          >= 1.10.1.0
+tested-with:            GHC == 7.2.2
+
+library
+  hs-source-dirs:         src
+  default-language:       Haskell98
+  exposed-modules:        Language.Lambda.AST
+  ghc-options:            -Wall
+  Build-depends:          base < 6.0
+  

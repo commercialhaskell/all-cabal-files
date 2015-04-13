@@ -1,0 +1,22 @@
+Name:           Unixutils
+Version:        1.22
+License:        BSD3
+License-File:	COPYING
+Author:         Jeremy Shaw
+Homepage:       http://src.seereason.com/haskell-unixutils
+Category:	System
+Build-Depends:  base >= 3 && < 4, unix, regex-compat, process, bytestring, directory, old-time, parallel, filepath
+Synopsis:       A crude interface between Haskell and Unix-like operating systems
+Maintainer:     jeremy@n-heptane.com
+Description:
+ A collection of useful and mildly useful functions that you might
+ expect to find in System.* which a heavy bias towards Unix-type operating systems.
+Build-type:	Simple
+ghc-options:	-O2
+Exposed-modules:
+        System.Unix.Directory, System.Unix.FilePath, System.Unix.List,
+	System.Unix.Misc, System.Unix.Mount, System.Unix.Process,
+	System.Unix.Progress, System.Unix.SpecialDevice, System.Unix.Files
+
+-- For more complex build options see:
+-- http://www.haskell.org/ghc/docs/latest/html/Cabal/

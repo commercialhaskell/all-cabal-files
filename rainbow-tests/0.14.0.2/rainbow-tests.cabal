@@ -1,0 +1,69 @@
+-- This Cabal file generated using the Cartel library.
+-- Cartel is available at:
+-- http://www.github.com/massysett/cartel
+--
+-- Script name used to generate: genCabal.hs
+-- Generated on: 2014-07-13 11:29:54.334637 EDT
+-- Cartel library version: 0.10.0.2
+name: rainbow-tests
+version: 0.14.0.2
+cabal-version: >= 1.14
+build-type: Simple
+license: BSD3
+license-file: LICENSE
+copyright: Copyright 2013 - 2014 Omari Norman
+author: Omari Norman
+maintainer: omari@smileystation.com
+stability: Experimental
+homepage: http://www.github.com/massysett/rainbow
+bug-reports: http://www.github.com/massyett/rainbow/issues
+synopsis: Tests and QuickCheck generators to accompany rainbow.
+description:
+  These are packaged separately so other packages may depend
+  on them.
+category: System
+extra-source-files:
+    README.md
+  , changelog
+  , current-versions.txt
+  , minimum-versions.txt
+  , genCabal.hs
+  , sunlight-test.hs
+
+source-repository head
+  type: git
+  location: git://github.com/massysett/rainbow.git
+  branch: master
+
+Library
+  exposed-modules:
+      Data.Monoid.Coarbitrary
+    , Data.Monoid.Generators
+    , Data.Monoid.Shrinkers
+    , Data.Text.Coarbitrary
+    , Data.Text.Generators
+    , Data.Text.Shrinkers
+    , Rainbow.Tests.Util
+    , System.Console.Rainbow.Coarbitrary
+    , System.Console.Rainbow.Colors.Coarbitrary
+    , System.Console.Rainbow.Colors.Generators
+    , System.Console.Rainbow.Colors.Shrinkers
+    , System.Console.Rainbow.Generators
+    , System.Console.Rainbow.Shrinkers
+    , System.Console.Rainbow.Types.Coarbitrary
+    , System.Console.Rainbow.Types.Generators
+    , System.Console.Rainbow.Types.Shrinkers
+    , System.Console.Terminfo.Color.Coarbitrary
+    , System.Console.Terminfo.Color.Generators
+    , System.Console.Terminfo.Color.Shrinkers
+  default-language: Haskell2010
+  ghc-options:
+      -Wall
+  hs-source-dirs:
+      lib
+  build-depends:
+      base ((> 4.5.0.0 || == 4.5.0.0) && < 4.8.0.0)
+    , terminfo ((> 0.3.2 || == 0.3.2) && < 0.5.0.0)
+    , text ((> 0.11.2.0 || == 0.11.2.0) && < 1.2.0.0)
+    , rainbow == 0.14.0.2
+    , QuickCheck ((> 2.7.5 || == 2.7.5) && < 2.8)

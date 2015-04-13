@@ -1,0 +1,21 @@
+Name:                type-level-natural-number-operations
+Version:             1.0
+License:             BSD3
+License-file:        LICENSE
+Author:              Gregory Crosswhite
+Maintainer:          Gregory Crosswhite <gcross@phys.washington.edu>
+Stability:           Provisional
+Synopsis:            Basic operations on type-level natural numbers.
+Description:         This package provides some basic operations that do not
+		     require the UndecideableInstances extension on type-level
+		     natural numbers.  Specifically, this package provides the
+		     Plus and Minus type functions.
+Cabal-version:       >=1.2.3
+Build-type:          Simple
+Category:	     Type System,Data
+
+Library
+    Build-depends:   base >= 3 && < 5,
+                     type-level-natural-number >= 1.0 && < 1.2
+    Exposed-modules: TypeLevel.NaturalNumber.Operations
+    Extensions:	     TypeFamilies

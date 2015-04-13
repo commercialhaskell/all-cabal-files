@@ -1,0 +1,25 @@
+name:                pure-priority-queue-tests
+version:             0.12
+synopsis:            Tests for the pure-priority-queue package
+description:         This package provides a test program for the
+                     pure-priority-queue package.
+category:            Data
+license:             BSD3
+license-file:        LICENSE
+author:              Bradford Larsen
+maintainer:          brad.larsen@gmail.com
+build-depends:       base
+build-type:          Simple
+cabal-version:       >= 1.2
+
+executable pure-priority-queue-tests
+  main-is:              Tests.hs
+
+  build-depends:
+                        base >= 3.0.3.1 && < 4,
+                        containers >= 0.2.0.1,
+                        pure-priority-queue >= 0.12,
+                        QuickCheck >= 2.1.0.1,
+                        test-framework-quickcheck2 >= 0.2.4,
+                        test-framework >= 0.2.4
+

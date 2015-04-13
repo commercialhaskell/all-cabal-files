@@ -1,0 +1,61 @@
+name:          ungadtagger
+synopsis:      Abstract GADTs from typelevel tags
+category:      Data
+version:       1.0.0
+cabal-version: >= 1.10
+author:        Andriy Polishchuk
+maintainer:    Andriy Polishchuk <andriy.s.polishchuk@gmail.com>
+homepage:      http://github.com/andriyp/ungadtagger
+bug-reports:   http://github.com/andriyp/ungadtagger/issues
+copyright:     (c) 2012 Andriy Polishchuk
+license:       BSD3
+license-file:  LICENSE
+build-type:    Simple
+description:
+  UnGADTagger encapsulates abstraction-from-GADT-tag workflow by utilizing existentials, rank2-types and kind polymorphism.    
+  .  
+  An example:
+  .
+  > # LANGUAGE GADTs, DataKinds, KindSignatures, LambdaCase #
+  >
+  > import Data.GADT.Untagged
+  >
+  > data Tag = A | B
+  >
+  > data Gadt :: Tag -> * where
+  >   ConA :: String   -> Gadt A
+  >   ConB :: [Gadt A] -> Gadt B
+  >   ConC :: Integer  -> Gadt B
+  > 
+  > foo :: something -> [Untagged Gadt] -> String
+  > foo _ = quux
+  >   where
+  >     quux  = concat . map baz    
+  >     baz x = match x $ \case
+  >       ConA s  -> s
+  >       ConB xs -> quux (map untag xs)
+  >       ConC i  -> show i
+  >
+  > test = foo "some cfg for e.g." (xs ++ ys)
+  >   where
+  >     xs = map untag [ConA "A1..", ConA "A2.."]
+  >     ys = map untag [ConB [ConA "A3.."], ConC 456]
+  >
+  > -- > "A1..A2..A3..456"
+  .
+
+source-repository head
+  type:     git
+  location: git://github.com/andriyp/ungadtagger.git
+
+library
+  hs-source-dirs: src
+  build-depends:
+    base >= 4 && < 5
+  exposed-modules:
+    Data.GADT.Untagged
+  default-language: Haskell2010
+  other-extensions:
+    ExistentialQuantification
+    Rank2Types    
+  ghc-options: -Wall -fwarn-tabs

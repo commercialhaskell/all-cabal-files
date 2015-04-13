@@ -1,0 +1,21 @@
+Name:                vector-space-opengl
+Version:             0.1
+Synopsis:            Instances of vector-space classes for OpenGL types
+Description:         Instances of <http://hackage.haskell.org/package/vector-space> classes for 'OpenGL' types.
+License:             BSD3
+License-file:        LICENSE
+Author:              Adam C. Foltzer
+Maintainer:          acfoltzer@gmail.com
+Category:            Graphics, Math
+Build-type:          Simple
+Cabal-version:       >=1.8
+
+Library
+  exposed-modules:   Data.VectorSpace.OpenGL
+  other-modules:     Data.VectorSpace.OpenGL.TH
+  hs-source-dirs:    src
+  extensions:        TemplateHaskell, TypeFamilies, UndecidableInstances
+  build-depends:     base == 4.*,
+                     OpenGL == 2.4.*,
+                     template-haskell == 2.6.*,
+                     vector-space == 0.8.*

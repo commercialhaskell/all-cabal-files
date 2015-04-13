@@ -1,0 +1,28 @@
+name: gtk2hs-cast-gtk
+version: 0.10.1.0
+cabal-version: >= 1.6
+build-type: Simple
+license: OtherLicense
+license-file: LICENSE
+copyright: 2009 Marco Túlio Gontijo e Silva <marcot@holoscopio.com>
+author: Marco Túlio Gontijo e Silva <marcot@holoscopio.com>
+maintainer: Marco Túlio Gontijo e Silva <marcot@holoscopio.com>
+stability: alpha
+bug-reports: mailto:marcot@holoscopio.com
+synopsis: A type class for cast functions of Gtk2hs: gtk package
+description:
+ This package contains a type class called Cast with a function cast, that is a
+ wrapper for all the castTo* functions of gtk2hs.  It makes it easier to write
+ other functions that require a castTo* as a parameter, like xmlGetWidget from
+ glade.
+ .
+ This is the gtk package of gtk2hs-cast.
+category: GUI
+tested-with: GHC == 6.10.1
+library
+  exposed-modules: Graphics.UI.Gtk.Cast
+  build-depends: base, hint, gtk, gtk2hs-cast-glib, template-haskell
+  extensions: ScopedTypeVariables, TemplateHaskell
+source-repository head
+  type: darcs
+  location: http://git.holoscopio.com/marcot/git/gtk2hs-cast/gtk2hs-cast-gtk

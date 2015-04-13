@@ -1,0 +1,30 @@
+Name:                   hopenssl
+Version:                1.4
+Copyright:              (c) 2004-2010 Peter Simons
+License:                BSD3
+License-File:           LICENSE
+Author:                 Peter Simons <simons@cryp.to>, Jesper Louis Andersen <jesper.louis.andersen@gmail.com>
+Maintainer:             Peter Simons <simons@cryp.to>
+Homepage:               http://gitorious.org/hopenssl
+Category:               Foreign, Cryptography
+Synopsis:               FFI bindings to OpenSSL's EVP digest interface
+Description:            Foreign-function bindings to the OpenSSL library
+                        <http://www.openssl.org/>. Currently provides
+                        access to the messages digests MD2, MD5, SHA,
+                        SHA1, DSS, DSS1, and RIPEMD160 through the
+                        EVP digest interface.
+Cabal-Version:          >= 1.6
+Build-Type:             Simple
+Tested-With:            GHC == 6.12.1
+
+Source-Repository head
+  Type:                 git
+  Location:             git://gitorious.org/hopenssl/mainline.git
+
+Library
+  Build-Depends:        base >= 3 && < 5, mtl, bytestring
+  Extensions:           ForeignFunctionInterface
+  Extra-Libraries:      crypto
+  Includes:             "openssl/evp.h"
+  Exposed-Modules:      OpenSSL.Digest, OpenSSL.Digest.ByteString, OpenSSL.Digest.ByteString.Lazy
+  Ghc-Options:          -Wall

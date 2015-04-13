@@ -1,0 +1,55 @@
+name: flow
+version: 1.0.0
+cabal-version: >=1.8
+build-type: Simple
+license: MIT
+license-file: LICENSE.md
+copyright: 2015 Taylor Fausak <taylor@fausak.me>
+maintainer: Taylor Fausak <taylor@fausak.me>
+homepage: http://taylor.fausak.me/flow/
+bug-reports: https://github.com/tfausak/flow/issues
+synopsis: Write more understandable Haskell.
+description:
+    Flow is a package that provides functions and operators for writing more
+    understandable Haskell. It's an alternative to some common idioms like
+    function application with @($)@ and function composition with @(.)@.
+    .
+    For more information, please visit
+    <http://taylor.fausak.me/flow/ its official site>.
+category: Combinators, Functions, Utility
+author: Taylor Fausak <taylor@fausak.me>
+extra-source-files:
+    CHANGELOG.md
+    README.md
+x-revision: 1
+
+source-repository head
+    type: git
+    location: https://github.com/tfausak/flow
+
+library
+    exposed-modules:
+        Flow
+    build-depends:
+        base <5
+    ghc-options: -Wall
+
+test-suite test
+    type: exitcode-stdio-1.0
+    main-is: Test.hs
+    build-depends:
+        base -any,
+        flow -any,
+        doctest ==0.9.*,
+        QuickCheck ==2.*,
+        template-haskell ==2.*
+    ghc-options: -Wall -Werror
+
+benchmark bench
+    type: exitcode-stdio-1.0
+    main-is: Bench.hs
+    build-depends:
+        base -any,
+        flow -any,
+        criterion ==1.*
+    ghc-options: -Wall -Werror

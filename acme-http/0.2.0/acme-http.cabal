@@ -1,0 +1,43 @@
+Name:                acme-http
+Version:             0.2.0
+Synopsis:            fastest Haskell PONG server in the world
+Description:         winning the PONG benchmark at all costs
+License:             BSD3
+License-file:        LICENSE
+Author:              Jeremy Shaw
+Maintainer:          jeremy@n-heptane.com
+Copyright:           2012 Jeremy Shaw, SeeReason Partners LLC
+Homepage:            http://happstack.com
+Category:            Web
+Build-type:          Simple
+Cabal-version:       >=1.6
+
+source-repository head
+    type:     darcs
+    location: http://patch-tag.com/r/stepcut/acme-http
+
+Library
+  Exposed-modules:   Acme.Response
+                     Acme.Request
+                     Acme.Serve
+                     Acme.Types
+
+  Build-depends:     base                   < 5,
+                     blaze-builder         == 0.3.*,
+                     bytestring            == 0.9.*,
+                     extensible-exceptions == 0.1.*,
+                     mtl                   == 2.0.*,
+                     network               >= 2.3 && <2.5,
+                     pretty                >= 1.0 && <1.2
+
+  GHC-Options: -O2
+
+Executable pong
+  Main-Is: Pong.hs
+  GHC-Options: -threaded -O2
+
+Executable http-echo
+  Main-Is: Echo.hs
+  GHC-Options: -threaded -O2
+
+

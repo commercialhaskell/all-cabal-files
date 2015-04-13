@@ -1,0 +1,22 @@
+name:                phantom-state
+version:             0.1.0.0
+synopsis:            Phantom State Monad Transformer. Like State Monad, but without values.
+description:         A monad transformer that mimics the State Monad Transformer from the
+                     <http://hackage.haskell.org/package/transformers transformers> package,
+                     but dropping the values. In those cases that you want to use the State
+                     Monad but you only care about how the state changes, use this library
+                     to earn a plus of efficiency.
+license:             BSD3
+license-file:        LICENSE
+author:              Daniel Díaz
+maintainer:          dhelta.diaz@gmail.com
+category:            Control
+build-type:          Simple
+cabal-version:       >=1.10
+
+library
+  exposed-modules:     Control.Monad.PhantomState
+  build-depends:       base == 4.*
+                     , transformers >= 0.3 && < 0.5
+  default-language:    Haskell2010
+  ghc-options: -O2 -Wall

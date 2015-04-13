@@ -1,0 +1,30 @@
+Name:                tilings
+Version:             0.1
+Synopsis:            substitution tilings
+Description:
+    Substitution tilings.  The term substitution, in connection with tilings,
+    describes a simple but powerful method to produce tilings with many
+    interesting properties.
+    .
+    The main idea is to use a finite set of building blocks called prototiles,
+    an expanding linear map (the inflation factor), and a rule how to dissect
+    each scaled tile into copies of the original prototiles.
+    .
+    For some examples of substitution tilings, and a glossary of terminology,
+    see the /tilings encyclopedia/
+    at <http://tilings.math.uni-bielefeld.de/>
+
+Homepage:            https://gitorious.org/tilings
+License:             BSD3
+License-file:        LICENSE
+Author:              Claude Heiland-Allen
+Maintainer:          claudiusmaximus@goto10.org
+
+Category:            Math
+Build-type:          Simple
+Cabal-version:       >=1.2
+
+Library
+  Exposed-modules:     Data.Tiling, Data.Tiling.Class, Data.Tiling.Quad
+  Build-depends:       base >= 4 && < 6
+  GHC-options:         -Wall -fno-warn-duplicate-exports

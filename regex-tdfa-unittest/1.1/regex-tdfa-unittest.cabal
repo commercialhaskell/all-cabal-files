@@ -1,0 +1,26 @@
+name:                   regex-tdfa-unittest
+version:                1.1
+-- 1.1 add single character tests totest.txt for ] and -
+cabal-version:          >=1.2
+license:                BSD3
+license-File:           LICENSE
+copyright:              Copyright (c) 2009, Christopher Kuklewicz
+author:                 Christopher Kuklewicz
+maintainer:             TextRegexLazy@personal.mightyreason.com
+stability:              Stable
+synopsis:               Unit tests for the regex-tdfa
+description:            Apply regex-posix-unittest tests to regex-tdfa
+category:               Text
+tested-with:            GHC
+build-type:             Simple
+data-dir:               data-dir
+data-files:             test-manifest.txt,
+                        basic3.txt,class.txt,forced-assoc.txt,nullsub3.txt,repetition2.txt,right-assoc.txt,totest.txt,left-assoc.txt,osx-bsd-critical.txt
+
+executable regex-tdfa-unittest
+  build-depends:        regex-base >= 0.93.1, base >=4  && < 5, regex-tdfa >= 0.92, bytestring, containers, array, mtl
+  main-is:              Main.hs
+  other-modules:        Paths_regex_tdfa_unittest
+  extensions:           FlexibleInstances, FlexibleContexts,Rank2Types
+  GHC-Options:          -Wall -O2 -funbox-strict-fields
+  GHC-Prof-Options:       -auto-all

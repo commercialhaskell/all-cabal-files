@@ -1,0 +1,29 @@
+name:		 hascat-system
+version:	 0.2
+license:	 OtherLicense
+Build-Type:  Simple
+license-file:	 LICENSE
+copyright:	 Björn Teegen 2006, Florian Micheler 2010
+author:		 Björn Teegen, Florian Micheler
+maintainer:	 fmi@informatik.uni-kiel.de
+stability:	 experimental
+synopsis:	 Hascat System Package
+description:	 Modules for programming Hascat system applications
+category:	 Network
+tested-with:	 GHC
+build-depends:
+		 base   >=4 && <5,
+		 hascat-lib     ==0.2,
+		 network ,
+		 plugins,
+		 HaXml		==1.13.3,
+		 HTTP,
+		 old-time,
+		 bytestring,
+		 containers,
+		 mtl,
+		 parsec,
+		 unix
+ghc-options:	 -fglasgow-exts
+exposed-modules: Hascat.System.App,
+		 Hascat.System.Controller

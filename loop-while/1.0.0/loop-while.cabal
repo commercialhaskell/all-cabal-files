@@ -1,0 +1,21 @@
+Name:            loop-while
+Version:         1.0.0
+Synopsis:        A monad transformer supporting various styles of while loop
+License:         BSD3
+License-file:    LICENSE
+Author:          Neil Brown
+Maintainer:      neil@twistedsquare.com
+Copyright:       Copyright (c) 2008--2010, Neil Brown
+Stability:       Stable
+Tested-with:     GHC==6.8.2, GHC==6.10.4, GHC==6.12.1
+Description:     A monad transformer allowing for pre-condition, post-condition and mid-condition while loops.
+Category:        Control
+
+Cabal-Version:   >= 1.2.3
+Build-Type:      Simple
+Build-Depends:   base >= 3 && < 5, mtl >= 1.0 && < 1.2
+
+Exposed-modules: Control.Monad.LoopWhile
+
+GHC-Options:     -Wall
+

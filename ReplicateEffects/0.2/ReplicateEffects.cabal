@@ -1,0 +1,22 @@
+Name:                ReplicateEffects
+Version:             0.2
+Synopsis:            Composable replication schemes of applicative functors
+-- Description:         
+Category:            Control
+
+License:             BSD3
+License-file:        LICENSE
+
+Author:              Martijn van Steenbergen, Sjoerd Visscher
+Maintainer:          martijn@van.steenbergen.nl
+Homepage:            https://github.com/MedeaMelana/ReplicateEffects
+Bug-reports:         https://github.com/MedeaMelana/ReplicateEffects/issues
+-- Copyright:           
+
+
+Build-type:          Simple
+Cabal-version:       >= 1.2
+
+Library
+  Exposed-modules:     Control.Replicate
+  Build-depends:       base >= 4.0 && < 4.4

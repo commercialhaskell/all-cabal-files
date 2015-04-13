@@ -1,0 +1,19 @@
+name:		bktrees
+version:	0.1
+license:	BSD3
+license-file:	LICENSE
+author:		Josef Svenningsson
+maintainer:	josef.svenningsson@gmail.com
+category:	Data Structures
+synopsis:	A set data structure with approximate searching
+description:
+		Burhard-Keller trees provide an implementation of sets 
+		which apart from the ordinary operations also has an 
+		approximate member search, allowing you to search for 
+		elements that are of a certain distance from the element 
+		you are searching for.
+build-depends:	base, containers
+exposed-modules:	Data.Set.BKTree
+extra-source-files: 	test/Test.hs
+extensions:	CPP
+ghc-options:	-O

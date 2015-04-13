@@ -1,0 +1,35 @@
+Name:                HGamer3D-SFML-Binding
+Version:             0.1.9
+Synopsis:            Windows Game Engine for the Haskell Programmer - SFML Bindings
+Description:         
+   HGamer3D is a game engine for developing 3D games in the programming 
+   language Haskell. The game engine uses available libraries for 3D graphics, 
+   sound, input device handling, gui programming and other areas and make
+   those functions available for the Haskell programmer by providing  
+   a Haskell API on top of that. HGamer3D is available on Windows only.
+   
+
+	
+License:             OtherLicense
+License-file:        LICENSE
+Author:              Peter Althainz
+Maintainer:          althainz@gmail.com
+Build-Type:          Simple
+Cabal-Version:       >=1.2
+Homepage:            http://www.hgamer3d.org
+Category:            Game
+Extra-source-files:  Setup.hs, include/ClassJoystick.h, include/ClassKeyboard.h, include/ClassListener.h, include/ClassMouse.h, include/ClassMouseHG3D.h, include/ClassMusic.h, include/ClassPtr.h, include/ClassSound.h, include/ClassSoundBuffer.h, include/ClassSoundSource.h, include/ClassSoundStream.h, include/EnumJoystickAxis.h, include/EnumKey.h, include/EnumMouseButton.h, include/EnumSoundSourceStatus.h, include/SFMLDllDefines.h, include/StructHG3DClass.h
+
+Library
+  Build-Depends:     base >= 3 && < 5, HGamer3D-Data >= 0.1.9
+
+  Exposed-modules:   HGamer3D.Bindings.SFML.Utils, HGamer3D.Bindings.SFML.ClassPtr, HGamer3D.Bindings.SFML.StructHG3DClass, HGamer3D.Bindings.SFML.EnumJoystickAxis, HGamer3D.Bindings.SFML.EnumKey, HGamer3D.Bindings.SFML.EnumMouseButton, HGamer3D.Bindings.SFML.EnumSoundSourceStatus, HGamer3D.Bindings.SFML.ClassJoystick, HGamer3D.Bindings.SFML.ClassKeyboard, HGamer3D.Bindings.SFML.ClassListener, HGamer3D.Bindings.SFML.ClassMouse, HGamer3D.Bindings.SFML.ClassMouseHG3D, HGamer3D.Bindings.SFML.ClassMusic, HGamer3D.Bindings.SFML.ClassSound, HGamer3D.Bindings.SFML.ClassSoundBuffer, HGamer3D.Bindings.SFML.ClassSoundSource, HGamer3D.Bindings.SFML.ClassSoundStream
+  Other-modules:     
+
+  ghc-options:       
+  cc-options:        -Wno-attributes 
+  hs-source-dirs:    .
+  Include-dirs:      include
+  Build-tools:       
+  build-depends:     
+  extra-libraries:   

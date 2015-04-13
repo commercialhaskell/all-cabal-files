@@ -1,0 +1,23 @@
+name:                hinvaders
+version:             0.1
+synopsis:            Space Invaders
+description:         A simple clone of Space Invaders for playing on one's terminal.
+category:            Game
+license:             GPL
+license-file:        LICENSE
+author:              Bernie Pope <bjpop@csse.unimelb.edu.au>
+maintainer:          Simon Michael <simon@joyful.com>
+homepage:            http://www.cs.mu.oz.au/~bjpop/code.html
+
+build-depends:       base, random, haskell98
+build-type:          Simple
+data-files:          README
+tested-with:         GHC==6.8.2
+
+executable:          hinvaders
+main-is:             Main.hs
+hs-source-dirs:      src
+other-modules:       AnsiInteract, AnsiScreen, Draw, Interact, Sprite
+
+ghc-options:         -O2 -Wall -optl-Wl,-s
+ghc-prof-options:    -prof -auto-all

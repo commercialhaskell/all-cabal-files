@@ -1,0 +1,51 @@
+Name:                xmlgen
+Version:             0.4.0.0
+Synopsis:            Fast XML generation library
+Description:         Library for high-performance XML generation.
+License:             BSD3
+License-file:        LICENSE
+Author:              Stefan Wehr, Stefan Schmidt, Johannes Weiss, David Leuschner
+Maintainer:          Stefan Wehr <wehr@factisresearch.com>
+Category:            Text
+Build-type:          Simple
+Cabal-version:       >=1.6
+
+Source-Repository head
+  type:     git
+  location: https://github.com/skogsbaer/xmlgen
+
+Library
+  Exposed-modules:   Text.XML.Generator
+  Hs-Source-Dirs:    src
+  Build-Depends:     base >= 4.2 && < 4.4, blaze-builder == 0.3.*,
+                     bytestring == 0.9.*, containers >= 0.3 && < 0.5,
+                     monads-tf == 0.1.*, text >= 0.10 && < 0.12,
+                     xml-types == 0.3.*
+  Ghc-Prof-Options: -auto-all -caf-all
+
+Flag tests
+  description: Build test suite
+  default:     False
+
+Executable tests
+  If flag(tests)
+    Build-Depends: HTF == 0.7.*, MissingH == 1.1.*, hxt == 9.0.*,
+                   filepath == 1.2.*, unix == 2.4.*, process == 1.0.*
+  Else
+    Buildable: False
+  Hs-Source-Dirs: src
+  Main-Is:        Text/XML/GeneratorTest.hs
+
+Flag benchmarks
+  description: Build benchmarks
+  default:     False
+
+Executable benchmarks
+  If flag(benchmarks)
+    Build-Depends: criterion == 0.5.*
+  Else
+    Buildable: False
+  Hs-Source-Dirs: src
+  Ghc-Options: -O2
+  Ghc-Prof-Options: -auto-all -caf-all
+  Main-Is:        Text/XML/GeneratorBenchmarks.hs

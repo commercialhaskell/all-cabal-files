@@ -1,0 +1,45 @@
+Name:            chp-spec
+Version:         1.0.0
+Synopsis:        A mirror implementation of chp that generates a specification of the program
+License:         BSD3
+License-file:    LICENSE
+Author:          Neil Brown
+Maintainer:      neil@twistedsquare.com
+Copyright:       Copyright (c) 2009--2010, University of Kent
+Stability:       Stable
+Tested-with:     GHC==6.10.4, GHC==6.12.1
+Description:     This library mirrors the API of much of the CHP library, but
+                 instead of executing the program properly, using this library
+		 will generate the CSP specification of your program.  See
+		 this article for details and caveats: <http://chplib.wordpress.com/2010/05/03/new-chp-spec-library-released/>
+Homepage:        http://www.cs.kent.ac.uk/projects/ofa/chp/
+Category:        Concurrency
+
+Cabal-Version:   >= 1.2.3
+Build-Type:      Simple
+Build-Depends:   base >= 4 && < 5, containers, deepseq >= 1.1 && < 1.2, mtl, pretty, TypeCompose >= 0.7 && < 0.8
+
+Exposed-modules: Control.Concurrent.CHPSpec                
+                 Control.Concurrent.CHPSpec.Alt
+                 Control.Concurrent.CHPSpec.Barriers
+                 Control.Concurrent.CHPSpec.Channels
+                 Control.Concurrent.CHPSpec.Channels.Communication
+                 Control.Concurrent.CHPSpec.Channels.Creation
+                 Control.Concurrent.CHPSpec.Channels.Ends
+                 Control.Concurrent.CHPSpec.Channels.Synonyms
+                 Control.Concurrent.CHPSpec.Enroll
+                 Control.Concurrent.CHPSpec.LazySmallCheck
+                 Control.Concurrent.CHPSpec.Monad
+                 Control.Concurrent.CHPSpec.Parallel
+
+Other-modules:   Control.Concurrent.CHPSpec.Base
+                 Control.Concurrent.CHPSpec.CSP
+                 Control.Concurrent.CHPSpec.Channels.Base
+                 Control.Concurrent.CHPSpec.Process
+                 Control.Concurrent.CHPSpec.Print
+                 Control.Concurrent.CHPSpec.Spec
+
+Extensions:      BangPatterns DeriveDataTypeable FlexibleContexts FlexibleInstances
+                 MultiParamTypeClasses Rank2Types ScopedTypeVariables TypeSynonymInstances
+
+GHC-Options:     -Wall -auto-all

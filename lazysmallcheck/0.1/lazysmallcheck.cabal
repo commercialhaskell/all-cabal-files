@@ -1,0 +1,34 @@
+Name:               lazysmallcheck
+Version:            0.1
+Copyright:          2007, Matthew Naylor
+Maintainer:         mfn@cs.york.ac.uk
+Homepage:           http://www.cs.york.ac.uk/~mfn/lazysmallcheck/
+Build-Depends:      base, haskell98, random
+Build-Type:         Simple
+License:            BSD3
+License-File:       LICENSE
+Author:             Matthew Naylor and Fredrik Lindblad
+Synopsis:           A library for demand-driven testing of Haskell programs
+Description:
+    Lazy SmallCheck is a library for exhaustive, demand-driven testing of
+    Haskell programs.  It is based on the idea that if a property holds
+    for a partially-defined input then it must also hold for all
+    fully-defined instantiations of the that input.  Compared to ``eager''
+    input generation as in SmallCheck, Lazy SmallCheck may require
+    significantly fewer test-cases to verify a property for all inputs up
+    to a given depth.
+Category:           Testing
+Hs-Source-dirs:
+    source
+Extra-Source-Files:
+    benchmarks/Benchmark.hs
+    benchmarks/Countdown.hs
+    benchmarks/List.hs
+    benchmarks/Mux.hs
+    benchmarks/RegExp.hs
+    benchmarks/Sad.hs
+    benchmarks/SumPuz.hs
+    benchmarks/clean.sh
+Exposed-modules:
+    LazySmallCheck
+    LazySmallCheck.Generic

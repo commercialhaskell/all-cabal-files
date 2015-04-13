@@ -1,0 +1,75 @@
+Name:                cassava
+Version:             0.1.0.0
+Synopsis:            A CSV parsing and encoding library
+Description:
+  A CSV parsing and encoding library optimized for ease of use and high
+  performance.
+Homepage:            https://github.com/tibbe/sea
+License:             BSD3
+License-file:        LICENSE
+Bug-reports:         https://github.com/tibbe/cassava/issues
+Copyright:           (c) 2012 Johan Tibell
+                     (c) 2012 Bryan O'Sullivan
+                     (c) 2011 MailRank, Inc.
+Author:              Johan Tibell
+Maintainer:          johan.tibell@gmail.com
+Category:            Text, Web, CSV
+Build-type:          Simple
+Cabal-version:       >=1.8
+
+
+Library
+  Exposed-modules:     Data.Csv
+                       Data.Csv.Parser
+
+  Other-modules:       Data.Csv.Conversion
+                       Data.Csv.Conversion.Internal
+                       Data.Csv.Encoding
+                       Data.Csv.Types
+
+  Build-depends:       array,
+                       attoparsec >= 0.10.2,
+                       base < 5,
+                       blaze-builder,
+                       bytestring,
+                       containers,
+                       text,
+                       unordered-containers,
+                       vector
+
+  ghc-options:         -Wall -O2
+
+Test-suite unit-tests
+  Type: exitcode-stdio-1.0
+  Main-is: UnitTests.hs
+  Build-depends:       attoparsec,
+                       base,
+                       bytestring,
+                       cassava,
+                       HUnit,
+                       QuickCheck >= 2.0,
+                       test-framework,
+                       test-framework-hunit,
+                       test-framework-quickcheck2,
+                       text,
+                       unordered-containers,
+                       vector
+
+  hs-source-dirs: tests
+  ghc-options:         -Wall
+
+Benchmark benchmarks
+  Type: exitcode-stdio-1.0
+  Main-is: Benchmarks.hs
+  Build-depends:       base,
+                       bytestring,
+                       cassava,
+                       criterion,
+                       text,
+                       unordered-containers,
+                       vector
+  hs-source-dirs: benchmarks
+
+source-repository head
+  type:     git
+  location: https://github.com/tibbe/cassava.git

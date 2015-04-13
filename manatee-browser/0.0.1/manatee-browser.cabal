@@ -1,0 +1,37 @@
+name:			manatee-browser
+version:		0.0.1
+Cabal-Version:	>= 1.6
+license:		GPL-3
+license-file:	LICENSE
+copyright:		(c) 2009 ~ 2010 Andy Stewart
+synopsis:		Browser extension for Manatee.
+description:    manatee-browser is WebKit browser extension for Manatee (Haskell/Gtk+ Integrated Live Environment)
+author:			Andy Stewart
+maintainer:		Andy Stewart <lazycat.manatee@gmail.com>
+stability:		provisional
+category:		Manatee, Browser, Network
+
+tested-with:	GHC==6.12.3
+build-type:		Custom
+
+Source-Repository head
+  type:         darcs
+  location:     http://patch-tag.com/r/AndyStewart/manatee-browser
+  
+Library
+     build-depends: base >= 4 && < 5, manatee-core >= 0.0.1, dbus-client >= 0.3 && < 0.4, stm >= 2.1.2.0,
+                    containers >= 0.3.0.0, webkit >= 0.12.0, gtk-serialized-event >= 0.12.0, gtk >= 0.12.0,
+                    text >= 0.7.1.0, mtl >= 1.1.0.2, utf8-string
+     exposed-modules:
+         Manatee.Extension.Browser
+         Manatee.Extension.Browser.PageMode
+         Manatee.Extension.Browser.BrowserBuffer
+         Manatee.Extension.Browser.BrowserView	 
+     other-modules:							
+     extensions:  
+     ghc-options: -fwarn-unused-matches -fwarn-unused-binds -fwarn-unused-imports -fwarn-overlapping-patterns -fwarn-duplicate-exports -fwarn-unrecognised-pragmas -fwarn-hi-shadowing 
+     
+Executable manatee-browser
+     main-is: Main.hs
+
+     ghc-options: -threaded      

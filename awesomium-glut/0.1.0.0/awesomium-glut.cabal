@@ -1,0 +1,30 @@
+
+Name:                awesomium-glut
+Version:             0.1.0.0
+Synopsis:            Utilities for using Awesomium with GLUT.
+License:             LGPL-3
+License-File:        LICENSE
+Copyright:           (c) 2012 Maksymilian Owsianny
+Author:              Maksymilian Owsianny
+Maintainer:          Maksymilian.Owsianny+AwesomiumGLUT@gmail.com
+Bug-Reports:         https://github.com/MaxOw/awesomium-glut/issues
+Category:            Graphics, Web
+Build-Type:          Simple
+Stability:           Experimental
+Cabal-Version:       >=1.8
+
+Description:         This package contains utilities for integrating
+                     Awesomium with GLUT (Mainly functions for
+                     marshalling input).
+
+Source-Repository head
+  Type:     git
+  Location: https://github.com/MaxOw/awesomium-glut.git
+
+library
+    Exposed-Modules: Graphics.UI.Awesomium.GLUT
+    Build-Depends  : awesomium-raw, awesomium
+                   , base >= 3 && < 5
+                   , GLUT
+    Hs-Source-Dirs : src
+

@@ -1,0 +1,59 @@
+name: sifflet
+version: 0.1.7
+cabal-version: >= 1.6
+build-type: Simple
+license: BSD3
+license-file: LICENSE
+copyright: (C) 2009-2010 Gregory D. Weber
+author: Gregory D. Weber
+maintainer: "gdweber" ++ drop 3 "abc@" ++ "iue.edu"
+bug-reports: mailto:"gdweber" ++ drop 3 "abc@" ++ "iue.edu"
+homepage: http://mypage.iu.edu/~gdweber/software/sifflet/
+stability: experimental
+synopsis: A simple, visual, functional programming language.
+description: Sifflet is a visual, functional programming language.
+  Sifflet users can make programs by drawing diagrams
+  to connect functions and other units.
+  Sifflet show the intermediate steps of the computation
+  on the diagram, and can expand function calls to show further details.
+  It is intended as an aid for learning about recursion.
+category: 
+  Language 
+  , Visual Programming
+tested-with: GHC == 6.10, GHC == 6.12
+-- data-files: filename list
+-- data-dir: directory
+-- extra-tmp-files: filename list
+
+extra-source-files: CBMgr.hs Examples.hs Expr.hs Geometry.hs GtkForeign.hs 
+  GtkUtil.hs LittleGtk.hs 
+  RPanel.hs SiffML.hs Tree.hs TreeGraph.hs  TreeLayout.hs
+  UITypes.hs Util.hs WindowManagement.hs Workspace.hs
+  Workspace/Canvas.hs Workspace/Frame.hs
+  Workspace/Functoid.hs Workspace/Tools.hs Workspace/WGraph.hs
+  Workspace/Workspace.hs
+  README
+
+executable sifflet
+  main-is: sifflet.hs
+  build-depends: 
+    base >= 4.0.0.0 && < 5,
+-- begin GTK stuff, should have same version numbers
+    cairo >= 0.10.0 && < 0.12.0,
+    glib >= 0.10.0 && < 0.12.0,
+    gtk >= 0.10.0 && < 0.12.0,
+-- end
+    containers >= 0.2 && < 1.0,
+    fgl >= 5.4 && < 5.4.2.3,
+    haskell98,
+    haskell-src >= 1.0 && < 2.0,
+    hxt >= 8.3 && < 9,
+    mtl >= 1.1 && < 2.0,
+    process >= 1.0 && < 2.0
+  if !os(windows)
+    build-depends: unix >= 2.3 && < 3.0
+  buildable: True
+  extensions: ForeignFunctionInterface CPP
+  ghc-options: -Wall
+  includes: gtk-2.0/gtk/gtk.h, gtk-2.0/gdk/gdk.h
+  extra-libraries: gdk-x11-2.0 gtk-x11-2.0

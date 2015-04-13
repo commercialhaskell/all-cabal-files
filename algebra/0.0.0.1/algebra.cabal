@@ -1,0 +1,23 @@
+Name:          algebra
+Version:       0.0.0.1
+Cabal-Version: >= 1.2
+Build-Type:    Simple
+License:       BSD3
+License-File:  LICENSE
+Copyright:     © 2009 Wolfgang Jeltsch
+Author:        Wolfgang Jeltsch
+Maintainer:    jeltsch@informatik.tu-cottbus.de
+Stability:     provisional
+Homepage:      http://community.haskell.org/~jeltsch/algebra/
+Package-URL:   http://hackage.haskell.org/packages/archive/algebra/0.0.0.0/algebra-0.0.0.0.tar.gz
+Synopsis:      Algebraic structures
+Description:   This package provides common algebraic structures in the form of type classes. In the
+               future, there might be other things than type classes in this package. Currently,
+               there is only the class of semigroups.
+Category:      Data
+Tested-With:   GHC == 6.10.1
+
+Library
+    Build-Depends:   base       >= 3.0 && < 4.1
+    Exposed-Modules: Data.Semigroup
+    HS-Source-Dirs:  src

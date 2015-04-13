@@ -1,0 +1,29 @@
+Name:                     iteratee-parsec
+Version:                  0.0.1
+Synopsis:                 Package allowing parsec parser initeratee
+Description:              Package providing instances of Stream in
+                          IterateeG monad.
+Category:                 Data, Parsing
+License:                  MIT
+License-file:	          LICENSE
+Author:		          John Lato,
+                          Maciej Piechotka
+Maintainer:	          uzytkownik2@gmail.com
+Build-Type:	          Simple
+Cabal-Version:	          >=1.4
+
+Library
+  Build-Depends:          base >= 3 && < 5,
+                          iteratee,
+                          ListLike,
+                          parsec >= 3,
+                          transformers
+  Exposed-Modules:        Text.Parsec.Iteratee,
+                          Text.Parsec.Iteratee.Chunk,
+                          Text.Parsec.Iteratee.LinkedList
+  HS-Source-Dirs:         src
+  Extensions:             FlexibleContexts,
+                          FlexibleInstances,
+                          MultiParamTypeClasses,
+                          UndecidableInstances
+  GHC-Options:		  -Wall

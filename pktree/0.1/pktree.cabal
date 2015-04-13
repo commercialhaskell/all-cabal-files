@@ -1,0 +1,36 @@
+name:            pktree
+version:         0.1
+cabal-version:   >= 1.8
+license:         OtherLicense
+license-file:    COPYING
+category:        Data
+copyright:       © 2011 Stephen Paul Weber
+author:          Stephen Paul Weber <singpolyma@singpolyma.net>
+maintainer:      Stephen Paul Weber <singpolyma@singpolyma.net>
+stability:       experimental
+tested-with:     GHC == 7.0.3
+synopsis:        Implementation of the PKTree spatial index data structure
+homepage:        https://github.com/singpolyma/pktree-haskell
+bug-reports:     https://github.com/singpolyma/pktree-haskell/issues
+build-type:      Simple
+description:
+        This project aims to implement the great spatial index data structure, the PK tree, in Haskell.  The data structure is covered in the following papers, but the code is much easier to read than they are:
+        .
+        <http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.21.411>
+        <http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.21.883>
+        <http://www.cs.umd.edu/~hjs/pubs/TR-4523.pdf>
+
+extra-source-files:
+        README
+
+library
+        exposed-modules:
+                Data.PKTree
+
+        build-depends:
+                base == 4.*,
+                containers
+
+source-repository head
+        type:     git
+        location: git://github.com/singpolyma/pktree-haskell.git

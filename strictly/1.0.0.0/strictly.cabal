@@ -1,0 +1,26 @@
+name:                strictly
+version:             1.0.0.0
+synopsis:            Combinators for strictifying functions
+
+homepage:            https://github.com/DanBurton/strictly#readme
+license:             BSD3
+license-file:        LICENSE
+author:              Dan Burton
+maintainer:          danburton.email@gmail.com
+
+category:            Control
+build-type:          Simple
+cabal-version:       >=1.8
+
+library
+  exposed-modules:     Control.Strictly
+  build-depends:       base >= 4.2 && < 4.7, deepseq > 1.1
+
+source-repository head
+  type: git
+  location: git://github.com/DanBurton/strictly.git
+
+source-repository this
+  type: git
+  location: git://github.com/DanBurton/strictly.git
+  tag: strictly-1.0.0.0

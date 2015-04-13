@@ -1,0 +1,21 @@
+Name:                nanoparsec
+Version:             0.1
+Synopsis:            An implementation of attoparsec-like parser around list-like
+Description:         An implementation of attoparsec-like parser around list-like
+License:             BSD3
+License-file:        LICENSE
+Author:              Maciej Piechotka
+Maintainer:          uzytkownik2@gmail.com
+Copyright:           (c) 2011  Maciej Piechotka
+Category:            Text
+Build-type:          Simple
+Cabal-version:       >=1.6
+
+Library
+  Exposed-modules:   Data.Nanoparsec,
+                     Data.Nanoparsec.Combinator
+  Other-modules:     Data.Nanoparsec.Internal
+  Build-depends:     base >= 4.3 && < 5,
+                     bytestring == 0.9.*,
+                     ListLike == 2.0.*
+  Ghc-options:       -Wall -O2

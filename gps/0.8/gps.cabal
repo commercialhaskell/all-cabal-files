@@ -1,0 +1,28 @@
+name:		gps
+version:	0.8
+license:	BSD3
+license-file:	LICENSE
+author:		Thomas DuBuisson <thomas.dubuisson@gmail.com>
+maintainer:	Thomas DuBuisson
+description:	Useful for manipulating GPS coordinages (in various forms), building paths, and performing basic computations.  NOTE: Version range 0.8.* won't strictly follow PVP - I will be adding additional functions in minor releases 0.8.x.
+synopsis:	For manipulating GPS coordinates and trails.
+category:	Data
+stability:	stable
+build-type:	Simple
+cabal-version:	>= 1.6
+tested-with:	GHC == 6.10.3
+extra-source-files: 
+
+Library
+  Build-Depends: base >= 3 && < 6,
+                   pretty >= 1.0 , prettyclass >= 1.0,
+                   time >= 1.1, GPX == 0.4.*, hxt >= 8.5, xsd == 0.3.*,
+                   vector >= 0.7, statistics >= 0.9
+  hs-source-dirs:
+  exposed-modules: Data.GPS
+  other-modules: Data.GPS.Core Data.GPS.Trail
+  ghc-options:
+
+source-repository head
+  type:     git
+  location: git@github.com:TomMD/gps.git

@@ -1,0 +1,17 @@
+name:               cml
+version:            0.1
+synopsis:           Events and Channels as in Concurrent ML
+description:
+    Implementation of Events and Channels as in CML
+    (extended with communication guards).
+    See /A Concurrent ML Library in Concurrent Haskell/ by Avik Chaudhuri
+    (avik\@cs.ucsc.edu) for details. The original code as well as the papers can
+    be found at <http://www.cs.umd.edu/~Eavik/projects/cmllch/>.
+category:           Concurrency
+license:            BSD3
+license-file:       LICENSE
+author:             Avik Chaudhuri
+maintainer:         ben.franksen@online.de
+build-depends:      base
+build-type:         Simple
+exposed-modules:    Control.Concurrent.CML

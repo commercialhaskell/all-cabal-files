@@ -1,0 +1,18 @@
+name:                instant-zipper
+version:             0.0.0
+category:            Generics
+synopsis:            Heterogenous Zipper in Instant Generics
+description:         This package contains a heterogenous Zipper and 2
+                     examples of how to use it.
+license:             GPL
+author:              Bram Schuur, Ruud Koot
+maintainer:          B.Schuur@students.uu.nl, R.Koot@students.uu.nl
+build-depends:       base >= 4.0, base < 5.0, instant-generics, mtl
+
+build-type:         Simple
+hs-source-dirs : src
+exposed-modules :    Generics.Instant.Zipper
+                     Generics.Instant.Zipper.Example.Dept
+                     Generics.Instant.Zipper.Example.Term
+
+

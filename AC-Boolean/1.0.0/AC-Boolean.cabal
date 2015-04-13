@@ -1,0 +1,26 @@
+Cabal-Version: >= 1.6
+Name:          AC-Boolean
+Version:       1.0.0
+Stability:     Experimental
+Synopsis:      Handle Boolean values generatically.
+
+Description:
+
+  This package provides various functions and classes for dealing
+  with things which are like Boolean values. It also defines a
+  few useful instances. The main benefit is the ability to use
+  the usual @&&@, etc. operators without having to invent new
+  operator names for every kind of Bool-like thing.
+
+Category:      Data, Logic, Math
+License:       BSD3
+License-file:  License.txt
+Author:        Andrew Coppin
+Maintainer:    MathematicalOrchid@hotmail.com
+Build-Type:    Simple
+Tested-With:   GHC == 6.12.3
+
+Library
+  Exposed-modules: Data.Boolean
+  Build-Depends:   base >= 4 && < 5
+  HS-Source-Dirs:  .

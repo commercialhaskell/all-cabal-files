@@ -1,0 +1,35 @@
+name:           gmap
+version:        0.1
+category:       Data Structures
+license:	BSD3
+description:
+        Provides typeclass for and several implementations of composable maps and generic tries.
+          OrdMap is roughly equivalent to Data.Map .
+          ListMap, EitherMap, MaybeMap, TupleMap and EnumMap allow you to break down the corresponding types.
+          InjectKeys is the easiest way to define tries on your own types, see EitherMap for a simple example.
+          ChoiceMap and TupleMap correspond to sum and product types, respectively.
+        The type-level syntax for creating maps is currently unwieldy. This will improve significantly in the next version.
+author:         Jamie Brandon, Adrian Hey
+maintainer:     jamiiecb (google mail)
+synopsis:       Composable maps and generic tries.
+build-depends:  base >= 3.0, QuickCheck, array, COrdering, AvlTree >= 4.2, random
+build-type:     Simple
+exposed-modules:
+        Data.GMap
+        Data.GMap.AssocList
+        Data.GMap.OrdMap
+        Data.GMap.IntMap
+        Data.GMap.ListMap
+        Data.GMap.EitherMap
+        Data.GMap.UnitMap
+        Data.GMap.MaybeMap
+        Data.GMap.CacheKeys
+        Data.GMap.ChoiceMap
+        Data.GMap.EnumMap
+        Data.GMap.InjectKeys
+        Data.GMap.TupleMap
+        Test.GMap
+        Test.GMap.Utils
+hs-source-dirs: src
+-- include-dirs:   include
+ghc-options:    -O2 -Wall

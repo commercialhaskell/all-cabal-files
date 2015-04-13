@@ -1,0 +1,43 @@
+Name:                 unfoldable
+Version:              0.5.0
+Synopsis:             Class of data structures that can be unfolded.
+Description:          Just as there's a Foldable class, there should also be an Unfoldable class. 
+                      .
+                      This package provides one. Example unfolds are:
+                      .
+                      * Random values
+                      .
+                      * Enumeration of all values (depth-first or breadth-first)
+                      .
+                      * Convert from a list
+                      .
+                      Some examples can be found in the examples directory.
+Homepage:             https://github.com/sjoerdvisscher/unfoldable
+Bug-reports:          https://github.com/sjoerdvisscher/unfoldable/issues
+License:              BSD3
+License-file:         LICENSE
+Author:               Sjoerd Visscher
+Maintainer:           sjoerd@w3future.com
+Category:             Generics
+Build-type:           Simple
+Cabal-version:        >= 1.6
+
+Extra-Source-Files:
+  examples/*.hs
+
+Library
+  HS-Source-Dirs:  src
+  
+  Exposed-modules:
+    Data.Unfolder
+    Data.Unfoldable  
+  
+  Build-depends:
+      base         >= 4   && < 5 
+    , transformers >= 0.3 && < 0.4
+    , random       >= 1.0 && < 1.1
+    , QuickCheck   >= 2.4 && < 2.5
+
+source-repository head
+  type:     git
+  location: git://github.com/sjoerdvisscher/unfoldable.git

@@ -1,0 +1,24 @@
+Name:          TreeT
+Version:       0.0
+Cabal-Version: >=1.6
+Synopsis:   Transformer for Data.Tree 
+Description:
+
+    This library implements a transformer for the Data.Tree package
+
+Category:      Control,Monads
+License:       PublicDomain
+License-File:  LICENSE
+Author:        Rahul Gopinath
+Maintainer:    gopinath@eecs.oregonstate.edu
+Bug-Reports:   mailto:gopinath@eecs.oregonstate.edu
+Build-Type:    Simple
+Stability:     experimental
+
+Library
+  Build-Depends:    base >= 2 && < 5, containers, transformers
+  Exposed-Modules:  Control.TreeT
+
+Source-Repository head
+  type:     darcs
+  location: 

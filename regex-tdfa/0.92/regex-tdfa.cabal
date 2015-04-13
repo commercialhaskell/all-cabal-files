@@ -1,0 +1,58 @@
+Name:                   regex-tdfa
+Version:                0.92
+-- Cabal-Version:       >=1.1.6
+License:                BSD3
+License-File:           LICENSE
+Copyright:              Copyright (c) 2007, Christopher Kuklewicz
+Author:                 Christopher Kuklewicz
+Maintainer:             TextRegexLazy@personal.mightyreason.com
+Stability:              Seems to work, but not POSIX yet
+Homepage:               http://sourceforge.net/projects/lazy-regex
+Package-URL:            http://darcs.haskell.org/packages/regex-unstable/regex-tdfa/
+Synopsis:               Replaces/Enhances Text.Regex
+Description:            A new all Haskell "tagged" DFA regex engine, inspired by libtre
+Category:               Text
+Tested-With:            GHC
+Build-Depends:          regex-base >= 0.80, base >= 2.0, parsec, mtl
+-- Data-Files:
+-- Extra-Source-Files:
+-- Extra-Tmp-Files:
+Exposed-Modules:        Text.Regex.TDFA.Common
+                        Text.Regex.TDFA.IntArrTrieSet
+                        Text.Regex.TDFA.TNFA
+                        Text.Regex.TDFA.TDFA
+                        Text.Regex.TDFA.Pattern
+                        Text.Regex.TDFA.ReadRegex
+                        Text.Regex.TDFA.CorePattern
+                        Text.Regex.TDFA.RunMutState
+                        Text.Regex.TDFA.String
+                        Text.Regex.TDFA.MutRun
+                        Text.Regex.TDFA.ByteString
+                        Text.Regex.TDFA.MutRunBS
+                        Text.Regex.TDFA.ByteString.Lazy
+                        Text.Regex.TDFA.MutRunLBS
+                        Text.Regex.TDFA.Sequence
+                        Text.Regex.TDFA.MutRunSeq
+                        Text.Regex.TDFA.Wrap
+                        Text.Regex.TDFA
+                        Data.IntSet.EnumSet
+                        Data.IntMap.EnumMap
+                        Data.IntMap.CharMap
+Buildable:              True
+-- Other-Modules:
+-- HS-Source-Dirs:         "."
+Extensions:             MultiParamTypeClasses, FunctionalDependencies, BangPatterns
+GHC-Options:            -Wall -Werror -O2 -funbox-strict-fields
+-- GHC-Options:            -Wall -Werror -O2
+-- GHC-Options:            -Wall -ddump-minimal-imports
+-- GHC-Prof-Options:       -auto-all
+-- Hugs-Options:
+-- NHC-Options:
+-- Includes:
+-- Include-Dirs:
+-- C-Sources:
+-- Extra-Libraries:
+-- Extra-Lib-Dirs:
+-- CC-Options:
+-- LD-Options:
+-- Frameworks:

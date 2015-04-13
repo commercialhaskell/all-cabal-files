@@ -1,0 +1,33 @@
+Name:                html2hamlet
+Version:             0.1.0
+Synopsis:            HTML to Hamlet converter
+
+Description:         HTML to Hamlet converter
+
+License:             BSD3
+License-file:        LICENSE
+Homepage:            http://github.com/tanakh/html2hamlet
+Author:              Hideyuki Tanaka
+Maintainer:          tanaka.hideyuki@gmail.com
+Category:            Text
+Build-type:          Simple
+Cabal-version:       >=1.6
+
+Source-repository head
+  Type: git
+  Location: https://tanakh@github.com/tanakh/html2hamlet.git
+
+Executable html2hamlet
+  Main-is:             Html2Hamlet.hs
+  
+  Build-depends:       base >= 4 && < 5
+                     , bytestring >= 0.9 && < 0.10
+                     , text >= 0.11 && < 0.12
+                     , ascii >= 0.0 && < 0.1
+                     , blaze-builder >= 0.2 && < 0.3
+                     , hamlet >= 0.7 && < 0.8
+                     , xmlhtml >= 0.1 && < 0.2
+                     , cmdargs >= 0.6 && < 0.7
+                     , http-enumerator >= 0.4 && < 0.5
+                     , network >= 2.3 && < 2.4
+

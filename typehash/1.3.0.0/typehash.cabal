@@ -1,0 +1,15 @@
+Name:		typehash
+Version:	1.3.0.0
+License:	BSD3
+Author:		Lennart Augustsson
+Maintainer:	Lennart Augustsson
+Category:	Reflection
+Synopsis:	Create a unique hash value for a type.
+Stability:      experimental
+Build-type:	Simple
+Description:	Produce a hash for a type that is unique for that type.
+		The hash takes both actual type names and type structure into account.
+		This is useful for checking the type of persisted values.
+Hs-Source-Dirs: src
+Build-Depends:	base < 4, mtl, bytestring, pureMD5
+Exposed-modules:	Data.TypeHash

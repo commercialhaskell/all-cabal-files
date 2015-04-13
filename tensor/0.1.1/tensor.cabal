@@ -1,0 +1,34 @@
+Name:           tensor
+Version:        0.1.1
+Cabal-Version:  >= 1.8
+License:        GPL-3
+License-File:   LICENSE
+Author:         Federico Squartini, Nicola Squartini
+Maintainer:     Nicola Squartini <tensor5@gmail.com>
+Stability:      experimental
+Synopsis:       A completely type-safe library for linear algebra
+Category:       Data, Math
+Build-Type:     Simple
+Description:
+
+  This library defines data types and classes for fixed dimension
+  vectors and tensors. See @"Data.Tensor.Examples"@ for a short
+  tutorial.
+
+Library
+  Build-Depends:   base == 4.*, vector
+  Build-Tools:     ghc >= 7.2.1
+  GHC-Options:     -Wall -O2
+  Exposed-Modules: Data.Cardinal
+                   Data.Ordinal
+                   Data.Tensor
+                   Data.Tensor.Examples
+                   Data.Tensor.LinearAlgebra
+                   Data.Tensor.LinearAlgebra.Vector
+                   Data.Tensor.Vector
+                   Data.TypeAlgebra
+                   Data.TypeList
+                   Data.TypeList.MultiIndex
+  Other-modules:   Data.Tensor.Vector.Internal
+                   Data.TypeList.MultiIndex.Internal
+

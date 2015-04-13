@@ -1,0 +1,62 @@
+Name:                imm
+Version:             0.3.0.0
+Synopsis:            RSS-to-maildir tool
+--Description:         
+--Homepage:
+Category:            Web
+
+License:             OtherLicense
+License-file:        LICENSE
+-- Copyright:           
+Author:              kamaradclimber, koral
+Maintainer:          koral att mailoo dott org
+
+Cabal-version:       >=1.8
+Build-type:          Simple
+-- Extra-source-files:  
+
+Source-repository head
+    Type:     git
+    Location: git@github:k0ral/imm.git
+
+Library
+    Exposed-modules:
+        Imm.Boot,
+        Imm.Config,
+        Imm.Main,
+        Imm.Feed,
+        Imm.Types,
+        Imm.Util,
+        Imm.Mail,
+        Imm.Maildir
+    Build-depends:
+        base == 4.*,
+        bytestring,
+        cmdargs,
+        cond,
+        directory,
+        dyre,
+        feed,
+        filepath,
+        HTTP,
+        mime-mail,
+        mtl,
+        network,
+        old-locale,
+        random,
+        text,
+        time,
+        timerep,
+        utf8-string,
+        xdg-basedir,
+        xml
+    
+    -- Other-modules:       
+    -- Build-tools:         
+    Ghc-options: -Wall
+
+Executable imm
+    Build-depends: imm, base == 4.*
+    Main-is: Executable.hs
+    Hs-Source-Dirs: Imm
+    Ghc-options: -Wall -threaded

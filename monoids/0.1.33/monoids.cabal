@@ -1,0 +1,82 @@
+name:		    monoids
+version:	    0.1.33
+license:	    BSD3
+license-file:   LICENSE
+author:		    Edward A. Kmett
+maintainer:	    Edward A. Kmett <ekmett@gmail.com>
+stability:	    experimental
+homepage:	    http://comonad.com/reader
+category:	    Data, Math, Numerical, Natural Language Processing, Parsing
+synopsis:	    Monoids, specialized containers and a general map/reduce framework
+description:    Monoids, specialized containers and a general map/reduce framework
+copyright:      (c) 2009 Edward A. Kmett
+build-type:     Simple
+cabal-version:  >=1.2
+
+library
+  build-depends: 
+    base >= 4 && < 4.2,
+    containers >= 0.2 && < 0.3, 
+    text >= 0.1 && < 0.2, 
+    parsec >= 3.0 && < 3.1,
+    fingertree >= 0.0 && < 0.1, 
+    bytestring >= 0.9 && < 1.0, 
+    category-extras >= 0.53 && < 0.60, 
+    parallel >= 1.1 && < 1.2, 
+    mtl >= 1.0 && < 1.2, 
+    stm >= 2.1 && < 2.2, 
+    bitset >= 1.0 && < 1.1, 
+    QuickCheck >= 2.1 && < 2.2, 
+    array >= 0.2 && < 0.3,
+    reflection >= 0.1 && < 0.2
+  exposed-modules:
+    Data.Field
+    Data.Field.VectorSpace
+    Data.Group
+    Data.Group.Combinators
+    Data.Group.Multiplicative
+    Data.Group.Multiplicative.Sugar
+    Data.Group.Sugar
+    Data.Monoid.Additive
+    Data.Monoid.Additive.Sugar
+    Data.Monoid.Applicative
+    Data.Monoid.Categorical
+    Data.Monoid.Combinators
+    Data.Monoid.FromString
+    Data.Generator
+    Data.Generator.Combinators
+    Data.Generator.Compressive.LZ78
+    Data.Generator.Compressive.RLE
+    Data.Generator.Free
+    Data.Monoid.Instances
+    Data.Monoid.Lexical.SourcePosition
+    Data.Monoid.Lexical.UTF8.Decoder
+    Data.Monoid.Lexical.Words
+    Data.Monoid.Monad
+    Data.Monoid.Multiplicative
+    Data.Monoid.Multiplicative.Sugar
+    Data.Monoid.Ord
+    Data.Monoid.Reducer
+    Data.Monoid.Reducer.Char
+    Data.Monoid.Reducer.With
+    Data.Monoid.Self
+    Data.Monoid.Union
+    Data.Ring
+    Data.Ring.Algebra
+    Data.Ring.Boolean
+    Data.Ring.FromNum
+    Data.Ring.ModularArithmetic
+    Data.Ring.Module
+    Data.Ring.Module.AutomaticDifferentiation
+    Data.Ring.Semi
+    Data.Ring.Semi.BitSet
+    Data.Ring.Semi.Kleene
+    Data.Ring.Semi.Near
+    Data.Ring.Semi.Near.Trie
+    Data.Ring.Semi.Natural
+    Data.Ring.Semi.Ord
+    Data.Ring.Semi.Tropical
+    Data.Ring.Sugar
+    Data.Set.Unboxed
+
+  ghc-options: -Wall -fno-warn-duplicate-exports

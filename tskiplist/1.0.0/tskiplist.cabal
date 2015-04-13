@@ -1,0 +1,57 @@
+Name:           tskiplist
+Synopsis:       A Skip List Implementation in Software Transactional Memory (STM)
+Description:
+    This package provides an implementation of a skip list in STM.
+    A skip list is a probabilistic data structure with dictionary
+    operations and support for efficient range-queries (similarly to /Data.Map/). In contrast 
+    to tree data structures, a skip list does not need any rebalancing, which makes it particularly
+    suitable for concurrent programming. See: William Pugh. Skip Lists: A
+    Probabilistic Alternative to Balanced Trees.  
+    .
+    Feedback appreciated!
+Author:         Peter Robinson 2010-2014
+Maintainer:     Peter Robinson <thaldyron@gmail.com>
+License:        LGPL
+License-file:   LICENSE
+Version:        1.0.0
+Category:       Data, Concurrency
+Stability:      experimental
+Homepage:       https://github.com/thaldyron/tskiplist
+
+
+build-type:     Simple                        
+cabal-version: >= 1.6
+
+source-repository head
+  type: git
+  location: https://github.com/thaldyron/tskiplist
+
+library
+    ghc-options:        -Wall -fno-ignore-asserts -fwarn-incomplete-patterns
+
+    exposed-modules:    Control.Concurrent.STM.TSkipList
+                        Control.Concurrent.STM.TSkipList.Internal
+
+--    other-modules:      test.hs
+
+    build-depends:      base >= 4 && < 5, 
+                        stm >= 2.1.1.0 && < 2.6, 
+                        random >= 1.0.0.1 && < 1.2,
+                        array >= 0.2 && < 0.6,
+                        containers >= 0.2 && < 0.6
+
+    extensions: DoAndIfThenElse
+
+--    extensions:         MultiParamTypeClasses
+--                        FunctionalDependencies, 
+--                        FlexibleContexts,
+--                        FlexibleInstances,
+--                        UndecidableInstances,
+--                        DeriveDataTypeable,
+--                        ExistentialQuantification,
+--                        TypeSynonymInstances,
+--                        BangPatterns,
+--                        ScopedTypeVariables,
+--                        TypeSynonymInstances
+                      
+

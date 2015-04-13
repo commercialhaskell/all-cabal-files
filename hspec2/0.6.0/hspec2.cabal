@@ -1,0 +1,41 @@
+name:             hspec2
+version:          0.6.0
+license:          MIT
+license-file:     LICENSE
+copyright:        (c) 2011-2014 Simon Hengel,
+                  (c) 2011-2012 Trystan Spangler,
+                  (c) 2011 Greg Weber
+maintainer:       Simon Hengel <sol@typeful.net>
+build-type:       Simple
+cabal-version:    >= 1.10
+category:         Testing
+stability:        experimental
+bug-reports:      https://github.com/hspec/hspec/issues
+homepage:         http://hspec.github.io/
+synopsis:         Alpha version of Hspec 2.0
+description:      This is an alpha release of Hspec 2.0.
+                  If you are looking for a stable solution for testing Haskell
+                  code, use the 1.x series of Hspec: <http://hspec.github.io/>
+
+source-repository head
+  type: git
+  location: https://github.com/hspec/hspec
+
+Library
+  exposed: False
+  ghc-options:
+      -Wall
+  hs-source-dirs:
+      src
+  build-depends:
+      base == 4.*
+    , hspec-discover == 2.0.*
+    , hspec == 2.0.*
+  exposed-modules:
+      Test.Hspec
+      Test.Hspec.Core
+      Test.Hspec.Discover
+      Test.Hspec.Formatters
+      Test.Hspec.QuickCheck
+      Test.Hspec.Runner
+  default-language: Haskell2010

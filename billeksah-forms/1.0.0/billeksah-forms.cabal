@@ -1,0 +1,51 @@
+name: billeksah-forms
+version: 1.0.0
+cabal-version: >= 1.8
+build-type: Simple
+license: LGPL
+license-file: LICENSE
+copyright: Juergen "jutaro" Nicklisch-Franken
+maintainer: maintainer@leksah.org
+homepage: http://www.leksah.org
+package-url: https://github.com/leksah
+bug-reports: http://code.google.com/p/leksah/issues/list
+synopsis: Leksah library
+description: Form library used by leksah to edit preferences, cabal infos, etc
+category: Graphics
+author: Juergen "jutaro" Nicklisch-Franken
+tested-with: GHC ==7.0
+
+Library
+    exposed-modules:
+        Graphics.Forms
+        Graphics.Forms.Basics
+        Graphics.Forms.Build
+        Graphics.Forms.Composite
+        Graphics.Forms.Sets
+        Graphics.Forms.Default
+        Graphics.Forms.Description
+        Graphics.Forms.GUIEvent
+        Graphics.Forms.Parameters
+        Graphics.Forms.Simple
+        Graphics.Forms.FormPane
+        Base.Preferences
+        Graphics.Panes.Preferences
+    exposed: True
+    buildable: True
+    hs-source-dirs: src
+    ghc-options: -Wall -fno-warn-name-shadowing -fno-warn-unused-do-bind
+    build-depends:
+        base >=4.0.0.0 && <4.4,
+        containers >=0.2 && <0.5,
+        mtl >=1.1.0.2 && <2.1,
+        transformers >= 0.2.2.0 && < 0.3,
+        directory >= 1.1.0.0 && <1.2,
+        filepath >= 1.2.0.0 && < 1.3,
+        Cabal >= 1.10.1.0 && < 1.11,
+        gtk >= 0.12.0 && < 0.13,
+        glib >= 0.12.0 && < 0.13,
+        parsec >= 3.1.1 && < 3.2,
+        pretty >= 1.0.1.2 && < 1.1,
+
+        billeksah-services >= 1.0.0 && < 1.1,
+        billeksah-pane >= 1.0.0 && < 1.1

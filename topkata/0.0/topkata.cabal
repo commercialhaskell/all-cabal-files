@@ -1,0 +1,18 @@
+Name:                topkata
+Version:             0.0
+Description:         OpenGL Arcade Game
+License:             GPL
+License-file:        LICENSE
+Author:              Christoph Bauer
+Maintainer:          Christoph Bauer <ich@christoph-bauer.net>
+Build-Depends:       base, GLUT, OpenGL, array, random, cairo, OpenAL, ALUT
+Category:            Game
+build-type:          Simple
+
+Executable:          topkata
+Main-is:             Main.hs
+
+
+Executable:          pdflaby
+Main-is:             PdfLaby.hs
+

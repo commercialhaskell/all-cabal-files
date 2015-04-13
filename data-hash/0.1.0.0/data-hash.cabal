@@ -1,0 +1,27 @@
+name:               data-hash
+version:            0.1.0.0
+description:
+                    Combinators for building fast hashing functions. Includes
+                    hashing functions for all basic Haskell98 types.
+
+synopsis:           Combinators for building fast hashing functions.
+
+category:           Data
+license:            BSD3
+license-file:       LICENSE
+maintainer:         jcpetruzza@gmail.com
+homepage:           http://code.haskell.org/~jcpetruzza/data-hash
+
+cabal-version:      >= 1.2
+build-type:         Simple
+tested-with:        GHC==6.10
+
+Library
+  build-depends:    base >= 3, array
+  ghc-options:      -Wall -O2
+  hs-source-dirs:   src
+
+  exposed-modules:  Data.Hash
+  other-modules:    Data.Hash.Base, Data.Hash.Instances
+
+  extensions:       CPP

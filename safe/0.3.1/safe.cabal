@@ -1,0 +1,32 @@
+cabal-version:  >= 1.6
+build-type:     Simple
+name:           safe
+version:        0.3.1
+license:        BSD3
+license-file:   LICENSE
+category:       Unclassified
+author:         Neil Mitchell <ndmitchell@gmail.com>
+maintainer:     Neil Mitchell <ndmitchell@gmail.com>
+copyright:      Neil Mitchell 2007-2011
+homepage:       http://community.haskell.org/~ndm/safe/
+synopsis:       Library for safe (pattern match free) functions
+description:
+    Partial functions from the base library, such as @head@ and @!!@, modified
+    to return more descriptive error messages, programmer defined error messages,
+    @Maybe@ wrapped results and default values.
+    
+    These functions can be used to reduce the number of unsafe pattern matches in
+    your code.
+
+
+source-repository head
+    type:     darcs
+    location: http://community.haskell.org/~ndm/darcs/safe/
+
+
+library
+    build-depends:
+        base < 5
+
+    exposed-modules:
+        Safe

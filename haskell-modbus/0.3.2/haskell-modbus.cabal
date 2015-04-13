@@ -1,0 +1,37 @@
+
+-- Plow version
+name:                haskell-modbus
+version:             0.3.2
+synopsis:            A cereal-based parser for the Modbus protocol
+description:         A cereal-based parser for the Modbus protocol
+homepage:            http://www.github.com/jhickner/haskell-modbus
+license:             BSD3
+license-file:        LICENSE
+author:              Jason Hickner
+maintainer:          jhickner@gmail.com
+-- copyright:
+category:            Data, Parsing, Network
+build-type:          Simple
+cabal-version:       >=1.8
+
+library
+  exposed-modules:     Data.Modbus, Data.Digest.CRC16
+  ghc-options: -Wall
+  -- other-modules:
+  build-depends:       base >= 4 && < 5,
+                       array >= 0.4,
+                       bytestring >= 0.9,
+                       cereal >=0.3
+
+test-suite spec 
+  Type:                exitcode-stdio-1.0
+  Default-Language:    Haskell2010
+  Hs-Source-Dirs:      test
+  Ghc-Options:         -Wall
+  Main-Is:             Spec.hs
+  Build-Depends:        base
+                      , hspec
+                      , haskell-modbus
+                      , cereal 
+                      , bytestring
+                      , array

@@ -1,0 +1,68 @@
+name:           tfp
+version:        0.4
+cabal-version:  >= 1.6
+build-type:     Simple
+license:        BSD3
+license-file:   LICENSE
+copyright:      Copyright (c) 2008 Peter Gavin
+author:         Peter Gavin
+maintainer:     pgavin@gmail.com
+homepage:       http://github.com/pgavin/tfp
+stability:      alpha
+package-url:    http://github.com/pgavin/tfp
+synopsis:       Type-level programming library using type families
+description:	TFP (short for Type Family Programming) provides implementations of type-level integers and booleans,
+		and (eventually) simple type-level data structures. It uses type families as functions to produce new types,
+		which provides an intuitive way to parameterize data types and functions on numerical values at compile time.
+category:       Data
+tested-with:    GHC == 6.9.0
+
+source-repository head {
+  type:         git
+  location:     git@github.com:pgavin/tfp.git
+}
+
+flag build-test
+  description: Build the tfp-test test program
+  default: False
+
+library {
+  extensions:     TypeFamilies, UndecidableInstances, TypeOperators,
+                  EmptyDataDecls, DeriveDataTypeable, ScopedTypeVariables,
+                  FlexibleInstances, TemplateHaskell, TypeSynonymInstances,
+                  MultiParamTypeClasses, GeneralizedNewtypeDeriving,
+                  Rank2Types, FlexibleContexts
+  build-depends:  base >= 3.0 && < 5, template-haskell >= 2.0
+  exposed-modules:
+    Data.SizedInt,
+    Data.SizedWord,
+    Types,
+    Types.Base,
+    Types.Data.Bool,
+    Types.Data.Num
+    Types.Data.Num.Ops
+    Types.Data.Num.Decimal,
+    Types.Data.Num.Decimal.Literals
+    Types.Data.Num.Decimal.Literals.TH
+    Types.Data.Num.Decimal.Digits
+    Types.Data.List,
+    Types.Data.Ord
+  other-modules:
+    Types.Data.Num.Decimal.Ops
+}
+
+
+executable tfp-test {
+  if flag(build-test) {
+    buildable: True
+  } else {
+    buildable: False
+  }
+  extensions:     TypeFamilies, UndecidableInstances, TypeOperators,
+                  EmptyDataDecls, DeriveDataTypeable, ScopedTypeVariables,
+                  FlexibleInstances, TemplateHaskell, TypeSynonymInstances,
+                  MultiParamTypeClasses, GeneralizedNewtypeDeriving,
+                  FunctionalDependencies, Rank2Types, FlexibleContexts
+  main-is: Test.hs
+  build-depends:  base >= 3.0 && < 5, template-haskell >= 2.0, QuickCheck >= 1.2.0.0
+}

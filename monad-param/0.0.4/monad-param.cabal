@@ -1,0 +1,26 @@
+name:           monad-param
+category:	Control
+version:        0.0.4
+synopsis:       Parameterized monads
+description:	Implements parameterized monads by overloading the monad sugar with more liberal types.
+stability:      alpha
+author:         Edward Kmett <ekmett@gmail.com>
+maintainer:     Dominique Devriese <dominique.devriese@gmail.com>
+copyright:      Copyright (C) 2006-2011, Edward Kmett, Dominique Devriese
+homepage:       http://hackage.haskell.org/package/monad-param
+package-url:    http://hackage.haskell.org/package/monad-param
+build-depends:  base >= 4 && < 5, mtl -any, stm -any
+build-type:	Simple
+cabal-version:  -any
+license:        BSD3
+license-file:	LICENSE
+buildable:      True
+extensions:     MultiParamTypeClasses 
+                FunctionalDependencies 
+		OverlappingInstances
+		UndecidableInstances
+                EmptyDataDecls
+                NoImplicitPrelude
+exposed-modules: Control.Monad.Parameterized
+ghc-options:    -funbox-strict-fields -Wall
+hs-source-dirs: src

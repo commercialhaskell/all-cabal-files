@@ -1,0 +1,50 @@
+Name:           ddc-base
+Version:        0.4.1.1
+License:        MIT
+License-file:   LICENSE
+Author:         The Disciplined Disciple Compiler Strike Force
+Maintainer:     Ben Lippmeier <benl@ouroborus.net>
+Build-Type:     Simple
+Cabal-Version:  >=1.6
+Stability:      experimental
+Category:       Compilers/Interpreters
+Homepage:       http://disciple.ouroborus.net
+Synopsis:       Disciplined Disciple Compiler common utilities.    
+Description:
+        This package re-exports the main external dependencies of 
+        the Disciplined Disciple Compiler project, and provides some
+        common utilities.
+
+Library
+  Build-Depends: 
+        base            >= 4.6 && < 4.8,
+        deepseq         == 1.3.*,
+        transformers    == 0.3.*,
+        containers      == 0.5.*,
+        wl-pprint       == 1.1.*,
+        parsec          == 3.1.*
+        
+  Exposed-modules:
+        DDC.Base.Parser
+        DDC.Base.Pretty
+
+        DDC.Control.Monad.Check
+
+        DDC.Data.Canned
+        DDC.Data.SourcePos
+        DDC.Data.Token
+        DDC.Data.ListUtils
+        
+  GHC-options:
+        -Wall
+        -fno-warn-orphans
+        -fno-warn-type-defaults
+        -fno-warn-missing-methods
+
+  Extensions:
+        ParallelListComp
+        PatternGuards
+        RankNTypes
+        FlexibleContexts
+        KindSignatures
+        BangPatterns

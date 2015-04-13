@@ -1,0 +1,36 @@
+Name:
+  wait-handle
+Version:
+  0.1
+Cabal-Version:
+  >= 1.2
+Category:
+  Distribution
+Synopsis:
+  Packaging of 'WaitHandle', extracted from Max Bolingbroke's OpenShake. Wait
+  handles are MVars which can only be written to once, and from which values
+  can never be removed.
+Description:
+  Packaging of 'WaitHandle', extracted from Max Bolingbroke's OpenShake. Wait
+  handles are MVars which can only be written to once, and from which values
+  can never be removed.
+License:
+  BSD3
+License-File:
+  LICENSE
+Author:
+  Max Bolingbroke <batterseapower@hotmail.com>
+Maintainer:
+  vi <vi@zalora.com>
+Homepage:
+  https://www.github.com/fmap/waithandle
+Build-Type:
+  Simple
+
+Library
+  Exposed-Modules:
+    Control.Concurrent.MVar.WaitHandle
+  Build-Depends:
+    base >= 3 && < 5
+  Hs-Source-Dirs:
+    src

@@ -1,0 +1,26 @@
+Name:           safe-failure
+Build-Type:     Simple
+Cabal-Version:  >= 1.2
+Version:        0.4.0
+License:        BSD3
+License-File:   LICENSE
+Copyright:      2007-8, Neil Mitchell
+Maintainer:     pepeiborra@gmail.com
+Author:         Neil Mitchell, Jose Iborra (2009), Michael Snoyman (2009)
+Homepage:       http://www-users.cs.york.ac.uk/~ndm/safe/
+Category:       Failure
+Synopsis:       Library for safe functions
+Description:
+    Partial functions from the base library, such as @head@ and @!!@, modified
+    to fail in a @Failure@.
+    
+    These functions can be used to reduce the number of unsafe pattern matches in
+    your code.
+
+Library
+   buildable: True
+   build-depends:  base >= 4 && < 5,
+                   failure >= 0.0.0 && < 0.1
+   exposed-modules:  
+      Safe.Failure
+   ghc-options: -Wall

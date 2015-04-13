@@ -1,0 +1,32 @@
+name:                digestive-functors-scotty
+version:             0.1.1.0
+synopsis:            Scotty backend for the digestive-functors library
+description:         Scotty backend for the digestive-functors library
+homepage:            https://bitbucket.org/wniare/digestive-functors-scotty
+license:             BSD3
+license-file:        LICENSE
+author:              Mārtiņš Mačs
+maintainer:          macs.martins@gmail.com
+category:            Web
+build-type:          Simple
+cabal-version:       >=1.8
+
+library
+  hs-source-dirs:      src
+  GHC-options:         -Wall -fwarn-tabs
+
+  exposed-modules:     Text.Digestive.Scotty
+
+  build-depends:       base               ==4.5.*
+                     , digestive-functors ==0.6.*
+                     , scotty             ==0.5.*
+                     , bytestring         ==0.9.*
+                     , http-types         ==0.8.*
+                     , text               ==0.11.*
+                     , wai                ==1.4.*
+                     , wai-extra          ==1.3.*
+
+source-repository head
+  Type: git
+  Location: https://bitbucket.org/wniare/digestive-functors-scotty
+

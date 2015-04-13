@@ -1,0 +1,28 @@
+Name:                wai-handler-snap
+Version:             0.0.0.1
+Synopsis:            Web Application Interface handler using snap-server.
+License:             BSD3
+License-file:        LICENSE
+Author:              Michael Snoyman
+Maintainer:          michael@snoyman.com
+Homepage:            http://github.com/snoyberg/wai-handler-snap
+Category:            Web
+Build-Type:          Simple
+Cabal-Version:       >=1.6
+Stability:           Stable
+
+Source-repository head
+    type:            git
+    location:        git://github.com/snoyberg/wai-handler-snap.git
+
+Library
+  Build-Depends:     base >= 3 && < 5,
+                     bytestring >= 0.9 && < 0.10,
+                     wai >= 0.2.0 && < 0.3,
+                     snap-core >= 0.2.8.1 && < 0.3,
+                     snap-server >= 0.2.8.1 && < 0.3,
+                     containers >= 0.2 && < 0.4,
+                     transformers >= 0.2.1 && < 0.3,
+                     iteratee >= 0.3.5 && < 0.4
+  Exposed-modules:   Network.Wai.Handler.Snap
+  ghc-options:       -Wall

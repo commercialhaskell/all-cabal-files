@@ -1,0 +1,28 @@
+
+Name:		regexpr-symbolic
+Synopsis:	Equality, containment, intersection among regular expressions via symbolic manipulation
+Category:       Text
+Version:	0.1
+Stability:      experimental
+Cabal-Version:  >= 1.2
+License:	BSD3
+License-File:	LICENSE
+Author:		Martin Sulzmann
+Maintainer:     martin.sulzmann@gmail.com
+Description:    Equality, containment, intersection among regular expressions via symbolic manipulation
+
+            
+data-files: README
+extra-source-files: Example.lhs
+
+Build-Type: Simple
+Build-Depends:	base, haskell98
+Exposed-modules:
+                     RegExpr.RegExprOperations
+
+
+Extensions: GADTs
+
+
+
+tested-with: GHC == 6.8.2

@@ -1,0 +1,64 @@
+name:          garepinoh
+version:       0.9.9.2.1
+synopsis:      reverse prefix notation calculator and calculation library
+description:   Another concatenative and stack-based calculator using
+               reverse prefix (– not polish! –) notation.
+stability:     provisional
+category:      Math, Console, Tools
+homepage:      http://hub.darcs.net/mekeor/Garepinoh/text/README.md
+bug-reports:   mailto:mekeor.melire@gmail.com
+license:       PublicDomain
+license-file:  text/LICENSE
+copyright:     Public Domain
+author:        Mekeor Melire <mekeor.melire@gmail.com>
+maintainer:    Mekeor Melire <mekeor.melire@gmail.com>
+bug-reports:   http://hub.darcs.net/mekeor/Garepinoh/issues
+tested-with:   GHC ==7.6.3
+cabal-version: >= 1.8
+build-type:    Simple
+
+source-repository head
+  type:
+    darcs
+  location:
+    http://hub.darcs.net/mekeor/Garepinoh
+
+executable garepinoh
+  hs-source-dirs:
+    code
+  build-depends:
+    base >2 && <5,
+    haskeline >= 0.7 && <= 1,
+    transformers == 0.3.*
+  main-is:
+    Console/Garepinoh/DoubleMain.hs
+  ghc-options:
+    -Wall
+
+executable garepiboh
+  hs-source-dirs:
+    code
+  build-depends:
+    base >2 && <5,
+    haskeline >= 0.7 && <= 1,
+    transformers == 0.3.*
+  main-is:
+    Console/Garepinoh/BoolMain.hs
+  ghc-options:
+    -Wall
+
+library
+  hs-source-dirs:
+    code
+  build-depends:
+    base >2 && <5,
+    haskeline >= 0.7 && <= 1,
+    transformers == 0.3.*
+  exposed-modules:
+    Console.Garepinoh.Calculate,
+    Console.Garepinoh.GenMain,
+    Console.Garepinoh.Preludes,
+    Console.Garepinoh.Types,
+    Console.Garepinoh.Utils
+  ghc-options:
+    -Wall

@@ -1,0 +1,46 @@
+Name:           fenfire
+Version:        0.1
+License:        GPL
+License-file:   LICENSE
+Author:         Benja Fallenstein and Tuukka Hastrup
+Maintainer:     fenfire-dev@nongnu.org
+Synopsis:       Graph-based notetaking system
+Description:    Fenfire is a graph-based notetaking system. (We're
+                planning to add a kitchen sink soon.) It is developed 
+                on the channel #fenfire on the Freenode IRC network.
+Category:       User Interfaces
+Stability:      alpha
+Homepage:       http://fenfire.org/
+Build-Depends:  base, HaXml, gtk, mtl, unix, cairo, harp, template-haskell
+Data-Files:     data/logo.svg data/logo48.png
+
+Executable:     fenfire
+Main-Is:        Fenfire.hs
+Other-Modules:  Fenfire, Vobs, RDF, Cache, Cairo, Utils, Raptor, FunctorSugar
+GHC-Options:    -fglasgow-exts -hide-package haskell98 -Wall 
+                -fno-warn-unused-imports -fno-warn-missing-signatures
+                -fno-warn-orphans -fno-warn-deprecations -main-is Fenfire.main
+Extra-Libraries: raptor
+
+Executable:     functortest
+Main-Is:        FunctorTest.hs
+Other-Modules:  FunctorTest, FunctorSugar
+GHC-Options:    -fglasgow-exts -hide-package haskell98 -Wall 
+                -fno-warn-unused-imports -fno-warn-missing-signatures
+                -fno-warn-orphans -fno-warn-deprecations 
+                -main-is FunctorTest.main
+
+Executable:     vobtest
+Main-Is:        VobTest.hs
+Other-Modules:  VobTest, Vobs, Cairo, Utils, FunctorSugar
+GHC-Options:    -fglasgow-exts -hide-package haskell98 -Wall 
+                -fno-warn-unused-imports -fno-warn-missing-signatures
+                -fno-warn-orphans -fno-warn-deprecations -main-is VobTest.main
+
+Executable:     darcs2rdf
+Main-Is:        Darcs2RDF.hs
+Other-Modules:  Darcs2RDF, FunctorSugar
+GHC-Options:    -fglasgow-exts -hide-package haskell98 -Wall 
+                -fno-warn-unused-imports -fno-warn-missing-signatures
+                -fno-warn-orphans -fno-warn-deprecations 
+                -main-is Darcs2RDF.main

@@ -1,0 +1,44 @@
+name:           BiobaseXNA
+version:        0.5.0.0
+author:         Christian Hoener zu Siederdissen
+maintainer:     choener@tbi.univie.ac.at
+homepage:       http://www.tbi.univie.ac.at/~choener/
+copyright:      Christian Hoener zu Siederdissen, 2011
+category:       Bioinformatics
+synopsis:       Efficient RNA/DNA representations
+license:        GPL-3
+license-file:   LICENSE
+build-type:     Simple
+stability:      experimental
+cabal-version:  >= 1.4.0
+description:
+                This is a base library for bioinformatics with emphasis on RNA
+                and DNA primary structure and related tools. Provided are
+                efficient encodings for short sequences, as required by RNA
+                folding tools. Extended RNA secondary structures can be
+                represented as well.
+
+extra-source-files:
+
+library
+  build-depends:
+    base >3 && <5,
+    text,
+    bytestring,
+    primitive,
+    tuple,
+    vector-read-instances,
+    vector >=0.7 && <0.8
+
+  exposed-modules:
+    Biobase.Primary
+    Biobase.Primary.Bounds
+    Biobase.Primary.Hashed
+    Biobase.Secondary
+    Biobase.Secondary.Constraint
+    Biobase.Secondary.Diagrams
+    Biobase.Secondary.PseudoKnots
+
+  ghc-options:
+    -O2
+

@@ -1,0 +1,28 @@
+Name:              hps-cairo
+Version:           0.2
+Synopsis:          Cairo rendering for the haskell postscript library
+Description:       Cairo rendering for the haskell postscript library
+License:           GPL
+Category:          Graphics
+Copyright:         Rohan Drape, 2006-2010
+Author:            Rohan Drape
+Maintainer:        rd@slavepianos.org
+Stability:         Experimental
+Homepage:          http://slavepianos.org/rd/?t=hps-cairo
+Tested-With:       GHC == 6.10.3
+Build-Type:	   Simple
+Cabal-Version:     >= 1.6
+
+Data-files:        README
+
+Library
+  Build-Depends:   base == 4.*,
+                   cairo,
+                   gtk,
+                   hps == 0.2
+  GHC-Options:     -Wall -fwarn-tabs
+  Exposed-modules: Graphics.PS.Cairo
+
+Source-Repository  head
+  Type:            darcs
+  Location:        http://slavepianos.org/rd/sw/hps-cairo

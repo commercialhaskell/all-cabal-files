@@ -1,0 +1,22 @@
+Name:                seal-module
+Version:             0.1
+Synopsis:            Template Haskell support for global configuration data
+Description:         A template haskell function is provided that allows the
+                     programmer to write a module as if configuration values
+                     were global constants. The exported function then expect
+                     those configuration values as extra parameters.
+License:             BSD3
+License-file:        LICENSE
+Author:              Joachim Breitner
+Maintainer:          mail@joachim-breitner.de
+Copyright:           2010 Joachim Breitner 
+Stability:           Experimental
+Category:            Language
+Build-type:          Simple
+
+-- Constraint on the version of Cabal needed to build this package.
+Cabal-version:       >=1.2
+
+Library
+  Exposed-modules:     SealModule
+  Build-depends:       base >= 3 && <5, template-haskell

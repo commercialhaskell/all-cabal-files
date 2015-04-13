@@ -1,0 +1,36 @@
+Name:                   to-string-class
+Version:                0.1.2
+Synopsis:               Converting string-like types to Strings.
+Description:            This library provides the class:
+                        .
+                        class ToString s where toString :: s -> String
+                        .
+                        Instances for String, Char and ShowS are provided.
+                        For other instances see the package:
+                        .
+                        <http://hackage.haskell.org/package/to-string-instances>
+                        .
+                        Also included is a general coercion function between string-like types:
+                        .
+                        fromToString :: (IsString s2, ToString s1) => s1 -> s2
+                        .
+                        fromToString = fromString . toString
+Category:               Data
+License:                BSD3
+License-file:           LICENSE
+Author:                 Bas van Dijk <v.dijk.bas@gmail.com>
+Maintainer:             Bas van Dijk <v.dijk.bas@gmail.com>
+Copyright:              2009 Bas van Dijk <v.dijk.bas@gmail.com>
+Cabal-version:          >= 1.6
+Build-Type:             Simple
+Stability:              Stable
+Extra-Source-Files:     LICENSE
+
+Source-repository head
+  Type:     darcs
+  Location: http://code.haskell.org/~basvandijk/code/to-string-class/
+
+Library
+  Build-Depends:        base == 4.*
+  Exposed-modules:      Data.String.ToString
+  Ghc-options:          -O2 -Wall

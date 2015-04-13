@@ -1,0 +1,19 @@
+name:                regex-tdfa-utf8
+Cabal-Version:       >= 1.2
+version:             1.0
+synopsis:            This combines regex-tdfa with utf8-string to allow searching over UTF8 encoded lazy bytestrings.
+description:         This combines regex-tdfa with utf8-string to allow searching over UTF8 encoded lazy bytestrings.
+category:            Text
+license:             BSD3
+license-file:        LICENSE
+author:              Chris Kuklewicz
+maintainer:          haskell@list.mightyreason.com
+build-depends:       base
+build-type:          Simple
+
+library
+  Build-Depends:     base,array,bytestring,utf8-string,regex-base,regex-tdfa >= 1.1.1
+  Exposed-Modules:   Text.Regex.TDFA.UTF8
+  Buildable:         True
+  Extensions:        MultiParamTypeClasses
+  Ghc-Options:         -O2

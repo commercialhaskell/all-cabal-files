@@ -1,0 +1,28 @@
+cabal-version: >= 1.2.3
+name: bindings-sqlite3
+homepage: http://bitbucket.org/mauricio/bindings
+synopsis:
+  Check bindings-common package for directions.
+version: 0.0.2
+license: BSD3
+license-file: LICENSE
+maintainer: Maurício C. Antunes
+author: Maurício C. Antunes
+build-type: Simple
+category: FFI
+library
+  hs-source-dirs: src
+  extensions:
+    ForeignFunctionInterface
+    TypeSynonymInstances
+    ScopedTypeVariables
+    EmptyDataDecls
+  build-depends: base, bindings-common
+  exposed-modules:
+    Bindings.Sqlite3
+  pkgconfig-depends:
+    sqlite3 >= 3.6.10
+  other-modules:
+    Sqlite3Constants
+    Sqlite3Functions
+    Sqlite3Types

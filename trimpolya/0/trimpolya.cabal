@@ -1,0 +1,24 @@
+Name:           trimpolya
+Version:        0
+License:        GPL
+
+Author:         Ketil Malde
+Maintainer:     Ketil Malde <ketil@malde.org>
+
+Category:       Bioinformatics
+Synopsis:       Search for, annotate and trim poly-A tail
+Description:    trimpolya - a very simple tool for identifying and annotating poly-A tails
+                and trimming following sequence. 
+                .
+                Usage: trimpolya input.fasta input.qual
+		.
+                Detailed description of the method is at <http://blog.malde.org/index.php/2009/12/14/searching-for-polya-tails/>,
+                darcs repository is at <http://malde.org/~ketil/biohaskell/trimpolya>.
+
+Build-Depends:  base>=3 && <4, bio > 0.4, simpleargs, bytestring
+Build-Type:     Simple
+Tested-with:    GHC==6.8.3
+
+Executable:     trimpolya
+Main-Is:        TrimPolyA.hs
+Ghc-Options:    -Wall

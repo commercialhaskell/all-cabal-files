@@ -1,0 +1,21 @@
+Name:                OpenGLCheck
+Cabal-Version:       >= 1.2
+Version:             1.0
+Synopsis:            Quickcheck instances for various data structures.
+Description:         Adds arbitrary instances for OpenGL.
+License:             BSD3
+License-file:        LICENSE
+Author:              Thomas Davie
+Maintainer:          Thomas Davie (tom.davie@gmail.com)
+Category:            Graphics
+build-type:          Simple
+
+Library
+  Build-Depends:        base >= 3.0,
+                        haskell98 >= 1.0,
+                        QuickCheck >= 1.1.0.0,
+                        checkers >= 0.1,
+                        OpenGL >= 2.2
+  Hs-Source-Dirs:       src
+  Exposed-Modules:      Test.QuickCheck.Instances.OpenGL
+                        

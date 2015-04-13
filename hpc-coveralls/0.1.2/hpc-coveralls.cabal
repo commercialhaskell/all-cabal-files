@@ -1,0 +1,101 @@
+name:           hpc-coveralls
+version:        0.1.2
+synopsis:       Coveralls.io support for Haskell.
+description:
+  This utility converts and sends Haskell projects hpc code coverage to <http://coveralls.io/ coverall.io>.
+  .
+  At the moment, only <http://travis-ci.org Travis CI> is supported, but other CI services will be supported soon.
+  .
+  /Usage/
+  .
+  Commands to add to your project .travis.yml:
+  .
+  > before_install:
+  >   - cabal install hpc-coveralls
+  > script:
+  >   - cabal configure --enable-tests --enable-library-coverage && cabal build
+  >   - run-cabal-test [optional-cabal-test-arguments]
+  > after_script:
+  >   - hpc-coveralls [your-test-suite-name]
+  .
+  /The run-cabal-test command/
+  .
+  When using hpc 0.6, 'cabal test' outputs an error message and exits with the error code 1, which results in a build failure.
+  .
+  In order to prevent this from happening, hpc-coveralls provides the 'run-cabal-test' command which runs 'cabal test' and returns with 0 if the regex '^Test suite .*: FAIL$' never matches any line of the output.
+  .
+  This hpc issue should be fixed in version 0.7, which is provided by GHC 7.8 (Travis CI currently only provides GHC 7.6).
+  .
+  /Limitations/
+  .
+  As Coveralls doesn't support yet partial-line coverage, the following convention is used to represent line coverage with line hit counts:
+  .
+  * 0 : the line is never hit,
+  .
+  * 1 : the line is partially covered,
+  .
+  * 2 : the line is fully covered.
+  .
+  Further information can be found in the <https://github.com/guillaume-nargeot/hpc-coveralls README>.
+
+license:        BSD3
+license-file:   LICENSE
+author:         Guillaume Nargeot
+maintainer:     Guillaume Nargeot <guillaume+hackage@nargeot.com>
+copyright:      (c) 2014 Guillaume Nargeot
+category:       Control
+build-type:     Simple
+stability:      experimental
+cabal-version:  >= 1.8
+tested-with:    GHC == 7.6.3
+
+source-repository head
+  type: git
+  location: https://github.com/guillaume-nargeot/hpc-coveralls.git
+
+library
+  hs-source-dirs:      src
+  exposed-modules:
+    Trace.Hpc.Coveralls,
+    Trace.Hpc.Coveralls.Curl,
+    Trace.Hpc.Lix
+  build-depends:
+    aeson,
+    base < 5,
+    bytestring >= 0.10,
+    curl >= 1.3.8,
+    hpc >= 0.6.0.0
+
+executable hpc-coveralls
+  hs-source-dirs: src
+  main-is:        HpcCoverallsMain.hs
+  build-depends:
+    aeson,
+    base < 5,
+    bytestring >= 0.10,
+    curl >= 1.3.8,
+    hpc >= 0.6.0.0
+  ghc-options:   -Wall -fwarn-tabs
+
+executable run-cabal-test
+  hs-source-dirs: src
+  main-is:        RunCabalTestMain.hs
+  build-depends:
+    base < 5,
+    process,
+    regex-posix
+  ghc-options:    -Wall -fwarn-tabs
+
+test-suite test-all
+  hs-source-dirs: src, test
+  type:           exitcode-stdio-1.0
+  main-is:        TestAll.hs
+  build-depends:
+    aeson,
+    base < 5,
+    bytestring >= 0.10,
+    curl >= 1.3.8,
+    hpc >= 0.6.0.0,
+    HUnit,
+    Cabal >= 1.9.2
+  ghc-options:    -Wall

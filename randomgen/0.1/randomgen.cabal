@@ -1,0 +1,28 @@
+name:               randomgen
+version:            0.1
+homepage:           http://galois.com
+synopsis:           A fast, SMP parallel random data generator
+description:        A fast, SMP parallel random data generator
+                    .
+                    To generate 10G of high quality pseudorandom
+                    data, using 4 processors to fill the file:
+                    .
+                    $ randomgen "data" 10 +RTS -N4
+                    .
+category:           System
+license:            BSD3
+license-file:       LICENSE
+author:             Adam Wick
+maintainer:         awick@haskell.org
+cabal-version:      >= 1.2
+build-type:         Simple
+
+executable randomgen
+    main-is:            Main.hs
+    ghc-options:        -O2 -threaded
+    extensions:         ForeignFunctionInterface
+    build-depends:      base,
+                        mersenne-random-pure64,
+                        bytestring,
+                        binary
+    extra-libraries:    crypto

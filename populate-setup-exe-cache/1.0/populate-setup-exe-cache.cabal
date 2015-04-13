@@ -1,0 +1,19 @@
+name:               populate-setup-exe-cache
+version:            1.0
+build-type:         Simple
+cabal-version:      >= 1.8
+license:            MIT
+copyright:          Copyright © 2014 Miëtek Bak
+author:             Miëtek Bak <hello@mietek.io>
+maintainer:         Miëtek Bak <hello@mietek.io>
+stability:          stable
+homepage:           https://github.com/mietek/populate-setup-exe-cache/
+license-file:       LICENSE.md
+extra-source-files: README.md
+category:           Distribution
+synopsis:           Empty Cabal package
+description:        Empty Cabal package, intended to populate the Cabal @setup-exe-cache@, which is <https://github.com/valderman/haste-compiler/issues/257 required to bootstrap> the <http://haste-lang.org/ Haste compilation system>.
+
+library
+  build-depends:      base < 42
+  exposed-modules:    Distribution.PopulateSetupExeCache

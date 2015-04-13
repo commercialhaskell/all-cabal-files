@@ -1,0 +1,54 @@
+name:            yesod-form
+version:         1.0.0.1
+license:         MIT
+license-file:    LICENSE
+author:          Michael Snoyman <michael@snoyman.com>
+maintainer:      Michael Snoyman <michael@snoyman.com>
+synopsis:        Form handling support for Yesod Web Framework
+category:        Web, Yesod
+stability:       Stable
+cabal-version:   >= 1.6
+build-type:      Simple
+homepage:        http://www.yesodweb.com/
+description:     Form handling support for Yesod Web Framework
+
+library
+    build-depends:   base                  >= 4        && < 5
+                   , yesod-core            >= 1.0      && < 1.1
+                   , yesod-persistent      >= 1.0      && < 1.1
+                   , time                  >= 1.1.4
+                   , hamlet                >= 1.0      && < 1.1
+                   , shakespeare-css       >= 1.0      && < 1.1
+                   , shakespeare-js        >= 1.0      && < 1.1
+                   , persistent            >= 0.9      && < 0.10
+                   , template-haskell
+                   , transformers          >= 0.2.2    && < 0.4
+                   , data-default          >= 0.3      && < 0.5
+                   , xss-sanitize          >= 0.3.0.1  && < 0.4
+                   , blaze-builder         >= 0.2.1.4  && < 0.4
+                   , network               >= 2.2      && < 2.4
+                   , email-validate        >= 0.2.6    && < 0.3
+                   , blaze-html            >= 0.4.1.3  && < 0.5
+                   , bytestring            >= 0.9.1.4  && < 0.10
+                   , text                  >= 0.9      && < 1.0
+                   , wai                   >= 1.2      && < 1.3
+                   , containers            >= 0.2      && < 0.5
+    exposed-modules: Yesod.Form
+                     Yesod.Form.Class
+                     Yesod.Form.Types
+                     Yesod.Form.Functions
+                     Yesod.Form.Input
+                     Yesod.Form.Fields
+                     Yesod.Form.Jquery
+                     Yesod.Form.Nic
+                     Yesod.Form.MassInput
+                     Yesod.Form.I18n.English
+                     Yesod.Form.I18n.Portuguese
+                     Yesod.Form.I18n.Swedish
+                     Yesod.Form.I18n.German
+                     -- FIXME Yesod.Helpers.Crud
+    ghc-options:     -Wall
+
+source-repository head
+  type:     git
+  location: https://github.com/yesodweb/yesod

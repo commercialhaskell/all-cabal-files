@@ -1,0 +1,24 @@
+Cabal-Version:       >= 1.6
+name:                tupleinstances
+version:             0.0.1
+synopsis:            Functor, Applicative and Monad for n-ary tuples.
+description:         Functor, Applicative and Monad for n-ary tuples.
+category:            Data
+license:             BSD3
+license-file:        LICENSE
+author:              Diego Echeverri
+maintainer:          diegoeche@gmail.com
+build-depends:       base >= 3.0.3.1 && < 4
+build-type:          Simple
+homepage:            http://github.com/diegoeche/tupleinstances
+
+source-repository    head
+  type:              git
+  location:          git://github.com/diegoeche/tupleinstances.git
+
+Library
+        hs-source-dirs:         src
+        Exposed-modules:        Data.Tuple.Instances
+        Other-Modules:          Data.Tuple.THMacros
+        ghc-options:            -W
+        Build-Depends:          base >=3 && <4, template-haskell == 2.3.0.1

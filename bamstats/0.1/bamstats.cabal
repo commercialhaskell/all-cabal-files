@@ -1,0 +1,21 @@
+Name:          bamstats
+Version:       0.1
+License:       GPL
+Cabal-Version: >= 1.6
+Build-Type:    Simple
+Category:      Bioinformatics
+Author:        Ketil Malde
+Maintainer:    Ketil Malde <ketil@malde.org>
+Synopsis:      A program to extract various information from BAM alignmnet files
+
+Library
+    Hs-Source-Dirs:  src
+    Exposed-Modules: Bio.SamTools.Classify
+    Ghc-Options:     -Wall
+
+Executable bam
+    Hs-Source-Dirs:  src
+    Main-Is:         Bam.hs
+    Build-Depends:   base >= 4 && < 5, samtools >= 0.2.1, cmdargs
+    Ghc-Options:     -Wall
+

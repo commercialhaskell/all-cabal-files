@@ -1,0 +1,18 @@
+name:           X11-rm
+version:        0.1
+license:                BSD3
+license-file:   LICENSE
+maintainer:     Troels Henriksen <athas@sigkill.dk>
+category:       Graphics
+synopsis:       A binding to the resource management functions missing from X11.
+description:    
+        The binding is a direct translation of the C binding; for
+        documentation of these calls, refer to "The Xlib Programming
+        Manual", available online at <http://tronche.com/gui/x/xlib/>.
+exposed-modules:
+    Graphics.X11.XRM
+extensions:         ForeignFunctionInterface, CPP
+build-depends:      base >= 3 && < 5, X11
+build-type:         Simple
+ghc-options:        -funbox-strict-fields -Wall -fno-warn-unused-binds
+ghc-prof-options:   -prof -auto-all

@@ -1,0 +1,47 @@
+Name:                test-framework-doctest
+Version:             0.1
+Synopsis:            Test.Framework wrapper for DocTest
+Description:         Test.Framework wrapper for DocTest
+License:             BSD3
+License-file:        LICENSE
+Author:              Sakari Jokinen
+Maintainer:          sakariij@gmail.com
+Category:            Testing
+Build-type:          Simple
+Cabal-version:       >=1.10
+
+extra-source-files:
+  tests/Main.hs
+  tests/Test.hs
+
+Source-repository head
+  type: git
+  location: git://github.com/sakari/test-framework-doctest.git
+
+Source-repository this
+  type: git
+  location: git://github.com/sakari/test-framework-doctest.git
+  tag: 0.1
+
+test-suite doctest
+  main-is: Main.hs
+  default-language: Haskell98
+  type: exitcode-stdio-1.0
+  hs-source-dirs: src, tests
+  build-depends:
+    base >= 4 && < 5,
+    test-framework >= 0.4,
+    test-framework-hunit >= 0.2,
+    doctest >= 0.4.0,
+    haddock
+
+Library
+  Hs-source-dirs: src
+  default-language: Haskell98
+  Exposed-modules: Test.Framework.Providers.DocTest
+  Build-depends:
+    base >= 4 && < 5,    
+    doctest >= 0.4.0,
+    test-framework >= 0.4,
+    test-framework-hunit >= 0.2,
+    haddock

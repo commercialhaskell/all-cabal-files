@@ -1,0 +1,25 @@
+name:                htune
+version:             0.2
+synopsis:            harmonic analyser and tuner for musical instruments
+description:         A real-time, graphical analyser of frequency spectrums.
+                     Reads audio data from ALSA and draws a spectrogram with
+                     tuning information for multiple frequency peaks. Draws
+                     using gloss/opengl. Use mouse for panning & zooming.
+
+license:             BSD3
+license-file:        LICENSE
+
+-- The package author(s).
+author:              Petr Rockai
+maintainer:          me@mornfall.net
+category:            Sound
+build-type:          Simple
+
+-- extra-source-files:
+
+-- Constraint on the version of Cabal needed to build this package.
+cabal-version:       >=1.6
+
+Executable htune
+  main-is: main.hs
+  build-depends: base < 5, carray == 0.1.*, fft == 0.1.*, alsa-pcm == 0.6.*, gloss == 1.7.*

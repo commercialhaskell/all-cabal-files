@@ -1,0 +1,25 @@
+name:                 winerror
+version:              1.0.1
+copyright:            2008 Felix Martini
+license:              BSD3
+license-file:         LICENSE
+maintainer:           fmartini@gmail.com
+stability:            Provisional
+category:             Foreign
+synopsis:             Error handling for foreign calls to the Windows API.
+description:          A small library useful for error handling when making
+                      foreign calls to the Windows API. Error codes set by
+                      Windows are converted to Haskell exceptions and can be
+                      thrown and caught with the usual exception handling
+                      functions in Control.Exception.
+build-type:           Simple
+cabal-version:        >= 1.2
+
+library
+  if os(windows)
+    build-depends:    base >= 4.0.0.0
+    exposed-modules:  System.Windows.Error
+    c-sources:        cbits/HsWinError.c
+    extensions:       CPP
+  else
+    buildable:        False

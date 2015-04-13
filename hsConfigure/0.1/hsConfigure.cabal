@@ -1,0 +1,23 @@
+Name:		hsConfigure
+Version:	0.1
+Cabal-Version:	>= 1.2
+Build-Type:	Simple
+License:	LGPL
+License-File:	LICENSE
+Author:		Yoshikuni Jujo
+Maintainer:	Yoshikuni Jujo <PAF01143@nifty.ne.jp>
+Stability:	experimental
+Homepage:	http://homepage3.nifty.com/salamander/second/projects/hsConfigure/index.xhtml
+Package-Url:	http://homepage3.nifty.com/salamander/second/portage/distfiles/hsConfigure-0.1.tar.gz
+Synopsis:	By using this package, you can make application configurable.
+Description:	I inspired by xmonad. Xmonad is configurable by using user's own main.
+		This package make your application configurable like xmonad.
+Category:	Unclassified
+Tested-With:	GHC
+Data-Files:
+Extra-Source-Files:
+Extra-Tmp-Files:
+
+Library
+  Build-Depends:	base, unix, process, filepath, directory
+  Exposed-Modules:	HsConfigure

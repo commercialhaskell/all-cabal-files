@@ -1,0 +1,26 @@
+Name:               pretty-class
+Version:            0.1
+Synopsis:           Extremely simple Pretty class
+Description:        I was unclear how to create instances of Language.Haskell.Pretty.Pretty because
+                    the pretty method is not exported.  So here is a copy.
+Homepage:           https://src.seereason.com/pretty-class
+License:            BSD3
+Author:             David Fox
+Maintainer:         David Fox <dsf@seereason.com>
+Category:           Text
+Build-type:         Simple
+Cabal-version:      >=1.6
+
+source-repository head
+  Type:             darcs
+  Location:         http://src.seereason.com/pretty-class
+
+Library
+  ghc-options:      -Wall -O2
+
+  Exposed-modules:
+    Text.PrettyPrint.Class
+
+  Build-depends:
+    base >= 4 && < 5,
+    pretty

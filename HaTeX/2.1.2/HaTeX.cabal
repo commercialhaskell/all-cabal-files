@@ -1,0 +1,47 @@
+Name:           HaTeX
+Version:        2.1.2
+Author:         Daniel Diaz
+Homepage:       http://ddiaz.asofilak.es/packages/HaTeX
+License:        BSD3
+License-file:   license
+Maintainer:     danieldiaz@asofilak.es
+Category:       Text
+Synopsis:       Monadic tool for write LaTeX files.
+Description:    
+         See <http://www.haskell.org/haskellwiki/HaTeX> for a brief introduction.
+         Also included in Text.LaTeX module API documentation.
+         .
+         More information in /HaTeX, a monadic perspective of LaTeX/, available in the package homepage.
+         .
+         Report any bug or suggestion to the author:
+         .
+         danieldiaz\@asofilak.es
+         .
+         Also, if you have an example where you use HaTeX, you could send it to the same email. Thanks in advance.
+         .
+         Changes from last version:
+         .
+         * Fixed a bug in @lnbk@ and @lnbk_@ functions. They need no more adding an extra space after their use.
+         .
+         * Modified some documentation.
+         .
+         * Added some documentation.
+         .
+         * Removed an unnecesary import from Text.LaTeX.Result.
+Extensions:     OverloadedStrings , FlexibleInstances , TypeSynonymInstances
+Build-type:     Simple
+Build-depends:  base == 4.*
+              , mtl
+              , dstring
+              , to-string-class
+              , string-combinators
+              , filepath
+Cabal-version:  >= 1.6
+Exposed-modules: Text.LaTeX
+               , Text.LaTeX.Macro
+               , Text.LaTeX.Commands
+               , Text.LaTeX.Packages
+               , Text.LaTeX.Arguments
+               , Text.LaTeX.Define
+               , Text.LaTeX.Monad
+               , Text.LaTeX.Result

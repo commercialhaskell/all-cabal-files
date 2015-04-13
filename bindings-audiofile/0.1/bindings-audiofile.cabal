@@ -1,0 +1,37 @@
+Name: bindings-audiofile
+Synopsis: Low level bindings to audiofile
+Description:
+        Bindings to audiofile: <http://www.68k.org/~michael/audiofile/>
+Version: 0.1
+License: PublicDomain
+License-File: COPYING
+Author: PHO <pho at cielonegro dot org>
+Maintainer: PHO <pho at cielonegro dot org>
+Stability: experimental
+Homepage: http://cielonegro.org/Bindings-AudioFile.html
+Category: FFI
+Tested-With: GHC == 6.12.3
+Cabal-Version: >= 1.6
+Build-Type: Simple
+Extra-Source-Files:
+    COPYING
+
+Source-Repository head
+    Type: git
+    Location: git://git.cielonegro.org/bindings-audiofile.git
+
+Library
+    Build-Depends:
+        base         == 4.2.*,
+        bindings-DSL == 1.0.*
+
+    PkgConfig-Depends:
+        audiofile >= 0.2.7
+
+    Exposed-Modules:
+        Bindings.AudioFile
+        Bindings.AudioFile.VFS
+        Bindings.AudioFile.PVList
+
+    Extensions:
+        ForeignFunctionInterface

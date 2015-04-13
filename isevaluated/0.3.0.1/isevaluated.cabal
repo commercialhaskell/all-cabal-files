@@ -1,0 +1,19 @@
+Name:          isevaluated
+Version:       0.3.0.1
+Category:      Data, GHC
+Stability:     experimental
+Copyright:     (c) 2009, 2010 Svein Ove Aas and Bertram Felgenhauer
+Maintainer:    Bertram Felgenhauer <int-e@gmx.de>
+License:       MIT
+License-File:  LICENSE
+Synopsis:      Check whether a value has been evaluated
+Description:   An IO action to check whether some value has been evaluated.
+	       .
+	       If isEvaluated returns True, evaluating it to weak-head normal
+               form won't throw exceptions and take constant time.
+Cabal-Version: >= 1.4
+Build-Type:    Simple
+
+Library
+    Exposed-Modules: Data.IsEvaluated
+    Build-Depends:   base >= 4 && < 5, vacuum >= 1.0 && < 1.1

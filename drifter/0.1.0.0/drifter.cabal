@@ -1,0 +1,31 @@
+
+name:                drifter
+version:             0.1.0.0
+synopsis:            Simple schema management for arbitrary databases.
+description:         Simple support for migrating database schemas, which allows
+                     haskell functions to be run as a part of the migration.
+license:             MIT
+license-file:        LICENSE
+author:              AndrewRademacher
+maintainer:          andrewrademacher@gmail.com
+category:            Database
+build-type:          Simple
+cabal-version:       >=1.10
+homepage:            https://github.com/AndrewRademacher/drifter
+
+source-repository head
+    type:     git
+    location: git@github.com:AndrewRademacher/drifter.git
+
+library
+    hs-source-dirs:     src
+    default-language:   Haskell2010
+
+    build-depends:      base                >=4.7   && <4.8
+                    ,   postgresql-simple   >=0.4   && <0.5
+                    ,   bytestring          >=0.10  && <0.11
+                    ,   time                >=1.4   && <1.5
+                    ,   text                >=1.2   && <1.3
+
+    exposed-modules:    Drifter.PostgreSQL
+                    ,   Drifter.Types

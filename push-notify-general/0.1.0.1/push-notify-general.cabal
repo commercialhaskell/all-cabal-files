@@ -1,0 +1,49 @@
+name:                push-notify-general
+version:             0.1.0.1
+synopsis:            A general library for sending/receiving push notif. through dif. services.
+
+description:         This library offers an API for sending/receiving notifications, and handling the registration of devices on the server.
+                     .
+                     It provides a general abstraction which can be used to communicate through different services as APNS, GCM, MPNS.
+                     .
+                     For more information and test examples: <http://gsoc2013cwithmobiledevices.blogspot.com.ar/>
+                     .
+                     GitHub repository: <https://github.com/MarcosPividori/GSoC-Communicating-with-mobile-devices>
+
+homepage:            http://gsoc2013cwithmobiledevices.blogspot.com.ar/
+license:             MIT
+license-file:        LICENSE
+author:              Marcos Pividori, mentored by Michael Snoyman.
+maintainer:          Marcos Pividori <marcos.pividori@gmail.com>
+
+category:            Network, Cloud, Mobile
+build-type:          Simple
+cabal-version:       >=1.8
+
+library
+  exposed-modules:   Network.PushNotify.General
+
+  other-modules:     Network.PushNotify.General.Send
+                   , Network.PushNotify.General.Types
+                   , Network.PushNotify.General.YesodPushApp
+                   , Network.PushNotify.General.YesodPushAppRoutes
+  
+  build-depends:     base                 >=4.5  && <5
+                   , aeson                >=0.6
+                   , bytestring           >=0.9
+                   , containers           >=0.4
+                   , data-default         >=0.5
+                   , http-client          >=0.2
+                   , hashable             >=1.2
+                   , http-conduit         >=1.9
+                   , http-types           >=0.8
+                   , push-notify          >=0.1
+                   , push-notify-ccs      >=0.1
+                   , text                 >=0.11
+                   , unordered-containers >=0.2
+                   , xml-conduit          >=1.1
+                   , yesod                >=1.2
+
+source-repository head
+  type:     git
+  location: https://github.com/MarcosPividori/GSoC-Communicating-with-mobile-devices.git

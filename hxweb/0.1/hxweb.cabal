@@ -1,0 +1,23 @@
+Name: hxweb
+Version: 0.1
+Maintainer: Lemmih (lemmih@gmail.com)
+Author: Lemmih (lemmih@gmail.com)
+Copyright: 2006, Lemmih
+License-File: LICENSE
+License: BSD3
+Category: Web
+Synopsis: Minimal webframework using fastcgi, libxml2 and libxslt.
+Description:
+  Fast template based web-framework using libxslt and fastcgi.
+Build-Depends: base, cgi, fastcgi, mtl, libxml, xslt
+Extensions: NoMonomorphismRestriction OverlappingInstances
+GHC-Options: -fglasgow-exts -fwarn-duplicate-exports -Werror
+             -fwarn-unused-binds -fwarn-unused-imports -fwarn-unused-matches
+Hs-Source-Dirs: src
+GHC-Prof-options: -auto-all
+Exposed-modules:
+  Network.HxWeb
+  Network.HxWeb.Monad
+  Network.HxWeb.Utils
+  Network.HxWeb.XSLT
+  Network.HxWeb.Cache

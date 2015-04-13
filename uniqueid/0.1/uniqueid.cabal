@@ -1,0 +1,26 @@
+Name:          uniqueid
+Version:       0.1
+Cabal-Version: >= 1.2
+Synopsis:      Splittable Unique Identifier Supply
+Description:   This package provides splittable supplies of unique
+               identifiers. The implementation mimics (only) essential
+               parts of the code that is used internally in GHC for
+               the same purpose.
+Category:      Data
+License:       BSD3
+License-File:  LICENSE
+Author:        Sebastian Fischer
+Maintainer:    sebf@informatik.uni-kiel.de
+Homepage:      http://github.com/sebfisch/uniqueid/wikis
+Build-Type:    Simple
+Stability:     experimental
+
+Library
+  Build-Depends:   base
+  Exposed-Modules: Data.Unique.Id
+  Extensions:      MagicHash
+  Ghc-Options:     -Wall
+
+Source-Repository head
+  type:     git
+  location: git://github.com/sebfisch/uniqueid.git

@@ -1,0 +1,37 @@
+name:                svm-simple
+version:             0.1.0
+synopsis:            Medium level, simplified, bindings to libsvm
+description:
+  Simplified bindings to libsvm <http://www.csie.ntu.edu.tw/~cjlin/libsvm/>.
+  The aim of this package is to make as easy to use bindings for libsvm as
+  possible. (But we are not yet there)
+  Changes in version 0.0.1
+  .
+  * Initial version
+  .
+license:             BSD3
+license-file:        LICENSE
+author:              Ville Tirronen <aleator@gmail.com>
+maintainer:          Ville Tirronen <aleator@gmail.com>
+                     Paulo Tanimoto <ptanimoto@gmail.com>
+homepage:            http://github.com/aleator/Simple-SVM
+bug-reports:         http://github.com/aleator/Simple-SVM/issues
+category:            AI, Pattern Classification, Algorithms, Support Vector Machine
+
+build-type:          Simple
+cabal-version:       >= 1.8
+  
+extra-source-files:
+    Examples/SmokeTest.hs
+    Examples/Plot.hs
+    Examples/PlotOneClass.hs
+
+library
+  Exposed-modules:
+    AI.SVM.Simple
+  build-depends:
+    base         >= 4   && < 5,
+    bindings-svm >= 0.2.0 && < 0.3,
+    vector       >= 0.7.0.1 && < 0.8,
+    directory    >= 1.1.0.0 && < 1.2,
+    containers   >= 0.4.0.0 && < 0.5

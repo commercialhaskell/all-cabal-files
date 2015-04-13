@@ -1,0 +1,26 @@
+cabal-version:      >=1.2.3
+build-type:         Simple
+name:               ChristmasTree
+version:            0.2
+license:            LGPL
+license-file:       COPYRIGHT
+maintainer:         Marcos Viera <mviera@fing.edu.uy>
+homepage:           http://www.cs.uu.nl/wiki/bin/view/Center/TTTAS
+description:        ChristmasTree (Changing Haskell's Read Implementation Such That by Mainpulating ASTs it Reads Expressions Efficiently) is an alternative approach of 'read' that composes grammars instead of parsers. It reads data in linear time, while the function 'read' has an exponential behavior in some cases of data types with infix operators.
+synopsis:           Alternative approach of 'read' that composes grammars instead of parsers.
+category:           Parsing 
+stability:          Experimental
+copyright:          Universiteit Utrecht
+build-depends:      base >= 4 && < 5, haskell98, template-haskell >= 2.4, containers,
+                    fgl>=5.4, TTTAS >= 0.4 , uulib >= 0.9.11 
+exposed-modules:    Text.GRead, Text.GShow, 
+                    Text.GRead.Derive, Text.GRead.Grammar,
+                    Text.GRead.Derive.BindingGroup,
+                    Text.GRead.Transformations.GramTrafo, 
+                    Text.GRead.Transformations.Group, 
+                    Text.GRead.Transformations.LeftCorner,
+                    Text.GRead.Transformations.LeftFact     
+extensions:         Arrows, GADTs, TemplateHaskell
+hs-source-dirs:     src
+extra-source-files: README, LICENSE-LGPL, ChristmasTree.bib
+ghc-options:        -Wall

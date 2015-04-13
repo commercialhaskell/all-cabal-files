@@ -1,0 +1,25 @@
+Name:                state-plus
+Version:             0.1
+License:             BSD3
+License-File:        COPYING
+Copyright:           Boris Sukholitko, 2012
+Author:              Boris Sukholitko
+Maintainer:          boriss@gmail.com
+Cabal-version:       >= 1.8
+Build-type:          Simple
+Synopsis:            MonadPlus for StateT
+Description:         Implements MonadPlus with left catch (MonadOr) for StateT.
+Category:            Control
+
+library 
+  build-depends:  base < 5, mtl
+  ghc-options:      -Wall
+  exposed-modules:  Control.Monad.Trans.State.Plus
+
+test-suite Main
+  type:            exitcode-stdio-1.0
+  build-depends:   base < 5, QuickCheck, mtl, state-plus, checkers
+  ghc-options:     -Wall
+  hs-source-dirs:  tests
+  main-is:         Main.hs
+

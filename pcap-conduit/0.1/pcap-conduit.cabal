@@ -1,0 +1,53 @@
+name:                pcap-conduit
+version:             0.1
+synopsis:            Conduit <-> libpcap
+description:
+  Provides a conduit source for reading from pcap files or live network
+  devices.
+homepage:            http://github.com/thoughtpolice/pcap-conduit
+bug-reports:         https://github.com/thoughtpolice/pcap-conduit/issues
+license:             BSD3
+license-file:        LICENSE.txt
+author:              Austin Seipp <mad.one@gmail.com>
+maintainer:          Austin Seipp <mad.one@gmail.com>
+category:            Network, Development
+build-type:          Simple
+cabal-version:       >=1.10
+tested-with:         GHC==7.0.4, GHC==7.2.1, GHC==7.4.2
+
+extra-source-files:
+  AUTHORS.txt, README.md
+  examples/makefile, examples/*.hs
+
+source-repository head
+  type: git
+  location: https://github.com/thoughtpolice/pcap-conduit.git
+
+library
+  exposed-modules:
+    Network.Pcap.Conduit
+  build-depends:
+    base         >= 3 && < 5,
+    bytestring,
+    transformers,
+    pcap,
+    conduit
+
+  ghc-options:      -Wall -O2 -fwarn-tabs
+  default-language: Haskell98
+
+-- test-suite properties
+--   hs-source-dirs: tests
+--   main-is:        Properties.hs
+--   type:           exitcode-stdio-1.0
+--
+--   build-depends:
+--     base           >= 3 && < 5,
+--     transformers,
+--     bytestring,
+--     pcap,
+--     conduit,
+--     pcap-conduit
+--
+--   ghc-options:      -fno-cse -fno-warn-orphans
+--   default-language: Haskell98

@@ -1,0 +1,27 @@
+name:          safer-file-handles-text
+version:       0.1.0.3
+cabal-version: >=1.6
+build-type:    Custom
+license:       BSD3
+license-file:  LICENSE
+copyright:     2010 Bas van Dijk
+author:        Bas van Dijk
+maintainer:    Bas van Dijk <v.dijk.bas@gmail.com>
+stability:     experimental
+category:      System, Monadic Regions
+synopsis:      Extends safer-file-handles with Text operations
+description:   Extends @safer-file-handles@ with @Text@ operations
+
+source-repository head
+  Type:     darcs
+  Location: http://code.haskell.org/~basvandijk/code/safer-file-handles-text
+
+Library
+  GHC-Options: -Wall
+  build-depends: text                  >= 0.7 && < 0.10
+               , regions               >= 0.6 && < 0.8
+               , transformers          >= 0.2 && < 0.3
+               , explicit-iomodes-text >= 0.1 && < 0.2
+               , safer-file-handles    >= 0.6 && < 0.9
+  exposed-modules: Data.Text.IO.SaferFileHandles
+                   Data.Text.Lazy.IO.SaferFileHandles

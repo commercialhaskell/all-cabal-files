@@ -1,0 +1,17 @@
+Name:            applicative-extras
+Version:         0.1.5
+Synopsis:        Instances for Applicative
+Description:     Some instances for applicative functors and type-level
+                 composition. Forkable on github.
+Category:        Control
+Homepage:        http://github.com/chriseidhof/applicative-extras/
+License:         BSD3
+License-file:    LICENSE
+Author:          Chris Eidhof <ce+hackage@tupil.com>, Russel O'Connor
+Maintainer:      Chris Eidhof <ce+hackage@tupil.com>
+Exposed-Modules:   Control.Applicative.Compose
+                 , Control.Applicative.Error
+                 , Control.Applicative.State
+                 , Control.Applicative.Backwards
+Build-Type:      Simple
+Build-Depends:   base >= 3 && < 5, haskell98, mtl

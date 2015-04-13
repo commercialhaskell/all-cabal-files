@@ -1,0 +1,36 @@
+Name:               hommage
+Version:            0.0.5
+License-file:       LICENSE
+Author:			    Daniel van den Eijkel <dvde@gmx.net>
+Category:           Sound
+Synopsis:           Haskell Offline Music Manipulation And Generation EDSL
+Description:        HOMMAGE is the successor of the Haskell Sound Lib.
+                    <http://substitut-fuer-feinmotorik.net/projects/haskellommage/introduction>
+Cabal-Version:      >=1.2
+Build-Type:         Simple
+GHC-Options:        -O2 -fglasgow-exts
+License:            BSD3
+Maintainer:         <None>
+
+c-sources:          Sound/Hommage/dft.c  
+
+build-depends:      base, directory, array, haskell98, random, time
+
+Exposed-modules:    Sound.Hommage, 
+                    Sound.Hommage.Misc, 
+                    Sound.Hommage.WavFile, 
+                    Sound.Hommage.DFTFilter, 
+                    Sound.Hommage.Signal, 
+                    Sound.Hommage.Sample, 
+                    Sound.Hommage.Midi, 
+                    Sound.Hommage.Notation, 
+                    Sound.Hommage.Seq, 
+                    Sound.Hommage.Osc, 
+                    Sound.Hommage.Envelope, 
+                    Sound.Hommage.Filter, 
+                    Sound.Hommage.Play, 
+                    Sound.Hommage.Sound, 
+                    Sound.Hommage.Parameter, 
+                    Sound.Hommage.FFT
+                    Sound.Hommage.Rand
+                    Sound.Hommage.Tools

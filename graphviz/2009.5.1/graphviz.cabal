@@ -1,0 +1,37 @@
+Name:               graphviz
+Version:            2009.5.1
+Stability:          Beta
+Copyright:          Matthew Sackman, Ivan Lazar Miljenovic
+Category:           Graphics
+Maintainer:         Ivan.Miljenovic@gmail.com
+Author:             Matthew Sackman, Ivan Lazar Miljenovic
+License:            BSD3
+License-File:       LICENSE
+Extra-Source-Files: TODO
+Cabal-Version:      >= 1.6
+Build-Type:         Simple
+Synopsis:           GraphViz wrapper for Haskell.
+Description:
+  Provides convenient functions to convert FGL graphs into the Dot
+  language used by the GraphViz (http://graphviz.org/) programs with a
+  large degree of customisation for layout, etc.
+
+  Also allows a limited amount of parsing of Dot, and usage of
+  GraphViz to attach positional data to each node and edge in the
+  graph.
+
+Library {
+        Build-Depends:     base == 4.*, containers, process, array,
+                           fgl, polyparse >= 1.1
+
+        Exposed-Modules:   Data.GraphViz
+                           Data.GraphViz.Types
+                           Data.GraphViz.Commands
+                           Data.GraphViz.Attributes
+
+        Other-Modules:     Data.GraphViz.Types.Clustering
+                           Data.GraphViz.ParserCombinators
+
+        Ghc-Options:       -Wall -fno-warn-name-shadowing
+        Ghc-Prof-Options:  -prof -auto-all
+}

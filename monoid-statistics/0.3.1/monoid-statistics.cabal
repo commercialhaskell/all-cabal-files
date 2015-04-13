@@ -1,0 +1,36 @@
+
+
+Name:           monoid-statistics
+Version:        0.3.1
+Cabal-Version:  >= 1.6
+License:        BSD3
+License-File:   LICENSE
+Author:         Alexey Khudyakov <alexey.skladnoy@gmail.com>
+Maintainer:     Alexey Khudyakov <alexey.skladnoy@gmail.com>
+Homepage:       https://bitbucket.org/Shimuuar/monoid-statistics
+Category:       Statistics
+Build-Type:     Simple
+Synopsis:       
+  Monoids for calculation of statistics of sample
+Description:
+  Monoids for calculation of statistics of sample. This approach
+  allows to calculate many statistics in one pass over data and
+  possibility to parallelize calculations. However not all statistics 
+  could be calculated this way.
+  .
+  This packages is quite similar to monoids package but limited to
+  calculation on statistics. In particular it makes use of
+  commutatitvity of statistical monoids.
+  .
+  Changes:
+  .
+  * 0.3.1 Better documentation; Fix in Min/Max monoids
+
+source-repository head
+  type:     hg
+  location: http://bitbucket.org/Shimuuar/monoid-statistics
+
+Library
+  Build-Depends:   base >=3 && <5
+  Exposed-modules: Data.Monoid.Statistics
+                   Data.Monoid.Statistics.Numeric

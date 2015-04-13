@@ -1,0 +1,16 @@
+Name:                Ansi2Html
+Version:             0.1
+Synopsis:            Convert ANSI Terminal Sequences to nice HTML markup
+Description:	     Particularly with xterm in mind, this software enables integration of terminal screen state in html pages. See project homepage for hints on how to setup xterm for it.
+Homepage:            http://janzzstimmpfle.de/~jens/software/Ansi2Html/
+License:             BSD3
+License-file:        LICENSE
+Author:              Jens Stimpfle
+Maintainer:          jens@janzzstimmpfle.de
+Category:            Web
+Build-type:          Simple
+Extra-source-files:  ansi2html.css
+Cabal-version:       >=1.2
+Executable ansi2html
+  Main-is:           Ansi2Html.hs
+  Build-depends:     parsec, mtl, base < 5, xhtml

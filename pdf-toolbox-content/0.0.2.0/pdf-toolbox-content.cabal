@@ -1,0 +1,33 @@
+name:                pdf-toolbox-content
+version:             0.0.2.0
+synopsis:            A collection of tools for processing PDF files
+license:             BSD3
+license-file:        LICENSE
+author:              Yuras Shumovich
+maintainer:          Yuras Shumovich <shumovichy@gmail.com>
+copyright:           Copyright (c) Yuras Shumovich 2013
+category:            PDF
+build-type:          Simple
+cabal-version:       >=1.8
+description:
+  Tools for processing PDF content streams
+
+library
+  hs-source-dirs:      lib
+  exposed-modules:
+                       Pdf.Toolbox.Content
+                       Pdf.Toolbox.Content.Parser
+                       Pdf.Toolbox.Content.Ops
+                       Pdf.Toolbox.Content.Processor
+                       Pdf.Toolbox.Content.Transform
+                       Pdf.Toolbox.Content.UnicodeCMap
+                       Pdf.Toolbox.Content.FontInfo
+  build-depends:       base ==4.6.*,
+                       containers,
+                       attoparsec,
+                       bytestring,
+                       base16-bytestring,
+                       text,
+                       io-streams,
+                       encoding,
+                       pdf-toolbox-core ==0.0.2.*

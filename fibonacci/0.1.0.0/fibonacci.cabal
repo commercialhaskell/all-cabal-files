@@ -1,0 +1,25 @@
+Name:          fibonacci
+Version:       0.1.0.0
+Cabal-Version: >= 1.6
+Synopsis:      Fast computation of Fibonacci numbers.
+Description:   <http://en.wikipedia.org/wiki/Fibonacci_number#Matrix_form>
+Category:      Algorithms, Numerical
+License:       BSD3
+License-File:  LICENSE
+Author:        Sebastian Fischer
+Maintainer:    Sebastian Fischer
+Bug-Reports:   http://github.com/sebfisch/fibonacci/issues
+Homepage:      http://github.com/sebfisch/fibonacci
+Build-Type:    Simple
+Stability:     experimental
+
+Extra-Source-Files: README.markdown
+
+Library
+  Build-Depends:    base == 4.*
+  Exposed-Modules:  Data.Numbers.Fibonacci
+  Ghc-Options:      -Wall
+
+Source-Repository head
+  type:     git
+  location: git://github.com/sebfisch/fibonacci.git

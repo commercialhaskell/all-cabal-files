@@ -1,0 +1,33 @@
+Name:                randproc
+Version:             0.4
+Homepage:            http://www.haskell.org/haskellwiki/Random_Processes
+Bug-reports:         http://trac.haskell.org/RandProc/
+Synopsis:            Data structures and support functions for working with random processes
+Description:         RandProc.hs - a Haskell library for working with random processes in a mathematically rigorous way
+   
+                     (Concepts taken from /Random Processes - a Mathematical Approach for Engineers/ by:
+
+                          - Robert M. Gray
+
+                          - Lee D. Davisson
+                          
+                          Prentice-Hall Information and System Sciences Series, Thomas Kailath, Series Editor)
+Category:            Data Structures
+License:             BSD3
+License-file:        LICENSE
+Author:              David Banas
+Maintainer:          dbanas@banasfamily.net
+Build-Type:          Simple
+Cabal-Version:       >=1.2
+extra-source-files: test/Test.hs
+                    README
+                    TODO
+                    benchmarks/timed_summaries/dbanas-eeepc
+                    Data/RandProc/Examples/Problems/ch3p3.hs
+                    Data/RandProc/Examples/Problems/ch3p7.hs
+
+Library
+  Build-Depends:     base >= 3 && < 5
+  Exposed-modules:   Data.RandProc
+  ghc-options:       -Wall
+

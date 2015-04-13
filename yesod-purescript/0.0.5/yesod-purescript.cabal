@@ -1,0 +1,42 @@
+name:                yesod-purescript
+version:             0.0.5
+synopsis:            PureScript integration for Yesod
+description:         PureScript is an awesome statically typed language that compiles to JS and runs in your browser, and this module makes it easier to use PureScript in Yesod.
+homepage:            https://github.com/mpietrzak/yesod-purescript
+license:             MIT
+license-file:        LICENSE
+author:              Maciej Pietrzak
+maintainer:          mpietrzak@gmail.com
+category:            Web, Yesod
+build-type:          Simple
+cabal-version:       >=1.8
+stability:           experimental
+
+source-repository head
+    type: git
+    location: https://github.com/mpietrzak/yesod-purescript
+
+library
+    exposed-modules: Yesod.PureScript
+    other-modules: Yesod.PureScript.Data
+    build-depends: aeson >= 0.8
+                 , base >= 4 && < 5
+                 , bytestring
+                 , containers
+                 , data-default
+                 , formatting
+                 , fsnotify
+                 , mtl
+                 , purescript >= 0.6.9.3 && < 0.7
+                 , regex-tdfa
+                 , regex-tdfa-text
+                 , shakespeare >= 2
+                 , text
+                 , time
+                 , system-filepath
+                 , system-fileio
+                 , template-haskell
+                 , transformers
+                 , yesod-core
+    ghc-options: -Wall
+

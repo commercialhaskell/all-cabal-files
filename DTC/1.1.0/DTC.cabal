@@ -1,0 +1,30 @@
+Name:           DTC
+Version:        1.1.0
+Author:         Daniel Diaz
+Homepage:       http://ddiaz.asofilak.es/packages/DTC
+License:        BSD3
+License-file:   license
+Maintainer:     Daniel Diaz <danieldiaz@asofilak.es>
+Category:       Language
+Synopsis:       Data To Class transformation.
+Description:    Transform data declarations to class definitions.
+                .
+                The way is explained in /Data Declarations to Class Definitions/ (see the homepage).
+                .
+                Changes from last version:
+                .
+                * Now @DTC@ uses @haskell-src-exts@ instead of @haskell-src@.
+                .
+                * New module: @DataInfo@.
+                .
+                * The @Maybe@ example included (in "Language.Haskell.DTC.Class" module).
+Build-type:     Simple
+Build-depends:  base == 4.*
+              , haskell-src-exts
+Cabal-version:  >= 1.6
+Exposed-modules: 
+           Language.Haskell.DTC
+         , Language.Haskell.DTC.Parser
+         , Language.Haskell.DTC.Mod
+         , Language.Haskell.DTC.Class
+         , Language.Haskell.DTC.DataInfo

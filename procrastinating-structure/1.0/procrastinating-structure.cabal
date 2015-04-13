@@ -1,0 +1,17 @@
+name:                procrastinating-structure
+version:             1.0
+synopsis:            Pure structures that can be incrementally created
+                     in impure code
+description:         This package provides a type class for
+                     incrementally creating pure structures in impure
+                     code. Also included is a queue with a pure front
+                     and an impure back.
+category:            Data
+license:             OtherLicense
+license-file:        LICENSE
+author:              Jake McArthur
+maintainer:          Jake.McArthur@gmail.com
+build-depends:       base >= 4 && < 5, procrastinating-variable >= 1.0.2 && < 2
+build-type:          Simple
+ghc-options:         -Wall -funbox-strict-fields
+exposed-modules:     Data.PVar.Structure, Data.PVar.Queue

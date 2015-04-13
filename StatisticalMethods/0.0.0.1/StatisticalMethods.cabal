@@ -1,0 +1,50 @@
+name:           StatisticalMethods
+version:        0.0.0.1
+author:         Christian Hoener zu Siederdissen
+maintainer:     choener@tbi.univie.ac.at
+homepage:       http://www.tbi.univie.ac.at/~choener/Haskell/
+copyright:      Christian Hoener zu Siederdissen, 2011
+category:       Statistics
+synopsis:       Collection of useful statistical methods.
+license:        GPL-3
+license-file:   LICENSE
+build-type:     Simple
+stability:      experimental
+cabal-version:  >= 1.4.0
+description:
+                High-level statistical methods.
+                .
+                * Confusion matrix
+                .
+                * Confusion matrix dependent statistics (sensitivity, specificity, F-measure, mcc)
+                .
+                * EM algorithm for two-component Gaussian mixture.
+                .
+                * GMM (Gaussian Mixture Models) with >=1 Gaussians fitted to the data.
+                .
+                .
+                .
+                Note that some methods are for testing only (two-component
+                Gaussian mixture EM).
+
+
+
+extra-source-files:
+
+library
+  build-depends:
+    base >=4 && <5,
+    vector,
+    statistics,
+    tuple
+
+  exposed-modules:
+    Statistics.ConfusionMatrix
+    Statistics.ConfusionMatrix.Instances
+    Statistics.EM.GMM
+    Statistics.EM.TwoGaussian
+    Statistics.PerformanceMetrics
+    TestData.Elements
+
+  ghc-options:
+      -O2

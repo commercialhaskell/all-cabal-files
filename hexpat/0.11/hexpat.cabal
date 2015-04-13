@@ -1,0 +1,68 @@
+Cabal-Version: >= 1.4
+Name: hexpat
+Version: 0.11
+Synopsis: wrapper for expat, the fast XML parser
+Description:
+  This package provides a general purpose Haskell XML library using the Expat do
+  do its parsing (<http://expat.sourceforge.net/> - a fast stream-oriented XML
+  parser written in C).  It is extensible to any string type, with @String@,
+  @ByteString@ and @Text@ provided out of the box.
+  .
+  Basic usage: Parsing a tree (/Tree/), formatting a tree (/Format/).
+  .
+  Other features: Helpers for processing XML trees (/Proc/), trees annotated with
+  XML source location (/Annotated/), XML cursors (/Cursor/), more intelligent
+  handling of qualified tag names (/Qualified/), tags qualified with namespaces
+  (/Namespaced/), SAX-style parse (/SAX/), and access to the low-level interface
+  in case speed is paramount (/IO/).
+  .
+  The design goals are speed, speed, speed, interface simplicity and modular design.
+  .
+  Examples and benchmarks: <http://haskell.org/haskellwiki/Hexpat/>
+  .
+  DARCS repository: <http://code.haskell.org/hexpat/>
+  .
+  Credits to the @xml@ (XML.Light) package for /Proc/ and /Cursor/.
+Category: XML
+License: BSD3
+License-File: LICENSE
+Author:
+  Doug Beardsley,
+  Stephen Blackheath (blackh),
+  Gregory Collins,
+  Evan Martin,
+  Matthew Pocock (drdozer)
+Maintainer: http://blacksapphire.com/antispam/
+Copyright:
+  (c) 2009 Doug Beardsley <mightybyte@gmail.com>,
+  (c) 2009 Stephen Blackheath <http://blacksapphire.com/antispam/>,
+  (c) 2009 Gregory Collins,
+  (c) 2008 Evan Martin <martine@danga.com>,
+  (c) 2009 Matthew Pocock <matthew.pocock@ncl.ac.uk>
+Homepage: http://haskell.org/haskellwiki/Hexpat/
+Build-Type: Simple
+Stability: beta
+
+Library
+  Build-Depends:
+    base >= 3 && < 5,
+    haskell98,
+    bytestring,
+    mtl >= 1.1.0.0,
+    text >= 0.5,
+    utf8-string >= 0.3.3,
+    parallel,
+    containers,
+    extensible-exceptions >= 0.1 && < 0.2
+  Exposed-Modules:
+    Text.XML.Expat.Annotated,
+    Text.XML.Expat.Cursor,
+    Text.XML.Expat.Format,
+    Text.XML.Expat.IO,
+    Text.XML.Expat.Namespaced,
+    Text.XML.Expat.Proc,
+    Text.XML.Expat.Qualified,
+    Text.XML.Expat.SAX,
+    Text.XML.Expat.Tree
+  Extra-Libraries: expat
+  --ghc-options: -Wall

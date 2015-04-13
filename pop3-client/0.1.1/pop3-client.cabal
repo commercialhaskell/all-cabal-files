@@ -1,0 +1,24 @@
+Name: pop3-client
+Version: 0.1.1
+License: BSD3
+License-File: LICENSE
+Maintainer: Peter van den Brand <peter@vdbrand.nl>
+Author: Peter van den Brand
+Stability: Provisional
+Copyright: Copyright (c) 2009 Peter van den Brand
+Category: Network
+Synopsis: POP3 Client Library
+Description: pop3-client provides a Haskell library to implement a POP3 client.
+ .
+  * Simple and safe API: connection is guaranteed to be closed, no need to know the POP3 protocol to use the API
+ .
+  * Standards compliant
+ .
+  * No dependencies (besides Network and the base library)
+Build-Type: Simple
+Cabal-Version: >=1.4
+Library
+    Build-Depends:  base >= 4 && < 5, network, mtl
+    Exposed-Modules: Network.POP3.Client
+    GHC-Options: -Wall
+

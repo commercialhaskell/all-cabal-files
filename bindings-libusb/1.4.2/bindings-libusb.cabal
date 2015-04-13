@@ -1,0 +1,33 @@
+cabal-version: >= 1.2.3
+name: bindings-libusb
+homepage: http://bitbucket.org/mauricio/bindings-libusb
+synopsis:
+  Low level bindings to libusb.
+version: 1.4.2
+license: BSD3
+license-file: LICENSE
+maintainer: Maurício C. Antunes <mauricio.antunes@gmail.com>
+author: Maurício C. Antunes
+build-type: Simple
+category: FFI
+bug-reports: http://bitbucket.org/mauricio/bindings-libusb/issues
+library
+  hs-source-dirs: src
+  extensions:
+    ForeignFunctionInterface
+  build-depends:
+    base >= 3 && < 5,
+    bindings-DSL >= 1.0 && < 1.1
+  exposed-modules:
+    Bindings.Libusb
+    Bindings.Libusb.Asynchronous
+    Bindings.Libusb.Descriptors
+    Bindings.Libusb.HandlingAndEnumeration
+    Bindings.Libusb.InitializationDeinitialization
+    Bindings.Libusb.Miscellaneous
+    Bindings.Libusb.PollingAndTiming
+    Bindings.Libusb.Synchronous
+  c-sources:
+    src/inlines.c
+    src/core.c
+  pkgconfig-depends: libusb-1.0 >= 1.0

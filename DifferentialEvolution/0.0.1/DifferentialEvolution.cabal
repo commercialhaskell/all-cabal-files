@@ -1,0 +1,43 @@
+Name:                DifferentialEvolution
+Version:             0.0.1
+Category:            Numerical, Optimization, Algorithms 
+Synopsis:            Global optimization using Differential Evolution
+Description:         Plain Differential Evolution algorithm for optimizing 
+                     real-valued functions. For further info, see
+                     Differential evolution: a practical approach 
+                     to global optimization By Kenneth V. Price, 
+                     Rainer M. Storn, and Jouni A. Lampinen.
+                     . 
+                     This Library is optimized and should achieve runtimes
+                     with factor of 2 from c. 
+                     For optimal performance, pay some attention to
+                     rts memory parameters.
+                     .
+                     Example in GHCi:
+                     .
+                     >import Data.Vector.Unboxed as VUB
+                     >import Numeric.Optimization.Algorithms.DifferentialEvolution
+                     >
+                     >let fitness = VUB.sum . VUB.map (*2)
+                     > 
+                     >de (defaultParams fitness ((VUB.replicate 60 0), (VUB.replicate 60 0)))
+
+License:             MIT
+License-File:        LICENSE
+Author:              Ville Tirronen
+Maintainer:          ville.tirronen@jyu.fi
+Build-Type:          Simple
+Cabal-Version:       >=1.8
+
+Library
+    Build-Depends:     base >= 4 && < 5
+                       , mwc-random >= 0.8 && <0.9
+                       , deepseq >= 1.1 && < 2
+                       , primitive >= 0.3.1 && < 4
+                       , mtl > 2 && <= 3
+                       , fclabels >= 0.11 && < 0.12
+                       , vector >= 0.7 && < 0.8
+                       , parallel >= 3.1 && < 4
+    Exposed-modules:   Numeric.Optimization.Algorithms.DifferentialEvolution
+    ghc-options:       -Odph -fllvm -fexcess-precision -funbox-strict-fields 
+

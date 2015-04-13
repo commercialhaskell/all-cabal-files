@@ -1,0 +1,23 @@
+name:                texts
+version:             0.2.1
+synopsis:            Common things for text
+description:         Common things for text
+license:             BSD3
+license-file:        LICENSE
+author:              Chris Done
+maintainer:          chrisdone@gmail.com
+copyright:           2013 Chris Done
+category:            Data, Text
+build-type:          Simple
+cabal-version:       >=1.8
+
+library
+  exposed-modules:   Data.Texts
+  hs-source-dirs:    src/
+  build-depends:     base > 4 && <5,
+                     text,
+                     HUnit,
+                     network,
+                     time,
+                     lists
+  ghc-options:       -Wall

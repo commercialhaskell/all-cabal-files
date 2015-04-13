@@ -1,0 +1,44 @@
+name:               meta-misc
+-- Don't forget to bump the tag and CHANGELOG placeholder too.
+version:            0.1.0.3
+cabal-version:      >= 1.18
+build-type:         Simple
+license:            BSD3
+license-file:       LICENSE
+copyright:          Copyright (C) 2011 Byron James Johnson
+author:             Byron James Johnson
+maintainer:         ByronJohnsonFP@gmail.com
+category:           Language, Generics, Data, Utility
+homepage:           https://github.com/bairyn/meta-misc
+bug-reports:        https://github.com/bairyn/meta-misc/issues
+tested-with:        GHC == 7.8.3
+extra-source-files:
+-- The extra-doc-files property requires cabal-version >= 1.18.
+extra-doc-files:
+  README.md
+ ,CHANGELOG.md
+synopsis:           Utility library providing miscellaneous meta-programming utilities.
+description:
+  Utility library providing miscellaneous meta-programming utilities.
+
+library
+  default-language:  Haskell2010
+  hs-source-dirs:    src
+  ghc-options:       -Wall
+  build-depends:
+    base             >= 4   && < 5
+   ,template-haskell >= 2.5 && < 3
+   ,loch-th          >= 0.1 && < 1
+  exposed-modules:
+    Language.Haskell.Util.Cons
+  other-extensions:
+    TemplateHaskell
+
+source-repository head
+    type:     git
+    location: git@github.com:bairyn/meta-misc.git
+
+source-repository this
+    type:     git
+    location: git@github.com:bairyn/meta-misc.git
+    tag:      v0.1.0.3

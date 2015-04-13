@@ -1,0 +1,36 @@
+name:          htodo
+category:      Other
+version:       0.0.1
+license:       BSD3
+cabal-version: >= 1.6
+license-file:  LICENSE
+author:        Yoichi Hirai
+maintainer:    Yoichi Hirai <i@yoichihirai.com>
+homepage:      http://github.com/pirapira/htodo
+bug-reports:   http://github.com/pirapira/htodo/issues
+copyright:     Copyright (C) 2013 Yoichi Hirai
+synopsis:      A todo application.
+description:   A todo application.
+build-type:    Simple
+
+extra-source-files: .travis.yml
+
+source-repository head
+  type: git
+  location: git://github.com/pirapira/htodo.git
+
+flag safe
+  manual: True
+  default: False
+
+executable htodo
+  build-depends:
+    base       >= 3 && < 5,
+    HDBC-sqlite3 >= 2.3.3.0,
+    HDBC >= 2.3.1.2
+
+  main-is:     Main.hs
+  ghc-options: -Wall
+
+  if flag(safe)
+    cpp-options: -DSAFE

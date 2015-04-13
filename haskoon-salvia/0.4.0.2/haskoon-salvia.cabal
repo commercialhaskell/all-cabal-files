@@ -1,0 +1,20 @@
+Name:                haskoon-salvia
+Version:             0.4.0.2
+Synopsis:            Integrating HttpSpec with Haskoon
+Description:         Allows to send and receive Http requests using the
+                     HttpSpec specifications.
+License:             LGPL
+License-file:        LICENSE
+Category:            Web
+Author:              David Leuschner <leuschner@factisresearch.com>, Dirk Spoeri <spoeri@factisresearch.com>, Stefan Wehr <wehr@factisresearch.com>
+Maintainer:          David Leuschner <leuschner@factisresearch.com>, Dirk Spoeri <spoeri@factisresearch.com>, Stefan Wehr <wehr@factisresearch.com>
+Build-Type:          Simple
+Cabal-Version:       >= 1.2
+
+Library
+  Hs-Source-Dirs:    src
+  GHC-Options: -Wall -fno-warn-name-shadowing -fno-warn-orphans
+  Build-Depends:     base >= 4 && < 5, HTTP, bytestring, transformers, hslogger >= 1.1.0,
+                     network, haskoon,
+                     salvia, salvia-protocol, fclabels, cgi, mtl, monads-fd
+  Exposed-Modules:   Factis.Haskoon.WebSalvia

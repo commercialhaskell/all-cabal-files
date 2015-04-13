@@ -1,0 +1,41 @@
+name:               CMQ
+version:            0.0.12
+synopsis:           cwmwl udp message queue
+category:           System
+license:            BSD3
+license-file:       LICENSE
+author:             Joerg Fritsch
+maintainer:         J.Fritsch@cs.cardiff.ac.uk
+copyright:          Copyright (c) 2012 cmq authors
+homepage:           http://github.com/viloocity/cmq/
+stability:          experimental
+tested-With:        GHC == 7.4.1
+cabal-version:      >= 1.8
+build-type:         Simple
+extra-source-files: README.md
+                  , AUTHORS
+                  , examples/*.hs
+description:
+    CMQ is a lightweight message queue using the UDP protocol as transport protocol. It trades guarantees, consistency mechanisms, (shared) state and transactions for robustness, scalability and performance. CMQ fares especially well in modern Layer 2 switches in data center networks, as well as in the presence of errors.
+
+    This library provides CMQ version = 0.0.12
+
+library
+    hs-source-dirs:       src
+    exposed-modules:      System.CMQ
+    ghc-options:          -Wall -threaded -rtsopts
+    build-depends:        base >= 3 && < 5
+                          , iproute
+                          , bytestring
+                          , cereal
+                          , network
+                          , mtl
+                          , containers
+                          , PSQueue
+                          , time
+                          , stm
+
+source-repository head
+    type:             git
+    location:         https://github.com/viloocity/CMQ
+

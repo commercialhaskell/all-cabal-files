@@ -1,0 +1,23 @@
+name:		marked-pretty
+version:	0.1
+Cabal-Version:  >= 1.2
+license:	BSD3
+license-file:	LICENSE
+category:	Text
+maintainer:	andygill@ku.edu
+synopsis:	Pretty-printing library, with scoping, based on pretty-1.0.0.0
+description:
+	This package contains a pretty-printing library, with scoping.
+build-type: Simple
+
+Library
+  Build-Depends:        base
+  Exposed-modules:
+     Text.PrettyPrint.MarkedHughesPJ
+
+Executable test
+  Main-Is:        Main.hs
+  Hs-Source-Dirs: ., test
+  buildable: False
+
+

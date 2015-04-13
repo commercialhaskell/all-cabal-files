@@ -1,0 +1,17 @@
+name:           hdbc-tuple
+version:        0.0.1
+license:        GPL
+license-file:   LICENSE
+copyright:      Rick Kaudewitz
+maintainer: 	Rick Kaudewitz <rick.kaudewitz@yahoo.de>
+stability:      experimental
+category:	Database
+description:	Type save tuples for HDBC
+synopsis:	Type save tuples for HDBC
+ghc-options:    -Wall -fno-warn-missing-signatures
+build-type: 	Simple
+build-depends:	base, typical, HDBC>=2.1.0, convertible>=1.0.1
+exposed-modules:
+		Database.HDBC.Tuple
+ghc-options:    -Wall -fno-warn-orphans -fno-warn-missing-signatures
+hs-source-dirs: .

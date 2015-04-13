@@ -1,0 +1,35 @@
+name:                acme-strfry
+version:             0.1
+synopsis:            A binding to the glibc strfry function.
+description:
+  This library provides a simple interface to the glibc @strfry@
+  function, addressing the perennial programming quandary: \"How do I
+  take good data in string form and painlessly turn it into garbage?\"
+  .
+  For more information, consult the glibc documentation:
+  <http://www.gnu.org/software/libc/manual/html_node/strfry.html>
+  .
+  Both @String@ and @ByteString@ interfaces are offered, as well as
+  the raw FFI binding.
+homepage:            https://github.com/ehird/acme-strfry
+license:             BSD3
+license-file:        LICENSE
+author:              Elliott Hird
+maintainer:          Elliott Hird
+stability:           experimental
+category:            Acme
+build-type:          Simple
+cabal-version:       >=1.6
+
+source-repository head
+  type: git
+  location: https://github.com/ehird/acme-strfry.git
+
+library
+  exposed-modules:
+    Acme.Strfry,
+    Acme.Strfry.String,
+    Acme.Strfry.ByteString,
+    Acme.Strfry.Foreign
+  build-depends: base == 4.*, bytestring == 0.9.*
+  ghc-options: -Wall

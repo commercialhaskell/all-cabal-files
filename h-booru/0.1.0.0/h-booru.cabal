@@ -1,0 +1,34 @@
+name:                h-booru
+version:             0.1.0.0
+synopsis:            Haskell library for retrieving data from various booru image sites
+description:         Haskell library for retrieving data from various booru image sites.
+                     By providing a common interface for such sites and some parsers for
+                     few existing sites, the hope is to alleviate the effort of writing
+                     applications which interface with them.
+homepage:            https://github.com/Fuuzetsu/h-booru
+license:             GPL-3
+license-file:        LICENSE
+author:              Mateusz Kowalczyk
+maintainer:          fuuzetsu@fuuzetsu.co.uk
+category:            Web
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+source-repository head
+  type:     git
+  location: git@github.com:Fuuzetsu/h-booru.git
+
+library
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+  exposed-modules:
+    HBooru.Types
+    HBooru.Parsers.Gelbooru
+    HBooru.Parsers.Ichijou
+    HBooru.Parsers.Konachan
+    HBooru.Parsers.Safebooru
+    HBooru.Parsers.Yandere
+    HBooru.Parsers.GenericBooru
+    HBooru.Parsers.GenericBooru.TH
+  -- other-modules:
+  build-depends:       base >=4.6 && <5, hxt >= 9.3.1.2, template-haskell

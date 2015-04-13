@@ -1,0 +1,33 @@
+Name:                happstack-monad-peel
+Version:             0.1
+
+Synopsis:            monad-peel instances for Happstack types
+Description:         monad-peel instances for Happstack types
+
+License:             BSD3
+License-file:        LICENSE
+Author:              Nils Schweinsberg <mail@nils.cc>
+Maintainer:          mail@nils.cc
+-- Copyright:           
+
+Category:            Web, Happstack
+
+Build-type:          Simple
+Cabal-version:       >= 1.6
+
+-- Extra-source-files:  
+
+Library
+
+  HS-source-dirs:    src
+  GHC-options:       -Wall -O3
+
+  Build-depends:       
+    base == 4.*, mtl, transformers,
+    monad-peel,
+    happstack-server
+
+  Exposed-modules:
+    Happstack.Server.MonadPeel
+
+  Other-modules:

@@ -1,0 +1,34 @@
+Name:           numeric-tools
+Version:        0.1.0.0
+Cabal-Version:  >= 1.6
+License:        BSD3
+License-File:   LICENSE
+Author:         Aleksey Khudyakov <alexey.skladnoy@gmail.com>
+Maintainer:     Aleksey Khudyakov <alexey.skladnoy@gmail.com>
+Homepage:       https://bitbucket.org/Shimuuar/numeric-tools
+bug-reports:    https://bitbucket.org/Shimuuar/numeric-tools/issues
+Category:       Math, Numerical
+Build-Type:     Simple
+Synopsis:       Collection of numerical tools for integration, differentiation etc.
+  
+Description:
+  Package provides function to perform numeric integration and
+  differentiation, function interpolation.
+
+source-repository head
+  type:     hg
+  location: https://bitbucket.org/Shimuuar/numeric-tools
+
+Library
+  Build-Depends:   base >=3 && <5,
+                   ieee754 >= 0.7.3,
+                   vector >= 0.7.0.1
+  Exposed-modules: Control.Monad.Numeric
+                   Numeric.Classes.Indexing
+                   Numeric.Tools.Equation
+                   Numeric.Tools.Differentiation
+                   Numeric.Tools.Integration
+                   Numeric.Tools.Interpolation
+                   Numeric.Tools.Mesh
+  c-sources:       cbits/ieee.c
+  ghc-options:	   -Wall -O2

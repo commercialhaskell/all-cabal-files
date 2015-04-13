@@ -1,0 +1,55 @@
+Name:               time-exts
+Version:            2.0.0
+License:            BSD3
+License-File:       LICENSE
+Copyright:          Copyright (c) 2014, Enzo Haussecker. All rights reserved.
+Author:             Enzo Haussecker <enzo@ucsd.edu>
+Maintainer:         Enzo Haussecker <enzo@ucsd.edu>
+Stability:          Experimental
+Category:           Time
+Synopsis:           Efficient Timestamps
+Homepage:           https://github.com/enzoh/time-exts
+Bug-Reports:        https://github.com/enzoh/time-exts/issues
+Build-Type:         Simple
+Cabal-Version:      >= 1.16.0
+Description:        Extensions to the Haskell time library, providing efficient Unix, UTC, and local timestamps.
+
+Library
+  Default-Language: Haskell2010
+  HS-Source-Dirs:   src
+  Exposed-Modules:  Data.Time.Exts
+                    Data.Time.Exts.Base
+                    Data.Time.Exts.C
+                    Data.Time.Exts.Local
+                    Data.Time.Exts.Unix
+                    Data.Time.Exts.Zone
+  Build-Depends:    aeson,
+                    base >= 4 && < 5,
+                    bindings-DSL,
+                    containers,
+                    convertible,
+                    deepseq,
+                    fclabels,
+                    QuickCheck,
+                    random,
+                    time,
+                    timezone-olson
+  Build-Tools:      hsc2hs
+
+Executable test-time-exts
+  Default-Language: Haskell2010
+  HS-Source-Dirs:   src
+  Main-Is:          Data/Time/Exts/Test.hs
+  Other-Modules:    Data.Time.Exts.C
+  Build-Depends:    aeson,
+                    base >= 4 && < 5,
+                    bindings-DSL,
+                    containers,
+                    convertible,
+                    deepseq,
+                    fclabels,
+                    QuickCheck,
+                    random,
+                    time,
+                    timezone-olson
+  Build-Tools:      hsc2hs

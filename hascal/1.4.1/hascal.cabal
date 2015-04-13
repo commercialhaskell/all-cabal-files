@@ -1,0 +1,47 @@
+name:          hascal
+version:       1.4.1
+synopsis:      A minimalistic but extensible and precise calculator
+description:   Hascal is a minimalistic calculator with infix-operations
+               supporting addition, subtraction, division, multiplication,
+               exponentiation and logarithming.
+               Futhermore, it's easy to add custom operators.
+stability:     provisional
+category:      Math, Console, Tools, Utility, Utils, Parsing
+homepage:      http://darcsden.com/mekeor/hascal
+bug-reports:   http://darcsden.com/mekeor/hascal/issues
+license:       GPL
+license-file:  LICENSE
+copyright:     2012 Mekeor Melire
+author:        Mekeor Melire <mekeor.melire@googlemail.com>
+maintainer:    Mekeor Melire <mekeor.melire@googlemail.com>
+tested-with:   GHC ==7.4.1
+cabal-version: >= 1.8
+build-type:    Simple
+
+
+source-repository head
+  type:     darcs
+  location: http://darcsden.com/mekeor/hascal
+
+
+source-repository head
+  type:     git
+  location: git://github.com/MekeorMelire/hascal.git
+
+
+test-suite test
+  type:          exitcode-stdio-1.0
+  main-is:       Test.hs
+  build-depends: HUnit ==1.2.*
+  
+
+library
+  build-depends:   base >2 && <5
+  exposed-modules: Hascal
+  ghc-options:     -Wall
+
+
+executable hascal
+  build-depends:   base >2 && <5, numbers >= 3000
+  main-is:         Main.hs
+  ghc-options:     -Wall

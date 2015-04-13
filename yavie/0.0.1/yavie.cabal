@@ -1,0 +1,39 @@
+build-type:    Simple
+cabal-version: >= 1.2
+
+name:          yavie
+version:       0.0.1
+stability:     experimental
+maintainer:    Yoshikuni Jujo <PAF01143@nifty.ne.jp>
+
+license:       BSD3
+license-file:  LICENSE
+
+category:      Editor
+synopsis:      yet another visual editor
+description:   yet another visual editor
+               .
+               Customizable vi like editor. 
+               You can customize by edit ~\/.yavie\/vty\/yavie-vty.hs.
+               It's very buggy now.
+
+data-files:    uuid_yavie,
+               src/vty/yavie-vty.cabal, src/vty/yavie-vty.hs
+               src/x11/yavie-x11.cabal, src/x11/yavie-x11.hs
+               src/gtk/yavie-gtk.cabal, src/gtk/yavie-gtk.hs
+
+library
+  hs-source-dirs:  src
+  exposed-modules: Yavie, Yavie.Keybind, Yavie.Keybind.Vi, Yavie.Editor
+  other-modules:   Yavie.MainTools,
+                   Yavie.EditorCore, Yavie.Tools
+  build-depends:   base > 4 && < 5,
+                   event-driven >= 0.0.2, filepath, monads-tf, regexpr
+  ghc-options:     -Wall
+
+executable yavie
+  hs-source-dirs: src
+  main-is:        Main.hs
+  other-modules:  MainNoPaths
+  build-depends:  base > 4 && < 5, directory, Cabal, process
+  ghc-options:    -Wall

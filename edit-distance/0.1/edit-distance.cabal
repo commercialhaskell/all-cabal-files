@@ -1,0 +1,66 @@
+Name:           edit-distance
+Version:        0.1
+x-revision: 1
+Cabal-Version:  >= 1.2
+Category:       Algorithms
+Synopsis:       Levenhstein and restricted Damerau-Levenshtein edit distances
+Description:    Optimized edit distances for fuzzy matching, including Levenhstein and restricted Damerau-Levenshtein algorithms.
+License:        BSD3
+License-File:   LICENSE
+Author:         Max Bolingbroke
+Maintainer:     batterseapower@hotmail.com
+Build-Type:     Simple
+
+Flag Tests
+        Description:    Enable building the tests and benchmark suite
+        Default:        False
+
+Flag SplitBase
+        Description:    Choose the new smaller, split-up base package
+        Default:        True
+
+
+Library
+        Exposed-Modules:        Text.EditDistance
+        Other-Modules:          Text.EditDistance.EditCosts
+                                Text.EditDistance.SquareSTUArray
+                                Text.EditDistance.STUArray
+                                Text.EditDistance.Bits
+                                Text.EditDistance.MonadUtilities
+        if flag(splitBase)
+                Build-Depends:  base >= 3 && < 4.6, array >= 0.1, random >= 1.0, containers >= 0.1.0.1
+        else
+                Build-Depends:  base < 3
+        
+        Ghc-Options:            -O2 -fvia-C -Wall
+
+Executable edit-distance-tests
+        Main-Is:                Text/EditDistance/Tests.hs
+        if flag(splitBase)
+                Build-Depends:  base >= 3 && < 4.6, array >= 0.1, random >= 1.0,
+                                QuickCheck >= 1.1
+        else
+                Build-Depends:  base < 3, 
+                                QuickCheck >= 1.1
+        
+        Extensions:             PatternGuards, PatternSignatures, 
+                                RankNTypes, ExistentialQuantification,
+                                ScopedTypeVariables
+        Ghc-Options:            -O2 -fvia-C -Wall -fno-warn-orphans
+        
+        if !flag(tests)
+                Buildable:      False
+
+Executable edit-distance-benchmark
+        Main-Is:                Text/EditDistance/Benchmark.hs
+        if flag(splitBase)
+                Build-Depends:  base >= 3 && < 4.6, array >= 0.1, random >= 1.0, old-time >= 1.0, process >= 1.0,
+                                parallel >= 1.0, unix >= 2.3
+        else
+                Build-Depends:  base < 3,
+                                parallel >= 1.0, unix >= 2.3
+        
+        Ghc-Options:            -O2 -fvia-C -Wall
+        
+        if !flag(tests)
+                Buildable:      False

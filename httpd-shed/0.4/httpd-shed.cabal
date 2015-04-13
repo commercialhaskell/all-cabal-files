@@ -1,0 +1,29 @@
+Name:           httpd-shed
+Version:        0.4
+Cabal-Version:  >= 1.2
+License:        BSD3
+License-File:   LICENSE
+Author:         Andy Gill, Brandon Moore, Henning Thielemann, John Van Enk.
+Category:       Network, Web
+Synopsis:       A simple web-server with an interact style API
+Description:    
+                This web server promotes a Request to IO Response function
+                into a local web server. The user can decide how to interpret
+                the requests, and the library is intended for implementing Ajax APIs.
+
+Maintainer:     Andy Gill
+Copyright:      (c) 2009 Andy Gill
+build-type:     Simple
+
+Library
+  Build-Depends:        base >= 4.0 && < 5.0, network
+  ghc-options: -Wall
+  Exposed-modules:
+    Network.Shed.Httpd
+
+
+-- Trivial test; we need real tests!
+Executable httpd-shed-test
+  Main-Is:        Main.hs
+  Hs-Source-Dirs: ., test
+  buildable: True

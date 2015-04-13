@@ -1,0 +1,56 @@
+name: hexpat-tagsoup
+version: 0.1
+cabal-version: -any
+build-type: Simple
+license: BSD3
+license-file: LICENSE
+copyright: Copyright (c) 2011 by Stephen Blackheath
+maintainer: Stephen Blackheath <http://blacksapphire.com/antispam>
+build-depends: base >=4 && <5, hexpat >=0.19.6 && <1,
+               tagsoup >=0.12 && <1
+stability: Alpha
+homepage:
+package-url:
+bug-reports:
+synopsis: Parse (possibly malformed) HTML to hexpat tree
+description: An integration of the /tagsoup/ and /hexpat/ packages, allowing HTML to be parsed to a
+             hexpat tree, tolerant of errors.
+             .
+             The real work is done by Neil Mitchell's /tagsoup/ package.
+             .
+             darcs repo: @http://code.haskell.org/hexpat-tagsoup/@
+category: XML
+author: Stephen Blackheath <http://blacksapphire.com/antispam>
+tested-with:
+data-files:
+data-dir: ""
+extra-source-files:
+extra-tmp-files:
+exposed-modules: Text.XML.Expat.TagSoup
+exposed: True
+buildable: True
+build-tools:
+cpp-options:
+cc-options:
+ld-options:
+pkgconfig-depends:
+frameworks:
+c-sources:
+default-language:
+other-languages:
+default-extensions:
+other-extensions:
+extensions:
+extra-libraries:
+extra-lib-dirs:
+includes:
+install-includes:
+include-dirs:
+hs-source-dirs: .
+other-modules:
+ghc-prof-options:
+ghc-shared-options:
+ghc-options:
+hugs-options:
+nhc98-options:
+jhc-options:

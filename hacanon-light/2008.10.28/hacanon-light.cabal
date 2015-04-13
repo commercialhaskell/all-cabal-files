@@ -1,0 +1,23 @@
+Name: hacanon-light
+Version: 2008.10.28
+Maintainer: Lemmih (lemmih@gmail.com)
+Author: Lemmih (lemmih@gmail.com)
+Copyright: 2004-2008, Lemmih
+License: BSD3
+License-File: LICENSE
+Build-type: Simple
+Build-Depends: base, mtl, template-haskell
+Category: FFI tools
+Synopsis: Template Haskell framework for automatic FFI code generation.
+Description: Combinatorial library for generating foreign bindings using TH.
+Extensions: CPP, TemplateHaskell
+Exposed-Modules:
+  Foreign.HacanonLight.FFIToHs,
+  Foreign.HacanonLight.Common,
+  Foreign.HacanonLight.Common.Types,
+  Foreign.HacanonLight.Common.THUtils,
+  Foreign.HacanonLight.DIS,
+  Foreign.HacanonLight.DIS.Types,
+  Foreign.HacanonLight.DIS.StdDIS,
+  Foreign.HacanonLight.Generate
+Hs-Source-Dirs: src

@@ -1,0 +1,45 @@
+name:                nagios-check
+version:             0.1.0.0
+synopsis:            Package for writing monitoring plugins
+description:         Implements Nagios plugin development guidelines
+                     within a Haskell framework for writing Nagios
+                     checks.
+homepage:            https://github.com/fractalcat/nagios-check
+license:             MIT
+license-file:        LICENSE
+author:              Sharif Olorin
+maintainer:          sio@tesser.org
+copyright:           2014 Sharif Olorin
+category:            System
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+
+source-repository    head
+  type:              git 
+  location:          git@github.com:fractalcat/nagios-check.git
+
+library
+  exposed-modules:     System.Nagios.Plugin
+  build-depends:       base >=4.7 && <5,
+                       mtl,
+                       text,
+                       bifunctors,
+                       exceptions,
+                       nagios-perfdata
+  hs-source-dirs:      lib
+  default-language:    Haskell2010
+  ghc-options:         -Wall
+                       -Wwarn
+                       -fwarn-tabs
+
+test-suite nagios-check-test
+  hs-source-dirs:    tests
+  main-is:           NagiosCheckTest.hs
+  type:              exitcode-stdio-1.0
+  default-language:    Haskell2010
+  build-depends:       base >=4.7 && <5,
+                       hspec,
+                       QuickCheck,
+                       text,
+                       nagios-check

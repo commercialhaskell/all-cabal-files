@@ -1,0 +1,22 @@
+Name:                digamma
+Version:             0.1
+Synopsis:            A robust implementation of the digamma function
+Description:         An implementation of the digamma function
+                     based on Thomas Minka's Matlab code.
+Homepage:            https://github.com/bgamari/digamma
+License:             BSD3
+License-file:        LICENSE
+Author:              Ben Gamari
+Maintainer:          bgamari@gmail.com
+Category:            Math
+Build-type:          Simple
+Cabal-version:       >=1.6
+
+Source-repository head
+  Type:              git
+  Location:          git://github.com/bgamari/digamma.git
+
+Library
+  Exposed-modules:   Numeric.Digamma
+  Build-depends:     base >= 4 && < 5, polynomial >= 0.6.5 && < 0.7
+

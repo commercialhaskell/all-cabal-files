@@ -1,0 +1,29 @@
+name:                diagrams-gtk
+version:             1.0
+synopsis:            Backend for rendering diagrams directly to GTK windows
+description:         An optional add-on to the diagrams-cairo package
+                     which allows rendering diagrams directly to GTK windows.
+homepage:            http://projects.haskell.org/diagrams/
+license:             BSD3
+license-file:        LICENSE
+author:              John Lato
+maintainer:          diagrams-discuss@googlegroups.com
+copyright:           John Lato
+category:            Graphics
+build-type:          Simple
+cabal-version:       >=1.10
+tested-with:         GHC == 7.2.1, GHC == 7.4.2
+extra-source-files:  CHANGES.markdown, README.markdown
+
+source-repository head
+  type:     git
+  location: http://github.com/diagrams/diagrams-gtk.git
+
+library
+  exposed-modules:     Diagrams.Backend.Gtk
+  build-depends:       base >= 4.2 && < 4.8,
+                       diagrams-lib >= 1.0 && < 1.1,
+                       diagrams-cairo >= 1.0 && < 1.1,
+                       gtk >= 0.12.0 && < 0.13
+  hs-source-dirs:      src
+  default-language:    Haskell2010

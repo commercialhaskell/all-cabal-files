@@ -1,0 +1,26 @@
+name:            clientsession
+version:         0.3.0
+license:         BSD3
+license-file:    LICENSE
+author:          Michael Snoyman <michael@snoyman.com>
+maintainer:      Michael Snoyman <michael@snoyman.com>
+synopsis:        Store session data in a cookie.
+description:     Achieves security through AES encryption and MD5 hashing.
+                 Uses base64 encoding to avoid any issues with characters.
+category:        Web
+stability:       stable
+cabal-version:   >= 1.2
+build-type:      Simple
+homepage:        http://github.com/snoyberg/clientsession/tree/master
+
+library
+    build-depends:   base >=4 && <5,
+                     SimpleAES >= 0.4.1 && < 0.5,
+                     pureMD5 >= 1.1.0.0 && < 1.2,
+                     dataenc >= 0.13.0.2 && < 0.14,
+                     failure >= 0.0.0.2 && < 0.2,
+                     bytestring >= 0.9 && < 0.10,
+                     directory >= 1 && < 1.1,
+                     binary >= 0.5.0.2 && < 0.6
+    exposed-modules: Web.ClientSession
+    ghc-options:     -Wall

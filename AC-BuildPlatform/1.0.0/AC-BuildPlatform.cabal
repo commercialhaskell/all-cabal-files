@@ -1,0 +1,43 @@
+Cabal-version:       >=1.6
+Name:                AC-BuildPlatform
+Version:             1.0.0
+Synopsis:            Detect which OS you're running on.
+Description:
+
+  This package lets you easily query various facts about the system
+  that your code is running on. Currently, it reports whether the
+  operating system is \"Windows\" or \"Unix\", and also the name and
+  version of the Haskell compiler used.
+  .
+  This package implements lots of complicated trickery to determine
+  the build environment. Once built, other packages can query this
+  information without needing to do complex trickery themselves.
+  .
+  Design assumptions:
+  .
+  * You are using GHC, version 6.8.1 or newer.
+  .
+  * You build this package using the Cabal-install tool. (Just doing
+    @runhaskell Setup@ won't work properly.)
+  .
+  If these conditions are not met, the package should still /build/,
+  it's just that all the compile-time constants will come back as
+  'Nothing'.
+  .
+  See also the included @ReadMe.xhtml@ file.
+
+License:             BSD3
+License-file:        License.txt
+Author:              Andrew Coppin
+Maintainer:          MathematicalOrchid@hotmail.com
+Category:            System
+Build-type:          Custom
+Extra-tmp-files:     Include/Platform.h
+Extra-source-files:  ReadMe.xhtml
+
+Library
+  Exposed-modules:
+    System.Platform
+  Build-depends:
+    base == 4.*
+  Include-dirs: Include

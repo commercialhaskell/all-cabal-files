@@ -1,0 +1,28 @@
+name: direct-binary-files
+version: 1.0
+cabal-version: >= 1.12
+build-type: Simple
+license: BSD3
+license-file: LICENSE
+copyright: Copyright (c) 2012 Irene Knapp
+author: Irene Knapp <irene.knapp@icloud.com>
+maintainer: irene.knapp@icloud.com
+homepage: http://ireneknapp.com/software/
+bug-reports: https://github.com/IreneKnapp/direct-binary-files/issues
+category: Data
+synopsis: Serialization and deserialization monads for streams and ByteStrings.
+description:
+  Serialization and deserialization monads which can work on either streams
+  or ByteStrings, running under IO in the former case and as pure functions
+  in the latter.
+
+Source-Repository head
+  type: git
+  location: git@github.com:IreneKnapp/direct-binary-files.git
+
+Library
+  exposed-modules: BinaryFiles
+  build-depends: base >= 4.1 && < 5,
+                 bytestring >= 0.9.1.5 && < 1,
+                 mtl >= 2.0.1.0 && < 3
+  default-language: Haskell2010

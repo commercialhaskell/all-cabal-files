@@ -1,0 +1,22 @@
+name:                           WL500gPLib
+version:                        0.3.1
+cabal-version:                  >= 1.2
+license:                        BSD3
+license-file:                   LICENSE
+author:                         Vasyl Pasternak <vasyl.pasternak@gmail.com>
+category:                       Network
+synopsis:                       A simple library to access to the WL 500gP router
+                                from the Haskell code
+build-type:                     Simple
+
+library
+        build-depends:          base < 4, curl, tagsoup, mtl
+        exposed-modules:        Network.Asus.WL500gP
+        hs-source-dirs:         src
+
+executable test
+        main-is:                Main.hs
+        build-depends:          base < 4
+        hs-source-dirs:         src
+        other-modules:          Network.Asus.WL500gP
+

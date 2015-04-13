@@ -1,0 +1,22 @@
+Extra-Libraries: pq
+include-dirs: /usr/include/postgresql, .
+-- extra-lib-dirs: 
+Name: HDBC-postgresql
+Version: 1.0.1.0
+License: LGPL
+Maintainer: John Goerzen <jgoerzen@complete.org>
+Stability: Alpha
+Copyright: Copyright (c) 2005-2006 John Goerzen
+Exposed-Modules: Database.HDBC.PostgreSQL
+Other-Modules: Database.HDBC.PostgreSQL.Connection,
+ Database.HDBC.PostgreSQL.Statement,
+ Database.HDBC.PostgreSQL.Types,
+ Database.HDBC.PostgreSQL.Utils,
+ Database.HDBC.PostgreSQL.Parser,
+ Database.HDBC.PostgreSQL.PTypeConv
+--Extensions: ExistentialQuantification, AllowOverlappingInstances,
+--    AllowUndecidableInstances, CPP
+Extensions: ExistentialQuantification
+Build-Depends: base, mtl, HDBC>=1.0.0, parsec
+GHC-Options: -O2
+C-Sources: hdbc-postgresql-helper.c

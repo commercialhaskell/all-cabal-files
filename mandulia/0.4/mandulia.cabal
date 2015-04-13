@@ -1,0 +1,69 @@
+Name:                mandulia
+Version:             0.4
+Stability:           Provisional
+Synopsis:            A zooming visualisation of the Mandelbrot Set as many Julia Sets.
+Description:         Mandulia provides a zooming visualisation of the Mandelbrot Set
+                     as many Julia Sets.  Featuring a profiled and optimized renderer,
+                     and a Lua configuration and scripting interface.
+Homepage:            http://gitorious.org/maximus/mandulia
+Cabal-version:       >=1.6
+License:             GPL-3
+License-file:        COPYING
+Author:              Claude Heiland-Allen
+Maintainer:          claudiusmaximus@goto10.org
+Copyright:           (C) 2010  Claude Heiland-Allen <claudiusmaximus@goto10.org>
+Category:            Graphics
+Build-type:          Simple
+Extra-source-files:  AUTHORS ChangeLog HACKING INSTALL NEWS README TODO
+                     src/rjulia.h src/qsort.h
+Data-dir:            config
+Data-files:          defaults.lua interactive.lua random.lua transition.lua
+
+Flag SSE4
+  Description:         Enable optimizations for SSE4 CPUs.
+  Default:             True
+
+Executable mandulia
+  Build-depends:       base >= 4 && < 5, array, bytestring, containers, directory, filepath, time, GLUT >= 2.2, hslua >= 0.2
+  Build-tools:         hsc2hs
+  Extensions:          ForeignFunctionInterface
+  if  flag(SSE4) && impl(ghc)
+    GHC-options:         -Wall -O3 -threaded -fvia-c -funbox-strict-fields -optc-O3 -optc-march=native -optc-ffast-math -optc-msse4
+    GHC-prof-options:    -Wall -O3 -threaded -fvia-c -funbox-strict-fields -optc-O3 -optc-march=native -optc-ffast-math -optc-msse4 -prof -auto-all
+    CC-options:          -std=c99 -Wall -pedantic -O3 -march=native -ffast-math -msse4
+  if !flag(SSE4) && impl(ghc)
+    GHC-options:         -Wall -O3 -threaded -fvia-c -funbox-strict-fields -optc-O3 -optc-march=native -optc-ffast-math
+    GHC-prof-options:    -Wall -O3 -threaded -fvia-c -funbox-strict-fields -optc-O3 -optc-march=native -optc-ffast-math -prof -auto-all
+    CC-options:          -std=c99 -Wall -pedantic -O3 -march=native -ffast-math
+  HS-source-dirs:      src
+  Main-is:             Mandulia.hs
+  Other-modules:       AmmannA3
+                       Bounds
+                       Image
+                       Interface
+                       JobQueue
+                       Julia
+                       Mandulia
+                       PriorityCache
+                       ResourcePool
+                       Snapshot
+                       Sort
+                       StatsLogger
+                       TextureCache
+                       Utils
+                       Vector
+  C-sources:           src/rjulia.c
+                       src/rts.c
+                       src/qsort.c
+  Include-dirs:        src
+  Includes:            rjulia.h
+                       qsort.h
+
+Source-repository head
+  type:                git
+  location:            git://gitorious.org/maximus/mandulia.git
+
+Source-repository this
+  type:                git
+  location:            git://gitorious.org/maximus/mandulia.git
+  tag:                 v0.4

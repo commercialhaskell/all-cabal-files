@@ -1,0 +1,30 @@
+
+Name:		join
+Synopsis:	Parallel Join Patterns with Guards and Propagation
+Category:       Concurrency
+Version:	0.2
+Stability:      experimental
+Cabal-Version:  >= 1.2
+License:	BSD3
+License-File:	LICENSE
+Author:		Martin Sulzmann
+Maintainer:     martin.sulzmann@gmail.com
+Description:    Parallel Join Patterns with Guards and Propagation
+homepage:       http://sulzmann.blogspot.com/2008/12/parallel-join-patterns-with-guards-and.html
+
+            
+data-files: README
+extra-source-files: Sum.hs, Santa.hs, StackJoin.hs, MergeSort.hs, GossipingGirlsinJoin.hs, BaggerProblem.hs
+
+Build-Type: Simple
+Build-Depends:	base, haskell98, stm, multisetrewrite
+Exposed-modules:     Join.Base
+                     Join.Join
+
+
+Extensions: UndecidableInstances, FlexibleInstances, TypeSynonymInstances
+            MultiParamTypeClasses, FunctionalDependencies
+
+GHC-Options: -threaded
+
+tested-with: GHC == 6.8.2

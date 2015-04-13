@@ -1,0 +1,61 @@
+Name:              hosc
+Version:           0.12
+Synopsis:          Haskell Open Sound Control
+Description:       @hosc@ implements a subset of the /Open Sound Control/
+                   byte protocol, <http://opensoundcontrol.org/>.
+                   .
+                   "Sound.OpenSoundControl" implements the actual protocol.
+                   .
+                   "Sound.OSC.Transport.FD" implements a
+                   /file descriptor/ based transport layer for @UDP@
+                   and @TCP@.
+                   .
+                   "Sound.OSC.Transport.Monad" implements a
+                   monadic interface to the @FD@ transport layer.
+                   .
+                   Composite modules are at "Sound.OSC" and "Sound.OSC.FD".
+License:           GPL
+Category:          Sound
+Copyright:         (c) Rohan Drape, Stefan Kersten and others, 2006-2012
+Author:            Rohan Drape, Stefan Kersten
+Maintainer:        rd@slavepianos.org
+Stability:         Experimental
+Homepage:          http://rd.slavepianos.org/?t=hosc
+Tested-With:       GHC == 7.6.1
+Build-Type:        Simple
+Cabal-Version:     >= 1.8
+Data-Files:        README
+
+Library
+  Build-Depends:   base == 4.*,
+                   binary,
+                   blaze-builder >= 0.3,
+                   bytestring,
+                   data-binary-ieee754,
+                   network >= 2.3,
+                   time,
+                   transformers
+  GHC-Options:     -Wall -fwarn-tabs
+  Exposed-modules: Sound.OpenSoundControl
+                   Sound.OpenSoundControl.Class
+                   Sound.OpenSoundControl.Coding.Byte
+                   Sound.OpenSoundControl.Coding.Cast
+                   Sound.OpenSoundControl.Coding.Coerce
+                   Sound.OpenSoundControl.Coding.Decode.Base
+                   Sound.OpenSoundControl.Coding.Decode.Binary
+                   Sound.OpenSoundControl.Coding.Encode.Base
+                   Sound.OpenSoundControl.Coding.Encode.Builder
+                   Sound.OpenSoundControl.Type
+                   Sound.OpenSoundControl.Coding
+                   Sound.OpenSoundControl.Time
+                   Sound.OpenSoundControl.Wait
+                   Sound.OSC
+                   Sound.OSC.FD
+                   Sound.OSC.Transport.FD
+                   Sound.OSC.Transport.FD.TCP
+                   Sound.OSC.Transport.FD.UDP
+                   Sound.OSC.Transport.Monad
+
+Source-Repository  head
+  Type:            darcs
+  Location:        http://rd.slavepianos.org/sw/hosc/

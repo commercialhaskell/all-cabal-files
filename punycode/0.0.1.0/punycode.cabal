@@ -1,0 +1,64 @@
+Name:               punycode
+Version:            0.0.1.0
+Cabal-Version:      >= 1.6
+Build-Type:         Simple
+License:            BSD3
+License-File:       LICENSE
+Copyright:          Copyright © 2011, Jon Kristensen
+Author:             Jon Kristensen
+Maintainer:         jon.kristensen@pontarius.org
+Stability:          alpha
+-- Homepage:
+Bug-Reports:        mailto:jon.kristensen@pontarius.org
+-- Package-URL:
+Synopsis:           Punycode encoder
+Description:        Punicode library to uniquely and reversibly transform a
+                    Unicode string into an ASCII string. This is a partial
+                    implementation of RFC 3492: Punycode: A Bootstring encoding
+                    of Unicode for Internationalized Domain Names in
+                    Applications (IDNA). 0.0.2.0 will ship with support for
+                    Punycode decoding. The code is currently prototyped and
+                    untested.
+Category:           Network
+Tested-With:        GHC ==7.0.2
+-- Data-Files:
+-- Data-Dir:
+-- Extra-Source-Files:
+-- Extra-Tmp-Files:
+
+Library
+  Exposed-Modules:   Data.Text.Punycode
+  Exposed:           True
+  Build-Depends:     base >= 2 && < 5, parsec, text, bytestring, text-icu
+  -- Other-Modules:
+  -- HS-Source-Dirs:
+  -- Extensions:
+  -- Build-Tools:
+  -- Buildable:
+  -- GHC-Options:
+  -- GHC-Prof-Options:
+  -- Hugs-Options:
+  -- NHC98-Options:
+  -- Includes:
+  -- Install-Includes:
+  -- Include-Dirs:
+  -- C-Sources:
+  -- Extra-Libraries:
+  -- Extra-Lib-Dirs:
+  -- CC-Options:
+  -- LD-Options:
+  -- Pkgconfig-Depends:
+  -- Frameworks:
+
+Source-Repository head
+  Type:     git
+  -- Module:
+  Location: git://github.com/jonkri/punycode.git
+  -- Subdir:
+
+Source-Repository this
+  Type:     git
+  -- Module:
+  Location: git://github.com/jonkri/punycode.git
+  Tag:      0.0.1.0
+  -- Subdir:

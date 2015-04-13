@@ -1,0 +1,53 @@
+Cabal-version:       >=1.6
+Name:                AC-Random
+Version:             0.1
+Synopsis:            A pure Haskell PRNG.
+Description:
+
+  This is a psuedo-random number generator (PRNG). It is designed to
+  replace the standard Haskell '98 PRNG from the @random@ package. It
+  has the following properties:
+  .
+  * Nicer API than @random@. (Supports all sizes of @Int@ and
+    @Word@, for example.)
+  .
+  * Much faster than @random@. (In my tests, roughly 14x faster.)
+  .
+  * Comparable quality to @random@. (Both libraries pass the \"Die
+    Harder\" suite of statistical randomness tests. In other words,
+    neither has any overly obvious pattern to the \"random\" numbers
+    it produces. Both libraries pass Die Harder with similar scores.)
+  .
+  * 100% Haskell '98 code. No compiler-specific features. No
+    external dependencies. Builds everywhere.
+  .
+  * Pure functions and simple ADTs. No mutable state, no @IO@ monad.
+    Simple API.
+  .
+  The actual algorithm is a lag-4 Multiply With Carry (MWC)
+  generator, using 32-bit arithmetic. (Should be fast on 32-bit and
+  64-bit platforms.) If my algebra is correct, its period should be
+  roughly 1.46 * 10^48. (By constrast, @random@ claims to have a
+  period of only 2.30 * 10^18.)
+  .
+  Note that this algorithm, by itself, is /not/ cryptographically
+  secure.
+  .
+  Changes:
+  .
+  * Initial release.
+
+License:             BSD3
+License-file:        License.txt
+Author:              Andrew Coppin
+Maintainer:          MathematicalOrchid@hotmail.com
+Category:            Random
+Build-type:          Simple
+
+Library
+  Exposed-modules:
+    Random.MWC.Primitive
+    Random.MWC.Pure
+    Random.MWC.Monadic
+  Build-depends:
+    base == 4.*

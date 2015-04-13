@@ -1,0 +1,80 @@
+name:        handa-geodata
+version:     0.2.0.1
+stability:   experimental
+author:      Brian W Bush
+maintainer:  code@bwbush.io
+homepage:    http://code.bwbush.io/handa-geodata/
+bug-reports: http://code.bwbush.io/handa-geodata/issues
+package-url: http://code.bwbush.io/handa-geodata/downloads
+
+category:    Data, Geography, Geometry
+synopsis:    Geographic and Geometric Data
+description:
+  This package contains functions, types, and classes for manipulating geographic and geometric data.
+  .
+  The package supports parsing of GeoJSON 1.0 < <http://geojson.org/geojson-spec.html>>.
+  .
+  The package also has rudimentary support for the Visualization Toolkit (VTK) 4.2 < <http://www.vtk.org/VTK/img/file-formats.pdf>>.  An executable is provided for converting GeoJSON files to VTK ones.
+
+license:      MIT
+license-file: LICENSE
+copyright:    (c) 2014 Brian W Bush
+
+cabal-version: >= 1.10
+build-type:    Simple
+
+data-dir:   data
+data-files: geojson/spec/Collection.geojson
+          , geojson/spec/Feature.geojson
+          , geojson/spec/FeatureCollection.geojson
+          , geojson/spec/LineString.geojson
+          , geojson/spec/MultiLineString.geojson
+          , geojson/spec/MultiPoint.geojson
+          , geojson/spec/MultiPolygon.geojson
+          , geojson/spec/Point.geojson
+          , geojson/spec/Polygon.geojson
+
+source-repository head
+  type:     mercurial
+  location: http://code.bwbush.io/handa-geodata/downloads
+
+
+library
+  exposed-modules:  Data.Geography.GeoJSON
+                    Data.Geometry.LegacyVTK
+                    Data.Geometry.LegacyVTK.Util
+  exposed:          True
+  hs-source-dirs:   src
+  build-depends:    base >= 4 && < 5
+               ,    aeson >= 0.7
+               ,    bytestring
+               ,    containers
+               ,    scientific >= 0.2.0
+  buildable:        True
+  default-language: Haskell2010
+  ghc-options:      -Wall
+
+
+executable          handa-test-geojson
+  main-is:          MainTestGeoJSON.hs 
+  hs-source-dirs:   src
+  build-depends:    base >= 4 && < 5
+               ,    aeson >= 0.7
+               ,    bytestring
+               ,    handa-geodata
+               ,    scientific >= 0.2.0
+  default-language: Haskell2010
+  ghc-options:      -Wall
+
+
+executable          handa-geojson-to-vtk
+  main-is:          MainGeoJSONtoVTK.hs 
+  hs-source-dirs:   src
+  build-depends:    base >= 4 && < 5
+               ,    aeson >= 0.7
+               ,    bytestring
+               ,    containers
+               ,    handa-geodata
+               ,    scientific >= 0.2.0
+  default-language: Haskell2010
+  ghc-options:     -Wall

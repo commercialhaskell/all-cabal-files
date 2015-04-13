@@ -1,0 +1,44 @@
+Name:                kure
+Version:             0.2.1
+Synopsis:            Combinators for Strategic Programming
+Description:	     KURE is a DSL for building rewriting DSLs.
+	 	     KURE shares combinator names and concepts with Stratego, but unlike Stratego, KURE is strongly typed.
+		     KURE is similar to Strafunski, but has a lightweight generic traversal mechanism using type families
+		     rather than SYB,
+		     and the KURE combinators are parameterized to provide the ability to have context sensitive rewrites.
+
+Category:            Language
+License:             BSD3
+License-file:        LICENSE
+Author:              Andy Gill
+Maintainer:          Andy Gill <andygill@ku.edu>
+Copyright:           (c) 2006-2008 Andy Gill
+Homepage:            http://ittc.ku.edu/~andygill/kure.php
+Stability:	     alpha
+build-type: 	     Simple
+Cabal-Version:       >= 1.6
+Extra-Source-Files:
+    test/Test.hs
+    test/Exp.hs
+    test/Id.hs
+
+Library
+  Build-Depends:        base
+  Exposed-modules:
+       Language.KURE,
+       Language.KURE.RewriteMonad, 
+       Language.KURE.Translate,
+       Language.KURE.Rewrite,
+       Language.KURE.Combinators,
+       Language.KURE.Term
+
+  Ghc-Options:  -Wall
+
+
+--Executable test1
+--  Ghc-Options:     -fhpc
+--  Main-Is:        Test.hs
+--  Hs-Source-Dirs: ., test
+--  buildable: True
+
+

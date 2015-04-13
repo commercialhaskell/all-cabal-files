@@ -1,0 +1,24 @@
+name:               refcount
+version:            0.0.1
+synopsis:           Container with element counts
+category:           Data
+license:            MIT
+author:             Ben Foppa
+stability:          Experimental
+homepage:           https://github.com/RobotGymnast/refcount
+maintainer:         benjamin.foppa@gmail.com
+build-type:         Simple
+cabal-version:      >= 1.9.2
+
+library
+    hs-source-dirs:   .
+    ghc-options:      -Wall
+    exposed-modules:  Data.Refcount
+
+    build-depends: base == 4.*
+                 , hashable == 1.2.1.*
+                 , unordered-containers == 0.2.4.*
+
+source-repository head
+  type: git
+  location: https://github.com/RobotGymnast/refcount

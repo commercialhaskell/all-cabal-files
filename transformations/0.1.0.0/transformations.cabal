@@ -1,0 +1,53 @@
+name:                transformations
+version:             0.1.0.0
+synopsis:            Generic representation of tree transformations
+description:
+  This library is based on ideas described in the paper:
+  .
+  *  Jeroen Bransen and Jose Pedro Magalhaes.
+     /Generic Representations of Tree Transformations/.
+     <http://dreixel.net/research/pdf/grtt_draft.pdf>
+
+license:             GPL-3
+license-file:        LICENSE
+author:              Jeroen Bransen and Jose Pedro Magalhaes
+maintainer:          generics@haskell.org
+-- copyright:           
+category:            Language
+build-type:          Simple
+cabal-version:       >=1.8
+
+
+extra-source-files:    examples/Datatypes.hs
+                       examples/Lang.lhs
+                       examples/Regular.hs
+                       examples/MultiRec.hs
+
+library
+  exposed-modules:
+                       -- Regular part
+                       Generics.Regular.Zipper,
+                       Generics.Regular.Functions.GOrd,
+                       Generics.Regular.Transformations.Explicit,
+                       Generics.Regular.Transformations.RewriteRules,
+                       Generics.Regular.Transformations.ZipperState,
+  
+                       -- MultiRec implementation
+                       Generics.MultiRec.Any,
+                       Generics.MultiRec.Ord,
+                       Generics.MultiRec.Transformations.ZipperState,
+                       Generics.MultiRec.Transformations.RewriteRules,
+                       Generics.MultiRec.Transformations.Explicit,
+
+                       -- Rewriting library for MultiRec
+                       Generics.MultiRec.HZip,
+                       Generics.MultiRec.LR,
+                       Generics.MultiRec.Rewriting,
+                       Generics.MultiRec.Rewriting.Machinery,
+                       Generics.MultiRec.Rewriting.Rules
+
+  -- other-modules:       
+  build-depends:       base >= 4 && < 5, mtl >= 2.1,
+                       regular >= 0.3, rewriting >= 0.2,
+                       multirec >= 0.7.3, zipper >= 0.4.2,
+                       parsec >= 3.1, containers >= 0.1

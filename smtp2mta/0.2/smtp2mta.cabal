@@ -1,0 +1,42 @@
+name:            smtp2mta
+version:         0.2
+cabal-version:   >= 1.8
+license:         OtherLicense
+license-file:    COPYING
+category:        Network
+copyright:       © 2012 Stephen Paul Weber
+author:          Stephen Paul Weber <singpolyma@singpolyma.net>
+maintainer:      Stephen Paul Weber <singpolyma@singpolyma.net>
+stability:       experimental
+tested-with:     GHC == 7.0.3
+synopsis:        Listen for SMTP traffic and send it to an MTA script
+homepage:        https://github.com/singpolyma/sock2stream
+bug-reports:     https://github.com/singpolyma/sock2stream/issues
+build-type:      Simple
+description:
+        This is a simple SMTP server that forwards all mail to a
+        sendmail-compatible script.
+        .
+        The primary intended use is to allow broken MUAs that expect to always
+        send over SMTP to send with a standard MTA script.  (This allows one
+        to authenticate with a mailserver using SSH keys, for example.)
+        .
+        smtp2mta can be run as a standalone server, or can serve connections
+        from behind inetd.
+
+extra-source-files:
+        README
+        example.sh
+
+executable smtp2mta
+        main-is: smtp2mta.hs
+
+        build-depends:
+                base == 4.*,
+                haskell98,
+                network,
+                process
+
+source-repository head
+        type:     git
+        location: git://github.com/singpolyma/smtp2mta.git

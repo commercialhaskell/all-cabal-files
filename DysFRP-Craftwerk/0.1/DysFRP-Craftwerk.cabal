@@ -1,0 +1,18 @@
+Name: DysFRP-Craftwerk
+Version: 0.1
+License: BSD3
+License-File: LICENSE
+Author: Marek Materzok
+Maintainer: Marek Materzok
+Build-Type: Simple
+Stability: experimental
+Cabal-Version: >= 1.2
+Homepage: https://github.com/tilk/DysFRP
+Category: FRP
+Synopsis: dysFunctional Reactive Programming on Craftwerk
+Description: Simple Craftwerk bindings for DysFRP.
+
+Library
+    Build-Depends: base >= 4 && < 5, cairo, gtk, containers, craftwerk, craftwerk-gtk, DysFRP, DysFRP-Cairo
+    Exposed-modules: Control.DysFRP.Craftwerk
+

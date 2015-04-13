@@ -1,0 +1,15 @@
+name:           pcap
+version:        0.2
+license:        BSD4
+license-file:   LICENSE
+synopsis:       pcap interface
+Description:	FFI Wrapper around libpcap
+Maintainer:	    nickburlett@mac.com, dominic.steinitz@blueyonder.co.uk
+Category:	    Network
+exposed-modules:
+                Network.Pcap
+Build-Depends:   
+				base, network, haskell98
+extensions:     ForeignFunctionInterface
+ghc-options:    -fglasgow-exts
+

@@ -1,0 +1,27 @@
+name:                watcher
+version:             0.0.3.0
+synopsis:            Opinionated filesystem watcher
+license:             MIT
+license-file:        LICENSE
+author:              So8res
+description:         A filesystem watcher. Triggers added/changed/removed events
+                     when the filesystem changes. Can cache in an SQL database
+                     and bring itself back up to date after long periods of
+                     downtime.
+maintainer:          nate@so8r.es
+category:            System
+build-type:          Simple
+cabal-version:       >=1.10
+
+library
+  default-language: Haskell2010
+  exposed-modules:     Watcher
+  build-depends:       base ==4.5.*,
+                       basic-prelude ==0.3.*,
+                       containers ==0.4.*,
+                       system-fileio ==0.3.*,
+                       system-filepath ==0.4.*,
+                       hinotify ==0.3.*
+  hs-source-dirs:      src
+  ghc-options:         -Wall -rtsopts
+  ghc-prof-options:    -auto-all

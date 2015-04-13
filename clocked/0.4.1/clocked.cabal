@@ -1,0 +1,59 @@
+Name:                clocked
+Version:             0.4.1
+Synopsis:            timer functionality to clock IO commands
+Description:         clocked is a library that allows you to clock IO-operations. You can use it to clock the rendering of frames, the calculation of steps in a physics engine, the triggering of musical events in a real-time system, etc.
+Homepage:            http://patch-tag.com/r/shahn/clocked/home
+License:             LGPL-3
+License-file:        LICENSE
+Author:              Sönke Hahn
+Maintainer:          shahn@joyridelabs.de
+Category:            Concurrency
+Build-type:          Simple
+
+Cabal-version:       >=1.8
+
+extra-source-files:
+    README
+
+source-repository head
+  type:     darcs
+  location: http://patch-tag.com/r/shahn/clocked
+
+Library
+    exposed-modules:
+        Clocked
+    other-modules:
+        Clocked.Common,
+        Clocked.WinTimePeriod
+
+    ghc-options:
+        -O3
+
+    hs-source-dirs:
+        -- choosing qt backend
+        src, src/qt-heuristic-seq
+    c-sources:
+        src/qt-heuristic-seq/clocked.cpp
+    if os(mingw32)
+        c-sources:
+            src/Clocked/WinTimePeriod.c
+    build-depends:
+        base >= 4 && < 5,
+        transformers,
+        MonadCatchIO-transformers,
+        containers
+    if !os(darwin)
+        build-depends:
+            clock
+
+    extra-libraries:
+        stdc++
+    if os(linux)
+        PkgConfig-Depends:
+            QtCore
+    if os(mingw32)
+        extra-libraries:
+            QtCore4
+    if os(darwin)
+        frameworks:
+            QtCore

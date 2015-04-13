@@ -1,0 +1,52 @@
+name:             profunctor-extras
+category:         Control, Categories
+version:          3.1
+license:          BSD3
+cabal-version:    >= 1.6
+license-file:     LICENSE
+author:           Edward A. Kmett
+maintainer:       Edward A. Kmett <ekmett@gmail.com>
+stability:        experimental
+homepage:         http://github.com/ekmett/profunctor-extras/
+bug-reports:      http://github.com/ekmett/profunctor-extras/issues
+copyright:        Copyright (C) 2011 Edward A. Kmett
+synopsis:         Profunctor extras
+description:
+  This package provides a number of utilities and constructions that arise
+  when working with profunctors that require minor extensions to Haskell 98.
+build-type:       Simple
+extra-source-files:
+  .travis.yml
+  .vim.custom
+  .ghci
+  travis-cabal-apt-install
+
+source-repository head
+  type: git
+  location: git://github.com/ekmett/profunctor-extras.git
+
+library
+  hs-source-dirs: src
+
+  other-extensions:
+    GADTs
+    FlexibleInstances
+    UndecidableInstances
+    MultiParamTypeClasses
+
+  build-depends:
+    base                == 4.*,
+    comonad             == 3.0.*,
+    semigroupoids       == 3.0.*,
+    semigroupoid-extras == 3.0.*,
+    profunctors         >= 3.1.2 && < 3.2,
+    tagged              >= 0.4.4 && < 0.5,
+    transformers        >= 0.2   && < 0.4
+
+  exposed-modules:
+    Data.Profunctor.Composition
+    Data.Profunctor.Collage
+    Data.Profunctor.Rep
+    Data.Profunctor.Trace
+
+  ghc-options:      -Wall

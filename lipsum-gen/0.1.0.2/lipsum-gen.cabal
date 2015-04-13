@@ -1,0 +1,35 @@
+name:                lipsum-gen
+version:             0.1.0.2
+synopsis:            Generators for random sequences of English-like nonsense 
+                     text. 
+description:         The generators in this package are based on syllable 
+                     statistics from ~44000 English words. 
+
+                     The words have been split into syllables, which are 
+                     categorized into initials, intermediates, and finals. 
+                     Single-syllable words have been removed.   
+license:             BSD3
+license-file:        LICENSE
+author:              Peter Holm
+maintainer:          peter@insella.se
+bug-reports:         http://github.com/evilcandybag/lipsum-gen/issues          
+category:            Text, Testing 
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+
+source-repository head
+    type:       git
+    location:   https://github.com/evilcandybag/lipsum-gen.git
+
+library
+  exposed-modules: 
+    Text.Lipsum.Gen
+    Text.Lipsum.Gen.Initials
+    Text.Lipsum.Gen.Intermediates
+    Text.Lipsum.Gen.Finals
+         
+  build-depends:       base >=4.6 && < 5,
+                       QuickCheck == 2.7.*
+  hs-source-dirs:      
+  default-language:    Haskell2010

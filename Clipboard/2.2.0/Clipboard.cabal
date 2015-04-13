@@ -1,0 +1,31 @@
+Name:           Clipboard
+Version:        2.2.0
+Author:         Sævar Berg, Daniel Díaz
+Homepage:       http://sites.google.com/site/dheltadiaz/packages/clipboard
+License:        BSD3
+License-file:   license
+Maintainer:     Daniel Diaz <dhelta.diaz@gmail.com>
+Category:       System
+Synopsis:       System clipboard interface.
+Description:    
+         /Clipboard/ is a package that allows you to interact with the system clipboard easily.
+         .
+         Currently, only in a Windows system.
+         .
+         Changes from last version:
+         .
+         * Added compatibility with the unicode character set with 'getClipboardString'.
+         .
+         * Unicode character set is the new standard for 'setClipboardString'.
+         .
+         * Fixed the function 'modifyClipboardString'.
+Build-type:     Simple
+Cabal-version:  >= 1.6
+Source-repository head
+ type: git
+ location: git://github.com/DheltaDiaz/Clipboard.git
+
+Library
+  Exposed-modules: System.Clipboard
+  Build-depends:  base == 4.*
+                , Win32 == 2.2.*

@@ -1,0 +1,33 @@
+Name:            iCalendar
+Version:         0.0
+Synopsis:        Parser for iCalendar format (RFC2445)
+
+Description: Parser for the iCalendar format (version 2.0, RFC2445).
+             .  
+             Features:
+             .
+               * Unfolds folded lines (see RFC)
+             . 
+               * Supports all IANA iCalendar tokens
+             .
+             /Warning!/  This is version 0.0, important things are missing
+             .   
+               * Property and parameter values are not parsed, but kept as in the file.
+             . 
+               * There are no restrictions on the properties components can have.
+             .  
+               * Line unfolding causes error messages to report the wrong line.
+             . 
+             This package is meant to grow to a full-fledged data definition, printer and
+             parser for the iCalendar format.  But that will probably take some time.  So,
+             if you've come here because you need this, please e-mail me (Eelco Lempsink).
+
+Category:        Text
+License:         BSD3
+License-file:    LICENSE
+Copyright:       (c) Tupil
+Author:          Eelco Lempsink <eml+hackage@tupil.com>
+Maintainer:      Eelco Lempsink <eml+hackage@tupil.com>
+Exposed-Modules: Text.ICalendar.Parser
+Build-Type:      Simple
+Build-Depends:   base, haskell98, parsec >=2 && <3

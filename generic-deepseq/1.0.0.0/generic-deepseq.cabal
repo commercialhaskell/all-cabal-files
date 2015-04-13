@@ -1,0 +1,44 @@
+Name:		generic-deepseq
+Version:	1.0.0.0
+License-File:	LICENSE
+License:	BSD3
+Author:		Maxime Henrion
+Copyright:	2012, Maxime Henrion
+Maintainer:	Maxime Henrion <mhenrion@gmail.com>
+Bug-Reports:	http://bitbucket.org/mumux/generic-deepseq/issues/
+Category:	Control, Generics
+Synopsis:	Generic deep evaluation of data structures
+Build-Type:	Simple
+Cabal-Version:	>= 1.6
+Tested-with:	GHC ==7.4.1
+Description:
+  This package provides a 'deepseq' function analogous to 'seq', except that
+  it traverses data structures deeply, and not just up to head normal form.
+  .
+  Using lists as an example:
+  .
+  > > [1,2,undefined] `seq` 3
+  > 3
+  .
+  Whereas with 'deepseq':
+  .
+  > > [1,2,undefined] `deepseq` 3
+  > *** Exception: Prelude.undefined
+  .
+  Unlike the @deepseq@ package, this implementation is based on the
+  "GHC.Generics" framework as found in GHC >= 7.2, so that it can generate
+  instances automatically for any datatype that has a 'Generic' instance,
+  without further code.
+  .
+  > data MyType = MyType String Int (Maybe Double)
+  >   deriving Generic
+  > instance DeepSeq MyType
+
+Source-Repository head
+  Type:			mercurial
+  Location:		http://bitbucket.org/mumux/generic-deepseq/
+
+Library
+  Build-Depends:	base >= 3 && < 5, ghc-prim >= 0.2
+  Exposed-Modules:	Control.DeepSeq
+  GHC-Options:		-Wall -O2

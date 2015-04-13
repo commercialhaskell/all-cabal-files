@@ -1,0 +1,93 @@
+Name: bindings-apr
+Synopsis: Low level bindings to Apache Portable Runtime (APR)
+Description:
+        Bindings to APR: <http://apr.apache.org/>
+Version: 0.1
+License: PublicDomain
+License-File: COPYING
+Author: PHO <pho at cielonegro dot org>
+Maintainer: PHO <pho at cielonegro dot org>
+Stability: experimental
+Homepage: http://cielonegro.org/Bindings-APR.html
+Category: FFI
+Tested-With: GHC == 6.12.3
+Cabal-Version: >= 1.6
+Build-Type: Simple
+Extra-Source-Files:
+    COPYING
+
+Source-Repository head
+    Type: git
+    Location: git://git.cielonegro.org/bindings-apr.git
+
+Library
+    Build-Depends:
+        base         == 4.2.*,
+        bindings-DSL == 1.0.*
+
+    PkgConfig-Depends:
+        apr-1 >= 1.3
+
+    Exposed-Modules:
+        Bindings.APR
+        Bindings.APR.Allocator.Types
+        Bindings.APR.Atomic
+        Bindings.APR.DSO
+        Bindings.APR.Env
+        Bindings.APR.ErrNo
+        Bindings.APR.File.IO
+        Bindings.APR.File.Info
+        Bindings.APR.File.Types
+        Bindings.APR.FNMatch
+        Bindings.APR.General
+        Bindings.APR.GetOpt
+        Bindings.APR.Global.Mutex
+        Bindings.APR.Hash
+        Bindings.APR.Lib
+        Bindings.APR.MMap
+        Bindings.APR.Network.IO
+        Bindings.APR.Poll
+        Bindings.APR.Pools
+        Bindings.APR.Portable
+        Bindings.APR.Proc.Mutex
+        Bindings.APR.Random
+        Bindings.APR.Shm
+        Bindings.APR.Signal
+        Bindings.APR.Strings
+        Bindings.APR.Support
+        Bindings.APR.Tables
+        Bindings.APR.Thread.Cond
+        Bindings.APR.Thread.Mutex
+        Bindings.APR.Thread.Proc
+        Bindings.APR.Thread.RWLock
+        Bindings.APR.Time
+        Bindings.APR.User
+        Bindings.APR.Version
+        Bindings.APR.Want
+
+    C-Sources:
+        cbits/helper_apr.c
+        cbits/helper_apr_errno.c
+        cbits/helper_apr_general.c
+        cbits/helper_apr_global_mutex.c
+        cbits/helper_apr_pools.c
+        cbits/helper_apr_lib.c
+        cbits/helper_apr_mmap.c
+        cbits/helper_apr_network_io.c
+        cbits/helper_apr_portable.c
+        cbits/helper_apr_signal.c
+        cbits/helper_apr_time.c
+        cbits/helper_apr_thread_proc.c
+        cbits/helper_apr_user.c
+        cbits/helper_apr_version.c
+
+    Include-Dirs:
+        include
+
+    Install-Includes:
+        bindings.apr.inherit.h
+        bindings.apr.pools.h
+        bindings.apr.ring.h
+
+    Extensions:
+        ForeignFunctionInterface

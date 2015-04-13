@@ -1,0 +1,18 @@
+Name: data-accessor
+Description:
+    This module provides a simple abstract data type for
+    a piece of a data stucture that can be read from and
+    written to.  It provides an automatic Template Haskell
+    routine to scour data type definitions and generate
+    accessor objects for them automatically.
+Version: 0.0.1
+Stability: experimental
+Synopsis: Automatically generate composable accessors for data types.
+License: LGPL
+Category: Data
+Author: Luke Palmer
+Maintainer: lrpalmer@gmail.com
+Build-Type: Simple
+Build-Depends: base, template-haskell, mtl
+Exposed-Modules: Data.Accessor
+Extensions: CPP, TemplateHaskell

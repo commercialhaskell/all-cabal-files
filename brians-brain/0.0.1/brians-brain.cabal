@@ -1,0 +1,27 @@
+name:          brians-brain
+version:       0.0.1
+category:      Game
+synopsis:      A Haskell implementation of the Brian's Brain cellular automaton
+
+description:   The Brian's Brain cellular automaton implemented in just 49 lines
+               of Haskell, with fancy GUI and everything.
+
+homepage:      http://github.com/willdonnelly/brians-brain
+bug-reports:   http://github.com/willdonnelly/brians-brain/issues
+stability:     alpha
+author:        Will Donnelly
+maintainer:    Will Donnelly <will.donnelly@gmail.com>
+copyright:     (c) 2009 Will Donnelly
+license:       BSD3
+license-file:  LICENSE
+
+build-type:    Simple
+cabal-version: >= 1.6
+
+executable "brians-brain"
+  main-is:       BriansBrain.hs
+  build-depends: base >= 4 && < 5, parallel, SDL, random, array
+
+source-repository head
+  type:      git
+  location:  git://github.com/willdonnelly/brians-brain.git

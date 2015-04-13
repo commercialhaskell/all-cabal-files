@@ -1,0 +1,46 @@
+name: acme-now
+version: 1.0.0
+cabal-version: -any
+build-type: Simple
+license: PublicDomain
+license-file: ""
+copyright:
+maintainer: sjurberengal@gmail.com
+build-depends: base >=4.1 && <5, time <=1.1.3 && <1.2
+stability: Stable
+homepage:
+package-url:
+bug-reports:
+synopsis: An interface to the philosophical and metaphysical "now"
+description: The ancient greek philosopher Parmenides provided a proof that change is impossible. It therefore stands to reason that there is only one moment in time, and it never changes. This library provides an interface to that moment, allowing it to be used in computations.
+category: Acme
+author: Sjur Gjøstein Karevoll
+tested-with:
+data-files:
+data-dir: ""
+extra-source-files:
+extra-tmp-files:
+exposed-modules: Acme.Time.Now
+exposed: True
+buildable: True
+build-tools:
+cpp-options:
+cc-options:
+ld-options:
+pkgconfig-depends:
+frameworks:
+c-sources:
+extensions:
+extra-libraries:
+extra-lib-dirs:
+includes:
+install-includes:
+include-dirs:
+hs-source-dirs: scr
+other-modules:
+ghc-prof-options:
+ghc-shared-options:
+ghc-options:
+hugs-options:
+nhc98-options:
+jhc-options:

@@ -1,0 +1,39 @@
+name:             hspec-experimental
+version:          0.1.0
+license:          MIT
+license-file:     LICENSE
+copyright:        (c) 2012 Simon Hengel
+author:           Simon Hengel <sol@typeful.net>
+maintainer:       Simon Hengel <sol@typeful.net>
+build-type:       Simple
+cabal-version:    >= 1.8
+category:         Testing
+stability:        experimental
+synopsis:         An experimental DSL for testing on top of Hspec
+description:      /Note:/ This is experimental!  If you are looking for a
+                  stable solution for testing Haskell code, try Hspec:
+                  <http://hspec.github.com/>
+
+source-repository head
+  type: git
+  location: https://github.com/sol/hspec-experimental
+
+library
+  ghc-options:      -Wall
+  hs-source-dirs:   src
+  exposed-modules:  Test.Hspec.Experimental
+  build-depends:
+      base        == 4.*
+    , hspec       == 1.4.*
+    , QuickCheck  >= 2.5
+    , HUnit
+
+test-suite spec
+  type:             exitcode-stdio-1.0
+  ghc-options:      -Wall
+  hs-source-dirs:   test
+  main-is:          Spec.hs
+  build-depends:
+      base
+    , hspec-experimental
+    , hspec-meta

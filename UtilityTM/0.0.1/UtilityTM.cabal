@@ -1,0 +1,29 @@
+Name:               UtilityTM
+Version:            0.0.1
+License:            BSD3
+License-File:       LICENSE
+Author:             Tony Morris <ʇǝu˙sıɹɹoɯʇ@ןןǝʞsɐɥ>
+Maintainer:         Tony Morris
+Synopsis:           Utility functions that are missing from the standard library
+Category:           Development
+Description:        Utility functions that are missing from the standard library
+Homepage:           https://bitbucket.org/dibblego/utility-tm/
+Cabal-version:      >= 1.2
+Build-Type:         Simple
+
+Flag small_base
+  Description:      Choose the new, split-up base package.
+
+Library
+  Build-Depends:
+                    base < 5 && >= 3
+
+  GHC-Options:
+                    -Wall
+
+  Hs-Source-Dirs:
+                    src
+
+  Exposed-Modules:
+                      Control.Monad.TM
+

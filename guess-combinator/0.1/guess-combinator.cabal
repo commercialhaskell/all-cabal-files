@@ -1,0 +1,21 @@
+Name:                guess-combinator
+Version:             0.1
+Synopsis:            Generate simple combinators given their type
+description:         Based on De-typechecker: converting from a type to a term
+                     by <oleg at pobox.com>
+                     http://www.haskell.org/pipermail/haskell/2005-March/015423.html
+Homepage:            http://code.atnnn.com/project/guess
+License:             BSD3
+License-file:        LICENSE
+Author:              Etienne Laurin
+Maintainer:          Etienne Laurin <etienne@atnnn.com>
+Category:            Development
+Build-type:          Simple
+Cabal-version:       >=1.2
+
+
+Library
+  Exposed-modules: Guess.Combinator
+  Build-depends: HList,
+                 base >= 2 && < 5
+  Other-modules: Guess.Combinator.Lib

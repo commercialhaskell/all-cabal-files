@@ -1,0 +1,24 @@
+Name:          pkggraph
+Version:       0.1
+Cabal-version: >= 1.6
+License:       BSD3
+License-file:  LICENSE
+Maintainer:    Robin Green <greenrd@greenrd.org>
+Build-type:    Simple
+Copyright:     2009 Robin Green
+Category:      Development
+Synopsis:      Package dependency graph for installed packages
+Description:   Presents the package dependencies of all installed packages maintained by a given
+               set of maintainers as a "dot" graph
+Bug-reports:   mailto:greenrd@greenrd.org
+Stability:     experimental
+Tested-with:   GHC == 6.10.2
+
+Source-repository head
+    Type:      darcs
+    Location:  http://patch-tag.com/publicrepos/pkggraph
+
+Executable pkggraph
+    Build-depends:   base, Cabal, split
+    Main-is:         PkgGraph.hs
+    GHC-options:     -Wall

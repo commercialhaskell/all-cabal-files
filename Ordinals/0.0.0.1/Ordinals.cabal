@@ -1,0 +1,17 @@
+name:                Ordinals
+version:             0.0.0.1
+synopsis:            Ordinal arithmetic
+description:         Ordinal arithmetic implementation up to epsilon_0.
+                     Currently based on interated multiset representation,
+                     planning to add CNF based implenetation.
+category:            Math
+license:             BSD3
+license-file:        LICENSE
+author:              Ki Yung Ahn
+maintainer:          kya@pdx.edu
+homepage:            https://patch-tag.com/r/kyagrd/Ordinals/
+build-depends:       base < 5
+build-type:          Simple
+ghc-options:         -Wall
+exposed-modules:     Math.Ordinals.MultiSet
+ghc-prof-options:    -auto-all

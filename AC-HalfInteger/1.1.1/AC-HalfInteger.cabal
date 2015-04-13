@@ -1,0 +1,24 @@
+Cabal-Version: >= 1.6
+Name:          AC-HalfInteger
+Version:       1.1.1
+Stability:     Experimental
+Synopsis:      Efficient half-integer type.
+
+Description:
+
+  This Haskell library is a simple implementation of
+  /half-integers/. That is, it provides a type that can
+  represent both normal integers and integers plus a half.
+
+Category:      Data, Math, Numerical
+License:       BSD3
+License-file:  Licence.txt
+Author:        Andrew Coppin
+Maintainer:    MathematicalOrchid@hotmail.com
+Build-Type:    Simple
+Tested-With:   GHC == 6.10.3
+
+Library
+  Exposed-modules: Data.HalfInteger
+  Build-Depends:   base >= 4 && < 5
+  HS-Source-Dirs:  .

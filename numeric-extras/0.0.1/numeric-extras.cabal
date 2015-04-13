@@ -1,0 +1,16 @@
+Name:              numeric-extras
+Version:           0.0.1
+Synopsis:          Useful tools from the C standard library
+Homepage:          http://patch-tag.com/r/ekmett/numeric-extras
+License:           BSD3
+License-file:      LICENSE
+Author:            Edward Kmett
+Maintainer:        ekmett@gmail.com
+Category:          Math
+Build-type:        Simple
+Cabal-version:     >=1.6
+
+Library
+  Exposed-modules: Numeric.Extras
+  Build-depends:   base >= 4 && < 5
+  GHC-Options:     -Wall -O2

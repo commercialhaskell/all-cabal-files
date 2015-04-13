@@ -1,0 +1,34 @@
+Name:                   pretty-ncols
+Version:                0.1
+Synopsis:               A implementation of multi-column layout w/ Text.PrettyPrint
+Description:            pretty-ncols allows for the following layouts to work nicely, so that:
+
+                        One  Two  Three
+                        1    2    3
+                        a    b    c
+
+                        can be written as:
+       
+                        cols_rowMajor = map text $ [["One", "Two", "Three"], ["1", "2","3"], ["a","b","c"]]
+                        cols_colMajor = transpose $ cols_rowMajors
+
+                        asColumns cols_rowMajor
+
+                        -- or
+
+                        asColumns cols_colMajor
+
+
+Category:               Text
+License:                BSD3
+License-file:           LICENSE
+Author:                 Joe Fredette
+Maintainer:             jfredett@gmail.com
+Build-Type:             Simple
+Cabal-Version:          >=1.6
+
+Library 
+        Build-Depends:          base,
+                                pretty >= 1.0.1.0
+
+        Exposed-Modules:        Text.PrettyPrint.NCol 

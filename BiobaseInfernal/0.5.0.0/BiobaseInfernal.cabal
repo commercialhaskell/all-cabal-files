@@ -1,0 +1,46 @@
+name:           BiobaseInfernal
+version:        0.5.0.0
+author:         Christian Hoener zu Siederdissen
+maintainer:     choener@tbi.univie.ac.at
+homepage:       http://www.tbi.univie.ac.at/~choener/
+copyright:      Christian Hoener zu Siederdissen, 2011
+category:       Bioinformatics
+synopsis:       Infernal data structures and tools
+license:        GPL-3
+license-file:   LICENSE
+build-type:     Simple
+stability:      experimental
+cabal-version:  >= 1.4.0
+description:
+                Provides import and export facilities for Infernal/Rfam data
+                formats. We include Stockholm, CM, verbose Infernal results,
+                and tabulated Infernal results. Some small tools are included.
+                .
+                With the BioHaskell library split, this package is officially
+                back! And the package is not feature-complete yet, take the
+                above as a will-include-soon list.
+
+extra-source-files:
+
+library
+  build-depends:
+    base >3 && <5,
+    attoparsec,
+    attoparsec-enumerator,
+    bytestring,
+    containers,
+    enumerator,
+    transformers,
+    tuple
+
+  exposed-modules:
+    Biobase.Infernal.Taxonomy
+    Biobase.Infernal.Taxonomy.Import
+    Biobase.Infernal.VerboseHit
+    Biobase.Infernal.VerboseHit.Export
+    Biobase.Infernal.VerboseHit.Import
+    Biobase.Infernal.VerboseHit.Internal
+
+  ghc-options:
+    -O2
+

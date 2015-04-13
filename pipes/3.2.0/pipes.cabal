@@ -1,0 +1,72 @@
+Name: pipes
+Version: 3.2.0
+Cabal-Version: >=1.8.0.2
+Build-Type: Simple
+License: BSD3
+License-File: LICENSE
+Copyright: 2012, 2013 Gabriel Gonzalez
+Author: Gabriel Gonzalez
+Maintainer: Gabriel439@gmail.com
+Bug-Reports: https://github.com/Gabriel439/Haskell-Pipes-Library/issues
+Synopsis: Compositional pipelines
+Description:
+  \"Coroutines done right\".  This library generalizes iteratees and coroutines
+  simply and elegantly.
+  .
+  Advantages over traditional iteratee\/coroutine implementations:
+  .
+  * /Concise API/: Use three simple commands: ('>->'), 'request', and 'respond'
+  .
+  * /Bidirectionality/: Implement duplex channels
+  .
+  * /Blazing fast/: Implementation tuned for speed
+  .
+  * /Elegant semantics/: Use practical category theory
+  .
+  * /Extension Framework/: Mix and match extensions and create your own
+  .
+  * /ListT/: Correct implementation of ListT that interconverts with pipes
+  .
+  * /Lightweight Dependency/: @pipes@ depends only on @transformers@ and
+    compiles rapidly
+  .
+  * /Extensive Documentation/: Second to none!
+  .
+  Import "Control.Proxy" to use the library.
+  .
+  Read "Control.Proxy.Tutorial" for a really extensive tutorial.
+Category: Control, Pipes, Proxies
+Source-Repository head
+    Type: git
+    Location: https://github.com/Gabriel439/Haskell-Pipes-Library
+
+Library
+    Build-Depends:
+        base         >= 4       && < 5  ,
+        mmorph       >= 1.0.0   && < 1.1,
+        transformers >= 0.2.0.0 && < 0.4
+    Exposed-Modules:
+        Control.Pipe,
+        Control.Proxy,
+        Control.Proxy.Class,
+        Control.Proxy.Core,
+        Control.Proxy.Core.Fast,
+        Control.Proxy.Core.Correct,
+        Control.Proxy.ListT,
+        Control.Proxy.Morph,
+        Control.Proxy.Pipe,
+        Control.Proxy.Synonym,
+        Control.Proxy.Trans,
+        Control.Proxy.Trans.Codensity,
+        Control.Proxy.Trans.Either,
+        Control.Proxy.Trans.Identity,
+        Control.Proxy.Trans.Maybe,
+        Control.Proxy.Trans.Reader,
+        Control.Proxy.Trans.State,
+        Control.Proxy.Trans.Writer,
+        Control.Proxy.Tutorial,
+        Control.Proxy.Prelude,
+        Control.Proxy.Prelude.Base,
+        Control.Proxy.Prelude.IO,
+        Control.Proxy.Prelude.Kleisli
+    GHC-Options: -O2

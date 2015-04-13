@@ -1,0 +1,32 @@
+Name:           daemonize-doublefork
+Version:        0.1.1
+Cabal-Version:  >= 1.8
+License:        GPL-3
+License-File:   LICENSE
+Stability:      deprecated
+Author:         Alexandru Scvortov <scvalex@gmail.com>
+Maintainer:     scvalex@gmail.com
+Homepage:       https://github.com/scvalex/daemonize-doublefork
+Category:       Web
+Synopsis:       Start background daemons by double-forking
+Build-type:     Simple
+Description:
+        This package has been deprecated in favour of
+        <http://hackage.haskell.org/package/daemons>.
+        .
+        Start background daemons by double-forking.
+        .
+        See "System.Posix.Daemon" for documentation.
+
+Extra-source-files:     Makefile
+
+Data-files:             README.md
+
+Source-repository head
+  Type:                 git
+  Location:             git://github.com/scvalex/daemonize-doublefork.git
+
+Library
+  Build-Depends:        base >= 4 && <5, unix, directory
+  Exposed-modules:      System.Posix.Daemon
+  Ghc-options:          -Wall

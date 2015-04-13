@@ -1,0 +1,50 @@
+Name:                pathtype
+Version:             0.0.1
+Synopsis:            Type-safe replacement for System.FilePath etc
+Description:         This module provides type-safe access to filepath manipulations.
+                     .
+		     It is designed to be imported instead of 'System.FilePath' and
+		     'System.Directory' and is intended to provide versions of
+		     functions from those modules which have equivalent functionality
+		     but are more typesafe.
+                     .
+		     The heart of this module is the @Path ar fd@ abstract type which
+		     represents file and directory paths. The idea is that there are
+		     two phantom type parameters - the first should be 'Abs' or 'Rel',
+		     and the second 'File' or 'Dir'. A number of type synonyms are
+		     provided for common types:
+                     .
+                     > type AbsFile    = Path Abs File
+                     > type RelFile    = Path Rel File
+                     > type AbsDir     = Path Abs Dir
+                     > type RelDir     = Path Rel Dir
+                     > type RelPath fd = Path Rel fd
+                     > type DirPath ar = Path ar Dir
+                     .
+		     The type of the 'combine' (aka '</>') function gives the idea:
+                     .
+		     > (</>) :: DirPath ar -> RelPath fd -> Path ar fd
+                     .
+		     Together this enables us to give more meaningful types to
+		     a lot of the functions, and (hopefully) catch a bunch more
+		     errors at compile time.
+                     .
+		     The basic API (and properties satisfied) are heavily influenced
+		     by Neil Mitchell's 'System.FilePath' module.
+                     .
+		     WARNING -- THE API IS NOT YET STABLE -- WARNING
+
+Stability:           experimental
+License:             BSD3
+Category:            System
+License-file:        LICENSE
+Author:              Ben Moseley
+Maintainer:          ben@moseley.name
+Build-Type:          Simple
+Cabal-Version:       >=1.2
+
+Library
+  Build-Depends:     base >= 3 && < 5, directory >= 1 && < 2, QuickCheck >= 1.2 && < 2
+  Exposed-modules:
+    System.Path
+  Extensions:        EmptyDataDecls, PatternGuards, FlexibleInstances, Rank2Types

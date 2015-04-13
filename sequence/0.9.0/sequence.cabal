@@ -1,0 +1,22 @@
+Name:                sequence
+Version:             0.9.0
+Synopsis:	         A type class for sequences and various sequence data structures.
+Description:         A type class for sequences and various sequence data structures.
+License:             BSD3
+License-file:        LICENSE
+Author:              Atze van der Ploeg
+Maintainer:          atzeus@gmail.com
+Homepage:            https://github.com/atzeus/sequence
+Build-Type:          Simple
+Cabal-Version:       >=1.6
+Data-files:          ChangeLog
+Category:            Data, Data Structures
+Tested-With:         GHC==7.6.3
+Library
+  Build-Depends: base >= 2 && <= 6
+  Exposed-modules: Data.SequenceClass, Data.Sequence.Queue, Data.Sequence.FastQueue, Data.Sequence.FastCatQueue,  Data.Sequence.ToCatQueue
+  Extensions:	
+
+source-repository head
+    type:     git
+    location:  https://github.com/atzeus/type-aligned

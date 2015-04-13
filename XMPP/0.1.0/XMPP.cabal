@@ -1,0 +1,26 @@
+Name:                XMPP
+Version:             0.1.0
+Synopsis:            XMPP library
+Category:            Network
+Description:         XMPP library
+License:             BSD3
+License-file:        COPYING
+Author:              Magnus Henoch, Kagami <newanon@yandex.ru>
+Maintainer:          newanon@yandex.ru
+Homepage:            http://www.dtek.chalmers.se/~henoch/text/hsxmpp.html
+Build-Type:          Simple
+Cabal-Version:       >=1.2
+
+Data-Files:          README, report.txt
+Extra-Source-Files:  install.sh
+
+Library
+  Exposed-Modules:   Network.XMPP, Network.XMPP.MUC
+
+  Other-modules:     Network.XMPP.Auth, Network.XMPP.JID,
+                     Network.XMPP.Stanzas, Network.XMPP.TCPConnection,
+                     Network.XMPP.XMLParse, Network.XMPP.XMPPConnection,
+                     Network.XMPP.XMPPMonad, Network.XMPP.MyDebug
+
+  Build-depends:     base >= 4.0 && < 5, haskell98, random, utf8-string,
+                     network, parsec, mtl

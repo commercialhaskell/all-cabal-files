@@ -1,0 +1,33 @@
+Name:              local-search 
+Version:           0.0.1
+Synopsis:          AA first attempt at generalised local search within Haskell, for applications in combinatorial optimisation. 
+Description:       This library represents a first attempt at creating a generalised library for
+                   local (non-exhaustive) search in Haskell.  It is based on work presented to
+                   IFL2010, a draft of which is currently available on the homepage. The library
+                   models local search space using a rose tree, with child nodes forming the
+                   neighbourhood of any solution. The tree can then be transformed by various
+                   combinators to implement different searching strategies; the result is then
+                   "navigated" to yield a sequence of solutions. 
+Stability:         experimental
+Category:          Control, Optimisation, Local Search
+Author:            Richard Senington & David Duke
+License:           GPL
+license-file:      LICENSE
+Copyright:         Copyright (c) 2010 Richard Senington
+Homepage:          http://www.comp.leeds.ac.uk/sc06r2s/Projects/HaskellLocalSearch
+Maintainer:        sc06r2s@leeds.ac.uk
+Build-Type:        Simple
+Cabal-Version:     >= 1.2
+
+library
+  Exposed-Modules: Control.Search.Local,
+                   Control.Search.Local.Example
+                   Control.Search.Local.Navigator
+                   Control.Search.Local.Neighbourhood
+                   Control.Search.Local.Transformation
+                   Control.Search.Local.Tree
+  Build-Depends:   base >= 2.0 && <=5, 
+                   random >= 1.0.0.1,
+                   containers >= 0.2.0.1
+  extensions: MultiParamTypeClasses,
+              FunctionalDependencies

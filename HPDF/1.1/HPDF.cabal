@@ -1,0 +1,57 @@
+Name: HPDF
+Version: 1.1
+License: LGPL
+License-file:LICENSE
+Copyright: Copyright (c) 2007, alpheccar
+category: Graphics
+synopsis: Generation of PDF documents
+maintainer: misc@NOSPAMalpheccar.org
+tested-with: GHC==6.6
+homepage: http://www.alpheccar.org/en/posts/show/82
+build-depends: base, haskell98,mtl,encoding >= 0.1 ,zlib >= 0.3, binary >= 0.3
+ghc-options: -Wall -funbox-strict-fields  -fglasgow-exts  -O2
+extensions: ForeignFunctionInterface, CPP
+description: A PDF library with support for several pages, page transitions, outlines, annotations, compression, colors, shapes, patterns, jpegs, fonts, typesetting ...
+extra-source-files:
+  c/ctext.h
+  c/metrics.h
+  c/conversion.h
+  Test/AFMParser.hs
+  Test/logo.jpg
+  Test/Makefile
+  Test/Penrose.hs
+  Test/test.hs
+  README.txt
+C-Sources:	
+   c/metrics.c
+   c/conversion.c
+Include-Dirs: c
+Install-Includes: 
+   ctext.h
+   conversion.h
+exposed-Modules: 
+   Graphics.PDF
+   Graphics.PDF.Colors
+   Graphics.PDF.Coordinates
+   Graphics.PDF.Document
+   Graphics.PDF.Shapes
+   Graphics.PDF.Text
+   Graphics.PDF.Navigation
+   Graphics.PDF.Image
+   Graphics.PDF.Action
+   Graphics.PDF.Annotation
+   Graphics.PDF.Pattern
+   Graphics.PDF.Shading
+   Graphics.PDF.Typesetting
+Other-Modules:
+   Graphics.PDF.LowLevel.Types
+   Graphics.PDF.Data.PDFTree
+   Graphics.PDF.Pages
+   Graphics.PDF.Resources
+   Graphics.PDF.Draw
+   Graphics.PDF.LowLevel.Kern
+   Graphics.PDF.Typesetting.Breaking
+   Graphics.PDF.Typesetting.Horizontal
+   Graphics.PDF.Typesetting.Vertical
+   Graphics.PDF.Typesetting.Box
+   Graphics.PDF.LowLevel.Serializer

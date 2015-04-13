@@ -1,0 +1,40 @@
+Name: HDBC-odbc
+Version: 1.1.4.4
+Cabal-Version: >=1.2
+Build-type: Simple
+License: LGPL
+Maintainer: John Goerzen <jgoerzen@complete.org>
+Author: John Goerzen
+Copyright: Copyright (c) 2005-2008 John Goerzen
+license-file: COPYRIGHT
+extra-source-files: COPYING, hdbc-odbc-helper.h
+homepage: http://software.complete.org/hdbc-odbc
+Category: Database
+synopsis: ODBC driver for HDBC
+Description: This package provides an ODBC database backend for HDBC.
+ It is cross-platform and supports unixODBC on Unix/Linux/POSIX platforms
+ and Microsoft ODBC on Windows.  It is also the preferred way to access
+ MySQL databases from Haskell.
+Stability: Beta
+
+Library
+  Exposed-Modules: Database.HDBC.ODBC
+  Other-Modules: Database.HDBC.ODBC.Connection,
+    Database.HDBC.ODBC.Statement,
+    Database.HDBC.ODBC.Types,
+    Database.HDBC.ODBC.Utils,
+    Database.HDBC.ODBC.TypeConv,
+    Database.HDBC.ODBC.ConnectionImpl
+  Extensions: 
+    ExistentialQuantification,
+    ForeignFunctionInterface,
+    PatternSignatures
+  Build-Depends: base, mtl, HDBC>=1.1.0
+  GHC-Options: -O2
+  C-Sources: hdbc-odbc-helper.c
+  if os(mingw32) || os(win32)
+    Extra-Libraries: odbc32
+  else
+    Extra-Libraries: odbc
+  include-dirs: .
+  -- extra-lib-dirs: 

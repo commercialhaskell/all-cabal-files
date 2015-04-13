@@ -1,0 +1,53 @@
+-- Update checklist:
+--
+-- 1. Update the version number.
+-- 2. Update the version number again, in source-repository.
+-- 3. Commit with the version number.
+-- 4. Tag with the version number.
+-- 5. Push branches and tags.
+
+name: reactive-thread
+version: 0.3.1.0
+
+author: Matt "strager" Glazar
+build-type: Simple
+cabal-version: >=1.8
+category: FRP
+homepage: https://github.com/strager/reactive-thread
+license-file: LICENSE
+license: BSD3
+maintainer: strager.nds@gmail.com
+synopsis: Reactive programming via imperative threads
+
+description:
+  Reactive programming with threads.
+
+source-repository this
+  type: git
+  location: https://github.com/strager/reactive-thread.git
+  tag: 0.3.1.0
+
+library
+  exposed-modules:
+    Reactive.Thread,
+    Reactive.Thread.Update
+
+  other-modules:
+    Data.Any,
+
+    Control.Concurrent.STM.TEvent,
+    Control.Concurrent.STM.TEventVar,
+
+    Reactive.Thread.Internal.DumbSTM,
+    Reactive.Thread.Internal.Thread,
+    Reactive.Thread.Internal.VarSource
+
+  build-depends:
+    base == 4.5.*,
+    monad-parallel,
+    SDL,
+    stm,
+    transformers
+
+  ghc-options:
+    -Wall

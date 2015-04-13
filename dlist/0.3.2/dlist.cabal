@@ -1,0 +1,21 @@
+Name:                dlist
+Version:             0.3.2
+x-revision: 1
+Synopsis:            Differences lists
+Description:         
+    Differences lists: a list-like type supporting O(1) append.
+    This is particularly useful for efficient logging and pretty
+    printing, (e.g. with the Writer monad), where list append 
+    quickly becomes too expensive.
+Category:            Data
+License:             BSD3
+License-file:        LICENSE
+Author:              Don Stewart 
+Maintainer:          dons@galois.com
+Copyright:           2006-7 Don Stewart
+Homepage:            http://www.cse.unsw.edu.au/~dons/dlist.html
+Build-Depends:       base < 4.8
+Ghc-options:         -O2 -Wall
+Extensions:          CPP
+Exposed-modules:     Data.DList
+extra-source-files:  README tests/Properties.hs tests/Parallel.hs

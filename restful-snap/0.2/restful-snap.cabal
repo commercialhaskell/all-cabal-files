@@ -1,0 +1,46 @@
+name:                restful-snap
+version:             0.2
+description:         A convention-based RESTful routing mechanism for snap
+license:             BSD3
+license-file:        LICENSE
+author:              Ozgun Ataman, Doug Beardsley
+maintainer:          ozataman@gmail.com
+copyright:           Soostone Inc
+category:            Web, Snap
+build-type:          Simple
+cabal-version:       >=1.8
+homepage:            https://github.com/ozataman/restful-snap
+
+source-repository head
+  type:     git
+  location: https://github.com/ozataman/restful-snap.git
+
+library
+  hs-source-dirs: src
+
+  exposed-modules: 
+    Snap.Restful
+    Snap.Restful.TH
+
+  build-depends:       
+    base               >= 4    && < 5,
+    blaze-builder      >= 0.3  && < 0.4,
+    bytestring         >= 0.8  && < 0.11,
+    containers         >= 0.4  && < 0.6,
+    data-default       >= 0.5  && < 0.6,
+    digestive-functors >= 0.6  && < 0.7,
+    heist              >= 0.12 && < 0.13,
+    lens               >= 3.8  && < 3.10,
+    mtl                >= 2.0  && < 2.2,
+    old-locale         >= 1.0  && < 1.1,
+    readable           >= 0.1  && < 0.2,
+    snap               >= 0.11 && < 0.13,
+    snap-core          >= 0.9  && < 0.10,
+    snap-extras        >= 0.5  && < 0.7,
+    template-haskell   >= 2.4  && < 2.9,
+    text               >= 0.11 && < 0.12,
+    time               >= 1.4  && < 1.5,
+    xmlhtml            >= 0.2  && < 0.3,
+    errors
+
+  ghc-options: -Wall -fwarn-tabs

@@ -1,0 +1,47 @@
+Name: rdtsc-enolan
+Version: 0.1
+Build-type: Simple
+Cabal-version: >= 1.6
+
+Synopsis: Binding to sources of high-efficiency, high-precision, monotonically
+    increasing relative time.
+Description: Haskell binding to sources of high-efficiency, high-precision,
+    monotonically increasing relative time. Tested only on amd64 though, so use
+    it at your own risk. Most of the credit should go to Matteo Frigo and Martin
+    Grabmuller, I only cleaned up the documentation.
+
+License: BSD3
+
+License-file: LICENSE
+
+Author: Martin Grabmueller <martin@grabmueller.de>,
+    Echo Nolan <echo@echonolan.net>
+
+Maintainer: Echo Nolan <echo@echonolan.net>
+
+Homepage: http://code.haskell.org/rdtsc
+
+Category: Foreign binding, time
+
+Stability: Experimental
+
+extra-source-files:  README
+  tests/Makefile
+  tests/test_rdtsc.c
+  tests/TestRdtsc.hs
+
+Source-repository head
+  type:     git
+  location: git://github.com/enolan/rdtsc-safer.git
+
+Library
+  Exposed-Modules:
+    System.CPUTime.Rdtsc
+  Extensions: ForeignFunctionInterface
+  C-sources: cbits/rdtsc.c
+  Include-dirs: cbits
+  Install-includes:
+    rdtsc.h
+    cycle.h
+  ghc-options:        -Wall
+  Build-depends:      base >= 4 && < 5

@@ -1,0 +1,30 @@
+Name: HaTeX-meta
+Version: 1.0.0
+Cabal-Version: >= 1.6
+Build-Type: Simple
+License: BSD3
+License-file: license
+Maintainer: Daniel Díaz {danieldiaz <at> dhelta <dot> net}
+Stability: Experimental
+Homepage: http://dhelta.net/hprojects/HaTeX-meta
+Bug-reports: danieldiaz <at> dhelta <dot> net
+Synopsis: HaTeX monad modules builder.
+Description: This packages belongs to the HaTeX project.
+             It builds the @.Monad@ modules.
+Category: Text
+Author: Daniel Díaz
+Tested-with: GHC == 7.0.3
+Extra-source-files: ReleaseNotes
+                  , ReadMe
+
+Executable metahatex
+  Build-depends: base == 4.*
+               , mtl  == 2.*
+               , haskell-src-exts == 1.11.*
+               , haddock == 2.9.*
+               , ghc  == 7.*
+               , parsec == 3.*
+               , containers == 0.4.*
+               , directory == 1.*
+               , filepath == 1.*
+  Main-is: MetaHaTeX.hs

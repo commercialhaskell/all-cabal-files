@@ -1,0 +1,42 @@
+Name:		cubicbezier
+Version: 	0.2.0
+Synopsis:	Efficient manipulating of 2D cubic bezier curves.
+Category: 	Graphics, Geometry, Typography
+Copyright: 	Kristof Bastiaensen (2013)
+Stability:	Unstable
+License:	BSD3
+License-file:	LICENSE
+Author:		Kristof Bastiaensen
+Maintainer:	Kristof Bastiaensen
+Bug-Reports: 	https://github.com/kuribas/cubicbezier/issues
+Build-type:	Simple
+Cabal-version:	>=1.6
+Description:	This library supports efficient manipulating of 2D cubic bezier curves.  The original goal
+  is to support typography, but it is useful for general graphics.  Supported features are:
+  .
+  Evaluating bezier curves and derivatives, affine transformations on bezier curves, arclength and inverse arclength, intersections between two curves, intersection between a curve and a line, curvature and radius of curvature, finding tangents parallel to a vector, finding inflection points and cusps.
+  .
+  It also supports polynomial root finding with Bernstein polynomials.
+  .
+  The module "Geom2D.CubicBezier" exports all the cubic bezier functions.  The module "Geom2D"
+  contains general 2D geometry functions and transformations.
+ 
+source-repository head
+  type:		git
+  location:	https://github.com/kuribas/cubicbezier
+
+Library
+  Ghc-options: -Wall
+  Build-depends: base >= 3 && < 5, containers > 0.4, integration >= 0.1.1, deepseq >= 1.3.0
+  Exposed-Modules:
+    Geom2D
+    Geom2D.CubicBezier
+    Geom2D.CubicBezier.Basic
+    Geom2D.CubicBezier.Approximate
+    Geom2D.CubicBezier.Outline
+    Geom2D.CubicBezier.Curvature
+    Geom2D.CubicBezier.Intersection
+    Geom2D.CubicBezier.MetaPath
+    Math.BernsteinPoly
+  Other-Modules:
+    Geom2D.CubicBezier.Numeric

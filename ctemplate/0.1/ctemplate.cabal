@@ -1,0 +1,25 @@
+Name: ctemplate
+Synopsis: Binding to the Google ctemplate library
+Description:
+  CTemplate is the library that Google uses to render most of their sites
+  (including the www.google.com search). It's a simple templating system, but
+  includes many, easy to use, escaping functions.
+Version: 0.1
+License: BSD3
+License-File: LICENSE
+Author: Adam Langley <agl@imperialviolet.org>
+Stability: experimental
+Homepage: http://darcs.imperialviolet.org/ctemplate
+Category: Text
+Tested-With: GHC == 6.8.2
+Build-Depends: base, bytestring
+Exposed-Modules:  Text.CTemplate
+Extensions: ForeignFunctionInterface, EmptyDataDecls
+ghc-options: -Wall -fno-warn-name-shadowing
+build-type: Simple
+C-Sources: cbits/ctemplate.cc
+Extra-Source-Files:
+        examples/test.tmpl
+        examples/included.tmpl
+        examples/example.hs
+Extra-Libraries: ctemplate

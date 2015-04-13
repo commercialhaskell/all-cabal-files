@@ -1,0 +1,25 @@
+Name:                stdata
+Version:             0.0.1
+Synopsis:            Structure Data Library
+Description:         Contains datatypes and quasi-quoting functionaly for
+                     standard s-expressions and nested structured/unstructured data
+License:             BSD3
+License-file:        LICENSE
+Author:              David Darais
+Maintainer:          david.darais@gmail.com
+-- Copyright:           
+Stability:           Experimental
+Category:            Data
+Build-type:          Simple
+Cabal-version:       >=1.6
+
+Library
+  Ghc-Options:         -Wall
+  Hs-Source-Dirs:      src
+  Exposed-modules:     Data.SExp, Data.SExp.Data, Data.SExp.Parse
+                     , Data.STData, Data.STData.Data, Data.STData.Parse
+  -- Other-modules:
+  Build-depends:       base == 4.3.*
+                     , syb == 0.3.*
+                     , template-haskell == 2.5.*
+                     , parsec == 3.1.*

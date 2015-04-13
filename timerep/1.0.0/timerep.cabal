@@ -1,0 +1,35 @@
+Name:          timerep
+Version:       1.0.0
+Category:      Web, Time
+Synopsis:      Parse and display time according to some RFCs (RFC3339, RFC2822)
+Description:   
+    .
+    Parse and display time according to some RFC's.
+    Supported: 
+    RFC3339 <http://www.ietf.org/rfc/rfc3339.txt>
+    RFC2822 <http://www.ietf.org/rfc/rfc2822.txt>
+    .
+    This package defines a type class to parse and read time representations 
+    specified in some RFC's.
+    Right now there is only support for reading and showing String
+    .
+Build-type:    Simple
+Maintainer:    Hugo Daniel Gomes <mr.hugo.gomes@gmail.com>
+Author:        Hugo Daniel Gomes <mr.hugo.gomes@gmail.com>
+Copyright:     Hugo Daniel Gomes
+Cabal-version: >= 1.6
+License:       BSD3
+License-file:  LICENSE
+source-repository head                                                             
+  type:     git                                                                    
+  location: git://github.com/HugoDaniel/RFC3339.git
+
+library
+  build-depends:
+    base < 5, time >= 1.2, old-locale
+
+  exposed-modules:
+    Data.Time.RFC3339
+    Data.Time.RFC2822
+
+  extensions: TypeSynonymInstances

@@ -1,0 +1,55 @@
+name:                semiring
+version:             0.1.1
+synopsis:            Semirings, ring-like structures used for dynamic programming applications 
+description:         This provides a type class for semirings and 
+                     implementations of the common semirings used in natural language 
+                     processing.
+category:            Natural Language Processing
+license:             BSD3
+license-file:        LICENSE
+author:              Sasha Rush
+maintainer:          <srush at mit dot edu>
+build-Type:          Simple
+cabal-version:       >= 1.2
+homepage:            http://github.com/srush/SemiRings/tree/master
+
+flag testing
+    description: Testing mode, only build minimal components
+    default: False
+
+library
+    exposed-modules:     NLP.Semiring
+                         NLP.Semiring.Boolean
+                         NLP.Semiring.Prob
+                         NLP.Semiring.Viterbi
+                         NLP.Semiring.ViterbiNBest
+                         NLP.Semiring.Counting
+                         NLP.Semiring.Derivation
+                         NLP.Semiring.ViterbiNBestDerivation
+    other-modules:       NLP.Semiring.Helpers
+    if flag(testing)
+        buildable: False
+
+    build-Depends:   base       >= 3   && < 4,
+                     containers >= 0.1 && < 0.3,
+                     monoids    >= 0.2.0.2 && < 0.3,
+                     Boolean
+
+executable hstestsemi
+    main-is:            Tests.hs
+    hs-source-dirs: . tests/
+
+    build-Depends:   base       >= 3   && < 4,
+                     containers >= 0.1 && < 0.3,
+                     monoids    >= 0.2.0.2 && < 0.3,
+                     Boolean,
+                     QuickCheck >= 2,
+                     HUnit,
+                     test-framework,
+                     test-framework-hunit,
+                     test-framework-quickcheck2
+                    
+                     
+    if !flag(testing)
+        buildable: False
+                  

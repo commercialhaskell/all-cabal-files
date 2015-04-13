@@ -1,0 +1,44 @@
+name:                   spine
+version:                0.1
+synopsis:               Simple implementation of the generic spine view
+homepage:               https://github.com/spl/spine
+description:
+
+  This package contains the basic representation types for defining generic
+  functions with the spine view. It is currently incomplete with respect to the
+  papers. We hope to rectify that in the future.
+  .
+  See the following publications for details.
+  .
+  R. Hinze and A. Löh. "Scrap Your Boilerplate: Reloaded" In Functional and
+  Logic Programming. 2006. pp. 13-29.
+  .
+  R. Hinze and A. Löh. "Scrap Your Boilerplate: Revolutions" In Mathematics and
+  Program Construction. 2006. pp. 180-208.
+
+category:               Generics
+copyright:              (c) 2011 Universiteit Utrecht
+license:                BSD3
+license-file:           LICENSE
+author:                 Sean Leather
+maintainer:             Sean Leather <leather@cs.uu.nl>
+stability:              experimental
+build-type:             Simple
+cabal-version:          >= 1.6
+
+source-repository head
+  type:                 git
+  location:             git://github.com/spl/spine.git
+
+--------------------------------------------------------------------------------
+
+Library
+  hs-source-dirs:       src
+
+  exposed-modules:      Generics.Spine
+                        Generics.Spine.Base
+
+  build-depends:        base < 100
+
+  ghc-options:          -Wall
+

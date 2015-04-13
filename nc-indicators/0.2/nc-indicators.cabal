@@ -1,0 +1,56 @@
+Name: nc-indicators
+Version: 0.2
+License: Apache-2.0
+License-File: LICENSE
+Author: Mihaly Barasz, Gergely Risko
+Maintainer: Mihaly Barasz <klao@nilcons.com>, Gergely Risko <errge@nilcons.com>
+Cabal-Version: >= 1.10
+Build-Type: Simple
+Category: System
+Stability: experimental
+Homepage: https://github.com/nilcons/nc-indicators
+Bug-Reports: https://github.com/nilcons/nc-indicators/issues
+Synopsis: CPU load and memory usage indicators for i3bar
+Description:
+  @nc-indicators@ displays a CPU load and memory usage mini-graphs in
+  your @i3bar@, much like Gnome's @indicator-multiload@ applet.
+  .
+  To use @nc-indicators@ simply @exec@ it on startup:
+  .
+  @
+  exec --no-startup-id nc-indicators
+  @
+  .
+  You can turn off either indicator and change the update interval, eg.:
+  .
+  @
+  exec --no-startup-id nc-indicators --show_mem=0 --update_interval=300
+  @
+  .
+  @nc-indicators@ uses the standard system tray icon protocol, so it
+  can be used with any system tray-like application, not just
+  @i3bar@. But it was originally created to be used with @i3bar@.
+
+Extra-Source-Files:
+  README.md
+
+Source-Repository head
+  Type: git
+  Location: https://github.com/nilcons/nc-indicators.git
+
+Executable nc-indicators
+  Main-Is: nc-indicators.hs
+  Default-Language: Haskell2010
+  GHC-Options: -Wall -threaded
+  Build-Depends:
+      base         >= 4.6 && < 5
+    , array        >= 0.4
+    , attoparsec   >= 0.10
+    , bytestring   >= 0.10
+    , containers   >= 0.5
+    , gtk          >= 0.12
+    , hflags       >= 0.4
+    , lens         >= 3.10
+    , pipes        >= 4.0
+    , stm          >= 2.4
+    , unix         >= 2.6

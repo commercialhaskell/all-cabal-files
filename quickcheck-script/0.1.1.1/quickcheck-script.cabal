@@ -1,0 +1,24 @@
+Name: quickcheck-script
+Version: 0.1.1.1
+Cabal-Version: >= 1.2
+Build-type: Simple
+License: BSD3
+License-file: LICENSE
+Copyright: Copyright (c) 2000-2003, Koen Claessen, John Hughes
+Author: Koen Claessen <koen@cs.chalmers.se>, John Hughes <rjmh@cs.chalmers.se>
+Maintainer: shelarcy <shelarcy@gmail.com>
+Homepage: http://www.cs.chalmers.se/~rjmh/QuickCheck/
+Synopsis: Automated test tool for QuickCheck.
+Description:
+  A program to invoke quickCheck for all properties in a module (this version invokes ghci, but is easily modified to other interpreters instead).
+Category: Testing
+
+flag splitBase
+  Description: Choose the new smaller, split-up base package.
+
+Executable quickCheck
+    if flag(splitBase)
+        build-depends: base >= 3 && < 5, directory, process, QuickCheck
+    else
+        build-depends: base <  3, QuickCheck
+  Main-is: quickCheck.hs

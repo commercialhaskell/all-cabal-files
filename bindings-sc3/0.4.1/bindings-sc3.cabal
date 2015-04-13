@@ -1,0 +1,52 @@
+Name:                   bindings-sc3
+Version:                0.4.1
+Synopsis:               Low-level bindings to the SuperCollider synthesis engine library.
+Description:
+    DEPRECATED. This library is looking for a new maintainer.
+    .
+    This library provides low level bindings to the SuperCollider synthesis
+    engine library (@libscsynth@). If you are looking for a higher level
+    Haskell interface, please use the /hsc3-process/ package
+    (<http://hackage.haskell.org/package/hsc3-process>).
+    .
+    ChangeLog: <https://github.com/kaoskorobase/bindings-sc3/blob/master/ChangeLog.md>
+    .
+    In order to use this package, you need to build the dynamic library version
+    of SuperCollider <supercollider.sourceforge.net> by passing
+    @-DLIBSCSYNTH=ON@ to @cmake@ and put it in a location where it can be found by the
+    linker (e.g. @/usr/local/lib@ on Unix systems, alternatively use the @--extra-lib-dirs@
+    flag of @cabal configure@).
+    .
+    The required SuperCollider version is 3.5.
+License:                GPL
+License-File:           LICENSE
+Category:               FFI, Sound
+Copyright:              Copyright (c) Stefan Kersten 2010-2012
+Author:                 Stefan Kersten <sk@k-hornz.de>
+Maintainer:             Stefan Kersten <sk@k-hornz.de>
+Stability:              experimental
+Homepage:               https://github.com/kaoskorobase/bindings-sc3/
+Bug-Reports:            https://github.com/kaoskorobase/bindings-sc3/issues/
+Tested-With:            GHC == 6.12, GHC == 7.0, GHC == 7.2
+Build-Type:             Simple
+Cabal-Version:          >= 1.6
+
+Data-Files:
+    README.md
+    include/SC_Export.h
+    include/SC_Reply.h
+    include/SC_Types.h
+    include/SC_WorldOptions.h
+
+Library
+    Extensions:         ForeignFunctionInterface
+    Exposed-Modules:    Bindings.Sound.SC3
+    C-Sources:		cbits/helper_functions.c
+    Build-Depends:      base >= 3 && < 5
+                      , bindings-DSL >= 1.0 && < 1.1
+    Include-Dirs:       ./include
+    Extra-Libraries:    scsynth
+
+Source-Repository head
+    Type:               git
+    Location:           git://github.com/kaoskorobase/bindings-sc3.git

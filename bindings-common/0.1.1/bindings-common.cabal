@@ -1,0 +1,33 @@
+cabal-version: >= 1.2.3
+name: bindings-common
+homepage: http://bitbucket.org/mauricio/bindings
+synopsis:
+  Low-level library bindings, base package.
+description: 
+  The @bindings-*@ set of packages contain low level bindings
+  for established libraries, and is aimed at developers of higher
+  level modules that can use it as foundation. They all mimic the
+  exact names and functionality of the original libraries. For
+  a specific library, look for package @bindings-library_name@.
+version: 0.1.1
+license: BSD3
+license-file: LICENSE
+maintainer: Maurício C. Antunes
+author: Maurício C. Antunes
+build-type: Simple
+category: FFI
+library
+  hs-source-dirs: src
+  c-sources:
+    src/Bindings/c.c
+  extensions:
+    ForeignFunctionInterface
+    TypeSynonymInstances
+    ScopedTypeVariables
+    MultiParamTypeClasses
+    TypeFamilies
+  build-depends: base
+  exposed-modules:
+    Bindings
+    Bindings.Utilities
+    Bindings.C

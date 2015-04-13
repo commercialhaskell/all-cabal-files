@@ -1,0 +1,59 @@
+Cabal-Version:      >= 1.2
+Name:               yhccore
+Version:            0.9
+Copyright:          2006-8, Neil Mitchell and The Yhc Team
+Maintainer:         ndmitchell@gmail.com
+Homepage:           http://www.haskell.org/haskellwiki/Yhc
+License:            BSD3
+License-File:       LICENSE
+Build-Type:         Simple
+Author:             Neil Mitchell
+Synopsis:           Yhc's Internal Core language.
+Description:
+    A minimal Core language to which Haskell can be reduced,
+    implemented in the Yhc compiler.
+Category:           Development
+
+Flag splitBase
+    Description: Choose the new smaller, split-up base package.
+
+Library
+    if flag(splitBase)
+        build-depends: base >= 3, mtl, pretty, containers
+    else
+        build-depends: base < 3, mtl
+    build-depends: mtl, uniplate
+
+    Exposed-modules:
+        Yhc.Core
+        Yhc.Core.Binary
+        Yhc.Core.CaseElimination
+        Yhc.Core.Clean
+        Yhc.Core.Equal
+        Yhc.Core.FreeVar
+        Yhc.Core.FreeVar2
+        Yhc.Core.FreeVar3
+        Yhc.Core.Haskell
+        Yhc.Core.Html
+        Yhc.Core.Inline
+        Yhc.Core.Invariant
+        Yhc.Core.Overlay
+        Yhc.Core.Play
+        Yhc.Core.Prim
+        Yhc.Core.Reachable
+        Yhc.Core.RecursiveLet
+        Yhc.Core.Saturated
+        Yhc.Core.Serialise
+        Yhc.Core.Show
+        Yhc.Core.ShowRaw
+        Yhc.Core.Simplify
+        Yhc.Core.Strictness
+        Yhc.Core.Type
+        Yhc.Core.Uniplate
+        Yhc.Core.UniqueId
+        Yhc.Core.UniqueName
+        Yhc.Core.Internal.Binary
+        Yhc.Core.Internal.General
+        Yhc.Core.Internal.HughesPJ
+        Yhc.Core.Internal.Play
+        Yhc.Core.Invariant.LambdaLift

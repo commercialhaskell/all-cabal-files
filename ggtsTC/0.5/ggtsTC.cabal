@@ -1,0 +1,65 @@
+name:             ggtsTC
+version:          0.5
+synopsis:         A type checker and runtime system of rCOS/g (impl. of ggts-FCS).
+description:    
+                  A type checker and runtime system of rCOS/g
+                  following the definitions in the /ggts-FCS/ article.
+                  .
+                  * Title: A graph-based generic type system for object-oriented programs
+                  .
+                  * Authors: Wei Ke, Zhiming Liu, Shuling Wang and Liang Zhao
+                  .
+                  * Accepted by: Frontier of Computer Science
+                  .
+                  * Year: 2012
+                  .
+                  Programmed by: Wei Ke
+                  .
+                  (c) 2012 Wei Ke
+                  .
+                  License:  GPL-3
+                  .
+                  License file: <LICENSE>
+                  .
+                  Source package download: <ggtsTC-0.5.tar.gz>
+                  .
+                  rCOS/g grammar: <grammar>
+homepage:         http://a319-101.ipm.edu.mo/~wke/ggts/impl/
+license:          GPL-3
+license-file:     LICENSE
+author:           Wei Ke
+maintainer:       wke@ipm.edu.mo
+copyright:        (c) 2012 Wei Ke
+category:         System   
+build-type:       Simple
+cabal-version:    >=1.4
+data-files:       
+                  examples/avl.rg, 
+                  examples/early.rg, 
+                  examples/fibs.rg, 
+                  examples/fig4.rg, 
+                  examples/fig5.rg, 
+                  examples/iter.rg, 
+                  examples/peano.rg, 
+                  grammar
+
+executable TC
+  hs-source-dirs: src
+  main-is:        Main.hs
+  other-modules:   
+                  Env,
+                  ErrMsg,
+                  Graph,
+                  Misc,
+                  RgAS,
+                  RgParser,
+                  St,
+                  Ty,
+                  Zp
+  build-depends:   
+                  base >= 4 && < 6,
+                  parsec >= 3.1.3,
+                  containers >= 0.5.0
+  ghc-options:    -Wall
+
+-- --$Id: ggtsTC.cabal 1192 2012-11-15 05:31:51Z wke@IPM.EDU.MO $

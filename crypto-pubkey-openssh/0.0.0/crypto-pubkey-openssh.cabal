@@ -1,0 +1,33 @@
+Name:               crypto-pubkey-openssh
+Version:            0.0.0
+Synopsis:           OpenSSH public keys parser
+Description:        OpenSSH public keys parser
+License:            MIT
+License-file:       LICENSE
+Copyright:          Fedor Gogolev <knsd@knsd.net>
+Author:             Fedor Gogolev <knsd@knsd.net>
+Maintainer:         Fedor Gogolev <knsd@knsd.net>
+Homepage:           https://github.com/knsd/crypto-pubkey-openssh
+Bug-reports:        https://github.com/knsd/crypto-pubkey-openssh/issues
+Category:           Cryptography, Parsing
+Stability:          Alpha
+Build-type:         Simple
+Cabal-version:      >= 1.12
+Tested-with:        GHC == 7.6.*
+
+Library
+  Hs-source-dirs:   src
+  Ghc-options:      -Wall -fno-warn-orphans
+  Default-language: Haskell2010
+  Build-depends:    base                      == 4.6.*
+                  , bytestring                == 0.10.*
+                  , base64-bytestring         == 1.0.*
+                  , cereal                    == 0.3.*
+                  , attoparsec                == 0.10.*
+                  , crypto-pubkey-types       == 0.2.*
+
+  Exposed-modules:  Crypto.PubKey.OpenSsh
+
+Source-repository head
+  Type:             git
+  Location:         https://github.com/knsd/crypto-pubkey-openssh

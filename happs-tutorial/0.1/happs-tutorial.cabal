@@ -1,0 +1,45 @@
+Name:                happs-tutorial
+Version:             0.1
+Synopsis:            A HAppS Tutorial that is is own demo
+Description:         A nice way to learn how to build web sites with HAppS
+
+
+
+License:             BSD3
+License-file:        LICENSE
+Author:              Thomas Hartman
+
+
+
+
+Maintainer:          thomashartman1 at gmail dot com
+Copyright:           2008 Thomas Hartman
+
+
+
+
+Stability:           Experimental
+Category:            Web
+Build-type:          Simple
+
+Cabal-Version:       >= 1.2
+
+Executable happs-tutorial
+    Main-is:             Main.hs
+    hs-source-dirs:
+        src
+    Other-Modules:
+        ControllerBasic
+        ControllerUsingTemplates  
+        Misc   
+        View
+        Controller          
+        Model  
+        Session
+         
+    Build-Depends:   base >= 3, HStringTemplate, mtl, bytestring,
+                     HAppS-Server, HAppS-Data, HAppS-State,
+                     containers
+
+
+

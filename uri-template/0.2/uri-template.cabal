@@ -1,0 +1,39 @@
+name: uri-template
+version: 0.2
+synopsis: URI template library for Haskell
+description:
+   A URI template expansion library for Haskell. Provides
+   support for Joe Gregorio's standardized format, OpenSearch 1.1's
+   format + WADL/WSDL-style templates.
+
+category: Web
+license:  BSD3
+license-file: LICENSE
+author:   Sigbjorn Finne <sof@forkIO.com>
+maintainer: sof@forkIO.com
+build-depends: base, containers
+cabal-version:  >= 1.2
+build-type: Simple
+Extra-source-files:README
+
+flag new-base
+  Description: Build with new smaller base library
+  Default: False
+
+library
+ Exposed-modules: Network.URI.Template
+ Other-modules: Codec.Web.Percent
+ Extra-libraries: 
+ Ghc-Options:     -Wall
+
+ Build-Depends:   base, containers, utf8-string
+ if flag(new-base)
+   Build-Depends: base >= 3
+ else
+   Build-Depends: base < 3
+
+executable main {
+  build-depends:        base
+  main-is:              Main.hs
+  ghc-options:          -Wall
+}

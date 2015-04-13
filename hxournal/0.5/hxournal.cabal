@@ -1,0 +1,97 @@
+Name:		hxournal
+Version:	0.5
+Synopsis:	A pen notetaking program written in haskell 
+Description: 	notetaking program written in haskell and gtk2hs
+License: 	BSD3
+License-file:	LICENSE
+Author:		Ian-Woo Kim
+Maintainer: 	Ian-Woo Kim <ianwookim@gmail.com>
+Build-Type: 	Simple
+Cabal-Version:  >= 1.8
+data-files:     template/*.html.st
+                resource/*.png
+
+
+Executable hxournal
+  Main-is: hxournal.hs
+  hs-source-dirs: exe
+  ghc-options: 	-Wall -O2 -threaded -funbox-strict-fields -fno-warn-unused-do-bind
+  ghc-prof-options: -caf-all -auto-all
+  Build-Depends: 
+                 base>4, 
+                 cmdargs >= 0.7 && <= 0.10, 
+                 hxournal == 0.5
+
+Library
+  hs-source-dirs: lib
+  ghc-options: 	-Wall -O2 -threaded -funbox-strict-fields -fno-warn-unused-do-bind
+  ghc-prof-options: -caf-all -auto-all
+  Build-Depends:   
+                     base == 4.*, 
+                     mtl == 2.*,
+                     directory == 1.*,
+                     filepath == 1.*, 
+                     strict == 0.3.*,
+                     gtk == 0.12.*, 
+                     cairo == 0.12.*,  
+                     monad-coroutine == 0.7.*, 
+                     transformers == 0.2.*,
+                     xournal-parser == 0.2.*,
+                     xournal-render == 0.2.*,
+                     containers == 0.4.*,
+                     template-haskell == 2.*,
+                     blaze-builder == 0.3.*, 
+                     bytestring == 0.9.*, 
+                     double-conversion == 0.2.*,
+                     fclabels == 1.0.*,
+                     cmdargs >= 0.7 && <= 0.10
+  Exposed-Modules: 
+                   Application.HXournal.ProgType
+                   Application.HXournal.Job
+                   Application.HXournal.Command 
+                   Application.HXournal.Type
+                   Application.HXournal.Type.Event 
+                   Application.HXournal.Type.Enum
+                   Application.HXournal.Type.Clipboard
+                   Application.HXournal.Type.Canvas
+                   Application.HXournal.Type.Coroutine
+                   Application.HXournal.Type.XournalState
+                   Application.HXournal.Type.Window
+                   Application.HXournal.ModelAction.Adjustment
+                   Application.HXournal.ModelAction.Pen 
+                   Application.HXournal.ModelAction.Page
+                   Application.HXournal.ModelAction.Eraser
+                   Application.HXournal.ModelAction.Select
+                   Application.HXournal.ModelAction.File
+                   Application.HXournal.ModelAction.Window
+                   Application.HXournal.Coroutine.Callback
+                   Application.HXournal.GUI
+                   Application.HXournal.GUI.Menu
+                   Application.HXournal.Coroutine
+                   Application.HXournal.Coroutine.Draw
+                   Application.HXournal.Coroutine.EventConnect
+                   Application.HXournal.Coroutine.Default
+                   Application.HXournal.Coroutine.Pen
+                   Application.HXournal.Coroutine.Eraser
+                   Application.HXournal.Coroutine.Highlighter
+                   Application.HXournal.Coroutine.Scroll
+                   Application.HXournal.Coroutine.Page
+                   Application.HXournal.Coroutine.Select
+                   Application.HXournal.Coroutine.File
+                   Application.HXournal.Coroutine.Mode
+                   Application.HXournal.Coroutine.Window
+                   Application.HXournal.Util
+                   Application.HXournal.Util.Verbatim 
+                   Application.HXournal.Draw
+                   Application.HXournal.Device
+                   Application.HXournal.Builder 
+                   Application.HXournal.Accessor
+  Other-Modules: 
+                   Paths_hxournal
+  c-sources: 
+                   csrc/c_initdevice.c
+  include-dirs:    csrc
+  install-includes: 
+                   c_initdevice.h
+
+		 

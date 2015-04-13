@@ -1,0 +1,20 @@
+Author:		Miguel Mitrofanov
+Build-Type:	Simple
+Cabal-Version:	>=1.4
+Category:	Control
+Description:	This package allows one to mix effects of two arrows into a single one, and get them back afterwards.
+		.
+		It was inspired by Wolfgang Jeltsch's lax package.
+License:	BSD3
+License-file:	LICENSE
+Maintainer:	miguelimo38@yandex.ru
+Name:		mix-arrows
+Synopsis:	Mixing effects of one arrow into another one
+Version:	0.1
+
+Library
+  Build-Depends:	base >= 4.0 && < 6
+  Exposed-Modules:	Control.Arrow.Mix, Control.Arrow.Mix.Along, Control.Arrow.Mix.Utilities
+  Extensions:		GADTs, RankNTypes, TupleSections, TypeOperators
+  GHC-Options:		-Wall
+  Hs-Source-Dirs:	src

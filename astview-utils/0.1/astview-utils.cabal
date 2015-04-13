@@ -1,0 +1,20 @@
+Name:            astview-utils
+Version:         0.1
+License:         BSD4
+License-File:    LICENSE
+Author:          
+                 Pascal Hof <pascal.hof@udo.edu>, 
+                 Sebastian Menge <sebastian.menge@udo.edu>
+Maintainer:      Sebastian Menge <sebastian.menge@udo.edu>
+Synopsis:        Interfacing between hint and astview
+Description:     see README
+
+Category:        Language
+
+Cabal-Version:   >= 1.2
+Build-Type:      Simple
+
+Library
+  Hs-Source-Dirs:  src
+  Exposed-Modules: Language.Astview.Parser, Language.Astview.DataTree
+  Build-Depends:   base>=4 && <5, containers, syb

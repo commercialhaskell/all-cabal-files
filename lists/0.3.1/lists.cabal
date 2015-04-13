@@ -1,0 +1,21 @@
+name:                lists
+version:             0.3.1
+synopsis:            Functions for dealing with lists
+description:         Functions for dealing with lists
+license:             BSD3
+license-file:        LICENSE
+author:              Chris Done
+maintainer:          chrisdone@gmail.com
+copyright:           2013 Chris Done, 2004-2011 John Goerzen
+category:            CATEGORY
+build-type:          Simple
+cabal-version:       >=1.8
+
+library
+  exposed-modules:   Data.Lists
+  hs-source-dirs:    src/
+  build-depends:     base > 4 && <5,
+                     bools,
+                     split,
+                     list-extras
+  ghc-options:       -Wall

@@ -1,0 +1,23 @@
+name:                   htime
+version:                0.1
+synopsis:               Timing utility for the command line
+description:            Timing utility for the command line, like the Unix
+                        "time" command. Especially useful on systems which
+                        do not have time, like Windows.
+category:               System
+copyright:              (c) 2010 Universiteit Utrecht
+license:                BSD3
+license-file:           LICENSE
+author:                 José Pedro Magalhães
+maintainer:             libraries@haskell.org
+stability:              experimental
+build-type:             Simple
+cabal-version:          >= 1.2
+tested-with:            GHC == 6.8.3, GHC == 6.10.4, GHC == 6.12.1, GHC == 7.0.1
+
+Executable htime
+  hs-source-dirs:       src
+  main-is:              HTime.hs
+  build-depends:        base >= 3 && < 5, process >= 1.0 && < 1.1,
+                        time >= 1.1 && < 1.2
+  ghc-options:          -Wall

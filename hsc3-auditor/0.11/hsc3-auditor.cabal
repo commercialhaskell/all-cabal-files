@@ -1,0 +1,31 @@
+Name:              hsc3-auditor
+Version:           0.11
+Synopsis:          Haskell SuperCollider Auditor
+Description:       A simple-minded auditioner for music structures.
+License:           GPL
+Category:          Sound
+Copyright:         (c) Rohan Drape, 2010-2011
+Author:            Rohan Drape
+Maintainer:        rd@slavepianos.org
+Stability:         Experimental
+Homepage:          http://slavepianos.org/rd/?t=hsc3-auditor
+Tested-With:       GHC == 7.2.2
+Build-Type:        Simple
+Cabal-Version:     >= 1.8
+
+Data-files:        README
+
+Library
+  Build-Depends:   base == 4.*,
+                   filepath,
+                   hmt == 0.11.*,
+                   hosc == 0.11.*,
+                   hsc3 == 0.11.*
+  GHC-Options:     -Wall -fwarn-tabs
+  Exposed-modules: Sound.SC3.Auditor
+                   Sound.SC3.Auditor.PF
+                   Sound.SC3.Auditor.TR808
+
+Source-Repository  head
+  Type:            darcs
+  Location:        http://slavepianos.org/rd/sw/hsc3-auditor

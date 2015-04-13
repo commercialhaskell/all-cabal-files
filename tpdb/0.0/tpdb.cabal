@@ -1,0 +1,47 @@
+Name: tpdb
+Version: 0.0
+Author: Johannes Waldmann
+Maintainer: Johannes Waldmann
+Category: Science
+License: GPL
+License-file: LICENSE
+Cabal-Version: >= 1.8
+Synopsis: Data Type for Rewriting Systems
+
+
+Description:
+   The package defines data types and parsers for rewriting systems,
+   as used in the Termination Competitions.
+   For syntax and semantics specification, 
+   see <http://www.termination-portal.org/wiki/TPDB>
+
+Build-Type: Simple
+
+Source-Repository head
+  Type: git
+  Location: git://dfa.imn.htwk-leipzig.de/srv/git/tpdb/
+
+Library
+  Build-Depends: base==4.*, hxt, pretty, parsec
+
+  Exposed-Modules:
+    TPDB.Data, 
+    TPDB.Plain.Write,     TPDB.Plain.Read,
+    TPDB.XTC,  TPDB.XTC.Read
+
+Test-Suite XML
+  Type: exitcode-stdio-1.0
+  main-is: read_print_xml.hs
+  hs-source-dirs: test .
+
+Test-Suite TRS
+  Type: exitcode-stdio-1.0
+  main-is: read_print_trs.hs
+  hs-source-dirs: test .
+
+Test-Suite SRS
+  Type: exitcode-stdio-1.0
+  main-is: read_print_srs.hs
+  hs-source-dirs: test .
+
+

@@ -1,0 +1,36 @@
+name:           BiobaseInfernal
+version:        0.0.2.0
+author:         Christian Hoener zu Siederdissen
+maintainer:     choener@tbi.univie.ac.at
+category:       Bioinformatics
+synopsis:       Infernal CM manipulation
+license:        GPL-3
+license-file:   LICENSE
+build-type:     Simple
+stability:      experimental
+cabal-version:  >= 1.4.0
+description:
+                This library provides functions to load Infernal covariance
+                models. Models can be converted from score mode into
+                probability mode. They, too, can be switched into local mode.
+                In additon, Stockholm files can be loaded.
+
+
+library
+  build-depends:
+    base >= 4 && < 5,
+    parsec >= 3 && < 4,
+    containers,
+    array,
+
+    Biobase >= 0.0.2 && < 0.0.3
+
+  exposed-modules:
+    Biobase.Infernal.CM
+    Biobase.Infernal.CM.Import
+    Biobase.Infernal.CM.Export
+    Biobase.Infernal.Stockholm
+    Biobase.Infernal.Stockholm.Import
+
+  ghc-options:
+    -O2

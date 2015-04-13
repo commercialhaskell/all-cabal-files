@@ -1,0 +1,29 @@
+name:                hold-em
+version:             0.1.0.0
+synopsis:            An engine for Texas hold'em Poker
+description:
+    This package contains a collection of essential data types and functions.
+    .
+    Please note, that the @deal@ function imposes a range of 2-9 players.
+license:             BSD3
+license-file:        LICENSE
+author:              Joe Vargas
+maintainer:          Joe Vargas <jxv@hush.com>
+copyright:           Copyright (c) Joe Vargas 2014
+category:            Game
+build-type:          Simple
+cabal-version:       >=1.10
+tested-with:         GHC==7.8.3
+extra-source-files:  README.md
+
+source-repository head
+  type:     git
+  location: https://github.com/jxv/hold-em.git
+
+library
+  exposed-modules:     HoldEm
+  build-depends:       base >=4.7 && <4.8,
+                       random >=1.0 && <1.1,
+                       safe >=0.3.7 && <0.4
+  hs-source-dirs:      src
+  default-language:    Haskell2010

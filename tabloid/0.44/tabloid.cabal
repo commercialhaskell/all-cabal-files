@@ -1,0 +1,41 @@
+Name:	         tabloid
+Version:         0.44
+Description:     GUI for shell commands and log analysis
+Category:	 System
+Synopsis:	 View the output of shell commands in a table
+License:         BSD3
+License-file:    LICENSE
+Author:          Sven Heyll
+Maintainer:      sven.heyll@gmail.com
+Build-Type:      Simple
+Cabal-Version:   >=1.2
+extra-source-files:     README,
+                        Component.hs,
+			DataProcController.hs,
+			DataProcView.hs,
+			DataSourceView.hs,
+			FileChooser.hs,
+			HaskellCmdInputController.hs,
+			LineSplitterController.hs,
+			LineSplitterView.hs,
+			LoadSaveController.hs,
+			LoadSaveView.hs,
+			MultiWidgetContainerController.hs,
+			MultiWidgetContainerView.hs,
+			RegexDefinitionController.hs,
+			RegexDefinitionView.hs,
+			ShellCmdInputController.hs,
+			ShellCmdInputView.hs,
+			SimpleRegex.hs,
+			TableController.hs,
+			TableView.hs,
+			TextInputView.hs,
+			WindowedApp.hs,
+                        examples/example.hs,
+                        examples/example.submatches.regex,
+                        examples/example_shell_cmd.sh
+
+Executable tabloid
+  Main-is:       Main.hs
+  Build-Depends: base >= 3.0 && < 4.0, gtk, regex-base, regex-posix>=0.93, bytestring, process, containers, hint, parallel
+  ghc-options:   -O9 -fforce-recomp -funbox-strict-fields -threaded

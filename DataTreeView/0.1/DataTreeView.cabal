@@ -1,0 +1,39 @@
+Name:                DataTreeView
+Version:             0.1
+Synopsis:            A GTK widget for displaying arbitrary Data.Data.Data instances
+License:             BSD3
+License-file:        LICENSE
+Author:              Daniel Schüssler
+Maintainer:          anotheraddress@gmx.de
+Category:            Development,Debug,GUI
+Build-type:          Simple
+Cabal-version:       >=1.6
+Description:
+ Screenshot: <http://i.imgur.com/5JlhG.png>
+ .
+ Example use:
+ .
+ > import DataTreeView
+ > main = simpleView [(["hello","world",error "this works too"],25)]
+
+
+Source-Repository head
+    type: darcs
+    location: http://patch-tag.com/r/DanielSchuessler/DataTreeView 
+
+
+Library
+  Build-depends:      bytestring, monad-control >= 0.2, mtl >= 2, 
+                      containers, glib >= 0.12, 
+                      base >= 4 && < 5, syb >= 0.3, MissingH >= 1.1.0.3,
+                      gtk>=0.12, deepseq 
+
+  Exposed-modules:    DataTreeView
+                      DataTreeView.CustomHandlers
+                      DataTreeView.StrictTypes
+  Other-modules:      DataTreeView.DataToTree
+                      DataTreeView.Widget
+                      DataTreeView.SimpleView
+                      DataTreeView.Row
+                      
+  

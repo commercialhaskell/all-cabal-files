@@ -1,0 +1,36 @@
+name:          comonad
+category:      Control, Comonads
+version:       3.0.0.2
+x-revision: 1
+license:       BSD3
+cabal-version: >= 1.6
+license-file:  LICENSE
+author:        Edward A. Kmett
+maintainer:    Edward A. Kmett <ekmett@gmail.com>
+stability:     provisional
+homepage:      http://github.com/ekmett/comonad/
+bug-reports:   http://github.com/ekmett/comonad/issues
+copyright:     Copyright (C) 2008-2012 Edward A. Kmett,
+               Copyright (C) 2004-2008 Dave Menendez
+synopsis:      Haskell 98 compatible comonads
+description:   Haskell 98 compatible comonads
+build-type:    Simple
+extra-source-files: .travis.yml
+
+source-repository head
+  type: git
+  location: git://github.com/ekmett/comonad.git
+
+library
+  other-extensions: CPP
+
+  build-depends:
+    base         >= 4       && < 4.7,
+    transformers >= 0.2     && < 0.4,
+    containers   >= 0.3     && < 0.6,
+    semigroups   >= 0.8.3   && < 0.9
+
+  exposed-modules:
+    Control.Comonad
+
+  ghc-options: -Wall

@@ -1,0 +1,44 @@
+name:                concorde
+version:             0.1
+license:             BSD3
+license-file:        LICENSE
+synopsis:            Simple interface to the Concorde solver for the Traveling Salesperson Problem
+category:            Algorithms
+author:              Keegan McAllister <mcallister.keegan@gmail.com>
+maintainer:          Keegan McAllister <mcallister.keegan@gmail.com>
+build-type:          Simple
+cabal-version:       >=1.6
+description:
+    This package provides a simple interface to Concorde, a solver for the
+    Traveling Salesperson Problem (TSP).  Concorde is available from
+    <http://www.tsp.gatech.edu/concorde/index.html>.
+    .
+    This library uses the Lin–Kernighan heuristic via Concorde's @linkern@
+    program.  It quickly produces good tours, which may not be optimal.  You
+    can directly control the tradeoff between run time and solution quality.
+    .
+    An example program is included.
+    .
+    Currently, only problems in two-dimensional Euclidean space are supported.
+    .
+    More features of Concorde can be added on request.  Feature requests and
+    patches are always welcome.
+
+extra-source-files:
+    README
+  , examples/visualize.hs
+
+library
+  exposed-modules:
+      Algorithms.Concorde.LinKern
+  ghc-options:      -Wall
+  build-depends:
+      base       >= 3 && < 5
+    , containers >= 0.4
+    , temporary  >= 1.1
+    , process    >= 1.0
+    , safe       >= 0.3
+
+source-repository head
+    type:     git
+    location: git://github.com/kmcallister/concorde

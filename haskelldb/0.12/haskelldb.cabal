@@ -1,0 +1,58 @@
+Name: haskelldb
+Version: 0.12
+Cabal-version: >= 1.2
+Build-type: Simple
+Homepage: http://haskelldb.sourceforge.net
+Copyright: The authors
+Maintainer: haskelldb-users@lists.sourceforge.net
+Author: Daan Leijen, Conny Andersson, Martin Andersson, Mary Bergman, Victor Blomqvist, Bjorn Bringert, Anders Hockersten, Torbjorn Martin, Jeremy Shaw
+License: BSD3
+Synopsis: SQL unwrapper for Haskell.
+
+Flag split-base
+
+Library
+  Build-depends: mtl
+  if flag(split-base)
+    Build-depends: base >= 3.0, pretty, old-time, old-locale, directory
+  else
+    Build-depends: base < 3.0
+  Extensions:
+    ExistentialQuantification,
+    OverlappingInstances,
+    UndecidableInstances,
+    MultiParamTypeClasses,
+    FunctionalDependencies,
+    TypeSynonymInstances,
+    FlexibleInstances,
+    FlexibleContexts,
+    PolymorphicComponents
+  Exposed-Modules:
+        Database.HaskellDB,
+        Database.HaskellDB.BoundedList,
+        Database.HaskellDB.BoundedString,
+        Database.HaskellDB.DBLayout,
+        Database.HaskellDB.DBDirect,
+        Database.HaskellDB.DBSpec,
+        Database.HaskellDB.DBSpec.DBInfo,
+        Database.HaskellDB.DBSpec.DBSpecToDBDirect,
+        Database.HaskellDB.DBSpec.DBSpecToDatabase,
+        Database.HaskellDB.DBSpec.DatabaseToDBSpec,
+        Database.HaskellDB.DBSpec.PPHelpers,
+        Database.HaskellDB.Database,
+        Database.HaskellDB.FieldType,
+        Database.HaskellDB.HDBRec,
+        Database.HaskellDB.Optimize,
+        Database.HaskellDB.PrimQuery,
+        Database.HaskellDB.Query,
+        Database.HaskellDB.Sql,
+        Database.HaskellDB.Sql.Generate,
+        Database.HaskellDB.Sql.Default,
+        Database.HaskellDB.Sql.Print,
+        Database.HaskellDB.Sql.MySQL,
+        Database.HaskellDB.Sql.PostgreSQL,
+        Database.HaskellDB.Sql.SQLite,
+        Database.HaskellDB.Version,
+        Database.HaskellDB.DriverAPI
+  Hs-source-dirs: src
+  ghc-options: -O2

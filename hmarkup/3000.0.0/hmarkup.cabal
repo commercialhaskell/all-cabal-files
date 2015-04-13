@@ -1,0 +1,20 @@
+Name: hmarkup
+Version: 3000.0.0
+Copyright: Bjorn Bringert 2006
+Maintainer: bjorn@bringert.net
+Author: Bjorn Bringert
+License: BSD3
+License-file: LICENSE
+build-depends: base, mtl, parsec, network, xhtml >= 3000.0.0
+Extensions: 
+Synopsis: Simple wikitext-like markup format implementation.
+Description:
+ This package implements a simple extensible wikitext-like markup format.
+ Currently the only implemented output format is XHTML.
+Exposed-Modules: 
+  Text.HMarkup,
+  Text.HMarkup.Parse,
+  Text.HMarkup.Types,
+  Text.HMarkup.XHtml
+Other-modules: Text.HMarkup.Entities
+ghc-options: -O2 -Wall

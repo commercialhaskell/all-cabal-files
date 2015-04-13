@@ -1,0 +1,19 @@
+name: interleavableGen
+version: 0.0.1
+cabal-version: >= 1.2.3.0
+build-type: Simple
+license: OtherLicense
+license-file: LICENSE
+copyright: (c) 2008 Marco Túlio Gontijo e Silva <marcot@riseup.net>
+author: Marco Túlio Gontijo e Silva
+maintainer: Marco Túlio Gontijo e Silva <marcot@riseup.net>
+synopsis: Generates a version of a module using InterleavableIO
+description:
+  This program generates a version of a module that uses IO a functions, with
+  MonadIO m => m a when the function returns IO, or InterleavableIO m => m a
+  when an IO a function is passed as a callback.
+category: Monads
+tested-with: GHC == 6.8.2
+Executable interleavableGen
+  main-is: Main.hs
+  build-depends: base, directory, hint, haskell-src, mtl

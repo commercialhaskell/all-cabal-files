@@ -1,0 +1,67 @@
+name:                DocTest
+version:             0.1.0
+stability:           experimental
+synopsis:            Test interactive Haskell examples
+description:         DocTest checks examples in source code comments.
+                     It is modeled after doctest for Python
+                     (<http://docs.python.org/library/doctest.html>).
+                     .
+                     Documentation is at <http://haskell.org/haskellwiki/DocTest>.
+category:            Testing
+homepage:            http://haskell.org/haskellwiki/DocTest
+license:             MIT
+license-file:        LICENSE
+author:              Simon Hengel
+maintainer:          simon.hengel@wiktory.org
+build-type:          Simple
+cabal-version:       >= 1.6
+
+extra-source-files:
+    DocTest.cabal
+    LICENSE
+    Setup.lhs
+    tests/run.sh
+    tests/TestInterpreter.hs
+    tests/runtests.sh
+    tests/Main.hs
+    tests/bugfixMultipleStatements/Fib.hs
+    tests/testImport/ModuleB.hs
+    tests/testImport/ModuleA.hs
+    tests/run_interpreter_tests.sh
+    tests/bugfixMultipleModules/ModuleB.hs
+    tests/bugfixMultipleModules/ModuleA.hs
+    tests/selftest.sh
+    tests/testCommentLocation/Foo.hs
+    tests/runtests.bat
+    tests/bugfixOutputToStdErr/Fib.hs
+    tests/testFailOnMultiline/Fib.hs
+    tests/testPutStr/Fib.hs
+    tests/bugfixWorkingDirectory/examples/Fib.hs
+    tests/bugfixWorkingDirectory/description
+    tests/bugfixWorkingDirectory/Fib.hs
+    tests/bugfixImportHierarchical/ModuleB.hs
+    tests/bugfixImportHierarchical/ModuleA.hs
+    tests/Util.hs
+
+source-repository head
+    type:            git
+    location:        http://code.haskell.org/~sih/code/DocTest.git/
+
+executable doctest
+    ghc-options:     -Wall
+    hs-source-dirs:  src
+    main-is:         Main.hs
+    other-modules:
+                      Interpreter
+                    , Options
+                    , HaddockBackend.Api
+                    , HaddockBackend.Markup
+
+    build-depends:
+                       base      >= 4.0.0.0 && < 4.3.0.0
+                     , containers == 0.3.*
+                     , HUnit     == 1.2.*
+                     , process   == 1.0.*
+                     , haddock   == 2.8.*
+                     , ghc-paths == 0.1.*
+                     , ghc       == 6.12.*

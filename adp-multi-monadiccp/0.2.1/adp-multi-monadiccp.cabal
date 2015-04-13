@@ -1,0 +1,92 @@
+name:           adp-multi-monadiccp
+version:        0.2.1
+cabal-version:  >=1.8
+build-type:     Simple
+author:         Maik Riechert
+stability:      experimental
+bug-reports:    https://github.com/adp-multi/adp-multi-monadiccp/issues
+homepage:       http://adp-multi.ruhoh.com
+copyright:      Maik Riechert, 2013
+license:        BSD3
+license-file:   LICENSE
+tested-with:    
+                GHC==7.4.1,
+                GHC==7.6.2
+maintainer:     Maik Riechert
+category:       Algorithms, Data Structures, Bioinformatics
+synopsis:       Subword construction in adp-multi using monadiccp
+description:    
+                This is an experimental subword construction algorithm
+                for the adp-multi package. It uses the constraint
+                programming framework monadiccp with the constraint solver
+                OvertonFD. It is slower than the built-in algorithm in
+                adp-multi and serves research purposes.
+                Use it by importing ADP.Multi.Constraint.All instead
+                of ADP.Multi.Rewriting.All in your grammar files.
+
+source-repository head
+  type:      git
+  location:  git://github.com/adp-multi/adp-multi-monadiccp.git
+
+Flag buildBenchmark
+  description: Build benchmark executable
+  default: False
+
+library
+  hs-source-dirs:   src
+  build-depends:    
+                   base == 4.*,
+                   containers >= 0.4 && < 0.6,
+                   adp-multi >= 0.2.3 && < 0.3,
+                   monadiccp == 0.7.*
+  ghc-options:      -Wall
+  exposed-modules:  
+                   ADP.Multi.Constraint.All,
+                   ADP.Multi.Constraint.Combinators,
+                   ADP.Multi.Constraint.ConstraintSolver
+  other-modules:    ADP.Multi.Constraint.MonadicCpHelper
+
+test-suite Test
+  type:            exitcode-stdio-1.0
+  x-uses-tf:       true
+  ghc-options:     -Wall -rtsopts
+  build-depends:   
+                   base == 4.*,
+                   containers >= 0.4 && < 0.6,
+                   adp-multi == 0.2.*,
+                   monadiccp == 0.7.*,
+                   QuickCheck == 2.5.*,
+                   test-framework == 0.8.*,
+                   test-framework-quickcheck2 == 0.3.*,
+                   mtl >= 2.0 && < 2.2
+  hs-source-dirs:  tests,src
+  main-is:         ADP/Tests/Suite.hs
+  other-modules:   
+                   ADP.Tests.CombinatorsTest,
+                   ADP.Tests.RGExample,
+                   ADP.Tests.RGExampleConstraint,
+                   ADP.Tests.RGExampleExplicit,
+                   Control.CP.MonadicCpExample,
+                   Control.CP.MonadicCpProblems
+  
+executable adp-multi-monadiccp-benchmarks
+  if !flag(buildBenchmark)
+    buildable: False
+  else
+    build-depends:   
+                   base == 4.*,
+                   containers >= 0.4 && < 0.6,
+                   adp-multi == 0.2.*,
+                   monadiccp == 0.7.*,
+                   QuickCheck == 2.5.*,
+                   test-framework == 0.8.*,
+                   test-framework-quickcheck2 == 0.3.*,
+                   mtl >= 2.0 && < 2.2,
+                   criterion == 0.6.*,
+                   deepseq >= 1.1.0.0
+  hs-source-dirs:  benchmarks,
+                   tests,
+                   src
+  ghc-options:     -Wall -rtsopts
+  main-is:         Benchmarks.hs
+  other-modules:   Criterion.Helpers

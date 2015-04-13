@@ -1,0 +1,25 @@
+Name:           dephd
+Version:        0.0
+License:        GPL
+License-File:   LICENSE
+
+Author:         Ketil Malde
+Maintainer:     Ketil Malde <ketil@malde.org>
+
+Category:       Bioinformatics
+Synopsis:       Analyze 'phred' output (.phd files)
+Description:    dephd - A simple tool for base calling and quality appraisal.
+                .
+                Reads files in phd-format (phred output), either specified individually,
+                or in a directory (use the --dir option to read directories).
+                The Darcs repository is at <http://malde.org/~ketil/dephd>.
+
+Build-Depends:  base>3, bio >= 0.3, regex-compat, bytestring==0.9.0.1, process, directory
+Build-Type:     Simple
+Tested-with:    GHC==6.8.3
+
+Data-files:     README, TODO
+Executable:     dephd
+Main-Is:        Dephd.hs
+Hs-Source-Dirs: src
+Ghc-Options:    -Wall -O2 -funbox-strict-fields

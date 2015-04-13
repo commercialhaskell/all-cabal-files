@@ -1,0 +1,43 @@
+name:		directory
+version:	1.0.1.2
+license:	BSD3
+license-file:	LICENSE
+maintainer:	libraries@haskell.org
+bug-reports: http://hackage.haskell.org/trac/ghc/newticket?component=libraries/directory
+synopsis:	library for directory handling
+description:
+	This package provides a library for handling directories.
+category:       System
+build-type: Configure
+extra-tmp-files:
+        config.log config.status autom4te.cache
+        include/HsDirectoryConfig.h
+extra-source-files:
+        config.guess config.sub install-sh
+        configure.ac configure include/HsDirectoryConfig.h.in
+cabal-version: >= 1.6
+
+source-repository head
+    type:     darcs
+    location: http://darcs.haskell.org/packages/directory/
+
+Library {
+    exposed-modules:
+            System.Directory
+    c-sources:
+            cbits/directory.c
+    include-dirs: include
+    includes: HsDirectory.h
+    install-includes: HsDirectory.h HsDirectoryConfig.h
+    extensions: CPP, ForeignFunctionInterface
+    build-depends: base >= 4.2 && < 4.4,
+                   old-time >= 1.0 && < 1.1,
+                   filepath >= 1.1 && < 1.3
+    if !impl(nhc98) {
+      if os(windows) {
+          build-depends: Win32
+      } else {
+          build-depends: unix
+      }
+    }
+}

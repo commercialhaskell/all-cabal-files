@@ -1,0 +1,30 @@
+name:                system-canonicalpath
+version:             0.1.1.0
+synopsis:            Abstract data type for canonical paths with pretty operations
+description:         This library provides abstract data type named 'CanonicalPath' and some useful functions for working with it. See every module's description to find out more.
+homepage:            https://github.com/d12frosted/CanonicalPath
+license:             MIT
+license-file:        LICENSE
+author:              Boris Buliga <d12frosted@icloud.com>
+maintainer:          Boris Buliga <d12frosted@icloud.com>
+copyright:           (c) Boris Buliga, 2014
+category:            System
+build-type:          Custom
+cabal-version:       >=1.10
+extra-source-files:  changelog.md
+
+library
+  exposed-modules:   Filesystem.CanonicalPath
+                   , Filesystem.CanonicalPath.Directory
+
+  other-modules:     Filesystem.CanonicalPath.Internal
+
+  other-extensions:  OverloadedStrings
+
+  build-depends:     base >=4.7 && <4.8
+                   , basic-prelude
+                   , directory
+                   , system-filepath
+                   , text
+
+  default-language:  Haskell2010

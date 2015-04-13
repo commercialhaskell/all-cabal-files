@@ -1,0 +1,27 @@
+Cabal-Version: >= 1.6
+Name:          AC-Vector-Fancy
+Version:       2.0.0
+Stability:     Experimental
+Synopsis:      Fancy type system stuff for AC-Vector
+
+Description:
+
+  Adds various type system tricks to AC-Vector.
+  (Requires several language extensions, including
+  type families.)
+
+Category:      Data, Math, Numerical
+License:       BSD3
+License-file:  License.txt
+Author:        Andrew Coppin
+Maintainer:    MathematicalOrchid@hotmail.com
+Build-Type:    Simple
+Tested-With:   GHC == 6.10.3
+
+Library
+  Exposed-modules:
+    Data.Vector.Axis,
+    Data.Vector.Fancy,
+    Data.Vector.Transform.Fancy
+  Build-Depends:   base >= 4 && < 5, AC-Angle >= 1.0, AC-Vector >= 2.0
+  HS-Source-Dirs:  .

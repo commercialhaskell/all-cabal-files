@@ -1,0 +1,18 @@
+Name:mmtl-base
+Version:15321.1
+License:BSD3
+License-File:license.txt
+Author:Mikhail Vorozhtsov <mikhail.vorozhtsov@gmail.com>, Bas van Dijk <v.dijk.bas@gmail.com>, Matthew Farkas-Dyck
+Copyright:2011 Mikhail Vorozhtsov <mikhail.vorozhtsov@gmail.com>, Bas van Dijk <v.dijk.bas@gmail.com>, Matthew Farkas-Dyck
+Maintainer:strake888@gmail.com
+Category:Control
+Synopsis:MonadBase type-class for mmtl
+Build-Type:Simple
+Cabal-Version: >= 1.2
+Description: Adaptation of Mikhail Vorozhtsov's and Bas van Dijk's transformers-base package to mmtl
+
+Library {
+  Build-Depends: base >= 4 && < 5, mmtl
+  Extensions: MultiParamTypeClasses, FlexibleContexts, FlexibleInstances
+  Exposed-Modules: Control.Monad.Base
+}

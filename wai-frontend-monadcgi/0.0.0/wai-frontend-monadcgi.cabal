@@ -1,0 +1,20 @@
+name:            wai-frontend-monadcgi
+version:         0.0.0
+license:         BSD3
+license-file:    LICENSE
+author:          Michael Snoyman <michael@snoyman.com>
+maintainer:      Michael Snoyman <michael@snoyman.com>
+synopsis:        Allows programs written against MonadCGI to run with any WAI handler.
+category:        Web
+stability:       stable
+cabal-version:   >= 1.2
+build-type:      Simple
+
+library
+    build-depends: base >= 4 && < 5,
+                   bytestring,
+                   containers >= 0.2,
+                   cgi,
+                   wai >= 0.2 && < 0.3
+    exposed-modules: Network.Wai.Frontend.MonadCGI
+    ghc-options:     -Wall

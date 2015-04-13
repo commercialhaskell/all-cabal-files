@@ -1,0 +1,67 @@
+name:           rmonad
+cabal-version:  >= 1.8
+build-type:     Simple
+copyright:      (c) 2008-9 Ganesh Sittampalam, 2008 Peter Gavin
+stability:      provisional
+version:        0.8
+license:        BSD3
+license-file:   LICENSE
+category:       Control
+maintainer:     Ganesh Sittampalam <ganesh@earth.li>
+synopsis:       Restricted monad library
+extra-source-files: README
+description:
+        A library for restricted monads based on associated datatypes.
+        This allows datatypes such as Set to be made into monads.
+        Users can either use the NoImplicitPrelude extension and use
+        Control.RMonad directly, or use Control.RMonad.AsMonad with
+        the embed and unEmbed combinators to use the normal Prelude
+        monad operations.
+
+source-repository head
+      type: darcs
+      location: http://code.haskell.org/rmonad/
+
+source-repository this
+      type: darcs
+      location: http://code.haskell.org/rmonad/
+      tag: "version 0.8"
+
+flag warn-as-error
+  description: build with warnings as errors
+  default: False
+
+Library
+  build-depends:  base < 5, containers, transformers, suitable >=0.1 && < 0.2
+  build-tools:    ghc >= 6.8
+  hs-source-dirs: src/
+
+  exposed-modules:
+        Control.IfThenElse
+        Control.RMonad.Prelude
+        Control.RMonad
+        Control.RMonad.AsMonad
+        Control.RMonad.Fix
+        Control.RMonad.Trans
+        Control.RMonad.Trans.Set
+        Control.RMonad.Trans.List
+        Control.RMonad.Trans.Reader
+        Control.RMonad.Trans.Cont
+
+  ghc-options: -Wall
+  if flag(warn-as-error)
+    ghc-options: -Werror
+
+Test-Suite test
+  type: exitcode-stdio-1.0
+
+  hs-source-dirs: test
+  main-is: allTests.hs
+
+  build-depends:
+    rmonad,
+    base,
+    containers,
+    HUnit,
+    test-framework,
+    test-framework-hunit

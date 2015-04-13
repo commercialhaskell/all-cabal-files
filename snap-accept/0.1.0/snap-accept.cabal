@@ -1,0 +1,39 @@
+name:          snap-accept
+version:       0.1.0
+license:       MIT
+license-file:  LICENSE
+author:        Timothy Jones
+maintainer:    Timothy Jones <git@zimothy.com>
+homepage:      http://github.com/zimothy/snap-accept
+bug-reports:   http://github.com/zimothy/snap-accept/issues
+category:      Web
+copyright:     (c) 2013 Timothy Jones
+build-type:    Simple
+cabal-version: >=1.10
+synopsis:      Accept header branching for the Snap web framework
+description:
+  HTTP media type functionality as a complement to Snap's 'method' and 'methods'
+  functions.  Branches based on the value of the Accept header of the current
+  request, automatically setting the Content-Type header of the response.
+
+library
+  hs-source-dirs: src
+
+  ghc-options: -Wall
+
+  default-language: Haskell2010
+  default-extensions:
+    OverloadedStrings
+
+  exposed-modules:
+    Snap.Accept
+
+  build-depends:
+    base       >= 4.6.0 && < 5.0,
+    http-media >= 0.1.0 && < 0.2,
+    snap-core  >= 0.9.4 && < 0.14
+
+source-repository head
+  type:     git
+  location: git://github.com/zimothy/snap-accept.get
+

@@ -1,0 +1,25 @@
+name:              hidapi
+version:           0.1.1
+build-type:        Simple
+cabal-version:     >= 1.6
+category:          Hardware
+author:            Patrick Chilton <chpatrick@gmail.com>, Niklas Hambüchen <mail@nh2.me>
+maintainer:        Patrick Chilton <chpatrick@gmail.com>
+homepage:          https://github.com/vahokif/haskell-hidapi
+bug-reports:       https://github.com/vahokif/haskell-hidapi/issues
+synopsis:          Haskell bindings to HIDAPI
+description:       Haskell bindings to the HIDAPI library (<http://www.signal11.us/oss/hidapi/>).
+license:           MIT
+license-file:      LICENSE
+
+source-repository head
+  type:      git
+  location:  git://github.com/vahokif/haskell-hidapi.git
+
+library
+  exposed-modules: System.HIDAPI
+  build-depends:
+      base < 5
+    , bytestring >= 0.10
+    , deepseq-generics >= 0.1
+  extra-libraries: hidapi-hidraw

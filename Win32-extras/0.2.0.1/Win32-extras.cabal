@@ -1,0 +1,65 @@
+name:                Win32-extras
+version:             0.2.0.1
+synopsis:            Provides missing Win32 API
+description:         This package provides missing features of Win32 package.
+                     .
+                     This should be part of Win32 package. But it seems that Win32 package is not active development now.
+                     So, I made a separated package for solving today problem.
+license:             BSD3
+license-file:        LICENSE
+author:              shelarcy
+maintainer:          shelarcy@gmail.com
+copyright:           (c) 2012-2013 shelarcy
+category:            System, Graphics
+build-type:          Simple
+cabal-version:       >=1.10
+homepage:            http://hub.darcs.net/shelarcy/Win32-extras/
+bug-reports:         http://hub.darcs.net/shelarcy/Win32-extras/issues
+extra-source-files:  changelog
+
+source-repository head
+   type: darcs
+   location: http://hub.darcs.net/shelarcy/Win32-extras
+
+library
+  exposed-modules:     Graphics.Win32.Compat
+                       Graphics.Win32.LayeredWindow
+                       Graphics.Win32.SafeImport
+                       Graphics.Win32.GDI.AlphaBlend
+                       Graphics.Win32.Window.HotKey
+                       Graphics.Win32.Window.IMM
+                       Graphics.Win32.Window.ForegroundWindow
+                       Graphics.Win32.Window.PostMessage
+
+                       Media.Win32
+
+                       System.Win32.Console.CtrlHandler
+                       System.Win32.Console.HWND
+                       System.Win32.Console.Title
+                       System.Win32.DLL.LoadFunction
+                       System.Win32.Encoding
+                       System.Win32.Error
+                       System.Win32.Exception.Unsupported
+                       System.Win32.HardLink
+                       System.Win32.Info.Computer
+                       System.Win32.Info.Version
+                       System.Win32.Process.Current
+                       System.Win32.String
+                       System.Win32.SymbolicLink
+                       System.Win32.Types.Compat
+                       System.Win32.Utils
+                       System.Win32.Word
+
+  other-modules:       System.Win32.Error.MultiByte
+  build-depends:       base < 5, Win32
+  default-language: Haskell2010
+  if os(windows) && arch(i386)
+   cpp-options: "-DWINDOWS_CCONV=stdcall"
+  else
+   cpp-options: "-DWINDOWS_CCONV=ccall"
+  extra-libraries: msimg32, imm32
+  ghc-options    : -Wall
+  include-dirs:  include
+  -- "cabal sdist" command doesn't contain includes file in tarball.
+  install-includes: alphablend.h
+  c-sources:     cbits/alphablend.c

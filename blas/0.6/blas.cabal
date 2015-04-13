@@ -1,0 +1,205 @@
+name:            blas
+version:         0.6
+homepage:        http://stat.stanford.edu/~patperry/code/blas
+synopsis:        Bindings to the BLAS library
+description:
+    The BLAS (Basic Linear Algebra Subprograms) are routines that provide
+    standard building blocks for performing basic vector and matrix operations. 
+    The Level 1 BLAS perform scalar, vector and vector-vector operations, the 
+    Level 2 BLAS perform matrix-vector operations, and the Level 3 BLAS perform
+    matrix-matrix operations. Because the BLAS are efficient, portable, and
+    widely available, they are commonly used in the development of high quality
+    linear algebra software, LAPACK for example.
+    .
+    For more information, see the Netlib BLAS webpage:
+    <http://www.netlib.org/blas/> 
+    .
+category:        Math
+license:         BSD3
+license-file:    LICENSE
+copyright:       (c) 2008. Patrick Perry <patperry@stanford.edu>
+author:          Patrick Perry
+maintainer:      Patrick Perry <patperry@stanford.edu>
+cabal-version:   >= 1.2.0
+build-type:      Simple
+tested-with:     GHC == 6.8.3
+
+extra-source-files:     INSTALL
+                        NEWS
+                        TODO
+                        
+                        examples/LU.hs
+                        
+                        tests/Makefile
+                        tests/Main.hs
+                        tests/Driver.hs
+                        
+                        tests/Generators/Vector/Dense.hs
+                        tests/Generators/Matrix.hs
+                        tests/Generators/Matrix/Banded.hs
+                        tests/Generators/Matrix/Dense.hs
+                        tests/Generators/Matrix/Diag.hs
+                        tests/Generators/Matrix/Perm.hs
+                        tests/Generators/Matrix/Herm/Banded.hs
+                        tests/Generators/Matrix/Herm/Dense.hs
+                        tests/Generators/Matrix/Tri/Banded.hs
+                        tests/Generators/Matrix/Tri/Dense.hs
+                        tests/Generators/Permutation.hs
+                        
+                        tests/Vector.hs
+                        tests/STVector.hs
+                        tests/Matrix.hs
+                        tests/STMatrix.hs
+                        tests/Banded.hs
+                        tests/Diag.hs
+                        tests/Perm.hs
+                        tests/HermMatrix.hs
+                        tests/HermBanded.hs
+                        tests/TriBanded.hs
+                        tests/TriMatrix.hs
+
+
+-- Below are the flags for specifying which CBLAS to link with.  If no flag
+-- is specified, the default is to use ATLAS.  To use the "custom" flag, you
+-- must edit the section at the end of the file with the name and location
+-- of the CBLAS library you want to use.
+
+flag atlas
+    description:    Link with ATLAS.
+    default:        False
+
+flag gsl
+    description:    Link with GSL unoptimized CBLAS.
+    default:        False
+
+flag mkl
+    description:    Link with Intel MKL.
+    default:        False
+
+flag veclib
+    description:    Link with Mac OS X vecLib.
+    default:        False
+    
+flag custom
+    description:    Link with a custom CBLAS.  
+    default:        False
+    -- You must edit this file below to use this option.  
+
+library
+    exposed-modules:    
+                        BLAS.C
+                            BLAS.C.Level1
+                            BLAS.C.Level2
+                            BLAS.C.Level3
+                            BLAS.C.Types
+
+                        BLAS.Conj
+
+                        BLAS.Elem
+                            BLAS.Elem.Base
+
+                        BLAS.Internal
+
+                        BLAS.Matrix
+                            BLAS.Matrix.Base
+                            BLAS.Matrix.Immutable
+                            BLAS.Matrix.Mutable
+                            BLAS.Matrix.Solve
+                                BLAS.Matrix.Solve.Immutable
+                                BLAS.Matrix.Solve.Mutable
+
+                        BLAS.Tensor
+                            BLAS.Tensor.Base
+                            BLAS.Tensor.Immutable
+                            BLAS.Tensor.Read
+                            BLAS.Tensor.Write
+
+                        BLAS.Types
+
+                        BLAS.UnsafeIOToM
+
+                        Data.Matrix.Banded
+                            Data.Matrix.Banded.IO
+                            Data.Matrix.Banded.ST
+                            Data.Matrix.Banded.Class
+                        
+                        Data.Matrix.Dense
+                            Data.Matrix.Dense.IO
+                            Data.Matrix.Dense.ST
+                            Data.Matrix.Dense.Class
+
+                        Data.Matrix.Diag 
+                        Data.Matrix.Perm
+                        Data.Matrix.Herm
+                        Data.Matrix.Tri
+
+                        Data.Vector.Dense
+                            Data.Vector.Dense.IO
+                            Data.Vector.Dense.ST
+                            Data.Vector.Dense.Class
+
+
+    other-modules:      BLAS.C.Double
+                        BLAS.C.Zomplex
+                        
+                        Data.Vector.Dense.Internal
+                        Data.Vector.Dense.Class.Internal
+                        Data.Vector.Dense.Class.Internal.Base
+                        Data.Vector.Dense.Class.Creating
+                        Data.Vector.Dense.Class.Elements
+                        Data.Vector.Dense.Class.Special
+                        Data.Vector.Dense.Class.Views
+                        Data.Vector.Dense.Class.Copying
+                        Data.Vector.Dense.Class.Properties
+                        Data.Vector.Dense.Class.Operations
+                        
+                        Data.Matrix.Banded.Internal
+                        Data.Matrix.Banded.Class.Internal
+                        Data.Matrix.Banded.Class.Creating
+                        Data.Matrix.Banded.Class.Elements
+                        Data.Matrix.Banded.Class.Special
+                        Data.Matrix.Banded.Class.Views
+                        Data.Matrix.Banded.Class.Copying
+                        
+                        Data.Matrix.Dense.Internal
+                        Data.Matrix.Dense.Class.Internal
+                        Data.Matrix.Dense.Class.Creating
+                        Data.Matrix.Dense.Class.Elements
+                        Data.Matrix.Dense.Class.Special
+                        Data.Matrix.Dense.Class.Views
+                        Data.Matrix.Dense.Class.Copying
+                        Data.Matrix.Dense.Class.Operations
+                        
+    ghc-options:        -Wall
+    extensions:         BangPatterns, FlexibleContexts, 
+                        FlexibleInstances, ForeignFunctionInterface, 
+                        FunctionalDependencies, MultiParamTypeClasses
+    build-depends:      base, ieee, permutation, storable-complex
+
+    
+    if flag(atlas)
+        extra-libraries:    cblas atlas
+      
+    if flag(gsl)
+        extra-libraries:    gslcblas
+
+    if flag(mkl)
+      if arch(x86_64)
+        extra-libraries:    mkl_lapack mkl_intel_lp64 mkl_sequential mkl_core
+      else
+        extra-libraries:    mkl_lapack mkl_intel mkl_sequential mkl_core
+
+    if flag(veclib)
+        extra-libraries:    cblas
+
+    if flag(custom)
+        -- CUSTOM CBLAS LIBS GO HERE
+        extra-libraries:    
+        
+        -- PATH TO CUSTOM LIB DIR GOES HERE 
+        extra-lib-dirs:     
+    
+    -- fall back to ATLAS if no flag is specified
+    if !flag(atlas) && !flag(gsl) && !flag(mkl) && !flag(veclib) && !flag(custom)
+        extra-libraries:    cblas atlas
+    

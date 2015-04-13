@@ -1,0 +1,35 @@
+name:              fb-persistent
+version:           0.1
+license:           BSD3
+license-file:      LICENSE
+author:            Felipe Lessa
+maintainer:        Felipe Lessa <felipe.lessa@gmail.com>
+synopsis:          Provides Persistent instances to Facebook types.
+category:          Web
+stability:         Experimental
+cabal-version:     >= 1.8
+build-type:        Simple
+homepage:          https://github.com/meteficha/fb-persistent
+
+description:
+  This package provides orphan Persistent instances to Facebook
+  types.  It is needed because @fb@ package should not depend on
+  @persistent@, and neither should @persistent@ depend on @fb@.
+  Use this @fb-persistent@ package instead of providing your own
+  orphan instances.
+
+
+source-repository head
+  type:     git
+  location: git://github.com/meteficha/fb-persistent.git
+
+
+library
+  hs-source-dirs: src
+  ghc-options: -Wall
+  exposed-modules:
+    Facebook.Persistent
+  build-depends:
+      base       >= 4     && < 5
+    , fb         >= 0.7.1
+    , persistent >= 0.7   && < 0.9

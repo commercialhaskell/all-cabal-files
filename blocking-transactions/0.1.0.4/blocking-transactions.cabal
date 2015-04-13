@@ -1,0 +1,43 @@
+Name:                blocking-transactions
+
+-- The package version. See the Haskell package versioning policy
+-- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
+-- standards guiding when and how versions should be incremented.
+Version:             0.1.0.4
+
+Synopsis:            Composable, blocking transactions.
+
+Description:         A variable type (BVar), monad (BTM), and arrow
+                     (BTA), which provide fast, atomic, composable, blocking
+                     inter-thread communication.  Blocking transactions are
+                     strictly less expressive than software transactional
+                     memory, but may be more efficient under very high
+                     contention.
+
+Homepage:            http://www.downstairspeople.org/git/blocking-transactions.git
+License:             BSD3
+License-file:        LICENSE
+Author:              Christopher Lane Hinson
+Maintainer:          lane@downstairspeople.org
+Stability:           Experimental
+Category:            Concurrency
+Build-type:          Simple
+Cabal-version:       >=1.2
+
+Flag Tests
+  Default:           False
+
+Library
+  Exposed-modules:     BlockingTransactions.BlockingTransactions
+
+  Build-depends:       base >=4&&<5, containers, parallel
+  ghc-options:         -O2
+
+Executable _RandomAccounts
+  main-is:          Examples/RandomAccounts.hs
+  Build-depends:    base >=4&&<5, random, array, stm
+  ghc-options:      -threaded -O2
+  ghc-prof-options: -prof -auto-all
+  if( !flag(Tests) )
+    buildable:      False
+

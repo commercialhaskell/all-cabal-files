@@ -1,0 +1,30 @@
+Name: gtk-simple-list-view
+Version: 0.0.0
+Synopsis: A simple custom form widget for gtk which allows single LOC creation/updating of list views.
+Description:
+ A simple custom form widget for gtk which allows single LOC creation/updating of list views.
+
+Category:Graphics
+
+License: GPL-3
+License-file:COPYING 
+Author: Timothy Hobbs
+Maintainer: Timothy Hobbs <timothyhobbs@seznam.cz>
+build-type:Simple
+
+homepage: http://github.com/timthelion/gtk-simple-list-view
+
+cabal-version: >= 1.6
+
+library
+ exposed-modules: Graphics.UI.Gtk.Custom.SimpleListView
+ build-depends:
+  gtk >= 0.12.0
+  ,base == 4.*
+ ghc-options:     -Wall
+ if impl(ghc >= 6.8)
+  ghc-options: -fwarn-tabs
+
+source-repository head
+ type:     git
+ location: git://github.com/timthelion/gtk-simple-list-view.git

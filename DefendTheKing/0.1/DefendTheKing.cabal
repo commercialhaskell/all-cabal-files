@@ -1,0 +1,33 @@
+Name:                DefendTheKing
+Version:             0.1
+Cabal-Version:       >= 1.2
+Synopsis:            A graphical demo. Will be a game
+Category:            game, FRP
+Description:
+
+  Defend the King from the Forces of Different:
+
+  A graphical demo.
+
+  Intended to become a simple fast-paced multiplayer RTS game
+  in the likes of Bughouse-Chess and Starcraft.
+
+Author:              Yair Chuchem
+Maintainer:          Yair Chuchem (yairchu@gmail.com)
+Homepage:            http://github.com/yairchu/defend/tree
+Copyright:           (c) 2009, Yair Chuchem
+License:             GPL
+License-File:        LICENSE
+Stability:           experimental
+Build-Type:          Simple
+Extra-Source-Files:
+  src/defend.hs
+  src/Chess.hs
+  src/ChessFont.hs
+Executable defend
+  Executable:        defend
+  HS-Source-Dirs:    src
+  Main-IS:           defend.hs
+  Build-Depends:     base >=2 && < 5, peakachu, GLUT
+  GHC-Options:       -O2 -Wall
+

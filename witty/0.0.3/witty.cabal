@@ -1,0 +1,36 @@
+Name:                   witty
+Version:                0.0.3
+Author:                 Kazu Yamamoto <kazu@iij.ad.jp>
+Maintainer:             Kazu Yamamoto <kazu@iij.ad.jp>
+License:                BSD3
+License-File:           LICENSE
+Synopsis:               A network server to show bottlenecks of GHC
+Description:            A network server to show bottlenecks of GHC
+Homepage:               https://github.com/kazu-yamamoto/witty/blob/master/README.md
+Category:               Network, Web
+Cabal-Version:          >= 1.8
+Build-Type:             Simple
+
+Executable witty
+  Main-Is:              Witty.hs
+  Other-Modules:        Accept
+                        Buffer
+                        Listen
+                        Malloc
+                        Prefork
+                        Recv
+                        Reply
+                        Send
+                        Types
+                        Worker
+  HS-Source-Dirs:       src
+  GHC-Options:          -Wall -threaded -rtsopts
+  Build-Depends:        base >= 4.0 && < 5
+                      , bytestring
+                      , network
+                      , unix
+
+Source-Repository head
+  Type:                 git
+  Location:             git://github.com/kazu-yamamoto/witty
+

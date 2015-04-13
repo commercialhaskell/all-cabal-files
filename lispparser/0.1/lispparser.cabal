@@ -1,0 +1,20 @@
+Name:                lispparser
+Version:             0.1
+Synopsis:            Simple parser for LISP S-expressions
+Description:
+    .
+    A simple parser for LISP S-expressions, using Parsec.
+    .
+    This comes from Johnathan Tang's tutorial,
+    /Write Yourself a Scheme in 48 Hours/.
+    .
+License:             BSD3
+License-file:        LICENSE
+Category:            Data
+Copyright:           Copyright (c) Johnathan Tang 2008
+Author:              Johnathan Tang
+Maintainer:          eric.kow@gmail.com
+Stability:           provisional
+Build-Type:          Simple
+Build-depends:       base, parsec
+Exposed-modules:     Text.ParserCombinators.Parsec.Lisp

@@ -1,0 +1,37 @@
+name:                text-normal
+version:             0.1.0.0
+synopsis:            Unicode-normalized text
+description:
+  This package provides types and functions for normalizing and comparing
+  @Text@ values according to Unicode equivalence.
+  .
+  An in-depth explanation of the forms of Unicode equivalence can be found
+  <http://en.wikipedia.org/wiki/Unicode_equivalence on Wikipedia>.
+  .
+  The modules in this package are named and function according to the four methods of
+  Unicode normalization. The @Normal@ types exported by each are purposefully
+  not compatible with functions exported by the other modules.
+  .
+  This package depends on @text-icu@, which means it requires that the @icu@
+  C library is installed.
+homepage:            https://github.com/joelteon/text-normal.git
+license:             MIT
+license-file:        LICENSE
+author:              Joel Taylor
+maintainer:          me@joelt.io
+category:            Data
+build-type:          Simple
+cabal-version:       >=1.10
+
+source-repository head
+  type: git
+  location: https://github.com/joelteon/text-normal.git
+
+library
+  exposed-modules:     Data.Text.Normal.NFC
+                       Data.Text.Normal.NFD
+                       Data.Text.Normal.NFKC
+                       Data.Text.Normal.NFKD
+  build-depends:       base >=4.6 && <4.7, deepseq, text, text-icu
+  hs-source-dirs:      src
+  default-language:    Haskell2010

@@ -1,0 +1,27 @@
+name:                nitro
+version:             0.2.2.5
+synopsis:            Haskell bindings for Nitro
+description:         Nitro is a secure message-passing network applications library.
+license:             BSD3
+license-file:        LICENSE
+author:              Erin Dahlgren
+maintainer:          edahlgren@bu.mp
+homepage:            http://haskell.gonitro.io
+category:            System, FFI
+build-type:          Configure
+stability:           experimental
+tested-with:         GHC == 7.6.1
+cabal-version:       >=1.8
+
+extra-source-files:
+  configure
+  nitro.buildinfo.in
+  include/nitrocfg.h.in
+
+library
+  exposed-modules: System.Nitro
+  build-depends:   base ==4.6.*,
+                   bytestring
+
+  extensions: ForeignFunctionInterface, CPP
+  c-sources: System/Nitro.chs.c

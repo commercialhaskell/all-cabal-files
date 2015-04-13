@@ -1,0 +1,16 @@
+name:                ipc
+version:             0.0.2
+synopsis:            High level inter-process communication library
+description:         Provides inter-process communication at a high level
+Copyright:           2008, Thomas DuBuisson
+category:            System
+license:             BSD3
+license-file:        LICENSE
+author:              Thomas DuBuisson
+maintainer:          Thomas.DuBuisson@gmail.com
+build-type:          Simple
+build-Depends:       base, network, dlist, network-bytestring, binary, stm, mtl, bytestring
+exposed-modules:     System.IPC, Data.Queue
+stability:           alpha
+tested-with:         GHC == 6.8.2
+extensions:          EmptyDataDecls

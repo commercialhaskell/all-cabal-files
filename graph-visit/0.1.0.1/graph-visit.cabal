@@ -1,0 +1,30 @@
+Name:				graph-visit
+Version:			0.1.0.1
+cabal-version:      >= 1.6
+License:			BSD3
+license-file:		LICENSE
+Copyright:			Utrecht University, Department of Information and Computing Sciences, Software Technology group
+Build-Type:		    Simple
+Author:				Atze Dijkstra
+Maintainer:         atze@uu.nl
+Homepage:           https://github.com/atzedijkstra/graph-visit
+Bug-Reports:        https://github.com/atzedijkstra/graph-visit/issues
+Category:			Development
+Synopsis:			Graph walk abstraction
+Description:        Walk over a graph, abstracting away from the underlying representation, not caring about precise order
+source-repository head
+  type:        git
+  location:    git://github.com/atzedijkstra/graph-visit.git
+
+library
+  Build-Depends:
+    base >= 4 && < 5,
+    data-lens >= 2 && < 3,
+    data-lens-template >= 2 && < 3,
+    mtl >= 2 && < 3,
+    containers >= 0.4 && < 0.5
+  Exposed-Modules:		Data.Graph.GraphVisit
+  Ghc-Options:		
+  HS-Source-Dirs:     	src
+  Build-Tools:		
+  Extensions:			

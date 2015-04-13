@@ -1,0 +1,44 @@
+
+name:                html-rules
+version:             0.1.0.1
+synopsis:            Perform traversals of HTML structures using sets of rules.
+description:         
+license:             BSD3
+license-file:        LICENSE
+author:              Kyle Carter
+maintainer:          Kyle Carter <kcarter@galois.com>
+copyright:           (c) Kyle Carter 2014, All rights reserved
+homepage:            http://github.com/kylcarte/html-rules/
+bug-reports:         http://github.com/kylcarte/html-rules/issues
+category:            HTML, Web, Text, Transformation
+build-type:          Simple
+-- extra-source-files:  
+cabal-version:       >=1.10
+
+source-repository head
+  type: git
+  location: git://github.com/kylcarte/html-rules.git
+
+library
+  exposed-modules:     Text.HTML.Rules
+                       ----
+                       Text.HTML.Rules.Types
+                       Text.HTML.Rules.Apply
+                       ----
+                       Text.HTML.Rules.Query
+                       ----
+                       Text.HTML.Rules.Transform
+                       Text.HTML.Rules.Attributes
+                       ----
+                       Text.HTML.Rules.Util
+  -- other-modules:       
+  -- other-extensions:    
+  build-depends:       base >=2 && < 5,
+                       lens >=4 && < 5,
+                       tagsoup >= 0.13,
+                       transformers >=0.2 && <0.4,
+                       mtl >=2 && <3
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+  ghc-options:         -Wall -fno-warn-unused-do-bind
+

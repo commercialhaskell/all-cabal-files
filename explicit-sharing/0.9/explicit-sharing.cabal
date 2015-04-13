@@ -1,0 +1,41 @@
+Name:          explicit-sharing
+Version:       0.9
+Cabal-Version: >= 1.6
+Synopsis:      Explicit Sharing of Monadic Effects
+Description:   
+
+  This package implements a monad for non-deterministic computations
+  with sharing.
+
+Category:      Control, Monads
+License:       PublicDomain
+License-File:  LICENSE
+Author:        Chung-chieh Shan, Oleg Kiselyov, and Sebastian Fischer
+Maintainer:    sebf@informatik.uni-kiel.de
+Homepage:      http://sebfisch.github.com/explicit-sharing
+Bug-Reports:   http://github.com/sebfisch/explicit-sharing/issues
+Build-Type:    Custom
+Stability:     experimental
+
+Extra-Source-Files: Test.hs, permsort.hs, reverse.hs, last.hs
+
+Library
+  Build-Depends:    base >= 3 && < 5, containers, mtl < 2,
+                    template-haskell >= 2.4 && < 2.6,
+                    derive >= 2.3.0.1 && < 2.5
+  Exposed-Modules:  Control.Monad.Sharing,
+                    Control.Monad.Sharing.Classes,
+                    Data.Monadic.Derive,
+                    Data.Monadic.List
+  Other-Modules:    Control.Monad.Sharing.Implementation.CPS
+  Ghc-Options:      -Wall -fno-warn-name-shadowing
+  Extensions:       ExistentialQuantification,
+                    MultiParamTypeClasses,
+                    FlexibleInstances,
+                    FlexibleContexts,
+                    RelaxedPolyRec,
+                    Rank2Types
+
+Source-Repository head
+  type:     git
+  location: git://github.com/sebfisch/explicit-sharing.git

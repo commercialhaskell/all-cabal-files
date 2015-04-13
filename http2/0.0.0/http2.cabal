@@ -1,0 +1,78 @@
+Name:                   http2
+Version:                0.0.0
+Author:                 Kazu Yamamoto <kazu@iij.ad.jp>
+Maintainer:             Kazu Yamamoto <kazu@iij.ad.jp>
+License:                BSD3
+License-File:           LICENSE
+Synopsis:               HTTP/2.0 library including HPACK
+Description:            HTTP/2.0 library including HPACK.
+                        Currently only HPACK 06 is supported.
+Category:               Network
+Cabal-Version:          >= 1.10
+Build-Type:             Simple
+
+Library
+  Default-Language:     Haskell2010
+  GHC-Options:          -Wall
+  Exposed-Modules:      Network.HPACK
+                        Network.HPACK.Context
+                        Network.HPACK.Context.HeaderSet
+                        Network.HPACK.Context.ReferenceSet
+                        Network.HPACK.Huffman
+                        Network.HPACK.Huffman.Bit
+                        Network.HPACK.Huffman.Code
+                        Network.HPACK.Huffman.Request
+                        Network.HPACK.Huffman.Response
+                        Network.HPACK.HeaderBlock
+                        Network.HPACK.HeaderBlock.Decode
+                        Network.HPACK.HeaderBlock.Encode
+                        Network.HPACK.HeaderBlock.From
+                        Network.HPACK.HeaderBlock.HeaderField
+                        Network.HPACK.HeaderBlock.Integer
+                        Network.HPACK.HeaderBlock.String
+                        Network.HPACK.HeaderBlock.To
+                        Network.HPACK.Table
+                        Network.HPACK.Table.Entry
+                        Network.HPACK.Table.Header
+                        Network.HPACK.Table.Static
+                        Network.HPACK.Types
+  Build-Depends:        base >= 4 && < 5
+                      , array
+                      , blaze-builder
+                      , bytestring
+                      , case-insensitive
+                      , hashtables
+                      , http-types
+
+Test-Suite doctest
+  Type:                 exitcode-stdio-1.0
+  Default-Language:     Haskell2010
+  HS-Source-Dirs:       test
+  Ghc-Options:          -Wall
+  Main-Is:              doctests.hs
+  Build-Depends:        base
+                      , doctest >= 0.9.3
+
+Test-Suite spec
+  Type:                 exitcode-stdio-1.0
+  Default-Language:     Haskell2010
+  HS-Source-Dirs:       test
+  Ghc-Options:          -Wall
+  Main-Is:              Spec.hs
+  Other-Modules:        BitSpec
+                        DecodeSpec
+                        HeaderBlockSpec
+                        HuffmanRequestSpec
+                        HuffmanResponseSpec
+                        IntegerSpec
+                        HeaderBlock
+                        HexString
+  Build-Depends:        base
+                      , bytestring
+                      , http2
+                      , hspec >= 1.3
+
+Source-Repository head
+  Type:                 git
+  Location:             git://github.com/kazu-yamamoto/http2
+

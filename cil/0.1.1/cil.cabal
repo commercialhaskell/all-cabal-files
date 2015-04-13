@@ -1,0 +1,43 @@
+name:    cil
+version: 0.1.1
+
+category: Language
+
+synopsis: An interface to CIL.
+
+description:
+  CIL is a simplified, intermediate language for C.
+  CIL makes a great frontend for C analysis, instrumentation, and compilation tools.
+
+author:     Tom Hawkins <tomahawkins@gmail.com>
+maintainer: Tom Hawkins <tomahawkins@gmail.com>
+
+license:      BSD3
+license-file: LICENSE
+
+homepage: http://tomahawkins.org
+
+build-type:    Simple
+cabal-version: >= 1.6
+
+library
+    build-depends:
+        base          >= 4.0     && < 5.0,
+        bytestring    >= 0.9     && < 1.0,
+        language-c    >= 0.3.2   && < 0.4
+
+    exposed-modules:
+        Language.CIL,
+        Language.CIL.Parse,
+        Language.CIL.StmtCore,
+        Language.CIL.StmtGoto,
+        Language.CIL.Types
+
+    extensions:
+
+    ghc-options:       -W
+
+source-repository head
+    type:     git
+    location: git://github.com/tomahawkins/cil.git
+

@@ -1,0 +1,21 @@
+name:                keyvaluehash
+version:             0.3.0.1
+synopsis:            Pure Haskell key/value store implementation
+-- description:         
+license:             BSD3
+license-file:        LICENSE
+author:              Eyal Lotem
+maintainer:          eyal.lotem@gmail.com
+-- copyright:           
+category:            Database
+build-type:          Simple
+cabal-version:       >=1.8
+
+library
+  hs-Source-Dirs:      src
+  exposed-modules:     Database.KeyValueHash
+  other-modules:       Database.GrowingFile, Database.FileArray
+  build-depends:       base >= 3 && <10, filepath, directory, bytestring, hashable,
+                       binary, derive, mmap, array, storable-record
+  ghc-options:         -O2 -Wall
+  ghc-prof-options:    -Wall -auto-all -caf-all -rtsopts

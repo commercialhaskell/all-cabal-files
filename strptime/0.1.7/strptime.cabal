@@ -1,0 +1,35 @@
+Name: strptime
+Category: System, Data, Parsing
+Version: 0.1.7
+Cabal-version: >= 1.2
+Build-type: Simple
+Copyright: Eugene Kirpichov
+Maintainer: ekirpichov@gmail.com    
+Author: Eugene Kirpichov
+License: BSD3
+License-File: LICENSE
+Synopsis: Efficient parsing of LocalTime using a binding to C's strptime
+Description:
+  This library provides a binding to strptime, that allows to parse 
+  dates and times from strings and strict/lazy bytestrings. The library
+  creates LocalTime values.
+Cabal-Version: >= 1.6
+Extra-Source-Files: include/hstrptime.h
+
+Source-repository head
+  type: darcs
+  location: http://patch-tag.com/r/jkff/strptime
+
+Flag split-base
+
+Library
+  Build-Depends: time, bytestring
+  C-sources: cbits/hstrptime.c
+  Include-dirs: include
+
+  if flag(split-base)
+    Build-depends: base >= 3.0 && < 5.0
+  else
+    Build-depends: base < 3.0
+  Exposed-modules: Data.Time.Parse
+

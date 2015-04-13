@@ -1,0 +1,58 @@
+cabal-version:    >= 1.6
+build-type:       Simple
+name:             random-stream
+version:          0.1.1
+license:          BSD3
+license-file:     LICENSE
+category:         System
+author:           Manlio Perillo <manlio.perillo@gmail.com>
+maintainer:       Manlio Perillo <manlio.perillo@gmail.com>
+copyright:        Manlio Perillo 2009
+synopsis:         An infinite stream of random data
+description:
+    Portable interface for the operating system source of pseudo
+    random data.
+
+    Supported sources are Unix /dev/urandom, Win32 CryptGenRandom and
+    OpenSSL pseudo random numbers generator.
+
+    This package is based on idea from os.urandom implementation, in
+    CPython.
+stability:        Beta
+
+Flag HAVE_URANDOM
+  Description: Unix /dev/urandom is available
+  Default:     False
+
+Flag HAVE_SSL
+  Description: OpenSSL pseudo random numbers generator is available
+  Default:     False
+
+Flag HAVE_WIN32_CRYPT
+  Description: Win32 CryptGenRandom is available
+  Default:     False
+
+library
+    build-depends:      base, random, bytestring, binary
+    exposed-modules:    System.Random.URandom, System.Random.Stream
+    hs-source-dirs:     src
+    ghc-options:        -Wall
+    extensions:         CPP, ForeignFunctionInterface
+    include-dirs:       include
+    includes:           HsURandom.h
+    install-includes:   HsURandom.h
+    cc-options:         -Wall
+    c-sources:          cbits/HsURandom.c
+
+
+    -- XXX this is rather ugly
+    if flag(HAVE_URANDOM)
+        cc-options:    -DHAVE_URANDOM
+    else
+        if flag(HAVE_SSL)
+           cc-options:         -DHAVE_SSL
+           extra-libraries:    ssl
+        else
+           if flag(HAVE_WIN32_CRYPT)
+               cc-options:         -DHAVE_WIN32_CRYPT
+               extra-libraries:    advapi32

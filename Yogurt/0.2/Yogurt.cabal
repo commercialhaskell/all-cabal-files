@@ -1,0 +1,20 @@
+Name:           Yogurt
+Version:        0.2
+Synopsis:       A MUD client library
+Description:    A MUD client library for Haskell. Features prioritized, regex-based hooks, variables and timers.
+
+Author:         Martijn van Steenbergen
+Maintainer:     martijn@van.steenbergen.nl
+Copyright:      Copyright (c) 2008 Martijn van Steenbergen
+Homepage:       http://martijn.van.steenbergen.nl/projects/yogurt/
+
+Cabal-Version:  >= 1.2
+License:        BSD3
+License-file:   LICENSE
+Category:       Network
+Build-type:     Simple
+
+Library
+  Build-Depends:    base, mtl, regex-posix, containers, time, old-locale, process, readline, network
+  Exposed-Modules:  Network.Yogurt, Network.Yogurt.Mud, Network.Yogurt.Utils, Network.Yogurt.Engine
+  Other-Modules:    Network.Yogurt.Ansi, Network.Yogurt.IO

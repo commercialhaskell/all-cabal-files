@@ -1,0 +1,14 @@
+Name:                   trhsx
+Version:                0.2.2
+License:                BSD3
+Author:                 Niklas Broberg
+Maintainer:             Niklas Broberg <nibro@cs.chalmers.se>
+
+Stability:              Deprecated
+Category:               Language
+Synopsis:               Deprecated
+Description: 		This tool is now part of the hsx package, and should be considered deprecated as a stand-alone package.
+
+build-type:		Simple
+
+exposed-modules:	Trhsx

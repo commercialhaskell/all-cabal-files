@@ -1,0 +1,66 @@
+name: ffeed
+version: 0.3
+synopsis: Haskell binding to the FriendFeed API
+description:
+   The hs-ffeed API binding lets you access friendfeed.com's
+   resources and methods from Haskell. Implements the
+   full API, as specified at http://code.google.com/p/friendfeed-api/wiki/ApiDocumentation
+
+category: Web
+license:  BSD3
+license-file: LICENSE
+author:   Sigbjorn Finne
+maintainer: sof@forkio.com
+build-depends: base, HTTP, xml
+cabal-version:  >= 1.2
+build-type: Simple
+extra-source-files: README
+                    examples/ShowPublic.hs
+                    examples/Util/GetOpts.hs
+
+flag new-base
+  Description: Build with new smaller base library
+  Default: False
+  
+
+library
+ Exposed-modules: FriendFeed.Types,
+                  FriendFeed.Monad,
+                  FriendFeed.API,
+                  FriendFeed.Entry,
+                  FriendFeed.List,
+                  FriendFeed.Publish,
+                  FriendFeed.Room,
+                  FriendFeed.Search,
+                  FriendFeed.Service,
+                  FriendFeed.Subscribe,
+                  FriendFeed.Updates,
+                  FriendFeed.User,
+                  Util.Codec.Percent,
+                  Util.Codec.URLEncoder,
+                  Util.Fetch
+ Ghc-Options:     -Wall
+ build-depends:   base, HTTP, network, utf8-string, json
+
+ if flag(new-base)
+   Build-Depends: base >= 3
+ else
+   Build-Depends: base < 3
+
+executable main {
+  build-depends:        base
+  main-is:              Main.hs
+  ghc-options:          -Wall -fglasgow-exts
+}
+
+executable showPublic {
+  build-depends:        base, pretty
+  main-is:              examples/ShowPublic.hs
+  ghc-options:          -Wall -fglasgow-exts -iexamples
+}
+
+executable tweetStream {
+  build-depends:        base, pretty
+  main-is:              examples/TweetStream.hs
+  ghc-options:          -Wall -fglasgow-exts -iexamples
+}

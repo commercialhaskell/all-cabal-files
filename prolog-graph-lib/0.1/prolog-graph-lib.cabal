@@ -1,0 +1,26 @@
+Name:                prolog-graph-lib
+Version:             0.1
+Synopsis:            Generating images of resolution trees for Prolog queries.
+Description:         This is the library part (See <http://hackage.haskell.org/package/prolog-graph> for the command line tool).
+License:             PublicDomain
+Author:              Matthias Bartsch
+Maintainer:          bartsch@cs.uni-bonn.de
+Homepage:            https://github.com/Erdwolf/prolog
+Category:            Language
+Build-type:          Simple
+Cabal-version:       >=1.6
+
+Source-repository head
+   type: git
+   location: git://github.com/Erdwolf/prolog.git
+
+Library
+  Exposed-Modules: Language.Prolog.GraphViz
+  Other-Modules: GraphViz
+  Build-depends:
+    prolog == 0.1.*,
+    base >=4 && <5,
+    fgl >= 5.4.2.4,
+    mtl >= 2.0.1.0,
+    text >= 0.11.1.5,
+    graphviz >= 2999.12.0.3

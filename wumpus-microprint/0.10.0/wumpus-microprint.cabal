@@ -1,0 +1,68 @@
+name:             wumpus-microprint
+version:          0.10.0
+license:          BSD3
+license-file:     LICENSE
+copyright:        Stephen Tetley <stephen.tetley@gmail.com>
+maintainer:       Stephen Tetley <stephen.tetley@gmail.com>
+homepage:         http://code.google.com/p/copperbox/
+category:         Graphics
+synopsis:         Microprints - "greek-text" pictures.
+description:
+  .
+  A library to produce /microprints/ [1] sometimes known as 
+  \"greek-text\". 
+  .
+  A rudimentary tokenizer is provided, but it is largely 
+  untested. 
+  .
+  Version 0.9.0 adds some new functionality, but the API is
+  undercooked and is unsuitable for real use. The API will improve 
+  as Wumpus-Basic improves...
+  .
+  .
+  \[1\] <http://scg.unibe.ch/archive/papers/Robb05b-microprintsESUG.pdf>
+  .
+  Changelog:
+  .
+  0.9.0 to 0.10.0:
+  .
+  * Updated to track changes in Wumpus-Basic.
+  .
+  .
+build-type:         Simple
+stability:          highly unstable
+cabal-version:      >= 1.2
+
+extra-source-files:
+  CHANGES,
+  LICENSE,
+  demo/Demo01.hs
+  
+library
+  hs-source-dirs:     src
+  build-depends:      base              <  5, 
+                      vector-space      >= 0.6,
+                      wumpus-core       == 0.35.0,
+                      wumpus-basic      == 0.10.0
+
+  
+  exposed-modules:
+    Wumpus.Microprint,
+    Wumpus.Microprint.Datatypes,
+    Wumpus.Microprint.Teletype,
+    Wumpus.Microprint.Render,
+    Wumpus.Microprint.Tokenizer,
+    Wumpus.Microprint.VersionNumber
+
+  other-modules:
+
+  extensions:
+    
+
+  ghc-options:
+  
+  includes: 
+  
+
+  
+  

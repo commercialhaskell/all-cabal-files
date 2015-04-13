@@ -1,0 +1,30 @@
+Name:            named-lock
+Version:         0.1
+License:         BSD3
+License-File:    LICENSE
+Author:          Thomas Schilling <nominolo@googlemail.com>
+Maintainer:      Thomas Schilling <nominolo@googlemail.com>
+Homepage:        http://github.com/nominolo/named-lock
+Synopsis:        A named lock that is created on demand.
+Description:
+  A named lock that is created on demand.
+  .
+  This is useful for situations where there is a potentially infinite
+  number of resources (e.g., database queries) that should not be used
+  concurrently.
+
+Category:        Concurrency
+Stability:       provisional
+Build-Type:      Simple
+Cabal-Version:   >= 1.4
+
+Library
+  Build-Depends:
+    base >= 4 && < 5,
+    containers >= 0.2 && < 0.3
+  GHC-Options:
+    -Wall
+  Exposed-Modules:
+    Control.Concurrent.NamedLock
+  Hs-Source-Dirs: src
+

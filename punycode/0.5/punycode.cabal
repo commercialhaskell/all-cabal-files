@@ -1,0 +1,38 @@
+name:            punycode
+version:         0.5
+license:         BSD3
+license-file:    LICENSE
+author:          Myles C. Maxfield <myles.maxfield@gmail.com>
+maintainer:      Myles C. Maxfield <myles.maxfield@gmail.com>
+synopsis:        Encode unicode strings to ascii forms according to RFC 3492
+description:     Encode unicode strings to ascii forms according to RFC 3492. It is written in pure Haskell, as opposed to gnuidn's Data.Text.IDN.Punycode
+category:        Text, Web
+stability:       Experimental
+cabal-version:   >= 1.8
+build-type:      Simple
+homepage:        https://github.com/litherum/punycode
+
+library
+    build-depends: base         >= 4       && < 5
+                 , bytestring
+                 , cereal
+                 , mtl
+    exposed-modules: Data.Text.Punycode
+    other-modules:   Data.Text.Punycode.Encode
+                   , Data.Text.Punycode.Decode
+                   , Data.Text.Punycode.Shared
+    ghc-options:     -Wall
+
+Test-Suite test-punycode
+    type: exitcode-stdio-1.0
+    main-is: Test/Main.hs
+    build-depends: base >= 4 && < 5
+                 , bytestring
+                 , cereal
+                 , mtl
+                 , HUnit
+                 , QuickCheck
+
+source-repository head
+  type:     git
+  location: git://github.com/litherum/punycode.git

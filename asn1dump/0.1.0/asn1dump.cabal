@@ -1,0 +1,29 @@
+Name:                asn1dump
+Version:             0.1.0
+Synopsis:            Dump ASN1 structure
+Description:         dump ASN1 structure from file in raw or PEM format.
+License:             BSD3
+License-file:        LICENSE
+Copyright:           Vincent Hanquez <vincent@snarc.org>
+Author:              Vincent Hanquez <vincent@snarc.org>
+Maintainer:          vincent@snarc.org
+Category:            Debug
+Stability:           experimental
+Build-Type:          Simple
+Homepage:            http://github.com/vincenthz/hs-asn1dump
+Cabal-Version:       >=1.8
+data-files:          README.md
+
+Executable           asn1dump
+  Main-Is:           asn1dump.hs
+  ghc-options:       -Wall -fno-warn-missing-signatures
+  Hs-Source-Dirs:    .
+  Build-depends:     base >= 4 && < 5
+                   , bytestring
+                   , asn1-types
+                   , asn1-encoding
+                   , pem
+
+source-repository head
+  type: git
+  location: git://github.com/vincenthz/hs-asn1dump

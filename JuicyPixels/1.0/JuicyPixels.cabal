@@ -1,0 +1,52 @@
+Name:                JuicyPixels
+Version:             1.0
+Synopsis:            Picture loading/serialization (in png, jpeg and bitmap)
+Description:
+    This library can load and store images in various image formats,
+ for now mainly in PNG/Bitmap and Jpeg (jpeg writing not
+ implemented yet though)
+homepage:            https://github.com/Twinside/Juicy.Pixels
+License:             BSD3
+License-file:        LICENSE
+Author:              Vincent Berthoux
+Maintainer:          vincent.berthoux@gmail.com
+Category:            Codec, Graphics
+Build-type:          Simple
+
+-- Extra-source-files:  
+
+-- Constraint on the version of Cabal needed to build this package.
+Cabal-version:       >=1.6
+
+Source-Repository head
+    Type:      git
+    Location:  git://github.com/Twinside/Juicy.Pixels.git
+
+Source-Repository this
+    Type:      git
+    Location:  git://github.com/Twinside/Juicy.Pixels.git
+    Tag:       v1.0
+
+Library
+  Exposed-modules:  Codec.Picture,
+                    Codec.Picture.Bitmap,
+                    Codec.Picture.Png,
+                    Codec.Picture.Jpg,
+                    Codec.Picture.Types
+
+  Ghc-options: -O3 -Wall
+  Build-depends: base >= 4 && < 5,
+                 array,
+                 bytestring,
+                 mtl >= 1.1,
+                 cereal >= 0.3.3.0 && < 0.4,
+                 zlib >= 0.5.3.1,
+                 transformers >= 0.2.2 && < 0.3
+
+-- Modules not exported by this package.
+  Other-modules: Codec.Picture.Jpg.DefaultTable,
+                 Codec.Picture.Jpg.FastIdct,
+                 Codec.Picture.Png.Export,
+                 Codec.Picture.Png.Type
+
+  

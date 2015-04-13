@@ -1,0 +1,58 @@
+Name:                Dust-tools-pcap
+Version:             1.3.1
+Description:         A set of tools for exploring network filtering
+Synopsis:            Network filtering exploration tools that rely on pcap
+Category:            Network
+License:             GPL
+License-file:        LICENSE
+Author:              Brandon Wiley
+Maintainer:          brandon@ischool.utexas.edu
+Build-Type:          Simple
+Cabal-Version:       >=1.8
+
+source-repository head
+  type: git
+  location: git@github.com:blanu/Dust-tools.git
+
+Executable replay-convert
+  Main-is: Dust/Model/convert.hs
+  Build-Depends:
+    base >= 3 && < 5,
+    Dust-crypto,
+    Dust >= 2.3.1,
+    Dust-tools >=1.3.2,
+    bytestring,
+    entropy,
+    network,
+    cereal,
+    ghc-prim,
+    binary,
+    random,
+    random-extras,
+    random-source,
+    random-fu,
+    containers,
+    directory,
+    split,
+    pcap
+
+Executable shaper-update
+  Main-is:           Dust/Model/update.hs
+  Build-Depends:
+    base >= 3 && < 5,
+    Dust,
+    bytestring,
+    entropy,
+    network,
+    cereal,
+    ghc-prim,
+    binary,
+    random,
+    random-extras,
+    random-source,
+    random-fu,
+    containers,
+    directory,
+    split,
+    pcap,
+    csv

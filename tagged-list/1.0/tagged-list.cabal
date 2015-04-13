@@ -1,0 +1,31 @@
+-- @+leo-ver=4-thin
+-- @+node:gcross.20100917231323.1281:@thin tagged-list.cabal
+-- @@language Haskell
+
+Name:                tagged-list
+Version:             1.0
+License:             BSD3
+License-file:        LICENSE
+Author:              Gregory Crosswhite
+Maintainer:          Gregory Crosswhite <gcross@phys.washington.edu>
+Stability:           Provisional
+Synopsis:            Lists tagged with a type-level natural number representing their length.
+Description:         This package contains a datatype, 'TaggedList', that provides a fixed-length list
+                     tagged with a phantom type-level natural number that corresponds to the length of
+                     the list.  It also contains some basic operations on these lists, as well as a
+                     typeclass for converting tagged lists to and from tuples.
+Cabal-version:       >=1.2.3
+Build-type:          Simple
+Category:            Data
+
+Library
+    Build-depends:   base >= 3 && < 5,
+                     type-level-natural-number >= 1.0 && < 1.2,
+                     type-level-natural-number-induction >= 1.0 && < 1.1,
+                     type-level-natural-number-operations >= 1.0 && < 1.1,
+                     natural-number >= 1.0 && < 1.1,
+                     AbortT-transformers >= 1.0 && < 1.1,
+                     binary >= 0.5 && < 0.6
+    Exposed-modules: Data.List.Tagged
+-- @-node:gcross.20100917231323.1281:@thin tagged-list.cabal
+-- @-leo

@@ -1,0 +1,33 @@
+Name:                simple-firewire
+Version:             0.1
+Synopsis:            Simplified interface for firewire cameras
+Description:         A simplified interface for firewire cameras based on libdc1394 <http://damien.douxchamps.net/ieee1394/libdc1394/>
+                     .
+                     Currently this interfaces with CV library and
+                     provides both plain IO based interface for
+                     controlling the cameras.
+                     .
+
+                     .
+                     The interface will most likely change in the future.
+Homepage:            https://github.com/aleator/simple-firewire
+License:             BSD3
+License-file:        LICENSE
+Author:              Ville Tirronen
+Maintainer:          aleator@gmail.com
+Category:            Graphics, Machine Vision, System
+Build-type:          Simple
+Cabal-version:       >=1.2
+Extra-Source-Files:
+        Examples/Example1.hs
+
+Library
+  Exposed-modules:     
+    System.Camera.Firewire.Simple
+  Build-depends:       
+        base            >  4       && < 5,
+        bindings-dc1394 >= 0.1     && < 1,
+        CV              >= 0.3.1.2 && < 0.4
+
+  -- Other-modules:       
+  -- Build-tools:         

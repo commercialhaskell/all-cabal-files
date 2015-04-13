@@ -1,0 +1,21 @@
+name:               pure-fft
+version:            0.2.0
+cabal-version:      >= 1.6
+build-type:         Simple
+license:            BSD3
+license-file:       LICENSE
+category:           Numerical, Math
+author:             Matt Morrow
+copyright:          Matt Morrow
+maintainer:         Matt Morrow <morrow@moonpatio.com>
+stability:          experimental
+synopsis:           Fast Fourier Transform
+description:        A pure-haskell implementation
+                    of the radix-2 DIT version of
+                    the Cooley-Tukey FFT algorithm.
+
+library
+  build-depends:    base
+  ghc-options:      -O2
+  hs-source-dirs:   src
+  exposed-modules:  Numeric.FFT

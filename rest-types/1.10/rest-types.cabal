@@ -1,0 +1,41 @@
+Name:             rest-types
+Version:          1.10
+Description:      Silk Rest Framework Types
+Synopsis:         Silk Rest Framework Types
+Maintainer:       code@silk.co
+Category:         Web
+Build-Type:       Simple
+Cabal-Version:    >= 1.8
+License:          BSD3
+License-File:     LICENSE
+
+Extra-Source-Files: CHANGELOG.md
+
+Library
+  GHC-Options:     -Wall
+  Hs-Source-Dirs:   src
+  Build-Depends:
+      base == 4.*
+    , aeson >= 0.7 && < 0.8
+    , bytestring >= 0.9 && < 0.11
+    , containers >= 0.4 && < 0.6
+    , generic-aeson == 0.1.*
+    , hxt >= 9.2 && < 9.4
+    , json-schema == 0.4.*
+    , mtl >= 2.0 && < 2.2
+    , regular == 0.3.*
+    , regular-xmlpickler == 0.2.*
+    , rest-stringmap == 0.1.*
+    , text >= 0.11 && < 1.2
+    , unordered-containers == 0.2.*
+    , utf8-string == 0.3.*
+    , uuid >= 1.2 && < 1.4
+
+  Exposed-Modules: Rest.Types.Container
+                   Rest.Types.Container.Resource
+                   Rest.Types.Error
+                   Rest.Types.ShowUrl
+
+Source-repository head
+  Type:              Git
+  Location:          https://github.com/silkapp/rest.git

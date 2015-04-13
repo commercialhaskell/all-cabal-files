@@ -1,0 +1,32 @@
+Name:               Digit
+Version:            0.0.1
+License:            BSD3
+License-File:       LICENSE
+Author:             Tony Morris <ʇǝu˙sıɹɹoɯʇ@ןןǝʞsɐɥ>
+Maintainer:         Tony Morris
+Synopsis:           A data-type representing digits 0-9
+Category:           Data
+Description:        A data-type with 10 nullary constructors
+Cabal-version:      >= 1.2
+Build-Type:         Simple
+
+Flag small_base
+  Description:      Choose the new, split-up base package.
+
+Library
+  Build-Depends:
+                    base < 5 && >= 4
+                    , HUnit
+                    , QuickCheck
+                    , test-framework
+                    , test-framework-hunit
+                    , test-framework-quickcheck2
+
+  GHC-Options:
+                    -Wall
+                    -fno-warn-name-shadowing
+                    -fno-warn-orphans
+
+  Exposed-Modules:
+                    Data.Digit
+                    , Test.Data.Digit

@@ -1,0 +1,44 @@
+Name:               MissingM
+Version:            0.0.4
+Author:             Dylan Just <dylan@techtangents.com>
+License:            BSD3
+License-file:       LICENSE
+Copyright:          Dylan Just
+Maintainer:         Dylan Just
+Category:           Control
+Synopsis:           findM and other missing 'M's
+Description:        findM and other missing 'M's
+Cabal-version:      >= 1.14
+Build-Type:         Simple
+
+
+source-repository head
+  type:     git
+  location: https://techtangents@github.com/techtangents/missingm.git
+
+
+Library
+  Build-Depends:    base < 5 && >= 3
+  hs-source-dirs:    src
+  GHC-Options:      -Wall
+                    -fno-warn-type-defaults
+                    -fno-warn-name-shadowing
+  default-language: Haskell2010
+  Exposed-Modules:  Control.Monad.MissingM
+
+
+test-suite Main
+  type:            exitcode-stdio-1.0
+  x-uses-tf:       true
+  build-depends:
+                   base >= 4 && < 5,
+                   HUnit >= 1.2 && < 2,
+                   QuickCheck >= 2.4,
+                   test-framework >= 0.4.1,
+                   test-framework-quickcheck2,
+                   test-framework-hunit,
+                   transformers > 0.3
+  ghc-options:     -Wall -rtsopts
+  hs-source-dirs:  src, tests
+  default-language: Haskell2010
+  main-is:         Main.hs

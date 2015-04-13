@@ -1,0 +1,119 @@
+name:          halfs
+version:       2.0
+license:       BSD3
+license-file:  LICENSE
+author:        Joel Stanley <intractable@gmail.com>,
+               Adam Wick <awick@galois.com>,
+               Isaac Jones <ijones@galois.com>
+maintainer:    Joel Stanley <intractable@gmail.com>
+description:   A library implementing a file system suitable for use in 
+               HaLVMs.  Provides useful abstractions over the underlying 
+               block layer.  Implemented atop FUSE.  Note: This is a new
+               implementation of the halfs project, and bears little to
+               no resemblance to halfs 0.2.
+synopsis:      The HAskelL File System ("halfs" -- intended for use on the HaLVM)
+category:      System
+stability:     experimental
+build-type:    Simple
+cabal-version: >= 1.8
+tested-with:   GHC == 7.0.4 
+
+source-repository head
+  type:     git
+  location: git clone https://github.com/GaloisInc/halfs.git 
+
+flag build-tests
+  description: Build the test executables
+
+library
+  build-depends:
+                    QuickCheck,
+                    array,
+                    base >= 3 && <= 4,
+                    bytestring,
+                    cereal,
+                    containers,
+                    directory,
+                    filepath,
+                    fingertree,
+                    mtl,
+                    random,
+                    time,
+                    unix
+
+  Exposed-Modules:
+                    Halfs.BlockMap,
+                    Halfs.Classes,
+                    Halfs.CoreAPI,
+                    Halfs.Directory,
+                    Halfs.Errors,
+                    Halfs.File,
+                    Halfs.HalfsState,
+                    Halfs.Inode,
+                    Halfs.Monad,
+                    Halfs.MonadUtils,
+                    Halfs.Protection,
+                    Halfs.SuperBlock,
+                    Halfs.Types,
+                    Halfs.Utils,
+                    System.Device.BlockDevice,
+                    System.Device.File,
+                    System.Device.Memory,
+                    System.Device.ST
+                    Tests.Instances,
+                    Tests.Types,
+                    Tests.Utils
+
+  extensions:
+                    BangPatterns,
+                    FlexibleContexts,
+                    FlexibleInstances,
+                    FunctionalDependencies,
+                    GeneralizedNewtypeDeriving,
+                    MultiParamTypeClasses,
+                    ScopedTypeVariables
+
+  hs-source-dirs   : . test/src
+  GHC-Options      : -Wall -fno-ignore-asserts 
+  ghc-prof-options : -prof -auto-all
+
+executable halfs-tests
+  if !flag(build-tests)
+    buildable: False
+
+  build-depends:
+                 QuickCheck,
+                 array,
+                 base >= 3 && < 5,
+                 bytestring,
+                 cereal,
+                 containers,
+                 directory,
+                 filepath,
+                 fingertree,
+                 halfs,
+                 mtl,
+                 random,
+                 time
+
+  hs-source-dirs   : test/src .
+  main-is          : Driver.hs
+  ghc-options      : -Wall -fno-ignore-asserts -threaded
+  ghc-prof-options : -prof -auto-all
+
+executable halfs
+  build-depends:
+                 HFuse >= 0.2.4.1,
+                 array,
+                 base >= 3 && < 5,
+                 bytestring,
+                 containers,
+                 directory,
+                 halfs,
+                 unix
+
+  hs-source-dirs   : fuse/src
+  main-is          : Halfs.hs
+  ghc-options      : -Wall -fno-ignore-asserts -threaded
+  ghc-prof-options : -prof -auto-all
+

@@ -1,0 +1,38 @@
+Name:			tremulous-query
+Version:		1.0
+Author:			Christoffer Öjeling
+Maintainer:		Christoffer Öjeling <christoffer@ojeling.net>
+License:		GPL-3
+License-File:		LICENSE
+Category:		Network
+Synopsis:		Library for polling Tremulous servers
+Description:		A library for polling servers from the game Tremulous.
+                        Supports both the released 1.1 version and the 1.2 Gameplay Preview commonly known as GPP.
+
+Cabal-Version:		>= 1.10
+Build-Type:		Simple
+Tested-With:            GHC==7.0.3
+
+Source-Repository head
+  Type:                 git
+  Location:             git://github.com/Cadynum/tremulous-query.git
+
+Library
+  Default-Language:     Haskell2010
+  Default-Extensions:   BangPatterns TupleSections NamedFieldPuns RecordWildCards
+                        ScopedTypeVariables OverloadedStrings DeriveDataTypeable
+  Other-Extensions:     CPP StandaloneDeriving
+  Exposed-Modules:      Network.Tremulous.Protocol
+                        Network.Tremulous.Polling
+                        Network.Tremulous.Util
+                        Network.Tremulous.NameInsensitive
+                        Network.Tremulous.SocketExtensions
+                        Network.Tremulous.ByteStringUtils
+                        Network.Tremulous.Scheduler
+  Other-Modules:        Network.Tremulous.TupleReader
+
+  Build-Depends:        base>=4.3 && < 5, old-time, network, deepseq, containers, bytestring, attoparsec, mtl
+  Ghc-Options:          -Wall -fno-warn-unused-do-bind -fno-warn-orphans -funbox-strict-fields
+
+
+

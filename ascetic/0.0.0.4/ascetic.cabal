@@ -1,0 +1,19 @@
+Name:              ascetic
+Version:           0.0.0.4
+Cabal-Version:     >= 1.6
+License:           MIT
+License-File:      LICENSE
+Synopsis:          Generic markup builder.
+Description:       Module for assembling/emitting files in any XML-like language.
+Category:          Text
+Author:            Andrei Lapets
+Maintainer:        Andrei Lapets <lapets@bu.edu>
+Build-Type:        Simple
+
+Library
+  Exposed-Modules: Text.Ascetic, Text.Ascetic.HTML
+  Build-Depends:   base >= 3 && < 5, MissingH
+
+Source-Repository head
+  Type:            git
+  Location:        https://github.com/lapets/ascetic

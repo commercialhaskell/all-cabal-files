@@ -1,0 +1,26 @@
+Name:          LTree
+Version:       0.0
+Cabal-Version: >=1.6
+Synopsis:   Tree with only leaves carrying the data.
+Description:
+
+    This Haskell library provides an implementation of
+    a tree data type with content only in the leaves, and its
+    corresponding transformer.
+
+Category:      Data
+License:       PublicDomain
+License-File:  LICENSE
+Author:        Rahul Gopinath
+Maintainer:    gopinath@eecs.oregonstate.edu
+Bug-Reports:   mailto:gopinath@eecs.oregonstate.edu
+Build-Type:    Simple
+Stability:     experimental
+
+Library
+  Build-Depends:    base >= 2 && < 5, transformers
+  Exposed-Modules:  Data.Trees.LTree
+
+Source-Repository head
+  type:     darcs
+  location: 

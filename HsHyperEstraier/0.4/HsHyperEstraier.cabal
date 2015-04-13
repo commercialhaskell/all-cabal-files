@@ -1,0 +1,49 @@
+Name:          HsHyperEstraier
+Synopsis:      HyperEstraier binding for Haskell
+Description:
+    HsHyperEstraier is a HyperEstraier binding for
+    Haskell. HyperEstraier is an embeddable full text search engine
+    which is supposed to be independent to any particular natural
+    languages.
+Version:       0.4
+License:       PublicDomain
+License-File:  COPYING
+Author:        PHO <pho at cielonegro dot org>
+Maintainer:    PHO <pho at cielonegro dot org>
+Stability:     experimental
+Homepage:      http://cielonegro.org/HsHyperEstraier.html
+Bug-Reports:   http://static.cielonegro.org/ditz/HsHyperEstraier/
+Category:      Text
+Tested-With:   GHC == 7.0.3
+Cabal-Version: >= 1.6
+Build-Type:    Simple
+Extra-Source-Files:
+    NEWS
+    examples/Makefile
+    examples/HelloWorld.hs
+
+Source-Repository head
+    Type: darcs
+    Location: http://darcs.cielonegro.org/HsHyperEstraier/
+
+Library
+    Build-Depends:
+        base                 == 4.3.*,
+        base-unicode-symbols == 0.2.*,
+        bytestring           == 0.9.*,
+        network              == 2.3.*,
+        text                 == 0.11.*
+    PkgConfig-Depends:
+        hyperestraier >= 1.4.9,
+        qdbm          >= 1.8.74
+    Exposed-Modules:
+        Text.HyperEstraier
+        Text.HyperEstraier.Condition
+        Text.HyperEstraier.Database
+        Text.HyperEstraier.Document
+    Other-Modules:
+        Database.QDBM.Cabin.List
+        Database.QDBM.Cabin.Map
+        Text.HyperEstraier.Utils
+    GHC-Options: 
+        -Wall

@@ -1,0 +1,30 @@
+name:                 alure
+version:              0.1
+cabal-version:        >= 1.6
+license:              LGPL
+license-file:         COPYING
+maintainer:           carljsv@student.matnat.uio.no
+category:             Sound
+synopsis:             A Haskell binding for ALURE
+description:          A Haskell binding for ALURE, http://kcat.strangesoft.net/alure.html,
+                      a utility library to help manage common tasks with OpenAL applications.
+                      For the moment just haskell functions for initialization and file loading.
+                      Links dynamically to ALURE C library.
+build-type:           Simple
+extra-source-files:   todo.txt
+                      readme.txt
+
+library
+  Build-Depends:      base >= 3 && < 5, OpenAL
+  Hs-Source-Dirs:     source
+  Exposed-Modules:    Sound.UI.ALURE.Raw
+                      Sound.UI.ALURE
+  Other-Modules:      Sound.UI.ALURE.Internal
+                      Sound.UI.ALURE.Marshal
+
+  Extra-Libraries:    alure
+  Extra-Lib-Dirs:     .
+
+
+  ghc-options:        -Wall
+  ghc-prof-options:   

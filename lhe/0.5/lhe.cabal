@@ -1,0 +1,22 @@
+Name:                lhe
+Version:             0.5
+Synopsis:            Parser and writer for Les-Houches event files
+Description:         This package implements a parser and writer for the Les-Houches event file format as described in hep-ph/0609017
+License:             MIT
+License-file:        LICENSE
+Author:              Scott Lawrence
+Maintainer:          bytbox@gmail.com
+Category:            Data, Physics
+Build-type:          Simple
+Cabal-version:       >=1.10
+
+Library
+  Exposed-modules:     Data.LHE
+  Default-language:    Haskell2010
+  Build-depends: haskell2010 >= 1.0 , HaXml >= 1.22, bytestring >= 0.9, lha >= 0.1.2
+  -- Other-modules:       
+ 
+source-repository head
+  type:  git
+  location: https://github.com/bytbox/lhe.hs.git
+ 

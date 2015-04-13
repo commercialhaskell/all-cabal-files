@@ -1,0 +1,19 @@
+name:                concatenative
+version:             0.0.0
+synopsis:            A library for postfix control flow.
+description:         Concatenative gives haskell factor style
+                     combinators and arrows for postfix notation.
+                     For more information on stack based languages,
+                     see <http://concatenative.org>
+category:            Control
+license:             BSD3
+license-file:        LICENSE
+author:              Sam Anklesaria
+maintainer:          amsay@amsay.net
+build-depends:       base >= 3 && < 5
+build-type:          Simple
+Cabal-Version:       >= 1.2
+
+Library
+    exposed-modules:  Control.Concatenative
+    Build-Depends:    base >= 3 && < 5

@@ -1,0 +1,26 @@
+Name:                trace-call
+Version:             0.1
+Synopsis:            functions for logging the arguments and results of function calls
+Description:         trace-call provides generic functions for logging the arguments and results of function calls 
+License:             BSD3
+License-file:        LICENSE
+Author:              Bram Schuur
+Maintainer:          bram@typlab.com
+Category:            Debug
+Build-type:          Simple
+Cabal-version:       >=1.6
+
+Library
+  exposed-modules:     Debug.TraceCall.Base
+                       Debug.TraceCall.Examples
+                       Debug.TraceCall.IO
+                       Debug.TraceCall.IODeep
+                       Debug.TraceCall.Unsafe
+                       Debug.TraceCall.UnsafeDeep
+                       Debug.TraceCall
+                       
+  build-depends:       base >= 3 && <= 5
+                     , containers ==0.4.*
+                     , mtl ==2.0.*
+                     
+  hs-source-dirs:      src

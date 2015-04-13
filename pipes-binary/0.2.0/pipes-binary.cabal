@@ -1,0 +1,37 @@
+name:               pipes-binary
+version:            0.2.0
+license:            BSD3
+license-file:       LICENSE
+copyright:          Copyright (c) Renzo Carbonara 2013
+author:             Renzo Carbonara
+maintainer:         renzocarbonaraλgmail.com
+stability:          Experimental
+tested-with:        GHC == 7.6.3
+homepage:           https://github.com/k0001/pipes-binary
+bug-reports:        https://github.com/k0001/pipes-binary/issues
+category:           Pipes
+build-type:         Simple
+synopsis:           Encode and decode binary streams using the pipes and binary libraries.
+cabal-version:      >=1.8
+extra-source-files: README.md PEOPLE NEWS
+description:
+  Encode and decode binary Pipes streams using the @binary@ library.
+  .
+  See the @NEWS@ file in the source distribution to learn about any
+  important changes between version.
+
+source-repository head
+    type: git
+    location: git://github.com/k0001/pipes-binary.git
+
+library
+    hs-source-dirs:    src
+    build-depends:     base           (==4.*)
+                     , binary         (>=0.7 && <0.8)
+                     , bytestring     (>=0.9.2.1)
+                     , pipes          (>=4.0 && <4.1)
+                     , pipes-parse    (>=2.0 && <2.1)
+                     , transformers   (>=0.2 && <0.4)
+    exposed-modules:   Pipes.Binary
+    other-modules:     Pipes.Binary.Internal
+    ghc-options: -Wall -O2

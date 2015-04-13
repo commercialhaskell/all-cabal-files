@@ -1,0 +1,34 @@
+cabal-version: >= 1.2.3
+name: bindings-common
+homepage: http://bitbucket.org/mauricio/bindings-common
+synopsis:
+  Macros and modules to facilitate writing library bindings.
+description: 
+  This package contains @hsc2hs@ macros and Haskell
+  modules that can be used to write C library
+  bindings according to a well defined standard. See
+  "Bindings" module documentation for details.
+version: 0.2.4
+license: BSD3
+license-file: LICENSE
+maintainer: Maurício C. Antunes <mauricio.antunes@gmail.com>
+author: Maurício C. Antunes
+stability: Needs users feedback
+build-type: Simple
+bug-reports: http://bitbucket.org/mauricio/bindings-common/issues
+category: FFI
+library
+  hs-source-dirs: src
+  include-dirs: src
+  install-includes:
+    bindings.macros.h
+  extensions:
+    ForeignFunctionInterface
+    ScopedTypeVariables
+    MultiParamTypeClasses
+    TypeFamilies
+  build-depends: base >=3 && <5
+  exposed-modules:
+    Bindings
+    Bindings.Utilities
+    Bindings.C

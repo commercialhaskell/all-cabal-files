@@ -1,0 +1,20 @@
+name:                lhs2html
+version:             0.99999
+synopsis:            Compile lhs in bird style to md, html, hs.
+license:             PublicDomain
+license-file:        LICENSE
+author:              Julian Fleischer
+maintainer:          julian.fleischer@warhog.net
+category:            Development
+build-type:          Simple
+cabal-version:       >=1.10
+data-files:          data/*.htm, data/*.md, data/*.hs, data/*.txt
+
+executable lhs2html
+  main-is:             lhs2html.hs
+  build-depends:       base >=4.7 && <4.8, nicify, filepath, Glob, directory
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+
+
+

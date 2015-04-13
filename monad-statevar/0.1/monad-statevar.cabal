@@ -1,0 +1,56 @@
+name:                monad-statevar
+version:             0.1
+synopsis:            Concise, overloaded accessors for IORef, STRef, TVar
+description:
+    Overloaded 'get' and 'put' for state variables ('IORef', 'STRef', 'TVar')
+    to make reading and writing more concise.
+    .
+    Inspired by the StateVar package by Sven Panne, with the following
+    differences:
+    .
+     * Supports variables in other monads besides 'IO' (e.g. 'TVar', 'STRef').
+    .
+     * Provides non-infix 'put', 'modify', etc.
+    .
+     * Does not provide concrete state variables (i.e. ones where you supply
+       get and put callbacks).  If you want this feature, please submit an
+       issue.
+    .
+     * Named \"Control.Monad.StateVar\" instead of \"Data.StateVar\",
+       to avoid a module naming conflict.
+license:             BSD3
+license-file:        LICENSE
+author:              Joey Adams
+maintainer:          joeyadams3.14159@gmail.com
+copyright:           Copyright (c) Joseph Adams 2013
+category:            Data
+build-type:          Simple
+cabal-version:       >=1.8
+homepage:            http://github.com/joeyadams/hs-monad-statevar
+bug-reports:         http://github.com/joeyadams/hs-monad-statevar/issues
+
+source-repository head
+    type:       git
+    location:   git://github.com/joeyadams/hs-monad-statevar.git
+
+library
+    exposed-modules: Control.Monad.StateVar
+
+    build-depends: base >= 4.3 && < 5
+                 , transformers
+
+    ghc-options: -Wall -fwarn-tabs
+
+test-suite test
+    type: exitcode-stdio-1.0
+
+    hs-source-dirs: test
+    main-is:        Main.hs
+    other-modules:
+        Safe
+
+    ghc-options: -Wall -fwarn-tabs
+
+    build-depends: base
+                 , monad-statevar
+                 , stm

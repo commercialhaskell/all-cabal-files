@@ -1,0 +1,74 @@
+name:                hmpfr
+version:             0.3.1
+synopsis:            Haskell binding to MPFR library
+description:         Haskell binding to MPFR library. This version is compatible
+                     only with 2.4.* and will not work with previous releases
+                     of the MPFR library.
+                     .
+
+                     This is the first release that includes a mutable interface
+                     in addition to the pure one. These functions should have a
+                     lot less overhead than the pure ones.
+                     .
+                     Some simple examples of usage can be found in demo/Demo.hs.
+category:            Data, Math
+license:             BSD3
+license-file:        LICENSE
+Stability:           experimental
+tested-with:         GHC == 6.10.4
+author:              Aleš Bizjak
+maintainer:          Aleš Bizjak <ales.bizjak0@gmail.com>
+Homepage:            http://code.haskell.org/hmpfr/
+
+build-type:          Simple
+cabal-version:       >= 1.2
+Extra-source-files:  demo/Demo.hs
+
+Data-files:          README
+                     dict.txt
+                     ChangeLog
+
+Library
+  build-Depends:       base > 3 && < 5
+  if impl(ghc >= 6.10) && impl(ghc < 6.12)
+     build-Depends:    base >= 4, integer
+  if impl(ghc >= 6.12)
+     build-Depends:    integer-gmp
+
+  Other-modules:       Data.Number.MPFR.FFIhelper
+                       Data.Number.MPFR.Internal
+                       Data.Number.MPFR.Mutable.Internal
+
+                       Data.Number.MPFR.Mutable.Arithmetic
+                       Data.Number.MPFR.Mutable.Special
+                       Data.Number.MPFR.Mutable.Integer
+                       Data.Number.MPFR.Mutable.Misc
+                       
+                       Data.Number.MPFR.Assignment
+                       Data.Number.MPFR.Conversion
+                       Data.Number.MPFR.Arithmetic
+                       Data.Number.MPFR.Comparison
+                       Data.Number.MPFR.Special
+                       Data.Number.MPFR.Integer
+                       Data.Number.MPFR.Misc
+
+  Exposed-modules:     Data.Number.MPFR.Instances.Near
+                       Data.Number.MPFR.Instances.Up
+                       Data.Number.MPFR.Instances.Down
+                       Data.Number.MPFR.Instances.Zero
+
+                       Data.Number.MPFR
+
+                       Data.Number.MPFR.Mutable
+                       
+  build-tools:         hsc2hs
+  GHC-options:         -Wall -fno-warn-orphans -O2
+  GHC-prof-options:    -prof -auto
+  hs-source-dirs:      src
+  include-dirs:        cbits
+  includes:            chsmpfr.h mpfr.h
+  install-includes:    chsmpfr.h
+  c-sources:           cbits/chsmpfr.c
+
+  extra-libraries:     mpfr
+

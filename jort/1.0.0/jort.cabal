@@ -1,0 +1,25 @@
+name:           jort
+version:        1.0.0
+category:       Graphics
+synopsis:       JP's own ray tracer
+description:
+  A real-time raytracer in Haskell. No kidding.
+  (Vintage: my first Haskell project)
+license:        OtherLicense
+-- CC attribution share alike
+license-file:   LICENSE
+author:         Jean-Philippe Bernardy
+maintainer:     jeanphilippe.bernardy@gmail.com
+Cabal-Version:  >= 1.8
+tested-with:    GHC==6.12.1
+build-type:     Simple
+
+executable jort
+  extensions: FlexibleInstances
+  main-is: Drawing.hs
+  ghc-options: -O2 -fexcess-precision
+  build-depends: base==4.*,
+                 array==0.3.*,
+                 gtk==0.11.*
+  
+  other-modules:  Basics Colors Textures Camera Lights Objects Ray Scenes Trace Vectors World Anims Env Bitmaps Drawing Bench

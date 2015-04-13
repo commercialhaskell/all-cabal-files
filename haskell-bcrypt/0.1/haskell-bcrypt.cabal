@@ -1,0 +1,26 @@
+Name:                haskell-bcrypt
+Version:             0.1
+Synopsis:            A bcrypt implementation for haskell
+License:             MIT
+License-file:        LICENSE
+Author:              Brett Carter
+Maintainer:          brett@rdnzl.net
+Copyright:           Brett Carter 2011
+Homepage:            http://www.github.com/zbskii/haskell-bcrypt
+Category:            System
+Build-type:          Simple
+Cabal-version:       >=1.6
+Extra-source-files:  include/blf.h, include/bcrypt.h, examples/Main.hs
+Description:
+  Wraps around the OpenBSD blowfish implementation to implement bcrypt.
+  .
+  A slightly modified (for build purposes) bcrypt c library is included.
+  .
+  See <http://www.usenix.org/events/usenix99/provos.html>
+
+Library
+  Exposed-modules:     Data.Digest.BCrypt
+  Build-depends:       base == 4.*, bytestring == 0.9.*
+  Build-tools:         hsc2hs
+  include-dirs:        include
+  c-sources:           cbits/blowfish.c, cbits/bcrypt.c

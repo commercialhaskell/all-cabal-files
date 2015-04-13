@@ -1,0 +1,15 @@
+name:		old-locale
+version:	1.0.0.1
+license:	BSD3
+license-file:	LICENSE
+maintainer:	libraries@haskell.org
+synopsis:	locale library
+category:       System
+description:
+    This package provides the old locale library.
+    For new code, the new locale library is recommended.
+build-type: Simple
+exposed-modules:
+	System.Locale
+build-depends: base
+

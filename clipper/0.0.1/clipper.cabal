@@ -1,0 +1,31 @@
+Name:                clipper
+Version:             0.0.1
+Synopsis:            Haskell API to clipper (2d polygon union/intersection/xor/clipping API)
+Description:         This is a haskell FFI to clipper (<http://www.angusj.com/delphi/clipper.php>)
+                     .
+                     Clipper's source+license (v4.3.0) is included in this package, so there are no external deps
+                     .
+                     NOTE: To compile, please specify the C++ compiler by passing --with-gcc=<CXX>
+Homepage:            https://github.com/chetant/clipper
+License:             BSD3
+License-file:        LICENSE
+Author:              Chetan Taralekar <chetant@gmail.com>
+Maintainer:          Chetan Taralekar <chetant@gmail.com>
+Category:            Algebra
+
+Build-type:          Simple
+Extra-source-files:  README
+                     cbits/clipper.hpp
+                     cbits/clipper.cpp
+                     cbits/README
+                     cbits/License.txt
+		     test/Test.hs
+		     test/test.cpp
+Cabal-version:       >=1.6
+Library
+  Exposed-modules:   Algebra.Clipper
+  Build-depends:     base >= 4 && < 5
+  Build-tools:       hsc2hs
+  Include-dirs:      cbits
+  C-sources:         cbits/clipper.cpp
+  Extra-libraries:   stdc++

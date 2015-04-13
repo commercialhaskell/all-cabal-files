@@ -1,0 +1,38 @@
+Name:                bit-vector
+Version:             0.1.0
+Synopsis:            Simple bit vectors for Haskell
+Homepage:            https://github.com/acfoltzer/bit-vector
+Bug-reports:         https://github.com/acfoltzer/bit-vector/issues
+License:             BSD3
+License-file:        LICENSE
+Author:              Adam C. Foltzer
+Maintainer:          acfoltzer@gmail.com
+Category:            Data, Bit Vectors
+Tested-With:         GHC==7.0.4, GHC==7.2.1
+Build-type:          Simple
+Cabal-version:       >=1.8
+extra-source-files:  README.md, test/Data/Vector/Bit/Tests.hs
+
+Library
+  Exposed-modules:   Data.Vector.Bit
+  Hs-source-dirs:    src
+  Build-depends:     base == 4.*,
+                     vector == 0.9.*
+  ghc-options:       -Wall
+                     -- orphans are kind of the point
+                     -fno-warn-orphans
+                     
+Test-Suite Tests
+  Type:		     exitcode-stdio-1.0
+  hs-source-dirs:    test
+  Main-is:	     Data/Vector/Bit/Tests.hs
+  Build-depends:     base == 4.*,
+                     vector == 0.9.*,
+                     QuickCheck == 2.4.*,
+                     test-framework >= 0.4.1.1,
+                     test-framework-quickcheck2 == 0.2.*,
+                     bit-vector
+
+source-repository head
+  type:     git
+  location: git://github.com/acfoltzer/bit-vector.git

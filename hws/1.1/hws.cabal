@@ -1,0 +1,39 @@
+name:         hws
+version:      1.1
+license:      BSD3
+license-file: LICENSE
+author:       Simon Marlow
+maintainer:   newsham@lava.net
+synopsis:     Simple Haskell Web Server
+
+description: The original Haskell Web Server, as described in the
+             paper "Developing a high-performance web server in
+             Concurrent Haskell" (JFP 12(4+5):359--374, July 2002).
+
+             I'm making the package available for archaeological and
+             illustrative reasons; while this certainly can be used to
+             serve simple static content, there are other much more
+             fully-featured web servers and frameworks on Hackage.
+
+category:     Web server
+build-type:   Simple
+cabal-version: >= 1.6
+
+
+Executable hws
+  build-depends: base >= 4.2 && < 4.4,
+                 text      == 0.7.*,
+                 network   == 2.2.*,
+                 haskell98 == 1.0.*,
+                 mtl       == 1.1.*,
+                 unix      == 2.4.*,
+                 html      == 1.0.*,
+                 array     == 0.3.*,
+                 old-time  == 1.0.*,
+                 directory == 1.0.*,
+                 regex-compat == 0.93.*,
+                 containers == 0.3.*
+
+  main-is: Main.hs
+  hs-source-dirs: src
+  extensions: CPP

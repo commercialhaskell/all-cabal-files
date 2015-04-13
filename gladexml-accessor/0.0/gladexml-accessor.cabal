@@ -1,0 +1,14 @@
+name:              gladexml-accessor
+version:           0.0
+license:           BSD3
+license-file:      LICENSE  
+author:            Yakov Zaytsev
+maintainer:        yakov@yakov.cc
+category:          GUI
+synopsis:          Automagically declares getters for widget handles in specified interface file.
+build-type:        Simple
+ghc-options:       -Wall
+exposed-modules:   Graphics.UI.Gtk.Glade.Accessor
+other-modules:     Graphics.UI.Gtk.Glade.Glade20DTD
+build-depends:     base >= 4 && < 5, template-haskell, HaXml>=1.19.7, glade>=0.10.1
+extra-source-files:LICENSE glade-2.0.dtd

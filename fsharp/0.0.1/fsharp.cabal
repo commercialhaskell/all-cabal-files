@@ -1,0 +1,16 @@
+name: fsharp
+version: 0.0.1
+license: BSD3
+synopsis: some F# operators, high priority pipes
+
+build-type: Simple
+cabal-version: >= 1.6
+
+library
+  Hs-Source-Dirs: src
+
+  exposed-modules:
+    Control.FSharp
+    Control.FSharp.Syntax.Operators
+
+  Build-Depends: base >= 4.3 && < 5

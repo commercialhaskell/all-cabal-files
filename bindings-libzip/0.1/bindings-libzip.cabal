@@ -1,0 +1,37 @@
+Name:                bindings-libzip
+Version:             0.1
+Synopsis:            Low level bindings to libzip.
+Description:
+  This package provides low-level bindings to libzip library.
+  For higher-level interface please use LibZip package:
+  <http://hackage.haskell.org/package/LibZip>
+
+Homepage:            http://bitbucket.org/jetxee/hs-libzip/
+License:             BSD3
+License-file:        LICENSE
+Author:              Sergey Astanin
+Maintainer:          s.astanin@gmail.com
+Category:            FFI, Foreign
+
+Build-type:          Simple
+
+Cabal-version:       >=1.2.3
+Tested-with:         GHC == 6.12.1
+
+Library
+  Extensions:
+        ForeignFunctionInterface
+
+  Exposed-modules:
+        Bindings.LibZip
+
+  Build-Depends:
+        base >= 4.0 && < 4.3
+      , bindings-DSL >= 1.0 && < 1.1
+
+  PkgConfig-Depends:
+        libzip >= 0.9
+
+  GHC-Options:
+        -Wall
+

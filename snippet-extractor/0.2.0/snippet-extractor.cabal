@@ -1,0 +1,58 @@
+Name:                snippet-extractor
+Version:             0.2.0
+Synopsis:            Extracts labeled snippets of code to files.
+Description:         Snippet-extractor looks for snippets in files and
+                     places those snippets in their own files.
+                     .
+                     A snippet is defined as consecutive lines in a
+                     file delimited by \"\@snippet-start \<filename\>\" and
+                     \"\@snippet-end\", the extracted snippet is placed in
+                     the provided filename.  If the desired filename
+                     contains spaces, put the filename in quotes.
+                     .
+                     Everything on the line with the start and end
+                     markers is discarded.  Snippet-extractor should
+                     be agnostic to the syntax of the file you are
+                     extracting from.
+                     .
+                     Here is an example:
+                     .
+                     >  /* @snippet-start snippet1.c */
+                     >  for(i = 0; i < 100; i++){
+                     >    printf("%d\n",i);
+                     >  }
+                     >  /* @snippet-end */
+                     .
+                     The above snippet would be extracted and placed in
+                     snippet1.c
+                     .
+                     Snippet-extractor is intended for use in
+                     documentation.  For example, the snippets could
+                     be extracted from working code and then included
+                     in a text about the code.
+                
+License:             BSD3
+License-file:        LICENSE
+Author:              Jason Dagit
+Maintainer:          dagitj@gmail.com
+-- Copyright:           
+Category:            Text
+Build-type:          Simple
+Cabal-version:       >=1.6
+source-repository head
+  type:     git
+  location: git://github.com/dagit/snippet-extractor.git
+
+Executable snippet-extractor
+  -- .hs or .lhs file containing the Main module.
+  Main-is: Main.hs
+  Hs-Source-Dirs: src  
+  Build-depends: base == 4.*,
+                 parsec == 3.1.*
+  
+  -- Modules not exported by this package.
+  -- Other-modules:       
+  
+  -- Extra tools (e.g. alex, hsc2hs, ...) needed to build the source.
+  -- Build-tools:         
+  

@@ -1,0 +1,42 @@
+name:               hsc3-process
+version:            0.1.2
+synopsis:           Create and control scsynth processes
+description:        Create and control scsynth processes.
+license:            GPL
+license-file:       LICENSE
+category:           Sound
+copyright:          Copyright (c) Stefan Kersten 2008
+author:             Stefan Kersten
+maintainer:         Stefan Kersten
+stability:          provisional
+homepage:           http://code.haskell.org/~StefanKersten/code/hsc3-process
+tested-with:        GHC == 6.10.1
+build-type:         Simple
+cabal-version:      >= 1.6
+
+extra-source-files: examples/config.hs
+                    examples/scsynth.cfg
+                    examples/sine.hs
+
+library
+  exposed-modules:  Sound.SC3.Server.Process
+                    Sound.SC3.Server.Process.ConfigFile
+                    Sound.SC3.Server.Process.Options
+  other-modules:    Sound.SC3.Server.Process.Accessor,
+                    Sound.SC3.Server.Process.CommandLine
+
+  extensions:       FlexibleContexts, TemplateHaskell, TypeSynonymInstances
+ 
+  build-depends:    base >= 3 && < 5,
+                    ConfigFile == 1.0.*,
+                    containers == 0.2.*,
+                    data-accessor == 0.1.*,
+                    data-accessor-template == 0.1.*,
+                    hosc == 0.8.*,
+                    mtl == 1.1.*,
+                    process == 1.0.*,
+                    template-haskell == 2.3.*
+
+source-repository head
+  type:             darcs
+  location:         http://code.haskell.org/~StefanKersten/code/hsc3-process/

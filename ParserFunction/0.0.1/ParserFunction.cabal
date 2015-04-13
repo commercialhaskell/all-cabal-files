@@ -1,0 +1,19 @@
+Name:            ParserFunction
+Version:         0.0.1
+License:         BSD3
+License-file:    LICENSE
+Author:          Enzo Haussecker
+Maintainer:      Enzo Haussecker <ehaussecker@gmail.com>
+Description:     Enzo Haussecker's algorithm for parsing functions.
+Synopsis:        Enzo Haussecker's algorithm for parsing functions.
+category:        Parsing
+Build-Depends:   base, parsec
+stability:       provisional
+build-type:      Simple
+cabal-version:   >= 1.2
+tested-with:     GHC ==6.8.2
+
+Exposed-modules: 
+	Text.ParserCombinators.Parsec.ParserFunction
+
+

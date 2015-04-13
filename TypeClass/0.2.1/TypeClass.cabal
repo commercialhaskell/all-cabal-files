@@ -1,0 +1,34 @@
+name:           TypeClass
+version:        0.2.1
+cabal-version:  >= 1.6
+build-type:     Simple
+author:         JP Moresmau
+maintainer:     jpmoresmau@gmail.com
+synopsis:       Typing speed game
+description:    A simple game where you need to type the letters scrolling down the screen before they reach the bottom. Using SDL and SDL_ttf.
+category:       Game
+license:        BSD3
+license-file:   LICENSE
+data-files:     font/FreeSansBold.ttf
+extra-source-files: README.md
+
+executable TypeClass
+  hs-source-dirs:  src
+  main-is:         Main.hs
+  ghc-options:     -Wall -fno-warn-unused-do-bind
+  extensions:      NamedFieldPuns
+  build-depends:   
+                   base < 5,
+                   SDL,
+                   SDL-ttf,
+                   random,
+                   containers,
+                   filepath,
+                   reactive-banana,
+                   reactive-banana-sdl >= 0.2.0,
+                   transformers >=0.3.0 && <0.4
+  includes: SDL.h
+
+Source-Repository head
+    Type:            git
+    Location:        https://github.com/JPMoresmau/TypeClass  

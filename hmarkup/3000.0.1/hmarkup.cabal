@@ -1,0 +1,29 @@
+Name: hmarkup
+Version: 3000.0.1
+Cabal-version: >= 1.2
+Build-type: Simple
+Copyright: Bjorn Bringert 2006
+Maintainer: bjorn@bringert.net
+Author: Bjorn Bringert
+License: BSD3
+License-file: LICENSE
+Synopsis: Simple wikitext-like markup format implementation.
+Description:
+ This package implements a simple extensible wikitext-like markup format.
+ Currently the only implemented output format is XHTML.
+
+Flag split-base
+
+Library
+  Build-depends: mtl, parsec, network, xhtml >= 3000.0.0
+  if flag(split-base)
+    Build-depends: base >= 3.0, containers
+  else
+    Build-depends: base < 3.0
+  Exposed-Modules: 
+    Text.HMarkup,
+    Text.HMarkup.Parse,
+    Text.HMarkup.Types,
+    Text.HMarkup.XHtml
+  Other-modules: Text.HMarkup.Entities
+  Ghc-options: -Wall

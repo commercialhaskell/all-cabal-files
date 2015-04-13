@@ -1,0 +1,50 @@
+name:                hmpfr
+version:             0.1.1
+synopsis:            Haskell binding to MPFR library
+description:         Haskell binding to MPFR library. Tested with MPFR 2.3.1 and 2.3.2.
+		     Some simple examples of usage can be found in test/Demo.hs.
+category:            Data, Math
+license:             BSD3
+license-file:        LICENSE
+Stability:           experimental
+tested-with:	     GHC == 6.8.2 GHC == 6.8.3
+author:              Aleš Bizjak
+maintainer:          Aleš Bizjak <ales.bizjak0@gmail.com>
+Homepage:	     http://code.haskell.org/hmpfr/
+build-Depends:       base
+
+Other-modules:       Data.Number.MPFR.FFIhelper
+                     Data.Number.MPFR.Internal
+		     Data.Number.MPFR.Base
+		     
+
+Exposed-modules:     Data.Number.MPFR.Assignment
+		     Data.Number.MPFR.Conversion
+                     Data.Number.MPFR.Arithmetic
+                     Data.Number.MPFR.Comparison
+                     Data.Number.MPFR.Special
+                     Data.Number.MPFR.Integer
+                     Data.Number.MPFR.Misc
+
+		     Data.Number.MPFR.Near
+		     Data.Number.MPFR.Up
+		     Data.Number.MPFR.Down
+		     Data.Number.MPFR.Zero
+
+		     Data.Number.MPFR
+
+Extra-source-files:  test/Demo.hs
+
+Data-files:	     README
+
+build-type:          Simple
+build-tools:         hsc2hs
+GHC-options:         -Wall -fno-warn-orphans -O2 -fvia-C -optc-O2
+GHC-prof-options:    -prof -auto-all
+include-dirs:        cbits
+includes:            chsmpfr.h mpfr.h
+install-includes:    chsmpfr.h
+c-sources:           cbits/chsmpfr.c
+
+extra-libraries:     mpfr
+

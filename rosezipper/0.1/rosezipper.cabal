@@ -1,0 +1,23 @@
+name:                rosezipper
+version:             0.1
+synopsis:            Generic zipper implementation for Data.Tree
+description:         Generic zipper implementation for Data.Tree
+category:            Data
+license:             BSD3
+license-file:        LICENSE
+author:              Krasimir Angelov and Iavor S. Diatchki
+maintainer:          Eric Kow <E.Y.Kow@brighton.ac.uk>
+build-Depends:       base >= 3, containers
+build-type:          Simple
+
+cabal-version:       >=1.2
+
+Flag splitBase
+  description: Choose the new smaller, split-up base package.
+
+Library
+  Exposed-modules:     Data.Tree.Zipper
+  if flag(splitBase)
+    Build-depends: base >= 3, containers
+  else
+    Build-Depends: base < 3

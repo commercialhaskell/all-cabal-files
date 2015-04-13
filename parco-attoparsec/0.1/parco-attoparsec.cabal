@@ -1,0 +1,25 @@
+name:               parco-attoparsec
+version:            0.1
+synopsis:           Generalised parser combinators - Attoparsec interface
+description:
+    Parser monad instance for Attoparsec.  You can easily define this
+    yourself, but it is provided here for convenience.
+category:           Parsing
+license:            BSD3
+license-file:       LICENSE
+author:             Troels Henriksen
+maintainer:         athas@sigkill.dk
+cabal-version:      >= 1.10
+build-type:         Simple
+
+Source-Repository head
+  Type:     git
+  Location: git://github.com/athas/parco.git
+
+library
+    exposed-modules:    Text.Parco.Attoparsec
+
+    build-depends:      mtl, base>=4.2 && < 5.0, attoparsec, parco==0.1
+    default-language:   Haskell2010
+    Ghc-Options:        -Wall
+    hs-source-dirs:     src

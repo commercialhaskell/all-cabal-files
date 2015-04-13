@@ -1,0 +1,9 @@
+Name:		happs-hsp
+Version:	0.1
+Build-Type:	Simple
+Build-Depends:	base, mtl, bytestring, plugins, HAppS-Server, hsp
+LICENSE:	BSD3
+Hs-Source-Dirs: src
+
+Exposed-Modules:
+  HAppS.Server.HSP

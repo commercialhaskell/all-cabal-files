@@ -1,0 +1,54 @@
+name:                hMollom
+version:             0.3.1
+cabal-version:       >= 1.6
+stability:           experimental
+synopsis:            Library to interact with the @Mollom anti-spam service
+description:         Library to interact with the @Mollom anti-spam service
+license:             BSD3
+license-file:        LICENSE
+author:              Andy Georges
+homepage:            http://github.com/itkovian/hMollom
+category:            Network
+maintainer:          itkovian@gmail.com
+build-Type:          Simple
+extra-source-files:  src/Network/Mollom/OAuth.hs
+                     src/Network/Mollom/Blacklist.hs
+                     src/Network/Mollom/Captcha.hs
+                     src/Network/Mollom/Content.hs
+                     src/Network/Mollom/Feedback.hs
+                     src/Network/Mollom/Helper.hs
+                     src/Network/Mollom/Internals.hs
+                     src/Network/Mollom/MollomMonad.hs
+                     src/Network/Mollom/Types.hs
+                     src/Network/Mollom/Whitelist.hs
+
+library
+    build-depends:     
+        aeson >= 0.5.0.0,
+        attoparsec >= 0.10,
+        base >= 3 && < 5, 
+        ghc-prim,
+        old-locale >= 1,
+        time >= 1.1.4,
+        Crypto >= 4.2.0,
+        bytestring >= 0.9.1.4,
+        dataenc >= 0.13,
+        mtl >= 1.1.0.2,
+        HTTP >= 4000.2.2,
+        pureMD5 >= 2.1.0.2,
+        old-time,
+        random 
+    exposed-modules:
+        Network.Mollom
+      , Network.Mollom.Blacklist
+      , Network.Mollom.Captcha
+      , Network.Mollom.Content
+      , Network.Mollom.Feedback
+      , Network.Mollom.MollomMonad
+      , Network.Mollom.Site
+      , Network.Mollom.Types
+      , Network.Mollom.Whitelist
+
+    ghc-options:       -Wall
+    hs-source-dirs:      src
+

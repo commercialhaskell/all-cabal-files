@@ -1,0 +1,23 @@
+Name:          lambdacube-bullet
+Version:       0.2.1
+Cabal-Version: >= 1.2
+Synopsis:      Example for combining LambdaCube and Bullet
+Category:      Graphics, Physics
+Description:   Example for combining LambdaCube and Bullet
+Author:        Csaba Hruska
+Maintainer:    csaba (dot) hruska (at) gmail (dot) com
+Copyright:     (c) 2009-2011, Csaba Hruska
+Homepage:      http://www.haskell.org/haskellwiki/LambdaCubeEngine
+Bug-Reports:   http://code.google.com/p/lambdacube/issues
+License:       BSD3
+License-File:  LICENSE
+Stability:     experimental
+Build-Type:    Simple
+Extra-Source-Files:
+  README
+
+Library
+  Build-Depends:       base >= 4 && < 5, lambdacube-engine, bullet, vector, mtl >= 2 && < 3
+  Exposed-Modules:     Graphics.LambdaCube.Bullet
+  Hs-Source-Dirs:      .
+  GHC-Options:         -Wall -O2 -fno-warn-name-shadowing

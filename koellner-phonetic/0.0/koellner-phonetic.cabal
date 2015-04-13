@@ -1,0 +1,31 @@
+Name:            koellner-phonetic
+version:         0.0
+synopsis:        "map German words to code representing pronunciation"
+category: Text, Natural Language Processing
+maintainer:      "Marc Weber"
+description:     "German soundex like code, see Wikipedia http://de.wikipedia.org/wiki/K%C3%B6lner_Phonetik"
+build-type:      Simple
+license:         BSD3
+cabal-version: >= 1.10
+
+-- TODO drop HUnit after fixing hack-nix
+Library
+  default-language: Haskell2010
+  build-depends:
+    base >= 2 && < 5,
+    HUnit
+  ghc-options   : -Wall
+
+-- executable "MyTest"
+--   build-depends:
+--     base >= 2,
+--     HUnit
+--   main-is:        Main.hs
+--   hs-source-dirs: test, src
+
+Test-Suite test-koellner-phonetic
+  default-language: Haskell2010
+  type: exitcode-stdio-1.0
+  hs-source-dirs: test, src
+  main-is: Main.hs
+  build-depends: base, HUnit

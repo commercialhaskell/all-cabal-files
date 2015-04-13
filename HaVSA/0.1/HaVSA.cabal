@@ -1,0 +1,41 @@
+-- cabal configure --prefix=$HOME --user
+-- cabal build
+name:                HaVSA
+version:             0.1
+synopsis:            <Project description>
+description:         <Project description>
+category:            AI
+license:             BSD3
+License-file:        LICENSE
+author:              Rogan Creswick
+maintainer:          creswick@gmail.com
+Cabal-Version:       >=1.8.0.6
+build-type:          Simple
+
+Library
+   Build-depends:    base >= 4 && < 6,
+                     logict >= 0.4.2 && < 0.5
+
+   Exposed-modules:  AI.VersionSpaces
+   ghc-options:      -Wall
+   hs-source-dirs:   src
+
+Executable tests
+  Main-Is:           Main.hs
+  hs-source-dirs:    tests,
+                     src
+
+  Build-Depends:     base >= 4 && < 6,
+                     logict >= 0.4.2 && < 0.5,
+                     QuickCheck >= 1.1 && < 2,
+                     HUnit >= 1.2.2 && < 1.2.3,
+                     test-framework >= 0.3.3 && < 0.4,
+                     test-framework-quickcheck >= 0.2.7 && < 0.3,
+                     test-framework-hunit >= 0.2.6 && < 0.3
+
+  ghc-options:       -Wall
+
+
+source-repository head
+  type:     git
+  location: git://github.com/creswick/HaVSA.git

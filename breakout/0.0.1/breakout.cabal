@@ -1,0 +1,23 @@
+Name:                breakout
+Version:             0.0.1
+Cabal-Version:       >= 1.2
+Synopsis:            A simple Breakout game implementation.
+Category:            game
+Description:
+
+  A simple Breakout game implementation.
+
+Author:              Eyal Lotem
+Maintainer:          Eyal Lotem (eyal.lotem@gmail.com)
+Homepage:            http://github.com/Peaker/breakout/tree/master
+Copyright:           (c) 2009, Eyal Lotem
+License:             GPL
+Stability:           experimental
+Build-Type:          Simple
+
+Executable breakout
+  Executable:        breakout
+  HS-Source-Dirs:    src
+  Main-IS:           breakout.hs
+  Build-Depends:     base >=4 && < 5, haskgame >= 0.0.6, mtl, SDL
+  GHC-Options:       -O2 -Wall

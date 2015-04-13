@@ -1,0 +1,46 @@
+name:                gitit
+version:             0.2.2
+Cabal-version:       >= 1.2
+build-type:          Simple
+synopsis:            Wiki using HAppS, git, and pandoc.
+description:         Gitit is a wiki program. HAppS is used for the web
+                     server and session state. Pages and uploaded files
+                     are stored in a git repository and may be modified
+                     either by using git's command-line tools or through
+                     the wiki's web interface. Pandoc's extended version
+                     of markdown is used as a markup language. Gitit can
+                     be configured to display TeX math (using jsMath)
+                     and highlighted source code. Ajax is used in a
+                     few places, but all the basic functionality is
+                     available even in browsers that do not support
+                     javascript.
+
+category:            Network
+license:             GPL
+license-file:        LICENSE
+author:              John MacFarlane
+maintainer:          jgm@berkeley.edu
+data-files:          stylesheets/gitit.css, stylesheets/hk-pyg.css,
+                     stylesheets/folder.png, stylesheets/page.png,
+                     javascripts/dragdiff.js, javascripts/folding.js,
+                     javascripts/jquery.min.js, javascripts/uploadForm.js,
+                     javascripts/jquery-ui-personalized-1.6rc2.min.js,
+                     javascripts/preview.js, javascripts/search.js,
+                     data/post-update, data/FrontPage.page, data/Help.page,
+                     README.markdown, data/SampleConfig.hs
+
+Executable           gitit
+  hs-source-dirs:    .
+  main-is:           Gitit.hs 
+  other-modules:     Gitit.State, Gitit.Git, Paths_gitit
+  build-depends:     base >=3, parsec < 3, pretty, xhtml, containers, pandoc
+                     >= 1.1, process, filepath, directory, mtl, cgi,
+                     network, old-time, highlighting-kate, bytestring,
+                     utf8-string, HAppS-Server >= 0.9.3 && < 0.9.4,
+                     HAppS-State >= 0.9.3 && < 0.9.4,
+                     HAppS-Data >= 0.9.3 && < 0.9.4, Crypto, HTTP
+  if impl(ghc >= 6.10)
+    build-depends:   base >= 4, syb
+  ghc-options:         -Wall -threaded
+  ghc-prof-options:    -auto-all
+

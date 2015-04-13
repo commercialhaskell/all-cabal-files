@@ -1,0 +1,22 @@
+name:               deunicode
+version:            0.1
+synopsis:           Get rid of unicode (utf-8) symbols in Haskell sources
+description:        A very simple-minded program to replace utf-8 encoded
+                    unicode operators in Haskell source files with their
+                    equivalent in ascii. It takes no arguments and acts as
+                    a pure filter from stdin to stdout.
+category:           Codec
+license:            MIT
+license-file:       LICENSE
+author:             Ben Franksen <ben.franksen@online.de>
+maintainer:         Ben Franksen <ben.franksen@online.de>
+cabal-version:      >= 1.6
+build-type:         Simple
+
+executable          deunicode
+    main-is:            deunicode.hs
+    build-depends:      base == 4.2.*, bytestring == 0.9.*, utf8-string == 0.3.*
+
+source-repository   head
+    type:               darcs
+    location:           http://code.haskell.org/~bfr/deunicode/

@@ -1,0 +1,44 @@
+name:                make-package
+version:             1.0.0
+synopsis:            Make a cabalized package
+description:         Create a cabalized haskell project
+license:             BSD3
+license-file:        LICENSE
+copyright:           Chris Done, Philipp Balzarek
+author:              Philipp Balzarek
+maintainer:          p.balzarek@googlemail.com
+category:            Development, Utils
+homepage:            https://github.com/Philonous/make-package
+Bug-Reports:         https://github.com/Philonous/make-package/issues/
+build-type:          Simple
+cabal-version:       >=1.8
+data-files:          files/package.cabal
+                     files/licenses/*.license
+                     files/Setup.hs
+                     files/dot-gitignore
+                     files/Main.hs
+                     files/README.md
+                     files/Package.hs
+extra-source-files:  make-package.conf
+
+executable make-package
+  hs-source-dirs:    src
+  main-is:           Main.hs
+  other-modules:     Github
+                   , IO
+                   , Options
+  build-depends:     base >= 4 && < 5,
+                     async,
+                     bytestring,
+                     configurator,
+                     containers,
+                     directory,
+                     filepath,
+                     github,
+                     haskeline,
+                     mtl,
+                     process,
+                     text,
+                     time,
+                     time-lens
+  ghc-options:        -Wall

@@ -1,0 +1,24 @@
+name:               binding-gtk
+version:            0.2
+cabal-version:      >= 1.6
+license:            BSD3
+license-file:       LICENSE
+author:             Gideon Sireling
+maintainer:         haskell@accursoft.org
+homepage:           http://code.accursoft.com/binding
+bug-reports:        http://code.accursoft.com/binding/issues
+synopsis:           Data Binding in Gtk2Hs
+build-type:         Simple
+category:           GUI, User Interfaces
+extra-source-files: demo/simple.hs demo/lists.hs, demo/in.txt
+description:        Bind mutable data and lists to Gtk2Hs widgets.
+                    Examples are provided by the included demo programs.
+
+library
+  build-depends:   base <5, gtk, binding-core, mtl
+  hs-source-dirs:  src
+  exposed-modules: Graphics.UI.Gtk.Binding
+
+source-repository head
+  type:     hg
+  location: https://bitbucket.org/accursoft/binding

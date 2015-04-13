@@ -1,0 +1,34 @@
+name:           parameterized-data
+version:        0.1
+cabal-version:  >= 1.2
+build-type:     Simple
+license:        BSD3
+license-file:   LICENSE
+copyright:      
+ Copyright (c) 2008 Alfonso Acosta, Oleg Kiselyov, Wolfgang Jeltsch
+                    and KTH's SAM group
+author:         Alfonso Acosta
+maintainer:     alfonso.acosta@gmail.com
+homepage:       http://code.haskell.org/parameterized-data
+stability:      alpha
+package-url:    http://code.haskell.org/parameterized-data
+synopsis:       Parameterized data library implementing lightweight dependent 
+                types
+description:
+ This library provides an implementation of parameterized types using
+ type-level computations to implement the type parameters and emulate
+ dependent types.
+
+ Right now only fixed-sized vectors are provided.
+
+category:       Data
+tested-with:    GHC==6.8.2
+
+
+-- depends on ghc due to the use of Template Haskell
+Library
+  build-depends:   base, ghc > 6.6, type-level, template-haskell > 2.0
+  hs-source-dirs:  src
+  exposed-modules: Data.Param,
+                   Data.Param.FSVec
+  ghc-options:	-Wall 

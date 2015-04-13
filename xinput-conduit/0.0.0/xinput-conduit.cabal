@@ -1,0 +1,22 @@
+name:                xinput-conduit
+version:             0.0.0
+synopsis:            Conduit of keys pressed by xinput
+description:         Conduit of keys pressed by xinput
+license:             BSD3
+license-file:        LICENSE
+author:              Chris Done
+maintainer:          chrisdone@gmail.com
+copyright:           2015 Chris Done
+category:            Conduit
+build-type:          Simple
+cabal-version:       >=1.8
+
+library
+  hs-source-dirs:    src/
+  ghc-options:       -Wall -O2
+  exposed-modules:   Data.Conduit.XInput
+  build-depends:     base >= 4 && <5
+                   , bytestring >= 0.10.4.0
+                   , conduit
+                   , conduit-extra
+                   , transformers

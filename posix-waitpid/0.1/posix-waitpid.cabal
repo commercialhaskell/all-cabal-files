@@ -1,0 +1,15 @@
+name:                posix-waitpid
+version:             0.1
+synopsis:            Low-level wrapping of POSIX waitpid(2).
+description:         A low-level wrapping of POSIX waitpid(2).
+category:            System
+license:             MIT
+license-file:        LICENSE
+author:              Richard Smith
+maintainer:          zygoloid@metafoo.co.uk
+build-type:          Simple
+cabal-version:       >= 1.6
+build-depends:       base == 4.*, unix
+c-sources:           System/Posix/waitpid.c
+exposed-modules:     System.Posix.Waitpid
+extensions:          ForeignFunctionInterface

@@ -1,0 +1,28 @@
+name:                atmos-dimensional
+version:             0.1.0.0
+synopsis:            dimensional wrapper on atmos package
+description: {
+1976 US Standard Atmosphere with dimensions from dimensional package.
+.
+This is a thin wrapper on top of the atmos package.
+}
+license:             BSD3
+license-file:        LICENSE
+author:              Greg Horn
+maintainer:          gregmainland@gmail.com
+-- copyright:           
+category:            Science
+build-type:          Simple
+cabal-version:       >=1.8
+
+library
+   exposed-modules: Atmosphere.Dimensional
+  -- other-modules:       
+   build-depends:   base >= 4 && < 5,
+                    atmos >= 0.1 && < 0.2,
+                    dimensional >= 0.10 && < 0.11,
+                    numtype >= 1.0 && < 1.1
+
+source-repository head
+  type:     git
+  location: git://github.com/ghorn/atmosphere.git

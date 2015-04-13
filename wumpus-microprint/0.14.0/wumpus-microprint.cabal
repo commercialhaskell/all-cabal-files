@@ -1,0 +1,81 @@
+name:             wumpus-microprint
+version:          0.14.0
+license:          BSD3
+license-file:     LICENSE
+copyright:        Stephen Tetley <stephen.tetley@gmail.com>
+maintainer:       Stephen Tetley <stephen.tetley@gmail.com>
+homepage:         http://code.google.com/p/copperbox/
+category:         Graphics
+synopsis:         Microprints - "greek-text" pictures.
+description:
+  .
+  A library to produce /microprints/ [1] sometimes known as 
+  \"greek-text\". 
+  .
+  A rudimentary tokenizer is provided, but it is largely 
+  untested. 
+  .
+  \*\* WARNING \*\* - in future, this library might not be updated
+  to track revisions to Wumpus-Basic and Wumpus-Drawing. 
+  Originally microprints seemed like a simple subject to use as a 
+  testbed for developing Wumpus, however in practice the 
+  Microprint library has not been valuable for this. To do the 
+  subject justice, more effort has to be spent on tokenizing 
+  (which does not contribute to advancing Wumpus) than drawing. 
+  Eventually I intend to polish this library, but I do not expect  
+  to do this soon.
+  .
+  \[1\] <http://scg.unibe.ch/archive/papers/Robb05b-microprintsESUG.pdf>
+  .
+  Changelog:
+  . 
+  v0.13.0 to v0.14.0:
+  . 
+  * Updated to track changes to Wumpus-Basic and Wumpus-Drawing.
+  .
+  * Removed the shim module @Wumpus.Microprint@ this was 
+    prioritizing the Teletype drawing style, however this style 
+    is now out-of-date and it may be dropped in future revisions
+    rather than revised.  
+  .
+  v0.12.0 to v0.13.0:
+  .
+  * Updated to track changes to Wumpus-Basic and Wumpus-Core.
+  .
+build-type:         Simple
+stability:          highly unstable
+cabal-version:      >= 1.2
+
+extra-source-files:
+  CHANGES,
+  LICENSE,
+  demo/Demo01.hs
+  
+library
+  hs-source-dirs:     src
+  build-depends:      base              <  5, 
+                      vector-space      >= 0.6      && < 1.0,
+                      wumpus-core       == 0.42.0,
+                      wumpus-basic      == 0.15.0,
+                      wumpus-drawing    == 0.1.0
+
+  
+  exposed-modules:
+    Wumpus.Microprint.Datatypes,
+    Wumpus.Microprint.Teletype,
+    Wumpus.Microprint.Render,
+    Wumpus.Microprint.Tokenizer,
+    Wumpus.Microprint.VersionNumber
+
+  other-modules:
+
+  extensions:
+    
+
+  ghc-options:
+  
+  includes: 
+  
+
+  
+  

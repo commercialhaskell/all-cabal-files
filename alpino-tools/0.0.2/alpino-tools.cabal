@@ -1,0 +1,49 @@
+Name:		alpino-tools
+Version:	0.0.2
+License:	OtherLicense
+License-file:	LICENSE
+Copyright:	Copyright 2010 Daniël de Kok
+Author:		Daniël de Kok <me@danieldk.eu>
+Maintainer:	Daniël de Kok <me@danieldk.eu>
+Homepage:	http://github.com/danieldk/alpino-tools
+Category:	Natural Language Processing, Data
+Synopsis:	Alpino data processing tools
+Description:	Tools for processing data of the Alpino parser/generator
+                for Dutch.
+Cabal-Version:	>= 1.2
+Build-Type:	Simple
+
+Library
+  Exposed-Modules:	Data.Alpino.Model, Data.Alpino.Model.Enumerator
+  Build-Depends:	base >= 4 && < 5, bytestring >= 0.9.1.7,
+                        utf8-string >= 0.3.6, bytestring-lexing >= 0.2.1,
+                        enumerator >= 0.4.1, transformers >= 0.2.2.0,
+                        containers >= 0.3.0.0, random >= 1.0.0.3,
+                        random-shuffle >= 0.0.2
+  HS-Source-Dirs:       src
+  Ghc-Options:		-O2 -Wall
+
+Executable at_model_rescore_data
+  HS-Source-Dirs:       src
+  main-is:              model_rescore_data.hs
+  Ghc-Options:		-O2
+
+Executable at_model_filter_data
+  HS-Source-Dirs:       src
+  main-is:              model_filter_data.hs
+  Ghc-Options:		-O2
+
+Executable at_model_oracle
+  HS-Source-Dirs:       src
+  main-is:              model_oracle.hs
+  Ghc-Options:		-O2
+
+Executable at_model_random_sample
+  HS-Source-Dirs:       src
+  main-is:              model_random_sample.hs
+  Ghc-Options:		-O2
+
+Executable at_model_statistics_data
+  HS-Source-Dirs:       src
+  main-is:              model_statistics_data.hs
+  Ghc-Options:		-O2

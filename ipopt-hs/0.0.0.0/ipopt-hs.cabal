@@ -1,0 +1,25 @@
+name:                ipopt-hs
+version:             0.0.0.0
+synopsis:            haskell binding to ipopt including automatic differentiation
+description:         
+license:             BSD3
+license-file:        LICENSE
+author:              Adam Vogt <vogt.adam@gmail.com>
+maintainer:          Adam Vogt <vogt.adam@gmail.com>
+category:            Data
+build-type:          Simple
+cabal-version:       >=1.8
+
+library
+  exposed-modules:     Ipopt
+  other-modules:       C2HS
+  build-depends:       base ==4.6.*, vector ==0.10.*, ad ==3.4.*
+  pkgconfig-depends:   ipopt
+
+executable ipopt-hs_Test1 
+  main-is:             Test1.hs
+  build-depends:       base ==4.6.*, vector ==0.10.*, ipopt-hs
+
+executable ipopt-hs_Test2
+  main-is:             Test2.hs
+  build-depends:       base ==4.6.*, vector ==0.10.*, ipopt-hs

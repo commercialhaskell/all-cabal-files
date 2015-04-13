@@ -1,0 +1,47 @@
+Name: testpack
+Version: 2.1.2.1
+License: LGPL
+Maintainer: John Goerzen <jgoerzen@complete.org>
+Author: John Goerzen
+Copyright: Copyright (c) 2004-2010 John Goerzen
+license-file: COPYRIGHT
+extra-source-files: COPYING, Makefile
+homepage: http://hackage.haskell.org/cgi-bin/hackage-scripts/package/testpack
+Category: Testing
+synopsis: Test Utililty Pack for HUnit and QuickCheck
+Description: Haskell Test Utility Pack for HUnit and QuickCheck
+ testpack provides utilities for both HUnit and QuickCheck.  These include
+ tools for running QuickCheck properties as HUnit test cases, allowing you to
+ combine both approaches in a single program.  It also includes tools for more
+ helpful displays of running progress in both HUnit and QuickCheck, additional
+ generators for other types for QuickCheck, and shortcuts for quickly defining new
+ test cases.
+Stability: Beta
+Build-Type: Simple
+Cabal-Version: >=1.2
+
+Flag splitBase
+  description: Choose the new smaller, split-up base package.
+
+Library
+ Hs-Source-Dirs: src
+ Exposed-Modules:
+  Test.HUnit.Tools,
+  Test.QuickCheck.Tools,
+  Test.QuickCheck.Instances
+
+ Extensions: ExistentialQuantification, CPP
+
+ -- Hack for cabal-install weirdness.  cabal-install forces base 3,
+ -- though it works fine for Setup.lhs manually.  Fix.
+ if impl(ghc >= 6.9)
+    build-depends: base >= 4 && <5
+
+ Build-Depends: base >= 3 && < 5,
+               mtl, HUnit,
+               QuickCheck >= 2.1.0.3 && < 2.5
+
+ If flag(splitBase)
+   Build-Depends: base >= 3 && < 5, containers, random
+ Else
+   Build-Depends: base < 3

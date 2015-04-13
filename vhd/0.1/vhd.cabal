@@ -1,0 +1,67 @@
+Name:                vhd
+Version:             0.1
+Synopsis:            Implementation of the Virtual Hard Disk (VHD) disk format
+Description:         Provide a toolbox of function to manipulate VHD files.
+Author:              Jonathan Knowles, Vincent Hanquez
+Maintainer:          jonathan.knowles@eu.citrix.com
+Copyright:           Citrix Systems Inc.
+License:             BSD3
+License-file:        LICENCE
+Stability:           Experimental
+Category:            System
+Build-type:          Simple
+Homepage:            https://github.com/jonathanknowles/hs-vhd
+Cabal-version:       >=1.6
+Data-files:          README
+
+Flag test
+  Description:       Build unit test
+  Default:           False
+
+Flag executable
+  Description:       Build executables
+  Default:           False
+
+Library
+  Build-depends:     base >= 4 && < 5
+                   , bytestring
+                   , mmap
+                   , text
+                   , time
+                   , cereal
+                   , random
+                   , storable-endian
+  Exposed-modules:   Data.VHD
+  Other-modules:     Data.VHD.Bat
+                     Data.VHD.Bitmap
+                     Data.VHD.Block
+                     Data.VHD.CheckSum
+                     Data.VHD.Context
+                     Data.VHD.Geometry
+                     Data.VHD.Serialize
+                     Data.VHD.Types
+                     Data.VHD.Utils
+
+Executable           Tests
+  Main-Is:           Tests.hs
+  if flag(test)
+    Buildable:       True
+    Build-depends:   base >= 3 && < 5
+                   , QuickCheck >= 2
+                   , bytestring
+                   , test-framework >= 0.3
+                   , test-framework-quickcheck2 >= 0.2
+  else
+    Buildable:       False
+
+Executable           vhd
+  Main-Is:           Vhd.hs
+  if flag(executable)
+    Buildable:       True
+    Build-depends:   base >= 3 && < 5
+  else
+    Buildable:       False
+
+source-repository head
+  type:     git
+  location: git://github.com/jonathanknowles/hs-vhd

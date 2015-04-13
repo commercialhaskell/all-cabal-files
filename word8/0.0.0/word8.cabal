@@ -1,0 +1,20 @@
+Name:                   word8
+Version:                0.0.0
+Author:                 Kazu Yamamoto <kazu@iij.ad.jp>
+Maintainer:             Kazu Yamamoto <kazu@iij.ad.jp>
+License:                BSD3
+License-File:           LICENSE
+Synopsis:               Word8 library
+Description:            Word8 library to be used with Data.ByteString
+Category:               Data
+Cabal-Version:          >= 1.8
+Build-Type:             Simple
+
+Library
+  GHC-Options:          -Wall
+  Exposed-Modules:      Data.Word8
+  Build-Depends:        base >= 4 && < 5
+
+Source-Repository head
+  Type:                 git
+  Location:             https://github.com/kazu-yamamoto/word8

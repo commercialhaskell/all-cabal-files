@@ -1,0 +1,28 @@
+name:          semigroupoid-extras
+category:      Control
+version:       4.0
+license:       BSD3
+cabal-version: >= 1.6
+license-file:  LICENSE
+author:        Edward A. Kmett
+maintainer:    Edward A. Kmett <ekmett@gmail.com>
+stability:     provisional
+homepage:      http://github.com/ekmett/semigroupoid-extras
+bug-reports:   http://github.com/ekmett/semigroupoid-extras/issues
+copyright:     Copyright (C) 2011-2013 Edward A. Kmett
+build-type:    Simple
+synopsis:      This package has been absorbed into semigroupoids 4.0
+description:   This package has been absorbed into semigroupoids 4.0
+
+extra-source-files:
+  .ghci
+  .gitignore
+  .travis.yml
+  .vim.custom
+
+source-repository head
+  type: git
+  location: git://github.com/ekmett/semigroupoid-extras.git
+
+library
+  build-depends: base >= 4 && < 5, semigroupoids >= 4.0

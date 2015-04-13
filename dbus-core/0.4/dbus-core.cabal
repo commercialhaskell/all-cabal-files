@@ -1,0 +1,63 @@
+name: dbus-core
+version: 0.4
+synopsis: Low-level DBus protocol implementation
+license: GPL
+license-file: License.txt
+author: John Millikin
+maintainer: jmillikin@gmail.com
+build-type: Simple
+cabal-version: >=1.6
+category: Network, Desktop
+stability: experimental
+bug-reports: mailto:jmillikin@gmail.com
+
+extra-source-files:
+  dbus-core.tex
+  Examples/*.hs
+  Tests/*.hs
+  Tests.hs
+
+source-repository head
+  type: darcs
+  location: http://patch-tag.com/r/jmillikin/dbus-core/pullrepo
+
+library
+  ghc-options: -Wall
+
+  build-depends:
+    base >=4 && < 5,
+    parsec >= 3.0.0,
+    binary,
+    bytestring,
+    data-binary-ieee754 >= 0.3,
+    utf8-string,
+    mtl,
+    containers,
+    unix,
+    network
+
+  exposed-modules:
+    DBus.Address
+    DBus.Bus
+    DBus.Connection
+    DBus.Constants
+    DBus.Message
+    DBus.Types
+
+  other-modules:
+    DBus.Authentication
+    DBus.Types.Atom
+    DBus.Types.Containers
+    DBus.Types.Containers.Array
+    DBus.Types.Containers.Dictionary
+    DBus.Types.Containers.Structure
+    DBus.Types.Containers.Variant
+    DBus.Types.Endianness
+    DBus.Types.Names
+    DBus.Types.ObjectPath
+    DBus.Types.Serial
+    DBus.Types.Signature
+    DBus.Marshal
+    DBus.Padding
+    DBus.Unmarshal
+    DBus.Util

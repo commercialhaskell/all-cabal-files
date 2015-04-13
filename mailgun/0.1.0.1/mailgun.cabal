@@ -1,0 +1,49 @@
+name:                mailgun
+version:             0.1.0.1
+synopsis:            Connector to Rackspace's Mailgun Service
+description:         Allows users to directly access Rackspace's Mailgun service
+                     without having to work with the underlying REST service.
+license:             MIT
+license-file:        LICENSE
+author:              Andrew Rademacher
+maintainer:          andrewrademacher@gmail.com
+category:            Web
+build-type:          Simple
+cabal-version:       >=1.10
+
+library
+    exposed-modules:    Rackspace.MailGun 
+    -- other-modules:       
+    -- other-extensions:    
+    hs-source-dirs:     src      
+    default-language:   Haskell2010
+    build-depends:      base >=4.6 && <4.7
+                    ,   text >=1.1.0.1
+                    ,   conduit >=1.0.17.1
+                    ,   http-conduit >=2.0.0.8
+                    ,   bytestring >=0.10.0.2
+                    ,   network >=2.4.2.2
+                    ,   http-client-multipart >=0.2.0.0
+                    ,   transformers >=0.3.0.0
+                    ,   monad-control >=0.3.2.3
+                    ,   http-client >=0.2.2.4
+                    ,   failure >=0.2.0.2
+                    ,   exceptions >=0.5
+
+executable send
+    main-is:            Send.hs
+    hs-source-dirs:     test
+    default-language:   Haskell2010
+    build-depends:      base >=4.6 && <4.7
+                    ,   text >=1.1.0.1
+                    ,   mailgun
+
+executable sendmany
+    main-is:            SendMany.hs
+    hs-source-dirs:     test
+    default-language:   Haskell2010
+    build-depends:      base >=4.6 && <4.7
+                    ,   text >=1.1.0.1
+                    ,   http-conduit >=2.0.0.8
+                    ,   transformers >=0.3.0.0
+                    ,   mailgun

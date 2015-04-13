@@ -1,0 +1,30 @@
+name:             tetris
+version:          0.27178
+
+license:          BSD3
+license-file:     LICENSE
+author:           mokehehe
+maintainer:       <mokehehe@gmail.com>
+
+stability:        Stable
+category:         Game
+synopsis:         A 2-D clone of Tetris
+description:      A simple clone of Tetris using GLUT.
+                  .
+                  Subversion repo available at <http://svn.coderepos.org/share/lang/haskell/tetris>.
+homepage:         http://d.hatena.ne.jp/mokehehe/20080921/tetris 
+
+build-depends:    base, GLUT, random
+
+build-type:       Simple
+tested-with:      GHC==6.10.1
+
+data-files:       README.txt, README.en.txt
+
+executable:       tetris
+main-is:          Main.hs
+other-modules:    Board Pad Player Util
+
+
+ghc-options:      -Wall
+ghc-prof-options: -prof -auto-all

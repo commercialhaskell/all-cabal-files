@@ -1,0 +1,34 @@
+name:                reify
+version:             0.1.1
+synopsis:            Serialize data
+description:         This is a library for reifying Haskell data structures in GHC.
+
+                     Haskell values are mapped into representations that we call
+                     graphs (for want of a better name). The representations are
+                     encoded in the Haskell type Graph, which is just an ordinary
+                     algebraic data type. This will not reify functions.
+                     .
+                     Bitrotten.
+category:            Data
+license:             GPL
+license-file:        LICENSE
+author:              Bernie Pope <bjpop@csse.unimelb.edu.au>
+maintainer:          None
+homepage:            http://www.cs.mu.oz.au/~bjpop/code.html
+stability:           experimental
+build-depends:       base, ghc==6.5
+build-type:          Simple
+tested-with:         GHC==6.5
+Extensions:          CPP, ForeignFunctionInterface
+
+data-files:          README, Makefile
+extra-source-files:  GhcInternalsC.c, HeapGraph.c, ReifyC.c, Hash.h, Internals.h
+
+exposed-modules:   PrettyGraph, ReifyHs
+
+executable:          reify
+main-is:             Main.hs
+
+
+ghc-options:         -O2 -Wall
+ghc-prof-options:    -prof -auto-all

@@ -1,0 +1,63 @@
+Name:                zoom-cache-sndfile
+
+-- The package version. See the Haskell package versioning policy
+-- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
+-- standards guiding when and how versions should be incremented.
+Version:             0.1.0.0
+
+Synopsis:            Tools for generating zoom-cache-pcm files
+
+Description:
+    zoom-cache-sndfile provides tools for encoding and dumping zoom-cache-pcm files.
+    See the zoom-cache-pcm and zoom-cache packages for more information about
+    zoom-cache files.
+
+License:             LGPL-2.1
+License-file:        LGPL-2.1
+Author:              Conrad Parker
+Maintainer:          Conrad Parker <conrad@metadecks.org>
+Stability:           Experimental
+Category:            Sound
+
+Cabal-version:       >=1.6
+Build-type:          Simple
+
+flag splitBase
+  description: Use the split-up base package.
+
+-- Extra-source-files:  
+
+Executable zoom-cache-sndfile
+  Main-is:           zoom-cache-sndfile.hs
+  Hs-Source-Dirs:    ., tools 
+  
+  if flag(splitBase)
+    build-depends:
+      base >= 3 && < 6
+  else
+    build-depends:
+      base < 3
+
+  Build-depends:
+    bytestring                >= 0.9     && < 0.10,
+    data-default,
+    hsndfile,
+    hsndfile-vector,
+    mtl                       >= 2.0.0.0 && < 3,
+    ui-command,
+    vector,
+    zoom-cache                >= 0.5.1.0 && < 0.6,
+    zoom-cache-pcm            >= 0.1.0.0 && < 0.2
+  
+  -- Other-modules:       
+  
+  -- Extra tools (e.g. alex, hsc2hs, ...) needed to build the source.
+  -- Build-tools:         
+  
+------------------------------------------------------------------------
+-- Git repo
+--
+source-repository head
+  type: git
+  location: git://github.com/kfish/zoom-sndfile.git
+

@@ -1,0 +1,36 @@
+Name:           graph-rewriting-lambdascope
+Version:        0.5.2
+Copyright:      (c) 2010, Jan Rochel
+License:        BSD3
+License-File:   LICENSE
+Author:         Jan Rochel
+Maintainer:     jan@rochel.info
+Homepage:       http://rochel.info/#graph-rewriting
+Stability:      alpha
+Build-Type:     Simple
+Synopsis:       Implementation of Lambdascope as an interactive graph-rewriting system
+Description:    Lambdascope is an optimal implementation of the λβ-calculus described in the paper "Lambdascope - Another optimal implementation of the lambda-calculus" by Vincent van Oostrom, Kees-Jan van de Looij, and Marijn Zwitserlood. Call "lambdascope" with one of the files from the "examples" directory as an argument. For usage of the GUI see "GraphRewriting.GL.UI". Use the "--lmo" flag for leftmost outermost evalution and "--bench" for non-graphical evaluation to weak head normal form.
+Category:       Graphs, Application
+Cabal-Version:  >= 1.6
+Data-Files:     examples/*.l
+
+Executable lambdascope
+  Main-Is:        Main.hs
+  Build-Depends:
+    base >= 4 && < 4.5,
+    base-unicode-symbols >= 0.2 && < 0.3,
+    graph-rewriting >= 0.7.1 && < 0.8,
+    graph-rewriting-layout >= 0.5.1 && < 0.6,
+    graph-rewriting-gl >= 0.7.1 && < 0.8,
+    graph-rewriting-strategies >= 0.2 && < 0.3,
+    parsec >= 2.1 && < 2.2,
+    GLUT >= 2.2 && < 2.3,
+    OpenGL >= 2.4 && < 2.5,
+    IndentParser >= 0.2 && < 0.3
+  Extensions:
+    UnicodeSyntax
+    FlexibleInstances
+    FlexibleContexts
+    MultiParamTypeClasses
+  GHC-Options:    -fno-warn-duplicate-exports -fwarn-unused-binds -fwarn-unused-imports -fwarn-unused-do-bind -fwarn-wrong-do-bind -fwarn-unrecognised-pragmas
+  Other-Modules:   GL Graph Resolver Rules Term

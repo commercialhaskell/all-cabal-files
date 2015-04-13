@@ -1,0 +1,41 @@
+Name:			Omega
+Version:		0.1.1
+Cabal-Version:		>= 1.2.3
+Build-Type:		Custom
+License:		BSD3
+License-File:		LICENSE
+Author:			Christopher Rodrigues
+Maintainer:		cirodrig@illinois.edu
+Stability:		Alpha
+Synopsis:		Operations on Presburger arithmetic formulae
+Description:
+        This package provides tools for manipulating sets and relations
+        whose members can be represented compactly as a Presburger
+        arithmetic formula.  The primary interface can be found
+        in "Data.Presburger.Omega.Set" and "Data.Presburger.Omega.Rel".
+
+        The Omega library
+        (<http://github.com/davewathaverford/the-omega-project>) must
+        be installed to build this package.
+Category:		Data
+Extra-Source-Files:
+	README
+	configure.ac
+	Makefile.in
+	src/C_omega.h
+	src/C_omega.cc
+Extra-Tmp-Files:	build/C_omega.o
+
+Library
+  Build-Depends:	base >= 3 && < 4, containers
+  Exposed-Modules:
+        Data.Presburger.Omega.Expr
+        Data.Presburger.Omega.LowLevel
+        Data.Presburger.Omega.Set
+        Data.Presburger.Omega.Rel
+  Other-Modules:
+        Data.Presburger.Omega.SetRel
+  Extensions:		GADTs ScopedTypeVariables
+  Build-Tools:		hsc2hs
+  Include-Dirs:		src
+  Extra-Libraries:	omega stdc++

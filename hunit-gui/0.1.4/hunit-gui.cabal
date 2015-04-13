@@ -1,0 +1,54 @@
+Name:           hunit-gui
+Version:        0.1.4
+Cabal-Version:  >= 1.6
+License:        PublicDomain
+Author:         Kim Wallmark
+Homepage:       http://patch-tag.com/r/kwallmar/hunit_gui/home
+Category:       Testing
+Synopsis:       A GUI testrunner for HUnit
+Build-Type:     Custom
+Maintainer:	kim_hunitgui@arlim.org
+Description:
+    hunit-gui is a graphical front-end for HUnit.  It provides a test
+    controller you can use in place of runTestTT or runTestText, as well
+    as an optional cleanup step.
+
+Data-Files:
+  examples/README.txt
+  examples/build.sh
+  examples/AllTestsPass.hs
+  examples/SomeTestsFail.hs
+  examples/Util/FakeTests.hs
+
+Library
+  Exposed-modules:
+    Test.HUnit.Gui,
+    Test.HUnit.Gui.Bar,
+    Test.HUnit.Gui.BarComputations,
+    Test.HUnit.Gui.Descriptions,
+    Test.HUnit.Gui.Runner,
+    Test.HUnit.Gui.Status,
+    Test.HUnit.Gui.Window
+  Hs-Source-Dirs:   .
+  Build-Depends:
+    base == 3.*,
+    haskell98,
+    HUnit == 1.2.*,
+    gtk == 0.10.*,
+    cairo == 0.10.*
+  Ghc-Options:      -Wall
+
+Executable tests
+  Main-Is:           AllTests.hs
+  Other-Modules:
+    BarComputationsTests
+    DescriptionsTests
+    StatusTests
+  Hs-Source-Dirs:    . tests
+  Build-Depends:
+    base == 3.*,
+    haskell98,
+    HUnit == 1.2.*,
+    gtk == 0.10.*,
+    cairo == 0.10.*
+  Ghc-Options:       -Wall

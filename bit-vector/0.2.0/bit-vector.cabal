@@ -1,0 +1,39 @@
+Name:                bit-vector
+Version:             0.2.0
+Synopsis:            Simple bit vectors for Haskell
+Description:         Operations for using a vector of Booleans as a bit vector. Intended more for pedagogical purposes than for serious applications
+Homepage:            https://github.com/acfoltzer/bit-vector
+Bug-reports:         https://github.com/acfoltzer/bit-vector/issues
+License:             BSD3
+License-file:        LICENSE
+Author:              Adam C. Foltzer
+Maintainer:          acfoltzer@gmail.com
+Category:            Data, Bit Vectors
+Build-type:          Simple
+Cabal-version:       >=1.8
+extra-source-files:  README.md, test/Data/Vector/Bit/Tests.hs
+
+Library
+  Exposed-modules:   Data.Vector.Bit
+  Hs-source-dirs:    src
+  Build-depends:     base >= 4.4 && < 5,
+                     vector >= 0.9
+  ghc-options:       -Wall
+                     -- orphans are kind of the point
+                     -fno-warn-orphans
+
+Test-Suite Tests
+  Type:              exitcode-stdio-1.0
+  hs-source-dirs:    test
+  Main-is:           Data/Vector/Bit/Tests.hs
+  Build-depends:     base,
+                     vector >= 0.9,
+                     QuickCheck >= 2.4,
+                     tasty >= 0.10,
+                     tasty-th >= 0.1,
+                     tasty-quickcheck >= 0.8,
+                     bit-vector
+
+source-repository head
+  type:     git
+  location: git://github.com/acfoltzer/bit-vector.git

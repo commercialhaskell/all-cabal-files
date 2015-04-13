@@ -1,0 +1,33 @@
+name:           BiobaseMAF
+version:        0.5.0.0
+author:         Christian Hoener zu Siederdissen
+maintainer:     choener@tbi.univie.ac.at
+homepage:       http://www.tbi.univie.ac.at/~choener/
+copyright:      Christian Hoener zu Siederdissen, 2011
+category:       Bioinformatics
+synopsis:       Multiple Alignment Format
+license:        GPL-3
+license-file:   LICENSE
+build-type:     Simple
+stability:      experimental
+cabal-version:  >= 1.4.0
+description:
+                MAF files store multiple (multiple) alignments, i.e. complete
+                n-way alignments between different genomes.
+
+extra-source-files:
+
+library
+  build-depends:
+    base >3 && <5,
+    bytestring,
+    containers,
+    iteratee
+
+  exposed-modules:
+    Biobase.MAF
+    Biobase.MAF.Import
+
+  ghc-options:
+    -O2
+

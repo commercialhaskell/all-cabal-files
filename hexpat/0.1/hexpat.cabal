@@ -1,0 +1,20 @@
+Cabal-Version: >= 1.2
+Name: hexpat
+Version: 0.1
+Synopsis: wrapper for expat, the fast XML parser
+Category: XML
+License: BSD3
+License-File: LICENSE
+Author: Evan Martin
+Maintainer: martine@danga.com
+Copyright: (c) 2008 Evan Martin <martine@danga.com>
+Homepage: http://neugierig.org/software/darcs/browse/?r=hexpat;a=summary
+Extra-Source-Files: C2HS.hs test.hs
+Build-Type: Simple
+
+Library
+  Build-Depends: base, haskell98
+  Exposed-Modules: Text.XML.Expat.IO, Text.XML.Expat.Tree
+  Extensions: ForeignFunctionInterface
+  Extra-Libraries: expat
+

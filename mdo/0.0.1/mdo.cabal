@@ -1,0 +1,18 @@
+name:            mdo
+version:         0.0.1
+copyright:       2008 Audrey Tang
+license:         BSD3
+license-file:    LICENSE
+author:          Audrey Tang <audreyt@audreyt.org>
+maintainer:      Audrey Tang <audreyt@audreyt.org>
+synopsis:        Command-line tool to run a command on each of the items.
+description:     Usage: mdo COMMAND [BEFORE... --] ITEMS... [--- AFTER...]
+                 Run COMMAND on each of the ITEMS.
+                 Arguments in BEFORE are used as initial arguments to each invocation.
+                 Arguments in AFTER are used as trailing arguments to each invocation.
+stability:       experimental
+build-type:      Simple
+category:        Console
+executable:      mdo
+build-depends:   base, process
+main-is:         mdo.hs

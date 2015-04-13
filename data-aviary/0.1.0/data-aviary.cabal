@@ -1,0 +1,47 @@
+name:             data-aviary
+version:          0.1.0
+license:          BSD3
+license-file:     LICENSE
+copyright:        Stephen Tetley <stephen.tetley@gmail.com>
+maintainer:       Stephen Tetley <stephen.tetley@gmail.com>
+homepage:         http://code.google.com/p/copperbox/
+category:         Combinators
+synopsis:         Combinator birds.
+description:
+  A catalogue for the combinator birds (Data.Aviary.Birds) - this 
+  module is intended more for illustration than utility.
+  .
+  Plus a smaller set (Data.Avery) intended to be useful, 
+  collecting combinators that have already /escaped/ (published 
+  elsewhere) but aren\'t in Data.Function and other favourites.
+  .
+
+build-type:         Simple
+stability:          highly unstable
+cabal-version:      >= 1.2
+
+extra-source-files:
+
+library
+  hs-source-dirs:     src
+  build-depends:      base<5
+
+  
+  exposed-modules:
+    Data.Aviary,
+    Data.Aviary.Birds,
+    Data.Aviary.BirdsInter
+    
+
+  other-modules:
+    
+  extensions:
+    
+
+  ghc-options:
+  
+  includes: 
+  
+
+  
+  

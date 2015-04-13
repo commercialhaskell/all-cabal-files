@@ -1,0 +1,52 @@
+name:                DrIFT-cabalized
+version:             2.2.3.2
+synopsis:            Program to derive type class instances
+description:         DrIFT is a type sensitive preprocessor for Haskell. It extracts type declarations
+                     and directives from modules. The directives cause rules to be fired on the parsed
+                     type declarations, generating new code which is then appended to the bottom of the input
+                     file. The rules are expressed as Haskell code, and it is intended that the user can add new
+                     rules as required.
+                     .
+                     DrIFT automates instance derivation for classes that aren't supported by the standard compilers.
+                     In addition, instances can be produced in seperate modules to that containing the type declaration.
+                     This allows instances to be derived for a type after the original module has been compiled.
+                     As a bonus, simple utility functions can also be produced from a type.
+                     .
+                     This package was cabalized by gwern <gwern0@gmail.com>.
+category:            Data Structures
+license:             BSD3
+license-file:        LICENSE
+-- For contributors & what they did, see AUTHORS
+author:              Noel Winstanley, John Meacham <john@repetae.net>
+maintainer:          <gwern0@gmail.com>
+homepage:            http://repetae.net/computer/haskell/DrIFT/
+
+Cabal-Version: >= 1.6
+build-type:   Simple
+data-files:   AUTHORS, ChangeLog, README, README.old, code/README.txt, docs/drift.texi, docs/drift.info,
+              example/README, example/TestTerm.out.correct
+extra-source-files:
+       code/GhcBinary.hs, code/FunctorM.hs, example/TestTerm.hs, example/BTree.hs, example/Foo.lhs,
+       example/Xref.hs, example/Artifical.hs, example/Example.hs
+
+source-repository head
+  type:     darcs
+  location: http://repetae.net/repos/DrIFT
+
+executable DrIFT-cabalized
+    build-depends:  base<4, old-time, random
+    main-is:        DrIFT.hs
+    hs-source-dirs: src, ./
+    other-modules: CommandP, Version, GenUtil, Rules, Rules.Binary,
+                   Rules.GhcBinary, Rules.Arbitrary,
+                   Rules.Monoid, Rules.BitsBinary, Rules.Xml,
+                   Rules.Utility, Rules.Generic, Rules.Standard,
+                   Rules.FunctorM, PreludData, ParseLib2,
+                   DataP, ChaseImports, Pretty, RuleUtils,
+                   Unlit, GetOpt
+    ghc-options:    -Wall
+
+executable DrIFT-cabalized-ghc
+    build-depends: base<4, process
+    main-is:       drift-ghc.hs
+    ghc-options:  -Wall

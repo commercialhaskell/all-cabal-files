@@ -1,0 +1,57 @@
+name:                package-o-tron
+version:             0.1.0.0
+synopsis:            Utilities for working with cabal packages and your package database
+
+description:         Utility to help managing Makefiles for Haskell projects, a cabal lint
+                     which can check the other-modules and build-deps
+                     sections in your cabal files, and a quick command
+                     that can show the direct package dependencies of
+                     a set of Haskell source files. See the README in
+                     the repo for more information:
+                     <https://github.com/JakeWheat/package-o-tron>.
+
+
+license:             BSD3
+license-file:        LICENSE
+author:              Jake Wheat
+maintainer:          jakewheatmail@gmail.com
+copyright:           Jake Wheat 2012
+category:            Development
+build-type:          Simple
+cabal-version:       >=1.8
+
+extra-source-files:  autorules.mk
+                     LICENSE
+                     README
+                     Makefile
+                     todo
+
+source-repository head
+  type:     git
+  location: https://github.com/JakeWheat/package-o-tron.git
+
+library
+  exposed-modules:  Distribution.Pot.Packages, Distribution.Pot.Modules
+  build-depends:    base >= 4 && < 5,
+                    groom,process,filepath,filemanip
+
+executable Makefilerize
+  build-depends:    base >= 4 && < 5,
+                    filepath,groom,process,filemanip
+  main-is:          Makefilerize.lhs
+  hs-source-dirs:   .,exe-src
+  other-modules:    Distribution.Pot.Packages, Distribution.Pot.Modules
+
+executable CabalLint
+  build-depends:    base >= 4 && < 5,
+                    filepath,groom,process,filemanip,Cabal,packdeps
+  main-is:          CabalLint.lhs
+  hs-source-dirs:   .,exe-src
+  other-modules:    Distribution.Pot.Packages, Distribution.Pot.Modules
+
+executable ShowPackages
+  build-depends:    base >= 4 && < 5,
+                    filepath,groom,process,filemanip
+  main-is:          ShowPackages.lhs
+  hs-source-dirs:   .,exe-src
+  other-modules:    Distribution.Pot.Packages, Distribution.Pot.Modules

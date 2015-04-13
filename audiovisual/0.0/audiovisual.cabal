@@ -1,0 +1,62 @@
+name:                audiovisual
+version:             0.0
+synopsis:            A battery-included audiovisual framework
+homepage:            https://github.com/fumieval/audiovisual
+bug-reports:         http://github.com/fumieval/audiovisual/issues
+description:         Types and utilities for audio and graphic stuff
+license:             BSD3
+license-file:        LICENSE
+author:              Fumiaki Kinoshita
+maintainer:          Fumiaki Kinoshita <fumiexcel@gmail.com>
+copyright:           Copyright (C) 2015 Fumiaki Kinoshita
+category:            Data, Records
+build-type:          Simple
+stability:           provisional
+
+extra-source-files: data/*.ttf
+data-files: data/*.ttf
+cabal-version:       >=1.10
+
+source-repository head
+  type: git
+  location: https://github.com/fumieval/extensible.git
+
+library
+  exposed-modules:
+    Data.Audio
+    Data.Graphics
+    Data.Graphics.Bitmap
+    Data.Graphics.Sight
+    Data.Graphics.Class
+    Data.Graphics.Font
+    Data.Graphics.Vertex
+    Data.Input.Event
+    Audiovisual.Sampler
+    Audiovisual.Deck
+    Audiovisual.Text
+  other-modules:
+    Paths_audiovisual
+  build-depends:       base >= 4.7 && <5
+    , template-haskell
+    , linear
+    , objective >= 1 && <1.1
+    , free >= 4.8 && <5
+    , colors
+    , deepseq
+    , mtl
+    , filepath
+    , directory
+    , freetype2
+    , hashable
+    , random
+    , boundingboxes
+    , JuicyPixels-util
+    , JuicyPixels
+    , vector
+    , lens
+    , void
+    , transformers
+    , WAVE
+  hs-source-dirs:      src
+  ghc-options: -Wall
+  default-language:    Haskell2010

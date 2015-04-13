@@ -1,0 +1,56 @@
+name:                fullstop
+version:             0.1.3.1
+synopsis:            Simple sentence segmenter
+description:         FullStop splits texts into sentences, using some orthographical
+                     conventions (used in English and hopefully other languages).
+                     .
+                     It recognises certain punctuation characters as sentence
+                     delimiters (@.?!@) and handles some abbreviations such as
+                     @Mr.@ and decimal numbers (eg. @4.2@).
+                     .
+                     Note that this package is mostly a placeholder.  I hope
+                     the Haskell/NLP communities will run with it and upload
+                     a more sophisticated (family of) segmenter(s) in its
+                     place.  Patches (and new maintainers) would be greeted
+                     with delight!
+category:            Natural Language Processing
+license:             BSD3
+license-file:        LICENSE
+author:              Eric Kow
+maintainer:          Eric Kow <kowey@comp-ling.com>
+homepage:            http://hub.darcs.net/kowey/fullstop
+cabal-version:       >= 1.10
+build-type:          Custom
+
+source-repository head
+  type:     darcs
+  location: http://hub.darcs.net/kowey/fullstop
+
+library
+    exposed-modules:  NLP.FullStop
+
+    -- NB: there actualy isn't any particular need for GHC 6.10
+    build-Depends: base >= 3 && < 5
+                 , split == 0.1.*
+    default-language: Haskell98
+
+executable fullstop
+    main-is:  fullstop.hs
+    build-Depends: base
+                 , fullstop
+    hs-source-dirs:  fullstop
+    default-language: Haskell98
+
+test-suite hstest-fullstop
+  type:            exitcode-stdio-1.0
+  hs-source-dirs:  test
+  main-is:         Tests.hs
+  other-modules:   Tests.NLP.FullStop
+
+  build-depends:   base
+               ,   fullstop
+               ,   HUnit == 1.2.*
+               ,   QuickCheck == 2.4.*
+               ,   test-framework
+               ,   test-framework-hunit
+               ,   test-framework-quickcheck2

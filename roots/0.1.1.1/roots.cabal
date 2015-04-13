@@ -1,0 +1,45 @@
+name:                   roots
+version:                0.1.1.1
+stability:              experimental
+
+cabal-version:          >= 1.6
+build-type:             Simple
+
+author:                 James Cook <mokus@deepbondi.net>
+maintainer:             James Cook <mokus@deepbondi.net>
+license:                PublicDomain
+homepage:               /dev/null
+
+category:               Math, Numerical
+synopsis:               Root-finding algorithms (1-dimensional)
+description:            Framework for and a few implementations of
+                        (1-dimensional) numerical root-finding algorithms.
+                        .
+                        Changes in 0.1.1.1: Added Eq contexts where necessary to
+                        build on GHC 7.4
+
+tested-with:            GHC == 6.8.3,
+                        GHC == 6.10.4,
+                        GHC == 6.12.1, GHC == 6.12.3,
+                        GHC == 7.0.4, GHC == 7.2.2,
+                        GHC == 7.4.1-rc1
+
+source-repository head
+  type: git
+  location: git://github.com/mokus0/roots.git
+
+Library
+  ghc-options:          -Wall
+  hs-source-dirs:       src
+  exposed-modules:      Math.Root.Bracket
+                        Math.Root.Finder
+                        Math.Root.Finder.Bisection
+                        Math.Root.Finder.Brent
+                        Math.Root.Finder.Dekker
+                        Math.Root.Finder.FalsePosition
+                        Math.Root.Finder.InverseQuadratic
+                        Math.Root.Finder.Newton
+                        Math.Root.Finder.Ridders
+                        Math.Root.Finder.Secant
+                        
+  build-depends:        base >= 3 && <5, tagged

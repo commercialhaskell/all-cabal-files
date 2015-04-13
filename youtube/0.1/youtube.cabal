@@ -1,0 +1,41 @@
+Name:                youtube
+Version:             0.1
+Synopsis:            Upload video to YouTube via YouTube API
+Description:
+  Upload a video to YouTube via YouTube API.
+  The aim of this program is to simplify uploads of related videos.
+  .
+  First you must have the @curl@ executable installed.
+  .
+  In order to use the @youtube-upload@ command
+  you need a YouTube account and an additional developer account.
+  From the developer account you get a keyfile.
+  If you want to upload videos you first have to login to YouTube.
+  As a result of this you get an authentication token.
+  Write this authentication token into the @YOUTUBEAUTH@ environment variable.
+  It is queried by @youtube-upload@.
+  For every upload you have to pass the developer keyfile,
+  an XML file containing meta data for the video and the video file.
+  .
+  The XML file must be encoded with UTF-8.
+  I found it very useful to generate the XML files
+  from an XML template file and a CSV table
+  using the @cvsreplace@ command from the @spreadsheet@ package.
+License:             BSD3
+License-file:        LICENSE
+Author:              Henning Thielemann
+Maintainer:          haskell@henning-thielemann.de
+Stability:           Experimental
+Category:            Web
+Build-type:          Simple
+
+Cabal-version:       >=1.2
+
+
+Executable youtube-upload
+  Main-is: src/Main.hs
+  GHC-Options: -Wall -threaded
+  Build-depends:
+    bytestring >=0.9 && <0.11,
+    process >=1.0 && <1.2,
+    base >=4.2 && <5

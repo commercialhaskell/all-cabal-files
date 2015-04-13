@@ -1,0 +1,34 @@
+Name:                hakismet
+Version:             0.1
+Synopsis:            Akismet spam protection library
+Description:         Network.Akismet offers an easy way to interact with the stop spam service Akismet.
+
+License:             MIT
+License-File:        LICENSE
+Category:            Web
+Author:              Oliver Mader <b52@reaktor42.de>, Nils Schweinsberg <mail@n-sch.de>
+Maintainer:          mail@n-sch.de
+Homepage:            https://code.reaktor42.de/projects/hakismet
+
+Build-type:          Simple
+Cabal-version:       >= 1.8
+
+Source-Repository head
+    type:            git
+    location:        git://reaktor42.de/hakismet.git
+
+Library
+
+    GHC-Options: -Wall
+    HS-Source-Dirs: src
+
+    Build-depends:
+        base == 4.*,
+        network == 2.2.*,
+        HTTP == 4000.*
+
+    Exposed-Modules:
+        Network.Akismet
+
+    Other-Modules:
+        Paths_hakismet

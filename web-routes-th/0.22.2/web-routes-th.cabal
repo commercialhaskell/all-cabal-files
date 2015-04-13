@@ -1,0 +1,38 @@
+Name:             web-routes-th
+Version:          0.22.2
+License:          BSD3
+License-File:     LICENSE
+Author:           jeremy@seereason.com
+Maintainer:       partners@seereason.com
+Bug-Reports:      http://bugzilla.seereason.com/
+Category:         Web, Language
+Synopsis:         Support for deriving PathInfo using Template Haskell
+Cabal-Version:    >= 1.8
+Build-type:       Simple
+
+test-suite Test
+  type             : exitcode-stdio-1.0
+  main-is          : Test.hs
+  hs-source-dirs   : test
+  build-depends    : base == 4.*,
+                     HUnit,
+                     QuickCheck,
+                     test-framework,
+                     test-framework-hunit,
+                     test-framework-quickcheck2,
+                     test-framework-th,
+                     web-routes,
+                     web-routes-th
+
+Library
+        Build-Depends:    base >= 4 && < 5,
+                          parsec >= 2 && < 4,
+                          template-haskell,
+                          text,
+                          split,
+                          web-routes >= 0.26
+        Exposed-Modules:  Web.Routes.TH
+
+source-repository head
+    type:     darcs
+    location: http://hub.darcs.net/stepcut/web-routes

@@ -1,0 +1,61 @@
+name:               system-time-monotonic
+version:            0.2
+synopsis:           Simple library for using the system's monotonic clock
+description:
+    Simple library for using the system's monotonic clock.  This library is
+    geared toward programs that need to run for long periods of time.  It does
+    not (necessarily) provide high-resolution timing.
+    .
+        * On Windows, this uses @GetTickCount64@, but falls back to
+          @GetTickCount@ if it is not available.  @GetTickCount64@ was
+          introduced in Windows Vista and Windows Server 2008.
+          Support for @QueryPerformanceCounter@ is also available, but is not
+          used by default, as it is less accurate in the long run than
+          @GetTickCount@.
+    .
+        * On Linux, this uses @clock_gettime@ with @CLOCK_MONOTONIC@.
+    .
+    Release history:
+    .
+    [0.2] Update driver API (@SystemClock@) to prevent cumulative precision loss.
+    .
+    [0.1] Initial release.
+homepage:           https://github.com/joeyadams/haskell-system-time-monotonic
+license:            BSD3
+license-file:       LICENSE
+author:             Joey Adams
+maintainer:         joeyadams3.14159@gmail.com
+copyright:          Copyright (c) Joseph Adams 2012
+category:           System
+build-type:         Simple
+cabal-version:      >=1.8
+
+extra-source-files:
+    testing/make.hs
+    testing/benchmark.hs
+    testing/bombard.hs
+    testing/clock.hs
+    testing/delay.hs
+    testing/diffCTimeSpec.hs
+    testing/diffMSec32.hs
+    testing/leak.hs
+
+source-repository head
+    type:       git
+    location:   git://github.com/joeyadams/haskell-system-time-monotonic.git
+
+library
+    exposed-modules:
+        System.Time.Monotonic
+        System.Time.Monotonic.Direct
+
+    build-tools: hsc2hs
+
+    ghc-options: -Wall -fwarn-tabs
+
+    if os(windows) {
+        c-sources: cbits/dll.c
+    }
+
+    build-depends   : base == 4.*
+                    , time

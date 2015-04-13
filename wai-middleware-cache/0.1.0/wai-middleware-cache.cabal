@@ -1,0 +1,32 @@
+name:           wai-middleware-cache
+version:        0.1.0
+cabal-version:  >= 1.8
+build-type:     Simple
+stability:      Experimental
+author:         Alexander Dorofeev <aka.spin@gmail.com>
+maintainer:     Alexander Dorofeev <aka.spin@gmail.com>
+synopsis:       Caching middleware for WAI.
+homepage:       https://github.com/akaspin/wai-middleware-cache
+bug-reports:    https://github.com/akaspin/wai-middleware-cache/issues
+description:    
+    This package provides cache middleware and abstract type for
+    creating cache backends.
+license:        BSD3
+license-file:   LICENSE
+category:       Web
+
+source-repository head
+  type:         git
+  location:     git://github.com/akaspin/wai-middleware-cache.git
+
+library
+  hs-source-dirs:  src
+  build-depends:   
+                   base >= 4 && < 5,
+                   wai >= 1.1,
+                   bytestring >= 0.9 && < 0.10,
+                   conduit >= 0.2 && < 0.3,
+                   http-types >= 0.6 && < 0.7
+  ghc-options:     -Wall
+  exposed-modules: Network.Wai.Middleware.Cache
+

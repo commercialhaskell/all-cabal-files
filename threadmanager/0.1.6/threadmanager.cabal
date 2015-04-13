@@ -1,0 +1,45 @@
+name:         threadmanager
+version:      0.1.6
+category:     Concurrency
+
+author:       _Real World Haskell_, http://www.realworldhaskell.org/
+maintainer:   Brian Lewis <brian@lorf.org>
+
+license:      BSD3
+license-file: LICENSE
+
+synopsis:     (deprecated in favor of 'threads') Simple thread management
+description:
+  This package is useful, but deprecated. In new code, please use /threads/
+  instead. See <http://hackage.haskell.org/package/threads>.
+  .
+  A simple thread management API inspired by the one in chapter 24 of
+  /Real World Haskell/. See <http://book.realworldhaskell.org/read/concurrent-and-multicore-programming.html>.
+
+cabal-version: >= 1.10
+build-type:    Simple
+
+--------------------------------------------------------------------------------
+
+library
+  default-language: Haskell2010
+
+  ghc-options: -Wall -O2
+  if impl(ghc >= 6.8)
+    ghc-options: -fwarn-tabs
+
+  exposed-modules:
+    Control.Concurrent.ThreadManager
+
+  hs-source-dirs:
+    src
+
+  build-depends:
+    base       == 4.*,
+    containers == 0.*
+
+--------------------------------------------------------------------------------
+
+source-repository head
+  type:     git
+  location: git://github.com/bsl/threadmanager.git

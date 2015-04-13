@@ -1,0 +1,34 @@
+name:                microtimer
+version:             0.0.1.1
+synopsis:            A tiny library for benchmarking IO actions.
+description:         A tiny library for benchmarking IO actions.
+homepage:            http://thoughtpolice.github.com/microtimer
+bug-reports:         http://github.com/thoughtpolice/microtimer/issues
+license:             BSD3
+license-file:        LICENSE.txt
+copyright:           Copyright (c) Bryan O'Sullivan 2009-2010,
+                               (c) Austin Seipp 2013
+author:              Bryan O'Sullivan
+maintainer:          Austin Seipp <aseipp@pobox.com>
+category:            System
+build-type:          Simple
+cabal-version:       >=1.10
+tested-with:         GHC == 7.4.2
+
+extra-source-files:
+  AUTHORS.txt README.md CONTRIBUTING.md CHANGELOG.md
+
+source-repository head
+  type: git
+  location: https://github.com/thoughtpolice/microtimer.git
+
+library
+  exposed-modules:
+    System.Microtimer
+  build-depends:
+    base >= 4 && < 5,
+    time
+
+  hs-source-dirs:     src
+  ghc-options:        -Wall -O2 -fwarn-tabs
+  default-language:   Haskell2010

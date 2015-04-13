@@ -1,0 +1,60 @@
+Name:                maybench
+Version:             0.2.2
+License:             BSD3
+License-file:        LICENSE
+Author:              Maybench developers
+Maintainer:          <maybench-devel@googlegroups.com>
+
+Category:            Development
+Synopsis:            Automated benchmarking tool
+Description:         Maybench is a tool for comparing the performance
+                     between two versions of the same program, on a
+                     series of benchmarks that you design.
+                     .
+                     Maybench aims to be easy to use, almost as easy
+                     as running "time your-program arg1..arg2". Ideally,
+                     it should be a simple matter for outsiders to write
+                     timing tests for your programming project and contribute
+                     them as part of your performance testing suite.
+                     .
+                     The Darcs repository is available at <http://code.haskell.org/maybench>.
+Homepage:            http://code.google.com/p/maybench/
+
+Build-Type:          Simple
+Cabal-Version:       >= 1.2
+Tested-With:         GHC==6.8.2
+
+Flag splitBase
+    Description: Choose the new smaller, split-up base package.
+Library
+    build-depends: benchpress >= 0.2.2 && < 0.2.3
+    if flag(splitBase)
+        build-depends: base >= 3, process, old-time
+    else
+        build-depends: base <  3, time, mtl
+ Exposed-Modules: Test.Maybench
+                  Test.Maybench.Command
+                  Test.Maybench.Utils
+ ghc-options: -Wall
+
+Executable maybench
+ Hs-Source-Dirs: ., wrapper
+ build-depends: benchpress >= 0.2.2 && < 0.2.3
+ if flag(splitBase)
+        build-depends: base >= 3,
+                       process
+ else
+        build-depends: base <  3, time, mtl
+ Main-Is: Maybench.hs
+ ghc-options: -Wall
+
+Executable darcs-benchmark
+ Hs-Source-Dirs: ., darcs-benchmark
+ build-depends: benchpress >= 0.2.2 && < 0.2.3
+ if flag(splitBase)
+        build-depends: base >= 3,
+                       process, directory, time, mtl, filepath
+ else
+        build-depends: base <  3, time, mtl
+ Main-Is: DarcsBenchmark.hs
+ ghc-options: -Wall

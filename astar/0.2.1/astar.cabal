@@ -1,0 +1,13 @@
+name:                astar
+version:             0.2.1
+synopsis:            General A* search algorithm.
+description:         This is a data-structure independent implementation of A* search.
+category:            Data
+license:             BSD3
+license-file:        LICENSE
+author:              Cale Gibbard
+maintainer:          cgibbard@gmail.com
+build-Depends:       base,containers,PSQueue
+build-type:          Simple
+exposed-modules:     Data.Graph.AStar
+ghc-options:         -O2

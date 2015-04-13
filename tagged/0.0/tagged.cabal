@@ -1,0 +1,20 @@
+name:		    tagged
+version:	    0.0
+license:	    BSD3
+license-file:   LICENSE
+author:		    Edward A. Kmett
+maintainer:	    Edward A. Kmett <ekmett@gmail.com>
+stability:	    experimental
+category:	    Data, Phantom Types
+synopsis:	    Provides a newtype wrapper for phantom types to avoid passing dummy arguments
+copyright:      2009 Edward A. Kmett
+description:    Provides a newtype wrapper for phantom types to avoid passing dummy arguments
+build-type:     Simple
+cabal-version:  >=1.2
+
+library
+  build-depends: 
+    base >= 4 && < 5
+  exposed-modules:
+    Data.Tagged
+  ghc-options: -Wall

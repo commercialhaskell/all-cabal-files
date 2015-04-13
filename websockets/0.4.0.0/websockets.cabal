@@ -1,0 +1,84 @@
+Name:    websockets
+Version: 0.4.0.0
+
+Synopsis:
+  A sensible and clean way to write WebSocket-capable servers in Haskell.
+
+Description:
+ This library allows you to write WebSocket-capable servers.
+ .
+ See an example: <http://jaspervdj/.be/websockets/example.html>.
+ .
+ The API of the 'Network.WebSockets' module should also contain enough
+ information to get you started.
+ .
+ See also:
+ .
+ * The specification of the WebSocket protocol:
+ <http://www.whatwg.org/specs/web-socket-protocol/>
+ .
+ * The JavaScript API for dealing with WebSockets:
+ <http://www.w3.org/TR/websockets/>
+
+License:       BSD3
+License-file:  LICENCE
+Copyright:     (c) 2010-2011 Siniša Biđin
+               (c) 2011 Jasper Van der Jeugt
+               (c) 2011 Steffen Schuldenzucker
+               (c) 2011 Alex Lang
+Author:        Siniša Biđin <sinisa@bidin.cc>
+               Jasper Van der Jeugt <m@jaspervdj.be>
+               Steffen Schuldenzucker <steffen.schuldenzucker@googlemail.com>
+               Alex Lang <lang@tsurucapital.com>
+Maintainer:    Jasper Van der Jeugt <m@jaspervdj.be>
+Stability:     experimental
+Category:      Network
+Build-type:    Simple
+Cabal-version: >= 1.6
+
+Homepage:    http://jaspervdj.be/websockets
+Bug-reports: https://github.com/jaspervdj/websockets/issues
+
+Library
+  Hs-source-dirs: src
+  Ghc-options:    -Wall
+
+  Exposed-modules:
+    Network.WebSockets
+
+  Other-modules:
+    Network.WebSockets.Demultiplex
+    Network.WebSockets.Handshake
+    Network.WebSockets.Handshake.Http
+    Network.WebSockets.Handshake.ShyIterParser
+    Network.WebSockets.Mask
+    Network.WebSockets.Monad
+    Network.WebSockets.Protocol
+    Network.WebSockets.Protocol.Hybi00
+    Network.WebSockets.Protocol.Hybi10
+    Network.WebSockets.Protocol.Unsafe
+    Network.WebSockets.Socket
+    Network.WebSockets.Types
+
+  Build-depends:
+    attoparsec               >= 0.9    && < 0.10,
+    attoparsec-enumerator    >= 0.2    && < 0.3,
+    base                     >= 4      && < 5,
+    base64-bytestring        >= 0.1    && < 0.2,
+    binary                   >= 0.5    && < 0.6,
+    blaze-builder            >= 0.3    && < 0.4,
+    blaze-builder-enumerator >= 0.2    && < 0.3,
+    bytestring               >= 0.9    && < 0.10,
+    case-insensitive         >= 0.3    && < 0.4,
+    containers               >= 0.3    && < 0.5,
+    enumerator               >= 0.4.13 && < 0.5,
+    mtl                      >= 2.0    && < 2.2,
+    network                  >= 2.3    && < 2.4,
+    random                   >= 1.0    && < 1.1,
+    SHA                      >= 1.5    && < 1.6,
+    text                     >= 0.10   && < 0.12,
+    pureMD5                  >= 0.2.2  && < 2.2
+
+Source-repository head
+  Type:     git
+  Location: https://github.com/jaspervdj/websockets

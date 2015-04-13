@@ -1,0 +1,24 @@
+name: omnicodec
+version: 0.3.1
+license: GPL
+license-file: COPYING
+author: Magnus Therning
+maintainer: magnus@therning.org
+copyright: Magnus Therning, 2007
+synopsis: data encoding and decoding command line utilities
+description: Two simple command line tools built on dataenc.
+build-type: Simple
+category: Codec
+cabal-version: >= 1.2
+
+executable odec
+  main-is: odec.hs
+  hs-source-dirs: src
+  build-depends: base >= 4.0.0 && < 4.3, dataenc >= 0.13, directory, filepath, haskell98
+  ghc-options: -Wall
+
+executable oenc
+  main-is: oenc.hs
+  hs-source-dirs: src
+  build-depends: base >= 4.0.0 && < 4.3, dataenc >= 0.13, directory, filepath, haskell98
+  ghc-options: -Wall

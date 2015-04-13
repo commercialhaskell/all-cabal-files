@@ -1,0 +1,16 @@
+Name:                SQLDeps
+Version:             0.1
+Synopsis:            Calculate db-data dependencies of functions
+Description:         Rerun computations that depend on SQL-select statements
+License:             BSD3
+Author:              Alexander Thiemann
+Maintainer:          Alexander Thiemann <mail@agrafix.net>
+Copyright:           Copyright (c) 2013 Alexander Thiemann
+Build-Type:          Simple
+Cabal-Version:       >=1.2
+Category:            Database
+
+Library
+   Build-Depends:     base >= 3 && < 5, mtl, HDBC, HDBC-sqlite3, hashable, unordered-containers
+   Exposed-modules:   Database.SQLDeps, Database.SQLDeps.Types, Database.SQLDeps.Engine
+   ghc-options:       -Wall

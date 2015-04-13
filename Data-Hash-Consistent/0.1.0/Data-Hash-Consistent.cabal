@@ -1,0 +1,19 @@
+Name:                Data-Hash-Consistent
+Version:             0.1.0
+Description:         Provide a simple consistent hashing mechanism
+Synopsis:	     Provide a simple consistent hashing mechanism
+Category:            Data
+Stability:           experimental
+Homepage:            https://github.com/bradclawsie/haskell-Data.Hash.Consistent
+License:             BSD3
+License-file:        LICENSE
+Author:              brad clawsie
+Maintainer:          haskell@fastmail.fm
+cabal-version: 	     >=1.2
+build-type:          Simple
+extra-source-files:  example.hs,README.md
+Flag splitBase
+  Description: Choose the new smaller, split-up base package.
+Library 
+  Build-Depends: bytestring,vector,vector-algorithms,digest,base>=3 && < 6
+  Exposed-modules:     Data.Hash.Consistent

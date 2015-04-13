@@ -1,0 +1,38 @@
+name:          data-lens-fd
+category:      Control, Comonads
+version:       1.8.0
+license:       BSD3
+cabal-version: >= 1.6
+license-file:  LICENSE
+author:        Edward A. Kmett
+maintainer:    Edward A. Kmett <ekmett@gmail.com>
+stability:     provisional
+homepage:      git://github.com/ekmett/data-lens-fd/
+copyright:     Copyright (C) 2011 Edward A. Kmett
+synopsis:      Lenses
+description:   Lenses
+build-type:    Simple
+
+source-repository head
+  type: git
+  location: git://github.com/ekmett/data-lens-fd.git
+
+flag DeriveDataTypeable
+  manual: False
+  default: True
+
+library
+  build-depends: 
+    base >= 4 && < 4.4,
+    transformers >= 0.2 && < 0.3,
+    mtl >= 2.0.1.0 && <= 2.1,
+    semigroups >= 0.5 && < 0.6,
+    comonad >= 1.1 && < 1.2,
+    data-lens >= 1.8 && < 1.9,
+    comonad-transformers >= 1.8 && < 1.9
+
+  exposed-modules:
+    Data.Lens
+
+  ghc-options:      -Wall 
+

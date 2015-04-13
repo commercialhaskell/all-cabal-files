@@ -1,0 +1,22 @@
+Name:                parport
+Version:             0.0.0
+License:             GPL
+License-File:        LICENSE
+Copyright:           Rick Kaudewitz 2008
+Author:              kaudewitz@gmx.de
+Maintainer:          Rick Kaudewitz
+Stability:           testing
+Synopsis:            Simply interfacing the parallel port on linux
+Description:
+    This is a simple library that lets you read and write pins on
+    the parallel port. It is mainly intended for controlling and
+    regulating hardware.
+Category:            Hardware
+Build-Depends:       base,
+                     array
+Exposed-Modules:     System.Hardware.Parport
+extensions:          CPP ForeignFunctionInterface
+c-sources:           System/Hardware/Parport/linux.c
+ghc-options:         -Wall
+build-type:          Simple
+

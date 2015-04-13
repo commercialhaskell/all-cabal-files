@@ -1,0 +1,46 @@
+name:           text
+version:        0.1
+x-revision: 1
+synopsis:       An efficient packed Unicode text type
+description:    An efficient packed Unicode text type.
+license:        BSD3
+license-file:   LICENSE
+author:         Tom Harper <rtharper@aftereternity.co.uk>
+maintainer:     Bryan O'Sullivan <bos@serpentine.com>
+                Tom Harper <rtharper@aftereternity.co.uk>
+                Duncan Coutts <duncan@haskell.org>
+copyright:      2008-2009 Tom Harper
+category:       Data, Text
+build-type:     Simple
+cabal-version:  >= 1.2
+extra-source-files: README
+
+library
+  exposed-modules:
+    Data.Text
+    Data.Text.Encoding
+    Data.Text.Encoding.Fusion
+    Data.Text.Foreign
+    Data.Text.Fusion
+  other-modules:
+    Data.Text.Array
+    Data.Text.Internal
+    Data.Text.Unsafe
+    Data.Text.UnsafeChar
+    Data.Text.Encoding.Utf8
+    Data.Text.Encoding.Utf16
+    Data.Text.Encoding.Utf32
+
+  build-depends:
+    base       < 4.4,
+    bytestring >= 0.9 && < 1.0
+  if impl(ghc >= 6.10)
+    build-depends:
+      ghc-prim, base >= 4
+
+  -- gather extensive profiling data for now
+  ghc-prof-options: -auto-all
+
+  ghc-options: -Wall -funbox-strict-fields -O2
+  if impl(ghc >= 6.8)
+    ghc-options: -fwarn-tabs

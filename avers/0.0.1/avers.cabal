@@ -1,0 +1,61 @@
+name:                avers
+version:             0.0.1
+license:             GPL-3
+license-file:        LICENSE
+author:              Tomas Carnecky
+maintainer:          tomas.carnecky@gmail.com
+category:            Avers
+build-type:          Simple
+cabal-version:       >= 1.10
+
+synopsis:            empty
+description:         empty
+
+
+library
+    hs-source-dirs:   src
+    default-language: Haskell2010
+
+    ghc-options:
+        -threaded -Wall
+
+
+    -- For the time being everything is exported.
+    exposed-modules:
+        Avers
+      , Avers.Metrics
+      , Avers.Patching
+      , Avers.Storage
+      , Avers.Storage.Backend
+      , Avers.Storage.Expressions
+      , Avers.TH
+      , Avers.Types
+      , Avers.Views
+
+
+    -- Standard dependencies, stuff that is or should be in the platform.
+    build-depends:
+        aeson
+      , attoparsec
+      , base <= 9999
+      , bytestring
+      , containers
+      , mtl
+      , network
+      , stm
+      , template-haskell
+      , text
+      , time
+      , unordered-containers
+      , vector
+
+    -- More exotic dependencies which people may not immediately recognize.
+    build-depends:
+        MonadRandom
+      , base16-bytestring
+      , cryptohash
+      , inflections
+      , influxdb
+      , resource-pool
+      , rethinkdb-client-driver >= 0.0.11
+      , scrypt

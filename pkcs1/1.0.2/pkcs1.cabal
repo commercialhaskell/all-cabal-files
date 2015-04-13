@@ -1,0 +1,24 @@
+Name:           pkcs1
+Version:        1.0.2
+License:        GPL
+License-File:   LICENSE
+Author:         Stephan Friedrichs,
+                Henning Günther,
+                Oliver Mielentz,
+                Martin Wegner
+
+Stability:      Stable
+Category:       Cryptography
+Synopsis:       RSA encryption with PKCS1 padding
+Description:    This is an implementation of RSA encryption with PKCS1 padding, developed
+                as part of the Barracuda ad-hoc P2P chat client.
+                .
+                The Darcs repository can be found at <http://repos.mroot.net/sep07-adhoc>
+Homepage:       http://sep07.mroot.net/
+
+Build-Depends:  base>=3, random, bytestring>0.9
+Build-Type:     Simple
+
+Exposed-Modules: Codec.Encryption.PKCS1
+ghc-options:     -Wall
+

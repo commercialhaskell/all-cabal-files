@@ -1,0 +1,30 @@
+name:           symbol
+version:        0.1
+cabal-version:  >= 1.6
+license:        BSD3
+license-file:   LICENSE
+copyright:      (c) 2006-2010 Harvard University
+author:         Geoffrey Mainland <mainland@eecs.harvard.edu>
+maintainer:     mainland@eecs.harvard.edu
+stability:      alpha
+homepage:       http://www.eecs.harvard.edu/~mainland/
+category:       Data
+synopsis:       A 'Symbol' type for fast symbol comparison.
+description:    Provides a 'Symbol' data type allowing fast symbol comparisons
+		and functions for interning symbols and recovering their
+		'String' representation.
+
+build-type:     Simple
+
+library
+  exposed-modules:
+    Data.Symbol
+
+  build-depends:
+    base >= 4 && < 5,
+    containers >= 0.2 && < 0.4,
+    syb >= 0.1 && < 0.2
+
+source-repository head
+  type:     svn
+  location: http://senseless.eecs.harvard.edu/repos/mainland-projects/symbol/trunk/

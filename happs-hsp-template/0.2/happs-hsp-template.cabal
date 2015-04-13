@@ -1,0 +1,15 @@
+Name:		happs-hsp-template
+Version:	0.2
+Category:	Web
+Maintainer:	David Himmelstrup (lemmih@gmail.com)
+Synopsis:	Utilities for using HSP templates in HAppS applications.
+Build-Type:	Simple
+Build-Depends:	base, bytestring, filepath, directory, mtl, containers, network,
+                hinotify, plugins>=1.2, RJson, HAppS-Server, hsp>=0.4.4
+LICENSE:	BSD3
+License-File:	LICENSE
+Hs-Source-Dirs: src
+
+Exposed-Modules:
+  HAppS.Template.HSP
+  HAppS.Template.HSP.Handle

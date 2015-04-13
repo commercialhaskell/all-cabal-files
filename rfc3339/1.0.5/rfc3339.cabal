@@ -1,0 +1,32 @@
+Name:          rfc3339
+Version:       1.0.5
+Category:      Web, Time
+Synopsis:      Parse and display time according to RFC3339 (deprecated)
+Description:   
+    .
+    Parse and display time according to RFC3339: 
+    <http://www.ietf.org/rfc/rfc3339.txt>
+    .
+    This package defines a type class to parse and read RFC 3339 from different
+    data types. 
+    Right now there is only support for reading and showing String
+    .
+    For more information and usage examples please read the documentation of 
+    the module here: <http://hackage.haskell.org/packages/archive/rfc3339/1.0.4/doc/html/Data-Time-RFC3339.html>
+    .
+Build-type:    Simple
+Maintainer:    Hugo Daniel Gomes <mr.hugo.gomes@gmail.com>
+Author:        Hugo Daniel Gomes <mr.hugo.gomes@gmail.com>
+Copyright:     Hugo Daniel Gomes
+Cabal-version: >= 1.6
+License:       BSD3
+License-file:  LICENSE
+source-repository head                                                             
+  type:     git                                                                    
+  location: git://github.com/HugoDaniel/RFC3339.git
+
+library
+  build-depends:
+    base < 5, timerep > 1.0
+
+  extensions: TypeSynonymInstances

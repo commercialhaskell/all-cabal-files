@@ -1,0 +1,35 @@
+name:          repr
+version:       0.3.2.1
+cabal-version: >= 1.6
+build-type:    Simple
+stability:     experimental
+tested-with:   GHC ==6.10.4
+author:        Bas van Dijk
+maintainer:    v.dijk.bas@gmail.com
+copyright:     (c) 2009-2010 Bas van Dijk
+license:       BSD3
+license-file:  LICENSE
+category:      Numeric, Text
+synopsis:      Render overloaded expressions to their textual representation.
+description:   This library allows you to render overloaded expressions to their
+               textual representation. For example:
+               .
+               @
+               *Repr> let rd = 1.5 + 2 + (3 + (-4) * (5 - pi / sqrt 6)) :: Repr Double
+               *Repr> show rd
+               \"fromRational (3 % 2) + 2 + (3 + negate 4 * (5 - pi / sqrt 6))\"
+               @
+
+source-repository head
+  Type: darcs
+  Location: http://code.haskell.org/~basvandijk/code/repr
+
+library
+  build-depends: base                 >= 3       && < 4.3
+               , base-unicode-symbols >= 0.1.1   && < 0.3
+               , random               >= 1.0     && < 1.1
+               , string-combinators   >= 0.5     && < 0.6
+               , to-string-class      >= 0.1.2   && < 0.2
+               , dstring              >= 0.3.0.1 && < 0.4
+  exposed-modules: Text.Repr
+  ghc-options: -Wall

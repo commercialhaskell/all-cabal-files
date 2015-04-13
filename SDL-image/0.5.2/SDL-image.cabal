@@ -1,0 +1,19 @@
+Name: SDL-image
+Version: 0.5.2
+Maintainer: Lemmih (lemmih@gmail.com)
+Author: Lemmih (lemmih@gmail.com)
+Copyright: 2004-2008, Lemmih
+License-File: LICENSE
+License: BSD3
+Build-Depends: base, SDL
+Build-Type: Custom
+Category: Foreign binding
+Synopsis: Binding to libSDL_image
+Extensions: ForeignFunctionInterface
+Exposed-Modules:
+  Graphics.UI.SDL.Image,
+  Graphics.UI.SDL.Image.Version
+Includes: SDL.h SDL_image.h
+Extra-Source-Files: configure, includes/HsSDLConfig.h.in, SDL-image.buildinfo.in, config.mk.in
+Data-Files: MACOSX, README, TODO
+GHC-Options: -Wall

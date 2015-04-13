@@ -1,0 +1,47 @@
+name:               greencard
+version:            3.0.1.1
+synopsis:           A foreign function interface pre-processor for Haskell
+category:           Development
+license:            BSD3
+license-file:       LICENSE
+description:        Green Card is a foreign function interface preprocessor for Haskell,
+                    simplifying the task of interfacing Haskell programs to external libraries
+                    (which are normally exposed via C interfaces). This package is of largely
+                    historical interest only.
+                    .
+                    To interface to an external function using Green Card, you write
+                    a small procedure specification. The specification tells Green Card
+                    what (Haskell) type you want to give the function together with details
+                    of how the arguments (and results) to the Haskell function should
+                    be marshalled to and from the data representation used by the external function.
+                    Green Card will then generate gobs of low-level boilerplate code that
+                    takes care of all the details.
+                    .
+                    This package supplies the executable, 'greencard', which needs GHC.
+                    For the Foreign.GreenCard library, you need to install this first and then you can
+                    install greencard-lib (greencard-lib requires the greencard binary already installed).
+author:             Alastair Reid, Sigbjorn Finne, and Thomas Nordin
+homepage:           http://www.haskell.org/greencard/
+
+maintainer:         None
+build-type:         Simple
+tested-with:        GHC==6.8.2
+Cabal-Version:      >= 1.2
+data-files:         README, ANNOUNCE, examples/world/README.txt
+extra-source-files: examples/Gdbm/README, examples/Gdbm/Gdbm.gc, examples/Gdbm/Main.hs,
+                    examples/Gdbm/gdbmplus.h, examples/Gdbm/diffs, examples/Gdbm/Makefile,
+                    examples/world/Makedefs.ghc, examples/world/Makefile.ghc-linux, examples/world/Main.hs,
+                    examples/world/Makefile.ghc-win32, examples/world/Makefile.hugs-win32,
+                    examples/world/Makefile.hugs-linux, examples/world/World.gc, examples/world/Makedeps, examples/Makefile,
+                    src/greencard.ghc.in, src/greencard.hugs.in
+
+Executable greencard
+           main-is:             GreenCard.lhs
+           hs-source-dirs:      src
+           other-modules:       Casm, DIS, Decl, ErrMonad, FillIn, FillInMonad,
+                                GCToken, GreenCard, Lex, LexM, ListUtils, MarshallMonad,
+                                Name, NameSupply, Package, Parse, PrettyUtils, Proc,
+                                Process, Target, Type
+           build-depends:       base >=3 && <4, pretty, containers, array, process
+           ghc-options:         -Wall 
+           ghc-prof-options:    -prof -auto-all

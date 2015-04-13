@@ -1,0 +1,39 @@
+Name:                 maid
+Version:              2011.10.13
+Build-type:           Simple
+Synopsis:             A simple static web server
+Description:
+        
+    Serve files from the current path
+
+License:              BSD3
+License-file:         LICENSE
+Author:               Jinjing Wang
+Maintainer:           Jinjing Wang <nfjinjing@gmail.com>
+Build-Depends:        base
+Cabal-version:        >= 1.2
+category:             Web
+homepage:             https://github.com/nfjinjing/maid
+data-files:           readme.md, changelog.md, known-issues.md, Nemesis
+
+Executable            maid
+  ghc-options:        -threaded
+  build-depends:      base >= 4 && < 100
+                    , air >= 2011.6.19
+                    , air-extra
+                    , hack2 >= 2011.6.20
+                    , hack2-contrib >= 2011.10.12
+                    , data-default
+                    -- , hack2-handler-warp
+                    , hack2-handler-snap-server
+                    -- , hack2-handler-mongrel2-http
+                    
+
+                    , containers
+                    , moe >= 2011.6
+                    , unix
+                    , bytestring
+                    , process
+                    , directory
+  hs-source-dirs:     src/
+  main-is:            maid.hs

@@ -1,0 +1,19 @@
+Name:                 qd-vec
+Version:              1.0
+Synopsis:             Data.Vec.NearZero instances for Numeric.QD types
+Description:
+    This package provides instances of Vec's NearZero for qd's types.
+
+License:              BSD3
+License-file:         LICENSE
+Author:               Claude Heiland-Allen
+Maintainer:           claudiusmaximus@goto10.org
+Category:             Math
+Build-type:           Simple
+Cabal-version:        >=1.2
+
+Library
+  Build-depends:      base >= 3 && < 6, qd >= 1 && < 2, Vec >= 0.9.8 && < 1
+  Exposed-modules:    Numeric.QD.Vec
+  GHC-options:        -Wall -fno-excess-precision
+  GHC-prof-options:   -prof -auto-all -caf-all

@@ -1,0 +1,19 @@
+Name:                c0check
+Version:             0.1
+Synopsis:            Simple C0 Syntax Check
+Description:         The package contains a progam to check if your C-Program is valid C0. 
+	             The C0-language is introduced in the basic programming course \"Algorithmisches Denken und imperative Programmierung\" (WS 2011/12 and later) at the University of Bonn.
+                     The program contained in the package will take a C source code file and test the content if it is conform to the C0-language specifications. 
+                     The answer is simply yes or no.
+License:             GPL
+Author:              Daniel Seidel
+Maintainer:          ds@iai.uni-bonn.de
+Build-Type:          Simple
+Cabal-Version:       >=1.2
+Category:            Language
+Stability:           Experimental
+
+Executable c0check
+  Main-is:           src/c0check.hs
+  Build-Depends:     base >= 3 && < 6,
+                     c0parser

@@ -1,0 +1,52 @@
+name:                pipes-websockets
+version:             0.0.0.0
+synopsis:            Library for using websockets ontop of pipes-network.
+description:         A pipes helper library on-top of pipes-network for receiving and responding to websocket connections.
+homepage:            https://github.com/ixmatus/pipes-websockets
+license:             BSD3
+license-file:        LICENSE
+author:              Parnell Springmeyer
+maintainer:          parnell@ixmat.us
+copyright:           (c) 2013 Parnell Springmeyer <parnell@ixmat.us>
+category:            Concurrency
+build-type:          Simple
+stability:           Alpha
+Bug-reports:         https://github.com/ixmatus/pipes-websockets/issues
+Package-url:         http://hackage.haskell.org/package/pipes-websockets
+cabal-version:       >=1.10
+
+extra-source-files:
+    CHANGELOG
+    README.org
+    LICENSE
+    DEBT.org
+
+source-repository head
+  type:     git
+  location: https://github.com/ixmatus/pipes-websockets
+
+library
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+  exposed-modules:
+    Pipes.Network.Websockets
+
+  ghc-options:         -Wall
+ 
+  build-depends:       base  >= 4.6     && < 4.7
+
+test-suite tests
+  type:           exitcode-stdio-1.0
+  hs-source-dirs: test
+  main-is:        Websockets.hs
+
+  ghc-options:
+    -Wall -threaded -rtsopts
+
+  build-depends:
+    pipes-websockets,
+    base >= 4.6,
+    QuickCheck >= 2.6,
+    test-framework >= 0.8,
+    test-framework-quickcheck2 >= 0.3.0,
+    test-framework-hunit >= 0.3.0

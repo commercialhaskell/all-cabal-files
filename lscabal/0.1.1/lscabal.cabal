@@ -1,0 +1,47 @@
+name:               lscabal
+version:            0.1.1
+homepage:           http://code.haskell.org/~dons/code/lscabal
+synopsis:           List exported modules from a set of .cabal files
+description:        List exported modules from a set of .cabal files   
+    .
+    > $ lscabal http://code.haskell.org/xmonad/xmonad.cabal
+    > XMonad
+    > XMonad.Main
+    > XMonad.Core
+    > XMonad.Config
+    > XMonad.Layout
+    > XMonad.ManageHook
+    > XMonad.Operations
+    > XMonad.StackSet
+    .
+category:           Distribution
+license:            BSD3
+license-file:       LICENSE
+author:             Don Stewart
+maintainer:         dons@galois.com
+cabal-version:      >= 1.2
+build-type:         Simple
+
+flag small_base
+    description: Choose the new smaller, split-up base package.
+
+executable lscabal
+    main-is:            Main.hs
+    ghc-options:        -Wall
+
+    if flag(small_base)
+        build-depends:      
+            base >= 4 && < 5,
+            pretty,
+            process,
+            directory,
+            containers,
+            bytestring
+    else
+        build-depends:      
+            base < 3
+
+    build-depends:
+            Cabal   > 1.6,
+            filepath
+

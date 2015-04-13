@@ -1,0 +1,40 @@
+Cabal-Version:      >= 1.2
+Name:               homeomorphic
+Version:            0.1
+Copyright:          2007-8, Neil Mitchell
+Maintainer:         ndmitchell@gmail.com
+Homepage:           http://www-users.cs.york.ac.uk/~ndm/homeomorphic/
+License:            BSD3
+License-File:       LICENSE
+Build-Type:         Simple
+Author:             Neil Mitchell
+Category:           Math
+Synopsis:           Homeomorphic Embedding Test
+Description:
+    A library to carry out homeomorphic embedding tests.
+Extra-Source-Files:
+    Data/Homeomorphic/Include/Hash.hs
+
+Flag splitBase
+    Description: Choose the new smaller, split-up base package.
+
+Library
+    if flag(splitBase)
+        build-depends: base >= 3, QuickCheck, mtl, containers
+    else
+        build-depends: base <  3, QuickCheck, mtl
+
+    Exposed-modules:
+        Data.Homeomorphic
+        Data.Homeomorphic.Check
+        Data.Homeomorphic.Hash1
+        Data.Homeomorphic.Hash2
+        Data.Homeomorphic.Internal
+        Data.Homeomorphic.Memo
+        Data.Homeomorphic.MemoCache
+        Data.Homeomorphic.ShellId
+        Data.Homeomorphic.Simple
+        Data.Homeomorphic.SimpleParallel
+        Data.Homeomorphic.Test
+
+    Extensions: CPP

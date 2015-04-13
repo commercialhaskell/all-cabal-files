@@ -1,0 +1,21 @@
+Name:              HandlerSocketClient
+Version:           0.0.1
+Synopsis:          Haskell implementation of a HandlerSocket client (API).
+Description:       This package implemets API for a HandlerSocket client.
+homepage:          https://github.com/wuxb45/HandlerSocket-Haskell-Client
+License:           BSD3
+License-file:      LICENSE
+Author:            Wu Xingbo
+Copyright:         2011 Wu Xingbo (wuxb45@gmail.com)
+Maintainer:        Wu Xingbo
+Bug-reports:       mailto:wuxb45@gmail.com
+Category:          Database
+Build-Type:        Simple
+Cabal-Version:     >= 1.2
+
+extra-source-files: README
+
+Library
+  Build-Depends:   base > 3 && < 5
+  Exposed-modules:
+    Database.HandlerSocket.HSClient

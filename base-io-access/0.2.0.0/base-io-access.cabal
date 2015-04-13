@@ -1,0 +1,45 @@
+name:                   base-io-access
+version:                0.2.0.0
+synopsis:               The IO functions included in base delimited into small, composable classes
+description:            An attempt to break up the monolithic IO monad into small, composable classes
+                        that can be used to restrict a function to only having access to, say, functions
+                        to work with the standard pipes, or a function that can access the environment.
+                        The motivation for this library is to allow people to make a stricter contract
+                        than simply "this function does IO", and express through the type system exactly
+                        what IO is being performed.
+license:                GPL-2
+license-file:           LICENSE
+author:                 Aaron Stevens
+maintainer:             bheklilr2@gmail.com
+homepage:               https://github.com/bheklilr/base-io-access
+category:               System
+build-type:             Simple
+cabal-version:          >=1.10
+
+source-repository head
+    type:               git
+    location:           git://github.com/bheklilr/base-io-access.git
+
+library
+    exposed-modules:    Access.Control.Concurrent,
+                        Access.Control.Concurrent.Chan,
+                        Access.Control.Concurrent.MVar,
+                        Access.Control.Exception,
+
+                        Access.Data.IORef,
+                        Access.Data.Unique,
+
+                        Access.Debug.Trace,
+
+                        Access.System.CPUTime,
+                        Access.System.Environment,
+                        Access.System.Exit,
+                        Access.System.IO,
+                        Access.System.IO.Error,
+                        Access.System.Mem,
+                        Access.System.Mem.StableName,
+                        Access.System.Mem.Weak,
+                        Access.System.Timeout
+
+    build-depends:      base >=4.6 && <4.7
+    default-language:   Haskell2010

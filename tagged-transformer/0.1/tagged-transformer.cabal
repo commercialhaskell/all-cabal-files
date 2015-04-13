@@ -1,0 +1,26 @@
+name:           tagged-transformer
+version:        0.1
+license:        BSD3
+license-file:   LICENSE
+author:         Edward A. Kmett
+maintainer:     Edward A. Kmett <ekmett@gmail.com>
+stability:      experimental
+category:       Data, Phantom Types
+synopsis:       Provides newtype wrappers for phantom types to avoid unsafely passing dummy arguments
+homepage:       http://github.com/ekmett/tagged-transformer
+copyright:      2011 Edward A. Kmett
+description:    Provides newtype wrappers for phantom types to avoid unsafely passing dummy arguments
+build-type:     Simple
+cabal-version:  >=1.6
+
+source-repository head
+  type: git
+  location: git://github.com/ekmett/tagged-transformer.git
+
+library
+  build-depends: 
+    base >= 4 && < 5,
+    transformers >= 0.2.2 && < 0.3
+  exposed-modules:
+    Control.Monad.Trans.Tagged
+  ghc-options: -Wall

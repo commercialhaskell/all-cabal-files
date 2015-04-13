@@ -1,0 +1,11 @@
+Name: nthable
+Version: 0.1
+Description: Generalization of 'fst', 'snd', etc.
+License: BSD3
+Category: Data Structures
+Author: George Pollard
+Maintainer: porges@porg.es
+Build-Depends: type-level>0.2.1, base
+Exposed-modules: Data.Nthable
+Build-type: Simple
+ghc-options: -O2 -Wall

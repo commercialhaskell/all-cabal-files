@@ -1,0 +1,21 @@
+Name:           hjs
+Version:        0.2
+Copyright:      Mark Wassell 2007
+License:        BSD3
+license-file:	LICENSE
+Author:         Mark Wassell<mwassell@bigpond.net.au>
+Maintainer:     mwassell@bigpond.net.au
+Stability:	experimental
+Homepage:       http://www.haskell.org/haskellwiki/Libraries_and_tools/HJS
+Category:       Compilers/Interpreters
+Build-Depends:  base,parsec>=2.0,mtl,regex-compat>=0.71
+Synopsis:       Javascript Parser
+Description:
+          A Javascript parser and interpreter.
+          Works as per ECMA-262 plus some parts of JS >=1.5.
+
+Executable: 	hjs
+Extensions: OverlappingInstances,UndecidableInstances
+Main-Is: 	Main.hs
+Hs-Source-Dirs:	src
+

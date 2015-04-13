@@ -1,0 +1,38 @@
+name:                sshtun
+version:             1.0.0
+cabal-version:       >= 1.8
+build-type:          Simple
+license:             BSD3
+license-file:        LICENSE
+copyright:           2012 Dino Morelli
+author:              Dino Morelli
+maintainer:          Dino Morelli <dino@ui3.info>
+stability:           experimental
+homepage:            http://ui3.info/d/proj/sshtun.html
+synopsis:            Wrapper daemon to manage an ssh tunnel
+description:         This is a daemon that executes an ssh command to form a secure tunnel and then blocks on it. If the tunnel goes down, sshtun can attempt to reestablish it. It can also be set up to monitor a file on an http server to determine if the tunnel should be up or not, so you can switch it on or off remotely.
+category:            Application, Network
+tested-with:         GHC >= 7.0.3
+
+data-dir:            resources
+data-files:          README
+                     sshtun.conf
+                     sshtun-switch.sh
+                     logrotate.d/sshtun
+
+source-repository    head
+   type:             darcs
+   location:         http://ui3.info/darcs/sshtun
+
+executable           sshtun
+   main-is:          main.hs
+   build-depends:    base >= 3 && < 5, containers, curl, directory,
+                     hdaemonize, hslogger, mtl, process, regex-compat,
+                     stm, unix
+   hs-source-dirs:   src
+   other-modules:    Sshtun.Common
+                     Sshtun.Conf
+                     Sshtun.Log
+                     Sshtun.Switch
+                     Sshtun.Tunnel
+   ghc-options:      -Wall -threaded

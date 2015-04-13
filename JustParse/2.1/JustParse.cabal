@@ -1,0 +1,28 @@
+name:                JustParse
+version:             2.1
+synopsis:            A simple and comprehensive Haskell parsing library
+description:         A simple and comprehensive Haskell parsing library
+homepage:            https://github.com/grantslatton/JustParse
+license:             PublicDomain
+license-file:        LICENSE
+author:              Grant Slatton
+maintainer:          grantslatton@gmail.com
+-- copyright:           
+category:            Text
+build-type:          Simple
+cabal-version:       >=1.8
+
+library
+    exposed-modules: 
+        Data.JustParse,
+        Data.JustParse.Combinator,
+        Data.JustParse.Numeric,
+        Data.JustParse.Language,
+        Data.JustParse.Char
+    other-modules: 
+        Data.JustParse.Internal
+    build-depends:
+        base >= 4.2 && < 5
+    hs-source-dirs: src
+    extensions: MultiParamTypeClasses, Rank2Types, FlexibleInstances, FlexibleContexts, Safe, TupleSections, UndecidableInstances
+    ghc-options: -O2 

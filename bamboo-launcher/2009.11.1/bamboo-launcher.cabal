@@ -1,0 +1,33 @@
+Name:                 bamboo-launcher
+Version:              2009.11.1
+Build-type:           Simple
+Synopsis:             bamboo-launcher
+Description:
+        
+    A standalone bamboo launcher to simplify deployment.
+
+License:              GPL
+License-file:         LICENSE
+Author:               Wang, Jinjing
+Maintainer:           Wang, Jinjing <nfjinjing@gmail.com>
+Build-Depends:        base
+Cabal-version:        >= 1.2
+category:             Web
+homepage:             http://github.com/nfjinjing/bamboo-launcher/tree/master
+data-files:           readme.md, changelog.md
+
+Executable            bamboo
+  ghc-options:        -Wall
+  build-depends:      base >= 4 && < 5
+                    , hack >= 2009.10.30
+                    , hack-contrib >= 2009.11.1
+                    , bamboo >= 2009.11.1
+                    , hack-handler-happstack >= 2009.6.5
+                    , mps >= 2009.5.13
+                    , utf8-prelude
+                    , process
+                    , haskell98
+                    , bamboo-theme-blueprint >= 2009.6.8
+                    , data-default >= 0.2
+  hs-source-dirs:     src/
+  main-is:            Launcher.hs

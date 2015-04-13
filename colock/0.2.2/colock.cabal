@@ -1,0 +1,26 @@
+name: colock
+version: 0.2.2
+cabal-version: >= 1.2
+license: LGPL
+license-file: LICENSE
+author: Lukas Mai
+maintainer: Lukas Mai <l.mai@web.de>
+stability: experimental
+category: System
+synopsis: thread-friendly file locks that don't block the entire program
+description:
+    This module provides file locks that (unlike their counterparts in System.Posix.IO)
+    leave other threads running while one waits for the lock.
+
+flag small_base
+  description: Choose the new smaller, split-up base package.
+
+library
+  exposed-modules: System.IO.Lock
+  build-depends: base, unix
+  hs-source-dirs: lib
+  include-dirs: .
+  includes: System_IO_Lock.h
+  install-includes: System_IO_Lock.h
+  c-sources: System_IO_Lock.c
+  ghc-options: -O2 -Wall -fvia-C

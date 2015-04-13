@@ -1,0 +1,63 @@
+name: fast-tags
+version: 0.0.4
+cabal-version: >= 1.8
+build-type: Simple
+synopsis: Fast incremental vi tags.
+description:
+    Yet another tags program.  Like hasktags, it uses its own parser rather
+    than haskell-src or haskell-src-exts, so it's fast.  It understands
+    hsc files, though not literate haskell.
+    .
+    In addition, it will load an existing tags file and merge generated tags.
+    .
+    The intent is to bind it to vim's BufWrite autocommand to automatically
+    keep the tags file up to date.
+    .
+    Changes since 0.0.3:
+    .
+    * Fixed bug that prevented old tags from being filered out.
+    .
+    Changes since 0.0.2:
+    .
+    * Lots of speed ups, especially when given lots of files at once.
+    .
+    * Support for type families and GADTs.
+    .
+    * Support infix operators, multiple declarations per line, and fix various
+    other bugs that missed or gave bad tags.
+    .
+    Limitations:
+    .
+    - No emacs tags, but they would be easy to add.
+    .
+    - Not using a real haskell parser means there are more likely to be dark
+    corners that don't parse right.
+    .
+    - Only top-level functions with type declarations are tagged.  Top-level
+    functions without type declarations are skipped, as are ones inside 'let'
+    or 'where'.
+    .
+    - Code has to be indented \"properly\", so brace and semicolon style with
+    strange dedents will probably confuse it.
+
+category: Haskell, Development
+license: BSD3
+license-file: LICENSE
+author: Evan Laforge
+maintainer: Evan Laforge <qdunkan@gmail.com>
+stability: experimental
+tested-with: GHC>=7.0.3
+data-files: README
+extra-source-files: src/*.hs
+
+source-repository head
+    type: git
+    location: git://github.com/elaforge/fast-tags.git
+
+executable fast-tags
+    main-is: Main.hs
+    hs-source-dirs: src
+    build-depends: base >= 3 && < 5, containers,
+        -- text 0.11.1.12 has a bug.
+        text (> 0.11.1.12 || < 0.11.1.12)
+    ghc-options: -Wall -fno-warn-name-shadowing

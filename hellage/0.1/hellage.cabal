@@ -1,0 +1,18 @@
+Name: hellage
+Version: 0.1
+Synopsis: Distributed hackage mirror
+Author: Voker57
+Maintainer: voker57@gmail.com
+Build-type: Simple
+Cabal-version: >= 1.4
+Stability: experimental
+License: BSD3
+License-file: COPYING
+Category: Distribution, Network
+Description: Distributed hackage mirror, based on Hellnet.
+Executable hellage
+ Main-is: hellage.hs
+ Build-Depends: hellnet >= 0.1, Lucu >= 0.3.2, network, base >= 4.2 && < 5, hjson >= 1.1.1, hjpath >= 2.0, regex-pcre, safe, mtl, bytestring
+Executable hellage-genmeta
+ Main-is: hellage-genmeta.hs
+ Build-Depends: hellnet >= 0.1, hjpath >= 2.0, hjson >= 1.1.1, base >= 4.2, mtl, safe, bytestring, HTTP, stm, containers, utf8-string, tar, zlib, directory, safe

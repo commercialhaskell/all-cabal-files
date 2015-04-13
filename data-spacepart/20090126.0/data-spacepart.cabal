@@ -1,0 +1,51 @@
+Name:           data-spacepart
+Version:        20090126.0
+License:        BSD3
+License-File:   LICENSE
+Author:         Corey O'Connor <coreyoconnor@gmail.com>
+Maintainer:     Corey O'Connor <coreyoconnor@gmail.com>
+Homepage:       http://www.tothepowerofdisco.com/repo/data-spacepart/
+Package-URL:    http://www.tothepowerofdisco.com/repo/data-spacepart/
+Category:       Data
+Build-Type:     Simple
+Synopsis:       Space partition data structures. Currently only a QuadTree.
+Stability:      alpha
+Description:
+    Space partition data structures. Currently only a QuadTree.
+    .
+    darcs get --partial http://www.tothepowerofdisco.com/repo/data-spacepart/
+    .
+    TODO:
+    .
+        lots.
+        .
+        Move test/QuadTreeVisualize to a separate package.
+    .
+    The only example is test/QuadTreeVisualize. This can be run with:
+    .
+        chmod u+x test/run_test
+        .
+        cd test && ./run_test
+    .
+    This isn't actually a "test". QuadTreeVisualize renders a random quadtree in
+    a heavily stylized fashion using OpenGL. Arrows to move about. Shift-Up/Down
+    to zoom in and out. This requires a non-standard branch of the OpenGL
+    libraries from here: 
+    .
+    http:\/\/www.tothepowerofdisco.com\/repo\/OpenGL\/
+    .
+    Due to the framebuffer object requirement of the test/Render module.
+    
+Extra-Source-Files: test/QuadTreeVisualize.hs
+                    test/run_test
+                    test/Render.hs
+
+Cabal-Version:  >= 1.6
+
+library
+    hs-source-dirs:         src
+    build-depends:          base, vector-space == 0.5.*, mersenne-random == 0.1.*
+    exposed-modules:        Data.QuadTree
+                            Math.Geometry
+                            System.Random.Utils
+

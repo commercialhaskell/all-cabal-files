@@ -1,0 +1,28 @@
+name:             test-shouldbe
+version:          0.2.0
+synopsis:         Catchy combinators for HUnit
+description:      Catchy combinators for HUnit: <https://github.com/sol/test-shouldbe#readme>
+license:          MIT
+license-file:     LICENSE
+copyright:        (c) 2011, 2012 Simon Hengel
+author:           Simon Hengel <sol@typeful.net>
+maintainer:       Simon Hengel <sol@typeful.net>
+build-type:       Simple
+category:         Testing
+cabal-version:    >= 1.6
+
+source-repository head
+  type: git
+  location: https://github.com/sol/test-shouldbe
+
+library
+  ghc-options:
+      -Wall
+  build-depends:
+      base < 4.6
+    , HUnit
+  hs-source-dirs:
+      src
+  exposed-modules:
+      Test.HUnit.ShouldBe
+    , Test.HUnit.ShouldBe.Contrib

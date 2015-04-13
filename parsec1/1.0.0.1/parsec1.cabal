@@ -1,0 +1,40 @@
+cabal-version: >= 1.2
+name:           parsec1
+version:        1.0.0.1
+license:        BSD3
+license-file:   LICENSE
+author:         Daan Leijen <daan@cs.uu.nl>
+maintainer:     Christian Maeder <Christian.Maeder@dfki.de>
+homepage:       http://www.cs.uu.nl/~daan/parsec.html
+category:       Parsing
+synopsis:       Portable monadic parser combinators
+description:
+    Parsec is designed from scratch as an industrial-strength parser
+    library.  It is simple, safe, well documented (on the package
+    homepage), has extensive libraries and good error messages,
+    and is also fast.
+    .
+    This package is the core haskell98 part of the parsec2
+    package, intended to preserve its simplicity and portability.
+    .
+
+    Note, that the module names overlap with those of parsec from the Haskell
+    Platform, therefore I do not recommend to unconditionally use parsec1 (or
+    parsec2 and parsec3) as dependency instead of "parsec < 3", "parsec > 2", or
+    just "parsec".  In order to ensure the use of these limited and portable
+    parsec1 functions, you may want to hide the official parsec package for
+    your own developments.
+    .
+    This version only differs from the pervious one by a changed description.
+build-type:     Simple
+cabal-version:      >= 1.6
+library {
+  exposed-modules:
+    Text.ParserCombinators.Parsec.Error,
+    Text.ParserCombinators.Parsec.Char,
+    Text.ParserCombinators.Parsec.Combinator,
+    Text.ParserCombinators.Parsec.Pos,
+    Text.ParserCombinators.Parsec.Prim,
+    Text.ParserCombinators.Parsec
+  build-depends:    base < 5
+}

@@ -1,0 +1,95 @@
+name:            blas
+Version:         0.4
+homepage:        http://stat.stanford.edu/~patperry/code/blas
+synopsis:        Bindings to the BLAS library
+description:
+    The BLAS (Basic Linear Algebra Subprograms) are routines that provide
+    standard building blocks for performing basic vector and matrix operations. 
+    The Level 1 BLAS perform scalar, vector and vector-vector operations, the 
+    Level 2 BLAS perform matrix-vector operations, and the Level 3 BLAS perform
+    matrix-matrix operations. Because the BLAS are efficient, portable, and
+    widely available, they are commonly used in the development of high quality
+    linear algebra software, LAPACK for example.
+    .
+    For more information, see the Netlib BLAS webpage:
+    <http://www.netlib.org/blas/> 
+    .
+category:        Math
+license:         BSD3
+license-file:    LICENSE
+copyright:       (c) 2008. Patrick Perry <patperry@stanford.edu>
+author:          Patrick Perry
+maintainer:      Patrick Perry <patperry@stanford.edu>
+cabal-version:   >= 1.2.0
+build-type:      Custom
+tested-with:     GHC == 6.8.2
+
+extra-source-files:     tests/Matrix.hs
+                        tests/HermMatrix.hs
+                        tests/TriMatrix.hs
+                        tests/Vector.hs
+
+library
+    exposed-modules:    BLAS.Access
+                        BLAS.C
+                            BLAS.C.Level1
+                            BLAS.C.Level2
+                            BLAS.C.Level3
+                            BLAS.C.Types
+                        BLAS.Elem
+                            BLAS.Elem.Base
+                        BLAS.Internal
+                        BLAS.Matrix
+                            BLAS.Matrix.Base
+                            BLAS.Matrix.Immutable
+                            BLAS.Matrix.ReadOnly
+                            BLAS.Matrix.Solve
+                                BLAS.Matrix.Solve.Immutable
+                                BLAS.Matrix.Solve.ReadOnly
+                        BLAS.Tensor
+                            BLAS.Tensor.Base
+                            BLAS.Tensor.Dense
+                                BLAS.Tensor.Dense.Immutable
+                                BLAS.Tensor.Dense.ReadOnly
+                            BLAS.Tensor.Immutable
+                            BLAS.Tensor.ReadOnly
+                            BLAS.Tensor.Mutable
+                            BLAS.Tensor.Scalable
+                        BLAS.Types
+                        BLAS.Vector
+                        
+                        Data.Matrix.Dense
+                            Data.Matrix.Dense.IO
+                            Data.Matrix.Dense.Internal
+                            Data.Matrix.Dense.Operations
+                        
+                        Data.Matrix.Herm
+                            Data.Matrix.Herm.Dense
+                        
+                        Data.Matrix.Tri
+                            Data.Matrix.Tri.Dense
+                        
+                        Data.Vector.Dense
+                            Data.Vector.Dense.IO
+                            Data.Vector.Dense.Internal
+                            Data.Vector.Dense.Operations
+                        
+                        Test.QuickCheck.Complex
+                        Test.QuickCheck.Vector
+                        Test.QuickCheck.Vector.Dense
+                        Test.QuickCheck.Matrix
+                        Test.QuickCheck.Matrix.Dense
+                        Test.QuickCheck.Matrix.Herm.Dense
+                        Test.QuickCheck.Matrix.Tri.Dense
+                        
+    other-modules:      BLAS.C.Double
+                        BLAS.C.Zomplex    
+                        
+    ghc-options:        -Wall                   
+    extensions:         BangPatterns, EmptyDataDecls, FlexibleContexts, 
+                        FlexibleInstances, ForeignFunctionInterface, 
+                        FunctionalDependencies, MultiParamTypeClasses
+    build-depends:      base, ieee, storable-complex, QuickCheck
+
+    extra-libraries:    blas
+    

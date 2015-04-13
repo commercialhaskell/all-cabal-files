@@ -1,0 +1,32 @@
+Name:		        IOSpec
+Version:        	0.1
+License:        	BSD3
+License-file:		LICENSE
+Author:			Wouter Swierstra
+Maintainer:     	Wouter Swierstra <wss@cs.nott.ac.uk>
+Homepage:       	http://www.cs.nott.ac.uk/~wss/repos/IOSpec
+Synopsis:       	A pure specification of the IO monad.
+Description:		At the moment this package consists of four 
+			modules:
+			.
+                           * "Test.IOSpec.Teletype": a specification of getChar and putChar.
+			.
+			   * "Test.IOSpec.IORef": a specification of most functions on IORefs.
+			.
+			   * "Test.IOSpec.Concurrent": specification of forkIO and MVars.
+			.
+			   * "Data.Stream": a library for manipulating infinite lists.
+			.
+			There are several well-documented examples included with the source distribution.
+Category:       	Test
+Build-Depends:  	base, mtl, QuickCheck 
+Hs-source-dirs:		src
+Extra-source-files:	README
+			, examples/Echo.hs
+			, examples/Queues.hs
+			, examples/Channels.hs
+Exposed-modules:	Data.Stream
+			, Test.IOSpec
+			, Test.IOSpec.Teletype
+			, Test.IOSpec.IORef
+			, Test.IOSpec.Concurrent

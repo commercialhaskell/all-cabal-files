@@ -1,0 +1,82 @@
+name:             hspec-discover
+version:          0.0.3
+license:          MIT
+license-file:     LICENSE
+copyright:        (c) 2012 Simon Hengel
+author:           Simon Hengel <sol@typeful.net>
+maintainer:       Simon Hengel <sol@typeful.net>
+build-type:       Simple
+cabal-version:    >= 1.8
+category:         Testing
+synopsis:         Automatically discover and run Hspec tests
+description:      Say you have a driver module for your test suite.
+                  .
+                  > module Main where
+                  >
+                  > import Test.Hspec.Monadic
+                  >
+                  > import qualified FooSpec
+                  > import qualified Foo.BarSpec
+                  > import qualified BazSpec
+                  >
+                  > main :: IO ()
+                  > main = hspecX $ do
+                  >   describe "Foo"     FooSpec.spec
+                  >   describe "Foo.Bar" Foo.BarSpec.spec
+                  >   describe "Baz"     BazSpec.spec
+                  .
+                  Then you can replace it with the following.
+                  .
+                  > {-# OPTIONS_GHC -F -pgmF hspec-discover #-}
+                  .
+                  All files with a name that ends in @Spec.hs@ are include in
+                  the generated test suite.  And it is assumed, that they
+                  export a @spec@ of type `Test.Hspec.Monadic.Specs`.
+                  .
+                  Full documentation is here:
+                  <https://github.com/sol/hspec-discover#readme>
+
+source-repository head
+  type: git
+  location: https://github.com/sol/hspec-discover
+
+library
+  ghc-options:
+      -Wall
+  hs-source-dirs:
+      src
+  exposed-modules:
+      Test.Hspec.Discover
+  build-depends:
+      base >= 4 && <= 5
+    , hspec == 1.1.*
+
+executable hspec-discover
+  ghc-options:
+      -Wall
+  hs-source-dirs:
+      src
+  main-is:
+      Main.hs
+  other-modules:
+      Run
+  build-depends:
+      base >= 4 && <= 5
+    , filepath
+    , directory
+
+test-suite spec
+  type:
+      exitcode-stdio-1.0
+  ghc-options:
+      -Wall -Werror
+  hs-source-dirs:
+      src, test
+  main-is:
+      Spec.hs
+  build-depends:
+      base >= 4 && <= 5
+    , filepath
+    , directory
+    , hspec
+    , hspec-shouldbe

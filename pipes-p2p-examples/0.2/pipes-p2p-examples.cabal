@@ -1,0 +1,38 @@
+name:                pipes-p2p-examples
+version:             0.2
+cabal-version:       >=1.10
+tested-with:         GHC == 7.6.3
+build-type:          Simple
+homepage:            https://github.com/jdnavarro/pipes-p2p-examples
+bug-reports:         https://github.com/jdnavarro/pipes-p2p-examples/issues
+license:             BSD3
+license-file:        LICENSE
+author:              Danny Navarro
+maintainer:          j@dannynavarro.net
+category:            Network, Pipes
+synopsis:            Examples using pipes-p2p
+description:
+  For now this package includes a dummy P2P network where nodes just exchange
+  their network addresses. This can be used as boilerplate code for other P2P
+  networks. Future releases may contain more examples.
+
+source-repository head
+    type: git
+    location: git@github.com:jdnavarro/pipes-p2p-examples.git
+
+executable address-exchanger
+  main-is:             Main.hs
+  build-depends:       base >=4.6 && <4.8,
+                       mtl,
+                       bytestring,
+                       binary >=0.7,
+                       containers,
+                       network,
+                       errors,
+                       network-simple-sockaddr,
+                       pipes,
+                       pipes-network,
+                       pipes-p2p >=0.2
+  hs-source-dirs:      examples/addr
+  default-language:    Haskell2010
+  ghc-options:         -Wall

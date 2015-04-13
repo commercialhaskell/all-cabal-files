@@ -1,0 +1,29 @@
+name:               text-binary
+version:            0.1.0
+synopsis:           Binary instances for text types
+description:	
+    The library provides binary instances for strict and lazy text types.
+license:            BSD3
+license-file:       LICENSE
+cabal-version:      >= 1.6
+author:             Jakub Waszczuk
+maintainer:         waszczuk.kuba@gmail.com
+stability:          provisional
+category:           Data
+homepage:           https://github.com/kawu/text-binary
+build-type:         Simple
+
+library
+    build-depends:
+        base >= 4 && < 5
+      , text
+      , binary
+
+    exposed-modules:
+        Data.Text.Binary
+
+    ghc-options: -Wall
+
+source-repository head
+    type: git
+    location: git://github.com/kawu/text-binary.git

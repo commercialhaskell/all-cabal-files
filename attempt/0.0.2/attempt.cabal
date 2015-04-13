@@ -1,0 +1,23 @@
+name:            attempt
+version:         0.0.2
+license:         BSD3
+license-file:    LICENSE
+author:          Michael Snoyman, Nicolas Pouillard
+maintainer:      Michael Snoyman <michael@snoyman.com>
+synopsis:        Error handling using extensible exceptions outside the IO monad.
+description:     Defines a data type, Attempt, which has a Success and Failure constructor. Failure contains an extensible exception.
+category:        Data
+stability:       unstable
+cabal-version:   >= 1.2
+build-type:      Simple
+homepage:        http://github.com/snoyberg/attempt/tree/master
+
+library
+    build-depends:   base >= 4 && < 5,
+                     syb,
+                     transformers >= 0.1.4.0,
+                     control-monad-failure >= 0.4,
+                     monadloc >= 0.4
+    exposed-modules: Data.Attempt
+                     Control.Monad.Attempt
+    ghc-options:     -Wall

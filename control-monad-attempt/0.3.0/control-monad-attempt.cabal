@@ -1,0 +1,20 @@
+name:            control-monad-attempt
+version:         0.3.0
+license:         BSD3
+license-file:    LICENSE
+author:          Michael Snoyman, Nicolas Pouillard
+maintainer:      Michael Snoyman <michael@snoyman.com>
+synopsis:        Monad transformer for attempt.
+description:     This package uses the transformers library.
+category:        Data, Failure
+stability:       stable
+cabal-version:   >= 1.2
+build-type:      Simple
+homepage:        http://github.com/snoyberg/control-monad-attempt
+
+library
+    build-depends:   base >= 4 && < 5,
+                     attempt >= 0.3.0 && < 0.4,
+                     transformers >= 0.1 && < 0.3
+    exposed-modules: Control.Monad.Attempt
+    ghc-options:     -Wall

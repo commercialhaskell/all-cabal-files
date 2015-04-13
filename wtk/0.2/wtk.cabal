@@ -1,0 +1,24 @@
+Name:		wtk
+Version:	0.2
+License:	BSD3
+License-file: license
+Author:		Bartosz Wojcik
+Maintainer:	Bartosz Wojcik <bartoszmwojcik@gmail.com>
+Copyright:  Copyright (c) 2012 Bartosz Wojcik
+Category:	Utils
+Synopsis:	Wojcik Tool Kit
+Stability:  experimental
+Build-type:	Simple
+Description: Set of simple tools.
+
+Cabal-Version: >=1.2.3
+
+library
+  Build-Depends:	base >= 3 && < 5, old-locale, time, transformers
+  Exposed-Modules: Text.ReadEither
+                   Text.Calculator
+                   Text.PrettyShow
+  Other-Modules: Text.WtkParser
+
+
+

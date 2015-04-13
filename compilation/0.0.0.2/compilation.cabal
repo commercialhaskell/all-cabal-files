@@ -1,0 +1,25 @@
+Name:              compilation
+Version:           0.0.0.2
+Cabal-Version:     >= 1.6
+License:           GPL-3
+License-File:      LICENSE
+Synopsis:          Haskell functionality for quickly assembling simple compilers.
+Description:       Haskell monad and combinators for quickly assembling simple compilation algorithms.
+Category:          Compilers/Interpreters, Language
+Author:            Andrei Lapets
+Maintainer:        Andrei Lapets <lapets@bu.edu>
+Build-Type:        Simple
+
+Library
+  Exposed-Modules: Control.Compilation,
+                   Control.Compilation.Fresh,
+                   Control.Compilation.Module,
+                   Control.Compilation.Environment,
+                   Control.Compilation.String,
+                   Control.Compilation.Sequence,
+                   Control.Compilation.Tree
+  Build-Depends:   base >= 3 && < 5, MissingH
+
+Source-Repository head
+  Type:            git
+  Location:        https://github.com/lapets/compilation

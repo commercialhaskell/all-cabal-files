@@ -1,0 +1,55 @@
+Name:           hscurses
+Version:        1.4.1.2
+License:        LGPL
+License-file:   LICENSE
+Author:         John Meacham <john at repetae dot net>
+                Tuomo Valkonen <tuomov at iki.fi>
+                Don Stewart <http://www.cse.unsw.edu.au/~dons>
+                Stefan Wehr <http://www.stefanwehr.de>
+Copyright:      Stefan Wehr 2004 - 2011
+                Don Stewart 2004
+                Tuomo Valkonen 2004
+                John Meacham 2002-2004
+Maintainer:     Stefan Wehr <http://www.stefanwehr.de>
+Stability:      Stable
+Category:       User-interface
+Synopsis:       NCurses bindings for Haskell
+Description:
+    Binding to NCurses, a library of functions that manage an
+    application's display on character-cell terminals. Additionally,
+    it contains some basic widgets such as a text input widget and
+    a table widget.
+Homepage:       https://github.com/skogsbaer/hscurses
+Cabal-version: >= 1.6
+Build-Type:     Configure
+Tested-with:    GHC==7.0.4, GHC==7.2.1, GHC==7.4.2, GHC==7.6.1
+Data-files:
+    README, TODO, ChangeLog,
+    example/contacts2, example/Setup.hs, example/ContactManager.hs,
+    example/cm.cabal, example/contacts, cbits/config.h.in
+    configure, configure.ac, hscurses.buildinfo.in,
+    cbits/HSCurses.h, cbits/HSCursesUtils.h
+
+Source-Repository head
+  Type:           git
+  Location:       git://github.com/skogsbaer/hscurses.git
+
+Library
+  Build-depends:  base == 4.*, mtl,
+                  old-time < 1.2, old-locale == 1.0.*
+  if !os(windows)
+    Build-depends: unix >= 2.4 && < 2.7
+  Exposed-modules:
+      UI.HSCurses.Curses, UI.HSCurses.CursesHelper, UI.HSCurses.Widgets,
+      UI.HSCurses.MonadException, UI.HSCurses.Logging
+  Other-modules:
+      UI.HSCurses.CWString, UI.HSCurses.IConv
+  C-sources:
+      cbits/HSCursesUtils.c
+  Includes:
+      HSCurses.h, HSCursesUtils.h
+  Extensions:
+      CPP, ForeignFunctionInterface, GeneralizedNewtypeDeriving,
+      ScopedTypeVariables, ExistentialQuantification
+  Include-dirs:     cbits .
+  Ghc-options:      -funbox-strict-fields -Wall -fno-warn-unused-do-bind -fno-warn-name-shadowing

@@ -1,0 +1,34 @@
+Name:          kinds
+Version:       0.0.0.0
+Cabal-Version: >= 1.2.3
+Build-Type:    Simple
+License:       BSD3
+License-File:  LICENSE
+Copyright:     © 2009–2010 Brandenburgische Technische Universität Cottbus
+Author:        Wolfgang Jeltsch
+Maintainer:    jeltsch@tu-cottbus.de
+Stability:     provisional
+Homepage:      http://community.haskell.org/~jeltsch/kinds/
+Bug-Reports:   jeltsch@tu-cottbus.de
+Package-URL:   http://hackage.haskell.org/packages/archive/kinds/0.0.0.0/kinds-0.0.0.0.tar.gz
+Synopsis:      Emulation of subkinds and subkind polymorphism
+Description:   Subkinds are the kind-level analog to subtypes. A kind denotes a set of types, and a
+               subkind of some base kind denotes a subset of the base kind&#x2019;s set of types.
+               Haskell has no support for subkinds and subkind polymorphism. However, this package
+               can be used to emulate subkinds of kind&#xA0;@*@ and subkind variables.
+               .
+               To define a new subkind, the user declares a type that represents the subkind, and
+               instantiates some classes. Afterwards, the user can declare types to be of that
+               subkind and universally quantify over the inhabitants of the subkind. Since subkinds
+               are represented by types, type-level polymorphism can be used to emulate kind-level
+               polymorphism.
+Category:      Type System
+Tested-With:   GHC == 6.10.4
+
+Library
+    Build-Depends:   base >= 3.0 && < 4.1
+    Extensions:      MultiParamTypeClasses
+                     Rank2Types
+                     TypeFamilies
+    Exposed-Modules: Data.Kind
+    HS-Source-Dirs:  src

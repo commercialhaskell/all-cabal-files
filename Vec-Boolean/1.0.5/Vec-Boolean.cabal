@@ -1,0 +1,22 @@
+name:                Vec-Boolean
+version:             1.0.5
+cabal-version:       >= 1.8
+build-type:          Simple
+license:             BSD3
+license-file:        ""
+copyright:           Tobias Bexelius
+maintainer:          Tobias Bexelius
+synopsis:            Provides Boolean instances for the Vec package
+description:         This package adds instances for the classes IfB and EqB in the Boolean package for the fixed length list data type in the Vec package.
+             These intances are useful for example when using the GPipe package.
+category:            Math, Data
+author:              Tobias Bexelius
+library 
+  build-depends:   
+                   base >= 4 && <5,
+                   Vec == 0.9.9,
+                   Boolean == 0.0.1
+  hs-source-dirs:  src
+  ghc-options:     -Wall
+  exposed-modules: Data.Vec.Boolean
+

@@ -1,0 +1,14 @@
+Name:           Consumer
+Version:        1.2
+License:        BSD3
+License-File:	debian/copyright
+Author:         Jeremy Shaw
+Maintainer:     partners@seereason.com
+Homepage:       http://src.seereason.com/ghc6103/haskell-consumer
+Category:       Monads
+Synopsis:       A monad and monad transformer for consuming streams
+Description:    Useful for building parsing type operations on top of a list of elements
+Build-type:     Simple
+Build-Depends:  base < 5, mtl
+Exposed-modules:
+        Control.Monad.Consumer

@@ -1,0 +1,50 @@
+Name:          grapefruit-examples
+Version:       0.0.0.0
+Cabal-Version: >= 1.2.3
+Build-Type:    Simple
+License:       BSD3
+License-File:  LICENSE
+Copyright:     © 2007–2009 Brandenburgische Technische Universität Cottbus
+Author:        Wolfgang Jeltsch
+Maintainer:    jeltsch@informatik.tu-cottbus.de
+Stability:     provisional
+Homepage:      http://haskell.org/haskellwiki/Grapefruit
+Package-URL:   http://hackage.haskell.org/packages/archive/grapefruit-examples/0.0.0.0/grapefruit-examples-0.0.0.0.tar.gz
+Synopsis:      Examples using the Grapefruit library
+Description:   Grapefruit is a library for Functional Reactive Programming (FRP) with a focus on
+               user interfaces. FRP makes it possible to implement reactive and interactive systems
+               in a declarative style. To learn more about FRP, have a look at
+               <http://haskell.org/haskellwiki/Functional_Reactive_Programming>.
+               .
+               This package contains a collection of examples using Grapefruit.
+               .
+               For running an example, you can start GHCi and enter the following:
+               .
+               @
+               import Graphics.UI.Grapefruit.Circuit
+               import Graphics.UI.Grapefruit./UIBackend/
+               import Examples.Grapefruit./Example/
+               run /UIBackend/ mainCircuit
+               @
+               .
+               Replace @/Example/@ with the name of the example to run and @/UIBackend/@ with the
+               name of the UI backend you want to use. At the moment, the only examples are @Simple@
+               and @Switching@ and the only UI backend is @GTK@.
+Category:      FRP, Reactivity, GUI, User Interfaces
+Tested-With:   GHC == 6.8.3
+               GHC == 6.10.1
+
+Library
+    Build-Depends:   base               >= 3.0 && < 4.1,
+                     grapefruit-frp     >= 0.0 && < 0.1,
+                     grapefruit-records >= 0.0 && < 0.1,
+                     grapefruit-ui      >= 0.0 && < 0.1
+    Extensions:      Arrows
+                     CPP
+                     -- ImpredicativeTypes
+                     Rank2Types
+                     TypeOperators
+    GHC-Options:     -fglasgow-exts
+    Exposed-Modules: Examples.Grapefruit.Simple
+                     Examples.Grapefruit.Switching
+    HS-Source-Dirs:  src

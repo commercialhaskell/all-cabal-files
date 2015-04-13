@@ -1,0 +1,26 @@
+Name:               patch-combinators
+Version:            0.1
+Synopsis:           A library for patching functions and data structures
+Description:        A library for patching functions and data structures
+-- Homepage:
+License:            BSD3
+License-file:       LICENSE
+Author:             Koen Claessen, Emil Axelsson
+Maintainer:         Emil Axelsson <emax@chalmers.se>
+Copyright:          Copyright (c) 2012, Emil Axelsson
+Category:           Data
+Stability:          experimental
+Build-type:         Simple
+Cabal-version:      >=1.6
+
+Source-repository head
+  type:     darcs
+  location: http://community.haskell.org/~emax/darcs/patch-combinators
+
+Library
+  Exposed-modules:
+    Data.Patch
+
+  Build-depends:
+    base >= 4 && < 5
+

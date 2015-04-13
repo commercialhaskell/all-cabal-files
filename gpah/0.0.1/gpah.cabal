@@ -1,0 +1,79 @@
+name:                  gpah
+version:               0.0.1
+synopsis:              Generic Programming Use in Hackage
+description:           Generic Programming Use in Hackage:
+category:              Generics
+copyright:             (c) 2013 Nikolaos Bezirgiannis, Johan Jeuring, Sean Leather
+license:               BSD3
+license-file:          LICENSE
+author:                Nikolaos Bezirgiannis, Johan Jeuring, Sean Leather
+maintainer:            n.bezirgiannis@students.uu.nl
+stability:             provisional
+extra-source-files:    README.html,
+                       README.md
+build-type:            Simple
+cabal-version:         >= 1.8
+tested-with:           GHC == 7.6.1
+                      
+Executable             gpah
+  Main-is:             Generics/GPAH/Main.hs
+  build-depends:       base >= 3.0 && < 5, 
+                       cmdargs, 
+                       haskell-src-exts, 
+                       filepath, 
+                       Cabal >= 1.16.0,  
+                       directory, 
+                       deepseq, 
+                       bytestring, 
+                       containers >= 0.4.2.0, 
+                       syb, 
+                       uniplate, 
+                       process, 
+                       csv,  
+                       hint, 
+                       network, 
+                       HTTP, 
+                       tar, 
+                       zlib, 
+                       uu-parsinglib
+  ghc-options:         -rtsopts  -with-rtsopts=-K50m
+  hs-source-dirs:      src
+  other-modules:       Generics.GPAH.Base,
+                       Generics.GPAH.Conf,
+                       Generics.GPAH.Cpp,
+                       Generics.GPAH.Cpp.Analyze
+                       Generics.GPAH.Cpp.Base
+                       Generics.GPAH.Cpp.PPrint
+                       Generics.GPAH.Date,
+                       Generics.GPAH.Date.Analyze
+                       Generics.GPAH.Date.Base
+                       Generics.GPAH.Date.PPrint
+                       Generics.GPAH.Derive,
+                       Generics.GPAH.Derive.Analyze
+                       Generics.GPAH.Derive.Base
+                       Generics.GPAH.Derive.PPrint
+                       Generics.GPAH.Deriving,
+                       Generics.GPAH.Deriving.Analyze
+                       Generics.GPAH.Deriving.Base
+                       Generics.GPAH.Deriving.PPrint
+                       Generics.GPAH.Function,
+                       Generics.GPAH.Function.Analyze
+                       Generics.GPAH.Function.Base
+                       Generics.GPAH.Function.PPrint
+                       Generics.GPAH.Hackage,
+                       Generics.GPAH.Hackage.Analyze
+                       Generics.GPAH.Hackage.Base
+                       Generics.GPAH.Hackage.PPrint
+                       Generics.GPAH.Interp,
+                       Generics.GPAH.Interp.Analyze
+                       Generics.GPAH.Interp.Base
+                       Generics.GPAH.Interp.PPrint
+                       Generics.GPAH.Upl,
+                       Generics.GPAH.Upl.Analyze
+                       Generics.GPAH.Upl.Base
+                       Generics.GPAH.Upl.PPrint
+                       Generics.GPAH.Utils
+
+     
+
+

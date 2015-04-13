@@ -1,0 +1,23 @@
+Name:           interpol
+Version:        0.1.0
+Cabal-Version:  >= 1.2
+License:        GPL
+License-File:   LICENSE
+Stability:      experimental
+Author:         Alexandru Scvortov <scvalex@gmail.com>
+Maintainer:     scvalex@gmail.com
+Homepage:       https://github.com/scvalex/interpol
+Category:       Source-tools, Language
+Synopsis:       GHC pre-processor to enable variable interpolation in strings
+Build-type:     Simple
+Description:    This pre-processor enables variable interpolation in strings.  See the README.md file for details.
+
+Extra-source-files:     Test/Simple.hs,
+                        Test/One.hs,
+                        Test/Standalone.hs
+
+Data-files:             Makefile, README.md
+
+Executable interpol
+  Build-Depends:        base >=4 && <5, syb, preprocessor-tools, regex-posix
+  Main-Is:              Main.hs

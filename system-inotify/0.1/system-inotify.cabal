@@ -1,0 +1,18 @@
+Name: system-inotify
+Synopsis: Binding to Linux's inotify interface
+Description: Binding to Linux's inotify interface
+Version: 0.1
+License: BSD3
+License-File: LICENSE
+Author: Adam Langley <agl at imperialviolet.org>
+Stability: experimental
+Homepage: http://darcs.imperialviolet.org/system-inotify
+Build-depends: base, bytestring>=0.9
+Category: System
+Tested-With: GHC == 6.8.2
+Cabal-Version: >= 1.2
+extra-source-files: example/inotify.hs
+Exposed-Modules: System.Inotify
+Extensions: ForeignFunctionInterface
+ghc-options: -Wall -fno-warn-name-shadowing
+Build-type: Simple

@@ -1,0 +1,19 @@
+Name:                 rallod
+Version:              0.0.1
+Build-type:           Simple
+Synopsis:             '$' in reverse. 
+Description:          A Simple package that exports '==>', which operates in the opposite direction of '$'.
+License:              BSD3
+License-file:         LICENSE
+Author:               Parker, Matt
+Maintainer:           Parker, Matt <moonmaster9000@gmail.com>
+Build-Depends:        base
+Cabal-version:        >= 1.2
+category:             Web
+homepage:             http://github.com/moonmaster9000/rallod
+data-files:           readme.markdown
+
+library
+  build-depends: haskell98, base >= 4.0 && < 5 
+  exposed-modules: Rallod
+  hs-source-dirs: src/

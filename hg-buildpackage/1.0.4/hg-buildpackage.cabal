@@ -1,0 +1,43 @@
+Name: hg-buildpackage
+Version: 1.0.4
+License: GPL
+license-file: COPYRIGHT
+extra-source-files: COPYING
+Maintainer: John Goerzen <jgoerzen@complete.org>
+Author: John Goerzen
+Category: System
+Synopsis: Tools to help manage Debian packages with Mercurial
+Stability: Alpha
+Copyright: Copyright (c) 2003 - 2007 John Goerzen
+Build-Depends: base, network, unix, parsec, MissingH>=1.0.0,
+ regex-compat, regex-posix, hslogger, HSH>=1.2.0, directory
+
+Executable: hg-importorig
+Extensions: ExistentialQuantification, OverlappingInstances,
+    UndecidableInstances
+GHC-Options: -O2
+Main-Is: hg-importorig.hs
+
+Executable: hg-importdsc
+Extensions: ExistentialQuantification, OverlappingInstances,
+    UndecidableInstances
+GHC-Options: -O2
+Main-Is: hg-importdsc.hs
+
+Executable: hg-buildpackage
+Extensions: ExistentialQuantification, OverlappingInstances,
+    UndecidableInstances
+GHC-Options: -O2
+Main-Is: hg-buildpackage.hs
+
+Executable: hg-markdeb
+Extensions: ExistentialQuantification, OverlappingInstances,
+    UndecidableInstances
+GHC-Options: -O2
+Main-Is: hg-markdeb.hs
+
+Executable: hgmerge-debupstream
+Extensions: ExistentialQuantification, OverlappingInstances,
+    UndecidableInstances
+GHC-Options: -O2
+Main-Is: hgmerge-debupstream.hs

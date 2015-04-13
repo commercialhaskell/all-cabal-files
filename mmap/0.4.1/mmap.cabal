@@ -1,0 +1,31 @@
+Name: mmap
+Version: 0.4.1
+x-revision: 1
+Stability: alpha
+License: BSD3
+License-File: LICENSE
+Copyright: 2008, Gracjan Polak
+Author: Gracjan Polak <gracjanpolak@gmail.com>
+Maintainer: Gracjan Polak <gracjanpolak@gmail.com>
+Synopsis: Memory mapped files for POSIX and Windows
+Description:
+    This library provides a wrapper to mmap(2) or MapViewOfFile, 
+    allowing files or devices to be lazily loaded into memory as 
+    strict or lazy ByteStrings, ForeignPtrs or plain Ptrs, using 
+    the virtual memory subsystem to do on-demand loading. 
+    Modifications are also supported.
+Cabal-version: >= 1.2
+Category: System
+Build-type: Simple
+
+Library
+  Build-depends: base<4.6, bytestring
+  Extensions: ForeignFunctionInterface
+  Exposed-modules: System.IO.MMap
+  Hs-source-dirs: .
+  CC-options: -Wall
+  if os(mingw32)
+      C-sources: cbits/win32.c
+  else
+      C-sources: cbits/posix.c
+

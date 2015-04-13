@@ -1,0 +1,35 @@
+Name:		HSoundFile
+Version:        0.2.2
+Cabal-Version:  >= 1.2
+Description:	encode and decode soundfiles using lazy ByteStrings.
+                Audio files may be read or written, with classes and 
+                data structures to facilitate conversion between different
+                formats.  Currently only wave format is supported.
+                Error handling is supported via Control.Monad.ErrorT.
+License:	BSD3
+License-file:	LICENSE
+Author:		John W. Lato, jwlato@gmail.com
+Maintainer:	John W. Lato, jwlato@gmail.com
+homepage:       http://mml.music.utexas.edu/jwlato/HSoundFile
+Stability:	experimental
+synopsis:       Audio file reading/writing
+category:       Codecs, Sound
+build-type:     Simple
+cabal-version:  >= 1.2
+tested-with:    GHC == 6.8.2, GHC == 6.8.1, GHC == 6.6.1
+extra-source-files: README, Examples/ex1.lhs
+
+flag splitBase
+  description: Choose the new split-up base package.
+
+Library
+ Hs-Source-Dirs:        src
+ ghc-options:           -O2 -Wall -fexcess-precision
+ if flag(splitBase)
+   build-depends:       base >= 3, bytestring >= 0.9
+ else
+   build-depends:       base < 3
+ build-depends:         haskell98, binary, filepath, mtl, parallel
+ exposed-modules:       Sound.File,
+                        Sound.Base,
+                        Sound.Codecs.WaveFile

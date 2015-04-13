@@ -1,0 +1,35 @@
+Name: posix-timer
+Version: 0.3
+Category: System
+Stability: experimental
+Synopsis: Bindings to POSIX clock and timer functions.
+Description:
+  This package provides bindings to POSIX clock and timer functions.
+
+Homepage: https://github.com/mvv/posix-timer
+Bug-Reports: https://github.com/mvv/posix-timer/issues
+
+Author: Mikhail Vorozhtsov <mikhail.vorozhtsov@gmail.com>
+Maintainer: Mikhail Vorozhtsov <mikhail.vorozhtsov@gmail.com>
+Copyright: 2010 Mikhail Vorozhtsov <mikhail.vorozhtsov@gmail.com>
+License: BSD3
+License-File: LICENSE
+
+Cabal-Version: >= 1.6.0
+Build-Type: Simple
+
+Extra-Source-Files: include/posix-timer.macros.h
+
+Source-Repository head
+  Type: git
+  Location: https://github.com/mvv/posix-timer.git
+
+Library
+  Build-Depends: base < 5, unix, transformers-base >= 0.3
+  Hs-Source-Dirs: src
+  Include-Dirs: include
+  GHC-Options: -Wall
+  Exposed-Modules:
+    System.Posix.Clock
+    System.Posix.Timer
+

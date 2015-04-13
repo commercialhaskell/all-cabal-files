@@ -1,0 +1,51 @@
+Name:                combinat-diagrams
+Version:             0.1
+Synopsis:            Graphical representations for various combinatorial objects
+Description:         Uses the @diagrams@ library to generate graphical 
+                     representations of combinatorial objects from 
+                     the @combinat@ library
+License:             BSD3
+License-file:        LICENSE
+Author:              Balazs Komuves
+Copyright:           (c) 2014 Balazs Komuves
+Maintainer:          bkomuves (plus) hackage (at) gmail (dot) com
+Homepage:            http://code.haskell.org/~bkomuves/
+Stability:           Experimental
+Category:            Math
+Tested-With:         GHC == 7.8.3
+Cabal-Version:       >= 1.6
+Build-Type:          Simple
+
+Flag base4
+  Description: Base v4
+  
+Library
+
+  if flag(base4)
+    Build-Depends:       base >= 4 && < 5
+    cpp-options:         -DBASE_VERSION=4
+  else 
+    Build-Depends:       base >= 3 && < 4
+    cpp-options:         -DBASE_VERSION=3
+
+  Build-Depends:       array, containers, transformers, 
+                       colour, vector-space,
+                       diagrams-core, diagrams-lib,
+                       combinat >= 0.2.7.0
+
+  Exposed-Modules:     Math.Combinat.Diagrams
+                       Math.Combinat.Diagrams.LatticePaths
+                       Math.Combinat.Diagrams.Tableaux
+                       Math.Combinat.Diagrams.Partitions
+                       Math.Combinat.Diagrams.Partitions.Integer
+                       Math.Combinat.Diagrams.Partitions.NonCrossing
+                       Math.Combinat.Diagrams.Partitions.Plane
+                       Math.Combinat.Diagrams.Trees.Binary
+
+  Extensions:          CPP, MultiParamTypeClasses, ScopedTypeVariables, 
+                       GeneralizedNewtypeDeriving, BangPatterns 
+
+  Hs-Source-Dirs:      .
+
+  ghc-options:         -Wall -fno-warn-unused-matches
+    

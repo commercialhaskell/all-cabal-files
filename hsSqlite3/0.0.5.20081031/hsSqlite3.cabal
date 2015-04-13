@@ -1,0 +1,30 @@
+cabal-version: >= 1.2
+build-type: Custom
+name: hsSqlite3
+version: 0.0.5.20081031
+author: Evgeny Jukov
+maintainer: Maurício C. Antunes <mauricio.antunes@gmail.com>
+stability: experimental
+homepage: http://code.haskell.org/hsSqlite3
+synopsis: sqlite3 bindings
+data-files: README, src/Examples/hs_sqlite3_test.sql
+license: BSD3
+license-file: LICENSE
+category: database
+extra-source-files: src/Examples/hs_sqlite3_test.hs
+flag examples
+  description: build example programs
+  default: False
+library
+  hs-source-dirs: src
+  extensions: ForeignFunctionInterface
+  build-depends: base
+  exposed-modules: Database.Sqlite3.Low
+  pkgconfig-depends: sqlite3
+executable 5minutes
+  hs-source-dirs: src/Examples
+  main-is: 5minutes.hs
+--  build-depends: base
+--  other-modules: Database.Sqlite3.Low
+  buildable: False
+

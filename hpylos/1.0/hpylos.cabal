@@ -1,0 +1,22 @@
+name:            hpylos
+version:         1.0
+copyright:       (c) 2008 Bartosz Wójcik
+license:         GPL
+license-file:    LICENSE
+author:          Bartosz Wójcik <bartek@sudety.it>
+maintainer:      Bartosz Wójcik <bartek@sudety.it>
+Homepage:        http://sourceforge.net/projects/hpylos/
+category:        AI,Game
+synopsis:        AI of Pylos game with GLUT interface.
+description:     Pylos is 2 persons turn strategy board game described here: <http://www.boardgamegeek.com/game/1419>.
+		 hpylos is functional example of AI of pylos with 3D graphic.
+		 You can play vs. one of few algorithms that can be customized.
+stability:       stable
+build-type:      Simple
+cabal-version:   >= 1.2.1
+
+Executable hpylos
+  Build-Depends:  base,containers,array,OpenGL,GLUT,EEConfig
+  ghc-options:    -O2
+  Main-Is:        hpylos.hs
+  hs-source-dirs: source

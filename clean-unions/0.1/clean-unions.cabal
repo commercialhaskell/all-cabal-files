@@ -1,0 +1,23 @@
+name:                clean-unions
+version:             0.1
+synopsis:            Open unions without need for Typeable
+-- description:         
+homepage:            https://github.com/fumieval/clean-unions
+license:             BSD3
+license-file:        LICENSE
+author:              Fumiaki Kinoshita
+maintainer:          Fumiaki Kinoshita <fumiexcel@gmail.com>
+copyright:           Copyright (C) 2014 Fumiaki Kinoshita
+category:            Data
+build-type:          Simple
+-- extra-source-files:  
+cabal-version:       >=1.10
+
+library
+  exposed-modules:     Data.OpenUnion1.Clean
+  -- other-modules:       
+  other-extensions:    Rank2Types, TypeOperators, TypeFamilies, MultiParamTypeClasses, FlexibleInstances, DataKinds, KindSignatures, PolyKinds, GADTs, ScopedTypeVariables, LambdaCase, OverlappingInstances
+  build-depends:       base == 4.*
+  hs-source-dirs:      src
+  ghc-options: -Wall
+  default-language:    Haskell2010

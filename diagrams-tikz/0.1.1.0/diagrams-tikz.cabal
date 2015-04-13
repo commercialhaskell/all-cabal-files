@@ -1,0 +1,25 @@
+Name:                diagrams-tikz
+Version:             0.1.1.0
+Synopsis:            TikZ backend for diagrams drawing EDSL
+Description:         This package provides a modular backend for rendering
+                     diagrams created with the diagrams EDSL using the 
+                     TikZ library.
+Homepage:            http://projects.haskell.org/diagrams
+License:             BSD3
+License-file:        LICENSE
+Author:              Scott N. Walck
+Maintainer:          diagrams-discuss@googlegroups.com
+Category:            Graphics
+Build-type:          Simple
+Cabal-version:       >=1.6
+Tested-with:         GHC == 7.4.1
+Extra-source-files:  example/*.hs
+Library
+  Exposed-modules:     Diagrams.Backend.TikZ
+                       Diagrams.Backend.TikZBase
+  Hs-source-dirs:      src
+  Build-depends:       base >= 4.2 && < 4.6,
+                       mtl >= 2.0 && < 2.2,
+                       diagrams-core >= 0.5 && < 0.6,
+                       diagrams-lib >= 0.5 && < 0.6,
+                       dlist >=0.5 && < 0.6

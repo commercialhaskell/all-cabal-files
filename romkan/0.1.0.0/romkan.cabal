@@ -1,0 +1,47 @@
+name:                romkan
+version:             0.1.0.0
+synopsis:	     Japanese Romaji <-> Japanese Kana conversion library
+description:         
+    Romkan is a library to convert from Japanese Romaji to Japanese Kana and vice versa.
+    .
+    Homepage is at <https://github.com/karlvoigtland/romkan-hs>.
+    .
+    This is a port of python-romkan: <http://www.soimort.org/python-romkan>.
+license:             BSD3
+license-file:        LICENSE
+author:              Karl Voigtland
+maintainer:          karl.voigtland@gmail.com
+copyright:           Copyright (c) 2014 Karl Voigtland
+homepage:            https://github.com/karlvoigtland/romkan-hs
+category:            Natural Language Processing
+build-type:          Simple
+cabal-version:       >=1.10
+
+source-repository head
+  type:      git
+  location:  https://github.com/karlvoigtland/romkan-hs
+
+library
+  exposed-modules:     NLP.Romkan
+  other-modules:       NLP.Romkan.Internal
+  Ghc-options:         -Wall
+  default-language:    Haskell2010
+  build-depends:
+        base >= 4.5 && < 5
+      , text
+      , containers
+      , attoparsec
+
+Test-Suite test-romkan
+  type:    exitcode-stdio-1.0
+  main-is:            Tests/Tests.hs
+  default-language:   Haskell2010
+  ghc-options:        -Wall
+  build-depends:
+        base >=4.5 && < 5
+      , text
+      , containers
+      , attoparsec
+      , HUnit
+      , test-framework
+      , test-framework-hunit

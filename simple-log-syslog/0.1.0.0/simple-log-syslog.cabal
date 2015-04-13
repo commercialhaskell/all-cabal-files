@@ -1,0 +1,22 @@
+name:                simple-log-syslog
+version:             0.1.0.0
+synopsis:            Syslog backend for simple-log
+-- description:         
+homepage:            http://github.com/mvoidex/simple-log-syslog
+license:             BSD3
+license-file:        LICENSE
+author:              Alexandr `voidex` Ruchkin
+maintainer:          voidex@live.com
+Category:             Logging
+build-type:          Simple
+cabal-version:       >=1.8
+
+library
+  hs-source-dirs: src  
+  build-depends:
+    base >= 4.6 && < 6,
+    text == 0.11.*,
+    simple-log == 0.2.*,
+    hsyslog == 1.*
+  exposed-modules:
+    System.Log.Syslog

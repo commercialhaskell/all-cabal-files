@@ -1,0 +1,23 @@
+Name:                csp
+Version:             1.0
+Description:         Constraint satisfaction problem (CSP) solvers
+License:             LGPL
+License-file:        LICENSE
+Author:              Andrei Barbu <andrei@0xab.com>
+Maintainer:          Andrei Barbu <andrei@0xab.com>
+Category:            Control, AI, Constraints, Failure, Monads
+Build-Type:          Simple
+cabal-version:       >= 1.6
+synopsis:
+    Discrete constraint satisfaction problem (CSP) solvers.
+extra-source-files:  README.md
+
+source-repository head
+  type: git
+  location: git://github.com/abarbu/csp-haskell.git
+
+Library
+  Build-Depends:     base >= 3 && < 5, mtl >= 2, containers, nondeterminism
+  Exposed-modules:
+                     Control.Monad.CSP
+  ghc-options:       -Wall

@@ -1,0 +1,35 @@
+name:                show
+version:             0.6
+
+license:             GPL
+license-file:        LICENSE
+author:              Lambdabot devs, Twan van Laarhoven <twanvl@gmail.com>
+maintainer:          Lambdabot developers
+
+stability:           Experimental
+category:            Language
+synopsis:            'Show' instances for Lambdabot
+description:         Show instances for functions and IO procedures
+
+build-type:          Simple
+Cabal-Version:       >= 1.6
+tested-with:         GHC==7.4.2, GHC == 7.6.1
+
+source-repository head
+  type:                 git
+  location:             https://github.com/mokus0/show.git
+
+Flag base4
+ Description: Build with base-4 or newer
+ Default: True
+
+library
+   exposed-modules:     ShowFun
+
+   if flag(base4)
+    build-depends:       base == 4.*, syb
+   else
+    build-depends:       base<4
+
+   ghc-options:         -Wall
+   ghc-prof-options:    -prof -auto-all

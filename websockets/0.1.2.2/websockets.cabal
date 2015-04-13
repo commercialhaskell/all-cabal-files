@@ -1,0 +1,31 @@
+Name:           websockets
+Version:        0.1.2.2
+
+Cabal-version:  >=1.6
+
+Synopsis:       Implements the WebSocket protocol.
+
+Description:    Implements certain basics of the WebSocket protocol
+                as defined at <http://is.gd/eSdLB>, allowing the
+                creation of simple WebSocket-capable servers. Works
+                with Handles and strict ByteStrings.
+
+License:        BSD3
+License-file:   LICENCE
+Copyright:      (c) 2010 Siniša Biđin
+
+Author:         Siniša Biđin
+Maintainer:     Siniša Biđin <sinisa@bidin.cc>
+Bug-reports:    mailto:sinisa@bidin.cc
+
+Stability:      experimental
+Category:       Network
+Tested-with:    GHC ==6.12
+
+Build-type:     Simple
+
+Library
+  Exposed-Modules: Network.WebSockets
+  Build-depends: pureMD5 >=2.1, network >=2.2.3, base ==4.*, 
+                 bytestring >=0.9, binary >=0.5, containers >=0.3
+

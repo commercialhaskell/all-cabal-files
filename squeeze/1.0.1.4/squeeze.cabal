@@ -1,0 +1,58 @@
+--Package-properties
+Name:			squeeze
+Version:		1.0.1.4
+Cabal-Version:		>= 1.6
+Copyright:		(C) 2010 Dr. Alistair Ward
+License:		GPL
+License-file:		LICENSE
+Author:			Dr. Alistair Ward
+Stability:		Stable interface, incomplete features.
+Synopsis:		A file-packing application.
+Build-Type:		Simple
+Description:		Returns progressively better subsets of the specified files, selected to fit into a limited space, without wasting more than the specific ratio.
+Category:		Utils
+Tested-With:		GHC == 6.10, GHC == 6.12, GHC == 7.0
+Homepage:		http://functionalley.eu
+Maintainer:		squeeze <at> functionalley <dot> eu
+Bug-reports:		squeeze <at> functionalley <dot> eu
+Data-files:
+Extra-Source-Files:	man/man1/*.1, *.spec, changelog, copyright, debian/DEBIAN/control, makefile
+
+flag threaded
+    Description:	Link with the threaded runtime.
+    default:		True
+
+flag llvm
+    Description:	Whether the 'llvm' backend has been installed and is required for code-generation.
+    manual:		True
+    default:		False
+
+Executable squeeze
+    hs-source-dirs:	src
+    Main-Is:		Main.hs
+    Other-modules:	Squeeze.CommandOptions Squeeze.File Squeeze.FileSizeBounds Squeeze.FileCombination Squeeze.QC Squeeze.Squeeze
+    Build-depends:
+        base == 4.*,
+        Cabal >= 1.6 && < 2,
+        directory,
+        filepath,
+        haskell98,
+        QuickCheck >= 2.4,
+        unix,
+        toolshed == 0.11.*
+
+    GHC-options:	-Wall -O2
+    GHC-prof-options:	-prof -auto-all -caf-all
+
+    if flag(threaded)
+        Build-depends:	parallel >= 3.0
+        GHC-options:	-threaded -feager-blackholing
+    else
+        Build-depends:	parallel
+
+    if impl(ghc >= 7.0)
+        GHC-options:	-rtsopts
+
+        if flag(llvm)
+            GHC-options:	-fllvm
+

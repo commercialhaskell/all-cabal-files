@@ -1,0 +1,44 @@
+Name:                church-list
+Version:             0.0.1
+Synopsis:            Lazy lists with O(1) concatenation that, unlike dlists, allow inspection
+License-file:        LICENSE
+License:             MIT
+Author:              John Wiegley
+Maintainer:          johnw@newartisans.com
+Build-Type:          Simple
+Cabal-Version:       >=1.10
+Category:            System
+Description:
+  Replicates the @Data.List@ interface for lists built around the type @forall
+  r. Monoid r => (a -> r) -> r@.  This allows for O(1) concatenation and snoc,
+  just as difference lists do, but without requiring that every operation
+  (such as map) render the list.
+  .
+  As motivation: Although difference lists are great for use with Writer, they
+  are horrible for use with State, because getting the list and querying an
+  element will result in producing a structure which is thrown away.  With
+  mlists, you can both append to, and inspect, the list in progress without
+  any wasted work.
+
+Source-repository head
+  type: git
+  location: git://github.com/jwiegley/church-list.git
+
+Library
+    default-language:   Haskell98
+    ghc-options: -Wall
+    build-depends:
+        base                 >= 3 && < 5
+    exposed-modules:
+        Data.Church.List
+
+test-suite test
+    hs-source-dirs: test
+    default-language: Haskell2010
+    main-is: main.hs
+    type: exitcode-stdio-1.0
+    ghc-options: -Wall -threaded
+    build-depends:
+        base
+      , church-list
+      , QuickCheck

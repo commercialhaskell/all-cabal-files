@@ -1,0 +1,30 @@
+Name:           Clipboard
+Version:        2.0.0
+Author:         Sævar Berg
+Homepage:       http://ddiaz.asofilak.es/packages/Clipboard
+License:        BSD3
+License-file:   license
+Maintainer:     Daniel Diaz <danieldiaz@asofilak.es>
+Category:       System
+Synopsis:       Access to the (Windows) clipboard.
+Description:    
+         /Clipboard/ is a package that allows you to interact with the system clipboard easily.
+         .
+         Currently, only in a Windows system.
+         .
+         Changes from last version:
+         .
+         * New definitions of 'setClipboardString' and 'getClipboardString',
+         according to the API specifications on MSDN. So, it's highly recommended update
+         to this version.
+         .
+         * Added 'modifyClipboardString'.
+         .
+         * Shorter name of the module @System.Windows.Clipboard@: @System.Clipboard@.
+Build-type:     Simple
+Cabal-version:  >= 1.6
+
+Library
+  Exposed-modules: System.Clipboard
+  Build-depends:  base == 4.*
+                , Win32 == 2.2.*

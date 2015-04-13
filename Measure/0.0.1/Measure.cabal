@@ -1,0 +1,28 @@
+Name:               Measure
+Version:            0.0.1
+License:            BSD3
+License-File:       LICENSE
+Author:             Tony Morris <code@tmorris.net>
+Maintainer:         Tony Morris
+Synopsis:           A library for units of measurement
+Category:           Development
+Description:        A library for units of measurement
+Cabal-version:      >= 1.2
+Build-Type:         Simple
+Extra-Source-Files: README
+
+Flag small_base
+  Description:     Choose the new, split-up base package.
+
+Library
+  if flag(small_base)
+    Build-Depends: base < 4 && >= 3
+  else
+    Build-Depends: base < 3
+
+  GHC-Options:    -Wall
+  Exposed-Modules:
+          Data.Measure.Length,
+          Data.Measure.Angle,
+          Data.Measure.RelativeDouble,
+          Data.Measure.ConvertDouble

@@ -1,0 +1,84 @@
+Name:           c2hs
+Version:        0.16.2
+License:        GPL-2
+License-File:   COPYING
+Copyright:      Copyright (c) 1999-2007 Manuel M T Chakravarty
+                              2005-2008 Duncan Coutts
+                              2008      Benedikt Huber
+Author:         Manuel M T Chakravarty
+Maintainer:     chak@cse.unsw.edu.au, duncan@haskell.org
+Stability:      Stable
+Homepage:       http://www.cse.unsw.edu.au/~chak/haskell/c2hs/
+Bug-Reports:    http://hackage.haskell.org/trac/c2hs/
+Synopsis:       C->Haskell FFI tool that gives some cross-language type safety
+Description:    C->Haskell assists in the development of Haskell bindings to C
+                libraries. It extracts interface information from C header
+                files and generates Haskell code with foreign imports and
+                marshaling. Unlike writing foreign imports by hand (or using
+                hsch2s), this ensures that C functions are imported with the
+                correct Haskell types.
+Category:       Development
+Tested-With:    GHC==6.10.4, GHC==6.12.1
+Cabal-Version:  >= 1.6
+Build-Type:     Simple
+
+--TODO: Cabal should allow 'Data-Files' in the executable stanza
+Data-Files:     C2HS.hs
+Extra-Source-Files:
+                src/C2HS/config.h
+                AUTHORS INSTALL README
+                doc/c2hs.xml doc/c2hs.css doc/man1/c2hs.1 doc/Makefile
+
+                tests/system/*.chs tests/system/*.h tests/system/*.c
+                tests/system/structs.expect
+                tests/system/Makefile
+
+source-repository head
+  type:         darcs
+  location:     http://code.haskell.org/c2hs/
+
+flag base3
+
+Executable c2hs
+    Build-Depends:  base >= 2 && < 5,
+                    language-c >= 0.3.1.1 && < 0.4.0,
+                    filepath
+
+    if flag(base3)
+        Build-Depends: base >= 3, process, directory, array, containers, pretty
+    else
+        Build-Depends: base < 3
+
+    hs-source-dirs: src
+    main-is:        Main.hs
+    other-modules:
+      C2HS.C
+      C2HS.C.Attrs
+      C2HS.C.Builtin
+      C2HS.C.Info
+      C2HS.C.Names
+      C2HS.C.Trav
+      C2HS.CHS
+      C2HS.CHS.Lexer
+      C2HS.Gen.Monad
+      C2HS.Gen.Bind
+      C2HS.Gen.Header
+      C2HS.State
+      C2HS.Switches
+      C2HS.Config
+      C2HS.Version
+
+      Control.StateBase
+      Control.State
+      Control.StateTrans
+      Data.Attributes
+      Data.DLists
+      Data.Errors
+      Data.NameSpaces
+      System.CIO
+      Text.Lexers
+
+    extensions:     ForeignFunctionInterface
+    c-sources:      src/C2HS/config.c
+    --TODO: eliminate the need to suppress these warnings:
+    ghc-options:    -Wall -fno-warn-incomplete-patterns

@@ -1,0 +1,75 @@
+Name:            ldif
+Version:         0.0.2
+License:         BSD3
+License-File:    LICENSE
+Synopsis:        The LDAP Data Interchange Format (LDIF) parser 
+Author:          Radoslav Dorcik <radoslav.dorcik@gmail.com>
+Maintainer:      radoslav.dorcik@gmail.com
+Description:     
+ LDIF files parser implementation using Parsec and based
+ on RFC 2849 - The LDAP Data Interchange Format (LDIF).
+ .
+ Current implementation is unfinished and need to be enhanced
+ for base64 encoded values and various DN escaping. 
+ .
+ It includes following tool:
+ .
+ - diffLDIF command generates change LDIF between two 
+   content LDIF files. 
+ .
+Category:        Text
+Stability:       experimental
+Build-Type:      Simple
+Cabal-Version:   >= 1.6
+Extra-Source-Files:
+    run_tests.sh
+    TODO
+    doc/rfc2253.txt
+    doc/rfc2849.txt
+    tests/TestMain.hs
+    tests/data/OK_diff01.content.ldif
+    tests/data/OK_diff02.content.ldif
+    tests/data/OK_multivalue.modify.ldif
+    tests/data/OK_simple01.content.ldif
+    tests/data/OK_simple01.modify.ldif
+    tests/data/OK_simple02.content.ldif
+    tests/data/OK_simple03.modify.ldif
+    tests/data/OK_simpleComment.modify.ldif
+    tests/data/OK_simpleWrap.modify.ldif
+    
+Source-Repository head
+  type:     darcs
+  location: http://rampa.sk/repo/ldif
+
+flag test
+  description: Build test program.
+  default:     False
+
+Library
+  Build-Depends:   ghc,
+                   base         < 5,
+                   filepath,
+                   haskell98,
+                   parsec       >= 2.1.0,
+                   Cabal        >= 1.5 && < 1.7
+  Hs-Source-Dirs:  src
+  Extensions:      CPP, PatternGuards
+  Ghc-Options:      -Wall -fno-warn-orphans
+
+  Exposed-modules:
+        Text.LDIF
+        Text.LDIF.Types
+        Text.LDIF.Parser
+        Text.LDIF.Printer
+        Text.LDIF.Proc
+
+Executable diffLDIF
+  Hs-Source-Dirs:  src
+  Main-Is:         diffLDIF.hs
+
+Executable test
+  Hs-Source-Dirs:  src, tests
+  Main-Is:         TestMain.hs
+  Build-Depends:   base, HUnit
+  if !flag(test)
+    Buildable:     False

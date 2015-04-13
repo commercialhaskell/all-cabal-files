@@ -1,0 +1,35 @@
+Name:	hVOIDP
+Version: 1.0
+Synopsis: Optimal variable selection in chain graphical model.
+Description: 
+   An implementation of the VOIDP algorithm that selects the optimal observations in chain graphical models.
+
+    .
+
+    References:
+    .
+
+    * Andreas Krause and Carlos Guestrin. 2009. Optimal value of information in graphical models. J. Artif. Int. Res. 35, 1 (July 2009), 557-591. 
+
+    .
+    * Qi Qi; Yi Shang; Hongchi Shi; , "An improved algorithm for optimal subset selection in chain graphical models," Evolutionary Computation (CEC), 2010 IEEE Congress on , vol., no., pp.1-6, 18-23 July 2010
+   
+   
+License:     GPL
+License-file: LICENSE
+Author:      Qi Qi <qiqi789@gmail.com>
+Maintainer:  Qi Qi <qiqi789@gmail.com>
+Homepage:    http://dslsrv4.cs.missouri.edu/~qqbm9
+Category:    AI
+Build-Type:  Simple
+cabal-version:  >=1.6
+
+Source-Repository head
+  Type:     git
+  Location: git://github.com/qiqi789/VOIDP--haskell-implementation-for-the-optimal-value-of-information-in-chain-models.git
+
+Executable hVOIDP
+  Main-is:    voidp.hs
+  Build-Depends:   array,hmatrix,base >=3 && <5
+  extra-libraries: lapack blas
+  extra-lib-dirs:  /usr/lib 

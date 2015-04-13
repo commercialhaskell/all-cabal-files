@@ -1,0 +1,30 @@
+name: failure
+version: 0.1.2
+Cabal-Version:  >= 1.6
+build-type: Simple
+license: BSD3
+author: Pepe Iborra, Michael Snoyman, Nicolas Pouillard
+maintainer: pepeiborra@gmail.com
+homepage: http://www.haskell.org/haskellwiki/Failure
+description: A simple type class for success/failure computations.
+synopsis: A simple type class for success/failure computations.
+category: Control, Monads, Failure
+stability: stable
+
+flag base43
+
+Library
+  buildable: True
+  if flag(base43)
+    build-depends: base >= 4.3 && < 5
+  else
+    build-depends: base >= 4 && < 4.3
+                 , transformers >= 0.2 && < 0.3
+  ghc-options: -Wall
+
+  exposed-modules:
+     Control.Failure
+
+source-repository head
+  type:     git
+  location: git://github.com/snoyberg/failure.git

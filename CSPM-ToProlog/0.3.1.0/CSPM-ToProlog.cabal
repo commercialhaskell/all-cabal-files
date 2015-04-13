@@ -1,0 +1,34 @@
+Name:                CSPM-ToProlog
+Version:             0.3.1.0
+Synopsis:            some modules specific for the ProB tool
+Description:
+  This package constains a translation from a CSPM AST to the representation
+  used by the ProB tool.
+  This code is only interesting for ProB developers.
+
+License:             BSD3
+category:            Formal Methods
+License-File:        LICENSE
+Author:              2006-2011 Marc Fontaine
+Maintainer:          Marc Fontaine <fontaine@cs.uni-duesseldorf.de>
+HomePage:            http://www.stups.uni-duesseldorf.de/ProB
+Cabal-Version:  >= 1.10
+Tested-With:    GHC==7.0.2
+Build-Type:     Simple
+
+Library
+  Default-Language: Haskell2010
+  Build-Depends:
+    CSPM-Frontend >= 0.6 && < 0.7
+    ,pretty >= 1.0 && < 1.1
+    ,base >= 4.0 && <5.0
+    ,containers >= 0.4 && <0.5
+
+  Hs-Source-Dirs: src
+  ghc-options: -Wall
+
+  Exposed-modules:
+    Language.CSPM.AstToProlog
+    Language.CSPM.TranslateToProlog
+  Other-modules:
+    Language.Prolog.PrettyPrint.Direct

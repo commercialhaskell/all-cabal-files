@@ -1,0 +1,20 @@
+Name:                  Interpolation
+Version:             0.2.4
+Description:         This package adds quasiquoter for multiline 
+                     strings, interpolation and simple templating.
+                     It can handle repetition templates which makes it
+                     Handy for outputting larger structures, such as
+                     latex tables or gnuplot files.
+Category:            Data,Text
+Synopsis:            Multiline strings, interpolation and templating.
+License:             OtherLicense
+License-file:        LICENSE
+Author:              Ville Tirronen
+Maintainer:          aleator@gmail.com
+Build-Type:          Simple
+Cabal-Version:       >=1.2
+
+Library
+  Build-Depends:     base >= 4, syb, template-haskell, haskell-src-meta
+  Exposed-modules:   Data.String.Interpolation
+  ghc-options:       -Wall 

@@ -1,0 +1,30 @@
+Name:                hback
+Version:             0.0.2
+Build-Depends:       base,haskell98,process,glade,gtk,cairo
+Build-type:          Simple
+License:             BSD3
+License-file:        LICENSE
+Author:              Norbert Wojtowicz <wojtowicz.norbert@gmail.com>
+Maintainer:          Norbert Wojtowicz <wojtowicz.norbert@gmail.com>
+Category:            Game
+Synopsis:            N-back memory game
+Description:         N-back memory game using gtk2hs.
+                     .
+                     Instructions on installation and gameplay available at:
+                     <http://pithyless.com/blog/2008/05/18/hback-haskell-n-back-memory-game/>
+Homepage:            http://pithyless.com/blog/2008/05/18/hback-haskell-n-back-memory-game/
+Extra-Source-Files:  README.txt,
+                     Makefile,
+                     Paths_hback.hs
+Data-Files:          hback.glade,
+                     sounds/a.wav,
+                     sounds/b.wav,
+                     sounds/d.wav,
+                     sounds/e.wav,
+                     sounds/f.wav,
+                     sounds/g.wav,
+                     sounds/h.wav,
+                     sounds/k.wav,
+                     sounds/t.wav
+Executable:          hback
+Main-is:             hback.hs

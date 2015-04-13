@@ -1,0 +1,80 @@
+--Package-properties
+Name:			regexdot
+Version:		0.10.2.1
+Cabal-Version:		>= 1.6
+Copyright:		(C) 2010 Dr. Alistair Ward
+License:		GPL
+License-file:		LICENSE
+Author:			Dr. Alistair Ward
+Stability:		Unstable interface, incomplete features.
+Synopsis:		A /polymorphic/, POSIX, extended regular-expression engine.
+Build-Type:		Simple
+Description:		Provides a portable, POSIX, extended regex-engine, designed to process a list of /arbitrary/ objects.
+Category:		Search, Regex
+Tested-With:		GHC == 6.10, GHC == 6.12, GHC == 7.0
+Homepage:		http://functionalley.eu
+Maintainer:		regexdot <at> functionalley <dot> eu
+Bug-reports:		regexdot <at> functionalley <dot> eu
+Extra-Source-Files:	changelog, copyright, makefile
+
+flag haveDeepSeq
+    Description:	Use 'Control.DeepSeq' rather than the older module 'Control.Parallel.Strategies'.
+    Default:		True
+
+flag llvm
+    Description:	Whether the 'llvm' backend has been installed and is required for code-generation.
+    manual:		True
+    default:		False
+
+flag threaded
+    Description:	Enable parallelized code.
+    default:		True
+
+Library
+    hs-source-dirs:	src
+
+    Exposed-modules:
+        RegExDot.Anchor
+        RegExDot.BracketExpression
+        RegExDot.BracketExpressionMember
+        RegExDot.CompilationOptions
+        RegExDot.Consumer
+        RegExDot.ConsumptionBounds
+        RegExDot.ConsumptionProfile
+        RegExDot.DataSpan
+        RegExDot.DataSpanTree
+        RegExDot.DSL
+        RegExDot.ExecutionOptions
+        RegExDot.InstanceInt
+        RegExDot.Meta
+        RegExDot.RegEx
+        RegExDot.RegExOpts
+        RegExDot.Repeatable
+        RegExDot.Result
+        RegExDot.ShowablePredicate
+        RegExDot.Span
+        RegExDot.Tree
+
+    Build-depends:
+        base == 4.*,
+        parsec == 3.*,
+        toolshed == 0.11.*
+
+    GHC-options:	-Wall -O2
+    GHC-prof-options:	-prof -auto-all -caf-all
+
+    if flag(haveDeepSeq)
+        Build-depends:	deepseq >= 1.1
+        CPP-options:	-DHAVE_DEEPSEQ
+    else
+        Build-depends:	parallel == 1.*
+
+    if flag(threaded)
+        Build-depends:	parallel >= 3.0
+        GHC-options:	-feager-blackholing
+    else
+        Build-depends:	parallel
+
+    if impl(ghc >= 7.0) && flag(llvm)
+        GHC-options:	-fllvm
+

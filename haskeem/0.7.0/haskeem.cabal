@@ -1,0 +1,27 @@
+Name:             haskeem
+Version:          0.7.0
+Author:           Uwe Hollerbach <uh@alumni.caltech.edu>
+Maintainer:       Uwe Hollerbach <uh@alumni.caltech.edu>
+Synopsis:         A small scheme interpreter
+Description:      This is a moderately complete small scheme interpreter.
+                  It implements most of R6RS, with the exception of call/cc.
+                  It has a macro system, but not R6RS hygienic macros.
+                  It is also not necessarily fully tail-recursive; so it's
+                  not industrial-strength. For playing with or learning
+                  scheme, it should be pretty good.
+License:          GPL
+License-File:     LICENSE
+Cabal-Version:    >= 1.2
+Build-Type:       Simple
+Category:         Compilers/Interpreters
+
+Executable        haskeem
+  Build-Depends:  base >= 4 && < 5, network, containers, mtl, parsec,
+                  haskell98, random, old-time, unix, directory, haskeline
+  Main-is:        haskeem.hs
+  Other-Modules:  LispData
+                  Parser
+                  Library
+                  Environment
+                  Evaluator
+                  WriteNumber

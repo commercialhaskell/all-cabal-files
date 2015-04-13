@@ -1,0 +1,32 @@
+name: direct-daemonize
+version: 3.0
+cabal-version: >= 1.12
+build-type: Simple
+license: BSD3
+license-file: LICENSE
+copyright: Copyright (c) 2012 Irene Knapp
+author: Irene Knapp <ireney.knapp@gmail.com>
+maintainer: ireney.knapp@gmail.com
+homepage: http://ireneknapp.com/software/
+bug-reports: http://ireneknapp.com/issues/create/
+category: System
+synopsis: Library to switch to daemon mode using built-in OS facilities.
+description:
+  This package is a wrapper around the daemon() function on BSD-like Unices,
+  including Mac OS X and glibc-based Linux distributions.  It does not function
+  on other systems.
+  
+  Version 3.0 cleans up the parameters structure.
+  
+  Version 2.0 fixes compatibility problems with the threaded GHC runtime.
+  Doing this required two non-backwards-compatible API changes.  First, the daemonize function now takes an action to perform as a daemon, and never
+  returns.  Second, the functionality of closing all open files has been
+  removed, as it caused crashes.  As a substitute, the option of closing only
+  the three standard streams has been added and made the default.
+
+Library
+  exposed-modules: System.Daemonize
+  build-depends: base >= 4.1 && < 5,
+                 unix >= 2.4.0.1
+  default-language: Haskell2010
+

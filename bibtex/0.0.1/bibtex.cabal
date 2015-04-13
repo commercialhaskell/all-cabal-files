@@ -1,0 +1,60 @@
+Name:             bibtex
+Version:          0.0.1
+License:          BSD3
+License-File:     LICENSE
+Author:           Henning Thielemann <haskell@henning-thielemann.de>
+Maintainer:       Henning Thielemann <haskell@henning-thielemann.de>
+Homepage:         http://www.haskell.org/haskellwiki/BibTeX
+Category:         Text
+Synopsis:         Parse, format and processing BibTeX files
+Description:
+  This package allows parsing, formatting and processing of BibTeX files.
+  BibTeX files are databases for literature for the natbib package
+  of the LaTeX typesetting system.
+Tested-With:      GHC==6.10.4
+Cabal-Version:    >=1.6
+Build-Type:       Simple
+Source-Repository head
+  type:     darcs
+  location: http://code.haskell.org/~thielema/bibtex/
+
+Source-Repository this
+  type:     darcs
+  location: http://code.haskell.org/~thielema/bibtex/
+  tag:      0.0.1
+
+Flag base2
+  description: Choose the new smaller, split-up base package.
+
+Flag buildExamples
+  description: Build example executables
+  default:     False
+
+Library
+  Build-Depends:
+    parsec >=2.1 && <2.2,
+    utility-ht >=0.0.5 && <0.1
+  If flag(base2)
+    Build-Depends:
+      base >= 2 && <5
+  Else
+    Build-Depends:
+      base >= 1.0 && < 2,
+      special-functors >=1.0 && <1.1
+
+  GHC-Options:      -Wall
+  Hs-Source-Dirs:   src
+  Exposed-Modules:
+    Text.BibTeX.Entry
+    Text.BibTeX.Format
+    Text.BibTeX.Parse
+    Text.LaTeX.Character
+
+
+Executable       publication-overview
+  If !flag(buildExamples)
+    Buildable:      False
+
+  GHC-Options:      -Wall
+  Hs-source-dirs:   src
+  Main-Is:          Publications.hs

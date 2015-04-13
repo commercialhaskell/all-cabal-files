@@ -1,0 +1,32 @@
+Name:          hs-pgms
+Version:       0.1
+Stability:     experimental
+Copyright:     (c) 2008 Bertram Felgenhauer
+Maintainer:    Bertram Felgenhauer <int-e@gmx.de>
+Category:      Game
+License:       BSD3
+License-File:  LICENSE
+Synopsis:      Programmer's Mine Sweeper in Haskell
+Description:
+    This package allows people to code Minesweeper strategies in Haskell
+    and run them in a graphical UI.
+
+    Inspired by <http://www.ccs.neu.edu/home/ramsdell/pgms/index.html>.
+Cabal-Version: >=1.2
+Build-Type:    Simple
+
+-- Data-Dir:      data
+Data-Files:    data/icons.png
+Extra-Source-Files: README, statistics
+
+Library
+    HS-Source-Dirs:  src
+    Exposed-Modules: Mine
+
+Executable mine
+    HS-Source-Dirs:  src
+    Main-is:         Main.hs
+    Other-Modules:   Mine, SimpleStrat, Strat1, Util,
+                     GUI, GUI.Common, GUI.Config, GUI.Stats
+    Build-Depends:   base, MonadPrompt, array, mtl, random, glib, gtk, directory
+    GHC-Options:     -threaded

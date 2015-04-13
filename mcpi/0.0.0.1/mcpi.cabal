@@ -1,0 +1,116 @@
+name:           mcpi
+Version:        0.0.0.1
+Stability:      experimental
+License:        PublicDomain
+Author:         Douglas Burke (dburke.gw@gmail.com)
+Maintainer:     dburke.gw@gmail.com
+Category:       network, raspberrypi, minecraft
+Synopsis:       Connect to MineCraft running on a Raspberry PI.
+Description:
+  The MineCraft edition for Raspberry PI comes with a Java and
+  Python API.
+  .
+  This is a *very* basic, and *incomplete* Haskell version. I
+  fully expect everything to change in later versions.
+  .
+  Two very simple examples are included in the examples/ directory,
+  as well as a way to interact with MineCraft directly.
+  .
+  Please see the TODO file in the source code for an incomplete
+  list of possible changes.
+
+Tested-With:    GHC==7.4.1
+Cabal-Version:  >= 1.8
+Build-Type:     Simple
+
+-- #Source-repository head
+-- #  type:      mercurial
+-- #  location:  https://bitbucket.org/doug_burke/grabtweets
+
+Data-Files:     examples/README
+                examples/*.hs
+
+Flag build-examples
+  Description: Build the example programs (defaults to True)
+  Default:     True
+
+Library
+   Build-Depends:
+      base >=3 && < 5,
+      network == 2.3.*,
+      split == 0.2.*,
+      transformers == 0.3.*
+
+   Hs-Source-Dirs: src/
+
+   Exposed-Modules:
+      Network.MineCraft.Pi.Client
+      Network.MineCraft.Pi.Client.Internal
+      Data.MineCraft.Pi.Block
+      Data.MineCraft.Pi.Camera
+      Data.MineCraft.Pi.Other
+      Data.MineCraft.Pi.Player
+      Data.MineCraft.Pi.Types
+
+   ghc-options:
+      -Wall
+
+Executable         flatten
+   if !flag(build-examples)
+     Buildable: False
+
+   Main-Is:        Flatten.hs
+   Hs-Source-Dirs: examples/ 
+
+   ghc-options:
+      -Wall
+
+   Build-Depends:
+      base,
+      mcpi,
+      transformers
+
+Executable         freefall
+   if !flag(build-examples)
+     Buildable: False
+
+   Main-Is:        Freefall.hs
+   Hs-Source-Dirs: examples/ 
+
+   ghc-options:
+      -Wall
+
+   Build-Depends:
+      base,
+      mcpi,
+      transformers
+
+Executable         hmcpi
+   if !flag(build-examples)
+     Buildable: False
+
+   Main-Is:        HMCPI.hs
+   Hs-Source-Dirs: examples/ 
+
+   ghc-options:
+      -Wall
+
+   Build-Depends:
+      base,
+      network,
+      pipes == 3.1.*
+
+Executable         isongold
+   if !flag(build-examples)
+     Buildable: False
+
+   Main-Is:        IsOnGold.hs
+   Hs-Source-Dirs: examples/ 
+
+   ghc-options:
+      -Wall
+
+   Build-Depends:
+      base,
+      mcpi,
+      transformers

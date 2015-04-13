@@ -1,0 +1,24 @@
+Name:           satchmo-backends
+Version:        1.4
+
+License:        GPL
+License-file:	gpl-2.0.txt
+Author:         Johannes Waldmann
+Maintainer:	Johannes Waldmann
+Homepage:       http://dfa.imn.htwk-leipzig.de/satchmo/
+Synopsis:       driver for external satchmo backends
+description:	Calls external solvers for (QBF-)CNF-SAT constraints produced by satchmo.
+		These solvers must be installed separately.
+		Note: the author and license of this package has no correlation 
+		with the authors and licenses of the individual solvers.
+                minisat (download from http://minisat.se/ )
+		quantor (download from http://fmv.jku.at/quantor/ )
+		qube    (download from http://www.star.dist.unige.it/~qube/ )
+Build-depends: satchmo, process, base, containers
+Exposed-modules:
+        Satchmo.Solver.Minisat
+        Satchmo.Solver.Quantor
+        Satchmo.Solver.Qube
+hs-source-dirs:	.
+extensions: 
+build-type: Simple

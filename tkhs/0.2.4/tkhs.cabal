@@ -1,0 +1,52 @@
+name:                tkhs
+version:             0.2.4
+synopsis:            Simple Presentation Utility
+description:         If you want to give your presentation in a terminal,
+                     or if PowerPoint would be overkill, you may find tkhs useful.
+category:            Console
+license:             BSD3
+license-file:        LICENSE
+extra-source-files:  README, demo/demo.txt
+author:              Yusaku Hashimoto
+maintainer:          Yusaku Hashimoto <nonowarn@gmail.com>
+build-type:          Custom
+cabal-version:       >= 1.6
+stability:           experimental
+homepage:            http://patch-tag.com/r/nonowarn/tkhs/snapshot/current/content/pretty/README
+
+flag test
+  description:       Build test program.
+  default:           False
+
+Executable tkhs
+  hs-source-dirs:    src
+  main-is:           Main.hs
+  ghc-options:       -Wall
+  build-depends:     base == 4.*
+                   , mtl
+                   , vty == 4.6.*
+                   , parsec == 2.*
+                   , pretty
+                   , utf8-string
+  other-modules:     Vty
+                     Tkhs
+                     Parser
+                     Zipper
+  if flag(test)
+    buildable:       False
+
+Executable test
+  hs-source-dirs:    src, test
+  other-modules:
+  main-is:           Test.hs
+  if !flag(test)
+    buildable:         False
+  else
+    build-depends:     test-framework
+                     , test-framework-hunit
+                     , HUnit
+
+
+Source-repository head
+  type:              git
+  location:          git://github.com/nonowarn/tkhs.git

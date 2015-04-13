@@ -1,0 +1,24 @@
+name:            data-object-json
+version:         0.0.0
+license:         BSD3
+license-file:    LICENSE
+author:          Michael Snoyman <michael@snoyman.com>
+maintainer:      Michael Snoyman <michael@snoyman.com>
+synopsis:        Serialize JSON data to/from Haskell using the data-object library.
+category:        Text
+stability:       Stable
+cabal-version:   >= 1.2
+build-type:      Simple
+homepage:        http://github.com/snoyberg/data-object-json/tree/master
+
+library
+    build-depends:   base >= 4 && < 5,
+                     json-b >= 0.0.4 && < 0.1,
+                     bytestring-trie >= 0.1.4 && < 0.2,
+                     bytestring >= 0.9.1.4 && < 0.10,
+                     data-object >= 0.2.0 && < 0.3,
+                     attempt >= 0.2.0 && < 0.3,
+                     convertible-text >= 0.2.0 && < 0.3,
+                     syb
+    exposed-modules: Data.Object.Json
+    ghc-options:     -Wall

@@ -1,0 +1,66 @@
+Name:           smtLib
+Version:        1.0
+License:        BSD3
+License-file:   LICENSE
+Author:         Iavor S. Diatchki
+Maintainer:     iavor.diatchki@gmail.com
+Category:       SMT
+Synopsis:       A library for working with the SMTLIB format.
+Description:    A library for working with the SMTLIB format.
+Build-type:     Simple
+Cabal-version: >= 1.8
+Extra-source-files:
+  LICENSE,
+  CHANGES
+
+library
+  hs-source-dirs: src
+
+  exposed-modules:
+    SMTLib1
+    SMTLib1.QF_BV
+    SMTLib1.QF_AUFBV
+    SMTLib2
+    SMTLib2.Compat1
+    SMTLib2.Core
+    SMTLib2.BitVector
+    SMTLib2.Array
+
+  other-modules:
+    SMTLib1.AST
+    SMTLib1.PP
+    SMTLib2.AST
+    SMTLib2.PP
+
+  build-depends:
+    base   < 5,
+    pretty
+
+
+  GHC-options:    -O2 -Wall
+
+source-repository head
+  type:     git
+  location: git://github.com/yav/smtLib.git
+
+executable smtLib-test-1
+
+  hs-source-dirs: test
+
+  main-is: Test1.hs
+
+  build-depends:
+    base    < 5,
+    smtLib,
+    process
+
+executable smtLib-test-2
+
+  hs-source-dirs: test
+
+  main-is: Test2.hs
+
+  build-depends:
+    base    < 5,
+    smtLib,
+    process

@@ -1,0 +1,20 @@
+
+Name:                BirdPP
+Version:             1.0
+Description:         Literate preprocessor that allows intuitive Haddock comments.
+License:             GPL
+License-file:        LICENSE
+Author:              Sean McLaughlin
+Maintainer:          seanmcl@gmail.com
+Build-Type:          Simple
+Cabal-Version:       >=1.6
+bug-reports:         http://github.com/seanmcl/BirdPP/issues
+category:            Development
+Synopsis:            A preprocessor for Bird-style Literate Haskell comments with Haddock markup.
+Extra-source-files:  LICENSE README 
+Executable BirdPP
+  Main-is:           Main.lhs
+  Build-Depends:     base >= 2 && < 4,
+                     haskell98
+
+

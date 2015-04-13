@@ -1,0 +1,37 @@
+
+name:               musicxml2
+version:            1.4.1
+cabal-version:      >= 1.2
+author:             Hans Hoglund
+maintainer:         Hans Hoglund
+license:            BSD3
+license-file:       COPYING
+synopsis:           A representation of the MusicXML format.
+category:           Music
+tested-with:        GHC
+build-type:         Simple
+
+description: 
+    A representation of the MusicXML format.
+
+library                    
+    build-depends: 
+        base >= 4 && < 5,
+        semigroups, nats, data-default, type-unary, reverse-apply,
+        xml,
+        music-pitch-literal,
+        music-dynamics-literal
+
+    hs-source-dirs: src
+    exposed-modules:
+        Music.MusicXml
+        Music.MusicXml.Time
+        Music.MusicXml.Pitch
+        Music.MusicXml.Dynamics
+        Music.MusicXml.Read
+        Music.MusicXml.Score
+        Music.MusicXml.Write
+        Music.MusicXml.Simple
+    other-modules:
+        Music.MusicXml.Write.Score
+    

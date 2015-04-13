@@ -1,0 +1,45 @@
+Name:                   regex-posix
+Version:                0.92
+-- Cabal-Version:       >=1.1.4
+License:                BSD3
+License-File:           LICENSE
+Copyright:              Copyright (c) 2007, Christopher Kuklewicz
+Author:                 Christopher Kuklewicz
+Maintainer:             TextRegexLazy@personal.mightyreason.com
+Stability:              Seems to work, passes a few tests
+Homepage:               http://sourceforge.net/projects/lazy-regex
+Package-URL:            http://darcs.haskell.org/packages/regex-unstable/regex-posix/
+Synopsis:               Replaces/Enhances Text.Regex
+Description:            The posix regex backend for regex-base
+Category:               Text
+Tested-With:            GHC
+Build-Depends:          regex-base >= 0.80, base >= 2.0
+-- Data-Files:
+-- Extra-Source-Files:
+-- Extra-Tmp-Files:
+-- This is the library
+Exposed-Modules:        Text.Regex.Posix
+                        Text.Regex.Posix.Wrap
+                        Text.Regex.Posix.String
+                        Text.Regex.Posix.Sequence
+                        Text.Regex.Posix.ByteString
+                        Text.Regex.Posix.ByteString.Lazy
+-- Futher fields
+Buildable:              True
+-- Other-Modules:
+-- HS-Source-Dirs:         "."
+Extensions:             MultiParamTypeClasses, FunctionalDependencies
+GHC-Options:            -Wall -Werror -O2
+-- GHC-Options:            -Wall -Werror
+-- GHC-Options:            -Wall -ddump-minimal-imports
+-- GHC-Prof-Options: 
+-- Hugs-Options:
+-- NHC-Options:
+-- C-Sources:
+-- LD-Options:
+-- Frameworks:
+CC-Options:             -DHAVE_REGEX_H
+-- Includes:
+Include-Dirs:           include
+-- Extra-Libraries:
+-- Extra-Lib-Dirs:

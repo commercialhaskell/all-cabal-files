@@ -1,0 +1,65 @@
+name:                unicoder
+version:             0.4.0
+stability:           beta
+synopsis:            Make writing in unicode easy.
+description:         Unicoder transforms text documents, replacing simple patterns with
+                     unicode equivalents. The patterns can be easily configured by the user.
+                     This package is especially meant to open the vast and expressive array
+                     of unicode identifiers to programmers and language designers, but there's
+                     nothing wrong with a technically savvy user putting unicoder to work
+                     on documents for human consumption.
+                     .
+                     With the default settings,
+                     .
+                     @
+                       \\E x. \\A y. \\\<x \\-> y\\\> \\ldots
+                       \\l x,y. x \\of x \\of y
+                     @
+                     .
+                     becomes
+                     .
+                     @
+                       ∃x ∀y ⟨x → y⟩ …
+                       λ x,y. x ∘ x ∘ y
+                     @
+                     .
+                     Many more possibilities abound just in the default set of characters.
+                     Any system of special characters can be made easy to type with a normal
+                     keyboard as long as unicode supports it.
+license:             BSD3
+license-file:        LICENSE
+author:              Zankoku Okuno
+maintainer:          zankoku.okuno@gmail.com
+copyright:           Copyright © 2013, 2014, Okuno Zankoku
+category:            Text
+build-type:          Simple
+cabal-version:       >=1.9.2
+data-dir:            data
+data-files:          *.conf
+extra-source-files:  README.md, changes.md,
+                     test/*.in, test/*.out, test/test.config
+
+executable unicoder
+  main-is:             unicoder.hs
+  -- other-modules:       
+  build-depends:       base ==4.6.*,
+                       text ==0.11.*,
+                       attoparsec >=0.10.0.0,
+                       directory ==1.2.*
+
+library
+  exposed-modules:     Text.Unicoder
+  build-depends:       base ==4.6.*,
+                       text ==0.11.*,
+                       attoparsec >=0.10.0.0
+
+Test-Suite test-unicoder
+    type:              exitcode-stdio-1.0
+    main-is:           test/test.hs
+    build-depends:     base ==4.6.*,
+                       text ==0.11.*,
+                       attoparsec >=0.10.0.0
+
+source-repository head
+  type: git
+  location: https://github.com/Zankoku-Okuno/unicoder.git

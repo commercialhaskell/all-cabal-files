@@ -1,0 +1,28 @@
+Name:                infinity
+Version:             0.3
+Description:         a tiny, pluggable irc bot
+License:             BSD3
+License-file:        LICENSE
+Stability:           Provisional
+Author:              Austin Seipp
+Maintainer:          austin@youareinferior.net
+Cabal-Version:       >= 1.2
+Extra-Source-Files:  README,
+		     INSTALL,
+		     PLoader.hs,
+		     Monitor.hs,
+		     Config.hs,
+		     Logger.hs,
+		     PState.hs,
+		     IMain.hs,
+		     Main.hs,
+		     API.hs,
+		     Net.hs,
+		     Plugins/System.hs,
+		     Plugins/Greet.hs,
+		     Plugins/Test.hs
+
+executable infinity
+  main-is:             Main.hs
+  build-depends:       Cabal >= 1.2, plugins >= 1.0, ghc >= 6.6 && < 6.8, binary >= 0.3, filepath, irc >= 0.2.3, base
+  ghc-options:         -O2 -threaded
