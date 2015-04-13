@@ -6,4 +6,4 @@ before_install:
 - mkdir -p ~/.ssh
 - mv id_rsa ~/.ssh
 - git config --global user.email "michael+all-cabal-files@snoyman.com"
-- git config --global user.name "Commercial Haskell: all-cabal-files Travis job"
+- git config --global user.name "Commercial Haskell all-cabal-files Travis job"
