@@ -9,4 +9,4 @@ tar xf 00-index.tar.gz
 rm -f 00-index.tar.gz
 git add -A
 git commit -m "Update from hackage at $(date)"
-git push
+git push git@github.com:commercialhaskell/all-cabal-files.git HEAD:master
