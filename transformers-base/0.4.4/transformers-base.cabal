@@ -1,5 +1,6 @@
 Name: transformers-base
 Version: 0.4.4
+x-revision: 1
 Category: Control
 Stability: experimental
 Synopsis: Lift computations from the bottom of a transformer stack
@@ -35,6 +36,7 @@ Flag OrphanInstances
 Library
   Build-Depends:
     base                >= 3 && < 5,
+    base                < 4.4 || >= 4.5,
     stm                 >= 2.3,
     transformers        >= 0.2,
     transformers-compat >= 0.2
