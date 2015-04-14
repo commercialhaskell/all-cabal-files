@@ -1,0 +1,31 @@
+name:                sfmt
+version:             0.1.1
+synopsis:            SIMD-oriented Fast Mersenne Twister(SFMT) binding.
+description:         this library has mwc-random<http://hackage.haskell.org/package/mwc-random> like api.
+license:             BSD3
+license-file:        LICENSE
+author:              HirotomoMoriwaki<philopon.dependence@gmail.com>
+maintainer:          HirotomoMoriwaki<philopon.dependence@gmail.com>
+Homepage:            https://github.com/philopon/sfmt-hs
+Bug-reports:         https://github.com/philopon/sfmt-hs/issues
+category:            Math, Random
+build-type:          Simple
+extra-source-files:  SFMT-src-1.4.1/SFMT.h
+                   , SFMT-src-1.4.1/SFMT-sse2.h
+                   , SFMT-src-1.4.1/SFMT-common.h
+                   , SFMT-src-1.4.1/SFMT-params.h
+                   , SFMT-src-1.4.1/SFMT-params19937.h
+cabal-version:       >=1.10
+
+library
+  exposed-modules:     System.Random.SFMT
+  other-modules:       System.Random.SFMT.Foreign
+  build-depends:       base       >=4.6  && <4.9
+                     , primitive  >=0.5  && <0.7
+                     , bytestring >=0.10 && <0.11
+                     , entropy    >=0.3  && <0.4
+  default-language:    Haskell2010
+  ghc-options:         -O3 -Wall
+  include-dirs:        SFMT-src-1.4.1
+  cc-options:          -O3 -fno-strict-aliasing -msse2 -DHAVE_SSE2 -DSFMT_MEXP=19937
+  c-sources:           SFMT-src-1.4.1/SFMT.c, cbits/wrap.c
