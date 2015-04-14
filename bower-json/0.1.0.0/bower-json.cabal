@@ -1,0 +1,49 @@
+name:                bower-json
+version:             0.1.0.0
+x-revision: 1
+synopsis:            bower.json from Haskell
+license:             MIT
+license-file:        LICENSE
+author:              Harry Garrood
+maintainer:          harry@garrood.me
+homepage:            https://github.com/hdgarrood/bower-json
+category:            Web
+build-type:          Simple
+cabal-version:       >=1.10
+
+description:
+  This package provides a data type and FromJSON instance for bower.json
+  package description files.
+
+source-repository head
+  type:     git
+  location: https://github.com/hdgarrood/bower-json
+
+library
+  exposed-modules:   Web.BowerJson
+  other-modules:     Web.BowerJson.Utils
+  build-depends:     base >=4 && <5
+                   , aeson >=0.6.1.0
+                   , filepath
+                   , containers
+                   , unordered-containers
+                   , text
+                   , bytestring
+
+  ghc-options:       -Wall
+  hs-source-dirs:    src
+  default-language:  Haskell2010
+
+test-suite tests
+    type:            exitcode-stdio-1.0
+    main-is:         Main.hs
+    hs-source-dirs:  test
+    build-depends:   base >=4 && <5
+                   , bower-json -any
+                   , aeson -any
+                   , bytestring -any
+                   , containers -any
+                   , tasty -any
+                   , tasty-hunit -any
+  ghc-options:       -Wall
+  default-language:  Haskell2010
