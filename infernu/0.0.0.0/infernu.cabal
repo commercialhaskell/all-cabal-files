@@ -1,7 +1,10 @@
 name:                infernu
 version:             0.0.0.0
+x-revision: 1
 synopsis:            Type inference and checker for JavaScript (experimental)
 description:         This version is highly experimental and may set your computer on fire (also, a lot of JS is not supported yet, so it may not be very useful.)
+                     .
+                     Also, the latest version is always at <https://github.com/sinelaw/infernu>. The version here (on hackage) is most certainly outdated.
                      .
                      Infernu is a type checker for JavaScript. Since JavaScript is dynamically and weakly typed, it makes no sense to talk about "type errors" in arbitrary JavaScript code.
                      .
