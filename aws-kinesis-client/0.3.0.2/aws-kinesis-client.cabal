@@ -1,5 +1,6 @@
 name:                aws-kinesis-client
 version:             0.3.0.2
+x-revision: 1
 synopsis:            A producer & consumer client library for AWS Kinesis
 -- description:
 license:             Apache-2.0
@@ -22,7 +23,7 @@ library
                        Aws.Kinesis.Client.Producer
   -- other-modules:
   -- other-extensions:
-  build-depends:       base >=4.7 && <4.8,
+  build-depends:       base >=4.7 && <5.0,
                        base-unicode-symbols,
                        aeson >=0.8,
                        aws >=0.10.5,
