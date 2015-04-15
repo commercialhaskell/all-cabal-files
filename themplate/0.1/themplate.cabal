@@ -1,5 +1,6 @@
 name:          themplate
 version:       0.1
+x-revision: 1
 license:       BSD3
 cabal-version: >= 1.10
 license-file:  LICENSE
@@ -40,4 +41,4 @@ executable themplate
     , either
     , optparse-applicative
     , configurator
-    , errors
+    , errors < 2
