@@ -1,10 +1,11 @@
 name: acme-everything
 version: 2015.4.15
+x-revision: 1
 synopsis: Everything.
 description: Install some packages.
 license: PublicDomain
 author: David Luposchainsky
-maintainer: dluposchainsky@gmail.com
+maintainer: David Luposchainsky <dluposchainsky(λ)gmail.com>
 build-type: Simple
 category: Acme
 cabal-version: >=1.10
