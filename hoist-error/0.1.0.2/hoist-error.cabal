@@ -1,6 +1,6 @@
 name:                hoist-error
 version:             0.1.0.2
-x-revision: 1
+x-revision: 2
 synopsis:            Some convenience facilities for hoisting errors into a monad
 license:             MIT
 license-file:        LICENSE
@@ -17,7 +17,7 @@ source-repository head
 
 library
   exposed-modules:     Control.Monad.Error.Hoist
-  build-depends:       base >=4.7 && <4.8
+  build-depends:       base >=4.7 && <5.0
                      , mtl >=2.1
                      , either >= 4.3
   hs-source-dirs:      src
