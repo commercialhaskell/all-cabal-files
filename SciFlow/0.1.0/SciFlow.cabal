@@ -3,7 +3,7 @@
 
 name:                SciFlow
 version:             0.1.0
-x-revision: 1
+x-revision: 2
 synopsis:            Scientific workflow management system
 description:         
   SciFlow is to help programmers design complex workflows
@@ -22,7 +22,6 @@ description:
   .
   > -- File 1: MyModule.hs
   >
-  > {-# LANGUAGE OverloadedStrings #-}
   > module MyModule where
   >
   > import Control.Arrow
@@ -55,7 +54,6 @@ description:
   > --------------------------------------------
   > -- File 2: main.hs
   >
-  > {-# LANGUAGE TemplateHaskell #-}
   > import Scientific.Workflow
   > import MyModule
   > import Data.Default
