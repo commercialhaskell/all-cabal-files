@@ -1,10 +1,14 @@
 script:
 - "./update.sh"
 before_install:
+- openssl aes-256-cbc -K $encrypted_f45973c98ea3_key -iv $encrypted_f45973c98ea3_iv
+  -in gpgkey.asc.enc -out gpgkey.asc -d
 - openssl aes-256-cbc -K $encrypted_672f84190d18_key -iv $encrypted_672f84190d18_iv
   -in id_rsa.enc -out id_rsa -d
 - mkdir -p ~/.ssh
 - mv id_rsa ~/.ssh
 - chmod 400 ~/.ssh/id_rsa
+- gpg --import gpgkey.asc
+- rm -f gpgkey.asc
 - git config --global user.email "michael+all-cabal-files@snoyman.com"
 - git config --global user.name "Commercial Haskell all-cabal-files Travis job"
