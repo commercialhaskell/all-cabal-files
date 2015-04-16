@@ -1,5 +1,6 @@
 Name: yet-another-logger
 Version: 0.2
+x-revision: 1
 Synopsis: Yet Another Logger
 Description:
     A logging framework written with flexibility and performance
@@ -111,7 +112,7 @@ Library
         stm-chans >= 3.0,
         text >= 1.2,
         time >= 1.5,
-        trace >= 0.1,
+        trace >= 0.1 && < 0.2,
         transformers >= 0.3,
         transformers-base >= 0.4,
         void >= 0.7
