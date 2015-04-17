@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-set -e
+set -eu
 set -x
 
 DIR=$HOME/.cabal/packages/hackage.haskell.org
