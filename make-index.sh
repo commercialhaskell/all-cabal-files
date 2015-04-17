@@ -10,7 +10,7 @@ TARGZ=$TAR.gz
 git pull
 mkdir -p "$DIR"
 
-rm -f $TAR $TARGZ
+rm -f "$TAR" "$TARGZ"
 
 git archive --format=tar -o "$TAR" master
 gzip -k "$TAR"
