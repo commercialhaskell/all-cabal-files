@@ -1,11 +1,11 @@
 Name:                   cabal2nix
 Version:                1.73
-x-revision: 3
+x-revision: 2
 Copyright:              Peter Simons, Andres Loeh
 License:                BSD3
 License-File:           LICENSE
-Author:                 Peter Simons, Andres Loeh
-Maintainer:             Peter Simons <simons@cryp.to>,
+Author:                 Peter Simons <simons@cryp.to>, Andres Loeh <mail@andres-loeh.de>
+Maintainer:             Nix Developers <nix-dev@lists.science.uu.nl>
 Homepage:               http://github.com/NixOS/cabal2nix
 Category:               Distribution
 Synopsis:               Convert Cabal files into Nix build instructions
