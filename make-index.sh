@@ -12,5 +12,5 @@ mkdir -p "$DIR"
 
 rm -f "$TAR" "$TARGZ"
 
-git archive --format=tar -o "$TAR" master
+git archive --format=tar -o "$TAR" HEAD
 gzip -k "$TAR"
