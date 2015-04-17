@@ -1,6 +1,6 @@
 Name:                   cabal2nix
 Version:                1.73
-x-revision: 1
+x-revision: 2
 Copyright:              Peter Simons, Andres Loeh
 License:                BSD3
 License-File:           LICENSE
@@ -82,7 +82,7 @@ Executable cabal2nix
 Executable hackage4nix
   main-is:              hackage4nix.hs
   hs-source-dirs:       src
-  Build-Depends:        base >= 3 && < 5, regex-posix, pretty, Cabal >= 1.18,
+  Build-Depends:        base >= 3 && < 5, regex-posix, pretty, Cabal >= 1.18 && < 1.22,
                         mtl, containers, directory, filepath, hackage-db >= 1.11,
                         transformers, process, deepseq
   Extensions:           PatternGuards, RecordWildCards, CPP
