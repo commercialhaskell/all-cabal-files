@@ -1,5 +1,6 @@
 name:                unlambda
 version:             0.1.2
+x-revision: 1
 
 license:             GPL
 license-file:        LICENSE
@@ -23,7 +24,7 @@ source-repository head
 
 executable              unlambda
    main-is:             Main.hs
-   build-depends:       base>3 && <5, unix
+   build-depends:       base>3 && <4.6, unix
 
 library
    exposed-modules:     Language.Unlambda
