@@ -7,7 +7,6 @@ DIR=$HOME/.cabal/packages/hackage.haskell.org
 TAR=$DIR/00-index.tar
 TARGZ=$TAR.gz
 
-git pull
 mkdir -p "$DIR"
 
 rm -f "$TAR" "$TARGZ"
