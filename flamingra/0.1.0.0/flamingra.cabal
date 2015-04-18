@@ -1,0 +1,59 @@
+
+name:                flamingra
+version:             0.1.0.0
+synopsis:            FlameGraphs of profiling
+description:         Hack to turn the profiling output into the format suitable for FlameGraph.
+                     It will be (kind of) interactive (e.g. <http://lelf.lu/files/pandoc.svg>).
+                     .
+                     <<pandoc.svg>>
+                     .
+                     =TL;DR (and the only one available) guide:
+                     .
+                     > some-program +RTS -P
+                     > wget https://raw.githubusercontent.com/brendangregg/FlameGraph/master/flamegraph.pl
+                     > flamingra some-program.prof | perl flamegraph.pl > picturesque.svg
+                     .
+                     =Usage:
+                     .
+                     > flamingra out.prof | …
+                     or
+                     .
+                     > … | flamingra | …
+                     .
+                     where out.prof is @-P@ profiling output.
+
+license:             BSD3
+license-file:        LICENSE
+author:              Antonio Nikishaev
+maintainer:          me@lelf.lu
+-- copyright:           
+category:            Development
+build-type:          Simple
+extra-doc-files:     pandoc.svg
+cabal-version:       >=1.10
+tested-with:         GHC==7.8.3
+
+source-repository head
+  type:     git
+  location: https://github.com/llelf/flamingra
+
+source-repository head
+  type:     darcs
+  location: http://hub.darcs.net/lelf/flamingra
+
+
+
+executable flamingra
+  main-is:             Main.hs
+  -- other-modules:       
+  -- other-extensions:    
+  build-depends:       base >=4.7 && <5, pipes,
+                       optparse-applicative, either
+  -- hs-source-dirs:      
+  default-language:    Haskell2010
+
+library
+  exposed-modules: I'mHereOnlyToPleaseHaddock
+  default-language: Haskell2010
+  build-depends:   base < 666
+
