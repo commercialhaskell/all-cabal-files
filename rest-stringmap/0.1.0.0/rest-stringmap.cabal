@@ -1,5 +1,6 @@
 name:                rest-stringmap
 version:             0.1.0.0
+x-revision: 1
 license:             BSD3
 synopsis:            Maps with stringy keys that can be transcoded to JSON and XML.
 description:         Maps with stringy keys that can be transcoded to JSON and XML.
@@ -21,7 +22,7 @@ library
     Rest.StringMap.Map.Strict
     Rest.StringMap.Util
   build-depends:
-      base >= 4.6 && < 4.8
+      base >= 4.7 && < 4.8
     , aeson == 0.7.*
     , containers == 0.5.*
     , hashable == 1.2.*
