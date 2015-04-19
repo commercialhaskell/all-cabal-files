@@ -1,5 +1,6 @@
 name:            yesod-bin
 version:         1.4.7.1
+x-revision: 1
 license:         MIT
 license-file:    LICENSE
 author:          Michael Snoyman <michael@snoyman.com>
@@ -88,7 +89,7 @@ executable             yesod
                      , wai-extra
                      , data-default-class
                      , streaming-commons
-                     , warp-tls
+                     , warp-tls           >= 3.0.1
                      , async
 
     ghc-options:       -Wall -threaded -rtsopts
