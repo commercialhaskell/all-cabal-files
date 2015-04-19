@@ -1,6 +1,6 @@
 Name:               feed
 Version:            0.3.7
-x-revision: 1
+x-revision: 2
 License:            BSD3
 License-file:       LICENSE
 Category:           Text
@@ -40,5 +40,5 @@ library
                      Text.Feed.Translate
                      Text.Feed.Util
     Ghc-Options:     -Wall
-    Build-Depends:   base >= 2 && < 4, haskell98, xml >= 1.2.6, utf8-string < 1
+    Build-Depends:   base >= 2 && < 4, haskell98 < 2, xml >= 1.2.6, utf8-string < 1
 
