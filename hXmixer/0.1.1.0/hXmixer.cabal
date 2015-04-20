@@ -1,0 +1,30 @@
+name:                hXmixer
+version:             0.1.1.0
+synopsis:            A Gtk mixer application for FreeBSD
+description:         A Gtk mixer application for FreeBSD
+homepage:            http://colinrmitchell.endoftheinternet.org/
+license:             BSD3
+license-file:        LICENSE
+author:              Colin Mitchell
+maintainer:          colin@colinrmitchell.endoftheinternet.org
+-- copyright:           
+category:            Sound
+build-type:          Simple
+-- extra-source-files:  
+cabal-version:       >=1.10
+
+executable hxmixer
+  main-is:           Main.hs
+  other-modules:
+      MixerForm,
+      MixerQuery
+  -- other-extensions:    
+  build-depends:       
+      base >= 4 && < 5, 
+      gtk3,
+      split,
+      directory,
+      process,
+      text
+  hs-source-dirs:      src
+  default-language:    Haskell2010
