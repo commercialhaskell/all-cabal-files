@@ -1,6 +1,5 @@
 name:                hsreadability
 version:             1.0.0.0
-x-revision: 1
 synopsis:            Access to the Readability API.
 
 description:         This package provides Haskell bindings to the
@@ -8,7 +7,7 @@ description:         This package provides Haskell bindings to the
 
 license:             MIT
 license-file:        LICENSE
-author:              Alexey Shmalko <rasen.dubi@gmail.com>, Nikolay Tsutsarin <leluch.contacts@gmail.com>
+author:              Alexey Shmalko <rasen.dubi@gmail.com>
 maintainer:          Alexey Shmalko <rasen.dubi@gmail.com>
 homepage:            http://github.com/rasendubi/hsreadability
 bug-reports:         http://github.com/rasendubi/hsreadability/issues
