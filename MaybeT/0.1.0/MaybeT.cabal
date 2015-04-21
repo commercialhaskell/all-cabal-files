@@ -1,5 +1,6 @@
 Name:                MaybeT
 Version:             0.1.0
+x-revision: 1
 Synopsis:            MaybeT monad transformer
 Description:         Support for computations with failures.
 License:             BSD3
@@ -8,6 +9,6 @@ Category:            Control
 Author:              Eric Kidd <haskell@randomhacks.net>
 Maintainer:          Eric Kidd <haskell@randomhacks.net>
 Stability:           experimental
-Build-Depends:       base, mtl
+Build-Depends:       base < 4.3, mtl
 Exposed-modules:     Control.Monad.Maybe
 ghc-options:         -Wall -O
