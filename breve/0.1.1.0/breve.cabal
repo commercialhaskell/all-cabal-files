@@ -1,0 +1,39 @@
+name:                breve
+version:             0.1.1.0
+synopsis:            a url shortener
+description:
+
+  Breve is a web application that provides a simple interface to
+  shortening long urls creating links smaller and easier to remember.
+
+homepage:            https://github.com/rnhmjoj/breve
+license:             MIT
+license-file:        LICENSE
+author:              Rnhmjoj
+maintainer:          micheleguerinirocco@me.com
+copyright:           (C) Michele Guerini Rocco 2015
+category:            Web
+build-type:          Simple
+extra-source-files:  README.md, LICENSE
+data-files:          static/*.png, static/*.html, static/*.css,
+                     views/*.html
+cabal-version:       >=1.10
+
+source-repository head
+  type: git
+  location: https://github.com/rnhmjoj/breve
+
+executable breve
+  main-is:           Main.hs
+  hs-source-dirs:    src
+  default-language:  Haskell2010
+  other-modules:     Application, Breve.Common,
+                     Breve.Generator, Breve.UrlTable
+  other-extensions:  OverloadedStrings
+  build-depends:     base >=4.8 && <5.0,
+                     simple, wai, wai-extra, warp,
+                     aeson, bytestring, binary,
+                     transformers, mtl,
+                     hashtables, cryptohash, random,
+                     xdg-basedir, configurator, directory
+  ghc-options:       -threaded -O2
