@@ -1,5 +1,6 @@
 name:                nf
 version:             1.0.0.2
+x-revision: 1
 synopsis:            NF data type to statically enforce normal form 
 description:         This package provides a data type NF representing
                      data which has been evaluated to normal form.  This
@@ -17,5 +18,8 @@ cabal-version:       >=1.10
 
 library
   exposed-modules:     Data.NF, Data.NF.Internal
+  -- With GHC 7.2 failes due to "Control.DeepSeq can't be safely imported! The module itself isn't safe."
+  build-depends:       base < 4.4 || >= 4.5  
+
   build-depends:       base >= 2 && < 5, deepseq >= 1.1
   default-language:    Haskell2010
