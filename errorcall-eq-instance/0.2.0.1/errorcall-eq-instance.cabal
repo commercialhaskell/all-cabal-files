@@ -1,6 +1,5 @@
 name:             errorcall-eq-instance
 version:          0.2.0.1
-x-revision: 1
 category:         Control
 synopsis:         An orphan Eq instance for ErrorCall
 description:      Prior to @base-4.7.0.0@ there was no @Eq@ instance for
@@ -24,7 +23,7 @@ library
       Control.Exception.ErrorCall.EqInstance
   build-depends:
       base    == 4.*
-    , base-compat >= 0.6 && < 0.8
+    , base-compat >= 0.6
 
 test-suite spec
   type:
