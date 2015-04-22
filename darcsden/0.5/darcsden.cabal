@@ -1,5 +1,6 @@
 name:            darcsden
 version:         0.5
+x-revision: 1
 synopsis:        darcs project hosting and collaboration
 description:
     A web and SSH server for hosting darcs projects and collaborating with
@@ -54,7 +55,7 @@ executable darcsden
     , random
     , redis
     , SHA
-    , ssh >= 0.2.6
+    , ssh >= 0.3
     , snap-core >= 0.4 && < 0.4.1
     , snap-server >= 0.4 && < 0.4.1
     , system-uuid

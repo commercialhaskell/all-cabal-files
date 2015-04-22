@@ -1,5 +1,6 @@
 name:            darcsden
 version:         1.0
+x-revision: 1
 synopsis:        Darcs repository UI and hosting/collaboration app.
 description:
     A web application and SSH server for browsing and hosting darcs
@@ -59,7 +60,7 @@ executable darcsden
   if flag(ssh)
     cpp-options: -DSSH_FLAG
     build-depends:
-      ssh >= 0.2.6
+      ssh >= 0.3
   build-depends:
       base >= 4 && < 5
     , base64-string
@@ -106,7 +107,7 @@ executable darcsden-ssh
   if flag(ssh)
     cpp-options: -DSSH_FLAG
     build-depends:
-      ssh >= 0.2.6
+      ssh >= 0.3
 
 executable darcsden-post-hook
   hs-source-dirs:  src
