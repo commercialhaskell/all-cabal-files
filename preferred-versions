@@ -76,6 +76,7 @@ endo >0.1.0.1
 engine-io <1.1.1 || >1.1.1
 equational-reasoning <0.2.0.1 || >0.2.0.1
 equivalence <0.2.6 || >0.2.6
+errorcall-eq-instance ==0.3.*
 esqueleto <1.4.1.1 || >1.4.1.1
 extensible-effects <1.5.0 || >1.5.0 && <1.6.0 || >1.6.0
 fasta <0.5.2.0 || >0.5.2.0
