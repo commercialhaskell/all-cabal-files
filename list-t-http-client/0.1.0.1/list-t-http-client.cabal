@@ -1,0 +1,53 @@
+name:
+  list-t-http-client
+version:
+  0.1.0.1
+synopsis:
+  A streaming HTTP client
+category:
+  Streaming, HTTP
+homepage:
+  https://github.com/nikita-volkov/list-t-http-client
+bug-reports:
+  https://github.com/nikita-volkov/list-t-http-client/issues 
+author:
+  Nikita Volkov <nikita.y.volkov@mail.ru>
+maintainer:
+  Nikita Volkov <nikita.y.volkov@mail.ru>
+copyright:
+  (c) 2015, Nikita Volkov
+license:
+  MIT
+license-file:
+  LICENSE
+build-type:
+  Simple
+cabal-version:
+  >=1.10
+
+
+source-repository head
+  type:
+    git
+  location:
+    git://github.com/nikita-volkov/list-t-http-client.git
+
+
+library
+  hs-source-dirs:
+    library
+  other-modules:
+  exposed-modules:
+    ListT.HTTPClient
+  ghc-options:
+    -funbox-strict-fields
+  default-extensions:
+    Arrows, BangPatterns, ConstraintKinds, DataKinds, DefaultSignatures, DeriveDataTypeable, DeriveFoldable, DeriveFunctor, DeriveGeneric, DeriveTraversable, EmptyDataDecls, FlexibleContexts, FlexibleInstances, FunctionalDependencies, GADTs, GeneralizedNewtypeDeriving, ImpredicativeTypes, LambdaCase, LiberalTypeSynonyms, MultiParamTypeClasses, MultiWayIf, NoImplicitPrelude, NoMonomorphismRestriction, OverloadedStrings, PatternGuards, ParallelListComp, QuasiQuotes, RankNTypes, RecordWildCards, ScopedTypeVariables, StandaloneDeriving, TemplateHaskell, TupleSections, TypeFamilies, TypeOperators
+  default-language:
+    Haskell2010
+  build-depends:
+    bytestring >= 0.10 && < 0.11,
+    http-client == 0.4.*,
+    list-t == 0.4.*,
+    mtl-prelude >= 1 && < 3,
+    base-prelude >= 0.1.19 && < 0.2
