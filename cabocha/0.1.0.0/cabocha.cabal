@@ -1,0 +1,31 @@
+name:               cabocha
+version:            0.1.0.0
+description:        A Haskell binding to CaboCha <http://taku910.github.io/cabocha>
+license:            BSD3
+license-file:       LICENSE
+author:             Miyazawa Akira
+maintainer:         Miyazawa Akira <pecorarista@gmail.com>
+category:           Natural Language Processing
+build-type:         Simple
+homepage:           http://github.com/pecorarista/hscabocha
+cabal-version:      >=1.10
+extra-source-files: test/*.hs
+
+library
+  exposed-modules:  Text.CaboCha
+  build-depends:
+    base >= 4.7 && < 5,
+    bytestring,
+    text
+  ghc-options:      -Wall -O2
+  extra-libraries:  cabocha
+  default-language: Haskell2010
+
+test-suite tests
+  type:           exitcode-stdio-1.0
+  hs-source-dirs: test
+  main-is:        Test.hs
+  build-depends:
+    base >= 4.7 && < 5,
+    cabocha,
+    text-format
