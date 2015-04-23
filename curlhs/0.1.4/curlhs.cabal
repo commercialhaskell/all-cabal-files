@@ -1,5 +1,6 @@
 name:          curlhs
 version:       0.1.4
+x-revision: 1
 synopsis:      bindings to libcurl, the multiprotocol file transfer library
 homepage:      https://github.com/kkardzis/curlhs
 category:      Network
@@ -44,13 +45,13 @@ description:
   >
   .
   More information about @curlhs@, such as tutorials or examples,
-  may be found in the <docs/#/README.md documentation> section.
+  may be found in the </package/curlhs-0.1.4/src/docs/#/README.md documentation> section.
   .
   Package is distributed under the
   <http://choosealicense.com/licenses/isc/ ISC License>
-  (MIT\/BSD-style, see <LICENSE> file for details).
+  (MIT\/BSD-style, see </package/curlhs-0.1.4/src/LICENSE LICENSE> file for details).
   .
-  <<https://ga-beacon.appspot.com/UA-53767359-1/curlhs>>
+  <<https://ga-beacon.appspot.com/UA-53767359-1/curlhs-0.1.4>>
 
 
 -------------------------------------------------------------------------------
