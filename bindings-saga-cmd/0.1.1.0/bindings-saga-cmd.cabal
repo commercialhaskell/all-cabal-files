@@ -1,0 +1,65 @@
+name:                bindings-saga-cmd
+version:             0.1.1.0
+synopsis:            Wrapping saga_cmd
+description:         A simple wrapper around the command-line version of the GIS-program saga
+homepage:            https://github.com/michelk/bindings-saga-cmd.hs
+
+license:             GPL-3
+license-file:        LICENSE
+author:              Michel Kuhlmann
+maintainer:          michel.kuhlmann@tkconsult.ch
+category:            Math
+build-type:          Simple
+cabal-version:       >=1.8
+
+source-repository head
+  type:     git
+  location: https://github.com/michelk/bindings-saga-cmd.hs
+
+library
+  exposed-modules:   Gis.Saga.Types
+                     Gis.Saga.Cmd
+                     Gis.Saga.Data
+                     Gis.Saga.Utils
+                     Gis.Saga.LUT
+                     Gis.Saga.Doc
+                     Gis.Saga.Node
+  build-depends:     base >=4.3 && < 5,
+                     filepath,
+                     process,
+                     containers,
+                     directory,
+                     unix
+  hs-source-dirs:    src
+
+executable sagaPipe
+  main-is:           sagaPipe.hs
+  build-depends:     base  >=4.3 && < 5,
+                     filepath,
+                     cmdargs,
+                     process,
+                     text,
+                     containers,
+                     directory,
+                     unix,
+                     bindings-saga-cmd
+  hs-source-dirs:    src
+
+executable sagaTopo
+  main-is:           sagaTopo.hs
+  build-depends:     base  >=4.3 && < 5,
+                     filepath,
+                     cmdargs,
+                     process,
+                     text,
+                     containers,
+                     directory,
+                     unix,
+                     bindings-saga-cmd
+  hs-source-dirs:    src
+
+executable sagaLut
+  main-is:           sagaLut.hs
+  build-depends:     base  >=4.3 && < 5,
+                     bindings-saga-cmd
+  hs-source-dirs:    src
