@@ -1,5 +1,6 @@
 Name:                   fast-logger
 Version:                0.2.0
+x-revision: 1
 Author:                 Kazu Yamamoto <kazu@iij.ad.jp>
 Maintainer:             Kazu Yamamoto <kazu@iij.ad.jp>
 License:                BSD3
@@ -21,7 +22,7 @@ library
                       , filepath
                       , old-locale
                       , text
-                      , time
+                      , time < 1.5
   if os(windows)
     cpp-options: -DWINDOWS
   else

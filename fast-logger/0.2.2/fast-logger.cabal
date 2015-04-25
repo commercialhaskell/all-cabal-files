@@ -1,5 +1,6 @@
 Name:                   fast-logger
 Version:                0.2.2
+x-revision: 1
 Author:                 Kazu Yamamoto <kazu@iij.ad.jp>
 Maintainer:             Kazu Yamamoto <kazu@iij.ad.jp>
 License:                BSD3
@@ -15,7 +16,7 @@ Library
   Exposed-Modules:      System.Log.FastLogger
                         System.Log.FastLogger.File
                         System.Log.FastLogger.Date
-  Build-Depends:        base >= 4 && < 5
+  Build-Depends:        base >= 4 && < 4.8
                       , blaze-builder
                       , bytestring
                       , directory
@@ -24,10 +25,10 @@ Library
   if os(windows)
     Cpp-Options:        -DWINDOWS
     Build-Depends:      old-locale
-                      , time
+                      , time < 1.5
   else
     Build-Depends:      unix
-                      , unix-time
+                      , unix-time < 0.1.10
 
 Test-Suite spec
     Main-Is:         Spec.hs

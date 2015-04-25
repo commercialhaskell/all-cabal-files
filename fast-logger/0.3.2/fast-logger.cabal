@@ -1,5 +1,6 @@
 Name:                   fast-logger
 Version:                0.3.2
+x-revision: 1
 Author:                 Kazu Yamamoto <kazu@iij.ad.jp>
 Maintainer:             Kazu Yamamoto <kazu@iij.ad.jp>
 License:                BSD3
@@ -25,10 +26,10 @@ Library
   if os(windows)
     Cpp-Options:        -DWINDOWS
     Build-Depends:      old-locale
-                      , time
+                      , time < 1.5
   else
     Build-Depends:      unix
-                      , unix-time
+                      , unix-time >= 0.2
 
 Test-Suite spec
     Main-Is:         Spec.hs
@@ -36,7 +37,7 @@ Test-Suite spec
     Type:            exitcode-stdio-1.0
 
     Ghc-Options:     -Wall
-    Build-Depends:   base >= 4 && < 5
+    Build-Depends:   base >= 4 && < 4.8
                    , bytestring
                    , fast-logger
                    , hspec
