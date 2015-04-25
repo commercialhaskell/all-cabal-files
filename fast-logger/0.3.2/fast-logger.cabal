@@ -1,6 +1,6 @@
 Name:                   fast-logger
 Version:                0.3.2
-x-revision: 1
+x-revision: 2
 Author:                 Kazu Yamamoto <kazu@iij.ad.jp>
 Maintainer:             Kazu Yamamoto <kazu@iij.ad.jp>
 License:                BSD3
@@ -16,7 +16,7 @@ Library
   Exposed-Modules:      System.Log.FastLogger
                         System.Log.FastLogger.File
                         System.Log.FastLogger.Date
-  Build-Depends:        base >= 4 && < 5
+  Build-Depends:        base >= 4 && < 4.8
                       , blaze-builder
                       , bytestring
                       , date-cache >= 0.3
