@@ -1,5 +1,6 @@
 Name:                HList
 Version:             0.1.1
+x-revision: 1
 Category:            Data
 Synopsis:            Heterogeneous lists
 Description:         HList is a record system providing strongly typed heterogenous lists, records,
@@ -13,13 +14,13 @@ Maintainer:          oleg@pobox.com
 Data-files:          README, keyword-arguments.lhs
 Cabal-version:       >= 1.4
 Tested-With:         GHC==6.8.2
-Build-Depends:       base >= 3 && < 5
+Build-Depends:       base >= 3 && < 4.3
 Build-Type:          Simple
 Exposed-modules:     Data.HList, Data.HList.CommonMain, Data.HList.Variant, Data.HList.GhcSyntax,
                      Data.HList.GhcRecord, Data.HList.Record, Data.HList.HZip, Data.HList.TIC, Data.HList.TIP,
                      Data.HList.HTypeIndexed, Data.HList.HOccurs, Data.HList.HArray, Data.HList.GhcExperiments,
                      Data.HList.HListPrelude, Data.HList.TypeEqBoolGeneric, Data.HList.TypeEqGeneric1,
-                     Data.HList.TypeCastGeneric1, Data.HList.TypeCastGeneric2, Data.HList.FakePrelude, 
+                     Data.HList.TypeCastGeneric1, Data.HList.TypeCastGeneric2, Data.HList.FakePrelude,
                      Data.HList.RecordP, Data.HList.TypeEqGeneric2,
                      Data.HList.Label1, Data.HList.Label2, Data.HList.Label3, Data.HList.Label4, Data.HList.Label5
 

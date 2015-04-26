@@ -1,5 +1,6 @@
 Name:                HList
 Version:             0.1
+x-revision: 1
 Category:            Data
 Synopsis:            Heterogeneous lists
 Description:         HList is a record system providing strongly typed heterogenous lists, records,
@@ -11,7 +12,7 @@ Author:              2004 Oleg Kiselyov (FNMOC, Monterey), Ralf Laemmel (CWI/VU,
 Maintainer:          oleg@pobox.com
 
 Tested-With:         GHC==6.8.2
-Build-Depends:       base
+Build-Depends:       base < 4.3
 Build-Type:          Simple
 Exposed-modules:     Data.HList
 Other-modules:       Data.HList.Label4, Data.HList.CommonMain, Data.HList.Variant, Data.HList.GhcSyntax,

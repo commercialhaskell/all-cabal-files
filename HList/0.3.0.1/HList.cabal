@@ -1,5 +1,6 @@
 Name:                HList
 Version:             0.3.0.1
+x-revision: 1
 Category:            Data
 Synopsis:            Heterogeneous lists
 Description:         HList is a record system providing strongly typed heterogenous lists, records,
@@ -40,7 +41,7 @@ Source-Repository head
 
 
 library
-  Build-Depends:       base >= 4 && < 5, template-haskell, ghc-prim, mtl
+  Build-Depends:       base == 4.6.*, template-haskell, ghc-prim, mtl
 
   Exposed-modules:     Data.HList,
                        Data.HList.CommonMain,
