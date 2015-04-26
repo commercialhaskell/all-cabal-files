@@ -1,0 +1,24 @@
+name:                   sorting
+version:                1.0.0.1
+description:            Utils for sorting.
+synopsis:               Utils for sorting.
+homepage:               https://github.com/joneshf/sorting
+license:                BSD3
+license-file:           LICENSE
+author:                 Hardy Jones
+maintainer:             jones3.hardy@gmail.com
+copyright:              © 2015 Hardy Jones
+category:               Data
+build-type:             Simple
+cabal-version:          >=1.10
+
+source-repository head
+  type:                 git
+  location:             git://github.com/joneshf/sorting.git
+
+library
+  build-depends:        base >=4.6 && <4.9
+  default-language:     Haskell2010
+  exposed-modules:      Data.Ord.Sorting
+  ghc-options:          -Wall
+  hs-source-dirs:       src
