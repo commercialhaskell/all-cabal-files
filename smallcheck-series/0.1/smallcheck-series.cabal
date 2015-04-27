@@ -1,0 +1,44 @@
+name:                smallcheck-series
+version:             0.1
+synopsis:            Extra series for smallcheck
+description:
+  Utilities for creating @SmallCheck@ @Series@ and orphan @Serial@
+  instances for frequently used types coming with GHC core libraries.
+homepage:            https://github.com/jdnavarro/smallcheck-series
+bug-reports:         https://github.com/jdnavarro/smallcheck-series/issues
+license:             BSD3
+license-file:        LICENSE
+author:              Danny Navarro
+maintainer:          j@dannynavarro.net
+category:            Testing
+build-type:          Simple
+extra-source-files:  README.md CHANGELOG.md
+cabal-version:       >=1.10
+
+source-repository head
+  type: git
+  location: git://github.com/jdnavarro/smallcheck-series.git
+
+
+library
+  exposed-modules:     Test.SmallCheck.Series.ByteString
+                       Test.SmallCheck.Series.ByteString.Lazy
+                       Test.SmallCheck.Series.Instances
+                       Test.SmallCheck.Series.Text
+                       Test.SmallCheck.Series.Text.Lazy
+  build-depends:       base >=4.6 && <4.9,
+                       bytestring >= 0.10.0,
+                       text >= 0.11.3,
+                       smallcheck >= 1.1
+  default-language:    Haskell2010
+  ghc-options:         -Wall
+
+test-suite doctests
+  default-language:    Haskell2010
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      tests
+  main-is:             doctests.hs
+  ghc-options:         -Wall -threaded
+  build-depends:       base >= 4.6 && <4.9,
+                       Glob >= 0.7.5,
+                       doctest >= 0.9.10
