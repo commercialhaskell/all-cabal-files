@@ -1,10 +1,11 @@
 name:                aws-kinesis-client
 version:             0.4.0.0
+x-revision: 1
 synopsis:            A producer & consumer client library for AWS Kinesis
 description:
     This package provides a Producer client for bulk-writing messages to a
     Kinesis stream through a bounded queue, and a Consumer client for reading
-    messages round-robin from all shards of a Kiensis stream.  Additionally, a
+    messages round-robin from all shards of a Kinesis stream.  Additionally, a
     rudimentary CLI interface to the Consumer is provided.
 
 license:             Apache-2.0
