@@ -1,6 +1,6 @@
 name:                aws-kinesis-client
 version:             0.4.0.0
-x-revision: 1
+x-revision: 2
 synopsis:            A producer & consumer client library for AWS Kinesis
 description:
     This package provides a Producer client for bulk-writing messages to a
@@ -41,7 +41,7 @@ library
                        Aws.Kinesis.Client.Internal.Queue.Chunk
   -- other-modules:
   -- other-extensions:
-  build-depends:       base >=4.7 && <4.9,
+  build-depends:       base >=4.7 && <5.0,
                        base-unicode-symbols,
                        aeson >=0.8,
                        aws >=0.10.5,
@@ -79,7 +79,7 @@ executable kinesis-cli
     hs-source-dirs: cli
     main-is: CLI.hs
     other-modules:     CLI.Options
-    build-depends:     base >=4.7 && <4.8,
+    build-depends:     base >=4.7 && <5.0,
                        base-unicode-symbols,
                        aeson >=0.8,
                        aws >=0.10.5,
