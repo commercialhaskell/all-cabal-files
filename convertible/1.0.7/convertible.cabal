@@ -1,5 +1,6 @@
 Name: convertible
 Version: 1.0.7
+x-revision: 1
 License: LGPL
 Maintainer: John Goerzen <jgoerzen@complete.org>
 Author: John Goerzen
@@ -45,7 +46,7 @@ flag time_gte_113
 
 library
   if flag(splitBase)
-    Build-Depends: base>=3 && <5, old-time, time>=1.1.2.4 && <=1.1.4,
+    Build-Depends: base >= 3 && < 4.2, old-time, time>=1.1.2.4 && <=1.1.4,
      bytestring, containers, old-locale
     if flag(time_gte_113)
       Build-Depends: time>=1.1.3
