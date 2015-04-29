@@ -1,0 +1,50 @@
+name:                templater
+version:             0.0.2.0
+synopsis:            Simple string templater
+-- description:
+homepage:            https://github.com/geraud/templater
+license:             MIT
+license-file:        LICENSE
+author:              Geraud Boyer
+maintainer:          geraud@gmail.com
+-- copyright:
+category:            Text
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+tested-with:
+    GHC == 7.6
+  , GHC == 7.8
+  , GHC == 7.10
+
+library
+  build-depends:
+    base >=4.5 && <4.9
+    , text >= 1.1
+    , attoparsec >= 0.12
+  hs-source-dirs:
+    src
+  default-language:
+    Haskell2010
+  exposed-modules:
+    Text.Templater
+
+test-suite tests
+  main-is: Spec.hs
+  build-depends:
+    base
+    , templater
+    , hspec == 2.*
+    , hspec-attoparsec >= 0.1.0
+    , HUnit
+    , QuickCheck
+    , text
+  default-language:
+    Haskell2010
+  ghc-options:
+    -Wall
+    -Werror
+  hs-source-dirs:
+    test
+  type:
+    exitcode-stdio-1.0
