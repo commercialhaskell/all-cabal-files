@@ -1,0 +1,59 @@
+name:          timerep
+version:       2.0.0
+category:      Web, Time
+synopsis:      Parse and display time according to some RFCs (RFC3339, RFC2822, RFC822)
+description:
+    .
+    Parse and display time according to some RFC's.
+    .
+    Supported:
+    .
+      * RFC822 <http://www.ietf.org/rfc/rfc0822.txt>
+      * RFC2822 <http://www.ietf.org/rfc/rfc2822.txt>
+      * RFC3339 <http://www.ietf.org/rfc/rfc3339.txt>
+    .
+    Special thanks to Koral for all the suggestions and help in solving some bugs
+    .
+build-type:    Simple
+maintainer:    Hugo Daniel Gomes <mr.hugo.gomes@gmail.com>
+author:        Hugo Daniel Gomes <mr.hugo.gomes@gmail.com>
+copyright:     Hugo Daniel Gomes
+cabal-version: >= 1.8
+license:       BSD3
+license-file:  LICENSE
+source-repository head
+  type:     git
+  location: git://github.com/HugoDaniel/RFC3339.git
+
+library
+  build-depends:
+    base < 5,
+    monoid-subclasses,
+    text,
+    time >= 1.5,
+    time-locale-compat,
+    attoparsec
+
+  exposed-modules:
+    Data.Time.RFC3339
+    Data.Time.RFC2822
+    Data.Time.RFC822
+
+  other-modules:
+    Data.Time.Util
+
+  extensions: TypeSynonymInstances FlexibleInstances
+
+test-suite Tests
+  type: detailed-0.9
+  hs-source-dirs: test
+  test-module: Test
+  build-depends:
+    base < 5,
+    Cabal >= 1.20.0,
+    cabal-test-quickcheck,
+    QuickCheck,
+    text,
+    time >= 1.2,
+    time-locale-compat,
+    timerep >= 1.0
