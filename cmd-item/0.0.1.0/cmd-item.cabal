@@ -1,0 +1,57 @@
+name: cmd-item
+version: 0.0.1.0
+homepage: https://github.com/geraud/cmd-item
+bug-reports: https://github.com/geraud/cmd-item/issues
+license: MIT
+license-file: LICENSE
+author: Geraud Boyer
+maintainer: Geraud Boyer <geraud@gmail.com>
+copyright: Copyright (C) 2015 Geraud Boyer
+synopsis: Library to compose and reuse command line fragments
+description: Library to compose and reuse command line fragments
+category: System
+build-type: Simple
+cabal-version: >=1.10
+
+tested-with:
+  GHC == 7.6
+  , GHC == 7.8
+  , GHC == 7.10
+
+extra-source-files:
+  .gitignore
+  .travis.yml
+  README.md
+
+source-repository head
+  type: git
+  location: git://github.com/geraud/cmd-item.git
+
+library
+  exposed-modules: Data.CmdItem
+  build-depends:
+    base >= 4.5 && < 4.9
+    , containers >= 0.5
+    , text >= 1.1
+    , templater >= 0
+  hs-source-dirs: src
+  default-language: Haskell2010
+  ghc-options: -Wall
+
+test-suite tests
+  main-is: Spec.hs
+  build-depends:
+    base
+    , cmd-item
+    , hspec == 2.*
+    , hspec-laws
+    , HUnit
+    , QuickCheck
+    , quickcheck-instances
+    , text
+  default-language: Haskell2010
+  ghc-options:
+    -Wall
+    -Werror
+  hs-source-dirs: test
+  type: exitcode-stdio-1.0
