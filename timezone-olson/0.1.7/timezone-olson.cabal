@@ -1,5 +1,6 @@
 Name:                timezone-olson
 Version:             0.1.7
+x-revision: 1
 Synopsis:            A pure Haskell parser and renderer for binary Olson timezone files
 Description:         A parser and renderer for binary Olson timezone
                      files whose format is specified by the tzfile(5)
@@ -12,6 +13,9 @@ Description:         A parser and renderer for binary Olson timezone
                      files suitable for use with this package are
                      available in the directory /usr/share/zoneinfo
                      and its subdirectories on your computer.
+                     For a way to read binary Olson timezone files at compile
+                     time, see the timezone-olson-th package
+                     (<http://hackage.haskell.org/package/timezone-olson-th>).
 Homepage:            http://projects.haskell.org/time-ng/
 License:             BSD3
 License-file:        LICENSE

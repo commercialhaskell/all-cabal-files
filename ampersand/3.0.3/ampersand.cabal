@@ -1,5 +1,6 @@
 name:           ampersand
 version:        3.0.3
+x-revision: 1
 author:         Stef Joosten
 maintainer:     stef.joosten@ou.nl
 synopsis:       Toolsuite for automated design of business processes.
@@ -13,7 +14,7 @@ build-type:     Custom
 license:        GPL
 license-file:   LICENSE
 copyright:      Stef Joosten
-bug-reports:    https://sourceforge.net/p/ampersand/tickets/
+bug-reports:    https://github.com/AmpersandTarski/ampersand/issues
 -- Recursive patterns such as static/* are not allowed in data-files. Hence we cannot use them for static files, as
 -- we would need to specify a pattern for each extension in each subdirectory.
 data-files:     
