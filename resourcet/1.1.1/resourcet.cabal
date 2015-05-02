@@ -1,5 +1,6 @@
 Name:                resourcet
 Version:             1.1.1
+x-revision: 1
 Synopsis:            Deterministic allocation and freeing of scarce resources.
 Description:
 	This package was originally included with the conduit package, and has since been split off. For more information, please see <http://www.yesodweb.com/book/conduits>.
@@ -25,7 +26,7 @@ Library
                      , transformers             >= 0.2.2        && < 0.4
                      , mtl                      >= 2.0          && < 2.2
                      , mmorph
-                     , exceptions               >= 0.5
+                     , exceptions               >= 0.5          && < 0.6
   ghc-options:     -Wall
 
 test-suite test
