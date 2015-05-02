@@ -1,5 +1,6 @@
 Name:               syb-with-class
 Version:            0.5.1
+x-revision: 1
 License:            BSD3
 License-file:       LICENSE
 Copyright:          2004 - 2008 The University of Glasgow, CWI,
@@ -25,7 +26,7 @@ source-repository head
   location: http://patch-tag.com/publicrepos/syb-with-class
 
 Library 
-    Build-Depends:      base >= 3 && < 5, template-haskell, bytestring, array, containers
+    Build-Depends:      base >= 3 && < 5, template-haskell < 2.5, bytestring, array, containers
     Exposed-modules:
         Data.Generics.SYB.WithClass.Basics
         Data.Generics.SYB.WithClass.Context

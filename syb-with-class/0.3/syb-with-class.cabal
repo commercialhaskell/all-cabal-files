@@ -1,5 +1,6 @@
 Name:               syb-with-class
 Version:            0.3
+x-revision: 1
 License:            BSD3
 Copyright:          2004 - 2007 The University of Glasgow, CWI,
                                 Simon Peyton Jones, Ralf Laemmel,
@@ -14,7 +15,7 @@ Description:
     Scrap Your Boilerplate With Class system.
 Category:           Data
 Tested-With:        GHC==6.6
-Build-Depends:      base, template-haskell
+Build-Depends:      base < 4.3, template-haskell
 Exposed-modules:
     Data.Generics.SYB.WithClass.Basics
     Data.Generics.SYB.WithClass.Context
