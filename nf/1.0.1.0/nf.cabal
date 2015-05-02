@@ -1,0 +1,21 @@
+name:                nf
+version:             1.0.1.0
+synopsis:            NF data type to statically enforce normal form 
+description:         This package provides a data type NF representing
+                     data which has been evaluated to normal form.  This
+                     is a useful type discipline for many situations when
+                     normal form data is necessary, e.g. when transmitting
+                     data to other threads over channels.
+homepage:            https://github.com/ezyang/nf
+license:             BSD3
+license-file:        LICENSE
+author:              Edward Z. Yang
+maintainer:          ezyang@cs.stanford.edu
+category:            Data
+build-type:          Simple
+cabal-version:       >=1.10
+
+library
+  exposed-modules:     Data.NF, Data.NF.Internal
+  build-depends:       base >= 2 && < 5, deepseq >= 1.1
+  default-language:    Haskell2010
