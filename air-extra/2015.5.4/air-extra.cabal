@@ -1,0 +1,37 @@
+Name:                 air-extra
+Version:              2015.5.4
+Build-type:           Simple
+Synopsis:             air-extra
+Description:          An alternative Haskell Prelude library, extra helpers
+License:              BSD3
+Author:               Jinjing Wang
+Maintainer:           Jinjing Wang <nfjinjing@gmail.com>
+Cabal-version:        >= 1.2
+category:             Development
+license-file:         LICENSE
+homepage:             https://github.com/nfjinjing/air-extra
+tested-with:          GHC==7.6.1
+
+library
+
+  build-depends:
+                  base >= 4 && < 5
+                , containers
+                , array
+                , parallel
+                -- , old-time
+                , time
+                , bytestring >= 0.9
+                , regexpr >= 0.3.4
+                , parsec >= 2
+                , directory
+                -- , old-locale
+                , filepath
+                , air >= 2013.7.18
+                , text
+
+  hs-source-dirs: src/
+  exposed-modules:
+                    Air.Extra
+                  , Air.Heavy
+                  , Air.UTF8
