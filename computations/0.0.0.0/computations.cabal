@@ -1,0 +1,54 @@
+Name:          computations
+Version:       0.0.0.0
+Cabal-Version: >= 1.16
+Build-Type:    Simple
+License:       BSD3
+License-File:  LICENSE
+Copyright:     © 2012–2015 Wolfgang Jeltsch
+Author:        Wolfgang Jeltsch
+Maintainer:    wolfgang@cs.ioc.ee
+Stability:     provisional
+Homepage:      http://darcs.wolfgang.jeltsch.info/haskell/computations
+Package-URL:   http://hackage.haskell.org/packages/archive/computations/0.0.0.0/computations-0.0.0.0.tar.gz
+Synopsis:      Advanced notions of computation
+Description:   This package provides a framework for computations with certain
+               consistency constraints. Based on this framework, it implements
+               resourceful computations, which are an alternative to the @IO@
+               mondad. In the case of resourceful computations, the consistency
+               constraint is a single-use policy, also known as linearity.
+Category:      Control
+Tested-With:   GHC == 7.8.3
+
+Source-Repository head
+    Type:     darcs
+    Location: http://darcs.wolfgang.jeltsch.info/haskell/computations/main
+
+Source-Repository this
+    Type:     darcs
+    Location: http://darcs.wolfgang.jeltsch.info/haskell/computations/main
+    Tag:      computations-0.0.0.0
+
+Library
+
+    Build-Depends: base >= 3.0 && < 5
+
+    Default-Language: Haskell2010
+
+    Default-Extensions: ConstraintKinds
+                        ExistentialQuantification
+                        FlexibleContexts
+                        FlexibleInstances
+                        GeneralizedNewtypeDeriving
+                        MultiParamTypeClasses
+                        Rank2Types
+                        TypeFamilies
+                        TypeOperators
+
+    if impl(ghc >= 7.8) {
+        Default-Extensions: AutoDeriveTypeable
+    }
+
+    Exposed-Modules: Control.Computation
+                     Control.Computation.Resourceful
+
+    HS-Source-Dirs: src
