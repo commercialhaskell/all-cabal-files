@@ -1,0 +1,25 @@
+name:                Diff
+version:             0.3.2
+synopsis:            O(ND) diff algorithm in haskell.
+description:         Implementation of the standard diff algorithm, and utilities for pretty printing.
+category:            Algorithms
+license:             BSD3
+license-file:        LICENSE
+author:              Sterling Clover
+maintainer:          s.clover@gmail.com
+Tested-With:         GHC == 7.8.4
+Build-Type:          Simple
+Cabal-Version:       >= 1.6
+
+library
+  build-depends:   base >= 3 && <= 6, array, pretty
+  hs-source-dirs:  src
+  exposed-modules:
+                   Data.Algorithm.Diff,
+                   Data.Algorithm.DiffOutput
+                   Data.Algorithm.DiffContext
+  ghc-options:     -O2 -Wall -funbox-strict-fields
+
+source-repository head
+  type:      darcs
+  location:  http://hub.darcs.net/sterlingclover/Diff
