@@ -1,0 +1,125 @@
+name: Rlang-QQ
+version: 0.3.0.0
+cabal-version: >=1.10
+build-type: Simple
+license: BSD3
+license-file: LICENSE
+maintainer: Adam Vogt <vogt.adam@gmail.com>
+homepage: http://code.haskell.org/~aavogt/Rlang-QQ
+synopsis: quasiquoter for inline-R code
+description: This quasiquoter calls R (<http://www.r-project.org/>) from ghc.
+             Variables from the haskell-side are passed in, and
+             variables created (or modified) are returned as the value
+             of the quasiquote.
+             .
+             The R package knitr is used, which allows recording plots. But
+             for this to work, you need to install it first, for example with:
+             .
+             > R --no-save <<< 'install.packages("knitr")'
+category: Development
+author: Adam Vogt <vogt.adam@gmail.com>
+tested-with: GHC == 7.6.2, GHC == 7.8.2
+data-dir: rsrc
+data-files: Tree.R parseTreeExample.R
+extra-source-files: examples/*.hs,
+                    examples/*.Rmd,
+                    examples/*.png
+                    examples/*.ipynb
+                    examples/*.html
+                    examples/Makefile
+                    Changelog.md
+
+source-repository head
+    type: darcs
+    location: http://code.haskell.org/~aavogt/Rlang-QQ
+
+library
+    hs-source-dirs: src
+
+    default-language:   Haskell2010
+    default-extensions: ConstraintKinds
+                        DataKinds
+                        FlexibleContexts
+                        FlexibleInstances
+                        FunctionalDependencies
+                        GADTs
+                        KindSignatures
+                        MultiParamTypeClasses
+                        ScopedTypeVariables
+                        TypeFamilies
+                        TypeOperators
+                        ViewPatterns
+
+    other-extensions:   NoMonomorphismRestriction
+                        PolyKinds
+                        TemplateHaskell
+                        UndecidableInstances
+                        CPP
+    if (impl(ghc > 7.7))
+      default-extensions: AllowAmbiguousTypes
+
+    build-depends: base ==4.*,
+                   array,
+                   binary,
+                   bytestring,
+                   Cabal,
+                   containers,
+                   data-binary-ieee754,
+                   directory,
+                   filepath,
+                   haskell-src-meta,
+                   HList >= 0.4,
+                   lens,
+                   mtl,
+                   process,
+                   SHA,
+                   split,
+                   syb,
+                   template-haskell <= 3,
+                   temporary,
+                   text,
+                   transformers,
+                   trifecta >= 1.4,
+                   utf8-string ==0.3.*,
+                   vector,
+                   zlib
+
+    if flag(repa)
+      build-depends: repa
+      cpp-options: -DREPA
+
+    exposed-modules: RlangQQ.Internal
+                     RlangQQ.Binary
+                     RlangQQ.Antiquote
+                     RlangQQ.NatQQ
+                     RlangQQ.MakeRecord
+                     RlangQQ.ParseKnitted
+                     RlangQQ
+
+    other-modules:  Paths_Rlang_QQ
+
+    exposed: True
+    buildable: True
+
+flag repa
+  description: enable repa (can be disabled to allow building RlangQQ with ghc-7.8)
+  default: True
+ 
+test-suite doctests
+  default-language: Haskell2010
+  type:          exitcode-stdio-1.0
+  ghc-options:   -threaded
+  main-is:       doctests.hs
+  build-depends: base, doctest >= 0.8
+
+test-suite hspec
+  default-language: Haskell2010
+  type:          exitcode-stdio-1.0
+  main-is: examples/tests.hs
+  build-depends: base,
+                 hspec,
+                 lens,
+                 directory,
+                 vector,
+                 Rlang-QQ
+  -- build-tools: HListPP
