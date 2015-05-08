@@ -1,5 +1,6 @@
 name:           AlignmentAlgorithms
 version:        0.0.1.0
+x-revision: 1
 author:         Christian Hoener zu Siederdissen, 2013-2015
 copyright:      Christian Hoener zu Siederdissen, 2013-2015
 homepage:       http://www.bioinf.uni-leipzig.de/Software/gADP/
@@ -19,7 +20,7 @@ description:
                 the grammar here, but bind the required data type for alignment
                 in user code.
                 .
-                <https://github.com/choener/AlignmentAlgorithms/README.md>
+                <https://github.com/choener/AlignmentAlgorithms/blob/master/README.md>
                 .
                 That being said, these algorithms are mostly aimed towards
                 sequence alignment problems.
