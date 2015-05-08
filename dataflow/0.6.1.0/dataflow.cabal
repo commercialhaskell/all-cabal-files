@@ -1,0 +1,70 @@
+name:                dataflow
+version:             0.6.1.0
+synopsis:            Generate Graphviz documents from a Haskell representation.
+description:         Render graphs using a declarative markup. Currently
+                     supports DFD (http://en.wikipedia.org/wiki/Data_flow_diagram)
+                     and sequence diagrams (http://plantuml.sourceforge.net/sequence.html).
+homepage:            https://github.com/sonyxperiadev/dataflow
+license:             BSD3
+license-file:        LICENSE
+author:              Oskar Wickström (Sony Mobile Communications)
+maintainer:          oskar.wickstrom@gmail.com
+copyright:           Sony Mobile Communications
+category:            Code Generation, Compiler, Graphs
+
+build-type:          Simple
+extra-source-files:  README.md,
+                     LICENSE,
+                     examples/webapp.flow,
+                     examples/webapp.seq.png,
+                     examples/webapp.dfd.png,
+                     examples/legend.flow,
+                     examples/legend.seq.png,
+                     examples/legend.dfd.png,
+                     examples/Makefile
+cabal-version:       >=1.10
+
+source-repository head
+  type: git
+  location: git@github.com:sonyxperiadev/dataflow.git
+
+library
+  exposed-modules:
+    DataFlow.Core,
+    DataFlow.Reader,
+    DataFlow.PrettyRenderer,
+    DataFlow.Graphviz,
+    DataFlow.Graphviz.EdgeNormalization,
+    DataFlow.Graphviz.Renderer,
+    DataFlow.PlantUML,
+    DataFlow.PlantUML.Renderer,
+    DataFlow.SequenceDiagram,
+    DataFlow.DFD
+  build-depends:
+    base >=4 && <4.8,
+    mtl >=2.2,
+    containers >= 0.4,
+    MissingH,
+    parsec >= 3.1.9
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+
+executable dataflow
+  main-is: Main.hs
+  build-depends:
+    base >=4 && <4.8,
+    dataflow
+  hs-source-dirs:      cli
+  default-language:    Haskell2010
+
+test-suite spec
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  default-language: Haskell98
+  hs-source-dirs: test
+  build-depends:
+    base,
+    HUnit,
+    hspec == 2.*,
+    dataflow
+  ghc-options: -Wall
