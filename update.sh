@@ -14,6 +14,9 @@ then
     git commit -m "Update from Hackage at $(date --utc --iso=sec)" --gpg-sign=D6CF60FD
     git push git@github.com:commercialhaskell/all-cabal-files.git HEAD:master
     git push git@github.com:commercialhaskell/all-cabal-files.git HEAD:hackage
+
+    git tag current-hackage -u D6CF60FD -m "Update from Hackage at $(date --utc --iso=sec)" -f
+    git push git@github.com:commercialhaskell/all-cabal-files.git --tags --force
 else
     echo No changes present
 fi
