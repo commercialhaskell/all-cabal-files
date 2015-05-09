@@ -1,5 +1,6 @@
 Name:               process-listlike
 Version:            0.6.2
+x-revision: 1
 Synopsis:           Enhanced version of process-extras
 Description:        Extra functionality for the Process library
                     <http://hackage.haskell.org/package/process>.
@@ -32,7 +33,7 @@ Library
 
   Build-depends:
     base >= 4 && < 5,
-    process,
+    process >= 1.1,
     bytestring,
     HUnit,
     ListLike >= 4.0,
