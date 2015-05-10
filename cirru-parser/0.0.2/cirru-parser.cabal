@@ -1,0 +1,29 @@
+
+name:   cirru-parser
+version:  0.0.2
+cabal-version:  >= 1.22
+license:  MIT
+license-file: README.md
+description: Cirru Parser in Haskell
+author:   JiyinYiyong
+maintainer: jiyiyiyiony@gmail.com
+homepage: https://github.com/Cirru/parser.hs
+category: Text
+synopsis: Cirru Parser in Haskell
+
+build-type: Simple
+cabal-version: >= 1.10
+
+source-repository head
+  type: git
+  location: git://github.com/Cirru/parser.hs.git
+
+library
+  hs-source-dirs: src/
+  build-depends:
+    base >= 4 && < 5,
+    text,
+    vector,
+    aeson
+  default-language: Haskell2010
+  exposed-modules: CirruParser, Cirru
