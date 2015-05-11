@@ -1,5 +1,6 @@
 Name:           haste-compiler
 Version:        0.4.4.4
+x-revision: 1
 License:        BSD3
 License-File:   LICENSE
 Synopsis:       Haskell To ECMAScript compiler
@@ -103,7 +104,7 @@ Executable hastec
     Build-Depends:
         base < 5,
         ghc-prim,
-        ghc >= 7.4,
+        ghc >= 7.4 && < 7.10,
         mtl,
         binary,
         containers,
