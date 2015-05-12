@@ -1,0 +1,37 @@
+name: schedule-planner
+version: 0.1.0.0
+cabal-version: >=1.10
+build-type: Simple
+license: LGPL-3
+license-file: LICENSE
+copyright: 2015
+maintainer: Justus Adam <development@justusadam.com>
+stability: experimental
+synopsis: Find the ideal lesson layout
+description:
+    Executable program for calculating layouts for fixed grid schedules as
+    are used in many universities and schools.
+    The primary data format for in- and output is json, a deployable server
+    instance of this software is planned.
+category: Data, Convenience, Planning
+author: Justus Adam <development@justusadam.com>
+data-dir: ""
+extra-source-files: README.md
+
+executable schedule-planner
+    build-depends:
+      base >= 4.7 && <5,
+      containers -any,
+      json -any,
+      options -any,
+      transformers > 0.4,
+      happstack-lite > 7,
+      mtl > 1
+    main-is: Main.hs
+    buildable: True
+    default-language: Haskell2010
+    hs-source-dirs: src
+
+source-repository head
+    type: git
+    location: git://github.com/JustusAdam/schedule-planner.git
