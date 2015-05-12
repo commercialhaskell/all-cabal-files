@@ -1,6 +1,7 @@
 name:          free
 category:      Control, Monads
 version:       3.4
+x-revision: 1
 license:       BSD3
 cabal-version: >= 1.10
 license-file:  LICENSE
@@ -52,7 +53,7 @@ library
     GADTs
 
   build-depends:
-    base                 >= 4       && < 5,
+    base                 >= 4       && < 4.7,
     bifunctors           >= 3,
     distributive         >= 0.2.1,
     transformers         >= 0.2.0   && < 0.4,
