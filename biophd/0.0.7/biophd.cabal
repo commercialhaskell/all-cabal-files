@@ -1,0 +1,23 @@
+Name:                biophd
+Version:             0.0.7
+Synopsis:            Library for reading phd sequence files
+Description:         Library for reading phd sequence files
+Homepage:	     https://github.com/dfornika/biophd/wiki
+License:             GPL
+License-file:        LICENSE
+Cabal-Version:       >=1.6
+Author:              Ketil Malde <ketil@malde.org>
+Maintainer:          Dan Fornika <dfornika@gmail.com>
+Stability:	     Provisional
+Category:	     Bioinformatics
+Build-Type:          Simple
+
+Library
+  Build-depends:     base >= 2 && < 5, biocore, bytestring, parsec, text, binary, time, old-locale
+  Exposed-modules:   Bio.Sequence.Phd
+  Hs-source-dirs:    src
+
+source-Repository    head
+  type:		     git
+  location:	     https://github.com/dfornika/biophd.git
+
