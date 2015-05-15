@@ -189,6 +189,7 @@ sasl <0.0.0.2 || >0.0.0.2
 schedule-planner <0.1.0.1 || >0.1.0.1
 sci-ratio <0.2.0.0 || >0.2.0.0
 scotty >0.5.0
+semigroupoids <4.5 || >4.5
 seqid <0.3.0 || >0.3.0
 shadower >=0.1.0.6
 shelly <1.5 || >1.5 && <1.5.3 || >1.5.3
