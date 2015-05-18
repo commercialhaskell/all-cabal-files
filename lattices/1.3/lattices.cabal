@@ -1,0 +1,39 @@
+name:               lattices
+version:            1.3
+cabal-version:      >= 1.10
+category:           Math
+license:            BSD3
+license-File:       LICENSE
+author:             Maximilian Bolingbroke <batterseapower@hotmail.com>
+maintainer:         Oleg Grenrus <oleg.grenrus@iki.fi>
+homepage:           http://github.com/phadej/lattices/
+bug-reports:        http://github.com/phadej/lattices.git/issues
+copyright:          (C) 2010-2015 Maximilian Bolingbroke
+build-type:         Simple
+extra-source-files: README.md CHANGELOG.md
+synopsis:           Fine-grained library for constructing and manipulating lattices
+description:
+  In mathematics, a lattice is a partially ordered set in which every two elements have a unique supremum (also called a least upper bound or @join@) and a unique infimum (also called a greatest lower bound or @meet@).
+
+source-repository head
+  type: git
+  location: git://github.com/phadej/lattices.git
+
+library
+  exposed-modules:  Algebra.Enumerable,
+                    Algebra.Lattice,
+                    Algebra.Lattice.Dropped,
+                    Algebra.Lattice.Levitated,
+                    Algebra.Lattice.Lifted,
+                    Algebra.PartialOrd
+
+  build-depends:    base >= 3 && < 5,
+                    containers >= 0.3 && < 0.6,
+                    deepseq >= 1.1 && < 1.5,
+                    hashable >= 1.2 && < 1.3,
+                    unordered-containers >= 0.2  && < 0.3
+  ghc-options:      -Wall
+  default-language: Haskell2010
+
+  if impl(ghc >= 7.4 && < 7.5)
+    build-depends:  ghc-prim
