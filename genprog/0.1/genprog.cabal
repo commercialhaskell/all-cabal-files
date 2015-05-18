@@ -1,5 +1,6 @@
 Name:                genprog
 Version:             0.1
+x-revision: 1
 Synopsis:            Genetic programming library
 License:             BSD3
 License-file:        LICENSE
@@ -25,7 +26,7 @@ Library
   Exposed-modules: 
     GenProg, GenProg.GenExpr, GenProg.GenExpr.Data
   Build-depends: 
-    base == 4.*, syb >= 0.1.0.2, syz >= 0.2, MonadRandom >= 0.1.5
+    base >= 4 && < 4.6, syb >= 0.1.0.2, syz >= 0.2, MonadRandom >= 0.1.5
   Extensions:
     MultiParamTypeClasses, FunctionalDependencies, 
     NoMonomorphismRestriction, ScopedTypeVariables, FlexibleInstances, 
