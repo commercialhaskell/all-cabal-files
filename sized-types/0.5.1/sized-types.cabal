@@ -1,0 +1,63 @@
+Name:                sized-types
+Version:             0.5.1
+Synopsis:            Sized types in Haskell using the GHC Nat kind.
+Description:         Providing matrixes, sparse matrixes, and signed and unsigned bit vectors, using GHC Nat kind.
+Category:            Language
+License:             BSD3
+License-file:        LICENSE
+Author:              Andy Gill
+Maintainer:          Andy Gill <andygill@ku.edu>
+Copyright:           (c) 2009-2013 The University of Kansas
+Homepage:            http://www.ittc.ku.edu/csdl/fpg/Tools
+Stability:           beta
+build-type:          Simple
+extra-source-files:  CHANGELOG.md, README.md
+Cabal-Version:       >= 1.8
+
+source-repository head
+  type:                git
+  location:            https://github.com/ku-fpg/sized-types
+
+Flag all
+  Description:         Enable full development tree
+  Default:             False
+
+Library
+  Build-Depends:       array       >= 0.4,
+                       base        >= 4.6   && < 5,
+                       base-compat >= 0.8.1 && < 1,
+                       containers  == 0.5.*,
+                       singletons  >= 0.10  && < 1.2
+  Exposed-modules:     Data.Sized.Fin,
+                       Data.Sized.Matrix,
+                       Data.Sized.Sparse.Matrix,
+                       Data.Sized.Signed,
+                       Data.Sized.Unsigned,
+                       Data.Sized.Sampled
+  Ghc-Options:         -Wall
+
+test-suite sized-types-test1
+   if flag(all)
+     buildable:        True
+   else
+     buildable:        False
+   type:               exitcode-stdio-1.0
+   Build-Depends:      base,
+                       QuickCheck  >= 2.0,
+                       sized-types == 0.5.1
+   Main-Is:            Test1.hs
+   Other-modules:      QC.QC
+   Hs-Source-Dirs:     test
+   Ghc-Options:        -Wall
+
+Executable sized-types-example1
+   if flag(all)
+     buildable:        True
+   else
+     buildable:        False
+   Build-depends:      base,
+                       base-compat >= 0.8.1 && < 1,
+                       sized-types == 0.5.1
+   Main-Is:            Example1.hs
+   Hs-Source-Dirs:     test
+   Ghc-Options:        -Wall
