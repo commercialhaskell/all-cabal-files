@@ -1,0 +1,64 @@
+name: unix-fcntl
+version: 0.0.0
+synopsis: Comprehensive bindings to fcntl(2)
+description: Comprehensive bindings to fcntl(2)
+homepage: https://github.com/maoe/unix-fcntl
+license: BSD3
+license-file: LICENSE
+author: Mitsutoshi Aoe
+maintainer: Mitsutoshi Aoe <maoe@foldr.in>
+copyright: Copyright (C) 2015 Mitsutoshi Aoe
+category: System
+build-type: Simple
+cabal-version: >=1.10
+tested-with:
+  GHC == 7.10.1
+
+extra-source-files:
+  README.md
+  CHANGELOG.md
+  include/custom-template-hsc.h
+
+flag examples
+  description: Build examples
+  default: False
+  manual: True
+
+flag gnu
+  description: Define _GNU_SOURCE before including @fcntl.h@.
+  default: False
+  manual: False
+
+library
+  exposed-modules: System.Posix.FileControl
+  build-depends:
+      base >= 4.7 && < 4.9
+    , foreign-var >= 0.1 && < 0.2
+  hs-source-dirs: src
+  include-dirs: include
+  ghc-options: -Wall
+  default-language: Haskell2010
+  if flag(gnu) && os(linux)
+    cc-options: -D_GNU_SOURCE
+
+executable record-lock
+  if !flag(examples)
+    buildable: False
+  main-is: record-lock.hs
+  hs-source-dirs: examples
+  build-depends:
+      base
+    , foreign-var
+    , unix
+    , unix-fcntl
+  default-language: Haskell2010
+
+source-repository head
+  type: git
+  branch: develop
+  location: https://github.com/maoe/unix-fcntl.git
+
+source-repository this
+  type: git
+  tag: v0.0.0
+  location: https://github.com/maoe/unix-fcntl.git
