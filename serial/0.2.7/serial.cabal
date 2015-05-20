@@ -1,0 +1,20 @@
+name:                serial
+version:             0.2.7
+synopsis:            POSIX serial port wrapper
+description:         Provides a clean interface to working with POSIX serial ports in Haskell
+category:            System
+license:             LGPL
+license-file:        LICENSE
+author:              Frederick Ross
+maintainer:          José Manuel Calderón Trilla <hackage@jmct.cc>
+build-type:          Simple
+Cabal-Version:       >=1.6
+extra-source-files: README
+source-repository head
+    type: git
+    location: https://github.com/jmct/serial
+
+Library
+  build-depends:       base >= 2 && < 5, unix
+  Exposed-Modules: System.Serial System.Serial.Manager System.Serial.BlockingManager
+  ghc-options:         -Wall
