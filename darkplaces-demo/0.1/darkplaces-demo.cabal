@@ -1,5 +1,6 @@
 name:                darkplaces-demo
 version:             0.1
+x-revision: 1
 license:             GPL-2
 license-file:        LICENSE
 author:              Slava Bacherikov
@@ -52,7 +53,7 @@ executable demoinfo
                        directory >= 1.2,
                        mtl >= 2.1 && < 2.3,
                        darkplaces-demo,
-                       darkplaces-text
+                       darkplaces-text == 0.1
 
   ghc-options:         -O2 -Wall -fno-warn-name-shadowing
   ghc-prof-options:    -prof -auto-all -fprof-auto -caf-all
