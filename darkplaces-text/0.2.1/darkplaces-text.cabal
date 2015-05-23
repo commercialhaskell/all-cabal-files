@@ -1,0 +1,61 @@
+name:                darkplaces-text
+version:             0.2.1
+license:             GPL-2
+license-file:        LICENSE
+author:              Slava Bacherikov
+maintainer:          slava@bacher09.org
+homepage:            https://github.com/bacher09/darkplaces-text
+bug-reports:         https://github.com/bacher09/darkplaces-text/issues
+category:            Game
+build-type:          Custom
+copyright:           (c) Slava Bacherikov 2015
+cabal-version:       >=1.10
+stability:           alpha
+synopsis:            Parser for darkplaces colorful text
+description:
+
+  This package supports parsing and displaying darkplaces colorfull text.
+  Darkplaces text may contains special color tags and unicode glyphs
+  that are unique for darkplaces fonts.
+
+library
+  exposed-modules:     DarkPlaces.Text,
+                       DarkPlaces.Text.Types
+
+  other-modules:       DarkPlaces.Text.Classes,
+                       DarkPlaces.Text.Lexer,
+                       DarkPlaces.Text.Chars,
+                       DarkPlaces.Text.Colors
+
+  build-depends:       base >=4.5 && <5,
+                       bytestring >=0.10 && <0.11,
+                       array,
+                       text >=1.0,
+                       utf8-string >=0.3,
+                       vector >=0.10,
+                       ansi-terminal >=0.6
+
+  build-tools:         alex
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+  ghc-options:         -O2 -funbox-strict-fields -Wall -fno-warn-name-shadowing
+  default-extensions:  FlexibleInstances
+
+test-suite tests
+  default-language:    Haskell2010
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      tests
+  main-is:             Spec.hs
+  other-modules:       DarkPlaces.TextSpec
+
+  build-depends:       base >=4.5 && <5,
+                       bytestring >=0.10 && <0.11,
+                       darkplaces-text,
+                       QuickCheck >= 2.5,
+                       hspec
+
+  default-extensions:  OverloadedStrings, FlexibleInstances
+
+source-repository head
+  type:                git
+  location:            https://github.com/bacher09/darkplaces-text.git
