@@ -1,0 +1,26 @@
+Name: hBDD-CMUBDD
+Version: 0.0.3
+Cabal-version: >= 1.2.3
+Build-type: Simple
+Copyright: (C) 2002-2005, 2009 University of New South Wales, (C) 2009-2011 Peter Gammie
+Maintainer: peteg42@gmail.com
+Author: Peter Gammie
+License: LGPL
+License-file: LICENCE
+Synopsis: An FFI binding to CMU/Long's BDD library
+Category: Data
+Description:
+
+ hBDD provides a high-level API to some Boolean Decision Diagram
+ libraries; this is the CMU/Long part of it.
+
+Extra-Source-Files: README
+
+Library
+  build-Tools: c2hs
+  build-depends: base >= 4 && < 5, containers, deepseq, hBDD == 0.0.3, unix
+  extensions: ForeignFunctionInterface TypeFamilies
+  exposed-modules: Data.Boolean.CMUBDD
+  includes: bdduser.h, memuser.h
+  ghc-options: -Wall
+  extra-libraries: bdd, mem

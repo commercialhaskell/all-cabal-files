@@ -1,0 +1,29 @@
+Name: hBDD
+Version: 0.0.3
+Cabal-version: >= 1.6
+Build-type: Simple
+Copyright: (C) 2002-2005, 2009 University of New South Wales, (C) 2009-2011 Peter Gammie
+Maintainer: peteg42@gmail.com
+Author: Peter Gammie
+License: LGPL
+License-file: COPYING.LIB
+Synopsis: An abstraction layer for BDD libraries
+Category: Data
+Description:
+
+ hBDD provides a high-level API to the CUDD and CMU Boolean Decision
+ Diagram libraries.
+
+Extra-Source-Files: AUTHORS README TODO
+
+source-repository head
+  type:     git
+  location: git://github.com/peteg/hBDD.cabal
+
+Library
+  Build-depends: base >= 4 && < 5
+  extensions: FlexibleInstances TypeFamilies TypeSynonymInstances
+  exposed-modules:
+     Data.Boolean
+     Data.Boolean.BF
+  ghc-options: -Wall
