@@ -1,0 +1,69 @@
+name:            spaceprobe
+version:         0.1.0
+license:         BSD3
+license-file:    LICENSE
+category:        Optimization
+author:          Sean Burton <burton.seanr@gmail.com> 
+maintainer:      Sean Burton <burton.seanr@gmail.com>
+stability:       experimental
+tested-with:     GHC == 7.6
+synopsis:        Optimization over arbitrary search spaces 
+cabal-version:   >= 1.8
+homepage:        https://github.com/SeanRBurton/spaceprobe
+bug-reports:     https://github.com/SeanRBurton/spaceprobe/issues
+build-type:      Simple
+description:
+    A parameter optimization library, designed for optimizing over 
+    arbitrary search spaces. It is particularly well suited for discontinuous
+    and/or high-dimensional search spaces.
+extra-source-files:
+    README.markdown
+    benchmarks/*.hs
+    tests/*.hs
+
+library
+  build-depends: base >= 2 && <5,
+                 containers,
+                 clock,
+                 erf,
+                 mtl
+  exposed-modules: Control.SpaceProbe
+                   Control.SpaceProbe.Internal.Probe
+                   Control.SpaceProbe.Internal.Optimize
+  ghc-options: -O3 -funbox-strict-fields -fllvm -Wall
+
+test-suite tests
+  type:           exitcode-stdio-1.0
+  hs-source-dirs: tests .
+  main-is:        Tests.hs
+
+  ghc-options:
+    -Wall
+
+  build-depends:
+    base >=2 && <5,
+    QuickCheck >= 2.7,
+    test-framework >= 0.8.0.2,
+    test-framework-quickcheck2 >= 0.3.0.3,
+    clock,
+    erf,
+    containers,
+    mtl
+
+benchmark benchmarks
+  type: exitcode-stdio-1.0
+  hs-source-dirs: benchmarks
+  main-is: Benchmarks.hs
+
+  ghc-options: -O2 -Wall
+
+  build-depends:
+    base >=2 && <5,
+    criterion,
+    spaceprobe
+
+  
+source-repository head
+  type:     git
+  location: https://github.com/SeanRBurton/spaceprobe
+
