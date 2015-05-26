@@ -1,5 +1,6 @@
 name:            http-conduit
 version:         1.8.3
+x-revision: 1
 license:         BSD3
 license-file:    LICENSE
 author:          Michael Snoyman <michael@snoyman.com>
@@ -106,7 +107,7 @@ test-suite test
                  , transformers-base
                  , lifted-base
                  , time
-                 , network
+                 , network < 2.6
                  , wai
                  , warp >= 1.2.1
                  , socks
