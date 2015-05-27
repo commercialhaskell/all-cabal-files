@@ -1,0 +1,65 @@
+name:                smallcheck-lens
+version:             0.1
+synopsis:            SmallCheck lens laws
+description:
+  @<https://hackage.haskell.org/package/smallcheck smallcheck>@ properties
+  ported from
+  @<https://hackage.haskell.org/package/lens-properties lens-properties>@
+  and @<https://hackage.haskell.org/package/tasty tasty>@ test trees to validate @Lens@es, @Setter@s, @Traversal@s, @Iso@s and @Prism@s.
+  .
+  Most likely, you will only need the "Test.Tasty.SmallCheck.Lens"
+  module, which includes test trees ready to be run.
+  .
+  Check the
+  <https://github.com/jdnavarro/smallcheck-lens/blob/master/tests/tasty.hs tests>
+  in this package for examples.
+homepage:            https://github.com/jdnavarro/smallcheck-lens
+bug-reports:         https://github.com/jdnavarro/smallcheck-lens/issues
+license:             BSD3
+license-file:        LICENSE
+author:              Danny Navarro
+maintainer:          j@dannynavarro.net
+category:            Testing, Lenses
+build-type:          Simple
+extra-source-files:  README.markdown CHANGELOG.markdown
+cabal-version:       >=1.10
+
+source-repository head
+  type: git
+  location: git://github.com/jdnavarro/smallcheck-lens.git
+
+library
+  default-language:    Haskell2010
+  ghc-options:         -Wall
+  exposed-modules:     Test.SmallCheck.Lens
+                       Test.SmallCheck.Lens.Iso
+                       Test.SmallCheck.Lens.Lens
+                       Test.SmallCheck.Lens.Prism
+                       Test.SmallCheck.Lens.Setter
+                       Test.SmallCheck.Lens.Traversal
+                       Test.Tasty.SmallCheck.Lens
+                       Test.Tasty.SmallCheck.Lens.Iso
+                       Test.Tasty.SmallCheck.Lens.Lens
+                       Test.Tasty.SmallCheck.Lens.Prism
+                       Test.Tasty.SmallCheck.Lens.Setter
+                       Test.Tasty.SmallCheck.Lens.Traversal
+  build-depends:       base >=4.6 && <4.9,
+                       transformers,
+                       lens,
+                       smallcheck >= 1.1,
+                       smallcheck-series >=0.3,
+                       tasty,
+                       tasty-smallcheck
+
+test-suite tasty
+  default-language:    Haskell2010
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      tests
+  main-is:             tasty.hs
+  ghc-options:         -Wall -threaded
+  build-depends:       base >= 4.6 && <4.9,
+                       lens >=4.1.2.1,
+                       tasty,
+                       tasty-smallcheck,
+                       smallcheck,
+                       smallcheck-lens
