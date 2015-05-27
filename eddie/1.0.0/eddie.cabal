@@ -1,0 +1,31 @@
+Name:                eddie
+Version:             1.0.0
+Synopsis:	     Command line file filtering with haskell
+Description:	     A tool to let you use short haskell expressions to filter
+		     files at the command line.
+Category:	     CLI tool
+License:             BSD3
+License-file:	     LICENSE
+Author:              Mike Meyer
+Copyright:	     (c) 2014 Mike Meyer
+Maintainer:          mwm@mired.org
+Build-type:          Simple
+Homepage:	     http://chiselapp.com/user/mwm/repository/eddie/
+Cabal-version:       >=1.8
+Extra-source-files:  eddie.md eddie.1 eddie.html README.md
+                     tests/*.test tests/*.data
+
+Executable eddie
+    Main-is:         eddie.hs
+    Build-Depends:   hint >= 0.3.3.2, base >= 4.2.0 && < 5,
+                     optparse-applicative >= 0.11, bifunctors >= 4.2,
+                     safe >= 0.3.8, classy-prelude >= 0.12
+
+Source-repository head
+    Type: fs
+    Location: https://chiselapp.com/user/mwm/repository/eddie/
+
+Source-repository this
+    Type: fs
+    Location: https://chiselapp.com/user/mwm/repository/eddie/
+    Tag: 1.0.0
