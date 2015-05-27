@@ -1,0 +1,42 @@
+name:                Win32-services-wrapper
+version:             0.1.3.0
+synopsis:            Wrapper code for making a Win32 service
+description:         Builds on the Win32-services package, providing a simple
+                     wrapper for turning a long-running process into a
+                     Windows service.
+license:             BSD3
+license-file:        LICENSE
+author:              Ganesh Sittampalam <ganesh@earth.li>
+maintainer:          Ganesh Sittampalam <ganesh@earth.li>
+-- copyright:           
+category:            System
+build-type:          Simple
+cabal-version:       >=1.8
+
+source-repository head
+  type:     darcs
+  location: http://hub.darcs.net/ganesh/Win32-services-wrapper
+
+flag warn-as-error
+  manual:      True
+  default:     False
+  description: Build with warnings-as-errors
+
+library
+  build-tools:         ghc >= 7.4 && < 7.12
+  hs-source-dirs:      src
+  exposed-modules:     System.Win32.SystemServices.Wrapper
+  other-modules:
+  build-depends:       
+                       Win32-services >= 0.3 && < 0.4,
+                       Win32 >= 2.2 && < 2.4,
+                       Win32-errors >= 0.2 && < 0.3,
+                       filepath > 1.3 && < 1.5,
+                       directory >= 1.1 && < 1.3,
+                       base >= 4.5 && < 4.9
+
+  if flag(warn-as-error)
+    ghc-options:      -Werror
+
+  if true
+    ghc-options:      -Wall
