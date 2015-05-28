@@ -1,5 +1,6 @@
 name:           entropy
 version:        0.2.2.1
+x-revision: 1
 license:        BSD3
 license-file:   LICENSE
 copyright:      Thomas DuBuisson <thomas.dubuisson@gmail.com>
@@ -22,7 +23,7 @@ extra-source-files: ./cbits/rdrand.c
                   , ./cbits/rdrand.h
 
 Library
-  Build-Depends: base == 4.*, bytestring
+  Build-Depends: base >= 4 && < 4.7, bytestring
   ghc-options:  -Wall -O2
   hs-source-dirs:
   exposed-modules: System.Entropy
