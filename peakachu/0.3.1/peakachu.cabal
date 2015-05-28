@@ -1,0 +1,36 @@
+Name:                peakachu
+Version:             0.3.1
+Category:            FRP
+Synopsis:            Experiemental library for composable interactive programs
+Description:
+  Experiemental library for composable interactive programs.
+
+  GLUT backend included.
+License:             BSD3
+License-file:        LICENSE
+Author:              Yair Chuchem
+Maintainer:          yairchu@gmail.com
+Cabal-Version:       >= 1.2
+Stability:           experiemental
+Build-type:          Simple
+
+Library
+  hs-Source-Dirs:      src
+  Extensions:
+  Build-Depends:       base >= 3 && < 5, template-haskell,
+                       List >= 0.4.0, TypeCompose >= 0.7, derive >= 2.3,
+                       GLUT >= 2.0 && < 3.0, time
+  Exposed-modules:     FRP.Peakachu
+                       FRP.Peakachu.Program
+                       FRP.Peakachu.Backend
+                       FRP.Peakachu.Backend.Internal
+                       FRP.Peakachu.Backend.File
+                       FRP.Peakachu.Backend.GLUT
+                       FRP.Peakachu.Backend.GLUT.Getters
+                       FRP.Peakachu.Backend.StdIO
+                       FRP.Peakachu.Backend.Time
+                       Control.Concurrent.MVar.YC
+                       Control.FilterCategory
+                       Data.ADT.Getters
+                       Data.Newtype
+  ghc-options:         -O2 -Wall
