@@ -1,0 +1,63 @@
+name:                socket
+version:             0.1.0.0
+synopsis:            A binding to the POSIX sockets interface
+description:
+  This package provides access to the system's socket interface with POSIX semantics.
+  .
+  The library is designed to be threadsafe and establishes a thin layer on
+  top of the underlying ccalls to help with the development of concurrent applications.
+  It integrates with GHC's event management mechanism (which itself uses epoll
+  or libev or similar) and makes all functions have blocking semantics
+  without actually blocking the runtime system.
+license:             MIT
+license-file:        LICENSE
+author:              Lars Petersen
+maintainer:          info@lars-petersen.net
+category:            System, Network
+build-type:          Simple
+cabal-version:       >=1.10
+homepage:            https://github.com/lpeterse/haskell-socket
+bug-reports:         https://github.com/lpeterse/haskell-socket/issues
+
+library
+  exposed-modules:     System.Socket
+                     , System.Socket.Address
+                     , System.Socket.Address.SockAddrUn
+                     , System.Socket.Address.SockAddrIn
+                     , System.Socket.Address.SockAddrIn6
+                     , System.Socket.Type
+                     , System.Socket.Type.DGRAM
+                     , System.Socket.Type.STREAM
+                     , System.Socket.Type.SEQPACKET
+                     , System.Socket.Protocol
+                     , System.Socket.Protocol.UDP
+                     , System.Socket.Protocol.TCP
+                     , System.Socket.Protocol.SCTP
+                     , System.Socket.Unsafe
+                     , System.Socket.Internal.FFI
+                     , System.Socket.Internal.Event
+                     , System.Socket.Internal.Socket
+  build-depends:       base < 5
+                     , bytestring
+  hs-source-dirs:      src
+  build-tools:         hsc2hs
+  default-language:    Haskell2010
+  ghc-options:         -Wall
+  c-sources:         cbits/misc.c
+  include-dirs:      include
+  includes:          misc.h
+  install-includes:  misc.h
+
+test-suite basic
+  hs-source-dirs:      tests
+  main-is:             Basic.hs
+  type:                exitcode-stdio-1.0
+  default-language:    Haskell2010
+  build-depends:       base < 5
+                     , bytestring
+                     , socket
+                     , async
+
+source-repository head
+  type:     git
+  location: git://github.com/lpeterse/haskell-socket.git
