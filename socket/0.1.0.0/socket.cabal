@@ -1,5 +1,6 @@
 name:                socket
 version:             0.1.0.0
+x-revision: 1
 synopsis:            A binding to the POSIX sockets interface
 description:
   This package provides access to the system's socket interface with POSIX semantics.
@@ -37,7 +38,7 @@ library
                      , System.Socket.Internal.FFI
                      , System.Socket.Internal.Event
                      , System.Socket.Internal.Socket
-  build-depends:       base < 5
+  build-depends:       base >= 4.8 && < 5
                      , bytestring
   hs-source-dirs:      src
   build-tools:         hsc2hs
