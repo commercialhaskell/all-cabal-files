@@ -1,0 +1,71 @@
+name:                socket
+version:             0.2.0.0
+synopsis:            A binding to the POSIX sockets interface
+description:
+  This package provides access to the system's socket interface with POSIX semantics.
+  .
+  The library is designed to be threadsafe and establishes a thin layer on
+  top of the underlying ccalls to help with the development of concurrent applications.
+  It integrates with GHC's event management mechanism (which itself uses epoll,
+  libev or similar) and makes all functions have blocking semantics
+  without actually blocking the runtime system.
+  .
+  This is a community project :-) Don't hesitate to request features on the
+  issue tracker or even implement some and send a pull request.
+license:             MIT
+license-file:        LICENSE
+author:              Lars Petersen
+maintainer:          info@lars-petersen.net
+category:            System, Network
+build-type:          Simple
+cabal-version:       >=1.10
+homepage:            https://github.com/lpeterse/haskell-socket
+bug-reports:         https://github.com/lpeterse/haskell-socket/issues
+tested-with:         GHC==7.10.1, GHC==7.8.3
+extra-source-files:  README.md CHANGELOG.md
+
+library
+  exposed-modules:     System.Socket
+                     , System.Socket.Address
+                     , System.Socket.Address.SockAddrUn
+                     , System.Socket.Address.SockAddrIn
+                     , System.Socket.Address.SockAddrIn6
+                     , System.Socket.Type
+                     , System.Socket.Type.DGRAM
+                     , System.Socket.Type.STREAM
+                     , System.Socket.Type.SEQPACKET
+                     , System.Socket.Protocol
+                     , System.Socket.Protocol.UDP
+                     , System.Socket.Protocol.TCP
+                     , System.Socket.Protocol.SCTP
+                     , System.Socket.Unsafe
+  other-modules:       System.Socket.Internal.FFI
+                     , System.Socket.Internal.Event
+                     , System.Socket.Internal.Socket
+                     , System.Socket.Internal.Exception
+                     , System.Socket.Internal.MsgFlags
+                     , System.Socket.Internal.AddrInfo
+  build-depends:       base >= 4.7 && < 5
+                     , bytestring < 0.11
+  hs-source-dirs:      src
+  build-tools:         hsc2hs
+  default-language:    Haskell2010
+  ghc-options:         -Wall
+  c-sources:         cbits/misc.c
+  include-dirs:      include
+  includes:          misc.h
+  install-includes:  misc.h
+
+test-suite basic
+  hs-source-dirs:      tests
+  main-is:             Basic.hs
+  type:                exitcode-stdio-1.0
+  default-language:    Haskell2010
+  build-depends:       base >= 4.7 && < 5
+                     , bytestring < 0.11
+                     , socket
+                     , async
+
+source-repository head
+  type:     git
+  location: git://github.com/lpeterse/haskell-socket.git
