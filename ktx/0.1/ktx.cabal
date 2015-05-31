@@ -1,0 +1,68 @@
+name: ktx
+version: 0.1
+cabal-version: >= 1.10
+build-type: Simple
+license: MIT
+license-file: LICENSE
+copyright: 2015 David McFarland
+author: David McFarland <corngood@gmail.com>
+maintainer: David McFarland <corngood@gmail.com>
+stability: alpha
+homepage: https://github.com/corngood/ktx
+bug-reports: https://github.com/corngood/ktx/issues
+synopsis: A binding for libktx from Khronos
+description:
+    Allows ktx format textures to be loaded into an OpenGL context.
+
+    libktx is included as a submodule and compiled with 'c-sources'.
+category: Graphics
+extra-source-files:
+    KTX/LICENSING.md
+    KTX/include/*.h
+    KTX/lib/*.h
+
+source-repository head
+    type: git
+    location: https://github.com/corngood/ktx.git
+
+flag dev
+    manual: True
+    default: False
+
+library
+    exposed-modules:
+        Graphics.Rendering.KTX
+    hs-source-dirs:
+        src
+    default-language:
+        Haskell2010
+    build-depends:
+        base >= 3 && < 5,
+        OpenGL >= 2.9 && < 3
+    ghc-options:
+        -Wall
+        -fno-warn-unused-do-bind
+        -fno-warn-name-shadowing
+    if flag(dev)
+        ghc-options: -Werror
+    c-sources:
+        KTX/lib/checkheader.c
+        KTX/lib/errstr.c
+        KTX/lib/hashtable.c
+        KTX/lib/ktxfilestream.c
+        KTX/lib/ktxmemstream.c
+        KTX/lib/loader.c
+        KTX/lib/swap.c
+        KTX/lib/writer.c
+        KTX/lib/etcdec.cxx
+        KTX/lib/etcunpack.cxx
+    pkgconfig-depends:
+        glew,
+        egl
+    include-dirs:
+        KTX/include
+    cc-options:
+        -fPIC
+        -DKTX_OPENGL=1
+        -DKTX_USE_GETPROC=1
+        -Wno-unused-result
