@@ -1,0 +1,50 @@
+name:                bindings-nettle
+version:             0.3.1
+synopsis:            bindings to nettle crypto library
+description:         partial bindings to nettle crypto library
+homepage:            http://floss.scru.org/bindings-nettle
+license:             GPL-3
+license-file:        LICENSE
+author:              Clint Adams
+maintainer:          clint@debian.org
+copyright:           2013-2015 Clint Adams
+category:            Bindings
+build-type:          Simple
+cabal-version:       >=1.10
+
+library
+  exposed-modules:     Bindings.Nettle.Cipher.AES
+                 ,     Bindings.Nettle.Cipher.ArcFour
+                 ,     Bindings.Nettle.Cipher.ArcTwo
+                 ,     Bindings.Nettle.Cipher.Blowfish
+                 ,     Bindings.Nettle.Cipher.Camellia
+                 ,     Bindings.Nettle.Cipher.CAST128
+                 ,     Bindings.Nettle.Cipher.DES
+                 ,     Bindings.Nettle.Cipher.Salsa20
+                 ,     Bindings.Nettle.Cipher.Serpent
+                 ,     Bindings.Nettle.Cipher.Twofish
+                 ,     Bindings.Nettle.Hash.Legacy
+                 ,     Bindings.Nettle.Hash.SHA2
+                 ,     Bindings.Nettle.Hash.SHA3
+                 ,     Bindings.Nettle.PRNG.Yarrow
+  build-depends:       base    > 4  && < 5
+               ,       bindings-DSL
+  pkgconfig-depends:   nettle
+  build-tools:         hsc2hs
+  default-language:    Haskell2010
+
+test-suite cast5
+  type: exitcode-stdio-1.0
+  main-is: test/suite.hs
+  build-depends:       base
+               ,       bindings-nettle
+               ,       bytestring
+               ,       HUnit
+               ,       QuickCheck
+               ,       hspec
+               ,       quickcheck-io
+  default-language:    Haskell2010
+
+source-repository head
+  type:     git
+  location: git://git.debian.org/users/clint/bindings-nettle.git
