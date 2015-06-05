@@ -1,0 +1,36 @@
+name:                raml
+version:             0.1.0
+synopsis:            RESTful API Modeling Language (RAML) library for Haskell
+homepage:            https://github.com/fnoble/raml
+license:             MIT
+license-file:        LICENSE
+author:              Fergus Noble
+maintainer:          Fergus Noble <fergusnoble@gmail.com>
+copyright:           Copyright (C) 2015 Fergus Noble
+category:            Web
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >= 1.10
+
+description:
+  RESTful API Modeling Language (RAML) library for Haskell
+
+source-repository head
+  type:              git
+  location:          git@github.com:fnoble/raml.git
+
+library
+  default-language:    Haskell2010
+  hs-source-dirs:      src
+  ghc-options:         -Wall
+  exposed-modules:
+      Web.Raml
+    , Web.Raml.Types
+  build-depends:
+      base == 4.*
+    , bytestring >= 0.10 && < 0.11
+    , text >= 1.2 && < 1.3
+    , aeson >= 0.9 && < 1.0
+    , yaml >= 0.8 && < 0.9
+    , unordered-containers >= 0.2 && < 0.3
+
