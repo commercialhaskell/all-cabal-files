@@ -1,0 +1,43 @@
+name:                KSP
+version:             0.1
+synopsis:            A library with the kerbal space program universe and demo code
+description:         This library is intended to help the haskell affine ksp player to
+                     calculations within the ksp universe.
+homepage:            https://github.com/frosch03/kerbal
+license:             PublicDomain
+license-file:        LICENSE
+author:              Matthias Brettschneider
+maintainer:          frosch03@frosch03.de
+category:            Testing
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+
+library
+  -- Modules exported by the library.
+  exposed-modules: System.KSP.DataConstructors,
+                   System.KSP.DataDestructors,
+                   System.KSP.Datatypes,
+                   System.KSP.Universe,
+                   System.KSP.OrbitalMechanics,
+                   System.KSP.Auxiliary,
+                   System.KSP.KSP
+
+  other-modules: System.KSP.Datatype.Object,
+                 System.KSP.Datatype.Body,
+                 System.KSP.Datatype.Orbit,
+                 System.KSP.Datatype.System
+  
+  -- other-extensions: GADT
+  --                 , FlexibleInstances
+  
+  build-depends: base >=4.6 && <= 4.8
+  
+  -- Directories containing source files.
+  hs-source-dirs:      src
+  
+  default-language:    Haskell2010
+
+source-repository head
+  type:     git
+  location: https://github.com/frosch03/kerbal.git
