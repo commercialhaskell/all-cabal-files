@@ -1,0 +1,40 @@
+Name:                snaplet-auth-acid
+Version:             0.1.0
+Synopsis:            Provides an Acid-State backend for the Auth Snaplet
+Description:         Provides an Acid-State backend for the Auth Snaplet
+License:             BSD3
+license-file:        LICENSE
+Author:              Ben Doyle
+Maintainer:          djohnson.m@gmail.com
+Stability:           Experimental
+Category:            Web, Snap
+Build-type:          Simple
+Cabal-version:       >=1.8
+
+Library
+  exposed-modules: Snap.Snaplet.Auth.Backends.Acid
+  Build-depends:
+    base                      >= 4 && < 5,
+    acid-state                == 0.12.*,
+    MonadCatchIO-transformers == 0.3.*,
+    aeson                     >= 0.6 && <= 0.9,
+    attoparsec                == 0.13.*,
+    cereal                    == 0.4.*,
+    clientsession             == 0.9.*,
+    errors                    == 1.4.*,
+    hashable                  == 1.2.*,
+    mtl                       == 2.2.*,
+    filepath                  == 1.4.*,
+    directory                 == 1.2.*,
+    lens                      == 4.11.*,
+    snap-core                 == 0.9.*, 
+    safecopy                  == 0.8.*,
+    scientific                == 0.3.*,
+    snap                      == 0.14.*,
+    text                      == 1.2.*,
+    time                      == 1.5.*,
+    unordered-containers      == 0.2.*,
+    vector                    == 0.10.*
+source-repository head
+  type:     git
+  location: https://github.com/dmjio/snaplet-auth-acid.git
