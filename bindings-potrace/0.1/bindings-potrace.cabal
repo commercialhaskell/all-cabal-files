@@ -1,0 +1,29 @@
+Name:                bindings-potrace
+Version:             0.1
+Synopsis:            Low-level bindings to the potrace bitmap tracing library
+Description:
+  This package contains low-level bindings to potrace, a library for
+  tracing bitmap images. Potrace is available at
+  <http://potrace.sourceforge.net/>.
+  .
+  These bindings are automatically generated using bindings-DSL.
+  For a higher-level, friendlier set of potrace bindings, see
+  <http://hackage.haskell.org/package/potrace>.
+Homepage:            https://github.com/rwbarton/bindings-potrace
+License:             GPL-2
+License-file:        LICENSE
+Author:              Reid Barton
+Maintainer:          rwbarton@gmail.com
+Category:            Graphics
+Build-type:          Simple
+Cabal-version:       >=1.6
+
+Source-repository head
+  Type:     git
+  Location: git://github.com/rwbarton/bindings-potrace.git
+
+Library
+  Exposed-modules:     Bindings.Potrace
+  Build-depends:       base >= 3 && < 5, bindings-DSL >= 1.0.15 && < 1.1
+  Extensions:          ForeignFunctionInterface
+  Extra-libraries:     potrace, m
