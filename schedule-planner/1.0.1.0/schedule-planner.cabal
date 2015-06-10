@@ -1,0 +1,92 @@
+name: schedule-planner
+version: 1.0.1.0
+cabal-version: >=1.10
+build-type: Simple
+license: LGPL-3
+license-file: LICENSE
+copyright: 2015
+maintainer: Justus Adam <development@justusadam.com>
+stability: experimental
+synopsis: Find the ideal lesson layout
+description:
+    Executable program for calculating layouts for fixed grid schedules as
+    are used in many universities and schools.
+    The primary data format for in- and output is json. A deployable server
+    instance of this software is also available.
+category: Data, Convenience, Planning
+author: Justus Adam <development@justusadam.com>
+-- data-dir: ""
+extra-source-files: README.md
+
+
+executable schedule-planner
+  build-depends:
+    base          >= 4.7 && <5,
+    containers    >= 0.5,
+    aeson         >= 0.8,
+    options       >= 1.2,
+    transformers  >= 0.4,
+    bytestring    >= 0.10,
+    text          >= 1.2,
+    warp          >= 3.0,
+    wai           >= 3.0,
+    mtl           >= 2.2,
+    http-types    >= 0.8
+  main-is: Main.hs
+  buildable: True
+  other-modules:
+    SchedulePlanner
+    SchedulePlanner.App
+    SchedulePlanner.Calculator
+    SchedulePlanner.Serialize
+    SchedulePlanner.Server
+    SchedulePlanner.Calculator.Scale
+    SchedulePlanner.Calculator.Solver
+  default-language: Haskell2010
+  hs-source-dirs: src
+  ghc-options:
+    -Wall
+
+
+executable schedule-planner-standalone
+  build-depends:
+    base          >= 4.7 && <5,
+    containers    >= 0.5,
+    aeson         >= 0.8,
+    options       >= 1.2,
+    transformers  >= 0.4,
+    bytestring    >= 0.10,
+    text          >= 1.2,
+    warp          >= 3.0,
+    wai           >= 3.0,
+    mtl           >= 2.2,
+    http-types    >= 0.8
+  main-is: Main.hs
+  buildable: True
+  other-modules:
+    SchedulePlanner
+    SchedulePlanner.App
+    SchedulePlanner.Calculator
+    SchedulePlanner.Serialize
+    SchedulePlanner.Server
+    SchedulePlanner.Calculator.Scale
+    SchedulePlanner.Calculator.Solver
+  default-language: Haskell2010
+  hs-source-dirs: src
+  ghc-options:
+    -Wall
+    -static
+    -optl-pthread
+    -optl-static
+
+
+source-repository head
+  type:     git
+  location: git://github.com/JustusAdam/schedule-planner.git
+
+
+source-repository this
+  type:     git
+  branch:   master
+  location: git://github.com/JustusAdam/schedule-planner.git
+  tag:      1.0.0.1
