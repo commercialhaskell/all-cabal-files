@@ -1,0 +1,34 @@
+Name:                   linear-grammar
+Version:                0.0.0.7
+Author:                 Athan Clark <athan.clark@gmail.com>
+Maintainer:             Athan Clark <athan.clark@gmail.com>
+License:                BSD3
+License-File:           LICENSE
+Synopsis:               A simple grammar for building linear equations and inclusive inequalities.
+-- Description:
+Cabal-Version:          >= 1.10
+Build-Type:             Simple
+Category:               Math, Algebra
+
+Library
+  Default-Language:     Haskell2010
+  HS-Source-Dirs:       src
+  GHC-Options:          -Wall
+  Exposed-Modules:      Linear.Grammar
+  Build-Depends:        base >= 4.6 && < 5
+
+Test-Suite spec
+  Type:                 exitcode-stdio-1.0
+  Default-Language:     Haskell2010
+  Hs-Source-Dirs:       src
+                      , test
+  Ghc-Options:          -Wall
+  Main-Is:              Spec.hs
+  Build-Depends:        base
+                      , hspec
+                      , QuickCheck
+                      , quickcheck-instances
+
+Source-Repository head
+  Type:                 git
+  Location:             https://github.com/athanclark/linear-grammar.git
