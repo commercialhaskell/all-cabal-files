@@ -1,0 +1,49 @@
+name:                snaplet-sass
+version:             0.1.1.0
+synopsis:            Sass integration for Snap with request- and pre-compilation.
+description:         Sass integration for Snap with request based compilation during development and precompilation in production.
+                     For more information, please see <https://github.com/lukerandall/snaplet-sass>.
+license:             BSD3
+license-file:        LICENSE
+author:              Luke Randall
+maintainer:          luke.randall@gmail.com
+homepage:            https://github.com/lukerandall/snaplet-sass
+bug-reports:         https://github.com/lukerandall/lukerandall-sass/issues
+category:            Web, Snap
+build-type:          Simple
+cabal-version:       >=1.8
+
+extra-source-files:
+  LICENSE
+  README.md
+  CHANGELOG.md
+
+data-files:
+  resources/devel.cfg
+
+source-repository head
+  type: git
+  location: https://github.com/lukerandall/snaplet-sass.git
+
+library
+  ghc-options: -Wall
+  hs-source-dirs: src
+
+  exposed-modules:
+    Snap.Snaplet.Sass
+    Snap.Snaplet.Sass.Internal
+
+  other-modules:
+    Paths_snaplet_sass
+
+  build-depends:
+      base         >= 4       && < 5
+    , bytestring   >= 0.9     && < 0.11
+    , configurator == 0.3.*
+    , directory    >= 1.1     && < 1.3
+    , filepath     == 1.3.*
+    , mtl          >= 2.1     && < 2.3
+    , process      >= 1.1     && <= 1.3
+    , snap         >= 0.11.1  && < 0.15
+    , snap-core    >= 0.9.3.1 && < 0.10
+    , transformers >= 0.3     && < 0.4 || > 0.4.1 && < 0.5
