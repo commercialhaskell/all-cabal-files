@@ -1,0 +1,37 @@
+name:                dozens
+version:             0.1.0
+synopsis:            dozens api library
+description:         
+  dozens(<https://dozens.jp/>) api library
+  .
+  examples: <https://github.com/philopon/dozens-hs/blob/master/examples/>
+license:             MIT
+license-file:        LICENSE
+author:              HirotomoMoriwaki<philopon.dependence@gmail.com>
+maintainer:          HirotomoMoriwaki<philopon.dependence@gmail.com>
+Homepage:            https://github.com/philopon/apiary
+Bug-reports:         https://github.com/philopon/apiary/issues
+copyright:           (c) 2015 Hirotomo Moriwaki
+category:            Web
+build-type:          Simple
+cabal-version:       >=1.10
+
+library
+  exposed-modules:     Network.API.Dozens
+                       Network.API.Dozens.Common
+                       Network.API.Dozens.API
+                       Network.API.Dozens.Explicit
+  other-modules:       Network.API.Dozens.Internal
+  build-depends:       base               >=4.6  && <4.9
+                     , transformers       >=0.4  && <0.5
+                     , http-client        >=0.4  && <0.5
+                     , http-client-tls    >=0.2  && <0.3
+                     , http-types         >=0.8  && <0.9
+                     , aeson              >=0.9  && <0.10
+                     , text               >=1.2  && <1.3
+                     , bytestring         >=0.10 && <0.11
+                     , data-default-class >=0.0  && <0.1
+                     , scientific         >=0.3  && <0.4
+                     , reflection         >=1.5  && <1.6
+  ghc-options:         -O2 -Wall
+  default-language:    Haskell2010
