@@ -1,0 +1,57 @@
+Name:                   linear-grammar
+Version:                0.0.1.4
+Author:                 Athan Clark <athan.clark@gmail.com>
+Maintainer:             Athan Clark <athan.clark@gmail.com>
+License:                BSD3
+License-File:           LICENSE
+Synopsis:               A simple grammar for building linear equations and inclusive inequalities.
+Description:
+  This library provides some simple tools for building abstract syntax trees,
+  representing linear equations and (inclusive) inequalities. As an example:
+  .
+  > 12x + 3y - 4z + 12 <= 43x - 7b + 8q
+  .
+  Would look like...
+  .
+  > f = (12 :: Double) .*. EVar "x" .+.
+  >     (3 :: Double) .*. EVar "y" .+.
+  >     (-4 :: Double) .*. EVar "z" .+.
+  >     ELit 12
+  >     .<=.
+  >     (43 :: Double) .*. EVar "x" .+.
+  >     (-7 :: Double) .*. EVar "b" .+.
+  >     (8 :: Double) .*. EVar "q"
+  .
+  I've added some overloading functionality, to help ease the verbosity of the
+  above statements - an @IsString@ instance, and some other utilities. To pack
+  the equation into <https://en.wikipedia.org/wiki/Linear_equation#General_.28or_standard.29_form standard form>,
+  use the @sandardForm@ function:
+  .
+  > stdF = standardForm f
+
+Cabal-Version:          >= 1.10
+Build-Type:             Simple
+Category:               Math, Algebra
+
+Library
+  Default-Language:     Haskell2010
+  HS-Source-Dirs:       src
+  GHC-Options:          -Wall
+  Exposed-Modules:      Linear.Grammar
+  Build-Depends:        base >= 4.6 && < 5
+                      , QuickCheck
+
+Test-Suite spec
+  Type:                 exitcode-stdio-1.0
+  Default-Language:     Haskell2010
+  Hs-Source-Dirs:       src
+                      , test
+  Ghc-Options:          -Wall
+  Main-Is:              Spec.hs
+  Build-Depends:        base
+                      , hspec
+                      , QuickCheck
+
+Source-Repository head
+  Type:                 git
+  Location:             https://github.com/athanclark/linear-grammar.git
