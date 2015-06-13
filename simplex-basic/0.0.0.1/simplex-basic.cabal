@@ -1,0 +1,44 @@
+Name:                   simplex-basic
+Version:                0.0.0.1
+Author:                 Athan Clark <athan.clark@gmail.com>
+Maintainer:             Athan Clark <athan.clark@gmail.com>
+License:                BSD3
+License-File:           LICENSE
+Synopsis:               Very basic simplex implementation.
+-- Description:
+Cabal-Version:          >= 1.10
+Build-Type:             Simple
+Category:               Math, Algebra
+
+Library
+  Default-Language:     Haskell2010
+  HS-Source-Dirs:       src
+  GHC-Options:          -Wall
+  Exposed-Modules:      Linear.Simplex.Primal
+                        Linear.Simplex.Primal.Types
+  Build-Depends:        base >= 4.6 && < 5
+                      , linear-grammar >= 0.0.2.1
+                      , mtl
+                      , transformers
+                      , bifunctors
+                      , QuickCheck
+
+Test-Suite spec
+  Type:                 exitcode-stdio-1.0
+  Default-Language:     Haskell2010
+  Hs-Source-Dirs:       src
+                      , test
+  Ghc-Options:          -Wall
+  Main-Is:              Spec.hs
+  Build-Depends:        base
+                      , linear-grammar >= 0.0.2.1
+                      , hspec
+                      , QuickCheck
+                      , mtl
+                      , transformers
+                      , bifunctors
+                      , containers
+
+Source-Repository head
+  Type:                 git
+  Location:             https://github.com/athanclark/simplex-basic.git
