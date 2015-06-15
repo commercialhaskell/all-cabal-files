@@ -1,0 +1,60 @@
+name:            serversession-backend-redis
+version:         1.0
+license:         MIT
+license-file:    LICENSE
+author:          Felipe Lessa <felipe.lessa@gmail.com>
+maintainer:      Felipe Lessa <felipe.lessa@gmail.com>
+synopsis:        Storage backend for serversession using Redis.
+category:        Web
+stability:       Stable
+cabal-version:   >= 1.8
+build-type:      Simple
+homepage:        https://github.com/yesodweb/serversession
+description:     API docs and the README are available at <http://www.stackage.org/package/serversession-backend-redis>
+extra-source-files: README.md
+
+library
+  hs-source-dirs: src
+  build-depends:
+      base                      == 4.*
+    , bytestring
+    , hedis                     == 0.6.*
+    , path-pieces
+    , tagged                    >= 0.8
+    , text
+    , time                      >= 1.5
+    , transformers
+    , unordered-containers
+
+    , serversession             == 1.0.*
+  exposed-modules:
+    Web.ServerSession.Backend.Redis
+    Web.ServerSession.Backend.Redis.Internal
+  extensions:
+    DeriveDataTypeable
+    FlexibleContexts
+    OverloadedStrings
+    RecordWildCards
+    ScopedTypeVariables
+    TypeFamilies
+  ghc-options:     -Wall
+
+
+test-suite tests
+  type: exitcode-stdio-1.0
+  hs-source-dirs:  tests
+  build-depends:
+      base, bytestring, hedis, path-pieces, text,
+      time, transformers, unordered-containers
+
+    , hspec                     >= 2.1 && < 3
+
+    , serversession
+    , serversession-backend-redis
+  main-is:         Main.hs
+  ghc-options:     -Wall -threaded "-with-rtsopts=-N -s -M1G -c" -rtsopts
+
+
+source-repository head
+  type:     git
+  location: https://github.com/yesodweb/serversession
