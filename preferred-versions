@@ -135,6 +135,7 @@ inspection-proxy <0.1.0.0 || >0.1.0.0 && <0.1.0.1 || >0.1.0.1
 ip6addr >=0.5.0.0
 jespresso >=1.0.1
 json-stream <0.1.0.0 || >0.1.0.0 && <0.3.0.0 || >0.3.0.0 && <0.3.0.1 || >0.3.0.1 && <0.3.0.2 || >0.3.0.2
+json-togo <0.1.0.2 || >0.1.0.2
 lambdabot <5.0.2 || >5.0.2
 lambdabot-haskell-plugins <5.0.2 || >5.0.2
 lambdabot-novelty-plugins <5.0.2 || >5.0.2
