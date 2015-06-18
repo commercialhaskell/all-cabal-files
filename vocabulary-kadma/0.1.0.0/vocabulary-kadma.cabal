@@ -1,0 +1,46 @@
+name:                vocabulary-kadma
+version:             0.1.0.0
+synopsis:            Smaoin vocabulary definitions of the base framework.
+description:
+  This package provides Smaoin vocabulary entities for direct access in
+  Haskell. There can be many vocabulary packages, but this is the first one. It
+  specifically provides entities defined by
+  <http://rel4tion.org/projects/kadma Kadma>, i.e. base framework definitions
+  such as the concepts of Smaoin itself.
+  .
+  All the vocabularies are under the "Data.Smaoin.Vocabulary" module, organized
+  by namespace, with names based on the English localization. For example, if
+  you define an ontology under namespace @hello@, you can place vocabulary
+  entities under @Data.Smaoin.Vocabulary.Hello@.
+  .
+  Vocabulary entity modules should be auto-generated from their source
+  documents (mostly written in <http://rel4tion.org/projects/idan Idan>), but
+  at this early stage the variable definitions in this package are written
+  manually (but based on the Idan sources).
+  .
+  For more information, see the project homepage.
+homepage:            http://rel4tion.org/projects/vocabularies-hs/
+bug-reports:         http://rel4tion.org/projects/vocabularies-hs/tickets/
+license:             PublicDomain
+license-file:        COPYING
+author:              fr33domlover
+maintainer:          fr33domlover@riseup.net
+copyright:           ♡ Copying is an act of love. Please copy, reuse and share.
+category:            Data
+build-type:          Simple
+extra-source-files:  AUTHORS ChangeLog COPYING INSTALL NEWS README
+cabal-version:       >=1.10
+
+source-repository head
+  type:                darcs
+  location:            http://darcs.rel4tion.org/repos/vocabulary-kadma/
+
+library
+  exposed-modules:     Data.Smaoin.Vocabulary
+                     , Data.Smaoin.Vocabulary.Smaoin
+  --other-modules:       
+  -- other-extensions:    
+  build-depends:       base       >=4.7 && <5
+                     , smaoin     >=0.3
+  hs-source-dirs:      src
+  default-language:    Haskell2010
