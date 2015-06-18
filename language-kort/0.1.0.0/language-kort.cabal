@@ -1,0 +1,57 @@
+name:                language-kort
+version:             0.1.0.0
+synopsis:            Parser and serializer for the Kort information language.
+description:         This package provides a library containing all the
+                     necessary tools for working with Kort files, allowing
+                     programs to load and save semantic data.
+homepage:            http://rel4tion.org/projects/language-kort/
+bug-reports:         http://rel4tion.org/projects/language-kort/tickets/
+license:             PublicDomain
+license-file:        COPYING
+author:              fr33domlover
+maintainer:          fr33domlover@riseup.net
+copyright:           ♡ Copying is an act of love. Please copy, reuse and share.
+category:            Language
+build-type:          Simple
+extra-source-files:  AUTHORS ChangeLog COPYING INSTALL NEWS README
+cabal-version:       >=1.10
+
+source-repository head
+  type:                darcs
+  location:            http://darcs.rel4tion.org/repos/language-kort/
+
+library
+  exposed-modules:     Language.Kort
+                     , Language.Kort.Parser
+                     , Language.Kort.Types
+                     , Language.Kort.UidGen
+                     , Language.Kort.Writer
+  -- other-modules:
+  -- other-extensions:    
+  build-depends:       base              >=4.7 && <5
+                     , base64-bytestring >=1.0
+                     , bytestring        >=0.10
+                     , random            >=1.1
+                     , razom-text-util   >=0.1.2
+                     , regex-applicative >=0.3.1
+                     , smaoin            >=0.3
+                     , text              >=1.2
+                     , text-position     >=0.1
+                     , vocabulary-kadma  >=0.1
+                     , utf8-string       >=1
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+
+test-suite test
+  default-language:    Haskell2010
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             test.hs
+  other-modules:       Input
+  build-depends:       base
+                     , bytestring
+                     , QuickCheck        >=2.8
+                     , language-kort
+                     , smaoin
+                     , text
+                     , vocabulary-kadma
