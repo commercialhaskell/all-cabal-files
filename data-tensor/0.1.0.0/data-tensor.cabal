@@ -1,0 +1,23 @@
+name:                data-tensor
+version:             0.1.0.0
+synopsis:            Tensor and Group typeclasses
+description:         Typeclasses for Groups (Monoids with an 'invert'
+                     operation) and Tensors.
+homepage:            https://bitbucket.org/tdammers/data-tensor
+license:             MIT
+license-file:        LICENSE
+author:              Tobias Dammers
+maintainer:          tdammers@gmail.com
+copyright:           2015
+category:            Data
+build-type:          Simple
+-- extra-source-files:
+cabal-version:       >=1.10
+
+library
+  exposed-modules:     Data.Tensor
+  -- other-modules:
+  -- other-extensions:
+  build-depends:       base >=4.5 && <5.0
+  hs-source-dirs:      src
+  default-language:    Haskell2010
