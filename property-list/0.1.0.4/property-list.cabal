@@ -1,5 +1,6 @@
 name:                   property-list
 version:                0.1.0.4
+x-revision: 1
 stability:              experimental
 license:                PublicDomain
 
@@ -51,6 +52,6 @@ Library
                         syb,
                         template-haskell,
                         text,
-                        time,
+                        time < 1.5,
                         vector,
                         xml >= 1.3.9
