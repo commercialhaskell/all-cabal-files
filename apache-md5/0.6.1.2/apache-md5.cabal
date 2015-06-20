@@ -1,5 +1,6 @@
 name:                 apache-md5
 version:              0.6.1.2
+x-revision: 1
 synopsis:             Apache specific MD5 digest algorighm.
 description:
   Haskell implementation of Apache HTTP server specific MD5 digest algorithm
@@ -47,7 +48,7 @@ library
 
   if flag(deepseq)
     cpp-options:        -DWITH_deepseq
-    build-depends:      deepseq >= 1.1.0.0
+    build-depends:      deepseq >= 1.1.0.0 && < 2
     -- Same minimal bound as criterion has since version 0.4.0.
 
   includes:             openssl/md5.h
