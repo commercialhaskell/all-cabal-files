@@ -1,0 +1,67 @@
+name: acme-zero
+version: 0.0.1
+synopsis: The absorbing element of package dependencies
+description:
+  <https://www.haskell.org/cabal/users-guide/developing-packages.html Cabal>
+  package dependencies form a commutative monoid with an absorbing element.
+  They satisfy the following axioms:
+  .
+  [Associativity]
+  .
+  For all dependencies @a@, @b@ and @c@,
+  .
+  @
+  (a , b) , c = a , (b , c)
+  @
+  .
+  In fact, the Cabal syntax does not even allow you to use the parentheses for
+  this reason.
+  .
+  [Commutativity]
+  .
+  For all dependencies @a@ and @b@,
+  .
+  @
+  a , b = b , a
+  @
+  .
+  [Identity element]
+  .
+  For all dependencies @a@,
+  .
+  @
+  acme-one , a = a , acme-one = a
+  @
+  .
+  Depending on @<https://hackage.haskell.org/package/acme-one acme-one>@ has no
+  additional effect.
+  .
+  [Absorbing element]
+  .
+  For all dependencies @a@,
+  .
+  @
+  acme-zero , a = a , acme-zero = acme-zero
+  @
+  .
+  Depending on @<https://hackage.haskell.org/package/acme-zero acme-zero>@ in
+  addition has the same effect as /only/ depending on @acme-zero@.
+license: PublicDomain
+license-file: LICENSE.md
+author: Johan Kiviniemi <devel@johan.kiviniemi.name>
+maintainer: Johan Kiviniemi <devel@johan.kiviniemi.name>
+stability: provisional
+homepage: https://github.com/ion1/acme-zero-one
+bug-reports: https://github.com/ion1/acme-zero-one/issues
+category: ACME
+build-type: Simple
+extra-source-files: README.md
+cabal-version: >= 1.10
+
+source-repository head
+  type: git
+  location: https://github.com/ion1/acme-zero-one.git
+
+library
+  build-depends: acme-zero == 0
+  default-language: Haskell2010
