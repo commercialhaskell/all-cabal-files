@@ -1,5 +1,6 @@
 Name:                concrete-typerep
 Version:             0.1
+x-revision: 1
 Synopsis:            Binary and Hashable instances for TypeRep
 Description:         Binary and Hashable instances for TypeRep
 License:             BSD3
@@ -13,4 +14,4 @@ Cabal-version:       >=1.2
 Library
   Exposed-modules:     Data.ConcreteTypeRep
 
-  Build-depends:       base < 5, binary, hashable
+  Build-depends:       base < 4.4, binary, hashable
