@@ -1,0 +1,57 @@
+name:                socket-sctp
+version:             0.1.0.0
+synopsis:            STCP socket extensions library.
+description:
+  This is a binding to the types and operations of `libsctp`.
+  It's intended to be used in conjunction with the `socket`
+  library.
+
+license:             MIT
+license-file:        LICENSE
+author:              Lars Petersen
+maintainer:          info@lars-petersen.net
+category:            System, Socket, Network
+build-type:          Simple
+cabal-version:       >=1.10
+homepage:            https://github.com/lpeterse/haskell-socket-sctp
+bug-reports:         https://github.com/lpeterse/haskell-socket-sctp/issues
+tested-with:         GHC==7.10.1, GHC==7.8.3
+extra-source-files:  README.md
+                     CHANGELOG.md
+                     CONTRIBUTORS.txt
+
+library
+  ghc-options:         -Wall
+  exposed-modules:     System.Socket.Protocol.SCTP
+  other-modules:       System.Socket.Protocol.SCTP.Internal
+  build-depends:       base >= 4.7 && < 5
+                     , bytestring < 0.11
+                     , socket >= 0.5.1.0 && < 0.6.0.0
+  hs-source-dirs:      src
+  build-tools:         hsc2hs
+  default-language:    Haskell2010
+  extra-libraries:     sctp
+
+source-repository head
+  type:                git
+  location:            git://github.com/lpeterse/haskell-socket-sctp.git
+
+test-suite SendReceiveMessage
+  hs-source-dirs:      tests
+  main-is:             SendReceiveMessage.hs
+  type:                exitcode-stdio-1.0
+  default-language:    Haskell2010
+  build-depends:       base >= 4.7 && < 5
+                     , bytestring < 0.11
+                     , socket
+                     , socket-sctp
+
+test-suite TooSmallBuffer
+  hs-source-dirs:      tests
+  main-is:             TooSmallBuffer.hs
+  type:                exitcode-stdio-1.0
+  default-language:    Haskell2010
+  build-depends:       base >= 4.7 && < 5
+                     , bytestring < 0.11
+                     , socket
+                     , socket-sctp
