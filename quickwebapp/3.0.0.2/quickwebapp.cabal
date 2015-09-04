@@ -1,5 +1,6 @@
 name:                quickwebapp
 version:             3.0.0.2
+x-revision: 1
 synopsis:            A quick webapp generator for any file processing tool
 description:
     A quick-and-dirty api generator, inspired from the 'interact' function from
@@ -17,7 +18,7 @@ category:            Web
 build-type:          Simple
 extra-source-files:  Changelog, README.md
 cabal-version:       >=1.10
-
+homepage: https://github.com/jtanguy/quickwebapp
 bug-reports: https://github.com/jtanguy/quickwebapp/issues
 
 source-repository head
