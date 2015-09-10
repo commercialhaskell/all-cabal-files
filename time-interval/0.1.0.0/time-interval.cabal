@@ -1,6 +1,6 @@
 name:                time-interval
 version:             0.1.0.0
-x-revision: 1
+x-revision: 2
 synopsis:            Use a time unit class, but hold a concrete time type.
 description:
   Two common ways to represent and hold short time intervals seem to be:
@@ -39,7 +39,7 @@ license-file:        COPYING
 author:              fr33domlover
 maintainer:          fr33domlover@riseup.net
 copyright:           ♡ Copying is an act of love. Please copy, reuse and share.
-category:            Web
+category:            Data
 build-type:          Simple
 extra-source-files:  AUTHORS ChangeLog COPYING INSTALL NEWS README.md
 cabal-version:       >=1.10
