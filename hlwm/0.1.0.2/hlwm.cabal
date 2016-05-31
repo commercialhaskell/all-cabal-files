@@ -1,11 +1,13 @@
 name:                hlwm
 version:             0.1.0.2
+x-revision: 1
 synopsis:            Bindings to the herbstluftwm window manager
 description:         A client-side IPC implementation for herbstluftwm.
 license:             BSD2
 license-file:        LICENSE
 author:              Hans-Peter Deifel
 maintainer:          <hpd@hpdeifel.de>
+homepage:            https://github.com/hpdeifel/hlwm-haskell
 category:            System
 build-type:          Simple
 cabal-version:       >=1.10
@@ -13,7 +15,7 @@ extra-source-files:  README.md
 
 source-repository head
   type:               git
-  location:           https://git.cs.fau.de/?p=lu03pevi/hlwm-haskell
+  location:           https://github.com/hpdeifel/hlwm-haskell.git
 
 flag examples
   description:         Build example programs
