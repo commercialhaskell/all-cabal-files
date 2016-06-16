@@ -1,5 +1,6 @@
 name: neural
 version: 0.2.0.0
+x-revision: 1
 cabal-version: >=1.10
 build-type: Simple
 license: MIT
@@ -52,7 +53,7 @@ source-repository head
 source-repository this
     type: git
     location: https://github.com/brunjlar/neural.git
-    tag: 0.1.1.0
+    tag: 0.2.0.0
 
 library
     exposed-modules:
