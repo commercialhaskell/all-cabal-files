@@ -1,12 +1,13 @@
 name:                ghc-typelits-presburger
 version:             0.1.0.0
-x-revision: 3
+x-revision: 6
 synopsis:            Presburger Arithmetic Solver for GHC Type-level natural numbers
-description:
+description: 
   @ghc-typelits-presburger@ augments GHC type-system with Presburger Arithmetic Solver for Type-level natural numbers.
-  You can use this by just add this package to @build-depends@ and the following line to the head of .hs files:
+  You can use by adding this package to @build-depends@ and add the following pragma to the head of .hs files:
+  .
+  > OPTIONS_GHC -fplugin GHC.TypeLits.Presburger
 
-  > {-# OPTIONS_GHC -fplugin GHC.TypeLits.Presburger #-}
 homepage:            https://github.com/konn/ghc-typelits-presburger#readme
 license:             BSD3
 license-file:        LICENSE
