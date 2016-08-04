@@ -1,5 +1,6 @@
 Name:                TransformeR
 Version:             0.1.0.0
+x-revision: 1
 Synopsis:            eDSL in R for Safe Variable Transformarion
 Homepage:            https://github.com/remysucre/TransformeR#readme
 License:             BSD3
@@ -31,7 +32,7 @@ library
   exposed-modules:     Syntax
                        Types
                        Parse
-  build-depends:       base >= 4.7 && < 5
+  build-depends:       base < 0
                      , parsec
                      , mtl
                      , haskell-src-exts
