@@ -11,6 +11,7 @@ name:                stochastic
 --                   | | +----- non-breaking API additions
 --                   | | | +--- code changes with no API change
 version:             0.1.0.0
+x-revision: 1
 
 -- A short (one-line) description of the package.
 synopsis:            Monadic composition of probabilistic functions and sampling.
@@ -22,7 +23,7 @@ description:         This package allows the user to perform monadic composition
                      can then be sampled from to generate datapoints.
 
 -- URL for the project homepage or repository.
-homepage:            http://kevinl.io/posts/2016-08-17-sampling-monad.html
+homepage:            http://kevinl.io/posts/2016-08-24-sampling-monad.html
 
 -- The license under which the package is released.
 license:             GPL-3
