@@ -1,7 +1,8 @@
 name:                alex-tools
 version:             0.1.0.0
+x-revision: 1
 synopsis:            A set of functions for a common use case of Alex.
-description:         This captures a common patter for using Alex.
+description:         This captures a common pattern for using Alex with Text.
 license:             ISC
 license-file:        LICENSE
 author:              Iavor S. Diatchki
