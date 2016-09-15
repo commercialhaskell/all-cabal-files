@@ -1,6 +1,5 @@
 name:                hopenpgp-tools
-version:             0.16.2
-x-revision: 1
+version:             0.19.3
 synopsis:            hOpenPGP-based command-line tools
 description:         command-line tools for performing some OpenPGP-related operations
 homepage:            http://floss.scru.org/hopenpgp-tools
@@ -8,7 +7,7 @@ license:             OtherLicense
 license-file:        LICENSE
 author:              Clint Adams
 maintainer:          Clint Adams <clint@debian.org>
-copyright:           2012-2015 Clint Adams
+copyright:           2012-2016 Clint Adams
 category:            Codec, Data
 build-type:          Simple
 cabal-version:       >=1.10
@@ -47,6 +46,8 @@ executable hokey
   main-is:             hokey.hs
   ghc-options:         -Wall
   other-modules:       HOpenPGP.Tools.Common
+               ,       HOpenPGP.Tools.HKP
+               ,       HOpenPGP.Tools.TKUtils
   build-depends:       base                   > 4    && < 5
                ,       aeson
                ,       ansi-wl-pprint         >= 0.6.7
@@ -61,17 +62,22 @@ executable hokey
                ,       cryptohash             >= 0.7.7
                ,       directory
                ,       errors
-               ,       hOpenPGP               >= 2.2
+               ,       hOpenPGP               >= 2.5
+               ,       http-client
+               ,       http-client-tls
+               ,       http-types
                ,       ixset-typed
                ,       lens
                ,       monad-loops
-               ,       old-locale
+               ,       openpgp-asciiarmor
                ,       optparse-applicative   >= 0.11.0
                ,       resourcet
                ,       text
-               ,       time                   >= 1.1 && <1.5
+               ,       time
+               ,       time-locale-compat
                ,       transformers
                ,       wl-pprint-extras
+               ,       wl-pprint-terminfo
                ,       yaml
   default-language: Haskell2010
 
@@ -104,7 +110,7 @@ executable hkt
                ,       optparse-applicative   >= 0.11.0
                ,       resourcet
                ,       text
-               ,       time                   >= 1.1 && <1.5
+               ,       time
                ,       transformers
                ,       unordered-containers
                ,       wl-pprint-extras
@@ -115,9 +121,9 @@ executable hkt
 
 source-repository head
   type:     git
-  location: git://git.debian.org/users/clint/hopenpgp-tools.git
+  location: https://anonscm.debian.org/git/users/clint/hopenpgp-tools.git
 
 source-repository this
   type:     git
-  location: git://git.debian.org/users/clint/hopenpgp-tools.git
-  tag:      hopenpgp-tools/0.16.2
+  location: https://anonscm.debian.org/git/users/clint/hopenpgp-tools.git
+  tag:      hopenpgp-tools/0.19.3

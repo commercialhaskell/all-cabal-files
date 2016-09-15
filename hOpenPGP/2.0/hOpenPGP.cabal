@@ -1,6 +1,6 @@
 Name:                hOpenPGP
 Version:             2.0
-x-revision: 1
+x-revision: 4
 Synopsis:            native Haskell implementation of OpenPGP (RFC4880)
 Description:         native Haskell implementation of OpenPGP (RFC4880)
 Homepage:            http://floss.scru.org/hOpenPGP/
@@ -206,7 +206,7 @@ Library
                , semigroups
                , split
                , text
-               , time                               >= 1.1
+               , time                  >= 1.1 && <1.5
                , transformers
                , unordered-containers
                , wl-pprint-extras
@@ -255,7 +255,7 @@ Test-Suite tests
                , semigroups
                , split
                , text
-               , time                               >= 1.1
+               , time                  >= 1.1 && <1.5
                , transformers
                , unordered-containers
                , wl-pprint-extras
@@ -310,7 +310,7 @@ Benchmark benchmark
                , semigroups
                , split
                , text
-               , time                               >= 1.1
+               , time                  >= 1.1 && <1.5
                , transformers
                , unordered-containers
                , wl-pprint-extras
