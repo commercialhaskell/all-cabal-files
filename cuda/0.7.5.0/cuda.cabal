@@ -1,5 +1,6 @@
 Name:                   cuda
 Version:                0.7.5.0
+x-revision: 1
 Synopsis:               FFI binding to the CUDA interface for programming NVIDIA GPUs
 Description:
     The CUDA library provides a direct, general purpose C-like SPMD programming
@@ -27,7 +28,7 @@ Description:
     The setup script for this package requires at least Cabal-1.24. To upgrade,
     execute one of:
     .
-    * cabal users: @cabal install Cabal --constraint="Cabal >= 1.24"@
+    * cabal users: @cabal install Cabal --constraint=\"Cabal >= 1.24\"@
     .
     * stack users: @stack setup --upgrade-cabal@
     .
