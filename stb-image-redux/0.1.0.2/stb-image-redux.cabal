@@ -1,6 +1,5 @@
 name: stb-image-redux
-version: 0.1.0.1
-x-revision: 1
+version: 0.1.0.2
 cabal-version: >=1.10
 build-type: Simple
 license: BSD3
@@ -41,8 +40,8 @@ test-suite stb-image-redux-tests
     main-is: Spec.hs
     build-depends:
         base >=4.9.0.0 && <4.10,
-        stb-image-redux >=0.1.0.1 && <0.2,
-        vector >=0.11.0.0 && <0.12,
+        stb-image-redux >=0.1.0.2 && <0.2,
+        vector >=0.10.12.3 && <0.12,
         hspec >=2.2.3 && <2.3,
         QuickCheck >=2.8.2 && <2.9
     default-language: Haskell2010
