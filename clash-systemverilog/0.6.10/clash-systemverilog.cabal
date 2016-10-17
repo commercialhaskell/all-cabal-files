@@ -1,7 +1,6 @@
-Name:                 clash-vhdl
-Version:              0.6.16
-x-revision: 1
-Synopsis:             CAES Language for Synchronous Hardware - VHDL backend
+Name:                 clash-systemverilog
+Version:              0.6.10
+Synopsis:             CAES Language for Synchronous Hardware - SystemVerilog backend
 Description:
   CλaSH (pronounced ‘clash’) is a functional hardware description language that
   borrows both its syntax and semantics from the functional programming language
@@ -28,7 +27,7 @@ Description:
   .
   This package provides:
   .
-  * VHDL Backend
+  * SystemVerilog Backend
 Homepage:             http://www.clash-lang.org/
 bug-reports:          http://github.com/clash-lang/clash-compiler/issues
 License:              BSD2
@@ -108,6 +107,6 @@ Library
                       unordered-containers    >= 0.2.3.3  && < 0.3,
                       wl-pprint-text          >= 1.1.0.0  && < 1.2
 
-  Exposed-modules:    CLaSH.Backend.VHDL
+  Exposed-modules:    CLaSH.Backend.SystemVerilog
 
-  Other-modules:      Paths_clash_vhdl
+  other-modules:      Paths_clash_systemverilog
